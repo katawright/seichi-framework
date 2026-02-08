@@ -18,3 +18,5 @@ A practical framework for integrating AI assistance into software development.
 
 - [Project Plan](PROJECT_PLAN.md) - Phased development approach
 
+- [SDLC Stages](STAGES.md) - Complete stage definitions with inputs, outputs, and criteria
+
