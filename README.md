@@ -20,3 +20,7 @@ A practical framework for integrating AI assistance into software development.
 
 - [SDLC Stages](STAGES.md) - Complete stage definitions with inputs, outputs, and criteria
 
+- [Current Status](STATUS.md) - Current project status and next steps
+
+- [Session Log](SESSION_LOG.md) - Detailed history of all sessions and decisions
+
