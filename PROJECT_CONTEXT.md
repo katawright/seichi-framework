@@ -61,27 +61,110 @@ The project is transitioning from exploratory work (with ChatGPT) to structured 
 - Need to review and refine existing artifacts
 - Need to extend framework to remaining SDLC stages
 
-## SDLC Stages (Expected)
+## SDLC Stages
 
-While the complete list should be verified from prior work, typical stages include:
-1. **Initiation** (Primary: Product Manager/Business Analyst; Supporting: Executives, Solutions Architect)
-2. **Analysis/Requirements** (Primary: Business Analyst/Product Manager; Supporting: Engineers, Architects)
-3. **High-Level Design** (Primary: Solutions Architect/Senior Engineers; Supporting: Product Manager)
-4. **Low-Level Design** (Primary: Engineers; Supporting: Architects)
-5. **Implementation** (Primary: Engineers)
-6. **Testing** (Primary: QA Engineers/Engineers; Supporting: Product Manager)
-7. **Deployment** (Primary: DevOps/Engineers; Supporting: Operations)
-8. **Maintenance** (Primary: Engineers; Supporting: DevOps, Support)
+The framework uses **7 stages** that balance simplicity with comprehensive coverage. For complete stage definitions including inputs, outputs, entry/exit criteria, and handoffs, see **[STAGES.md](STAGES.md)**.
 
-**Note:** Role ownership should be clearly indicated in each stage's artifacts to:
+**Quick Summary:**
+1. **Initiation** - Establish business case with measurable success criteria
+2. **Requirements** - Define testable requirements with acceptance criteria
+3. **Design** - Create architecture (foundational) and detailed designs (iterative)
+4. **Implementation** - Build working code
+5. **Verification** - Validate through testing and acceptance (including UAT)
+6. **Deployment** - Release to production
+7. **Support** - Monitor, maintain, and enhance
+
+**Execution Patterns:**
+- **Foundational** (once per project): Initiation, Requirements, Design (first pass)
+- **Iterative** (per increment): Design (detail), Implementation, Verification, Deployment
+- **Continuous** (ongoing): Support
+
+**Role Ownership Principle:**
+Each stage has a clearly identified primary role and supporting roles to:
 - Set expectations for who drives each stage
 - Clarify cross-functional involvement
 - Enable non-technical stakeholders to participate appropriately
 - Improve handoffs between stages
 
+See [STAGES.md](STAGES.md) for detailed descriptions, artifacts, and cross-stage relationships.
+
+## Measurable Goals and Success Criteria
+
+A foundational principle of effective project execution is establishing **measurable success criteria** during Initiation. The framework is agnostic to specific goal-setting methodologies while emphasizing the critical importance of measurement.
+
+### Goal-Setting Approaches
+
+The framework supports any goal-setting approach that produces measurable outcomes. Organizations should use whichever framework best fits their culture and practices:
+
+**Common Frameworks:**
+- **OKRs (Objectives and Key Results):** Qualitative objectives paired with measurable key results (2-5 per objective)
+- **SMART Goals:** Specific, Measurable, Achievable, Relevant, Time-bound objectives
+- **KPIs (Key Performance Indicators):** Critical metrics tracked over time to measure performance
+- **Balanced Scorecard:** Multi-perspective measurement across financial, customer, process, and learning dimensions
+- **Simple Success Metrics:** Measurable outcomes without formal framework structure
+- **Qualitative Criteria:** For research/exploration projects where quantification isn't feasible
+
+**What matters:** Regardless of framework, success criteria must be clearly defined, measurable (or evaluable), and trackable throughout the project lifecycle.
+
+### Three Types of Success Metrics
+
+Projects should define measurable goals across three dimensions:
+
+**1. Business Metrics**
+- Revenue impact, cost savings, or efficiency gains
+- User engagement, adoption, or satisfaction (NPS, CSAT)
+- Market share, competitive position, or brand perception
+- Customer retention, churn reduction, or lifetime value
+
+**2. Technical Metrics**
+- System performance (latency, throughput, response time)
+- Reliability and availability (uptime, error rates, MTTR)
+- Scalability (concurrent users, transaction volume)
+- Code quality (test coverage, technical debt reduction)
+- Security posture (vulnerabilities resolved, compliance achieved)
+
+**3. Project Metrics**
+- Time to market or delivery milestones
+- Budget adherence or cost efficiency
+- Scope delivery (features completed vs. planned)
+- Team velocity or productivity improvements
+
+### Measurement Requirements
+
+**Mandatory Components (Initiation Stage):**
+- Define clear objectives with at least one measurable success criterion per project
+- Specify how success will be measured and validated
+- Identify measurement mechanisms (analytics, surveys, system metrics, business KPIs)
+- Set baseline (current state) and target (desired state)
+- Determine when and how success will be evaluated
+
+**Allowance for Non-Quantifiable Projects:**
+Projects focused on pure research, exploration, or learning may use qualitative success criteria:
+- "Successfully prototype three alternative approaches"
+- "Gain sufficient understanding to make informed build/buy decision"
+- "Validate technical feasibility of approach X"
+
+Even qualitative projects should define clear, evaluable criteria for success.
+
+### Success Criteria Throughline
+
+Measurable success criteria established in Initiation flow through all subsequent stages, actively guiding development and enabling data-driven validation. Each stage integrates measurement differently:
+
+- **Initiation** - Define objectives with measurable success criteria
+- **Requirements** - Ensure instrumentation needs are captured as NFRs
+- **Design** - Design measurement infrastructure
+- **Implementation** - Implement metrics collection
+- **Verification** - Test measurement systems
+- **Deployment** - Capture baseline measurements
+- **Support** - Monitor and validate success criteria
+
+See [STAGES.md](STAGES.md) for the complete measurement throughline table showing how each stage integrates measurement.
+
 ## SDLC Stage Execution Model
 
 The framework recognizes that software development is not a strict linear waterfall process. Stages have different execution patterns and can be revisited as the project evolves.
+
+**Note:** For stage-specific execution details, inputs/outputs, and entry/exit criteria, see [STAGES.md](STAGES.md). This section describes the framework's overall execution philosophy and how stages interact.
 
 ### Terminology: Increments
 
@@ -105,41 +188,43 @@ The framework uses "increment" to remain methodology-agnostic while supporting a
 ### Stage Execution Patterns
 
 **Foundational Stages** (Execute once per project, can be revisited when needed):
-- **Initiation** - Establishes project vision, business case, and goals
-- **Analysis/Requirements** - Defines what the system should do
-- **High-Level Design** - Establishes overall system architecture and approach
+- **Initiation** - Establishes project vision, business case, objectives, and measurable success criteria
+- **Requirements** - Defines what the system should do with acceptance criteria
+- **Design** (foundational pass) - Establishes overall system architecture and technical approach
 
 These stages set the project foundation but are **not frozen**. They can and should be revisited when significant new information emerges.
 
 **Iterative Stages** (Execute repeatedly per increment):
-- **Low-Level Design** - Detailed design for specific increment
+- **Design** (iterative pass) - Detailed design for specific increment
 - **Implementation** - Build the increment
-- **Testing** - Verify the increment works
+- **Verification** - Validate the increment through testing and acceptance
 - **Deployment** - Release the increment to production
 
-These stages repeat for each deliverable increment, enabling continuous value delivery.
+These stages repeat for each deliverable increment, enabling continuous value delivery. Note that Design serves dual purposes: a foundational pass for overall architecture, and iterative passes for increment-specific details.
 
 **Continuous Stages** (Ongoing after first production deployment):
-- **Maintenance** - Monitor, support, fix, and enhance the system
+- **Support** - Monitor systems and success metrics, respond to incidents, fix bugs, and deliver enhancements
 
 ### Revisit Triggers
 
 Stages may need to be revisited when:
 
-**For Foundational Stages (Initiation, Analysis, HLD):**
+**For Foundational Stages (Initiation, Requirements, Design):**
 - Implementation reveals unanticipated technical constraints or impossibilities
 - User feedback from deployed increments shows requirements miss the mark
+- Measurement shows objectives are off-target or success criteria need adjustment
 - Business context or priorities shift significantly
 - Regulatory, compliance, or security requirements change
 - Technical discoveries reveal fundamentally better approaches
 - Market conditions change during development
 - Stakeholder understanding evolves through iterative delivery
 
-**For Iterative Stages (LLD, Implementation, Testing, Deployment):**
-- Testing reveals design flaws requiring LLD revision
+**For Iterative Stages (Design, Implementation, Verification, Deployment):**
+- Verification reveals design flaws requiring revision
 - Code review identifies better implementation approaches
-- Performance issues require architectural changes
-- Security vulnerabilities discovered during testing
+- Performance testing shows architectural changes needed
+- Security vulnerabilities discovered during verification
+- UAT feedback indicates requirements misalignment
 
 ### Feedback Loops and Revision Approach
 
@@ -155,25 +240,25 @@ When revisiting a stage:
 ### Practical Example: 2-Month Project
 
 **Month 1, Week 1:**
-- Complete Initiation (foundational)
-- Complete Analysis/Requirements (foundational)
-- Complete High-Level Design (foundational)
-- Plan increments based on HLD
+- Complete Initiation (foundational) - Define objectives with measurable success criteria
+- Complete Requirements (foundational) - Document FRs/NFRs with acceptance criteria
+- Complete Design (foundational) - Establish system architecture
+- Plan increments based on architecture
 
 **Month 1, Weeks 2-4:**
-- Increment 1 (User Authentication): LLD → Implementation → Testing → Deployment
-- Increment 2 (Database Schema): LLD → Implementation → Testing → Deployment
+- Increment 1 (User Authentication): Design → Implementation → Verification → Deployment
+- Increment 2 (Database Schema): Design → Implementation → Verification → Deployment
 
 **Month 2, Week 1:**
 - User feedback on Increment 1 reveals requirements gap
-- **Revisit Analysis** - Update requirements document
+- **Revisit Requirements** - Update requirements document and acceptance criteria
 - **Assess impact** - Affects Increment 3 design
 - Continue Increment 3 with updated understanding
 
 **Month 2, Weeks 2-4:**
-- Increment 3 (User Profile): LLD → Implementation → Testing → Deployment (incorporating learning)
-- Increment 4 (Search Feature): LLD → Implementation → Testing → Deployment
-- **Maintenance begins** - Supporting Increments 1-2 in production
+- Increment 3 (User Profile): Design → Implementation → Verification → Deployment (incorporating learning)
+- Increment 4 (Search Feature): Design → Implementation → Verification → Deployment
+- **Support begins** - Monitoring metrics, supporting Increments 1-2 in production
 
 ### Framework Flexibility
 
@@ -185,11 +270,7 @@ This execution model ensures the framework is:
 - **Scalable** - Works for small increments and large projects
 - **Methodology-agnostic** - Teams use their own terminology (epic, feature, sprint, etc.)
 
-Each stage's artifacts will include:
-- **Execution Frequency** - Foundational / Iterative / Continuous
-- **Typical Triggers for Revisit** - When to loop back
-- **Revision Guidance** - How to handle updates
-- **Downstream Impact** - What else needs updating when this changes
+See [STAGES.md](STAGES.md) for complete stage definitions including execution patterns, inputs/outputs, entry/exit criteria, and handoff details.
 
 ## Artifact Structure Template
 
@@ -201,6 +282,7 @@ For each SDLC stage, create:
 - Structured, fillable template
 - **Role metadata:** Primary role, supporting roles, cross-functional involvement
 - **Execution metadata:** Foundational / Iterative / Continuous, typical revisit triggers
+- **Measurement integration:** For Initiation, includes objectives with measurable success criteria; other stages reference how they support measurement
 
 ### Stage Checklist (`{stage}-checklist.md`)
 - Verification that brief is complete
@@ -263,15 +345,18 @@ For each SDLC stage, create:
 
 The framework succeeds if:
 1. Engineers can follow it without extensive training
-2. Non-technical stakeholders can use early stages (Initiation, Analysis) to properly scope projects
+2. Non-technical stakeholders can use early stages (Initiation, Requirements) to properly scope projects
 3. AI assistance adds measurable value at each stage
 4. Professional standards are maintained or improved
 5. Engineers view AI as helpful rather than threatening
 6. Cross-functional handoffs are clearer and more efficient
-7. The framework is lightweight enough to avoid becoming bureaucratic overhead
+7. The 7-stage model is lightweight enough to avoid bureaucratic overhead
 8. The framework can be followed manually before tooling exists
-9. Business stakeholders feel empowered to initiate projects independently
+9. Business stakeholders feel empowered to initiate projects independently with clear success criteria
 10. Reduced back-and-forth between business and engineering teams
+11. Projects consistently define measurable success criteria during Initiation
+12. Teams can track progress toward goals throughout the SDLC
+13. The framework adapts to both small/medium organizations (unified Design stage) and enterprises (split Architecture/Detailed Design)
 
 ## Framework Effectiveness and Measurement
 
@@ -325,9 +410,9 @@ Framework updates should be driven by evidence from actual usage, not just theor
 ## Notes for Claude Code
 
 - Existing work from ChatGPT is reference material only - review and improve, don't just copy
-- Maintain consistency across all stage artifacts
+- Maintain consistency across all 7 stage artifacts
 - Keep language professional but approachable
-- **Adjust language/terminology based on primary role for each stage** (business language for PM stages, technical for engineering stages)
+- **Adjust language/terminology based on primary role for each stage** (business language for PM/BA stages, technical for engineering stages)
 - Avoid jargon that might alienate skeptical engineers OR non-technical stakeholders
 - Focus on practical utility over theoretical completeness
 - The framework should work with any AI tool, not just Claude
@@ -336,6 +421,10 @@ Framework updates should be driven by evidence from actual usage, not just theor
 - **Each stage should clearly indicate role ownership and cross-functional touchpoints**
 - **AI prompts must be tailored to the expertise level of the primary role**
 - Consider how stages hand off between different roles/departments
+- **Emphasize measurable success criteria in Initiation stage artifacts** - be framework-agnostic (support OKRs, SMART goals, KPIs, etc.)
+- **Show measurement throughline across all stages** - how each stage contributes to or enables measurement of success
+- **Make Design stage's dual nature (foundational + iterative) clear in artifacts**
+- **Verification stage should encompass all validation types** (unit, integration, UAT, performance, security)
 
 **Version Control Standards:**
 - Use **Semantic Versioning** (semver) for all releases: MAJOR.MINOR.PATCH
@@ -346,12 +435,13 @@ Framework updates should be driven by evidence from actual usage, not just theor
 - Use **Conventional Commits** for all commit messages:
   - Format: `type(scope): description`
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`
-  - Scopes: stage names (initiation, analysis, hld, lld, implementation, testing, deployment, maintenance), framework, application, ci
+  - Scopes: stage names (initiation, requirements, design, implementation, verification, deployment, support), framework, application, ci
   - Examples:
-    - `feat(initiation): add risk assessment section to brief template`
-    - `fix(analysis): correct checklist validation logic`
+    - `feat(initiation): add measurable success criteria section to brief template`
+    - `fix(requirements): correct acceptance criteria validation logic`
     - `docs(framework): update execution model examples`
     - `refactor(application): extract stage loader into separate module`
+    - `feat(design): add architecture decision record template`
   - Breaking changes: Add `BREAKING CHANGE:` in commit body or use `!` after type/scope
   - Example: `feat(framework)!: restructure stage artifact naming convention`
 - Tag releases with version number: `git tag v1.0.0`
@@ -360,8 +450,8 @@ Framework updates should be driven by evidence from actual usage, not just theor
 ## Questions to Address
 
 When reviewing reference materials and building the framework:
-1. Are the SDLC stages comprehensive and appropriately scoped?
-2. Is the artifact structure consistent and complete?
+1. Are the 7 SDLC stages comprehensive and appropriately scoped?
+2. Is the artifact structure consistent and complete across all stages?
 3. Are there missing artifacts that would add value?
 4. Do the AI agent prompts effectively elicit required information?
 5. Is the workflow clear and practical?
@@ -370,7 +460,10 @@ When reviewing reference materials and building the framework:
 8. **Is role ownership clearly indicated for each stage?**
 9. **Are AI prompts accessible to non-technical stakeholders where appropriate?**
 10. **Do cross-functional handoffs have clear deliverable formats?**
-11. **Can a non-technical stakeholder successfully complete early stages independently?**
+11. **Can a non-technical stakeholder successfully complete Initiation and Requirements independently?**
 12. **Is the execution model (foundational/iterative/continuous) clear for each stage?**
 13. **Are revisit triggers and feedback loops well-documented?**
 14. **Does the framework accommodate both waterfall-style and agile/iterative approaches?**
+15. **Are measurable success criteria clearly integrated throughout the framework?**
+16. **Does the Initiation stage adequately guide definition of measurable goals regardless of framework choice?**
+17. **Is the dual nature of Design stage (foundational + iterative) clear?**

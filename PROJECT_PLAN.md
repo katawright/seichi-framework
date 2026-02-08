@@ -33,19 +33,19 @@ Key strategic value: Democratizing project initiation by enabling business stake
 
 ### Deliverables
 
-- [ ] Standardized artifact template structure
+- [x] **STAGES.md** - Authoritative definition of 7 SDLC stages with inputs/outputs/criteria
+- [x] Standardized artifact template structure
 - [ ] Complete documentation for each SDLC stage:
-  - [ ] Initiation stage artifacts
-  - [ ] Analysis stage artifacts
-  - [ ] High-Level Design stage artifacts
-  - [ ] Low-Level Design stage artifacts
+  - [ ] Initiation stage artifacts (with measurable success criteria guidance)
+  - [ ] Requirements stage artifacts
+  - [ ] Design stage artifacts (covering both foundational and iterative passes)
   - [ ] Implementation stage artifacts
-  - [ ] Testing stage artifacts
+  - [ ] Verification stage artifacts (covering all validation types)
   - [ ] Deployment stage artifacts
-  - [ ] Maintenance stage artifacts
+  - [ ] Support stage artifacts (operations + maintenance)
 - [ ] Project README with framework overview
 - [ ] Usage guide and examples
-- [ ] Workflow documentation showing stage transitions
+- [ ] Workflow documentation showing stage transitions and feedback loops
 
 ### Why Sonnet 4.5?
 
@@ -66,9 +66,11 @@ Key strategic value: Democratizing project initiation by enabling business stake
 - **AI prompts use appropriate terminology for target role (business vs. technical language)**
 - No stage-specific artifacts contradict framework principles
 - Engineers can understand and use the framework without extensive training
-- **Non-technical stakeholders can complete early-stage (Initiation, Analysis) artifacts independently**
+- **Non-technical stakeholders can complete early-stage (Initiation, Requirements) artifacts independently**
+- **Measurable success criteria are emphasized without mandating specific frameworks (OKRs, SMART, KPIs, etc.)**
 - **Handoff points between roles are clearly defined**
 - **Framework supports both iterative delivery and adaptive revision of foundational stages**
+- **Design stage's dual nature (foundational + iterative) is clear and practical**
 
 ---
 
@@ -133,11 +135,11 @@ Continue with Sonnet for:
 ### Objectives
 
 1. **Follow the AI-Assisted SDLC framework** (dogfooding)
-2. Complete Initiation stage for the application
-3. Complete Analysis stage for the application
-4. Complete High-Level Design stage for the application
+2. Complete Initiation stage for the application (with measurable success criteria)
+3. Complete Requirements stage for the application
+4. Complete Design stage for the application (foundational pass)
 5. Make architectural decisions about application type, tech stack, features
-6. **Design application to read framework artifacts as single source of truth**
+6. **Design application to read framework artifacts (including STAGES.md) as single source of truth**
 7. **Ensure framework-application synchronization strategy is implemented**
 8. **Design optional feedback/measurement mechanisms for framework effectiveness**
 9. Design user experience for different roles (engineers, PMs, etc.)
@@ -147,22 +149,23 @@ Continue with Sonnet for:
 Following the framework we created:
 
 **Initiation Stage:**
-- [ ] Application initiation-brief.md
+- [ ] Application initiation-brief.md (with measurable success criteria)
 - [ ] Completed initiation-checklist.md
-- [ ] Project charter
+- [ ] Project charter with objectives and success metrics
 
-**Analysis Stage:**
-- [ ] Application analysis-brief.md
-- [ ] Requirements document
+**Requirements Stage:**
+- [ ] Application requirements-brief.md
+- [ ] Requirements document with acceptance criteria
 - [ ] Use cases and user stories
-- [ ] Completed analysis-checklist.md
+- [ ] Completed requirements-checklist.md
 
-**High-Level Design Stage:**
+**Design Stage (Foundational Pass):**
 - [ ] Application design-brief.md
 - [ ] System architecture
 - [ ] Technology stack selection
 - [ ] Component design
 - [ ] User interface design
+- [ ] Measurement/instrumentation architecture
 - [ ] Completed design-checklist.md
 
 ### Why Opus 4.5?
@@ -207,23 +210,24 @@ Must support:
 
 ## Phase 4: Application Implementation
 
-**Timeline:** After design phase (4-8 weeks estimated)  
-**Primary Tool:** Claude Code with **Sonnet 4.5**  
-**Escalate to:** **Opus 4.5** for complex implementation challenges  
-**Focus:** Building the application following Low-Level Design → Implementation → Testing
+**Timeline:** After design phase (4-8 weeks estimated)
+**Primary Tool:** Claude Code with **Sonnet 4.5**
+**Escalate to:** **Opus 4.5** for complex implementation challenges
+**Focus:** Building the application following Design (iterative) → Implementation → Verification → Deployment
 
 ### Objectives
 
-1. Complete Low-Level Design stage using the framework
+1. Complete Design stage (iterative passes) for each increment using the framework
 2. Implement application following the framework
-3. Test application following the framework
+3. Verify application following the framework (all validation types)
 4. Deploy application following the framework
 5. Document application following the framework
+6. Establish Support stage practices
 
 ### Deliverables
 
-**Low-Level Design Stage:**
-- [ ] Detailed component specifications
+**Design Stage (Iterative Passes):**
+- [ ] Detailed component specifications per increment
 - [ ] API designs
 - [ ] Data models
 - [ ] Interface specifications
@@ -232,26 +236,32 @@ Must support:
 - [ ] Source code
 - [ ] Unit tests
 - [ ] Integration tests
-- [ ] **Framework-loading mechanism (reads markdown artifacts)**
+- [ ] **Framework-loading mechanism (reads STAGES.md and stage artifacts)**
 - [ ] **Version alignment validation**
+- [ ] **Instrumentation for measuring framework effectiveness**
 - [ ] Code documentation
 
-**Testing Stage:**
-- [ ] Test plans
-- [ ] Test results
+**Verification Stage:**
+- [ ] Test plans (unit, integration, UAT, performance, security)
+- [ ] Test results across all validation types
 - [ ] Bug reports and resolutions
+- [ ] UAT sign-off from stakeholders
 - [ ] Performance validation
+- [ ] Security testing results
 
 **Deployment Stage:**
 - [ ] Deployment scripts/configs
 - [ ] User documentation
 - [ ] Installation guide
 - [ ] Deployment validation
+- [ ] Baseline measurements captured
 
-**Maintenance Stage:**
-- [ ] Maintenance plan
+**Support Stage:**
+- [ ] Support plan and runbooks
 - [ ] Issue tracking setup
 - [ ] Update procedures
+- [ ] Monitoring and alerting configuration
+- [ ] Success criteria tracking mechanisms
 
 ### Model Selection Strategy
 
@@ -387,11 +397,17 @@ The framework artifacts (markdown files) are the **single source of truth**. The
 ```
 application/
 ├── src/
-│   ├── framework-loader.js    # Reads markdown files
+│   ├── framework-loader.js    # Reads markdown files including STAGES.md
 │   └── ...
 ├── framework/                  # Symlink or copy of framework docs
+│   ├── STAGES.md              # Core stage definitions
 │   ├── initiation/
-│   ├── analysis/
+│   ├── requirements/
+│   ├── design/
+│   ├── implementation/
+│   ├── verification/
+│   ├── deployment/
+│   ├── support/
 │   └── ...
 ```
 
@@ -417,9 +433,15 @@ application/
 **Git strategy:**
 ```
 ai-assisted-sdlc/
+├── STAGES.md            # Core stage definitions
 ├── framework/           # Framework documentation
 │   ├── initiation/
-│   ├── analysis/
+│   ├── requirements/
+│   ├── design/
+│   ├── implementation/
+│   ├── verification/
+│   ├── deployment/
+│   ├── support/
 │   └── ...
 ├── application/         # Application code
 │   ├── src/
@@ -485,8 +507,8 @@ ai-assisted-sdlc/
 ## Project Goals
 [Description here]
 
-## Success Metrics
-[How we'll measure success]
+## Measurable Success Criteria
+[How we'll measure success - using OKRs, SMART goals, KPIs, or other approach]
 ```
 
 **Application impact:**
@@ -498,13 +520,15 @@ ai-assisted-sdlc/
 ### Decision Points for Claude Code
 
 When building the application (Phase 3-4), key decisions:
-1. **How should application read framework files?** (Runtime vs. build-time)
+1. **How should application read framework files?** (Runtime vs. build-time) - Must include STAGES.md
 2. **What validation should application perform on framework structure?**
 3. **How should application handle framework version mismatches?**
 4. **Should application cache framework content or read fresh each time?**
 5. **How should application handle framework updates during active use?**
+6. **How should application support framework-agnostic goal setting?** (OKRs, SMART, KPIs, etc.)
+7. **How should application track and display measurement throughline?**
 
-These decisions should be made during the design phase using the framework itself.
+These decisions should be made during the Design stage using the framework itself.
 
 ---
 
@@ -534,11 +558,14 @@ These decisions should be made during the design phase using the framework itsel
 1. ✅ Create project directory structure
 2. ✅ Initialize version control
 3. ✅ Set up reference materials directory
-4. ⬜ Launch Claude Code in project directory
-5. ⬜ Review existing ChatGPT artifacts
-6. ⬜ Begin Phase 1 framework development
-7. ⬜ Establish artifact template standards
-8. ⬜ Create first complete stage documentation set
+4. ✅ Launch Claude Code in project directory
+5. ✅ Review existing ChatGPT artifacts
+6. ✅ Define 7-stage SDLC model (Initiation, Requirements, Design, Implementation, Verification, Deployment, Support)
+7. ✅ Create STAGES.md with comprehensive stage definitions
+8. ✅ Establish framework-agnostic measurable success criteria approach
+9. ⬜ Create complete artifact sets for each of the 7 stages
+10. ⬜ Establish artifact template standards
+11. ⬜ Validate framework with realistic scenarios
 
 ---
 
