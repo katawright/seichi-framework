@@ -14,6 +14,8 @@ The AI-Assisted SDLC framework uses **7 stages** that balance comprehensive cove
 
 The framework recognizes that stages execute in different patterns: some are foundational (execute once), some are iterative (repeat per increment), and some are continuous (ongoing).
 
+For operational guidance on AI autonomy levels at each stage, see the **[AI Autonomy Scorecard](AI_AUTONOMY_SCORECARD.md)**, which evaluates each stage across fit, verifiability, risk, and recommended autonomy levels.
+
 ---
 
 ## Quick Reference

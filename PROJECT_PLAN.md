@@ -34,6 +34,7 @@ Key strategic value: Democratizing project initiation by enabling business stake
 ### Deliverables
 
 - [x] **STAGES.md** - Authoritative definition of 7 SDLC stages with inputs/outputs/criteria
+- [x] **AI_AUTONOMY_SCORECARD.md** - Operational guidance on AI autonomy levels per stage
 - [x] Standardized artifact template structure
 - [ ] Complete documentation for each SDLC stage:
   - [ ] Initiation stage artifacts (with measurable success criteria guidance)
