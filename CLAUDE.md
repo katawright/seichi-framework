@@ -28,10 +28,11 @@ See PROJECT_CONTEXT.md for full details.
 5. Methodology-agnostic - works for agile, waterfall, and hybrid teams
 
 ## SDLC Execution Model
-- **Foundational stages** (once per project, revisitable): Initiation, Analysis, High-Level Design
-- **Iterative stages** (per increment): Low-Level Design, Implementation, Testing, Deployment
-- **Continuous stages**: Maintenance
+- **Foundational stages** (once per project, revisitable): Initiation, Requirements, Design (foundational pass)
+- **Iterative stages** (per increment): Design (iterative pass), Implementation, Verification, Deployment
+- **Continuous stages**: Support
 - **Increment** = neutral term mapping to epic/feature/sprint/milestone/deliverable
+- See STAGES.md for complete stage definitions
 
 ## Standards
 - **Versioning:** Semantic Versioning (MAJOR.MINOR.PATCH)
@@ -56,7 +57,47 @@ When building the application (Phase 3+):
 - Both released together with aligned version numbers
 - Framework changes require application updates in same commit
 
-## Important
+## Session Management
+
+### Start of Session
+Read these files for context:
+- **STATUS.md** - Current project status and immediate next steps
+- **PROJECT_CONTEXT.md** - Full project context (if needed for deeper understanding)
+- **STAGES.md** - Stage definitions (if working on stage-specific artifacts)
+
+### End of Session Protocol
+
+**IMPORTANT:** Before ending any session, you MUST:
+
+1. **Update STATUS.md**
+   - Update "Last Updated" date
+   - Update current phase/branch if changed
+   - Update "Latest Milestone" with what was just completed
+   - Update "Next Steps" with what should happen next
+   - Update "Quick Context" if major decisions were made
+
+2. **Update SESSION_LOG.md**
+   - Add new session entry using the template at bottom of file
+   - Document key decisions made and rationale
+   - List artifacts created/modified
+   - Note questions addressed and insights gained
+   - Record git activity (branches, commits, PRs)
+   - Update session statistics
+
+3. **Commit and Push**
+   - Create feature branch if not exists
+   - Commit STATUS.md and SESSION_LOG.md with message: `docs: update session tracking for [date]`
+   - Push changes (to feature branch or directly to main depending on context)
+
+**Do NOT end the session until these files are updated and committed.**
+
+### When to Skip Updates
+Only skip STATUS.md/SESSION_LOG.md updates if:
+- Session was purely informational (no code/docs changed)
+- Session was immediately interrupted with no work completed
+- User explicitly says to skip updates
+
+## Important Context
 Read PROJECT_CONTEXT.md at session start for complete understanding of:
 - Target audiences and their concerns
 - SDLC stage execution model with feedback loops
