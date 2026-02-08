@@ -31,7 +31,7 @@ This project develops a lightweight, practical framework that guides both techni
 
 ## Design Principles
 
-1. **AI as Assistant, Not Replacement** - Frame AI as a productivity tool that humans control
+1. **AI as Assistant, Not Replacement** - Frame AI as a productivity tool that humans control. The [AI Autonomy Scorecard](AI_AUTONOMY_SCORECARD.md) operationalizes this principle by defining specific autonomy levels and human gates for each stage based on verifiability and risk.
 2. **Practical Over Theoretical** - Focus on actionable, real-world applicability
 3. **Lightweight Process** - Avoid bureaucratic overhead; keep it simple
 4. **Professional Standards** - Humans evaluate and validate all AI output
