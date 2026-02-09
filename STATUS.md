@@ -1,136 +1,156 @@
 # Current Status
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-09
 **Phase:** Phase 1 - Framework Development (In Progress)
-**Current Branch:** feature/initiation-stage-artifacts
-**Framework Version:** 0.2.0 (Initiation stage complete)
+**Current Branch:** feature/requirements-stage-artifacts
+**Framework Version:** 0.3.0 (Requirements stage complete)
 
 ## Latest Milestone
 
-**✅ Initiation Stage Complete (v0.2.0)**
-- Complete Initiation stage artifact set created in `framework/initiation/`
-- Checkpoint taxonomy established (Gates, Quality Checkpoints, Deployment Approvals, Alignment Reviews, Compliance Approvals)
-- Framework versioning strategy implemented (version per stage completion)
-- Template vs. project output distinction clarified
-- Democratization emphasis: "anyone with an idea can start"
+**✅ Requirements Stage Complete (v0.3.0)**
+- Complete Requirements stage artifact set created in `framework/requirements/`
+- Full MoSCoW prioritization method implemented (Must Have / Should Have / Could Have / Won't Have)
+- "Iteration plan" terminology adopted (replacing "slice plan" for consistency with "increment")
+- Coarse prioritization approach at foundational stage with Design stage mapping to increments
+- Template vs. project output distinction maintained
+- Business Analyst/PM primary audience with business-focused language
 
 ## Key Accomplishments This Session
 
-### 1. Initiation Stage Artifacts (5 files)
-- ✅ `initiation-brief-template.md` - Template with guidance for creating project briefs
-- ✅ `initiation-checklist.md` - 60-90 second readiness checklist (12 items)
-- ✅ `initiation-reference.md` - Deep reference with definitions, rationale, examples
-- ✅ `initiation-ai-agent-prompt.md` - AI agent prompt for drafting briefs
-- ✅ `README.md` - Stage overview, workflow, checkpoint guidance
+### 1. Requirements Stage Artifacts (5 files)
+- ✅ `requirements-brief-template.md` - Template with guidance for creating requirements documents
+  - Full MoSCoW prioritization sections (Must Have / Should Have / Could Have / Won't Have)
+  - Examples for all 4 priority tiers
+  - Emphasis on measurement throughline from Initiation
+- ✅ `requirements-checklist.md` - 60-90 second readiness checklist (12 items)
+  - MoSCoW prioritization validation
+  - Exit criteria alignment with STAGES.md
+- ✅ `requirements-reference.md` - Deep reference with definitions, rationale, examples (456 lines)
+  - Comprehensive MoSCoW explanation with industry context
+  - Key distinction: Should Have (committed) vs. Could Have (aspirational)
+  - How MoSCoW maps to increments (Requirements → Design iteration plan → Implementation)
+  - When to revisit Requirements section
+- ✅ `requirements-ai-agent-prompt.md` - AI agent prompt for drafting requirements documents
+  - Full MoSCoW terminology
+  - Behavior-first, testable FRs, objective ACs
+- ✅ `README.md` - Stage overview, workflow, checkpoint guidance (261 lines)
+  - Alignment Reviews checkpoint type documented
+  - Gate 2 timing clarified (end of Requirements + Design foundational)
+  - Measurement throughline integration
 
-### 2. Checkpoint Taxonomy
-- ✅ Defined 5 checkpoint types in STAGES.md with clear purposes and AI validation guidance
-- ✅ Reserved "Gate" for genuine investment decisions (real stop option)
-- ✅ Gate 1 = End of Initiation (approve brief), Gate 2 = End of Requirements/Design (build/no-build)
-- ✅ Acknowledged later checkpoints focus on "when/how" rather than "if"
-- ✅ Each checkpoint type includes AI validation requirements
+### 2. MoSCoW Prioritization Method (Full 4-Tier)
+- ✅ **Must Have** - Critical for first usable release (minimum viability threshold)
+- ✅ **Should Have** - Important, WILL be delivered in future releases (committed)
+- ✅ **Could Have** - Desirable if time permits (not committed, opportunistic: "build if easy, skip if hard")
+- ✅ **Won't Have** - Out of scope for this project (maps to "Out of scope / non-goals")
+- ✅ Key distinction emphasized: Should Have (committed) vs. Could Have (aspirational)
+- ✅ Coarse prioritization at Requirements stage; Design creates iteration plan mapping to increments
 
-### 3. Framework Improvements
-- ✅ Version management: Single framework version (v0.2.0), git-centric approach
-- ✅ CHANGELOG.md created to track framework changes
-- ✅ Template naming: `initiation-brief-template.md` (clarifies it's a template, not project output)
-- ✅ Empowering language: "Anyone with an idea can start" (no sponsor/budget required)
-- ✅ Pipeline model: Explicit stage inputs and outputs documented
+### 3. Terminology Refinements
+- ✅ Changed "Analysis" → "Requirements" throughout (terminology consistency)
+- ✅ Changed "MVP vs. Later" → full MoSCoW (Must/Should/Could/Won't Have)
+- ✅ Changed "slice plan" → "iteration plan" (13 occurrences across 5 files)
+  - Consistent with framework's use of "increment" as neutral term
+  - Clearer than introducing "slice" as yet another term
+- ✅ Removed parenthetical text from checklist titles for cleaner presentation
 
-### 4. Documentation Quality
-- ✅ Removed "(1 page)" claim (unrealistic)
-- ✅ Removed section numbering (cleaner)
-- ✅ Added "Starting Point" and "Stage Outputs" sections to Initiation README
-- ✅ Clarified framework artifacts vs. project outputs distinction
-- ✅ Updated all cross-references to use new template filename
+### 4. Framework Integration
+- ✅ Gate 2 timing consistently explained (end of Requirements + Design foundational pass)
+- ✅ Alignment Reviews checkpoint type integrated
+- ✅ Measurement throughline emphasized (Initiation metrics → Requirements NFRs → Design instrumentation)
+- ✅ Cross-references to STAGES.md, AI_AUTONOMY_SCORECARD.md, PROJECT_CONTEXT.md throughout
+- ✅ Quality and depth match Initiation artifacts (comprehensive examples, rationale, guidance)
+
+### 5. Prior Work Enhancement
+- ✅ Adapted from reference materials v0.1 (2026-02-06) with significant enhancements:
+  - Added framework integration (metadata, cross-references, checkpoint taxonomy)
+  - Expanded from 2-tier to full 4-tier MoSCoW
+  - Added comprehensive "Why these elements matter" sections
+  - Enhanced examples and micro-guidance throughout
+  - Added "When to revisit Requirements" guidance
+  - Added "AI Assistance Guidance" section
 
 ## Next Steps
 
-### Immediate (Next Session)
-1. **Commit and tag current work:**
-   - Review all changes
-   - Commit with conventional commit message: `feat(framework): complete Initiation stage with checkpoint taxonomy`
-   - Tag as v0.2.0: `git tag -a v0.2.0 -m "Initiation stage complete"`
-   - Push to remote
+### Immediate (Before Ending Session)
+- ✅ All Requirements artifacts created and reviewed
+- User will handle: Commit, PR creation, merge, branch deletion
 
-2. **Create PR or merge to main:**
-   - Branch: `feature/initiation-stage-artifacts`
-   - Review changes
-   - Merge or create PR for review
+### Phase 1 Continuation (v0.4.0+)
 
-### Phase 1 Continuation (v0.3.0+)
-3. **Requirements stage artifacts** (Stage 2 of 7)
-   - Follow Initiation pattern
-   - Add checkpoint guidance (Alignment Reviews, Gate 2)
-   - Emphasize Business Analyst/PM primary role
+**Design stage artifacts** (Stage 3 of 7) - Next major milestone
+- Address foundational + iterative nature (Design has both patterns)
+- Foundational pass: High-level architecture, key trade-offs, iteration plan creation
+- Iterative passes: Detailed design per increment
+- Checkpoint guidance: Alignment Reviews (foundational), Quality Checkpoints (iterative)
+- Emphasize Engineer/Architect primary role
+- Show how iteration plan maps MoSCoW priorities to specific increments
+- Explain instrumentation design for measurement throughline
 
-4. **Design stage artifacts** (Stage 3 of 7)
-   - Address foundational + iterative nature
-   - Checkpoint guidance for both passes
-   - Emphasize Engineer/Architect primary role
+**Remaining stages** (4-7)
+- Implementation, Verification, Deployment, Support
+- Each stage: template, checklist, reference, AI prompt, README
+- Appropriate checkpoint types for each stage
 
-5. **Remaining stages** (4-7)
-   - Implementation, Verification, Deployment, Support
-   - Each stage: template, checklist, reference, AI prompt, README
-   - Appropriate checkpoint types for each
-
-6. **Framework validation**
-   - Test framework with realistic project scenario
-   - Create example end-to-end (Initiation through Support)
-   - Gather feedback and refine
+**Framework validation**
+- Test framework with realistic project scenario
+- Create example end-to-end (Initiation through Support)
+- Gather feedback and refine
 
 ## Quick Context for Next Session
 
-### Key Decisions Made
+### Key Decisions Made This Session
 
-**Checkpoint Taxonomy:**
-- **Gates** = Investment decisions with real stop option (Initiation, Requirements/Design only)
-- **Quality Checkpoints** = Readiness checks (code review, tests, etc.)
-- **Deployment Approvals** = Release authorization (staging, production, rollout)
-- **Alignment Reviews** = Stakeholder sync (design reviews, sprint reviews)
-- **Compliance Approvals** = Required sign-offs (legal, security, etc.)
+**MoSCoW Prioritization (Full 4-Tier):**
+- **Must Have** = Critical for first usable release (without these, not viable)
+- **Should Have** = Will be delivered in future releases (committed to build)
+- **Could Have** = Desirable if efficient (not committed, opportunistic)
+- **Won't Have** = Out of scope (prevents scope creep)
+- **Key insight:** Should Have (committed) vs. Could Have (aspirational) distinction is meaningful
+- **Mapping:** Requirements (coarse prioritization) → Design (iteration plan) → Implementation (execution)
 
-**Gate Numbering:**
-- **Gate 1:** End of Initiation (approve brief and fund Requirements)
-- **Gate 2:** End of Requirements + Design foundational (commit to build)
-- **Gates 3-5:** Actually deployment approvals (staging, production, GA)
-- After Gate 2: Project committed, focus shifts to "when/how" not "if"
+**Iteration Plan (not Slice Plan):**
+- Changed all 13 references from "slice plan" to "iteration plan"
+- Consistent with framework's use of "increment" as neutral term
+- Avoids introducing "slice" as yet another term
+- Created by Design stage foundational pass
+- Maps MoSCoW priorities to specific increments
 
-**Versioning Strategy:**
-- Single framework version (not per-file versions)
-- Increment minor version per stage completion (0.2.0, 0.3.0, etc.)
-- Version tracked in root README.md and CHANGELOG.md
-- Individual files have "Last Updated" dates only
-- Git tags mark releases (v0.2.0, v0.3.0, etc.)
+**Requirements Stage Timing:**
+- Foundational stage (done once per project, revisitable)
+- Done BEFORE Design stage (before increment boundaries are known)
+- Coarse prioritization only at this stage
+- Design stage creates detailed iteration plan with increment assignments
 
-**Template vs. Output:**
-- Framework provides **templates and guides** (`framework/initiation/*-template.md`)
-- Users create **project outputs** (filled-out briefs in their project repos)
-- Clear distinction documented in README files
+**Gate 2 Clarification:**
+- Gate 2 = End of Requirements + Design foundational pass (build/no-build decision)
+- Requirements readiness = Quality checkpoint (ready for Design)
+- Gate 2 evaluates BOTH requirements AND high-level design before committing team
+- Slice plan → iteration plan with dependencies for iterative delivery
 
-**Democratization:**
-- Initiation requires only "an idea" to start (no sponsor, budget, or approval)
-- Process helps refine idea → secure buy-in → decide proceed/pivot/stop
-- Empowering language throughout: "anyone with an idea can start"
-
-**AI Validation:**
-- Explicit guidance at every checkpoint type
-- Human review required for all AI-generated content
-- Initiation = "AI assist only" (human owns all decisions)
-- AI validation requirements documented in checkpoint taxonomy
+**Terminology Consistency:**
+- "Requirements" not "Analysis" or "Discovery"
+- "Iteration plan" not "slice plan"
+- "MoSCoW" not "MVP vs. Later"
+- "Must Have" not "MVP"
 
 ### Framework Structure
 
 ```
 framework/
   initiation/               # ✅ COMPLETE (v0.2.0)
-    README.md               # Stage overview, workflow, checkpoints
+    README.md
     initiation-brief-template.md
     initiation-checklist.md
     initiation-reference.md
     initiation-ai-agent-prompt.md
-  requirements/             # 📋 TODO (v0.3.0)
-  design/                   # 📋 TODO (v0.4.0)
+  requirements/             # ✅ COMPLETE (v0.3.0)
+    README.md
+    requirements-brief-template.md
+    requirements-checklist.md
+    requirements-reference.md
+    requirements-ai-agent-prompt.md
+  design/                   # 📋 TODO (v0.4.0) - NEXT
   implementation/           # 📋 TODO (v0.5.0)
   verification/             # 📋 TODO (v0.6.0)
   deployment/               # 📋 TODO (v0.7.0)
@@ -140,36 +160,63 @@ framework/
 ### Files Modified This Session
 
 **Created:**
-- `CHANGELOG.md` - Framework version history
-- `framework/initiation/README.md`
-- `framework/initiation/initiation-brief-template.md` (renamed from initiation-brief.md)
-- `framework/initiation/initiation-checklist.md`
-- `framework/initiation/initiation-reference.md`
-- `framework/initiation/initiation-ai-agent-prompt.md`
+- `framework/requirements/README.md` (261 lines)
+- `framework/requirements/requirements-brief-template.md` (230 lines)
+- `framework/requirements/requirements-checklist.md` (110 lines)
+- `framework/requirements/requirements-reference.md` (456 lines)
+- `framework/requirements/requirements-ai-agent-prompt.md` (99 lines)
 
 **Updated:**
-- `README.md` - Added framework version (0.2.0), stage artifacts section
-- `STAGES.md` - Added "Decision Points and Checkpoints" section, updated Initiation stage with checkpoints
-- `PROJECT_PLAN.md` - Marked Initiation stage complete, updated file references
-- `AI_AUTONOMY_SCORECARD.md` - Removed version number (framework-level versioning)
+- `framework/initiation/initiation-checklist.md` - Removed "(60-90 seconds)" from title
 - `STATUS.md` - This file
 
 **Counts:**
-- ~620 lines added in Initiation artifacts
-- Checkpoint taxonomy: ~150 lines in STAGES.md
-- Total: ~1000+ lines of framework documentation
+- ~1,156 lines added in Requirements artifacts
+- Total Requirements stage: Comprehensive and matches Initiation quality
+- Full MoSCoW implementation with examples and guidance
+
+### MoSCoW Implementation Details
+
+**Requirements Brief Template:**
+- Must Have section with examples (conversation view, search, history)
+- Should Have section with examples (advanced filters, export, real-time sync)
+- Could Have section with examples (tagging, dark mode, shortcuts, notifications)
+- Won't Have section with examples (UI redesign, backfill, i18n, mobile app)
+
+**How MoSCoW Maps to Increments:**
+1. **Requirements stage (foundational):** Prioritize all requirements using MoSCoW (coarse categorization)
+2. **Design stage (foundational pass):** Create iteration plan that maps:
+   - Must Haves → Increment 1 (or Increment 1 + 2 if dependencies require)
+   - Should Haves → Increment 2, 3, 4+ based on dependencies, risk, value
+   - Could Haves → Evaluated during implementation; built if efficient, skipped if complex
+   - Won't Haves → Not included in any increment
+3. **Implementation stage (iterative):** Execute per increment; Could Haves built opportunistically
+
+**Example from requirements-reference.md:**
+- Requirements: FR-1 to FR-10 (Must Have), FR-11 to FR-18 (Should Have), FR-19 to FR-22 (Could Have), FR-23 to FR-25 (Won't Have)
+- Design iteration plan: Increment 1 = FR-1 to FR-7, Increment 2 = FR-8 to FR-13, Increment 3 = FR-14 to FR-18, evaluate FR-19 to FR-22
+- Implementation: Could Have FR-19 built in Increment 2 (was easy); FR-20 to FR-22 deferred (too complex)
 
 ## Important Reminders
 
 - **STAGES.md** is the authoritative source for stage definitions
-- **Each stage** should have: inputs, outputs, checkpoints documented
+- **MoSCoW prioritization** is now framework standard (not "MVP vs. Later")
+- **Iteration plan** created by Design stage (maps MoSCoW to increments)
 - **Measurement throughline** flows from Initiation → Support
 - **AI autonomy levels** per stage documented in AI_AUTONOMY_SCORECARD.md
 - **Conventional commits** required (feat, fix, docs, refactor, etc.)
 - **Semantic versioning** for framework (0.x.0 during development, 1.0.0 when Phase 1 complete)
+- **Coarse prioritization** at Requirements (foundational); detailed increment assignment in Design
 
-## Current Git State
+## Framework Progress
 
-- Branch: `feature/initiation-stage-artifacts`
-- Uncommitted changes: Initiation stage artifacts + checkpoint taxonomy
-- Ready for: Commit, tag (v0.2.0), and PR/merge
+**Stages Complete:** 2 of 7 (29%)
+- ✅ Initiation (v0.2.0)
+- ✅ Requirements (v0.3.0)
+- 📋 Design (v0.4.0) - Next
+- 📋 Implementation (v0.5.0)
+- 📋 Verification (v0.6.0)
+- 📋 Deployment (v0.7.0)
+- 📋 Support (v0.8.0)
+
+**Framework v1.0.0 target:** All 7 stages complete with validated end-to-end example

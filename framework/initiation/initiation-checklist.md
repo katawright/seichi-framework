@@ -1,4 +1,4 @@
-# Initiation Checklist (60–90 seconds)
+# Initiation Checklist
 
 **Last Updated:** 2026-02-08
 
