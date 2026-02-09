@@ -1,6 +1,6 @@
 # AI Autonomy Scorecard by SDLC Stage
 
-Version 1.0.0
+**Last Updated:** 2026-02-08
 
 ## Overview
 

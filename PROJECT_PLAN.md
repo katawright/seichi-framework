@@ -37,7 +37,7 @@ Key strategic value: Democratizing project initiation by enabling business stake
 - [x] **AI_AUTONOMY_SCORECARD.md** - Operational guidance on AI autonomy levels per stage
 - [x] Standardized artifact template structure
 - [ ] Complete documentation for each SDLC stage:
-  - [ ] Initiation stage artifacts (with measurable success criteria guidance)
+  - [x] Initiation stage artifacts (with measurable success criteria guidance)
   - [ ] Requirements stage artifacts
   - [ ] Design stage artifacts (covering both foundational and iterative passes)
   - [ ] Implementation stage artifacts
@@ -150,7 +150,7 @@ Continue with Sonnet for:
 Following the framework we created:
 
 **Initiation Stage:**
-- [ ] Application initiation-brief.md (with measurable success criteria)
+- [ ] Application initiation-brief-template.md (with measurable success criteria)
 - [ ] Completed initiation-checklist.md
 - [ ] Project charter with objectives and success metrics
 
@@ -497,13 +497,13 @@ ai-assisted-sdlc/
 
 ### Example: Adding a New Stage Field
 
-**Old framework (initiation-brief.md):**
+**Old framework (initiation-brief-template.md):**
 ```markdown
 ## Project Goals
 [Description here]
 ```
 
-**New framework (initiation-brief.md):**
+**New framework (initiation-brief-template.md):**
 ```markdown
 ## Project Goals
 [Description here]

@@ -1,6 +1,6 @@
 # AI-Assisted SDLC Stages
 
-Version 1.0.0
+**Last Updated:** 2026-02-08
 
 ## Overview
 
@@ -15,6 +15,105 @@ The AI-Assisted SDLC framework uses **7 stages** that balance comprehensive cove
 The framework recognizes that stages execute in different patterns: some are foundational (execute once), some are iterative (repeat per increment), and some are continuous (ongoing).
 
 For operational guidance on AI autonomy levels at each stage, see the **[AI Autonomy Scorecard](AI_AUTONOMY_SCORECARD.md)**, which evaluates each stage across fit, verifiability, risk, and recommended autonomy levels.
+
+---
+
+## Decision Points and Checkpoints
+
+Throughout the SDLC, various checkpoints ensure quality, alignment, and sound decision-making. The framework distinguishes five types of checkpoints, each with different purposes and outcomes:
+
+### 1. Gates (Investment Decisions)
+
+**Purpose:** Decide whether to continue investing resources in the project
+**Outcome:** Proceed / Pivot / Stop
+**Real stop option:** Yes - these are genuine go/no-go decisions
+**When used:** Early in the project when stopping is still realistic
+
+**Examples:**
+- **Gate 1:** End of Initiation - Approve brief and fund Requirements work?
+- **Gate 2:** End of Requirements + Design (foundational) - Commit to building this?
+
+**AI validation:** Ensure AI-assisted analysis and recommendations are sound; human owns the investment decision.
+
+**After Gate 2:** The project is funded and team committed. Later checkpoints focus on "when/how to proceed" rather than "if."
+
+### 2. Quality Checkpoints
+
+**Purpose:** Ensure quality and readiness standards are met before proceeding
+**Outcome:** Ready / Not Ready (with remediation needed)
+**Real stop option:** No - fix issues and retry, don't stop the project
+**When used:** Throughout development to maintain quality bars
+
+**Examples:**
+- Code review approval
+- Test coverage thresholds met
+- Security scan passed
+- Performance benchmarks achieved
+- Documentation completeness check
+
+**AI validation:** Human review of AI-generated code, tests, and documentation is critical. Verify:
+- AI-generated code is correct, secure, and maintainable
+- AI-generated tests provide meaningful coverage
+- AI-generated docs are accurate and complete
+
+### 3. Deployment Approvals
+
+**Purpose:** Authorize deployment to a specific environment
+**Outcome:** Deploy / Hold / Rollback
+**Real stop option:** No - about timing and rollback, not project cancellation
+**When used:** When releasing to staging, production, or progressive rollout milestones
+
+**Examples:**
+- Staging deployment approval
+- Production deployment go/no-go
+- Rollout gates (10% → 50% → 100%)
+- Emergency rollback decisions
+
+**AI validation:** Ensure AI-assisted deployment automation is safe and monitored. Verify deployment plans and rollback procedures.
+
+### 4. Alignment Reviews
+
+**Purpose:** Synchronize stakeholders, gather feedback, ensure consensus
+**Outcome:** Aligned / Adjustments Needed
+**Real stop option:** No - about refinement and convergence
+**When used:** When stakeholder input or team alignment is needed
+
+**Examples:**
+- Design review with stakeholders
+- Sprint review/demo
+- Architecture review
+- Requirements walkthrough
+
+**AI validation:** Review AI-generated designs, architectures, and requirements with the team. Ensure AI recommendations align with stakeholder needs and constraints.
+
+### 5. Compliance Approvals
+
+**Purpose:** Obtain required sign-offs from legal, security, or regulatory teams
+**Outcome:** Approved / Remediation Required
+**Real stop option:** Technically yes, but rarely - usually remediate and resubmit
+**When used:** When regulatory, legal, or security requirements must be met
+
+**Examples:**
+- Legal review (privacy, licensing, terms)
+- Security review (vulnerability assessment, threat modeling)
+- Accessibility compliance verification
+- Data privacy impact assessment
+
+**AI validation:** Ensure AI outputs meet compliance requirements:
+- AI-generated code doesn't introduce security vulnerabilities
+- AI-assisted data handling respects privacy regulations
+- AI recommendations consider legal and regulatory constraints
+
+### Using Checkpoints in This Framework
+
+Each stage specifies which checkpoint types apply. For example:
+- **Initiation:** Gate 1 (investment decision)
+- **Requirements:** Alignment Reviews (stakeholder walkthroughs), Gate 2 (build/no-build decision)
+- **Implementation:** Quality Checkpoints (code review, tests), Deployment Approvals (to staging)
+- **Verification:** Quality Checkpoints (test execution), Deployment Approvals (production readiness)
+- **Deployment:** Deployment Approvals (production deployment, rollout gates)
+
+**Human validation of AI output is required at all checkpoint types.** The AI Autonomy Scorecard provides stage-specific guidance on where AI can work more independently vs. where human oversight is critical.
 
 ---
 
@@ -66,7 +165,7 @@ Establish the business case, define objectives with measurable success criteria,
 - Define success metrics (business, technical, project)
 
 ### Outputs
-- **Initiation Brief** - One-page summary of project (see `initiation-brief.md`)
+- **Initiation Brief** - One-page summary of project (see `initiation-brief-template.md`)
 - Objectives with measurable success criteria documented
 - Assumptions and risks list
 - High-level timeline and resource estimate (range-based)
@@ -76,6 +175,13 @@ Establish the business case, define objectives with measurable success criteria,
 - Success metrics are defined and measurable
 - Scope boundaries are clear
 - Go/no-go decision made
+
+### Checkpoints
+- **Gate 1 (Investment Decision):** End of Initiation stage
+  - **Decision:** Approve brief and proceed to Requirements, pivot to refine the idea, or stop the project
+  - **Based on:** Completed Initiation Brief
+  - **Criteria:** Business case clear, stakeholders aligned, risks acceptable, sponsor committed
+  - **AI validation:** Human review ensures AI-assisted brief analysis is sound and recommendations are appropriate
 
 ### Handoff to Next Stage
 Requirements stage receives: Initiation Brief with objectives, measurable success criteria, constraints, and stakeholder list.
@@ -505,7 +611,7 @@ Support (continuous)
 
 Each stage produces specific artifacts. Detailed templates and examples will be created for:
 
-- `initiation-brief.md` - One-page project summary with measurable success criteria
+- `initiation-brief-template.md` - One-page project summary with measurable success criteria
 - `initiation-checklist.md` - Readiness checklist
 - `initiation-reference.md` - Detailed guidance
 - `initiation-ai-agent-prompt.md` - AI prompt for stage execution
