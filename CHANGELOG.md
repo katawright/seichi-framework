@@ -7,19 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-- Established checkpoint taxonomy: Gates, Quality Checkpoints, Deployment Approvals, Alignment Reviews, Compliance Approvals
-- Clarified Gate 1 = End of Initiation (investment decision), Gate 2 = End of Requirements/Design (build/no-build decision)
-- Renamed `initiation-brief.md` → `initiation-brief-template.md` to clarify it's a template, not project output
-- Updated Initiation stage to emphasize democratization ("anyone with an idea can start")
-- Added explicit AI validation guidance at all checkpoint types
-- Removed "(1 page)" from brief title and section numbering format
+## [0.3.0] - 2026-02-09
 
 ### Added
-- "Decision Points and Checkpoints" section in STAGES.md explaining the 5 checkpoint types
-- "Stage Checkpoints" section in Initiation README documenting Gate 1
-- "Starting Point" and "Stage Outputs" sections in Initiation README clarifying framework tools vs. project outputs
-- AI validation requirements at each checkpoint type
+- Complete Requirements stage artifacts (Stage 2 of 7):
+  - `framework/requirements/README.md` - Stage overview with checkpoint guidance (261 lines)
+  - `framework/requirements/requirements-brief-template.md` - Requirements document template with full MoSCoW prioritization (230 lines)
+  - `framework/requirements/requirements-checklist.md` - Readiness checklist with 12 validation items (110 lines)
+  - `framework/requirements/requirements-reference.md` - Comprehensive reference with definitions, rationale, examples (456 lines)
+  - `framework/requirements/requirements-ai-agent-prompt.md` - AI agent prompt for drafting requirements (99 lines)
+- Full MoSCoW prioritization method (Must Have / Should Have / Could Have / Won't Have)
+- "Iteration plan" terminology for Design stage deliverable (maps MoSCoW priorities to increments)
+- Alignment Reviews checkpoint type integrated in Requirements stage
+- Comprehensive MoSCoW-to-increments mapping guidance
+
+### Changed
+- Implemented full 4-tier MoSCoW prioritization (previously 2-tier "MVP vs. Later")
+- Changed "slice plan" to "iteration plan" throughout Requirements artifacts (13 occurrences)
+- Updated Requirements stage to emphasize Business Analyst/PM primary audience
+- Clarified Gate 2 timing (end of Requirements + Design foundational pass)
+- Enhanced measurement throughline from Initiation metrics → Requirements NFRs
+- Removed parenthetical text from checklist titles (cleaner presentation)
+- Updated `framework/initiation/initiation-checklist.md` title (removed "(60-90 seconds)")
+
+### Key Concepts
+- **MoSCoW prioritization**: Industry-standard 4-tier method with clear distinction between committed (Should Have) and aspirational (Could Have) requirements
+- **Iteration plan**: Created by Design stage to map coarse MoSCoW priorities to specific increments
+- **Coarse prioritization**: Requirements stage categorizes by commitment level; Design stage assigns to increments
+- **Could Have requirements**: Opportunistic ("build if easy, skip if hard"), evaluated during implementation
 
 ## [0.2.0] - 2026-02-08
 
@@ -53,5 +68,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Framework design principles: practical, non-threatening, cross-functional, methodology-agnostic
 - Measurement philosophy with framework-agnostic approach
 
+[0.3.0]: https://github.com/yourusername/ai-assisted-sdlc/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/yourusername/ai-assisted-sdlc/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/yourusername/ai-assisted-sdlc/releases/tag/v0.1.0
