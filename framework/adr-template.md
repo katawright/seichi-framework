@@ -187,9 +187,16 @@ Added to framework in v0.4.0.
 - `ADR-003-authentication-approach.md`
 - `ADR-004-frontend-framework.md`
 
-**Location:** Store ADRs in `docs/adr/` directory in your project repository.
+**Location:** Store ADRs in stage-appropriate directories:
+- **Design stage ADRs:** `design/adr/` for architectural and foundational
+  decisions
+- **Implementation stage ADRs:** `implementation/adr/` for
+  increment-specific implementation decisions
+- Or use project-level: `docs/adr/` for all decisions (if preferred)
 
-**Numbering:** Use sequential numbers (001, 002, 003...) regardless of when created. If ADR-005 is superseded, ADR-006 is the next number (don't reuse numbers).
+**Numbering:** Use sequential numbers (001, 002, 003...) per directory.
+Numbers are scoped to the directory (design/adr/ADR-001 and
+implementation/adr/ADR-001 can both exist).
 
 **Status values:**
 - **Proposed:** Decision is under consideration
@@ -201,31 +208,53 @@ Added to framework in v0.4.0.
 
 ## Tips for Writing Good ADRs
 
-1. **Be concise but complete** - Capture enough context for future engineers to understand why
-2. **Document alternatives** - Show what you considered and why you chose this path
+1. **Be concise but complete** - Capture enough context for future
+   engineers to understand why
+2. **Document alternatives** - Show what you considered and why you chose
+   this path
 3. **Include costs** - Research and document infrastructure/tooling costs
 4. **Explain trade-offs** - Be honest about what you're accepting/rejecting
-5. **Update status** - Mark as Deprecated or Superseded when decisions change
-6. **Link from design-brief** - Reference ADRs from your design document
-7. **Version control** - Commit ADRs alongside code; they're part of the design
+5. **Update status** - Mark as Deprecated or Superseded when decisions
+   change
+6. **Link from brief** - Reference ADRs from your design-brief or
+   implementation-brief
+7. **Version control** - Commit ADRs alongside code; they're part of your
+   project history
+8. **Use the "reasonable engineer test"** - If a reasonable engineer might
+   ask "why this instead of alternatives?", document it
 
 ---
 
-## Example: Referencing This ADR
+## Example: Referencing ADRs
 
-In your `design-brief.md`:
+**In your `design-brief.md` (Design stage):**
 
 ```markdown
 ## Technology Stack
 
-**Database:** PostgreSQL 15 (see ADR-001)
-**File Upload:** Presigned URLs with object storage (see ADR-002)
-**Authentication:** JWT tokens (see ADR-003)
+**Database:** PostgreSQL 15 (see [ADR-001](adr/ADR-001-database-selection.md))
+**File Upload:** Presigned URLs with object storage (see [ADR-002](adr/ADR-002-file-upload-mechanism.md))
+**Authentication:** JWT tokens (see [ADR-003](adr/ADR-003-authentication-approach.md))
 
-For detailed rationale, alternatives considered, and cost analysis, see Architecture Decision Records in `docs/adr/`.
+For detailed rationale, alternatives, and cost analysis, see ADRs in
+`design/adr/`.
+```
+
+**In your `implementation-brief.md` (Implementation stage):**
+
+```markdown
+## Key Implementation Decisions
+
+| # | Decision | Type | ADR Link | Date |
+|---|----------|------|----------|------|
+| 1 | Use Builder pattern for PaymentRequest | Pattern | [ADR-001](adr/ADR-001-payment-builder-pattern.md) | 2024-02-10 |
+| 2 | Cache user permissions for 5 minutes | Caching | [ADR-002](adr/ADR-002-permission-caching.md) | 2024-02-10 |
 ```
 
 ---
 
-**Template Version:** 0.4.0
-**Last Updated:** 2026-02-09
+**Usage:** This template is used by both Design and Implementation stages
+for documenting significant technical decisions.
+
+**Template Version:** 0.5.0
+**Last Updated:** 2026-02-11

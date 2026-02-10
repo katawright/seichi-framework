@@ -1,6 +1,6 @@
 # Implementation Stage Reference
 
-**Last Updated:** 2026-02-10
+**Last Updated:** 2026-02-11
 
 ---
 
@@ -28,7 +28,9 @@
 
 ### Definition
 
-The Implementation stage is where detailed designs become working, tested code. Engineers translate design specifications into executable software following professional standards and best practices.
+The Implementation stage is where detailed designs become working, tested
+code. Engineers translate design specifications into executable software
+following professional standards and best practices.
 
 ### Goals
 
@@ -73,7 +75,9 @@ The Implementation stage is where detailed designs become working, tested code. 
 
 ### Iterative Execution
 
-Implementation executes **once per increment**. Each iteration of the Design → Implementation → Verification → Deployment cycle includes an Implementation pass.
+Implementation executes **once per increment**. Each iteration of the
+Design → Implementation → Verification → Deployment cycle includes an
+Implementation pass.
 
 ### Typical Timeline
 
@@ -90,33 +94,98 @@ Implementation executes **once per increment**. Each iteration of the Design →
 
 ### Implementation Workflow
 
+This workflow shows how AI assistance accelerates each step while
+maintaining human oversight and quality gates. For increments with
+multiple PRs, steps 3-11 repeat for each PR.
+
+**Legend:**
+- 🤖 AI can assist with this step
+- 👤 Human review/approval required
+- ✋ Quality gate (mandatory human approval)
+
 ```
-1. Review Design Brief
+┌─ ONCE PER INCREMENT ───────────────────────────────────────────
+│
+│ 1. 🤖 Review Design Brief
+│    AI: Read and summarize design, ask clarifying questions
+│    👤 Human: Confirm understanding and answer questions
+│    ↓
+│ 2. 🤖 Set Up Development Environment
+│    AI: Suggest setup commands, troubleshoot issues
+│    👤 Human: Execute commands and verify setup
+│
+└─────────────────────────────────────────────────────────────────
    ↓
-2. Set Up Development Environment
+┌─ FOR EACH PR (single or multiple per increment) ───────────────
+│
+│ 3. 🤖 Create/Continue Feature Branch
+│    AI: Suggest branch name and strategy, generate git cmds
+│    👤 Human: Approve branching strategy for this PR
+│    ↓
+│ 4. 🤖 Write Code (with unit tests) for this PR's scope
+│    AI: Generate code following design specs and team patterns
+│    👤 Human: Review logic, correctness, and security ✋ GATE
+│    ↓
+│ 5. 🤖 Implement Instrumentation for this PR
+│    AI: Generate logging, metrics, telemetry code
+│    👤 Human: Verify completeness and alignment ✋ GATE
+│    ↓
+│ 6. 🤖 Document Code for this PR
+│    AI: Write docstrings, comments, update README
+│    👤 Human: Review accuracy and clarity ✋ GATE
+│    ↓
+│ 7. 🤖 Run Tests Locally
+│    AI: Execute test commands, interpret results, suggest fixes
+│    👤 Human: Verify all tests pass, validate test quality
+│    ↓
+│ 8. 🤖 Update Implementation Brief (Progress Log)
+│    AI: Add session notes, update PR tracking table
+│    👤 Human: Review progress documentation
+│    ↓
+│ 9. 🤖 Submit This PR for Review
+│    AI: Create PR, write description, list changes
+│    👤 Human: Approve PR submission ✋ GATE
+│    ↓
+│ 10. 🤖 Address Review Feedback
+│     AI: Make changes based on reviewer comments
+│     👤 Human: Guide priorities, approve changes
+│     ↓
+│ 11. 👤 Get Approval and Merge This PR ✋ GATE
+│     AI: Respond to reviewer questions, make final tweaks
+│     Human: Peer approves and merges to target branch
+│     ↓
+│  ◄──┘ More PRs needed? Return to step 3
+│
+└─────────────────────────────────────────────────────────────────
    ↓
-3. Create Feature Branch
+   All PRs for increment merged
    ↓
-4. Write Code (with unit tests)
+┌─ ONCE PER INCREMENT (after all PRs merged) ────────────────────
+│
+│ 12. 🤖 Run Implementation Checklist
+│     AI: Go through all checklist items, flag issues
+│     👤 Human: Verify completeness and sign-off ✋ GATE
+│     ↓
+│ 13. 🤖 Finalize Implementation Brief
+│     AI: Complete final sections, ensure all PRs documented
+│     👤 Human: Review and finalize
+│     ↓
+│ 14. 🤖 Prepare Handoff to Verification
+│     AI: Document test scenarios, environment setup, issues
+│     👤 Human: Approve handoff (increment branch merge if used)
+│     ✋ FINAL GATE
+│
+└─────────────────────────────────────────────────────────────────
    ↓
-5. Implement Instrumentation
-   ↓
-6. Document Code
-   ↓
-7. Run Tests Locally
-   ↓
-8. Fill Out Implementation Brief
-   ↓
-9. Submit Code for Review
-   ↓
-10. Address Review Feedback
-   ↓
-11. Get Approval
-   ↓
-12. Run Implementation Checklist
-   ↓
-13. Merge and Hand Off to Verification
+15. Verification Stage
 ```
+
+**Key Principles:**
+- **AI assists at every step** to accelerate work
+- **Humans maintain ownership** through review and approval gates
+- **Steps 3-11 loop** for each PR when increment requires multiple PRs
+- **Single PR increments** execute steps 3-11 once
+- **All PRs must merge** before proceeding to final checklist and handoff
 
 ---
 
@@ -124,15 +193,18 @@ Implementation executes **once per increment**. Each iteration of the Design →
 
 ### SOLID Principles
 
-The SOLID principles are foundational to writing maintainable object-oriented code.
+The SOLID principles are foundational to writing maintainable
+object-oriented code.
 
 #### S - Single Responsibility Principle (SRP)
 
-**Definition:** A class or module should have one, and only one, reason to change.
+**Definition:** A class or module should have one, and only one, reason to
+change.
 
 **In practice:**
 - Each class/module does one thing well
-- If you can't describe a class's purpose in one sentence, it's doing too much
+- If you can't describe a class's purpose in one sentence, it's doing too
+  much
 - Separate concerns (data access, business logic, presentation)
 
 **Example:**
@@ -160,10 +232,12 @@ class PermissionService:
 
 #### O - Open/Closed Principle (OCP)
 
-**Definition:** Software entities should be open for extension but closed for modification.
+**Definition:** Software entities should be open for extension but closed
+for modification.
 
 **In practice:**
-- Use interfaces/abstractions to allow new behavior without changing existing code
+- Use interfaces/abstractions to allow new behavior without changing
+  existing code
 - Prefer composition over modification
 - Use dependency injection
 
@@ -200,7 +274,8 @@ class PayPalPayment {
 
 #### L - Liskov Substitution Principle (LSP)
 
-**Definition:** Objects of a superclass should be replaceable with objects of its subclasses without breaking the application.
+**Definition:** Objects of a superclass should be replaceable with objects
+of its subclasses without breaking the application.
 
 **In practice:**
 - Subclasses must honor the contracts of their base classes
@@ -209,7 +284,8 @@ class PayPalPayment {
 
 #### I - Interface Segregation Principle (ISP)
 
-**Definition:** No client should be forced to depend on methods it does not use.
+**Definition:** No client should be forced to depend on methods it does
+not use.
 
 **In practice:**
 - Create small, focused interfaces
@@ -218,7 +294,8 @@ class PayPalPayment {
 
 #### D - Dependency Inversion Principle (DIP)
 
-**Definition:** High-level modules should not depend on low-level modules. Both should depend on abstractions.
+**Definition:** High-level modules should not depend on low-level modules.
+Both should depend on abstractions.
 
 **In practice:**
 - Depend on interfaces/abstractions, not concrete implementations
@@ -252,18 +329,21 @@ class OrderService {
 
 #### DRY - Don't Repeat Yourself
 
-**Definition:** Every piece of knowledge should have a single, unambiguous representation.
+**Definition:** Every piece of knowledge should have a single, unambiguous
+representation.
 
 **In practice:**
 - Extract duplicated code into reusable functions/modules
 - Use constants for repeated values
 - Create abstractions for common patterns
 
-**When to violate:** Early in development when patterns aren't clear yet. Don't prematurely abstract.
+**When to violate:** Early in development when patterns aren't clear yet.
+Don't prematurely abstract.
 
 #### KISS - Keep It Simple, Stupid
 
-**Definition:** Simplicity should be a key goal; unnecessary complexity should be avoided.
+**Definition:** Simplicity should be a key goal; unnecessary complexity
+should be avoided.
 
 **In practice:**
 - Choose the simplest solution that works
@@ -314,40 +394,62 @@ class UserSettings {
 
 ### Code Readability
 
+**Important Note on Conventions:**
+The examples in this section illustrate common practices, but many details
+vary by programming language, team standards, and project requirements.
+**Always follow your project's established conventions** (style guides,
+linter configurations, existing code patterns) over these generic examples.
+The universal principles are clarity, consistency, and intent-revealing names.
+
 #### Naming Conventions
 
-**Variables and functions:** Use descriptive names that reveal intent
+**Universal principle:** Use descriptive names that reveal intent
 
 ```python
-# BAD
+# BAD - Unclear intent
 def calc(d, r):
     return d * r
 
-# GOOD
+# GOOD - Clear intent
 def calculate_total_price(quantity, unit_price):
     return quantity * unit_price
 ```
 
-**Boolean variables:** Use is/has/can prefixes
+**Boolean variables:** Prefixes like is/has/can improve clarity (common
+convention, but adapt to your language/team style)
 
 ```javascript
-// GOOD
+// Common pattern in JavaScript/TypeScript
 const isValid = checkValidation(data);
 const hasPermission = user.hasRole('admin');
 const canEdit = permissions.includes('edit');
 ```
 
-**Constants:** Use UPPER_SNAKE_CASE
+**Constants:** Naming varies by language and team
 
 ```java
-// GOOD
+// Java/Python convention: UPPER_SNAKE_CASE
 public static final int MAX_RETRY_ATTEMPTS = 3;
 public static final String API_BASE_URL = "https://api.example.com";
+
+// JavaScript convention: Often camelCase or UPPER_SNAKE_CASE
+const maxRetryAttempts = 3;
+const API_BASE_URL = "https://api.example.com";
+
+// Go convention: Mixed case with capitalization for exported constants
+const MaxRetryAttempts = 3
 ```
+
+**Always check your project's style guide or linter configuration for the
+expected convention.**
 
 #### Function Length
 
-**Guideline:** Functions should be short (typically 10-50 lines).
+**Universal principle:** Functions should be focused and understandable at
+a glance
+
+**Common guideline:** 10-50 lines (varies by team; some prefer shorter, some
+allow longer)
 
 **Rationale:**
 - Easier to understand and test
@@ -358,6 +460,9 @@ public static final String API_BASE_URL = "https://api.example.com";
 - Function does multiple distinct things
 - Function has multiple levels of abstraction
 - You need comments to explain sections
+
+**Note:** Some teams enforce stricter limits (e.g., 20 lines), others are
+more flexible. Follow your team's standards.
 
 #### Comment Guidelines
 
@@ -392,7 +497,8 @@ for i in range(0, len(users), batch_size):
 
 ### What is a Unit Test?
 
-A **unit test** verifies the behavior of a single unit of code (function, method, class) in isolation from its dependencies.
+A **unit test** verifies the behavior of a single unit of code (function,
+method, class) in isolation from its dependencies.
 
 **Characteristics:**
 - **Fast** - Runs in milliseconds
@@ -656,10 +762,12 @@ def test_pop():
 **Be specific and constructive:**
 
 ❌ **BAD:** "This is wrong."
-✅ **GOOD:** "This validation doesn't handle null values. Consider adding a null check before accessing properties."
+✅ **GOOD:** "This validation doesn't handle null values. Consider adding
+a null check before accessing properties."
 
 ❌ **BAD:** "Bad naming."
-✅ **GOOD:** "The name `process()` is vague. Consider `processPayment()` to clarify what's being processed."
+✅ **GOOD:** "The name `process()` is vague. Consider `processPayment()`
+to clarify what's being processed."
 
 **Use prefixes to indicate severity:**
 
@@ -671,9 +779,11 @@ def test_pop():
 
 **Example:**
 ```
-MUST: This SQL query is vulnerable to injection. Use parameterized queries instead.
+MUST: This SQL query is vulnerable to injection. Use parameterized
+queries instead.
 
-SHOULD: Consider extracting this logic into a separate function for reusability.
+SHOULD: Consider extracting this logic into a separate function for
+reusability.
 
 CONSIDER: Would a factory pattern make this more testable?
 
@@ -741,7 +851,8 @@ QUESTION: Why is the timeout set to 30 seconds? Is this documented?
 
 **Example (Python docstring):**
 ```python
-def calculate_total_price(items: List[CartItem], discount_code: Optional[str] = None) -> Decimal:
+def calculate_total_price(items: List[CartItem],
+                         discount_code: Optional[str] = None) -> Decimal:
     """
     Calculate the total price for a cart with optional discount.
 
@@ -786,6 +897,81 @@ def calculate_total_price(items: List[CartItem], discount_code: Optional[str] = 
 - Code review notes
 - Known issues and technical debt
 - Handoff notes to Verification
+
+### Implementation Decision Records (ADRs)
+
+For significant implementation decisions, create Architecture Decision
+Records (ADRs) using the framework's ADR template. ADRs document the
+context, options considered, trade-offs, and rationale for important
+decisions.
+
+#### When to Create an ADR
+
+Use the **"reasonable engineer test"**: If a reasonable engineer looking
+at this code later might ask "why this approach instead of alternatives?",
+create an ADR.
+
+**Create an ADR when:**
+- Multiple viable approaches were considered
+- Trade-offs were weighed between options
+- The decision has non-obvious consequences or implications
+- You want to prevent future debates about re-doing the decision
+- The decision could be questioned or revisited later
+
+**Document inline in implementation brief when:**
+- Single obvious approach (no real alternatives)
+- Team standard practice or convention
+- Low-impact, easily reversible decision
+- Self-explanatory from the code itself
+
+#### ADR Location and Structure
+
+**Storage location:**
+- Implementation stage ADRs: `implementation/adr/` directory
+- Use sequential numbering: ADR-001, ADR-002, etc.
+- File naming: `ADR-XXX-short-description.md`
+
+**Template:**
+- Use the framework's ADR template at `../../adr-template.md`
+- Includes: Context, Options Considered, Decision, Rationale, Consequences,
+  Alternatives, Implementation Notes
+
+**Reference from implementation brief:**
+- Create table in "Key Implementation Decisions" section
+- Link to ADR files for detailed documentation
+- Keep minor decisions inline in the brief
+
+#### Example ADR Scenarios
+
+**Should create ADR:**
+- "Use Builder pattern for PaymentRequest construction" (alternatives:
+  constructor with many params, factory method)
+- "Cache user permissions for 5 minutes" (alternatives: no caching, cache
+  for 1 min, cache indefinitely)
+- "Retry failed API calls 3 times with exponential backoff" (alternatives:
+  fixed backoff, no retry, circuit breaker)
+- "Use Redis for session storage" (alternatives: in-memory, database,
+  file-based)
+
+**Inline documentation sufficient:**
+- "Used factory pattern for test fixtures" (team standard practice)
+- "Set connection pool to 20" (team default for this service tier)
+- "Sorted results by created_at DESC" (obvious requirement from spec)
+- "Named endpoint /api/v1/orders" (follows existing API conventions)
+
+#### ADR Benefits
+
+**For current team:**
+- Prevents repeated debates about settled decisions
+- Documents trade-offs for future reference
+- Helps onboard new team members
+- Creates audit trail for architectural choices
+
+**For future engineers:**
+- Explains "why" behind non-obvious choices
+- Shows what alternatives were considered
+- Prevents unknowingly repeating past mistakes
+- Enables informed decisions about changes
 
 ---
 
@@ -1054,7 +1240,8 @@ def get_report():
 
 ### What is Technical Debt?
 
-**Technical debt** is the implied cost of rework caused by choosing a quick solution now instead of a better approach that would take longer.
+**Technical debt** is the implied cost of rework caused by choosing a
+quick solution now instead of a better approach that would take longer.
 
 ### Types of Technical Debt
 
@@ -1165,7 +1352,8 @@ if status_code == HTTP_TOO_MANY_REQUESTS:
 
 **Problem:** Optimizing before knowing where bottlenecks are.
 
-**Solution:** Write clear code first, profile, then optimize based on data.
+**Solution:** Write clear code first, profile, then optimize based on
+data.
 
 ### 5. No Error Handling
 
@@ -1337,24 +1525,30 @@ def process_user_input(data):
 
 ### The Reality of Iterative Development
 
-Increment implementation often spans multiple work sessions or involves multiple engineers:
+Increment implementation often spans multiple work sessions or involves
+multiple engineers:
 - **Multi-day work** - Large increments take days or weeks to complete
 - **Shift handoffs** - Different engineers work different hours or days
 - **Parallel work** - Multiple engineers working on different components
 - **Context switching** - Engineers work on multiple increments or tasks
-- **Interruptions** - Meetings, incidents, or other priorities interrupt flow
+- **Interruptions** - Meetings, incidents, or other priorities interrupt
+  flow
 
-**The challenge:** How do engineers communicate status, progress, and context between sessions?
+**The challenge:** How do engineers communicate status, progress, and
+context between sessions?
 
 ### Standard Practices for Session Handoffs
 
 #### 1. Implementation Brief as Living Document
 
-Use the **implementation-brief-template.md** as a living document throughout the increment:
+Use the **implementation-brief-template.md** as a living document
+throughout the increment:
 
 **Update after each work session:**
-- **Progress Log** - Add session entry with what was completed, in progress, next steps, blockers
-- **Current Status Summary** - Update component status (completed, in progress, not started)
+- **Progress Log** - Add session entry with what was completed, in
+  progress, next steps, blockers
+- **Current Status Summary** - Update component status (completed, in
+  progress, not started)
 - **Open Questions** - Track questions needing answers
 - **Known Issues** - Document bugs or problems discovered
 
@@ -1394,7 +1588,8 @@ Use the **implementation-brief-template.md** as a living document throughout the
 
 #### 2. Draft Pull Requests
 
-Create a **Draft PR** early in the increment, even before code is complete:
+Create a **Draft PR** early in the increment, even before code is
+complete:
 
 **PR Description format:**
 ```markdown
@@ -1438,7 +1633,8 @@ Create a **Draft PR** early in the increment, even before code is complete:
 
 #### 3. Task Tracking System
 
-Use your team's task tracking system (Jira, GitHub Issues, Linear, Azure DevOps):
+Use your team's task tracking system (Jira, GitHub Issues, Linear, Azure
+DevOps):
 
 **Break increment into subtasks:**
 ```
@@ -1465,12 +1661,14 @@ Mark incomplete work directly in the code:
 ```python
 def process_payment(order):
     # TODO(alice, 2024-02-11): Add retry logic with exponential backoff
-    # Stripe occasionally times out, we should retry 3 times with 1s, 2s, 4s delays
+    # Stripe occasionally times out, we should retry 3 times with 1s,
+    # 2s, 4s delays
     # See: https://stripe.com/docs/error-handling#retry-logic
 
     try:
         result = stripe_client.charge(order.total)
-        # TODO(alice): Add logging here - log payment attempt with order_id and amount
+        # TODO(alice): Add logging here - log payment attempt with
+        # order_id and amount
         return result
     except StripeTimeout:
         # FIXME(alice): Currently just raises, needs retry logic
@@ -1504,7 +1702,8 @@ git commit -m "WIP: payment tests failing, investigating timeout issue"
 - Easy to roll back if approach doesn't work
 - Shows thought process and evolution
 
-**⚠️ Important:** Squash WIP commits before final merge to keep main branch clean.
+**⚠️ Important:** Squash WIP commits before final merge to keep main
+branch clean.
 
 #### 6. Session Notes / Standup Updates
 
@@ -1562,9 +1761,11 @@ Shared:
 #### Communication Channels
 
 **Establish clear communication:**
-- **Async updates:** Progress log in implementation brief, draft PR descriptions
+- **Async updates:** Progress log in implementation brief, draft PR
+  descriptions
 - **Sync touchpoints:** Daily standup, pair programming sessions
-- **Questions:** Team chat for quick questions, design reviews for bigger decisions
+- **Questions:** Team chat for quick questions, design reviews for bigger
+  decisions
 - **Blocking issues:** Tag relevant people immediately, escalate if urgent
 
 #### Session Handoff Checklist
@@ -1617,8 +1818,8 @@ git commit -m "stuff"
 **Add context for the next person:**
 ```python
 # NOTE: Payment processing is async - webhook confirms completion
-# If webhook doesn't arrive within 5 minutes, we mark as "pending review"
-# and ops team investigates manually. See docs/payment-flows.md
+# If webhook doesn't arrive within 5 minutes, we mark as "pending
+# review" and ops team investigates manually. See docs/payment-flows.md
 
 # CONTEXT: We use Builder pattern here because payment requests have
 # many optional fields (discount, tax, shipping) and this makes the
@@ -1639,6 +1840,312 @@ git commit -m "stuff"
 - Completed work notifications
 - Simple questions with clear answers
 - Documentation updates
+
+---
+
+## PR Strategy and Branching Patterns
+
+### The Reality of Pull Request Size
+
+Code review effectiveness decreases significantly as PR size increases.
+Research and industry experience provide guidance on optimal PR sizes.
+
+#### Industry Guidance on PR Size
+
+**Research findings:**
+- **Google research:** PRs under 200 lines reviewed more thoroughly and
+  faster
+- **Common industry recommendation:** 200-400 lines optimal for review
+  quality
+- **Microsoft research:** Review effectiveness drops above 400 lines
+- **Time-based guideline:** Reviewable in under 1 hour (varies by
+  complexity)
+
+**Why PR size matters:**
+- **Cognitive load:** Humans can only hold so much context in working
+  memory
+- **Review quality:** Larger PRs often get rubber-stamped rather than
+  carefully reviewed
+- **Bug detection:** Smaller PRs have higher bug detection rates
+- **Iteration speed:** Faster reviews = faster feedback = faster progress
+- **Context retention:** Easier to remember what changed in 200 lines vs
+  2000 lines
+
+**Trade-offs:**
+- **Too small:** Review overhead, context switching cost, integration
+  complexity
+- **Too large:** Poor review quality, bugs slip through, conflicts more
+  likely
+- **Sweet spot:** Varies by team, codebase complexity, and domain expertise
+
+**This is a team convention:** Like naming conventions and code style, PR
+size targets should be agreed upon by the team and documented in
+`AGENTS.md` or project context files.
+
+### Single vs. Multiple PRs per Increment
+
+Increments vary in size. The framework supports both single-PR and
+multi-PR approaches based on increment scope.
+
+#### Single PR per Increment
+
+**When to use:**
+- Small increments (<500 lines, 1-5 files)
+- Simple, cohesive changes
+- Single engineer working alone
+- Work naturally forms one reviewable unit
+
+**Workflow:**
+```
+Increment: Add user profile page
+  └─ PR #123: User profile component, API, tests (~350 lines)
+     → Review → Merge → Verification
+```
+
+**Benefits:**
+- Simple workflow
+- Atomic delivery of increment
+- Clear increment completion
+- Easier handoff to Verification
+
+#### Multiple PRs per Increment
+
+**When to use:**
+- Medium/large increments (>500 lines, 5+ files)
+- Work can be logically separated
+- Multiple engineers working in parallel
+- Want to merge and integrate progressively
+
+**Workflow example:**
+```
+Increment: Order Management Feature
+  ├─ PR #201: Order and OrderItem data models (~180 lines) → Merged
+  ├─ PR #202: Order validation and business logic (~290 lines) → Merged
+  ├─ PR #203: Order API endpoints (~310 lines) → In Review
+  └─ PR #204: Order calculation service (~220 lines) → In Progress
+
+Verification starts when: All 4 PRs merged to target branch
+```
+
+**Benefits:**
+- Each PR stays within reviewable size
+- Better review quality
+- Can merge partial progress
+- Reduces risk of large merge conflicts
+- Enables parallel work more easily
+
+**How to break up work:**
+- **By architectural layer:** Data models → Business logic → API endpoints
+- **By component/module:** Orders component, Payments component, etc.
+- **By dependency order:** Foundations first, dependents later
+- **By risk:** Isolate risky changes for easier rollback if needed
+
+**Key principle:** The increment remains the unit of work for Verification
+stage, even if implemented across multiple PRs. All PRs must merge before
+Verification begins.
+
+### Branching Strategies
+
+Modern software development uses different branching strategies. The
+framework supports multiple approaches and recommends teams choose based on
+their context.
+
+**This is a team convention:** Document your branching strategy in
+`AGENTS.md` or project context files so all engineers and AI assistants
+follow the same approach.
+
+#### Trunk-Based Development (Recommended)
+
+**Approach:**
+- Feature branches are short-lived (hours to 2 days)
+- All branches merge directly to `main`/`master`
+- `main` is always deployable
+- Feature flags/toggles hide incomplete features in production
+- Deploy frequently (daily or multiple times per day)
+
+**Workflow with single PR:**
+```
+main
+  ↓
+feature/user-profile (PR #123)
+  ↓
+main (merged, deployed with feature flag OFF)
+  ↓
+Verification passes → Toggle feature flag ON → Users see feature
+```
+
+**Workflow with multiple PRs:**
+```
+main
+  ├─ feature/order-models (PR #201) → main (merged, flagged OFF)
+  ├─ feature/order-logic (PR #202) → main (merged, flagged OFF)
+  ├─ feature/order-api (PR #203) → main (merged, flagged OFF)
+  └─ feature/order-calc (PR #204) → main (merged, flagged OFF)
+
+All merged → Verification tests with flags ON → Flags enabled → Feature
+live
+```
+
+**Benefits:**
+- Fewer merge conflicts (frequent integration)
+- Continuous integration (literally)
+- Integration issues discovered immediately
+- Easier to refactor shared code
+- Aligns with modern CI/CD practices
+- Correlated with high-performing teams (DORA research)
+
+**Challenges:**
+- Requires feature flag infrastructure
+- Discipline needed to keep `main` stable
+- May deploy "dead code" that's flagged off
+- Team must commit to frequent integration
+
+**When to use:**
+- High deployment frequency (daily or more)
+- Strong CI/CD pipeline
+- Feature flag system available
+- Team comfortable with continuous integration
+- Modern cloud-native applications
+
+#### Increment Branch Strategy
+
+**Approach:**
+- Create long-running branch per increment from `main`
+- Multiple PRs merge to increment branch
+- Increment branch merges to `main` after Verification passes
+- `main` only receives verified, complete increments
+
+**Workflow:**
+```
+main
+  ↓
+feature/order-management (increment branch)
+  ├─ PR #201 (models) → feature/order-management
+  ├─ PR #202 (logic) → feature/order-management
+  ├─ PR #203 (API) → feature/order-management
+  └─ PR #204 (calc) → feature/order-management
+
+Verification tests feature/order-management → All tests pass →
+feature/order-management merges to main → Deployment
+```
+
+**Benefits:**
+- Clear separation of complete vs. in-progress work
+- `main` branch always production-ready
+- Easier to abandon incomplete increment
+- No feature flag infrastructure needed
+- Familiar to teams using Git Flow or similar
+
+**Challenges:**
+- Merge conflicts accumulate over time
+- Integration issues discovered late (when merging to `main`)
+- Long-running branches drift from `main`
+- "Merge day" can be painful
+- Slows down feedback loops
+
+**When to use:**
+- Infrequent deployments (weekly, monthly)
+- Large, complex increments
+- Regulated industries requiring clear separation
+- Team not ready for trunk-based development
+- No feature flag infrastructure
+
+#### Comparison Table
+
+| Aspect | Trunk-Based | Increment Branch |
+|--------|-------------|------------------|
+| **Branch lifetime** | Hours to 2 days | Days to weeks |
+| **Merge target** | `main` directly | Increment branch, then `main` |
+| **Integration** | Continuous | At increment completion |
+| **Feature hiding** | Feature flags | Not deployed until complete |
+| **Merge conflicts** | Rare (frequent sync) | More common (late integration) |
+| **Main stability** | Requires discipline | Always stable |
+| **Infrastructure** | Needs feature flags | No extra infrastructure |
+| **Industry trend** | Modern best practice | Traditional, still common |
+| **Best for** | Fast iteration, CI/CD | Careful gatekeeping |
+
+#### Choosing Your Strategy
+
+**Consider:**
+- Deployment frequency (daily = trunk-based, monthly = increment branch)
+- Team size and distribution (distributed = trunk-based works well)
+- Regulatory requirements (strict = increment branch may be easier)
+- Feature flag availability (yes = trunk-based possible, no = increment
+  branch)
+- Team experience (trunk-based requires discipline)
+- Risk tolerance (high = trunk-based, low = increment branch)
+
+**Document your choice** in `AGENTS.md` or project context files including:
+- Branching strategy name
+- Branch naming conventions
+- Merge targets
+- Feature flag usage (if applicable)
+- PR size guidelines
+
+### Unit Testing Requirements (Non-Negotiable)
+
+**Regardless of branching strategy, unit tests must pass before any code
+integration.**
+
+#### Testing Discipline Hierarchy
+
+**1. Ideal: Pre-commit hooks**
+- Tests run automatically before commit
+- Commit blocked if tests fail
+- Catches issues before code leaves developer's machine
+- Example: `husky`, `pre-commit` framework
+
+**2. Required: CI/CD enforcement**
+- CI runs tests on every push
+- PR cannot merge if tests fail
+- Automated enforcement, no honor system
+- Example: GitHub Actions, GitLab CI, Jenkins
+
+**3. Minimum: Manual test runs**
+- Developer runs tests before pushing
+- Honor system, prone to mistakes
+- Not recommended for teams >1 person
+
+#### Why This Matters
+
+**Broken tests block the team:**
+- Trunk-based: Broken `main` blocks all feature branches
+- Increment branch: Broken increment branch blocks all parallel PRs
+
+**Fix cost increases exponentially:**
+- Caught pre-commit: Fix in seconds
+- Caught in CI: Fix in minutes
+- Caught after merge: Fix in hours (reverting, debugging, re-reviewing)
+- Caught in Verification: Fix in days (context switching, rework)
+
+**Trunk-based especially requires discipline:**
+- Merging to `main` multiple times per day amplifies impact of broken tests
+- Feature flags don't hide test failures
+- Team velocity depends on `main` always being green
+
+#### Enforcing Test Discipline
+
+**Pre-commit hook example:**
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+echo "Running unit tests..."
+npm test  # or: pytest, mvn test, etc.
+
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Commit blocked."
+  echo "Fix failing tests before committing."
+  exit 1
+fi
+
+echo "✅ All tests pass. Proceeding with commit."
+```
+
+**CI/CD enforcement:**
+- Configure branch protection rules
+- Require CI checks to pass before merge
+- No bypass option (even for leads)
+- Make test failures visible (Slack notifications, etc.)
 
 ---
 
@@ -1722,7 +2229,8 @@ git commit -m "stuff"
 - **SOLID, DRY, KISS, YAGNI** - Follow these principles
 - **Test thoroughly** - Comprehensive unit tests are non-negotiable
 - **Review rigorously** - Code review catches issues early
-- **Instrument for observability** - Logging and metrics enable monitoring
+- **Instrument for observability** - Logging and metrics enable
+  monitoring
 - **Document for maintainers** - Future developers will thank you
 - **AI accelerates, humans validate** - Use AI but review carefully
 

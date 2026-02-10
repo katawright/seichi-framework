@@ -1,7 +1,7 @@
 # AI-Assisted SDLC: Implementation Stage Artifacts
 
 **Framework Version:** 0.5.0
-**Last Updated:** 2026-02-10
+**Last Updated:** 2026-02-11
 
 **Stage:** 4 of 7 (Implementation)
 **Primary Audience:** Engineers
@@ -10,9 +10,13 @@
 
 ## Overview
 
-The Implementation stage is where designs become working code. Engineers write, test, and review code following professional standards and best practices. This stage executes iteratively—once per increment—delivering working software that meets the detailed design specifications.
+The Implementation stage is where designs become working code. Engineers
+write, test, and review code following professional standards and best
+practices. This stage executes iteratively—once per increment—delivering
+working software that meets the detailed design specifications.
 
-This is the stage where engineering craftsmanship matters most: clean code, comprehensive tests, thoughtful reviews, and maintainable solutions.
+This is the stage where engineering craftsmanship matters most: clean
+code, comprehensive tests, thoughtful reviews, and maintainable solutions.
 
 ## Purpose
 
@@ -42,7 +46,8 @@ A template for documenting implementation work for each increment.
 
 ### 2. Implementation Checklist (`implementation-checklist.md`)
 
-Quick validation (60-90 seconds) that ensures code is ready for the Verification stage.
+Quick validation (60-90 seconds) that ensures code is ready for the
+Verification stage.
 
 **Checklist items:**
 - All requirements implemented for increment
@@ -56,7 +61,8 @@ Quick validation (60-90 seconds) that ensures code is ready for the Verification
 
 ### 3. Implementation Reference (`implementation-reference.md`)
 
-Comprehensive guidance on implementation practices, standards, and techniques.
+Comprehensive guidance on implementation practices, standards, and
+techniques.
 
 **Covers:**
 - What implementation means in this framework
@@ -72,7 +78,8 @@ Comprehensive guidance on implementation practices, standards, and techniques.
 
 ### 4. Implementation AI Agent Prompt (`implementation-ai-agent-prompt.md`)
 
-An AI assistant prompt tailored for engineers to help with code generation and implementation tasks.
+An AI assistant prompt tailored for engineers to help with code
+generation and implementation tasks.
 
 **Helps with:**
 - Generating boilerplate code from designs
@@ -83,11 +90,40 @@ An AI assistant prompt tailored for engineers to help with code generation and i
 - Suggesting refactoring improvements
 - Implementing instrumentation
 
-**⚠️ Important:** AI-generated code MUST be reviewed by engineers. AI can accelerate coding but cannot replace human judgment on correctness, security, and maintainability.
+**⚠️ Important:** AI-generated code MUST be reviewed by engineers. AI can
+accelerate coding but cannot replace human judgment on correctness,
+security, and maintainability.
 
-### 5. This README
+### 5. Implementation Decision Records (`adr/ADR-XXX-*.md`) - Optional
 
-Explains all Implementation artifacts, the iterative execution pattern, and how to use them effectively.
+Architecture Decision Records (ADRs) document significant implementation
+decisions with trade-offs and rationale.
+
+**When to create:**
+- Use the "reasonable engineer test" - if someone might ask "why this
+  instead of alternatives?", create an ADR
+- Multiple viable approaches were considered
+- Decision has non-obvious consequences
+
+**Template:**
+- Use framework's ADR template: `../../adr-template.md`
+- Store in `implementation/adr/` directory
+- Reference from implementation brief
+
+**Examples:**
+- Choice of algorithm or data structure with trade-offs
+- Caching strategy decisions
+- Pattern selection (Builder, Factory, Strategy, etc.)
+- Retry/resilience strategy
+- Performance optimization approaches
+
+**Note:** Minor, obvious, or standard practice decisions can be documented
+inline in the implementation brief instead.
+
+### 6. This README
+
+Explains all Implementation artifacts, the iterative execution pattern,
+and how to use them effectively.
 
 ---
 
@@ -99,18 +135,21 @@ After the detailed design for an increment is complete and approved.
 
 ### Goal
 
-Deliver working, tested code that implements the current increment's requirements.
+Deliver working, tested code that implements the current increment's
+requirements.
 
 ### Key Activities
 
-1. **Set up development environment** - Ensure tools, dependencies, and access are ready
+1. **Set up development environment** - Ensure tools, dependencies, and
+   access are ready
 2. **Write code** - Implement features following design specifications
 3. **Create unit tests** - Test individual components and functions
 4. **Implement instrumentation** - Add logging, metrics, and telemetry
 5. **Perform code review** - Peer review for quality and correctness
 6. **Refactor as needed** - Improve code quality and maintainability
 7. **Document code** - Add comments, API docs, and implementation notes
-8. **Verify locally** - Ensure unit tests pass and code works as expected
+8. **Verify locally** - Ensure unit tests pass and code works as
+   expected
 
 ### Outputs
 
@@ -123,9 +162,11 @@ Deliver working, tested code that implements the current increment's requirement
 
 ### Checkpoint: Quality Checkpoint (Mandatory)
 
-- **When:** Before marking increment as complete and handing to Verification
+- **When:** Before marking increment as complete and handing to
+  Verification
 - **Who:** Peer engineers, tech lead, or senior developer
-- **Purpose:** Ensure code meets quality standards and is ready for integration testing
+- **Purpose:** Ensure code meets quality standards and is ready for
+  integration testing
 - **Criteria:**
   - Code review approved
   - Unit tests pass with adequate coverage
@@ -133,13 +174,23 @@ Deliver working, tested code that implements the current increment's requirement
   - No critical issues identified
   - Documentation complete
 - **Outcome:** Ready / Not Ready (with issues to resolve)
-- **AI Validation:** Human review ensures AI-generated code is correct, secure, and maintainable
+- **AI Validation:** Human review ensures AI-generated code is correct,
+  secure, and maintainable
 
 ---
 
 ## Workflow
 
-### Starting Implementation for an Increment
+### AI-Assisted Implementation Workflow
+
+The implementation workflow leverages AI assistance at each step while
+maintaining human oversight through quality gates. For increments with
+multiple PRs, steps 3-11 repeat for each PR.
+
+**Legend:**
+- 🤖 AI can assist
+- 👤 Human review/approval required
+- ✋ Quality gate (mandatory human approval)
 
 ```
 Prerequisites:
@@ -147,24 +198,94 @@ Prerequisites:
 ✅ Requirements and acceptance criteria clear
 ✅ Development environment set up
 ✅ Architecture and API specs available
+✅ Team conventions documented (AGENTS.md or similar)
 
-Steps:
-1. Review design-brief for current increment
-2. Review requirements and acceptance criteria
-3. Set up feature branch in version control
-4. Use implementation-ai-agent-prompt.md to generate initial code (optional)
-5. Write code following design specifications
-6. Write unit tests (aim for high coverage)
-7. Implement instrumentation (logging, metrics)
-8. Document code (comments, API docs)
-9. Run tests locally and ensure they pass
-10. Fill out implementation-brief-template.md
-11. Submit code for peer review
-12. Address review feedback
-13. Get code review approval
-14. Run through implementation-checklist.md
-15. Merge code and proceed to Verification stage
+┌─ ONCE PER INCREMENT ───────────────────────────────────────────
+│
+│ 1. 🤖 Review design-brief for current increment
+│    👤 Confirm understanding with AI, clarify questions
+│
+│ 2. 🤖 Verify development environment ready
+│    👤 Execute any setup commands, verify tools available
+│
+└─────────────────────────────────────────────────────────────────
+   ↓
+┌─ FOR EACH PR (single or multiple per increment) ───────────────
+│
+│ 3. 🤖 Set up feature branch per branching strategy
+│    AI: Suggest branch name, PR breakdown if needed
+│    👤 Approve strategy (single/multiple PRs for increment)
+│
+│ 4. 🤖 Write code for this PR's scope
+│    AI: Generate code using implementation-ai-agent-prompt.md
+│    👤 Review generated code for correctness and security
+│    ✋ GATE
+│
+│ 5. 🤖 Write unit tests (happy path, edge cases, errors)
+│    AI: Generate comprehensive test suite with high coverage
+│    👤 Verify tests are meaningful, not padding ✋ GATE
+│
+│ 6. 🤖 Implement instrumentation (logging, metrics, telemetry)
+│    AI: Add observability code aligned with success criteria
+│    👤 Verify measurement completeness ✋ GATE
+│
+│ 7. 🤖 Document code (comments, API docs, README updates)
+│    AI: Generate docstrings, comments, documentation
+│    👤 Review for accuracy and clarity ✋ GATE
+│
+│ 8. 🤖 Run tests locally and ensure they pass
+│    AI: Execute tests, interpret results, suggest fixes
+│    👤 Verify all tests pass, validate quality
+│
+│ 9. 🤖 Update implementation-brief-template.md
+│    AI: Update Progress Log, PR tracking table
+│    👤 Review progress documentation
+│
+│ 10. 🤖 Submit this PR for peer review
+│     AI: Create PR with description, testing notes, changes
+│     👤 Approve PR submission ✋ GATE
+│
+│ 11. 🤖 Address code review feedback
+│     AI: Make requested changes, respond to questions
+│     👤 Guide priorities, approve changes
+│
+│ 12. 👤 Get code review approval and merge this PR ✋ GATE
+│     Human peer reviewer validates and approves merge
+│     ↓
+│  ◄──┘ More PRs needed for increment? Return to step 3
+│
+└─────────────────────────────────────────────────────────────────
+   ↓
+   All PRs for increment merged to target branch
+   ↓
+┌─ ONCE PER INCREMENT (after all PRs merged) ────────────────────
+│
+│ 13. 🤖 Run through implementation-checklist.md
+│     AI: Check all items, flag any issues
+│     👤 Verify readiness and sign-off ✋ GATE
+│
+│ 14. 🤖 Finalize implementation brief
+│     AI: Complete final sections, verify all PRs documented
+│     👤 Review and finalize brief
+│
+│ 15. 🤖 Prepare handoff to Verification stage
+│     AI: Document test scenarios, environment setup, issues
+│     👤 Approve handoff (merge increment branch if used)
+│     ✋ FINAL GATE
+│
+└─────────────────────────────────────────────────────────────────
+   ↓
+16. Proceed to Verification stage
 ```
+
+**Key Principles:**
+- **AI assists throughout** - Accelerates all steps from setup to handoff
+- **Humans maintain ownership** - Review gates ensure quality and security
+- **Steps 3-12 loop for each PR** - Repeat when increment needs multiple
+  PRs
+- **Single PR increments** - Execute steps 3-12 once
+- **All PRs must merge** - Before final checklist and Verification
+  handoff
 
 ---
 
@@ -223,10 +344,14 @@ Steps:
 
 From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 
-- **Fit:** Very High - AI excels at code generation, boilerplate, patterns, and unit tests
-- **Verifiability:** High - Code can be tested, reviewed, and executed to verify correctness
-- **Risk:** Medium - Bugs can reach production but are caught in Verification if thorough
-- **Recommended Autonomy:** AI generates code, human reviews and approves before merge
+- **Fit:** Very High - AI excels at code generation, boilerplate,
+  patterns, and unit tests
+- **Verifiability:** High - Code can be tested, reviewed, and executed
+  to verify correctness
+- **Risk:** Medium - Bugs can reach production but are caught in
+  Verification if thorough
+- **Recommended Autonomy:** AI generates code, human reviews and
+  approves before merge
 
 ### Where AI Helps
 
@@ -255,24 +380,37 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 
 ### Where Human Expertise is Critical
 
-- **Code review and approval** - Engineers must validate AI-generated code
-- **Security review** - Check for vulnerabilities AI may have introduced
-- **Business logic correctness** - Verify code implements requirements correctly
-- **Error handling** - Ensure edge cases and failures are handled properly
-- **Performance optimization** - Validate code meets performance requirements
-- **Architectural consistency** - Ensure code follows established patterns
-- **Test quality** - Verify tests are meaningful, not just coverage padding
+- **Code review and approval** - Engineers must validate AI-generated
+  code
+- **Security review** - Check for vulnerabilities AI may have
+  introduced
+- **Business logic correctness** - Verify code implements requirements
+  correctly
+- **Error handling** - Ensure edge cases and failures are handled
+  properly
+- **Performance optimization** - Validate code meets performance
+  requirements
+- **Architectural consistency** - Ensure code follows established
+  patterns
+- **Test quality** - Verify tests are meaningful, not just coverage
+  padding
 - **Final merge decision** - Human owns the decision to merge code
 
 ### Best Practices
 
-1. **AI generates, human validates** - Never merge AI code without review
+1. **AI generates, human validates** - Never merge AI code without
+   review
 2. **Test AI-generated code thoroughly** - Verify it works as expected
-3. **Review for security** - Check for SQL injection, XSS, auth bypass, etc.
-4. **Check for maintainability** - Ensure code is readable and well-structured
-5. **Validate test quality** - AI tests should be meaningful, not superficial
-6. **Iterative refinement** - Use AI to refactor based on review feedback
-7. **Document AI usage** - Note in code review when AI was used significantly
+3. **Review for security** - Check for SQL injection, XSS, auth bypass,
+   etc.
+4. **Check for maintainability** - Ensure code is readable and
+   well-structured
+5. **Validate test quality** - AI tests should be meaningful, not
+   superficial
+6. **Iterative refinement** - Use AI to refactor based on review
+   feedback
+7. **Document AI usage** - Note in code review when AI was used
+   significantly
 
 ---
 
@@ -286,7 +424,8 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 - Peer engineers (code review)
 - Tech lead or senior developer (approval)
 
-**Purpose:** Ensure code is correct, secure, maintainable, and ready for integration testing
+**Purpose:** Ensure code is correct, secure, maintainable, and ready for
+integration testing
 
 **Criteria:**
 - ✅ Code review approved by peer(s)
@@ -313,7 +452,8 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 
 **Who:** Tech lead, DevOps
 
-**Purpose:** Authorize deployment to staging/test environment for integration testing
+**Purpose:** Authorize deployment to staging/test environment for
+integration testing
 
 **Criteria:**
 - ✅ Quality Checkpoint passed
@@ -328,13 +468,20 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 
 ### Common Scenarios
 
-1. **Verification tests fail** - Integration or UAT tests reveal bugs → Fix code
-2. **Performance issues** - Code doesn't meet NFRs → Optimize or revisit design
-3. **Security vulnerabilities found** - Security scan or review finds issues → Fix and re-review
-4. **Code review feedback** - Significant issues require rework → Refactor and resubmit
-5. **Requirements clarified** - Acceptance criteria become clearer → Adjust implementation
-6. **Design changed** - Design updated during implementation → Adjust code accordingly
-7. **Technical debt identified** - Code works but needs refactoring → Plan refactor or document debt
+1. **Verification tests fail** - Integration or UAT tests reveal bugs →
+   Fix code
+2. **Performance issues** - Code doesn't meet NFRs → Optimize or
+   revisit design
+3. **Security vulnerabilities found** - Security scan or review finds
+   issues → Fix and re-review
+4. **Code review feedback** - Significant issues require rework →
+   Refactor and resubmit
+5. **Requirements clarified** - Acceptance criteria become clearer →
+   Adjust implementation
+6. **Design changed** - Design updated during implementation → Adjust
+   code accordingly
+7. **Technical debt identified** - Code works but needs refactoring →
+   Plan refactor or document debt
 
 ### Revision Process
 
@@ -356,18 +503,21 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 - **S**ingle Responsibility - Classes/functions do one thing well
 - **O**pen/Closed - Open for extension, closed for modification
 - **L**iskov Substitution - Subtypes are substitutable for base types
-- **I**nterface Segregation - Many specific interfaces better than one general
+- **I**nterface Segregation - Many specific interfaces better than one
+  general
 - **D**ependency Inversion - Depend on abstractions, not concretions
 
 **Other Key Principles:**
 - **DRY** (Don't Repeat Yourself) - Eliminate duplication
 - **KISS** (Keep It Simple, Stupid) - Simplicity over cleverness
-- **YAGNI** (You Aren't Gonna Need It) - Don't build for hypothetical futures
+- **YAGNI** (You Aren't Gonna Need It) - Don't build for hypothetical
+  futures
 
 ### Code Review Focus Areas
 
 1. **Correctness** - Does it implement requirements correctly?
-2. **Security** - Are there vulnerabilities (injection, auth bypass, XSS)?
+2. **Security** - Are there vulnerabilities (injection, auth bypass,
+   XSS)?
 3. **Performance** - Are there obvious inefficiencies?
 4. **Maintainability** - Is it readable and well-structured?
 5. **Testability** - Can it be easily tested?
@@ -379,7 +529,8 @@ From the [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md):
 
 ## Measurement Throughline
 
-The Implementation stage builds the instrumentation designed in the Design stage.
+The Implementation stage builds the instrumentation designed in the
+Design stage.
 
 **From Initiation:**
 - Objectives with measurable success criteria defined
@@ -404,10 +555,13 @@ The Implementation stage builds the instrumentation designed in the Design stage
 - Validate instrumentation captures required data
 
 **Example:**
-- **Initiation:** Reduce customer support tickets by 30% within 6 months
+- **Initiation:** Reduce customer support tickets by 30% within 6
+  months
 - **Requirements:** NFR-5: System must log all user errors with context
-- **Design:** Design error tracking system with categorization, trending dashboard
-- **Implementation:** Implement error logging, build dashboard, add alerting
+- **Design:** Design error tracking system with categorization, trending
+  dashboard
+- **Implementation:** Implement error logging, build dashboard, add
+  alerting
 - **Verification:** Test error logging captures all scenarios
 - **Support:** Monitor error rates and validate 30% reduction
 
@@ -417,7 +571,9 @@ The Implementation stage builds the instrumentation designed in the Design stage
 
 ### What is Technical Debt?
 
-Technical debt is the implied cost of rework caused by choosing a quick or limited solution now instead of a better approach that would take longer.
+Technical debt is the implied cost of rework caused by choosing a quick
+or limited solution now instead of a better approach that would take
+longer.
 
 **Types of Technical Debt:**
 - **Deliberate** - Conscious choice to go fast now, pay later
@@ -495,14 +651,18 @@ Technical debt is the implied cost of rework caused by choosing a quick or limit
 Large organizations may add:
 - **Architecture review** - For changes affecting system design
 - **Security review** - Mandatory for security-critical code
-- **Performance review** - For high-throughput or latency-sensitive code
+- **Performance review** - For high-throughput or latency-sensitive
+  code
 - **Accessibility review** - For UI/UX changes
 
 ### Automated Quality Gates
 
-- **Static analysis** - Automated code quality checks (SonarQube, CodeClimate)
-- **Security scanning** - Automated vulnerability detection (Snyk, Checkmarx)
-- **Coverage enforcement** - Fail build if coverage drops below threshold
+- **Static analysis** - Automated code quality checks (SonarQube,
+  CodeClimate)
+- **Security scanning** - Automated vulnerability detection (Snyk,
+  Checkmarx)
+- **Coverage enforcement** - Fail build if coverage drops below
+  threshold
 - **Dependency checks** - Scan for vulnerable dependencies
 
 ---
@@ -536,7 +696,9 @@ Large organizations may add:
 ## Additional Resources
 
 - **[STAGES.md](../../STAGES.md)** - Authoritative stage definitions
-- **[AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md)** - AI autonomy guidance per stage
-- **[PROJECT_CONTEXT.md](../../PROJECT_CONTEXT.md)** - Framework design principles and philosophy
+- **[AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md)** - AI
+  autonomy guidance per stage
+- **[PROJECT_CONTEXT.md](../../PROJECT_CONTEXT.md)** - Framework design
+  principles and philosophy
 - **Previous Stage:** [Design](../design/README.md)
 - **Next Stage:** Verification _(coming soon)_
