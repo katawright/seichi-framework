@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Requirements Stage Artifacts
 
-**Framework Version:** 0.3.0
+**Framework Version:** 0.4.0
 **Last Updated:** 2026-02-09
 
 **Stage:** 2 of 7 (Requirements)

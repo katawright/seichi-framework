@@ -2,95 +2,188 @@
 
 **Last Updated:** 2026-02-09
 **Phase:** Phase 1 - Framework Development (In Progress)
-**Current Branch:** feature/requirements-stage-artifacts
-**Framework Version:** 0.3.0 (Requirements stage complete)
+**Current Branch:** feat/design-stage
+**Framework Version:** 0.4.0 (Design stage complete)
 
 ## Latest Milestone
 
-**✅ Requirements Stage Complete (v0.3.0)**
-- Complete Requirements stage artifact set created in `framework/requirements/`
-- Full MoSCoW prioritization method implemented (Must Have / Should Have / Could Have / Won't Have)
-- "Iteration plan" terminology adopted (replacing "slice plan" for consistency with "increment")
-- Coarse prioritization approach at foundational stage with Design stage mapping to increments
-- Template vs. project output distinction maintained
-- Business Analyst/PM primary audience with business-focused language
+**✅ Design Stage Complete (v0.4.0)**
+- Complete Design stage artifact set created in `framework/design/`
+- Dual execution pattern (foundational + iterative) clearly documented
+- Infrastructure and tooling cost guidance integrated
+- Architecture Decision Records (ADRs) as separate files
+- Effort estimation and Gate 2 decision package with total project cost
+- Versioning conventions standardized across all stages
 
 ## Key Accomplishments This Session
 
-### 1. Requirements Stage Artifacts (5 files)
-- ✅ `requirements-brief-template.md` - Template with guidance for creating requirements documents
-  - Full MoSCoW prioritization sections (Must Have / Should Have / Could Have / Won't Have)
-  - Examples for all 4 priority tiers
-  - Emphasis on measurement throughline from Initiation
-- ✅ `requirements-checklist.md` - 60-90 second readiness checklist (12 items)
-  - MoSCoW prioritization validation
-  - Exit criteria alignment with STAGES.md
-- ✅ `requirements-reference.md` - Deep reference with definitions, rationale, examples (456 lines)
-  - Comprehensive MoSCoW explanation with industry context
-  - Key distinction: Should Have (committed) vs. Could Have (aspirational)
-  - How MoSCoW maps to increments (Requirements → Design iteration plan → Implementation)
-  - When to revisit Requirements section
-- ✅ `requirements-ai-agent-prompt.md` - AI agent prompt for drafting requirements documents
-  - Full MoSCoW terminology
-  - Behavior-first, testable FRs, objective ACs
-- ✅ `README.md` - Stage overview, workflow, checkpoint guidance (261 lines)
-  - Alignment Reviews checkpoint type documented
-  - Gate 2 timing clarified (end of Requirements + Design foundational)
-  - Measurement throughline integration
+### 1. Design Stage Artifacts (6 files)
 
-### 2. MoSCoW Prioritization Method (Full 4-Tier)
-- ✅ **Must Have** - Critical for first usable release (minimum viability threshold)
-- ✅ **Should Have** - Important, WILL be delivered in future releases (committed)
-- ✅ **Could Have** - Desirable if time permits (not committed, opportunistic: "build if easy, skip if hard")
-- ✅ **Won't Have** - Out of scope for this project (maps to "Out of scope / non-goals")
-- ✅ Key distinction emphasized: Should Have (committed) vs. Could Have (aspirational)
-- ✅ Coarse prioritization at Requirements stage; Design creates iteration plan mapping to increments
+**Core artifacts:**
+- ✅ `README.md` - Stage overview with dual execution pattern explanation (19K)
+- ✅ `design-brief-template.md` - Template for foundational + iterative design (34K)
+  - Part A: Foundational design (architecture, tech stack, iteration plan, Gate 2 decision package)
+  - Part B: Iterative design per increment (component design, APIs, data models, testing)
+  - Technology stack with ADR references
+  - Infrastructure & tooling costs section
+  - Effort estimates (person-weeks) and cost calculation guidance
+- ✅ `design-checklist.md` - Readiness validation for foundational and iterative design (7K)
+  - Separate checklists for foundational vs iterative
+  - Architecture, technology, NFRs, iteration plan validation
+- ✅ `design-reference.md` - Comprehensive design guidance (46K)
+  - Architecture principles (SOLID, separation of concerns, DRY, YAGNI, KISS)
+  - Technology selection with cost as criterion #8
+  - Creating iteration plans (10 steps including effort estimation and cost calculation)
+  - ADR guidance with examples
+  - Security, performance, scalability, observability
+  - Common design anti-patterns
+- ✅ `design-ai-agent-prompt.md` - AI prompts for foundational and iterative design (20K)
+  - Instructions to create separate ADR files
+  - Cost research requirement
+  - Example interactions showing multi-file output
+- ✅ `design-adr-template.md` - Template for Architecture Decision Records (NEW)
+  - Standalone file template for individual ADRs
+  - Cost considerations section
+  - File naming convention: ADR-XXX-short-description.md
+  - Storage location: docs/adr/ directory
+  - Status values, revision history, implementation notes
 
-### 3. Terminology Refinements
-- ✅ Changed "Analysis" → "Requirements" throughout (terminology consistency)
-- ✅ Changed "MVP vs. Later" → full MoSCoW (Must/Should/Could/Won't Have)
-- ✅ Changed "slice plan" → "iteration plan" (13 occurrences across 5 files)
-  - Consistent with framework's use of "increment" as neutral term
-  - Clearer than introducing "slice" as yet another term
-- ✅ Removed parenthetical text from checklist titles for cleaner presentation
+### 2. Infrastructure Cost Guidance (Critical Enhancement)
 
-### 4. Framework Integration
-- ✅ Gate 2 timing consistently explained (end of Requirements + Design foundational pass)
-- ✅ Alignment Reviews checkpoint type integrated
-- ✅ Measurement throughline emphasized (Initiation metrics → Requirements NFRs → Design instrumentation)
-- ✅ Cross-references to STAGES.md, AI_AUTONOMY_SCORECARD.md, PROJECT_CONTEXT.md throughout
-- ✅ Quality and depth match Initiation artifacts (comprehensive examples, rationale, guidance)
+**Problem addressed:** Prevent post-commitment cost surprises (e.g., discovering managed SFTP service costs $2,400-3,600/year after committing to client)
 
-### 5. Prior Work Enhancement
-- ✅ Adapted from reference materials v0.1 (2026-02-06) with significant enhancements:
-  - Added framework integration (metadata, cross-references, checkpoint taxonomy)
-  - Expanded from 2-tier to full 4-tier MoSCoW
-  - Added comprehensive "Why these elements matter" sections
-  - Enhanced examples and micro-guidance throughout
-  - Added "When to revisit Requirements" guidance
-  - Added "AI Assistance Guidance" section
+**Technology Selection (design-reference.md):**
+- ✅ Added "Cost of ownership" as criterion #8 (mandatory)
+- ✅ One-time costs (licenses, setup, migration, training)
+- ✅ Recurring costs (subscriptions, per-usage fees, infrastructure)
+- ✅ Scaling costs (10x, 100x growth impact)
+- ✅ Hidden costs (support contracts, professional services)
+- ✅ Build vs. buy cost comparison
+- ✅ Service-agnostic examples (managed service ~$200-300/month vs self-hosted ~$50-100/month vs object storage ~$5-20/month)
+
+**ADR Template:**
+- ✅ Cost Considerations section in template
+- ✅ Cost comparison across alternatives
+- ✅ Total estimated annual cost
+- ✅ Examples: Database ADR ($3-6K/year), File upload ADR ($60-180/year vs $2,400-3,600/year)
+
+**Gate 2 Decision Package (design-brief-template.md):**
+- ✅ Infrastructure & Tooling Costs table (hosting, database, storage, CDN, monitoring, email, etc.)
+- ✅ One-time costs section
+- ✅ Scaling cost considerations
+- ✅ Total Project Cost (First Year) = Labor + Infrastructure + One-time
+- ✅ Ongoing costs (Years 2+)
+- ✅ Example: $700/month infrastructure = $8,400/year recurring
+
+**ADR Examples:**
+- ✅ ADR-001: PostgreSQL selection (with cost comparison: PostgreSQL ~$3-6K/year, MongoDB similar, DynamoDB ~$50-200/month variable)
+- ✅ ADR-002: File upload mechanism (Presigned URLs $60-180/year vs Managed SFTP $2,400-3,600/year vs Self-hosted $600-1,200/year)
+  - Shows how cost research prevents 20-40x budget surprises
+
+### 3. Architecture Decision Records as Separate Files
+
+**Why:** Prevent design-brief from becoming massive (10-20 embedded ADRs = 500+ lines); enable easy reference, versioning, and updates
+
+**Implementation:**
+- ✅ Created `design-adr-template.md` - Standalone template for ADR files
+- ✅ Updated `design-brief-template.md` - References ADRs, doesn't embed them
+  - Technology stack table includes ADR column
+  - ADR section lists all ADRs with cost impact
+  - Example: "Database: PostgreSQL 15 (see ADR-001)"
+- ✅ Updated `design-ai-agent-prompt.md` - Instructs AI to create separate ADR files
+  - Output: design-brief.md + docs/adr/ADR-001-xxx.md + ADR-002-xxx.md + ...
+  - Each ADR includes cost research
+- ✅ Updated `design-reference.md` - Clarified ADRs are separate files in docs/adr/
+- ✅ Updated `design README.md` - Added ADR template as artifact #5
+
+**File structure:**
+```
+project/
+  docs/adr/
+    README.md (index)
+    ADR-001-database-selection.md
+    ADR-002-file-upload-mechanism.md
+  design-brief.md (references ADRs)
+```
+
+### 4. Effort Estimation and Gate 2 Cost Calculation
+
+**Iteration Plan enhancements:**
+- ✅ Team composition per increment (e.g., "2 engineers, 1 QA (50%), 1 architect (25%)")
+- ✅ Effort in person-weeks (team × duration)
+- ✅ Summary table with total effort across increments
+- ✅ Example: 8 weeks timeline, 20 person-weeks effort
+
+**Gate 2 Decision Package:**
+- ✅ Project timeline (calendar weeks)
+- ✅ Total effort (person-weeks)
+- ✅ Team composition summary
+- ✅ Labor cost calculation (person-weeks × hours × blended rate)
+  - Service-agnostic: uses person-weeks as primary metric
+  - Conversion guidance with examples at $100, $150, $200, $250/hour
+- ✅ Infrastructure costs (from ADRs)
+- ✅ Total project cost = Labor + Infrastructure + One-time
+- ✅ Comparison to Initiation estimates
+- ✅ Risks and recommendation (proceed/pivot/stop)
+
+**Design Reference:**
+- ✅ Step 9: Estimate Effort (person-weeks calculation)
+- ✅ Step 10: Calculate Cost for Gate 2 (apply blended rates)
+- ✅ Updated iteration plan example with team, effort, and cost calculation
+
+### 5. Versioning Conventions Standardized
+
+**File-Level Versioning:**
+- ✅ README.md files: Framework Version (current, updated with each release) + Last Updated
+- ✅ Individual artifacts: Last Updated (top) + "Added to framework in vX.X.X" (bottom)
+- ✅ Rationale: READMEs show current framework version; individual artifacts only track modifications
+
+**Updated files to follow convention:**
+- ✅ All 3 stage READMEs now show Framework Version: 0.4.0 (current)
+- ✅ Initiation artifacts: Added version notes to 4 files
+- ✅ Requirements artifacts: Added version notes to 2 files
+- ✅ Design artifacts: Follow convention from creation
+
+**Documentation:**
+- ✅ PROJECT_CONTEXT.md - File-level versioning conventions section with rationale
+- ✅ CLAUDE.md - Quick reference to versioning standards
+
+### 6. Framework Integration
+
+**Cross-references:**
+- ✅ Links to STAGES.md for stage definitions
+- ✅ Links to AI_AUTONOMY_SCORECARD.md for autonomy guidance
+- ✅ Links to PROJECT_CONTEXT.md for design principles
+- ✅ Handoff to Implementation stage documented
+
+**Dual execution pattern clarity:**
+- ✅ Foundational pass: Architecture, tech stack, iteration plan, Gate 2
+- ✅ Iterative passes: Component designs per increment
+- ✅ Clear when to do each pass
+- ✅ Separate checklists for foundational vs iterative
+
+**Measurement throughline:**
+- ✅ Design stage designs instrumentation for success criteria from Initiation
+- ✅ Observability and monitoring strategy
+- ✅ Analytics infrastructure design
+- ✅ Example showing how to track success metrics
 
 ## Next Steps
 
-### Immediate (Before Ending Session)
-- ✅ All Requirements artifacts created and reviewed
-- User will handle: Commit, PR creation, merge, branch deletion
+### Phase 1 Continuation (v0.5.0+)
 
-### Phase 1 Continuation (v0.4.0+)
+**Implementation stage artifacts** (Stage 4 of 7) - Next major milestone
+- Execution pattern: Iterative (per increment)
+- Primary role: Engineers
+- Build working code following design specifications
+- Code quality, unit testing, code review
+- Instrumentation implementation
+- Documentation
 
-**Design stage artifacts** (Stage 3 of 7) - Next major milestone
-- Address foundational + iterative nature (Design has both patterns)
-- Foundational pass: High-level architecture, key trade-offs, iteration plan creation
-- Iterative passes: Detailed design per increment
-- Checkpoint guidance: Alignment Reviews (foundational), Quality Checkpoints (iterative)
-- Emphasize Engineer/Architect primary role
-- Show how iteration plan maps MoSCoW priorities to specific increments
-- Explain instrumentation design for measurement throughline
-
-**Remaining stages** (4-7)
-- Implementation, Verification, Deployment, Support
-- Each stage: template, checklist, reference, AI prompt, README
-- Appropriate checkpoint types for each stage
+**Remaining stages** (5-7)
+- Verification (Stage 5): All testing types (unit, integration, UAT, performance, security)
+- Deployment (Stage 6): Release to production with monitoring
+- Support (Stage 7): Operations, maintenance, bug fixes, enhancements
 
 **Framework validation**
 - Test framework with realistic project scenario
@@ -101,57 +194,55 @@
 
 ### Key Decisions Made This Session
 
-**MoSCoW Prioritization (Full 4-Tier):**
-- **Must Have** = Critical for first usable release (without these, not viable)
-- **Should Have** = Will be delivered in future releases (committed to build)
-- **Could Have** = Desirable if efficient (not committed, opportunistic)
-- **Won't Have** = Out of scope (prevents scope creep)
-- **Key insight:** Should Have (committed) vs. Could Have (aspirational) distinction is meaningful
-- **Mapping:** Requirements (coarse prioritization) → Design (iteration plan) → Implementation (execution)
+**Separate ADR Files:**
+- ADRs are separate files in docs/adr/ directory (not embedded in design-brief)
+- Template: design-adr-template.md
+- File naming: ADR-XXX-short-description.md
+- Referenced from design-brief by number
+- AI agent creates multiple files (design-brief + ADRs)
 
-**Iteration Plan (not Slice Plan):**
-- Changed all 13 references from "slice plan" to "iteration plan"
-- Consistent with framework's use of "increment" as neutral term
-- Avoids introducing "slice" as yet another term
-- Created by Design stage foundational pass
-- Maps MoSCoW priorities to specific increments
+**Infrastructure Cost Guidance:**
+- Cost research is mandatory during technology selection
+- Cost of ownership is criterion #8 in technology selection
+- ADRs must include cost analysis (one-time, recurring, scaling)
+- Gate 2 Decision Package includes total project cost (labor + infrastructure)
+- Prevents post-commitment surprises (e.g., $2,400/year vs $60/year difference)
 
-**Requirements Stage Timing:**
-- Foundational stage (done once per project, revisitable)
-- Done BEFORE Design stage (before increment boundaries are known)
-- Coarse prioritization only at this stage
-- Design stage creates detailed iteration plan with increment assignments
+**Effort Estimation:**
+- Primary metric: person-weeks (organization-agnostic)
+- Conversion guidance to dollars (person-weeks × hours × blended rate)
+- Examples at $100-250/hour (not prescriptive)
+- Gate 2 shows total project cost for decision-making
 
-**Gate 2 Clarification:**
-- Gate 2 = End of Requirements + Design foundational pass (build/no-build decision)
-- Requirements readiness = Quality checkpoint (ready for Design)
-- Gate 2 evaluates BOTH requirements AND high-level design before committing team
-- Slice plan → iteration plan with dependencies for iterative delivery
-
-**Terminology Consistency:**
-- "Requirements" not "Analysis" or "Discovery"
-- "Iteration plan" not "slice plan"
-- "MoSCoW" not "MVP vs. Later"
-- "Must Have" not "MVP"
+**Versioning Conventions:**
+- README.md: Framework Version (current) + Last Updated
+- Individual artifacts: Last Updated (top) + "Added in vX.X.X" (bottom)
+- All stage READMEs updated to show current framework version (0.4.0)
 
 ### Framework Structure
 
 ```
 framework/
-  initiation/               # ✅ COMPLETE (v0.2.0)
+  initiation/               # ✅ COMPLETE (v0.2.0, updated to v0.4.0 versioning)
     README.md
     initiation-brief-template.md
     initiation-checklist.md
     initiation-reference.md
     initiation-ai-agent-prompt.md
-  requirements/             # ✅ COMPLETE (v0.3.0)
+  requirements/             # ✅ COMPLETE (v0.3.0, updated to v0.4.0 versioning)
     README.md
     requirements-brief-template.md
     requirements-checklist.md
     requirements-reference.md
     requirements-ai-agent-prompt.md
-  design/                   # 📋 TODO (v0.4.0) - NEXT
-  implementation/           # 📋 TODO (v0.5.0)
+  design/                   # ✅ COMPLETE (v0.4.0) - NEW THIS SESSION
+    README.md
+    design-brief-template.md
+    design-checklist.md
+    design-reference.md
+    design-ai-agent-prompt.md
+    design-adr-template.md  # NEW - ADR template
+  implementation/           # 📋 TODO (v0.5.0) - NEXT
   verification/             # 📋 TODO (v0.6.0)
   deployment/               # 📋 TODO (v0.7.0)
   support/                  # 📋 TODO (v0.8.0)
@@ -159,64 +250,61 @@ framework/
 
 ### Files Modified This Session
 
-**Created:**
-- `framework/requirements/README.md` (261 lines)
-- `framework/requirements/requirements-brief-template.md` (230 lines)
-- `framework/requirements/requirements-checklist.md` (110 lines)
-- `framework/requirements/requirements-reference.md` (456 lines)
-- `framework/requirements/requirements-ai-agent-prompt.md` (99 lines)
+**Created (Design stage):**
+- `framework/design/README.md` (19K)
+- `framework/design/design-brief-template.md` (34K)
+- `framework/design/design-checklist.md` (7K)
+- `framework/design/design-reference.md` (46K)
+- `framework/design/design-ai-agent-prompt.md` (20K)
+- `framework/design/design-adr-template.md` (NEW - ADR template)
 
-**Updated:**
-- `framework/initiation/initiation-checklist.md` - Removed "(60-90 seconds)" from title
+**Updated (Versioning):**
+- `framework/initiation/README.md` - Framework Version: 0.4.0, Last Updated: 2026-02-09
+- `framework/initiation/initiation-brief-template.md` - Added version note
+- `framework/initiation/initiation-checklist.md` - Added version note
+- `framework/initiation/initiation-reference.md` - Added version note
+- `framework/initiation/initiation-ai-agent-prompt.md` - Added version note
+- `framework/requirements/README.md` - Framework Version: 0.4.0
+- `framework/requirements/requirements-brief-template.md` - Added version note
+- `framework/requirements/requirements-ai-agent-prompt.md` - Added version note
+
+**Updated (Documentation):**
+- `PROJECT_CONTEXT.md` - File-level versioning conventions
+- `CLAUDE.md` - Versioning quick reference
+- `PROJECT_PLAN.md` - Marked Design stage complete
 - `STATUS.md` - This file
 
 **Counts:**
-- ~1,156 lines added in Requirements artifacts
-- Total Requirements stage: Comprehensive and matches Initiation quality
-- Full MoSCoW implementation with examples and guidance
-
-### MoSCoW Implementation Details
-
-**Requirements Brief Template:**
-- Must Have section with examples (conversation view, search, history)
-- Should Have section with examples (advanced filters, export, real-time sync)
-- Could Have section with examples (tagging, dark mode, shortcuts, notifications)
-- Won't Have section with examples (UI redesign, backfill, i18n, mobile app)
-
-**How MoSCoW Maps to Increments:**
-1. **Requirements stage (foundational):** Prioritize all requirements using MoSCoW (coarse categorization)
-2. **Design stage (foundational pass):** Create iteration plan that maps:
-   - Must Haves → Increment 1 (or Increment 1 + 2 if dependencies require)
-   - Should Haves → Increment 2, 3, 4+ based on dependencies, risk, value
-   - Could Haves → Evaluated during implementation; built if efficient, skipped if complex
-   - Won't Haves → Not included in any increment
-3. **Implementation stage (iterative):** Execute per increment; Could Haves built opportunistically
-
-**Example from requirements-reference.md:**
-- Requirements: FR-1 to FR-10 (Must Have), FR-11 to FR-18 (Should Have), FR-19 to FR-22 (Could Have), FR-23 to FR-25 (Won't Have)
-- Design iteration plan: Increment 1 = FR-1 to FR-7, Increment 2 = FR-8 to FR-13, Increment 3 = FR-14 to FR-18, evaluate FR-19 to FR-22
-- Implementation: Could Have FR-19 built in Increment 2 (was easy); FR-20 to FR-22 deferred (too complex)
+- ~126K added in Design artifacts (6 files)
+- Total Design stage: Comprehensive with cost guidance and ADR template
+- Infrastructure cost guidance prevents budget surprises
+- Separate ADR files enable clean design-brief and reusable decisions
 
 ## Important Reminders
 
 - **STAGES.md** is the authoritative source for stage definitions
-- **MoSCoW prioritization** is now framework standard (not "MVP vs. Later")
-- **Iteration plan** created by Design stage (maps MoSCoW to increments)
+- **Design stage** has dual execution pattern (foundational + iterative)
+- **ADRs are separate files** in docs/adr/ directory (not embedded)
+- **Cost research is mandatory** during technology selection
+- **Gate 2** requires total project cost (labor + infrastructure)
+- **Iteration plan** maps MoSCoW to increments with effort estimates
+- **Versioning:** READMEs show current framework version, artifacts show when added
 - **Measurement throughline** flows from Initiation → Support
 - **AI autonomy levels** per stage documented in AI_AUTONOMY_SCORECARD.md
 - **Conventional commits** required (feat, fix, docs, refactor, etc.)
 - **Semantic versioning** for framework (0.x.0 during development, 1.0.0 when Phase 1 complete)
-- **Coarse prioritization** at Requirements (foundational); detailed increment assignment in Design
 
 ## Framework Progress
 
-**Stages Complete:** 2 of 7 (29%)
+**Stages Complete:** 3 of 7 (43%)
 - ✅ Initiation (v0.2.0)
 - ✅ Requirements (v0.3.0)
-- 📋 Design (v0.4.0) - Next
-- 📋 Implementation (v0.5.0)
+- ✅ Design (v0.4.0)
+- 📋 Implementation (v0.5.0) - Next
 - 📋 Verification (v0.6.0)
 - 📋 Deployment (v0.7.0)
 - 📋 Support (v0.8.0)
 
 **Framework v1.0.0 target:** All 7 stages complete with validated end-to-end example
+
+**Phase 1 completion:** ~43% (3 of 7 stages)

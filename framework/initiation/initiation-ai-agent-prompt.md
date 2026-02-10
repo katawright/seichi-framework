@@ -89,3 +89,9 @@ Return two sections:
 ## Project notes
 (Paste notes here)
 
+---
+
+## Notes
+
+Added to framework in v0.2.0.
+

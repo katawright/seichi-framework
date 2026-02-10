@@ -38,8 +38,8 @@ Key strategic value: Democratizing project initiation by enabling business stake
 - [x] Standardized artifact template structure
 - [ ] Complete documentation for each SDLC stage:
   - [x] Initiation stage artifacts (with measurable success criteria guidance)
-  - [ ] Requirements stage artifacts
-  - [ ] Design stage artifacts (covering both foundational and iterative passes)
+  - [x] Requirements stage artifacts (with MoSCoW prioritization)
+  - [x] Design stage artifacts (covering both foundational and iterative passes, ADR template, cost guidance)
   - [ ] Implementation stage artifacts
   - [ ] Verification stage artifacts (covering all validation types)
   - [ ] Deployment stage artifacts

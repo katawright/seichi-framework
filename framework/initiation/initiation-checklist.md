@@ -29,3 +29,9 @@ This checklist aligns with the formal exit criteria in [STAGES.md](../../STAGES.
 - Scope boundaries are clear (items 4–5)
 - Go/no-go decision made (item 11)
 
+---
+
+## Notes
+
+Added to framework in v0.2.0.
+
