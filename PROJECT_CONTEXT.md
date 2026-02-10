@@ -447,6 +447,25 @@ Framework updates should be driven by evidence from actual usage, not just theor
 - Tag releases with version number: `git tag v1.0.0`
 - Generate changelog from conventional commits
 
+**File-Level Versioning Conventions:**
+- **README.md files (stage overviews):**
+  - Include `**Framework Version:** X.X.X` at the top (reflects **CURRENT framework version**, not when stage was added)
+  - Include `**Last Updated:** YYYY-MM-DD` at the top (when file was last modified)
+  - **Update Framework Version in ALL README files** when incrementing framework version (e.g., v0.4.0 → v0.5.0)
+  - Update Last Updated when content changes
+  - **Example:** When releasing v0.5.0, update all existing README files (Initiation, Requirements, Design) to show Framework Version: 0.5.0
+- **Individual artifact files (templates, checklists, references, prompts):**
+  - Include `**Last Updated:** YYYY-MM-DD` at the top (when file was last modified)
+  - Include version note at bottom: "Added to framework in vX.X.X" (never changes after creation - preserves history)
+  - Do NOT include Framework Version at top (reduces maintenance burden)
+  - Update Last Updated only when content actually changes
+- **Rationale:**
+  - README files act as stage entry points and should communicate "this is the current framework version" for consistency
+  - All stage READMEs showing the same version number creates cohesive framework experience
+  - Individual artifacts preserve historical context with "Added to framework in vX.X.X" notes
+  - Only ~7 README files to update per release (manageable), vs 50+ individual artifacts
+  - Git history and tags provide full version tracking
+
 ## Questions to Address
 
 When reviewing reference materials and building the framework:

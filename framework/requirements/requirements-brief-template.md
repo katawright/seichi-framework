@@ -245,5 +245,11 @@
 
 ---
 
+## Notes
+
+Added to framework in v0.3.0.
+
+---
+
 ## Change log
 - **Date:** Initial Requirements Document for [project name].

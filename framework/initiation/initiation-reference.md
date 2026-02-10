@@ -259,3 +259,9 @@ Otherwise, keep the Brief concise and move quickly to the Requirements stage.
 
 **Using the AI agent prompt:** See `initiation-ai-agent-prompt.md` for a modular prompt that references these artifacts by name (avoids duplication and drift).
 
+---
+
+## Notes
+
+Added to framework in v0.2.0.
+

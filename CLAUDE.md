@@ -40,6 +40,11 @@ See PROJECT_CONTEXT.md for full details.
   - Types: feat, fix, docs, refactor, test, chore, style
   - Scopes: stage names, framework, application, ci
   - Breaking changes: Use `!` or `BREAKING CHANGE:` in body
+- **File Versioning:**
+  - README.md files: Include `**Framework Version:** X.X.X` (CURRENT framework, update ALL READMEs per release) and `**Last Updated:** YYYY-MM-DD` at top
+  - Individual artifacts: Include `**Last Updated:** YYYY-MM-DD` at top, version note at bottom ("Added to framework in vX.X.X")
+  - When releasing new version: Update Framework Version in ALL README files
+  - See PROJECT_CONTEXT.md for detailed file-level versioning conventions
 
 ## Workflow
 1. Review reference materials in ../ai-assisted-sdlc-reference/ before creating new artifacts

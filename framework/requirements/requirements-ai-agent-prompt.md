@@ -100,3 +100,9 @@ Return two sections:
 
 ## Project notes
 (Paste Initiation Brief and stakeholder notes here)
+
+---
+
+## Notes
+
+Added to framework in v0.3.0.

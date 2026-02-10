@@ -113,3 +113,9 @@ Use this section to plan ahead for subsequent decision gates:
 - **Approvers:** (engineering/product/security as needed)
 - **Stakeholders:**
 
+---
+
+## Notes
+
+Added to framework in v0.2.0.
+
