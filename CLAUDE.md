@@ -45,6 +45,11 @@ See PROJECT_CONTEXT.md for full details.
   - Individual artifacts: Include `**Last Updated:** YYYY-MM-DD` at top, version note at bottom ("Added to framework in vX.X.X")
   - When releasing new version: Update Framework Version in ALL README files
   - See PROJECT_CONTEXT.md for detailed file-level versioning conventions
+- **Markdown Formatting:**
+  - Maximum line length: 80 characters
+  - Break lines at natural points (sentence boundaries, clauses, list items)
+  - Preserve markdown structure (headers, lists, code blocks, tables)
+  - Improves readability in text editors and code reviews
 
 ## Workflow
 1. Review reference materials in ../ai-assisted-sdlc-reference/ before creating new artifacts

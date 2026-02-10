@@ -1,10 +1,13 @@
 # Implementation Stage Checklist
 
-**Last Updated:** 2026-02-10
+**Last Updated:** 2026-02-11
 
-**Purpose:** Quick validation (60-90 seconds) that implementation is complete and ready for the Verification stage.
+**Purpose:** Quick validation (60-90 seconds) that implementation is
+complete and ready for the Verification stage.
 
-**How to Use:** Review each item and mark ✅ (complete), ⚠️ (needs attention), or ❌ (not complete). All items should be ✅ before proceeding to Verification.
+**How to Use:** Review each item and mark ✅ (complete), ⚠️ (needs
+attention), or ❌ (not complete). All items should be ✅ before
+proceeding to Verification.
 
 ---
 
@@ -18,8 +21,10 @@
 
 **All requirements for this increment are implemented:**
 
-- [ ] All functional requirements (FRs) for this increment are implemented
-- [ ] All non-functional requirements (NFRs) for this increment are addressed
+- [ ] All functional requirements (FRs) for this increment are
+  implemented
+- [ ] All non-functional requirements (NFRs) for this increment are
+  addressed
 - [ ] Acceptance criteria for each requirement are met
 - [ ] No critical functionality is missing or incomplete
 
@@ -35,10 +40,12 @@
 **Code meets quality standards:**
 
 - [ ] Code follows project/team coding standards and conventions
-- [ ] No obvious code smells (duplication, overly complex methods, god objects)
+- [ ] No obvious code smells (duplication, overly complex methods, god
+  objects)
 - [ ] Code is readable and well-structured
 - [ ] SOLID principles applied where appropriate
-- [ ] No hardcoded values (magic numbers/strings) - constants or config used
+- [ ] No hardcoded values (magic numbers/strings) - constants or config
+  used
 - [ ] Error handling is implemented for failure scenarios
 - [ ] Input validation is present where needed
 
@@ -60,7 +67,8 @@
 - [ ] Tests cover edge cases and error conditions
 - [ ] Tests are meaningful (not just padding for coverage)
 - [ ] Test naming is clear and descriptive
-- [ ] Tests are fast and don't require external dependencies (mocked/stubbed)
+- [ ] Tests are fast and don't require external dependencies
+  (mocked/stubbed)
 
 **Coverage Metrics:**
 - Overall coverage: ____%
@@ -78,15 +86,15 @@
 
 **Code has been reviewed and approved:**
 
-- [ ] Code review submitted (PR/MR created)
-- [ ] All reviewers have approved
-- [ ] Review feedback has been addressed
-- [ ] No unresolved comments or open threads
-- [ ] Code review checklist completed by reviewer(s)
+- [ ] All PRs for this increment submitted for review
+- [ ] All PRs have been approved by required reviewers
+- [ ] Review feedback has been addressed across all PRs
+- [ ] No unresolved comments or open threads on any PR
+- [ ] Code review checklist completed by reviewer(s) for all PRs
 
-**Reviewers:**
-- [Reviewer 1 name] - Approved: ✅ / ⚠️ / ❌
-- [Reviewer 2 name] - Approved: ✅ / ⚠️ / ❌
+**PR Review Status:** _(list all PRs for this increment)_
+- PR #___ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌ Changes Requested
+- PR #___ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌ Changes Requested
 
 **Notes/Issues:**
 - [Any open review items]
@@ -99,20 +107,23 @@
 
 **All automated checks pass:**
 
-- [ ] Linting passes (no errors)
-- [ ] Code formatting is consistent
-- [ ] Static analysis passes (if applicable)
+- [ ] Linting passes (no errors) on all PRs
+- [ ] Code formatting is consistent across all PRs
+- [ ] Static analysis passes (if applicable) on all PRs
 - [ ] Build succeeds without errors or warnings
-- [ ] CI/CD pipeline passes all checks
+- [ ] CI/CD pipeline passes all checks for all PRs
+- [ ] Unit tests pass for all PRs (enforced pre-merge)
 
 **Tool Results:**
 - Linter: ✅ / ⚠️ / ❌ - [Tool name]
 - Formatter: ✅ / ⚠️ / ❌ - [Tool name]
 - Static Analysis: ✅ / ⚠️ / ❌ - [Tool name]
 - Build: ✅ / ⚠️ / ❌
+- Tests: ✅ / ⚠️ / ❌
 
 **Notes/Issues:**
 - [Any failing checks or warnings]
+- [Note: Tests must pass before ANY PR is merged, regardless of branching strategy]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
 
@@ -122,7 +133,8 @@
 
 **Security considerations are addressed:**
 
-- [ ] Input validation prevents injection attacks (SQL, NoSQL, command injection)
+- [ ] Input validation prevents injection attacks (SQL, NoSQL, command
+  injection)
 - [ ] No XSS vulnerabilities (output encoding/escaping)
 - [ ] Authentication and authorization are properly implemented
 - [ ] Sensitive data is not logged or exposed
@@ -147,7 +159,8 @@
 
 **Logging, metrics, and monitoring are implemented:**
 
-- [ ] Appropriate logging is implemented (errors, warnings, important events)
+- [ ] Appropriate logging is implemented (errors, warnings, important
+  events)
 - [ ] Log messages are clear and include necessary context
 - [ ] No sensitive data in logs (passwords, PII, tokens)
 - [ ] Metrics/telemetry implemented for key operations
@@ -236,7 +249,8 @@
 - [ ] All error conditions have appropriate handling
 - [ ] User-facing error messages are clear and helpful
 - [ ] System errors are logged with sufficient context
-- [ ] Edge cases are handled (null values, empty collections, boundary conditions)
+- [ ] Edge cases are handled (null values, empty collections, boundary
+  conditions)
 - [ ] Timeouts are set for external calls
 - [ ] Retry logic implemented where appropriate
 
@@ -252,14 +266,21 @@
 **Ready to hand off to Verification stage:**
 
 - [ ] Implementation brief is filled out and complete
+- [ ] All PRs for this increment are listed and tracked
+- [ ] All PRs are merged to target branch (per team's branching strategy)
 - [ ] Known issues and limitations are documented
 - [ ] Test scenarios are documented for Verification team
 - [ ] Environment setup instructions are provided
 - [ ] Test data requirements are documented
-- [ ] Code is merged to appropriate branch (or ready to merge)
+
+**Branching Strategy Compliance:**
+- [ ] Trunk-based: All PRs merged to `main` (feature flags configured if needed)
+- [ ] Increment branch: All PRs merged to increment branch, ready to merge to `main` after Verification
+- [ ] Other: [Describe completion state per team strategy]
 
 **Handoff Documentation:**
 - Implementation brief: ✅ / ⚠️ / ❌
+- PR tracking: ✅ / ⚠️ / ❌
 - Test guidance: ✅ / ⚠️ / ❌
 - Environment setup: ✅ / ⚠️ / ❌
 
@@ -287,7 +308,8 @@
 
 ### Non-Critical Issues
 
-**Can be addressed in future increments or documented as technical debt:**
+**Can be addressed in future increments or documented as technical
+debt:**
 1. [Issue 1]
 2. [Issue 2]
 
@@ -333,15 +355,19 @@
 ## Next Steps
 
 **If Ready:**
-1. Merge code to main/develop branch
+1. Ensure all PRs merged per branching strategy:
+   - Trunk-based: All merged to `main`, feature flags set appropriately
+   - Increment branch: Merge increment branch to `main` (after Verification)
 2. Hand off implementation brief to Verification team
-3. Schedule increment demo (if applicable)
-4. Move to Verification stage
+3. Provide access to test environment (or `main` with feature flags)
+4. Schedule increment demo (if applicable)
+5. Move to Verification stage
 
 **If Not Ready:**
 1. Address critical issues identified above
-2. Re-run checklist
-3. Get sign-off before proceeding
+2. Complete any pending PRs
+3. Re-run checklist
+4. Get sign-off before proceeding
 
 ---
 

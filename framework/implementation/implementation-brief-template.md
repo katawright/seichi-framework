@@ -1,6 +1,7 @@
 # Implementation Brief: [Increment Name]
 
 **Last Updated:** YYYY-MM-DD
+**Template Version:** v0.5.0 (updated 2026-02-11)
 
 ---
 
@@ -20,7 +21,8 @@
 
 ## Progress Log
 
-**Purpose:** Track progress across multiple sessions or engineers. Update this after each work session.
+**Purpose:** Track progress across multiple sessions or engineers. Update this
+after each work session.
 
 ### Session 1 (YYYY-MM-DD, [Engineer Name])
 
@@ -93,11 +95,50 @@ _Add more session entries as needed_
 
 ---
 
+## Pull Requests
+
+**Branching Strategy:** [Trunk-based / Increment branch / Other - see
+AGENTS.md]
+**Target Branch:** [main / develop / feature/increment-name]
+**PR Size Guideline:** [Team's target, e.g., <400 lines]
+
+### PR Breakdown
+
+_For small increments with a single PR, this section can be simplified to
+just list the one PR. For larger increments, list all PRs._
+
+| PR # | Description | Lines Changed | Status | Link |
+|------|-------------|---------------|--------|------|
+| #123 | Data models and migrations | ~150 | ✅ Merged | [PR #123](url) |
+| #124 | Business logic and validation | ~280 | ✅ Merged | [PR #124](url) |
+| #125 | API endpoints and serializers | ~320 | 🔄 In Review | [PR #125](url) |
+| #126 | Calculation service | ~220 | 📝 Draft | [PR #126](url) |
+
+**Status Legend:**
+- ✅ Merged - PR approved and merged to target branch
+- 🔄 In Review - Submitted, awaiting approval
+- 📝 Draft - Work in progress, not ready for review
+- ⏳ Planned - Not yet started
+
+**Testing Requirements:**
+- [ ] All PRs have passing unit tests before merge
+- [ ] Pre-commit hooks enforced (if applicable)
+- [ ] CI/CD checks passing for all merged PRs
+
+**Notes:**
+- All PRs must be merged before proceeding to Verification stage
+- For trunk-based: PRs merge to `main`, feature flags hide incomplete work
+- For increment branch: PRs merge to increment branch, then to `main` after
+  Verification
+
+---
+
 ## Increment Overview
 
 ### Requirements Implemented
 
-List the requirements from the Requirements Brief that this increment implements:
+List the requirements from the Requirements Brief that this increment
+implements:
 
 | Requirement ID | Description | Acceptance Criteria Met |
 |----------------|-------------|------------------------|
@@ -134,17 +175,43 @@ Describe the high-level approach to implementing this increment:
 
 ### Key Implementation Decisions
 
-Document important decisions made during implementation that weren't in the design:
+Document important decisions made during implementation. Use the
+"reasonable engineer test": if a reasonable engineer might later ask "why
+this approach instead of alternatives?", create an ADR.
 
-#### Decision 1: [Decision Title]
-- **Context:** What situation required a decision?
-- **Decision:** What did you decide?
-- **Rationale:** Why this approach?
-- **Alternatives Considered:** What else was considered?
-- **Trade-offs:** What are the pros/cons?
+**Decision documentation approach:**
+- **Significant decisions with trade-offs** → Create ADR and link from
+  table below
+- **Minor, obvious, or standard practice decisions** → Document inline
+  below
 
-#### Decision 2: [Decision Title]
-- **Context:**
+**Significant Decisions (ADRs):**
+
+| # | Decision | Type | ADR Link | Date |
+|---|----------|------|----------|------|
+| 1 | [Decision title] | [Pattern/Architecture/Algorithm/etc] | [ADR-001](adr/ADR-001-decision-slug.md) | YYYY-MM-DD |
+| 2 | [Decision title] | [Type] | [ADR-002](adr/ADR-002-decision-slug.md) | YYYY-MM-DD |
+
+_If no significant decisions required separate ADRs, note "No separate
+ADRs created for this increment."_
+
+**Minor Decisions (inline documentation):**
+- [Decision 1]: [Brief explanation - e.g., "Used factory pattern for test
+  fixtures (standard team practice)"]
+- [Decision 2]: [Brief explanation - e.g., "Set connection pool to 20
+  (team default for this tier)"]
+- [Decision 3]: [Brief explanation]
+
+_If all decisions required ADRs, note "All significant decisions
+documented in ADRs above."_
+
+**ADR Creation Guideline:**
+Create an ADR when:
+- Multiple viable approaches were considered
+- Trade-offs were weighed between options
+- A reasonable engineer might ask: "Why this instead of option A or B?"
+- Decision has non-obvious consequences
+- You want to prevent future debates about re-doing the decision
 - **Decision:**
 - **Rationale:**
 - **Alternatives Considered:**
@@ -240,7 +307,8 @@ List the main categories of tests written:
 - [Gap 2 with reason: e.g., will be covered in E2E tests]
 
 **Plan to address:**
-- How will these gaps be covered? (Integration tests, manual testing, future work)
+- How will these gaps be covered? (Integration tests, manual testing,
+  future work)
 
 ---
 
@@ -355,7 +423,8 @@ List the main categories of tests written:
   - **Future Plan:** [Will this be addressed later?]
 
 **Performance Limitations:**
-- [Limitation 2: e.g., Performs well for N users, may need optimization for 10N]
+- [Limitation 2: e.g., Performs well for N users, may need optimization
+  for 10N]
   - **Current Performance:** [What are the numbers?]
   - **Threshold:** [When does it become a problem?]
 
@@ -546,7 +615,8 @@ For each requirement, confirm acceptance criteria are met:
 
 ### What Went Well
 
-- [Success 1: e.g., AI code generation accelerated boilerplate development]
+- [Success 1: e.g., AI code generation accelerated boilerplate
+  development]
 - [Success 2: e.g., Design was clear and easy to implement]
 - [Success 3: e.g., Pair programming caught issues early]
 
@@ -558,8 +628,10 @@ For each requirement, confirm acceptance criteria are met:
 
 ### Recommendations for Future Increments
 
-- [Recommendation 1: e.g., Add more design detail for complex interactions]
-- [Recommendation 2: e.g., Allocate more time for dependency investigation]
+- [Recommendation 1: e.g., Add more design detail for complex
+  interactions]
+- [Recommendation 2: e.g., Allocate more time for dependency
+  investigation]
 - [Recommendation 3: e.g., Set up test data earlier in the process]
 
 ---
@@ -618,7 +690,8 @@ For each requirement, confirm acceptance criteria are met:
 ---
 
 **Version History:**
-- vX.X.X (YYYY-MM-DD) - [Brief description of major changes to this brief]
+- vX.X.X (YYYY-MM-DD) - [Brief description of major changes to this
+  brief]
 
 ---
 

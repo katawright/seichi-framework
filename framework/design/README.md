@@ -89,13 +89,14 @@ An AI assistant prompt tailored for engineers and architects to help draft desig
 
 **⚠️ Important:** The AI prompt instructs the AI to create **separate ADR files** (not embedded in design-brief).
 
-### 5. Architecture Decision Record Template (`design-adr-template.md`)
+### 5. Architecture Decision Record Template (`../adr-template.md`)
 
-A template for documenting individual architectural decisions as separate files.
+A template for documenting individual architectural and design decisions as separate files.
 
 **What it is:**
 - Standalone file template for each significant technology or architecture decision
-- Stored in `docs/adr/` directory in project repositories
+- Shared template used by both Design and Implementation stages
+- Stored in `design/adr/` for architectural decisions
 - Referenced from design-brief, not embedded in it
 
 **Includes sections for:**
