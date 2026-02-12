@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Design Stage Artifacts
 
-**Framework Version:** 0.5.0
+**Framework Version:** 0.6.0
 **Last Updated:** 2026-02-10
 
 **Stage:** 3 of 7 (Design)
