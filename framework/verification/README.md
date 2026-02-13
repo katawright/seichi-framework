@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Verification Stage Artifacts
 
-**Framework Version:** 0.6.0
+**Framework Version:** 0.7.0
 **Last Updated:** 2026-02-12
 
 **Stage:** 5 of 7 (Verification)

@@ -1,7 +1,7 @@
 # AI-Assisted SDLC: Initiation Stage Artifacts
 
-**Framework Version:** 0.6.0
-**Last Updated:** 2026-02-10
+**Framework Version:** 0.7.0
+**Last Updated:** 2026-02-12
 
 **Stage:** 1 of 7 (Initiation)
 **Primary Audience:** Product Managers, Business Analysts
