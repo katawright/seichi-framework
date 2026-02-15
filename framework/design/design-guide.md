@@ -23,8 +23,8 @@ delivery.
 **Key outputs:**
 
 - System architecture and technology decisions (ADRs)
-- **Infrastructure architecture and planning (CI/CD, deployment,
-  observability)**
+- Infrastructure architecture and planning (CI/CD, deployment,
+  observability)
 - Iteration plan mapping priorities to increments
 - Detailed component designs per increment
 
@@ -73,7 +73,7 @@ Design bridges "what we need to build" (Requirements) and "how we'll build it"
 
 - System architecture diagrams
 - Technology stack selections with justification (ADRs)
-- **Infrastructure architecture (CI/CD, deployment, environments, monitoring)**
+- Infrastructure architecture (CI/CD, deployment, environments, monitoring)
 - Data and API architecture
 - Security and compliance approach
 - Observability and monitoring strategy
@@ -100,8 +100,8 @@ The Design stage has a unique **dual execution pattern**.
 **Scope:**
 
 - System-wide decisions (architecture, technology, data model, API conventions)
-- **Infrastructure planning (CI/CD pipelines, deployment, environments,
-  monitoring)**
+- Infrastructure planning (CI/CD pipelines, deployment, environments,
+  monitoring)
 - Cross-cutting concerns (security, observability, performance approach)
 - Increment planning (mapping MoSCoW priorities to increments)
 
@@ -475,9 +475,148 @@ Verification → Deployment cycle:
 
 ### Brownfield Infrastructure Planning
 
-For **projects extending existing systems**, infrastructure already exists.
-Foundational design outputs an **assessment and adaptation plan** rather than
-building from scratch.
+For **projects extending existing systems**, infrastructure already exists but
+the approach differs based on whether AI context has been established.
+
+**Two brownfield scenarios:**
+
+1. **First AI-assisted project** — Existing system has no documented AI context
+   (architecture, infrastructure, conventions). Increment 1 focuses on
+   **discovery and documentation** to enable effective AI assistance.
+
+2. **Subsequent AI-assisted projects** — AI context exists from prior work.
+   Increment 1 proceeds directly to **feature delivery**, using and updating
+   existing documentation.
+
+This distinction is **surfaced during Initiation/Requirements** when the team
+identifies project type.
+
+---
+
+#### First AI-Assisted Project (Discovery)
+
+When AI assistance is first introduced to a brownfield project, existing
+architecture, infrastructure, and conventions are typically **not documented in
+a format AI can use**. Future AI assistance relies on this context being
+captured.
+
+**This discovery need is surfaced during Initiation/Requirements** when the team
+identifies: "This is a brownfield project without existing AI context
+documentation."
+
+**Discovery work happens in Increment 1**, similar to how greenfield projects
+establish infrastructure in Increment 1. Subsequent AI-assisted projects on the
+same system use and update this existing documentation.
+
+**What to document:**
+
+**Essential (blocks effective AI assistance):**
+
+- System architecture overview (components, boundaries, data flow, integration
+  points)
+- Technology stack (languages, frameworks, databases, major libraries, versions)
+- Key constraints (performance SLAs, security policies, API contracts, data
+  schemas)
+
+**Important (significantly improves AI effectiveness):**
+
+- Infrastructure setup (CI/CD pipelines, deployment processes, environments,
+  monitoring)
+- Coding conventions and patterns (naming standards, code organization,
+  established practices)
+- Critical business logic areas (authentication, payment processing, core
+  workflows)
+
+**Nice-to-have (add iteratively as needed):**
+
+- Retroactive ADRs documenting historical decisions and rationale
+- Detailed component internals
+- Full dependency mapping and integration details
+
+**Discovery approach:**
+
+**AI can auto-discover much of this context** using tools like Claude Code's
+`/init` command or similar capabilities:
+
+- Programming languages and frameworks
+- Project structure and organization
+- Dependencies and libraries
+- Coding patterns and conventions
+- Configuration and environment variables
+
+**Team experts verify AI discoveries and supplement:**
+
+- Confirm AI findings are accurate and complete
+- Add business context AI cannot infer
+- Document constraints and historical decisions
+- Explain architectural choices and trade-offs
+- Identify critical areas requiring special handling
+
+**Documentation structure:**
+
+**Use existing project structure if present:**
+
+- If the project has `docs/`, `docs/adr/`, `ARCHITECTURE.md`, etc., use that
+  structure
+- Consistency with existing conventions reduces friction
+
+**Suggest structure if none exists:**
+
+- `AGENTS.md` — Tool-agnostic AI context file (project overview, key concepts,
+  conventions)
+- `docs/architecture/` — Architecture diagrams and system overview
+- `docs/adr/` — Architecture Decision Records
+- `CONTRIBUTING.md` or `CONVENTIONS.md` — Coding standards and practices
+- `docs/infrastructure/` — Deployment, CI/CD, monitoring documentation
+
+**Allow customization:** Teams can organize documentation differently based on
+their preferences. The goal is capturing context, not enforcing structure.
+
+**Increment 1: Discovery execution:**
+
+The discovery increment follows the standard Design → Implementation →
+Verification → Deployment cycle:
+
+- **Design (iterative):** Plan what to document and how to structure it
+- **Implementation:** Use AI tools to discover context, experts verify and
+  document
+- **Verification:** Review documentation for completeness and accuracy
+- **Deployment:** Commit documentation to version control, make available for
+  future AI sessions
+
+**Impact on increment planning:**
+
+**If discovery reveals minimal gaps:**
+
+- Increment 1 completes discovery and documentation
+- Increment 2+ proceeds with feature work as planned
+
+**If discovery reveals significant infrastructure gaps:**
+
+- Missing CI/CD pipelines, monitoring, or security tooling
+- Major technical debt or compliance issues
+- Undocumented critical systems or integrations
+
+**These findings may trigger:**
+
+- Return to Requirements stage to adjust scope based on newly-understood
+  constraints
+- Revised increment plan addressing infrastructure gaps before feature work
+- Updated risk assessment and Gate 2 decision with infrastructure investment
+  costs
+- Extended Increment 1 to address critical gaps
+
+**Outcome:** Documented architecture, infrastructure, and conventions that
+enable effective AI assistance on future work. Team has baseline understanding
+of system state and risks.
+
+---
+
+#### Subsequent Projects (Existing AI Context)
+
+For brownfield projects where **AI context already exists** from prior work,
+foundational design outputs an **assessment and adaptation plan** rather than
+building from scratch or rediscovering existing architecture.
 
 **Required infrastructure planning outputs:**
 
@@ -504,19 +643,30 @@ building from scratch.
    - Compliance and security requirements
    - Performance and reliability SLAs to maintain
 
-4. **Increment Plan Update**
-   - **Increment 1:** First feature increment (infrastructure exists)
+4. **Context Usage and Updates**
+   - Use existing documentation (AGENTS.md, architecture docs, ADRs) as AI
+     context
+   - Update documentation based on changes made in this project
+   - Add new ADRs for new decisions
+   - Refine conventions and patterns as needed
+
+5. **Increment Plan Update**
+   - **Increment 1:** First feature increment (infrastructure exists, context
+     documented)
    - Include infrastructure adaptations in relevant increments (e.g., "Add Redis
      to staging in Increment 2")
 
-**Brownfield Increment 1 execution:**
+**Increment 1 execution:**
 
 Increment 1 proceeds directly to feature delivery because infrastructure already
-exists. Any infrastructure adaptations are included as tasks within the
-increment alongside feature work.
+exists and AI context is documented. Any infrastructure adaptations are included
+as tasks within the increment alongside feature work.
 
 **Outcome:** First feature increment delivered using existing infrastructure
-(possibly with minor adaptations).
+(possibly with minor adaptations), with updated documentation for future
+projects.
+
+---
 
 ### Infrastructure ADRs
 
