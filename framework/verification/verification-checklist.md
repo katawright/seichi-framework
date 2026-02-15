@@ -4,12 +4,12 @@
 
 ## Purpose
 
-This checklist provides a quick 60-90 second validation that testing is
-complete and the increment is ready for deployment. Use this before handing
-off to the Deployment stage.
+This checklist provides a quick 60-90 second validation that testing is complete
+and the increment is ready for deployment. Use this before handing off to the
+Deployment stage.
 
-**Target:** QA Engineers, Test Leads
-**When to use:** After test execution, before deployment approval
+**Target:** QA Engineers, Test Leads **When to use:** After test execution,
+before deployment approval
 
 ---
 
@@ -27,6 +27,7 @@ off to the Deployment stage.
 ## Section 1: Test Planning ✅
 
 **Test strategy defined and documented:**
+
 - [ ] Test types selected based on increment scope
 - [ ] Test coverage approach defined
 - [ ] Test environments prepared and accessible
@@ -34,6 +35,7 @@ off to the Deployment stage.
 - [ ] Acceptance criteria clearly identified
 
 **Red flags:**
+
 - ❌ Test strategy unclear or missing
 - ❌ Test environments not accessible
 - ❌ Test data incomplete or incorrect
@@ -43,6 +45,7 @@ off to the Deployment stage.
 ## Section 2: Integration Testing ✅
 
 **Integration tests executed and passing:**
+
 - [ ] All integration tests run successfully
 - [ ] Component interactions validated
 - [ ] API contracts verified
@@ -50,11 +53,13 @@ off to the Deployment stage.
 - [ ] No critical integration failures
 
 **Test evidence:**
+
 - [ ] Test results documented in verification brief
 - [ ] Test logs available for review
 - [ ] CI/CD pipeline shows green build
 
 **Red flags:**
+
 - ❌ Integration tests not executed
 - ❌ Multiple test failures without resolution
 - ❌ No test evidence or documentation
@@ -64,6 +69,7 @@ off to the Deployment stage.
 ## Section 3: Functional Testing ✅
 
 **Functional tests against acceptance criteria:**
+
 - [ ] All acceptance criteria tested
 - [ ] Happy path scenarios verified
 - [ ] Edge cases and boundary conditions tested
@@ -71,11 +77,13 @@ off to the Deployment stage.
 - [ ] Business rules confirmed
 
 **Coverage validation:**
+
 - [ ] 100% of acceptance criteria covered by tests
 - [ ] Test cases documented with results
 - [ ] Failed tests resolved or deferred with justification
 
 **Red flags:**
+
 - ❌ Acceptance criteria not fully tested
 - ❌ Critical functional failures unresolved
 - ❌ No test coverage documentation
@@ -85,6 +93,7 @@ off to the Deployment stage.
 ## Section 4: User Acceptance Testing (UAT) ✅
 
 **Business stakeholder validation:**
+
 - [ ] UAT scenarios executed with business users
 - [ ] UAT environment reflects production-like conditions
 - [ ] Business workflows validated end-to-end
@@ -92,11 +101,13 @@ off to the Deployment stage.
 - [ ] Business stakeholder sign-off obtained
 
 **UAT approval:**
+
 - [ ] Formal UAT approval received
 - [ ] Approver name and date documented
 - [ ] Any conditions or caveats noted
 
 **Red flags:**
+
 - ❌ UAT not conducted
 - ❌ No business stakeholder sign-off
 - ❌ Critical UAT issues unresolved
@@ -106,6 +117,7 @@ off to the Deployment stage.
 ## Section 5: Performance Testing ✅
 
 **Performance validated against NFRs:**
+
 - [ ] Performance tests executed (or confirmed N/A)
 - [ ] Response time meets NFR targets
 - [ ] Throughput meets NFR targets
@@ -113,11 +125,13 @@ off to the Deployment stage.
 - [ ] No performance degradation vs. baseline
 
 **Load and stress testing:**
+
 - [ ] System behavior under expected load validated
 - [ ] Stress test shows graceful degradation
 - [ ] Performance bottlenecks identified and addressed
 
 **Red flags:**
+
 - ❌ Performance NFRs not met
 - ❌ Performance tests required but not executed
 - ❌ Unresolved performance degradation
@@ -127,6 +141,7 @@ off to the Deployment stage.
 ## Section 6: Security Testing ✅
 
 **Security validated:**
+
 - [ ] Security tests executed (or confirmed N/A)
 - [ ] No critical or high-severity vulnerabilities
 - [ ] Medium/low vulnerabilities documented and accepted
@@ -134,12 +149,14 @@ off to the Deployment stage.
 - [ ] Input validation and sanitization verified
 
 **Vulnerability scan:**
+
 - [ ] SAST/DAST scans completed
 - [ ] Dependency vulnerabilities checked
 - [ ] Security scan report available
 - [ ] All critical/high vulnerabilities remediated
 
 **Red flags:**
+
 - ❌ Critical or high-severity vulnerabilities unresolved
 - ❌ Security tests skipped without justification
 - ❌ No security scan evidence
@@ -149,6 +166,7 @@ off to the Deployment stage.
 ## Section 7: Accessibility Testing ✅
 
 **Accessibility validated (if applicable):**
+
 - [ ] Accessibility tests executed (or confirmed N/A)
 - [ ] WCAG compliance validated
 - [ ] Keyboard navigation tested
@@ -156,6 +174,7 @@ off to the Deployment stage.
 - [ ] Accessibility issues documented and addressed
 
 **Red flags:**
+
 - ❌ Required accessibility standards not met
 - ❌ Accessibility tests skipped without justification
 
@@ -164,6 +183,7 @@ off to the Deployment stage.
 ## Section 8: Monitoring & Instrumentation ✅
 
 **Observability validated:**
+
 - [ ] Logging implemented and tested
 - [ ] Metrics collection verified
 - [ ] Dashboards display correctly
@@ -171,12 +191,14 @@ off to the Deployment stage.
 - [ ] Success criteria measurement mechanisms working
 
 **Instrumentation validation:**
+
 - [ ] Application logs capture key events
 - [ ] Error logs include context and stack traces
 - [ ] No PII or sensitive data in logs
 - [ ] Correlation IDs present for request tracing
 
 **Red flags:**
+
 - ❌ Logging or metrics not working
 - ❌ Success criteria cannot be measured
 - ❌ Critical alerts not configured
@@ -186,6 +208,7 @@ off to the Deployment stage.
 ## Section 9: Defect Management ✅
 
 **Defects tracked and resolved:**
+
 - [ ] All defects logged and tracked
 - [ ] No critical defects open
 - [ ] No high-severity defects open
@@ -193,11 +216,13 @@ off to the Deployment stage.
 - [ ] Deferred defects documented with target fix version
 
 **Defect resolution:**
+
 - [ ] Fixed defects retested and verified
 - [ ] Regression testing completed
 - [ ] Defect status documented in verification brief
 
 **Red flags:**
+
 - ❌ Critical or high-severity defects unresolved
 - ❌ Defects not tracked or documented
 - ❌ Fixed defects not retested
@@ -207,6 +232,7 @@ off to the Deployment stage.
 ## Section 10: Test Evidence & Documentation ✅
 
 **Test results documented:**
+
 - [ ] Verification brief completed
 - [ ] All test results recorded
 - [ ] Test evidence available (logs, reports, screenshots)
@@ -214,6 +240,7 @@ off to the Deployment stage.
 - [ ] Test artifacts linked in verification brief
 
 **Documentation completeness:**
+
 - [ ] Test strategy documented
 - [ ] Test execution results recorded
 - [ ] UAT sign-off captured
@@ -221,6 +248,7 @@ off to the Deployment stage.
 - [ ] Production readiness assessment completed
 
 **Red flags:**
+
 - ❌ Test results not documented
 - ❌ No test evidence available
 - ❌ Verification brief incomplete
@@ -230,6 +258,7 @@ off to the Deployment stage.
 ## Section 11: Production Readiness ✅
 
 **Ready for deployment:**
+
 - [ ] All quality gates passed
 - [ ] UAT approved
 - [ ] No critical or high-severity defects
@@ -238,6 +267,7 @@ off to the Deployment stage.
 - [ ] Monitoring and instrumentation verified
 
 **Deployment prerequisites:**
+
 - [ ] Deployment checklist prepared
 - [ ] Rollback plan documented
 - [ ] Known issues and limitations documented
@@ -245,6 +275,7 @@ off to the Deployment stage.
 - [ ] Post-deployment validation plan defined
 
 **Red flags:**
+
 - ❌ Quality gates not passed
 - ❌ UAT not approved
 - ❌ Deployment checklist not prepared
@@ -254,6 +285,7 @@ off to the Deployment stage.
 ## Section 12: Handoff Readiness ✅
 
 **Ready to hand off to Deployment:**
+
 - [ ] Verification brief completed and reviewed
 - [ ] All sign-offs obtained (QA, Tech Lead, Product Owner)
 - [ ] Deployment team notified and ready
@@ -261,6 +293,7 @@ off to the Deployment stage.
 - [ ] Success validation criteria defined
 
 **Handoff artifacts:**
+
 - [ ] Verified code branch/tag identified
 - [ ] Test reports available
 - [ ] UAT approval documented
@@ -268,6 +301,7 @@ off to the Deployment stage.
 - [ ] Monitoring dashboard links shared
 
 **Red flags:**
+
 - ❌ Required sign-offs missing
 - ❌ Deployment team not ready
 - ❌ Handoff artifacts incomplete
@@ -277,13 +311,15 @@ off to the Deployment stage.
 ## Final Decision
 
 ### Overall Status
+
 - [ ] ✅ **READY FOR DEPLOYMENT** - All checks passed, proceed to Deployment
-  stage
+      stage
 - [ ] ⚠️ **READY WITH CONDITIONS** - Minor issues acceptable, conditions
-  documented
+      documented
 - [ ] ❌ **NOT READY** - Critical issues must be resolved before deployment
 
 ### Sign-Off
+
 - **QA Lead:** [Name]
 - **Date:** [YYYY-MM-DD]
 - **Status:** [✅ Ready | ⚠️ Ready with conditions | ❌ Not ready]
@@ -296,22 +332,27 @@ off to the Deployment stage.
 ### Common Issues and Resolutions
 
 **Issue: Integration tests failing**
+
 - Resolution: Return to Implementation stage to fix code
 - Don't proceed until tests are green
 
 **Issue: UAT not approved**
+
 - Resolution: Address UAT feedback, re-test, get re-approval
 - Never deploy without business sign-off
 
 **Issue: Performance NFRs not met**
+
 - Resolution: Performance tuning or NFR renegotiation
 - Document accepted performance if NFRs relaxed
 
 **Issue: Security vulnerabilities**
+
 - Resolution: Remediate critical/high before deployment
 - Document accepted risk for medium/low (with approval)
 
 **Issue: Monitoring not working**
+
 - Resolution: Fix instrumentation before deployment
 - Cannot measure success without working monitoring
 
@@ -320,6 +361,7 @@ off to the Deployment stage.
 ## Appendix: Red Flags Summary
 
 **STOP deployment if any of these are true:**
+
 - ❌ Critical or high-severity defects unresolved
 - ❌ UAT not approved by business stakeholders
 - ❌ Critical or high-severity security vulnerabilities present
@@ -330,6 +372,7 @@ off to the Deployment stage.
 - ❌ Required sign-offs missing
 
 **Investigate further if any of these are true:**
+
 - ⚠️ Multiple medium-severity defects deferred
 - ⚠️ Test coverage below 80% of acceptance criteria
 - ⚠️ Performance borderline on NFRs
@@ -339,6 +382,7 @@ off to the Deployment stage.
 - ⚠️ Deployment prerequisites unclear
 
 **Acceptable to proceed with documentation:**
+
 - ✅ Low-severity defects deferred to future iterations
 - ✅ Known limitations documented and communicated
 - ✅ Acceptable risks documented with mitigation plans
@@ -348,10 +392,10 @@ off to the Deployment stage.
 
 ## Related Documents
 
-- **[verification-brief-template.md](verification-brief-template.md)** -
-  Full test results documentation
-- **[verification-reference.md](verification-reference.md)** - Testing best
-  practices and guidance
+- **[verification-brief-template.md](verification-brief-template.md)** - Full
+  test results documentation
+- **[verification-guide.md](verification-guide.md)** - Testing best practices
+  and guidance
 - **[STAGES.md](../../STAGES.md)** - Verification stage definition
 
 ---

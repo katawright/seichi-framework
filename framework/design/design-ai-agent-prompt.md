@@ -2,23 +2,29 @@
 
 **Last Updated:** 2026-02-09
 
-**Purpose:** This prompt helps engineers and architects use AI to draft design documents for the Design stage.
+**Purpose:** This prompt helps engineers and architects use AI to draft design
+documents for the Design stage.
 
 **Target Audience:** Engineers, Solutions Architects, Technical Leads
 
-**Design Type:** [ ] Foundational (Initial Architecture) | [ ] Iterative (Increment Detail)
+**Design Type:** [ ] Foundational (Initial Architecture) | [ ] Iterative
+(Increment Detail)
 
 ---
 
 ## Instructions for Using This Prompt
 
 1. **Copy the prompt below** to your AI assistant (Claude, ChatGPT, etc.)
-2. **Answer the AI's questions** - It will ask about requirements, constraints, and preferences
+2. **Answer the AI's questions** - It will ask about requirements, constraints,
+   and preferences
 3. **Review and refine** - AI will generate design options and documentation
-4. **Human validates** - Always have experienced engineers review and approve AI-generated designs
-5. **Document decision** - Fill out [design-brief-template.md](design-brief-template.md) with final design
+4. **Human validates** - Always have experienced engineers review and approve
+   AI-generated designs
+5. **Document decision** - Fill out
+   [design-brief-template.md](design-brief-template.md) with final design
 
-**⚠️ Important:** AI provides options and drafts, but **humans make final design decisions** based on team context, skills, and constraints.
+**⚠️ Important:** AI provides options and drafts, but **humans make final design
+decisions** based on team context, skills, and constraints.
 
 ---
 
@@ -70,9 +76,11 @@ Let's start. Please ask me questions to understand the project context and requi
 **What the AI will ask:**
 
 1. **Project overview:** What problem are we solving? Who are the users?
-2. **Requirements summary:** What are the key functional requirements (Must Haves)?
+2. **Requirements summary:** What are the key functional requirements (Must
+   Haves)?
 3. **NFRs:** What are performance, scalability, security requirements?
-4. **Constraints:** Budget, timeline, team size, team skills, existing infrastructure
+4. **Constraints:** Budget, timeline, team size, team skills, existing
+   infrastructure
 5. **Compliance:** Are there regulatory requirements (GDPR, HIPAA, etc.)?
 6. **Scale:** How many users? What's the expected growth?
 
@@ -80,13 +88,15 @@ Let's start. Please ask me questions to understand the project context and requi
 
 - `design-brief.md` - Architecture overview with ADR references
 - `docs/adr/ADR-001-database-selection.md` - Database choice with cost analysis
-- `docs/adr/ADR-002-file-upload-mechanism.md` - File handling approach with costs
+- `docs/adr/ADR-002-file-upload-mechanism.md` - File handling approach with
+  costs
 - `docs/adr/ADR-003-authentication-approach.md` - Auth strategy
 - Additional ADRs for each significant technology decision
 - Iteration plan with increments, team composition, and effort estimates
 - Gate 2 Decision Package with labor and infrastructure costs
 
 **Each ADR will include:**
+
 - Context and problem statement
 - 2-3 options considered with cost research
 - Decision with rationale
@@ -129,11 +139,14 @@ Let's start. Please ask me questions to understand the increment scope and archi
 **What the AI will ask:**
 
 1. **Increment scope:** Which requirements are in this increment?
-2. **Architecture context:** What's the existing system architecture? What components exist?
+2. **Architecture context:** What's the existing system architecture? What
+   components exist?
 3. **Technology stack:** What technologies are we using?
-4. **API conventions:** What are the API design standards (REST, versioning, auth)?
+4. **API conventions:** What are the API design standards (REST, versioning,
+   auth)?
 5. **Acceptance criteria:** What are the specific ACs for these requirements?
-6. **Constraints:** Are there specific limitations or challenges for this increment?
+6. **Constraints:** Are there specific limitations or challenges for this
+   increment?
 
 **What the AI will generate:**
 
@@ -149,6 +162,7 @@ Let's start. Please ask me questions to understand the increment scope and archi
 ## Example Interaction (Foundational Design)
 
 **You:**
+
 ```
 You are an experienced solutions architect helping me design the foundational architecture for a software project. [full prompt from above]
 
@@ -174,6 +188,7 @@ Constraints:
 ```
 
 **AI:**
+
 ```
 Great! Let me help you design the architecture. I'll generate a few options.
 
@@ -290,6 +305,7 @@ Great! Let me help you design the architecture. I'll generate a few options.
 ## Example Interaction (Iterative Design)
 
 **You:**
+
 ```
 You are an experienced software engineer helping me create a detailed design for Increment 1.
 
@@ -314,7 +330,8 @@ Please help me design the components, APIs, and data model for Increment 1.
 ```
 
 **AI:**
-```
+
+````
 Great! Let me help you detail the design for Increment 1 (User Authentication).
 
 ## Component Design
@@ -351,9 +368,10 @@ class AuthService {
     // Return userId if valid
   }
 }
-```
+````
 
 **Dependencies:**
+
 - bcrypt (password hashing)
 - jsonwebtoken (JWT generation/validation)
 - User model (Sequelize)
@@ -363,18 +381,20 @@ class AuthService {
 ### 2. AuthController (Backend)
 
 **Responsibilities:**
-- Handle HTTP requests for /api/v1/auth/* endpoints
+
+- Handle HTTP requests for /api/v1/auth/\* endpoints
 - Validate request input
 - Call AuthService
 - Return HTTP responses
 
 **Structure:**
+
 ```javascript
 // src/controllers/AuthController.js
 class AuthController {
   async register(req, res, next) {
     try {
-      const {email, password, name} = req.body;
+      const { email, password, name } = req.body;
       const result = await AuthService.register(email, password, name);
       res.status(201).json(result);
     } catch (error) {
@@ -384,7 +404,7 @@ class AuthController {
 
   async login(req, res, next) {
     try {
-      const {email, password} = req.body;
+      const { email, password } = req.body;
       const result = await AuthService.login(email, password);
       res.status(200).json(result);
     } catch (error) {
@@ -399,40 +419,46 @@ class AuthController {
 ### 3. User Model (Backend)
 
 **Responsibilities:**
+
 - Define users table schema
 - Provide data access methods
 
 **Schema:**
+
 ```javascript
 // src/models/User.js
-const User = sequelize.define('User', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+const User = sequelize.define(
+  "User",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+      validate: { isEmail: true },
+    },
+    password_hash: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: "user",
+    },
   },
-  email: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false,
-    validate: {isEmail: true}
+  {
+    timestamps: true,
+    underscored: true,
   },
-  password_hash: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: true
-  },
-  role: {
-    type: DataTypes.STRING,
-    defaultValue: 'user'
-  }
-}, {
-  timestamps: true,
-  underscored: true
-});
+);
 ```
 
 ---
@@ -440,12 +466,14 @@ const User = sequelize.define('User', {
 ### 4. RegisterForm Component (Frontend)
 
 **Responsibilities:**
+
 - Collect user input (email, password, name)
 - Validate input client-side
 - Submit to POST /api/v1/auth/register
 - Handle success (store token, redirect) and errors (display message)
 
 **Structure:**
+
 ```jsx
 // src/components/auth/RegisterForm.jsx
 function RegisterForm() {
@@ -479,6 +507,7 @@ function RegisterForm() {
 ### POST /api/v1/auth/register
 
 **Request:**
+
 ```json
 {
   "email": "user@example.com",
@@ -488,11 +517,13 @@ function RegisterForm() {
 ```
 
 **Validation:**
+
 - email: Required, valid email format, not already registered
 - password: Required, min 8 characters
 - name: Optional, max 255 characters
 
 **Success Response (201 Created):**
+
 ```json
 {
   "user": {
@@ -509,17 +540,21 @@ function RegisterForm() {
 **Error Responses:**
 
 400 Bad Request (validation):
+
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
     "message": "Invalid input",
-    "details": [{"field": "password", "message": "Must be at least 8 characters"}]
+    "details": [
+      { "field": "password", "message": "Must be at least 8 characters" }
+    ]
   }
 }
 ```
 
 409 Conflict (email exists):
+
 ```json
 {
   "error": {
@@ -534,6 +569,7 @@ function RegisterForm() {
 ### POST /api/v1/auth/login
 
 **Request:**
+
 ```json
 {
   "email": "user@example.com",
@@ -542,6 +578,7 @@ function RegisterForm() {
 ```
 
 **Success Response (200 OK):**
+
 ```json
 {
   "user": {
@@ -555,6 +592,7 @@ function RegisterForm() {
 ```
 
 **Error Response (401 Unauthorized):**
+
 ```json
 {
   "error": {
@@ -574,46 +612,46 @@ function RegisterForm() {
 
 ```javascript
 exports.up = async (queryInterface, Sequelize) => {
-  await queryInterface.createTable('users', {
+  await queryInterface.createTable("users", {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     email: {
       type: Sequelize.STRING,
       unique: true,
-      allowNull: false
+      allowNull: false,
     },
     password_hash: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
     },
     name: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     role: {
       type: Sequelize.STRING,
-      defaultValue: 'user'
+      defaultValue: "user",
     },
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updated_at: {
       type: Sequelize.DATE,
       allowNull: false,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-    }
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    },
   });
 
-  await queryInterface.addIndex('users', ['email'], {unique: true});
+  await queryInterface.addIndex("users", ["email"], { unique: true });
 };
 
 exports.down = async (queryInterface) => {
-  await queryInterface.dropTable('users');
+  await queryInterface.dropTable("users");
 };
 ```
 
@@ -624,12 +662,14 @@ exports.down = async (queryInterface) => {
 ### Unit Tests
 
 **AuthService.register():**
+
 - ✅ Valid input → creates user, returns token
 - ✅ Duplicate email → throws EmailExistsError
 - ✅ Weak password → throws ValidationError
 - ✅ Password is hashed (not plaintext)
 
 **AuthService.login():**
+
 - ✅ Valid credentials → returns user and token
 - ✅ Invalid password → throws InvalidCredentialsError
 - ✅ Non-existent email → throws InvalidCredentialsError
@@ -639,12 +679,14 @@ exports.down = async (queryInterface) => {
 ### Integration Tests
 
 **POST /api/v1/auth/register:**
+
 - ✅ Valid data → 201 Created, user in DB, token valid
 - ✅ Duplicate email → 409 Conflict
 - ✅ Missing email → 400 Bad Request
 - ✅ Weak password → 400 Bad Request
 
 **POST /api/v1/auth/login:**
+
 - ✅ Valid credentials → 200 OK, token valid
 - ✅ Wrong password → 401 Unauthorized
 - ✅ Non-existent email → 401 Unauthorized
@@ -652,6 +694,7 @@ exports.down = async (queryInterface) => {
 ### Acceptance Tests (UAT)
 
 **Test Case 1: User Registration**
+
 1. Navigate to /register
 2. Enter email: test@example.com
 3. Enter password: SecurePass123!
@@ -659,6 +702,7 @@ exports.down = async (queryInterface) => {
 5. **Expected:** Redirected to /dashboard, logged in
 
 **Test Case 2: Login with Invalid Credentials**
+
 1. Navigate to /login
 2. Enter email: test@example.com
 3. Enter wrong password: WrongPass!
@@ -670,22 +714,28 @@ exports.down = async (queryInterface) => {
 ## Implementation Notes
 
 ### Security
+
 - **Never log passwords** (even in dev) - log email only for debugging
 - **Use bcrypt cost factor 10** - balances security and performance
 - **JWT expiration: 24 hours** - refresh tokens in future increment
 - **SQL injection:** Sequelize parameterizes queries automatically
 
 ### Performance
+
 - **Index on users.email** - Critical for login query
 - **Connection pooling** - Configure max 20 connections
-- **Password hashing is CPU-intensive** - Acceptable for registration/login (not bulk operations)
+- **Password hashing is CPU-intensive** - Acceptable for registration/login (not
+  bulk operations)
 
 ### Code Patterns
+
 - **Use async/await** - Consistent error handling with try/catch
 - **Repository pattern** - Keep data access in services, not controllers
-- **Centralized error handling** - Express error middleware for consistent responses
+- **Centralized error handling** - Express error middleware for consistent
+  responses
 
 Would you like me to detail any specific component further?
+
 ```
 
 ---
@@ -724,12 +774,16 @@ Use ADRs to document why you chose AI-suggested options:
 ## Related Documents
 
 - [Design Brief Template](design-brief-template.md) - Fill this out with AI-generated designs
-- [Design Reference](design-reference.md) - Comprehensive design guidance
+- [Design Guide](design-guide.md) - Comprehensive design guidance
 - [Design Checklist](design-checklist.md) - Validate design completeness
-- [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md) - AI autonomy guidance for Design stage
+- [Framework Guide](../framework-guide.md) - Cross-cutting
+  framework concepts
+- [AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md) - AI
+  autonomy guidance for Design stage
 
 ---
 
 ## Notes
 
 Added to framework in v0.4.0.
+```

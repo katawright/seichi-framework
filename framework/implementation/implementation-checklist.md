@@ -2,18 +2,17 @@
 
 **Last Updated:** 2026-02-11
 
-**Purpose:** Quick validation (60-90 seconds) that implementation is
-complete and ready for the Verification stage.
+**Purpose:** Quick validation (60-90 seconds) that implementation is complete
+and ready for the Verification stage.
 
-**How to Use:** Review each item and mark ✅ (complete), ⚠️ (needs
-attention), or ❌ (not complete). All items should be ✅ before
-proceeding to Verification.
+**How to Use:** Review each item and mark ✅ (complete), ⚠️ (needs attention),
+or ❌ (not complete). All items should be ✅ before proceeding to Verification.
 
 ---
 
 ## Increment: [Increment Name]
-**Date:** YYYY-MM-DD
-**Reviewer:** [Name]
+
+**Date:** YYYY-MM-DD **Reviewer:** [Name]
 
 ---
 
@@ -21,14 +20,13 @@ proceeding to Verification.
 
 **All requirements for this increment are implemented:**
 
-- [ ] All functional requirements (FRs) for this increment are
-  implemented
-- [ ] All non-functional requirements (NFRs) for this increment are
-  addressed
+- [ ] All functional requirements (FRs) for this increment are implemented
+- [ ] All non-functional requirements (NFRs) for this increment are addressed
 - [ ] Acceptance criteria for each requirement are met
 - [ ] No critical functionality is missing or incomplete
 
 **Notes/Issues:**
+
 - [Any concerns about completeness]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -40,16 +38,15 @@ proceeding to Verification.
 **Code meets quality standards:**
 
 - [ ] Code follows project/team coding standards and conventions
-- [ ] No obvious code smells (duplication, overly complex methods, god
-  objects)
+- [ ] No obvious code smells (duplication, overly complex methods, god objects)
 - [ ] Code is readable and well-structured
 - [ ] SOLID principles applied where appropriate
-- [ ] No hardcoded values (magic numbers/strings) - constants or config
-  used
+- [ ] No hardcoded values (magic numbers/strings) - constants or config used
 - [ ] Error handling is implemented for failure scenarios
 - [ ] Input validation is present where needed
 
 **Notes/Issues:**
+
 - [Any code quality concerns]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -67,15 +64,16 @@ proceeding to Verification.
 - [ ] Tests cover edge cases and error conditions
 - [ ] Tests are meaningful (not just padding for coverage)
 - [ ] Test naming is clear and descriptive
-- [ ] Tests are fast and don't require external dependencies
-  (mocked/stubbed)
+- [ ] Tests are fast and don't require external dependencies (mocked/stubbed)
 
 **Coverage Metrics:**
-- Overall coverage: ____%
-- Branch coverage: ____%
-- Critical path coverage: ____%
+
+- Overall coverage: \_\_\_\_%
+- Branch coverage: \_\_\_\_%
+- Critical path coverage: \_\_\_\_%
 
 **Notes/Issues:**
+
 - [Any testing gaps or concerns]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -93,10 +91,14 @@ proceeding to Verification.
 - [ ] Code review checklist completed by reviewer(s) for all PRs
 
 **PR Review Status:** _(list all PRs for this increment)_
-- PR #___ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌ Changes Requested
-- PR #___ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌ Changes Requested
+
+- PR #\_\_\_ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌
+  Changes Requested
+- PR #\_\_\_ - Reviewers: [Names] - Status: ✅ Approved / 🔄 In Review / ❌
+  Changes Requested
 
 **Notes/Issues:**
+
 - [Any open review items]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -115,6 +117,7 @@ proceeding to Verification.
 - [ ] Unit tests pass for all PRs (enforced pre-merge)
 
 **Tool Results:**
+
 - Linter: ✅ / ⚠️ / ❌ - [Tool name]
 - Formatter: ✅ / ⚠️ / ❌ - [Tool name]
 - Static Analysis: ✅ / ⚠️ / ❌ - [Tool name]
@@ -122,8 +125,10 @@ proceeding to Verification.
 - Tests: ✅ / ⚠️ / ❌
 
 **Notes/Issues:**
+
 - [Any failing checks or warnings]
-- [Note: Tests must pass before ANY PR is merged, regardless of branching strategy]
+- [Note: Tests must pass before ANY PR is merged, regardless of branching
+  strategy]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
 
@@ -134,7 +139,7 @@ proceeding to Verification.
 **Security considerations are addressed:**
 
 - [ ] Input validation prevents injection attacks (SQL, NoSQL, command
-  injection)
+      injection)
 - [ ] No XSS vulnerabilities (output encoding/escaping)
 - [ ] Authentication and authorization are properly implemented
 - [ ] Sensitive data is not logged or exposed
@@ -143,12 +148,14 @@ proceeding to Verification.
 - [ ] Security scan passed (if applicable)
 
 **Security Scan Results:**
+
 - Tool: [Snyk, Checkmarx, etc.]
 - Critical vulnerabilities: [Count or "None"]
 - High vulnerabilities: [Count or "None"]
 - Status: ✅ / ⚠️ / ❌
 
 **Notes/Issues:**
+
 - [Any security concerns or findings]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -159,8 +166,7 @@ proceeding to Verification.
 
 **Logging, metrics, and monitoring are implemented:**
 
-- [ ] Appropriate logging is implemented (errors, warnings, important
-  events)
+- [ ] Appropriate logging is implemented (errors, warnings, important events)
 - [ ] Log messages are clear and include necessary context
 - [ ] No sensitive data in logs (passwords, PII, tokens)
 - [ ] Metrics/telemetry implemented for key operations
@@ -168,11 +174,13 @@ proceeding to Verification.
 - [ ] Performance monitoring points are in place
 
 **Instrumentation Status:**
+
 - Logging: ✅ / ⚠️ / ❌
 - Metrics: ✅ / ⚠️ / ❌
 - Success criteria tracking: ✅ / ⚠️ / ❌ / N/A
 
 **Notes/Issues:**
+
 - [Any instrumentation gaps]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -191,12 +199,14 @@ proceeding to Verification.
 - [ ] Developer setup instructions are updated (if changed)
 
 **Documentation Status:**
+
 - Code comments: ✅ / ⚠️ / ❌
 - API documentation: ✅ / ⚠️ / ❌ / N/A
 - README/docs: ✅ / ⚠️ / ❌ / N/A
 - Implementation brief: ✅ / ⚠️ / ❌
 
 **Notes/Issues:**
+
 - [Any documentation gaps]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -215,10 +225,12 @@ proceeding to Verification.
 - [ ] Integration points are tested (unit tests with mocks)
 
 **New Dependencies:**
-- [Dependency 1] - Version: ___ - License: ___ - Approved: ✅ / ❌
-- [Dependency 2] - Version: ___ - License: ___ - Approved: ✅ / ❌
+
+- [Dependency 1] - Version: **_ - License: _** - Approved: ✅ / ❌
+- [Dependency 2] - Version: **_ - License: _** - Approved: ✅ / ❌
 
 **Notes/Issues:**
+
 - [Any dependency concerns]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -236,6 +248,7 @@ proceeding to Verification.
 - [ ] Performance-critical code paths are profiled (if applicable)
 
 **Performance Notes:**
+
 - [Any performance concerns or measurements]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -250,11 +263,12 @@ proceeding to Verification.
 - [ ] User-facing error messages are clear and helpful
 - [ ] System errors are logged with sufficient context
 - [ ] Edge cases are handled (null values, empty collections, boundary
-  conditions)
+      conditions)
 - [ ] Timeouts are set for external calls
 - [ ] Retry logic implemented where appropriate
 
 **Notes/Issues:**
+
 - [Any error handling gaps]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -274,17 +288,21 @@ proceeding to Verification.
 - [ ] Test data requirements are documented
 
 **Branching Strategy Compliance:**
+
 - [ ] Trunk-based: All PRs merged to `main` (feature flags configured if needed)
-- [ ] Increment branch: All PRs merged to increment branch, ready to merge to `main` after Verification
+- [ ] Increment branch: All PRs merged to increment branch, ready to merge to
+      `main` after Verification
 - [ ] Other: [Describe completion state per team strategy]
 
 **Handoff Documentation:**
+
 - Implementation brief: ✅ / ⚠️ / ❌
 - PR tracking: ✅ / ⚠️ / ❌
 - Test guidance: ✅ / ⚠️ / ❌
 - Environment setup: ✅ / ⚠️ / ❌
 
 **Notes/Issues:**
+
 - [Any handoff concerns]
 
 **Status:** ✅ Ready / ⚠️ Issues to address / ❌ Not ready
@@ -295,21 +313,20 @@ proceeding to Verification.
 
 ### Summary
 
-**Total Sections:** 12
-**Sections Ready (✅):** ___
-**Sections with Issues (⚠️):** ___
-**Sections Not Ready (❌):** ___
+**Total Sections:** 12 **Sections Ready (✅):** **_ **Sections with Issues
+(⚠️):** _** **Sections Not Ready (❌):** \_\_\_
 
 ### Critical Issues
 
 **Must be resolved before proceeding to Verification:**
+
 1. [Issue 1 - from Section X]
 2. [Issue 2 - from Section Y]
 
 ### Non-Critical Issues
 
-**Can be addressed in future increments or documented as technical
-debt:**
+**Can be addressed in future increments or documented as technical debt:**
+
 1. [Issue 1]
 2. [Issue 2]
 
@@ -334,27 +351,24 @@ debt:**
   - Must resolve issues before proceeding
   - Return to implementation
 
-**Rationale:**
-[Brief explanation of decision]
+**Rationale:** [Brief explanation of decision]
 
 ---
 
 ## Sign-off
 
-**Completed By:** [Name]
-**Role:** [Engineer/Tech Lead]
-**Date:** YYYY-MM-DD
+**Completed By:** [Name] **Role:** [Engineer/Tech Lead] **Date:** YYYY-MM-DD
 **Signature:** [Initials]
 
-**Reviewed By:** [Name] _(optional - Tech Lead or Senior Engineer)_
-**Date:** YYYY-MM-DD
-**Signature:** [Initials]
+**Reviewed By:** [Name] _(optional - Tech Lead or Senior Engineer)_ **Date:**
+YYYY-MM-DD **Signature:** [Initials]
 
 ---
 
 ## Next Steps
 
 **If Ready:**
+
 1. Ensure all PRs merged per branching strategy:
    - Trunk-based: All merged to `main`, feature flags set appropriately
    - Increment branch: Merge increment branch to `main` (after Verification)
@@ -364,6 +378,7 @@ debt:**
 5. Move to Verification stage
 
 **If Not Ready:**
+
 1. Address critical issues identified above
 2. Complete any pending PRs
 3. Re-run checklist
@@ -376,6 +391,7 @@ debt:**
 Watch out for these warning signs during the checklist:
 
 ### Code Quality Red Flags
+
 - ⚠️ Methods/functions longer than 50-100 lines
 - ⚠️ Classes with more than 10 public methods
 - ⚠️ Deeply nested conditionals (>3 levels)
@@ -383,18 +399,21 @@ Watch out for these warning signs during the checklist:
 - ⚠️ Commented-out code (should be removed)
 
 ### Testing Red Flags
+
 - ⚠️ Coverage looks good but tests don't assert anything meaningful
 - ⚠️ Tests pass in isolation but fail together (test interdependence)
 - ⚠️ Tests take a long time to run (should be fast)
 - ⚠️ Tests are flaky (sometimes pass, sometimes fail)
 
 ### Security Red Flags
+
 - ⚠️ SQL queries built with string concatenation
 - ⚠️ User input rendered directly in HTML without escaping
 - ⚠️ Authentication bypassed or incomplete
 - ⚠️ Secrets visible in code or logs
 
 ### Performance Red Flags
+
 - ⚠️ Loops inside loops (O(n²) complexity)
 - ⚠️ Database queries inside loops (N+1 problem)
 - ⚠️ Loading entire large datasets into memory
