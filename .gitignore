@@ -45,6 +45,9 @@ tmp/
 temp/
 *.tmp
 
+# Private notes and scratch work
+.ignore/
+
 # Package manager lock files (uncomment preferred one)
 # package-lock.json
 # yarn.lock
