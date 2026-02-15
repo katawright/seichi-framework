@@ -23,6 +23,8 @@ delivery.
 **Key outputs:**
 
 - System architecture and technology decisions (ADRs)
+- **Infrastructure architecture and planning (CI/CD, deployment,
+  observability)**
 - Iteration plan mapping priorities to increments
 - Detailed component designs per increment
 
@@ -71,6 +73,7 @@ Design bridges "what we need to build" (Requirements) and "how we'll build it"
 
 - System architecture diagrams
 - Technology stack selections with justification (ADRs)
+- **Infrastructure architecture (CI/CD, deployment, environments, monitoring)**
 - Data and API architecture
 - Security and compliance approach
 - Observability and monitoring strategy
@@ -97,6 +100,8 @@ The Design stage has a unique **dual execution pattern**.
 **Scope:**
 
 - System-wide decisions (architecture, technology, data model, API conventions)
+- **Infrastructure planning (CI/CD pipelines, deployment, environments,
+  monitoring)**
 - Cross-cutting concerns (security, observability, performance approach)
 - Iteration planning (mapping MoSCoW priorities to increments)
 
@@ -255,6 +260,217 @@ Total effort × blended rate = project cost Compare to Initiation estimates
 - **De-risk early:** technically uncertain work in early increments
 - **Allow for discovery:** don't over-plan distant increments
 - **Make Could Haves truly optional:** don't commit in timelines
+
+---
+
+## Infrastructure Planning
+
+Infrastructure planning is a **required output** of foundational design for both
+greenfield and brownfield projects. The goal is to ensure working development,
+testing, deployment, and monitoring infrastructure exists before feature
+delivery begins.
+
+See
+[Framework Guide: Greenfield vs. Brownfield](../framework-guide.md#greenfield-vs-brownfield-projects)
+for conceptual overview.
+
+### Why Infrastructure Planning Matters
+
+**Without infrastructure:**
+
+- No way to deploy code for testing or production
+- No automated testing in CI pipeline
+- No visibility into system health or performance
+- Manual, error-prone deployment processes
+- Cannot measure success criteria
+
+**With infrastructure:**
+
+- Automated build, test, and deployment pipelines
+- Consistent environments (dev, staging, production)
+- Monitoring and observability from day one
+- Repeatable, low-risk deployments
+- Success criteria tracked automatically
+
+### Greenfield Infrastructure Planning
+
+For **new projects built from scratch**, infrastructure must be created.
+Foundational design outputs an infrastructure plan that becomes **Increment 1:
+Bootstrap** — establishing the foundation before feature work begins.
+
+**Required infrastructure planning outputs:**
+
+1. **Version Control and Code Organization**
+   - Repository structure and branching strategy (trunk-based, GitFlow, etc.)
+   - Code organization conventions (monorepo vs. multi-repo)
+   - Commit and PR standards
+   - **ADR:** Document repository and branching strategy decisions
+
+2. **CI/CD Pipeline Design**
+   - Build automation (compilation, dependency management)
+   - Test automation stages (unit, integration, e2e)
+   - Quality gates (test coverage thresholds, linting, security scans)
+   - Deployment automation (environments, approval workflows)
+   - **ADR:** Document CI/CD tool selection and pipeline design
+
+3. **Environment Strategy**
+   - Development environment (local dev setup, shared dev environment)
+   - Staging environment (production-like for pre-release testing)
+   - Production environment (live system serving users)
+   - Environment parity strategy (minimize differences)
+   - **ADR:** Document environment architecture and hosting decisions
+
+4. **Deployment Strategy**
+   - Deployment pattern (blue-green, canary, rolling, recreate)
+   - Rollback procedures and automation
+   - Database migration strategy
+   - Configuration management (environment variables, secrets)
+   - **ADR:** Document deployment strategy and tooling
+
+5. **Monitoring and Observability Architecture**
+   - Logging infrastructure (structured logs, aggregation, retention)
+   - Metrics collection (RED/USE metrics, custom business metrics)
+   - Tracing and profiling capabilities
+   - Alerting rules and on-call procedures
+   - Success criteria instrumentation (from Initiation stage)
+   - **ADR:** Document observability stack selection
+
+6. **Security and Compliance Infrastructure**
+   - Secret management (API keys, credentials, certificates)
+   - Security scanning (SAST, DAST, dependency scanning)
+   - Access controls (who can deploy, who can access production)
+   - Compliance automation (audit logs, data retention policies)
+   - **ADR:** Document security tooling and policies
+
+7. **Iteration Plan Update**
+   - **Increment 1: Bootstrap** — establish all infrastructure above
+   - Increment 2+: Feature delivery using established infrastructure
+   - Success criteria: "Deploy hello world app through full pipeline to
+     production"
+
+**Bootstrap Increment 1 execution:**
+
+The bootstrap increment goes through the standard Design → Implementation →
+Verification → Deployment cycle:
+
+- **Design (iterative):** Detailed infrastructure specifications
+- **Implementation:** Build pipelines, configure environments, implement
+  monitoring
+- **Verification:** Test that pipelines work, validate deployments, verify
+  monitoring
+- **Deployment:** Deploy a simple "hello world" application through the full
+  pipeline to production
+
+**Outcome:** Working infrastructure ready for feature delivery in Increment 2+.
+
+### Brownfield Infrastructure Planning
+
+For **projects extending existing systems**, infrastructure already exists.
+Foundational design outputs an **assessment and adaptation plan** rather than
+building from scratch.
+
+**Required infrastructure planning outputs:**
+
+1. **Infrastructure Assessment**
+   - Existing CI/CD capabilities and limitations
+   - Current deployment processes and frequency
+   - Available environments and their configurations
+   - Monitoring and observability coverage
+   - Security and compliance tooling in place
+   - Gaps between existing infrastructure and project needs
+
+2. **Integration and Adaptation Plan**
+   - How new code integrates with existing pipelines
+   - Required pipeline extensions or modifications
+   - Environment provisioning needs (new services, databases, etc.)
+   - Monitoring extensions (new metrics, dashboards, alerts)
+   - Security scanning updates for new technologies
+   - **ADRs:** Document significant infrastructure changes
+
+3. **Constraint Documentation**
+   - Deployment windows and approval processes
+   - Technology and tooling constraints
+   - Environment access and permissions
+   - Compliance and security requirements
+   - Performance and reliability SLAs to maintain
+
+4. **Iteration Plan Update**
+   - **Increment 1:** First feature increment (infrastructure exists)
+   - Include infrastructure adaptations in relevant increments (e.g., "Add Redis
+     to staging in Increment 2")
+
+**Brownfield Increment 1 execution:**
+
+Increment 1 proceeds directly to feature delivery because infrastructure already
+exists. Any infrastructure adaptations are included as tasks within the
+increment alongside feature work.
+
+**Outcome:** First feature increment delivered using existing infrastructure
+(possibly with minor adaptations).
+
+### Infrastructure ADRs
+
+Infrastructure decisions are **architectural decisions** and must be documented
+in ADRs. Use the framework's [ADR template](../adr-template.md).
+
+**Common infrastructure ADRs:**
+
+- ADR-001: CI/CD Platform Selection (GitHub Actions vs. GitLab CI vs. Jenkins)
+- ADR-002: Cloud Provider and Deployment Model (AWS/Azure/GCP, serverless vs.
+  containers vs. VMs)
+- ADR-003: Database Hosting Strategy (managed vs. self-hosted)
+- ADR-004: Monitoring and Observability Stack (Datadog vs. New Relic vs.
+  Prometheus/Grafana)
+- ADR-005: Secret Management Approach (AWS Secrets Manager vs. HashiCorp Vault)
+- ADR-006: Deployment Strategy (blue-green vs. canary vs. rolling)
+
+**Critical:** Include **cost analysis** in infrastructure ADRs — cloud
+infrastructure costs scale with usage and can become a significant budget item.
+
+### Infrastructure vs. Application Architecture
+
+**Infrastructure architecture** (covered here):
+
+- How code gets built, tested, deployed, and monitored
+- Environments, pipelines, observability systems
+- Enables software delivery
+
+**Application architecture** (covered in other sections):
+
+- How the software is structured internally
+- Components, APIs, data models, technology stack
+- Defines what gets delivered
+
+Both are designed in the foundational design stage, but they serve different
+purposes.
+
+### When Infrastructure Planning is Skipped
+
+**Never skip infrastructure planning.** Even for the smallest projects, you need
+a way to deploy and monitor the system.
+
+**Minimal infrastructure** for small projects:
+
+- Version control (GitHub/GitLab)
+- Basic CI (run tests on PR)
+- Simple deployment (git push to production, serverless function)
+- Basic monitoring (uptime checks, error alerts)
+
+As projects grow, infrastructure sophistication increases, but the foundation
+must exist from the start.
+
+### Common Infrastructure Anti-Patterns
+
+- **"We'll add CI/CD later"** — results in manual, error-prone deployments and
+  delays delivery
+- **"Production is the test environment"** — leads to outages and poor user
+  experience
+- **"No monitoring until it breaks"** — reactive firefighting instead of
+  proactive management
+- **"Developers don't need staging"** — increases production incidents and
+  rollback frequency
+- **"Infrastructure isn't architecture"** — poor tooling choices become
+  expensive technical debt
 
 ---
 

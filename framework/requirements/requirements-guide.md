@@ -28,6 +28,8 @@ rework from ambiguity.
 - FRs are behavior-focused and testable
 - ACs are objective and observable (Given/When/Then)
 - NFRs include observability for success metrics
+- **Brownfield: Existing system constraints captured (SLAs, API contracts, data
+  schemas)**
 - MoSCoW priorities assigned (see
   [Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization))
 - Edge cases and data constraints documented
@@ -267,6 +269,271 @@ work.
 build/no-build decision. See
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy) for
 Gate 2 details.
+
+---
+
+## Brownfield Projects: Capturing Existing System Constraints
+
+For **brownfield projects** (extending existing systems), requirements must
+capture **existing system constraints** in addition to new functional
+requirements. These constraints define the boundaries within which new work must
+operate.
+
+See
+[Framework Guide: Greenfield vs. Brownfield](../framework-guide.md#greenfield-vs-brownfield-projects)
+for conceptual overview.
+
+### Why Existing Constraints Matter
+
+**New work must fit within existing system boundaries:**
+
+- Cannot break existing functionality or integrations
+- Must meet established performance and reliability standards
+- Must comply with existing security and compliance policies
+- Must integrate with existing data models and API contracts
+- Must operate within existing deployment and operational constraints
+
+**Failing to capture constraints early leads to:**
+
+- Late-stage design changes when conflicts are discovered
+- Performance regressions affecting existing users
+- Breaking changes to APIs that other teams depend on
+- Security or compliance violations
+- Deployment failures due to operational mismatches
+
+**When captured early, constraints:**
+
+- Guide architecture decisions to avoid conflicts
+- Enable accurate effort estimates
+- Prevent breaking changes
+- Ensure smooth integration with existing systems
+- Reduce rework and deployment delays
+
+### Categories of Existing System Constraints
+
+Capture constraints across these categories and document them as
+**Non-Functional Requirements (NFRs)** in your Requirements Document:
+
+#### 1. Performance Constraints
+
+Existing SLAs and performance targets that new work must maintain or improve.
+
+**Examples:**
+
+- "All API endpoints must respond in <1 second (p95)"
+- "Database query latency must not exceed 200ms (p99)"
+- "Page load time must remain <2 seconds (p90)"
+- "System must support 10,000 concurrent users"
+- "Batch processing must complete within 4-hour maintenance window"
+
+**Document as NFR:** "NFR-Performance-1: New search feature must not degrade
+existing API response times; all endpoints must maintain p95 <1s under current
+load."
+
+#### 2. Security Policies
+
+Authentication, authorization, encryption, and audit requirements already
+enforced.
+
+**Examples:**
+
+- "All requests must use OAuth 2.0 with JWT tokens"
+- "PII must be encrypted at rest using AES-256"
+- "All admin actions must be logged to audit trail with 1-year retention"
+- "API access requires API key authentication with rate limiting"
+- "Database connections must use TLS 1.3"
+
+**Document as NFR:** "NFR-Security-1: New endpoints must use existing OAuth 2.0
+authentication; all admin operations must write to existing audit log table."
+
+#### 3. API Contracts
+
+Existing API interfaces, data formats, and integration contracts that must
+remain compatible.
+
+**Examples:**
+
+- "Public API v1 endpoints must maintain backward compatibility"
+- "Webhook payloads must follow existing JSON schema"
+- "GraphQL schema changes must not break existing queries"
+- "REST API versioning policy: breaking changes require new major version"
+- "Partner integrations expect XML format with specific schema"
+
+**Document as NFR:** "NFR-Integration-1: New user fields must be added to
+existing GET /api/v1/users response without breaking existing clients; response
+schema extension only (no removals or type changes)."
+
+#### 4. Data Schemas and Constraints
+
+Existing database schemas, data formats, validation rules, and referential
+integrity.
+
+**Examples:**
+
+- "User table has unique constraint on email field"
+- "Customer records must maintain foreign key to account table"
+- "Status field must be one of: pending, active, suspended, closed"
+- "Created_at timestamps stored in UTC; UI displays in user timezone"
+- "Phone numbers stored in E.164 format"
+
+**Document as NFR:** "NFR-Data-1: New customer fields must be added to existing
+customer table; must not violate existing foreign key constraints or unique
+indexes."
+
+#### 5. Compliance Requirements
+
+Regulatory, legal, and audit requirements already enforced by existing system.
+
+**Examples:**
+
+- "GDPR: Users must be able to request data deletion within 30 days"
+- "HIPAA: PHI must be encrypted and access logged"
+- "SOC 2: All database changes must be auditable"
+- "PCI DSS: Credit card data must not be stored in application database"
+- "Data residency: EU user data must remain in EU region"
+
+**Document as NFR:** "NFR-Compliance-1: New features handling user data must
+support existing GDPR data deletion workflow; all PII access must be logged to
+compliance audit table."
+
+#### 6. Architectural Constraints
+
+Technology stack, frameworks, patterns, and coding standards already in use.
+
+**Examples:**
+
+- "Backend services use Python 3.11 with FastAPI framework"
+- "Frontend uses React 18 with TypeScript"
+- "All services must be containerized and orchestrated via Kubernetes"
+- "Database is PostgreSQL 15; no new database technologies"
+- "Code must pass existing ESLint and Black linting rules"
+
+**Document as NFR:** "NFR-Architecture-1: New backend features must use existing
+FastAPI framework and follow established service patterns; must pass existing
+linting and type checking."
+
+#### 7. Operational Constraints
+
+Deployment windows, rollback procedures, monitoring standards, and on-call
+processes.
+
+**Examples:**
+
+- "Deployments allowed only during change windows: Tue/Thu 2-4pm ET"
+- "All changes must support zero-downtime rollback"
+- "New services must integrate with existing Datadog monitoring"
+- "Database migrations must be backward-compatible for rollback"
+- "On-call team must be trained on new features before production deployment"
+
+**Document as NFR:** "NFR-Operations-1: New features must deploy within existing
+change windows; database schema changes must be backward-compatible to support
+rollback."
+
+### How to Capture Existing Constraints
+
+**Process:**
+
+1. **Review existing documentation** — architecture docs, API specs, compliance
+   policies, operational runbooks
+2. **Interview engineering teams** — developers, DevOps, security, compliance
+   teams who know the system
+3. **Examine existing codebase** — review data models, API contracts,
+   configuration
+4. **Identify integration points** — what other systems, teams, or external
+   partners depend on this system?
+5. **Document as NFRs** — capture constraints in Non-Functional Requirements
+   section with specific thresholds and formats
+6. **Validate with stakeholders** — alignment review with engineering and
+   operations teams to confirm accuracy
+
+**Template for documenting constraints as NFRs:**
+
+```markdown
+### NFR-[Category]-[Number]: [Short description]
+
+**Constraint:** [Existing requirement that must be maintained]
+
+**Rationale:** [Why this constraint exists — e.g., compliance, partner contract,
+performance SLA]
+
+**Impact on new work:** [How this constrains design/implementation]
+
+**Validation:** [How to verify compliance — e.g., test, measurement, review]
+```
+
+### Example: Brownfield Requirements NFRs
+
+```markdown
+## Non-Functional Requirements (NFRs)
+
+### Performance Constraints (Existing System)
+
+**NFR-Perf-1: API Response Time SLA** Constraint: All API endpoints must
+maintain p95 response time <1 second under production load (10k req/min).
+Rationale: Contractual SLA with enterprise customers; monitored and reported
+monthly. Impact: New search feature must not degrade existing endpoint
+performance; may require caching or async processing. Validation: Load testing
+against production traffic patterns; p95 latency monitoring.
+
+### Integration Constraints (Existing System)
+
+**NFR-Integration-1: Public API Compatibility** Constraint: GET /api/v1/users
+endpoint must maintain backward compatibility; existing fields and response
+structure cannot change. Rationale: 50+ external integrations depend on current
+API contract; breaking changes require 6-month migration cycle. Impact: New user
+attributes must be added as optional fields; response schema extension only.
+Validation: API contract tests; schema validation against v1 spec.
+
+### Compliance Constraints (Existing System)
+
+**NFR-Compliance-1: GDPR Data Deletion** Constraint: New features storing user
+data must support existing GDPR deletion workflow (30-day SLA). Rationale: GDPR
+regulatory requirement; existing compliance process handles deletion requests.
+Impact: New tables must include user_id foreign key; deletion service must be
+updated to purge new tables. Validation: Test deletion workflow with new data;
+verify 30-day SLA met.
+```
+
+### Greenfield vs. Brownfield Requirements Differences
+
+| Aspect                    | Greenfield                           | Brownfield                                               |
+| ------------------------- | ------------------------------------ | -------------------------------------------------------- |
+| **Constraints**           | Only business/regulatory constraints | + Existing system constraints (SLAs, APIs, data schemas) |
+| **NFR complexity**        | Define new standards                 | Must align with existing standards                       |
+| **Integration**           | New integrations from scratch        | Must integrate with existing systems and APIs            |
+| **Performance baselines** | No existing SLAs                     | Must maintain or improve existing SLAs                   |
+| **Data models**           | Design from scratch                  | Extend existing schemas; maintain referential integrity  |
+| **API contracts**         | No backward compatibility concerns   | Must maintain backward compatibility                     |
+| **Deployment**            | Define new deployment process        | Follow existing deployment windows and procedures        |
+| **Risk**                  | Risk of building wrong thing         | + Risk of breaking existing functionality                |
+
+### Common Mistakes
+
+- **"We'll figure it out in Design"** — Constraints discovered late cause
+  architecture rework
+- **"Existing system doesn't matter"** — Results in breaking changes,
+  performance regressions, integration failures
+- **"Just add it to the database"** — Ignores schema constraints, referential
+  integrity, data migration complexity
+- **"The API can change"** — Breaking changes disrupt partners, requiring
+  extensive coordination
+- **"Performance will be fine"** — New work degrades existing SLAs, triggering
+  contract penalties
+
+### Integration with Framework
+
+**Design stage** (next) uses these constraints to:
+
+- Make architecture decisions that fit within existing system boundaries
+- Plan infrastructure adaptations (see
+  [Design Guide: Infrastructure Planning](../design/design-guide.md#infrastructure-planning))
+- Identify integration points and compatibility requirements
+
+**Verification stage** must test:
+
+- No regressions to existing functionality
+- Constraints still satisfied (performance, security, compatibility)
+- Integration tests with existing systems pass
 
 ---
 
