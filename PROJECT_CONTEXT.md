@@ -399,16 +399,8 @@ For each SDLC stage, create:
 - **When and how to revisit this stage** - triggers and revision process
 - **Downstream impact** - what changes when this stage is updated
 - More comprehensive than the brief
-
-### AI Agent Prompt (`{stage}-ai-agent-prompt.md`)
-
-- Prompt for AI to elicit information needed
-- References brief, checklist, and reference documents
-- Guides conversation to fill out the brief
-- **Language and questions tailored to primary role** (business vs. technical
-  terminology)
-- Should be usable by stakeholders with AI tools, regardless of technical
-  background
+- **Example questions and explorations** - Shows the types of thinking to apply
+  when working with AI assistance, without prescribing specific prompts
 
 ### Stage README (`README.md`)
 
@@ -550,7 +542,9 @@ theoretical improvements.
 - Consider real-world engineering and business constraints and workflows
 - **Each stage should clearly indicate role ownership and cross-functional
   touchpoints**
-- **AI prompts must be tailored to the expertise level of the primary role**
+- **Stage guides should include example questions and explorations** that teams
+  can use when working with AI assistants, tailored to the expertise level of
+  the primary role
 - Consider how stages hand off between different roles/departments
 - **Emphasize measurable success criteria in Initiation stage artifacts** - be
   framework-agnostic (support OKRs, SMART goals, KPIs, etc.)

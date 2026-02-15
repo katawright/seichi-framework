@@ -1,6 +1,6 @@
 # AI Autonomy Scorecard by SDLC Stage
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-15
 
 ## Overview
 
@@ -383,14 +383,16 @@ This scorecard complements the [SDLC Stages](framework-stages.md) document:
 
 1. Identify your current stage from [framework-stages.md](framework-stages.md)
 2. Review this scorecard for autonomy recommendations
-3. Use stage-specific artifacts (checklists, briefs, references) from stage
+3. Use the [Manual Process Guide](framework-manual-process.md) to engage your
+   AI assistant with the framework
+4. Use stage-specific artifacts (checklists, briefs, guides) from stage
    directories
-4. Implement appropriate human gates based on autonomy level
-5. Validate outputs according to stage exit criteria
+5. Implement appropriate human gates based on autonomy level
+6. Validate outputs according to stage exit criteria
 
-**For stage-specific AI guidance:** Each stage directory will include an
-`ai-agent-prompt.md` file with tailored prompts and examples that respect the
-autonomy levels defined in this scorecard.
+**For AI assistance:** Use the Manual Process Guide to work with your AI
+assistant through each stage. Stage guides include example questions and
+explorations that respect the autonomy levels defined in this scorecard.
 
 ---
 

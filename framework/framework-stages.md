@@ -1,6 +1,6 @@
 # AI-Assisted SDLC Stages
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-15
 
 ## Overview
 
@@ -769,33 +769,27 @@ created for:
 - `initiation-brief-template.md` - One-page project summary with measurable
   success criteria
 - `initiation-checklist.md` - Readiness checklist
-- `initiation-guide.md` - Detailed guidance
-- `initiation-ai-agent-prompt.md` - AI prompt for stage execution
+- `initiation-guide.md` - Detailed guidance with example explorations
 - `requirements-brief.md` - Requirements with acceptance criteria
 - `requirements-checklist.md` - Requirements completeness check
-- `requirements-guide.md` - Requirements best practices
-- `requirements-ai-agent-prompt.md` - AI prompt for elicitation
+- `requirements-guide.md` - Requirements best practices with example questions
 - `design-architecture.md` - System architecture documentation
 - `design-brief.md` - Detailed design per increment
 - `design-checklist.md` - Design review checklist
-- `design-guide.md` - Design patterns and best practices
-- `design-ai-agent-prompt.md` - AI prompt for design generation
+- `design-guide.md` - Design patterns and best practices with example
+  explorations
 - `implementation-brief.md` - Implementation notes and decisions
 - `implementation-checklist.md` - Code completion checklist
 - `implementation-guide.md` - Coding standards and practices
-- `implementation-ai-agent-prompt.md` - AI prompt for code generation
 - `verification-report.md` - Test results and approvals
 - `verification-checklist.md` - Testing completeness check
 - `verification-guide.md` - Testing strategies and approaches
-- `verification-ai-agent-prompt.md` - AI prompt for test generation
 - `deployment-brief.md` - Deployment plan and results
 - `deployment-checklist.md` - Deployment readiness check
 - `deployment-guide.md` - Deployment best practices
-- `deployment-ai-agent-prompt.md` - AI prompt for deployment planning
 - `support-brief.md` - Ongoing support plan
 - `support-checklist.md` - Support readiness check
 - `support-guide.md` - Operations and maintenance guidance
-- `support-ai-agent-prompt.md` - AI prompt for support activities
 
 Each stage will include a `README.md` explaining the artifacts and workflow.
 

@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Support Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 7 of 7 (Support) **Primary Audience:** DevOps Engineers, Support
 Engineers, Engineers **Execution Pattern:** Continuous (ongoing)
@@ -19,12 +19,11 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                         | Description                              |
-| ---------------------------- | ---------------------------------------- |
-| `support-brief-template.md`  | Template for support plan and operations |
-| `support-guide.md`           | Stage-specific guidance and rationale    |
-| `support-checklist.md`       | 60-90 second readiness checklist         |
-| `support-ai-agent-prompt.md` | AI prompt for support operations         |
+| File                        | Description                              |
+| --------------------------- | ---------------------------------------- |
+| `support-brief-template.md` | Template for support plan and operations |
+| `support-guide.md`          | Stage-specific guidance and rationale    |
+| `support-checklist.md`      | 60-90 second readiness checklist         |
 
 ## Suggested Workflow
 

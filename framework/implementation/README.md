@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Implementation Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 4 of 7 (Implementation) **Primary Audience:** Engineers **Execution
 Pattern:** Iterative (per increment)
@@ -19,13 +19,12 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                                | Description                                   |
-| ----------------------------------- | --------------------------------------------- |
-| `implementation-brief-template.md`  | Template for documenting implementation work  |
-| `implementation-guide.md`           | Stage-specific guidance and rationale         |
-| `implementation-checklist.md`       | 60-90 second readiness checklist              |
-| `implementation-ai-agent-prompt.md` | AI prompt for code generation and review      |
-| `adr/`                              | Directory for implementation decision records |
+| File                               | Description                                   |
+| ---------------------------------- | --------------------------------------------- |
+| `implementation-brief-template.md` | Template for documenting implementation work  |
+| `implementation-guide.md`          | Stage-specific guidance and rationale         |
+| `implementation-checklist.md`      | 60-90 second readiness checklist              |
+| `adr/`                             | Directory for implementation decision records |
 
 ## Suggested Workflow
 

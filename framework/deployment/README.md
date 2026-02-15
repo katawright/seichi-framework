@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Deployment Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 6 of 7 (Deployment) **Primary Audience:** DevOps Engineers, Engineers
 **Execution Pattern:** Iterative (per increment)
@@ -19,12 +19,11 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                            | Description                              |
-| ------------------------------- | ---------------------------------------- |
-| `deployment-brief-template.md`  | Template for deployment plan and results |
-| `deployment-guide.md`           | Stage-specific guidance and rationale    |
-| `deployment-checklist.md`       | 60-90 second readiness checklist         |
-| `deployment-ai-agent-prompt.md` | AI prompt for deployment planning        |
+| File                           | Description                              |
+| ------------------------------ | ---------------------------------------- |
+| `deployment-brief-template.md` | Template for deployment plan and results |
+| `deployment-guide.md`          | Stage-specific guidance and rationale    |
+| `deployment-checklist.md`      | 60-90 second readiness checklist         |
 
 ## Suggested Workflow
 
