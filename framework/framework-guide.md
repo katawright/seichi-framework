@@ -319,7 +319,7 @@ non-goals to prevent scope creep.
 - Could Have = "We'd like to, but no commitment" (aspirational)
 
 **How priorities map to increments:** During Design (foundational pass), the
-iteration plan maps MoSCoW priorities to specific increments:
+increment plan maps MoSCoW priorities to specific increments:
 
 - Must Have → early increments (Increment 1-2)
 - Should Have → later increments, based on dependencies and value
@@ -560,7 +560,7 @@ mechanisms.
 
 - Parallel increments require explicit coordination:
   - Establish shared architecture authority to resolve cross-team conflicts
-  - Manage cross-team dependencies in iteration planning
+  - Manage cross-team dependencies in increment planning
   - Plan integration testing and deployment orchestration
 - More formal gates and handoffs maintain alignment
 

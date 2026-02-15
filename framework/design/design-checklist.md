@@ -59,7 +59,7 @@ to proceed.
 - [ ] **Measurement throughline validated** - NFRs from Requirements include
       instrumentation needs
 
-### Iteration Plan
+### Increment Plan
 
 - [ ] **Iteration plan created** - MoSCoW priorities mapped to specific
       increments

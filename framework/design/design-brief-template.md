@@ -1,6 +1,6 @@
 # Design Brief
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-15
 
 ---
 
@@ -29,7 +29,7 @@ Team, Product Manager, DevOps Lead]
 # Part A: Foundational Design (Complete Once per Project)
 
 > **Purpose:** Establish the system architecture, technology choices, and
-> iteration plan that will guide all implementation work.
+> increment plan that will guide all implementation work.
 >
 > **When to complete:** After Requirements stage, before first increment
 > implementation.
@@ -523,7 +523,7 @@ in production.
 
 ---
 
-## 8. Iteration Plan
+## 8. Increment Plan
 
 **What it is:** The roadmap for delivering the system incrementally, mapping
 MoSCoW priorities to specific increments.
@@ -556,8 +556,8 @@ MoSCoW priorities to specific increments.
 - NFR-2: JWT authentication
 - NFR-3: API error handling
 
-**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 solutions architect
-(25% time) **Effort:** 4.5 person-weeks (2 engineers × 2 weeks + 0.5 architect)
+**Duration:** 1.5-2.5 weeks (estimate) **Team:** 2 full-stack engineers, 1
+solutions architect (25% time) **Effort:** 3.5-5.5 person-weeks (estimate)
 **Dependencies:** None
 
 **Why first:**
@@ -579,9 +579,9 @@ MoSCoW priorities to specific increments.
 - FR-5: Search posts by keyword
 - NFR-4: API response time <500ms
 
-**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 QA engineer (50% time)
-**Effort:** 5 person-weeks (2 engineers × 2 weeks + 1 QA × 1 week)
-**Dependencies:** Increment 1 (requires authentication)
+**Duration:** 1.5-2.5 weeks (estimate) **Team:** 2 full-stack engineers, 1 QA
+engineer (50% time) **Effort:** 4-6 person-weeks (estimate) **Dependencies:**
+Increment 1 (requires authentication)
 
 **Why second:**
 
@@ -602,9 +602,9 @@ MoSCoW priorities to specific increments.
 - FR-8: User notifications for comments
 - NFR-5: Email delivery via SendGrid
 
-**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 QA engineer (50% time)
-**Effort:** 5 person-weeks (2 engineers × 2 weeks + 1 QA × 1 week)
-**Dependencies:** Increment 2 (requires posts and comments)
+**Duration:** 1.5-2.5 weeks (estimate) **Team:** 2 full-stack engineers, 1 QA
+engineer (50% time) **Effort:** 4-6 person-weeks (estimate) **Dependencies:**
+Increment 2 (requires posts and comments)
 
 **Why third:**
 
@@ -624,9 +624,9 @@ MoSCoW priorities to specific increments.
 - FR-10: Admin dashboard for moderation
 - NFR-6: Audit logging
 
-**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 DevOps engineer (25%
-time), 1 QA engineer (50% time) **Effort:** 5.5 person-weeks (2 engineers × 2
-weeks + 0.5 DevOps + 1 QA) **Dependencies:** Increment 3
+**Duration:** 1.5-2.5 weeks (estimate) **Team:** 2 full-stack engineers, 1
+DevOps engineer (25% time), 1 QA engineer (50% time) **Effort:** 4.5-6.5
+person-weeks (estimate) **Dependencies:** Increment 3
 
 **Why fourth:**
 
@@ -676,20 +676,21 @@ weeks + 0.5 DevOps + 1 QA) **Dependencies:** Increment 3
 
 ---
 
-### Iteration Plan Summary
+### Increment Plan Summary
 
-| Increment | Type        | Requirements                    | Duration      | Team                               | Effort           |
-| --------- | ----------- | ------------------------------- | ------------- | ---------------------------------- | ---------------- |
-| 1         | Must Have   | FR-1, FR-2, NFR-1, NFR-2, NFR-3 | 2 weeks       | 2 engineers + 0.25 architect       | 4.5 person-weeks |
-| 2         | Must Have   | FR-3, FR-4, FR-5, NFR-4         | 2 weeks       | 2 engineers + 0.5 QA               | 5 person-weeks   |
-| 3         | Should Have | FR-6, FR-7, FR-8, NFR-5         | 2 weeks       | 2 engineers + 0.5 QA               | 5 person-weeks   |
-| 4         | Should Have | FR-9, FR-10, NFR-6              | 2 weeks       | 2 engineers + 0.25 DevOps + 0.5 QA | 5.5 person-weeks |
-| -         | Could Have  | FR-11, FR-12, FR-13             | Opportunistic | Evaluated during implementation    | TBD              |
-| -         | Won't Have  | FR-14, FR-15, FR-16, FR-17      | Out of scope  | N/A                                | N/A              |
+| Increment | Type        | Requirements                    | Duration (estimate) | Team                               | Effort (estimate)    |
+| --------- | ----------- | ------------------------------- | ------------------- | ---------------------------------- | -------------------- |
+| 1         | Must Have   | FR-1, FR-2, NFR-1, NFR-2, NFR-3 | 1.5-2.5 weeks       | 2 engineers + 0.25 architect       | 3.5-5.5 person-weeks |
+| 2         | Must Have   | FR-3, FR-4, FR-5, NFR-4         | 1.5-2.5 weeks       | 2 engineers + 0.5 QA               | 4-6 person-weeks     |
+| 3         | Should Have | FR-6, FR-7, FR-8, NFR-5         | 1.5-2.5 weeks       | 2 engineers + 0.5 QA               | 4-6 person-weeks     |
+| 4         | Should Have | FR-9, FR-10, NFR-6              | 1.5-2.5 weeks       | 2 engineers + 0.25 DevOps + 0.5 QA | 4.5-6.5 person-weeks |
+| -         | Could Have  | FR-11, FR-12, FR-13             | Opportunistic       | Evaluated during implementation    | TBD                  |
+| -         | Won't Have  | FR-14, FR-15, FR-16, FR-17      | Out of scope        | N/A                                | N/A                  |
 
-**Total Must Have:** 4 weeks duration, 9.5 person-weeks effort **Total Should
-Have:** 4 weeks duration, 10.5 person-weeks effort **Total Project (without
-Could Haves):** 8 weeks duration, 20 person-weeks effort
+**Total Must Have:** 3-5 weeks duration (estimate), 7.5-11.5 person-weeks effort
+(estimate) **Total Should Have:** 3-5 weeks duration (estimate), 8.5-12.5
+person-weeks effort (estimate) **Total Project (without Could Haves):** 6-10
+weeks duration (estimate), 16-24 person-weeks effort (estimate)
 
 ---
 
@@ -701,27 +702,29 @@ Could Haves):** 8 weeks duration, 20 person-weeks effort
 
 **Project Timeline:**
 
-- **Must Have (minimum viable):** 4 weeks
-- **Should Have (committed scope):** Additional 4 weeks (8 weeks total)
-- **Total delivery:** 8 weeks from start of Implementation to final Deployment
+- **Must Have (minimum viable):** 3-5 weeks (estimate)
+- **Should Have (committed scope):** Additional 3-5 weeks (6-10 weeks total,
+  estimate)
+- **Total delivery:** 6-10 weeks from start of Implementation to final
+  Deployment (estimate)
 
 **Effort Estimate:**
 
-- **Must Have:** 9.5 person-weeks
-- **Should Have:** 10.5 person-weeks
-- **Total:** 20 person-weeks
+- **Must Have:** 7.5-11.5 person-weeks (estimate)
+- **Should Have:** 8.5-12.5 person-weeks (estimate)
+- **Total:** 16-24 person-weeks (estimate)
 
 **Team Composition:**
 
-- 2 full-stack engineers (full-time, 8 weeks)
-- 1 QA engineer (part-time, ~50% over 6 weeks = 3 weeks)
-- 1 solutions architect (part-time, ~25% over 2 weeks = 0.5 weeks)
-- 1 DevOps engineer (part-time, ~25% over 2 weeks = 0.5 weeks)
+- 2 full-stack engineers (full-time, 6-10 weeks)
+- 1 QA engineer (part-time, ~50% over 4-8 weeks)
+- 1 solutions architect (part-time, ~25% over 1.5-2.5 weeks)
+- 1 DevOps engineer (part-time, ~25% over 1.5-2.5 weeks)
 
 **Cost Calculation:**
 
-To calculate project cost, apply your organization's blended rate (salary +
-benefits + overhead) to the effort estimate:
+To calculate project cost range, apply your organization's blended rate (salary
++ benefits + overhead) to the effort estimate range:
 
 1. **Determine your blended rate:**
    - Typical range: $100-$250 per hour depending on location, seniority, and
@@ -729,18 +732,19 @@ benefits + overhead) to the effort estimate:
    - Include: base salary, benefits, taxes, overhead, equipment, facilities
    - Calculate: annual fully-loaded cost per employee ÷ 2080 hours
 
-2. **Calculate total cost:**
-   - Total effort × hours per week × blended rate
-   - Example: 20 person-weeks × 40 hours = 800 hours
+2. **Calculate total cost range:**
+   - Total effort range × hours per week × blended rate
+   - Example low: 16 person-weeks × 40 hours = 640 hours
+   - Example high: 24 person-weeks × 40 hours = 960 hours
 
 3. **Example calculations:**
 
-| Blended Rate | Total Cost | Monthly Run Rate |
-| ------------ | ---------- | ---------------- |
-| $100/hour    | $80,000    | $40,000/month    |
-| $150/hour    | $120,000   | $60,000/month    |
-| $200/hour    | $160,000   | $80,000/month    |
-| $250/hour    | $200,000   | $100,000/month   |
+| Blended Rate | Cost Range (estimate) | Monthly Run Rate (estimate) |
+| ------------ | --------------------- | --------------------------- |
+| $100/hour    | $64,000-$96,000       | $32,000-$48,000/month       |
+| $150/hour    | $96,000-$144,000      | $48,000-$72,000/month       |
+| $200/hour    | $128,000-$192,000     | $64,000-$96,000/month       |
+| $250/hour    | $160,000-$240,000     | $80,000-$120,000/month      |
 
 **Note:** Rates vary significantly by organization, geography, and team
 composition. Use your actual costs.
@@ -806,13 +810,13 @@ composition. Use your actual costs.
 
 - **Initiation estimate:** [Original range from initiation-brief, e.g., "3-5
   engineers, 2-4 months, $200K-$400K"]
-- **Design estimate:** 2-3 engineers, 2 months, 20 person-weeks (~$80K-$200K
-  depending on rates)
-- **Confidence level:** Medium-High (based on detailed iteration plan with known
-  technology stack)
+- **Design estimate:** 2-3 engineers, 1.5-2.5 months, 16-24 person-weeks
+  (~$64K-$240K depending on rates, estimate)
+- **Confidence level:** Medium-High (based on detailed increment plan with known
+  technology stack, ±25% per 25/75 standard)
 - **Key refinements:**
   - Better understanding of requirements after Requirements stage
-  - Clearer increment boundaries and dependencies from iteration plan
+  - Clearer increment boundaries and dependencies from increment plan
   - Identified technical risks and mitigation strategies
 
 **Risks and Mitigation:**
@@ -840,7 +844,7 @@ composition. Use your actual costs.
 >
 > **When to complete:** Before implementing each increment.
 >
-> **Complete this section for each increment** defined in the iteration plan.
+> **Complete this section for each increment** defined in the increment plan.
 > Copy and fill out sections 9-13 for every increment.
 
 ---
@@ -851,7 +855,7 @@ composition. Use your actual costs.
 
 **Requirements in Scope:**
 
-- [List requirement IDs from iteration plan, e.g., FR-1, FR-2, NFR-1]
+- [List requirement IDs from increment plan, e.g., FR-1, FR-2, NFR-1]
 
 **Acceptance Criteria:**
 

@@ -15,11 +15,11 @@ Design has a **dual execution pattern:**
 **Foundational pass (once per project):**
 
 - Requires: completed Requirements Document with MoSCoW priorities
-- Produces: system architecture, technology decisions, iteration plan
+- Produces: system architecture, technology decisions, increment plan
 
 **Iterative pass (per increment):**
 
-- Requires: foundational architecture + increment from iteration plan
+- Requires: foundational architecture + increment from increment plan
 - Produces: detailed component designs, API specs, data model changes
 
 ## Artifacts
@@ -40,7 +40,7 @@ Design has a **dual execution pattern:**
 2. Use the [Manual Process Guide](../framework-manual-process.md) to engage AI
    assistant in brainstorming architecture
 3. Fill out foundational sections of design brief
-4. Create iteration plan mapping MoSCoW to increments
+4. Create increment plan mapping MoSCoW to increments
 5. Create ADRs for significant technology decisions
 6. Run `design-checklist.md`
 7. Conduct alignment review with stakeholders
@@ -48,7 +48,7 @@ Design has a **dual execution pattern:**
 
 ### Iterative Design (Per Increment)
 
-1. Review iteration plan for current increment scope
+1. Review increment plan for current increment scope
 2. Use the [Manual Process Guide](../framework-manual-process.md) to engage AI
    assistant in detailing component designs
 3. Fill out iterative sections of design brief
@@ -59,12 +59,12 @@ Design has a **dual execution pattern:**
 ## Stage Outputs
 
 **Foundational:** Architecture diagrams, technology stack with ADRs, data/API
-architecture, security approach, observability strategy, iteration plan.
+architecture, security approach, observability strategy, increment plan.
 
 **Iterative:** Detailed component designs, API specs, data model changes, test
 strategy for increment.
 
-**Handoff:** Implementation stage receives design specs and iteration plan.
+**Handoff:** Implementation stage receives design specs and increment plan.
 
 ---
 
