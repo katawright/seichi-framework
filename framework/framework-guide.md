@@ -45,7 +45,7 @@ the organization.
 
 ## Key Concepts
 
-This guide covers five major concepts that structure the framework:
+This guide covers six major concepts that structure the framework:
 
 **[SDLC Stages](#sdlc-stages)** — The framework defines stages that work for any
 methodology (agile, waterfall, hybrid). Stages follow different execution
@@ -65,6 +65,10 @@ ensuring goals actively guide development and enable data-driven validation.
 **[MoSCoW Prioritization](#moscow-prioritization)** — A coarse prioritization
 method (Must/Should/Could/Won't Have) used during Requirements to organize
 features before increment boundaries are defined.
+
+**[Greenfield vs. Brownfield Projects](#greenfield-vs-brownfield-projects)** —
+How the framework adapts for new projects built from scratch versus extensions
+to existing systems, including infrastructure setup and constraint management.
 
 **[AI Autonomy Overview](#ai-autonomy-overview)** — Guidance for how
 independently AI can operate at each stage before requiring human approval,
@@ -328,14 +332,163 @@ shapes design and testing.
 **Discovery** — Early-stage investigative work to reduce uncertainty. Maps to
 the Initiation and Requirements stages.
 
+**Greenfield project** — A new software project built from scratch with no
+existing system, codebase, or infrastructure.
+
+**Brownfield project** — A project that extends, modifies, or enhances an
+existing system with established codebase, infrastructure, and constraints.
+
+---
+
+## Greenfield vs. Brownfield Projects
+
+The framework adapts to both greenfield (new) and brownfield (existing) projects
+by normalizing the experience: **both project types converge at the same point
+where working infrastructure exists and feature delivery can proceed
+consistently**.
+
+### Definitions
+
+**Greenfield project** — Building a new system from scratch. Everything must be
+created: codebase, infrastructure, CI/CD pipelines, deployment systems,
+monitoring, and observability. Examples: new product launch, startup MVP,
+internal tool for new capability.
+
+**Brownfield project** — Extending or enhancing an existing system. The codebase
+exists, infrastructure is in place, and there are established patterns,
+constraints, and technical debt. Examples: adding features to production
+application, modernizing legacy system, migrating to new architecture.
+
+### Key Principle
+
+**Greenfield projects invest Increment 1 in establishing infrastructure so that
+subsequent increments operate identically to brownfield projects.** Once
+infrastructure exists, both project types deliver features using the same
+iterative cycle.
+
+### How the Framework Adapts
+
+The framework's 7 stages apply to both project types, but activities and
+emphasis differ:
+
+| Stage            | Greenfield                                   | Brownfield                                        |
+| ---------------- | -------------------------------------------- | ------------------------------------------------- |
+| **Initiation**   | Define vision and objectives from scratch    | Understand existing system + define new goals     |
+| **Requirements** | All requirements are new                     | New requirements + existing system constraints    |
+| **Design**       | Full architecture + infrastructure plan      | Adapt/extend architecture + assess infrastructure |
+| **Increment 1**  | **Establish infrastructure** (bootstrap)     | **Deliver first feature** (infrastructure exists) |
+| **Increment 2+** | Deliver features with established infra      | Deliver features with established infra           |
+| **Support**      | Monitor new system, no legacy considerations | Monitor changes, consider existing user base      |
+
+### Increment 1: The Critical Difference
+
+**Greenfield Increment 1** is the **bootstrap increment** — establishing the
+foundational infrastructure before feature development begins:
+
+- Set up version control, branching strategy, code organization
+- Establish CI/CD pipelines (build, test, deploy automation)
+- Configure development, staging, and production environments
+- Implement monitoring, logging, and observability infrastructure
+- Set up security scanning, secret management, and access controls
+- Create deployment runbooks and rollback procedures
+- Implement measurement/telemetry systems (from success criteria)
+- Deploy a "hello world" application to validate the full pipeline
+
+**Outcome:** Working infrastructure that can support feature delivery.
+
+**Brownfield Increment 1** proceeds directly to **feature delivery** because
+infrastructure already exists:
+
+- Infrastructure is already operational
+- CI/CD pipelines exist (may need minor adaptation)
+- Monitoring and deployment systems are in place
+- Focus is on delivering the first new feature/capability
+
+**Outcome:** First feature increment delivered using existing infrastructure.
+
+### Design Stage: Infrastructure Planning
+
+During **Design (foundational)**, infrastructure planning is a **required
+output** for both project types:
+
+**Greenfield infrastructure planning includes:**
+
+- Architecture Decision Records (ADRs) for infrastructure choices
+- CI/CD pipeline design (tools, stages, quality gates)
+- Environment strategy (dev, staging, production)
+- Deployment strategy (blue-green, canary, rolling, etc.)
+- Monitoring and observability architecture
+- Security and compliance infrastructure
+- Iteration plan identifying **Increment 1 = establish infrastructure**
+
+**Brownfield infrastructure planning includes:**
+
+- Assessment of existing infrastructure capabilities
+- ADRs for infrastructure adaptations or extensions
+- Integration plan with existing CI/CD pipelines
+- Deployment strategy within existing constraints
+- Monitoring extensions or dashboard updates
+- Security and compliance adjustments
+- Iteration plan identifying **Increment 1 = first feature**
+
+**Key output:** Both project types exit Design (foundational) with a clear
+infrastructure plan that enables subsequent feature delivery.
+
+### Requirements Stage: Capturing Constraints
+
+During **Requirements**, brownfield projects must **capture existing system
+constraints** that new work must satisfy:
+
+**Brownfield-specific requirements include:**
+
+- **Performance constraints:** Existing SLAs (e.g., "API responses < 1 second")
+- **Security policies:** Authentication, authorization, data encryption
+  standards
+- **API contracts:** Existing interfaces that must remain compatible
+- **Data schemas:** Database structures, data formats, integration formats
+- **Compliance requirements:** Regulatory constraints already in place
+- **Architectural constraints:** Patterns, frameworks, languages in use
+- **Operational constraints:** Deployment windows, rollback requirements
+
+These constraints become **Non-Functional Requirements (NFRs)** that shape
+design and testing. See the [Requirements Guide](requirements/requirements-
+guide.md) for detailed guidance on capturing brownfield constraints.
+
+### When Both Types Converge
+
+After Increment 1, **both greenfield and brownfield projects operate
+identically**:
+
+- Infrastructure is established and operational
+- Feature delivery follows the same iterative cycle: Design → Implementation →
+  Verification → Deployment
+- Deployment processes are consistent
+- Monitoring and observability are in place
+- Support operates the same way
+
+**This normalization is the key insight:** By investing in infrastructure setup
+upfront (greenfield) or leveraging existing infrastructure (brownfield), the
+framework provides a consistent experience for feature delivery regardless of
+project type.
+
+### Detailed Guidance
+
+Stage-specific greenfield and brownfield guidance is documented in each stage's
+guide:
+
+- **[Design Guide](design/design-guide.md)** — Infrastructure planning outputs
+  and bootstrap increment guidance
+- **[Requirements Guide](requirements/requirements-guide.md)** — Capturing
+  existing system constraints for brownfield projects
+- **[Implementation Guide](implementation/implementation-guide.md)** — Bootstrap
+  increment execution for greenfield projects
+
 ---
 
 ## Future Sections
 
 The following topics will be added to this guide as the framework matures:
 
-- **Greenfield vs. brownfield guidance** — How the framework adapts for new
-  projects vs. existing systems
 - **Team size adaptation** — How to scale the framework for solo developers,
   small teams, and large organizations
 
