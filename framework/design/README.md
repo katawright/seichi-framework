@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Design Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 3 of 7 (Design) **Primary Audience:** Engineers, Solutions Architects
 **Execution Pattern:** Foundational + Iterative
@@ -24,21 +24,21 @@ Design has a **dual execution pattern:**
 
 ## Artifacts
 
-| File                        | Description                                   |
-| --------------------------- | --------------------------------------------- |
-| `design-brief-template.md`  | Template for architecture and detailed design |
-| `design-guide.md`           | Stage-specific guidance and rationale         |
-| `design-checklist.md`       | 60-90 second readiness checklist              |
-| `design-ai-agent-prompt.md` | AI prompt for design and architecture         |
-| `../adr-template.md`        | Architecture Decision Record template         |
-| `adr/`                      | Directory for project ADR files               |
+| File                       | Description                                   |
+| -------------------------- | --------------------------------------------- |
+| `design-brief-template.md` | Template for architecture and detailed design |
+| `design-guide.md`          | Stage-specific guidance and rationale         |
+| `design-checklist.md`      | 60-90 second readiness checklist              |
+| `../adr-template.md`       | Architecture Decision Record template         |
+| `adr/`                     | Directory for project ADR files               |
 
 ## Suggested Workflow
 
 ### Foundational Design
 
 1. Review Requirements Document and all FRs/NFRs
-2. Use AI prompt to brainstorm architecture
+2. Use the [Manual Process Guide](../framework-manual-process.md) to engage AI
+   assistant in brainstorming architecture
 3. Fill out foundational sections of design brief
 4. Create iteration plan mapping MoSCoW to increments
 5. Create ADRs for significant technology decisions
@@ -49,7 +49,8 @@ Design has a **dual execution pattern:**
 ### Iterative Design (Per Increment)
 
 1. Review iteration plan for current increment scope
-2. Use AI prompt to detail component designs
+2. Use the [Manual Process Guide](../framework-manual-process.md) to engage AI
+   assistant in detailing component designs
 3. Fill out iterative sections of design brief
 4. Specify APIs, data models, component interactions
 5. Run `design-checklist.md` (iterative items)

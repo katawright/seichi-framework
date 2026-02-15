@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Initiation Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 1 of 7 (Initiation) **Primary Audience:** Product Managers, Business
 Analysts **Execution Pattern:** Foundational (once per project, revisitable)
@@ -25,17 +25,17 @@ This is the **first stage** — designed for anyone with an idea.
 
 ## Artifacts
 
-| File                            | Description                                  |
-| ------------------------------- | -------------------------------------------- |
-| `initiation-brief-template.md`  | Template for your project's initiation brief |
-| `initiation-guide.md`           | Stage-specific guidance and rationale        |
-| `initiation-checklist.md`       | 60-90 second readiness checklist             |
-| `initiation-ai-agent-prompt.md` | AI prompt for drafting briefs                |
+| File                           | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| `initiation-brief-template.md` | Template for your project's initiation brief |
+| `initiation-guide.md`          | Stage-specific guidance and rationale        |
+| `initiation-checklist.md`      | 60-90 second readiness checklist             |
 
 ## Suggested Workflow
 
-1. **Draft:** Use `initiation-brief-template.md` as structure. Use
-   `initiation-ai-agent-prompt.md` to have AI help draft from your project notes
+1. **Draft:** Use `initiation-brief-template.md` as structure. Use the
+   [Manual Process Guide](../framework-manual-process.md) to engage your AI
+   assistant in helping draft from your project notes
 2. **Validate:** Edit the brief for correctness — you own the final content
 3. **Check readiness:** Run `initiation-checklist.md` before circulating
 4. **Reference:** Consult `initiation-guide.md` for deeper guidance

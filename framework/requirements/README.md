@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Requirements Stage
 
-**Framework Version:** 0.8.0 **Last Updated:** 2026-02-14
+**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
 
 **Stage:** 2 of 7 (Requirements) **Primary Audience:** Business Analysts,
 Product Managers **Execution Pattern:** Foundational (once per project,
@@ -27,17 +27,17 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                              | Description                             |
-| --------------------------------- | --------------------------------------- |
-| `requirements-brief-template.md`  | Template for your requirements document |
-| `requirements-guide.md`           | Stage-specific guidance and rationale   |
-| `requirements-checklist.md`       | 60-90 second readiness checklist        |
-| `requirements-ai-agent-prompt.md` | AI prompt for drafting requirements     |
+| File                             | Description                             |
+| -------------------------------- | --------------------------------------- |
+| `requirements-brief-template.md` | Template for your requirements document |
+| `requirements-guide.md`          | Stage-specific guidance and rationale   |
+| `requirements-checklist.md`      | 60-90 second readiness checklist        |
 
 ## Suggested Workflow
 
-1. **Draft:** Use `requirements-brief-template.md` as structure. Use AI prompt +
-   Initiation Brief + stakeholder input
+1. **Draft:** Use `requirements-brief-template.md` as structure. Use the
+   [Manual Process Guide](../framework-manual-process.md) to engage AI
+   assistant with Initiation Brief + stakeholder input
 2. **Elicit & validate:** Conduct stakeholder alignment reviews to refine
    requirements
 3. **Validate AI output:** Edit for correctness — you own the final content

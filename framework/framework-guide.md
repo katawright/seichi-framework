@@ -43,6 +43,58 @@ the organization.
 
 ---
 
+## How to Use This Framework
+
+The AI-Assisted SDLC framework can be used in two ways, depending on whether
+dedicated tooling exists for your team.
+
+### Option 1: AI-Assisted Manual Process (Available Now)
+
+Work through the framework by asking your AI assistant to guide you through
+each stage. The framework documents provide the structure and concepts; your
+AI assistant helps you apply them to your specific project context.
+
+**Getting started:**
+
+See the **[Manual Process Guide](framework-manual-process.md)** for a
+comprehensive guide to using the framework with any AI assistant. The guide
+includes:
+
+- Template prompt with project context placeholders
+- Guidance for different AI tools (Claude Code, ChatGPT, Copilot, etc.)
+- Example prompts for each stage
+- Tips for effective AI collaboration across multiple sessions
+
+**Using this approach:**
+
+1. Start with the Initiation stage
+2. Use the Manual Process Guide to engage your AI assistant
+3. Work iteratively across multiple sessions as needed (stages aren't
+   one-conversation tasks)
+4. Complete the brief template for each stage (outputs)
+5. Validate with the checklist before proceeding to the next stage
+6. Adapt prompts based on your AI tool's capabilities and project needs
+
+**Key principle:** The framework provides the process structure and guidance.
+Your AI assistant helps you think through the activities and produce the
+artifacts. You remain in control of all decisions and outputs.
+
+### Option 2: Framework Application (In Development)
+
+A dedicated application is being developed (using this framework itself -
+dogfooding) that will:
+
+- Read framework documents automatically
+- Generate contextual prompts based on your project
+- Manage workflow and artifact progression
+- Track completion across stages
+- Adapt to your chosen AI tool and team structure
+
+This application will provide a more structured experience while maintaining
+the framework's flexibility. It is planned for future release.
+
+---
+
 ## Key Concepts
 
 This guide covers six major concepts that structure the framework:
