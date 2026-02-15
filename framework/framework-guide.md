@@ -1,6 +1,6 @@
 # Framework Guide
 
-**Last Updated:** 2026-02-14
+**Last Updated:** 2026-02-15
 
 > Framework-wide concepts that apply across all stages. Stage-specific guidance
 > is in each stage's guide.
@@ -485,12 +485,35 @@ guide:
 
 ---
 
-## Future Sections
+## Team Size Adaptation
 
-The following topics will be added to this guide as the framework matures:
+The framework's seven stages remain the same regardless of team size. What
+changes is the level of formality, documentation detail, and coordination
+mechanisms.
 
-- **Team size adaptation** — How to scale the framework for solo developers,
-  small teams, and large organizations
+**Solo developer:**
+
+- You fulfill all roles—that's expected
+- Lighter documentation is appropriate (brief notes vs. formal docs, mental
+  ADRs)
+- Gates become self-checkpoints or quick stakeholder check-ins
+- **Don't skip measurement**—success criteria are still your north star
+
+**Small teams (2-5):**
+
+- Role overlap is natural and expected
+- Keep process lightweight; favor communication over documentation
+
+**Large teams (6+):**
+
+- Parallel increments require explicit coordination:
+  - Establish shared architecture authority to resolve cross-team conflicts
+  - Manage cross-team dependencies in iteration planning
+  - Plan integration testing and deployment orchestration
+- More formal gates and handoffs maintain alignment
+
+**Key principle:** Stages define *what* work to do. Team size determines *how
+formal* and *how coordinated*.
 
 ---
 
