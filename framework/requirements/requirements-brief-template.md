@@ -64,7 +64,7 @@ suggest, humans own all decisions and validate correctness with stakeholders.
 > Have / Should Have / Could Have / Won't Have) for requirements prioritization.
 > At the Requirements stage (foundational), you're doing coarse prioritization
 > before increment boundaries are known. The Design stage will create an
-> **iteration plan** that maps these priorities to specific increments.
+> **increment plan** that maps these priorities to specific increments.
 
 ### Must Have (first usable release)
 

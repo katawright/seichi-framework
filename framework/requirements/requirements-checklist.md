@@ -73,7 +73,7 @@ is ready to guide Design stage work.
     - Clear distinction between committed (Must/Should Have) and aspirational
       (Could Have)
     - Prioritization uses MoSCoW method for coarse prioritization
-    - Design stage will map priorities to specific increments via iteration plan
+    - Design stage will map priorities to specific increments via increment plan
     - Dependencies between requirements understood
 
 12. **A review occurred (engineering + product; security/compliance if

@@ -1,6 +1,6 @@
 # Design Guide
 
-**Last Updated:** 2026-02-14
+**Last Updated:** 2026-02-15
 
 > Stage-specific guidance for Design. For cross-cutting framework concepts, see
 > [framework-guide.md](../framework-guide.md).
@@ -10,7 +10,7 @@
 ## Quick Reference
 
 **Purpose:** Translate requirements into implementable technical solutions —
-architecture, technology choices, and an iteration plan for incremental
+architecture, technology choices, and an increment plan for incremental
 delivery.
 
 **Primary roles:** Engineers, Solutions Architects
@@ -40,7 +40,7 @@ delivery.
 **Common pitfalls:**
 
 - Over-designing future increments (YAGNI)
-- No iteration plan — jumping straight to coding
+- No increment plan — jumping straight to coding
 - Technology chosen without cost research
 - Security/performance considered as afterthoughts
 - No ADRs for significant decisions
@@ -103,7 +103,7 @@ The Design stage has a unique **dual execution pattern**.
 - **Infrastructure planning (CI/CD pipelines, deployment, environments,
   monitoring)**
 - Cross-cutting concerns (security, observability, performance approach)
-- Iteration planning (mapping MoSCoW priorities to increments)
+- Increment planning (mapping MoSCoW priorities to increments)
 
 **Key principle:** Make decisions that are expensive to change later.
 
@@ -132,7 +132,7 @@ Foundational design creates the rules; iterative design applies them:
 - Foundational: "We use REST APIs with JWT auth"
 - Iterative: "POST /api/v1/posts with Bearer token"
 
-Foundational design creates the iteration plan; iterative design executes it:
+Foundational design creates the increment plan; iterative design executes it:
 
 - Foundational: "Increment 1 includes FR-1, FR-2, FR-3"
 - Iterative: "Detailed design for user registration (FR-1)"
@@ -199,12 +199,22 @@ Document significant technology choices as ADRs.
 
 ---
 
-## Creating Iteration Plans
+## Creating Increment Plans
 
-The iteration plan is a **key output of foundational design**. It maps MoSCoW
+The increment plan is a **key output of foundational design**. It maps MoSCoW
 priorities from Requirements to specific, deliverable increments. See
 [Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization) for
 priority definitions.
+
+### Planning Best Practices
+
+- **Use range-based estimates:** Express duration and effort as ranges (e.g.,
+  1.5-2.5 weeks), not single points, to acknowledge inherent uncertainty
+- **Deliver value incrementally:** each increment ships something usable
+- **Build foundations first:** auth, database, API framework before features
+- **De-risk early:** technically uncertain work in early increments
+- **Allow for discovery:** don't over-plan distant increments
+- **Make Could Haves truly optional:** don't commit in timelines
 
 ### Planning Process
 
@@ -212,32 +222,33 @@ priority definitions.
    criteria
 2. **Identify dependencies** — which requirements depend on others?
 3. **Assess risk and complexity** — technically uncertain items first
-4. **Group into increments** — Must Haves first, 1-3 weeks each, delivering
-   testable value
+4. **Group into increments** — Must Haves first, delivering testable value
 5. **Sequence increments** — dependencies first, then risk/value balance
 6. **Map Should Haves** — assign to later increments based on dependencies and
    value
 7. **Handle Could Haves** — mark as opportunistic, "build if easy, skip if hard"
 8. **Document Won't Haves** — explicitly list exclusions
-9. **Estimate effort** — person-weeks per increment (team size x duration)
-10. **Calculate cost for Gate 2** — effort x blended rate, compare to Initiation
-    estimates
+9. **Estimate duration and effort as ranges** — duration (calendar time to
+   complete, e.g., 1.5-2.5 weeks) and effort (person-weeks, e.g., 4-5
+   person-weeks) for each increment
+10. **Calculate cost range for Gate 2** — effort range x blended rate, compare
+    to Initiation estimates
 
-### Iteration Plan Format
+### Increment Plan Format
 
 ```markdown
-## Iteration Plan
+## Increment Plan
 
 ### Increment 1: [Name] (Must Have - Foundation)
 
 **Goal:** [What this increment delivers] **Requirements:** FR-1, FR-2, NFR-1,
-NFR-2 **Duration:** 2 weeks **Team:** 2 engineers, 1 architect (25%) **Effort:**
-4.5 person-weeks **Dependencies:** None
+NFR-2 **Duration:** 1.5-2.5 weeks (estimate) **Team:** 2 engineers, 1 architect
+(25%) **Effort:** 4-5 person-weeks (estimate) **Dependencies:** None
 
 ### Increment 2: [Name] (Must Have - Core)
 
-**Requirements:** FR-3, FR-4, FR-5 **Duration:** 2 weeks **Dependencies:**
-Increment 1
+**Requirements:** FR-3, FR-4, FR-5 **Duration:** 1.5-2.5 weeks (estimate)
+**Dependencies:** Increment 1
 
 ### Could Have (Opportunistic)
 
@@ -249,17 +260,116 @@ Increment 1
 
 ### Gate 2 Cost Calculation
 
-Total effort × blended rate = project cost Compare to Initiation estimates
+Total effort range × blended rate = project cost range Compare to Initiation
+estimates
 ```
 
-### Best Practices
+### Increment Sizing Guidance
 
-- **Right-size increments:** 1-3 weeks, 3-7 requirements each
-- **Deliver value incrementally:** each increment ships something usable
-- **Build foundations first:** auth, database, API framework before features
-- **De-risk early:** technically uncertain work in early increments
-- **Allow for discovery:** don't over-plan distant increments
-- **Make Could Haves truly optional:** don't commit in timelines
+Well-sized increments deliver testable value while fitting your team's cadence.
+
+**Characteristics of well-sized increments:**
+
+- Delivers testable, demonstrable functionality (not partial features)
+- Can be deployed independently or builds on prior increments
+- Fits within your deployment cadence and stakeholder feedback cycle
+- Balances value delivery with deployment/validation overhead
+
+**Methodology examples:**
+
+- **Scrum:** Align to sprint length (commonly 2 weeks per Scrum Guide); deliver
+  1 increment per sprint
+- **Kanban/Continuous Flow:** Size for frequent deployment (3-7 day cycle
+  times); focus on WIP limits
+- **SAFe:** Fit increments within Program Increments; break large features into
+  smaller chunks
+- **Waterfall:** Use milestones as increments (architecture milestone, MVP
+  milestone, etc.)
+
+**Context considerations:**
+
+- **Team size:** Solo developers favor smaller increments (3-7 days); larger
+  teams can tackle 2-3 weeks or parallelize
+- **Deployment maturity:** Mature CI/CD enables smaller increments; manual
+  processes favor larger batches
+- **Domain complexity:** Complex/uncertain domains benefit from smaller
+  increments to manage risk
+
+**Warning signs - increments too large:**
+
+- Cannot deliver within planned timeframe
+- Long gaps between deployments or user feedback
+- High risk if increment needs to be cut
+
+**Warning signs - increments too small:**
+
+- Deployment overhead exceeds value delivered
+- Increments deliver partial features that cannot be tested independently
+- Excessive coordination between tightly-coupled increments
+
+**Research backing:** DORA State of DevOps reports show smaller batch sizes and
+frequent deployment correlate with higher performance. Lean manufacturing
+principles support minimizing work-in-progress and batch size.
+
+### Increment Estimation Guidance
+
+Software estimation is probabilistic, not deterministic. Research shows that even
+"good" estimates vary significantly from actuals.
+
+**The 25/75 standard:**
+
+Conte, Dunsmore, and Shen (1986) established that "good" software estimates fall
+within **±25% of actual effort 75% of the time**. This demonstrates that
+single-point estimates create false precision — uncertainty is inherent in
+software work, and ranges communicate realistic confidence levels.
+
+**Citation:** Conte, S. D., Dunsmore, H. E., & Shen, V. Y. (1986). *Software
+Engineering Metrics and Models*. Benjamin/Cummings Publishing Company.
+
+**Duration vs. Effort:**
+
+- **Duration:** Calendar time to complete the increment (e.g., 1.5-2.5 weeks) —
+  affects project timeline and stakeholder expectations
+- **Effort:** Total person-time required (e.g., 4-5 person-weeks) — affects cost
+  and staffing decisions
+- Both should be expressed as ranges to acknowledge uncertainty
+
+**Use range-based estimates:**
+
+**Good:**
+
+- Duration: 1.5-2.5 weeks (estimate)
+- Effort: 8-12 person-days (estimate)
+- Cost: $40K-$60K (estimate)
+
+**Avoid:**
+
+- Duration: 2 weeks
+- Effort: 10 person-days
+- Cost: $50K
+
+**Estimation techniques:**
+
+Multiple techniques exist for estimating software work. Choose based on your
+team's context, or combine techniques for better accuracy:
+
+**Expert judgment with historical data:** Individual or lead engineer estimates
+based on experience, calibrated against past similar work. Fast and common, but
+validate with team review.
+
+**Planning Poker (team-based):** Team collaboratively estimates using relative
+sizing (story points). Based on Wideband Delphi method. Builds consensus and
+surfaces assumptions. Time-consuming but valuable for complex or uncertain work.
+
+**Three-point estimation:** Estimate optimistic (best case), most likely, and
+pessimistic (worst case) scenarios. Use optimistic-pessimistic as your range
+(e.g., 6-14 days), or calculate weighted average: (O + 4M + P) / 6.
+
+**Decomposition:** Break increment into tasks, estimate tasks individually, sum
+with contingency. More accurate for detailed design, but time-intensive.
+
+**No single technique is "best."** The key is using ranges, acknowledging
+uncertainty, and refining estimates as more information emerges.
 
 ---
 
@@ -342,7 +452,7 @@ Bootstrap** — establishing the foundation before feature work begins.
    - Compliance automation (audit logs, data retention policies)
    - **ADR:** Document security tooling and policies
 
-7. **Iteration Plan Update**
+7. **Increment Plan Update**
    - **Increment 1: Bootstrap** — establish all infrastructure above
    - Increment 2+: Feature delivery using established infrastructure
    - Success criteria: "Deploy hello world app through full pipeline to
@@ -394,7 +504,7 @@ building from scratch.
    - Compliance and security requirements
    - Performance and reliability SLAs to maintain
 
-4. **Iteration Plan Update**
+4. **Increment Plan Update**
    - **Increment 1:** First feature increment (infrastructure exists)
    - Include infrastructure adaptations in relevant increments (e.g., "Add Redis
      to staging in Increment 2")
@@ -647,7 +757,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 3. Update design artifacts
 4. Create ADR documenting the change
 5. Communicate to affected teams
-6. Update iteration plan and downstream work
+6. Update increment plan and downstream work
 
 ---
 
