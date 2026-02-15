@@ -411,6 +411,14 @@ exists, infrastructure is in place, and there are established patterns,
 constraints, and technical debt. Examples: adding features to production
 application, modernizing legacy system, migrating to new architecture.
 
+**Brownfield projects have two scenarios:**
+
+- **First AI-assisted project:** System exists but architecture, infrastructure,
+  and conventions are not documented for AI use. Requires discovery and
+  documentation (similar to greenfield bootstrap).
+- **Subsequent AI-assisted projects:** AI context exists from prior work. Can
+  proceed directly to feature delivery.
+
 ### Key Principle
 
 **Greenfield projects invest Increment 1 in establishing infrastructure so that
@@ -423,14 +431,14 @@ iterative cycle.
 The framework's 7 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage            | Greenfield                                   | Brownfield                                        |
-| ---------------- | -------------------------------------------- | ------------------------------------------------- |
-| **Initiation**   | Define vision and objectives from scratch    | Understand existing system + define new goals     |
-| **Requirements** | All requirements are new                     | New requirements + existing system constraints    |
-| **Design**       | Full architecture + infrastructure plan      | Adapt/extend architecture + assess infrastructure |
-| **Increment 1**  | **Establish infrastructure** (bootstrap)     | **Deliver first feature** (infrastructure exists) |
-| **Increment 2+** | Deliver features with established infra      | Deliver features with established infra           |
-| **Support**      | Monitor new system, no legacy considerations | Monitor changes, consider existing user base      |
+| Stage            | Greenfield                                | Brownfield (First AI)                                      | Brownfield (Has Context)                          |
+| ---------------- | ----------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------- |
+| **Initiation**   | Define vision and objectives from scratch | Understand existing system + define new goals              | Understand existing system + define new goals     |
+| **Requirements** | All requirements are new                  | New requirements + existing system constraints             | New requirements + existing system constraints    |
+| **Design**       | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 1           | Adapt/extend architecture + assess infrastructure |
+| **Increment 1**  | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context   | **Deliver first feature** (infrastructure exists) |
+| **Increment 2+** | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
+| **Support**      | Monitor new system                        | Monitor changes, consider existing user base               | Monitor changes, consider existing user base      |
 
 ### Increment 1: The Critical Difference
 
@@ -448,15 +456,32 @@ foundational infrastructure before feature development begins:
 
 **Outcome:** Working infrastructure that can support feature delivery.
 
-**Brownfield Increment 1** proceeds directly to **feature delivery** because
-infrastructure already exists:
+**Brownfield Increment 1 (First AI-Assisted Project)** is the **discovery
+increment** — documenting existing architecture, infrastructure, and conventions
+for AI context:
+
+- Use AI tools to discover system architecture, tech stack, and patterns
+- Document architecture overview, components, and data flows
+- Capture infrastructure setup (CI/CD, deployment, monitoring)
+- Record coding conventions and established practices
+- Create retroactive ADRs for significant existing decisions
+- Document constraints (SLAs, policies, API contracts)
+- Store in AGENTS.md and docs/ structure for future AI use
+
+**Outcome:** Documented context that enables effective AI assistance on future
+projects.
+
+**Brownfield Increment 1 (Subsequent Projects)** proceeds directly to **feature
+delivery** because infrastructure exists and AI context is documented:
 
 - Infrastructure is already operational
 - CI/CD pipelines exist (may need minor adaptation)
 - Monitoring and deployment systems are in place
+- AI context documented from prior projects
 - Focus is on delivering the first new feature/capability
 
-**Outcome:** First feature increment delivered using existing infrastructure.
+**Outcome:** First feature increment delivered using existing infrastructure,
+with updated documentation.
 
 ### Design Stage: Infrastructure Planning
 
@@ -473,18 +498,35 @@ output** for both project types:
 - Security and compliance infrastructure
 - Iteration plan identifying **Increment 1 = establish infrastructure**
 
-**Brownfield infrastructure planning includes:**
+**Brownfield infrastructure planning (first AI-assisted project) includes:**
 
-- Assessment of existing infrastructure capabilities
+- Assessment of existing infrastructure capabilities (team's tribal knowledge)
 - ADRs for infrastructure adaptations or extensions
 - Integration plan with existing CI/CD pipelines
 - Deployment strategy within existing constraints
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
-- Iteration plan identifying **Increment 1 = first feature**
+- Increment plan identifying **Increment 1 = document existing context for AI**
+  - What to document: architecture, conventions, constraints, infrastructure
+  - Documentation structure approach (use existing or propose new)
+  - Discovery approach (AI tools + team expert verification)
+  - **Note:** If Increment 1 reveals significant gaps in team's understanding,
+    may trigger return to Design stage to reassess plans
 
-**Key output:** Both project types exit Design (foundational) with a clear
-infrastructure plan that enables subsequent feature delivery.
+**Brownfield infrastructure planning (subsequent projects) includes:**
+
+- Assessment of existing infrastructure capabilities (use documented context)
+- ADRs for infrastructure adaptations or extensions
+- Integration plan with existing CI/CD pipelines
+- Deployment strategy within existing constraints
+- Monitoring extensions or dashboard updates
+- Security and compliance adjustments
+- Increment plan identifying **Increment 1 = first feature**
+
+**Key output:** All project types exit Design (foundational) with a clear plan
+that enables subsequent feature delivery — greenfield and brownfield-first
+establish foundations (infrastructure or documentation), brownfield-subsequent
+proceeds to features.
 
 ### Requirements Stage: Capturing Constraints
 

@@ -27,7 +27,7 @@ Help me work through the [STAGE NAME] stage for my project:
 
 **Project context:**
 - Description: [brief description of your project]
-- Type: [greenfield/brownfield]
+- Type: [greenfield / brownfield - first AI project / brownfield - has context]
 - Tech stack: [if known, list key technologies]
 - Team size: [solo/small (2-5)/large (6+)]
 
@@ -46,7 +46,9 @@ Replace the bracketed placeholders with your project's specifics:
 
 - **[STAGE NAME]:** Start with "Initiation" and progress through stages
 - **[brief description]:** 1-2 sentences about what you're building
-- **[greenfield/brownfield]:** New project or extending existing system
+- **[Type]:** "greenfield" (new project), "brownfield - first AI project"
+  (existing system, no AI context), or "brownfield - has context" (existing
+  system with documented context)
 - **[tech stack]:** Known technologies (or "to be determined")
 - **[team size]:** Solo, small team, or large team
 
@@ -129,7 +131,7 @@ Help me work through the Initiation stage for my project:
 - Description: A web application for tracking employee onboarding tasks,
   ensuring new hires complete all required steps (paperwork, training,
   equipment setup) within their first 30 days.
-- Type: Greenfield (new application)
+- Type: greenfield
 - Tech stack: To be determined (will decide during Design stage)
 - Team size: Small (3 engineers, 1 product manager)
 
