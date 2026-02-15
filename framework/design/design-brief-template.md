@@ -4,11 +4,10 @@
 
 ---
 
-**Project Name:** [Project Name]
-**Design Type:** [ ] Foundational (Initial Architecture) | [ ] Iterative (Increment Detail)
-**Date:** [YYYY-MM-DD]
-**Author(s):** [Lead Architect / Engineering Lead]
-**Reviewers:** [Engineering Team, Product Manager, DevOps Lead]
+**Project Name:** [Project Name] **Design Type:** [ ] Foundational (Initial
+Architecture) | [ ] Iterative (Increment Detail) **Date:** [YYYY-MM-DD]
+**Author(s):** [Lead Architect / Engineering Lead] **Reviewers:** [Engineering
+Team, Product Manager, DevOps Lead]
 
 ---
 
@@ -16,21 +15,27 @@
 
 - **Related Requirements:** [Link to requirements-brief.md]
 - **Increment:** [If iterative: Increment number/name] | [If foundational: N/A]
-- **Execution Pattern:** Foundational + Iterative (see [STAGES.md](../../STAGES.md))
+- **Execution Pattern:** Foundational + Iterative (see
+  [STAGES.md](../../STAGES.md))
 - **Primary Role:** Engineers / Solutions Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps
-- **Checkpoints:** Alignment Review (foundational), Quality Checkpoint (iterative, optional)
-- **Gate:** Gate 2 (build/no-build decision after foundational design + requirements complete)
+- **Checkpoints:** Alignment Review (foundational), Quality Checkpoint
+  (iterative, optional)
+- **Gate:** Gate 2 (build/no-build decision after foundational design +
+  requirements complete)
 
 ---
 
 # Part A: Foundational Design (Complete Once per Project)
 
-> **Purpose:** Establish the system architecture, technology choices, and iteration plan that will guide all implementation work.
+> **Purpose:** Establish the system architecture, technology choices, and
+> iteration plan that will guide all implementation work.
 >
-> **When to complete:** After Requirements stage, before first increment implementation.
+> **When to complete:** After Requirements stage, before first increment
+> implementation.
 >
-> **Complete this section once** at the start of the project. This creates the architectural foundation for all subsequent increments.
+> **Complete this section once** at the start of the project. This creates the
+> architectural foundation for all subsequent increments.
 
 ---
 
@@ -38,15 +43,17 @@
 
 ### 1.1 System Context
 
-**What it is:**
-High-level view of the system and its external interactions (users, systems, services).
+**What it is:** High-level view of the system and its external interactions
+(users, systems, services).
 
 **What to include:**
+
 - System boundaries (what's in scope, what's external)
 - Key actors (users, administrators, external systems)
 - Major integrations (third-party APIs, databases, services)
 
 **Guidance:**
+
 - Use a simple context diagram (boxes and arrows)
 - Focus on "what" not "how"
 - Keep it understandable to non-technical stakeholders
@@ -71,15 +78,17 @@ External Systems:
 
 ### 1.2 System Architecture
 
-**What it is:**
-How the system is structured internally (components, layers, modules).
+**What it is:** How the system is structured internally (components, layers,
+modules).
 
 **What to include:**
+
 - Major components and their responsibilities
 - Component relationships and communication patterns
 - Deployment architecture (client, server, databases, caching, etc.)
 
 **Guidance:**
+
 - Use architecture diagrams (C4 model, layered architecture, etc.)
 - Show data flow between components
 - Explain architectural style (microservices, monolith, serverless, etc.)
@@ -119,10 +128,11 @@ Components:
 
 ### 2.1 Technology Selections
 
-**What it is:**
-Specific languages, frameworks, platforms, and tools chosen for the project.
+**What it is:** Specific languages, frameworks, platforms, and tools chosen for
+the project.
 
 **What to include:**
+
 - Programming languages
 - Frameworks and libraries
 - Database(s)
@@ -130,35 +140,40 @@ Specific languages, frameworks, platforms, and tools chosen for the project.
 - Development tools
 
 **Guidance:**
+
 - Justify each major choice (why this over alternatives?)
 - Consider team skills, organizational standards, long-term maintenance
 - Document trade-offs
 
 **Example:**
 
-| Category | Choice | Justification | ADR |
-|----------|--------|---------------|-----|
-| **Frontend** | React 18 | Team expertise, large ecosystem | ADR-004 |
-| **Backend** | Node.js 20 + Express | JavaScript full-stack, async I/O | ADR-005 |
-| **Database** | PostgreSQL 15 | ACID compliance, relational data | ADR-001 |
-| **Cache** | Redis 7 | In-memory speed, pub/sub support | ADR-006 |
-| **File Upload** | Presigned URLs | Cost-effective, scalable | ADR-002 |
-| **Auth** | JWT tokens | Stateless, widely supported | ADR-003 |
-| **Hosting** | Cloud managed services | Scalability, reduced ops burden | ADR-007 |
-| **CI/CD** | GitHub Actions | Integrated with repo, free tier | - |
+| Category        | Choice                 | Justification                    | ADR     |
+| --------------- | ---------------------- | -------------------------------- | ------- |
+| **Frontend**    | React 18               | Team expertise, large ecosystem  | ADR-004 |
+| **Backend**     | Node.js 20 + Express   | JavaScript full-stack, async I/O | ADR-005 |
+| **Database**    | PostgreSQL 15          | ACID compliance, relational data | ADR-001 |
+| **Cache**       | Redis 7                | In-memory speed, pub/sub support | ADR-006 |
+| **File Upload** | Presigned URLs         | Cost-effective, scalable         | ADR-002 |
+| **Auth**        | JWT tokens             | Stateless, widely supported      | ADR-003 |
+| **Hosting**     | Cloud managed services | Scalability, reduced ops burden  | ADR-007 |
+| **CI/CD**       | GitHub Actions         | Integrated with repo, free tier  | -       |
 
-**Note:** Reference ADRs (Architecture Decision Records) for detailed rationale, alternatives considered, and cost analysis. ADRs are stored as separate files in `docs/adr/` directory.
+**Note:** Reference ADRs (Architecture Decision Records) for detailed rationale,
+alternatives considered, and cost analysis. ADRs are stored as separate files in
+`docs/adr/` directory.
 
 ---
 
 ### 2.2 Architecture Decision Records (ADRs)
 
-**What it is:**
-Documentation of significant architectural decisions and the reasoning behind them.
+**What it is:** Documentation of significant architectural decisions and the
+reasoning behind them.
 
-**⚠️ Important:** ADRs are **separate files**, not embedded in this design-brief.
+**⚠️ Important:** ADRs are **separate files**, not embedded in this
+design-brief.
 
 **Where ADRs live:**
+
 - **Directory:** `docs/adr/` in your project repository
 - **File naming:** `ADR-XXX-short-description.md`
   - Example: `ADR-001-database-selection.md`
@@ -167,6 +182,7 @@ Documentation of significant architectural decisions and the reasoning behind th
 - **Index:** Create `docs/adr/README.md` listing all ADRs with status
 
 **What to include in each ADR:**
+
 - Context and problem statement
 - Options considered with **cost analysis** (critical!)
 - Decision and rationale
@@ -175,6 +191,7 @@ Documentation of significant architectural decisions and the reasoning behind th
 - References to requirements, vendor docs, pricing pages
 
 **When to create an ADR:**
+
 - Significant technology choices (database, framework, cloud platform)
 - Architecture style decisions (monolith, microservices, serverless)
 - Security or compliance approaches
@@ -184,27 +201,31 @@ Documentation of significant architectural decisions and the reasoning behind th
 
 **Example ADR list for this project:**
 
-| ADR | Title | Status | Cost Impact |
-|-----|-------|--------|-------------|
-| ADR-001 | Database Selection (PostgreSQL) | Accepted | ~$3-6K/year |
+| ADR     | Title                                  | Status   | Cost Impact   |
+| ------- | -------------------------------------- | -------- | ------------- |
+| ADR-001 | Database Selection (PostgreSQL)        | Accepted | ~$3-6K/year   |
 | ADR-002 | File Upload Mechanism (Presigned URLs) | Accepted | ~$60-180/year |
-| ADR-003 | Authentication Approach (JWT) | Accepted | Minimal |
-| ADR-004 | Frontend Framework (React) | Accepted | Free (OSS) |
-| ADR-005 | Backend Framework (Express) | Accepted | Free (OSS) |
-| ADR-006 | Caching Strategy (Redis) | Accepted | ~$1-2K/year |
-| ADR-007 | Hosting Platform Selection | Accepted | ~$5-10K/year |
+| ADR-003 | Authentication Approach (JWT)          | Accepted | Minimal       |
+| ADR-004 | Frontend Framework (React)             | Accepted | Free (OSS)    |
+| ADR-005 | Backend Framework (Express)            | Accepted | Free (OSS)    |
+| ADR-006 | Caching Strategy (Redis)               | Accepted | ~$1-2K/year   |
+| ADR-007 | Hosting Platform Selection             | Accepted | ~$5-10K/year  |
 
-**Total infrastructure cost from ADRs:** ~$9-18K/year (included in Gate 2 Decision Package)
+**Total infrastructure cost from ADRs:** ~$9-18K/year (included in Gate 2
+Decision Package)
 
-**ADR Index:**
-For full details on each architectural decision including alternatives considered, trade-offs, and cost analysis, see:
+**ADR Index:** For full details on each architectural decision including
+alternatives considered, trade-offs, and cost analysis, see:
+
 - `docs/adr/README.md` - Index of all ADRs
 - `docs/adr/ADR-001-database-selection.md`
 - `docs/adr/ADR-002-file-upload-mechanism.md`
 - `docs/adr/ADR-003-authentication-approach.md`
 - etc.
 
-**Critical reminder:** Research costs BEFORE creating ADRs to prevent surprises like discovering a managed service costs 20x more than expected after committing to it.
+**Critical reminder:** Research costs BEFORE creating ADRs to prevent surprises
+like discovering a managed service costs 20x more than expected after committing
+to it.
 
 ---
 
@@ -212,15 +233,16 @@ For full details on each architectural decision including alternatives considere
 
 ### 3.1 Data Model Overview
 
-**What it is:**
-High-level view of data entities and relationships.
+**What it is:** High-level view of data entities and relationships.
 
 **What to include:**
+
 - Key entities (users, products, orders, etc.)
 - Relationships (one-to-many, many-to-many)
 - Data ownership and boundaries
 
 **Guidance:**
+
 - Use Entity-Relationship Diagrams (ERD) or simple descriptions
 - Focus on business entities, not implementation details
 - Show how data maps to requirements
@@ -244,16 +266,17 @@ Relationships:
 
 ### 3.2 Data Persistence Strategy
 
-**What it is:**
-How data is stored, accessed, and managed.
+**What it is:** How data is stored, accessed, and managed.
 
 **What to include:**
+
 - Database schema approach
 - Data access patterns (ORM, raw SQL, query builders)
 - Migration strategy
 - Backup and disaster recovery approach
 
 **Guidance:**
+
 - Consider read vs. write patterns
 - Plan for schema evolution
 - Address data retention and deletion policies
@@ -272,16 +295,17 @@ How data is stored, accessed, and managed.
 
 ### 4.1 API Design Principles
 
-**What it is:**
-Standards and conventions for API design across the system.
+**What it is:** Standards and conventions for API design across the system.
 
 **What to include:**
+
 - API style (REST, GraphQL, gRPC)
 - Versioning strategy
 - Authentication and authorization approach
 - Error handling conventions
 
 **Guidance:**
+
 - Establish patterns to ensure consistency
 - Document standards for the team to follow
 - Consider API evolution and backward compatibility
@@ -299,28 +323,29 @@ Standards and conventions for API design across the system.
 
 ### 4.2 Integration Points
 
-**What it is:**
-How the system integrates with external services and APIs.
+**What it is:** How the system integrates with external services and APIs.
 
 **What to include:**
+
 - Third-party APIs and SDKs
 - Integration patterns (webhooks, polling, events)
 - Error handling and retry logic
 - Authentication to external services
 
 **Guidance:**
+
 - Document each integration's purpose and data flow
 - Plan for integration failures (fallbacks, retries)
 - Consider rate limits and quotas
 
 **Example:**
 
-| Integration | Purpose | Pattern | Error Handling |
-|-------------|---------|---------|----------------|
-| Auth0 | User authentication | OAuth 2.0 | Fallback to local auth if Auth0 unavailable |
-| Stripe | Payment processing | REST API + webhooks | Retry with exponential backoff |
-| SendGrid | Email delivery | REST API | Queue for retry if API down |
-| Google Analytics | Usage tracking | Client-side SDK | Fail silently if blocked |
+| Integration      | Purpose             | Pattern             | Error Handling                              |
+| ---------------- | ------------------- | ------------------- | ------------------------------------------- |
+| Auth0            | User authentication | OAuth 2.0           | Fallback to local auth if Auth0 unavailable |
+| Stripe           | Payment processing  | REST API + webhooks | Retry with exponential backoff              |
+| SendGrid         | Email delivery      | REST API            | Queue for retry if API down                 |
+| Google Analytics | Usage tracking      | Client-side SDK     | Fail silently if blocked                    |
 
 ---
 
@@ -328,16 +353,17 @@ How the system integrates with external services and APIs.
 
 ### 5.1 Security Architecture
 
-**What it is:**
-How the system protects data and prevents unauthorized access.
+**What it is:** How the system protects data and prevents unauthorized access.
 
 **What to include:**
+
 - Authentication and authorization mechanisms
 - Data encryption (at rest, in transit)
 - Input validation and sanitization
 - Security scanning and monitoring
 
 **Guidance:**
+
 - Address OWASP Top 10 vulnerabilities
 - Plan for least-privilege access
 - Document security controls and safeguards
@@ -347,23 +373,26 @@ How the system protects data and prevents unauthorized access.
 - **Authentication:** JWT tokens via Auth0 (OAuth 2.0)
 - **Authorization:** RBAC with roles: Admin, User, Guest
 - **Encryption:** TLS 1.3 in transit, AES-256 at rest (RDS encryption)
-- **Input Validation:** Server-side validation on all inputs, parameterized queries
-- **Security Scanning:** Dependabot for dependency vulnerabilities, OWASP ZAP for penetration testing
+- **Input Validation:** Server-side validation on all inputs, parameterized
+  queries
+- **Security Scanning:** Dependabot for dependency vulnerabilities, OWASP ZAP
+  for penetration testing
 - **Secrets Management:** AWS Secrets Manager for API keys, DB credentials
 
 ---
 
 ### 5.2 Compliance Requirements
 
-**What it is:**
-Regulatory, legal, or organizational compliance needs.
+**What it is:** Regulatory, legal, or organizational compliance needs.
 
 **What to include:**
+
 - Relevant regulations (GDPR, HIPAA, SOC 2, etc.)
 - Data residency and sovereignty requirements
 - Audit logging and retention
 
 **Guidance:**
+
 - Identify applicable regulations early
 - Design compliance into the architecture
 - Document how each requirement is addressed
@@ -372,7 +401,8 @@ Regulatory, legal, or organizational compliance needs.
 
 - **GDPR:** User data deletion API, consent tracking, data export functionality
 - **Data Residency:** All EU user data stored in eu-west-1 region
-- **Audit Logging:** All data modifications logged with user, timestamp, change details (7-year retention)
+- **Audit Logging:** All data modifications logged with user, timestamp, change
+  details (7-year retention)
 
 ---
 
@@ -380,16 +410,17 @@ Regulatory, legal, or organizational compliance needs.
 
 ### 6.1 Instrumentation Strategy
 
-**What it is:**
-How the system will be monitored, logged, and measured.
+**What it is:** How the system will be monitored, logged, and measured.
 
 **What to include:**
+
 - Logging approach (what, where, how)
 - Metrics collection (application, infrastructure)
 - Distributed tracing (if applicable)
 - Alerting thresholds
 
 **Guidance:**
+
 - Design for observability from the start
 - Align with success criteria from Initiation stage
 - Plan for troubleshooting and debugging
@@ -397,35 +428,40 @@ How the system will be monitored, logged, and measured.
 **Example:**
 
 - **Logging:** Structured JSON logs via Winston, centralized in CloudWatch
-- **Metrics:** Custom application metrics (business KPIs) + infrastructure metrics (CloudWatch)
-- **Tracing:** AWS X-Ray for distributed tracing (API → database → external services)
+- **Metrics:** Custom application metrics (business KPIs) + infrastructure
+  metrics (CloudWatch)
+- **Tracing:** AWS X-Ray for distributed tracing (API → database → external
+  services)
 - **Dashboards:** Grafana dashboards for real-time monitoring
-- **Alerts:** PagerDuty integration for critical errors (error rate >1%, API latency >2s)
+- **Alerts:** PagerDuty integration for critical errors (error rate >1%, API
+  latency >2s)
 
 ---
 
 ### 6.2 Success Criteria Measurement
 
-**What it is:**
-How success criteria from the Initiation stage will be measured in production.
+**What it is:** How success criteria from the Initiation stage will be measured
+in production.
 
 **What to include:**
+
 - Metrics to track for each success criterion
 - Data collection mechanisms
 - Dashboards and reporting
 
 **Guidance:**
+
 - Link directly to objectives from initiation-brief
 - Ensure NFRs include instrumentation requirements
 - Plan for baseline capture and ongoing tracking
 
 **Example:**
 
-| Success Criterion (from Initiation) | Metric | Collection Method | Dashboard |
-|-------------------------------------|--------|-------------------|-----------|
-| Reduce support tickets by 30% | Support ticket count by category | Webhook from Zendesk to analytics DB | Weekly trend chart |
-| Improve page load time to <2s | Page load time (p95) | Real User Monitoring (RUM) via Datadog | Real-time latency dashboard |
-| Increase user engagement by 20% | Daily active users, session duration | Google Analytics + custom events | Monthly engagement report |
+| Success Criterion (from Initiation) | Metric                               | Collection Method                      | Dashboard                   |
+| ----------------------------------- | ------------------------------------ | -------------------------------------- | --------------------------- |
+| Reduce support tickets by 30%       | Support ticket count by category     | Webhook from Zendesk to analytics DB   | Weekly trend chart          |
+| Improve page load time to <2s       | Page load time (p95)                 | Real User Monitoring (RUM) via Datadog | Real-time latency dashboard |
+| Increase user engagement by 20%     | Daily active users, session duration | Google Analytics + custom events       | Monthly engagement report   |
 
 ---
 
@@ -433,15 +469,16 @@ How success criteria from the Initiation stage will be measured in production.
 
 ### 7.1 Performance Targets
 
-**What it is:**
-Specific performance requirements the system must meet.
+**What it is:** Specific performance requirements the system must meet.
 
 **What to include:**
+
 - Response time targets (API, page load)
 - Throughput requirements (requests per second)
 - Concurrency expectations (simultaneous users)
 
 **Guidance:**
+
 - Derive from NFRs in requirements stage
 - Be specific and measurable
 - Consider peak vs. average load
@@ -458,16 +495,17 @@ Specific performance requirements the system must meet.
 
 ### 7.2 Scalability Approach
 
-**What it is:**
-How the system will scale to meet growing demand.
+**What it is:** How the system will scale to meet growing demand.
 
 **What to include:**
+
 - Horizontal vs. vertical scaling strategy
 - Stateless vs. stateful components
 - Caching strategy
 - Database scaling approach
 
 **Guidance:**
+
 - Design for scalability even if not needed immediately
 - Identify bottlenecks and mitigation strategies
 - Consider cost vs. performance trade-offs
@@ -475,9 +513,11 @@ How the system will scale to meet growing demand.
 **Example:**
 
 - **Application Tier:** Horizontal scaling via ECS auto-scaling (2-10 instances)
-- **Stateless Design:** No server-side sessions (JWT tokens), supports load balancing
+- **Stateless Design:** No server-side sessions (JWT tokens), supports load
+  balancing
 - **Caching:** Redis for session data, API responses (5-minute TTL)
-- **Database:** Read replicas for query scaling, connection pooling via PgBouncer
+- **Database:** Read replicas for query scaling, connection pooling via
+  PgBouncer
 - **CDN:** CloudFront for static assets (images, CSS, JS)
 - **Background Jobs:** Distributed job queue via Bull (multiple workers)
 
@@ -485,16 +525,18 @@ How the system will scale to meet growing demand.
 
 ## 8. Iteration Plan
 
-**What it is:**
-The roadmap for delivering the system incrementally, mapping MoSCoW priorities to specific increments.
+**What it is:** The roadmap for delivering the system incrementally, mapping
+MoSCoW priorities to specific increments.
 
 **What to include:**
+
 - Increment definitions with requirements mappings
 - Dependencies between increments
 - Estimated duration and goals for each increment
 - Could Have evaluation approach
 
 **Guidance:**
+
 - Start with Must Have requirements (minimum viable system)
 - Sequence based on dependencies, risk, and value
 - Be realistic about increment size (typically 1-3 weeks each)
@@ -503,21 +545,23 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 **Example:**
 
 ### Increment 1: Foundation (Must Have)
+
 **Goal:** Establish authentication, database, and core API infrastructure
 
 **Requirements:**
+
 - FR-1: User registration and login
 - FR-2: User profile management
 - NFR-1: PostgreSQL database setup
 - NFR-2: JWT authentication
 - NFR-3: API error handling
 
-**Duration:** 2 weeks
-**Team:** 2 full-stack engineers, 1 solutions architect (25% time)
-**Effort:** 4.5 person-weeks (2 engineers × 2 weeks + 0.5 architect)
+**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 solutions architect
+(25% time) **Effort:** 4.5 person-weeks (2 engineers × 2 weeks + 0.5 architect)
 **Dependencies:** None
 
 **Why first:**
+
 - Foundation for all user-facing features
 - De-risks authentication early
 - Establishes development patterns
@@ -525,20 +569,22 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 ---
 
 ### Increment 2: Core Features (Must Have)
+
 **Goal:** Deliver primary user-facing functionality
 
 **Requirements:**
+
 - FR-3: Create and view posts
 - FR-4: Comment on posts
 - FR-5: Search posts by keyword
 - NFR-4: API response time <500ms
 
-**Duration:** 2 weeks
-**Team:** 2 full-stack engineers, 1 QA engineer (50% time)
+**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 QA engineer (50% time)
 **Effort:** 5 person-weeks (2 engineers × 2 weeks + 1 QA × 1 week)
 **Dependencies:** Increment 1 (requires authentication)
 
 **Why second:**
+
 - Delivers core value proposition
 - Enables UAT and user feedback
 - Tests performance under load
@@ -546,20 +592,22 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 ---
 
 ### Increment 3: Enhancements (Should Have)
+
 **Goal:** Add important features that improve user experience
 
 **Requirements:**
+
 - FR-6: Tag posts with categories
 - FR-7: Filter posts by tags
 - FR-8: User notifications for comments
 - NFR-5: Email delivery via SendGrid
 
-**Duration:** 2 weeks
-**Team:** 2 full-stack engineers, 1 QA engineer (50% time)
+**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 QA engineer (50% time)
 **Effort:** 5 person-weeks (2 engineers × 2 weeks + 1 QA × 1 week)
 **Dependencies:** Increment 2 (requires posts and comments)
 
 **Why third:**
+
 - Enhances discoverability
 - Improves engagement
 - Committed to delivery but not minimum viability
@@ -567,19 +615,21 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 ---
 
 ### Increment 4: Advanced Features (Should Have)
+
 **Goal:** Add advanced functionality for power users
 
 **Requirements:**
+
 - FR-9: Export user data (GDPR compliance)
 - FR-10: Admin dashboard for moderation
 - NFR-6: Audit logging
 
-**Duration:** 2 weeks
-**Team:** 2 full-stack engineers, 1 DevOps engineer (25% time), 1 QA engineer (50% time)
-**Effort:** 5.5 person-weeks (2 engineers × 2 weeks + 0.5 DevOps + 1 QA)
-**Dependencies:** Increment 3
+**Duration:** 2 weeks **Team:** 2 full-stack engineers, 1 DevOps engineer (25%
+time), 1 QA engineer (50% time) **Effort:** 5.5 person-weeks (2 engineers × 2
+weeks + 0.5 DevOps + 1 QA) **Dependencies:** Increment 3
 
 **Why fourth:**
+
 - Compliance requirement (GDPR)
 - Supports content moderation
 - Lower user-facing priority
@@ -603,7 +653,8 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 - FR-13: Keyboard shortcuts for power users
   - **Evaluate in:** Increment 2 (UI work)
   - **Effort if easy:** 1 day (simple event handlers)
-  - **Skip if:** Conflicts with accessibility requirements or complex to implement
+  - **Skip if:** Conflicts with accessibility requirements or complex to
+    implement
 
 ---
 
@@ -612,11 +663,13 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 **Explicitly excluded from this project:**
 
 - FR-14: Mobile native apps (iOS, Android) - Defer to Phase 2
-- FR-15: Multi-language support (i18n) - Not needed for initial English-only launch
+- FR-15: Multi-language support (i18n) - Not needed for initial English-only
+  launch
 - FR-16: Video/image upload - Too complex, use external links instead
 - FR-17: Social media integration (share to Twitter, etc.) - Low priority, defer
 
 **Why Won't Have:**
+
 - Reduces scope to deliver faster
 - Avoids complexity for features with uncertain value
 - Can revisit in future projects
@@ -625,36 +678,41 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 
 ### Iteration Plan Summary
 
-| Increment | Type | Requirements | Duration | Team | Effort |
-|-----------|------|--------------|----------|------|--------|
-| 1 | Must Have | FR-1, FR-2, NFR-1, NFR-2, NFR-3 | 2 weeks | 2 engineers + 0.25 architect | 4.5 person-weeks |
-| 2 | Must Have | FR-3, FR-4, FR-5, NFR-4 | 2 weeks | 2 engineers + 0.5 QA | 5 person-weeks |
-| 3 | Should Have | FR-6, FR-7, FR-8, NFR-5 | 2 weeks | 2 engineers + 0.5 QA | 5 person-weeks |
-| 4 | Should Have | FR-9, FR-10, NFR-6 | 2 weeks | 2 engineers + 0.25 DevOps + 0.5 QA | 5.5 person-weeks |
-| - | Could Have | FR-11, FR-12, FR-13 | Opportunistic | Evaluated during implementation | TBD |
-| - | Won't Have | FR-14, FR-15, FR-16, FR-17 | Out of scope | N/A | N/A |
+| Increment | Type        | Requirements                    | Duration      | Team                               | Effort           |
+| --------- | ----------- | ------------------------------- | ------------- | ---------------------------------- | ---------------- |
+| 1         | Must Have   | FR-1, FR-2, NFR-1, NFR-2, NFR-3 | 2 weeks       | 2 engineers + 0.25 architect       | 4.5 person-weeks |
+| 2         | Must Have   | FR-3, FR-4, FR-5, NFR-4         | 2 weeks       | 2 engineers + 0.5 QA               | 5 person-weeks   |
+| 3         | Should Have | FR-6, FR-7, FR-8, NFR-5         | 2 weeks       | 2 engineers + 0.5 QA               | 5 person-weeks   |
+| 4         | Should Have | FR-9, FR-10, NFR-6              | 2 weeks       | 2 engineers + 0.25 DevOps + 0.5 QA | 5.5 person-weeks |
+| -         | Could Have  | FR-11, FR-12, FR-13             | Opportunistic | Evaluated during implementation    | TBD              |
+| -         | Won't Have  | FR-14, FR-15, FR-16, FR-17      | Out of scope  | N/A                                | N/A              |
 
-**Total Must Have:** 4 weeks duration, 9.5 person-weeks effort
-**Total Should Have:** 4 weeks duration, 10.5 person-weeks effort
-**Total Project (without Could Haves):** 8 weeks duration, 20 person-weeks effort
+**Total Must Have:** 4 weeks duration, 9.5 person-weeks effort **Total Should
+Have:** 4 weeks duration, 10.5 person-weeks effort **Total Project (without
+Could Haves):** 8 weeks duration, 20 person-weeks effort
 
 ---
 
 ### Gate 2 Decision Package
 
-> **Purpose:** Provide executives and stakeholders with the information needed to make the build/no-build decision at Gate 2 (end of Requirements + Design foundational pass).
+> **Purpose:** Provide executives and stakeholders with the information needed
+> to make the build/no-build decision at Gate 2 (end of Requirements + Design
+> foundational pass).
 
 **Project Timeline:**
+
 - **Must Have (minimum viable):** 4 weeks
 - **Should Have (committed scope):** Additional 4 weeks (8 weeks total)
 - **Total delivery:** 8 weeks from start of Implementation to final Deployment
 
 **Effort Estimate:**
+
 - **Must Have:** 9.5 person-weeks
 - **Should Have:** 10.5 person-weeks
 - **Total:** 20 person-weeks
 
 **Team Composition:**
+
 - 2 full-stack engineers (full-time, 8 weeks)
 - 1 QA engineer (part-time, ~50% over 6 weeks = 3 weeks)
 - 1 solutions architect (part-time, ~25% over 2 weeks = 0.5 weeks)
@@ -662,10 +720,12 @@ The roadmap for delivering the system incrementally, mapping MoSCoW priorities t
 
 **Cost Calculation:**
 
-To calculate project cost, apply your organization's blended rate (salary + benefits + overhead) to the effort estimate:
+To calculate project cost, apply your organization's blended rate (salary +
+benefits + overhead) to the effort estimate:
 
 1. **Determine your blended rate:**
-   - Typical range: $100-$250 per hour depending on location, seniority, and organization
+   - Typical range: $100-$250 per hour depending on location, seniority, and
+     organization
    - Include: base salary, benefits, taxes, overhead, equipment, facilities
    - Calculate: annual fully-loaded cost per employee ÷ 2080 hours
 
@@ -676,35 +736,39 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 3. **Example calculations:**
 
 | Blended Rate | Total Cost | Monthly Run Rate |
-|--------------|------------|------------------|
-| $100/hour | $80,000 | $40,000/month |
-| $150/hour | $120,000 | $60,000/month |
-| $200/hour | $160,000 | $80,000/month |
-| $250/hour | $200,000 | $100,000/month |
+| ------------ | ---------- | ---------------- |
+| $100/hour    | $80,000    | $40,000/month    |
+| $150/hour    | $120,000   | $60,000/month    |
+| $200/hour    | $160,000   | $80,000/month    |
+| $250/hour    | $200,000   | $100,000/month   |
 
-**Note:** Rates vary significantly by organization, geography, and team composition. Use your actual costs.
+**Note:** Rates vary significantly by organization, geography, and team
+composition. Use your actual costs.
 
 ---
 
 **Infrastructure & Tooling Costs:**
 
-> **Critical:** Research and document infrastructure costs BEFORE Gate 2. Managed services, cloud platforms, and SaaS tools can significantly impact total project cost.
+> **Critical:** Research and document infrastructure costs BEFORE Gate 2.
+> Managed services, cloud platforms, and SaaS tools can significantly impact
+> total project cost.
 
 **Recurring Costs (Annual):**
 
-| Category | Service/Tool | Purpose | Monthly Cost | Annual Cost |
-|----------|--------------|---------|--------------|-------------|
-| **Hosting** | Cloud compute instances | Application servers | $X/month | $X/year |
-| **Database** | Managed database service | PostgreSQL RDS | $X/month | $X/year |
-| **Storage** | Object storage | File uploads, backups | $X/month | $X/year |
-| **CDN** | Content delivery network | Static assets | $X/month | $X/year |
-| **Auth** | Authentication service | User identity (optional) | $X/month | $X/year |
-| **Monitoring** | Observability platform | Logs, metrics, alerts | $X/month | $X/year |
-| **Email** | Transactional email | SendGrid, Postmark, etc. | $X/month | $X/year |
-| **Other** | [Other services] | [Purpose] | $X/month | $X/year |
-| **TOTAL** | | | **$X/month** | **$X/year** |
+| Category       | Service/Tool             | Purpose                  | Monthly Cost | Annual Cost |
+| -------------- | ------------------------ | ------------------------ | ------------ | ----------- |
+| **Hosting**    | Cloud compute instances  | Application servers      | $X/month     | $X/year     |
+| **Database**   | Managed database service | PostgreSQL RDS           | $X/month     | $X/year     |
+| **Storage**    | Object storage           | File uploads, backups    | $X/month     | $X/year     |
+| **CDN**        | Content delivery network | Static assets            | $X/month     | $X/year     |
+| **Auth**       | Authentication service   | User identity (optional) | $X/month     | $X/year     |
+| **Monitoring** | Observability platform   | Logs, metrics, alerts    | $X/month     | $X/year     |
+| **Email**      | Transactional email      | SendGrid, Postmark, etc. | $X/month     | $X/year     |
+| **Other**      | [Other services]         | [Purpose]                | $X/month     | $X/year     |
+| **TOTAL**      |                          |                          | **$X/month** | **$X/year** |
 
 **Example (moderate web application):**
+
 - Hosting: $200/month (application servers, load balancer)
 - Database: $300/month (managed PostgreSQL with HA)
 - Storage: $20/month (object storage for uploads)
@@ -714,6 +778,7 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 - **Total recurring: ~$700/month (~$8,400/year)**
 
 **One-Time Costs:**
+
 - Setup fees: $X
 - Migration costs: $X
 - Licenses (if applicable): $X
@@ -721,11 +786,14 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 - **Total one-time: $X**
 
 **Scaling Cost Considerations:**
-- [How infrastructure costs scale with usage - linear, exponential, step function?]
+
+- [How infrastructure costs scale with usage - linear, exponential, step
+  function?]
 - [What happens at 10x traffic? 100x?]
 - [Any per-user or per-transaction costs that scale automatically?]
 
 **Total Project Cost (First Year):**
+
 - **Labor (one-time):** $80K-$200K (depending on blended rate)
 - **Infrastructure (recurring):** $X/year
 - **One-time costs:** $X
@@ -735,35 +803,45 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 ---
 
 **Comparison to Initiation Estimate:**
-- **Initiation estimate:** [Original range from initiation-brief, e.g., "3-5 engineers, 2-4 months, $200K-$400K"]
-- **Design estimate:** 2-3 engineers, 2 months, 20 person-weeks (~$80K-$200K depending on rates)
-- **Confidence level:** Medium-High (based on detailed iteration plan with known technology stack)
+
+- **Initiation estimate:** [Original range from initiation-brief, e.g., "3-5
+  engineers, 2-4 months, $200K-$400K"]
+- **Design estimate:** 2-3 engineers, 2 months, 20 person-weeks (~$80K-$200K
+  depending on rates)
+- **Confidence level:** Medium-High (based on detailed iteration plan with known
+  technology stack)
 - **Key refinements:**
   - Better understanding of requirements after Requirements stage
   - Clearer increment boundaries and dependencies from iteration plan
   - Identified technical risks and mitigation strategies
 
 **Risks and Mitigation:**
+
 - [List top 3-5 risks that could impact timeline/cost]
 - [For each risk: impact, probability, mitigation strategy]
 
 **Recommendation:**
-- [ ] **Proceed** - Business case is sound, cost is acceptable, team is available
-- [ ] **Pivot** - [What would need to change: reduce scope, different approach, etc.]
-- [ ] **Stop** - [Why: cost too high, business case weak, better alternatives exist]
 
-**Decision Rationale:**
-[1-2 paragraphs explaining the recommendation]
+- [ ] **Proceed** - Business case is sound, cost is acceptable, team is
+      available
+- [ ] **Pivot** - [What would need to change: reduce scope, different approach,
+      etc.]
+- [ ] **Stop** - [Why: cost too high, business case weak, better alternatives
+      exist]
+
+**Decision Rationale:** [1-2 paragraphs explaining the recommendation]
 
 ---
 
 # Part B: Iterative Design (Complete Per Increment)
 
-> **Purpose:** Provide detailed specifications for implementing a specific increment.
+> **Purpose:** Provide detailed specifications for implementing a specific
+> increment.
 >
 > **When to complete:** Before implementing each increment.
 >
-> **Complete this section for each increment** defined in the iteration plan. Copy and fill out sections 9-13 for every increment.
+> **Complete this section for each increment** defined in the iteration plan.
+> Copy and fill out sections 9-13 for every increment.
 
 ---
 
@@ -772,12 +850,16 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 **Increment Number/Name:** [e.g., Increment 1: Foundation]
 
 **Requirements in Scope:**
+
 - [List requirement IDs from iteration plan, e.g., FR-1, FR-2, NFR-1]
 
 **Acceptance Criteria:**
-- [List key acceptance criteria from requirements-brief that apply to this increment]
+
+- [List key acceptance criteria from requirements-brief that apply to this
+  increment]
 
 **Out of Scope for This Increment:**
+
 - [Clarify what's NOT included to prevent scope creep]
 
 **Example:**
@@ -785,6 +867,7 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 **Increment:** Increment 1: Foundation
 
 **In Scope:**
+
 - FR-1: User registration with email/password
 - FR-2: User login with JWT token generation
 - NFR-1: PostgreSQL database with users table
@@ -792,12 +875,14 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 - NFR-3: API error handling (4xx/5xx responses)
 
 **Acceptance Criteria:**
+
 - User can register with valid email and password
 - User can login and receive JWT token
 - Invalid credentials return 401 Unauthorized
 - Passwords are hashed (never stored plaintext)
 
 **Out of Scope:**
+
 - Password reset functionality (deferred to Increment 3)
 - OAuth social login (won't have)
 - Multi-factor authentication (won't have)
@@ -808,16 +893,18 @@ To calculate project cost, apply your organization's blended rate (salary + bene
 
 ### 10.1 Components in This Increment
 
-**What it is:**
-Detailed design of specific components being built or modified in this increment.
+**What it is:** Detailed design of specific components being built or modified
+in this increment.
 
 **What to include:**
+
 - Component responsibilities
 - Internal structure (classes, modules, functions)
 - Dependencies and interactions
 - State management (if applicable)
 
 **Guidance:**
+
 - Enough detail for engineers to implement without guessing
 - Reference architecture from foundational design
 - Identify reusable patterns
@@ -827,11 +914,13 @@ Detailed design of specific components being built or modified in this increment
 **Component: Authentication Service (Backend)**
 
 **Responsibilities:**
+
 - User registration (email/password validation, hashing, database insert)
 - User login (credential verification, JWT generation)
 - Token validation (JWT verification middleware)
 
 **Structure:**
+
 ```
 src/services/
   AuthService.js
@@ -845,6 +934,7 @@ src/middleware/
 ```
 
 **Dependencies:**
+
 - bcrypt (password hashing)
 - jsonwebtoken (JWT generation/validation)
 - User model (Sequelize)
@@ -856,12 +946,14 @@ src/middleware/
 **Component: Registration Form (Frontend)**
 
 **Responsibilities:**
+
 - Collect user email and password
 - Validate input (email format, password strength)
 - Submit to /api/v1/auth/register
 - Handle success (redirect to dashboard) and errors (display message)
 
 **Structure:**
+
 ```
 src/components/auth/
   RegisterForm.jsx
@@ -871,6 +963,7 @@ src/components/auth/
 ```
 
 **Dependencies:**
+
 - React Hook Form (form validation)
 - axios (API client)
 - react-router (navigation)
@@ -881,15 +974,17 @@ src/components/auth/
 
 ### 10.2 Component Interactions
 
-**What it is:**
-How components communicate and collaborate for this increment's features.
+**What it is:** How components communicate and collaborate for this increment's
+features.
 
 **What to include:**
+
 - Sequence diagrams or flow descriptions
 - API calls and data flow
 - Error handling paths
 
 **Guidance:**
+
 - Show the "happy path" and key error scenarios
 - Clarify async operations and callbacks
 - Document expected behaviors
@@ -912,9 +1007,11 @@ How components communicate and collaborate for this increment's features.
 ```
 
 **Error Scenarios:**
+
 - Email already exists → 409 Conflict → Display "Email already registered"
 - Weak password → 400 Bad Request → Display "Password must be 8+ characters"
-- Database error → 500 Internal Server Error → Display "Registration failed, try again"
+- Database error → 500 Internal Server Error → Display "Registration failed, try
+  again"
 
 ---
 
@@ -922,16 +1019,17 @@ How components communicate and collaborate for this increment's features.
 
 ### 11.1 Schema Changes
 
-**What it is:**
-Database schema additions or modifications for this increment.
+**What it is:** Database schema additions or modifications for this increment.
 
 **What to include:**
+
 - New tables or columns
 - Indexes for performance
 - Foreign keys and constraints
 - Migration scripts
 
 **Guidance:**
+
 - Be explicit about data types, nullability, defaults
 - Consider migration strategy (additive changes preferred)
 - Plan for rollback if needed
@@ -962,15 +1060,16 @@ CREATE INDEX idx_users_email ON users(email);
 
 ### 11.2 Data Access Patterns
 
-**What it is:**
-How data will be queried and modified in this increment.
+**What it is:** How data will be queried and modified in this increment.
 
 **What to include:**
+
 - Key queries (SELECT, INSERT, UPDATE, DELETE)
 - ORM usage patterns
 - Caching strategy (if applicable)
 
 **Guidance:**
+
 - Identify frequent queries that need optimization
 - Consider N+1 query problems
 - Plan for data validation
@@ -978,20 +1077,23 @@ How data will be queried and modified in this increment.
 **Example:**
 
 **Create User (Registration):**
+
 ```javascript
 const user = await User.create({
   email: email,
   password_hash: hashedPassword,
-  name: name
+  name: name,
 });
 ```
 
 **Find User by Email (Login):**
+
 ```javascript
 const user = await User.findOne({ where: { email: email } });
 ```
 
 **Validate Token (Authentication):**
+
 ```javascript
 // No database query - JWT is self-contained
 const payload = jwt.verify(token, secret);
@@ -1006,16 +1108,17 @@ const userId = payload.userId;
 
 ### 12.1 Endpoints
 
-**What it is:**
-Detailed API endpoint specifications for this increment.
+**What it is:** Detailed API endpoint specifications for this increment.
 
 **What to include:**
+
 - HTTP method, path, description
 - Request parameters (body, query, headers)
 - Response format (success and error cases)
 - Authentication requirements
 
 **Guidance:**
+
 - Follow API design principles from foundational design
 - Be specific about data types and validation rules
 - Document all possible responses
@@ -1031,6 +1134,7 @@ Detailed API endpoint specifications for this increment.
 **Authentication:** None (public endpoint)
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -1040,11 +1144,13 @@ Detailed API endpoint specifications for this increment.
 ```
 
 **Validation:**
+
 - `email`: Required, valid email format, not already registered
 - `password`: Required, min 8 characters, must include letter and number
 - `name`: Optional, max 255 characters
 
 **Success Response (201 Created):**
+
 ```json
 {
   "user": {
@@ -1061,19 +1167,24 @@ Detailed API endpoint specifications for this increment.
 **Error Responses:**
 
 **400 Bad Request** (validation failure):
+
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
     "message": "Invalid input",
     "details": [
-      {"field": "password", "message": "Password must be at least 8 characters"}
+      {
+        "field": "password",
+        "message": "Password must be at least 8 characters"
+      }
     ]
   }
 }
 ```
 
 **409 Conflict** (email already exists):
+
 ```json
 {
   "error": {
@@ -1084,6 +1195,7 @@ Detailed API endpoint specifications for this increment.
 ```
 
 **500 Internal Server Error** (database error):
+
 ```json
 {
   "error": {
@@ -1102,6 +1214,7 @@ Detailed API endpoint specifications for this increment.
 **Authentication:** None (public endpoint)
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -1110,6 +1223,7 @@ Detailed API endpoint specifications for this increment.
 ```
 
 **Success Response (200 OK):**
+
 ```json
 {
   "user": {
@@ -1125,6 +1239,7 @@ Detailed API endpoint specifications for this increment.
 **Error Responses:**
 
 **401 Unauthorized** (invalid credentials):
+
 ```json
 {
   "error": {
@@ -1138,25 +1253,27 @@ Detailed API endpoint specifications for this increment.
 
 ### 12.2 Authentication Middleware
 
-**What it is:**
-How protected endpoints will validate authentication.
+**What it is:** How protected endpoints will validate authentication.
 
 **Example:**
 
 **Middleware:** `requireAuth()`
 
 **Usage:**
+
 ```javascript
-router.get('/api/v1/profile', requireAuth(), ProfileController.getProfile);
+router.get("/api/v1/profile", requireAuth(), ProfileController.getProfile);
 ```
 
 **Behavior:**
+
 1. Extract token from `Authorization: Bearer <token>` header
 2. Verify JWT signature and expiration
 3. If valid: attach `req.userId` and call `next()`
 4. If invalid: return 401 Unauthorized
 
 **Error Response (401):**
+
 ```json
 {
   "error": {
@@ -1172,15 +1289,16 @@ router.get('/api/v1/profile', requireAuth(), ProfileController.getProfile);
 
 ### 13.1 Unit Tests
 
-**What it is:**
-Tests for individual functions and components.
+**What it is:** Tests for individual functions and components.
 
 **What to include:**
+
 - Key functions to unit test
 - Test cases (happy path, edge cases, errors)
 - Coverage targets
 
 **Guidance:**
+
 - Focus on business logic and complex functions
 - Aim for 80%+ coverage on new code
 - Use mocks for external dependencies
@@ -1188,6 +1306,7 @@ Tests for individual functions and components.
 **Example:**
 
 **AuthService Unit Tests:**
+
 - `register()` with valid input → creates user, returns token
 - `register()` with duplicate email → throws EmailExistsError
 - `register()` with weak password → throws ValidationError
@@ -1202,15 +1321,16 @@ Tests for individual functions and components.
 
 ### 13.2 Integration Tests
 
-**What it is:**
-Tests for API endpoints and component interactions.
+**What it is:** Tests for API endpoints and component interactions.
 
 **What to include:**
+
 - API endpoint tests (request → response)
 - Database integration tests
 - End-to-end flows
 
 **Guidance:**
+
 - Test realistic scenarios
 - Use test database (not production)
 - Clean up test data after each test
@@ -1218,6 +1338,7 @@ Tests for API endpoints and component interactions.
 **Example:**
 
 **API Integration Tests:**
+
 - POST /api/v1/auth/register with valid data → 201 Created, user in database
 - POST /api/v1/auth/register with duplicate email → 409 Conflict
 - POST /api/v1/auth/login with valid credentials → 200 OK, valid token
@@ -1231,15 +1352,16 @@ Tests for API endpoints and component interactions.
 
 ### 13.3 Acceptance Testing
 
-**What it is:**
-Validation that acceptance criteria from requirements are met.
+**What it is:** Validation that acceptance criteria from requirements are met.
 
 **What to include:**
+
 - Manual test scenarios
 - UAT script for stakeholders
 - Success criteria
 
 **Guidance:**
+
 - Reference acceptance criteria from requirements-brief
 - Create step-by-step test cases
 - Involve Product Manager or Business Analyst in UAT
@@ -1268,15 +1390,16 @@ Validation that acceptance criteria from requirements are met.
 
 ### 13.4 Performance Testing
 
-**What it is:**
-Validation that NFRs are met (response time, throughput).
+**What it is:** Validation that NFRs are met (response time, throughput).
 
 **What to include:**
+
 - Load test scenarios
 - Performance benchmarks
 - Tools and approach
 
 **Guidance:**
+
 - Test under realistic load
 - Validate against NFRs from requirements
 - Identify bottlenecks
@@ -1284,10 +1407,12 @@ Validation that NFRs are met (response time, throughput).
 **Example:**
 
 **Load Test: Registration Endpoint**
+
 - **Tool:** Apache Bench (ab) or k6
 - **Scenario:** 100 concurrent users, 1000 requests
 - **Target:** p95 response time <500ms (from NFR-4)
-- **Command:** `ab -n 1000 -c 100 -p register.json -T application/json http://localhost:3000/api/v1/auth/register`
+- **Command:**
+  `ab -n 1000 -c 100 -p register.json -T application/json http://localhost:3000/api/v1/auth/register`
 
 **Success Criteria:** 95% of requests complete in <500ms, 0% errors
 
@@ -1295,16 +1420,18 @@ Validation that NFRs are met (response time, throughput).
 
 ## 14. Implementation Notes
 
-**What it is:**
-Guidance, tips, and considerations for engineers implementing this increment.
+**What it is:** Guidance, tips, and considerations for engineers implementing
+this increment.
 
 **What to include:**
+
 - Tricky aspects or gotchas
 - Code patterns to follow
 - Performance optimizations
 - Security considerations
 
 **Guidance:**
+
 - Helpful context that's not obvious from specs
 - Lessons learned from similar work
 - Things to watch out for
@@ -1312,20 +1439,26 @@ Guidance, tips, and considerations for engineers implementing this increment.
 **Example:**
 
 ### Security Notes
+
 - **Never log passwords** (even in development) - log only email for debugging
 - **Use bcrypt with cost factor 10** - balances security and performance
 - **JWT expiration:** Set to 24 hours, refresh tokens in future increment
-- **SQL injection prevention:** Sequelize parameterizes queries automatically, but validate inputs
+- **SQL injection prevention:** Sequelize parameterizes queries automatically,
+  but validate inputs
 
 ### Performance Notes
+
 - **Index on users.email** - Critical for login query performance
 - **Connection pooling** - Configure max 20 connections in production
-- **Password hashing is CPU-intensive** - Offload to background job for bulk user imports (future)
+- **Password hashing is CPU-intensive** - Offload to background job for bulk
+  user imports (future)
 
 ### Code Patterns
+
 - **Use async/await** - Consistent error handling with try/catch
 - **Repository pattern** - Keep data access in repositories, not controllers
-- **Error handling middleware** - Centralized error responses in `src/middleware/errorHandler.js`
+- **Error handling middleware** - Centralized error responses in
+  `src/middleware/errorHandler.js`
 
 ---
 
@@ -1334,6 +1467,7 @@ Guidance, tips, and considerations for engineers implementing this increment.
 Before proceeding to implementation, validate:
 
 **Foundational Design (if applicable):**
+
 - [ ] System architecture addresses all requirements
 - [ ] Technology stack is justified and appropriate
 - [ ] Iteration plan created with increment boundaries
@@ -1343,6 +1477,7 @@ Before proceeding to implementation, validate:
 - [ ] Alignment Review conducted and approved
 
 **Iterative Design (per increment):**
+
 - [ ] Increment scope is clear (in scope, out of scope)
 - [ ] Component designs are detailed and implementable
 - [ ] Data model changes specified with migrations
@@ -1351,6 +1486,7 @@ Before proceeding to implementation, validate:
 - [ ] Implementation notes provide helpful guidance
 
 **Handoff to Implementation:**
+
 - [ ] Engineers understand what to build and how
 - [ ] No major unknowns or blockers
 - [ ] Ready to proceed to Implementation stage

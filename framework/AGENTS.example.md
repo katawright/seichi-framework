@@ -1,7 +1,6 @@
 # Project Context for AI Agents
 
-**Last Updated:** YYYY-MM-DD
-**Project:** [Your Project Name]
+**Last Updated:** YYYY-MM-DD **Project:** [Your Project Name]
 
 ---
 
@@ -12,22 +11,21 @@ Cursor, etc.) about this project's structure, conventions, and workflow. It
 helps AI assistants generate code that matches your team's standards and
 understands your development practices.
 
-**Note:** This is an **agent-agnostic** file. For Claude-specific
-instructions, see `CLAUDE.md`. For general project documentation, see
-`README.md`.
+**Note:** This is an **agent-agnostic** file. For Claude-specific instructions,
+see `CLAUDE.md`. For general project documentation, see `README.md`.
 
 ---
 
 ## Quick Reference
 
-| Category | Value |
-|----------|-------|
-| **Language** | [e.g., Python 3.11, TypeScript 5.0] |
-| **Framework** | [e.g., Django 4.2, React 18, Spring Boot 3.1] |
-| **Branching Strategy** | [Trunk-based / Increment branch / Git Flow] |
-| **PR Size Target** | [e.g., <400 lines, <1 hour review] |
-| **Test Coverage Target** | [e.g., 80% overall, 85% critical paths] |
-| **Code Style** | [e.g., PEP8 with Black, Airbnb ESLint, Google Java] |
+| Category                 | Value                                               |
+| ------------------------ | --------------------------------------------------- |
+| **Language**             | [e.g., Python 3.11, TypeScript 5.0]                 |
+| **Framework**            | [e.g., Django 4.2, React 18, Spring Boot 3.1]       |
+| **Branching Strategy**   | [Trunk-based / Increment branch / Git Flow]         |
+| **PR Size Target**       | [e.g., <400 lines, <1 hour review]                  |
+| **Test Coverage Target** | [e.g., 80% overall, 85% critical paths]             |
+| **Code Style**           | [e.g., PEP8 with Black, Airbnb ESLint, Google Java] |
 
 ---
 
@@ -36,18 +34,21 @@ instructions, see `CLAUDE.md`. For general project documentation, see
 ### Core Technologies
 
 **Backend:**
+
 - Language: [e.g., Python 3.11]
 - Framework: [e.g., Django 4.2]
 - Database: [e.g., PostgreSQL 15]
 - ORM: [e.g., Django ORM / SQLAlchemy / Hibernate]
 
 **Frontend:** _(if applicable)_
+
 - Language: [e.g., TypeScript 5.0]
 - Framework: [e.g., React 18, Next.js 14]
 - State Management: [e.g., Redux Toolkit, Zustand]
 - Styling: [e.g., Tailwind CSS, styled-components]
 
 **Infrastructure:**
+
 - Hosting: [e.g., AWS, Azure, GCP, Heroku]
 - Container: [e.g., Docker, Docker Compose]
 - CI/CD: [e.g., GitHub Actions, GitLab CI, Jenkins]
@@ -55,10 +56,12 @@ instructions, see `CLAUDE.md`. For general project documentation, see
 ### Key Dependencies
 
 **Production:**
+
 - [dependency-name] v[version] - [purpose]
 - [dependency-name] v[version] - [purpose]
 
 **Development:**
+
 - [tool-name] v[version] - [purpose]
 - [tool-name] v[version] - [purpose]
 
@@ -83,6 +86,7 @@ project-root/
 ```
 
 **Key directories:**
+
 - `src/[module]/models/` - Data models and database schemas
 - `src/[module]/services/` - Business logic (follows service pattern)
 - `src/[module]/views/` - API endpoints or UI controllers
@@ -94,17 +98,17 @@ project-root/
 
 ### Coding Standards
 
-**Style Guide:** [e.g., PEP8 for Python, Airbnb for JavaScript, Google for
-Java]
+**Style Guide:** [e.g., PEP8 for Python, Airbnb for JavaScript, Google for Java]
 
 **Linter/Formatter:**
+
 - Linter: [e.g., Ruff, ESLint, Checkstyle] - Config: `.ruff.toml`,
   `.eslintrc.json`
-- Formatter: [e.g., Black, Prettier] - Config: `pyproject.toml`,
-  `.prettierrc`
+- Formatter: [e.g., Black, Prettier] - Config: `pyproject.toml`, `.prettierrc`
 - Pre-commit hooks: [Yes/No] - Tool: [e.g., husky, pre-commit framework]
 
 **Naming Conventions:**
+
 - Variables/functions: [e.g., snake_case in Python, camelCase in JavaScript]
 - Classes: [e.g., PascalCase]
 - Constants: [e.g., UPPER_SNAKE_CASE in Python/Java, camelCase or
@@ -112,24 +116,25 @@ Java]
 - Files: [e.g., snake_case.py, kebab-case.tsx]
 - Test files: [e.g., test_*.py, *.test.ts]
 
-**Function/Method Length:** [e.g., Target <50 lines, prefer <30 for
-complexity]
+**Function/Method Length:** [e.g., Target <50 lines, prefer <30 for complexity]
 
 **Import Organization:**
-- [e.g., Standard library → Third-party → Local, sorted alphabetically
-  within groups]
-- Use absolute imports or relative? [e.g., Prefer absolute imports from
-  `src/`]
+
+- [e.g., Standard library → Third-party → Local, sorted alphabetically within
+  groups]
+- Use absolute imports or relative? [e.g., Prefer absolute imports from `src/`]
 
 ### Code Quality Principles
 
 **Required Principles:**
+
 - SOLID principles (especially SRP, DIP)
 - DRY (Don't Repeat Yourself)
 - KISS (Keep It Simple)
 - YAGNI (You Aren't Gonna Need It)
 
 **Specific Guidelines:**
+
 - [e.g., Use dependency injection for services]
 - [e.g., Separate business logic from API layer]
 - [e.g., Prefer composition over inheritance]
@@ -138,8 +143,7 @@ complexity]
 
 ## Branching Strategy
 
-**Approach:** [Trunk-based development / Increment branches / Git Flow /
-Other]
+**Approach:** [Trunk-based development / Increment branches / Git Flow / Other]
 
 **Rationale:** [e.g., "We use trunk-based for fast feedback and continuous
 integration"]
@@ -147,6 +151,7 @@ integration"]
 ### Branch Naming
 
 **Conventions:**
+
 - Feature branches: `feature/[ticket-id]-[short-description]` or
   `feature/[short-description]`
 - Bugfix branches: `bugfix/[ticket-id]-[short-description]`
@@ -154,6 +159,7 @@ integration"]
 - Release branches: `release/[version]` _(if applicable)_
 
 **Examples:**
+
 - `feature/AUTH-123-user-login`
 - `bugfix/fix-cart-calculation`
 - `hotfix/critical-security-patch`
@@ -163,26 +169,29 @@ integration"]
 **Primary branch:** `main` _(or `master`, `develop`)_
 
 **For trunk-based:**
+
 - Feature branches merge directly to `main`
 - Branches are short-lived (< 2 days)
 - Use feature flags to hide incomplete work
 - Deploy frequently (daily or multiple times/day)
 
 **For increment branches:**
+
 - Create increment branch: `feature/[increment-name]`
 - Multiple PRs merge to increment branch
 - Increment branch merges to `main` after Verification passes
 - Longer-lived branches (days to weeks)
 
 **For Git Flow:**
+
 - Feature branches merge to `develop`
 - Release branches merge to both `main` and `develop`
 - Hotfix branches merge to both `main` and `develop`
 
 ### Feature Flags
 
-**System:** [e.g., LaunchDarkly, Unleash, custom, N/A]
-**Usage:** [e.g., "All incomplete features must be behind feature flags"]
+**System:** [e.g., LaunchDarkly, Unleash, custom, N/A] **Usage:** [e.g., "All
+incomplete features must be behind feature flags"]
 
 ---
 
@@ -192,10 +201,11 @@ integration"]
 
 **Target:** [e.g., 200-400 lines changed, reviewable in <1 hour]
 
-**Rationale:** Smaller PRs get better reviews, faster feedback, and catch
-more bugs.
+**Rationale:** Smaller PRs get better reviews, faster feedback, and catch more
+bugs.
 
 **For large increments:**
+
 - Break into multiple PRs by [layer / component / dependency order]
 - Example breakdown:
   1. Data models and migrations
@@ -206,20 +216,22 @@ more bugs.
 ### PR Requirements
 
 **Pre-merge checklist:**
+
 - [ ] Unit tests pass (enforced by CI)
 - [ ] Code review approved by [number] engineer(s)
 - [ ] Linting/formatting passes
 - [ ] No merge conflicts
 - [ ] Branch up-to-date with target branch
 
-**PR Template:** [Yes/No - location if yes, e.g., `.github/pull_request_template.md`]
+**PR Template:** [Yes/No - location if yes, e.g.,
+`.github/pull_request_template.md`]
 
 ### Code Review
 
 **Required approvers:** [e.g., 1 engineer, or 1 senior engineer for critical
-changes]
-**Review turnaround SLA:** [e.g., Within 24 hours]
-**Review focus areas:**
+changes] **Review turnaround SLA:** [e.g., Within 24 hours] **Review focus
+areas:**
+
 - Correctness and logic
 - Code quality and readability
 - Security (SQL injection, XSS, auth, secrets)
@@ -233,34 +245,38 @@ changes]
 ### Test Framework
 
 **Unit testing:**
+
 - Framework: [e.g., pytest, Jest, JUnit]
 - Runner: [e.g., pytest, npm test, mvn test]
 - Location: [e.g., `tests/` directory mirrors `src/`]
 
 **Integration testing:** _(if applicable)_
+
 - Framework: [e.g., pytest with Django TestCase, Supertest]
 - Location: [e.g., `tests/integration/`]
 
 **E2E testing:** _(if applicable)_
+
 - Framework: [e.g., Playwright, Cypress, Selenium]
 - Location: [e.g., `tests/e2e/`]
 
 ### Coverage Targets
 
-**Overall coverage:** [e.g., 80%]
-**Branch coverage:** [e.g., 75%]
-**Critical paths:** [e.g., 100% for payment, auth, data integrity]
+**Overall coverage:** [e.g., 80%] **Branch coverage:** [e.g., 75%] **Critical
+paths:** [e.g., 100% for payment, auth, data integrity]
 
 **Enforcement:**
+
 - Coverage tool: [e.g., coverage.py, nyc, JaCoCo]
 - CI blocks merge if below: [threshold, e.g., 75%]
 
 ### Test Discipline
 
-**Pre-commit:** [Tests run via git hook / Manual / Not enforced]
-**Pre-merge:** [CI must pass / Manual verification]
+**Pre-commit:** [Tests run via git hook / Manual / Not enforced] **Pre-merge:**
+[CI must pass / Manual verification]
 
 **Testing philosophy:**
+
 - Write tests alongside code (not after)
 - Test behavior, not implementation
 - Mock external dependencies (APIs, databases, file systems)
@@ -273,9 +289,11 @@ changes]
 ### Local Development Setup
 
 **Prerequisites:**
+
 - [e.g., Python 3.11+, Node.js 20+, Docker]
 
 **Setup steps:**
+
 ```bash
 # Example setup commands
 git clone [repo-url]
@@ -287,6 +305,7 @@ cd [project-directory]
 ```
 
 **Environment variables:**
+
 - Template: `.env.example`
 - Required variables: [list key variables, e.g., DATABASE_URL, API_KEY]
 - Secrets management: [e.g., 1Password, AWS Secrets Manager, local .env file
@@ -295,6 +314,7 @@ cd [project-directory]
 ### Environments
 
 **Available environments:**
+
 - **Local:** Developer machines
 - **Development/Staging:** [URL if applicable] - Deployed from: [branch, e.g.,
   `develop`]
@@ -307,15 +327,16 @@ cd [project-directory]
 ### Build Process
 
 **Build command:** [e.g., `npm run build`, `mvn package`, `docker build`]
-**Build artifacts:** [e.g., `dist/`, `target/`, Docker image]
-**Build time:** [e.g., ~2 minutes]
+**Build artifacts:** [e.g., `dist/`, `target/`, Docker image] **Build time:**
+[e.g., ~2 minutes]
 
 ### CI/CD Pipeline
 
-**Platform:** [e.g., GitHub Actions, GitLab CI, Jenkins]
-**Config file:** [e.g., `.github/workflows/ci.yml`]
+**Platform:** [e.g., GitHub Actions, GitLab CI, Jenkins] **Config file:** [e.g.,
+`.github/workflows/ci.yml`]
 
 **Pipeline stages:**
+
 1. **Lint** - [linter runs, e.g., ruff, eslint]
 2. **Test** - [unit tests, e.g., pytest]
 3. **Build** - [build artifacts]
@@ -323,14 +344,14 @@ cd [project-directory]
 5. **Deploy** - [to staging/production]
 
 **Deployment trigger:**
+
 - Staging: [e.g., On merge to `develop`]
 - Production: [e.g., On merge to `main` / Manual approval / Tagged release]
 
 ### Deployment Strategy
 
-**Method:** [e.g., Blue-green, Rolling, Canary]
-**Rollback process:** [e.g., Automatic on health check failure, Manual via
-`git revert`]
+**Method:** [e.g., Blue-green, Rolling, Canary] **Rollback process:** [e.g.,
+Automatic on health check failure, Manual via `git revert`]
 
 ---
 
@@ -339,6 +360,7 @@ cd [project-directory]
 ### Required Security Checks
 
 **Always enforce:**
+
 - [ ] Input validation on all user inputs
 - [ ] Parameterized queries (no SQL injection)
 - [ ] Output escaping (no XSS)
@@ -348,16 +370,16 @@ cd [project-directory]
 - [ ] Dependency vulnerability scanning
 
 **Tools:**
+
 - Dependency scanner: [e.g., Snyk, Dependabot, OWASP Dependency Check]
 - SAST: [e.g., Semgrep, SonarQube] _(if applicable)_
 - Secrets detection: [e.g., GitGuardian, TruffleHog] _(if applicable)_
 
 ### Secrets Management
 
-**Approach:** [e.g., Environment variables loaded from .env (local), AWS
-Secrets Manager (production)]
-**Never commit:** API keys, passwords, tokens, private keys, .env files
-**Rotation:** [e.g., API keys rotated quarterly]
+**Approach:** [e.g., Environment variables loaded from .env (local), AWS Secrets
+Manager (production)] **Never commit:** API keys, passwords, tokens, private
+keys, .env files **Rotation:** [e.g., API keys rotated quarterly]
 
 ---
 
@@ -366,17 +388,20 @@ Secrets Manager (production)]
 ### Code Documentation
 
 **Comments:**
-- Explain *why*, not *what* (code should be self-explanatory)
+
+- Explain _why_, not _what_ (code should be self-explanatory)
 - Document non-obvious decisions or trade-offs
 - Link to tickets, RFCs, or external resources where relevant
 
 **API/Function documentation:**
+
 - Format: [e.g., Python docstrings (Google style), JSDoc, Javadoc]
 - Required for: [e.g., All public APIs, exported functions, complex internal
   functions]
 - Include: Purpose, parameters, return value, exceptions, examples
 
 **Example:**
+
 ```python
 def calculate_total(items: List[Item], discount: Optional[Decimal] = None) -> Decimal:
     """
@@ -400,10 +425,9 @@ def calculate_total(items: List[Item], discount: Optional[Decimal] = None) -> De
 
 ### Project Documentation
 
-**README.md:** Project overview, setup, basic usage
-**docs/ directory:** [Architecture, API docs, deployment guides, etc.]
-**Architecture Decision Records (ADRs):** [Yes/No - location if yes, e.g.,
-`docs/adr/`]
+**README.md:** Project overview, setup, basic usage **docs/ directory:**
+[Architecture, API docs, deployment guides, etc.] **Architecture Decision
+Records (ADRs):** [Yes/No - location if yes, e.g., `docs/adr/`]
 
 ---
 
@@ -411,16 +435,16 @@ def calculate_total(items: List[Item], discount: Optional[Decimal] = None) -> De
 
 ### Logging
 
-**Framework/Library:** [e.g., Python logging, Winston, Log4j]
-**Format:** [Structured JSON / Plain text]
-**Log levels:**
+**Framework/Library:** [e.g., Python logging, Winston, Log4j] **Format:**
+[Structured JSON / Plain text] **Log levels:**
+
 - ERROR: Failures requiring attention
 - WARN: Unexpected but handled
 - INFO: Important business events
 - DEBUG: Detailed diagnostic info
 
-**Never log:** Passwords, API keys, PII (unless required and anonymized),
-credit card numbers
+**Never log:** Passwords, API keys, PII (unless required and anonymized), credit
+card numbers
 
 ### Metrics and Monitoring
 
@@ -428,6 +452,7 @@ credit card numbers
 **APM:** [e.g., New Relic, Datadog APM, Sentry] _(if applicable)_
 
 **Key metrics tracked:**
+
 - Request rate and latency
 - Error rates
 - [Business metrics specific to your app]
@@ -439,6 +464,7 @@ credit card numbers
 ### Communication
 
 **Primary channels:**
+
 - Team chat: [e.g., Slack #engineering channel]
 - Code review: [e.g., GitHub PR comments]
 - Standup: [e.g., Daily at 10am, async in Slack]
@@ -448,9 +474,9 @@ credit card numbers
 
 ### Issue Tracking
 
-**System:** [e.g., Jira, GitHub Issues, Linear, Azure DevOps]
-**Workflow:** [e.g., Backlog → In Progress → Code Review → Done]
-**Ticket format:** [e.g., Include acceptance criteria, link to design docs]
+**System:** [e.g., Jira, GitHub Issues, Linear, Azure DevOps] **Workflow:**
+[e.g., Backlog → In Progress → Code Review → Done] **Ticket format:** [e.g.,
+Include acceptance criteria, link to design docs]
 
 ---
 
@@ -459,6 +485,7 @@ credit card numbers
 ### When to Use AI Assistants
 
 **Good use cases:**
+
 - Generating boilerplate code
 - Writing unit tests
 - Documenting code
@@ -466,6 +493,7 @@ credit card numbers
 - Implementing standard patterns
 
 **Requires extra caution:**
+
 - Security-critical code (auth, payment, encryption)
 - Performance-critical code
 - Architectural decisions
@@ -474,6 +502,7 @@ credit card numbers
 ### AI Code Review Checklist
 
 **Always verify AI-generated code for:**
+
 - [ ] Security vulnerabilities (SQL injection, XSS, etc.)
 - [ ] Correctness (does it actually work?)
 - [ ] Follows project conventions (this file)
@@ -484,6 +513,7 @@ credit card numbers
 ### Human Ownership
 
 **Remember:** AI suggests, humans decide.
+
 - Engineers own all code quality and correctness
 - All AI-generated code must be reviewed
 - Security and architecture decisions require human judgment
@@ -492,10 +522,10 @@ credit card numbers
 
 ## Version History
 
-| Date | Version | Changes | Author |
-|------|---------|---------|--------|
-| YYYY-MM-DD | 1.0.0 | Initial version | [Your Name] |
-| YYYY-MM-DD | 1.1.0 | Added branching strategy | [Name] |
+| Date       | Version | Changes                  | Author      |
+| ---------- | ------- | ------------------------ | ----------- |
+| YYYY-MM-DD | 1.0.0   | Initial version          | [Your Name] |
+| YYYY-MM-DD | 1.1.0   | Added branching strategy | [Name]      |
 
 ---
 
