@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Deployment Stage
 
-**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
+**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
 
 **Stage:** 6 of 7 (Deployment) **Primary Audience:** DevOps Engineers, Engineers
 **Execution Pattern:** Iterative (per increment)

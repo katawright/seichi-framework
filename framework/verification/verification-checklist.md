@@ -24,18 +24,20 @@ before deployment approval
 
 ---
 
-## Section 1: Test Planning ✅
+## Section 1: Test Execution Planning ✅
 
-**Test strategy defined and documented:**
+**Design stage test strategy confirmed and adapted:**
 
-- [ ] Test types selected based on increment scope
-- [ ] Test coverage approach defined
+- [ ] Test strategy from Design stage (design-brief section 13) reviewed
+- [ ] Test types confirmed or adapted based on implementation
+- [ ] Test coverage approach confirmed from Design plan
 - [ ] Test environments prepared and accessible
 - [ ] Test data loaded and validated
 - [ ] Acceptance criteria clearly identified
 
 **Red flags:**
 
+- ❌ Design stage test strategy not reviewed
 - ❌ Test strategy unclear or missing
 - ❌ Test environments not accessible
 - ❌ Test data incomplete or incorrect
@@ -241,7 +243,7 @@ before deployment approval
 
 **Documentation completeness:**
 
-- [ ] Test strategy documented
+- [ ] Test execution plan documented (execution of Design stage test strategy)
 - [ ] Test execution results recorded
 - [ ] UAT sign-off captured
 - [ ] Defect tracking documented

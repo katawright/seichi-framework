@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Requirements Stage
 
-**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
+**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
 
 **Stage:** 2 of 7 (Requirements) **Primary Audience:** Business Analysts,
 Product Managers **Execution Pattern:** Foundational (once per project,

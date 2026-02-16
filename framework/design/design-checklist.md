@@ -127,6 +127,8 @@ architecture is established.**
       acceptance criteria
 - [ ] **Performance tests planned** - Load test scenarios validate NFRs (if
       applicable to this increment)
+- [ ] **Test strategy ready for Verification** - Plan is detailed enough for QA
+      team to execute tests in Verification stage
 
 ### Implementation Readiness
 

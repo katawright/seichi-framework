@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Initiation Stage
 
-**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
+**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
 
 **Stage:** 1 of 7 (Initiation) **Primary Audience:** Product Managers, Business
 Analysts **Execution Pattern:** Foundational (once per project, revisitable)

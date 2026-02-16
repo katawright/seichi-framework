@@ -36,9 +36,19 @@ being tested]
 
 ---
 
-## Test Strategy
+## Test Execution Plan
 
-### Test Types Selected
+**Executing Design-Stage Test Strategy:** This section executes the test
+strategy planned in Design stage (design-brief section 13). The Design stage
+determined WHAT to test, HOW to test it, and coverage targets. Verification
+stage executes that plan, adapting as needed based on implementation realities.
+
+**Design Test Strategy Reference:** [Link to design-brief.md section 13 -
+Testing Strategy for This Increment]
+
+### Design-Stage Test Plan Confirmation
+
+**Test types planned in Design (confirm or note changes):**
 
 - [x] Integration Testing - Component interactions and API contracts
 - [x] Functional Testing - Acceptance criteria validation
@@ -50,7 +60,16 @@ being tested]
 
 **Rationale for test type selection:** [Why these test types? Why skip others?]
 
+**Changes from Design plan:** [Any adjustments to the test strategy planned in
+Design? What changed and why?]
+
 ### Test Coverage Approach
+
+**Confirming Design stage coverage plan:**
+
+The Design stage (design-brief section 13) identified coverage targets and
+in-scope areas. This section confirms or adapts that plan based on
+implementation realities.
 
 **What is in scope:**
 
@@ -63,11 +82,14 @@ being tested]
 - [Area 1: e.g., Third-party integrations (tested separately)]
 - [Area 2: e.g., UI visual design (not part of this increment)]
 
-**Coverage targets:**
+**Coverage targets (from Design):**
 
 - Integration test coverage: [X% or "all public APIs"]
 - Functional test coverage: [X% or "all acceptance criteria"]
 - Acceptance criteria coverage: [100%]
+
+**Adjustments from Design plan:** [Any changes to coverage approach based on
+implementation? What changed and why?]
 
 ---
 
