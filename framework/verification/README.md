@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Verification Stage
 
-**Framework Version:** 0.9.0 **Last Updated:** 2026-02-15
+**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
 
 **Stage:** 5 of 7 (Verification) **Primary Audience:** QA Engineers, Engineers
 **Execution Pattern:** Iterative (per increment)

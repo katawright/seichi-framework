@@ -9,8 +9,9 @@
 
 ## Quick Reference
 
-**Purpose:** Validate that implemented increments work correctly through
-comprehensive testing and business acceptance before deployment.
+**Purpose:** Execute the test strategy planned in Design stage to validate that
+implemented increments work correctly through comprehensive testing and business
+acceptance before deployment.
 
 **Primary roles:** QA Engineers, Engineers
 
@@ -58,6 +59,14 @@ Verification answers two critical questions:
 This stage encompasses both — testing technical correctness AND validating
 business value before deployment.
 
+**Inputs from Design:**
+
+- Test strategy planned in Design stage
+  ([design-brief section 13](design-brief-template.md#13-testing-strategy-for-this-increment))
+- Test types selected (integration, functional, performance, security)
+- Coverage targets and acceptance criteria traceability
+- Performance benchmarks from NFRs
+
 **Inputs from Implementation:**
 
 - Working code on branch/environment
@@ -71,6 +80,15 @@ business value before deployment.
 - UAT approval from business stakeholders
 - Production readiness assessment
 - Deployment checklist
+
+**Relationship to Design Stage:**
+
+Verification **executes and refines** the test strategy planned during Design
+stage (iterative). The Design stage identifies what to test, coverage targets,
+and test approaches. Verification stage executes those tests, adapts based on
+implementation realities, and validates acceptance criteria.
+
+**Design plans → Verification executes → Deployment deploys**
 
 ---
 
@@ -309,12 +327,13 @@ now, fix before deploy, defer, or won't fix.
 ## Verification Workflow
 
 ```
--- PHASE 1: TEST PLANNING --
+-- PHASE 1: TEST PLANNING (builds on Design stage test strategy) --
 
  1. Review requirements and acceptance criteria
- 2. Define test strategy and coverage approach
+ 2. Review test strategy from Design stage (design-brief section 13)
+ 3. Refine test strategy and coverage approach based on implementation
     [Human approves strategy]
- 3. Prepare test environment and data
+ 4. Prepare test environment and data
 
 -- PHASE 2: TEST EXECUTION --
 

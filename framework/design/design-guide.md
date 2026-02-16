@@ -25,17 +25,21 @@ delivery.
 - System architecture and technology decisions (ADRs)
 - Infrastructure architecture and planning (CI/CD, deployment,
   observability)
-- Iteration plan mapping priorities to increments
+- Increment plan mapping priorities to increments
 - Detailed component designs per increment
+- **Test strategy for Verification stage** (what to test, how to test,
+  coverage targets)
 
 **What good looks like:**
 
 - Architecture addresses all requirements and NFRs
 - Technology choices justified in ADRs with cost analysis
-- Iteration plan sequences Must Haves first, with clear dependencies
+- Increment plan sequences Must Haves first, with clear dependencies
 - Each increment delivers testable value
 - Security, performance, and observability designed in
 - Instrumentation planned for success criteria
+- **Test strategy detailed enough for Verification to execute** (prevents
+  rework)
 
 **Common pitfalls:**
 
@@ -136,6 +140,13 @@ Foundational design creates the increment plan; iterative design executes it:
 
 - Foundational: "Increment 1 includes FR-1, FR-2, FR-3"
 - Iterative: "Detailed design for user registration (FR-1)"
+
+Iterative design creates test strategy; Verification stage executes it:
+
+- Design (iterative): "Integration tests for POST /api/v1/auth/register: valid
+  input → 201, duplicate email → 409"
+- Verification: Executes planned tests, adapts as needed, validates acceptance
+  criteria
 
 Foundational design is revisited rarely; iterative design is adjusted based on
 implementation feedback.

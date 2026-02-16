@@ -162,15 +162,28 @@ significant new information emerges:
 
 ### Stage Overview
 
-| #   | Stage          | Primary Role          | Pattern                  | Purpose                                                  |
-| --- | -------------- | --------------------- | ------------------------ | -------------------------------------------------------- |
-| 1   | Initiation     | PM / BA               | Foundational             | Establish business case with measurable success criteria |
-| 2   | Requirements   | BA / PM               | Foundational             | Define testable requirements with acceptance criteria    |
-| 3   | Design         | Engineers / Architect | Foundational + Iterative | Create architecture and detailed designs                 |
-| 4   | Implementation | Engineers             | Iterative                | Build working code                                       |
-| 5   | Verification   | QA / Engineers        | Iterative                | Validate through testing and acceptance                  |
-| 6   | Deployment     | DevOps / Engineers    | Iterative                | Release to production                                    |
-| 7   | Support        | Engineers / DevOps    | Continuous               | Monitor, maintain, and enhance                           |
+| #   | Stage          | Primary Role          | Pattern                  | Purpose                                                               |
+| --- | -------------- | --------------------- | ------------------------ | --------------------------------------------------------------------- |
+| 1   | Initiation     | PM / BA               | Foundational             | Establish business case with measurable success criteria              |
+| 2   | Requirements   | BA / PM               | Foundational             | Define testable requirements with acceptance criteria                 |
+| 3   | Design         | Engineers / Architect | Foundational + Iterative | Plan architecture, implementation approach, AND test strategy         |
+| 4   | Implementation | Engineers             | Iterative                | Execute implementation plan from Design                               |
+| 5   | Verification   | QA / Engineers        | Iterative                | Execute test strategy from Design, validate acceptance criteria       |
+| 6   | Deployment     | DevOps / Engineers    | Iterative                | Release to production                                                 |
+| 7   | Support        | Engineers / DevOps    | Continuous               | Monitor, maintain, and enhance                                        |
+
+**Key principle: Design plans, Implementation and Verification execute**
+
+The Design stage (iterative) plans BOTH how to build the increment AND how to
+test it. Implementation and Verification execute those plans:
+
+- **Design → Implementation:** Architecture and component designs guide
+  developers in writing code
+- **Design → Verification:** Test strategy guides QA in validating the code
+
+This ensures testability is designed in from the start, not retrofitted after
+implementation. Test planning happens when architectural decisions are made,
+preventing costly rework.
 
 ### Terminology: Increments
 
