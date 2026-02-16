@@ -1,7 +1,5 @@
 # Framework Guide
 
-**Last Updated:** 2026-02-15
-
 > Framework-wide concepts that apply across all stages. Stage-specific guidance
 > is in each stage's guide.
 
@@ -122,7 +120,7 @@ features before increment boundaries are defined.
 How the framework adapts for new projects built from scratch versus extensions
 to existing systems, including infrastructure setup and constraint management.
 
-**[AI Autonomy Overview](#ai-autonomy-overview)** — Guidance for how
+**[AI Assistance Overview](#ai-assistance-overview)** — Guidance for how
 independently AI can operate at each stage before requiring human approval,
 balanced against verifiability and risk.
 
@@ -138,7 +136,7 @@ milestone, etc.).
 
 This section provides a high-level overview. For complete stage definitions
 including inputs, outputs, entry/exit criteria, and handoffs, see the
-[SDLC Stages](framework-stages.md) document.
+[AI-Assisted SDLC Stages](framework-stages.md) document.
 
 ### Execution Patterns
 
@@ -280,7 +278,7 @@ Examples: legal review, security review, accessibility compliance, data privacy
 assessment.
 
 **Human validation of AI output is required at all checkpoint types.** See the
-[AI Autonomy Scorecard](framework-ai-autonomy.md) for stage-specific guidance.
+[AI Assistance Scorecard](framework-ai-assistance.md) for stage-specific guidance.
 
 ---
 
@@ -341,27 +339,27 @@ increment plan maps MoSCoW priorities to specific increments:
 
 ---
 
-## AI Autonomy Overview
+## AI Assistance Overview
 
-AI autonomy levels are bounded and controlled with explicit human gates.
-"Autonomy" means how independently AI can operate before requiring human
+AI assistance levels are bounded and controlled with explicit human gates.
+"Assistance" means how independently AI can operate before requiring human
 approval — not uncontrolled operation.
 
-**Core principle:** Increase AI autonomy as verifiability increases; tighten
+**Core principle:** Increase AI assistance as verifiability increases; tighten
 human gates as risk increases.
 
-| #   | Stage          | Autonomy Level                 | Best Uses                                               |
+| #   | Stage          | Assistance Level               | Best Uses                                               |
 | --- | -------------- | ------------------------------ | ------------------------------------------------------- |
 | 1   | Initiation     | AI assist only                 | Draft briefs, risks, options, sizing                    |
 | 2   | Requirements   | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts |
 | 3   | Design         | AI agent + strong gates        | Propose architectures, ADR drafts, slice plans          |
-| 4   | Implementation | High autonomy, bounded scope   | Generate/refactor code, keep PR-sized slices            |
-| 5   | Verification   | High autonomy + CI gates       | Generate tests, test matrices, expand coverage          |
+| 4   | Implementation | High assistance, bounded scope   | Generate/refactor code, keep PR-sized slices            |
+| 5   | Verification   | High assistance + CI gates       | Generate tests, test matrices, expand coverage          |
 | 6   | Deployment     | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute     |
 | 7   | Support        | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates    |
 
-For full autonomy level definitions (6 levels) and operational guidance, see the
-[AI Autonomy Scorecard](framework-ai-autonomy.md).
+For full assistance level definitions (6 levels) and operational guidance, see the
+[AI Assistance Scorecard](framework-ai-assistance.md).
 
 ---
 
@@ -625,5 +623,7 @@ formal* and *how coordinated*.
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.9.0.

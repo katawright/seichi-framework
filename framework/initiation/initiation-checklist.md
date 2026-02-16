@@ -1,7 +1,5 @@
 # Initiation Checklist
 
-**Last Updated:** 2026-02-08
-
 Use this checklist before sharing an Initiation Brief.
 
 1. **Problem statement is problem-first (not solution-first).**
@@ -30,7 +28,7 @@ Use this checklist before sharing an Initiation Brief.
 ## Exit Criteria Alignment
 
 This checklist aligns with the formal exit criteria in
-[STAGES.md](../../STAGES.md#stage-1-initiation):
+[AI-Assisted SDLC Stages](../framework-stages.md#stage-1-initiation):
 
 - Stakeholders approve business case and objectives (items 1–2)
 - Success metrics are defined and measurable (item 3)
@@ -40,5 +38,7 @@ This checklist aligns with the formal exit criteria in
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.2.0.

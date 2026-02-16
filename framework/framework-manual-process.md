@@ -1,6 +1,4 @@
-# Bootstrap Prompt for AI-Assisted SDLC
-
-**Last Updated:** 2026-02-15
+# Manual Process Guide
 
 ---
 
@@ -230,5 +228,7 @@ If you're stuck or unsure how to proceed:
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.9.0.

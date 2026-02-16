@@ -1,6 +1,6 @@
 # Initiation Brief
 
-**Last Updated:** 2026-02-08
+**Last Updated:** YYYY-MM-DD
 
 > **Purpose:** Define the problem and business case; set goals/success metrics;
 > establish scope boundaries, constraints, assumptions, and key risks/unknowns;
@@ -11,7 +11,7 @@
 **initiation-guide.md**.
 
 **AI Assistance:** This stage is "AI assist only" per
-[AI_AUTONOMY_SCORECARD.md](../../AI_AUTONOMY_SCORECARD.md) — AI can draft and
+[AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft and
 suggest, humans own all decisions and correctness.
 
 ---
@@ -117,7 +117,7 @@ _Example:_ "1 TL + 1 BE + 1 FE + 0.5 PM for 2–4 weeks to reach Gate 2
     opportunity closed, better alternatives exist"
 
 **Next step if proceeding:** This brief becomes input to Requirements stage (per
-[STAGES.md](../../STAGES.md#stage-1-initiation)).
+[AI-Assisted SDLC Stages](../framework-stages.md#stage-1-initiation)).
 
 ## (Optional) Planning for future gates
 
@@ -158,5 +158,7 @@ increment)
 ---
 
 ## Notes
+
+**Template Last Updated:** 2026-02-14
 
 Added to framework in v0.2.0.

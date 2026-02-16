@@ -766,4 +766,6 @@ Date:** [YYYY-MM-DD - recommend quarterly reviews]
 
 ---
 
+**Template Last Updated:** 2026-02-14
+
 _Added to framework in v0.8.0_

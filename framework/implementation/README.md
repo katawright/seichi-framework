@@ -1,12 +1,10 @@
 # AI-Assisted SDLC: Implementation Stage
 
-**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
-
 **Stage:** 4 of 7 (Implementation) **Primary Audience:** Engineers **Execution
 Pattern:** Iterative (per increment)
 
 For cross-cutting framework concepts, see
-[framework-guide.md](../framework-guide.md).
+[Framework Guide](../framework-guide.md).
 
 ## Starting Point
 
@@ -54,5 +52,9 @@ approvals.
 ---
 
 ## Notes
+
+**Framework Version:** 0.11.0
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.5.0.

@@ -1,7 +1,5 @@
 # Design Stage Readiness Checklist
 
-**Last Updated:** 2026-02-09
-
 **Purpose:** Quick validation (60-90 seconds) that design is complete and ready
 to proceed.
 
@@ -152,7 +150,7 @@ architecture is established.**
 ## Exit Criteria Alignment
 
 This checklist ensures the Design stage exit criteria from
-[STAGES.md](../../STAGES.md) are met:
+[AI-Assisted SDLC Stages](../framework-stages.md) are met:
 
 **Foundational:**
 
@@ -206,10 +204,12 @@ This checklist ensures the Design stage exit criteria from
 - [Design Brief Template](design-brief-template.md) - Complete this before using
   checklist
 - [Design Guide](design-guide.md) - Detailed guidance on design practices
-- [STAGES.md](../../STAGES.md) - Design stage definition and exit criteria
+- [AI-Assisted SDLC Stages](../framework-stages.md) - Design stage definition and exit criteria
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.4.0.

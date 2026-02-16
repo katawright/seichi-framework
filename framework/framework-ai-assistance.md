@@ -1,30 +1,28 @@
-# AI Autonomy Scorecard by SDLC Stage
-
-**Last Updated:** 2026-02-15
+# AI Assistance Scorecard
 
 ## Overview
 
 This scorecard provides operational guidance for determining appropriate AI
-autonomy levels across the 7 SDLC stages. It evaluates each stage across four
+assistance levels across the 7 SDLC stages. It evaluates each stage across four
 critical dimensions to help teams make informed decisions about where AI can
 work more independently and where human oversight is essential.
 
 **Purpose:**
 
-- Define clear boundaries for AI autonomy at each stage
+- Define clear boundaries for AI assistance at each stage
 - Help engineers understand where humans maintain control
 - Provide practical guidance for integrating AI safely and effectively
 - Balance productivity gains with appropriate risk management
 
-**Key principle:** AI autonomy levels are bounded and controlled with explicit
-human gates. "Autonomy" in this context means how independently AI can operate
+**Key principle:** AI assistance levels are bounded and controlled with explicit
+human gates. "Assistance" in this context means how independently AI can operate
 before requiring human approval—not uncontrolled or unsupervised operation.
 
 **How to use this scorecard:**
 
 1. Identify which SDLC stage you're working in
-2. Review the autonomy recommendation and "best real work uses"
-3. Consult the autonomy level definitions for implementation details
+2. Review the assistance recommendation and "best real work uses"
+3. Consult the assistance level definitions for implementation details
 4. Adjust recommendations based on your organization's risk tolerance
 
 ---
@@ -62,22 +60,22 @@ Impact and blast radius if AI produces incorrect output.
 - **Medium:** Rework needed, delays, quality issues
 - **Low:** Minor corrections, easily reversible
 
-### 4. Recommended Autonomy Level
+### 4. Recommended Assistance Level
 
 How far the AI agent can go before a human decision gate. See
-[AI Autonomy Levels](#ai-autonomy-levels-definitions) for detailed definitions.
+[AI Assistance Levels](#ai-assistance-levels-definitions) for detailed definitions.
 
 ---
 
 ## Scorecard by Stage
 
-| #   | SDLC Stage         | Fit for AI | Verifiability | Risk if Wrong | Recommended Autonomy                  | Best "Real Work" Uses                                                                                                         |
+| #   | SDLC Stage         | Fit for AI | Verifiability | Risk if Wrong | Recommended Assistance                  | Best "Real Work" Uses                                                                                                         |
 | --- | ------------------ | ---------- | ------------- | ------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | 1   | **Initiation**     | Medium     | Low–Medium    | Medium        | **AI assist only**                    | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
 | 2   | **Requirements**   | High       | Medium        | High          | **AI agent with human gate**          | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
 | 3   | **Design**         | High       | Medium        | High          | **AI agent with strong gates**        | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
-| 4   | **Implementation** | Very High  | High          | Medium        | **High AI autonomy in bounded scope** | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
-| 5   | **Verification**   | Very High  | Very High     | Medium        | **High AI autonomy with CI gates**    | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
+| 4   | **Implementation** | Very High  | High          | Medium        | **High AI assistance in bounded scope** | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
+| 5   | **Verification**   | Very High  | Very High     | Medium        | **High AI assistance with CI gates**    | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
 | 6   | **Deployment**     | Medium     | High          | Very High     | **AI assist only + runbook gates**    | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
 | 7   | **Support**        | High       | Medium        | High          | **AI agent with human gate**          | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
 
@@ -88,11 +86,11 @@ How far the AI agent can go before a human decision gate. See
 Per-increment detailed design (iterative) may use lighter gates as patterns
 become established.
 
-**Implementation (Stage 4):** Autonomy should be bounded by scope (single
+**Implementation (Stage 4):** Assistance should be bounded by scope (single
 service/module), constraints (no auth changes, feature-flagged), and automated
 gates (tests, linting, security scans).
 
-**Verification (Stage 5):** High autonomy appropriate because tests are
+**Verification (Stage 5):** High assistance appropriate because tests are
 self-verifying. AI can iterate until tests pass, but humans validate test
 quality and coverage.
 
@@ -102,7 +100,7 @@ and rollback decisions.
 
 ---
 
-## AI Autonomy Levels (Definitions)
+## AI Assistance Levels (Definitions)
 
 These levels describe **how far an AI agent can go without a human decision
 gate**. They're operational—you can map them to workflow steps, branch
@@ -211,7 +209,7 @@ protections, and permissions.
 
 ---
 
-### Level 4: High AI Autonomy in Bounded Scope
+### Level 4: High AI Assistance in Bounded Scope
 
 **What it means:**
 
@@ -247,7 +245,7 @@ protections, and permissions.
 
 ---
 
-### Level 5: High AI Autonomy with CI Gates
+### Level 5: High AI Assistance with CI Gates
 
 **What it means:**
 
@@ -320,7 +318,7 @@ protections, and permissions.
 
 ### Rule of Thumb
 
-**Increase AI autonomy as verifiability increases; tighten human gates as risk
+**Increase AI assistance as verifiability increases; tighten human gates as risk
 increases.**
 
 This simple rule captures the core tradeoff:
@@ -336,20 +334,20 @@ This simple rule captures the core tradeoff:
 | High uncertainty / low verifiability        | **AI assist only**                    | Human judgment required                        |
 | Medium verifiability / high business impact | **AI agent with human gate**          | Substantial work, human validates correctness  |
 | Architecture/security/data/compliance       | **AI agent with strong gates**        | Large blast radius requires specialized review |
-| Code + tests in constrained module          | **High AI autonomy in bounded scope** | Clear boundaries enable fast iteration         |
-| Test generation with measurable outcomes    | **High AI autonomy with CI gates**    | Objective validation enables autonomy          |
+| Code + tests in constrained module          | **High AI assistance in bounded scope** | Clear boundaries enable fast iteration         |
+| Test generation with measurable outcomes    | **High AI assistance with CI gates**    | Objective validation enables assistance          |
 | Anything production-executed                | **AI assist only + runbook gates**    | High risk demands human execution              |
 
 ### Adapting to Your Organization
 
-**Increase autonomy when:**
+**Increase assistance when:**
 
 - Team has strong CI/CD pipelines and automated testing
 - Organization has high risk tolerance for development environments
 - Engineers are comfortable with AI tooling
 - Rollback procedures are well-established
 
-**Decrease autonomy when:**
+**Decrease assistance when:**
 
 - Working in regulated industries (finance, healthcare, defense)
 - Team is new to AI-assisted development
@@ -372,30 +370,32 @@ confidence and establishes effective gate processes.
 
 ## Integration with Framework
 
-This scorecard complements the [SDLC Stages](framework-stages.md) document:
+This scorecard complements the [AI-Assisted SDLC Stages](framework-stages.md) document:
 
 - **framework-stages.md** defines _what_ to do at each stage (inputs,
   activities, outputs, criteria)
-- **This scorecard** defines _how much autonomy_ AI can have when assisting with
+- **This scorecard** defines _how much assistance_ AI can have when assisting with
   those activities
 
 **Workflow integration:**
 
-1. Identify your current stage from [framework-stages.md](framework-stages.md)
-2. Review this scorecard for autonomy recommendations
+1. Identify your current stage from [AI-Assisted SDLC Stages](framework-stages.md)
+2. Review this scorecard for assistance recommendations
 3. Use the [Manual Process Guide](framework-manual-process.md) to engage your
    AI assistant with the framework
 4. Use stage-specific artifacts (checklists, briefs, guides) from stage
    directories
-5. Implement appropriate human gates based on autonomy level
+5. Implement appropriate human gates based on assistance level
 6. Validate outputs according to stage exit criteria
 
 **For AI assistance:** Use the Manual Process Guide to work with your AI
 assistant through each stage. Stage guides include example questions and
-explorations that respect the autonomy levels defined in this scorecard.
+explorations that respect the assistance levels defined in this scorecard.
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.9.0.

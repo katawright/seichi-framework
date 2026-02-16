@@ -1,9 +1,7 @@
 # Support Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Support. For cross-cutting framework concepts, see
-> [framework-guide.md](../framework-guide.md).
+> [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -44,8 +42,8 @@ enhancement requests, system health metrics
 **Checkpoint:** Continuous monitoring + escalation gates — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** High autonomy for monitoring + human escalation — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** High assistance for monitoring + human escalation — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -494,11 +492,12 @@ recognition.
 
 - [Support Brief Template](support-brief-template.md)
 - [Support Checklist](support-checklist.md)
-- [Support AI Agent Prompt](support-ai-agent-prompt.md)
-- [STAGES.md](../../STAGES.md)
+- [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.8.0.

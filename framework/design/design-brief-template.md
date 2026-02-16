@@ -1,6 +1,6 @@
 # Design Brief
 
-**Last Updated:** 2026-02-15
+**Last Updated:** YYYY-MM-DD
 
 ---
 
@@ -16,7 +16,7 @@ Team, Product Manager, DevOps Lead]
 - **Related Requirements:** [Link to requirements-brief.md]
 - **Increment:** [If iterative: Increment number/name] | [If foundational: N/A]
 - **Execution Pattern:** Foundational + Iterative (see
-  [STAGES.md](../../STAGES.md))
+  [AI-Assisted SDLC Stages](../framework-stages.md))
 - **Primary Role:** Engineers / Solutions Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps
 - **Checkpoints:** Alignment Review (foundational), Quality Checkpoint
@@ -178,7 +178,7 @@ design-brief.
 - **File naming:** `ADR-XXX-short-description.md`
   - Example: `ADR-001-database-selection.md`
   - Example: `ADR-002-file-upload-mechanism.md`
-- **Template:** Use `design-adr-template.md` from the framework
+- **Template:** Use [ADR Template](../adr-template.md) from the framework
 - **Index:** Create `docs/adr/README.md` listing all ADRs with status
 
 **What to include in each ADR:**
@@ -1498,5 +1498,7 @@ Before proceeding to implementation, validate:
 ---
 
 ## Notes
+
+**Template Last Updated:** 2026-02-15
 
 Added to framework in v0.4.0.

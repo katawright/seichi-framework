@@ -1,12 +1,10 @@
 # AI-Assisted SDLC: Design Stage
 
-**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
-
 **Stage:** 3 of 7 (Design) **Primary Audience:** Engineers, Solutions Architects
 **Execution Pattern:** Foundational + Iterative
 
 For cross-cutting framework concepts, see
-[framework-guide.md](../framework-guide.md).
+[Framework Guide](../framework-guide.md).
 
 ## Starting Point
 
@@ -69,5 +67,9 @@ strategy for increment.
 ---
 
 ## Notes
+
+**Framework Version:** 0.11.0
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.4.0.

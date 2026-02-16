@@ -1,6 +1,6 @@
 # Project Context for AI Agents
 
-**Last Updated:** YYYY-MM-DD **Project:** [Your Project Name]
+**Project:** [Your Project Name]
 
 ---
 
@@ -536,6 +536,14 @@ Include acceptance criteria, link to design docs]
 - **CONTRIBUTING.md** - Contribution guidelines
 - **.github/PULL_REQUEST_TEMPLATE.md** - PR template
 - **docs/architecture.md** - Architecture documentation
+
+---
+
+## Notes
+
+**Last Updated:** 2026-02-14
+
+Added to framework in v0.5.0.
 
 ---
 

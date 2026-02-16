@@ -1,9 +1,7 @@
 # Design Guide
 
-**Last Updated:** 2026-02-15
-
 > Stage-specific guidance for Design. For cross-cutting framework concepts, see
-> [framework-guide.md](../framework-guide.md).
+> [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -53,8 +51,8 @@ delivery.
 **Checkpoint:** Alignment Review + Gate 2 — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** AI agent + strong gates — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** AI agent + strong gates — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -963,21 +961,19 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 4. Iterate with AI based on review feedback
 5. Document decisions in ADRs (note AI assistance)
 
-**Using the AI agent prompt:** See `design-ai-agent-prompt.md` for a modular
-prompt that references these artifacts by name.
-
 ---
 
 ## Related Documents
 
 - [Design Brief Template](design-brief-template.md)
 - [Design Checklist](design-checklist.md)
-- [Design AI Agent Prompt](design-ai-agent-prompt.md)
 - [ADR Template](../adr-template.md)
-- [STAGES.md](../../STAGES.md)
+- [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.4.0.

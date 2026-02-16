@@ -1,9 +1,7 @@
 # Initiation Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Initiation. For cross-cutting framework concepts,
-> see [framework-guide.md](../framework-guide.md).
+> see [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -40,8 +38,8 @@ get approval to invest in Requirements work.
 **Checkpoint:** Gate 1 — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** AI assist only — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** AI assist only — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -214,8 +212,8 @@ Otherwise, keep the Brief concise and move quickly to the Requirements stage.
 
 ## AI Assistance Guidance
 
-**Autonomy level:** AI assist only — see
-[AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md)
+**Assistance level:** AI assist only — see
+[AI Assistance Scorecard](../framework-ai-assistance.md)
 
 **Why:** Initiation involves non-technical business decisions that require human
 judgment, stakeholder alignment, and organizational context that AI cannot
@@ -235,11 +233,10 @@ provide.
 - Approve outputs
 - Align stakeholders
 
-**Using the AI agent prompt:** See `initiation-ai-agent-prompt.md` for a modular
-prompt that references these artifacts by name.
-
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.2.0.

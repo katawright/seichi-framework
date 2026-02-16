@@ -1,13 +1,11 @@
 # AI-Assisted SDLC: Requirements Stage
 
-**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
-
 **Stage:** 2 of 7 (Requirements) **Primary Audience:** Business Analysts,
 Product Managers **Execution Pattern:** Foundational (once per project,
 revisitable)
 
 For cross-cutting framework concepts, see
-[framework-guide.md](../framework-guide.md).
+[Framework Guide](../framework-guide.md).
 
 ## Starting Point
 
@@ -57,5 +55,9 @@ For cross-cutting framework concepts, see
 ---
 
 ## Notes
+
+**Framework Version:** 0.11.0
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.3.0.

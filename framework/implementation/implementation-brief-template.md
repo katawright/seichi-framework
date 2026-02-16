@@ -1,6 +1,6 @@
 # Implementation Brief: [Increment Name]
 
-**Last Updated:** YYYY-MM-DD **Template Version:** v0.5.0 (updated 2026-02-11)
+**Last Updated:** YYYY-MM-DD
 
 ---
 
@@ -740,5 +740,7 @@ For each requirement, confirm acceptance criteria are met:
 - vX.X.X (YYYY-MM-DD) - [Brief description of major changes to this brief]
 
 ---
+
+**Template Last Updated:** 2026-02-14
 
 _Added to framework in v0.5.0_

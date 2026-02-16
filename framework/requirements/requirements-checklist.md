@@ -1,7 +1,5 @@
 # Requirements Checklist
 
-**Last Updated:** 2026-02-09
-
 Use this checklist before declaring "requirements ready for Design."
 
 **Time required:** 60-90 seconds
@@ -106,7 +104,7 @@ These items are essential for enabling Design work:
 ## Exit Criteria Alignment
 
 This checklist validates the Requirements stage exit criteria from
-[STAGES.md](../../STAGES.md#stage-2-requirements):
+[AI-Assisted SDLC Stages](../framework-stages.md#stage-2-requirements):
 
 - ✅ All high-priority requirements have acceptance criteria (Items 5-6)
 - ✅ Requirements reviewed and approved by business and technical stakeholders
@@ -120,16 +118,18 @@ This checklist validates the Requirements stage exit criteria from
 
 This checklist aligns with:
 
-- **Stage definition:** [STAGES.md](../../STAGES.md#stage-2-requirements) lines
+- **Stage definition:** [AI-Assisted SDLC Stages](../framework-stages.md#stage-2-requirements) lines
   230-234 (Exit Criteria)
 - **Checkpoint taxonomy:** Quality Checkpoint (ready/not ready) per
-  [STAGES.md - Decision Points and Checkpoints](../../STAGES.md#decision-points-and-checkpoints)
+  [AI-Assisted SDLC Stages - Decision Points and Checkpoints](../framework-stages.md#decision-points-and-checkpoints)
 - **Next stage:** If ready, proceed to Design stage (foundational pass) per
-  [STAGES.md](../../STAGES.md#stage-3-design)
+  [AI-Assisted SDLC Stages](../framework-stages.md#stage-3-design)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.3.0. Adapted from reference materials v0.1 (2026-02-06)
 with exit criteria alignment, critical items emphasis, and framework

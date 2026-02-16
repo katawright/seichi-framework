@@ -1,7 +1,5 @@
 # Verification Checklist
 
-**Last Updated:** 2026-02-12
-
 ## Purpose
 
 This checklist provides a quick 60-90 second validation that testing is complete
@@ -394,14 +392,16 @@ before deployment approval
 
 ## Related Documents
 
-- **[verification-brief-template.md](verification-brief-template.md)** - Full
+- **[Verification Brief](verification-brief-template.md)** - Full
   test results documentation
-- **[verification-guide.md](verification-guide.md)** - Testing best practices
+- **[Verification Guide](verification-guide.md)** - Testing best practices
   and guidance
-- **[STAGES.md](../../STAGES.md)** - Verification stage definition
+- **[AI-Assisted SDLC Stages](../framework-stages.md)** - Verification stage definition
 
 ---
 
 **Version Notes**
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.6.0

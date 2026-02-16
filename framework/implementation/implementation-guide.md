@@ -1,9 +1,7 @@
 # Implementation Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Implementation. For cross-cutting framework
-> concepts, see [framework-guide.md](../framework-guide.md).
+> concepts, see [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -45,8 +43,8 @@ brief, instrumentation
 - standards) — see
   [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** High autonomy, bounded scope — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** High assistance, bounded scope — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -384,12 +382,13 @@ Broken tests block the team and fix cost increases exponentially over time.
 
 - [Implementation Brief Template](implementation-brief-template.md)
 - [Implementation Checklist](implementation-checklist.md)
-- [Implementation AI Agent Prompt](implementation-ai-agent-prompt.md)
 - [ADR Template](../adr-template.md)
-- [STAGES.md](../../STAGES.md)
+- [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.5.0.

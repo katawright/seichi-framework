@@ -1,9 +1,7 @@
 # Requirements Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Requirements. For cross-cutting framework
-> concepts, see [framework-guide.md](../framework-guide.md).
+> concepts, see [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -48,8 +46,8 @@ rework from ambiguity.
 **Checkpoint:** Alignment Reviews throughout; feeds Gate 2 — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** AI assist only — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** AI agent with human gate — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -610,8 +608,8 @@ Requirements is a foundational stage but revisitable when circumstances change:
 
 ## AI Assistance Guidance
 
-**Autonomy level:** AI assist only — see
-[AI Autonomy Scorecard](../../AI_AUTONOMY_SCORECARD.md)
+**Assistance level:** AI agent with human gate — see
+[AI Assistance Scorecard](../framework-ai-assistance.md)
 
 **Why:** Requirements involve business judgment, stakeholder alignment, and
 domain knowledge that AI cannot independently verify.
@@ -639,11 +637,10 @@ domain knowledge that AI cannot independently verify.
 4. Are priorities aligned with business goals?
 5. Are edge cases comprehensive?
 
-**Using the AI agent prompt:** See `requirements-ai-agent-prompt.md` for a
-modular prompt that references these artifacts by name.
-
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.3.0.
