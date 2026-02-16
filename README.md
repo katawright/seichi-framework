@@ -16,7 +16,7 @@ Phase 1: Framework Development — **Complete** (all 7 stages documented)
 - [Project Plan](PROJECT_PLAN.md) - Phased development approach
 - [SDLC Stages](STAGES.md) - Complete stage definitions with inputs, outputs,
   and criteria
-- [AI Autonomy Scorecard](AI_AUTONOMY_SCORECARD.md) - Guidance on AI autonomy
+- [AI Assistance Scorecard](framework/framework-ai-assistance.md) - Guidance on AI assistance
   levels by stage
 
 ### Stage Artifacts

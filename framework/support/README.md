@@ -1,12 +1,10 @@
 # AI-Assisted SDLC: Support Stage
 
-**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
-
 **Stage:** 7 of 7 (Support) **Primary Audience:** DevOps Engineers, Support
 Engineers, Engineers **Execution Pattern:** Continuous (ongoing)
 
 For cross-cutting framework concepts, see
-[framework-guide.md](../framework-guide.md).
+[Framework Guide](../framework-guide.md).
 
 ## Starting Point
 
@@ -57,5 +55,9 @@ start new increments through the SDLC.
 ---
 
 ## Notes
+
+**Framework Version:** 0.11.0
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.8.0.

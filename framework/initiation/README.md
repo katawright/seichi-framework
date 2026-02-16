@@ -1,12 +1,14 @@
 # AI-Assisted SDLC: Initiation Stage
 
-**Framework Version:** 0.10.0 **Last Updated:** 2026-02-15
+**Stage:** 1 of 7 (Initiation) 
 
-**Stage:** 1 of 7 (Initiation) **Primary Audience:** Product Managers, Business
-Analysts **Execution Pattern:** Foundational (once per project, revisitable)
+**Primary Audience:** Product Managers, Business
+Analysts 
+
+**Execution Pattern:** Foundational (once per project, revisitable)
 
 For cross-cutting framework concepts, see
-[framework-guide.md](../framework-guide.md).
+[Framework Guide](../framework-guide.md).
 
 ## Starting Point
 
@@ -53,5 +55,9 @@ starting point.
 ---
 
 ## Notes
+
+**Framework Version:** 0.11.0
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.2.0.

@@ -636,4 +636,6 @@ deployment
 
 ---
 
+**Template Last Updated:** 2026-02-14
+
 _Added to framework in v0.7.0_

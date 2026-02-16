@@ -288,4 +288,4 @@ For detailed rationale, alternatives, and cost analysis, see ADRs in
 **Usage:** This template is used by both Design and Implementation stages for
 documenting significant technical decisions.
 
-**Template Version:** 0.5.0 **Last Updated:** 2026-02-11
+**Template Last Updated:** 2026-02-14

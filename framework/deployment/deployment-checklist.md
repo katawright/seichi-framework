@@ -1,7 +1,5 @@
 # Deployment Checklist
 
-**Last Updated:** 2026-02-12
-
 **Purpose:** Quick verification (60-90 seconds) that deployment is ready to
 execute and has completed successfully.
 
@@ -434,5 +432,7 @@ rollback if critical.
 - [ ] Toggle features on/off without redeployment
 
 ---
+
+**Last Updated:** 2026-02-14
 
 _Added to framework in v0.7.0_

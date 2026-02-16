@@ -565,4 +565,6 @@ DEF-004 | [Low-priority cosmetic issue] | Does not block deployment | v1.2 |
 
 **Version Notes**
 
+**Template Last Updated:** 2026-02-15
+
 Added to framework in v0.6.0

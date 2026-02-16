@@ -1,9 +1,7 @@
 # Verification Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Verification. For cross-cutting framework
-> concepts, see [framework-guide.md](../framework-guide.md).
+> concepts, see [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -44,8 +42,8 @@ assessment, deployment checklist
 **Checkpoint:** Quality Checkpoints + Deployment Approval — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** High autonomy + CI gates — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** High assistance + CI gates — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -418,11 +416,12 @@ Verification validates that measurement systems work correctly. See
 
 - [Verification Brief Template](verification-brief-template.md)
 - [Verification Checklist](verification-checklist.md)
-- [Verification AI Agent Prompt](verification-ai-agent-prompt.md)
-- [STAGES.md](../../STAGES.md)
+- [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.6.0.

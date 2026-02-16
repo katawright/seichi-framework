@@ -1,7 +1,5 @@
 # AI-Assisted SDLC Stages
 
-**Last Updated:** 2026-02-15
-
 ## Overview
 
 The AI-Assisted SDLC framework uses **7 stages** that balance comprehensive
@@ -19,9 +17,9 @@ The framework recognizes that stages execute in different patterns: some are
 foundational (execute once), some are iterative (repeat per increment), and some
 are continuous (ongoing).
 
-For operational guidance on AI autonomy levels at each stage, see the
-**[AI Autonomy Scorecard](framework-ai-autonomy.md)**, which evaluates each
-stage across fit, verifiability, risk, and recommended autonomy levels.
+For operational guidance on AI assistance levels at each stage, see the
+**[AI Assistance Scorecard](framework-ai-assistance.md)**, which evaluates each
+stage across fit, verifiability, risk, and recommended assistance levels.
 
 ---
 
@@ -141,7 +139,7 @@ Each stage specifies which checkpoint types apply. For example:
 - **Deployment:** Deployment Approvals (production deployment, rollout gates)
 
 **Human validation of AI output is required at all checkpoint types.** The AI
-Autonomy Scorecard provides stage-specific guidance on where AI can work more
+Assistance Scorecard provides stage-specific guidance on where AI can work more
 independently vs. where human oversight is critical.
 
 ---
@@ -833,5 +831,7 @@ maintain the 7-stage simplicity.
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-15
 
 Added to framework in v0.9.0.

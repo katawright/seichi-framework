@@ -1,6 +1,6 @@
 # Requirements Brief
 
-**Last Updated:** 2026-02-09
+**Last Updated:** YYYY-MM-DD
 
 > **Purpose:** Convert the Initiation Brief into a **clear, testable
 > requirements baseline**: functional requirements with acceptance criteria,
@@ -11,10 +11,10 @@
 > architect the solution and plan for measurement/instrumentation.
 
 **How to use this:** Bullets only. Keep it concise (~2-3 pages). For deeper
-guidance, see **requirements-guide.md**.
+guidance, see [Requirements Guide](requirements-guide.md).
 
 **AI Assistance:** This stage is "AI assist only" per
-[AI_AUTONOMY_SCORECARD.md](../../AI_AUTONOMY_SCORECARD.md) — AI can draft and
+[AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft and
 suggest, humans own all decisions and validate correctness with stakeholders.
 
 ---
@@ -301,7 +301,7 @@ _Example:_
 
 > **Quality checkpoint:** Confirm requirements are ready for Design stage
 > (foundational pass). Use
-> [requirements-checklist.md](requirements-checklist.md) for detailed
+> [Requirements Checklist](requirements-checklist.md) for detailed
 > validation.
 
 **Ready when:**
@@ -346,6 +346,8 @@ this Requirements Document to Design team.
 ---
 
 ## Notes
+
+**Template Last Updated:** 2026-02-15
 
 Added to framework in v0.3.0.
 

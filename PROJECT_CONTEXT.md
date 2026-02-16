@@ -41,7 +41,7 @@ across their entire product development lifecycle
 ## Design Principles
 
 1. **AI as Assistant, Not Replacement** - Frame AI as a productivity tool that
-   humans control. The [AI Autonomy Scorecard](AI_AUTONOMY_SCORECARD.md)
+   humans control. The [AI Assistance Scorecard](framework/framework-ai-assistance.md)
    operationalizes this principle by defining specific autonomy levels and human
    gates for each stage based on verifiability and risk.
 2. **Practical Over Theoretical** - Focus on actionable, real-world
@@ -86,7 +86,7 @@ development:
 
 The framework uses **7 stages** that balance simplicity with comprehensive
 coverage. For complete stage definitions including inputs, outputs, entry/exit
-criteria, and handoffs, see **[STAGES.md](STAGES.md)**.
+criteria, and handoffs, see **[AI-Assisted SDLC Stages](framework/framework-stages.md)**.
 
 **Quick Summary:**
 
@@ -115,7 +115,7 @@ and supporting roles to:
 - Enable non-technical stakeholders to participate appropriately
 - Improve handoffs between stages
 
-See [STAGES.md](STAGES.md) for detailed descriptions, artifacts, and cross-stage
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for detailed descriptions, artifacts, and cross-stage
 relationships.
 
 ## Measurable Goals and Success Criteria
@@ -211,7 +211,7 @@ validation. Each stage integrates measurement differently:
 - **Deployment** - Capture baseline measurements
 - **Support** - Monitor and validate success criteria
 
-See [STAGES.md](STAGES.md) for the complete measurement throughline table
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for the complete measurement throughline table
 showing how each stage integrates measurement.
 
 ## SDLC Stage Execution Model
@@ -221,7 +221,7 @@ waterfall process. Stages have different execution patterns and can be revisited
 as the project evolves.
 
 **Note:** For stage-specific execution details, inputs/outputs, and entry/exit
-criteria, see [STAGES.md](STAGES.md). This section describes the framework's
+criteria, see [AI-Assisted SDLC Stages](framework/framework-stages.md). This section describes the framework's
 overall execution philosophy and how stages interact.
 
 ### Terminology: Increments
@@ -361,7 +361,7 @@ This execution model ensures the framework is:
 - **Methodology-agnostic** - Teams use their own terminology (epic, feature,
   sprint, etc.)
 
-See [STAGES.md](STAGES.md) for complete stage definitions including execution
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for complete stage definitions including execution
 patterns, inputs/outputs, entry/exit criteria, and handoff details.
 
 ## Artifact Structure Template

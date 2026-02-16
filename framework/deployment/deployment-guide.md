@@ -1,9 +1,7 @@
 # Deployment Guide
 
-**Last Updated:** 2026-02-14
-
 > Stage-specific guidance for Deployment. For cross-cutting framework concepts,
-> see [framework-guide.md](../framework-guide.md).
+> see [Framework Guide](../framework-guide.md).
 
 ---
 
@@ -44,8 +42,8 @@ baselines, rollback confirmation
 **Checkpoint:** Deployment Approval — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI autonomy:** Automated execution + human approval gates — see
-[Framework Guide: AI Autonomy](../framework-guide.md#ai-autonomy-overview)
+**AI assistance:** AI assist only + runbook gates — see
+[Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
 
@@ -473,11 +471,12 @@ Deployment validates that measurement systems work in production. See
 
 - [Deployment Brief Template](deployment-brief-template.md)
 - [Deployment Checklist](deployment-checklist.md)
-- [Deployment AI Agent Prompt](deployment-ai-agent-prompt.md)
-- [STAGES.md](../../STAGES.md)
+- [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
+
+**Last Updated:** 2026-02-14
 
 Added to framework in v0.7.0.
