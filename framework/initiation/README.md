@@ -1,9 +1,8 @@
 # AI-Assisted SDLC: Initiation Stage
 
-**Stage:** 1 of 7 (Initiation) 
+**Stage:** 1 of 8 (Initiation)
 
-**Primary Audience:** Product Managers, Business
-Analysts 
+**Primary Audience:** Product Managers, Business Analysts
 
 **Execution Pattern:** Foundational (once per project, revisitable)
 
@@ -27,11 +26,12 @@ This is the **first stage** — designed for anyone with an idea.
 
 ## Artifacts
 
-| File                           | Description                                  |
-| ------------------------------ | -------------------------------------------- |
-| `initiation-brief-template.md` | Template for your project's initiation brief |
-| `initiation-guide.md`          | Stage-specific guidance and rationale        |
-| `initiation-checklist.md`      | 60-90 second readiness checklist             |
+| File                           | Description                                            |
+| ------------------------------ | ------------------------------------------------------ |
+| `initiation-brief-template.md` | Template for your project's initiation brief           |
+| `initiation-guide.md`          | Stage-specific guidance and rationale                  |
+| `initiation-checklist.md`      | 60-90 second readiness checklist                       |
+| `initiation-reference.md`      | Detailed practices and examples for deeper exploration |
 
 ## Suggested Workflow
 
@@ -58,6 +58,6 @@ starting point.
 
 **Framework Version:** 0.11.0
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.2.0.

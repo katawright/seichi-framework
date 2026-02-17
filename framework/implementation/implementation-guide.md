@@ -38,10 +38,8 @@ brief, instrumentation
 - Large PRs that get rubber-stamped
 - Merging without tests passing
 
-**Checkpoint:** Quality Checkpoint (code review + tests
-
-- standards) — see
-  [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
+**Checkpoint:** Quality Checkpoint (code review + tests + standards) — see
+[Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
 **AI assistance:** High assistance, bounded scope — see
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
@@ -62,27 +60,9 @@ accelerating each step.
 - Implement instrumentation for observability
 - Document decisions for future maintainers
 
-**Inputs from Design:**
-
-- Detailed design specifications for increment
-- API specifications and data models
-- Architecture patterns to follow
-
-**Outputs to Verification:**
-
-- Working code in feature branch
-- Unit test results and coverage reports
-- Code review approval records
-- Implementation brief with notes
-
 ---
 
-## Execution Pattern
-
-Implementation executes **once per increment** in the Design → Implementation →
-Verification → Deployment cycle.
-
-### Implementation Workflow
+## Implementation Workflow
 
 AI assists at every step; humans maintain ownership through review and approval
 gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
@@ -101,7 +81,6 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
  5. Implement instrumentation (logging, metrics)
     Human review: measurement completeness [GATE]
  6. Document code
-    Human review: accuracy and clarity [GATE]
  7. Run tests locally, verify passing
  8. Update implementation brief (progress log)
  9. Submit PR for peer review [GATE]
@@ -130,26 +109,21 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
 ## Code Quality
 
-Follow SOLID, DRY, KISS, and YAGNI principles. These are well-documented in
-standard engineering references; consult your team's standards or ask your AI
-agent for specific guidance.
+Follow SOLID, DRY, KISS, and YAGNI principles. Consult your team's standards or
+ask your AI agent for guidance.
 
-### Code Review Focus Areas
+**Code review focus areas:** Correctness, security, performance,
+maintainability, testability, error handling, standards compliance.
 
-1. **Correctness** — implements requirements?
-2. **Security** — injection, auth bypass, XSS?
-3. **Performance** — obvious inefficiencies?
-4. **Maintainability** — readable, well-structured?
-5. **Testability** — can it be easily tested?
-6. **Error handling** — edge cases and failures?
-7. **Standards compliance** — team conventions?
+> For detailed code review focus areas and code quality check templates, see
+> [Implementation Reference: Code Review](implementation-reference.md#code-review-focus-areas).
 
 ---
 
 ## Implementation Decision Records (ADRs)
 
-For significant implementation decisions, create ADRs using the framework's
-template (`../../adr-template.md`).
+For significant decisions, create ADRs using the framework's template
+(`../../adr-template.md`).
 
 **"Reasonable engineer test":** If someone might later ask "why this approach
 instead of alternatives?", create an ADR.
@@ -160,103 +134,51 @@ decisions with implications.
 **Document inline when:** Single obvious approach, team standard practice,
 easily reversible.
 
-Store in `implementation/adr/` with sequential numbering (ADR-001, ADR-002).
+Store in `implementation/adr/` with sequential numbering.
 
 ---
 
 ## Instrumentation and Observability
 
-Implement the measurement infrastructure designed in the Design stage. Success
-criteria from Initiation must be measurable in production — see
+Implement the measurement infrastructure designed in the System Design stage.
+Success criteria from Initiation must be measurable in production — see
 [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline).
 
-### Logging Best Practices
+**What to implement:**
 
-**Log levels:**
+- Structured logging (errors, key events, security)
+- Metrics for key operations (counters, histograms, timers)
+- Success criteria measurement
+- Alert configuration
 
-- **ERROR** — failures requiring attention
-- **WARN** — unexpected but handled conditions
-- **INFO** — important business events
-- **DEBUG** — diagnostic information
-
-Use structured (JSON) logging for machine readability.
-
-**Always log:** Errors with context, security events, important state changes,
-external service calls.
-
-**Never log:** Passwords, PII, API keys, secrets.
-
-### Metrics and Telemetry
-
-**Metric types:**
-
-- **Counters** — count events (requests, errors)
-- **Gauges** — current value (connections, queue depth)
-- **Histograms** — distributions (response time)
-- **Timers** — durations (API response, query time)
-
-**Implement measurement for success criteria:**
-
-```
-# Success criterion: Reduce tickets by 30%
-metrics.increment('support_ticket.created',
-    tags={'category': ticket.category})
-
-# Success criterion: API response < 200ms p95
-with metrics.timer('api.request.duration',
-    tags={'endpoint': name}):
-    result = process_request()
-```
-
-### Monitoring and Alerts
-
-Configure alerts for error rate thresholds, performance degradation, resource
-exhaustion, external service failures, and security events.
+> For logging best practices, metric types, code examples, and alert guidance,
+> see
+> [Implementation Reference: Logging](implementation-reference.md#logging-best-practices)
+> and [Metrics](implementation-reference.md#metrics-and-telemetry).
 
 ---
 
-## Security Implementation
+## Additional Topics
 
-Follow security best practices when writing code. Consult OWASP guidance and
-your team's security standards.
+The [Implementation Reference](implementation-reference.md) covers these topics
+in depth:
 
-**Key areas:**
-
-- **Input validation** — validate and sanitize all inputs server-side
-- **SQL injection** — use parameterized queries
-- **XSS prevention** — escape output in templates
-- **Authorization** — check permissions before actions
-- **Secrets management** — never hardcode; use environment variables or secret
-  managers
-
----
-
-## Technical Debt Management
-
-**Technical debt** is the implied cost of choosing a quick solution now over a
-better approach.
-
-**Types:** Deliberate (conscious trade-off), accidental (didn't know better),
-environmental (dependencies evolve), bit rot (code degrades over time).
-
-**Good reasons to incur debt:** Time-to-market, uncertainty, learning, risk
-mitigation.
-
-**Bad reasons:** Laziness, ignoring standards, skipping tests or review.
-
-**Managing debt:**
-
-1. **Document it** — TODO/FIXME comments with context
-2. **Track it** — backlog items with "Tech Debt" label
-3. **Prioritize** — high-impact debt blocks features
-4. **Plan paydown** — schedule in future increments
-5. **Communicate** — stakeholders understand trade-offs
+- **Security implementation** — input validation, SQL injection, XSS, secrets
+  management
+- **Technical debt management** — types, good/bad reasons, tracking and paydown
+- **Multi-session work** — continuity mechanisms, session handoff checklists
+- **PR strategy and branching** — PR sizing, trunk-based vs. increment branch,
+  unit testing enforcement
+- **Code quality red flags** — code, testing, security, and performance warning
+  signs
+- **Unit testing details** — coverage targets, test organization, scenario
+  categories
 
 ---
 
 ## AI-Assisted Implementation
 
-### Where AI Excels
+**AI excels at:**
 
 - Generating code from design specifications
 - Implementing standard patterns (CRUD, auth, validation)
@@ -265,95 +187,21 @@ mitigation.
 - Generating documentation and code comments
 - Suggesting refactoring improvements
 
-### Where Human Expertise Is Critical
+**Human responsibilities:**
 
 - Code review and approval — validate AI-generated code
 - Security review — check for vulnerabilities
 - Business logic correctness — verify requirements met
-- Test quality — ensure tests are meaningful, not padding
-- Architectural consistency — follows established patterns
+- Test quality — ensure tests are meaningful
 - Final merge decision — human owns this
 
-### Best Practices
+**Best practices:**
 
-1. **AI generates, human validates** — never merge without review
-2. **Test AI code thoroughly** — verify it works
-3. **Review for security** — injection, auth, XSS
-4. **Validate test quality** — meaningful assertions
-5. **Iterative refinement** — use AI to address review feedback
-
----
-
-## Multi-Session and Multi-Engineer Work
-
-### Continuity Mechanisms
-
-When implementation spans multiple sessions or engineers:
-
-1. **Implementation brief progress log** — primary handoff document between
-   sessions
-2. **Draft PRs** — work-in-progress visible to team
-3. **TODO/FIXME comments** — mark incomplete work in code
-4. **Task tracking** — update tickets with status
-5. **Frequent commits** — save progress incrementally
-6. **Session notes** — brief updates for the team
-
-### Multi-Engineer Best Practices
-
-- **Divide by component** — minimize overlapping files
-- **Agree on interfaces** — define contracts upfront
-- **Communicate frequently** — async for updates, sync for decisions and
-  blockers
-
-### Session Handoff Checklist
-
-**Before ending:** Commit/push, update progress log, update draft PR, mark
-TODOs, post session summary.
-
-**Before starting:** Pull latest, read progress log, check PR status, review
-team updates.
-
----
-
-## PR Strategy and Branching
-
-### PR Size
-
-Keep PRs reviewable — industry guidance suggests 200-400 lines for optimal
-review quality. Larger PRs get rubber-stamped; smaller PRs catch more bugs.
-
-PR size targets are a team convention — document in `AGENTS.md`.
-
-### Single vs. Multiple PRs
-
-- **Single PR:** Small increments (<500 lines), simple cohesive changes
-- **Multiple PRs:** Larger increments, break by architectural layer, component,
-  or dependency order
-
-The increment remains the unit of work for Verification — all PRs must merge
-first.
-
-### Branching Strategies
-
-**Trunk-Based (Recommended):** Short-lived branches merge to `main`, feature
-flags hide incomplete work. Best for frequent deployment, strong CI/CD.
-
-**Increment Branch:** Long-running branch per increment, merges to `main` after
-Verification. Best for infrequent deployment, no feature flags.
-
-Document your branching strategy in `AGENTS.md`.
-
-### Unit Testing Requirements
-
-**Non-negotiable:** Tests must pass before any code integration.
-
-**Enforcement hierarchy:**
-
-1. Pre-commit hooks (ideal — catches before commit)
-2. CI/CD enforcement (required — blocks merge)
-3. Manual runs (minimum — honor system)
-
-Broken tests block the team and fix cost increases exponentially over time.
+1. AI generates, human validates — never merge without review
+2. Test AI code thoroughly — verify it works
+3. Review for security — injection, auth, XSS
+4. Validate test quality — meaningful assertions
+5. Iterative refinement — use AI to address feedback
 
 ---
 
@@ -382,6 +230,7 @@ Broken tests block the team and fix cost increases exponentially over time.
 
 - [Implementation Brief Template](implementation-brief-template.md)
 - [Implementation Checklist](implementation-checklist.md)
+- [Implementation Reference](implementation-reference.md)
 - [ADR Template](../adr-template.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
@@ -389,6 +238,6 @@ Broken tests block the team and fix cost increases exponentially over time.
 
 ## Notes
 
-**Last Updated:** 2026-02-14
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.5.0.

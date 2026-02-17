@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Support Stage
 
-**Stage:** 7 of 7 (Support) **Primary Audience:** DevOps Engineers, Support
+**Stage:** 8 of 8 (Support) **Primary Audience:** DevOps Engineers, Support
 Engineers, Engineers **Execution Pattern:** Continuous (ongoing)
 
 For cross-cutting framework concepts, see
@@ -17,11 +17,12 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                        | Description                              |
-| --------------------------- | ---------------------------------------- |
-| `support-brief-template.md` | Template for support plan and operations |
-| `support-guide.md`          | Stage-specific guidance and rationale    |
-| `support-checklist.md`      | 60-90 second readiness checklist         |
+| File                        | Description                                            |
+| --------------------------- | ------------------------------------------------------ |
+| `support-brief-template.md` | Template for support plan and operations               |
+| `support-guide.md`          | Stage-specific guidance and rationale                  |
+| `support-checklist.md`      | 60-90 second readiness checklist                       |
+| `support-reference.md`      | Detailed practices and examples for deeper exploration |
 
 ## Suggested Workflow
 
@@ -58,6 +59,6 @@ start new increments through the SDLC.
 
 **Framework Version:** 0.11.0
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.8.0.

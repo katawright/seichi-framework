@@ -3,7 +3,7 @@
 ## Overview
 
 This scorecard provides operational guidance for determining appropriate AI
-assistance levels across the 7 SDLC stages. It evaluates each stage across four
+assistance levels across the 8 SDLC stages. It evaluates each stage across four
 critical dimensions to help teams make informed decisions about where AI can
 work more independently and where human oversight is essential.
 
@@ -63,38 +63,41 @@ Impact and blast radius if AI produces incorrect output.
 ### 4. Recommended Assistance Level
 
 How far the AI agent can go before a human decision gate. See
-[AI Assistance Levels](#ai-assistance-levels-definitions) for detailed definitions.
+[AI Assistance Levels](#ai-assistance-levels-definitions) for detailed
+definitions.
 
 ---
 
 ## Scorecard by Stage
 
-| #   | SDLC Stage         | Fit for AI | Verifiability | Risk if Wrong | Recommended Assistance                  | Best "Real Work" Uses                                                                                                         |
-| --- | ------------------ | ---------- | ------------- | ------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Initiation**     | Medium     | Low–Medium    | Medium        | **AI assist only**                    | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
-| 2   | **Requirements**   | High       | Medium        | High          | **AI agent with human gate**          | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
-| 3   | **Design**         | High       | Medium        | High          | **AI agent with strong gates**        | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
-| 4   | **Implementation** | Very High  | High          | Medium        | **High AI assistance in bounded scope** | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
-| 5   | **Verification**   | Very High  | Very High     | Medium        | **High AI assistance with CI gates**    | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
-| 6   | **Deployment**     | Medium     | High          | Very High     | **AI assist only + runbook gates**    | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
-| 7   | **Support**        | High       | Medium        | High          | **AI agent with human gate**          | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
+| #   | SDLC Stage           | Fit for AI | Verifiability | Risk if Wrong | Recommended Assistance                  | Best "Real Work" Uses                                                                                                         |
+| --- | -------------------- | ---------- | ------------- | ------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | **AI assist only**                      | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
+| 2   | **Requirements**     | High       | Medium        | High          | **AI agent with human gate**            | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
+| 3   | **System Design**    | High       | Medium        | High          | **AI agent with strong gates**          | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
+| 4   | **Increment Design** | High       | Medium        | Medium        | **AI agent with strong gates**          | Detail component designs, API specs, test strategies, data model changes                                                      |
+| 5   | **Implementation**   | Very High  | High          | Medium        | **High AI assistance in bounded scope** | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
+| 6   | **Verification**     | Very High  | Very High     | Medium        | **High AI assistance with CI gates**    | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
+| 7   | **Deployment**       | Medium     | High          | Very High     | **AI assist only + runbook gates**      | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
+| 8   | **Support**          | High       | Medium        | High          | **AI agent with human gate**            | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
 
 ### Stage-Specific Notes
 
-**Design (Stage 3):** Has dual execution patterns. Initial architecture
-(foundational) requires strong gates with architecture board review.
-Per-increment detailed design (iterative) may use lighter gates as patterns
-become established.
+**System Design (Stage 3):** Requires strong gates with architecture board
+review. Foundational decisions with high blast radius.
 
-**Implementation (Stage 4):** Assistance should be bounded by scope (single
+**Increment Design (Stage 4):** May use lighter gates as patterns become
+established from System Design. Per-increment detailed design.
+
+**Implementation (Stage 5):** Assistance should be bounded by scope (single
 service/module), constraints (no auth changes, feature-flagged), and automated
 gates (tests, linting, security scans).
 
-**Verification (Stage 5):** High assistance appropriate because tests are
+**Verification (Stage 6):** High assistance appropriate because tests are
 self-verifying. AI can iterate until tests pass, but humans validate test
 quality and coverage.
 
-**Deployment (Stage 6):** Despite high verifiability, the very high risk demands
+**Deployment (Stage 7):** Despite high verifiability, the very high risk demands
 AI assist only. Production actions require human judgment about timing, traffic,
 and rollback decisions.
 
@@ -203,7 +206,7 @@ protections, and permissions.
 
 **When to use:**
 
-- Design stage (especially foundational architecture)
+- System Design stage (especially foundational architecture)
 - Any changes affecting security, data integrity, or system reliability
 - Cross-service interfaces and contracts
 
@@ -329,14 +332,14 @@ This simple rule captures the core tradeoff:
 
 ### Quick Mapping: When to Use Which Level
 
-| Scenario                                    | Recommended Level                     | Rationale                                      |
-| ------------------------------------------- | ------------------------------------- | ---------------------------------------------- |
-| High uncertainty / low verifiability        | **AI assist only**                    | Human judgment required                        |
-| Medium verifiability / high business impact | **AI agent with human gate**          | Substantial work, human validates correctness  |
-| Architecture/security/data/compliance       | **AI agent with strong gates**        | Large blast radius requires specialized review |
+| Scenario                                    | Recommended Level                       | Rationale                                      |
+| ------------------------------------------- | --------------------------------------- | ---------------------------------------------- |
+| High uncertainty / low verifiability        | **AI assist only**                      | Human judgment required                        |
+| Medium verifiability / high business impact | **AI agent with human gate**            | Substantial work, human validates correctness  |
+| Architecture/security/data/compliance       | **AI agent with strong gates**          | Large blast radius requires specialized review |
 | Code + tests in constrained module          | **High AI assistance in bounded scope** | Clear boundaries enable fast iteration         |
-| Test generation with measurable outcomes    | **High AI assistance with CI gates**    | Objective validation enables assistance          |
-| Anything production-executed                | **AI assist only + runbook gates**    | High risk demands human execution              |
+| Test generation with measurable outcomes    | **High AI assistance with CI gates**    | Objective validation enables assistance        |
+| Anything production-executed                | **AI assist only + runbook gates**      | High risk demands human execution              |
 
 ### Adapting to Your Organization
 
@@ -370,19 +373,21 @@ confidence and establishes effective gate processes.
 
 ## Integration with Framework
 
-This scorecard complements the [AI-Assisted SDLC Stages](framework-stages.md) document:
+This scorecard complements the [AI-Assisted SDLC Stages](framework-stages.md)
+document:
 
 - **framework-stages.md** defines _what_ to do at each stage (inputs,
   activities, outputs, criteria)
-- **This scorecard** defines _how much assistance_ AI can have when assisting with
-  those activities
+- **This scorecard** defines _how much assistance_ AI can have when assisting
+  with those activities
 
 **Workflow integration:**
 
-1. Identify your current stage from [AI-Assisted SDLC Stages](framework-stages.md)
+1. Identify your current stage from
+   [AI-Assisted SDLC Stages](framework-stages.md)
 2. Review this scorecard for assistance recommendations
-3. Use the [Manual Process Guide](framework-manual-process.md) to engage your
-   AI assistant with the framework
+3. Use the [Manual Process Guide](framework-manual-process.md) to engage your AI
+   assistant with the framework
 4. Use stage-specific artifacts (checklists, briefs, guides) from stage
    directories
 5. Implement appropriate human gates based on assistance level

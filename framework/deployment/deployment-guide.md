@@ -65,8 +65,6 @@ baselines, rollback confirmation
 Choose based on risk tolerance, rollback speed needs, infrastructure
 capabilities, and deployment frequency.
 
-### Strategy Comparison
-
 | Factor          | Blue/Green | Canary | Rolling | Feature Flag |
 | --------------- | ---------- | ------ | ------- | ------------ |
 | Zero downtime   | Yes        | Yes    | Yes     | Yes          |
@@ -75,76 +73,12 @@ capabilities, and deployment frequency.
 | Complexity      | Medium     | High   | Low     | High         |
 | Gradual rollout | No         | Yes    | Partial | Yes          |
 
-### Blue/Green Deployment
-
-Two identical environments (Blue = current, Green = new). Deploy to Green,
-validate, switch traffic.
-
-- Instant rollback (switch traffic back)
-- Requires double infrastructure
-- Database migrations must be backward-compatible
-
-### Canary Deployment
-
-Deploy to small subset (5-10%), monitor, gradually increase traffic if healthy.
-
-- Limited blast radius
-- Real production validation
-- Requires traffic routing and metrics segmentation
-
-### Rolling Deployment
-
-Gradually update instances one at a time or in batches.
-
-- No extra infrastructure needed
-- Mixed versions during rollout
-- Slower rollback (must redeploy previous version)
-
 **Recommendation:** Start with rolling deployment, add feature flags as you
 mature, use canary for high-risk changes, consider blue/green for
 zero-downtime-critical systems.
 
-### Feature Flags
-
-Deploy code with features disabled, enable via configuration without
-redeployment.
-
-- Decouples deployment from release
-- Instant rollback (toggle flag off)
-- Adds code complexity; flags must be cleaned up
-
-Consult your team's feature flag tools and practices for implementation
-guidance.
-
----
-
-## Environment Management
-
-### Environment Pipeline
-
-```
-Development → Staging/QA → Pre-Production → Production
-```
-
-**Key environments:**
-
-- **Development** — engineer testing, synthetic data, continuous deployment
-- **Staging/QA** — verification testing, production-like data (anonymized),
-  per-increment deployment
-- **Pre-Production** (optional) — final validation, production-identical
-  infrastructure
-- **Production** — live system, real users, controlled monitored releases
-
-### Environment Parity
-
-Differences between staging and production cause "works in staging, fails in
-production" issues.
-
-**Achieve parity across:** infrastructure, configuration, data schema,
-dependencies, resource allocation.
-
-Use Infrastructure as Code (Terraform, CloudFormation) to maintain consistency.
-Document environment-specific differences explicitly.
+> For strategy details and strategy-specific checklists, see
+> [Deployment Reference: Deployment Strategies](deployment-reference.md#deployment-strategies).
 
 ---
 
@@ -152,70 +86,21 @@ Document environment-specific differences explicitly.
 
 Database migrations are often the riskiest part of deployment. Plan carefully.
 
-### Migration Types
+**Migration types:** Additive (safest), backward-compatible (safe), breaking
+(risky — requires coordinated deployment).
 
-- **Additive (safest)** — new tables, columns, indexes; old code ignores new
-  structures
-- **Backward-compatible (safe)** — modify existing structures compatibly
-  (nullable columns, defaults)
-- **Breaking (risky)** — remove or fundamentally change structures; requires
-  coordinated deployment
+**Key principle:** Use the expand-contract strategy for zero-downtime migrations
+— add new structures first, migrate data, then remove old structures after all
+code is updated.
 
-### Expand-Contract Strategy (Recommended)
-
-1. **Expand** — add new structures without removing old (both versions work
-   simultaneously)
-2. **Migrate** — copy data from old to new
-3. **Contract** — remove old structures after all code updated
-
-This enables zero-downtime migrations and easy rollback.
-
-### Migration Best Practices
-
-**Before:** Test in staging with production-sized data, estimate duration,
-assess lock impact, back up database, write rollback script.
-
-**During:** Monitor progress, check application health, validate incrementally.
-
-**After:** Validate data integrity, check logs for errors, monitor performance,
-plan cleanup of old structures.
-
-### Common Pitfalls
-
-- Adding non-nullable column without default (fails on existing rows)
-- Creating index without CONCURRENTLY on large tables (locks table)
-- Renaming column without expand-contract (breaks old code immediately)
-
----
-
-## Configuration Management
-
-### Principles
-
-1. Externalize configuration from code
-2. Never commit secrets to version control
-3. Environment-specific values (dev vs. staging vs. production)
-4. Validate on startup (fail fast if config missing)
-5. Document expected configuration
-
-### Secrets Management
-
-Use dedicated tools for secrets: AWS Secrets Manager, HashiCorp Vault, Azure Key
-Vault, Kubernetes Secrets.
-
-**Never commit:** API keys, passwords, database credentials, private keys, OAuth
-tokens.
-
-**Best practices:** Rotate secrets after deployment, use different secrets per
-environment, audit secret access.
+> For migration details, expand-contract walkthrough, and common pitfalls, see
+> [Deployment Reference: Database Migrations](deployment-reference.md#database-migrations).
 
 ---
 
 ## Rollback Procedures
 
 Every deployment must be reversible. Plan rollback before deploying.
-
-### When to Roll Back
 
 **Critical triggers (roll back immediately):**
 
@@ -225,156 +110,39 @@ Every deployment must be reversible. Plan rollback before deploying.
 - Error rate >5% sustained for >5 minutes
 - Performance collapse (response time >2x baseline)
 
-**Warning signs (investigate, may need rollback):**
+Define rollback decision authority BEFORE deployment: deployment engineer for
+technical issues, DevOps lead for major incidents, product manager for business
+impact.
 
-- Error rate 2-5% above baseline
-- Performance degradation 1.5-2x baseline
-- Multiple user reports of same issue
-
-### Rollback Decision Authority
-
-Define decision maker BEFORE deployment:
-
-- Deployment engineer — technical issues
-- DevOps lead — major incidents
-- Product manager — business impact assessment
-- Escalation path documented
-
-### Database Rollback Considerations
-
-- **Additive migrations** — safe to leave after rollback; old code ignores new
-  structures
-- **Breaking migrations** — require rollback script or database backup
-  restoration
-
-### Post-Rollback Actions
-
-1. Notify stakeholders (reason and impact)
-2. Preserve evidence (logs, metrics, error reports)
-3. Schedule retrospective
-4. Fix root cause before redeploying
-5. Update deployment brief
+> For detailed rollback procedures, database rollback considerations, and
+> post-rollback actions, see
+> [Deployment Reference: Rollback Procedures](deployment-reference.md#rollback-procedures).
 
 ---
 
 ## Monitoring and Observability
 
-### Key Metrics to Monitor
+Monitor application health, infrastructure health, database metrics, and
+business metrics during and after every deployment.
 
-**Application health:** Error rate (<1% baseline), response time (p50/p95/p99),
-throughput, success rate.
+**Cadence:** Active monitoring for first 2 hours, dashboard checks every 2 hours
+for first 24 hours, daily review for first week.
 
-**Infrastructure health:** CPU (<70% baseline), memory (<80%), disk (<70%),
-network I/O.
-
-**Database metrics:** Connection pool usage, query time, deadlocks, replication
-lag.
-
-**Business metrics:** User activity, conversion rate, revenue (if applicable).
-
-### Monitoring Cadence
-
-**Before deployment:** Configure dashboards, define alert thresholds, capture
-baseline metrics, verify success criteria instrumentation.
-
-**During deployment:** Monitor dashboards every 5-15 minutes, watch for
-anomalies, check logs, validate health checks.
-
-**After deployment:** Continue monitoring 24-48 hours, review logs daily for
-first week, track success criteria weekly for first month.
+> For specific thresholds, alert configuration, and health check details, see
+> [Deployment Reference: Monitoring Thresholds](deployment-reference.md#monitoring-thresholds-and-cadence).
 
 ---
 
-## Communication and Stakeholder Management
+## Communication
 
 Overcommunicate during deployments. Stakeholders prefer too much information to
 being surprised.
 
-### Notification Timeline
+**Timeline:** Notify 24-48h before, at deployment start, every 30 min during
+long deployments, at completion, and immediately on rollback.
 
-- **Pre-deployment (24-48h)** — all stakeholders: schedule, expected impact, new
-  features
-- **Deployment start** — technical teams, support: in progress, expected
-  duration
-- **During (if >30min)** — progress updates every 30 minutes
-- **Deployment complete** — all stakeholders: success, new features live, known
-  issues
-- **If rollback** — all stakeholders immediately: reason, impact, next steps
-
-### Communication Channels
-
-- Dedicated #deployments Slack channel
-- Status page (customer-facing, if applicable)
-- Email for formal notifications
-- Incident channel for issues (#incident-YYYY-MM-DD)
-
----
-
-## Common Deployment Patterns
-
-### Hotfix Deployment
-
-For critical bugs requiring immediate fix:
-
-1. Branch from production tag (not main)
-2. Implement minimal fix only
-3. Fast-track testing (regression + fix validation)
-4. Deploy with accelerated approval
-5. Monitor closely
-6. Merge hotfix back to main
-
-**Anti-patterns:** bundling other changes, skipping testing, hotfixing minor
-issues.
-
-### Scheduled Maintenance
-
-For breaking changes requiring downtime:
-
-1. Schedule low-traffic maintenance window
-2. Notify users 1-2 weeks in advance
-3. Display maintenance page
-4. Deploy and validate
-5. Bring online and notify completion
-
----
-
-## Deployment Automation
-
-### CI/CD Pipeline
-
-```
-Code Push → Build → Tests → Package →
-Deploy to Dev → Smoke Tests →
-Deploy to Staging → Full Tests →
-Manual Approval → Deploy to Production → Monitor
-```
-
-**Best practices:**
-
-- Automate deployment to dev/staging
-- Require manual approval for production
-- Run smoke tests after each deployment
-- Automatically roll back if health checks fail
-- Deployment scripts must be idempotent
-- Log every deployment step
-
----
-
-## Security Considerations
-
-**Before deployment:**
-
-- No secrets in code or config files
-- Dependencies scanned for vulnerabilities
-- Access controls reviewed (least privilege)
-- Audit logging enabled
-
-**After deployment:**
-
-- No secrets exposed in logs or error messages
-- Security headers configured
-- SSL/TLS certificates valid
-- Authentication and authorization verified
+> For notification templates and channel guidance, see
+> [Deployment Reference: Communication](deployment-reference.md#communication-templates).
 
 ---
 
@@ -408,6 +176,22 @@ Manual Approval → Deploy to Production → Monitor
 
 HANDOFF TO SUPPORT
 ```
+
+---
+
+## Additional Topics
+
+The [Deployment Reference](deployment-reference.md) covers these topics in
+depth:
+
+- **Environment management** — pipeline, parity, Infrastructure as Code
+- **Configuration and secrets** — externalization principles, secrets management
+  tools
+- **Deployment patterns** — hotfix workflow, scheduled maintenance
+- **CI/CD pipeline** — automation structure and best practices
+- **Security** — pre- and post-deployment security checks
+- **Decision trees** — before, during, and after deployment
+- **Red flags** — stop-and-address signals at each phase
 
 ---
 
@@ -471,12 +255,13 @@ Deployment validates that measurement systems work in production. See
 
 - [Deployment Brief Template](deployment-brief-template.md)
 - [Deployment Checklist](deployment-checklist.md)
+- [Deployment Reference](deployment-reference.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-02-14
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.7.0.

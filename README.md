@@ -6,7 +6,7 @@ A practical framework for integrating AI assistance into software development.
 
 ## Status
 
-Phase 1: Framework Development — **Complete** (all 7 stages documented)
+Phase 1: Framework Development — **Complete** (all 8 stages documented)
 
 ## Documentation
 
@@ -16,23 +16,24 @@ Phase 1: Framework Development — **Complete** (all 7 stages documented)
 - [Project Plan](PROJECT_PLAN.md) - Phased development approach
 - [SDLC Stages](STAGES.md) - Complete stage definitions with inputs, outputs,
   and criteria
-- [AI Assistance Scorecard](framework/framework-ai-assistance.md) - Guidance on AI assistance
-  levels by stage
+- [AI Assistance Scorecard](framework/framework-ai-assistance.md) - Guidance on
+  AI assistance levels by stage
 
 ### Stage Artifacts
 
 Each stage includes a brief template, checklist, reference guide, AI agent
 prompt, and README.
 
-| #   | Stage                                       | Description                            |
-| --- | ------------------------------------------- | -------------------------------------- |
-| 1   | [Initiation](framework/initiation/)         | Business case, objectives, scope       |
-| 2   | [Requirements](framework/requirements/)     | Functional/non-functional requirements |
-| 3   | [Design](framework/design/)                 | Architecture and detailed design       |
-| 4   | [Implementation](framework/implementation/) | Code development and review            |
-| 5   | [Verification](framework/verification/)     | Testing and acceptance                 |
-| 6   | [Deployment](framework/deployment/)         | Release and rollout                    |
-| 7   | [Support](framework/support/)               | Monitoring, maintenance, enhancement   |
+| #   | Stage                                           | Description                            |
+| --- | ----------------------------------------------- | -------------------------------------- |
+| 1   | [Initiation](framework/initiation/)             | Business case, objectives, scope       |
+| 2   | [Requirements](framework/requirements/)         | Functional/non-functional requirements |
+| 3   | [System Design](framework/system-design/)       | Architecture and technology choices    |
+| 4   | [Increment Design](framework/increment-design/) | Detailed design per increment          |
+| 5   | [Implementation](framework/implementation/)     | Code development and review            |
+| 6   | [Verification](framework/verification/)         | Testing and acceptance                 |
+| 7   | [Deployment](framework/deployment/)             | Release and rollout                    |
+| 8   | [Support](framework/support/)                   | Monitoring, maintenance, enhancement   |
 
 ### Supporting Artifacts
 

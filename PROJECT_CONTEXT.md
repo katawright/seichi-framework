@@ -41,7 +41,8 @@ across their entire product development lifecycle
 ## Design Principles
 
 1. **AI as Assistant, Not Replacement** - Frame AI as a productivity tool that
-   humans control. The [AI Assistance Scorecard](framework/framework-ai-assistance.md)
+   humans control. The
+   [AI Assistance Scorecard](framework/framework-ai-assistance.md)
    operationalizes this principle by defining specific autonomy levels and human
    gates for each stage based on verifiability and risk.
 2. **Practical Over Theoretical** - Focus on actionable, real-world
@@ -84,26 +85,26 @@ development:
 
 ## SDLC Stages
 
-The framework uses **7 stages** that balance simplicity with comprehensive
+The framework uses **8 stages** that balance simplicity with comprehensive
 coverage. For complete stage definitions including inputs, outputs, entry/exit
-criteria, and handoffs, see **[AI-Assisted SDLC Stages](framework/framework-stages.md)**.
+criteria, and handoffs, see
+**[AI-Assisted SDLC Stages](framework/framework-stages.md)**.
 
 **Quick Summary:**
 
 1. **Initiation** - Establish business case with measurable success criteria
 2. **Requirements** - Define testable requirements with acceptance criteria
-3. **Design** - Create architecture (foundational) and detailed designs
-   (iterative)
-4. **Implementation** - Build working code
-5. **Verification** - Validate through testing and acceptance (including UAT)
-6. **Deployment** - Release to production
-7. **Support** - Monitor, maintain, and enhance
+3. **System Design** - Establish system architecture and technical approach
+4. **Increment Design** - Create detailed designs per increment
+5. **Implementation** - Build working code
+6. **Verification** - Validate through testing and acceptance (including UAT)
+7. **Deployment** - Release to production
+8. **Support** - Monitor, maintain, and enhance
 
 **Execution Patterns:**
 
-- **Foundational** (once per project): Initiation, Requirements, Design (first
-  pass)
-- **Iterative** (per increment): Design (detail), Implementation, Verification,
+- **Foundational** (once per project): Initiation, Requirements, System Design
+- **Iterative** (per increment): Increment Design, Implementation, Verification,
   Deployment
 - **Continuous** (ongoing): Support
 
@@ -115,8 +116,8 @@ and supporting roles to:
 - Enable non-technical stakeholders to participate appropriately
 - Improve handoffs between stages
 
-See [AI-Assisted SDLC Stages](framework/framework-stages.md) for detailed descriptions, artifacts, and cross-stage
-relationships.
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for detailed
+descriptions, artifacts, and cross-stage relationships.
 
 ## Measurable Goals and Success Criteria
 
@@ -205,14 +206,15 @@ validation. Each stage integrates measurement differently:
 
 - **Initiation** - Define objectives with measurable success criteria
 - **Requirements** - Ensure instrumentation needs are captured as NFRs
-- **Design** - Design measurement infrastructure
+- **System Design** - Design measurement infrastructure
+- **Increment Design** - Plan metrics collection for increment
 - **Implementation** - Implement metrics collection
 - **Verification** - Test measurement systems
 - **Deployment** - Capture baseline measurements
 - **Support** - Monitor and validate success criteria
 
-See [AI-Assisted SDLC Stages](framework/framework-stages.md) for the complete measurement throughline table
-showing how each stage integrates measurement.
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for the complete
+measurement throughline table showing how each stage integrates measurement.
 
 ## SDLC Stage Execution Model
 
@@ -221,8 +223,9 @@ waterfall process. Stages have different execution patterns and can be revisited
 as the project evolves.
 
 **Note:** For stage-specific execution details, inputs/outputs, and entry/exit
-criteria, see [AI-Assisted SDLC Stages](framework/framework-stages.md). This section describes the framework's
-overall execution philosophy and how stages interact.
+criteria, see [AI-Assisted SDLC Stages](framework/framework-stages.md). This
+section describes the framework's overall execution philosophy and how stages
+interact.
 
 ### Terminology: Increments
 
@@ -256,22 +259,21 @@ needed):
 - **Initiation** - Establishes project vision, business case, objectives, and
   measurable success criteria
 - **Requirements** - Defines what the system should do with acceptance criteria
-- **Design** (foundational pass) - Establishes overall system architecture and
-  technical approach
+- **System Design** - Establishes overall system architecture and technical
+  approach
 
 These stages set the project foundation but are **not frozen**. They can and
 should be revisited when significant new information emerges.
 
 **Iterative Stages** (Execute repeatedly per increment):
 
-- **Design** (iterative pass) - Detailed design for specific increment
+- **Increment Design** - Detailed design for specific increment
 - **Implementation** - Build the increment
 - **Verification** - Validate the increment through testing and acceptance
 - **Deployment** - Release the increment to production
 
 These stages repeat for each deliverable increment, enabling continuous value
-delivery. Note that Design serves dual purposes: a foundational pass for overall
-architecture, and iterative passes for increment-specific details.
+delivery.
 
 **Continuous Stages** (Ongoing after first production deployment):
 
@@ -282,7 +284,7 @@ architecture, and iterative passes for increment-specific details.
 
 Stages may need to be revisited when:
 
-**For Foundational Stages (Initiation, Requirements, Design):**
+**For Foundational Stages (Initiation, Requirements, System Design):**
 
 - Implementation reveals unanticipated technical constraints or impossibilities
 - User feedback from deployed increments shows requirements miss the mark
@@ -294,7 +296,8 @@ Stages may need to be revisited when:
 - Market conditions change during development
 - Stakeholder understanding evolves through iterative delivery
 
-**For Iterative Stages (Design, Implementation, Verification, Deployment):**
+**For Iterative Stages (Increment Design, Implementation, Verification,
+Deployment):**
 
 - Verification reveals design flaws requiring revision
 - Code review identifies better implementation approaches
@@ -322,7 +325,7 @@ When revisiting a stage:
   criteria
 - Complete Requirements (foundational) - Document FRs/NFRs with acceptance
   criteria
-- Complete Design (foundational) - Establish system architecture
+- Complete System Design (foundational) - Establish system architecture
 - Plan increments based on architecture
 
 **Month 1, Weeks 2-4:**
@@ -361,8 +364,9 @@ This execution model ensures the framework is:
 - **Methodology-agnostic** - Teams use their own terminology (epic, feature,
   sprint, etc.)
 
-See [AI-Assisted SDLC Stages](framework/framework-stages.md) for complete stage definitions including execution
-patterns, inputs/outputs, entry/exit criteria, and handoff details.
+See [AI-Assisted SDLC Stages](framework/framework-stages.md) for complete stage
+definitions including execution patterns, inputs/outputs, entry/exit criteria,
+and handoff details.
 
 ## Artifact Structure Template
 
@@ -456,15 +460,15 @@ The framework succeeds if:
 4. Professional standards are maintained or improved
 5. Engineers view AI as helpful rather than threatening
 6. Cross-functional handoffs are clearer and more efficient
-7. The 7-stage model is lightweight enough to avoid bureaucratic overhead
+7. The 8-stage model is lightweight enough to avoid bureaucratic overhead
 8. The framework can be followed manually before tooling exists
 9. Business stakeholders feel empowered to initiate projects independently with
    clear success criteria
 10. Reduced back-and-forth between business and engineering teams
 11. Projects consistently define measurable success criteria during Initiation
 12. Teams can track progress toward goals throughout the SDLC
-13. The framework adapts to both small/medium organizations (unified Design
-    stage) and enterprises (split Architecture/Detailed Design)
+13. The framework provides clean separation between foundational System Design
+    and iterative Increment Design
 
 ## Framework Effectiveness and Measurement
 
@@ -530,7 +534,7 @@ theoretical improvements.
 
 - Existing work from ChatGPT is reference material only - review and improve,
   don't just copy
-- Maintain consistency across all 7 stage artifacts
+- Maintain consistency across all 8 stage artifacts
 - Keep language professional but approachable
 - **Adjust language/terminology based on primary role for each stage** (business
   language for PM/BA stages, technical for engineering stages)
@@ -550,8 +554,8 @@ theoretical improvements.
   framework-agnostic (support OKRs, SMART goals, KPIs, etc.)
 - **Show measurement throughline across all stages** - how each stage
   contributes to or enables measurement of success
-- **Make Design stage's dual nature (foundational + iterative) clear in
-  artifacts**
+- **Clarify handoff between System Design and Increment Design** - how
+  architecture decisions inform increment-level design
 - **Verification stage should encompass all validation types** (unit,
   integration, UAT, performance, security)
 
@@ -566,14 +570,15 @@ theoretical improvements.
 - Use **Conventional Commits** for all commit messages:
   - Format: `type(scope): description`
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`
-  - Scopes: stage names (initiation, requirements, design, implementation,
-    verification, deployment, support), framework, application, ci
+  - Scopes: stage names (initiation, requirements, system-design,
+    increment-design, implementation, verification, deployment, support),
+    framework, application, ci
   - Examples:
     - `feat(initiation): add measurable success criteria section to brief template`
     - `fix(requirements): correct acceptance criteria validation logic`
     - `docs(framework): update execution model examples`
     - `refactor(application): extract stage loader into separate module`
-    - `feat(design): add architecture decision record template`
+    - `feat(system-design): add architecture decision record template`
   - Breaking changes: Add `BREAKING CHANGE:` in commit body or use `!` after
     type/scope
   - Example: `feat(framework)!: restructure stage artifact naming convention`
@@ -591,7 +596,8 @@ theoretical improvements.
     version (e.g., v0.4.0 → v0.5.0)
   - Update Last Updated when content changes
   - **Example:** When releasing v0.5.0, update all existing README files
-    (Initiation, Requirements, Design) to show Framework Version: 0.5.0
+    (Initiation, Requirements, System Design, Increment Design) to show
+    Framework Version: 0.5.0
 - **Individual artifact files (templates, checklists, references, prompts):**
   - Include `**Last Updated:** YYYY-MM-DD` at the top (when file was last
     modified)
@@ -606,7 +612,7 @@ theoretical improvements.
     experience
   - Individual artifacts preserve historical context with "Added to framework in
     vX.X.X" notes
-  - Only ~7 README files to update per release (manageable), vs 50+ individual
+  - Only ~8 README files to update per release (manageable), vs 50+ individual
     artifacts
   - Git history and tags provide full version tracking
 
@@ -614,7 +620,7 @@ theoretical improvements.
 
 When reviewing reference materials and building the framework:
 
-1. Are the 7 SDLC stages comprehensive and appropriately scoped?
+1. Are the 8 SDLC stages comprehensive and appropriately scoped?
 2. Is the artifact structure consistent and complete across all stages?
 3. Are there missing artifacts that would add value?
 4. Do the AI agent prompts effectively elicit required information?
@@ -636,4 +642,5 @@ When reviewing reference materials and building the framework:
     framework?**
 16. **Does the Initiation stage adequately guide definition of measurable goals
     regardless of framework choice?**
-17. **Is the dual nature of Design stage (foundational + iterative) clear?**
+17. **Is the handoff between System Design and Increment Design clear and
+    effective?**

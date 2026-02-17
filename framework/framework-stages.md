@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AI-Assisted SDLC framework uses **7 stages** that balance comprehensive
+The AI-Assisted SDLC framework uses **8 stages** that balance comprehensive
 coverage with practical simplicity. The stages are designed to be:
 
 - **Methodology-agnostic** - Works for agile, waterfall, and hybrid approaches
@@ -39,8 +39,7 @@ still realistic
 **Examples:**
 
 - **Gate 1:** End of Initiation - Approve brief and fund Requirements work?
-- **Gate 2:** End of Requirements + Design (foundational) - Commit to building
-  this?
+- **Gate 2:** End of Requirements + System Design - Commit to building this?
 
 **AI validation:** Ensure AI-assisted analysis and recommendations are sound;
 human owns the investment decision.
@@ -130,7 +129,8 @@ legal, or security requirements must be met
 Each stage specifies which checkpoint types apply. For example:
 
 - **Initiation:** Gate 1 (investment decision)
-- **Requirements:** Alignment Reviews (stakeholder walkthroughs), Gate 2
+- **Requirements:** Alignment Reviews (stakeholder walkthroughs)
+- **System Design:** Alignment Reviews (architecture decisions), Gate 2
   (build/no-build decision)
 - **Implementation:** Quality Checkpoints (code review, tests), Deployment
   Approvals (to staging)
@@ -146,15 +146,16 @@ independently vs. where human oversight is critical.
 
 ## Quick Reference
 
-| #   | Stage          | Primary Role        | Pattern                  | Purpose                                                  |
-| --- | -------------- | ------------------- | ------------------------ | -------------------------------------------------------- |
-| 1   | Initiation     | PM/BA               | Foundational             | Establish business case with measurable success criteria |
-| 2   | Requirements   | BA/PM               | Foundational             | Define testable requirements with acceptance criteria    |
-| 3   | Design         | Engineers/Architect | Foundational + Iterative | Create system architecture and detailed designs          |
-| 4   | Implementation | Engineers           | Iterative                | Build working code                                       |
-| 5   | Verification   | QA/Engineers        | Iterative                | Validate through testing and acceptance                  |
-| 6   | Deployment     | DevOps/Engineers    | Iterative                | Release to production                                    |
-| 7   | Support        | Engineers/DevOps    | Continuous               | Monitor, maintain, and enhance                           |
+| #   | Stage            | Primary Role        | Pattern      | Purpose                                                  |
+| --- | ---------------- | ------------------- | ------------ | -------------------------------------------------------- |
+| 1   | Initiation       | PM/BA               | Foundational | Establish business case with measurable success criteria |
+| 2   | Requirements     | BA/PM               | Foundational | Define testable requirements with acceptance criteria    |
+| 3   | System Design    | Engineers/Architect | Foundational | Establish system architecture and technical approach     |
+| 4   | Increment Design | Engineers           | Iterative    | Create detailed designs for specific increments          |
+| 5   | Implementation   | Engineers           | Iterative    | Build working code                                       |
+| 6   | Verification     | QA/Engineers        | Iterative    | Validate through testing and acceptance                  |
+| 7   | Deployment       | DevOps/Engineers    | Iterative    | Release to production                                    |
+| 8   | Support          | Engineers/DevOps    | Continuous   | Monitor, maintain, and enhance                           |
 
 ---
 
@@ -295,22 +296,22 @@ rework from ambiguity.
 
 ### Handoff to Next Stage
 
-Design stage receives: Requirements document with acceptance criteria,
+System Design stage receives: Requirements document with acceptance criteria,
 prioritized backlog, NFRs, and success criteria to be instrumented.
 
 ---
 
-## Stage 3: Design
+## Stage 3: System Design
 
 **Primary Role:** Engineers / Solutions Architect **Supporting Roles:** Product
-Manager, QA Engineers, DevOps **Execution Pattern:** Foundational + Iterative
-(initial architecture, then per-increment designs)
+Manager, QA Engineers, DevOps **Execution Pattern:** Foundational (once per
+project, revisitable)
 
 ### Purpose
 
-Establish overall system architecture and technical approach (foundational),
-then create detailed designs for specific increments (iterative). Translate
-requirements into implementable technical solutions.
+Establish overall system architecture, technology choices, infrastructure plan,
+and increment roadmap. Translate requirements into a technical foundation that
+guides all subsequent implementation work.
 
 ### Inputs
 
@@ -334,54 +335,120 @@ requirements into implementable technical solutions.
 
 ### Key Activities
 
-**Foundational (first pass):**
-
 - Define system architecture and major components
 - Select technology stack and frameworks
 - Design data models and persistence strategy
 - Plan observability/monitoring for success criteria
-- Create API contracts and interfaces
+- Create API contracts and conventions
 - Assess security and compliance requirements
 - Plan for scalability and performance
-
-**Iterative (per increment):**
-
-- Detail design for specific features/stories
-- Define component interactions for increment
-- Create database schema changes
-- Plan testing approach for increment
+- Plan infrastructure (CI/CD, deployment, environments)
+- Create increment plan mapping MoSCoW to increments
 
 ---
 
 ### Outputs
 
-- **Architecture Diagrams** - System components and interactions (see
-  `design-architecture.md`)
-- **Detailed Design Documents** - Per increment (see `design-brief.md`)
-- Data models and API specifications
-- Architecture Decision Records (ADRs) for key choices
-- Test strategy and approach
+- **Architecture Diagrams** — System components and interactions
+- **Technology Stack** — Decisions documented in ADRs
+- **Data/API Architecture** — Entity models, API conventions, integration
+  patterns
+- **Infrastructure Plan** — CI/CD, environments, deployment, monitoring
+- **Increment Plan** — Requirements mapped to increments with estimates
+- **Gate 2 Decision Package** — Cost estimates, risks, recommendation
 
 ### Exit Criteria
 
-- Architecture reviewed and approved (foundational)
-- Design supports all requirements for increment (iterative)
-- Security and performance considerations addressed
-- Design is implementable within constraints
+- Architecture reviewed and approved
+- Technology choices documented in ADRs with cost analysis
+- Increment plan created with MoSCoW mapping
+- Security, performance, and observability addressed
+- Infrastructure plan complete
+- Gate 2 decision made (proceed/pivot/stop)
+
+### Checkpoints
+
+- **Alignment Review:** Architecture and technology decisions reviewed with
+  stakeholders
+- **Gate 2 (Investment Decision):** End of Requirements + System Design
+  - **Decision:** Commit to building this, pivot to change approach, or stop
+  - **Based on:** Architecture, increment plan, cost estimates, risk assessment
+  - **Criteria:** Technical approach sound, costs acceptable, risks manageable
+  - **AI validation:** Human review ensures AI-assisted design is
+    architecturally sound
 
 ### Handoff to Next Stage
 
-Implementation stage receives: Architecture diagrams, detailed design for
-increment, API specs, data models, and test strategy.
-
-**Note for Enterprise Organizations:** Large teams may split this stage into:
-
-- **3a. Architecture** - System-level design, architecture board review
-- **3b. Detailed Design** - Component-level design, tech lead review
+Increment Design stage receives: System architecture, technology decisions, API
+conventions, data architecture, infrastructure plan, and increment plan.
 
 ---
 
-## Stage 4: Implementation
+## Stage 4: Increment Design
+
+**Primary Role:** Engineers **Supporting Roles:** QA Engineers, Product Manager
+**Execution Pattern:** Iterative (per increment)
+
+### Purpose
+
+Create detailed specifications for implementing a specific increment, including
+component designs, API specs, data model changes, and test strategy for
+Verification.
+
+### Inputs
+
+**Required:**
+
+- System architecture and conventions from System Design
+- Increment plan identifying current increment scope
+- Requirements with acceptance criteria for this increment
+
+**Optional:**
+
+- Previous increment learnings
+- Updated constraints from implementation feedback
+
+### Entry Criteria
+
+- System Design approved (Gate 2 passed)
+- Current increment identified from increment plan
+- Dependencies for this increment available (or mocked)
+
+### Key Activities
+
+- Detail component designs for increment features
+- Define component interactions and data flow
+- Create database schema changes with migrations
+- Specify API endpoints with request/response formats
+- Plan testing approach for Verification stage
+- Document implementation guidance
+
+---
+
+### Outputs
+
+- **Component Designs** — Detailed specifications per component
+- **API Specifications** — Endpoint details with validation and error handling
+- **Data Model Changes** — Schema changes with migration and rollback plans
+- **Test Strategy** — Unit, integration, acceptance, and performance test plans
+- **Implementation Notes** — Security, performance, and code pattern guidance
+
+### Exit Criteria
+
+- Component designs detailed enough to implement
+- API specs complete and follow established conventions
+- Data model changes include migration and rollback
+- Test strategy ready for Verification stage
+- No major unknowns or blockers
+
+### Handoff to Next Stage
+
+Implementation stage receives: Detailed component designs, API specs, data
+models, test strategy, and implementation notes.
+
+---
+
+## Stage 5: Implementation
 
 **Primary Role:** Engineers **Supporting Roles:** Architects, DevOps, QA
 Engineers **Execution Pattern:** Iterative (per increment)
@@ -395,7 +462,7 @@ increment, following engineering best practices and professional standards.
 
 **Required:**
 
-- Detailed design for increment
+- Detailed design from Increment Design stage
 - Architecture diagrams and API specifications
 - Requirements with acceptance criteria
 - Success criteria requiring measurement
@@ -446,7 +513,7 @@ results, and implementation notes.
 
 ---
 
-## Stage 5: Verification
+## Stage 6: Verification
 
 **Primary Role:** QA Engineers / Engineers **Supporting Roles:** Product
 Manager, Business Analyst, DevOps **Execution Pattern:** Iterative (per
@@ -464,7 +531,7 @@ right thing).
 
 - Working code from Implementation
 - Requirements with acceptance criteria
-- Test strategy from Design stage
+- Test strategy from Increment Design stage
 
 **Optional:**
 
@@ -518,7 +585,7 @@ deployment checklist.
 
 ---
 
-## Stage 6: Deployment
+## Stage 7: Deployment
 
 **Primary Role:** DevOps / Engineers **Supporting Roles:** Operations, Product
 Manager, Engineers **Execution Pattern:** Iterative (per increment)
@@ -586,7 +653,7 @@ baseline measurements for success criteria.
 
 ---
 
-## Stage 7: Support
+## Stage 8: Support
 
 **Primary Role:** Engineers / DevOps **Supporting Roles:** Operations, Customer
 Support, Product Manager **Execution Pattern:** Continuous (ongoing after first
@@ -651,7 +718,7 @@ N/A (continuous stage)
 Support stage may trigger revisits to earlier stages:
 
 - Requirements stage: User feedback reveals gaps or new needs
-- Design stage: Performance issues require architectural changes
+- System Design stage: Performance issues require architectural changes
 - Implementation stage: Bug fixes and enhancements
 
 ---
@@ -664,7 +731,7 @@ Support stage may trigger revisits to earlier stages:
 
 - **Initiation** - Set project vision
 - **Requirements** - Define what to build
-- **Design (foundational pass)** - Establish architecture
+- **System Design** - Establish architecture
 
 These stages create the project foundation but are not frozen. Revisit when:
 
@@ -678,7 +745,7 @@ These stages create the project foundation but are not frozen. Revisit when:
 
 **Execute repeatedly per increment/feature/sprint**
 
-- **Design (iterative pass)** - Detail design for increment
+- **Increment Design** - Detail design for increment
 - **Implementation** - Build increment
 - **Verification** - Test and validate increment
 - **Deployment** - Release increment
@@ -702,15 +769,16 @@ learnings back into future iterations.
 
 Measurable success criteria established in Initiation flow through all stages:
 
-| Stage              | How Measurement Is Used                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------------------ |
-| **Initiation**     | Define objectives with measurable success criteria; establish measurement approach and targets   |
-| **Requirements**   | Ensure NFRs include instrumentation/telemetry; acceptance criteria ladder up to success criteria |
-| **Design**         | Design analytics infrastructure, dashboards, monitoring systems, and data collection             |
-| **Implementation** | Implement logging, metrics collection, instrumentation, and measurement systems                  |
-| **Verification**   | Test that measurement systems work; validate acceptance criteria tied to success criteria        |
-| **Deployment**     | Deploy with monitoring configured; capture baseline measurements in production                   |
-| **Support**        | Monitor success criteria in production; validate whether objectives achieved; report progress    |
+| Stage                | How Measurement Is Used                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------ |
+| **Initiation**       | Define objectives with measurable success criteria; establish measurement approach and targets   |
+| **Requirements**     | Ensure NFRs include instrumentation/telemetry; acceptance criteria ladder up to success criteria |
+| **System Design**    | Design analytics infrastructure, dashboards, monitoring systems, and data collection             |
+| **Increment Design** | Plan test strategy, specify what to measure per increment                                        |
+| **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                  |
+| **Verification**     | Test that measurement systems work; validate acceptance criteria tied to success criteria        |
+| **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                   |
+| **Support**          | Monitor success criteria in production; validate whether objectives achieved; report progress    |
 
 This ensures goals aren't just documented and forgotten—they actively guide
 development and enable data-driven validation of success.
@@ -722,8 +790,8 @@ development and enable data-driven validation of success.
 ### Linear Flow (Waterfall-style)
 
 ```
-Initiation → Requirements → Design → Implementation
-→ Verification → Deployment → Support
+Initiation → Requirements → System Design → Increment Design
+→ Implementation → Verification → Deployment → Support
 ```
 
 ### Iterative Flow (Agile-style)
@@ -733,11 +801,11 @@ Initiation (once)
     ↓
 Requirements (once)
     ↓
-Design - foundational (once)
+System Design (once)
     ↓
 ┌────────────────────────────┐
 │ Per Increment:             │
-│   Design (detail)          │
+│   Increment Design         │
 │      ↓                     │
 │   Implementation           │
 │      ↓                     │
@@ -752,9 +820,9 @@ Support (continuous)
 ### Feedback Loops
 
 - **Support → Requirements:** User feedback reveals new requirements
-- **Support → Design:** Performance issues need architectural changes
+- **Support → System Design:** Performance issues need architectural changes
 - **Verification → Implementation:** Test failures require code fixes
-- **Verification → Design:** Design flaws discovered during testing
+- **Verification → Increment Design:** Design flaws discovered during testing
 - **Support → Initiation:** Success metrics indicate objectives need revision
 
 ---
@@ -771,11 +839,13 @@ created for:
 - `requirements-brief.md` - Requirements with acceptance criteria
 - `requirements-checklist.md` - Requirements completeness check
 - `requirements-guide.md` - Requirements best practices with example questions
-- `design-architecture.md` - System architecture documentation
-- `design-brief.md` - Detailed design per increment
-- `design-checklist.md` - Design review checklist
-- `design-guide.md` - Design patterns and best practices with example
-  explorations
+- `system-design-architecture.md` - System architecture documentation
+- `system-design-checklist.md` - System design review checklist
+- `system-design-guide.md` - Architecture patterns and best practices with
+  example explorations
+- `increment-design-brief.md` - Detailed design per increment
+- `increment-design-checklist.md` - Increment design review checklist
+- `increment-design-guide.md` - Detailed design patterns and best practices
 - `implementation-brief.md` - Implementation notes and decisions
 - `implementation-checklist.md` - Code completion checklist
 - `implementation-guide.md` - Coding standards and practices
@@ -795,28 +865,6 @@ Each stage will include a `README.md` explaining the artifacts and workflow.
 
 ## Enterprise Extensions
 
-### Splitting the Design Stage
-
-Large organizations or complex projects may split Stage 3 (Design) into two
-stages:
-
-**3a. Architecture**
-
-- System-level design and technology decisions
-- Reviewed by architecture board or technical leadership
-- Produces: Architecture diagrams, ADRs, technology stack decisions
-- Gate: Architecture board approval
-
-**3b. Detailed Design**
-
-- Component-level design for specific increments
-- Reviewed by tech leads and senior engineers
-- Produces: Detailed component designs, API specs, data models
-- Gate: Tech lead approval
-
-Most small-to-medium teams should keep Design as a single stage with
-foundational and iterative passes.
-
 ### Adding Governance Stages
 
 Enterprise organizations may add governance checkpoints:
@@ -826,12 +874,12 @@ Enterprise organizations may add governance checkpoints:
 - Change Advisory Board approval (before Deployment)
 
 These can be inserted as gates within stages rather than separate stages to
-maintain the 7-stage simplicity.
+maintain the 8-stage simplicity.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.9.0.

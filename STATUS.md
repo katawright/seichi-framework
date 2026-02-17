@@ -34,7 +34,7 @@ Progress) **Current Branch:** feat/verification-stage **Framework Version:**
 **Framework Progress:**
 
 - Verification stage: ✅ COMPLETE
-- 5 of 7 SDLC stages complete (71%)
+- 5 of 8 SDLC stages complete (71%)
 - Next: Deployment stage (v0.7.0)
 
 **Commits This Session:**
@@ -482,7 +482,7 @@ Verification stage (v0.6.0).
 
 ### Phase 1 Continuation (v0.6.0+)
 
-**Verification stage artifacts** (Stage 5 of 7) - Next major milestone
+**Verification stage artifacts** (Stage 6 of 8) - Next major milestone
 
 - Execution pattern: Iterative (per increment)
 - Primary role: QA Engineers / Engineers
@@ -562,13 +562,20 @@ framework/
     requirements-checklist.md
     requirements-reference.md
     requirements-ai-agent-prompt.md
-  design/                   # ✅ COMPLETE (v0.4.0, updated to v0.5.0 versioning)
+  system-design/            # ✅ COMPLETE (split from Design in v0.12.0)
     README.md
-    design-brief-template.md
-    design-checklist.md
-    design-reference.md
-    design-ai-agent-prompt.md
-    design-adr-template.md
+    system-design-brief-template.md
+    system-design-checklist.md
+    system-design-guide.md
+    system-design-reference.md
+    adr/
+  increment-design/         # ✅ COMPLETE (split from Design in v0.12.0)
+    README.md
+    increment-design-brief-template.md
+    increment-design-checklist.md
+    increment-design-guide.md
+    increment-design-reference.md
+    adr/
   implementation/           # ✅ COMPLETE (v0.5.0) - NEW THIS SESSION
     README.md
     implementation-brief-template.md
@@ -634,17 +641,18 @@ framework/
 
 ## Framework Progress
 
-**Stages Complete:** 4 of 7 (57%)
+**Stages Complete:** 4 of 8 (50%)
 
 - ✅ Initiation (v0.2.0)
 - ✅ Requirements (v0.3.0)
-- ✅ Design (v0.4.0)
+- ✅ System Design (v0.4.0, split from Design in v0.12.0)
+- ✅ Increment Design (v0.4.0, split from Design in v0.12.0)
 - ✅ Implementation (v0.5.0)
 - 📋 Verification (v0.6.0) - Next
 - 📋 Deployment (v0.7.0)
 - 📋 Support (v0.8.0)
 
-**Framework v1.0.0 target:** All 7 stages complete with validated end-to-end
+**Framework v1.0.0 target:** All 8 stages complete with validated end-to-end
 example
 
-**Phase 1 completion:** ~57% (4 of 7 stages)
+**Phase 1 completion:** ~50% (4 of 8 stages)

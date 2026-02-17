@@ -6,8 +6,7 @@
 
 This document provides a starting prompt to help teams begin using the
 AI-Assisted SDLC framework with their AI assistant of choice. Use this as a
-template and adapt it to your specific project context and AI tool
-capabilities.
+template and adapt it to your specific project context and AI tool capabilities.
 
 ---
 
@@ -71,8 +70,8 @@ Please read these framework documents:
 **ChatGPT / Claude.ai (Web-based):**
 
 These tools cannot access your filesystem. You'll need to paste relevant
-sections of the framework documents into your conversation, or provide links
-if the documents are hosted online.
+sections of the framework documents into your conversation, or provide links if
+the documents are hosted online.
 
 ```
 I'm using the AI-Assisted SDLC framework for a software project.
@@ -88,8 +87,8 @@ Help me work through the [STAGE NAME] stage for my project:
 **GitHub Copilot:**
 
 Copilot works best for implementation tasks with code in context. For earlier
-stages (Initiation, Requirements, Design), consider using ChatGPT or Claude
-instead.
+stages (Initiation, Requirements, System Design), consider using ChatGPT or
+Claude instead.
 
 ### Step 3: Work Iteratively
 
@@ -130,7 +129,7 @@ Help me work through the Initiation stage for my project:
   ensuring new hires complete all required steps (paperwork, training,
   equipment setup) within their first 30 days.
 - Type: greenfield
-- Tech stack: To be determined (will decide during Design stage)
+- Tech stack: To be determined (will decide during System Design stage)
 - Team size: Small (3 engineers, 1 product manager)
 
 Guide me through the key activities for this stage, help me complete the
@@ -169,8 +168,8 @@ work from earlier stages to maintain continuity.
 
 ## Tips for Effective AI Collaboration
 
-1. **Be specific about your context** - The more details you provide, the
-   better your AI assistant can help
+1. **Be specific about your context** - The more details you provide, the better
+   your AI assistant can help
 2. **Ask clarifying questions** - If the AI suggests something you don't
    understand, ask for explanation
 3. **Challenge suggestions** - Your AI assistant may not know your constraints;
@@ -202,8 +201,8 @@ This is normal and expected. The framework supports iterative work.
 
 ## Moving Beyond the Bootstrap
 
-As you become familiar with the framework, you'll naturally adapt your
-prompts to your specific needs:
+As you become familiar with the framework, you'll naturally adapt your prompts
+to your specific needs:
 
 - Asking more targeted questions based on your project
 - Focusing on specific activities within a stage

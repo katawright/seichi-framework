@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Deployment Stage
 
-**Stage:** 6 of 7 (Deployment) **Primary Audience:** DevOps Engineers, Engineers
+**Stage:** 7 of 8 (Deployment) **Primary Audience:** DevOps Engineers, Engineers
 **Execution Pattern:** Iterative (per increment)
 
 For cross-cutting framework concepts, see
@@ -17,11 +17,12 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                           | Description                              |
-| ------------------------------ | ---------------------------------------- |
-| `deployment-brief-template.md` | Template for deployment plan and results |
-| `deployment-guide.md`          | Stage-specific guidance and rationale    |
-| `deployment-checklist.md`      | 60-90 second readiness checklist         |
+| File                           | Description                                            |
+| ------------------------------ | ------------------------------------------------------ |
+| `deployment-brief-template.md` | Template for deployment plan and results               |
+| `deployment-guide.md`          | Stage-specific guidance and rationale                  |
+| `deployment-checklist.md`      | 60-90 second readiness checklist                       |
+| `deployment-reference.md`      | Detailed practices and examples for deeper exploration |
 
 ## Suggested Workflow
 
@@ -54,6 +55,6 @@ support runbook.
 
 **Framework Version:** 0.11.0
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.7.0.

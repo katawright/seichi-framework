@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Verification Stage
 
-**Stage:** 5 of 7 (Verification) **Primary Audience:** QA Engineers, Engineers
+**Stage:** 6 of 8 (Verification) **Primary Audience:** QA Engineers, Engineers
 **Execution Pattern:** Iterative (per increment)
 
 For cross-cutting framework concepts, see
@@ -18,11 +18,12 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                             | Description                            |
-| -------------------------------- | -------------------------------------- |
-| `verification-brief-template.md` | Template for test planning and results |
-| `verification-guide.md`          | Stage-specific guidance and rationale  |
-| `verification-checklist.md`      | 60-90 second readiness checklist       |
+| File                             | Description                                            |
+| -------------------------------- | ------------------------------------------------------ |
+| `verification-brief-template.md` | Template for test planning and results                 |
+| `verification-guide.md`          | Stage-specific guidance and rationale                  |
+| `verification-checklist.md`      | 60-90 second readiness checklist                       |
+| `verification-reference.md`      | Detailed practices and examples for deeper exploration |
 
 ## Suggested Workflow
 
@@ -57,6 +58,6 @@ approval.
 
 **Framework Version:** 0.11.0
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.6.0.
