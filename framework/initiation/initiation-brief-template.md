@@ -144,7 +144,7 @@ increment)
 **Gate 5:** GA / rollout complete
 
 > **Note:** Gates 3-5 are placeholders. Gate definitions evolve as the project
-> progresses through Requirements and Design stages.
+> progresses through Requirements and System Design stages.
 
 ## Owner / DRI and stakeholders
 
@@ -159,6 +159,6 @@ increment)
 
 ## Notes
 
-**Template Last Updated:** 2026-02-14
+**Template Last Updated:** 2026-02-16
 
 Added to framework in v0.2.0.

@@ -215,15 +215,15 @@ Added to framework in v0.4.0.
 
 **Location:** Store ADRs in stage-appropriate directories:
 
-- **Design stage ADRs:** `design/adr/` for architectural and foundational
-  decisions
+- **System Design stage ADRs:** `system-design/adr/` for architectural and
+  foundational decisions
 - **Implementation stage ADRs:** `implementation/adr/` for increment-specific
   implementation decisions
 - Or use project-level: `docs/adr/` for all decisions (if preferred)
 
 **Numbering:** Use sequential numbers (001, 002, 003...) per directory. Numbers
-are scoped to the directory (design/adr/ADR-001 and implementation/adr/ADR-001
-can both exist).
+are scoped to the directory (system-design/adr/ADR-001 and
+implementation/adr/ADR-001 can both exist).
 
 **Status values:**
 
@@ -243,8 +243,8 @@ can both exist).
 3. **Include costs** - Research and document infrastructure/tooling costs
 4. **Explain trade-offs** - Be honest about what you're accepting/rejecting
 5. **Update status** - Mark as Deprecated or Superseded when decisions change
-6. **Link from brief** - Reference ADRs from your design-brief or
-   implementation-brief
+6. **Link from brief** - Reference ADRs from your system-design-brief,
+   increment-design-brief, or implementation-brief
 7. **Version control** - Commit ADRs alongside code; they're part of your
    project history
 8. **Use the "reasonable engineer test"** - If a reasonable engineer might ask
@@ -254,7 +254,7 @@ can both exist).
 
 ## Example: Referencing ADRs
 
-**In your `design-brief.md` (Design stage):**
+**In your `system-design-brief.md` (System Design stage):**
 
 ```markdown
 ## Technology Stack
@@ -265,7 +265,7 @@ can both exist).
 (see [ADR-003](adr/ADR-003-authentication-approach.md))
 
 For detailed rationale, alternatives, and cost analysis, see ADRs in
-`design/adr/`.
+`system-design/adr/`.
 ```
 
 **In your `implementation-brief.md` (Implementation stage):**
@@ -285,7 +285,7 @@ For detailed rationale, alternatives, and cost analysis, see ADRs in
 
 ---
 
-**Usage:** This template is used by both Design and Implementation stages for
-documenting significant technical decisions.
+**Usage:** This template is used by System Design, Increment Design, and
+Implementation stages for documenting significant technical decisions.
 
 **Template Last Updated:** 2026-02-14

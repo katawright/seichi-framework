@@ -48,9 +48,9 @@ dedicated tooling exists for your team.
 
 ### Option 1: AI-Assisted Manual Process (Available Now)
 
-Work through the framework by asking your AI assistant to guide you through
-each stage. The framework documents provide the structure and concepts; your
-AI assistant helps you apply them to your specific project context.
+Work through the framework by asking your AI assistant to guide you through each
+stage. The framework documents provide the structure and concepts; your AI
+assistant helps you apply them to your specific project context.
 
 **Getting started:**
 
@@ -88,8 +88,8 @@ dogfooding) that will:
 - Track completion across stages
 - Adapt to your chosen AI tool and team structure
 
-This application will provide a more structured experience while maintaining
-the framework's flexibility. It is planned for future release.
+This application will provide a more structured experience while maintaining the
+framework's flexibility. It is planned for future release.
 
 ---
 
@@ -145,11 +145,11 @@ significant new information emerges:
 
 - **Initiation** — project vision and business case
 - **Requirements** — what to build
-- **Design** (foundational pass) — system architecture
+- **System Design** — system architecture
 
 **Iterative stages** repeat for each deliverable increment:
 
-- **Design** (iterative pass) — detailed design for the current increment
+- **Increment Design** — detailed design for the current increment
 - **Implementation** — build the increment
 - **Verification** — test and validate the increment
 - **Deployment** — release the increment
@@ -160,24 +160,26 @@ significant new information emerges:
 
 ### Stage Overview
 
-| #   | Stage          | Primary Role          | Pattern                  | Purpose                                                               |
-| --- | -------------- | --------------------- | ------------------------ | --------------------------------------------------------------------- |
-| 1   | Initiation     | PM / BA               | Foundational             | Establish business case with measurable success criteria              |
-| 2   | Requirements   | BA / PM               | Foundational             | Define testable requirements with acceptance criteria                 |
-| 3   | Design         | Engineers / Architect | Foundational + Iterative | Plan architecture, implementation approach, AND test strategy         |
-| 4   | Implementation | Engineers             | Iterative                | Execute implementation plan from Design                               |
-| 5   | Verification   | QA / Engineers        | Iterative                | Execute test strategy from Design, validate acceptance criteria       |
-| 6   | Deployment     | DevOps / Engineers    | Iterative                | Release to production                                                 |
-| 7   | Support        | Engineers / DevOps    | Continuous               | Monitor, maintain, and enhance                                        |
+| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
+| --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
+| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with acceptance criteria                     |
+| 3   | System Design    | Engineers / Architect | Foundational | Establish system architecture and technical approach                      |
+| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
+| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
+| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
+| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
+| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
 
 **Key principle: Design plans, Implementation and Verification execute**
 
-The Design stage (iterative) plans BOTH how to build the increment AND how to
-test it. Implementation and Verification execute those plans:
+The Increment Design stage plans BOTH how to build the increment AND how to test
+it. Implementation and Verification execute those plans:
 
-- **Design → Implementation:** Architecture and component designs guide
-  developers in writing code
-- **Design → Verification:** Test strategy guides QA in validating the code
+- **Increment Design → Implementation:** Architecture and component designs
+  guide developers in writing code
+- **Increment Design → Verification:** Test strategy guides QA in validating the
+  code
 
 This ensures testability is designed in from the start, not retrofitted after
 implementation. Test planning happens when architectural decisions are made,
@@ -199,9 +201,9 @@ chunk of work. Map it to your methodology:
 **Linear (waterfall-style):**
 
 ```
-Initiation → Requirements → Design →
-Implementation → Verification → Deployment →
-Support
+Initiation → Requirements → System Design →
+Increment Design → Implementation → Verification →
+Deployment → Support
 ```
 
 **Iterative (agile-style):**
@@ -209,18 +211,18 @@ Support
 ```
 Initiation (once)
   → Requirements (once)
-    → Design - foundational (once)
-      → [Per increment: Design → Implementation
-         → Verification → Deployment]
+    → System Design - foundational (once)
+      → [Per increment: Increment Design →
+         Implementation → Verification → Deployment]
         → Support (continuous)
 ```
 
 **Feedback loops:**
 
 - Support → Requirements (user feedback)
-- Support → Design (performance issues)
+- Support → System Design (performance issues)
 - Verification → Implementation (test failures)
-- Verification → Design (design flaws)
+- Verification → Increment Design (design flaws)
 - Support → Initiation (objectives need revision)
 
 ---
@@ -238,8 +240,7 @@ decision-making. The framework defines five types:
 Stop **Real stop option:** Yes
 
 - **Gate 1** (end of Initiation): Approve brief and fund Requirements work?
-- **Gate 2** (end of Requirements + Design foundational): Commit to building
-  this?
+- **Gate 2** (end of Requirements + System Design): Commit to building this?
 
 After Gate 2, the project is funded and team committed. Later checkpoints focus
 on "when/how" rather than "if."
@@ -278,7 +279,8 @@ Examples: legal review, security review, accessibility compliance, data privacy
 assessment.
 
 **Human validation of AI output is required at all checkpoint types.** See the
-[AI Assistance Scorecard](framework-ai-assistance.md) for stage-specific guidance.
+[AI Assistance Scorecard](framework-ai-assistance.md) for stage-specific
+guidance.
 
 ---
 
@@ -287,15 +289,16 @@ assessment.
 Measurable success criteria established in Initiation flow through all stages,
 ensuring goals actively guide development.
 
-| Stage              | How Measurement Is Used                                                               |
-| ------------------ | ------------------------------------------------------------------------------------- |
-| **Initiation**     | Define objectives with measurable success criteria; set targets                       |
-| **Requirements**   | Ensure NFRs include instrumentation/telemetry; ACs ladder up to success criteria      |
-| **Design**         | Design analytics infrastructure, dashboards, monitoring, data collection              |
-| **Implementation** | Implement logging, metrics collection, instrumentation                                |
-| **Verification**   | Test that measurement systems work; validate ACs tied to success criteria             |
-| **Deployment**     | Deploy with monitoring configured; capture baseline measurements                      |
-| **Support**        | Monitor success criteria in production; validate objectives achieved; report progress |
+| Stage                | How Measurement Is Used                                                               |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| **Initiation**       | Define objectives with measurable success criteria; set targets                       |
+| **Requirements**     | Ensure NFRs include instrumentation/telemetry; ACs ladder up to success criteria      |
+| **System Design**    | Design analytics infrastructure, dashboards, monitoring, data collection              |
+| **Increment Design** | Plan measurement instrumentation for the increment                                    |
+| **Implementation**   | Implement logging, metrics collection, instrumentation                                |
+| **Verification**     | Test that measurement systems work; validate ACs tied to success criteria             |
+| **Deployment**       | Deploy with monitoring configured; capture baseline measurements                      |
+| **Support**          | Monitor success criteria in production; validate objectives achieved; report progress |
 
 **The framework is agnostic to goal-setting methodology.** Use OKRs, SMART
 goals, KPIs, Balanced Scorecard, or simple success metrics — whatever fits your
@@ -329,8 +332,8 @@ non-goals to prevent scope creep.
 - Should Have = "We WILL build this, just later" (committed)
 - Could Have = "We'd like to, but no commitment" (aspirational)
 
-**How priorities map to increments:** During Design (foundational pass), the
-increment plan maps MoSCoW priorities to specific increments:
+**How priorities map to increments:** During System Design, the increment plan
+maps MoSCoW priorities to specific increments:
 
 - Must Have → early increments (Increment 1-2)
 - Should Have → later increments, based on dependencies and value
@@ -348,18 +351,19 @@ approval — not uncontrolled operation.
 **Core principle:** Increase AI assistance as verifiability increases; tighten
 human gates as risk increases.
 
-| #   | Stage          | Assistance Level               | Best Uses                                               |
-| --- | -------------- | ------------------------------ | ------------------------------------------------------- |
-| 1   | Initiation     | AI assist only                 | Draft briefs, risks, options, sizing                    |
-| 2   | Requirements   | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts |
-| 3   | Design         | AI agent + strong gates        | Propose architectures, ADR drafts, slice plans          |
-| 4   | Implementation | High assistance, bounded scope   | Generate/refactor code, keep PR-sized slices            |
-| 5   | Verification   | High assistance + CI gates       | Generate tests, test matrices, expand coverage          |
-| 6   | Deployment     | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute     |
-| 7   | Support        | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates    |
+| #   | Stage            | Assistance Level               | Best Uses                                               |
+| --- | ---------------- | ------------------------------ | ------------------------------------------------------- |
+| 1   | Initiation       | AI assist only                 | Draft briefs, risks, options, sizing                    |
+| 2   | Requirements     | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts |
+| 3   | System Design    | AI agent + strong gates        | Propose architectures, ADR drafts, slice plans          |
+| 4   | Increment Design | AI agent + strong gates        | Detailed design, test strategy, component specs         |
+| 5   | Implementation   | High assistance, bounded scope | Generate/refactor code, keep PR-sized slices            |
+| 6   | Verification     | High assistance + CI gates     | Generate tests, test matrices, expand coverage          |
+| 7   | Deployment       | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute     |
+| 8   | Support          | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates    |
 
-For full assistance level definitions (6 levels) and operational guidance, see the
-[AI Assistance Scorecard](framework-ai-assistance.md).
+For full assistance level definitions (6 levels) and operational guidance, see
+the [AI Assistance Scorecard](framework-ai-assistance.md).
 
 ---
 
@@ -383,8 +387,8 @@ go/no-go investment decision.
 **Increment** — A discrete, deliverable chunk of work. See
 [Terminology: Increments](#terminology-increments).
 
-**Iterative stage** — Repeats for each increment in the Design → Implementation
-→ Verification → Deployment cycle.
+**Iterative stage** — Repeats for each increment in the Increment Design →
+Implementation → Verification → Deployment cycle.
 
 **Continuous stage** — Runs ongoing after first production deployment (Support).
 
@@ -439,17 +443,18 @@ iterative cycle.
 
 ### How the Framework Adapts
 
-The framework's 7 stages apply to both project types, but activities and
+The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage            | Greenfield                                | Brownfield (First AI)                                      | Brownfield (Has Context)                          |
-| ---------------- | ----------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------- |
-| **Initiation**   | Define vision and objectives from scratch | Understand existing system + define new goals              | Understand existing system + define new goals     |
-| **Requirements** | All requirements are new                  | New requirements + existing system constraints             | New requirements + existing system constraints    |
-| **Design**       | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 1           | Adapt/extend architecture + assess infrastructure |
-| **Increment 1**  | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context   | **Deliver first feature** (infrastructure exists) |
-| **Increment 2+** | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
-| **Support**      | Monitor new system                        | Monitor changes, consider existing user base               | Monitor changes, consider existing user base      |
+| Stage                | Greenfield                                | Brownfield (First AI)                                        | Brownfield (Has Context)                          |
+| -------------------- | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
+| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                | Understand existing system + define new goals     |
+| **Requirements**     | All requirements are new                  | New requirements + existing system constraints               | New requirements + existing system constraints    |
+| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 1             | Adapt/extend architecture + assess infrastructure |
+| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                             | Plan first feature increment details              |
+| **Increment 1**      | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context     | **Deliver first feature** (infrastructure exists) |
+| **Increment 2+**     | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
+| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                 | Monitor changes, consider existing user base      |
 
 ### Increment 1: The Critical Difference
 
@@ -494,10 +499,10 @@ delivery** because infrastructure exists and AI context is documented:
 **Outcome:** First feature increment delivered using existing infrastructure,
 with updated documentation.
 
-### Design Stage: Infrastructure Planning
+### System Design Stage: Infrastructure Planning
 
-During **Design (foundational)**, infrastructure planning is a **required
-output** for both project types:
+During **System Design**, infrastructure planning is a **required output** for
+both project types:
 
 **Greenfield infrastructure planning includes:**
 
@@ -522,7 +527,7 @@ output** for both project types:
   - Documentation structure approach (use existing or propose new)
   - Discovery approach (AI tools + team expert verification)
   - **Note:** If Increment 1 reveals significant gaps in team's understanding,
-    may trigger return to Design stage to reassess plans
+    may trigger return to System Design stage to reassess plans
 
 **Brownfield infrastructure planning (subsequent projects) includes:**
 
@@ -534,10 +539,10 @@ output** for both project types:
 - Security and compliance adjustments
 - Increment plan identifying **Increment 1 = first feature**
 
-**Key output:** All project types exit Design (foundational) with a clear plan
-that enables subsequent feature delivery — greenfield and brownfield-first
-establish foundations (infrastructure or documentation), brownfield-subsequent
-proceeds to features.
+**Key output:** All project types exit System Design with a clear plan that
+enables subsequent feature delivery — greenfield and brownfield-first establish
+foundations (infrastructure or documentation), brownfield-subsequent proceeds to
+features.
 
 ### Requirements Stage: Capturing Constraints
 
@@ -565,8 +570,8 @@ After Increment 1, **both greenfield and brownfield projects operate
 identically**:
 
 - Infrastructure is established and operational
-- Feature delivery follows the same iterative cycle: Design → Implementation →
-  Verification → Deployment
+- Feature delivery follows the same iterative cycle: Increment Design →
+  Implementation → Verification → Deployment
 - Deployment processes are consistent
 - Monitoring and observability are in place
 - Support operates the same way
@@ -581,8 +586,8 @@ project type.
 Stage-specific greenfield and brownfield guidance is documented in each stage's
 guide:
 
-- **[Design Guide](design/design-guide.md)** — Infrastructure planning outputs
-  and bootstrap increment guidance
+- **[System Design Guide](system-design/system-design-guide.md)** —
+  Infrastructure planning outputs and bootstrap increment guidance
 - **[Requirements Guide](requirements/requirements-guide.md)** — Capturing
   existing system constraints for brownfield projects
 - **[Implementation Guide](implementation/implementation-guide.md)** — Bootstrap
@@ -592,7 +597,7 @@ guide:
 
 ## Team Size Adaptation
 
-The framework's seven stages remain the same regardless of team size. What
+The framework's eight stages remain the same regardless of team size. What
 changes is the level of formality, documentation detail, and coordination
 mechanisms.
 
@@ -617,8 +622,8 @@ mechanisms.
   - Plan integration testing and deployment orchestration
 - More formal gates and handoffs maintain alignment
 
-**Key principle:** Stages define *what* work to do. Team size determines *how
-formal* and *how coordinated*.
+**Key principle:** Stages define _what_ work to do. Team size determines _how
+formal_ and _how coordinated_.
 
 ---
 

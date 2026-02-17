@@ -5,10 +5,10 @@
 > **Purpose:** Convert the Initiation Brief into a **clear, testable
 > requirements baseline**: functional requirements with acceptance criteria,
 > non-functional requirements (NFRs), edge cases, and a prioritized scope
-> suitable for Design and Implementation.
+> suitable for System Design and Implementation.
 >
-> **Handoff:** This document enables the Design stage (foundational pass) to
-> architect the solution and plan for measurement/instrumentation.
+> **Handoff:** This document enables the System Design stage (foundational pass)
+> to architect the solution and plan for measurement/instrumentation.
 
 **How to use this:** Bullets only. Keep it concise (~2-3 pages). For deeper
 guidance, see [Requirements Guide](requirements-guide.md).
@@ -63,7 +63,7 @@ suggest, humans own all decisions and validate correctness with stakeholders.
 > **Prioritization approach:** This framework uses the **MoSCoW** method (Must
 > Have / Should Have / Could Have / Won't Have) for requirements prioritization.
 > At the Requirements stage (foundational), you're doing coarse prioritization
-> before increment boundaries are known. The Design stage will create an
+> before increment boundaries are known. The System Design stage will create an
 > **increment plan** that maps these priorities to specific increments.
 
 ### Must Have (first usable release)
@@ -84,8 +84,8 @@ suggest, humans own all decisions and validate correctness with stakeholders.
 - **Write:** Important requirements that WILL be delivered (committed), but
   deferred to future releases after initial launch.
 - **Tip:** These add significant value but aren't required for initial
-  viability. Design stage will determine which increment they map to. Key point:
-  Should Haves are **committed** to be built.
+  viability. System Design stage will determine which increment they map to. Key
+  point: Should Haves are **committed** to be built.
 - _Example:_
   - Advanced search filters (by date range, by agent, by status)
   - Export conversation history to CSV
@@ -279,14 +279,14 @@ _Example:_
 
 ## Open questions / blockers
 
-- **Write:** Questions that must be answered before Design starts or during
-  Design foundational pass.
+- **Write:** Questions that must be answered before System Design starts or
+  during System Design foundational pass.
 - **Tip:** Assign an owner if possible; flag blockers vs. nice-to-know.
 
 _Example:_
 
 - **Q1:** Does Tool B API support webhooks for real-time sync, or must we poll?
-  (Blocker for Design) — Owner: SolutionArchitect
+  (Blocker for System Design) — Owner: SolutionArchitect
 - **Q2:** What's the data retention policy for unified conversation view? —
   Owner: Compliance team
 - **Q3:** Can we cache Tool A/B data, or must every search be live? — Owner:
@@ -297,12 +297,11 @@ _Example:_
 - **Q1:**
 - **Q2:**
 
-## Requirements readiness (ready for Design)
+## Requirements readiness (ready for System Design)
 
-> **Quality checkpoint:** Confirm requirements are ready for Design stage
-> (foundational pass). Use
-> [Requirements Checklist](requirements-checklist.md) for detailed
-> validation.
+> **Quality checkpoint:** Confirm requirements are ready for System Design stage
+> (foundational pass). Use [Requirements Checklist](requirements-checklist.md)
+> for detailed validation.
 
 **Ready when:**
 
@@ -313,30 +312,33 @@ _Example:_
 - Requirements are testable and unambiguous
 - Open questions documented with owners (blockers resolved or mitigated)
 
-**Decision:** Ready for Design / Revise requirements / Stop
+**Decision:** Ready for System Design / Revise requirements / Stop
 
-**Next step if ready:** Proceed to Design stage (foundational pass). Provide
-this Requirements Document to Design team.
+**Next step if ready:** Proceed to System Design stage (foundational pass).
+Provide this Requirements Document to System Design team.
 
 ## (Optional) Gate 2 planning
 
 > **Note on Gate 2 timing:** Gate 2 (the major build/no-build decision) occurs
-> at the **end of Requirements + Design foundational pass**, not at the end of
-> Requirements alone. This section helps plan what outputs to produce during
-> Design.
+> at the **end of Requirements + System Design foundational pass**, not at the
+> end of Requirements alone. This section helps plan what outputs to produce
+> during System Design.
 
-**Gate 2 expected outputs** (produced during Design foundational pass):
+**Gate 2 expected outputs** (produced during System Design foundational pass):
 
 - ✅ Requirements + acceptance criteria reviewed and approved (completed in
   Requirements stage)
-- ⏳ High-level design documented with key trade-offs identified (Design stage)
-- ⏳ Top risks addressed with spikes/prototypes/reviews and mitigations (Design
+- ⏳ High-level design documented with key trade-offs identified (System Design
   stage)
-- ⏳ Iteration plan with dependencies for iterative delivery (Design stage)
-- ⏳ Updated staffing/timeline estimates with improved confidence (Design stage)
-- ⏳ Recommendation: proceed / pivot / stop (Design stage)
+- ⏳ Top risks addressed with spikes/prototypes/reviews and mitigations (System
+  Design stage)
+- ⏳ Iteration plan with dependencies for iterative delivery (System Design
+  stage)
+- ⏳ Updated staffing/timeline estimates with improved confidence (System Design
+  stage)
+- ⏳ Recommendation: proceed / pivot / stop (System Design stage)
 
-**For Design team:** Focus foundational design pass on:
+**For System Design team:** Focus foundational design pass on:
 
 - Architecture trade-offs affecting cost/schedule/risk
 - Instrumentation approach for success metrics (observability)
@@ -347,7 +349,7 @@ this Requirements Document to Design team.
 
 ## Notes
 
-**Template Last Updated:** 2026-02-15
+**Template Last Updated:** 2026-02-16
 
 Added to framework in v0.3.0.
 

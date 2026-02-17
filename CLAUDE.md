@@ -28,7 +28,7 @@ See PROJECT_CONTEXT.md for full details.
   model, measurement philosophy
 - **PROJECT_PLAN.md** - Phased development approach with model selection
   strategy (Sonnet vs Opus)
-- **framework/framework-stages.md** - Authoritative definition of the 7 SDLC
+- **framework/framework-stages.md** - Authoritative definition of the 8 SDLC
   stages with inputs, outputs, and criteria
 
 ## Design Principles
@@ -41,11 +41,11 @@ See PROJECT_CONTEXT.md for full details.
 
 ## SDLC Execution Model
 
-- **Foundational stages** (once per project, revisitable): Initiation, Analysis,
-  High-Level Design
-- **Iterative stages** (per increment): Low-Level Design, Implementation,
-  Testing, Deployment
-- **Continuous stages**: Maintenance
+- **Foundational stages** (once per project, revisitable): Initiation,
+  Requirements, System Design
+- **Iterative stages** (per increment): Increment Design, Implementation,
+  Verification, Deployment
+- **Continuous stages**: Support
 - **Increment** = neutral term mapping to
   epic/feature/sprint/milestone/deliverable
 

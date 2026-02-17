@@ -1,6 +1,6 @@
 # AI-Assisted SDLC: Requirements Stage
 
-**Stage:** 2 of 7 (Requirements) **Primary Audience:** Business Analysts,
+**Stage:** 2 of 8 (Requirements) **Primary Audience:** Business Analysts,
 Product Managers **Execution Pattern:** Foundational (once per project,
 revisitable)
 
@@ -25,24 +25,25 @@ For cross-cutting framework concepts, see
 
 ## Artifacts
 
-| File                             | Description                             |
-| -------------------------------- | --------------------------------------- |
-| `requirements-brief-template.md` | Template for your requirements document |
-| `requirements-guide.md`          | Stage-specific guidance and rationale   |
-| `requirements-checklist.md`      | 60-90 second readiness checklist        |
+| File                             | Description                                            |
+| -------------------------------- | ------------------------------------------------------ |
+| `requirements-brief-template.md` | Template for your requirements document                |
+| `requirements-guide.md`          | Stage-specific guidance and rationale                  |
+| `requirements-checklist.md`      | 60-90 second readiness checklist                       |
+| `requirements-reference.md`      | Detailed practices and examples for deeper exploration |
 
 ## Suggested Workflow
 
 1. **Draft:** Use `requirements-brief-template.md` as structure. Use the
-   [Manual Process Guide](../framework-manual-process.md) to engage AI
-   assistant with Initiation Brief + stakeholder input
+   [Manual Process Guide](../framework-manual-process.md) to engage AI assistant
+   with Initiation Brief + stakeholder input
 2. **Elicit & validate:** Conduct stakeholder alignment reviews to refine
    requirements
 3. **Validate AI output:** Edit for correctness — you own the final content
 4. **Check readiness:** Run `requirements-checklist.md` before declaring ready
-   for Design
+   for System Design
 5. **Reference:** Consult `requirements-guide.md` for deeper guidance
-6. **Handoff:** Provide Requirements Document to Design stage
+6. **Handoff:** Provide Requirements Document to System Design stage
 
 ## Stage Outputs
 
@@ -50,7 +51,8 @@ For cross-cutting framework concepts, see
   each FR, NFRs (including observability), MoSCoW prioritization, data/
   integration constraints, edge cases, open questions
 
-**Handoff:** Design stage uses your Requirements Document as its starting point.
+**Handoff:** System Design stage uses your Requirements Document as its starting
+point.
 
 ---
 
@@ -58,6 +60,6 @@ For cross-cutting framework concepts, see
 
 **Framework Version:** 0.11.0
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 Added to framework in v0.3.0.

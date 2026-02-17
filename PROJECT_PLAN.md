@@ -44,7 +44,7 @@ independently while providing engineers with better-structured inputs.
 
 ### Deliverables
 
-- [x] **STAGES.md** - Authoritative definition of 7 SDLC stages with
+- [x] **STAGES.md** - Authoritative definition of 8 SDLC stages with
       inputs/outputs/criteria
 - [x] **AI_AUTONOMY_SCORECARD.md** - Operational guidance on AI autonomy levels
       per stage
@@ -52,8 +52,10 @@ independently while providing engineers with better-structured inputs.
 - [ ] Complete documentation for each SDLC stage:
   - [x] Initiation stage artifacts (with measurable success criteria guidance)
   - [x] Requirements stage artifacts (with MoSCoW prioritization)
-  - [x] Design stage artifacts (covering both foundational and iterative passes,
-        ADR template, cost guidance)
+  - [x] System Design stage artifacts (architecture, technology selection,
+        increment planning, ADR template, cost guidance)
+  - [x] Increment Design stage artifacts (component design, API specs, test
+        strategy per increment)
   - [x] Implementation stage artifacts (with multi-PR support, branching
         strategies, ADR guidance)
   - [ ] Verification stage artifacts (covering all validation types)
@@ -91,8 +93,8 @@ independently while providing engineers with better-structured inputs.
 - **Handoff points between roles are clearly defined**
 - **Framework supports both iterative delivery and adaptive revision of
   foundational stages**
-- **Design stage's dual nature (foundational + iterative) is clear and
-  practical**
+- **System Design (foundational) and Increment Design (iterative) stages have
+  clear, distinct purposes**
 
 ---
 
@@ -164,7 +166,7 @@ process
 2. Complete Initiation stage for the application (with measurable success
    criteria)
 3. Complete Requirements stage for the application
-4. Complete Design stage for the application (foundational pass)
+4. Complete System Design stage for the application
 5. Make architectural decisions about application type, tech stack, features
 6. **Design application to read framework artifacts (including STAGES.md) as
    single source of truth**
@@ -191,15 +193,14 @@ Following the framework we created:
 - [ ] Use cases and user stories
 - [ ] Completed requirements-checklist.md
 
-**Design Stage (Foundational Pass):**
+**System Design Stage:**
 
-- [ ] Application design-brief.md
+- [ ] Application system-design-brief.md
 - [ ] System architecture
 - [ ] Technology stack selection
-- [ ] Component design
-- [ ] User interface design
+- [ ] Increment plan
 - [ ] Measurement/instrumentation architecture
-- [ ] Completed design-checklist.md
+- [ ] Completed system-design-checklist.md
 
 ### Why Opus 4.5?
 
@@ -254,8 +255,7 @@ implementation challenges **Focus:** Building the application following Design
 
 ### Objectives
 
-1. Complete Design stage (iterative passes) for each increment using the
-   framework
+1. Complete Increment Design stage for each increment using the framework
 2. Implement application following the framework
 3. Verify application following the framework (all validation types)
 4. Deploy application following the framework
@@ -264,7 +264,7 @@ implementation challenges **Focus:** Building the application following Design
 
 ### Deliverables
 
-**Design Stage (Iterative Passes):**
+**Increment Design Stage (Per Increment):**
 
 - [ ] Detailed component specifications per increment
 - [ ] API designs
@@ -475,7 +475,8 @@ application/
 │   ├── STAGES.md              # Core stage definitions
 │   ├── initiation/
 │   ├── requirements/
-│   ├── design/
+│   ├── system-design/
+│   ├── increment-design/
 │   ├── implementation/
 │   ├── verification/
 │   ├── deployment/
@@ -513,7 +514,8 @@ ai-assisted-sdlc/
 ├── framework/           # Framework documentation
 │   ├── initiation/
 │   ├── requirements/
-│   ├── design/
+│   ├── system-design/
+│   ├── increment-design/
 │   ├── implementation/
 │   ├── verification/
 │   ├── deployment/
@@ -619,8 +621,8 @@ When building the application (Phase 3-4), key decisions:
    SMART, KPIs, etc.)
 7. **How should application track and display measurement throughline?**
 
-These decisions should be made during the Design stage using the framework
-itself.
+These decisions should be made during the System Design stage using the
+framework itself.
 
 ---
 
@@ -654,11 +656,11 @@ itself.
 3. ✅ Set up reference materials directory
 4. ✅ Launch Claude Code in project directory
 5. ✅ Review existing ChatGPT artifacts
-6. ✅ Define 7-stage SDLC model (Initiation, Requirements, Design,
-   Implementation, Verification, Deployment, Support)
+6. ✅ Define 8-stage SDLC model (Initiation, Requirements, System Design,
+   Increment Design, Implementation, Verification, Deployment, Support)
 7. ✅ Create STAGES.md with comprehensive stage definitions
 8. ✅ Establish framework-agnostic measurable success criteria approach
-9. ⬜ Create complete artifact sets for each of the 7 stages
+9. ⬜ Create complete artifact sets for each of the 8 stages
 10. ⬜ Establish artifact template standards
 11. ⬜ Validate framework with realistic scenarios
 

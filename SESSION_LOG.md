@@ -5,6 +5,137 @@ decisions, rationale, and insights.
 
 ---
 
+## Session 5: 2026-02-16 - Split Design Stage into System Design + Increment Design
+
+### Session Goals
+
+- Split the Design stage (stage 3 of 7) into two separate stages: System Design
+  (foundational) and Increment Design (iterative)
+- Transform the framework from 7 stages to 8 stages
+- Update all cross-references, renumber stages, and verify consistency
+
+### Key Decisions Made
+
+#### 1. Design Stage Split (7 → 8 stages)
+
+**Decision:** Split the single Design stage into System Design (stage 3,
+foundational) and Increment Design (stage 4, iterative)
+
+**Rationale:**
+
+- Design was the largest stage (~2,182 lines across 5 files) with a unique
+  "Foundational + Iterative" dual execution pattern
+- The design brief template was already split into Part A (foundational,
+  sections 1-8) and Part B (iterative, sections 9-14)
+- Splitting makes execution patterns clean: stages 1-3 foundational, stages 4-7
+  iterative, stage 8 continuous
+- Gate 2 lands naturally between System Design and Increment Design
+- framework-stages.md already had an enterprise note acknowledging large teams
+  may split this into "Architecture" and "Detailed Design"
+
+**New Stage Structure:**
+
+1. Initiation (foundational)
+2. Requirements (foundational)
+3. System Design (foundational) — architecture, technology, increment plan, Gate
+   2
+4. Increment Design (iterative) — component design, API specs, test strategy per
+   increment
+5. Implementation (iterative)
+6. Verification (iterative)
+7. Deployment (iterative)
+8. Support (continuous)
+
+#### 2. Naming Convention
+
+**Decision:** "System Design" and "Increment Design" (not "Architecture" /
+"Detailed Design")
+
+**Rationale:** Consistent with existing framework terminology ("increment" is
+already the neutral term used throughout). "System Design" emphasizes holistic
+scope. "Increment Design" clearly signals per-increment execution.
+
+#### 3. Gate 2 Repositioning
+
+**Decision:** Gate 2 now sits at the end of System Design (between System Design
+and Increment Design)
+
+**Rationale:** Gate 2 is a strategic go/no-go checkpoint that belongs after
+foundational architecture decisions, before iterative detailed design begins.
+
+### Artifacts Created
+
+**framework/system-design/ (new directory):**
+
+- `README.md` — Stage 3 of 8 overview
+- `system-design-guide.md` — Architecture, technology selection, increment
+  planning guidance
+- `system-design-brief-template.md` — Part A sections (1-8 + Gate 2)
+- `system-design-checklist.md` — Foundational readiness checklist
+- `system-design-reference.md` — Infrastructure, increment sizing, technology
+  selection examples
+
+**framework/increment-design/ (new directory):**
+
+- `README.md` — Stage 4 of 8 overview
+- `increment-design-guide.md` — Component design, API design, test strategy
+  guidance (new content)
+- `increment-design-brief-template.md` — Part B sections renumbered 1-6
+- `increment-design-checklist.md` — Increment readiness checklist
+- `increment-design-reference.md` — Component, API, testing examples
+
+### Artifacts Modified
+
+**Framework core:**
+
+- `framework-stages.md` — Complete rewrite for 8 stages
+- `framework-guide.md` — All tables, patterns, flows updated
+- `framework-ai-assistance.md` — Scorecard split, renumbered
+- `framework-manual-process.md` — Design → System Design
+
+**Stage READMEs (renumbered X of 7 → X of 8):**
+
+- All 6 non-design stage READMEs updated
+
+**Stage cross-references:**
+
+- Requirements files → "System Design" (4 files)
+- Implementation guide → System Design / Increment Design
+- Verification files → "Increment Design" for test strategy (3 files)
+- `adr-template.md` → Updated directory references
+
+**Project documentation:**
+
+- `PROJECT_CONTEXT.md` — 8 stages, execution patterns, measurement
+- `PROJECT_PLAN.md` — Stage counts, deliverables, directory structure
+- `README.md` — Stage table updated
+- `STATUS.md` — Progress metrics, framework structure
+- `CLAUDE.md` — Execution model, stage count
+- `SESSION_LOG.md` — This entry
+
+### Artifacts Deleted
+
+- `framework/design/` — Entire directory (content migrated to system-design/ and
+  increment-design/)
+
+### Git Activity
+
+- Branch: `feat/usability-improvements`
+- Commits: pending
+
+### Key Insights
+
+1. The brief template's existing Part A/Part B split made the content migration
+   natural — the design was already logically separated
+2. increment-design-guide.md was written as new content rather than extracted,
+   since the original design-guide.md was primarily foundational in nature
+3. The enterprise extension note about splitting Design was removed since it's
+   now the default structure
+4. Test strategy handoff cleanly moves from Increment Design → Verification,
+   matching actual workflow
+
+---
+
 ## Session 1: 2026-02-08 - Framework Definition and Stage Consolidation
 
 ### Session Goals
