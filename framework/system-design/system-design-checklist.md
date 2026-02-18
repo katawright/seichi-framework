@@ -11,14 +11,16 @@ ready for Gate 2.
 
 - [ ] System architecture diagram exists (components, boundaries, interactions)
 - [ ] Technology stack documented with justification
-- [ ] Architecture Decision Records (ADRs) created for key decisions
+- [ ] ADRs created for significant technology selections
 - [ ] Data architecture defined (entity model, relationships, persistence)
+- [ ] ADRs created for significant data decisions
 
 ## API and Integration
 
 - [ ] API design principles established (versioning, auth, error handling)
 - [ ] Integration points identified and documented
 - [ ] Authentication/authorization approach defined
+- [ ] ADRs created for significant API decisions
 
 ## Non-Functional Requirements
 
@@ -26,22 +28,26 @@ ready for Gate 2.
 - [ ] Compliance requirements addressed (GDPR, HIPAA, etc.)
 - [ ] Performance targets specified (response time, throughput, concurrency)
 - [ ] Scalability approach defined
+- [ ] ADRs created for significant non-functional requirements decisions
 
 ## Observability and Measurement
 
 - [ ] Monitoring and logging strategy designed
 - [ ] Success criteria instrumentation planned
 - [ ] Measurement throughline validated (NFRs include instrumentation needs)
+- [ ] ADRs created for significant observability decisions
 
 ## Infrastructure
 
 - [ ] CI/CD pipeline designed
 - [ ] Environment strategy defined (dev, staging, production)
 - [ ] Deployment strategy documented
-- [ ] Infrastructure decisions documented in ADRs
+- [ ] ADRs created for significant infrastructure decisions
 
 ## Increment Plan
 
+- [ ] Increment 0 need assessed (bootstrap for greenfield, discovery for
+      brownfield first AI-assisted, or not needed for subsequent brownfield)
 - [ ] Increment plan created with MoSCoW mapping
 - [ ] Must Have requirements in first increments
 - [ ] Should Have requirements sequenced
@@ -83,6 +89,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 Added to framework in v0.12.0.

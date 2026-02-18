@@ -40,7 +40,7 @@ for conceptual overview.
 ### Greenfield Infrastructure Planning
 
 For **new projects built from scratch**, infrastructure must be created. System
-Design outputs an infrastructure plan that becomes **Increment 1: Bootstrap** —
+Design outputs an infrastructure plan that becomes **Increment 0: Bootstrap** —
 establishing the foundation before feature work begins.
 
 **Required infrastructure planning outputs:**
@@ -88,12 +88,12 @@ establishing the foundation before feature work begins.
    - **ADR:** Document security tooling
 
 7. **Increment Plan Update**
-   - **Increment 1: Bootstrap** — establish all above
-   - Increment 2+: Feature delivery using established infrastructure
+   - **Increment 0: Bootstrap** — establish all above
+   - Increment 1+: Feature delivery using established infrastructure
    - Success criteria: "Deploy hello world app through full pipeline to
      production"
 
-**Bootstrap Increment 1 execution:**
+**Bootstrap Increment 0 execution:**
 
 The bootstrap increment goes through the standard Increment Design ->
 Implementation -> Verification -> Deployment cycle:
@@ -105,7 +105,7 @@ Implementation -> Verification -> Deployment cycle:
 - **Deployment:** Deploy a "hello world" app through the full pipeline to
   production
 
-**Outcome:** Working infrastructure ready for feature delivery in Increment 2+.
+**Outcome:** Working infrastructure ready for feature delivery in Increment 1+.
 
 ### Brownfield Infrastructure Planning
 
@@ -114,12 +114,12 @@ the approach differs based on whether AI context has been established.
 
 **Two brownfield scenarios:**
 
-1. **First AI-assisted project** — No documented AI context. Increment 1 focuses
+1. **First AI-assisted project** — No documented AI context. Increment 0 focuses
    on **discovery and documentation**.
 
-2. **Subsequent AI-assisted projects** — AI context exists from prior work.
-   Increment 1 proceeds to **feature delivery**, using and updating existing
-   documentation.
+2. **Subsequent AI-assisted projects** — AI context exists from prior work. No
+   Increment 0 is needed; Increment 1 proceeds to **feature delivery**, using
+   and updating existing documentation.
 
 This distinction is **surfaced during Initiation/Requirements** when the team
 identifies project type.
@@ -193,7 +193,7 @@ monitoring, security), findings may trigger:
 - Return to Requirements stage to adjust scope
 - Revised increment plan addressing gaps
 - Updated risk assessment and Gate 2 decision
-- Extended Increment 1 for critical gaps
+- Extended Increment 0 for critical gaps
 
 #### Subsequent Projects (Existing AI Context)
 
@@ -210,8 +210,8 @@ outputs an **assessment and adaptation plan**.
    compliance requirements
 4. **Context Usage and Updates** — Use existing docs as AI context, update based
    on changes
-5. **Increment Plan Update** — Increment 1 is first feature increment
-   (infrastructure exists)
+5. **Increment Plan Update** — No Increment 0 needed; Increment 1 is first
+   feature increment (infrastructure exists)
 
 ### Infrastructure ADRs
 
@@ -263,7 +263,7 @@ Even the smallest projects need:
   debt
 
 > **AI exploration:** _"Design an infrastructure plan for [describe your project
-> type, team size, and > deployment requirements]."_
+> > type, team size, and > deployment requirements]."_
 
 ---
 
@@ -310,7 +310,7 @@ Well-sized increments deliver testable value while fitting your team's cadence.
 **Research backing:** DORA State of DevOps reports show smaller batch sizes and
 frequent deployment correlate with higher performance.
 
-> **AI exploration:** _"Help me size increments for [describe your team size,
+> **AI exploration:** _"Help me size increments for [describe your team size, >
 > methodology, and deployment > maturity]."_
 
 ---
@@ -412,7 +412,7 @@ client needs.
 
 Document significant technology choices as ADRs.
 
-> **AI exploration:** _"Compare [technology options] for [describe your use
+> **AI exploration:** _"Compare [technology options] for [describe your use >
 > case, team skills, and NFRs]."_
 
 ---
@@ -443,7 +443,7 @@ to design decisions:
 - Consent tracking and right-to-deletion
 - Encryption and key management
 
-> **AI exploration:** _"Design a security architecture for [describe your
+> **AI exploration:** _"Design a security architecture for [describe your >
 > application, data sensitivity, and > compliance requirements]."_
 
 ---
@@ -510,7 +510,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 | ----------------- | -------- | ------------------- |
 | [Criterion]       | [Metric] | [Collection method] |
 
-> **AI exploration:** _"Design an observability strategy for [describe your
+> **AI exploration:** _"Design an observability strategy for [describe your >
 > application, success criteria, and > monitoring requirements]."_
 
 ---
@@ -530,7 +530,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 - **Golden Hammer** — same tech for everything. Fix: evaluate options per
   problem.
 
-> **AI exploration:** _"Review this design for anti-patterns: [describe your
+> **AI exploration:** _"Review this design for anti-patterns: [describe your >
 > architecture and > component structure]."_
 
 ---
@@ -624,6 +624,11 @@ Relationships:
 | SendGrid    | Email     | REST API        | Queue for retry        |
 
 ### Increment Plan Example
+
+> **Note:** This example shows feature increments (Increment 1+). If your
+> project requires an Increment 0 (bootstrap for greenfield or discovery for
+> brownfield first AI-assisted), it would precede these increments. See
+> [System Design Guide: Infrastructure Planning](system-design-guide.md#infrastructure-planning).
 
 #### Increment 1: Foundation (Must Have)
 
@@ -719,11 +724,11 @@ early, establishes development patterns.
   deployment strategy
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
-> **AI exploration:** _"Help me troubleshoot [describe > the checklist item
+> **AI exploration:** _"Help me troubleshoot [describe > the checklist item >
 > that's failing and your current > design state]."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 _Added to framework in v0.12.0_

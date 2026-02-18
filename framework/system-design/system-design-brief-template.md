@@ -58,48 +58,49 @@ components._
 
 ---
 
-## 2. Technology Stack
+## 2. Architecture Decision Records (ADRs)
 
-### 2.1 Technology Selections
-
-| Category     | Choice               | Justification | ADR       |
-| ------------ | -------------------- | ------------- | --------- |
-| **Frontend** | [Framework]          | [Why]         | [ADR-XXX] |
-| **Backend**  | [Language/Framework] | [Why]         | [ADR-XXX] |
-| **Database** | [Database]           | [Why]         | [ADR-XXX] |
-| **Cache**    | [Cache system]       | [Why]         | [ADR-XXX] |
-| **Auth**     | [Auth approach]      | [Why]         | [ADR-XXX] |
-| **Hosting**  | [Platform]           | [Why]         | [ADR-XXX] |
-| **CI/CD**    | [Tool]               | [Why]         | -         |
-
-Reference ADRs for detailed rationale, alternatives, and cost analysis. ADRs are
-stored as separate files in `docs/adr/`.
-
----
-
-### 2.2 Architecture Decision Records (ADRs)
-
-**ADRs are separate files**, not embedded in this brief.
+ADRs document significant decisions across all aspects of the architecture —
+technology stack, data, API, security, infrastructure, and more. They are
+**separate files**, not embedded in this brief.
 
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-XXX-short-description.md`
 - **Template:** [ADR Template](../adr-template.md)
 - **Index:** `docs/adr/README.md`
 
-| ADR     | Title   | Status   | Cost Impact |
-| ------- | ------- | -------- | ----------- |
-| ADR-001 | [Title] | [Status] | [Cost/year] |
-| ADR-002 | [Title] | [Status] | [Cost/year] |
+| ADR     | Title   | Category | Status   |
+| ------- | ------- | -------- | -------- |
+| ADR-001 | [Title] | [Area]   | [Status] |
+| ADR-002 | [Title] | [Area]   | [Status] |
 
-**Total infrastructure cost from ADRs:** $X/year
-
-**Critical:** Research costs BEFORE creating ADRs.
+Reference individual ADRs from the relevant sections below (Technology Stack,
+Data Architecture, API Architecture, etc.).
 
 ---
 
-## 3. Data Architecture
+## 3. Technology Stack
 
-### 3.1 Data Model Overview
+**What to include:**
+
+- Frontend framework and language
+- Backend language and framework
+- Database and data storage
+- Caching layer
+- Authentication and authorization approach
+- Hosting and cloud platform
+- CI/CD tooling
+
+_For each selection, document the choice, justification, and reference the
+relevant ADR._
+
+[Describe your technology stack here]
+
+---
+
+## 4. Data Architecture
+
+### 4.1 Data Model Overview
 
 **What to include:**
 
@@ -113,7 +114,7 @@ entities._
 
 ---
 
-### 3.2 Data Persistence Strategy
+### 4.2 Data Persistence Strategy
 
 **What to include:**
 
@@ -123,13 +124,16 @@ entities._
 - Backup and disaster recovery approach
 - Caching strategy
 
+_Document significant data decisions (database selection, schema approach) in
+ADRs._
+
 [Describe your persistence strategy here]
 
 ---
 
-## 4. API Architecture
+## 5. API Architecture
 
-### 4.1 API Design Principles
+### 5.1 API Design Principles
 
 - **Style:** [REST / GraphQL / gRPC]
 - **Versioning:** [URL-based / header-based]
@@ -138,9 +142,11 @@ entities._
 - **Error Format:** [Standard error structure]
 - **Rate Limiting:** [Limits per user/endpoint]
 
+_Document significant API decisions (style, versioning strategy) in ADRs._
+
 ---
 
-### 4.2 Integration Points
+### 5.2 Integration Points
 
 | Integration | Purpose   | Pattern   | Error Handling |
 | ----------- | --------- | --------- | -------------- |
@@ -148,9 +154,9 @@ entities._
 
 ---
 
-## 5. Security and Compliance Design
+## 6. Security and Compliance Design
 
-### 5.1 Security Architecture
+### 6.1 Security Architecture
 
 - **Authentication:** [Mechanism]
 - **Authorization:** [Approach and roles]
@@ -159,9 +165,12 @@ entities._
 - **Security Scanning:** [Tools]
 - **Secrets Management:** [Approach]
 
+_Document significant security decisions (auth mechanism, encryption approach,
+secrets management) in ADRs._
+
 ---
 
-### 5.2 Compliance Requirements
+### 6.2 Compliance Requirements
 
 - **Regulations:** [GDPR / HIPAA / SOC 2 / etc.]
 - **Data Residency:** [Requirements]
@@ -169,9 +178,9 @@ entities._
 
 ---
 
-## 6. Observability and Monitoring Design
+## 7. Observability and Monitoring Design
 
-### 6.1 Instrumentation Strategy
+### 7.1 Instrumentation Strategy
 
 - **Logging:** [Approach, tool, centralization]
 - **Metrics:** [Application + infrastructure metrics]
@@ -179,9 +188,12 @@ entities._
 - **Dashboards:** [Monitoring dashboards]
 - **Alerts:** [Alert tool and thresholds]
 
+_Document significant observability decisions (stack selection, retention
+policies) in ADRs._
+
 ---
 
-### 6.2 Success Criteria Measurement
+### 7.2 Success Criteria Measurement
 
 | Success Criterion (from Initiation) | Metric   | Collection Method | Dashboard |
 | ----------------------------------- | -------- | ----------------- | --------- |
@@ -189,9 +201,9 @@ entities._
 
 ---
 
-## 7. Performance and Scalability Design
+## 8. Performance and Scalability Design
 
-### 7.1 Performance Targets
+### 8.1 Performance Targets
 
 - **API Response Time:** [p95 / p99 targets]
 - **Page Load Time:** [FCP target]
@@ -201,7 +213,7 @@ entities._
 
 ---
 
-### 7.2 Scalability Approach
+### 8.2 Scalability Approach
 
 - **Application Tier:** [Horizontal / vertical]
 - **Stateless Design:** [Yes/No, approach]
@@ -209,9 +221,12 @@ entities._
 - **Database Scaling:** [Replicas / sharding]
 - **CDN:** [Static asset delivery]
 
+_Document significant scaling decisions (horizontal vs. vertical, sharding
+strategy) in ADRs._
+
 ---
 
-## 8. Increment Plan
+## 9. Increment Plan
 
 **What to include:**
 
@@ -223,13 +238,32 @@ entities._
 _Start with Must Haves. Be realistic about size (typically 1-3 weeks each). Make
 Could Haves opportunistic._
 
+### Increment 0: [Bootstrap / Discovery] (if applicable)
+
+> **Include Increment 0 when:** greenfield projects need infrastructure
+> bootstrap, or brownfield first AI-assisted projects need discovery and
+> documentation. Subsequent brownfield projects skip Increment 0 and begin at
+> Increment 1. See
+> [System Design Guide: Infrastructure Planning](system-design-guide.md#infrastructure-planning).
+
+**Goal:** [Establish infrastructure (greenfield) / Document existing system for
+AI context (brownfield first AI)]
+
+**Requirements:** [Infrastructure NFRs / Discovery scope] **Duration:** [X-Y
+weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
+(estimate) **Dependencies:** None
+
+**Why first:** [Foundation must exist before feature delivery can begin]
+
+---
+
 ### Increment 1: [Name] (Must Have)
 
 **Goal:** [What this increment delivers]
 
 **Requirements:** [FR-X, FR-Y, NFR-Z] **Duration:** [X-Y weeks] (estimate)
 **Team:** [Composition] **Effort:** [X-Y person-weeks] (estimate)
-**Dependencies:** [None / Increment N]
+**Dependencies:** [None / Increment 0]
 
 **Why first:** [Rationale for sequencing]
 
@@ -264,10 +298,11 @@ _Add more increments as needed._
 
 ### Increment Plan Summary
 
-| Inc | Type       | Requirements | Duration | Effort  |
-| --- | ---------- | ------------ | -------- | ------- |
-| 1   | [Priority] | [FRs, NFRs]  | [Range]  | [Range] |
-| 2   | [Priority] | [FRs, NFRs]  | [Range]  | [Range] |
+| Inc | Type                  | Requirements    | Duration | Effort  |
+| --- | --------------------- | --------------- | -------- | ------- |
+| 0   | Bootstrap / Discovery | [If applicable] | [Range]  | [Range] |
+| 1   | [Priority]            | [FRs, NFRs]     | [Range]  | [Range] |
+| 2   | [Priority]            | [FRs, NFRs]     | [Range]  | [Range] |
 
 **Total Must Have:** [Duration range], [Effort range] **Total Project:**
 [Duration range], [Effort range]
@@ -280,7 +315,8 @@ _Add more increments as needed._
 ### Gate 2 Decision Package
 
 > **Purpose:** Provide executives and stakeholders with the information needed
-> to make the build/no-build decision.
+> to make the build/no-build decision. Record the decision using the
+> [Gate Decision Template](../gate-decision-template.md).
 
 **Project Timeline:**
 
@@ -369,6 +405,6 @@ Before proceeding to Gate 2, validate:
 
 ## Notes
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-18
 
 Added to framework in v0.12.0.
