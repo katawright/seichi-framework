@@ -48,8 +48,9 @@ get approval to invest in Requirements work.
 **Primary roles:** Product Managers, Business Analysts **Supporting roles:**
 Executives, Solutions Architect, Engineers
 
-The language in Initiation artifacts is intentionally **business-focused**
-rather than technical. This enables non-technical stakeholders to independently
+Any stakeholder with a project idea can use Initiation artifacts — no technical
+expertise or formal role required. The language is intentionally
+**business-focused** to enable non-technical stakeholders to independently
 initiate and scope projects with AI assistance.
 
 ---
@@ -97,9 +98,16 @@ Otherwise, keep the Brief concise and move quickly to Requirements.
 **Why AI assist only:** Initiation involves non-technical business decisions
 that require human judgment, stakeholder alignment, and organizational context.
 
-**AI's role:**
+**AI's role — two modes of working:**
 
-- Draft initial brief based on project notes
+- **Interview mode:** Describe your idea to AI. It asks structured questions
+  based on the template, suggests options, and produces a draft brief for your
+  review.
+- **Review mode:** Fill out the template yourself, then ask AI to review for
+  completeness, suggest improvements, and edit as directed.
+
+In either mode, AI can also:
+
 - Suggest alternatives and trade-offs
 - Analyze completeness (run checklist)
 - Provide templates and examples

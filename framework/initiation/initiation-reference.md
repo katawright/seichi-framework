@@ -55,7 +55,7 @@ Success metrics defined here flow through all later stages — see
 - One adoption metric (usage/coverage), if relevant
 
 > **AI exploration:** _"Help me define measurable success metrics for [describe
-> your project goals > and current baselines]."_
+> > your project goals > and current baselines]."_
 
 ---
 
@@ -98,7 +98,7 @@ early prevents catastrophic surprises later.
 - A concrete mitigation (spike/prototype/review)
 - A fallback path
 
-> **AI exploration:** _"Help me identify risks and unknowns for [describe your
+> **AI exploration:** _"Help me identify risks and unknowns for [describe your >
 > project context and > technology choices]."_
 
 ---
@@ -199,7 +199,7 @@ If items 1-4 and 10-12 are missing, the brief is usually not ready to circulate:
 - **Item 4 (Scope boundaries):** Without boundaries, scope creep is inevitable
 - **Item 10 (Estimate):** Stakeholders need a range to assess investment
 - **Item 11 (Gate 1):** Clear criteria prevent ambiguous approval
-- **Item 12 (DRI):** No owner means no accountability
+- **Item 12 (Project lead):** No owner means no accountability
 
 ---
 
