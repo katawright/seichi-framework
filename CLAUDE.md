@@ -5,6 +5,7 @@
 This project develops a practical framework for integrating AI assistance across
 all SDLC stages. The framework is designed to:
 
+- Fully integrate AI into the software development process
 - Guide both technical and non-technical stakeholders through software
   development
 - Make AI adoption less threatening to skeptical engineers
@@ -15,10 +16,8 @@ See PROJECT_CONTEXT.md for full details.
 
 ## Quick Context
 
-- **Phase:** Phase 1 - Framework Development
-- **Goal:** Create complete, standardized SDLC stage documentation
-- **Reference Materials:** ../ai-assisted-sdlc-reference/ contains prior work
-  from ChatGPT
+- **Phase:** Phase 2 - Framework Refinement
+- **Goal:** Review and refine framework for completeness and usability
 - **Target Audience:** Engineers (primary), Product Managers, Business Analysts,
   Executives (secondary)
 
@@ -26,8 +25,6 @@ See PROJECT_CONTEXT.md for full details.
 
 - **PROJECT_CONTEXT.md** - Complete project vision, design principles, execution
   model, measurement philosophy
-- **PROJECT_PLAN.md** - Phased development approach with model selection
-  strategy (Sonnet vs Opus)
 - **framework/framework-stages.md** - Authoritative definition of the 8 SDLC
   stages with inputs, outputs, and criteria
 
@@ -59,9 +56,9 @@ See PROJECT_CONTEXT.md for full details.
   - Breaking changes: Use `!` or `BREAKING CHANGE:` in body
 - **File Versioning:**
   - README.md files: Include `**Framework Version:** X.X.X` (CURRENT framework,
-    update ALL READMEs per release) and `**Last Updated:** YYYY-MM-DD` at top
-  - Individual artifacts: Include `**Last Updated:** YYYY-MM-DD` at top, version
-    note at bottom ("Added to framework in vX.X.X")
+    update ALL READMEs per release) and `**Last Updated:** YYYY-MM-DD` at bottom
+  - Individual artifacts: Include `**Last Updated:** YYYY-MM-DD`, version note
+    at bottom ("Added to framework in vX.X.X")
   - When releasing new version: Update Framework Version in ALL README files
   - See PROJECT_CONTEXT.md for detailed file-level versioning conventions
 - **Markdown Formatting:**
@@ -69,24 +66,45 @@ See PROJECT_CONTEXT.md for full details.
   - Break lines at natural points (sentence boundaries, clauses, list items)
   - Preserve markdown structure (headers, lists, code blocks, tables)
   - Improves readability in text editors and code reviews
+  - When linking to files use the file title as the link text, not the file name
 
 ## Workflow
 
-1. Review reference materials in ../ai-assisted-sdlc-reference/ before creating
-   new artifacts
-2. Maintain consistency across all stage artifacts
-3. Tailor language to role (business language for PM/BA stages, technical for
+1. Maintain consistency across all stage artifacts
+2. Tailor language to role (business language for PM/BA stages, technical for
    engineering stages)
-4. Each stage needs: brief, checklist, reference, AI agent prompt, README
-5. Include role metadata and execution pattern
+3. Each stage needs: brief, checklist, reference, AI agent prompt, README
+4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
-6. Create feature branch, commit with conventional commits, create PR (main
+5. Create feature branch, commit with conventional commits, create PR (main
    branch is protected)
-7. Only commit changes when explicitly directed by the user
+6. Only commit changes when explicitly directed by the user
+
+## Cross-Cutting Refinement Patterns
+
+When refining any stage's artifacts, apply these patterns established during
+Initiation refinement:
+
+1. **README "How AI Helps" section** — Add after Starting Point, before
+   Artifacts. Include 3-4 stage-appropriate bullets describing how AI assists,
+   linking to the AI Assistance Scorecard.
+2. **README measurement throughline callout** — Add a blockquote after Stage
+   Outputs pointing to Framework Guide: Measurement Throughline, describing that
+   stage's measurement role.
+3. **Gate decision template references** — Any artifact mentioning a gate
+   decision should reference the Gate Decision Template rather than embedding
+   decision criteria inline.
+4. **No DRI jargon** — Use "project lead" if ownership is referenced.
+5. **Link text convention** — Use file title as link text, not the filename
+   (e.g., `[Initiation Guide](initiation-guide.md)` not
+   `**initiation-guide.md**`).
+
+See the Initiation stage artifacts for reference implementations of these
+patterns.
 
 ## Framework-Application Synchronization
 
-When building the application (Phase 3+):
+When building the application (Phase 4):
 
 - Framework artifacts (markdown files) are single source of truth
 - Application reads framework files (runtime or build-time)
