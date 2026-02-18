@@ -6,18 +6,15 @@ A practical framework for integrating AI assistance into software development.
 
 ## Status
 
-Phase 1: Framework Development — **Complete** (all 8 stages documented)
+Phase 1: Framework Development — **Complete** (all 8 stages documented)  
+Phase 2: Framework Refinement - **In Progress**
 
 ## Documentation
 
 ### Core Framework
 
 - [Project Context](PROJECT_CONTEXT.md) - Background and vision
-- [Project Plan](PROJECT_PLAN.md) - Phased development approach
-- [SDLC Stages](STAGES.md) - Complete stage definitions with inputs, outputs,
-  and criteria
-- [AI Assistance Scorecard](framework/framework-ai-assistance.md) - Guidance on
-  AI assistance levels by stage
+- Framework documents in `/framework`
 
 ### Stage Artifacts
 

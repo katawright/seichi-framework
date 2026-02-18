@@ -372,7 +372,7 @@ and handoff details.
 
 For each SDLC stage, create:
 
-### Stage Brief (`{stage}-brief.md`)
+### Stage Brief (`{stage}-brief-template.md`)
 
 - One-page document
 - Captures essential information for the stage
@@ -415,7 +415,7 @@ For each SDLC stage, create:
 
 ## Project Phases
 
-### Phase 1: Framework Development (Current)
+### Phase 1: Framework Development
 
 **Goal:** Create complete, standardized documentation for all SDLC stages  
 **Tool:** Claude Code with Sonnet 4.5  
@@ -426,18 +426,27 @@ For each SDLC stage, create:
 - Consistency across all stages
 - Usage guidelines and examples
 
-### Phase 2: Framework Validation
+### Phase 2: Framework Refinement (Current)
 
 **Goal:** Review and refine framework for completeness and usability  
-**Tool:** Claude Code with Sonnet 4.5, potentially Opus 4.5 for complex
+**Tool:** Claude Code with Sonnet 4.5, potentially Opus 4.6 for complex
+decisions  
+**Deliverables:**
+
+- Reviewed and refined framework
+
+### Phase 3: Framework Validation
+
+**Goal:** Exercise the framework using simulation  
+**Tool:** Claude Code with Sonnet 4.5, potentially Opus 4.6 for complex
 decisions  
 **Deliverables:**
 
 - Validated framework
 - Example workflows
-- User testing feedback incorporated
+- Simulation testing feedback incorporated
 
-### Phase 3: Application Development
+### Phase 4: Application Development
 
 **Goal:** Build tool that facilitates use of the AI-Assisted SDLC framework  
 **Tool:** Claude Code with Sonnet 4.5 for implementation, Opus 4.5 for
@@ -532,8 +541,6 @@ theoretical improvements.
 
 ## Notes for Claude Code
 
-- Existing work from ChatGPT is reference material only - review and improve,
-  don't just copy
 - Maintain consistency across all 8 stage artifacts
 - Keep language professional but approachable
 - **Adjust language/terminology based on primary role for each stage** (business
@@ -588,9 +595,9 @@ theoretical improvements.
 **File-Level Versioning Conventions:**
 
 - **README.md files (stage overviews):**
-  - Include `**Framework Version:** X.X.X` at the top (reflects **CURRENT
+  - Include `**Framework Version:** X.X.X` at the bottom (reflects **CURRENT
     framework version**, not when stage was added)
-  - Include `**Last Updated:** YYYY-MM-DD` at the top (when file was last
+  - Include `**Last Updated:** YYYY-MM-DD` at the bottom (when file was last
     modified)
   - **Update Framework Version in ALL README files** when incrementing framework
     version (e.g., v0.4.0 → v0.5.0)
@@ -599,11 +606,11 @@ theoretical improvements.
     (Initiation, Requirements, System Design, Increment Design) to show
     Framework Version: 0.5.0
 - **Individual artifact files (templates, checklists, references, prompts):**
-  - Include `**Last Updated:** YYYY-MM-DD` at the top (when file was last
+  - Include `**Last Updated:** YYYY-MM-DD` at the bottom (when file was last
     modified)
   - Include version note at bottom: "Added to framework in vX.X.X" (never
     changes after creation - preserves history)
-  - Do NOT include Framework Version at top (reduces maintenance burden)
+  - Do NOT include Framework Version (reduces maintenance burden)
   - Update Last Updated only when content actually changes
 - **Rationale:**
   - README files act as stage entry points and should communicate "this is the

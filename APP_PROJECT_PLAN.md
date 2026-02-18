@@ -1,158 +1,12 @@
-# AI-Assisted SDLC - Project Plan
+# AI-Assisted SDLC - Application Project Plan
 
 ## Overview
 
-This plan outlines the development of the AI-Assisted SDLC framework in phases,
-with appropriate Claude model selection for each phase based on task complexity
-and requirements.
+This plan outlines the development of an AI-Assisted SDLC framework application
+in phases, with appropriate Claude model selection for each phase based on task 
+complexity and requirements.
 
-The framework serves multiple audiences:
-
-- **Engineers:** Learn to leverage AI throughout their work while maintaining
-  professional standards
-- **Non-technical stakeholders:** Properly initiate and scope projects with AI
-  assistance
-- **Organizations:** Improve cross-functional collaboration and project quality
-
-Key strategic value: Democratizing project initiation by enabling business
-stakeholders (Product Managers, Marketing, Executives) to start projects
-independently while providing engineers with better-structured inputs.
-
----
-
-## Phase 1: Framework Development
-
-**Timeline:** Initial phase (4-6 weeks estimated)  
-**Primary Tool:** Claude Code with **Sonnet 4.5**  
-**Focus:** Documentation creation, template standardization, content development
-
-### Objectives
-
-1. Review and evaluate existing artifacts from ChatGPT reference materials
-2. Establish consistent structure and standards across all SDLC stages
-3. Create complete artifact sets for all SDLC stages
-4. **Define clear role ownership for each stage (PM, BA, Engineer, QA, DevOps,
-   etc.)**
-5. **Define execution pattern for each stage
-   (foundational/iterative/continuous)**
-6. **Document revisit triggers and feedback loops for each stage**
-7. **Tailor AI prompts and documentation to appropriate audience (business vs.
-   technical)**
-8. Ensure templates are practical, lightweight, and accessible to both technical
-   and non-technical users
-9. Document framework usage, workflows, and cross-functional handoffs
-
-### Deliverables
-
-- [x] **STAGES.md** - Authoritative definition of 8 SDLC stages with
-      inputs/outputs/criteria
-- [x] **AI_AUTONOMY_SCORECARD.md** - Operational guidance on AI autonomy levels
-      per stage
-- [x] Standardized artifact template structure
-- [ ] Complete documentation for each SDLC stage:
-  - [x] Initiation stage artifacts (with measurable success criteria guidance)
-  - [x] Requirements stage artifacts (with MoSCoW prioritization)
-  - [x] System Design stage artifacts (architecture, technology selection,
-        increment planning, ADR template, cost guidance)
-  - [x] Increment Design stage artifacts (component design, API specs, test
-        strategy per increment)
-  - [x] Implementation stage artifacts (with multi-PR support, branching
-        strategies, ADR guidance)
-  - [ ] Verification stage artifacts (covering all validation types)
-  - [ ] Deployment stage artifacts
-  - [ ] Support stage artifacts (operations + maintenance)
-- [ ] Project README with framework overview
-- [ ] Usage guide and examples
-- [ ] Workflow documentation showing stage transitions and feedback loops
-
-### Why Sonnet 4.5?
-
-- Excellent at structured documentation and writing
-- Fast iteration cycles for refinement
-- Cost-effective for high-volume document creation
-- Sufficient reasoning capability for template design
-- Well-suited for markdown and technical writing
-
-### Success Criteria
-
-- All SDLC stages have complete, consistent artifact sets
-- Templates are clear and easy to follow
-- Language is professional but approachable
-- **Each stage clearly indicates primary role and cross-functional involvement**
-- **Execution pattern (foundational/iterative/continuous) is explicit for each
-  stage**
-- **Revisit triggers and feedback loops are well-documented**
-- **AI prompts use appropriate terminology for target role (business vs.
-  technical language)**
-- No stage-specific artifacts contradict framework principles
-- Engineers can understand and use the framework without extensive training
-- **Non-technical stakeholders can complete early-stage (Initiation,
-  Requirements) artifacts independently**
-- **Measurable success criteria are emphasized without mandating specific
-  frameworks (OKRs, SMART, KPIs, etc.)**
-- **Handoff points between roles are clearly defined**
-- **Framework supports both iterative delivery and adaptive revision of
-  foundational stages**
-- **System Design (foundational) and Increment Design (iterative) stages have
-  clear, distinct purposes**
-
----
-
-## Phase 2: Framework Validation and Refinement
-
-**Timeline:** Following Phase 1 (2-3 weeks estimated)  
-**Primary Tool:** Claude Code with **Sonnet 4.5**  
-**Escalate to:** **Opus 4.5** for complex framework design decisions  
-**Focus:** Quality assurance, usability testing, optimization
-
-### Objectives
-
-1. Review framework for completeness and consistency
-2. Test workflows with realistic scenarios
-3. **Validate execution model with both foundational and iterative stages**
-4. **Test feedback loops - simulate revisiting stages when new information
-   emerges**
-5. Identify gaps or redundancies
-6. Refine based on feedback
-7. Create example walkthroughs
-8. Validate that framework meets design principles
-
-### Deliverables
-
-- [ ] Framework validation report
-- [ ] Example project walkthrough using the framework
-- [ ] Refined templates based on testing
-- [ ] FAQ or troubleshooting guide
-- [ ] Feedback incorporation document
-- [ ] Final framework v1.0
-
-### When to Use Opus 4.5
-
-Use Opus for:
-
-- Resolving complex architectural decisions about framework structure
-- Deep analysis of workflow effectiveness
-- Sophisticated reasoning about edge cases
-- Critical design trade-offs that impact usability
-
-Continue with Sonnet for:
-
-- Document refinement and editing
-- Example creation
-- FAQ development
-- Incremental improvements
-
-### Success Criteria
-
-- Framework has been tested with at least one complete SDLC cycle
-- Identified issues have been resolved
-- Documentation is clear and complete
-- Framework achieves design principle goals
-- Ready for broader use
-
----
-
-## Phase 3: Application Design
+## Application Design
 
 **Timeline:** After framework validation (2-3 weeks estimated)  
 **Primary Tool:** Claude Code with **Opus 4.5**  
@@ -246,7 +100,7 @@ Must support:
 
 ---
 
-## Phase 4: Application Implementation
+## Application Implementation
 
 **Timeline:** After design phase (4-8 weeks estimated) **Primary Tool:** Claude
 Code with **Sonnet 4.5** **Escalate to:** **Opus 4.5** for complex
@@ -335,7 +189,7 @@ implementation challenges **Focus:** Building the application following Design
 
 ---
 
-## Phase 5: Iteration and Improvement
+## Iteration and Improvement
 
 **Timeline:** Ongoing after initial release  
 **Primary Tool:** Context-dependent (Sonnet or Opus)  
@@ -646,30 +500,3 @@ framework itself.
 - Time saved using the application
 - User retention
 - Support ticket volume
-
----
-
-## Next Immediate Steps
-
-1. ✅ Create project directory structure
-2. ✅ Initialize version control
-3. ✅ Set up reference materials directory
-4. ✅ Launch Claude Code in project directory
-5. ✅ Review existing ChatGPT artifacts
-6. ✅ Define 8-stage SDLC model (Initiation, Requirements, System Design,
-   Increment Design, Implementation, Verification, Deployment, Support)
-7. ✅ Create STAGES.md with comprehensive stage definitions
-8. ✅ Establish framework-agnostic measurable success criteria approach
-9. ⬜ Create complete artifact sets for each of the 8 stages
-10. ⬜ Establish artifact template standards
-11. ⬜ Validate framework with realistic scenarios
-
----
-
-## Notes
-
-- This plan is a living document and will evolve based on learnings
-- Phase timelines are estimates and may adjust
-- Model selection is a guideline, not a strict rule
-- The project itself demonstrates the framework's value
-- Regular reflection on what's working/not working is essential
