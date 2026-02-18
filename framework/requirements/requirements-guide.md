@@ -45,6 +45,13 @@ rework from ambiguity.
 **Checkpoint:** Alignment Reviews throughout; feeds Gate 2 — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
+> **Gate 2 context:** Gate 2 criteria differ from Gate 1 because the decision is
+> different. Gate 1 asks "Should we invest in requirements work?" (business
+> case). Gate 2 asks "Should we commit to building?" (requirements validated,
+> architecture sound, risks mitigated, estimate within budget). Gate 2 occurs at
+> the end of Requirements + System Design foundational pass. Record gate
+> decisions using the [Gate Decision Template](../gate-decision-template.md).
+
 **AI assistance:** AI agent with human gate — see
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
@@ -201,11 +208,23 @@ Requirements is foundational but revisitable:
 **Why human gate:** Requirements involve business judgment, stakeholder
 alignment, and domain knowledge that AI cannot independently verify.
 
+**Two modes of AI assistance** (matching the Initiation pattern):
+
+- **Interview mode:** AI conducts structured interviews based on the
+  [Requirements Brief Template](requirements-brief-template.md) and the
+  Initiation Brief. It asks clarifying questions about user needs, edge cases,
+  and constraints, then drafts requirements for human review.
+- **Review mode:** Human drafts requirements independently, then asks AI to
+  review for completeness, testability, ambiguity, and suggest improvements.
+
 **AI's role:**
 
 - Draft requirements from Initiation Brief
+- Conduct structured stakeholder interviews to surface requirements
 - Suggest acceptance criteria and NFRs
-- Identify potential edge cases
+- Simulate stakeholder perspectives to surface edge cases
+- Generate NFRs from success metrics (observability, performance)
+- Identify gaps in acceptance criteria
 - Analyze completeness (run checklist)
 
 **Human's role:**

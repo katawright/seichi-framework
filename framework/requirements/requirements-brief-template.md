@@ -13,9 +13,16 @@
 **How to use this:** Bullets only. Keep it concise (~2-3 pages). For deeper
 guidance, see [Requirements Guide](requirements-guide.md).
 
-**AI Assistance:** This stage is "AI assist only" per
-[AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft and
-suggest, humans own all decisions and validate correctness with stakeholders.
+**AI Assistance:** This stage is "AI agent with human gate" per
+[AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft
+requirements, conduct interviews, and suggest ACs/NFRs; humans validate with
+stakeholders and own all decisions. Two ways to work with AI on this brief:
+
+- **Interview mode:** Share the Initiation Brief with AI. It asks structured
+  questions based on the template, interviews you (or stakeholders) to surface
+  requirements, and produces a draft for your review.
+- **Review mode:** Fill out the template yourself, then ask AI to review for
+  completeness, testability, ambiguity, and suggest improvements.
 
 ---
 
@@ -49,7 +56,7 @@ suggest, humans own all decisions and validate correctness with stakeholders.
 ## Goals and success metrics (from Initiation)
 
 > **Measurement throughline:** These metrics from the Initiation Brief inform
-> your functional and non-functional requirements. NFRs (Section 8) should
+> your functional and non-functional requirements. NFRs (Section 9) should
 > include instrumentation to measure these metrics.
 
 - **Write:** Carry forward measurable success criteria from Initiation Brief
@@ -57,6 +64,41 @@ suggest, humans own all decisions and validate correctness with stakeholders.
 - **Tip:** Use these to inform NFRs (performance targets, observability
   requirements).
 - _Example:_ "p90 time-to-context 75s → <30s; repeat-contact rate 12% → 10%."
+
+## Constraints
+
+> **Carry forward from Initiation:** Review the Initiation Brief for constraints
+> already identified (budget, deadlines, team capacity, compliance, technology
+> restrictions). Capture them here, then add any new constraints discovered
+> during requirements elicitation.
+
+### From Initiation Brief
+
+- **Write:** Copy relevant constraints from Initiation Brief.
+- _Example:_
+  - Budget: $150K approved for Phase 1
+  - Deadline: Q2 launch aligned with support team hiring cycle
+  - Team: 2 backend engineers, 1 frontend, shared QA
+  - Compliance: Must meet existing data-handling policy (no new PII stores
+    without security review)
+
+### Discovered during requirements
+
+- **Write:** New constraints surfaced during stakeholder interviews, technical
+  discovery, or requirements elicitation.
+- **Tip:** These often emerge from brownfield analysis, integration research, or
+  SME interviews. For brownfield projects, gather existing system constraints —
+  see
+  [Requirements Guide: Brownfield Projects](requirements-guide.md#brownfield-projects).
+- _Example:_
+  - Tool B API has no bulk export (must paginate all queries)
+  - Support team cannot tolerate >5 minutes downtime during business hours
+    (existing SLA)
+  - Legal requires 90-day audit trail for PII access
+
+> **Note:** Constraints inform MoSCoW prioritization (Section 7) and shape NFRs
+> (Section 9). Detailed cost analysis happens during System Design, with Gate 2
+> as the decision point.
 
 ## Scope baseline
 
@@ -323,6 +365,11 @@ Provide this Requirements Document to System Design team.
 > at the **end of Requirements + System Design foundational pass**, not at the
 > end of Requirements alone. This section helps plan what outputs to produce
 > during System Design.
+>
+> **Gate 2 differs from Gate 1:** Gate 1 asks "Should we invest in requirements
+> work?" (business case). Gate 2 asks "Should we commit to building?"
+> (requirements + design + estimates). Record the actual decision using the
+> [Gate Decision Template](../gate-decision-template.md).
 
 **Gate 2 expected outputs** (produced during System Design foundational pass):
 
