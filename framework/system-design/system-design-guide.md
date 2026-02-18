@@ -7,18 +7,22 @@
 
 ## Quick Reference
 
-**Purpose:** Establish system architecture, technology choices, infrastructure
-plan, and increment roadmap that will guide all implementation work.
+**Purpose:** Establish or assess system architecture, technology choices,
+infrastructure plan, and increment roadmap that will guide all implementation
+work.
 
 **Primary roles:** Engineers, Solutions Architects
 
 **Execution pattern:** Foundational (once per project, revisitable)
 
-**Key inputs:** Requirements Document (FRs, ACs, NFRs, MoSCoW priorities)
+**Key inputs:** Requirements Document (FRs, ACs, NFRs, MoSCoW priorities). For
+brownfield first AI-assisted projects: existing architecture docs, ADRs,
+infrastructure configuration, known technical debt. For subsequent brownfield
+projects: documented context from prior discovery (review and update as needed)
 
 **Key outputs:**
 
-- System architecture and technology decisions (ADRs)
+- System architecture with significant decisions documented in ADRs
 - Infrastructure architecture and planning (CI/CD, deployment, observability)
 - Increment plan mapping priorities to increments
 - Gate 2 Decision Package
@@ -26,7 +30,7 @@ plan, and increment roadmap that will guide all implementation work.
 **What good looks like:**
 
 - Architecture addresses all requirements and NFRs
-- Technology choices justified in ADRs with cost analysis
+- Significant decisions justified in ADRs
 - Increment plan sequences Must Haves first
 - Security, performance, and observability designed in
 - Instrumentation planned for success criteria
@@ -52,12 +56,13 @@ plan, and increment roadmap that will guide all implementation work.
 ## What Is System Design?
 
 System Design bridges "what we need to build" (Requirements) and "how we'll
-build it" (Implementation). It establishes the foundational architecture and
-technical approach for the entire project.
+build it" (Implementation). It establishes or assesses the foundational
+architecture and technical approach for the entire project.
 
 **Purpose:**
 
-1. **Technical planning** — determine how the system will be structured
+1. **Technical planning** — determine how the system will be structured or how
+   changes integrate into existing architecture
 2. **Risk reduction** — identify technical challenges before coding
 3. **Architecture alignment** — ensure components work together coherently
 4. **Increment sequencing** — create a realistic delivery roadmap
@@ -72,13 +77,6 @@ technical approach for the entire project.
 Follow established principles — SOLID, Separation of Concerns, DRY, YAGNI, KISS
 — when making design decisions. Consult your team's standards or ask your AI
 agent for guidance.
-
-**Key design decisions to document:**
-
-- Component boundaries and responsibilities
-- Layering strategy (presentation, business logic, data access)
-- Dependency direction (depend on abstractions)
-- Where to apply patterns vs. keep things simple
 
 ---
 
@@ -119,20 +117,28 @@ priority definitions.
 1. **Review requirements** — all FRs, NFRs, MoSCoW priorities, acceptance
    criteria
 2. **Identify dependencies** — which requirements depend on others?
-3. **Assess risk and complexity** — uncertain items first
-4. **Group into increments** — Must Haves first, delivering testable value
-5. **Sequence increments** — dependencies first, then risk/value balance
-6. **Map Should Haves** — assign to later increments
-7. **Handle Could Haves** — mark as opportunistic
-8. **Document Won't Haves** — explicitly list exclusions
-9. **Estimate duration and effort as ranges**
-10. **Calculate cost range for Gate 2** — effort x blended rate, compare to
+3. **Determine Increment 0 need** — greenfield projects require a bootstrap
+   Increment 0; brownfield first AI-assisted projects require a discovery
+   Increment 0; subsequent brownfield projects skip directly to Increment 1
+4. **Assess risk and complexity** — uncertain items first
+5. **Group into increments** — Must Haves first, delivering testable value
+6. **Sequence increments** — dependencies first, then risk/value balance
+7. **Map Should Haves** — assign to later increments
+8. **Handle Could Haves** — mark as opportunistic
+9. **Document Won't Haves** — explicitly list exclusions
+10. **Estimate duration and effort as ranges**
+11. **Calculate cost range for Gate 2** — effort x blended rate, compare to
     Initiation estimates
 
 > For increment sizing guidance, estimation techniques, and methodology-specific
 > examples, see
 > [System Design Reference: Increment Sizing](system-design-reference.md#increment-sizing-guidance)
 > and [Estimation](system-design-reference.md#increment-estimation-guidance).
+
+> **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
+> [System Design Brief Template](system-design-brief-template.md#gate-2-decision-package).
+> Record the proceed/pivot/stop decision using the
+> [Gate Decision Template](../gate-decision-template.md).
 
 ---
 
@@ -142,17 +148,17 @@ Infrastructure planning is a **required output** of System Design. The goal is
 to ensure working development, testing, deployment, and monitoring
 infrastructure exists before feature delivery begins.
 
-**Greenfield projects:** Infrastructure must be created. Increment 1 becomes a
-**Bootstrap** increment establishing CI/CD, environments, monitoring, and
-deployment automation.
+**Greenfield projects:** Infrastructure must be created. Increment 0 becomes the
+**bootstrap** increment establishing CI/CD, environments, monitoring, and
+deployment automation. Feature delivery begins at Increment 1.
 
-**Brownfield projects (first AI-assisted):** Increment 1 focuses on **discovery
+**Brownfield projects (first AI-assisted):** Increment 0 focuses on **discovery
 and documentation** — capturing existing architecture, infrastructure, and
-conventions for effective AI assistance.
+conventions for effective AI assistance. Feature delivery begins at Increment 1.
 
-**Brownfield projects (subsequent):** Increment 1 proceeds to **feature
-delivery**, using and updating existing documentation. Infrastructure
-adaptations are included within feature increments.
+**Brownfield projects (subsequent):** No Increment 0 is needed. Increment 1
+proceeds to **feature delivery**, using and updating existing documentation.
+Infrastructure adaptations are included within feature increments.
 
 Infrastructure decisions are architectural decisions and must be documented in
 ADRs.
@@ -233,12 +239,15 @@ depth:
 - Analyzing trade-offs between approaches
 - Suggesting design patterns for common scenarios
 - Creating boilerplate (data models, ADRs)
+- Generating diagram-as-code (Mermaid, PlantUML) as first drafts — layout and
+  details typically need human refinement
 - Identifying edge cases and security concerns
 
 **AI struggles with:**
 
 - Organizational context (team skills, infrastructure)
 - Business priorities and long-term maintainability
+- Producing publication-ready diagrams without human refinement
 - Subtle security nuances
 
 **Best practices:**
@@ -256,7 +265,7 @@ depth:
 ### Triggers
 
 - Architecture proves infeasible during implementation
-- NFRs can't be met (performance, scalability, security)
+- NFRs can't be met within cost or time constraints
 - Technology choice doesn't support needed capabilities
 - Major requirements change or new constraints emerge
 - Production issues reveal architectural problems
@@ -284,6 +293,6 @@ depth:
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 Added to framework in v0.12.0.

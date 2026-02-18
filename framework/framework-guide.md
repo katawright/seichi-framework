@@ -164,7 +164,7 @@ significant new information emerges:
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
 | 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
 | 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with acceptance criteria                     |
-| 3   | System Design    | Engineers / Architect | Foundational | Establish system architecture and technical approach                      |
+| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
 | 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
@@ -296,7 +296,7 @@ ensuring goals actively guide development.
 | -------------------- | ------------------------------------------------------------------------------------- |
 | **Initiation**       | Define objectives with measurable success criteria; set targets                       |
 | **Requirements**     | Ensure NFRs include instrumentation/telemetry; ACs ladder up to success criteria      |
-| **System Design**    | Design analytics infrastructure, dashboards, monitoring, data collection              |
+| **System Design**    | Design or assess analytics infrastructure, dashboards, monitoring, data collection    |
 | **Increment Design** | Plan measurement instrumentation for the increment                                    |
 | **Implementation**   | Implement logging, metrics collection, instrumentation                                |
 | **Verification**     | Test that measurement systems work; validate ACs tied to success criteria             |
@@ -354,16 +354,16 @@ approval — not uncontrolled operation.
 **Core principle:** Increase AI assistance as verifiability increases; tighten
 human gates as risk increases.
 
-| #   | Stage            | Assistance Level               | Best Uses                                               |
-| --- | ---------------- | ------------------------------ | ------------------------------------------------------- |
-| 1   | Initiation       | AI assist only                 | Draft briefs, risks, options, sizing                    |
-| 2   | Requirements     | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts |
-| 3   | System Design    | AI agent + strong gates        | Propose architectures, ADR drafts, slice plans          |
-| 4   | Increment Design | AI agent + strong gates        | Detailed design, test strategy, component specs         |
-| 5   | Implementation   | High assistance, bounded scope | Generate/refactor code, keep PR-sized slices            |
-| 6   | Verification     | High assistance + CI gates     | Generate tests, test matrices, expand coverage          |
-| 7   | Deployment       | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute     |
-| 8   | Support          | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates    |
+| #   | Stage            | Assistance Level               | Best Uses                                                |
+| --- | ---------------- | ------------------------------ | -------------------------------------------------------- |
+| 1   | Initiation       | AI assist only                 | Draft briefs, risks, options, sizing                     |
+| 2   | Requirements     | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts  |
+| 3   | System Design    | AI agent + strong gates        | Propose or assess architectures, ADR drafts, slice plans |
+| 4   | Increment Design | AI agent + strong gates        | Detailed design, test strategy, component specs          |
+| 5   | Implementation   | High assistance, bounded scope | Generate/refactor code, keep PR-sized slices             |
+| 6   | Verification     | High assistance + CI gates     | Generate tests, test matrices, expand coverage           |
+| 7   | Deployment       | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute      |
+| 8   | Support          | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates     |
 
 For full assistance level definitions (6 levels) and operational guidance, see
 the [AI Assistance Scorecard](framework-ai-assistance.md).
@@ -439,10 +439,10 @@ application, modernizing legacy system, migrating to new architecture.
 
 ### Key Principle
 
-**Greenfield projects invest Increment 1 in establishing infrastructure so that
-subsequent increments operate identically to brownfield projects.** Once
-infrastructure exists, both project types deliver features using the same
-iterative cycle.
+**Greenfield projects invest Increment 0 in establishing infrastructure;
+brownfield first AI-assisted projects invest Increment 0 in discovering and
+documenting existing systems.** After Increment 0 (where applicable), all
+project types deliver features using the same iterative cycle.
 
 ### How the Framework Adapts
 
@@ -453,15 +453,15 @@ emphasis differ:
 | -------------------- | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                | Understand existing system + define new goals     |
 | **Requirements**     | All requirements are new                  | New requirements + existing system constraints               | New requirements + existing system constraints    |
-| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 1             | Adapt/extend architecture + assess infrastructure |
+| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 0             | Adapt/extend architecture + assess infrastructure |
 | **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                             | Plan first feature increment details              |
-| **Increment 1**      | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context     | **Deliver first feature** (infrastructure exists) |
-| **Increment 2+**     | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
+| **Increment 0**      | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context     | N/A — proceed directly to feature delivery        |
+| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
 | **Support**          | Monitor new system                        | Monitor changes, consider existing user base                 | Monitor changes, consider existing user base      |
 
-### Increment 1: The Critical Difference
+### Increment 0: The Critical Difference
 
-**Greenfield Increment 1** is the **bootstrap increment** — establishing the
+**Greenfield Increment 0** is the **bootstrap increment** — establishing the
 foundational infrastructure before feature development begins:
 
 - Set up version control, branching strategy, code organization
@@ -473,9 +473,10 @@ foundational infrastructure before feature development begins:
 - Implement measurement/telemetry systems (from success criteria)
 - Deploy a "hello world" application to validate the full pipeline
 
-**Outcome:** Working infrastructure that can support feature delivery.
+**Outcome:** Working infrastructure that can support feature delivery. Increment
+1+ delivers features.
 
-**Brownfield Increment 1 (First AI-Assisted Project)** is the **discovery
+**Brownfield Increment 0 (First AI-Assisted Project)** is the **discovery
 increment** — documenting existing architecture, infrastructure, and conventions
 for AI context:
 
@@ -488,10 +489,11 @@ for AI context:
 - Store in AGENTS.md and docs/ structure for future AI use
 
 **Outcome:** Documented context that enables effective AI assistance on future
-projects.
+projects. Increment 1+ delivers features.
 
-**Brownfield Increment 1 (Subsequent Projects)** proceeds directly to **feature
-delivery** because infrastructure exists and AI context is documented:
+**Brownfield (Subsequent Projects)** requires no Increment 0 and proceeds
+directly to **feature delivery** because infrastructure exists and AI context is
+documented:
 
 - Infrastructure is already operational
 - CI/CD pipelines exist (may need minor adaptation)
@@ -499,8 +501,8 @@ delivery** because infrastructure exists and AI context is documented:
 - AI context documented from prior projects
 - Focus is on delivering the first new feature/capability
 
-**Outcome:** First feature increment delivered using existing infrastructure,
-with updated documentation.
+**Outcome:** First feature increment (Increment 1) delivered using existing
+infrastructure, with updated documentation.
 
 ### System Design Stage: Infrastructure Planning
 
@@ -515,7 +517,7 @@ both project types:
 - Deployment strategy (blue-green, canary, rolling, etc.)
 - Monitoring and observability architecture
 - Security and compliance infrastructure
-- Iteration plan identifying **Increment 1 = establish infrastructure**
+- Iteration plan identifying **Increment 0 = establish infrastructure**
 
 **Brownfield infrastructure planning (first AI-assisted project) includes:**
 
@@ -525,11 +527,11 @@ both project types:
 - Deployment strategy within existing constraints
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
-- Increment plan identifying **Increment 1 = document existing context for AI**
+- Increment plan identifying **Increment 0 = document existing context for AI**
   - What to document: architecture, conventions, constraints, infrastructure
   - Documentation structure approach (use existing or propose new)
   - Discovery approach (AI tools + team expert verification)
-  - **Note:** If Increment 1 reveals significant gaps in team's understanding,
+  - **Note:** If Increment 0 reveals significant gaps in team's understanding,
     may trigger return to System Design stage to reassess plans
 
 **Brownfield infrastructure planning (subsequent projects) includes:**
@@ -540,7 +542,8 @@ both project types:
 - Deployment strategy within existing constraints
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
-- Increment plan identifying **Increment 1 = first feature**
+- Increment plan identifying **Increment 1 = first feature** (no Increment 0
+  needed)
 
 **Key output:** All project types exit System Design with a clear plan that
 enables subsequent feature delivery — greenfield and brownfield-first establish
@@ -569,8 +572,8 @@ guide.md) for detailed guidance on capturing brownfield constraints.
 
 ### When Both Types Converge
 
-After Increment 1, **both greenfield and brownfield projects operate
-identically**:
+After Increment 0 (where applicable), **both greenfield and brownfield projects
+operate identically**:
 
 - Infrastructure is established and operational
 - Feature delivery follows the same iterative cycle: Increment Design →
