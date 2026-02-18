@@ -245,6 +245,9 @@ Stop **Real stop option:** Yes
 After Gate 2, the project is funded and team committed. Later checkpoints focus
 on "when/how" rather than "if."
 
+Record gate decisions using the
+[Gate Decision Template](gate-decision-template.md).
+
 ### 2. Quality Checkpoints
 
 **Purpose:** Ensure standards met before proceeding **Outcome:** Ready / Not

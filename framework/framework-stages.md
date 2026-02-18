@@ -47,6 +47,9 @@ human owns the investment decision.
 **After Gate 2:** The project is funded and team committed. Later checkpoints
 focus on "when/how to proceed" rather than "if."
 
+Record gate decisions using the
+[Gate Decision Template](gate-decision-template.md).
+
 ### 2. Quality Checkpoints
 
 **Purpose:** Ensure quality and readiness standards are met before proceeding
@@ -222,9 +225,11 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 - **Gate 1 (Investment Decision):** End of Initiation stage
   - **Decision:** Approve brief and proceed to Requirements, pivot to refine the
     idea, or stop the project
-  - **Based on:** Completed Initiation Brief
+  - **Based on:** Completed Initiation Brief (which proposes decision criteria)
   - **Criteria:** Business case clear, stakeholders aligned, risks acceptable,
     sponsor committed
+  - **Record decision:** Use the
+    [Gate Decision Template](gate-decision-template.md)
   - **AI validation:** Human review ensures AI-assisted brief analysis is sound
     and recommendations are appropriate
 

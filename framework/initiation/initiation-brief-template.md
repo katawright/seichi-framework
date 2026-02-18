@@ -8,11 +8,18 @@
 > for a **proceed/pivot/stop** decision.
 
 **How to use this:** Bullets only. Keep it concise. For deeper guidance, see
-**initiation-guide.md**.
+[Initiation Guide](initiation-guide.md).
 
 **AI Assistance:** This stage is "AI assist only" per
 [AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft and
-suggest, humans own all decisions and correctness.
+suggest, humans own all decisions and correctness. Two ways to work with AI on
+this brief:
+
+- **Interview mode:** Describe your idea to AI. It asks structured questions
+  based on the template, suggests options, and produces a draft brief for your
+  review.
+- **Review mode:** Fill out the template yourself, then ask AI to review for
+  completeness, suggest improvements, and edit as directed.
 
 ---
 
@@ -76,7 +83,8 @@ For each:
 
 ## Constraints and dependencies
 
-- **Constraints:** (deadlines, compliance, SLOs, platform limits)
+- **Constraints:** (budget, deadlines, compliance, SLOs, platform limits, team
+  capacity, technology restrictions)
 - **Dependencies:** (teams, vendors, approvals)
 
 ## Options considered (at least one alternative)
@@ -98,13 +106,13 @@ For each:
 _Example:_ "1 TL + 1 BE + 1 FE + 0.5 PM for 2–4 weeks to reach Gate 2
 (Requirements complete)."
 
-## Gate 1 — Initiation approval (proceed / pivot / stop)
+## Gate 1 — Proposed decision criteria
 
-> **Gate 1** = End of Initiation stage. This is an **Investment Gate** - a
-> genuine go/no-go decision with a real option to stop the project. Decision
-> based on this brief.
+> These are **proposed criteria** for stakeholders to evaluate at the end of
+> Initiation. The actual gate decision is recorded separately using the
+> [Gate Decision Template](../gate-decision-template.md).
 
-**Decision criteria:**
+**Proposed criteria:**
 
 - **Proceed if:** …
   - _Example:_ "Business case is clear, stakeholders aligned, risks are
@@ -146,12 +154,12 @@ increment)
 > **Note:** Gates 3-5 are placeholders. Gate definitions evolve as the project
 > progresses through Requirements and System Design stages.
 
-## Owner / DRI and stakeholders
+## Project lead and stakeholders
 
-> **DRI = Directly Responsible Individual** (accountable for forward progress
-> and clarity; not doing all work).
+> The project lead is accountable for forward progress and clarity — not for
+> doing all the work.
 
-- **DRI:** name
+- **Project lead:** name
 - **Approvers:** (engineering/product/security as needed)
 - **Stakeholders:**
 

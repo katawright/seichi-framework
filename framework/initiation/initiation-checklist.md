@@ -21,7 +21,7 @@ to circulate.
 9. **At least one alternative option considered**
 10. **Hypothesis includes a time range and confidence level**
 11. **Gate 1 decision criteria are explicit** (proceed/pivot/stop)
-12. **An owner/DRI is named**
+12. **A project lead is named**
 
 ---
 
@@ -37,7 +37,7 @@ to circulate.
 > [Initiation Reference: Checklist Reference](initiation-reference.md#checklist-reference).
 
 > **AI suggestion:** _"Walk me through this checklist for [describe your project
-> idea] and flag items needing attention."_
+> > idea] and flag items needing attention."_
 
 ---
 
