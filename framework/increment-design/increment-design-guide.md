@@ -8,8 +8,8 @@
 ## Quick Reference
 
 **Purpose:** Create detailed specifications for implementing a specific
-increment, including component designs, API specs, data model changes, and test
-strategy.
+increment, including component designs, interface specifications, data/state
+changes, and test strategy.
 
 **Primary roles:** Engineers
 
@@ -21,8 +21,9 @@ foundational conventions, requirements with ACs
 **Key outputs:**
 
 - Detailed component designs per increment
-- API endpoint specifications
-- Data model changes with migrations
+- Interface specifications (API endpoints, component contracts, event schemas —
+  as applicable to your stack)
+- Data/state changes (with migrations if applicable)
 - **Test strategy for Verification stage** (what to test, how to test, coverage
   targets)
 - Implementation notes and guidance
@@ -30,8 +31,9 @@ foundational conventions, requirements with ACs
 **What good looks like:**
 
 - Components detailed enough to implement without guessing
-- API specs complete with request/response formats
-- Data model changes include migration and rollback
+- Interface specifications complete with inputs, outputs, and error cases
+- Data/state changes clearly documented (with migration and rollback if
+  applicable)
 - Test strategy detailed enough for Verification to execute
 - Follows foundational conventions from System Design
 
@@ -41,7 +43,7 @@ foundational conventions, requirements with ACs
 - Designs that don't follow established conventions
 - Missing error handling paths
 - Test strategy as afterthought
-- No data migration or rollback plan
+- No migration or rollback plan for data/state changes
 
 **Checkpoint:** Optional Quality Checkpoint — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
@@ -61,8 +63,8 @@ in System Design to a concrete set of requirements.
 
 1. **Detail planning** — specify exactly what to build for this increment
 2. **Component design** — define responsibilities, structure, and interactions
-3. **API specification** — detail endpoints, request/ response formats,
-   validation
+3. **Interface specification** — detail contracts between components, services,
+   or systems (e.g., API endpoints, component props, event schemas)
 4. **Test planning** — create test strategy for Verification stage
 5. **Implementation guidance** — provide notes, tips, and considerations for
    engineers
@@ -76,8 +78,10 @@ in System Design to a concrete set of requirements.
 2. **Design components** — responsibilities, structure, dependencies, state
    management
 3. **Design interactions** — sequence diagrams, data flow, error handling
-4. **Specify data changes** — schema changes, migrations, rollback
-5. **Specify APIs** — endpoints, validation, responses, error cases
+4. **Specify data/state changes** — new state, storage changes, migrations (if
+   applicable)
+5. **Specify interfaces** — contracts between components or systems (APIs,
+   props, events, commands — as applicable)
 6. **Plan testing** — unit, integration, acceptance, performance tests
 7. **Document guidance** — security notes, performance tips, code patterns
 
@@ -87,13 +91,15 @@ in System Design to a concrete set of requirements.
 
 System Design creates the rules; Increment Design applies them:
 
-- System Design: "We use REST APIs with JWT auth"
-- Increment Design: "POST /api/v1/posts with Bearer token"
+- System Design: "We use REST APIs with JWT auth" / Increment Design: "POST
+  /api/v1/posts with Bearer token"
+- System Design: "React components use compound pattern with context" /
+  Increment Design: "`<DataTable>` exposes `columns` prop and `onSort` callback"
 
 Increment Design creates test strategy; Verification stage executes it:
 
-- Increment Design: "Integration tests for POST /register: valid input -> 201,
-  duplicate email -> 409"
+- Increment Design: "Integration tests for the registration flow: valid input ->
+  success, duplicate entry -> error"
 - Verification: Executes planned tests, validates ACs
 
 System Design is revisited rarely; Increment Design is adjusted based on
@@ -118,23 +124,32 @@ guessing. Reference architecture from System Design.
 Document how components communicate for this increment's features:
 
 - Sequence diagrams or flow descriptions
-- API calls and data flow
+- Calls, events, or data flow between components
 - Error handling paths (happy path + key errors)
 
 ---
 
-## API Design Principles
+## Interface Design Principles
 
-Follow the API conventions established in System Design. For each endpoint:
+Follow the conventions established in System Design. For each interface your
+increment introduces or modifies, document:
 
-- HTTP method, path, description
-- Authentication requirements
-- Request parameters (body, query, headers)
+- Interface type and identifier
+- Input/output formats
 - Validation rules
-- Response format (success and error cases)
+- Success and error cases
 
-> For detailed API specification examples, see
-> [Increment Design Reference: API Specification Example](increment-design-reference.md#api-specification-example).
+The specific details depend on your project's technology stack. Common interface
+types include:
+
+- **API endpoints** — HTTP method, path, request/response formats, status codes
+- **UI component contracts** — props, callbacks, rendered output
+- **Event schemas** — event name, payload structure, consumers
+- **CLI commands** — arguments, flags, output format
+- **Library functions** — signatures, return types, exceptions
+
+> For detailed interface specification examples, see
+> [Increment Design Reference: Interface Specification Examples](increment-design-reference.md#interface-specification-examples).
 
 ---
 
@@ -147,8 +162,8 @@ Verification stage what to test and how.
 
 - **Unit tests:** Key functions, test cases (happy path, edge cases, errors),
   coverage targets, mock strategy
-- **Integration tests:** API endpoint tests (request -> response), database
-  integration, end-to-end flows
+- **Integration tests:** Interface tests (e.g., API request/response, component
+  rendering, event handling), data integration, end-to-end flows
 - **Acceptance tests:** Manual test scenarios from ACs, UAT scripts for
   stakeholders
 - **Performance tests:** Load test scenarios validating NFRs, tools and
@@ -171,10 +186,10 @@ Verification stage what to test and how.
 **AI excels at:**
 
 - Generating component design options
-- Creating API specifications from requirements
+- Creating interface specifications from requirements
 - Suggesting test strategies and test cases
 - Identifying edge cases and error scenarios
-- Creating boilerplate (API specs, data models)
+- Creating boilerplate (interface specs, data models, component scaffolding)
 
 **AI struggles with:**
 
