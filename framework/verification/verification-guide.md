@@ -68,6 +68,27 @@ implementation realities, and validates acceptance criteria.
 
 ---
 
+## Right-Sizing Verification
+
+Not every project needs a full test suite across all test types. Match your
+Verification effort to your project's risk tier.
+
+| Test Type               | Minimal                           | Standard                                   | Enterprise                                         |
+| ----------------------- | --------------------------------- | ------------------------------------------ | -------------------------------------------------- |
+| **Integration tests**   | Smoke tests for critical paths    | Integration tests for key workflows        | Comprehensive integration coverage                 |
+| **Functional tests**    | Manual testing against specs      | Automated functional tests, CI enforcement | Full automated suite with traceability to specs    |
+| **UAT**                 | Informal stakeholder demo         | Structured UAT with acceptance criteria    | Formal UAT sign-off with documented results        |
+| **Performance tests**   | None or basic load check          | Performance baseline, key scenario testing | Load, stress, and soak testing with SLO validation |
+| **Security tests**      | Basic vulnerability awareness     | Dependency scanning, OWASP top 10 review   | Penetration testing, SAST/DAST, compliance checks  |
+| **Accessibility tests** | Basic usability check             | WCAG conformance for key flows             | Full WCAG audit, assistive technology testing      |
+| **Regression tests**    | Manual check of existing features | Automated regression suite in CI           | Comprehensive regression with risk-based selection |
+| **Go/no-go decision**   | Informal team agreement           | Checklist-based go/no-go meeting           | Formal gate with stakeholder sign-off              |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
 ## Test Types Overview
 
 Unit tests are already done during Implementation; Verification focuses on

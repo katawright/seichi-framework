@@ -8,7 +8,7 @@ iteration 0. For per-increment deployment readiness, use the
 [Deployment Checklist](deployment-checklist.md) instead.
 
 For detailed setup guidance, see the
-[Deployment Planning Guide](deployment-planning-guide.md).
+[Deployment Setup Guide](deployment-setup-guide.md).
 
 ---
 
@@ -49,7 +49,7 @@ increment deployment
 
 ---
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your
+> **AI suggestion:** _"Walk me through this checklist for [describe your >
 > project and infrastructure] and flag any items that need extra attention."_
 
 ---

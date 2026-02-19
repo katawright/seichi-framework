@@ -71,6 +71,25 @@ in System Design to a concrete set of requirements.
 
 ---
 
+## Right-Sizing Increment Design
+
+Not every increment needs formal component specs or detailed interface
+contracts. Match your Increment Design effort to your project's risk tier.
+
+| Practice               | Minimal                            | Standard                                      | Enterprise                                        |
+| ---------------------- | ---------------------------------- | --------------------------------------------- | ------------------------------------------------- |
+| **Component design**   | Mental model, brief notes          | Component specs with responsibilities defined | Detailed design docs with review and sign-off     |
+| **Interface specs**    | Informal agreements or conventions | Documented API contracts and component props  | Formal interface specs with versioning strategy   |
+| **Data/state changes** | Note what changes                  | Migration plan, rollback approach             | Formal data migration plan with validation steps  |
+| **Test strategy**      | List what to test                  | Test plan with coverage targets               | Comprehensive test strategy with risk-based focus |
+| **Risk assessment**    | Quick mental check                 | Known risks documented with mitigations       | Formal risk register with probability and impact  |
+| **Dependency mapping** | Awareness of key dependencies      | Dependencies documented, owners identified    | Cross-team dependency tracking with SLAs          |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
 ## Increment Design Workflow
 
 1. **Review increment scope** — requirements from increment plan, acceptance

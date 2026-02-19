@@ -73,7 +73,7 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your
+> **AI exploration:** _"Compare deployment strategies for [describe your >
 > system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
@@ -82,7 +82,7 @@ redeployment.
 
 For environment provisioning, pipeline setup, environment parity, and
 Infrastructure as Code guidance, see the
-[Deployment Planning Guide](deployment-planning-guide.md).
+[Deployment Setup Guide](deployment-setup-guide.md).
 
 ---
 
@@ -173,7 +173,7 @@ When using feature flags as part of deployment:
 ## Configuration and Secrets Management
 
 For configuration principles and secrets management setup, see the
-[Deployment Planning Guide](deployment-planning-guide.md).
+[Deployment Setup Guide](deployment-setup-guide.md).
 
 Per-increment configuration changes are tracked in the
 [Deployment Brief Template](deployment-brief-template.md) under Configuration
@@ -251,7 +251,7 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe your
+> **AI exploration:** _"Help me design a rollback procedure for [describe your >
 > deployment strategy and infrastructure]."_
 
 ---
@@ -399,7 +399,7 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your
+> **AI exploration:** _"Draft deployment communications for [describe your >
 > deployment and audience]."_
 
 ---
@@ -438,7 +438,7 @@ For breaking changes requiring downtime:
 ## CI/CD Pipeline and Automation
 
 For pipeline design, structure, and best practices, see the
-[Deployment Planning Guide](deployment-planning-guide.md).
+[Deployment Setup Guide](deployment-setup-guide.md).
 
 ---
 
@@ -459,7 +459,7 @@ For pipeline design, structure, and best practices, see the
 - Authentication and authorization verified
 
 > **AI exploration:** _"Audit our deployment security posture for [describe your
-> stack and compliance requirements]."_
+> > stack and compliance requirements]."_
 
 ---
 
@@ -516,7 +516,7 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe
+> **AI exploration:** _"Create deployment decision trees tailored to [describe >
 > your deployment process and risk tolerance]."_
 
 ---

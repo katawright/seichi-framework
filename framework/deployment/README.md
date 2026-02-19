@@ -19,7 +19,7 @@ For cross-cutting framework concepts, see
 - Test results and known issues documented
 
 > **First time deploying this project?** Start with the
-> [Deployment Planning Guide](deployment-planning-guide.md) and
+> [Deployment Setup Guide](deployment-setup-guide.md) and
 > [Deployment Pipeline Checklist](deployment-pipeline-checklist.md) to set up
 > your deployment infrastructure before your first increment deployment.
 
@@ -41,7 +41,7 @@ For assistance level details, see the
 
 | File                                                              | Description                                            |
 | ----------------------------------------------------------------- | ------------------------------------------------------ |
-| [Deployment Planning Guide](deployment-planning-guide.md)         | Strategic guide for deployment infrastructure setup    |
+| [Deployment Setup Guide](deployment-setup-guide.md)               | Strategic guide for deployment infrastructure setup    |
 | [Deployment Pipeline Checklist](deployment-pipeline-checklist.md) | Quick checklist for pipeline readiness                 |
 | [Deployment Brief Template](deployment-brief-template.md)         | Template for deployment plan and results               |
 | [Deployment Guide](deployment-guide.md)                           | Stage-specific guidance and rationale                  |
@@ -89,7 +89,7 @@ support runbook.
 
 ## Notes
 
-**Framework Version:** 0.13.0
+**Framework Version:** 0.14.0
 
 **Last Updated:** 2026-02-19
 

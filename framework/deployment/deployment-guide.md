@@ -49,9 +49,28 @@ baselines, rollback confirmation
 
 > **First time deploying this project?** If deployment infrastructure doesn't
 > exist yet (or isn't documented), start with the
-> [Deployment Planning Guide](deployment-planning-guide.md) and
+> [Deployment Setup Guide](deployment-setup-guide.md) and
 > [Deployment Pipeline Checklist](deployment-pipeline-checklist.md) before using
 > this guide. This guide covers per-increment deployment execution.
+
+---
+
+## Right-Sizing Deployment
+
+Not every project needs multi-environment promotion or canary deploys. Match
+your per-increment deployment effort to your project's risk tier.
+
+| Practice               | Minimal                            | Standard                                       | Enterprise                                        |
+| ---------------------- | ---------------------------------- | ---------------------------------------------- | ------------------------------------------------- |
+| **Deploy method**      | Manual or scripted deploy          | CI/CD pipeline with automated steps            | Multi-stage pipeline with approval gates          |
+| **Environments**       | Production only (or prod + local)  | Staging + production                           | Dev → staging → pre-prod → production             |
+| **Rollback plan**      | Redeploy previous version manually | Documented rollback steps, tested periodically | Automated rollback triggers, blue-green or canary |
+| **Monitoring cadence** | Check health after deploy          | Watch dashboards for 15-30 min post-deploy     | Automated canary analysis, extended observation   |
+| **Communication**      | Notify team in chat                | Deployment announcement to stakeholders        | Change management process, scheduled windows      |
+| **Data/state changes** | Apply manually if needed           | Migration scripts with rollback                | Versioned migrations, dry-run validation, backups |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
 
 ---
 
@@ -193,8 +212,8 @@ HANDOFF TO SUPPORT
 
 ## Additional Topics
 
-The [Deployment Planning Guide](deployment-planning-guide.md) covers
-project-level setup (do these once, during iteration 0):
+The [Deployment Setup Guide](deployment-setup-guide.md) covers project-level
+setup (do these once, during iteration 0):
 
 - **CI/CD pipeline** — design, build, and validate your pipeline
 - **Environment management** — provisioning, parity, Infrastructure as Code
@@ -269,7 +288,7 @@ Deployment validates that measurement systems work in production. See
 
 ## Related Documents
 
-- [Deployment Planning Guide](deployment-planning-guide.md)
+- [Deployment Setup Guide](deployment-setup-guide.md)
 - [Deployment Pipeline Checklist](deployment-pipeline-checklist.md)
 - [Deployment Brief Template](deployment-brief-template.md)
 - [Deployment Checklist](deployment-checklist.md)
