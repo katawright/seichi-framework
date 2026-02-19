@@ -1,7 +1,16 @@
 # Verification Brief: [Increment Name]
 
-**Last Updated:** YYYY-MM-DD **Increment ID:** [e.g., INC-001, Epic-42] **QA
-Lead:** [Name] **Test Environment:** [e.g., staging.example.com]
+**Last Updated:** YYYY-MM-DD
+
+**Increment ID:** [e.g., INC-001, Epic-42]
+
+**QA Lead:** [Name]
+
+**Test Environment:** [e.g., staging.example.com]
+
+**Test Cycle:** [e.g., Cycle 1, Cycle 2]
+
+**Prior Cycle Brief:** [Link to previous cycle's brief, or "N/A — first cycle"]
 
 ---
 
@@ -27,6 +36,22 @@ being tested]
   - How measured: [metric/instrumentation]
 - [Success criterion #2]
   - How measured: [metric/instrumentation]
+
+---
+
+## Cycle Context
+
+_For Cycle 2 and beyond. Delete this section for Cycle 1._
+
+**Prior cycle brief:** [Link to previous cycle's completed brief]
+
+**Defects fixed in Implementation since last cycle:**
+
+- [DEF-001: Description — fixed in PR #X]
+- [DEF-002: Description — fixed in PR #X]
+
+**Scope changes since last cycle:** [Any requirements or acceptance criteria
+changes, or "None"]
 
 ---
 
@@ -159,6 +184,9 @@ section 5]
 
 ## Production Readiness
 
+> For structuring the go/no-go decision, use the
+> [Gate Decision Template](../gate-decision-template.md).
+
 **Overall:** [✅ Ready / ⚠️ Ready with conditions / ❌ Not Ready]
 
 | Gate              | Status       | Notes |
@@ -226,6 +254,6 @@ section 5]
 
 ---
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-18
 
 _Added to framework in v0.6.0_

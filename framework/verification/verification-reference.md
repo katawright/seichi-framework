@@ -32,8 +32,8 @@ specifics or a starting point for AI-assisted exploration.
 - Test error paths and idempotency
 - Verify data flows correctly across boundaries
 
-> **AI exploration:** _"Generate integration test cases for [describe your
-> component interactions and APIs]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Generate integration test cases for [describe your component interactions and APIs]."_
 
 ---
 
@@ -66,8 +66,8 @@ specifics or a starting point for AI-assisted exploration.
 **BDD (optional):** Tools like Cucumber express tests in natural language tied
 to acceptance criteria, readable by non-technical stakeholders.
 
-> **AI exploration:** _"Create a test matrix from these acceptance criteria:
-> [paste your criteria]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Create a test matrix from these acceptance criteria: [paste your criteria]."_
 
 ---
 
@@ -98,8 +98,8 @@ earlier), or exploratory testing.
 - Manage scope creep — defer new ideas to backlog
 - Document everything for audit trail
 
-> **AI exploration:** _"Help me design UAT scenarios for [describe your feature
-> and business workflows]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me design UAT scenarios for [describe your feature and business workflows]."_
 
 ---
 
@@ -129,8 +129,8 @@ earlier), or exploratory testing.
 | Peak     | [X req/s] | [<Xms p95] | [Xms]    | [Pass/Fail] |       |
 | Stress   | [X req/s] | [Graceful] | [Result] | [Pass/Fail] |       |
 
-> **AI exploration:** _"Design a performance test plan for [describe your
-> system, expected load, and NFRs]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design a performance test plan for [describe your system, expected load, and NFRs]."_
 
 ---
 
@@ -160,8 +160,8 @@ protection, OWASP Top 10.
 Consult [OWASP](https://owasp.org/Top10/) for current guidance and your team's
 security testing standards.
 
-> **AI exploration:** _"Identify security test cases for [describe your
-> application's auth model and data > sensitivity]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Identify security test cases for [describe your application's auth model and data sensitivity]."_
 
 ---
 
@@ -183,8 +183,8 @@ Test against WCAG guidelines (A, AA levels minimum).
 | Color contrast | WCAG 1.4.3 | [Pass/Fail] | [Count] |
 | Alt text       | WCAG 1.1.1 | [Pass/Fail] | [Count] |
 
-> **AI exploration:** _"Audit our UI for accessibility issues against WCAG 2.1
-> AA: [describe your UI]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Audit our UI for accessibility issues against WCAG 2.1 AA: [describe your UI]."_
 
 ---
 
@@ -214,8 +214,8 @@ deployment.
 - Use separate test databases
 - Automate data generation
 
-> **AI exploration:** _"Design a test data strategy for [describe your data
-> model and testing needs]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design a test data strategy for [describe your data model and testing needs]."_
 
 ---
 
@@ -256,8 +256,8 @@ now, fix before deploy, defer, or won't fix.
 | ------- | ----------- | -------- | -------- | --------- | -------- | -------- |
 | DEF-001 | [Issue]     | [Sev]    | [Pri]    | [Type]    | [Status] | [Name]   |
 
-> **AI exploration:** _"Help me triage these defects and recommend fix-vs-defer
-> decisions: [paste defect list]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me triage these defects and recommend fix-vs-defer decisions: [paste defect list]."_
 
 ---
 
@@ -291,8 +291,8 @@ now, fix before deploy, defer, or won't fix.
 - [ ] Alert thresholds appropriate
 - [ ] Runbook links included in alerts
 
-> **AI exploration:** _"Review our monitoring setup for [describe your stack]
-> and identify instrumentation gaps."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Review our monitoring setup for [describe your stack] and identify instrumentation gaps."_
 
 ---
 
@@ -376,8 +376,8 @@ now, fix before deploy, defer, or won't fix.
 - Acceptable risks documented with mitigation plans
 - Conditional approval with clear conditions met
 
-> **AI exploration:** _"Given our test results [summarize results], assess
-> deployment readiness and flag any red flags."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Given our test results [summarize results], assess deployment readiness and flag any red flags."_
 
 ---
 
@@ -398,11 +398,11 @@ Document accepted risk for medium/low (with approval).
 **Monitoring not working:** Fix instrumentation before deployment. Cannot
 measure success without working monitoring.
 
-> **AI exploration:** _"Help me troubleshoot [describe > your failing tests or
-> verification issue]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me troubleshoot [describe your failing tests or verification issue]."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 _Added to framework in v0.12.0_
