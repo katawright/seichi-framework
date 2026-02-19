@@ -47,6 +47,22 @@ enhancement requests, system health metrics
 
 ---
 
+## Right-Sizing Support
+
+Not every project needs the full support infrastructure described in this guide.
+MVPs, experiments, and small internal tools may only need basic monitoring and
+an informal response plan. Before diving into the sections below, see the
+[Support Operations Guide](support-operations-guide.md) to choose the right
+support level (Minimal, Standard, or Enterprise) for your project.
+
+> **First-time setup?** If you are establishing support operations for a new
+> project or formalizing support for an existing one, start with the
+> [Support Operations Guide](support-operations-guide.md). It covers one-time
+> strategic decisions (support level, incident response process, on-call
+> structure, SLAs). This guide covers ongoing per-increment operations.
+
+---
+
 ## Core Responsibilities
 
 - **Monitor** — watch system health and success criteria
@@ -63,6 +79,12 @@ enhancement requests, system health metrics
 
 Effective monitoring enables teams to detect issues before users report them and
 track progress toward business objectives.
+
+Monitoring **infrastructure and tooling** (dashboards, APM, log aggregation) is
+set up during deployment — see the
+[Deployment Planning Guide](../deployment/deployment-planning-guide.md). This
+section covers the **operational practices** for using that infrastructure
+day-to-day.
 
 **What to monitor:**
 
@@ -220,10 +242,14 @@ Fair, sustainable on-call and documented knowledge prevent burnout and tribal
 knowledge problems.
 
 **On-call:** Establish rotation structure appropriate to team size, ensure fair
-distribution, provide clear escalation paths and runbooks.
+distribution, provide clear escalation paths and runbooks. For initial on-call
+setup (choosing rotation type, defining escalation tiers), see the
+[Support Operations Guide](support-operations-guide.md).
 
 **Knowledge:** Maintain runbooks, troubleshooting guides, architecture docs, and
-user documentation. Keep updated after incidents and releases.
+user documentation. Keep updated after incidents and releases. For initial
+knowledge management setup (choosing tools, creating first runbooks), see the
+[Support Operations Guide](support-operations-guide.md).
 
 For rotation structures, burnout prevention strategies, and documentation best
 practices, see
@@ -302,6 +328,8 @@ practices, see
 
 ## Related Documents
 
+- [Support Operations Guide](support-operations-guide.md)
+- [Support Readiness Checklist](support-readiness-checklist.md)
 - [Support Brief Template](support-brief-template.md)
 - [Support Checklist](support-checklist.md)
 - [Support Reference](support-reference.md)
@@ -311,6 +339,6 @@ practices, see
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 Added to framework in v0.8.0.

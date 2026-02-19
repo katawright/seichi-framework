@@ -41,6 +41,10 @@ starting point for AI-assisted exploration.
 
 ## Incident Response Process
 
+For initial incident response setup (defining severity levels, choosing a
+process appropriate to your support level), see the
+[Support Operations Guide](support-operations-guide.md).
+
 ### Six-Phase Response
 
 **Phase 1 — Detection (0-5 min):** Alert fires or user reports issue. On-call
@@ -109,7 +113,7 @@ channel.
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your
+> **AI exploration:** _"Customize these severity levels for [describe your >
 > product, user base, and SLA commitments]."_
 
 ---
@@ -181,7 +185,7 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** _"Help me build a bug triage process for [describe team
+> **AI exploration:** _"Help me build a bug triage process for [describe team >
 > size, product, and release cadence]."_
 
 ---
@@ -256,6 +260,10 @@ high-value / low-effort items first.
 
 ## On-Call Operations
 
+For initial on-call setup (choosing a rotation type, defining escalation tiers
+appropriate to your support level), see the
+[Support Operations Guide](support-operations-guide.md).
+
 ### Rotation Structures
 
 - **Weekly** (small teams) — predictable, one week per engineer
@@ -294,6 +302,10 @@ recognition.
 
 ## Knowledge Management
 
+For initial knowledge management setup (choosing tools, creating first runbooks
+appropriate to your support level), see the
+[Support Operations Guide](support-operations-guide.md).
+
 ### Documentation Types
 
 - **Runbooks** — operational procedures (deploy, rollback, scale, restore,
@@ -309,7 +321,7 @@ recognition.
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your
+> **AI exploration:** _"Generate a runbook template for [describe your >
 > deployment process and tooling]."_
 
 ---
@@ -508,6 +520,13 @@ no knowledge transfer, team disengaged.
 
 ## Support Maturity Model
 
+The maturity model describes how support operations **grow over time** within a
+project — from reactive fire-fighting to optimized operations. This is distinct
+from support levels (Minimal, Standard, Enterprise) defined in the
+[Support Operations Guide](support-operations-guide.md), which describe
+**right-sizing for project type** — not every project needs to reach Level 4. A
+Minimal-level project operating well at Level 2 is a success.
+
 ### Level 1: Reactive Fire-Fighting
 
 - No proactive monitoring; react to user reports
@@ -545,6 +564,6 @@ no knowledge transfer, team disengaged.
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 _Added to framework in v0.12.0_

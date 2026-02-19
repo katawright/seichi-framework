@@ -127,6 +127,10 @@ Set up observability infrastructure:
 - Alert routing and escalation policies
 - On-call rotation setup
 
+For configuring ongoing operational processes that use this infrastructure
+(incident response, on-call procedures, runbooks), see the
+[Support Operations Guide](../support/support-operations-guide.md).
+
 ### 7. Skeleton Deployment
 
 Validate the entire pipeline end-to-end before the first real increment:
@@ -140,7 +144,7 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your >
 > stack, team size, and deployment frequency targets]."_
 
 ---

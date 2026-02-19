@@ -9,6 +9,9 @@ name or members] **Status:** [Active / Maintenance Mode / End of Life]
 
 **Purpose:** [Brief description of what this system does and why it exists]
 
+**Support Level:** [Minimal / Standard / Enterprise] _(see
+[Support Operations Guide](support-operations-guide.md) for level definitions)_
+
 **Current Version:** [v1.2.0 or release identifier] **Deployed:** [Date of most
 recent production deployment]
 
@@ -53,6 +56,8 @@ recent production deployment]
 
 ## Monitoring Setup
 
+_(All levels — scope to your support level)_
+
 **Primary Dashboard:** [Link]
 
 - Error rate, response time, throughput, infrastructure health
@@ -83,6 +88,9 @@ For detailed threshold tables, see
 ---
 
 ## On-Call and Escalation
+
+_(Standard and Enterprise levels — Minimal projects may use informal contact
+list instead)_
 
 **Current On-Call:** [Name, contact, Slack handle] **Backup On-Call:** [Name,
 contact, Slack handle] **Rotation:** [Weekly / daily, rotation day]
@@ -121,6 +129,8 @@ manager name]
 
 ## Success Criteria Tracking
 
+_(All levels — Minimal projects may track informally)_
+
 **Success Criterion 1:** [Description]
 
 - Baseline: [value] → Target: [value]
@@ -152,6 +162,8 @@ For report templates, see
 ---
 
 ## Maintenance Schedule
+
+_(Standard and Enterprise levels)_
 
 **Weekly:** Dependency vulnerability scan, alert tuning, runbook review
 
@@ -200,6 +212,6 @@ limitations]
 
 ---
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-19
 
 _Added to framework in v0.8.0_

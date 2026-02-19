@@ -1,7 +1,16 @@
 # Support Checklist
 
-Use this checklist to verify support readiness and ongoing health. Review
+Use this checklist to verify ongoing operational readiness and health. Review
 regularly (weekly recommended).
+
+> **First-time setup?** For one-time support infrastructure readiness (choosing
+> support level, establishing incident response, setting up on-call), use the
+> [Support Readiness Checklist](support-readiness-checklist.md) instead. This
+> checklist covers ongoing operations.
+
+Not all items apply to all support levels. Teams at the Minimal level may skip
+items that reference formal on-call rotations or SLAs. See the
+[Support Operations Guide](support-operations-guide.md) for level definitions.
 
 ## Support Readiness
 
@@ -54,7 +63,7 @@ tailored to your tools and processes.
 ## Exit Criteria Alignment
 
 This checklist aligns with the formal exit criteria in
-[AI-Assisted SDLC Stages](../framework-stages.md#stage-7-support):
+[AI-Assisted SDLC Stages](../framework-stages.md#stage-8-support):
 
 - Support team ready and on-call rotation active (items 1-6)
 - Monitoring and alerting operational (items 7-11)
@@ -65,6 +74,6 @@ This checklist aligns with the formal exit criteria in
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 _Added to framework in v0.8.0_
