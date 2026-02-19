@@ -93,7 +93,7 @@ confirms readiness to own the system in production.
 
 ## Notes
 
-**Framework Version:** 0.13.0
+**Framework Version:** 0.14.0
 
 **Last Updated:** 2026-02-19
 

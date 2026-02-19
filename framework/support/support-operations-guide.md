@@ -18,48 +18,29 @@ For per-increment support operations, see the [Support Guide](support-guide.md).
 
 ---
 
-## Right-Sizing Support
+## Choosing Your Support Level
 
-Not every project needs enterprise support. Choose the level that matches your
-risk, user base, and organizational context.
+For tier definitions (Minimal, Standard, Enterprise) and criteria for choosing,
+see the [Right-Sizing Guide](../right-sizing-guide.md). For a detailed
+comparison of what each tier looks like for Support specifically, see
+[Support Guide: Right-Sizing Support](support-guide.md#right-sizing-support).
 
-| Dimension             | Minimal                                    | Standard                                        | Enterprise                                     |
-| --------------------- | ------------------------------------------ | ----------------------------------------------- | ---------------------------------------------- |
-| **Monitoring**        | Basic health checks, error tracking        | APM, log aggregation, custom dashboards         | Full observability, distributed tracing        |
-| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel            |
-| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                  |
-| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms           |
-| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)           | Contractual SLAs with penalties                |
-| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                   | Tiered support (L1/L2/L3), knowledge base      |
-| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                  | Comprehensive knowledge base, training program |
-| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                 | Dashboards with automated reporting            |
-
-### Choosing Your Level
-
-- **Minimal** — MVPs, experiments, prototypes, internal tools with few users,
-  hackathon projects. The cost of downtime is low and the team is small.
-- **Standard** — Production applications with real users, internal tools with
-  broad adoption, services other teams depend on. Downtime has meaningful
-  impact.
-- **Enterprise** — Mission-critical systems, customer-facing SaaS, regulated
-  environments, systems where downtime has financial or safety consequences.
-
-Your level can change over time. A project that starts as Minimal may grow into
-Standard as it gains users. Reassess when circumstances change.
+The greenfield and brownfield paths below include per-step guidance for each
+tier — follow the tier that matches your project.
 
 ---
 
 ## Relationship to Deployment
 
-The [Deployment Planning Guide](../deployment/deployment-planning-guide.md) sets
-up monitoring and alerting **infrastructure and tooling** — the dashboards, log
+The [Deployment Setup Guide](../deployment/deployment-setup-guide.md) sets up
+monitoring and alerting **infrastructure and tooling** — the dashboards, log
 aggregation, APM, and alert routing that make observability possible.
 
 This guide configures the **operational processes** that use that infrastructure
 — who responds to alerts, how incidents are managed, and what gets reported to
 stakeholders.
 
-| Responsibility         | Deployment Planning Guide                     | Support Operations Guide                         |
+| Responsibility         | Deployment Setup Guide                        | Support Operations Guide                         |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------ |
 | Monitoring tools       | Select and configure APM, logging, dashboards | Define what to watch and review cadence          |
 | Alert routing          | Set up channels (PagerDuty, Slack, email)     | Define severity levels and response expectations |
@@ -70,7 +51,7 @@ stakeholders.
 
 If you are setting up both deployment infrastructure and support operations for
 the first time, complete the
-[Deployment Planning Guide](../deployment/deployment-planning-guide.md) first —
+[Deployment Setup Guide](../deployment/deployment-setup-guide.md) first —
 support processes depend on the infrastructure being in place.
 
 ---
@@ -165,8 +146,8 @@ problems.
 **Enterprise:** Automated dashboards with real-time tracking. Defined escalation
 when metrics deviate from targets.
 
-> **AI exploration:** _"Help me set up support operations for [describe > your
-> project, team size, user base, and risk level]. Suggest the right support
+> **AI exploration:** _"Help me set up support operations for [describe > your >
+> > project, team size, user base, and risk level]. Suggest the right support
 > level and what to prioritize first."_
 
 ---
@@ -259,7 +240,7 @@ For a quick verification, use the
 - [Support Readiness Checklist](support-readiness-checklist.md)
 - [Support Brief Template](support-brief-template.md)
 - [Support Reference](support-reference.md)
-- [Deployment Planning Guide](../deployment/deployment-planning-guide.md)
+- [Deployment Setup Guide](../deployment/deployment-setup-guide.md)
 - [Gate Decision Template](../gate-decision-template.md)
 
 ---

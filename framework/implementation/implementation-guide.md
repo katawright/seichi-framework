@@ -62,6 +62,25 @@ accelerating each step.
 
 ---
 
+## Right-Sizing Implementation
+
+Not every project needs formal pull request processes or comprehensive
+instrumentation. Match your Implementation effort to your project's risk tier.
+
+| Practice               | Minimal                            | Standard                                        | Enterprise                                         |
+| ---------------------- | ---------------------------------- | ----------------------------------------------- | -------------------------------------------------- |
+| **Code review**        | Self-review or informal peer check | PR-based review with at least one reviewer      | Formal review with multiple reviewers, audit trail |
+| **ADRs**               | Brief notes on key decisions       | ADRs for significant implementation choices     | Comprehensive ADRs with compliance traceability    |
+| **Unit test coverage** | Tests for critical paths           | Coverage targets (e.g., 80%), CI enforcement    | High coverage targets, mutation testing            |
+| **Instrumentation**    | Basic logging                      | Structured logging, key metrics, error tracking | Full observability — traces, metrics, logs, alerts |
+| **Security practices** | Avoid known vulnerabilities        | Dependency scanning, basic security review      | SAST/DAST scanning, security review gates          |
+| **PR size/process**    | Commit directly or small PRs       | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
 ## Implementation Workflow
 
 AI assists at every step; humans maintain ownership through review and approval

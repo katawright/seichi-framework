@@ -461,15 +461,22 @@ emphasis differ:
 
 ### Increment 0: The Critical Difference
 
+> For a practical walkthrough of Increment 0 activities — including sequencing
+> and links to stage-specific setup guides — see the
+> [Increment 0 Guide](increment-0-guide.md).
+
 **Greenfield Increment 0** is the **bootstrap increment** — establishing the
 foundational infrastructure before feature development begins:
 
 - Set up version control, branching strategy, code organization
-- Establish CI/CD pipelines (build, test, deploy automation)
+- Establish CI/CD pipelines (build, test, deploy automation) — see
+  [Deployment Setup Guide](deployment/deployment-setup-guide.md)
 - Configure development, staging, and production environments
 - Implement monitoring, logging, and observability infrastructure
 - Set up security scanning, secret management, and access controls
 - Create deployment runbooks and rollback procedures
+- Establish support operations (incident response, on-call) — see
+  [Support Operations Guide](support/support-operations-guide.md)
 - Implement measurement/telemetry systems (from success criteria)
 - Deploy a "hello world" application to validate the full pipeline
 
@@ -602,6 +609,12 @@ guide:
 ---
 
 ## Team Size Adaptation
+
+Right-sizing has two independent dimensions: **project risk** determines _what_
+practices you adopt (Minimal, Standard, or Enterprise tier), and **team size**
+determines _how formally_ you apply them. This section covers the team size
+dimension. For the full two-dimension model and tier definitions, see the
+[Right-Sizing Guide](right-sizing-guide.md).
 
 The framework's eight stages remain the same regardless of team size. What
 changes is the level of formality, documentation detail, and coordination

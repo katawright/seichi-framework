@@ -179,6 +179,10 @@ Expand Requirements only when needed:
 
 Otherwise, keep Requirements concise and move to System Design.
 
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
 ---
 
 ## When to Revisit Requirements

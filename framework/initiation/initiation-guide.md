@@ -91,6 +91,10 @@ Expand Initiation only when needed:
 
 Otherwise, keep the Brief concise and move quickly to Requirements.
 
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
 ---
 
 ## AI Assistance Guidance

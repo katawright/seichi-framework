@@ -72,6 +72,25 @@ architecture and technical approach for the entire project.
 
 ---
 
+## Right-Sizing System Design
+
+Not every project needs a formal architecture document or comprehensive ADRs.
+Match your System Design effort to your project's risk tier.
+
+| Practice                | Minimal                              | Standard                                      | Enterprise                                           |
+| ----------------------- | ------------------------------------ | --------------------------------------------- | ---------------------------------------------------- |
+| **Architecture docs**   | Informal notes or diagrams           | Architecture document with key diagrams       | Formal architecture review with stakeholder sign-off |
+| **ADRs**                | Mental notes or brief chat messages  | ADRs for major technology and design choices  | Comprehensive ADRs with alternatives analysis        |
+| **Technology choices**  | Pick what you know, document briefly | Evaluate options, document rationale          | Formal evaluation matrix, proof of concepts          |
+| **Security design**     | Basic security awareness             | Threat model for key areas, security baseline | Comprehensive threat model, compliance mapping       |
+| **Infrastructure plan** | Simplest viable hosting              | Environment strategy, basic IaC               | Multi-environment, HA design, disaster recovery      |
+| **Increment plan**      | Ordered task list                    | Sequenced increments with dependencies        | Formal roadmap with cross-team coordination          |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
 ## Architecture Principles
 
 Follow established principles — SOLID, Separation of Concerns, DRY, YAGNI, KISS

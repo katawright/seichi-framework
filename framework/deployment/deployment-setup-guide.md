@@ -1,4 +1,4 @@
-# Deployment Planning Guide
+# Deployment Setup Guide
 
 Strategic guide for setting up deployment infrastructure. Use this guide during
 **iteration 0** (before your first increment deployment) or when making
@@ -6,6 +6,27 @@ significant infrastructure changes.
 
 For per-increment deployment execution, see the
 [Deployment Guide](deployment-guide.md).
+
+---
+
+## Right-Sizing Deployment Setup
+
+Not every project needs multi-environment infrastructure or
+infrastructure-as-code. Match your deployment setup investment to your project's
+risk tier. The greenfield and brownfield paths below apply at every tier — this
+table shows the target scope for each.
+
+| Practice                   | Minimal                            | Standard                                      | Enterprise                                            |
+| -------------------------- | ---------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
+| **CI/CD pipeline**         | Simple script or manual deploy     | Automated build, test, and deploy pipeline    | Multi-stage pipeline with approval gates and auditing |
+| **Environments**           | Production only (or prod + local)  | Staging + production                          | Dev → staging → pre-prod → production                 |
+| **Infrastructure as Code** | None — manual setup                | Key infrastructure codified (Terraform, etc.) | All infrastructure codified, version-controlled       |
+| **Secrets management**     | Environment variables              | Secret manager (Vault, AWS Secrets Manager)   | Rotated secrets, access policies, audit logging       |
+| **Monitoring/alerting**    | Basic health check                 | APM + log aggregation + alert routing         | Full observability stack, distributed tracing         |
+| **Skeleton deploy**        | Deploy anything to production once | Validate full pipeline end-to-end             | Validate all environments, rollback, and monitoring   |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
 
 ---
 
@@ -144,7 +165,7 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your >
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your > > >
 > stack, team size, and deployment frequency targets]."_
 
 ---

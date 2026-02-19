@@ -50,10 +50,21 @@ enhancement requests, system health metrics
 ## Right-Sizing Support
 
 Not every project needs the full support infrastructure described in this guide.
-MVPs, experiments, and small internal tools may only need basic monitoring and
-an informal response plan. Before diving into the sections below, see the
-[Support Operations Guide](support-operations-guide.md) to choose the right
-support level (Minimal, Standard, or Enterprise) for your project.
+Match your ongoing support effort to your project's risk tier.
+
+| Dimension             | Minimal                                    | Standard                                        | Enterprise                                     |
+| --------------------- | ------------------------------------------ | ----------------------------------------------- | ---------------------------------------------- |
+| **Monitoring**        | Basic health checks, error tracking        | APM, log aggregation, custom dashboards         | Full observability, distributed tracing        |
+| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel            |
+| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                  |
+| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms           |
+| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)           | Contractual SLAs with penalties                |
+| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                   | Tiered support (L1/L2/L3), knowledge base      |
+| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                  | Comprehensive knowledge base, training program |
+| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                 | Dashboards with automated reporting            |
+
+> For tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
 
 > **First-time setup?** If you are establishing support operations for a new
 > project or formalizing support for an existing one, start with the
@@ -82,9 +93,8 @@ track progress toward business objectives.
 
 Monitoring **infrastructure and tooling** (dashboards, APM, log aggregation) is
 set up during deployment — see the
-[Deployment Planning Guide](../deployment/deployment-planning-guide.md). This
-section covers the **operational practices** for using that infrastructure
-day-to-day.
+[Deployment Setup Guide](../deployment/deployment-setup-guide.md). This section
+covers the **operational practices** for using that infrastructure day-to-day.
 
 **What to monitor:**
 
