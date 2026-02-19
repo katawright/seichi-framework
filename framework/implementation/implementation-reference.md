@@ -34,8 +34,9 @@ external service calls.
 | Error       | `Failed to {operation}: {error}`     | Debugging   |
 | Performance | `Operation {name} took {duration}ms` | Monitoring  |
 
-> **AI exploration:** _"Design a logging strategy for [describe your application
-> and key operations]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design a logging strategy for
+> [describe your application and key operations]."_
 
 ---
 
@@ -66,8 +67,9 @@ with metrics.timer('api.request.duration',
 Configure alerts for: error rate thresholds, performance degradation, resource
 exhaustion, external service failures, and security events.
 
-> **AI exploration:** _"Generate instrumentation code for [describe your success
-> criteria and tech stack]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Generate instrumentation code for
+> [describe your success criteria and tech stack]."_
 
 ---
 
@@ -96,8 +98,9 @@ your team's security standards.
 - [ ] HTTPS/TLS enforced where needed
 - [ ] Dependencies scanned for vulnerabilities
 
-> **AI exploration:** _"Review this code for security vulnerabilities: [paste
-> code or describe patterns]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Review this code for security
+> vulnerabilities: [paste code or describe patterns]."_
 
 ---
 
@@ -133,8 +136,9 @@ better approach.
 | --------- | -------------- | ------ | ----------------- |
 | [Item]    | [Why incurred] | [Cost] | [When/how to fix] |
 
-> **AI exploration:** _"Assess technical debt in [describe your codebase area]
-> and suggest a paydown plan."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Assess technical debt in [describe your
+> codebase area] and suggest a paydown plan."_
 
 ---
 
@@ -169,29 +173,15 @@ team updates.
 
 ### Progress Log Template
 
-```
-### Session N (YYYY-MM-DD, [Engineer Name])
+Use the standalone
+[Implementation Session Log Template](implementation-session-log-template.md) to
+track session-by-session progress. Start one from the template at the beginning
+of each increment. Have the AI agent update it at the end of every work session
+so the next session's agent can restore context from it.
 
-**Duration:** [Hours worked]
-
-**Completed:**
-- [What was finished this session]
-
-**In Progress:**
-- [What's partially done]
-
-**Next Steps:**
-- [What should be done next session]
-
-**Blockers:**
-- [Issues preventing progress]
-
-**Notes:**
-- [Important decisions or context]
-```
-
-> **AI exploration:** _"Help me write a session handoff summary for [describe
-> what you worked on today]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me write a session handoff summary
+> for [describe what you worked on today]."_
 
 ---
 
@@ -235,8 +225,10 @@ Document your branching strategy in `AGENTS.md`.
 
 Broken tests block the team and fix cost increases exponentially over time.
 
-> **AI exploration:** _"Recommend a PR and branching strategy for [describe your
-> team size, deployment > cadence, and CI/CD maturity]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Recommend a PR and branching strategy
+> for [describe your team size, deployment cadence, and
+> CI/CD maturity]."_
 
 ---
 
@@ -271,8 +263,9 @@ Broken tests block the team and fix cost increases exponentially over time.
 - Loading entire large datasets into memory
 - No pagination for large result sets
 
-> **AI exploration:** _"Review this code for red flags: [paste code or describe
-> the module]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Review this code for red flags:
+> [paste code or describe the module]."_
 
 ---
 
@@ -308,8 +301,9 @@ Broken tests block the team and fix cost increases exponentially over time.
 - [ ] Tests are independent (no execution order)
 - [ ] Tests cover happy path, edge cases, and errors
 
-> **AI exploration:** _"Generate unit tests for [describe > your function/module
-> and acceptance criteria]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Generate unit tests for [describe your
+> function/module and acceptance criteria]."_
 
 ---
 
@@ -333,8 +327,9 @@ Broken tests block the team and fix cost increases exponentially over time.
 | Security Scan    | [✅/❌] | [Snyk, Checkmarx, etc.]   |
 | Dependency Check | [✅/❌] | [npm audit, safety, etc.] |
 
-> **AI exploration:** _"Review this PR for code quality issues: [paste code or
-> describe changes]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Review this PR for code quality
+> issues: [paste code or describe changes]."_
 
 ---
 
@@ -355,7 +350,8 @@ Broken tests block the team and fix cost increases exponentially over time.
 - [ ] Large data sets handled efficiently
 - [ ] Performance-critical paths profiled
 
-> **AI exploration:** _"Profile and optimize [describe > your
+<!-- prettier-ignore -->
+> **AI exploration:** _"Profile and optimize [describe your
 > performance-critical code path]."_
 
 ---
@@ -394,11 +390,12 @@ Broken tests block the team and fix cost increases exponentially over time.
 2. [Step 2: e.g., Revert to previous deployment]
 3. [Step 3: e.g., Run rollback migration]
 
-> **AI exploration:** _"Generate a rollback plan for [describe your deployment
-> and changes]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Generate a rollback plan for [describe
+> your deployment and changes]."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 _Added to framework in v0.12.0_

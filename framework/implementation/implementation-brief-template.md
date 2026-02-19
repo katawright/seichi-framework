@@ -15,18 +15,11 @@
 
 ## Progress Log
 
-Update after each work session. See
-[Implementation Reference: Multi-Session Work](implementation-reference.md#multi-session-and-multi-engineer-work)
-for the full session template.
-
-### Session 1 (YYYY-MM-DD, [Engineer Name])
-
-- **Completed:** [What was finished]
-- **In Progress:** [What's partially done]
-- **Next Steps:** [Priority for next session]
-- **Blockers:** [Issues preventing progress]
-
-_Add more session entries as needed._
+Session-by-session progress is tracked in a separate
+[Implementation Session Log](implementation-session-log-template.md). Start one
+from the template at the beginning of each increment. Have the AI agent update
+it at the end of every work session so the next session's agent can restore
+context from it.
 
 ---
 
@@ -211,6 +204,6 @@ _If none: "No separate ADRs for this increment."_
 
 ---
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-18
 
 _Added to framework in v0.5.0_
