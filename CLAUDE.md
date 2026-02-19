@@ -49,6 +49,8 @@ See PROJECT_CONTEXT.md for full details.
 ## Standards
 
 - **Versioning:** Semantic Versioning (MAJOR.MINOR.PATCH)
+  - `framework/VERSION` is the canonical source of truth for the
+    framework version
   - Framework and application versions stay synchronized
 - **Commits:** Conventional Commits (type(scope): description)
   - Types: feat, fix, docs, refactor, test, chore, style
