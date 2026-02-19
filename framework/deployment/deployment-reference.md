@@ -73,47 +73,27 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your system,
-> traffic patterns, and risk > tolerance] and recommend an approach."_
+> **AI exploration:** _"Compare deployment strategies for [describe your
+> system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
 
 ## Environment Management
 
-### Environment Pipeline
-
-```
-Development → Staging/QA → Pre-Production → Production
-```
-
-**Key environments:**
-
-- **Development** — engineer testing, synthetic data, continuous deployment
-- **Staging/QA** — verification testing, production-like data (anonymized),
-  per-increment deployment
-- **Pre-Production** (optional) — final validation, production-identical
-  infrastructure
-- **Production** — live system, real users, controlled monitored releases
-
-### Environment Parity
-
-Differences between staging and production cause "works in staging, fails in
-production" issues.
-
-**Achieve parity across:** infrastructure, configuration, data schema,
-dependencies, resource allocation.
-
-Use Infrastructure as Code (Terraform, CloudFormation) to maintain consistency.
-Document environment-specific differences explicitly.
-
-> **AI exploration:** _"Audit our environment differences between [staging] and
-> [production] and suggest parity improvements."_
+For environment provisioning, pipeline setup, environment parity, and
+Infrastructure as Code guidance, see the
+[Deployment Planning Guide](deployment-planning-guide.md).
 
 ---
 
-## Database Migrations
+## Data and State Changes
 
-### Migration Types
+Deployments often involve more than code changes. This section covers data and
+state changes that may accompany a deployment.
+
+### Database Migrations
+
+#### Migration Types
 
 - **Additive (safest)** — new tables, columns, indexes; old code ignores new
   structures
@@ -122,7 +102,7 @@ Document environment-specific differences explicitly.
 - **Breaking (risky)** — remove or fundamentally change structures; requires
   coordinated deployment
 
-### Expand-Contract Strategy (Recommended)
+#### Expand-Contract Strategy (Recommended)
 
 1. **Expand** — add new structures without removing old (both versions work
    simultaneously)
@@ -131,7 +111,7 @@ Document environment-specific differences explicitly.
 
 This enables zero-downtime migrations and easy rollback.
 
-### Migration Best Practices
+#### Migration Best Practices
 
 **Before:** Test in staging with production-sized data, estimate duration,
 assess lock impact, back up database, write rollback script.
@@ -141,7 +121,7 @@ assess lock impact, back up database, write rollback script.
 **After:** Validate data integrity, check logs for errors, monitor performance,
 plan cleanup of old structures.
 
-### Common Pitfalls
+#### Common Pitfalls
 
 - Adding non-nullable column without default (fails on existing rows)
 - Creating index without CONCURRENTLY on large tables (locks table)
@@ -150,31 +130,54 @@ plan cleanup of old structures.
 > **AI exploration:** _"Review our migration plan for [describe schema changes]
 > and identify risks or suggest a safer approach."_
 
+### Cache Invalidation
+
+When deployments change data formats, API responses, or business logic, cached
+data may become stale or incompatible.
+
+**Strategies:**
+
+- **Versioned cache keys** — include version in cache key so new code reads
+  fresh data
+- **Warm-then-switch** — populate new cache before switching traffic
+- **Gradual expiry** — let old cache expire naturally if compatible
+- **Full flush** — clear all caches (last resort; causes temporary performance
+  impact)
+
+**Plan for:** Which caches are affected, invalidation strategy per cache,
+performance impact of cold cache, rollback implications.
+
+### Search Index Updates
+
+When deployments change data models or search behavior, search indexes may need
+updates.
+
+**Considerations:**
+
+- Reindex before or after deployment?
+- Can the old index serve queries during reindexing?
+- How long does reindexing take? Can it run in the background?
+- Does rollback require reverting the index?
+
+### Feature Flag Management
+
+When using feature flags as part of deployment:
+
+- Document which flags are being enabled or disabled
+- Confirm flag state in each environment before deployment
+- Plan flag cleanup after successful rollout
+- Consider flag dependencies (enabling flag A requires flag B)
+
 ---
 
 ## Configuration and Secrets Management
 
-### Configuration Principles
+For configuration principles and secrets management setup, see the
+[Deployment Planning Guide](deployment-planning-guide.md).
 
-1. Externalize configuration from code
-2. Never commit secrets to version control
-3. Environment-specific values (dev vs. staging vs. production)
-4. Validate on startup (fail fast if config missing)
-5. Document expected configuration
-
-### Secrets Management
-
-Use dedicated tools: AWS Secrets Manager, HashiCorp Vault, Azure Key Vault,
-Kubernetes Secrets.
-
-**Never commit:** API keys, passwords, database credentials, private keys, OAuth
-tokens.
-
-**Best practices:** Rotate secrets after deployment, use different secrets per
-environment, audit secret access.
-
-> **AI exploration:** _"Evaluate our secrets management approach for [describe
-> your stack] and suggest improvements."_
+Per-increment configuration changes are tracked in the
+[Deployment Brief Template](deployment-brief-template.md) under Configuration
+Changes.
 
 ---
 
@@ -231,12 +234,14 @@ Define decision maker BEFORE deployment:
 4. Validate rollback success (smoke tests, dashboards)
 5. Notify stakeholders
 
-### Database Rollback Considerations
+### Data/State Rollback Considerations
 
-- **Additive migrations** — safe to leave after rollback; old code ignores new
-  structures
-- **Breaking migrations** — require rollback script or database backup
-  restoration
+- **Additive changes** (new tables, columns, cache keys) — safe to leave after
+  rollback; old code ignores new structures
+- **Breaking changes** — require rollback script, database backup restoration,
+  or cache flush
+- **Feature flags** — toggle off; no data rollback needed
+- **Search indexes** — may need revert if schema changed
 
 ### Post-Rollback Actions
 
@@ -247,7 +252,7 @@ Define decision maker BEFORE deployment:
 5. Update deployment brief
 
 > **AI exploration:** _"Help me design a rollback procedure for [describe your
-> deployment strategy and > infrastructure]."_
+> deployment strategy and infrastructure]."_
 
 ---
 
@@ -329,7 +334,7 @@ lag.
 - [ ] Webhooks and callbacks working
 
 > **AI exploration:** _"Suggest monitoring thresholds and alert rules tuned to
-> [describe your stack, traffic > patterns, and SLAs]."_
+> [describe your stack, traffic patterns, and SLAs]."_
 
 ---
 
@@ -425,33 +430,15 @@ For breaking changes requiring downtime:
 4. Deploy and validate
 5. Bring online and notify completion
 
-> **AI exploration:** _"Help me plan a [hotfix / scheduled > maintenance]
+> **AI exploration:** _"Help me plan a [hotfix / scheduled maintenance]
 > deployment for [describe the situation]."_
 
 ---
 
 ## CI/CD Pipeline and Automation
 
-### Pipeline Structure
-
-```
-Code Push → Build → Tests → Package →
-Deploy to Dev → Smoke Tests →
-Deploy to Staging → Full Tests →
-Manual Approval → Deploy to Production → Monitor
-```
-
-### Best Practices
-
-- Automate deployment to dev/staging
-- Require manual approval for production
-- Run smoke tests after each deployment
-- Automatically roll back if health checks fail
-- Deployment scripts must be idempotent
-- Log every deployment step
-
-> **AI exploration:** _"Review our CI/CD pipeline and suggest improvements for
-> [describe your current setup > and pain points]."_
+For pipeline design, structure, and best practices, see the
+[Deployment Planning Guide](deployment-planning-guide.md).
 
 ---
 
@@ -472,7 +459,7 @@ Manual Approval → Deploy to Production → Monitor
 - Authentication and authorization verified
 
 > **AI exploration:** _"Audit our deployment security posture for [describe your
-> stack and compliance > requirements]."_
+> stack and compliance requirements]."_
 
 ---
 
@@ -481,7 +468,7 @@ Manual Approval → Deploy to Production → Monitor
 | Time (UTC) | Phase       | Action   | Status   | Notes   |
 | ---------- | ----------- | -------- | -------- | ------- |
 | HH:MM      | Pre-Deploy  | [Action] | [Status] | [Notes] |
-| HH:MM      | Migration   | [Action] | [Status] | [Notes] |
+| HH:MM      | Data/State  | [Action] | [Status] | [Notes] |
 | HH:MM      | Deploy      | [Action] | [Status] | [Notes] |
 | HH:MM      | Validation  | [Action] | [Status] | [Notes] |
 | HH:MM      | Traffic     | [Action] | [Status] | [Notes] |
@@ -530,7 +517,7 @@ Stable for 24 hours?
 ```
 
 > **AI exploration:** _"Create deployment decision trees tailored to [describe
-> your deployment process and risk > tolerance]."_
+> your deployment process and risk tolerance]."_
 
 ---
 
@@ -539,10 +526,10 @@ Stable for 24 hours?
 Address these immediately when observed:
 
 **Pre-Deployment:** UAT not signed off, rollback procedure not documented or
-tested, database migrations not tested in staging, monitoring or alerting not
+tested, data/state changes not tested in staging, monitoring or alerting not
 configured, no deployment plan, team not available or on-call not identified.
 
-**During Deployment:** Health checks failing, database migration errors or
+**During Deployment:** Health checks failing, data/state change errors or
 timeouts, configuration errors causing crashes, traffic not routing correctly,
 critical alerts firing immediately.
 
@@ -588,10 +575,10 @@ rollback if critical.
   deployment
 
 > **AI exploration:** _"Generate a support handoff checklist tailored to
-> [describe your team structure > and tooling]."_
+> [describe your team structure and tooling]."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 _Added to framework in v0.12.0_

@@ -9,6 +9,9 @@ executing correctly, and completed successfully.
 
 ## Pre-Deployment Readiness
 
+> This section confirms Verification stage outputs are complete. It does not
+> repeat testing — it verifies that testing was done and results are acceptable.
+
 - [ ] All Verification stage tests passing
 - [ ] UAT sign-off obtained from business stakeholders
 - [ ] Known issues reviewed and accepted
@@ -17,7 +20,8 @@ executing correctly, and completed successfully.
 - [ ] Environment health verified and backups completed
 - [ ] Infrastructure capacity validated
 - [ ] Monitoring dashboards and alerting configured
-- [ ] Success criteria instrumentation verified
+- [ ] Success criteria instrumentation verified (Verification tested it works;
+      confirm it will be active in production)
 - [ ] Configuration and secrets reviewed
 - [ ] Stakeholders notified of deployment schedule
 - [ ] Deployment team available and on communication channel
@@ -29,7 +33,7 @@ executing correctly, and completed successfully.
 ## Deployment Execution
 
 - [ ] Deployment package version and checksum validated
-- [ ] Database migrations applied successfully (if applicable)
+- [ ] Data and state changes applied (if applicable)
 - [ ] Each deployment phase completed and validated
 - [ ] Application deployed and health checks passing
 - [ ] Configuration and secrets applied correctly
@@ -74,18 +78,20 @@ executing correctly, and completed successfully.
 - [ ] 24-hour monitoring plan clear
 - [ ] Follow-up issues logged in backlog
 
-**Final Gate:** All sign-offs obtained → Hand off to Support stage
+**Final Gate:** All sign-offs obtained → Hand off to Support stage. Record the
+deployment decision using the
+[Gate Decision Template](../gate-decision-template.md).
 
 ---
 
 > For decision trees, red flags, strategy-specific checklists, and detailed
 > procedures, see the [Deployment Reference](deployment-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your
+> **AI suggestion:** _"Walk me through this checklist for [describe > your
 > deployment] and flag any items that need extra attention."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 _Added to framework in v0.7.0_

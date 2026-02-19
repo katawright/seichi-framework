@@ -7,7 +7,7 @@
 
 ## Quick Reference
 
-**Purpose:** Transform verified code into live, operational systems that deliver
+**Purpose:** Deliver verified code into live, operational systems that deliver
 value to end users, balancing speed with safety.
 
 **Primary roles:** DevOps Engineers, Engineers
@@ -25,14 +25,14 @@ baselines, rollback confirmation
 - Zero-downtime deployment with instant rollback
 - Monitoring validates production health post-deploy
 - Stakeholders notified at each phase
-- Database migrations tested and backward-compatible
+- Data and state changes tested and backward-compatible
 - Success criteria instrumentation confirmed working
 - Rollback plan tested before deployment
 
 **Common pitfalls:**
 
 - No rollback plan or untested rollback
-- Database migrations not backward-compatible
+- Data/state changes not backward-compatible
 - Skipping staging validation
 - Poor stakeholder communication during deployment
 - Secrets committed to version control
@@ -44,6 +44,14 @@ baselines, rollback confirmation
 
 **AI assistance:** AI assist only + runbook gates — see
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
+
+---
+
+> **First time deploying this project?** If deployment infrastructure doesn't
+> exist yet (or isn't documented), start with the
+> [Deployment Planning Guide](deployment-planning-guide.md) and
+> [Deployment Pipeline Checklist](deployment-pipeline-checklist.md) before using
+> this guide. This guide covers per-increment deployment execution.
 
 ---
 
@@ -82,19 +90,23 @@ zero-downtime-critical systems.
 
 ---
 
-## Database Migrations
+## Data and State Changes
 
-Database migrations are often the riskiest part of deployment. Plan carefully.
+Deployments often involve more than code — database migrations, cache
+invalidation, search index updates, and feature flag changes may all be part of
+a release. Plan these carefully.
 
-**Migration types:** Additive (safest), backward-compatible (safe), breaking
-(risky — requires coordinated deployment).
+**Database migrations** are often the riskiest data change. Migration types:
+additive (safest), backward-compatible (safe), breaking (risky — requires
+coordinated deployment). Use the expand-contract strategy for zero-downtime
+migrations.
 
-**Key principle:** Use the expand-contract strategy for zero-downtime migrations
-— add new structures first, migrate data, then remove old structures after all
-code is updated.
+**Other data/state changes** to consider: cache invalidation strategy, search
+index updates, feature flag state changes.
 
-> For migration details, expand-contract walkthrough, and common pitfalls, see
-> [Deployment Reference: Database Migrations](deployment-reference.md#database-migrations).
+> For detailed guidance on database migrations, cache invalidation, search index
+> updates, and feature flag management, see
+> [Deployment Reference: Data and State Changes](deployment-reference.md#data-and-state-changes).
 
 ---
 
@@ -114,7 +126,7 @@ Define rollback decision authority BEFORE deployment: deployment engineer for
 technical issues, DevOps lead for major incidents, product manager for business
 impact.
 
-> For detailed rollback procedures, database rollback considerations, and
+> For detailed rollback procedures, data/state rollback considerations, and
 > post-rollback actions, see
 > [Deployment Reference: Rollback Procedures](deployment-reference.md#rollback-procedures).
 
@@ -181,14 +193,18 @@ HANDOFF TO SUPPORT
 
 ## Additional Topics
 
-The [Deployment Reference](deployment-reference.md) covers these topics in
-depth:
+The [Deployment Planning Guide](deployment-planning-guide.md) covers
+project-level setup (do these once, during iteration 0):
 
-- **Environment management** — pipeline, parity, Infrastructure as Code
+- **CI/CD pipeline** — design, build, and validate your pipeline
+- **Environment management** — provisioning, parity, Infrastructure as Code
 - **Configuration and secrets** — externalization principles, secrets management
   tools
+
+The [Deployment Reference](deployment-reference.md) covers per-increment
+deep-dive topics:
+
 - **Deployment patterns** — hotfix workflow, scheduled maintenance
-- **CI/CD pipeline** — automation structure and best practices
 - **Security** — pre- and post-deployment security checks
 - **Decision trees** — before, during, and after deployment
 - **Red flags** — stop-and-address signals at each phase
@@ -253,6 +269,8 @@ Deployment validates that measurement systems work in production. See
 
 ## Related Documents
 
+- [Deployment Planning Guide](deployment-planning-guide.md)
+- [Deployment Pipeline Checklist](deployment-pipeline-checklist.md)
 - [Deployment Brief Template](deployment-brief-template.md)
 - [Deployment Checklist](deployment-checklist.md)
 - [Deployment Reference](deployment-reference.md)
@@ -262,6 +280,6 @@ Deployment validates that measurement systems work in production. See
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-19
 
 Added to framework in v0.7.0.
