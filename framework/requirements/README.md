@@ -84,7 +84,7 @@ point.
 
 ## Notes
 
-**Framework Version:** 0.11.0
+**Framework Version:** 0.13.0
 
 **Last Updated:** 2026-02-16
 
