@@ -110,6 +110,9 @@ Track defects by **severity** (technical impact: Critical → Low) and
 
 ### Go/No-Go Decision
 
+> For structuring gate decisions, use the
+> [Gate Decision Template](../gate-decision-template.md).
+
 - **Go:** All critical gates passed, UAT approved, rollback plan exists
 - **No-go:** Critical defects, UAT not approved, performance below NFRs
 - **Conditional go:** Minor issues accepted with workarounds documented
@@ -159,6 +162,14 @@ Track defects by **severity** (technical impact: Critical → Low) and
 
 HANDOFF TO DEPLOYMENT
 ```
+
+**When verification fails:** If the go/no-go decision (step 12) results in
+**no-go**, work returns to the Implementation stage for defect fixes. Once fixes
+are complete, a **new verification cycle** begins — start a fresh brief from the
+template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
+brief. This preserves each cycle's results as a clean historical record and
+makes it easy to see what changed between cycles. The new brief's Cycle Context
+section links to the prior brief and summarizes what was fixed.
 
 ---
 
@@ -231,6 +242,6 @@ Verification validates that measurement systems work correctly. See
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-18
 
 Added to framework in v0.6.0.
