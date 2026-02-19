@@ -70,7 +70,7 @@ fleet]
 | Phase                | Duration | Responsible | Rollback Point |
 | -------------------- | -------- | ----------- | -------------- |
 | [Pre-Deployment]     | [X min]  | [Role]      | [Y/N]          |
-| [Database Migration] | [X min]  | [Role]      | [Y/N]          |
+| [Data/State Changes] | [X min]  | [Role]      | [Y/N]          |
 | [Application Deploy] | [X min]  | [Role]      | [Y/N]          |
 | [Traffic Switch]     | [X min]  | [Role]      | [Y/N]          |
 | [Validation]         | [X min]  | [Role]      | [Y/N]          |
@@ -80,10 +80,15 @@ fleet]
 
 ---
 
-## Database Migrations
+## Data and State Changes
 
-**Schema Changes:** [Yes / No] **Data Changes:** [Yes / No] **Migration Type:**
-[Additive / Backward-Compatible / Breaking]
+_Fill in the subsections that apply to this increment. Remove or mark "N/A" for
+subsections that don't apply._
+
+### Database Migrations
+
+**Schema Changes:** [Yes / No / N/A] **Data Changes:** [Yes / No / N/A]
+**Migration Type:** [Additive / Backward-Compatible / Breaking / N/A]
 
 **Migration Scripts:**
 
@@ -94,6 +99,24 @@ fleet]
 - [ ] Tested in staging with production-like data
 - [ ] Rollback tested and validated
 - [ ] Performance impact assessed
+
+### Cache and Index Updates
+
+**Cache Invalidation Required:** [Yes / No / N/A] **Strategy:** [Versioned keys
+/ Warm-then-switch / Flush / N/A]
+
+**Search Index Updates Required:** [Yes / No / N/A] **Reindex Approach:**
+[Background / Pre-deploy / Post-deploy / N/A]
+
+### Feature Flag State
+
+| Flag Name | Current State | Target State | Rollback Action |
+| --------- | ------------- | ------------ | --------------- |
+| [flag]    | [on/off]      | [on/off]     | [toggle off]    |
+
+### Other State Changes
+
+- [Describe any other state changes not covered above]
 
 ---
 
@@ -244,6 +267,6 @@ tracker]
 
 ---
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-19
 
 _Added to framework in v0.7.0_
