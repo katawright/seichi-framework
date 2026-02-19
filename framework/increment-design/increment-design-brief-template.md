@@ -74,7 +74,7 @@ _Add more components as needed._
 Document how components communicate for this increment's features:
 
 - Sequence diagrams or flow descriptions
-- API calls and data flow
+- Calls, events, or data flow between components
 - Error handling paths (happy path + key errors)
 
 **[Feature Name] Flow:**
@@ -89,56 +89,81 @@ Document how components communicate for this increment's features:
 
 ---
 
-## 3. Data Model Changes
+## 3. Data and State Changes
 
-### 3.1 Schema Changes
+_Include sections below that apply to your project. Not all projects require
+data storage or schema changes._
 
-**New/Modified Tables:**
+### 3.1 State Management Changes
 
-```sql
-[SQL DDL for new tables, columns, indexes]
+Describe how this increment affects application state:
+
+- New state introduced (local state, shared state, persisted data)
+- State flow between components
+- State initialization and cleanup
+
+### 3.2 Schema/Storage Changes (if applicable)
+
+_Include this section if your project uses a database or persistent storage._
+
+**New/Modified Structures:**
+
+```
+[Schema definitions, DDL, document structures, or storage formats]
 ```
 
-**Migration File:** [Migration path/name] **Rollback:** [Rollback SQL or
-strategy]
+**Migration Strategy:** [Migration path/name or approach] **Rollback:**
+[Rollback strategy]
 
 ---
 
-### 3.2 Data Access Patterns
+### 3.3 Data Access Patterns (if applicable)
 
-- Key queries and ORM usage patterns
+- Key queries or data retrieval patterns
 - Caching strategy (if applicable)
-- N+1 prevention approach
+- Performance considerations (e.g., N+1 prevention, pagination)
 
 ---
 
-## 4. API Specifications
+## 4. Interface Specifications
 
-### 4.1 Endpoints
+_Include sections below that apply to your project. Choose the interface types
+relevant to your technology stack._
 
-For each endpoint, document:
+### 4.1 Interfaces
 
-- HTTP method, path, description
-- Authentication requirements
-- Request parameters (body, query, headers)
+For each interface this increment introduces or modifies, document:
+
+- Interface type and identifier (e.g., API endpoint, event, prop contract, CLI
+  command)
+- Input/output formats
 - Validation rules
-- Response format (success and error cases)
+- Success and error cases
 
-_Follow API design principles from System Design._
+_Follow conventions established in System Design._
 
-**[METHOD] [PATH]**
+**[Interface identifier]**
 
 - **Description:** [What it does]
-- **Authentication:** [None / Required]
-- **Request:** [Parameters and validation]
-- **Success Response:** [Status code and body]
-- **Error Responses:** [Status codes and bodies]
+- **Input:** [Parameters, props, request body, arguments]
+- **Output:** [Return value, response, emitted event]
+- **Error cases:** [Validation failures, error states]
 
-_Add more endpoints as needed._
+_Add more interfaces as needed._
 
-> For detailed API specification examples with full request/response JSON
-> bodies, see
-> [Increment Design Reference: API Specification Example](increment-design-reference.md#api-specification-example).
+**Examples of interface types by project:**
+
+- **REST API:** `POST /api/v1/users` — method, path, request/response bodies,
+  status codes
+- **UI component:** `<UserCard user={User} onDelete={fn}>` — props, callbacks,
+  rendered output
+- **Event-driven:** `user.created` event — payload schema, consumers
+- **CLI tool:** `migrate --dry-run` — arguments, flags, stdout output
+- **Library/SDK:** `createClient(config): Client` — function signatures, return
+  types
+
+> For detailed interface specification examples, see
+> [Increment Design Reference](increment-design-reference.md#interface-specification-examples).
 
 ---
 
@@ -153,8 +178,9 @@ _Add more endpoints as needed._
 
 ### 5.2 Integration Tests
 
-- API endpoint tests (request -> response)
-- Database integration tests
+- Interface tests (e.g., API request/response, component rendering, event
+  handling)
+- Data integration tests (if applicable)
 - End-to-end flows
 
 ### 5.3 Acceptance Testing
@@ -197,8 +223,8 @@ Before proceeding to Implementation, validate:
 
 - [ ] Increment scope clear (in/out of scope)
 - [ ] Component designs detailed and implementable
-- [ ] Data model changes specified with migrations
-- [ ] API specifications complete and follow conventions
+- [ ] Data/state changes specified (with migrations if applicable)
+- [ ] Interface specifications complete and follow conventions
 - [ ] Testing strategy covers unit, integration, acceptance, performance
 - [ ] Implementation notes provide guidance
 

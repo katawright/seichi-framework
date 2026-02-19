@@ -19,12 +19,12 @@ and ready for Implementation.
 - [ ] Component interactions documented
 - [ ] Error handling paths defined
 
-## Data and APIs
+## Interfaces and Data
 
-- [ ] Data model changes specified with migrations
-- [ ] Data access patterns clear
-- [ ] API specifications complete (method, path, request, response, errors)
-- [ ] API follows foundational conventions
+- [ ] Interface specifications complete (inputs, outputs, error cases)
+- [ ] Interfaces follow foundational conventions from System Design
+- [ ] Data/state changes specified (with migrations if applicable)
+- [ ] Data access or state management patterns clear
 
 ## Testing Strategy
 
@@ -53,7 +53,7 @@ and ready for Implementation.
 > For common issues and troubleshooting when items fail, see
 > [Increment Design Reference: Checklist Troubleshooting](increment-design-reference.md#checklist-troubleshooting).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your
+> **AI suggestion:** _"Walk me through this checklist for [describe your >
 > increment design] and flag items needing attention."_
 
 ---
