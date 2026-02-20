@@ -44,7 +44,7 @@ running a Standard-tier project still does code review — but it might be a
 self-review checklist rather than a pull request with two approvers.
 
 See
-[Framework Guide: Team Size Adaptation](framework-guide.md#team-size-adaptation)
+[Framework Guide: Right-Sizing Your Process](framework-guide.md#right-sizing-your-process)
 for detailed guidance on solo, small-team, and large-team formality adjustments.
 
 ### How the Dimensions Interact

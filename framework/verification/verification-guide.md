@@ -68,6 +68,27 @@ implementation realities, and validates acceptance criteria.
 
 ---
 
+## AI Assistance
+
+**AI excels at:**
+
+- Generating test cases from acceptance criteria
+- Creating test matrices for edge cases
+- Writing integration and E2E tests
+- Generating test data and fixtures
+- Analyzing test results and patterns
+- Identifying coverage gaps
+
+**Human responsibilities:**
+
+- Approve test strategy and coverage
+- Decide go/no-go for deployment
+- Prioritize defect fixes vs. deferral
+- Sign off on UAT and production readiness
+- Assess acceptable risk levels
+
+---
+
 ## Right-Sizing Verification
 
 Not every project needs a full test suite across all test types. Match your
@@ -84,71 +105,23 @@ Verification effort to your project's risk tier.
 | **Regression tests**    | Manual check of existing features | Automated regression suite in CI           | Comprehensive regression with risk-based selection |
 | **Go/no-go decision**   | Informal team agreement           | Checklist-based go/no-go meeting           | Formal gate with stakeholder sign-off              |
 
-> For tier definitions and choosing criteria, see the
+Expand Verification only when needed:
+
+- **Regulated / compliance-heavy:** Add formal test traceability, compliance
+  verification, documented UAT sign-off
+- **High availability / performance-critical:** Add load, stress, and soak
+  testing with SLO validation
+- **Security-sensitive:** Add penetration testing, SAST/DAST scanning,
+  compliance checks
+- **Accessibility requirements:** Add WCAG audit, assistive technology testing
+- **Large user base or high-risk changes:** Add comprehensive regression suite,
+  canary validation, extended UAT
+
+Otherwise, keep Verification focused and move to Deployment.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../right-sizing-guide.md).
-
----
-
-## Test Types Overview
-
-Unit tests are already done during Implementation; Verification focuses on
-higher-level testing.
-
-| Test Type     | Purpose                  | Key Question                         |
-| ------------- | ------------------------ | ------------------------------------ |
-| Integration   | Components work together | Do APIs, DB, and services connect?   |
-| Functional    | Acceptance criteria met  | Does it do what was specified?       |
-| UAT           | Business needs met       | Does it solve the business problem?  |
-| Performance   | NFRs met                 | Is it fast and stable enough?        |
-| Security      | No vulnerabilities       | Is it safe?                          |
-| Accessibility | Usable by all            | Is it accessible?                    |
-| Regression    | Nothing broke            | Did changes break existing features? |
-
-> For detailed test strategies, best practices, and result templates for each
-> test type, see the [Verification Reference](verification-reference.md).
-
----
-
-## Defect Management
-
-Track defects by **severity** (technical impact: Critical → Low) and
-**priority** (business urgency: P0 → P3).
-
-**Key rules:**
-
-- No critical or high-severity defects open at deployment
-- Deferred defects must have justification and target version
-- Fixed defects must be retested and verified
-- Regular triage meetings to review and prioritize
-
-> For severity definitions, defect lifecycle, triage process, and tracking
-> templates, see
-> [Verification Reference: Defect Management](verification-reference.md#defect-management).
-
----
-
-## Production Readiness
-
-### Go/No-Go Decision
-
-> For structuring gate decisions, use the
-> [Gate Decision Template](../gate-decision-template.md).
-
-- **Go:** All critical gates passed, UAT approved, rollback plan exists
-- **No-go:** Critical defects, UAT not approved, performance below NFRs
-- **Conditional go:** Minor issues accepted with workarounds documented
-
-### Readiness Requirements
-
-- All test types executed with passing results
-- 100% of acceptance criteria verified
-- UAT approved by business stakeholders
-- Monitoring and instrumentation verified
-- Deployment artifacts prepared (code tagged, runbook created, rollback plan
-  documented)
-
-> For quality gate status template and deployment prerequisites, see
-> [Verification Reference: Production Readiness](verification-reference.md#production-readiness-details).
 
 ---
 
@@ -194,7 +167,66 @@ section links to the prior brief and summarizes what was fixed.
 
 ---
 
-## Measurement Validation
+## Verification Guidance
+
+### Test Types Overview
+
+Unit tests are already done during Implementation; Verification focuses on
+higher-level testing.
+
+| Test Type     | Purpose                  | Key Question                         |
+| ------------- | ------------------------ | ------------------------------------ |
+| Integration   | Components work together | Do APIs, DB, and services connect?   |
+| Functional    | Acceptance criteria met  | Does it do what was specified?       |
+| UAT           | Business needs met       | Does it solve the business problem?  |
+| Performance   | NFRs met                 | Is it fast and stable enough?        |
+| Security      | No vulnerabilities       | Is it safe?                          |
+| Accessibility | Usable by all            | Is it accessible?                    |
+| Regression    | Nothing broke            | Did changes break existing features? |
+
+> For detailed test strategies, best practices, and result templates for each
+> test type, see the [Verification Reference](verification-reference.md).
+
+### Defect Management
+
+Track defects by **severity** (technical impact: Critical → Low) and
+**priority** (business urgency: P0 → P3).
+
+**Key rules:**
+
+- No critical or high-severity defects open at deployment
+- Deferred defects must have justification and target version
+- Fixed defects must be retested and verified
+- Regular triage meetings to review and prioritize
+
+> For severity definitions, defect lifecycle, triage process, and tracking
+> templates, see
+> [Verification Reference: Defect Management](verification-reference.md#defect-management).
+
+### Production Readiness
+
+#### Go/No-Go Decision
+
+> For structuring gate decisions, use the
+> [Gate Decision Template](../gate-decision-template.md).
+
+- **Go:** All critical gates passed, UAT approved, rollback plan exists
+- **No-go:** Critical defects, UAT not approved, performance below NFRs
+- **Conditional go:** Minor issues accepted with workarounds documented
+
+#### Readiness Requirements
+
+- All test types executed with passing results
+- 100% of acceptance criteria verified
+- UAT approved by business stakeholders
+- Monitoring and instrumentation verified
+- Deployment artifacts prepared (code tagged, runbook created, rollback plan
+  documented)
+
+> For quality gate status template and deployment prerequisites, see
+> [Verification Reference: Production Readiness](verification-reference.md#production-readiness-details).
+
+### Measurement Validation
 
 Verification validates that measurement systems work correctly. See
 [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline).
@@ -206,27 +238,6 @@ Verification validates that measurement systems work correctly. See
 - Confirm alerts trigger correctly
 - Verify instrumentation captures required data
 - Test success criteria measurement mechanisms
-
----
-
-## AI Assistance
-
-**AI excels at:**
-
-- Generating test cases from acceptance criteria
-- Creating test matrices for edge cases
-- Writing integration and E2E tests
-- Generating test data and fixtures
-- Analyzing test results and patterns
-- Identifying coverage gaps
-
-**Human responsibilities:**
-
-- Approve test strategy and coverage
-- Decide go/no-go for deployment
-- Prioritize defect fixes vs. deferral
-- Sign off on UAT and production readiness
-- Assess acceptable risk levels
 
 ---
 

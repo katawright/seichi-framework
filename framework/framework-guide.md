@@ -95,7 +95,7 @@ framework's flexibility. It is planned for future release.
 
 ## Key Concepts
 
-This guide covers six major concepts that structure the framework:
+This guide covers seven major concepts that structure the framework:
 
 **[SDLC Stages](#sdlc-stages)** — The framework defines stages that work for any
 methodology (agile, waterfall, hybrid). Stages follow different execution
@@ -119,6 +119,11 @@ features before increment boundaries are defined.
 **[Greenfield vs. Brownfield Projects](#greenfield-vs-brownfield-projects)** —
 How the framework adapts for new projects built from scratch versus extensions
 to existing systems, including infrastructure setup and constraint management.
+
+**[Right-Sizing Your Process](#right-sizing-your-process)** — Match process
+rigor to project risk (Minimal, Standard, Enterprise) and team size. Each stage
+guide includes a right-sizing table with expansion triggers. See the
+[Right-Sizing Guide](right-sizing-guide.md) for the full model.
 
 **[AI Assistance Overview](#ai-assistance-overview)** — Guidance for how
 independently AI can operate at each stage before requiring human approval,
@@ -170,6 +175,10 @@ significant new information emerges:
 | 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
 | 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
 | 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
+
+> **Guide structure:** Each stage guide follows a consistent structure: Quick
+> Reference, What Is [Stage], AI Assistance, Right-Sizing, Workflow, Guidance
+> (stage-specific subsections), When to Revisit, Related Documents, and Notes.
 
 **Key principle: Design plans, Implementation and Verification execute**
 
@@ -224,8 +233,6 @@ Initiation (once)
 - Verification → Implementation (test failures)
 - Verification → Increment Design (design flaws)
 - Support → Initiation (objectives need revision)
-
----
 
 ---
 
@@ -608,17 +615,23 @@ guide:
 
 ---
 
-## Team Size Adaptation
+## Right-Sizing Your Process
 
-Right-sizing has two independent dimensions: **project risk** determines _what_
-practices you adopt (Minimal, Standard, or Enterprise tier), and **team size**
-determines _how formally_ you apply them. This section covers the team size
-dimension. For the full two-dimension model and tier definitions, see the
-[Right-Sizing Guide](right-sizing-guide.md).
+Right-sizing has two independent dimensions:
 
-The framework's eight stages remain the same regardless of team size. What
-changes is the level of formality, documentation detail, and coordination
-mechanisms.
+- **Project risk tier** determines _what_ practices you adopt — Minimal (low
+  risk), Standard (moderate), or Enterprise (high). Each stage guide includes a
+  tier table showing exactly what each level involves.
+- **Team size** determines _how formally_ you apply those practices — a solo
+  developer on a Standard-tier project still does code review, but it might be a
+  self-review checklist rather than a pull request with two approvers.
+
+For the full two-dimension model, tier definitions, and choosing criteria, see
+the [Right-Sizing Guide](right-sizing-guide.md).
+
+The framework's eight stages remain the same regardless of risk tier or team
+size. What changes is the level of formality, documentation detail, and
+coordination mechanisms.
 
 **Solo developer:**
 
@@ -648,6 +661,6 @@ formal_ and _how coordinated_.
 
 ## Notes
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-19
 
 Added to framework in v0.9.0.

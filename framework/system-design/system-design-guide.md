@@ -72,6 +72,35 @@ architecture and technical approach for the entire project.
 
 ---
 
+## AI Assistance
+
+**AI excels at:**
+
+- Generating architecture options
+- Analyzing trade-offs between approaches
+- Suggesting design patterns for common scenarios
+- Creating boilerplate (data models, ADRs)
+- Generating diagram-as-code (Mermaid, PlantUML) as first drafts — layout and
+  details typically need human refinement
+- Identifying edge cases and security concerns
+
+**AI struggles with:**
+
+- Organizational context (team skills, infrastructure)
+- Business priorities and long-term maintainability
+- Producing publication-ready diagrams without human refinement
+- Subtle security nuances
+
+**Best practices:**
+
+1. Use AI for exploration — generate multiple options
+2. Human makes final decisions based on context
+3. Validate AI suggestions with experienced engineers
+4. Iterate with AI based on review feedback
+5. Document decisions in ADRs (note AI assistance)
+
+---
+
 ## Right-Sizing System Design
 
 Not every project needs a formal architecture document or comprehensive ADRs.
@@ -86,20 +115,55 @@ Match your System Design effort to your project's risk tier.
 | **Infrastructure plan** | Simplest viable hosting              | Environment strategy, basic IaC               | Multi-environment, HA design, disaster recovery      |
 | **Increment plan**      | Ordered task list                    | Sequenced increments with dependencies        | Formal roadmap with cross-team coordination          |
 
-> For tier definitions and choosing criteria, see the
+Expand System Design only when needed:
+
+- **Multi-service architecture:** Add service interaction diagrams, API
+  contracts, deployment topology
+- **High availability / performance:** Add capacity planning, failover design,
+  SLO architecture
+- **Security-sensitive / compliance:** Add comprehensive threat model,
+  compliance mapping, audit controls
+- **Multi-team coordination:** Add cross-team interface contracts, shared
+  component ownership
+- **Complex data architecture:** Add data flow diagrams, migration strategy,
+  consistency models
+
+Otherwise, keep design lightweight and move to Increment Design.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../right-sizing-guide.md).
 
 ---
 
-## Architecture Principles
+## System Design Workflow
+
+1. **Review requirements and constraints** — all FRs, NFRs, MoSCoW priorities,
+   acceptance criteria, and brownfield constraints
+2. **Design or assess architecture** — create system architecture (greenfield)
+   or evaluate existing architecture (brownfield)
+3. **Evaluate and select technology** — research options, compare trade-offs,
+   document costs in ADRs
+4. **Plan infrastructure** — CI/CD, environments, monitoring, deployment
+   automation (greenfield Increment 0 or brownfield discovery)
+5. **Document architecture and ADRs** — architecture diagrams, data models, API
+   conventions, and key decision records
+6. **Create increment plan** — map MoSCoW priorities to sequenced, deliverable
+   increments with range-based estimates
+7. **Prepare Gate 2 decision package** — compile architecture, increment plan,
+   cost estimates, and risk assessment for proceed/pivot/stop review
+
+---
+
+## System Design Guidance
+
+### Architecture Principles
 
 Follow established principles — SOLID, Separation of Concerns, DRY, YAGNI, KISS
 — when making design decisions. Consult your team's standards or ask your AI
 agent for guidance.
 
----
-
-## Technology Selection
+### Technology Selection
 
 Evaluate team skills, organizational standards, requirements fit, ecosystem
 maturity, maintainability, performance/scalability, and security/compliance when
@@ -112,16 +176,14 @@ Document costs in ADRs.
 > trade-offs, see
 > [System Design Reference: Technology Selection](system-design-reference.md#technology-selection-details).
 
----
-
-## Creating Increment Plans
+### Creating Increment Plans
 
 The increment plan is a **key output of System Design**. It maps MoSCoW
 priorities from Requirements to specific, deliverable increments. See
 [Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization) for
 priority definitions.
 
-### Planning Best Practices
+#### Planning Best Practices
 
 - **Use range-based estimates:** Express duration and effort as ranges (e.g.,
   1.5-2.5 weeks), not single points
@@ -131,7 +193,7 @@ priority definitions.
 - **Allow for discovery:** don't over-plan distant increments
 - **Make Could Haves truly optional:** don't commit in timelines
 
-### Planning Process
+#### Planning Process
 
 1. **Review requirements** — all FRs, NFRs, MoSCoW priorities, acceptance
    criteria
@@ -159,9 +221,7 @@ priority definitions.
 > Record the proceed/pivot/stop decision using the
 > [Gate Decision Template](../gate-decision-template.md).
 
----
-
-## Infrastructure Planning
+### Infrastructure Planning
 
 Infrastructure planning is a **required output** of System Design. The goal is
 to ensure working development, testing, deployment, and monitoring
@@ -186,11 +246,9 @@ ADRs.
 > infrastructure ADR examples, and anti-patterns, see
 > [System Design Reference: Infrastructure Planning](system-design-reference.md#infrastructure-planning).
 
----
+### Design Documentation
 
-## Design Documentation
-
-### What to Document
+#### What to Document
 
 - **Architecture diagrams:** System context, container, component (C4 model
   recommended)
@@ -199,7 +257,7 @@ ADRs.
   patterns
 - **Increment plan:** Increment definitions with requirements mapping
 
-### Documentation Principles
+#### Documentation Principles
 
 - Keep docs in version control alongside code
 - Document architecture and key decisions; code should be self-explanatory
@@ -207,9 +265,7 @@ ADRs.
 - Update docs during code reviews
 - Document "why" not "what" — clean code explains what
 
----
-
-## Architecture Decision Records (ADRs)
+### Architecture Decision Records (ADRs)
 
 ADRs document significant decisions and reasoning. They are **separate files**
 stored in `docs/adr/`.
@@ -228,9 +284,7 @@ rationale, consequences, alternatives.
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
 
----
-
-## Additional Topics
+### Additional Topics
 
 The [System Design Reference](system-design-reference.md) covers these topics in
 depth:
@@ -247,35 +301,6 @@ depth:
   increment plans
 - **Gate 2 cost calculation** — estimation examples and infrastructure cost
   templates
-
----
-
-## AI Assistance in System Design
-
-**AI excels at:**
-
-- Generating architecture options
-- Analyzing trade-offs between approaches
-- Suggesting design patterns for common scenarios
-- Creating boilerplate (data models, ADRs)
-- Generating diagram-as-code (Mermaid, PlantUML) as first drafts — layout and
-  details typically need human refinement
-- Identifying edge cases and security concerns
-
-**AI struggles with:**
-
-- Organizational context (team skills, infrastructure)
-- Business priorities and long-term maintainability
-- Producing publication-ready diagrams without human refinement
-- Subtle security nuances
-
-**Best practices:**
-
-1. Use AI for exploration — generate multiple options
-2. Human makes final decisions based on context
-3. Validate AI suggestions with experienced engineers
-4. Iterate with AI based on review feedback
-5. Document decisions in ADRs (note AI assistance)
 
 ---
 
