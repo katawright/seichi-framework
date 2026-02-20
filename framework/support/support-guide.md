@@ -72,23 +72,28 @@ delivery back to development.
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [AI agent with human gate](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)
+> — Support involves production-impacting decisions requiring domain expertise
+> and real-time judgment for escalation and prioritization.
 
-- Monitoring and anomaly detection
-- Log analysis and pattern identification
-- Generating incident reports and post-mortems
-- Drafting success criteria reports
-- Suggesting alert thresholds and tuning
-- Creating runbooks and documentation
+### AI Autonomy Spectrum
 
-**Human responsibilities:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 2](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)) sets
+the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Make escalation and severity decisions
-- Own stakeholder communication during incidents
-- Prioritize bugs and enhancements
-- Decide go/no-go for hotfixes
-- Interpret business metrics and drive actions
-- Manage on-call rotation and team health
+| Activity                       | Human-Led                                            | Collaborative                                               | AI-Led                                                                                         |
+| ------------------------------ | ---------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Monitoring**                 | Engineer reviews dashboards; AI highlights anomalies | AI monitors and alerts; engineer investigates               | AI monitors and identifies patterns across incidents; engineer validates escalations           |
+| **Incident response**          | Engineer triages; AI surfaces logs and context       | AI classifies severity and drafts comms; engineer decides   | AI correlates with recent changes and suggests root cause; engineer validates and communicates |
+| **Bug triage**                 | Engineer analyzes; AI suggests related issues        | AI classifies and suggests priority; engineer decides       | AI identifies patterns across bugs and triages; engineer validates critical items              |
+| **Success criteria reporting** | Engineer compiles reports; AI formats data           | AI drafts reports with analysis; engineer reviews           | AI identifies trends and anomalies proactively; engineer validates insights                    |
+| **Runbook maintenance**        | Engineer writes; AI suggests updates                 | AI drafts updates from incident learnings; engineer reviews | AI identifies outdated runbooks from incident patterns; engineer validates                     |
+| **Dependency updates**         | Engineer reviews; AI flags vulnerabilities           | AI proposes update plan; engineer approves                  | AI monitors advisories and proposes update plans proactively; engineer approves                |
 
 ---
 
@@ -368,6 +373,6 @@ practices, see
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.8.0.

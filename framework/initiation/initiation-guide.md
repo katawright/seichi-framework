@@ -71,29 +71,27 @@ and scope projects with AI assistance.
 
 ## AI Assistance
 
-**Why AI assist only:** Initiation involves non-technical business decisions
-that require human judgment, stakeholder alignment, and organizational context.
+> **Assistance level:**
+> [AI assist only](../framework-ai-assistance.md#level-1-ai-assist-only) —
+> Initiation involves business decisions requiring human judgment, stakeholder
+> alignment, and organizational context that AI cannot independently verify.
 
-**AI's role — two modes of working:**
+### AI Autonomy Spectrum
 
-- **Interview mode:** Describe your idea to AI. It asks structured questions
-  based on the template, suggests options, and produces a draft brief for your
-  review.
-- **Review mode:** Fill out the template yourself, then ask AI to review for
-  completeness, suggest improvements, and edit as directed.
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage ([Level 1](../framework-ai-assistance.md#level-1-ai-assist-only))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-In either mode, AI can also:
-
-- Suggest alternatives and trade-offs
-- Analyze completeness (run checklist)
-- Provide templates and examples
-
-**Human's role:**
-
-- Own all decisions
-- Validate correctness
-- Approve outputs
-- Align stakeholders
+| Activity              | Human-Led                                | Collaborative                                      | AI-Led                                                                                          |
+| --------------------- | ---------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Problem statement** | Human writes; AI reviews for clarity     | AI interviews using template; human refines        | AI drives discovery, cross-references for contradictions; human validates                       |
+| **Business case**     | Human builds case; AI suggests structure | AI drafts from interview context; human validates  | AI researches comparable approaches, identifies unstated risks; human validates                 |
+| **Success criteria**  | Human defines; AI suggests metrics       | AI proposes criteria with baselines; human refines | AI cross-references objectives and constraints to propose criteria; human validates             |
+| **Risk assessment**   | Human identifies; AI suggests categories | AI drafts assessment; human validates              | AI proactively identifies risks from goals, constraints, and industry patterns; human validates |
+| **Options analysis**  | Human evaluates; AI provides research    | AI drafts options with trade-offs; human decides   | AI researches options, evaluates against constraints proactively; human decides                 |
+| **Estimation**        | Human estimates; AI provides benchmarks  | AI suggests ranges from context; human validates   | AI synthesizes scope, risks, and comparables into estimates; human validates                    |
 
 ---
 
@@ -213,6 +211,6 @@ Each section of the initiation brief serves a specific purpose:
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.2.0.

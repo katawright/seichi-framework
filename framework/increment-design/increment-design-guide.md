@@ -73,26 +73,29 @@ in System Design to a concrete set of requirements.
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [AI agent with strong gates](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates)
+> — Increment Design produces component-level decisions that shape
+> implementation; gates may be lighter as patterns from System Design become
+> established.
 
-- Generating component design options
-- Creating interface specifications from requirements
-- Suggesting test strategies and test cases
-- Identifying edge cases and error scenarios
-- Creating boilerplate (interface specs, data models, component scaffolding)
+### AI Autonomy Spectrum
 
-**AI struggles with:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 3](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Organizational context (team skills, existing code)
-- Subtle business logic nuances
-- Knowing which conventions are already established
-
-**Best practices:**
-
-1. Provide System Design context to AI
-2. Reference existing conventions and patterns
-3. Use AI for exploration, human makes final decisions
-4. Iterate with AI based on review feedback
+| Activity                 | Human-Led                                  | Collaborative                                 | AI-Led                                                                                    |
+| ------------------------ | ------------------------------------------ | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Component design**     | Engineer designs; AI generates boilerplate | AI drafts component specs; engineer reviews   | AI drafts specs and flags cross-cutting concerns proactively; engineer validates          |
+| **Interface specs**      | Engineer specifies; AI suggests patterns   | AI drafts from requirements; engineer refines | AI drafts and identifies contract inconsistencies proactively; engineer validates         |
+| **Data/state changes**   | Engineer plans; AI suggests approach       | AI drafts migration plan; engineer reviews    | AI analyzes data dependencies and proposes migration with rollback; engineer validates    |
+| **Test strategy**        | Engineer plans; AI suggests cases          | AI drafts from ACs; engineer reviews          | AI cross-references requirements and design to identify coverage gaps; engineer validates |
+| **Edge case analysis**   | Engineer identifies; AI suggests scenarios | AI enumerates edge cases; engineer validates  | AI analyzes component interactions for edge cases proactively; engineer validates         |
+| **Implementation notes** | Engineer writes; AI suggests patterns      | AI drafts from design; engineer refines       | AI identifies implementation risks and patterns proactively; engineer validates           |
 
 ---
 
@@ -270,6 +273,6 @@ Verification stage what to test and how.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.12.0.

@@ -71,21 +71,30 @@ users."
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [AI assist only + runbook gates](../framework-ai-assistance.md#level-6-ai-assist-only--runbook-gates-production-sensitive)
+> — Production actions have high blast radius and require real-time context; AI
+> drafts and monitors, humans own approval gates.
 
-- Generating deployment scripts and runbooks
-- Creating monitoring dashboards and alert configs
-- Writing rollback procedures
-- Drafting stakeholder communications
-- Analyzing deployment metrics
+### AI Autonomy Spectrum
 
-**Human responsibilities:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 6](../framework-ai-assistance.md#level-6-ai-assist-only--runbook-gates-production-sensitive))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. Even at
+the AI-Led tier, **humans own all production approval gates; pipelines execute
+deployment steps**. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Approve deployment plan and timing
-- Make go/no-go and rollback decisions
-- Own stakeholder communication
-- Manage production access and security
-- Sign off on deployment success
+| Activity                | Human-Led                                 | Collaborative                                                          | AI-Led                                                                                              |
+| ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Runbook/playbook**    | Engineer writes; AI provides templates    | AI drafts from infrastructure specs; engineer reviews                  | AI generates and cross-references against recent incidents; engineer validates                      |
+| **Release readiness**   | Engineer compiles evidence manually       | AI drafts readiness assessment from pipeline results; engineer decides | AI proactively gathers evidence across stages, flags blockers; engineer decides                     |
+| **Gate approval**       | Engineer evaluates and approves promotion | AI summarizes risk and evidence; engineer approves                     | AI recommends with analysis of diff, coverage, and prior incidents; engineer approves               |
+| **Pipeline monitoring** | Engineer watches pipeline output          | AI monitors and highlights failures; engineer investigates             | AI monitors, correlates failures with recent changes; engineer validates                            |
+| **Rollout analysis**    | Engineer reviews metrics manually         | AI monitors canary metrics and flags anomalies; engineer decides       | AI analyzes metrics against baselines, recommends proceed or rollback; engineer decides             |
+| **Rollback decision**   | Engineer decides based on own analysis    | AI recommends with evidence; engineer decides                          | AI monitors health and proactively recommends rollback with root-cause hypothesis; engineer decides |
 
 ---
 
@@ -317,6 +326,6 @@ Deployment validates that measurement systems work in production. See
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.7.0.
