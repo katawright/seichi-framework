@@ -89,7 +89,7 @@ support runbook.
 
 ## Notes
 
-**Framework Version:** 0.14.0
+**Framework Version:** 0.15.0
 
 **Last Updated:** 2026-02-19
 

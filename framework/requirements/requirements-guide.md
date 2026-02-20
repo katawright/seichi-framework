@@ -57,157 +57,26 @@ rework from ambiguity.
 
 ---
 
-## Primary Audience
+## What Is Requirements?
 
-**Primary roles:** Business Analysts, Product Managers **Supporting roles:**
-Engineers, Architects, QA
+Requirements converts business objectives from the Initiation Brief into
+testable, prioritized specifications that drive design, implementation, and
+verification. It answers: _"What exactly must the system do?"_
 
-The language in Requirements artifacts is intentionally **business-focused with
-technical precision** — accessible to non-technical stakeholders while rigorous
-enough for engineering teams.
+**Purpose:**
 
----
-
-## Key Terms
-
-**Functional Requirements (FRs):** Testable statements of required system
-behavior. Numbered (FR-1, FR-2) for traceability.
-
-**Acceptance Criteria (ACs):** Objective, observable conditions that define
-"done" for a requirement. Given/When/Then format or measurable conditions.
-
-**Non-Functional Requirements (NFRs):** Quality attributes (performance,
-reliability, security, observability, compliance) that shape architecture and
-testing.
-
-**MoSCoW:** Coarse prioritization method — Must Have, Should Have, Could Have,
-Won't Have. See
-[Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization).
-
-> For detailed definitions, good/bad examples, and formatting guidance, see
-> [Requirements Reference: Terminology](requirements-reference.md#requirements-terminology).
+1. **Behavior specification** — define what the system must do in testable terms
+2. **Acceptance definition** — establish objective criteria for "done"
+3. **Quality attributes** — capture non-functional requirements that shape
+   architecture
+4. **Prioritization** — enable trade-off decisions with MoSCoW classification
+5. **Constraint capture** — document data, integration, and brownfield
+   limitations
+6. **Measurement bridge** — translate success metrics into observable NFRs
 
 ---
 
-## Why These Requirements Elements Matter
-
-Each section of the requirements brief serves a specific purpose. Key
-highlights:
-
-- **Success metrics** from Initiation establish the measurement throughline —
-  translate them into NFRs (see
-  [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline))
-- **MoSCoW prioritization** prevents scope creep and enables faster trade-off
-  decisions
-- **FRs + ACs** enable objective validation in Verification stage
-- **NFRs** (especially observability) shape architecture decisions and testing
-  strategy
-- **Data/integration constraints** prevent schedule slips from unexamined
-  limitations
-- **Edge cases** drive significant design complexity — document expected
-  behavior early
-
-> For section-by-section rationale, see
-> [Requirements Reference: Section Rationale](requirements-reference.md#why-each-requirements-section-matters).
-
----
-
-## Brownfield Projects
-
-For **brownfield projects** (extending existing systems), requirements must
-capture **existing system constraints** as NFRs. These define boundaries within
-which new work must operate.
-
-**Constraint categories:**
-
-1. Performance constraints (existing SLAs)
-2. Security policies (auth, encryption, audit)
-3. API contracts (backward compatibility)
-4. Data schemas (referential integrity, formats)
-5. Compliance requirements (GDPR, HIPAA, etc.)
-6. Architectural constraints (tech stack, patterns)
-7. Operational constraints (deployment windows, rollback)
-
-**Failing to capture constraints early** leads to late-stage design changes,
-performance regressions, breaking changes, and deployment failures.
-
-**How to capture:** Review existing docs, interview engineering teams, examine
-codebase, identify integration points, document as NFRs, validate with
-stakeholders.
-
-> For detailed constraint categories with examples, NFR templates, and
-> greenfield vs. brownfield comparison, see
-> [Requirements Reference: Brownfield Constraints](requirements-reference.md#brownfield-constraint-categories).
-
----
-
-## Common Pitfalls (and Fixes)
-
-- **Requirements describe UI, not behavior** → Rewrite as behavior: "The system
-  shall allow agents to search by customer phone number."
-
-- **Acceptance criteria are subjective** → Add observable signals: "Results in
-  <2s (p95); displays most recent timestamp."
-
-- **"Everything is Must Have"** → Force prioritization; Must Have is the minimum
-  usable set.
-
-- **NFRs added late** → Capture performance, security, scalability NFRs early.
-
-- **No observability NFRs** → Add observability NFRs for each success metric.
-
-- **Data/integration constraints ignored** → Document rate limits, SLAs, data
-  ownership early.
-
-- **Requirements not reviewed by engineering** → Conduct alignment reviews with
-  engineering.
-
-- **Edge cases discovered during testing** → Document top edge cases early.
-
----
-
-## When to Expand Beyond Minimal
-
-Expand Requirements only when needed:
-
-- **Regulated / compliance-heavy:** Add control requirements, compliance
-  sign-off
-- **Complex data migrations:** Add data mapping, transformation rules
-- **Multi-team interface work:** Add interface contracts, cross-team SLAs
-- **High availability / performance:** Add detailed SLOs, fault tolerance specs
-- **Security-sensitive:** Add threat model, audit requirements
-
-Otherwise, keep Requirements concise and move to System Design.
-
-> These triggers help you decide when to move from Minimal to Standard or
-> Enterprise. For full tier definitions and choosing criteria, see the
-> [Right-Sizing Guide](../right-sizing-guide.md).
-
----
-
-## When to Revisit Requirements
-
-Requirements is foundational but revisitable:
-
-**Triggers:**
-
-- System Design reveals better approach (pivot decision)
-- Business priorities shift or new constraints emerge
-- Technical infeasibility discovered
-- Stakeholder feedback indicates misalignment
-- Compliance or regulatory changes
-
-**Process:**
-
-1. Update Requirements Document with changes
-2. Conduct alignment review with stakeholders
-3. Re-run requirements-checklist.md
-4. Update System Design artifacts to reflect changes
-5. Assess impact on schedule/scope/risk
-
----
-
-## AI Assistance Guidance
+## AI Assistance
 
 **Why human gate:** Requirements involve business judgment, stakeholder
 alignment, and domain knowledge that AI cannot independently verify.
@@ -238,6 +107,184 @@ alignment, and domain knowledge that AI cannot independently verify.
 - Approve outputs
 - Ensure accuracy and testability
 - Resolve ambiguities and conflicts
+
+---
+
+## Right-Sizing Requirements
+
+Not every project needs comprehensive NFRs or formal stakeholder reviews. Match
+your Requirements effort to your project's risk tier.
+
+| Practice                        | Minimal                     | Standard                                     | Enterprise                                        |
+| ------------------------------- | --------------------------- | -------------------------------------------- | ------------------------------------------------- |
+| **Functional requirements**     | Brief behavior descriptions | Numbered FRs with testable statements        | Formal FRs with traceability matrix               |
+| **Acceptance criteria**         | Informal "done" definition  | Given/When/Then for each FR                  | Comprehensive ACs with edge cases documented      |
+| **NFRs**                        | Note key quality concerns   | Documented NFRs including observability      | Full NFR catalog with SLOs and compliance mapping |
+| **Prioritization**              | Informal must/nice-to-have  | MoSCoW classification for all requirements   | Weighted prioritization with stakeholder input    |
+| **Edge cases/data constraints** | Acknowledge known issues    | Document top edge cases and data constraints | Comprehensive edge case analysis, data mapping    |
+| **Stakeholder review**          | Informal check-in           | Alignment review with engineering            | Formal review cycles with sign-off                |
+| **Compliance**                  | Basic awareness             | Documented compliance requirements           | Full compliance matrix with audit trail           |
+
+Expand Requirements only when needed:
+
+- **Regulated / compliance-heavy:** Add control requirements, compliance
+  sign-off
+- **Complex data migrations:** Add data mapping, transformation rules
+- **Multi-team interface work:** Add interface contracts, cross-team SLAs
+- **High availability / performance:** Add detailed SLOs, fault tolerance specs
+- **Security-sensitive:** Add threat model, audit requirements
+
+Otherwise, keep Requirements concise and move to System Design.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
+## Requirements Workflow
+
+1. **Review Initiation Brief** — understand objectives, success criteria,
+   constraints, and non-goals
+2. **Draft functional requirements** — convert business objectives into testable
+   behavior statements (FR-1, FR-2, etc.)
+3. **Define acceptance criteria** — write objective, observable conditions for
+   each FR (Given/When/Then format)
+4. **Identify non-functional requirements** — capture quality attributes
+   including observability NFRs for success metrics
+5. **Capture brownfield constraints** — document existing system constraints as
+   NFRs (if applicable)
+6. **Prioritize with MoSCoW** — classify all requirements as Must Have, Should
+   Have, Could Have, or Won't Have
+7. **Review with engineering** — conduct alignment review to validate
+   feasibility and completeness
+8. **Prepare for Gate 2** — compile Requirements Document for the Gate 2
+   decision package
+
+---
+
+## Requirements Guidance
+
+### Primary Audience
+
+**Primary roles:** Business Analysts, Product Managers **Supporting roles:**
+Engineers, Architects, QA
+
+The language in Requirements artifacts is intentionally **business-focused with
+technical precision** — accessible to non-technical stakeholders while rigorous
+enough for engineering teams.
+
+### Key Terms
+
+**Functional Requirements (FRs):** Testable statements of required system
+behavior. Numbered (FR-1, FR-2) for traceability.
+
+**Acceptance Criteria (ACs):** Objective, observable conditions that define
+"done" for a requirement. Given/When/Then format or measurable conditions.
+
+**Non-Functional Requirements (NFRs):** Quality attributes (performance,
+reliability, security, observability, compliance) that shape architecture and
+testing.
+
+**MoSCoW:** Coarse prioritization method — Must Have, Should Have, Could Have,
+Won't Have. See
+[Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization).
+
+> For detailed definitions, good/bad examples, and formatting guidance, see
+> [Requirements Reference: Terminology](requirements-reference.md#requirements-terminology).
+
+### Why These Requirements Elements Matter
+
+Each section of the requirements brief serves a specific purpose. Key
+highlights:
+
+- **Success metrics** from Initiation establish the measurement throughline —
+  translate them into NFRs (see
+  [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline))
+- **MoSCoW prioritization** prevents scope creep and enables faster trade-off
+  decisions
+- **FRs + ACs** enable objective validation in Verification stage
+- **NFRs** (especially observability) shape architecture decisions and testing
+  strategy
+- **Data/integration constraints** prevent schedule slips from unexamined
+  limitations
+- **Edge cases** drive significant design complexity — document expected
+  behavior early
+
+> For section-by-section rationale, see
+> [Requirements Reference: Section Rationale](requirements-reference.md#why-each-requirements-section-matters).
+
+### Brownfield Projects
+
+For **brownfield projects** (extending existing systems), requirements must
+capture **existing system constraints** as NFRs. These define boundaries within
+which new work must operate.
+
+**Constraint categories:**
+
+1. Performance constraints (existing SLAs)
+2. Security policies (auth, encryption, audit)
+3. API contracts (backward compatibility)
+4. Data schemas (referential integrity, formats)
+5. Compliance requirements (GDPR, HIPAA, etc.)
+6. Architectural constraints (tech stack, patterns)
+7. Operational constraints (deployment windows, rollback)
+
+**Failing to capture constraints early** leads to late-stage design changes,
+performance regressions, breaking changes, and deployment failures.
+
+**How to capture:** Review existing docs, interview engineering teams, examine
+codebase, identify integration points, document as NFRs, validate with
+stakeholders.
+
+> For detailed constraint categories with examples, NFR templates, and
+> greenfield vs. brownfield comparison, see
+> [Requirements Reference: Brownfield Constraints](requirements-reference.md#brownfield-constraint-categories).
+
+### Common Pitfalls
+
+- **Requirements describe UI, not behavior** → Rewrite as behavior: "The system
+  shall allow agents to search by customer phone number."
+
+- **Acceptance criteria are subjective** → Add observable signals: "Results in
+  <2s (p95); displays most recent timestamp."
+
+- **"Everything is Must Have"** → Force prioritization; Must Have is the minimum
+  usable set.
+
+- **NFRs added late** → Capture performance, security, scalability NFRs early.
+
+- **No observability NFRs** → Add observability NFRs for each success metric.
+
+- **Data/integration constraints ignored** → Document rate limits, SLAs, data
+  ownership early.
+
+- **Requirements not reviewed by engineering** → Conduct alignment reviews with
+  engineering.
+
+- **Edge cases discovered during testing** → Document top edge cases early.
+
+---
+
+## When to Revisit Requirements
+
+Requirements is foundational but revisitable:
+
+**Triggers:**
+
+- System Design reveals better approach (pivot decision)
+- Business priorities shift or new constraints emerge
+- Technical infeasibility discovered
+- Stakeholder feedback indicates misalignment
+- Compliance or regulatory changes
+
+**Process:**
+
+1. Update Requirements Document with changes
+2. Conduct alignment review with stakeholders
+3. Re-run requirements-checklist.md
+4. Update System Design artifacts to reflect changes
+5. Assess impact on schedule/scope/risk
 
 ---
 

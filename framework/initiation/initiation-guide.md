@@ -43,61 +43,33 @@ get approval to invest in Requirements work.
 
 ---
 
-## Primary Audience
+## What Is Initiation?
 
-**Primary roles:** Product Managers, Business Analysts **Supporting roles:**
-Executives, Solutions Architect, Engineers
+Initiation establishes the business case for a project and secures approval to
+invest in detailed Requirements work. It answers the fundamental question:
+_"Should we pursue this idea?"_
+
+**Purpose:**
+
+1. **Problem definition** — articulate who is affected, what they can't do, and
+   why it matters
+2. **Business justification** — establish value, urgency, and strategic
+   alignment
+3. **Success definition** — set measurable criteria that flow through all later
+   stages
+4. **Scope boundaries** — define non-goals and assumptions to prevent scope
+   creep
+5. **Risk awareness** — identify unknowns that affect estimation and planning
+6. **Investment decision** — prepare the Gate 1 proceed/pivot/stop decision
 
 Any stakeholder with a project idea can use Initiation artifacts — no technical
 expertise or formal role required. The language is intentionally
-**business-focused** to enable non-technical stakeholders to independently
-initiate and scope projects with AI assistance.
+business-focused to enable non-technical stakeholders to independently initiate
+and scope projects with AI assistance.
 
 ---
 
-## Why These Initiation Elements Matter
-
-Each section of the initiation brief serves a specific purpose:
-
-- **Problem statement** — prevents solution-first bias; aligns stakeholders on
-  what's actually wrong
-- **Business case** — prioritization requires value and urgency
-- **Success metrics** — guardrails that keep delivery honest; flow through all
-  later stages (see
-  [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline))
-- **Non-goals** — boundary contract that prevents scope creep and reduces rework
-- **Assumptions** — hidden scope; making them explicit improves estimate honesty
-- **Risks** — estimate range is mostly a function of unknowns; manage early
-- **Options considered** — forces comparison of alternatives and trade-offs
-- **Range-based estimation** — early work is uncertain; point estimates create
-  false certainty
-- **Gate 1** — first decision gate; determines whether to invest in detailed
-  requirements work
-
-> For detailed rationale, examples, and formatting guidance for each section,
-> see [Initiation Reference](initiation-reference.md).
-
----
-
-## When to Expand Beyond Minimal
-
-Expand Initiation only when needed:
-
-- Regulated/compliance-heavy domain
-- Large data migrations
-- Material security/privacy impact
-- Multi-team dependency chain
-- Hard external deadlines
-
-Otherwise, keep the Brief concise and move quickly to Requirements.
-
-> These triggers help you decide when to move from Minimal to Standard or
-> Enterprise. For full tier definitions and choosing criteria, see the
-> [Right-Sizing Guide](../right-sizing-guide.md).
-
----
-
-## AI Assistance Guidance
+## AI Assistance
 
 **Why AI assist only:** Initiation involves non-technical business decisions
 that require human judgment, stakeholder alignment, and organizational context.
@@ -122,6 +94,111 @@ In either mode, AI can also:
 - Validate correctness
 - Approve outputs
 - Align stakeholders
+
+---
+
+## Right-Sizing Initiation
+
+Not every project needs a formal business case or comprehensive risk assessment.
+Match your Initiation effort to your project's risk tier.
+
+| Practice                  | Minimal                       | Standard                                    | Enterprise                                           |
+| ------------------------- | ----------------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| **Problem statement**     | Brief description of the need | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
+| **Business case**         | Informal justification        | Value, urgency, and strategic alignment     | Formal business case with financial analysis         |
+| **Success criteria**      | 1-2 measurable outcomes       | 3-5 criteria with baselines and targets     | Comprehensive KPIs with measurement plans            |
+| **Non-goals/assumptions** | Quick list                    | 3-5 explicit non-goals, key assumptions     | Detailed boundary analysis with stakeholder review   |
+| **Risk assessment**       | Mental note of key risks      | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
+| **Estimation**            | Rough range                   | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
+| **Gate 1 process**        | Informal team agreement       | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
+
+Expand Initiation only when needed:
+
+- **Regulated / compliance-heavy:** Add compliance requirements, formal sign-off
+- **Large data migrations:** Add data scope analysis, migration risks
+- **Material security / privacy impact:** Add threat summary, privacy
+  considerations
+- **Multi-team dependency chain:** Add cross-team coordination, dependency
+  mapping
+- **Hard external deadlines:** Add timeline constraints, phased delivery options
+
+Otherwise, keep the Brief concise and move quickly to Requirements.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
+## Initiation Workflow
+
+1. **Define problem statement** — articulate who is affected, what they can't
+   do, why, and the business impact
+2. **Build business case** — establish value, urgency, and strategic alignment
+3. **Define success criteria** — set measurable outcomes with baselines and
+   targets
+4. **Identify non-goals, assumptions, and risks** — establish scope boundaries
+   and surface unknowns
+5. **Consider options** — compare alternatives and trade-offs
+6. **Estimate** — provide range-based estimates with confidence labels
+7. **Prepare Gate 1 decision** — compile the Initiation Brief for
+   proceed/pivot/stop review
+
+---
+
+## Initiation Guidance
+
+### Primary Audience
+
+**Primary roles:** Product Managers, Business Analysts **Supporting roles:**
+Executives, Solutions Architect, Engineers
+
+Any stakeholder with a project idea can use Initiation artifacts — no technical
+expertise or formal role required. The language is intentionally
+**business-focused** to enable non-technical stakeholders to independently
+initiate and scope projects with AI assistance.
+
+### Why These Initiation Elements Matter
+
+Each section of the initiation brief serves a specific purpose:
+
+- **Problem statement** — prevents solution-first bias; aligns stakeholders on
+  what's actually wrong
+- **Business case** — prioritization requires value and urgency
+- **Success metrics** — guardrails that keep delivery honest; flow through all
+  later stages (see
+  [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline))
+- **Non-goals** — boundary contract that prevents scope creep and reduces rework
+- **Assumptions** — hidden scope; making them explicit improves estimate honesty
+- **Risks** — estimate range is mostly a function of unknowns; manage early
+- **Options considered** — forces comparison of alternatives and trade-offs
+- **Range-based estimation** — early work is uncertain; point estimates create
+  false certainty
+- **Gate 1** — first decision gate; determines whether to invest in detailed
+  requirements work
+
+> For detailed rationale, examples, and formatting guidance for each section,
+> see [Initiation Reference](initiation-reference.md).
+
+---
+
+## When to Revisit Initiation
+
+**Triggers:**
+
+- Business priorities shift or strategic context changes
+- Stakeholder feedback indicates misalignment on objectives
+- Market changes or competitive landscape shifts
+- Success criteria need revision based on new information
+- Scope boundaries (non-goals/assumptions) prove incorrect
+
+**Process:**
+
+1. Revisit the Initiation Brief with updated context
+2. Re-validate problem statement and business case
+3. Update success criteria if objectives changed
+4. Re-run the initiation checklist
+5. Communicate changes to downstream stages
 
 ---
 

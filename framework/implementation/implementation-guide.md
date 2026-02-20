@@ -62,6 +62,35 @@ accelerating each step.
 
 ---
 
+## AI Assistance
+
+**AI excels at:**
+
+- Generating code from design specifications
+- Implementing standard patterns (CRUD, auth, validation)
+- Writing unit tests from acceptance criteria
+- Creating data models and API endpoints
+- Generating documentation and code comments
+- Suggesting refactoring improvements
+
+**Human responsibilities:**
+
+- Code review and approval — validate AI-generated code
+- Security review — check for vulnerabilities
+- Business logic correctness — verify requirements met
+- Test quality — ensure tests are meaningful
+- Final merge decision — human owns this
+
+**Best practices:**
+
+1. AI generates, human validates — never merge without review
+2. Test AI code thoroughly — verify it works
+3. Review for security — injection, auth, XSS
+4. Validate test quality — meaningful assertions
+5. Iterative refinement — use AI to address feedback
+
+---
+
 ## Right-Sizing Implementation
 
 Not every project needs formal pull request processes or comprehensive
@@ -76,7 +105,23 @@ instrumentation. Match your Implementation effort to your project's risk tier.
 | **Security practices** | Avoid known vulnerabilities        | Dependency scanning, basic security review      | SAST/DAST scanning, security review gates          |
 | **PR size/process**    | Commit directly or small PRs       | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
 
-> For tier definitions and choosing criteria, see the
+Expand Implementation only when needed:
+
+- **Regulated / compliance-heavy:** Add formal code review audit trail,
+  compliance traceability
+- **Security-sensitive code:** Add SAST/DAST scanning, dedicated security review
+  gates
+- **High-traffic / performance-critical:** Add performance benchmarks,
+  structured observability, load testing in CI
+- **Multi-team or shared codebase:** Add PR review policies, branch protection,
+  change management
+- **Complex business logic:** Add comprehensive unit tests with mutation
+  testing, detailed ADRs
+
+Otherwise, keep Implementation lightweight and move to Verification.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../right-sizing-guide.md).
 
 ---
@@ -126,7 +171,9 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
 ---
 
-## Code Quality
+## Implementation Guidance
+
+### Code Quality
 
 Follow SOLID, DRY, KISS, and YAGNI principles. Consult your team's standards or
 ask your AI agent for guidance.
@@ -137,9 +184,7 @@ maintainability, testability, error handling, standards compliance.
 > For detailed code review focus areas and code quality check templates, see
 > [Implementation Reference: Code Review](implementation-reference.md#code-review-focus-areas).
 
----
-
-## Implementation Decision Records (ADRs)
+### Implementation Decision Records (ADRs)
 
 For significant decisions, create ADRs using the framework's template
 (`../../adr-template.md`).
@@ -155,9 +200,7 @@ easily reversible.
 
 Store in `implementation/adr/` with sequential numbering.
 
----
-
-## Instrumentation and Observability
+### Instrumentation and Observability
 
 Implement the measurement infrastructure designed in the System Design stage.
 Success criteria from Initiation must be measurable in production — see
@@ -175,9 +218,7 @@ Success criteria from Initiation must be measurable in production — see
 > [Implementation Reference: Logging](implementation-reference.md#logging-best-practices)
 > and [Metrics](implementation-reference.md#metrics-and-telemetry).
 
----
-
-## Additional Topics
+### Additional Topics
 
 The [Implementation Reference](implementation-reference.md) covers these topics
 in depth:
@@ -192,35 +233,6 @@ in depth:
   signs
 - **Unit testing details** — coverage targets, test organization, scenario
   categories
-
----
-
-## AI-Assisted Implementation
-
-**AI excels at:**
-
-- Generating code from design specifications
-- Implementing standard patterns (CRUD, auth, validation)
-- Writing unit tests from acceptance criteria
-- Creating data models and API endpoints
-- Generating documentation and code comments
-- Suggesting refactoring improvements
-
-**Human responsibilities:**
-
-- Code review and approval — validate AI-generated code
-- Security review — check for vulnerabilities
-- Business logic correctness — verify requirements met
-- Test quality — ensure tests are meaningful
-- Final merge decision — human owns this
-
-**Best practices:**
-
-1. AI generates, human validates — never merge without review
-2. Test AI code thoroughly — verify it works
-3. Review for security — injection, auth, XSS
-4. Validate test quality — meaningful assertions
-5. Iterative refinement — use AI to address feedback
 
 ---
 
