@@ -70,22 +70,28 @@ implementation realities, and validates acceptance criteria.
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [High AI assistance with CI gates](../framework-ai-assistance.md#level-5-high-ai-assistance-with-ci-gates)
+> — Tests are self-verifying, so AI can iterate until objective gates pass;
+> humans validate test quality and coverage intent.
 
-- Generating test cases from acceptance criteria
-- Creating test matrices for edge cases
-- Writing integration and E2E tests
-- Generating test data and fixtures
-- Analyzing test results and patterns
-- Identifying coverage gaps
+### AI Autonomy Spectrum
 
-**Human responsibilities:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 5](../framework-ai-assistance.md#level-5-high-ai-assistance-with-ci-gates))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Approve test strategy and coverage
-- Decide go/no-go for deployment
-- Prioritize defect fixes vs. deferral
-- Sign off on UAT and production readiness
-- Assess acceptable risk levels
+| Activity          | Human-Led                                   | Collaborative                                         | AI-Led                                                                         |
+| ----------------- | ------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Test strategy** | Engineer plans; AI suggests additions       | AI drafts strategy from ACs; engineer refines         | AI analyzes code and requirements to generate strategy; engineer validates     |
+| **Test writing**  | Engineer writes tests; AI suggests cases    | AI drafts tests; engineer reviews coverage            | AI writes and iterates until CI passes                                         |
+| **Test data**     | Engineer creates data; AI generates samples | AI generates realistic test data; engineer validates  | AI manages test data lifecycle; engineer spot-checks                           |
+| **Defect triage** | Engineer analyzes; AI surfaces patterns     | AI classifies and suggests priority; engineer decides | AI identifies patterns across defects and triages; engineer validates severity |
+| **UAT support**   | Engineer runs UAT; AI documents results     | AI drafts UAT scripts; engineer facilitates           | AI generates UAT scenarios; engineer facilitates with stakeholders             |
+| **Go/no-go**      | Engineer compiles evidence; AI summarizes   | AI drafts readiness report; engineer decides          | AI compiles evidence and proactively flags risks; engineer decides             |
 
 ---
 
@@ -274,6 +280,6 @@ Verification validates that measurement systems work correctly. See
 
 ## Notes
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.6.0.

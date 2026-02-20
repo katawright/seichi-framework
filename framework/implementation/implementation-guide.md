@@ -64,30 +64,28 @@ accelerating each step.
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [High AI assistance in bounded scope](../framework-ai-assistance.md#level-4-high-ai-assistance-in-bounded-scope)
+> — Implementation outputs are highly verifiable through tests and CI, enabling
+> AI to iterate quickly within defined boundaries.
 
-- Generating code from design specifications
-- Implementing standard patterns (CRUD, auth, validation)
-- Writing unit tests from acceptance criteria
-- Creating data models and API endpoints
-- Generating documentation and code comments
-- Suggesting refactoring improvements
+### AI Autonomy Spectrum
 
-**Human responsibilities:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 4](../framework-ai-assistance.md#level-4-high-ai-assistance-in-bounded-scope))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Code review and approval — validate AI-generated code
-- Security review — check for vulnerabilities
-- Business logic correctness — verify requirements met
-- Test quality — ensure tests are meaningful
-- Final merge decision — human owns this
-
-**Best practices:**
-
-1. AI generates, human validates — never merge without review
-2. Test AI code thoroughly — verify it works
-3. Review for security — injection, auth, XSS
-4. Validate test quality — meaningful assertions
-5. Iterative refinement — use AI to address feedback
+| Activity          | Human-Led                                  | Collaborative                                | AI-Led                                                                                     |
+| ----------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Code writing**  | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews    | AI implements full slices, identifies integration issues; engineer validates               |
+| **Unit tests**    | Engineer writes; AI suggests cases         | AI drafts tests from ACs; engineer validates | AI writes and iterates until passing                                                       |
+| **Code review**   | Full line-by-line review of AI output      | Human reviews diffs + AI summary             | Human reviews intent + CI results                                                          |
+| **PR process**    | Engineer creates PR with AI assistance     | AI drafts PR; engineer reviews and submits   | AI creates PR; engineer reviews and merges                                                 |
+| **Refactoring**   | Engineer directs each change; AI suggests  | AI proposes refactors; engineer approves     | AI identifies refactoring opportunities and executes within boundaries; engineer validates |
+| **Documentation** | Engineer writes; AI suggests improvements  | AI drafts docs from code; engineer reviews   | AI identifies documentation gaps and maintains docs; engineer spot-checks                  |
 
 ---
 
@@ -269,6 +267,6 @@ in depth:
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.5.0.

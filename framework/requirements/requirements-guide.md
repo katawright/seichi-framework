@@ -78,35 +78,28 @@ verification. It answers: _"What exactly must the system do?"_
 
 ## AI Assistance
 
-**Why human gate:** Requirements involve business judgment, stakeholder
-alignment, and domain knowledge that AI cannot independently verify.
+> **Assistance level:**
+> [AI agent with human gate](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)
+> — Requirements involve business judgment, stakeholder alignment, and domain
+> knowledge that AI cannot independently verify.
 
-**Two modes of AI assistance** (matching the Initiation pattern):
+### AI Autonomy Spectrum
 
-- **Interview mode:** AI conducts structured interviews based on the
-  [Requirements Brief Template](requirements-brief-template.md) and the
-  Initiation Brief. It asks clarifying questions about user needs, edge cases,
-  and constraints, then drafts requirements for human review.
-- **Review mode:** Human drafts requirements independently, then asks AI to
-  review for completeness, testability, ambiguity, and suggest improvements.
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 2](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)) sets
+the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-**AI's role:**
-
-- Draft requirements from Initiation Brief
-- Conduct structured stakeholder interviews to surface requirements
-- Suggest acceptance criteria and NFRs
-- Simulate stakeholder perspectives to surface edge cases
-- Generate NFRs from success metrics (observability, performance)
-- Identify gaps in acceptance criteria
-- Analyze completeness (run checklist)
-
-**Human's role:**
-
-- Own all decisions
-- Validate with stakeholders (alignment reviews)
-- Approve outputs
-- Ensure accuracy and testability
-- Resolve ambiguities and conflicts
+| Activity                    | Human-Led                                     | Collaborative                                         | AI-Led                                                                                          |
+| --------------------------- | --------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Functional requirements** | Human writes FRs; AI reviews for gaps         | AI drafts FRs from brief; human validates             | AI drafts FRs and proactively flags contradictions and gaps; human validates                    |
+| **Acceptance criteria**     | Human writes ACs; AI suggests edge cases      | AI drafts ACs per FR; human refines                   | AI generates ACs and identifies untestable criteria proactively; human validates                |
+| **NFRs**                    | Human identifies NFRs; AI suggests categories | AI drafts NFRs from success criteria; human validates | AI cross-references requirements to surface missing NFRs; human validates                       |
+| **Prioritization**          | Human prioritizes; AI suggests trade-offs     | AI proposes MoSCoW classification; human decides      | AI analyzes dependencies and constraints to recommend priorities; human decides                 |
+| **Edge case analysis**      | Human identifies; AI suggests additions       | AI enumerates edge cases; human validates relevance   | AI researches similar systems for edge cases proactively; human validates                       |
+| **Stakeholder interviews**  | Human leads; AI takes notes                   | AI conducts structured interview; human guides        | AI drives interview, adapts questions from prior answers, flags contradictions; human validates |
 
 ---
 
@@ -299,6 +292,6 @@ Requirements is foundational but revisitable:
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.3.0.

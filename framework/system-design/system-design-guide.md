@@ -74,30 +74,28 @@ architecture and technical approach for the entire project.
 
 ## AI Assistance
 
-**AI excels at:**
+> **Assistance level:**
+> [AI agent with strong gates](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates)
+> — System Design produces foundational decisions with high blast radius,
+> requiring specialized review and architectural judgment.
 
-- Generating architecture options
-- Analyzing trade-offs between approaches
-- Suggesting design patterns for common scenarios
-- Creating boilerplate (data models, ADRs)
-- Generating diagram-as-code (Mermaid, PlantUML) as first drafts — layout and
-  details typically need human refinement
-- Identifying edge cases and security concerns
+### AI Autonomy Spectrum
 
-**AI struggles with:**
+Match AI's role to your team's autonomy comfort level. The assistance level for
+this stage
+([Level 3](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates))
+sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
 
-- Organizational context (team skills, infrastructure)
-- Business priorities and long-term maintainability
-- Producing publication-ready diagrams without human refinement
-- Subtle security nuances
-
-**Best practices:**
-
-1. Use AI for exploration — generate multiple options
-2. Human makes final decisions based on context
-3. Validate AI suggestions with experienced engineers
-4. Iterate with AI based on review feedback
-5. Document decisions in ADRs (note AI assistance)
+| Activity                    | Human-Led                                   | Collaborative                                     | AI-Led                                                                                             |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Architecture design**     | Architect designs; AI suggests patterns     | AI proposes options; architect selects            | AI evaluates requirements against patterns, identifies trade-offs proactively; architect validates |
+| **Technology selection**    | Architect evaluates; AI provides research   | AI compares options; architect decides            | AI researches options, analyzes cost and fit proactively; architect validates                      |
+| **ADR drafting**            | Architect writes; AI suggests structure     | AI drafts ADRs; architect reviews                 | AI identifies decisions needing ADRs, drafts with trade-off analysis; architect validates          |
+| **Increment planning**      | Architect plans; AI suggests sequencing     | AI drafts plan from priorities; architect refines | AI analyzes dependencies and risks to propose sequencing; architect validates                      |
+| **Security design**         | Architect designs; AI suggests threat model | AI drafts threat model; architect validates       | AI proactively identifies attack surfaces from architecture; architect validates                   |
+| **Infrastructure planning** | Architect plans; AI provides templates      | AI drafts plan; architect reviews                 | AI evaluates requirements against infrastructure patterns; architect validates                     |
 
 ---
 
@@ -337,6 +335,6 @@ depth:
 
 ## Notes
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.12.0.
