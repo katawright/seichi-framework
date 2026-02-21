@@ -88,6 +88,14 @@ sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                           | Collaborative                           | AI-Led                                                                    |
+| ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| Human designs; AI suggests patterns | AI proposes architecture; human decides | AI evaluates trade-offs proactively, identifies concerns; human validates |
+
+**By activity:**
+
 | Activity                    | Human-Led                                   | Collaborative                                     | AI-Led                                                                                             |
 | --------------------------- | ------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | **Architecture design**     | Architect designs; AI suggests patterns     | AI proposes options; architect selects            | AI evaluates requirements against patterns, identifies trade-offs proactively; architect validates |

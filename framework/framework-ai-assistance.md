@@ -288,8 +288,8 @@ protections, and permissions.
 **What it means:**
 
 - AI can draft the plan, checklists, and scripts
-- **Humans execute production actions**, following a runbook and approval
-  process
+- **Humans own all production approval gates**, following a runbook and approval
+  process; pipelines execute deployment steps
 - AI provides guidance but cannot take production-impacting actions
 
 **Why this exists:**
@@ -343,14 +343,18 @@ This simple rule captures the core tradeoff:
 
 ### Adapting to Your Organization
 
-**Increase assistance when:**
+The [AI Autonomy Spectrum](#ai-autonomy-spectrum) provides structured guidance
+for adjusting AI's role to your organization's comfort level. As a quick rule of
+thumb:
+
+**Lean toward AI-Led when:**
 
 - Team has strong CI/CD pipelines and automated testing
 - Organization has high risk tolerance for development environments
 - Engineers are comfortable with AI tooling
 - Rollback procedures are well-established
 
-**Decrease assistance when:**
+**Lean toward Human-Led when:**
 
 - Working in regulated industries (finance, healthcare, defense)
 - Team is new to AI-assisted development
@@ -359,11 +363,10 @@ This simple rule captures the core tradeoff:
 
 ### Practical Takeaway
 
-**AI is strongest where outputs are machine-checkable:** implementation
-
-- testing. It's still highly useful in requirements/design/support, but you need
-  explicit human gates because correctness is less objectively verifiable and
-  impact can be high.
+**AI is strongest where outputs are machine-checkable:** implementation and
+testing. It's still highly useful in requirements/design/support, but you need
+explicit human gates because correctness is less objectively verifiable and
+impact can be high.
 
 Focus your AI adoption efforts on stages with high verifiability first
 (Implementation, Verification), then expand to other stages as your team builds
@@ -399,8 +402,101 @@ explorations that respect the assistance levels defined in this scorecard.
 
 ---
 
+## AI Autonomy Spectrum
+
+The scorecard above defines **assistance levels** — how far AI can go before a
+human gate. But within any given level, teams differ in _how much AI drives the
+work_. A cautious team and a progressive team can both operate at Level 4 (High
+AI Assistance in Bounded Scope) yet look very different day to day.
+
+The AI Autonomy Spectrum addresses this by describing three tiers of AI
+involvement. It operates **within** the assistance levels — levels set the
+ceiling based on risk and verifiability; the spectrum adjusts who drives versus
+who assists beneath that ceiling.
+
+### Tier Definitions
+
+| Tier              | Philosophy                 | AI Role                                                                                                                  |
+| ----------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Human-Led**     | Humans drive, AI assists   | AI produces drafts and options on request; humans direct every step and make every decision                              |
+| **Collaborative** | Shared work with gates     | AI executes tasks within human-set agenda; humans review and approve at defined gates                                    |
+| **AI-Led**        | AI drives, humans validate | AI drives the process — setting agendas, identifying gaps, iterating proactively; humans steer and validate at key gates |
+
+**Collaborative is the default.** The guidance elsewhere in this scorecard and
+in each stage guide assumes the Collaborative tier. If your team is just getting
+started, Collaborative is a safe starting point.
+
+### Cross-Stage Summary
+
+This table shows how the three tiers manifest across all eight stages. Each
+stage guide contains a detailed activity-level table in its AI Assistance
+section.
+
+| Stage                          | Human-Led                                  | Collaborative                                         | AI-Led                                                                          |
+| ------------------------------ | ------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Initiation** (Level 1)       | Human drafts; AI answers questions         | AI interviews and drafts brief; human reviews         | AI drives discovery, cross-references for gaps; human validates                 |
+| **Requirements** (Level 2)     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts and proactively flags contradictions and gaps; human validates        |
+| **System Design** (Level 3)    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs proactively, identifies concerns; human validates       |
+| **Increment Design** (Level 3) | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts and flags cross-cutting concerns proactively; human validates         |
+| **Implementation** (Level 4)   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI implements full slices, identifies issues; engineer validates                |
+| **Verification** (Level 5)     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent                 |
+| **Deployment** (Level 6)       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
+| **Support** (Level 2)          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and identifies patterns proactively; engineer validates             |
+
+**Note:** Even at the AI-Led tier, the assistance level ceiling still applies.
+For example, Deployment (Level 6) requires humans to own all production approval
+gates regardless of autonomy tier; pipelines execute deployment steps.
+
+### Choosing Your Tier
+
+Your autonomy tier can — and should — vary by stage. A team might be AI-Led for
+Implementation (high verifiability, fast feedback) but Human-Led for Deployment
+(high risk, low tolerance for error).
+
+**Signals you're ready for AI-Led:**
+
+- Strong automated testing and CI/CD pipelines
+- Team has experience reviewing AI-generated output
+- Clear rollback procedures exist
+- The stage's outputs are highly verifiable (machine-checkable)
+- AI has sufficient context to identify gaps and cross-cutting concerns
+- Team trusts AI to drive the agenda (not just execute tasks)
+- Organization has established AI governance policies
+
+**Signals to stay Human-Led:**
+
+- Team is new to AI-assisted development
+- Outputs require significant domain judgment to verify
+- Regulatory or compliance constraints limit AI involvement
+- Limited automated testing or CI/CD maturity
+- Organization is still developing AI trust
+
+**Signals for Collaborative (good default):**
+
+- Team has some AI experience but wants human checkpoints
+- Mix of verifiable and judgment-dependent outputs
+- Moderate risk tolerance
+- Established review processes that can incorporate AI output
+
+### Your Tier Can Evolve
+
+Teams typically progress from Human-Led to Collaborative to AI-Led as they build
+confidence:
+
+1. **Start Human-Led** — learn AI strengths and weaknesses in your context
+2. **Move to Collaborative** — let AI drive routine work while humans gate
+   decisions
+3. **Advance to AI-Led** — give AI maximum independence where outputs are
+   verifiable and risk is managed
+
+Reassess your tier periodically — after major milestones, incidents, or team
+changes. Moving backward is healthy if circumstances change (new regulations,
+team turnover, new domain).
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.9.0.

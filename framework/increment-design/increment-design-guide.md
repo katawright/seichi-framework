@@ -88,6 +88,14 @@ sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                               | Collaborative                                     | AI-Led                                                                  |
+| --------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------- |
+| Human designs; AI generates boilerplate | AI drafts component and test specs; human reviews | AI drafts and flags cross-cutting concerns proactively; human validates |
+
+**By activity:**
+
 | Activity                 | Human-Led                                  | Collaborative                                 | AI-Led                                                                                    |
 | ------------------------ | ------------------------------------------ | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | **Component design**     | Engineer designs; AI generates boilerplate | AI drafts component specs; engineer reviews   | AI drafts specs and flags cross-cutting concerns proactively; engineer validates          |

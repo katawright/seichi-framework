@@ -22,9 +22,9 @@ team context.
 
 ---
 
-## The Two Dimensions
+## The Three Dimensions
 
-Right-sizing has two independent dimensions:
+Right-sizing has three independent dimensions:
 
 ### Project Risk → _What_ Practices
 
@@ -47,6 +47,28 @@ See
 [Framework Guide: Right-Sizing Your Process](framework-guide.md#right-sizing-your-process)
 for detailed guidance on solo, small-team, and large-team formality adjustments.
 
+### AI Autonomy → _How Much AI Drives_
+
+AI autonomy determines how independently AI operates within each stage's
+assistance level. The [AI Assistance Scorecard](framework-ai-assistance.md)
+defines three tiers:
+
+| Tier              | Philosophy                 | AI Role                                                                                                     |
+| ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Human-Led**     | Humans drive, AI assists   | AI produces drafts and options on request; humans direct every step and make every decision                 |
+| **Collaborative** | Shared work with gates     | AI executes tasks within human-set agenda; humans review and approve at defined gates                       |
+| **AI-Led**        | AI drives, humans validate | AI drives the process — setting agendas, identifying gaps, iterating proactively; humans steer and validate |
+
+Your autonomy tier can vary by stage — a team might be AI-Led for Implementation
+but Human-Led for Deployment. Tiers evolve as teams build confidence with AI
+tooling.
+
+For detailed tier definitions, cross-stage summary, and choosing guidance, see
+the
+[AI Assistance Scorecard: AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum).
+Each stage guide also includes a stage-specific autonomy table in its AI
+Assistance section.
+
 ### How the Dimensions Interact
 
 |                | Solo / Small Team                                                                             | Large Team                                                                             |
@@ -55,10 +77,10 @@ for detailed guidance on solo, small-team, and large-team formality adjustments.
 | **Standard**   | Solid practices, lighter ceremony — self-review or pair review, internal SLOs, basic runbooks | Full ceremony — PR reviews, documented SLOs, on-call rotation, runbooks                |
 | **Enterprise** | All required practices, adapted for small scale — one person may fill multiple roles          | Full formality — dedicated roles, formal gates, audit trails, compliance documentation |
 
-**Key insight:** Tier determines _what_ you do. Team size determines _how much
-ceremony_ surrounds it. A solo developer on an Enterprise project still needs
-security reviews and compliance checks — they just don't need a change advisory
-board.
+**Key insight:** Risk tier determines _what_ you do. Team size determines _how
+much ceremony_ surrounds it. AI autonomy determines _how much AI drives_ the
+work. A solo developer on an Enterprise project still needs security reviews and
+compliance checks — they just don't need a change advisory board.
 
 ---
 
@@ -163,6 +185,6 @@ sections which serve as right-sizing triggers:
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.13.0.

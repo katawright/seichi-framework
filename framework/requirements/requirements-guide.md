@@ -92,6 +92,14 @@ the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                     | Collaborative                              | AI-Led                                                                   |
+| ----------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
+| Human writes reqs; AI reviews | AI drafts reqs from brief; human validates | AI drafts and proactively flags contradictions and gaps; human validates |
+
+**By activity:**
+
 | Activity                    | Human-Led                                     | Collaborative                                         | AI-Led                                                                                          |
 | --------------------------- | --------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Functional requirements** | Human writes FRs; AI reviews for gaps         | AI drafts FRs from brief; human validates             | AI drafts FRs and proactively flags contradictions and gaps; human validates                    |

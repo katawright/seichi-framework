@@ -78,6 +78,14 @@ sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                                  | Collaborative                                     | AI-Led                                                           |
+| ------------------------------------------ | ------------------------------------------------- | ---------------------------------------------------------------- |
+| Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full slices, identifies issues; engineer validates |
+
+**By activity:**
+
 | Activity          | Human-Led                                  | Collaborative                                | AI-Led                                                                                     |
 | ----------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | **Code writing**  | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews    | AI implements full slices, identifies integration issues; engineer validates               |

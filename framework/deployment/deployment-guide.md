@@ -87,6 +87,14 @@ deployment steps**. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                             | Collaborative                       | AI-Led                                                                          |
+| ------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------- |
+| Engineer writes runbook; AI templates | AI drafts runbook; engineer reviews | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
+
+**By activity:**
+
 | Activity                | Human-Led                                 | Collaborative                                                          | AI-Led                                                                                              |
 | ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | **Runbook/playbook**    | Engineer writes; AI provides templates    | AI drafts from infrastructure specs; engineer reviews                  | AI generates and cross-references against recent incidents; engineer validates                      |

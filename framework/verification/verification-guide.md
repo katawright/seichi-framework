@@ -84,6 +84,14 @@ sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                                | Collaborative                                         | AI-Led                                                          |
+| ---------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
+| Engineer writes tests; AI suggests cases | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent |
+
+**By activity:**
+
 | Activity          | Human-Led                                   | Collaborative                                         | AI-Led                                                                         |
 | ----------------- | ------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------ |
 | **Test strategy** | Engineer plans; AI suggests additions       | AI drafts strategy from ACs; engineer refines         | AI analyzes code and requirements to generate strategy; engineer validates     |

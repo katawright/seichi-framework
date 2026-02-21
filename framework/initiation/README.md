@@ -76,7 +76,7 @@ starting point.
 
 ## Notes
 
-**Framework Version:** 0.15.0
+**Framework Version:** 0.16.0
 
 **Last Updated:** 2026-02-16
 
