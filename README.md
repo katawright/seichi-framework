@@ -4,6 +4,11 @@
 
 A practical framework for integrating AI assistance into software development.
 
+## Getting Started
+
+New here? Read the [Quick Start Guide](framework/framework-quickstart.md) for a
+brief overview of the framework.
+
 ## Status
 
 Phase 1: Framework Development — **Complete** (all 8 stages documented)  
