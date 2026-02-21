@@ -84,6 +84,14 @@ sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                          | Collaborative                                 | AI-Led                                                          |
+| ---------------------------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| Human drafts; AI answers questions | AI interviews and drafts brief; human reviews | AI drives discovery, cross-references for gaps; human validates |
+
+**By activity:**
+
 | Activity              | Human-Led                                | Collaborative                                      | AI-Led                                                                                          |
 | --------------------- | ---------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Problem statement** | Human writes; AI reviews for clarity     | AI interviews using template; human refines        | AI drives discovery, cross-references for contradictions; human validates                       |

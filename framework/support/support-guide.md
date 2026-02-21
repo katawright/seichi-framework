@@ -86,6 +86,14 @@ the ceiling; this spectrum adjusts who drives within that ceiling. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
+**At a glance:**
+
+| Human-Led                          | Collaborative                                     | AI-Led                                                              |
+| ---------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------- |
+| Engineer triages; AI surfaces data | AI triages and drafts responses; engineer decides | AI monitors and identifies patterns proactively; engineer validates |
+
+**By activity:**
+
 | Activity                       | Human-Led                                            | Collaborative                                               | AI-Led                                                                                         |
 | ------------------------------ | ---------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | **Monitoring**                 | Engineer reviews dashboards; AI highlights anomalies | AI monitors and alerts; engineer investigates               | AI monitors and identifies patterns across incidents; engineer validates escalations           |

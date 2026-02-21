@@ -372,6 +372,13 @@ human gates as risk increases.
 | 7   | Deployment       | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute      |
 | 8   | Support          | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates     |
 
+Within each assistance level, teams also choose an **AI autonomy tier** —
+Human-Led, Collaborative, or AI-Led — that adjusts who drives the process. The
+assistance level sets the ceiling; the autonomy tier adjusts whether humans set
+the agenda (Collaborative) or AI drives it proactively (AI-Led). See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum)
+for tier definitions and guidance.
+
 For full assistance level definitions (6 levels) and operational guidance, see
 the [AI Assistance Scorecard](framework-ai-assistance.md).
 
@@ -661,6 +668,6 @@ formal_ and _how coordinated_.
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-20
 
 Added to framework in v0.9.0.
