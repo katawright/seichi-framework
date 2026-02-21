@@ -3,6 +3,9 @@
 > Framework-wide concepts that apply across all stages. Stage-specific guidance
 > is in each stage's guide.
 
+> **Looking for a brief overview?** See the
+> [Quick Start Guide](framework-quickstart.md).
+
 ---
 
 ## What Is This Framework?
@@ -32,8 +35,8 @@ the organization.
 
 **Target audiences:**
 
-- **Primary:** Engineers who may be skeptical about AI tools or unfamiliar with
-  AI's strengths and weaknesses
+- **Primary:** Engineers who may be new to AI tools or unfamiliar with AI's
+  strengths and weaknesses
 - **Secondary:** Product Managers, Business Analysts, Marketing, and Executives
   who need to initiate and plan projects
 - **Tertiary:** Any organization seeking a structured approach to integrating AI
