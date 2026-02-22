@@ -9,6 +9,18 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.18.1] - 2026-02-22
+
+### Fixed
+
+- Reordered sections in `framework/README.md` (Quick Start Guide) so What / Why
+  / Who appear first, followed by Is This Framework Right for You? and Get
+  Started, before the deeper-context sections (Business Case, Adoption Path,
+  Stages, Governance)
+- Renamed `framework/framework-quickstart.md` → `framework/README.md` so GitHub
+  auto-renders the Quick Start Guide when browsing the `framework/` directory
+- Updated all cross-references to `framework-quickstart.md` across 4 files
+
 ## [0.3.0] - 2026-02-09
 
 ### Added

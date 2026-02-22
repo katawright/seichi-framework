@@ -26,18 +26,21 @@ playbook that tells your team exactly how to use AI at each phase of development
 consistent quality, and a clear governance model that satisfies both engineers
 and leadership.
 
-## Business Case for Adoption
+## Who Is It For?
 
-| Dimension          | Without Framework            | With Framework                  |
-| ------------------ | ---------------------------- | ------------------------------- |
-| Project initiation | Requires technical expertise | Any stakeholder with an idea    |
-| Requirements       | Manual drafting, ambiguity   | AI-drafted, ambiguity detected  |
-| Implementation     | Developer writes all code    | AI generates, developer reviews |
-| Testing            | Manual test creation         | AI generates, CI validates      |
+- **Engineers** — especially those new to AI-assisted workflows or AI tools
+- **Product Managers and Business Analysts** — who need to initiate and plan
+  projects without deep technical expertise
+- **Any organization** seeking a structured, practical approach to AI-assisted
+  software development
 
-**Where to start:** Implementation and Verification stages offer the highest
-verifiability and fastest payback. Begin there if your team already has CI/CD
-pipelines.
+**Find your starting point:**
+
+- **Engineering leaders** evaluating adoption → [Adoption Path](#adoption-path)
+- **Practitioners** (engineers, PMs, BAs) starting a project →
+  [Get Started](#get-started)
+- **Executives** making an investment decision →
+  [Governance at a Glance](#governance-at-a-glance)
 
 ## Is This Framework Right for You?
 
@@ -57,6 +60,41 @@ pipelines.
 **Recommended pilot:** Apply the framework to one Standard-tier project
 (moderate risk, existing CI/CD) through two increments. Evaluate cycle time,
 defect rate, and team satisfaction before broader rollout.
+
+## Get Started
+
+**For practitioners (engineers, PMs, BAs):**
+
+1. Copy the bootstrap prompt from the
+   [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
+   and fill in your project details
+2. Start with the [Initiation stage](initiation/) — use the guide, brief
+   template, and checklist
+3. When you need deeper context, consult the
+   [Framework Guide](framework-guide.md)
+
+**For executives and decision-makers:**
+
+1. Read [Business Case for Adoption](#business-case-for-adoption) for the
+   business case
+2. Review [Governance at a Glance](#governance-at-a-glance) to understand
+   decision points
+3. See [Is This Framework Right for You?](#is-this-framework-right-for-you) to
+   evaluate fit
+4. Share this Quick Start with your team leads
+
+## Business Case for Adoption
+
+| Dimension          | Without Framework            | With Framework                  |
+| ------------------ | ---------------------------- | ------------------------------- |
+| Project initiation | Requires technical expertise | Any stakeholder with an idea    |
+| Requirements       | Manual drafting, ambiguity   | AI-drafted, ambiguity detected  |
+| Implementation     | Developer writes all code    | AI generates, developer reviews |
+| Testing            | Manual test creation         | AI generates, CI validates      |
+
+**Where to start:** Implementation and Verification stages offer the highest
+verifiability and fastest payback. Begin there if your team already has CI/CD
+pipelines.
 
 ## Adoption Path
 
@@ -79,22 +117,6 @@ engineers — AI is positioned as an assistant, not a replacement. Start with
 Human-Led autonomy to build trust, then evolve to Collaborative as confidence
 grows. See the [AI Autonomy Spectrum](framework-ai-assistance.md) for the
 progression model.
-
-## Who Is It For?
-
-- **Engineers** — especially those new to AI-assisted workflows or AI tools
-- **Product Managers and Business Analysts** — who need to initiate and plan
-  projects without deep technical expertise
-- **Any organization** seeking a structured, practical approach to AI-assisted
-  software development
-
-**Find your starting point:**
-
-- **Engineering leaders** evaluating adoption → [Adoption Path](#adoption-path)
-- **Practitioners** (engineers, PMs, BAs) starting a project →
-  [Get Started](#get-started)
-- **Executives** making an investment decision →
-  [Governance at a Glance](#governance-at-a-glance)
 
 ## The 8 Stages at a Glance
 
@@ -155,27 +177,12 @@ deployment timing, and compliance — not whether to continue.
 [Checkpoint Taxonomy](framework-guide.md#checkpoint-taxonomy) in the Framework
 Guide.
 
-## Get Started
-
-**For practitioners (engineers, PMs, BAs):**
-
-1. Copy the bootstrap prompt from the
-   [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
-   and fill in your project details
-2. Start with the [Initiation stage](initiation/) — use the guide, brief
-   template, and checklist
-3. When you need deeper context, consult the
-   [Framework Guide](framework-guide.md)
-
-**For executives and decision-makers:**
-
-1. Read the Executive Summary (above) for the business case
-2. Review "Governance at a Glance" to understand decision points
-3. See "Is This Framework Right for You?" to evaluate fit
-4. Share this Quick Start with your team leads
-
 ---
 
 ## Notes
 
+**Framework Version:** 0.18.1
+
 **Last Updated:** 2026-02-22
+
+Added to framework in v0.17.0.

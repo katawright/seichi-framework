@@ -152,7 +152,7 @@ independently vs. where human oversight is critical.
 
 ## Quick Reference
 
-<!-- Keep this table in sync with framework-guide.md and framework-quickstart.md -->
+<!-- Keep this table in sync with framework-guide.md and README.md -->
 
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |

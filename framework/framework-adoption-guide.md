@@ -82,7 +82,7 @@ expansion.
 
 **Activities:**
 
-1. Pilot team reads the [Quick Start Guide](framework-quickstart.md) and
+1. Pilot team reads the [Quick Start Guide](README.md) and
    [Framework Guide](framework-guide.md)
 2. Apply the framework to one project, starting at Initiation
 3. Work through stages iteratively, beginning with Human-Led autonomy
