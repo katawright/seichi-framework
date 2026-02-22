@@ -63,6 +63,14 @@ session so the next session's AI agent can restore context from it.
 11. Finalize implementation brief
 12. Handoff to Verification stage
 
+**If the checklist results in NOT READY:** Resolve the blocking items and re-run
+the checklist before proceeding.
+
+**If code review is rejected:** Address all feedback and re-submit for review.
+
+**If CI fails:** Fix all failures before handing off to Verification. Do not
+proceed with a red pipeline.
+
 ## Stage Outputs
 
 - Working code with unit tests passing
@@ -79,12 +87,15 @@ session so the next session's AI agent can restore context from it.
 **Handoff:** Verification stage receives working code, test results, session
 log, and review approvals.
 
+- Test environment available and accessible to QA
+- Test data prepared or generation scripts ready
+
 ---
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.5.0.

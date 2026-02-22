@@ -7,6 +7,9 @@ System Design.
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Checklist Items
 
 1. **Users/personas are identified** — primary and secondary users documented
@@ -24,7 +27,7 @@ System Design.
 5. **Functional requirements are testable (FR-#)** — unique IDs,
    behavior-focused, can be validated in Verification
 
-6. **Each FR has objective acceptance criteria** — ACs define "done" with
+6. **[H] Each FR has objective acceptance criteria** — ACs define "done" with
    measurable conditions, no subjective language
 
 7. **Key NFRs are captured** — performance, reliability, security/privacy,
@@ -33,14 +36,15 @@ System Design.
 8. **Data sources and integrations identified** — rate limits, SLAs,
    authentication, data ownership documented
 
-9. **Top edge cases listed** — common failure scenarios with expected behavior
+9. **[H] Top edge cases listed** — common failure scenarios with expected
+   behavior
 
 10. **Open questions listed** — critical blockers flagged with owners
 
 11. **Requirements prioritized (MoSCoW)** — clear Must/Should/Could/Won't Have
     with dependency understanding
 
-12. **Review occurred** — engineering + product (and security/compliance if
+12. **[H] Review occurred** — engineering + product (and security/compliance if
     relevant) have validated
 
 ---
@@ -76,6 +80,6 @@ System Design.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.3.0.

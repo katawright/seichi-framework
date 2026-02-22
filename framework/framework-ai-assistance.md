@@ -462,6 +462,9 @@ Implementation (high verifiability, fast feedback) but Human-Led for Deployment
 - AI has sufficient context to identify gaps and cross-cutting concerns
 - Team trusts AI to drive the agenda (not just execute tasks)
 - Organization has established AI governance policies
+- CI/CD pipeline runs in under 15 minutes with >80% test coverage
+- Team has completed >3 increments reviewing AI-generated output
+- Rollback can be executed in <30 minutes with a documented runbook
 
 **Signals to stay Human-Led:**
 
@@ -477,6 +480,8 @@ Implementation (high verifiability, fast feedback) but Human-Led for Deployment
 - Mix of verifiable and judgment-dependent outputs
 - Moderate risk tolerance
 - Established review processes that can incorporate AI output
+- Team has completed at least 1 increment using AI assistance
+- Code review includes at least one reviewer checking AI-generated output
 
 ### Your Tier Can Evolve
 
@@ -497,6 +502,6 @@ team turnover, new domain).
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.9.0.

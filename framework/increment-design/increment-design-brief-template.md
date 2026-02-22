@@ -18,7 +18,10 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
   [AI-Assisted SDLC Stages](../framework-stages.md))
 - **Primary Role:** Engineers
 - **Supporting Roles:** QA Engineers, Product Manager
-- **Checkpoint:** Quality Checkpoint (optional)
+- **Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
+  Standard; required for Enterprise)
+- **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this
+  increment's design]
 
 ---
 
@@ -238,6 +241,6 @@ Before proceeding to Implementation, validate:
 
 ## Notes
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

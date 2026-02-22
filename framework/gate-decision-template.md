@@ -1,6 +1,6 @@
 # Gate Decision: [Gate N — Short Title]
 
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** 2026-02-21
 
 **Date:** YYYY-MM-DD
 
@@ -63,6 +63,11 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
-**Template Last Updated:** 2026-02-17
+> **Note:** This template is designed for Gate 1 and Gate 2 investment
+> decisions. For architecture review decisions (Alignment Review checkpoints),
+> record the outcome as an ADR with status "Accepted" rather than using this
+> template.
+
+**Template Last Updated:** 2026-02-21
 
 Added to framework in v0.13.0.

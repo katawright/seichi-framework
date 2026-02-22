@@ -1,18 +1,21 @@
 # Implementation Checklist
 
-**Purpose:** Quick validation (60-90 seconds) that implementation is complete
-and ready for Verification.
+**Purpose:** Pre-handoff readiness review that implementation is complete and
+ready for Verification.
 
 **Usage:** Review after all PRs merged, before handoff.
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Requirements
 
 - [ ] All functional requirements for this increment implemented
 - [ ] All non-functional requirements addressed
-- [ ] Acceptance criteria met for each requirement
-- [ ] No critical functionality missing
+- [ ] **[H]** Acceptance criteria met for each requirement
+- [ ] **[H]** No critical functionality missing
 
 **Gate:** Requirements complete → Continue
 
@@ -34,10 +37,11 @@ and ready for Verification.
 ## Unit Testing
 
 - [ ] Unit tests written for all new code
-- [ ] Coverage meets team threshold
+- [ ] Coverage meets team threshold (default: 80% line coverage if not yet
+      established)
 - [ ] All unit tests pass locally
 - [ ] Tests cover happy path, edge cases, and errors
-- [ ] Tests are meaningful (not padding for coverage)
+- [ ] **[H]** Tests are meaningful (not padding for coverage)
 
 **Gate:** Tests passing → Continue
 
@@ -45,8 +49,8 @@ and ready for Verification.
 
 ## Code Review and CI/CD
 
-- [ ] All PRs submitted, reviewed, and approved
-- [ ] Review feedback addressed, no open threads
+- [ ] **[H]** All PRs submitted, reviewed, and approved
+- [ ] **[H]** Review feedback addressed, no open threads
 - [ ] Linting and formatting pass
 - [ ] CI/CD pipeline passing all checks
 - [ ] All PRs merged to target branch
@@ -69,7 +73,7 @@ and ready for Verification.
 ## Handoff Readiness
 
 - [ ] Implementation brief completed
-- [ ] Known issues and limitations documented
+- [ ] **[H]** Known issues and limitations documented
 - [ ] Test scenarios documented for Verification team
 - [ ] Environment setup instructions provided
 - [ ] Deployment team notified and ready
@@ -95,11 +99,11 @@ and ready for Verification.
 > For red flags, code quality details, testing guidance, and detailed
 > checklists, see the [Implementation Reference](implementation-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your
+> **AI suggestion:** _"Walk me through this checklist for [describe your >
 > increment] and flag items needing attention."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.5.0_

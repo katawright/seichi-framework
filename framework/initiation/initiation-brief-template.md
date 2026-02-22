@@ -1,10 +1,10 @@
 # Initiation Brief
 
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** 2026-02-21
 
 > **Purpose:** Define the problem and business case; set goals/success metrics;
 > establish scope boundaries, constraints, assumptions, and key risks/unknowns;
-> and produce a **range-based plan** to reach **Gate 1 (Requirements complete)**
+> and produce a **range-based plan** to reach **Gate 1 (Initiation complete)**
 > for a **proceed/pivot/stop** decision.
 
 **How to use this:** Bullets only. Keep it concise. For deeper guidance, see

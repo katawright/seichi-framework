@@ -1,6 +1,6 @@
 # Requirements Brief
 
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** 2026-02-21
 
 > **Purpose:** Convert the Initiation Brief into a **clear, testable
 > requirements baseline**: functional requirements with acceptance criteria,
@@ -26,7 +26,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 
 ---
 
-## Context (1–3 bullets)
+## 1. Context
 
 - **Write:** What triggered this requirements work / where it sits in the
   roadmap.
@@ -35,7 +35,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 - _Example:_ "Follow-on to Initiation Gate 1; defining Must Have requirements
   for Q2 initial release based on approved business case."
 
-## Users / personas
+## 2. Users / personas
 
 - **Write:** Primary users and secondary stakeholders with brief context.
 - **Tip:** Carry forward from Initiation Brief; add detail if user roles are
@@ -44,7 +44,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
   context switching). Secondary: Support manager (monitors SLA compliance),
   Compliance team (audits PII handling)."
 
-## Problem to solve (summary)
+## 3. Problem to solve (summary)
 
 - **Write:** Restate the problem in problem-first form (no solutions). Carry
   forward from Initiation Brief.
@@ -53,10 +53,10 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
   within 30 seconds because conversations are split across Tool A and Tool B,
   increasing handle time and driving repeat contacts."
 
-## Goals and success metrics (from Initiation)
+## 4. Goals and success metrics (from Initiation)
 
 > **Measurement throughline:** These metrics from the Initiation Brief inform
-> your functional and non-functional requirements. NFRs (Section 9) should
+> your functional and non-functional requirements. NFRs (Section 10) should
 > include instrumentation to measure these metrics.
 
 - **Write:** Carry forward measurable success criteria from Initiation Brief
@@ -65,7 +65,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
   requirements).
 - _Example:_ "p90 time-to-context 75s → <30s; repeat-contact rate 12% → 10%."
 
-## Constraints
+## 5. Constraints
 
 > **Carry forward from Initiation:** Review the Initiation Brief for constraints
 > already identified (budget, deadlines, team capacity, compliance, technology
@@ -96,11 +96,11 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
     (existing SLA)
   - Legal requires 90-day audit trail for PII access
 
-> **Note:** Constraints inform MoSCoW prioritization (Section 7) and shape NFRs
-> (Section 9). Detailed cost analysis happens during System Design, with Gate 2
+> **Note:** Constraints inform MoSCoW prioritization (Section 6) and shape NFRs
+> (Section 10). Detailed cost analysis happens during System Design, with Gate 2
 > as the decision point.
 
-## Scope baseline
+## 6. Scope baseline
 
 > **Prioritization approach:** This framework uses the **MoSCoW** method (Must
 > Have / Should Have / Could Have / Won't Have) for requirements prioritization.
@@ -158,7 +158,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
   - No internationalization support (English only for v1)
   - No mobile app (web-only for v1)
 
-## Functional requirements (FRs)
+## 7. Functional requirements (FRs)
 
 > **Write testable requirements:** Use "The system shall..." or "As a <user>, I
 > can <action> so that <value>." Each requirement must be testable (you'll
@@ -188,7 +188,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 - FR-4:
 - FR-5:
 
-## Acceptance criteria (AC)
+## 8. Acceptance criteria (AC)
 
 > **Define "done" objectively:** Acceptance criteria must be objective,
 > observable, and testable. Prefer concrete signals over subjective judgments.
@@ -213,17 +213,24 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 
 **Your ACs:**
 
-- ## **AC for FR-1:**
-- ## **AC for FR-2:**
-- ## **AC for FR-3:**
+- **AC for FR-1:**
+- **AC for FR-2:**
+- **AC for FR-3:**
 
-## Non-functional requirements (NFRs) — minimal set
+## 9. Traceability summary
+
+| FR ID | Initiation Objective | MoSCoW | ACs    | Success Metric |
+| ----- | -------------------- | ------ | ------ | -------------- |
+| FR-1  | [objective ref]      | Must   | AC-1.1 | [metric ref]   |
+| FR-2  | [objective ref]      | Should | AC-2.1 | [metric ref]   |
+
+## 10. Non-functional requirements (NFRs) — minimal set
 
 > **Include only NFRs that matter for decisions, testing, or architecture.**
 > NFRs shape design choices and testing plans.
 >
 > **Measurement throughline:** Ensure observability NFRs capture instrumentation
-> needed to measure success metrics (Section 4).
+> needed to measure success metrics (Section 4 — Goals and success metrics).
 
 ### Performance
 
@@ -274,7 +281,7 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 - **Observability:**
 - **Compliance (if any):**
 
-## Data and integrations (constraints)
+## 11. Data and integrations (constraints)
 
 - **Write:** Data sources, ownership, retention, migration needs.
 - **Write:** External/internal integrations with constraints (rate limits, SLAs,
@@ -292,11 +299,11 @@ _Example:_
 - **Data migration:** No historical backfill required (only new data from
   go-live)
 
-## **Your data and integrations:**
+**Your data and integrations:**
 
 -
 
-## Edge cases and error handling
+## 12. Edge cases and error handling
 
 - **Write:** Top edge cases with expected behavior.
 - **Tip:** Focus on cases that affect UX or require specific handling.
@@ -314,12 +321,12 @@ _Example:_
 - Concurrent agents viewing same customer → Each agent sees independent view (no
   locking required)
 
-## **Your edge cases:**
+**Your edge cases:**
 
 -
 -
 
-## Open questions / blockers
+## 13. Open questions / blockers
 
 - **Write:** Questions that must be answered before System Design starts or
   during System Design foundational pass.
@@ -339,7 +346,7 @@ _Example:_
 - **Q1:**
 - **Q2:**
 
-## Requirements readiness (ready for System Design)
+## 14. Requirements readiness (ready for System Design)
 
 > **Quality checkpoint:** Confirm requirements are ready for System Design stage
 > (foundational pass). Use [Requirements Checklist](requirements-checklist.md)
@@ -359,7 +366,15 @@ _Example:_
 **Next step if ready:** Proceed to System Design stage (foundational pass).
 Provide this Requirements Document to System Design team.
 
-## (Optional) Gate 2 planning
+**Review sign-off:**
+
+| Reviewer | Role        | Date       | Status                      |
+| -------- | ----------- | ---------- | --------------------------- |
+| [name]   | Engineering | YYYY-MM-DD | Approved / Revisions needed |
+| [name]   | Product     | YYYY-MM-DD | Approved / Revisions needed |
+| [name]   | Security    | YYYY-MM-DD | Approved / Revisions needed |
+
+## 15. (Optional) Gate 2 planning
 
 > **Note on Gate 2 timing:** Gate 2 (the major build/no-build decision) occurs
 > at the **end of Requirements + System Design foundational pass**, not at the
@@ -396,7 +411,7 @@ Provide this Requirements Document to System Design team.
 
 ## Notes
 
-**Template Last Updated:** 2026-02-16
+**Template Last Updated:** 2026-02-21
 
 Added to framework in v0.3.0.
 
@@ -404,4 +419,6 @@ Added to framework in v0.3.0.
 
 ## Change log
 
-- **Date:** Initial Requirements Document for [project name].
+| Date       | Change description            | Sections affected | Impact | Approved by |
+| ---------- | ----------------------------- | ----------------- | ------ | ----------- |
+| YYYY-MM-DD | Initial requirements document | All               | N/A    | [name]      |

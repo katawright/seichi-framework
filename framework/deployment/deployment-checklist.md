@@ -1,11 +1,14 @@
 # Deployment Checklist
 
-**Purpose:** Quick verification (60-90 seconds) that deployment is ready,
-executing correctly, and completed successfully.
+**Purpose:** Pre-handoff readiness review for deployment execution and
+successful completion.
 
 **Usage:** Review before, during, and after deployment.
 
 ---
+
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
 
 ## Pre-Deployment Readiness
 
@@ -13,8 +16,8 @@ executing correctly, and completed successfully.
 > repeat testing — it verifies that testing was done and results are acceptable.
 
 - [ ] All Verification stage tests passing
-- [ ] UAT sign-off obtained from business stakeholders
-- [ ] Known issues reviewed and accepted
+- [ ] **[H]** UAT sign-off obtained from business stakeholders
+- [ ] **[H]** Known issues reviewed and accepted
 - [ ] Deployment strategy selected and steps documented
 - [ ] Rollback procedure documented and tested
 - [ ] Environment health verified and backups completed
@@ -22,8 +25,8 @@ executing correctly, and completed successfully.
 - [ ] Monitoring dashboards and alerting configured
 - [ ] Success criteria instrumentation verified (Verification tested it works;
       confirm it will be active in production)
-- [ ] Configuration and secrets reviewed
-- [ ] Stakeholders notified of deployment schedule
+- [ ] **[H]** Configuration and secrets reviewed
+- [ ] **[H]** Stakeholders notified of deployment schedule
 - [ ] Deployment team available and on communication channel
 
 **Gate:** All items checked → Proceed to deployment
@@ -59,11 +62,11 @@ executing correctly, and completed successfully.
 
 ## Handoff to Support
 
-- [ ] Support team briefed on deployment outcome
-- [ ] Known issues and workarounds documented
+- [ ] **[H]** Support team briefed on deployment outcome
+- [ ] **[H]** Known issues and workarounds documented
 - [ ] Production monitoring access verified
 - [ ] Support runbook created or updated
-- [ ] On-call rotation and escalation path updated
+- [ ] **[H]** On-call rotation and escalation path updated
 - [ ] First-week monitoring schedule defined
 
 **Gate:** Support team ready to own production system
@@ -72,9 +75,9 @@ executing correctly, and completed successfully.
 
 ## Sign-Off
 
-- [ ] Deployment engineer signs off on success
-- [ ] DevOps lead reviews and approves outcome
-- [ ] Product manager acknowledges completion
+- [ ] **[H]** Deployment engineer signs off on success
+- [ ] **[H]** DevOps lead reviews and approves outcome
+- [ ] **[H]** Product manager acknowledges completion
 - [ ] 24-hour monitoring plan clear
 - [ ] Follow-up issues logged in backlog
 
@@ -87,11 +90,11 @@ deployment decision using the
 > For decision trees, red flags, strategy-specific checklists, and detailed
 > procedures, see the [Deployment Reference](deployment-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe > your
+> **AI suggestion:** _"Walk me through this checklist for [describe your >
 > deployment] and flag any items that need extra attention."_
 
 ---
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.7.0_

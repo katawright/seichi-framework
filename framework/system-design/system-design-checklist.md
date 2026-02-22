@@ -7,6 +7,9 @@ ready for Gate 2.
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Architecture and Technology
 
 - [ ] System architecture diagram exists (components, boundaries, interactions)
@@ -25,7 +28,7 @@ ready for Gate 2.
 ## Non-Functional Requirements
 
 - [ ] Security architecture designed (auth, encryption, input validation)
-- [ ] Compliance requirements addressed (GDPR, HIPAA, etc.)
+- [ ] **[H]** Compliance requirements addressed (GDPR, HIPAA, etc.)
 - [ ] Performance targets specified (response time, throughput, concurrency)
 - [ ] Scalability approach defined
 - [ ] ADRs created for significant non-functional requirements decisions
@@ -34,7 +37,8 @@ ready for Gate 2.
 
 - [ ] Monitoring and logging strategy designed
 - [ ] Success criteria instrumentation planned
-- [ ] Measurement throughline validated (NFRs include instrumentation needs)
+- [ ] **[H]** Measurement throughline validated (NFRs include instrumentation
+      needs)
 - [ ] ADRs created for significant observability decisions
 
 ## Infrastructure
@@ -46,10 +50,10 @@ ready for Gate 2.
 
 ## Increment Plan
 
-- [ ] Increment 0 need assessed (bootstrap for greenfield, discovery for
+- [ ] **[H]** Increment 0 need assessed (bootstrap for greenfield, discovery for
       brownfield first AI-assisted, or not needed for subsequent brownfield)
 - [ ] Increment plan created with MoSCoW mapping
-- [ ] Must Have requirements in first increments
+- [ ] **[H]** Must Have requirements in first increments
 - [ ] Should Have requirements sequenced
 - [ ] Could Have evaluation approach defined
 - [ ] Won't Have requirements documented
@@ -57,9 +61,9 @@ ready for Gate 2.
 ## Readiness for Gate 2
 
 - [ ] All requirements have architectural approach
-- [ ] No major technical unknowns remain
-- [ ] Design is implementable within constraints
-- [ ] Alignment Review conducted
+- [ ] **[H]** No major technical unknowns remain
+- [ ] **[H]** Design is implementable within constraints
+- [ ] **[H]** Alignment Review conducted
 
 ---
 
@@ -89,6 +93,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

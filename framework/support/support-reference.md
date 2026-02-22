@@ -37,6 +37,19 @@ starting point for AI-assisted exploration.
 > **AI exploration:** _"Given our stack [describe stack], suggest monitoring
 > thresholds tuned to our traffic patterns and SLAs."_
 
+### Error Budgets
+
+An error budget is the complement of your SLO availability target:
+
+- 99.9% uptime SLO → 0.1% error budget → ~43 minutes/month
+- 99.5% uptime SLO → 0.5% error budget → ~3.6 hours/month
+
+**How to use it:**
+
+- When budget is healthy: prioritize feature work
+- When budget is at 50%: increase monitoring attention
+- When budget is exhausted: freeze feature work, prioritize reliability
+
 ---
 
 ## Incident Response Process
@@ -81,6 +94,69 @@ channel.
 
 ---
 
+## Incident Communication Templates
+
+Ready-made templates for incident communication at each phase. Copy, fill in the
+bracketed fields, and send. Adjust update cadence to your severity level: P0
+every 15–30 min, P1 every 30–60 min.
+
+### Initial Incident Notification
+
+Send within 15 minutes of P0/P1 declaration.
+
+```
+INCIDENT DECLARED — [P0/P1] — [System affected]
+Status: Investigating
+Impact: [User-facing impact description]
+Team: [Names of responders]
+Channel: [#incident-YYYY-MM-DD or link]
+Next update: [Time]
+```
+
+### Ongoing Status Update
+
+P0: every 15–30 min. P1: every 30–60 min.
+
+```
+INCIDENT UPDATE — [P0/P1] — [System] — [Time]
+Status: [Investigating / Mitigating / Monitoring]
+Current findings: [What we know]
+Actions taken: [What has been done]
+Next steps: [What is happening next]
+Next update: [Time]
+```
+
+### Resolution Notification
+
+Send when the incident is resolved and systems are stable.
+
+```
+INCIDENT RESOLVED — [P0/P1] — [System]
+Resolution time: [Duration from declaration to resolution]
+Root cause (preliminary): [Brief description]
+Customer impact: [What users experienced]
+Prevention: [Immediate actions taken to prevent recurrence]
+Post-mortem: Scheduled for [Date/Time]
+```
+
+### Post-Mortem Summary
+
+Brief version for stakeholder communication, sent after the post-incident review
+is complete.
+
+```
+POST-MORTEM SUMMARY — [Incident ID] — [Date]
+What happened: [2–3 sentences]
+Why it happened: [Root cause]
+How we fixed it: [Mitigation/resolution]
+Prevention: [Key action items with owners and due dates]
+```
+
+> **AI exploration:** _"Draft incident communication messages for [describe the
+> current incident situation]."_
+
+---
+
 ## Severity Level Details
 
 **P0 — Critical (15-min response):**
@@ -113,7 +189,7 @@ channel.
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your >
+> **AI exploration:** _"Customize these severity levels for [describe your > > >
 > product, user base, and SLA commitments]."_
 
 ---
@@ -185,8 +261,9 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** _"Help me build a bug triage process for [describe team >
-> size, product, and release cadence]."_
+> **AI exploration:** \_"Help me build a bug triage process for [describe team >
+>
+> > size, product, and release cadence]."\_
 
 ---
 
@@ -309,7 +386,8 @@ appropriate to your support level), see the
 ### Documentation Types
 
 - **Runbooks** — operational procedures (deploy, rollback, scale, restore,
-  incident handling)
+  incident handling). See the [Runbook Template](runbook-template.md) for a
+  fillable starting point.
 - **Troubleshooting guides** — common issues, diagnostic steps, log locations
 - **Architecture documentation** — system design, data flow, integrations
 - **User documentation** — guides, API docs, FAQ
@@ -321,7 +399,7 @@ appropriate to your support level), see the
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your >
+> **AI exploration:** _"Generate a runbook template for [describe your > > >
 > deployment process and tooling]."_
 
 ---
@@ -564,6 +642,128 @@ Minimal-level project operating well at Level 2 is a success.
 
 ---
 
-**Last Updated:** 2026-02-19
+## Disaster Recovery
+
+Disaster recovery (DR) planning ensures your team can restore service after a
+catastrophic failure — hardware loss, data corruption, region outage, or
+security breach. Right-size DR to your project tier.
+
+### RTO and RPO
+
+Two metrics define your DR requirements:
+
+- **Recovery Time Objective (RTO):** Maximum acceptable time from failure to
+  restored service. "How long can we be down?"
+- **Recovery Point Objective (RPO):** Maximum acceptable data loss measured in
+  time. "How much data can we lose?"
+
+**Setting RTO and RPO:**
+
+| Question                           | Drives |
+| ---------------------------------- | ------ |
+| What is the business cost per hour | RTO    |
+| of downtime?                       |        |
+| How frequently does critical data  | RPO    |
+| change?                            |        |
+| What do SLAs or contracts require? | Both   |
+| What can the backup infrastructure | Both   |
+| actually achieve?                  |        |
+
+**Example targets by tier:**
+
+| Tier       | Typical RTO | Typical RPO  |
+| ---------- | ----------- | ------------ |
+| Minimal    | < 24 hours  | < 24 hours   |
+| Standard   | < 4 hours   | < 1 hour     |
+| Enterprise | < 1 hour    | < 15 minutes |
+
+### Backup Validation
+
+Backups that haven't been tested are assumptions, not safeguards. Validate
+regularly:
+
+- [ ] Backup exists and is current (check timestamp against RPO)
+- [ ] Backup is stored separately from primary system (different region,
+      provider, or medium)
+- [ ] Backup can be restored (test restore to a non-production environment)
+- [ ] Restored system passes smoke tests and data integrity checks
+- [ ] Restore completes within RTO
+
+**Validation cadence:**
+
+| Tier       | Backup Check | Restore Test |
+| ---------- | ------------ | ------------ |
+| Minimal    | Monthly      | Annually     |
+| Standard   | Weekly       | Quarterly    |
+| Enterprise | Daily        | Monthly      |
+
+### DR Drill Cadence
+
+Regular DR drills build confidence and uncover gaps before a real disaster.
+
+| Tier       | Drill Cadence | Drill Scope                       |
+| ---------- | ------------- | --------------------------------- |
+| Minimal    | Annually      | Restore from backup, verify app   |
+| Standard   | Semi-annually | Full failover, restore, verify    |
+| Enterprise | Quarterly     | Full failover with timed recovery |
+
+**Drill process:**
+
+1. **Announce:** Schedule the drill, notify stakeholders
+2. **Execute:** Follow the DR plan as written — do not improvise
+3. **Time it:** Record actual RTO and RPO achieved
+4. **Document:** Note what worked, what failed, and what was unclear
+5. **Remediate:** Update the DR plan based on findings
+
+### DR Plan Template
+
+```markdown
+# Disaster Recovery Plan — [System Name]
+
+**Owner:** [Team or role] **Last Tested:** YYYY-MM-DD **RTO Target:** [X hours]
+**RPO Target:** [X hours]
+
+## Scope
+
+[What systems, services, and data are covered by this plan]
+
+## Recovery Steps
+
+1. [Assess the situation — determine scope and severity]
+2. [Notify stakeholders using incident communication templates]
+3. [Activate backup infrastructure / failover region]
+4. [Restore data from most recent backup]
+5. [Deploy application to recovery environment]
+6. [Run smoke tests and data integrity checks]
+7. [Switch DNS / load balancer to recovery environment]
+8. [Monitor closely for [X hours] post-recovery]
+
+## Communication Plan
+
+- Incident channel: [How to create/join]
+- Stakeholder updates: [Cadence and recipients]
+- Customer communication: [Who drafts, who approves, channel]
+
+## Verification
+
+- [ ] Application health check returns 200
+- [ ] Core user paths functional (login, primary workflow)
+- [ ] Data integrity verified (record counts, checksums)
+- [ ] Monitoring and alerting active in recovery environment
+
+## Sign-Off
+
+| Role             | Name   | Date       |
+| ---------------- | ------ | ---------- |
+| Engineering lead | [Name] | YYYY-MM-DD |
+| Operations lead  | [Name] | YYYY-MM-DD |
+```
+
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe
+> your system, infrastructure, and business requirements]."_
+
+---
+
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.12.0_

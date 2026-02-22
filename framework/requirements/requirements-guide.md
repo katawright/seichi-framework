@@ -116,15 +116,15 @@ for full tier definitions.
 Not every project needs comprehensive NFRs or formal stakeholder reviews. Match
 your Requirements effort to your project's risk tier.
 
-| Practice                        | Minimal                     | Standard                                     | Enterprise                                        |
-| ------------------------------- | --------------------------- | -------------------------------------------- | ------------------------------------------------- |
-| **Functional requirements**     | Brief behavior descriptions | Numbered FRs with testable statements        | Formal FRs with traceability matrix               |
-| **Acceptance criteria**         | Informal "done" definition  | Given/When/Then for each FR                  | Comprehensive ACs with edge cases documented      |
-| **NFRs**                        | Note key quality concerns   | Documented NFRs including observability      | Full NFR catalog with SLOs and compliance mapping |
-| **Prioritization**              | Informal must/nice-to-have  | MoSCoW classification for all requirements   | Weighted prioritization with stakeholder input    |
-| **Edge cases/data constraints** | Acknowledge known issues    | Document top edge cases and data constraints | Comprehensive edge case analysis, data mapping    |
-| **Stakeholder review**          | Informal check-in           | Alignment review with engineering            | Formal review cycles with sign-off                |
-| **Compliance**                  | Basic awareness             | Documented compliance requirements           | Full compliance matrix with audit trail           |
+| Practice                        | Minimal                     | Standard                                     | Enterprise                                                          |
+| ------------------------------- | --------------------------- | -------------------------------------------- | ------------------------------------------------------------------- |
+| **Functional requirements**     | Brief behavior descriptions | Numbered FRs with testable statements        | Formal FRs with traceability matrix                                 |
+| **Acceptance criteria**         | Informal "done" definition  | Given/When/Then for each FR                  | Comprehensive ACs with edge cases documented                        |
+| **NFRs**                        | Note key quality concerns   | Documented NFRs including observability      | Full NFR catalog with SLOs and compliance mapping                   |
+| **Prioritization**              | Informal must/nice-to-have  | MoSCoW classification for all requirements   | MoSCoW baseline plus weighted scoring with formal stakeholder input |
+| **Edge cases/data constraints** | Acknowledge known issues    | Document top edge cases and data constraints | Comprehensive edge case analysis, data mapping                      |
+| **Stakeholder review**          | Informal check-in           | Alignment review with engineering            | Formal review cycles with sign-off                                  |
+| **Compliance**                  | Basic awareness             | Documented compliance requirements           | Full compliance matrix with audit trail                             |
 
 Expand Requirements only when needed:
 
@@ -177,19 +177,14 @@ enough for engineering teams.
 
 ### Key Terms
 
-**Functional Requirements (FRs):** Testable statements of required system
-behavior. Numbered (FR-1, FR-2) for traceability.
+See [Framework Guide: Key Terms](../framework-guide.md#key-terms) for canonical
+definitions of FR, NFR, AC, MoSCoW, and other framework terms.
 
-**Acceptance Criteria (ACs):** Objective, observable conditions that define
-"done" for a requirement. Given/When/Then format or measurable conditions.
+**Stage-specific usage notes:**
 
-**Non-Functional Requirements (NFRs):** Quality attributes (performance,
-reliability, security, observability, compliance) that shape architecture and
-testing.
-
-**MoSCoW:** Coarse prioritization method — Must Have, Should Have, Could Have,
-Won't Have. See
-[Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization).
+- FRs are numbered sequentially (FR-1, FR-2) for traceability
+- ACs use Given/When/Then format and are linked to their parent FR
+- NFRs include observability requirements to support success metrics
 
 > For detailed definitions, good/bad examples, and formatting guidance, see
 > [Requirements Reference: Terminology](requirements-reference.md#requirements-terminology).
@@ -211,6 +206,22 @@ highlights:
   limitations
 - **Edge cases** drive significant design complexity — document expected
   behavior early
+
+### How requirements artifacts relate
+
+```
+Initiation Objective
+  → Success Metric (baseline → target)
+    → NFR-Observability (instrumentation to measure it)
+    → FR (behavior that delivers the objective)
+      → AC (observable condition proving the FR works)
+```
+
+**Example:** "Reduce repeat-contact rate from 12% to 10%"
+
+- NFR-Obs-1: Track repeat-contact metric in the dashboard
+- FR-1: Unified conversation view across both tools
+  - AC-1.1: Messages from both tools appear chronologically
 
 > For section-by-section rationale, see
 > [Requirements Reference: Section Rationale](requirements-reference.md#why-each-requirements-section-matters).
@@ -300,6 +311,6 @@ Requirements is foundational but revisitable:
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.3.0.

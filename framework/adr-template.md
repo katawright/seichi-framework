@@ -28,9 +28,69 @@ play?
 
 ## Options Considered
 
-1. **Option 1:** [Brief description]
-2. **Option 2:** [Brief description]
-3. **Option 3:** [Brief description]
+### Option 1: [Name] _(chosen)_
+
+**Description:**
+
+- [What this option entails]
+
+**Pros:**
+
+- [Advantage 1]
+- [Advantage 2]
+
+**Cons:**
+
+- [Disadvantage 1]
+- [Disadvantage 2]
+
+### Option 2: [Name]
+
+**Description:**
+
+- [What this option entails]
+
+**Pros:**
+
+- [Advantage 1]
+- [Advantage 2]
+
+**Cons:**
+
+- [Disadvantage 1]
+- [Disadvantage 2]
+
+**Cost:**
+
+- [One-time and recurring costs]
+
+**Why not chosen:**
+
+- [Primary reason this option was rejected]
+
+### Option 3: [Name]
+
+**Description:**
+
+- [What this option entails]
+
+**Pros:**
+
+- [Advantage 1]
+- [Advantage 2]
+
+**Cons:**
+
+- [Disadvantage 1]
+- [Disadvantage 2]
+
+**Cost:**
+
+- [One-time and recurring costs]
+
+**Why not chosen:**
+
+- [Primary reason this option was rejected]
 
 ---
 
@@ -42,7 +102,7 @@ We will **[decision statement]**.
 
 ## Rationale
 
-Why this option?
+Why this option? See Options Considered above for full comparison.
 
 **Pros:**
 
@@ -92,62 +152,6 @@ Why this option?
 
 **⚠️ Note:** Research costs BEFORE making technology decisions to avoid
 post-commitment surprises.
-
----
-
-## Alternatives Considered
-
-### Option 2: [Name]
-
-**Description:**
-
-- [What this option entails]
-
-**Pros:**
-
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons:**
-
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Cost:**
-
-- [One-time and recurring costs]
-
-**Why not chosen:**
-
-- [Primary reason this option was rejected]
-- [Secondary reasons]
-
----
-
-### Option 3: [Name]
-
-**Description:**
-
-- [What this option entails]
-
-**Pros:**
-
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons:**
-
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Cost:**
-
-- [One-time and recurring costs]
-
-**Why not chosen:**
-
-- [Primary reason this option was rejected]
-- [Secondary reasons]
 
 ---
 
@@ -213,13 +217,14 @@ Added to framework in v0.4.0.
 - `ADR-003-authentication-approach.md`
 - `ADR-004-frontend-framework.md`
 
-**Location:** Store ADRs in stage-appropriate directories:
+**Location:** Use `docs/adr/` as the primary project-level ADR registry.
 
-- **System Design stage ADRs:** `system-design/adr/` for architectural and
-  foundational decisions
-- **Implementation stage ADRs:** `implementation/adr/` for increment-specific
-  implementation decisions
-- Or use project-level: `docs/adr/` for all decisions (if preferred)
+- `docs/adr/` — canonical location for all ADRs (recommended)
+- `system-design/adr/` — alternative for System Design decisions
+- `implementation/adr/` — alternative for increment-specific decisions
+
+Use per-stage directories if your team prefers scoped numbering; use `docs/adr/`
+for a unified ADR registry.
 
 **Numbering:** Use sequential numbers (001, 002, 003...) per directory. Numbers
 are scoped to the directory (system-design/adr/ADR-001 and
@@ -288,4 +293,4 @@ For detailed rationale, alternatives, and cost analysis, see ADRs in
 **Usage:** This template is used by System Design, Increment Design, and
 Implementation stages for documenting significant technical decisions.
 
-**Template Last Updated:** 2026-02-14
+**Template Last Updated:** 2026-02-21

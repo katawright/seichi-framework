@@ -178,6 +178,18 @@ secrets management) in ADRs._
 
 ---
 
+### Threat Model (Standard and Enterprise tiers)
+
+Identify threats using STRIDE or equivalent methodology:
+
+| Asset / Surface  | Threat (STRIDE) | Likelihood | Impact | Mitigation        | NFR Ref |
+| ---------------- | --------------- | ---------- | ------ | ----------------- | ------- |
+| [e.g., Auth API] | Spoofing        | Medium     | High   | JWT + rate limits | NFR-3   |
+
+Link each mitigation to an NFR so it is traceable through Verification.
+
+---
+
 ## 7. Observability and Monitoring Design
 
 ### 7.1 Instrumentation Strategy
@@ -223,6 +235,15 @@ policies) in ADRs._
 
 _Document significant scaling decisions (horizontal vs. vertical, sharding
 strategy) in ADRs._
+
+---
+
+## NFR Traceability
+
+| NFR ID | Description            | Architectural Approach      | ADR   | Verification Method      |
+| ------ | ---------------------- | --------------------------- | ----- | ------------------------ |
+| NFR-1  | p95 response < 200ms   | CDN + Redis caching layer   | ADR-6 | Load test in Increment 2 |
+| NFR-2  | Data encrypted at rest | AES-256 via managed service | ADR-3 | Security scan + audit    |
 
 ---
 
@@ -405,6 +426,6 @@ Before proceeding to Gate 2, validate:
 
 ## Notes
 
-**Template Last Updated:** 2026-02-18
+**Template Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

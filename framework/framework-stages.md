@@ -89,6 +89,9 @@ progressive rollout milestones
 **AI validation:** Ensure AI-assisted deployment automation is safe and
 monitored. Verify deployment plans and rollback procedures.
 
+Approval authority varies by environment — see the Deployment Guide for
+role-specific guidance.
+
 ### 4. Alignment Reviews
 
 **Purpose:** Synchronize stakeholders, gather feedback, ensure consensus
@@ -149,16 +152,18 @@ independently vs. where human oversight is critical.
 
 ## Quick Reference
 
-| #   | Stage            | Primary Role        | Pattern      | Purpose                                                  |
-| --- | ---------------- | ------------------- | ------------ | -------------------------------------------------------- |
-| 1   | Initiation       | PM/BA               | Foundational | Establish business case with measurable success criteria |
-| 2   | Requirements     | BA/PM               | Foundational | Define testable requirements with acceptance criteria    |
-| 3   | System Design    | Engineers/Architect | Foundational | Establish system architecture and technical approach     |
-| 4   | Increment Design | Engineers           | Iterative    | Create detailed designs for specific increments          |
-| 5   | Implementation   | Engineers           | Iterative    | Build working code                                       |
-| 6   | Verification     | QA/Engineers        | Iterative    | Validate through testing and acceptance                  |
-| 7   | Deployment       | DevOps/Engineers    | Iterative    | Release to production                                    |
-| 8   | Support          | Engineers/DevOps    | Continuous   | Monitor, maintain, and enhance                           |
+<!-- Keep this table in sync with framework-guide.md and framework-quickstart.md -->
+
+| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
+| --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
+| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with acceptance criteria                     |
+| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
+| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
+| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
+| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
+| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
+| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
 
 ---
 
@@ -608,9 +613,12 @@ monitoring and rollback capabilities.
 - UAT sign-off
 - Deployment checklist
 
+**Required:**
+
+- Rollback plan (tested and documented)
+
 **Optional:**
 
-- Rollback plan
 - Canary or blue-green deployment strategy
 - Release notes
 
@@ -678,11 +686,11 @@ feedback for future improvements.
 - Monitoring dashboards and alerts
 - Runbooks and operational procedures
 - Defined success criteria and baseline measurements
+- Incident response procedures
 
 **Optional:**
 
-- SLA/SLO definitions
-- Incident response procedures
+- SLA/SLO definitions (required for Standard and Enterprise tiers)
 - User feedback channels
 
 ### Entry Criteria
@@ -832,42 +840,6 @@ Support (continuous)
 
 ---
 
-## Artifact Placeholders
-
-Each stage produces specific artifacts. Detailed templates and examples will be
-created for:
-
-- `initiation-brief-template.md` - One-page project summary with measurable
-  success criteria
-- `initiation-checklist.md` - Readiness checklist
-- `initiation-guide.md` - Detailed guidance with example explorations
-- `requirements-brief.md` - Requirements with acceptance criteria
-- `requirements-checklist.md` - Requirements completeness check
-- `requirements-guide.md` - Requirements best practices with example questions
-- `system-design-architecture.md` - System architecture documentation
-- `system-design-checklist.md` - System design review checklist
-- `system-design-guide.md` - Architecture patterns and best practices with
-  example explorations
-- `increment-design-brief.md` - Detailed design per increment
-- `increment-design-checklist.md` - Increment design review checklist
-- `increment-design-guide.md` - Detailed design patterns and best practices
-- `implementation-brief.md` - Implementation notes and decisions
-- `implementation-checklist.md` - Code completion checklist
-- `implementation-guide.md` - Coding standards and practices
-- `verification-report.md` - Test results and approvals
-- `verification-checklist.md` - Testing completeness check
-- `verification-guide.md` - Testing strategies and approaches
-- `deployment-brief.md` - Deployment plan and results
-- `deployment-checklist.md` - Deployment readiness check
-- `deployment-guide.md` - Deployment best practices
-- `support-brief.md` - Ongoing support plan
-- `support-checklist.md` - Support readiness check
-- `support-guide.md` - Operations and maintenance guidance
-
-Each stage will include a `README.md` explaining the artifacts and workflow.
-
----
-
 ## Enterprise Extensions
 
 ### Adding Governance Stages
@@ -885,6 +857,6 @@ maintain the 8-stage simplicity.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.9.0.

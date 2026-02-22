@@ -93,8 +93,8 @@ confirms readiness to own the system in production.
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.8.0.

@@ -33,6 +33,9 @@ context from it.
 | FR-Y           | [Brief description] | [✅/⚠️/❌] |
 | NFR-Z          | [Brief description] | [✅/⚠️/❌] |
 
+> Status key: ✓ Complete · ⚠ In progress · ✗ Not started
+> (Text alternative: Done / In Progress / Not Started)
+
 ### Scope Summary
 
 **What was built:**
@@ -204,6 +207,6 @@ _If none: "No separate ADRs for this increment."_
 
 ---
 
-**Template Last Updated:** 2026-02-18
+**Template Last Updated:** 2026-02-21
 
 _Added to framework in v0.5.0_

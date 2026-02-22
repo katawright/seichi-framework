@@ -33,14 +33,30 @@ the organization.
    non-technical stakeholders
 6. **Role-appropriate guidance** — each stage tailored to its primary role
 
-**Target audiences:**
+### Key Benefits
 
-- **Primary:** Engineers who may be new to AI tools or unfamiliar with AI's
-  strengths and weaknesses
-- **Secondary:** Product Managers, Business Analysts, Marketing, and Executives
-  who need to initiate and plan projects
-- **Tertiary:** Any organization seeking a structured approach to integrating AI
-  assistance across the software development lifecycle
+- **Lower AI adoption risk** — clear guardrails at every stage prevent costly AI
+  missteps in architecture and production
+- **Faster project starts** — non-technical stakeholders can initiate projects
+  with AI guidance, no process expertise required
+- **Consistent governance** — auditable checkpoints satisfy compliance,
+  security, and executive oversight needs
+- **Scalable across teams** — right-sizing from solo developer to enterprise;
+  methodology-agnostic (agile, waterfall, hybrid)
+- **Progressive AI adoption** — start Human-Led to build trust, evolve to
+  Collaborative and AI-Led as confidence grows
+
+### Who Benefits
+
+- **Engineers** — structured guidance for using AI safely and effectively, with
+  clear boundaries at each stage
+- **Product Managers and Business Analysts** — initiate and plan projects with
+  AI assistance, even without technical expertise
+- **Engineering Leaders and Executives** — governance visibility across the
+  development lifecycle with auditable checkpoints and measurable success
+  criteria
+- **Organizations** — a repeatable, scalable approach to AI-assisted development
+  that works across teams and methodologies
 
 ---
 
@@ -98,7 +114,7 @@ framework's flexibility. It is planned for future release.
 
 ## Key Concepts
 
-This guide covers seven major concepts that structure the framework:
+This guide covers the major concepts that structure the framework:
 
 **[SDLC Stages](#sdlc-stages)** — The framework defines stages that work for any
 methodology (agile, waterfall, hybrid). Stages follow different execution
@@ -131,6 +147,18 @@ guide includes a right-sizing table with expansion triggers. See the
 **[AI Assistance Overview](#ai-assistance-overview)** — Guidance for how
 independently AI can operate at each stage before requiring human approval,
 balanced against verifiability and risk.
+
+**[Roles and Responsibilities](#roles-and-responsibilities)** — A cross-stage
+RACI matrix showing who is Responsible, Accountable, Consulted, and Informed for
+each stage and gate decision.
+
+**[Architecture Governance](#architecture-governance)** — Tiered governance
+models for architecture decisions, from self-review (Minimal) to formal
+architecture council (Enterprise).
+
+**[Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)**
+— Key compliance considerations for AI-assisted development, including IP, data
+privacy, audit trails, and emerging AI regulation.
 
 ---
 
@@ -167,6 +195,8 @@ significant new information emerges:
 - **Support** — monitor, maintain, enhance
 
 ### Stage Overview
+
+<!-- Keep this table in sync with framework-quickstart.md and framework-stages.md -->
 
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
@@ -313,6 +343,15 @@ ensuring goals actively guide development.
 | **Deployment**       | Deploy with monitoring configured; capture baseline measurements                      |
 | **Support**          | Monitor success criteria in production; validate objectives achieved; report progress |
 
+**Example business KPIs flowing through the framework:**
+
+| KPI                   | Initiation Target          | Support Measurement            |
+| --------------------- | -------------------------- | ------------------------------ |
+| Time-to-market        | "First release in 8 weeks" | Actual release date vs. target |
+| Customer satisfaction | "NPS > 40 within 90 days"  | NPS tracked via in-app survey  |
+| Defect escape rate    | "< 5 prod bugs/month"      | Production incident count      |
+| Cost per feature      | "< $15K average"           | Actual hours × blended rate    |
+
 **The framework is agnostic to goal-setting methodology.** Use OKRs, SMART
 goals, KPIs, Balanced Scorecard, or simple success metrics — whatever fits your
 organization.
@@ -389,11 +428,18 @@ the [AI Assistance Scorecard](framework-ai-assistance.md).
 
 ## Key Terms
 
+> **Canonical glossary:** This section is the single authoritative source for
+> term definitions used across the framework. Stage-level documents link here
+> rather than redefining terms.
+
 **Acceptance Criteria (AC)** — Objective, observable conditions that define
 "done" for a requirement. Format: Given/When/Then or measurable conditions.
 
 **Architecture Decision Record (ADR)** — A short document capturing a
-significant design decision and the reasoning behind it. Stored in `docs/adr/`.
+significant design decision and the reasoning behind it. Primary storage:
+`docs/adr/`. Alternative: per-stage directories (`system-design/adr/`,
+`implementation/adr/`) for scoped numbering. See the
+[ADR Template](adr-template.md) for guidance.
 
 **Foundational stage** — Executes once per project but can be revisited. Sets
 the project foundation.
@@ -424,6 +470,36 @@ existing system, codebase, or infrastructure.
 
 **Brownfield project** — A project that extends, modifies, or enhances an
 existing system with established codebase, infrastructure, and constraints.
+
+---
+
+## Roles and Responsibilities
+
+This matrix shows who is Responsible, Accountable, Consulted, and Informed for
+key activities at each stage. It consolidates the Primary and Supporting Role
+designations from each stage guide into a single cross-stage view.
+
+**Legend:** **R** = Responsible (does the work), **A** = Accountable
+(approves/owns the outcome), **C** = Consulted (provides input), **I** =
+Informed (kept in the loop)
+
+| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | Exec |
+| -------------------- | ----- | --------- | --------- | --- | ------ | ---- |
+| **Initiation**       | R/A   | C         | C         | -   | -      | I    |
+| Gate 1 decision      | R     | -         | -         | -   | -      | A    |
+| **Requirements**     | R/A   | C         | C         | C   | -      | I    |
+| **System Design**    | C     | C         | R/A       | C   | C      | I    |
+| Gate 2 decision      | C     | C         | R         | C   | C      | A    |
+| **Increment Design** | C     | R/A       | C         | C   | -      | -    |
+| **Implementation**   | -     | R/A       | C         | C   | C      | -    |
+| **Verification**     | C     | R         | C         | R/A | -      | -    |
+| **Deployment**       | I     | C         | C         | C   | R/A    | I    |
+| **Support**          | I     | C         | C         | -   | R/A    | I    |
+
+> **Note:** This matrix represents the most common role assignments. Adapt to
+> your team structure — in smaller teams, one person may hold multiple roles. In
+> larger organizations, additional roles (security, compliance) may be Consulted
+> or Accountable at specific stages.
 
 ---
 
@@ -669,8 +745,98 @@ formal_ and _how coordinated_.
 
 ---
 
+## Architecture Governance
+
+Right-size architecture governance to your team and project tier:
+
+| Tier       | Review Forum               | ADR Approval          | Design Review              |
+| ---------- | -------------------------- | --------------------- | -------------------------- |
+| Minimal    | Self-review or pair review | Author + one reviewer | Informal, async comment    |
+| Standard   | Team PR review or design   | Tech lead sign-off    | Weekly design meeting      |
+|            | sync                       |                       |                            |
+| Enterprise | Architecture council       | Council vote or       | Formal design review board |
+|            |                            | delegate              |                            |
+
+### Architecture Council (Enterprise Tier)
+
+For Enterprise-tier projects, establish a formal architecture council:
+
+- **Membership:** Tech leads, principal engineers, security representative, and
+  (optionally) a compliance representative
+- **Meeting cadence:** Bi-weekly or monthly, depending on project velocity and
+  volume of architecture decisions
+- **Decision authority:** ADR approval, technology stack changes, cross-team API
+  contracts, and significant infrastructure decisions
+- **Escalation path:** Deadlocked decisions escalate to VP Engineering or CTO
+  with a written summary of positions and trade-offs
+
+### When Architecture Review Is Triggered
+
+Not every change needs formal review. Use this guide:
+
+| Change Type                  | Minimal     | Standard    | Enterprise     |
+| ---------------------------- | ----------- | ----------- | -------------- |
+| New external dependency      | Self-review | Tech lead   | Council review |
+| API contract change          | Self-review | Team review | Council review |
+| Database schema change       | Self-review | Tech lead   | Team review    |
+| New service or component     | Self-review | Design sync | Council review |
+| Technology stack change      | N/A         | Tech lead   | Council vote   |
+| Security architecture change | Self-review | Security +  | Council +      |
+|                              |             | tech lead   | security       |
+
+---
+
+## Compliance and Regulatory Considerations
+
+AI-assisted development introduces specific compliance considerations that
+organizations should evaluate before adoption.
+
+### Key Considerations
+
+- **IP and licensing:** AI-generated code may have licensing implications. Human
+  review at every stage mitigates this risk. Establish a policy on AI-generated
+  code ownership and attribution.
+- **Data privacy:** AI assistants process project context. Verify that your AI
+  tool's data handling meets your compliance requirements before use — check
+  data residency, training data opt-out policies, and data retention terms.
+- **Audit trail:** The framework's gate decisions, checklists, and briefs create
+  a natural audit trail of human decision-making at every stage. This is
+  valuable for regulatory audits and compliance reviews.
+- **Liability:** Human validation at all checkpoints maintains human
+  accountability for all outputs. AI generates; humans approve.
+
+### Enterprise-Tier Controls
+
+Organizations in regulated industries (healthcare, finance, government) should
+use the Enterprise risk tier, which adds formal gates for security review,
+compliance validation, and Change Advisory Board approval. See
+[Right-Sizing Guide](right-sizing-guide.md) for tier definitions.
+
+### AI-Specific Policies
+
+Before adopting the framework, ensure your organization has addressed:
+
+- [ ] **AI usage policy** — which AI tools are approved, what data can be shared
+      with them, and what restrictions apply
+- [ ] **Code review standards** — how to review AI-generated code (same
+      standards as human code, with additional attention to licensing and
+      security)
+- [ ] **Data classification** — which project data can be used as AI context and
+      which must be excluded
+- [ ] **Disclosure requirements** — whether AI-assisted development must be
+      disclosed to customers, regulators, or auditors
+
+### Emerging AI Regulation
+
+Monitor applicable AI regulations (e.g., EU AI Act) for any disclosure or
+documentation requirements for AI-generated software artifacts. The framework's
+audit trail and human-in-the-loop design position teams well for emerging
+regulatory requirements.
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.9.0.

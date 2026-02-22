@@ -82,15 +82,15 @@ For assistance level details, see the
 **Handoff:** Support stage receives deployed system, monitoring dashboards, and
 support runbook.
 
-**Gate 7:** Record the deployment decision using the
+**Deployment Approval:** Record the deployment decision using the
 [Gate Decision Template](../gate-decision-template.md).
 
 ---
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.7.0.

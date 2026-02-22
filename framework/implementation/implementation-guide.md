@@ -38,11 +38,15 @@ brief, instrumentation
 - Large PRs that get rubber-stamped
 - Merging without tests passing
 
-**Checkpoint:** Quality Checkpoint (code review + tests + standards) — see
-[Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
+**Checkpoint:** Quality Checkpoint — code review + tests + standards must pass
+before handoff. See
+[Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy) for
+type definitions.
 
-**AI assistance:** High assistance, bounded scope — see
+**AI Assistance:** Collaborative by default — AI generates drafts, human reviews
+all output. See
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
+for level definitions.
 
 ---
 
@@ -193,7 +197,7 @@ maintainability, testability, error handling, standards compliance.
 ### Implementation Decision Records (ADRs)
 
 For significant decisions, create ADRs using the framework's template
-(`../../adr-template.md`).
+(`../adr-template.md`).
 
 **"Reasonable engineer test":** If someone might later ask "why this approach
 instead of alternatives?", create an ADR.
@@ -275,6 +279,6 @@ in depth:
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.5.0.
