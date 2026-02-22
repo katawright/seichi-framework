@@ -3,8 +3,7 @@
 > Framework-wide concepts that apply across all stages. Stage-specific guidance
 > is in each stage's guide.
 
-> **Looking for a brief overview?** See the
-> [Quick Start Guide](framework-quickstart.md).
+> **Looking for a brief overview?** See the [Quick Start Guide](README.md).
 
 ---
 
@@ -196,7 +195,7 @@ significant new information emerges:
 
 ### Stage Overview
 
-<!-- Keep this table in sync with framework-quickstart.md and framework-stages.md -->
+<!-- Keep this table in sync with README.md and framework-stages.md -->
 
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |

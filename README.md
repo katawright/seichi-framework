@@ -1,13 +1,13 @@
 # AI-Assisted SDLC
 
-**Framework Version:** 0.18.0 **Last Updated:** 2026-02-20
+**Framework Version:** 0.18.1 **Last Updated:** 2026-02-22
 
 A practical framework for integrating AI assistance into software development.
 
 ## Getting Started
 
-New here? Read the [Quick Start Guide](framework/framework-quickstart.md) for a
-brief overview of the framework.
+New here? Read the [Quick Start Guide](framework/README.md) for a brief overview
+of the framework.
 
 ## Status
 

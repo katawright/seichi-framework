@@ -94,7 +94,7 @@ log, and review approvals. Before handoff, ensure:
 
 ## Notes
 
-**Framework Version:** 0.18.0
+**Framework Version:** 0.18.1
 
 **Last Updated:** 2026-02-22
 
