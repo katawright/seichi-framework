@@ -325,6 +325,19 @@ assessment.
 [AI Assistance Scorecard](framework-ai-assistance.md) for stage-specific
 guidance.
 
+### Checkpoint Decision Rights
+
+The table below summarizes who approves each checkpoint type, what evidence is
+required, and where the decision is recorded.
+
+| Checkpoint Type     | Approver             | Required Evidence                      | Decision Record              |
+| ------------------- | -------------------- | -------------------------------------- | ---------------------------- |
+| Gate (1 & 2)        | Executive (A)        | Stage brief, risk assessment           | Gate Decision Template       |
+| Quality Checkpoint  | Tech lead / QA (A)   | Code review, test results, CI          | PR history, CI logs          |
+| Deployment Approval | DevOps / Eng (A)     | Deployment checklist, UAT              | Deployment brief / checklist |
+| Alignment Review    | PM/BA or Arch (A)    | Design artifacts, stakeholder sign-off | ADR or meeting notes         |
+| Compliance Approval | Legal / Security (A) | Audit artifacts, scan results          | Compliance record / ADR      |
+
 ---
 
 ## Measurement Throughline
@@ -667,8 +680,9 @@ constraints** that new work must satisfy:
 - **Operational constraints:** Deployment windows, rollback requirements
 
 These constraints become **Non-Functional Requirements (NFRs)** that shape
-design and testing. See the [Requirements Guide](requirements/requirements-
-guide.md) for detailed guidance on capturing brownfield constraints.
+design and testing. See the
+[Requirements Guide](requirements/requirements-guide.md) for detailed guidance
+on capturing brownfield constraints.
 
 ### When Both Types Converge
 
@@ -837,6 +851,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.9.0.

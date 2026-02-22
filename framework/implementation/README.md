@@ -85,17 +85,17 @@ proceed with a red pipeline.
 > [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline).
 
 **Handoff:** Verification stage receives working code, test results, session
-log, and review approvals.
+log, and review approvals. Before handoff, ensure:
 
-- Test environment available and accessible to QA
-- Test data prepared or generation scripts ready
+- Test environment is available and accessible to QA
+- Test data is prepared or generation scripts are ready
 
 ---
 
 ## Notes
 
-**Framework Version:** 0.17.0
+**Framework Version:** 0.18.0
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.5.0.

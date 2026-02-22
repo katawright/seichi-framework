@@ -1,6 +1,6 @@
 # Gate Decision: [Gate N — Short Title]
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 **Date:** YYYY-MM-DD
 
@@ -63,7 +63,9 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
-> **Note:** This template is designed for Gate 1 and Gate 2 investment
+> **Note:** This template is the standard decision record for formal checkpoints
+> across the framework. Primary uses: Gate 1 and Gate 2 investment decisions.
+> Also used for: deployment approval records and support readiness acceptance
 > decisions. For architecture review decisions (Alignment Review checkpoints),
 > record the outcome as an ADR with status "Accepted" rather than using this
 > template.

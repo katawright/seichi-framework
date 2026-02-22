@@ -153,7 +153,7 @@ Prevention: [Key action items with owners and due dates]
 ```
 
 > **AI exploration:** _"Draft incident communication messages for [describe the
-> current incident situation]."_
+> > current incident situation]."_
 
 ---
 
@@ -189,7 +189,7 @@ Prevention: [Key action items with owners and due dates]
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your > > >
+> **AI exploration:** _"Customize these severity levels for [describe your >
 > product, user base, and SLA commitments]."_
 
 ---
@@ -399,7 +399,7 @@ appropriate to your support level), see the
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your > > >
+> **AI exploration:** _"Generate a runbook template for [describe your >
 > deployment process and tooling]."_
 
 ---
@@ -759,11 +759,11 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** _"Help me create a disaster recovery plan for [describe
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe >
 > your system, infrastructure, and business requirements]."_
 
 ---
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 _Added to framework in v0.12.0_

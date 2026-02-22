@@ -213,7 +213,7 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 ### Outputs
 
 - **Initiation Brief** - One-page summary of project (see
-  `initiation-brief-template.md`)
+  [Initiation Brief Template](initiation/initiation-brief-template.md))
 - Objectives with measurable success criteria documented
 - Assumptions and risks list
 - High-level timeline and resource estimate (range-based)
@@ -292,7 +292,7 @@ rework from ambiguity.
 ### Outputs
 
 - **Requirements Document** - Functional and non-functional requirements (see
-  `requirements-brief.md`)
+  [Requirements Brief Template](requirements/requirements-brief-template.md))
 - User stories or use cases with acceptance criteria
 - Prioritized feature backlog
 - Requirements traceability to objectives and success criteria
@@ -571,7 +571,7 @@ right thing).
 ### Outputs
 
 - **Test Results** - All test types with pass/fail status (see
-  `verification-report.md`)
+  [Verification Brief Template](verification/verification-brief-template.md))
 - Defect reports and resolution status
 - UAT sign-off from business stakeholders
 - Performance test results
@@ -857,6 +857,6 @@ maintain the 8-stage simplicity.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.9.0.
