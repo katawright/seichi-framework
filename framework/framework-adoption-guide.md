@@ -263,6 +263,12 @@ getting value. The framework is designed so each stage works independently — y
 don't need Initiation briefs to benefit from structured AI-assisted
 implementation.
 
+**Measurement throughline note:** End-to-end traceability — from business
+objectives through to production metrics — requires the complete stage sequence.
+Partial adoption delivers structured workflows and verification gates without
+the full measurement chain. Add Initiation and Requirements stages when
+governance reporting and objective traceability become priorities.
+
 ---
 
 ## Organizational Tier Policies
@@ -395,6 +401,6 @@ as the team builds familiarity.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 _Added to framework in v0.17.0_

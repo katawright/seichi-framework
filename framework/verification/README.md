@@ -89,7 +89,7 @@ fresh brief.
 
 ## Notes
 
-**Framework Version:** 0.17.0
+**Framework Version:** 0.18.0
 
 **Last Updated:** 2026-02-21
 

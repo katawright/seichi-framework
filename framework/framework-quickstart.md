@@ -88,10 +88,13 @@ progression model.
 - **Any organization** seeking a structured, practical approach to AI-assisted
   software development
 
-> **Find your starting point:** Engineering leaders evaluating adoption → see
-> [Adoption Path](#adoption-path) below Practitioners starting a project → see
-> [Get Started](#get-started) below Executives making an investment decision →
-> see [Governance at a Glance](#governance-at-a-glance) below
+**Find your starting point:**
+
+- **Engineering leaders** evaluating adoption → [Adoption Path](#adoption-path)
+- **Practitioners** (engineers, PMs, BAs) starting a project →
+  [Get Started](#get-started)
+- **Executives** making an investment decision →
+  [Governance at a Glance](#governance-at-a-glance)
 
 ## The 8 Stages at a Glance
 
@@ -175,4 +178,4 @@ Guide.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22

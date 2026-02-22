@@ -63,12 +63,16 @@ file paths and the tool will read them.
 I'm using the AI-Assisted SDLC framework for a software project.
 
 Please read these framework documents:
-- C:\Code\ai-assisted-sdlc\framework\framework-stages.md
-- C:\Code\ai-assisted-sdlc\framework\framework-guide.md
-- C:\Code\ai-assisted-sdlc\framework\initiation\initiation-guide.md
+- framework/framework-stages.md
+- framework/framework-guide.md
+- framework/initiation/initiation-guide.md
 
 [rest of prompt...]
 ```
+
+> Use paths relative to your repository root. If your tool requires absolute
+> paths, substitute your local root (e.g.,
+> `C:\your-repo\framework\framework-stages.md`).
 
 **ChatGPT / Claude.ai (Web-based):**
 
@@ -231,6 +235,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.9.0.

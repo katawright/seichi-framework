@@ -42,7 +42,7 @@ enhancement requests, system health metrics
 **Checkpoint:** Continuous monitoring + escalation gates — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
-**AI assistance:** High assistance for monitoring + human escalation — see
+**AI assistance:** AI agent with human gate — see
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
 
 ---
@@ -381,6 +381,6 @@ practices, see
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.8.0.

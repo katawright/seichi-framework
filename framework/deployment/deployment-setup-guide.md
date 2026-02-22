@@ -174,8 +174,8 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your > > >
-> > stack, team size, and deployment frequency targets]."_
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your >
+> stack, team size, and deployment frequency targets]."_
 
 ---
 
@@ -266,6 +266,6 @@ Lower-priority items become backlog for future iterations.
 
 ---
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 _Added to framework in v0.12.0_

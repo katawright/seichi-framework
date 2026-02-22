@@ -366,14 +366,14 @@ depth:
 The following concerns apply across all stages. Define your approach at System
 Design and trace it through implementation and verification:
 
-| Concern       | Define at           | Verify at            | Framework Reference       |
-| ------------- | ------------------- | -------------------- | ------------------------- |
-| Security      | System Design       | Verification         | Threat model template     |
-| Performance   | System Design       | Verification         | NFR traceability table    |
-| Observability | Requirements/Design | Support              | Measurement Throughline   |
-| Accessibility | Requirements        | Verification         | Checklist                 |
-| Resilience    | System Design       | Verification/Support | Rollback and DR sections  |
-| Data privacy  | System Design       | Verification         | Compliance considerations |
+| Concern       | Define at           | Verify at            | Framework Reference                                                                            |
+| ------------- | ------------------- | -------------------- | ---------------------------------------------------------------------------------------------- |
+| Security      | System Design       | Verification         | system-design-brief-template.md (Security section) + verification-checklist.md (security gate) |
+| Performance   | System Design       | Verification         | requirements-brief-template.md (NFR section)                                                   |
+| Observability | Requirements/Design | Support              | Measurement Throughline                                                                        |
+| Accessibility | Requirements        | Verification         | Checklist                                                                                      |
+| Resilience    | System Design       | Verification/Support | Rollback and DR sections                                                                       |
+| Data privacy  | System Design       | Verification         | Compliance considerations                                                                      |
 
 ---
 
@@ -425,6 +425,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 Added to framework in v0.12.0.
