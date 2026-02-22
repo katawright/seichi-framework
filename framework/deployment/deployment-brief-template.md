@@ -1,6 +1,6 @@
 # Deployment Brief
 
-**Last Updated:** YYYY-MM-DD **Increment:** [Increment name/ID] **Deployment
+**Last Updated:** 2026-02-21 **Increment:** [Increment name/ID] **Deployment
 Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 / In Progress / Completed / Rolled Back]
 
@@ -43,6 +43,8 @@ Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 Bang]
 
 **Rationale:** [Why this strategy was chosen]
+
+**Deployment Window:** [Start time] – [End time] [Timezone]
 
 **Target Environment:** [Production / Staging / Pre-Prod] **Region(s):** [e.g.,
 US-East, EU-Central, Global] **Infrastructure:** [e.g., AWS ECS, Kubernetes, VM
@@ -138,7 +140,7 @@ subsections that don't apply._
 
 ## Rollback Plan
 
-**Triggers** — initiate rollback if any occur:
+**Example triggers (adjust to your baseline):**
 
 - Critical bug blocking users
 - Error rate >5% sustained for >5 minutes
@@ -234,6 +236,39 @@ tracker]
 
 ---
 
+## Production Ownership Transfer
+
+_Complete this section when production responsibility transfers from the
+deploying team to the accepting (support/ops) team. For Minimal-tier projects
+where the same team deploys and supports, a lightweight acknowledgment is
+sufficient._
+
+| Field              | Value                                              |
+| ------------------ | -------------------------------------------------- |
+| System / Increment | [What is being transferred]                        |
+| Transfer date/time | YYYY-MM-DD HH:MM [TZ]                              |
+| Accepting team     | [Team or role name]                                |
+| Support tier       | [Minimal / Standard / Enterprise]                  |
+| Escalation contact | [Deployment engineer, available until: YYYY-MM-DD] |
+
+**Accepting team confirms:**
+
+- [ ] Runbooks received and reviewed
+- [ ] Monitoring dashboards accessible
+- [ ] Alerting verified and routed to on-call
+- [ ] Rollback procedure known and tested
+- [ ] Known issues and workarounds understood
+- [ ] Escalation path and contacts documented
+
+**Sign-off:**
+
+| Role                | Name   | Date       |
+| ------------------- | ------ | ---------- |
+| Deploying team lead | [Name] | YYYY-MM-DD |
+| Accepting team lead | [Name] | YYYY-MM-DD |
+
+---
+
 ## Sign-Off
 
 **Deployment Status:** [✅ Success / ⚠️ Partial / ❌ Rolled Back]
@@ -267,6 +302,6 @@ tracker]
 
 ---
 
-**Template Last Updated:** 2026-02-19
+**Template Last Updated:** 2026-02-21
 
 _Added to framework in v0.7.0_

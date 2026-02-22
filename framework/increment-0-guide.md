@@ -35,7 +35,7 @@ Foundational Stages          Increment 0          Feature Delivery
 │ System Design      │      │ Discovery │      │ Increment 3      │
 │                    │      │           │      │ ...              │
 └────────────────────┘      └───────────┘      └──────────────────┘
-        Gate 1  Gate 2           Gate 3
+        Gate 1  Gate 2
 ```
 
 **Not every project needs Increment 0.** Brownfield projects with existing
@@ -110,6 +110,6 @@ functionality.
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.14.0.

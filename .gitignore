@@ -48,6 +48,9 @@ temp/
 # Private notes and scratch work
 .ignore/
 
+# Obsidian vault files (if not using Obsidian Sync)
+.obsidian/
+
 # Package manager lock files (uncomment preferred one)
 # package-lock.json
 # yarn.lock

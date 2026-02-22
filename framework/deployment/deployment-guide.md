@@ -229,7 +229,7 @@ index updates, feature flag state changes.
 
 Every deployment must be reversible. Plan rollback before deploying.
 
-**Critical triggers (roll back immediately):**
+**Example triggers (adjust to your baseline):**
 
 - Core functionality broken
 - Data corruption or loss
@@ -334,6 +334,6 @@ Deployment validates that measurement systems work in production. See
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.7.0.

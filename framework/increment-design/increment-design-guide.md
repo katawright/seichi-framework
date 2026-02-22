@@ -45,7 +45,8 @@ foundational conventions, requirements with ACs
 - Test strategy as afterthought
 - No migration or rollback plan for data/state changes
 
-**Checkpoint:** Optional Quality Checkpoint — see
+**Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
+Standard; required for Enterprise) — see
 [Framework Guide: Checkpoints](../framework-guide.md#checkpoint-taxonomy)
 
 **AI assistance:** AI agent + strong gates — see
@@ -281,6 +282,6 @@ Verification stage what to test and how.
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

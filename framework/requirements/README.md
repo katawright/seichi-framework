@@ -19,6 +19,14 @@ For cross-cutting framework concepts, see
 - Existing system context for brownfield projects (see
   [Requirements Guide: Brownfield Projects](requirements-guide.md#brownfield-projects))
 
+**Handoff verification (from Initiation):**
+
+- [ ] Initiation Brief approved at Gate 1
+- [ ] Success metrics defined with baseline and target
+- [ ] Stakeholder list with availability confirmed
+- [ ] Constraints and non-goals documented
+- [ ] Gate 1 decision recorded using the Gate Decision Template
+
 **The Requirements process helps you:**
 
 - Convert business objectives into functional requirements (FRs)
@@ -84,8 +92,8 @@ point.
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.3.0.

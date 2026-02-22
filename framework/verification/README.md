@@ -14,7 +14,8 @@ For cross-cutting framework concepts, see
 **To begin, you need:**
 
 - Working code from Implementation stage
-- Unit tests passing with adequate coverage
+- Unit tests passing with coverage meeting team threshold (default: 80% line
+  coverage — see implementation brief for project-specific target)
 - Code review approvals
 - Requirements with acceptance criteria
 - Implementation brief with notes
@@ -45,21 +46,22 @@ For assistance level details, see the
 ## Suggested Workflow
 
 1. Review requirements and acceptance criteria
-2. Define test strategy and coverage approach
-3. Prepare test environment and data
-4. Execute integration tests
-5. Execute functional tests against acceptance criteria
-6. Execute performance tests against NFRs
-7. Execute security tests
-8. Track and resolve defects
-9. Conduct UAT with business stakeholders
-10. Validate instrumentation and monitoring
-11. Assess production readiness (go/no-go) using the
+2. Review test strategy from Increment Design brief
+3. Refine test strategy and coverage approach for this cycle
+4. Prepare test environment and data
+5. Execute integration tests
+6. Execute functional tests against acceptance criteria
+7. Execute performance tests against NFRs
+8. Execute security tests
+9. Track and resolve defects
+10. Conduct UAT with business stakeholders
+11. Validate instrumentation and monitoring
+12. Assess production readiness (go/no-go) using the
     [Gate Decision Template](../gate-decision-template.md)
-12. Run `verification-checklist.md`
-13. Complete verification brief
+13. Run `verification-checklist.md`
+14. Complete verification brief
 
-If verification fails (step 11 results in no-go), work returns to Implementation
+If verification fails (step 12 results in no-go), work returns to Implementation
 for defect fixes. When fixes are complete, start a new verification cycle with a
 **fresh brief** — do not overwrite the previous cycle's brief, so each cycle's
 results are preserved as a clean historical record.
@@ -87,8 +89,8 @@ fresh brief.
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.6.0.

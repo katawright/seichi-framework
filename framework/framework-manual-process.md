@@ -27,6 +27,9 @@ Help me work through the [STAGE NAME] stage for my project:
 - Type: [greenfield / brownfield - first AI project / brownfield - has context]
 - Tech stack: [if known, list key technologies]
 - Team size: [solo/small (2-5)/large (6+)]
+- Risk tier: [Minimal / Standard / Enterprise]
+(See Right-Sizing Guide if unsure:
+framework/right-sizing-guide.md)
 
 Guide me through the key activities for this stage, help me complete the
 stage brief template, and validate against the checklist criteria. We may
@@ -228,6 +231,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.9.0.

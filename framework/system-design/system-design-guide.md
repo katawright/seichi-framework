@@ -263,6 +263,18 @@ ADRs.
   patterns
 - **Increment plan:** Increment definitions with requirements mapping
 
+**C4 diagram levels and when to use them:**
+
+| Level     | What it shows              | When required                 |
+| --------- | -------------------------- | ----------------------------- |
+| Context   | System and external actors | Always (all tiers)            |
+| Container | Major deployable units     | Standard and Enterprise       |
+| Component | Internal structure         | Enterprise or complex systems |
+| Code      | Class/function level       | Rarely needed; use sparingly  |
+
+For Minimal-tier projects, a whiteboard context sketch is sufficient. Use
+Mermaid or PlantUML for diagram-as-code.
+
 #### Documentation Principles
 
 - Keep docs in version control alongside code
@@ -290,6 +302,47 @@ rationale, consequences, alternatives.
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
 
+### ADR Lifecycle
+
+ADRs follow a propose → review → approve → record → evolve lifecycle:
+
+1. **Propose:** Author creates an ADR with status "Proposed" and opens a review
+   (PR, design meeting, or async comment thread)
+2. **Review:** Right-size the review forum to your tier:
+   - Minimal: Self-review or pair discussion
+   - Standard: Team review via PR or design meeting
+   - Enterprise: Architecture council or tech lead board
+3. **Approve:** Reviewers accept; author updates status to "Accepted" and
+   records who decided
+4. **Record:** ADR is merged to version control alongside code
+5. **Evolve:** When a decision is superseded, create a new ADR and set the
+   original's status to "Superseded by ADR-XXX"
+
+### System-Level Interface Contracts
+
+For multi-service or multi-team architectures, define formal interface contracts
+at System Design to enable parallel increment work.
+
+**When contracts are needed:**
+
+- Multiple services communicate over an API boundary
+- Multiple teams develop components in parallel
+- External parties will consume the API
+
+**Recommended formats:**
+
+- REST APIs: OpenAPI (YAML/JSON)
+- Event-driven: AsyncAPI
+- RPC: protobuf / gRPC
+- Internal schemas: JSON Schema
+
+**Storage and governance:**
+
+- Store contracts in `docs/api/` or alongside the owning service
+- Version contracts using semantic versioning
+- Treat contract changes as ADR-worthy decisions
+- Increment Design contracts are refinements of system-level contracts
+
 ### Additional Topics
 
 The [System Design Reference](system-design-reference.md) covers these topics in
@@ -307,6 +360,20 @@ depth:
   increment plans
 - **Gate 2 cost calculation** — estimation examples and infrastructure cost
   templates
+
+## Cross-Cutting Concerns
+
+The following concerns apply across all stages. Define your approach at System
+Design and trace it through implementation and verification:
+
+| Concern       | Define at           | Verify at            | Framework Reference       |
+| ------------- | ------------------- | -------------------- | ------------------------- |
+| Security      | System Design       | Verification         | Threat model template     |
+| Performance   | System Design       | Verification         | NFR traceability table    |
+| Observability | Requirements/Design | Support              | Measurement Throughline   |
+| Accessibility | Requirements        | Verification         | Checklist                 |
+| Resilience    | System Design       | Verification/Support | Rollback and DR sections  |
+| Data privacy  | System Design       | Verification         | Compliance considerations |
 
 ---
 
@@ -329,6 +396,21 @@ depth:
 5. Communicate to affected teams
 6. Update increment plan and downstream work
 
+### Proactive Architecture Evolution
+
+In addition to reactive triggers, consider scheduled architecture reviews:
+
+- **Quarterly review:** Assess technical debt backlog and fitness of current
+  architecture against current load and team size
+- **Tech debt tracking:** Maintain a tech debt backlog category alongside the
+  feature backlog; review at each increment planning session
+- **Fitness functions:** For long-lived systems, define automated checks that
+  validate architectural constraints (e.g., no circular dependencies, response
+  time budgets). Run as part of CI.
+- **ADR refresh:** When a decision is superseded proactively (not due to
+  failure), create a new ADR and mark the original as "Superseded by ADR-XXX"
+  with a brief rationale.
+
 ---
 
 ## Related Documents
@@ -343,6 +425,6 @@ depth:
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

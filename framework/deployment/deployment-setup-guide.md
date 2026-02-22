@@ -146,7 +146,9 @@ Set up observability infrastructure:
 - Log aggregation and search
 - Infrastructure metrics dashboards
 - Alert routing and escalation policies
-- On-call rotation setup
+- On-call rotation tooling configured (see
+  [Support Operations Guide](../support/support-operations-guide.md) for
+  rotation structure and escalation process)
 
 For configuring ongoing operational processes that use this infrastructure
 (incident response, on-call procedures, runbooks), see the
@@ -159,14 +161,21 @@ Validate the entire pipeline end-to-end before the first real increment:
 1. Deploy a minimal application (health check endpoint)
 2. Verify it passes through all pipeline stages
 3. Confirm monitoring captures metrics
-4. Test rollback procedure
+4. Test rollback procedure — a successful rollback test confirms:
+   - Previous version is serving traffic and passing health checks
+   - No data loss or corruption occurred
+   - Monitoring shows baseline metrics restored
+
+   See [Deployment Reference: Rollback Procedures](deployment-reference.md) for
+   step-by-step rollback instructions.
+
 5. Validate alerting fires correctly (test alert)
 
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
 > **AI exploration:** _"Help me design a CI/CD pipeline for [describe your > > >
-> stack, team size, and deployment frequency targets]."_
+> > stack, team size, and deployment frequency targets]."_
 
 ---
 
@@ -257,6 +266,6 @@ Lower-priority items become backlog for future iterations.
 
 ---
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.12.0_

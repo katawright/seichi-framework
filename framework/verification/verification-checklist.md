@@ -1,11 +1,14 @@
 # Verification Checklist
 
-**Purpose:** Quick verification (60-90 seconds) that testing is complete and the
+**Purpose:** Pre-handoff readiness review that testing is complete and the
 increment is ready for deployment.
 
 **Usage:** Review after test execution, before deployment approval.
 
 ---
+
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
 
 ## Test Planning
 
@@ -36,9 +39,9 @@ increment is ready for deployment.
 
 ## User Acceptance Testing
 
-- [ ] UAT scenarios executed with business users
-- [ ] UAT feedback documented and addressed
-- [ ] Business stakeholder sign-off obtained
+- [ ] **[H]** UAT scenarios executed with business users
+- [ ] **[H]** UAT feedback documented and addressed
+- [ ] **[H]** Business stakeholder sign-off obtained
 - [ ] Approver name, date, and conditions documented
 
 **Gate:** UAT approved → Proceed to readiness
@@ -61,7 +64,7 @@ increment is ready for deployment.
 
 - [ ] All defects logged and tracked
 - [ ] No critical or high-severity defects open
-- [ ] Deferred defects documented with justification
+- [ ] **[H]** Deferred defects documented with justification
 - [ ] Fixed defects retested and verified
 
 **Gate:** No blocking defects → Proceed to readiness
@@ -72,7 +75,7 @@ increment is ready for deployment.
 
 - [ ] All quality gates passed
 - [ ] Verification brief completed
-- [ ] Known issues and limitations documented
+- [ ] **[H]** Known issues and limitations documented
 - [ ] Deployment checklist prepared
 - [ ] Rollback plan documented
 - [ ] Deployment team notified and ready
@@ -85,7 +88,9 @@ increment is ready for deployment.
 
 - [ ] **READY FOR DEPLOYMENT** — All checks passed
 - [ ] **READY WITH CONDITIONS** — Minor issues, conditions documented
-- [ ] **NOT READY** — Critical issues must be resolved
+- [ ] **NOT READY** — Critical issues must be resolved. Return to Implementation
+      for defect fixes. Start a new verification cycle with a fresh brief when
+      fixes are complete.
 
 **Sign-Off:**
 
@@ -98,11 +103,11 @@ increment is ready for deployment.
 > For red flags, troubleshooting guidance, and detailed test type checklists,
 > see the [Verification Reference](verification-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your
+> **AI suggestion:** _"Walk me through this checklist for [describe your > >
 > increment] and flag items that need extra attention."_
 
 ---
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.6.0_

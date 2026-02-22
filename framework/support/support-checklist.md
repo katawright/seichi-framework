@@ -12,13 +12,16 @@ Not all items apply to all support levels. Teams at the Minimal level may skip
 items that reference formal on-call rotations or SLAs. See the
 [Support Operations Guide](support-operations-guide.md) for level definitions.
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Support Readiness
 
-1. **Support team identified with roles and on-call rotation.**
+1. **[H] Support team identified with roles and on-call rotation.**
 2. **Production access granted (VPN, MFA, credentials documented).**
 3. **Support brief completed and up to date.**
 4. **Runbooks created for common operational tasks.**
-5. **Handoff from deployment team completed (training, walkthrough).**
+5. **[H] Handoff from deployment team completed (training, walkthrough).**
 6. **Escalation contacts identified and documented.**
 
 ## Monitoring and Alerting
@@ -26,7 +29,7 @@ items that reference formal on-call rotations or SLAs. See the
 7. **Production monitoring dashboard configured and accessible.**
 8. **Alerts configured with severity-appropriate routing (page vs. Slack vs.
    email).**
-9. **Alert thresholds tested and tuned (not too noisy, not too quiet).**
+9. **[H] Alert thresholds tested and tuned (not too noisy, not too quiet).**
 10. **Error tracking and log aggregation configured.**
 11. **Success criteria dashboard shows current values against targets.**
 
@@ -39,18 +42,18 @@ items that reference formal on-call rotations or SLAs. See the
 
 ## Ongoing Operations
 
-16. **Daily: Dashboards reviewed, new issues triaged.**
-17. **Bug triage process active (severity, impact, urgency).**
-18. **Enhancement backlog maintained and reviewed.**
+16. **[H] Daily: Dashboards reviewed, new issues triaged.**
+17. **[H] Bug triage process active (severity, impact, urgency).**
+18. **[H] Enhancement backlog maintained and reviewed.**
 19. **Dependency scanning active (vulnerabilities tracked).**
-20. **Documentation updated after incidents and releases.**
+20. **[H] Documentation updated after incidents and releases.**
 
 ## Success Criteria
 
 21. **Success criteria from Initiation are being measured per schedule.**
-22. **Trends analyzed (improving, declining, stable).**
-23. **Reports distributed to stakeholders.**
-24. **Action items created when metrics are behind target.**
+22. **[H] Trends analyzed (improving, declining, stable).**
+23. **[H] Reports distributed to stakeholders.**
+24. **[H] Action items created when metrics are behind target.**
 
 > If items 1-6 and 12-14 are not met, the team is not ready to own production.
 
@@ -74,6 +77,6 @@ This checklist aligns with the formal exit criteria in
 
 ## Notes
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.8.0_

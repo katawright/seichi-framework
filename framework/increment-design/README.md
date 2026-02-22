@@ -59,7 +59,10 @@ For assistance level details, see the
 4. Specify interfaces, data/state changes, component interactions
 5. Define test strategy for Verification stage
 6. Run `increment-design-checklist.md`
-7. Proceed to Implementation stage
+7. Obtain design approval — peer review or tech lead sign-off (optional for
+   Minimal; recommended for Standard; required for Enterprise — see
+   [Right-Sizing Guide](../right-sizing-guide.md))
+8. Proceed to Implementation stage
 
 ## Stage Outputs
 
@@ -79,8 +82,8 @@ contracts, and test strategy.
 
 ## Notes
 
-**Framework Version:** 0.16.0
+**Framework Version:** 0.17.0
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.

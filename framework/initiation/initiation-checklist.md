@@ -7,6 +7,9 @@ to circulate.
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Checklist Items
 
 1. **Problem statement is problem-first** (not solution-first)
@@ -16,11 +19,11 @@ to circulate.
 4. **Scope boundaries are explicit** (in-scope and out-of-scope)
 5. **Non-goals are explicit** (3-5 items)
 6. **Top assumptions (<=5) are written down**
-7. **Top risks/unknowns (<=5) with likelihood + mitigations**
+7. **[H] Top risks/unknowns (<=5) with likelihood + mitigations**
 8. **Constraints and dependencies identified** with owners where possible
 9. **At least one alternative option considered**
 10. **Hypothesis includes a time range and confidence level**
-11. **Gate 1 decision criteria are explicit** (proceed/pivot/stop)
+11. **[H] Gate 1 decision criteria are explicit** (proceed/pivot/stop)
 12. **A project lead is named**
 
 ---
@@ -36,8 +39,10 @@ to circulate.
 > For critical items rationale and exit criteria alignment, see
 > [Initiation Reference: Checklist Reference](initiation-reference.md#checklist-reference).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your project
-> > idea] and flag items needing attention."_
+> **AI suggestion:** \_"Walk me through this checklist for [describe your
+> project
+>
+> > idea] and flag items needing attention."\_
 
 ---
 
@@ -52,6 +57,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.2.0.

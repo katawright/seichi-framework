@@ -139,8 +139,8 @@ Reassess your tier at major milestones — particularly after Initiation and
 Requirements, where expansion triggers signal that your project may need more
 rigor:
 
-- [Initiation Guide: When to Expand Beyond Minimal](initiation/initiation-guide.md#when-to-expand-beyond-minimal)
-- [Requirements Guide: When to Expand Beyond Minimal](requirements/requirements-guide.md#when-to-expand-beyond-minimal)
+- [Initiation Guide: Right-Sizing Initiation](initiation/initiation-guide.md#right-sizing-initiation)
+- [Requirements Guide: Right-Sizing Requirements](requirements/requirements-guide.md#right-sizing-requirements)
 
 ---
 
@@ -175,16 +175,13 @@ table showing exactly what each tier involves for that stage:
 - [Deployment Setup Guide: Right-Sizing](deployment/deployment-setup-guide.md#right-sizing-deployment-setup)
 - [Support Guide: Right-Sizing](support/support-guide.md#right-sizing-support)
 
-For Initiation and Requirements, see the "When to Expand Beyond Minimal"
-sections which serve as right-sizing triggers:
-
-- [Initiation Guide: When to Expand Beyond Minimal](initiation/initiation-guide.md#when-to-expand-beyond-minimal)
-- [Requirements Guide: When to Expand Beyond Minimal](requirements/requirements-guide.md#when-to-expand-beyond-minimal)
+- [Initiation Guide: Right-Sizing Initiation](initiation/initiation-guide.md#right-sizing-initiation)
+- [Requirements Guide: Right-Sizing Requirements](requirements/requirements-guide.md#right-sizing-requirements)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.13.0.

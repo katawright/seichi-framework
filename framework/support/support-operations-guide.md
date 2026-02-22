@@ -100,6 +100,18 @@ escalation paths. See
 **Enterprise:** 24x7 coverage with follow-the-sun or shift-based rotation.
 Automated escalation if on-call does not acknowledge within SLA.
 
+### On-Call Expectations
+
+| Expectation                 | Standard             | Enterprise           |
+| --------------------------- | -------------------- | -------------------- |
+| Alert acknowledgment SLA    | Within 15 minutes    | Within 5 minutes     |
+| Connectivity during on-call | Available by phone   | Available and online |
+| Escalation trigger          | No ack after 15 min  | No ack after 5 min   |
+| Handoff process             | Slack summary at EOD | Brief call + ticket  |
+
+Handoff: At rotation change, brief incoming on-call on all active incidents,
+known instabilities, and any elevated alert states.
+
 ### 4. Set Up User Support Channels
 
 **Minimal:** Publish a contact email or Slack channel. Set expectations that
@@ -129,11 +141,14 @@ Document procedures the team will need:
 contact for help.
 
 **Standard:** Add runbooks for common incidents, database maintenance,
-dependency updates, and scaling procedures. See
-[Support Reference: Runbook Examples](support-reference.md#operational-runbook-examples).
+dependency updates, and scaling procedures. Use the
+[Runbook Template](runbook-template.md) as a starting point. See
+[Support Reference: Runbook Examples](support-reference.md#operational-runbook-examples)
+for example content.
 
 **Enterprise:** Comprehensive runbook library covering all operational
-scenarios, regularly tested and updated.
+scenarios, regularly tested and updated. Use the
+[Runbook Template](runbook-template.md) for consistent formatting.
 
 ### 7. Establish Success Criteria Tracking
 
@@ -146,9 +161,11 @@ problems.
 **Enterprise:** Automated dashboards with real-time tracking. Defined escalation
 when metrics deviate from targets.
 
-> **AI exploration:** _"Help me set up support operations for [describe > your >
+> **AI exploration:** \_"Help me set up support operations for [describe >
+> your >
+>
 > > project, team size, user base, and risk level]. Suggest the right support
-> level and what to prioritize first."_
+> > level and what to prioritize first."\_
 
 ---
 
@@ -245,6 +262,6 @@ For a quick verification, use the
 
 ---
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-21
 
 _Added to framework in v0.12.0_

@@ -7,6 +7,9 @@ and ready for Implementation.
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Increment Scope
 
 - [ ] Increment scope is clear (in/out of scope)
@@ -37,9 +40,9 @@ and ready for Implementation.
 ## Implementation Readiness
 
 - [ ] Implementation notes provided (guidance, gotchas)
-- [ ] No major blockers (dependencies available)
-- [ ] Engineers understand the design
-- [ ] Design supports all increment requirements
+- [ ] **[H]** No major blockers (dependencies available)
+- [ ] **[H]** Engineers understand the design
+- [ ] **[H]** Design supports all increment requirements
 
 ---
 
@@ -53,7 +56,7 @@ and ready for Implementation.
 > For common issues and troubleshooting when items fail, see
 > [Increment Design Reference: Checklist Troubleshooting](increment-design-reference.md#checklist-troubleshooting).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your >
+> **AI suggestion:** _"Walk me through this checklist for [describe your > >
 > increment design] and flag items needing attention."_
 
 ---
@@ -69,6 +72,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.
