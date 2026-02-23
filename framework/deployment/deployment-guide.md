@@ -270,7 +270,7 @@ long deployments, at completion, and immediately on rollback.
 ### Additional Topics
 
 The [Deployment Setup Guide](deployment-setup-guide.md) covers project-level
-setup (do these once, during iteration 0):
+setup (do these once, during Increment 0):
 
 - **CI/CD pipeline** — design, build, and validate your pipeline
 - **Environment management** — provisioning, parity, Infrastructure as Code

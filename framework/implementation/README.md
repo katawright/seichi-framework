@@ -42,7 +42,11 @@ For assistance level details, see the
 | `implementation-guide.md`                | Stage-specific guidance and rationale                  |
 | `implementation-checklist.md`            | 60-90 second readiness checklist                       |
 | `implementation-reference.md`            | Detailed practices and examples for deeper exploration |
-| `adr/`                                   | Directory for implementation decision records          |
+| `adr/`                                   | Optional project ADR output directory for implementation decisions (create as needed) |
+
+> **Note:** The framework provides templates and references. Project artifacts
+> such as `adr/`, `docs/adr/`, and `AGENTS.md` are created and maintained in
+> your project repository.
 
 ## Suggested Workflow
 
@@ -94,8 +98,10 @@ log, and review approvals. Before handoff, ensure:
 
 ## Notes
 
-**Framework Version:** 0.18.1
+**Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-22
 
 Added to framework in v0.5.0.
+
+

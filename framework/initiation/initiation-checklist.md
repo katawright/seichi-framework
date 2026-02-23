@@ -39,10 +39,7 @@ to circulate.
 > For critical items rationale and exit criteria alignment, see
 > [Initiation Reference: Checklist Reference](initiation-reference.md#checklist-reference).
 
-> **AI suggestion:** \_"Walk me through this checklist for [describe your
-> project
->
-> > idea] and flag items needing attention."\_
+> **AI suggestion:** _"Walk me through this checklist for [describe your project idea] and flag items needing attention."_
 
 ---
 

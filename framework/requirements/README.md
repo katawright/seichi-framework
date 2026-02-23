@@ -92,8 +92,10 @@ point.
 
 ## Notes
 
-**Framework Version:** 0.18.1
+**Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.3.0.
+
+

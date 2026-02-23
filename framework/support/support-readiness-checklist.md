@@ -63,9 +63,7 @@ prepared for mission-critical production ownership.
 
 ---
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your >
-> project, support level, and team] and flag any items that need extra
-> attention."_
+> **AI suggestion:** _"Walk me through this checklist for [describe your project, support level, and team] and flag any items that need extra attention."_
 
 ---
 

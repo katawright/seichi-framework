@@ -76,6 +76,20 @@ early frustration. Look for:
 Adopt the framework in three phases, with explicit success criteria gating each
 expansion.
 
+### Pre-Pilot Readiness Gate
+
+Before starting Phase 1, confirm minimum readiness to avoid false negatives in
+the pilot:
+
+- [ ] AI usage policy is documented (approved tools, prohibited data, human
+      review expectations)
+- [ ] CI/test baseline exists for the pilot project (automated build and core
+      tests running on every change)
+- [ ] Rollback readiness is defined (owner, trigger, and basic rollback steps
+      for pilot deployments)
+- [ ] Checkpoint ownership is explicit (who approves gate, quality,
+      deployment, and compliance checkpoints)
+
 ### Phase 1: Pilot (1 Team, 1–2 Increments)
 
 **Duration:** 4–8 weeks

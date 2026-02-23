@@ -28,8 +28,7 @@ actually wrong.
 
 > "Build an AI chatbot for support."
 
-> **AI exploration:** _"Help me rewrite this problem statement in problem-first
-> format: [paste your > current problem statement]."_
+> **AI exploration:** _"Help me rewrite this problem statement in problem-first format: [paste your current problem statement]."_
 
 ---
 
@@ -54,8 +53,7 @@ Success metrics defined here flow through all later stages — see
 - One operational metric (latency/errors)
 - One adoption metric (usage/coverage), if relevant
 
-> **AI exploration:** _"Help me define measurable success metrics for [describe
-> > your project goals > and current baselines]."_
+> **AI exploration:** _"Help me define measurable success metrics for [describe your project goals and current baselines]."_
 
 ---
 
@@ -98,8 +96,7 @@ early prevents catastrophic surprises later.
 - A concrete mitigation (spike/prototype/review)
 - A fallback path
 
-> **AI exploration:** _"Help me identify risks and unknowns for [describe your >
-> project context and > technology choices]."_
+> **AI exploration:** _"Help me identify risks and unknowns for [describe your project context and technology choices]."_
 
 ---
 
@@ -150,7 +147,7 @@ objectives, measurable success criteria, constraints, and stakeholder list.
 
 ---
 
-## Gate 2 (Requirements Complete)
+## Gate 2 (Requirements + System Design Foundation Complete)
 
 **Why:** Gate 2 is the major "build/no-build" decision — it converts hypotheses
 into validated plans.

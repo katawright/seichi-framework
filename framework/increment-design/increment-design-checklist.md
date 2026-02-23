@@ -56,8 +56,7 @@ and ready for Implementation.
 > For common issues and troubleshooting when items fail, see
 > [Increment Design Reference: Checklist Troubleshooting](increment-design-reference.md#checklist-troubleshooting).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your > >
-> increment design] and flag items needing attention."_
+> **AI suggestion:** _"Walk me through this checklist for [describe your increment design] and flag items needing attention."_
 
 ---
 

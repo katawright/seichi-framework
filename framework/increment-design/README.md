@@ -48,7 +48,11 @@ For assistance level details, see the
 | `increment-design-brief-template.md` | Template for increment-level design                    |
 | `increment-design-checklist.md`      | 60-90 second readiness checklist                       |
 | `increment-design-reference.md`      | Detailed practices and examples for deeper exploration |
-| `adr/`                               | Directory for increment-level ADR files                |
+| `adr/`                               | Optional project ADR output directory for increment decisions (create as needed) |
+
+> **Note:** The framework does not ship project ADR directories. If you record
+> increment-level ADRs, create `adr/` (or your preferred ADR location) in your
+> project repository.
 
 ## Suggested Workflow
 
@@ -82,8 +86,10 @@ contracts, and test strategy.
 
 ## Notes
 
-**Framework Version:** 0.18.1
+**Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.12.0.
+
+

@@ -6,6 +6,8 @@
 
 **Status:** Pending / Approved / Rejected
 
+**Usage:** Gate 1 and Gate 2 investment decisions
+
 **Decision makers:**
 
 - **Decided by:** (names/roles)
@@ -64,11 +66,11 @@ Criteria may match or differ from what the preceding stage proposed.
 ---
 
 > **Note:** This template is the standard decision record for formal checkpoints
-> across the framework. Primary uses: Gate 1 and Gate 2 investment decisions.
-> Also used for: deployment approval records and support readiness acceptance
-> decisions. For architecture review decisions (Alignment Review checkpoints),
-> record the outcome as an ADR with status "Accepted" rather than using this
-> template.
+> across the framework for Gate 1 and Gate 2 investment decisions.
+> For deployment approvals and support readiness acceptance decisions, use the
+> [Checkpoint Decision Template](checkpoint-decision-template.md).
+> For architecture review decisions (Alignment Review checkpoints), record the
+> outcome as an ADR with status "Accepted" rather than using this template.
 
 **Template Last Updated:** 2026-02-21
 

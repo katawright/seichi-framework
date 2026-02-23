@@ -64,6 +64,10 @@ ADRs document significant decisions across all aspects of the architecture —
 technology stack, data, API, security, infrastructure, and more. They are
 **separate files**, not embedded in this brief.
 
+> **Project artifact note:** `docs/adr/` is a project-level location you create
+> in your own repository when applying this framework. It is not a directory
+> shipped under `framework/`.
+
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-XXX-short-description.md`
 - **Template:** [ADR Template](../adr-template.md)

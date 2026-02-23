@@ -97,8 +97,7 @@ decisions, testing plans, or risk.
 - "Code should be maintainable." — Implementation concern
 - "Use microservices architecture." — Design decision
 
-> **AI exploration:** _"Help me write testable requirements and acceptance
-> criteria for [describe > your feature and user personas]."_
+> **AI exploration:** _"Help me write testable requirements and acceptance criteria for [describe your feature and user personas]."_
 
 ---
 
@@ -297,8 +296,7 @@ contract tests; schema validation.
 - **"The API can change"** — Breaking changes disrupt partners
 - **"Performance will be fine"** — New work degrades existing SLAs
 
-> **AI exploration:** _"Help me identify existing system constraints for
-> [describe your brownfield > project and existing system architecture]."_
+> **AI exploration:** _"Help me identify existing system constraints for [describe your brownfield project and existing system architecture]."_
 
 ---
 
@@ -350,8 +348,7 @@ for System Design.
 **Gate 2 Planning (Section 13):** Helps plan what System Design should produce
 for the build/no-build decision.
 
-> **AI exploration:** _"Review my requirements document for completeness and
-> flag any missing sections or weak areas: [paste your requirements brief]."_
+> **AI exploration:** _"Review my requirements document for completeness and flag any missing sections or weak areas: [paste your requirements brief]."_
 
 ---
 

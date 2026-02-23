@@ -67,8 +67,18 @@ For assistance level details, see the
 
 ### Feedback Loop
 
-Enhancements and new features identified in Support feed back to Initiation to
-start new increments through the SDLC.
+Enhancements and new features identified in Support feed into earlier stages
+based on scope:
+
+- **Increment Design** — for scoped enhancements that fit existing objectives
+  and architecture
+- **Implementation** — for clearly low-risk patches that can be safely
+  delivered without design or requirements changes (document rationale and
+  rollback using the Checkpoint Decision Template)
+- **Requirements** — for new or changed user/business requirements
+- **System Design** — for architectural or infrastructure changes
+- **Initiation** — only when objectives, business case, or success criteria
+  shift materially
 
 ## Stage Outputs
 
@@ -86,15 +96,17 @@ start new increments through the SDLC.
 
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
-[Gate Decision Template](../gate-decision-template.md) to record when the team
-confirms readiness to own the system in production.
+[Checkpoint Decision Template](../checkpoint-decision-template.md) to record
+when the team confirms readiness to own the system in production.
 
 ---
 
 ## Notes
 
-**Framework Version:** 0.18.1
+**Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.8.0.
+
+

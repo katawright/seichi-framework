@@ -285,8 +285,9 @@ Mermaid or PlantUML for diagram-as-code.
 
 ### Architecture Decision Records (ADRs)
 
-ADRs document significant decisions and reasoning. They are **separate files**
-stored in `docs/adr/`.
+ADRs document significant decisions and reasoning. They are **separate
+project files** stored in `docs/adr/` (or a stage-level `adr/` directory if
+your team uses scoped ADRs).
 
 **Create for decisions that are:**
 
@@ -298,7 +299,7 @@ Key sections: Context, options considered (with cost analysis), decision and
 rationale, consequences, alternatives.
 
 **File naming:** `ADR-NNN-short-description.md` **Template:**
-`../../adr-template.md`
+[ADR Template](../adr-template.md)
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
 

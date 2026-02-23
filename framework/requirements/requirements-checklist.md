@@ -61,11 +61,7 @@ System Design.
 > For critical items rationale and exit criteria alignment, see
 > [Requirements Reference: Checklist Reference](requirements-reference.md#checklist-reference).
 
-> **AI suggestion:** _"Walk me through this checklist for my requirements and
-> flag items needing attention."_ Or: _"Review my requirements document against
-> this checklist and identify weak areas or gaps."_ AI can help by evaluating
-> each checklist item against your requirements and highlighting where more
-> detail is needed.
+> **AI suggestion:** _"Walk me through this checklist for my requirements and flag items needing attention."_ Or: _"Review my requirements document against this checklist and identify weak areas or gaps."_ AI can help by evaluating each checklist item against your requirements and highlighting where more detail is needed."_
 
 ---
 

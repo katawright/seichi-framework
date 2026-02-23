@@ -169,7 +169,7 @@ Otherwise, keep support lightweight and scale as the system matures.
 -- FEEDBACK LOOP --
 
  9. Production insights feed into new
-    increments (back to Initiation)
+    increments (route by scope)
 ```
 
 ---
@@ -260,8 +260,13 @@ Assess three dimensions for every production bug:
 **Hotfix when:** Critical severity AND high user impact AND no workaround AND
 fix is low-risk.
 
+**Low-risk patch fast path:** For clearly low-risk, scoped patches, teams may
+route directly to Implementation. Record the rationale, rollback approach, and
+approver using the
+[Checkpoint Decision Template](../checkpoint-decision-template.md).
+
 **Otherwise:** Add to backlog with severity tag, prioritize in sprint planning,
-follow full SDLC process.
+and follow the appropriate SDLC stage path.
 
 For the full decision matrix and hotfix workflow, see
 [Support Reference: Bug Triage](support-reference.md#bug-triage-decision-matrix).
@@ -273,8 +278,17 @@ improvements. Use a prioritization framework (RICE, Value vs. Effort, or your
 team's approach) to evaluate objectively.
 
 **Workflow:** Request logged → PM reviews → engineering estimates → prioritize →
-approved items become new increments starting at Initiation → full SDLC →
-monitor impact after delivery.
+approved items route by scope:
+
+- Implementation (clearly low-risk patch; requires documented checkpoint
+  decision and rollback approach)
+- Increment Design (scoped enhancement in existing boundaries)
+- Requirements (new/changed requirements)
+- System Design (architectural/infrastructure impact)
+- Initiation (only if objectives or business case change materially)
+
+Then execute through the appropriate SDLC stages and monitor impact after
+delivery.
 
 For prioritization framework details, see
 [Support Reference: Enhancement Prioritization](support-reference.md#enhancement-prioritization).
