@@ -60,7 +60,11 @@ For assistance level details, see the
 | [System Design Checklist](system-design-checklist.md)           | 60-90 second readiness checklist                       |
 | [System Design Reference](system-design-reference.md)           | Detailed practices and examples for deeper exploration |
 | [ADR Template](../adr-template.md)                              | Architecture Decision Record template                  |
-| `adr/`                                                          | Directory for project ADR files                        |
+| `adr/`                                                          | Optional project ADR output directory (create in your project as needed) |
+
+> **Note:** The framework provides templates and guidance. Project artifact
+> directories like `adr/`, `docs/adr/`, `docs/api/`, and `AGENTS.md` are
+> created in your project repository as you apply this stage.
 
 ## Suggested Workflow
 
@@ -93,6 +97,8 @@ foundational conventions.
 
 ## Notes
 
-**Framework Version:** 0.18.1
+**Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-21
+
+

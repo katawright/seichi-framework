@@ -99,8 +99,7 @@ ready for Verification.
 > For red flags, code quality details, testing guidance, and detailed
 > checklists, see the [Implementation Reference](implementation-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your >
-> increment] and flag items needing attention."_
+> **AI suggestion:** _"Walk me through this checklist for [describe your increment] and flag items needing attention."_
 
 ---
 

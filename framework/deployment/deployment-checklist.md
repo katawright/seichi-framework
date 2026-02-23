@@ -83,15 +83,14 @@ successful completion.
 
 **Final Gate:** All sign-offs obtained → Hand off to Support stage. Record the
 deployment decision using the
-[Gate Decision Template](../gate-decision-template.md).
+[Checkpoint Decision Template](../checkpoint-decision-template.md).
 
 ---
 
 > For decision trees, red flags, strategy-specific checklists, and detailed
 > procedures, see the [Deployment Reference](deployment-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your >
-> deployment] and flag any items that need extra attention."_
+> **AI suggestion:** _"Walk me through this checklist for [describe your deployment] and flag any items that need extra attention."_
 
 ---
 

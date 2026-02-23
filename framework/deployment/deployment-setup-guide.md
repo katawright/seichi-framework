@@ -1,7 +1,7 @@
 # Deployment Setup Guide
 
 Strategic guide for setting up deployment infrastructure. Use this guide during
-**iteration 0** (before your first increment deployment) or when making
+**Increment 0** (before your first increment deployment) or when making
 significant infrastructure changes.
 
 For per-increment deployment execution, see the
@@ -174,8 +174,7 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your >
-> stack, team size, and deployment frequency targets]."_
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your stack, team size, and deployment frequency targets]."_
 
 ---
 
@@ -241,8 +240,7 @@ Prioritize improvements based on risk and effort:
 Address high-priority items before the first increment deployment.
 Lower-priority items become backlog for future iterations.
 
-> **AI exploration:** _"Review our current deployment process [describe it] and
-> identify gaps compared to modern deployment practices."_
+> **AI exploration:** _"Review our current deployment process [describe it] and identify gaps compared to modern deployment practices."_
 
 ---
 

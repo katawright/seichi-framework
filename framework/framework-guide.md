@@ -106,6 +106,11 @@ dogfooding) that will:
 - Track completion across stages
 - Adapt to your chosen AI tool and team structure
 
+**Current state (February 23, 2026):** This application is not yet generally
+available for production use. Use **Option 1: AI-Assisted Manual Process** now.
+Treat the application as a future accelerator, not a prerequisite to adopt this
+framework.
+
 This application will provide a more structured experience while maintaining the
 framework's flexibility. It is planned for future release.
 
@@ -260,11 +265,14 @@ Initiation (once)
 
 **Feedback loops:**
 
+- Support → Increment Design (scoped enhancements within current boundaries)
 - Support → Requirements (user feedback)
 - Support → System Design (performance issues)
+- Support → Implementation (low-risk patches with documented checkpoint
+  decision)
 - Verification → Implementation (test failures)
 - Verification → Increment Design (design flaws)
-- Support → Initiation (objectives need revision)
+- Support → Initiation (only when objectives/business case need revision)
 
 ---
 
@@ -303,6 +311,9 @@ Rollback **Real stop option:** No (timing, not cancellation)
 Examples: staging approval, production go/no-go, rollout gates (10% → 50% →
 100%).
 
+Record deployment approvals using the
+[Checkpoint Decision Template](checkpoint-decision-template.md).
+
 ### 4. Alignment Reviews
 
 **Purpose:** Synchronize stakeholders, gather feedback **Outcome:** Aligned /
@@ -333,7 +344,7 @@ required, and where the decision is recorded.
 | ------------------- | -------------------- | -------------------------------------- | ---------------------------- |
 | Gate (1 & 2)        | Executive (A)        | Stage brief, risk assessment           | Gate Decision Template       |
 | Quality Checkpoint  | Tech lead / QA (A)   | Code review, test results, CI          | PR history, CI logs          |
-| Deployment Approval | DevOps / Eng (A)     | Deployment checklist, UAT              | Deployment brief / checklist |
+| Deployment Approval | DevOps / Eng (A)     | Deployment checklist, UAT              | Checkpoint Decision Template |
 | Alignment Review    | PM/BA or Arch (A)    | Design artifacts, stakeholder sign-off | ADR or meeting notes         |
 | Compliance Approval | Legal / Security (A) | Audit artifacts, scan results          | Compliance record / ADR      |
 
@@ -453,6 +464,11 @@ significant design decision and the reasoning behind it. Primary storage:
 `implementation/adr/`) for scoped numbering. See the
 [ADR Template](adr-template.md) for guidance.
 
+> **Artifact location note:** Paths like `docs/adr/`, `docs/api/`, and
+> `AGENTS.md` refer to project-level artifacts created in your project
+> repository when applying this framework. They are not directories shipped
+> under `framework/`.
+
 **Foundational stage** — Executes once per project but can be revisited. Sets
 the project foundation.
 
@@ -512,6 +528,20 @@ Informed (kept in the loop)
 > your team structure — in smaller teams, one person may hold multiple roles. In
 > larger organizations, additional roles (security, compliance) may be Consulted
 > or Accountable at specific stages.
+
+Security and compliance accountability should be explicit at the checkpoint
+level, especially for regulated or enterprise environments:
+
+| Stage / Checkpoint                      | Accountable Role                    | Typical Trigger                                               |
+| --------------------------------------- | ----------------------------------- | ------------------------------------------------------------- |
+| Initiation (risk and policy framing)    | Project lead + security/compliance  | Sensitive data, regulated domains, external AI tools          |
+| Gate 1 / Gate 2 input (risk posture)    | Security/compliance (advisory A\*)  | New legal/privacy/security risk exposure                      |
+| Verification (control evidence)         | QA/engineering + security/compliance | Security, privacy, or audit controls required for release    |
+| Compliance Approval checkpoint          | Security/compliance/legal (A)       | Contractual, regulatory, or internal policy sign-off required |
+| Deployment Approval (release readiness) | DevOps/engineering + security (C/A) | Production change with material risk, data impact, or exposure |
+
+\*Investment gate ownership remains with executive decision-makers; security and
+compliance provide required risk and policy input before approval.
 
 ---
 

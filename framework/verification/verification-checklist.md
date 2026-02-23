@@ -103,8 +103,7 @@ increment is ready for deployment.
 > For red flags, troubleshooting guidance, and detailed test type checklists,
 > see the [Verification Reference](verification-reference.md).
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your > >
-> increment] and flag items that need extra attention."_
+> **AI suggestion:** _"Walk me through this checklist for [describe your increment] and flag items that need extra attention."_
 
 ---
 

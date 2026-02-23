@@ -91,6 +91,8 @@ monitored. Verify deployment plans and rollback procedures.
 
 Approval authority varies by environment — see the Deployment Guide for
 role-specific guidance.
+Record deployment approvals using the
+[Checkpoint Decision Template](checkpoint-decision-template.md).
 
 ### 4. Alignment Reviews
 
@@ -732,7 +734,9 @@ Support stage may trigger revisits to earlier stages:
 
 - Requirements stage: User feedback reveals gaps or new needs
 - System Design stage: Performance issues require architectural changes
-- Implementation stage: Bug fixes and enhancements
+- Increment Design stage: Scoped enhancements within current boundaries
+- Implementation stage: Low-risk patches with documented checkpoint decision
+- Initiation stage: Objectives/business case need revision
 
 ---
 
@@ -832,11 +836,14 @@ Support (continuous)
 
 ### Feedback Loops
 
+- **Support → Increment Design:** Scoped enhancements within current boundaries
 - **Support → Requirements:** User feedback reveals new requirements
 - **Support → System Design:** Performance issues need architectural changes
+- **Support → Implementation:** Low-risk patches with documented checkpoint
+  decision
 - **Verification → Implementation:** Test failures require code fixes
 - **Verification → Increment Design:** Design flaws discovered during testing
-- **Support → Initiation:** Success metrics indicate objectives need revision
+- **Support → Initiation:** Objectives/business case need revision
 
 ---
 

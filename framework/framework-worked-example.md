@@ -348,15 +348,15 @@ From the **Implementation Brief**, Pull Requests section:
 
 **Branching Strategy:** Trunk-based **Target Branch:** main
 
-| PR # | Description              | Lines | Status | Link      |
-| ---- | ------------------------ | ----- | ------ | --------- |
-| #12  | Task library data model  | ~180  | Merged | [Link](#) |
+| PR # | Description              | Lines | Status | Link                     |
+| ---- | ------------------------ | ----- | ------ | ------------------------ |
+| #12  | Task library data model  | ~180  | Merged | Example placeholder link |
 |      | and seed data            |       |        |           |
-| #14  | Task assignment API and  | ~340  | Merged | [Link](#) |
+| #14  | Task assignment API and  | ~340  | Merged | Example placeholder link |
 |      | service layer            |       |        |           |
-| #16  | Task assignment UI modal | ~280  | Merged | [Link](#) |
+| #16  | Task assignment UI modal | ~280  | Merged | Example placeholder link |
 |      | and checkbox list        |       |        |           |
-| #18  | New hire dashboard with  | ~250  | Merged | [Link](#) |
+| #18  | New hire dashboard with  | ~250  | Merged | Example placeholder link |
 |      | progress tracking        |       |        |           |
 ```
 

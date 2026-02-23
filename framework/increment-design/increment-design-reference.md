@@ -209,8 +209,7 @@ These formats can be adapted similarly:
 2. Select "Engineering" role filter -> only engineers shown
 3. Click a team member row -> navigates to member detail view
 
-> **AI exploration:** _"Generate a detailed design for [describe your >
-> increment scope, requirements, and system architecture]."_
+> **AI exploration:** _"Generate a detailed design for [describe your increment scope, requirements, and system architecture]."_
 
 ---
 
@@ -230,8 +229,7 @@ These formats can be adapted similarly:
   patterns
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
-> **AI exploration:** _"Help me troubleshoot [describe the checklist > item
-> that's failing and your current design state]."_
+> **AI exploration:** _"Help me troubleshoot [describe the checklist item that's failing and your current design state]."_
 
 ---
 

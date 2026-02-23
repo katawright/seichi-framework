@@ -73,8 +73,7 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your >
-> system, traffic patterns, and risk tolerance] and recommend an approach."_
+> **AI exploration:** _"Compare deployment strategies for [describe your system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
 
@@ -127,8 +126,7 @@ plan cleanup of old structures.
 - Creating index without CONCURRENTLY on large tables (locks table)
 - Renaming column without expand-contract (breaks old code immediately)
 
-> **AI exploration:** _"Review our migration plan for [describe schema changes]
-> and identify risks or suggest a safer approach."_
+> **AI exploration:** _"Review our migration plan for [describe schema changes] and identify risks or suggest a safer approach."_
 
 ### Cache Invalidation
 
@@ -251,8 +249,7 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe your >
-> deployment strategy and infrastructure]."_
+> **AI exploration:** _"Help me design a rollback procedure for [describe your deployment strategy and infrastructure]."_
 
 ---
 
@@ -333,8 +330,7 @@ lag.
 - [ ] Background jobs running on schedule
 - [ ] Webhooks and callbacks working
 
-> **AI exploration:** _"Suggest monitoring thresholds and alert rules tuned to
-> [describe your stack, traffic patterns, and SLAs]."_
+> **AI exploration:** _"Suggest monitoring thresholds and alert rules tuned to [describe your stack, traffic patterns, and SLAs]."_
 
 ---
 
@@ -399,8 +395,7 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your >
-> deployment and audience]."_
+> **AI exploration:** _"Draft deployment communications for [describe your deployment and audience]."_
 
 ---
 
@@ -430,8 +425,7 @@ For breaking changes requiring downtime:
 4. Deploy and validate
 5. Bring online and notify completion
 
-> **AI exploration:** _"Help me plan a [hotfix / scheduled maintenance]
-> deployment for [describe the situation]."_
+> **AI exploration:** _"Help me plan a [hotfix / scheduled maintenance] deployment for [describe the situation]."_
 
 ---
 
@@ -458,8 +452,7 @@ For pipeline design, structure, and best practices, see the
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe your
-> > stack and compliance requirements]."_
+> **AI exploration:** _"Audit our deployment security posture for [describe your stack and compliance requirements]."_
 
 ---
 
@@ -516,8 +509,7 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe >
-> your deployment process and risk tolerance]."_
+> **AI exploration:** _"Create deployment decision trees tailored to [describe your deployment process and risk tolerance]."_
 
 ---
 
@@ -540,8 +532,7 @@ vulnerability discovered, success criteria instrumentation not working.
 **Action:** If any red flag present, STOP and address immediately. Consider
 rollback if critical.
 
-> **AI exploration:** _"Given our recent deployment [describe what happened],
-> identify which red flags apply and suggest remediations."_
+> **AI exploration:** _"Given our recent deployment [describe what happened], identify which red flags apply and suggest remediations."_
 
 ---
 
@@ -574,8 +565,7 @@ rollback if critical.
 - **Deployment Engineer:** [Name, Contact] — Available for [Duration] after
   deployment
 
-> **AI exploration:** _"Generate a support handoff checklist tailored to
-> [describe your team structure and tooling]."_
+> **AI exploration:** _"Generate a support handoff checklist tailored to [describe your team structure and tooling]."_
 
 ---
 

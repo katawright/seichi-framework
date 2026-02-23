@@ -262,8 +262,7 @@ Even the smallest projects need:
 - **"Infrastructure isn't architecture"** — poor tooling becomes expensive tech
   debt
 
-> **AI exploration:** _"Design an infrastructure plan for [describe your project
-> > type, team size, and > deployment requirements]."_
+> **AI exploration:** _"Design an infrastructure plan for [describe your project type, team size, and deployment requirements]."_
 
 ---
 
@@ -310,8 +309,7 @@ Well-sized increments deliver testable value while fitting your team's cadence.
 **Research backing:** DORA State of DevOps reports show smaller batch sizes and
 frequent deployment correlate with higher performance.
 
-> **AI exploration:** _"Help me size increments for [describe your team size, >
-> methodology, and deployment > maturity]."_
+> **AI exploration:** _"Help me size increments for [describe your team size, methodology, and deployment maturity]."_
 
 ---
 
@@ -369,8 +367,7 @@ contingency. More accurate for detailed design.
 **No single technique is "best."** The key is using ranges, acknowledging
 uncertainty, and refining as more information emerges.
 
-> **AI exploration:** _"Help me estimate [describe your > increment scope] using
-> [estimation technique]."_
+> **AI exploration:** _"Help me estimate [describe your increment scope] using [estimation technique]."_
 
 ---
 
@@ -412,8 +409,7 @@ client needs.
 
 Document significant technology choices as ADRs.
 
-> **AI exploration:** _"Compare [technology options] for [describe your use >
-> case, team skills, and NFRs]."_
+> **AI exploration:** _"Compare [technology options] for [describe your use case, team skills, and NFRs]."_
 
 ---
 
@@ -443,8 +439,7 @@ to design decisions:
 - Consent tracking and right-to-deletion
 - Encryption and key management
 
-> **AI exploration:** _"Design a security architecture for [describe your >
-> application, data sensitivity, and > compliance requirements]."_
+> **AI exploration:** _"Design a security architecture for [describe your application, data sensitivity, and compliance requirements]."_
 
 ---
 
@@ -469,8 +464,7 @@ targets from NFRs.
 Design for your actual NFRs — don't optimize prematurely, but don't ignore
 performance either.
 
-> **AI exploration:** _"Design a performance and scalability strategy for
-> [describe your NFRs, expected > load, and technology stack]."_
+> **AI exploration:** _"Design a performance and scalability strategy for [describe your NFRs, expected load, and technology stack]."_
 
 ---
 
@@ -510,8 +504,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 | ----------------- | -------- | ------------------- |
 | [Criterion]       | [Metric] | [Collection method] |
 
-> **AI exploration:** _"Design an observability strategy for [describe your >
-> application, success criteria, and > monitoring requirements]."_
+> **AI exploration:** _"Design an observability strategy for [describe your application, success criteria, and monitoring requirements]."_
 
 ---
 
@@ -530,8 +523,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 - **Golden Hammer** — same tech for everything. Fix: evaluate options per
   problem.
 
-> **AI exploration:** _"Review this design for anti-patterns: [describe your >
-> architecture and > component structure]."_
+> **AI exploration:** _"Review this design for anti-patterns: [describe your architecture and component structure]."_
 
 ---
 
@@ -724,8 +716,7 @@ early, establishes development patterns.
   deployment strategy
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
-> **AI exploration:** _"Help me troubleshoot [describe > the checklist item >
-> that's failing and your current > design state]."_
+> **AI exploration:** _"Help me troubleshoot [describe the checklist item that's failing and your current design state]."_
 
 ---
 

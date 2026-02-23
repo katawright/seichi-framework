@@ -34,8 +34,7 @@ starting point for AI-assisted exploration.
 - Deadlocks (target: 0)
 - Replication lag (<1 second)
 
-> **AI exploration:** _"Given our stack [describe stack], suggest monitoring
-> thresholds tuned to our traffic patterns and SLAs."_
+> **AI exploration:** _"Given our stack [describe stack], suggest monitoring thresholds tuned to our traffic patterns and SLAs."_
 
 ### Error Budgets
 
@@ -89,8 +88,7 @@ channel.
 | L3   | VP Eng / CTO     | P0 >4h, major customer impact, data breach         |
 | Ext  | Cloud/vendor     | Infrastructure or third-party root cause           |
 
-> **AI exploration:** _"Help me draft an incident response playbook for
-> [describe your system and team size]."_
+> **AI exploration:** _"Help me draft an incident response playbook for [describe your system and team size]."_
 
 ---
 
@@ -152,8 +150,7 @@ How we fixed it: [Mitigation/resolution]
 Prevention: [Key action items with owners and due dates]
 ```
 
-> **AI exploration:** _"Draft incident communication messages for [describe the
-> > current incident situation]."_
+> **AI exploration:** _"Draft incident communication messages for [describe the current incident situation]."_
 
 ---
 
@@ -189,8 +186,7 @@ Prevention: [Key action items with owners and due dates]
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your >
-> product, user base, and SLA commitments]."_
+> **AI exploration:** _"Customize these severity levels for [describe your product, user base, and SLA commitments]."_
 
 ---
 
@@ -219,8 +215,7 @@ deployed buggy code."
 - **Incident frequency** — trending downward
 - **Recurrence** — goal: 0% (incidents should not repeat)
 
-> **AI exploration:** _"Analyze our incident history and suggest process
-> improvements to reduce MTTR."_
+> **AI exploration:** _"Analyze our incident history and suggest process improvements to reduce MTTR."_
 
 ---
 
@@ -261,9 +256,7 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** \_"Help me build a bug triage process for [describe team >
->
-> > size, product, and release cadence]."\_
+> **AI exploration:** _"Help me build a bug triage process for [describe team size, product, and release cadence]."_
 
 ---
 
@@ -299,8 +292,7 @@ high-value / low-effort items first.
 - Success criteria gaps (metrics not meeting targets)
 - Technical improvements (performance, tech debt, DX)
 
-> **AI exploration:** _"Prioritize our enhancement backlog using RICE scoring
-> given [describe your backlog items]."_
+> **AI exploration:** _"Prioritize our enhancement backlog using RICE scoring given [describe your backlog items]."_
 
 ---
 
@@ -330,8 +322,7 @@ high-value / low-effort items first.
 - Review and adjust weekly
 - Track alert-to-incident ratio (healthy: >50%)
 
-> **AI exploration:** _"Review our current alert rules and suggest which to
-> consolidate, tune, or remove."_
+> **AI exploration:** _"Review our current alert rules and suggest which to consolidate, tune, or remove."_
 
 ---
 
@@ -372,8 +363,7 @@ items that fix root causes.
 **Work-life balance:** Allow shift swaps, time off after stressful incidents,
 recognition.
 
-> **AI exploration:** _"Design an on-call rotation for our team of [N] engineers
-> that minimizes burnout."_
+> **AI exploration:** _"Design an on-call rotation for our team of [N] engineers that minimizes burnout."_
 
 ---
 
@@ -399,8 +389,7 @@ appropriate to your support level), see the
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your >
-> deployment process and tooling]."_
+> **AI exploration:** _"Generate a runbook template for [describe your deployment process and tooling]."_
 
 ---
 
@@ -445,8 +434,7 @@ appropriate to your support level), see the
 5. Validate performance post-maintenance
 6. Notify stakeholders of completion
 
-> **AI exploration:** _"Generate operational runbooks tailored to our stack:
-> [describe your infrastructure, > CI/CD pipeline, and deployment tools]."_
+> **AI exploration:** _"Generate operational runbooks tailored to our stack: [describe your infrastructure, CI/CD pipeline, and deployment tools]."_
 
 ---
 
@@ -482,8 +470,7 @@ appropriate to your support level), see the
 - [Action item 2]
 ```
 
-> **AI exploration:** _"Draft a success criteria report based on these metrics:
-> [paste your current data]."_
+> **AI exploration:** _"Draft a success criteria report based on these metrics: [paste your current data]."_
 
 ---
 
@@ -515,8 +502,7 @@ appropriate to your support level), see the
 | Pages per on-call   | <10/week | PagerDuty / OpsGenie |
 | Recurring incidents | 0%       | Incident tracker     |
 
-> **AI exploration:** _"Suggest support KPIs and targets appropriate for
-> [describe your team maturity and product]."_
+> **AI exploration:** _"Suggest support KPIs and targets appropriate for [describe your team maturity and product]."_
 
 ---
 
@@ -564,8 +550,7 @@ Is minor functionality broken?
   → No: P3 - Low priority, schedule for later
 ```
 
-> **AI exploration:** _"Create decision trees tailored to our product's critical
-> paths and failure modes."_
+> **AI exploration:** _"Create decision trees tailored to our product's critical paths and failure modes."_
 
 ---
 
@@ -591,8 +576,7 @@ unmaintained.
 **Team health:** On-call burnout, tribal knowledge (single points of failure),
 no knowledge transfer, team disengaged.
 
-> **AI exploration:** _"Given our recent incidents, identify which red flags
-> apply and suggest remediations."_
+> **AI exploration:** _"Given our recent incidents, identify which red flags apply and suggest remediations."_
 
 ---
 
@@ -637,8 +621,7 @@ Minimal-level project operating well at Level 2 is a success.
 - Continuous feedback loop driving enhancements
 - **Goal:** Maintain excellence
 
-> **AI exploration:** _"Assess our current support maturity level and suggest
-> concrete steps to reach the next level."_
+> **AI exploration:** _"Assess our current support maturity level and suggest concrete steps to reach the next level."_
 
 ---
 
@@ -759,8 +742,7 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** _"Help me create a disaster recovery plan for [describe >
-> your system, infrastructure, and business requirements]."_
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe your system, infrastructure, and business requirements]."_
 
 ---
 
