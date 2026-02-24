@@ -131,28 +131,20 @@ _Example:_ "1 TL + 1 BE + 1 FE + 0.5 PM for 2–4 weeks to reach Gate 2
 
 Use this section to plan ahead for subsequent decision gates:
 
-**Gate 2 — Requirements complete** (end of Requirements + Design foundational
-pass)
+**Gate 2 — Requirements complete** (end of Requirements + System Design
+foundational pass)
 
 - **Outputs expected:**
-  - Requirements + acceptance criteria drafted and reviewed
-  - NFRs captured (functional, performance, security, and others as needed)
+  - FRs with acceptance criteria drafted and reviewed
+  - NFRs with verification criteria drafted and reviewed (performance,
+    security, observability, and others as needed)
   - High-level design direction documented (key trade-offs identified)
   - Top risks addressed (spikes/prototypes/reviews) with mitigations/fallbacks
   - Slice plan with dependencies (for iterative delivery)
   - Updated staffing/timeline range + confidence
+  - Cost estimates updated (labor + infrastructure/tooling, with
+    assumptions)
   - Recommendation: proceed / pivot / stop
-
-**Gate 3:** MVP increment in staging (end of Implementation + Verification for
-first increment)
-
-**Gate 4:** MVP increment in production behind flag (end of Deployment for first
-increment)
-
-**Gate 5:** GA / rollout complete
-
-> **Note:** Gates 3-5 are placeholders. Gate definitions evolve as the project
-> progresses through Requirements and System Design stages.
 
 ## Project lead and stakeholders
 

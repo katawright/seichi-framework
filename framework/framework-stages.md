@@ -159,11 +159,11 @@ independently vs. where human oversight is critical.
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
 | 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with acceptance criteria                     |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria |
 | 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
-| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
+| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
 | 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
 | 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
 
@@ -255,9 +255,9 @@ per project, revisitable)
 
 ### Purpose
 
-Convert business objectives into testable requirements with acceptance criteria
-that enable coherent design decisions, accurate test planning, and reduced
-rework from ambiguity.
+Convert business objectives into testable requirements with FR acceptance
+criteria and NFR verification criteria that enable coherent design decisions,
+accurate test planning, and reduced rework from ambiguity.
 
 ### Inputs
 
@@ -282,11 +282,12 @@ rework from ambiguity.
 ### Key Activities
 
 - Elicit and document functional requirements (FRs)
-- Define acceptance criteria (AC) for each requirement
+- Define FR acceptance criteria (AC) for each functional requirement
 - Identify non-functional requirements (NFRs): performance, security,
   scalability, usability
 - Prioritize requirements for incremental delivery (MVP vs. future)
-- Ensure NFRs include instrumentation for measuring success criteria
+- Ensure NFRs include verification criteria and instrumentation for measuring
+  success criteria
 - Validate requirements with stakeholders
 
 ---
@@ -295,21 +296,22 @@ rework from ambiguity.
 
 - **Requirements Document** - Functional and non-functional requirements (see
   [Requirements Brief Template](requirements/requirements-brief-template.md))
-- User stories or use cases with acceptance criteria
+- User stories or use cases with FR acceptance criteria
 - Prioritized feature backlog
 - Requirements traceability to objectives and success criteria
 
 ### Exit Criteria
 
-- All high-priority requirements have acceptance criteria
+- All high-priority FRs have acceptance criteria
 - Requirements reviewed and approved by business and technical stakeholders
-- NFRs include measurement/instrumentation needs
+- NFRs include verification criteria and measurement/instrumentation needs
 - Requirements are testable and unambiguous
 
 ### Handoff to Next Stage
 
-System Design stage receives: Requirements document with acceptance criteria,
-prioritized backlog, NFRs, and success criteria to be instrumented.
+System Design stage receives: Requirements document with FR acceptance
+criteria, prioritized backlog, NFRs with verification criteria, and success
+criteria to be instrumented.
 
 ---
 
@@ -329,7 +331,7 @@ guides all subsequent implementation work.
 
 **Required:**
 
-- Requirements document with acceptance criteria
+- Requirements document with FR acceptance criteria
 - Non-functional requirements (performance, security, etc.)
 - Success criteria requiring instrumentation
 
@@ -413,7 +415,7 @@ Verification.
 
 - System architecture and conventions from System Design
 - Increment plan identifying current increment scope
-- Requirements with acceptance criteria for this increment
+- Requirements with FR acceptance criteria for this increment
 
 **Optional:**
 
@@ -476,7 +478,7 @@ increment, following engineering best practices and professional standards.
 
 - Detailed design from Increment Design stage
 - Architecture diagrams and API specifications
-- Requirements with acceptance criteria
+- Requirements with FR acceptance criteria
 - Success criteria requiring measurement
 
 **Optional:**
@@ -542,7 +544,7 @@ right thing).
 **Required:**
 
 - Working code from Implementation
-- Requirements with acceptance criteria
+- Requirements with FR acceptance criteria
 - Test strategy from Increment Design stage
 
 **Optional:**
@@ -560,7 +562,7 @@ right thing).
 ### Key Activities
 
 - Execute integration testing
-- Perform functional testing against acceptance criteria
+- Perform functional testing against FR acceptance criteria
 - Conduct User Acceptance Testing (UAT) with business stakeholders
 - Run performance and load testing
 - Execute security testing (vulnerability scans, penetration testing)
@@ -583,7 +585,7 @@ right thing).
 
 ### Exit Criteria
 
-- All acceptance criteria met
+- All FR acceptance criteria and NFR verification criteria met
 - No critical or high-priority defects
 - UAT approved by business stakeholders
 - Performance meets NFRs
@@ -789,11 +791,11 @@ Measurable success criteria established in Initiation flow through all stages:
 | Stage                | How Measurement Is Used                                                                          |
 | -------------------- | ------------------------------------------------------------------------------------------------ |
 | **Initiation**       | Define objectives with measurable success criteria; establish measurement approach and targets   |
-| **Requirements**     | Ensure NFRs include instrumentation/telemetry; acceptance criteria ladder up to success criteria |
+| **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
 | **System Design**    | Design analytics infrastructure, dashboards, monitoring systems, and data collection             |
 | **Increment Design** | Plan test strategy, specify what to measure per increment                                        |
 | **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                  |
-| **Verification**     | Test that measurement systems work; validate acceptance criteria tied to success criteria        |
+| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria |
 | **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                   |
 | **Support**          | Monitor success criteria in production; validate whether objectives achieved; report progress    |
 
