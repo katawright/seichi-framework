@@ -3,8 +3,9 @@
 **Last Updated:** 2026-02-21
 
 > **Purpose:** Convert the Initiation Brief into a **clear, testable
-> requirements baseline**: functional requirements with acceptance criteria,
-> non-functional requirements (NFRs), edge cases, and a prioritized scope
+> requirements baseline**: functional requirements with FR acceptance criteria,
+> non-functional requirements (NFRs) with NFR verification criteria, edge
+> cases, and a prioritized scope
 > suitable for System Design and Implementation.
 >
 > **Handoff:** This document enables the System Design stage (foundational pass)
@@ -15,8 +16,9 @@ guidance, see [Requirements Guide](requirements-guide.md).
 
 **AI Assistance:** This stage is "AI agent with human gate" per
 [AI Assistance Scorecard](../framework-ai-assistance.md) — AI can draft
-requirements, conduct interviews, and suggest ACs/NFRs; humans validate with
-stakeholders and own all decisions. Two ways to work with AI on this brief:
+requirements, conduct interviews, and suggest FR acceptance criteria and NFR
+verification criteria; humans validate with stakeholders and own all decisions.
+Two ways to work with AI on this brief:
 
 - **Interview mode:** Share the Initiation Brief with AI. It asks structured
   questions based on the template, interviews you (or stakeholders) to surface
@@ -229,6 +231,9 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 > **Include only NFRs that matter for decisions, testing, or architecture.**
 > NFRs shape design choices and testing plans.
 >
+> **Verification criteria required:** For each NFR, define measurable pass/fail
+> checks (thresholds, SLOs, instrumentation, or test method).
+>
 > **Measurement throughline:** Ensure observability NFRs capture instrumentation
 > needed to measure success metrics (Section 4 — Goals and success metrics).
 
@@ -275,11 +280,11 @@ stakeholders and own all decisions. Two ways to work with AI on this brief:
 
 **Your NFRs:**
 
-- **Performance:**
-- **Reliability:**
-- **Security/Privacy:**
-- **Observability:**
-- **Compliance (if any):**
+- **Performance:** [NFR] | **Verification criteria:** [how validated]
+- **Reliability:** [NFR] | **Verification criteria:** [how validated]
+- **Security/Privacy:** [NFR] | **Verification criteria:** [how validated]
+- **Observability:** [NFR] | **Verification criteria:** [how validated]
+- **Compliance (if any):** [NFR] | **Verification criteria:** [how validated]
 
 ## 11. Data and integrations (constraints)
 
@@ -355,8 +360,10 @@ _Example:_
 **Ready when:**
 
 - All high-priority FRs have acceptance criteria (objective/observable)
-- FRs and ACs reviewed and approved by business and technical stakeholders
-- Key NFRs captured (performance, reliability, security, observability)
+- FRs and FR acceptance criteria reviewed and approved by business and
+  technical stakeholders
+- Key NFRs captured with verification criteria (performance, reliability,
+  security, observability)
 - Measurement/instrumentation needs identified (observability NFRs)
 - Requirements are testable and unambiguous
 - Open questions documented with owners (blockers resolved or mitigated)
@@ -388,7 +395,7 @@ Provide this Requirements Document to System Design team.
 
 **Gate 2 expected outputs** (produced during System Design foundational pass):
 
-- ✅ Requirements + acceptance criteria reviewed and approved (completed in
+- ✅ Requirements + FR acceptance criteria reviewed and approved (completed in
   Requirements stage)
 - ⏳ High-level design documented with key trade-offs identified (System Design
   stage)

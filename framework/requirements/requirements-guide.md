@@ -17,15 +17,16 @@ rework from ambiguity.
 
 **Key inputs:** Initiation Brief (objectives, success metrics, constraints)
 
-**Key outputs:** Requirements Document (FRs, ACs, NFRs, prioritization)
+**Key outputs:** Requirements Document (FRs, FR acceptance criteria, NFRs, NFR
+verification criteria, prioritization)
 
 **Handoff:** System Design stage receives Requirements Document
 
 **What good looks like:**
 
 - FRs are behavior-focused and testable
-- ACs are objective and observable (Given/When/Then)
-- NFRs include observability for success metrics
+- FR acceptance criteria are objective and observable (Given/When/Then)
+- NFRs include verification criteria and observability for success metrics
 - Brownfield: Existing system constraints captured
 - MoSCoW priorities assigned (see
   [Framework Guide: MoSCoW](../framework-guide.md#moscow-prioritization))
@@ -149,10 +150,11 @@ Otherwise, keep Requirements concise and move to System Design.
    constraints, and non-goals
 2. **Draft functional requirements** — convert business objectives into testable
    behavior statements (FR-1, FR-2, etc.)
-3. **Define acceptance criteria** — write objective, observable conditions for
-   each FR (Given/When/Then format)
+3. **Define FR acceptance criteria** — write objective, observable conditions
+   for each FR (Given/When/Then format)
 4. **Identify non-functional requirements** — capture quality attributes
-   including observability NFRs for success metrics
+   including observability NFRs for success metrics, with NFR verification
+   criteria
 5. **Capture brownfield constraints** — document existing system constraints as
    NFRs (if applicable)
 6. **Prioritize with MoSCoW** — classify all requirements as Must Have, Should
@@ -183,8 +185,10 @@ definitions of FR, NFR, AC, MoSCoW, and other framework terms.
 **Stage-specific usage notes:**
 
 - FRs are numbered sequentially (FR-1, FR-2) for traceability
-- ACs use Given/When/Then format and are linked to their parent FR
-- NFRs include observability requirements to support success metrics
+- FR acceptance criteria use Given/When/Then format and are linked to parent
+  FRs
+- NFRs include verification criteria and observability requirements to support
+  success metrics
 
 > For detailed definitions, good/bad examples, and formatting guidance, see
 > [Requirements Reference: Terminology](requirements-reference.md#requirements-terminology).
@@ -199,8 +203,10 @@ highlights:
   [Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline))
 - **MoSCoW prioritization** prevents scope creep and enables faster trade-off
   decisions
-- **FRs + ACs** enable objective validation in Verification stage
-- **NFRs** (especially observability) shape architecture decisions and testing
+- **FRs + FR acceptance criteria** enable objective validation in Verification
+  stage
+- **NFRs + NFR verification criteria** (especially observability) shape
+  architecture decisions and testing
   strategy
 - **Data/integration constraints** prevent schedule slips from unexamined
   limitations

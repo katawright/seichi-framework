@@ -205,11 +205,11 @@ significant new information emerges:
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
 | --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
 | 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with acceptance criteria                     |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria |
 | 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
-| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate acceptance criteria |
+| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
 | 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
 | 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
 
@@ -358,11 +358,11 @@ ensuring goals actively guide development.
 | Stage                | How Measurement Is Used                                                               |
 | -------------------- | ------------------------------------------------------------------------------------- |
 | **Initiation**       | Define objectives with measurable success criteria; set targets                       |
-| **Requirements**     | Ensure NFRs include instrumentation/telemetry; ACs ladder up to success criteria      |
+| **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
 | **System Design**    | Design or assess analytics infrastructure, dashboards, monitoring, data collection    |
 | **Increment Design** | Plan measurement instrumentation for the increment                                    |
 | **Implementation**   | Implement logging, metrics collection, instrumentation                                |
-| **Verification**     | Test that measurement systems work; validate ACs tied to success criteria             |
+| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria      |
 | **Deployment**       | Deploy with monitoring configured; capture baseline measurements                      |
 | **Support**          | Monitor success criteria in production; validate objectives achieved; report progress |
 
