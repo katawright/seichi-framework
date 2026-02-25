@@ -562,7 +562,9 @@ internal tool for new capability.
 **Brownfield project** — Extending or enhancing an existing system. The codebase
 exists, infrastructure is in place, and there are established patterns,
 constraints, and technical debt. Examples: adding features to production
-application, modernizing legacy system, migrating to new architecture.
+application, modernizing legacy system, migrating to new architecture. Note that
+a brownfield "codebase" may span multiple repositories and include business
+logic in database-layer artifacts (stored procedures, triggers, views).
 
 **Brownfield projects have two scenarios:**
 
@@ -574,9 +576,14 @@ application, modernizing legacy system, migrating to new architecture.
 
 ### Key Principle
 
-**Greenfield projects invest Increment 0 in establishing infrastructure;
-brownfield first AI-assisted projects invest Increment 0 in discovering and
-documenting existing systems.** After Increment 0 (where applicable), all
+**Greenfield projects invest foundation work in establishing infrastructure;
+brownfield first AI-assisted projects invest foundation work in discovering and
+documenting existing systems.** The scope of brownfield foundation work varies —
+well-organized codebases need only a discovery pass, while codebases with
+significant gaps may require extended preparation or a dedicated preparation
+project. See the
+[Project Foundation Guide: Assessing Brownfield Readiness](project-foundation-guide.md#assessing-brownfield-readiness)
+for the readiness assessment. After foundation work (where applicable), all
 project types deliver features using the same iterative cycle.
 
 ### How the Framework Adapts
@@ -584,23 +591,23 @@ project types deliver features using the same iterative cycle.
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                | Greenfield                                | Brownfield (First AI)                                        | Brownfield (Has Context)                          |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                | Understand existing system + define new goals     |
-| **Requirements**     | All requirements are new                  | New requirements + existing system constraints               | New requirements + existing system constraints    |
-| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for Increment 0             | Adapt/extend architecture + assess infrastructure |
-| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                             | Plan first feature increment details              |
-| **Increment 0**      | **Establish infrastructure** (bootstrap)  | **Discover and document** existing system for AI context     | N/A — proceed directly to feature delivery        |
-| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context | Deliver features with established infra           |
-| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                 | Monitor changes, consider existing user base      |
+| Stage                | Greenfield                                | Brownfield (First AI)                                                                                                          | Brownfield (Has Context)                          |
+| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                  | Understand existing system + define new goals     |
+| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                                                 | New requirements + existing system constraints    |
+| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                           | Adapt/extend architecture + assess infrastructure |
+| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                                               | Plan first feature increment details              |
+| **Foundation**       | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](project-foundation-guide.md#assessing-brownfield-readiness)) | N/A — proceed directly to feature delivery        |
+| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                                   | Deliver features with established infra           |
+| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                                   | Monitor changes, consider existing user base      |
 
-### Increment 0: The Critical Difference
+### Project Foundation: The Critical Difference
 
-> For a practical walkthrough of Increment 0 activities — including sequencing
+> For a practical walkthrough of foundation activities — including sequencing
 > and links to stage-specific setup guides — see the
-> [Increment 0 Guide](increment-0-guide.md).
+> [Project Foundation Guide](project-foundation-guide.md).
 
-**Greenfield Increment 0** is the **bootstrap increment** — establishing the
+**Greenfield foundation** is the **bootstrap increment** — establishing the
 foundational infrastructure before feature development begins:
 
 - Set up version control, branching strategy, code organization
@@ -618,7 +625,7 @@ foundational infrastructure before feature development begins:
 **Outcome:** Working infrastructure that can support feature delivery. Increment
 1+ delivers features.
 
-**Brownfield Increment 0 (First AI-Assisted Project)** is the **discovery
+**Brownfield Foundation (First AI-Assisted Project)** is the **discovery
 increment** — documenting existing architecture, infrastructure, and conventions
 for AI context:
 
@@ -630,10 +637,18 @@ for AI context:
 - Document constraints (SLAs, policies, API contracts)
 - Store in AGENTS.md and docs/ structure for future AI use
 
-**Outcome:** Documented context that enables effective AI assistance on future
-projects. Increment 1+ delivers features.
+When discovery reveals deeper gaps — poor test coverage, inconsistent patterns,
+tangled dependencies, or untested database logic — foundation work may extend
+beyond documentation into active preparation, or become a multi-increment
+preparation project. See the
+[Project Foundation Guide](project-foundation-guide.md#assessing-brownfield-readiness)
+for the readiness assessment and preparation paths.
 
-**Brownfield (Subsequent Projects)** requires no Increment 0 and proceeds
+**Outcome:** Documented context and structural readiness (test coverage in
+critical paths, pattern clarity, dependency mapping) that enable effective AI
+assistance on future projects. Increment 1+ delivers features.
+
+**Brownfield (Subsequent Projects)** requires no foundation work and proceeds
 directly to **feature delivery** because infrastructure exists and AI context is
 documented:
 
@@ -669,6 +684,11 @@ both project types:
 - Deployment strategy within existing constraints
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
+- Readiness assessment using the
+  [Project Foundation Guide dimensions](project-foundation-guide.md#assessing-brownfield-readiness)
+  to determine foundation scope
+- Preparation plan if readiness assessment identifies gaps beyond documentation
+  (test coverage, pattern stabilization, dependency mapping, database logic)
 - Increment plan identifying **Increment 0 = document existing context for AI**
   - What to document: architecture, conventions, constraints, infrastructure
   - Documentation structure approach (use existing or propose new)
@@ -684,7 +704,7 @@ both project types:
 - Deployment strategy within existing constraints
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
-- Increment plan identifying **Increment 1 = first feature** (no Increment 0
+- Increment plan identifying **Increment 1 = first feature** (no foundation work
   needed)
 
 **Key output:** All project types exit System Design with a clear plan that
@@ -715,8 +735,8 @@ on capturing brownfield constraints.
 
 ### When Both Types Converge
 
-After Increment 0 (where applicable), **both greenfield and brownfield projects
-operate identically**:
+After foundation work (where applicable), **both greenfield and brownfield
+projects operate identically**:
 
 - Infrastructure is established and operational
 - Feature delivery follows the same iterative cycle: Increment Design →

@@ -206,15 +206,21 @@ pilot, start with [Try It Now](#try-it-now).
 
 ### Choose your project type
 
-| Project type                                             | When to choose                                       | First step                          |
-| -------------------------------------------------------- | ---------------------------------------------------- | ----------------------------------- |
-| **Greenfield** (new project)                             | Preferred for first pilot — fewer legacy constraints | Start at Initiation                 |
-| **Brownfield** (existing codebase, context documented)   | Good candidate if docs and tests exist               | Start at feature delivery           |
-| **Brownfield** (existing codebase, context undocumented) | Common real-world scenario                           | Run Increment 0 for discovery first |
+| Project type                                         | When to choose                                                                                       | First step                                                                                                 |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                                        |
+| **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                                  |
+| **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](project-foundation-guide.md#assessing-brownfield-readiness) to determine scope |
+
+**Brownfield without documented context?** The
+[Project Foundation Guide](project-foundation-guide.md#brownfield-foundation)
+walks you through a readiness assessment that determines your next step — a
+focused discovery pass, extended foundation work that addresses gaps, or a
+dedicated preparation project for codebases with pervasive issues.
 
 See
 [Greenfield vs. Brownfield](framework-guide.md#greenfield-vs-brownfield-projects)
-and the [Increment 0 Guide](increment-0-guide.md) for details.
+for conceptual overview.
 
 ### Pre-pilot prerequisites
 
