@@ -202,16 +202,16 @@ significant new information emerges:
 
 <!-- Keep this table in sync with README.md and framework-stages.md -->
 
-| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
-| --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
-| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria |
-| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
-| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
-| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
+| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
+| --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                                                   |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
+| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach                                             |
+| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
+| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
 | 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
-| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
-| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
+| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                                                      |
+| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                                                             |
 
 > **Guide structure:** Each stage guide follows a consistent structure: Quick
 > Reference, What Is [Stage], AI Assistance, Right-Sizing, Workflow, Guidance
@@ -355,16 +355,16 @@ required, and where the decision is recorded.
 Measurable success criteria established in Initiation flow through all stages,
 ensuring goals actively guide development.
 
-| Stage                | How Measurement Is Used                                                               |
-| -------------------- | ------------------------------------------------------------------------------------- |
-| **Initiation**       | Define objectives with measurable success criteria; set targets                       |
+| Stage                | How Measurement Is Used                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Initiation**       | Define objectives with measurable success criteria; set targets                                                               |
 | **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
-| **System Design**    | Design or assess analytics infrastructure, dashboards, monitoring, data collection    |
-| **Increment Design** | Plan measurement instrumentation for the increment                                    |
-| **Implementation**   | Implement logging, metrics collection, instrumentation                                |
-| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria      |
-| **Deployment**       | Deploy with monitoring configured; capture baseline measurements                      |
-| **Support**          | Monitor success criteria in production; validate objectives achieved; report progress |
+| **System Design**    | Design or assess analytics infrastructure, dashboards, monitoring, data collection                                            |
+| **Increment Design** | Plan measurement instrumentation for the increment                                                                            |
+| **Implementation**   | Implement logging, metrics collection, instrumentation                                                                        |
+| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
+| **Deployment**       | Deploy with monitoring configured; capture baseline measurements                                                              |
+| **Support**          | Monitor success criteria in production; validate objectives achieved; report progress                                         |
 
 **Example business KPIs flowing through the framework:**
 
@@ -532,13 +532,13 @@ Informed (kept in the loop)
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:
 
-| Stage / Checkpoint                      | Accountable Role                    | Typical Trigger                                               |
-| --------------------------------------- | ----------------------------------- | ------------------------------------------------------------- |
-| Initiation (risk and policy framing)    | Project lead + security/compliance  | Sensitive data, regulated domains, external AI tools          |
-| Gate 1 / Gate 2 input (risk posture)    | Security/compliance (advisory A\*)  | New legal/privacy/security risk exposure                      |
-| Verification (control evidence)         | QA/engineering + security/compliance | Security, privacy, or audit controls required for release    |
-| Compliance Approval checkpoint          | Security/compliance/legal (A)       | Contractual, regulatory, or internal policy sign-off required |
-| Deployment Approval (release readiness) | DevOps/engineering + security (C/A) | Production change with material risk, data impact, or exposure |
+| Stage / Checkpoint                      | Accountable Role                     | Typical Trigger                                                |
+| --------------------------------------- | ------------------------------------ | -------------------------------------------------------------- |
+| Initiation (risk and policy framing)    | Project lead + security/compliance   | Sensitive data, regulated domains, external AI tools           |
+| Gate 1 / Gate 2 input (risk posture)    | Security/compliance (advisory A\*)   | New legal/privacy/security risk exposure                       |
+| Verification (control evidence)         | QA/engineering + security/compliance | Security, privacy, or audit controls required for release      |
+| Compliance Approval checkpoint          | Security/compliance/legal (A)        | Contractual, regulatory, or internal policy sign-off required  |
+| Deployment Approval (release readiness) | DevOps/engineering + security (C/A)  | Production change with material risk, data impact, or exposure |
 
 \*Investment gate ownership remains with executive decision-makers; security and
 compliance provide required risk and policy input before approval.
@@ -857,6 +857,14 @@ compliance validation, and Change Advisory Board approval. See
 
 ### AI-Specific Policies
 
+An AI usage policy defines the organizational boundaries for using AI tools in
+development. It typically covers approved tools, data boundaries (what can and
+cannot be shared with AI), code review standards for AI-generated output, and
+disclosure rules. Without a policy, teams risk data leakage, IP exposure,
+inconsistent tooling choices, and regulatory gaps. A one-page policy covering
+these four areas is sufficient to start — the checklist below can serve as a
+template.
+
 Before adopting the framework, ensure your organization has addressed:
 
 - [ ] **AI usage policy** — which AI tools are approved, what data can be shared
@@ -880,6 +888,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-24
 
 Added to framework in v0.9.0.
