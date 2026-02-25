@@ -108,6 +108,23 @@ framework-specific skills:
 | DevOps            | CI/CD, infrastructure             | Deployment checklist, support handoff |
 | Engineering leads | Architecture review, mentoring    | Tier selection, gate decisions        |
 
+### Codebase Readiness (Brownfield)
+
+Organizational readiness covers people, policy, and process. For brownfield
+projects, **codebase readiness** also matters — the state of the existing
+codebase affects how quickly teams can start AI-assisted feature work.
+
+Use the
+[Project Foundation Guide: Assessing Brownfield Readiness](project-foundation-guide.md#assessing-brownfield-readiness)
+to evaluate test coverage, documentation, architectural consistency, dependency
+health, and database logic.
+
+- **Ready** — Proceed with standard Increment 0 discovery
+- **Needs Preparation** — Factor extended Increment 0 into timeline
+- **Needs Significant Preparation** — Consider treating the preparation project
+  as the adoption pilot (see
+  [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
+
 ---
 
 ## Pilot Selection
@@ -140,8 +157,11 @@ early frustration. Look for:
 
 **Good pilot project characteristics:**
 
-- **Greenfield preferred** — avoids the complexity of legacy constraints during
-  initial adoption
+- **Greenfield or well-documented brownfield preferred** — avoids the complexity
+  of undocumented legacy constraints during initial adoption. Most organizations
+  will pilot on brownfield because that's where their work is — this is viable
+  when informed by a
+  [readiness assessment](project-foundation-guide.md#assessing-brownfield-readiness)
 - **Moderate complexity** — complex enough to exercise multiple stages, simple
   enough to complete in 2–3 increments
 - **Non-critical path** — failure or delay won't impact revenue or contractual
@@ -157,6 +177,32 @@ early frustration. Look for:
 - Trivial projects that won't exercise the framework meaningfully
 - Projects with heavy regulatory or compliance requirements (save Enterprise
   tier for post-pilot)
+
+### Brownfield Preparation as a Pilot
+
+When a brownfield codebase needs significant preparation, the preparation
+project itself can serve as the adoption pilot.
+
+**Key insight:** Preparation work — adding tests, documenting architecture,
+mapping dependencies — exercises the framework's stages on familiar code. The
+team builds framework fluency on territory they already know.
+
+**Approach:**
+
+1. Run 1–2 preparation increments through the framework's full cycle (Increment
+   Design → Implementation → Verification → Deployment)
+2. Evaluate results using
+   [Phase 1 success criteria](#phase-1-pilot-1-team-12-increments)
+3. Decide whether to complete the full preparation project or adjust the
+   approach
+
+**Why this works:**
+
+- Preparation outputs (tests, documentation, dependency maps) have immediate
+  value regardless of whether the organization continues with the framework
+- The team gains hands-on framework experience before tackling new feature work
+- Lower risk than piloting on new feature development — preparation changes are
+  additive, not behavior-changing
 
 ---
 
