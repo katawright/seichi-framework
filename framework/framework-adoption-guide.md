@@ -21,6 +21,95 @@ grows.
 
 ---
 
+## Readiness Assessment
+
+Before selecting a pilot, assess whether your organization is ready to adopt
+now, try a limited pilot first, or defer briefly to close specific gaps.
+
+### Adopt Now
+
+Your organization is ready for a full pilot if:
+
+- Teams already use or are evaluating AI coding assistants
+- An AI usage policy exists (even a lightweight one)
+- You want structure instead of ad-hoc AI adoption
+- You need governance guardrails for AI-assisted development
+
+### Try First (Limited Pilot)
+
+Start with a single team and one increment if:
+
+- You have an AI usage policy but limited practical experience
+- Only one or two teams have used AI tools — others are curious but untested
+- Leadership supports experimentation but hasn't committed to broader adoption
+
+A limited pilot builds the evidence base for a wider rollout decision.
+
+### Defer Briefly
+
+Pause adoption to close these gaps first. Each is actionable and typically
+resolvable in days, not months.
+
+**No AI usage policy yet**
+
+An AI usage policy defines the organizational boundaries for using AI tools in
+development. It covers four areas:
+
+1. **Approved tools** — which AI assistants are sanctioned for use
+2. **Data boundaries** — what project data can be shared with AI tools and what
+   must be excluded (credentials, PII, proprietary algorithms)
+3. **Code review standards** — how AI-generated code is reviewed (typically the
+   same standards as human-written code, with additional attention to licensing
+   and security)
+4. **Disclosure rules** — whether and how AI-assisted development is disclosed
+   to customers, regulators, or auditors
+
+**Why it matters:** Without a policy, teams face data leakage risk (sensitive
+code or data sent to unapproved tools), IP exposure (unclear ownership of
+AI-generated output), inconsistent tooling (teams choosing different tools with
+different data handling), and regulatory exposure (no audit trail of AI usage
+decisions).
+
+This doesn't need to be a 50-page document — a one-page policy covering the four
+areas above is enough to unblock adoption. Use the
+[AI-Specific Policies](framework-guide.md#ai-specific-policies) checklist in the
+Framework Guide as a starting template.
+
+**Zero AI tool experience**
+
+Teams need foundational AI literacy before the framework adds value. Focus on
+durable skill categories that remain stable regardless of which tools your
+organization ultimately selects:
+
+- **Prompt engineering fundamentals** — how to write effective prompts, provide
+  context, and iterate on AI output
+- **Understanding model capabilities and limitations** — what AI tools are good
+  at (drafting, pattern recognition, code generation) versus where they struggle
+  (novel architecture, nuanced requirements, business judgment)
+- **Code review practices for AI-generated output** — recognizing common AI code
+  patterns, checking for hallucinated APIs, verifying security and correctness
+- **Data sensitivity awareness** — understanding what information is safe to
+  share with AI tools and what must be kept out of prompts
+
+Tool-specific training (e.g., learning a particular IDE extension) becomes
+useful once tools are selected, but these conceptual foundations come first.
+
+### What Each Role Needs
+
+Once foundational AI literacy is in place, each role benefits from
+framework-specific skills:
+
+| Role              | Core Skills                       | Framework-Specific Skills             |
+| ----------------- | --------------------------------- | ------------------------------------- |
+| Engineers         | AI tool proficiency, prompt craft | Stage workflows, verification gates   |
+| QA / Test         | Test strategy, automation         | AI-generated test review, coverage    |
+| PM / BA           | Requirements writing, stakeholder | Initiation brief, AI-assisted         |
+|                   | management                        | requirements drafting                 |
+| DevOps            | CI/CD, infrastructure             | Deployment checklist, support handoff |
+| Engineering leads | Architecture review, mentoring    | Tier selection, gate decisions        |
+
+---
+
 ## Pilot Selection
 
 ### Choosing a Pilot Team
@@ -76,10 +165,11 @@ early frustration. Look for:
 Adopt the framework in three phases, with explicit success criteria gating each
 expansion.
 
-### Pre-Pilot Readiness Gate
+### Pre-Pilot Readiness Checklist
 
-Before starting Phase 1, confirm minimum readiness to avoid false negatives in
-the pilot:
+Before starting Phase 1, confirm minimum readiness. These items operationalize
+the [Readiness Assessment](#readiness-assessment) — if any are unchecked,
+revisit the assessment for guidance:
 
 - [ ] AI usage policy is documented (approved tools, prohibited data, human
       review expectations)
@@ -87,8 +177,8 @@ the pilot:
       tests running on every change)
 - [ ] Rollback readiness is defined (owner, trigger, and basic rollback steps
       for pilot deployments)
-- [ ] Checkpoint ownership is explicit (who approves gate, quality,
-      deployment, and compliance checkpoints)
+- [ ] Checkpoint ownership is explicit (who approves gate, quality, deployment,
+      and compliance checkpoints)
 
 ### Phase 1: Pilot (1 Team, 1–2 Increments)
 
@@ -152,25 +242,10 @@ the pilot:
 - Annual refresh of organizational tier policies
 - Continuous improvement based on retrospective feedback
 
----
-
-## Skills and Readiness
-
-### What Each Role Needs
-
-| Role              | Core Skills                       | Framework-Specific Skills             |
-| ----------------- | --------------------------------- | ------------------------------------- |
-| Engineers         | AI tool proficiency, prompt craft | Stage workflows, verification gates   |
-| QA / Test         | Test strategy, automation         | AI-generated test review, coverage    |
-| PM / BA           | Requirements writing, stakeholder | Initiation brief, AI-assisted         |
-|                   | management                        | requirements drafting                 |
-| DevOps            | CI/CD, infrastructure             | Deployment checklist, support handoff |
-| Engineering leads | Architecture review, mentoring    | Tier selection, gate decisions        |
-
 ### Progressing Through Autonomy Tiers
 
-Teams naturally progress from Human-Led to Collaborative to AI-Led as they build
-confidence. The
+As teams gain experience during rollout, they naturally progress from Human-Led
+to Collaborative to AI-Led. The
 [AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum) defines
 each tier. Expect this progression:
 
@@ -415,6 +490,6 @@ as the team builds familiarity.
 
 ## Notes
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-24
 
 _Added to framework in v0.17.0_

@@ -47,16 +47,16 @@ criteria and full guidance.
 The framework defines eight stages. Foundational stages run once per project
 (though they can be revisited); iterative stages repeat each increment.
 
-| Stage                     | Type         | What happens                                            |
-| ------------------------- | ------------ | ------------------------------------------------------- |
-| [Initiation](initiation/) | Foundational | Define the problem, stakeholders, and success criteria  |
-| Requirements              | Foundational | Capture what to build and how to verify it              |
-| System Design             | Foundational | Choose architecture, patterns, and tech stack           |
-| Increment Design          | Iterative    | Plan one increment's scope and approach                 |
-| Implementation            | Iterative    | Build the increment with AI assistance                  |
-| Verification              | Iterative    | Test, review, and validate the increment                |
-| Deployment                | Iterative    | Release to production                                   |
-| Support                   | Continuous   | Monitor, maintain, and feed back into future increments |
+| Stage                                          | Type         | What happens                                            |
+| ---------------------------------------------- | ------------ | ------------------------------------------------------- |
+| [Initiation](initiation/README.md)             | Foundational | Define the problem, stakeholders, and success criteria  |
+| [Requirements](requirements/README.md)         | Foundational | Capture what to build and how to verify it              |
+| [System Design](system-design/README.md)       | Foundational | Choose architecture, patterns, and tech stack           |
+| [Increment Design](increment-design/README.md) | Iterative    | Plan one increment's scope and approach                 |
+| [Implementation](implementation/README.md)     | Iterative    | Build the increment with AI assistance                  |
+| [Verification](verification/README.md)         | Iterative    | Test, review, and validate the increment                |
+| [Deployment](deployment/README.md)             | Iterative    | Release to production                                   |
+| [Support](support/README.md)                   | Continuous   | Monitor, maintain, and feed back into future increments |
 
 For full stage definitions, inputs, outputs, and criteria, see
 [AI-Assisted SDLC Stages](framework-stages.md).
@@ -107,7 +107,7 @@ A quick scenario — building an internal dashboard — to make the stages concr
 The framework improves delivery outcomes in four ways:
 
 - **Faster time-to-value** — AI-assisted drafting and structured handoffs reduce
-  cycle time from idea to working increment.
+  cycle time from idea to working deliverable.
 - **Lower risk and rework** — Explicit quality checkpoints and verification
   criteria surface problems earlier.
 - **Stronger governance** — Gate decisions and checkpoint records make
@@ -148,7 +148,7 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate 1 | End of Initiation                   | Continue to requirements work? (Y/N) |
 | Gate 2 | End of Requirements + System Design | Commit to building? (Y/N)            |
 
-After Gate 2, the project is funded. Subsequent checkpoints govern quality,
+After Gate 2, the project is committed. Subsequent checkpoints govern quality,
 deployment timing, and compliance — not whether to continue.
 
 > **Why two gates?** Gate 1 is a low-cost screen: spend a little to learn
@@ -178,8 +178,12 @@ or **defer briefly**.
 
 **Defer if:**
 
-- Your organization has no AI usage policy yet
-- Teams have zero experience with AI tools (start with training first)
+- Your organization has no AI usage policy yet (see
+  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for what to
+  include and how to create one quickly)
+- Teams have zero experience with AI tools (see
+  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for
+  foundational skill areas to target before adopting)
 
 > **What does a pilot require?** One project team, one Standard-tier project,
 > two increments (~4–8 weeks depending on scope). No special tooling beyond the
@@ -188,7 +192,7 @@ or **defer briefly**.
 
 If there are no defer signals, continue to [Adoption Path](#adoption-path). For
 detailed pre-pilot readiness criteria, see the
-[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-gate).
+[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-checklist).
 
 ---
 
@@ -222,7 +226,7 @@ Confirm these before pilot kickoff:
 - **Ownership baseline:** Named owners for gate and checkpoint decisions
 
 For detailed readiness criteria, see the
-[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-gate).
+[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-checklist).
 
 ### Pilot sequence
 
@@ -238,7 +242,7 @@ For detailed readiness criteria, see the
 - Copy the bootstrap prompt from the
   [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
   and fill in your project details (~15 minutes).
-- Start with the [Initiation stage](initiation/) — use the guide, brief
+- Start with the [Initiation stage](initiation/README.md) — use the guide, brief
   template, and checklist.
 - Use the [Framework Guide](framework-guide.md) when deeper context is needed.
 
@@ -263,8 +267,9 @@ to try the framework solo or with your team first, skip to
 4. Copy and complete the bootstrap prompt
    ([Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template))
    — plan ~15 minutes.
-5. Complete Initiation artifacts using the [Initiation stage](initiation/)
-   guide, brief template, and checklist.
+5. Complete Initiation artifacts using the
+   [Initiation stage](initiation/README.md) guide, brief template, and
+   checklist.
 6. Schedule and run the Gate 1 decision.
 
 **Expected early outputs:**
@@ -274,9 +279,9 @@ to try the framework solo or with your team first, skip to
 - A clear go/no-go decision for requirements work
 
 > **Your first session:** Complete steps 1–4, then open the
-> [Initiation stage](initiation/) guide and work through the brief template with
-> your AI assistant. Most teams complete the first stage in a single working
-> session.
+> [Initiation stage](initiation/README.md) guide and work through the brief
+> template with your AI assistant. Most teams complete the first stage in a
+> single working session.
 
 ---
 
@@ -292,8 +297,8 @@ hour.
    [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
    and fill in your project details.
 3. **Work through Initiation (~20 min).** Open the
-   [Initiation stage](initiation/) guide and complete the brief template with
-   your AI assistant.
+   [Initiation stage](initiation/README.md) guide and complete the brief
+   template with your AI assistant.
 4. **Calibrate process weight (~5 min).** Use the
    [Right-Sizing Guide](right-sizing-guide.md) to match framework rigor to your
    project's size and risk.
