@@ -1,24 +1,52 @@
 # Right-Sizing Guide
 
-> Framework-level guidance for scaling practices to your project. For
-> cross-cutting framework concepts, see [Framework Guide](framework-guide.md).
+## Overview
+
+This guide helps teams scale framework practices to fit their project's actual
+risk and context — preventing both over-engineering (heavyweight processes that
+slow down small projects) and under-engineering (skipping critical practices
+that would have caught production failures early).
+
+### Purpose
+
+- Prevent over-engineering on low-risk projects and under-engineering on
+  high-risk ones
+- Provide a consistent model for scaling practices across all 8 stages
+- Help teams choose the right tier and evolve it as their project grows
+
+For cross-cutting framework concepts, see [Framework Guide](framework-guide.md).
+
+### Key Principle
+
+Match your process investment to your project's actual risk and team context.
+Risk tier determines _what_ you do, team size determines _how much ceremony_
+surrounds it, and AI autonomy determines _how much AI drives_ the work.
+
+### How to Use This Guide
+
+1. Review the **Cross-Stage Overview** table to see what each tier looks like
+   across all 8 stages
+2. Understand the **Three Dimensions** that shape your process choices
+3. Use **Choosing Your Tier** to select and evolve your tier
+4. Drill into individual stage guides for detailed right-sizing tables
 
 ---
 
-## Why Right-Size?
+## Cross-Stage Overview
 
-Not every project needs every practice described in this framework. A prototype
-for five internal users doesn't need contractual SLAs, and a regulated financial
-platform shouldn't rely on informal monitoring. Right-sizing prevents two common
-failures:
+This table summarizes what each tier looks like across all eight stages. See
+each stage guide's Right-Sizing section for full details.
 
-- **Over-engineering** — heavyweight processes that slow down small projects and
-  frustrate teams
-- **Under-engineering** — skipping critical practices that would have caught
-  production failures early
-
-The goal is to match your process investment to your project's actual risk and
-team context.
+| Stage                                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
+| ------------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **[Initiation](initiation/initiation-guide.md)**                   | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
+| **[Requirements](requirements/requirements-guide.md)**             | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
+| **[System Design](system-design/system-design-guide.md)**          | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
+| **[Increment Design](increment-design/increment-design-guide.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
+| **[Implementation](implementation/implementation-guide.md)**       | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
+| **[Verification](verification/verification-guide.md)**             | Manual testing, basic smoke tests                   | Integration + functional tests, performance baseline, UAT          | Full test suite, security + accessibility + performance testing, formal go/no-go |
+| **[Deployment](deployment/deployment-guide.md)**                   | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
+| **[Support](support/support-guide.md)**                            | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
 
 ---
 
@@ -49,9 +77,9 @@ for detailed guidance on solo, small-team, and large-team formality adjustments.
 
 ### AI Autonomy → _How Much AI Drives_
 
-AI autonomy determines how independently AI operates within each stage's
-assistance level. The [AI Assistance Scorecard](framework-ai-assistance.md)
-defines three tiers:
+AI autonomy determines how independently AI operates within each stage's gate
+requirements. The [AI Assistance Scorecard](framework-ai-assistance.md) defines
+three tiers:
 
 | Tier              | Philosophy                 | AI Role                                                                                                     |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -125,9 +153,7 @@ Choose Enterprise when:
 **Examples:** Payment processing, healthcare records system, customer-facing
 SaaS with SLAs, trading platform.
 
----
-
-## Your Tier Can Change
+### Your Tier Can Change
 
 Projects evolve, and your tier should evolve with them. Common transitions:
 
@@ -144,44 +170,8 @@ rigor:
 
 ---
 
-## Cross-Stage Overview
-
-This table summarizes what each tier looks like across all eight stages. See
-each stage guide's Right-Sizing section for full details.
-
-| Stage                                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
-| ------------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| **[Initiation](initiation/initiation-guide.md)**                   | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
-| **[Requirements](requirements/requirements-guide.md)**             | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
-| **[System Design](system-design/system-design-guide.md)**          | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
-| **[Increment Design](increment-design/increment-design-guide.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
-| **[Implementation](implementation/implementation-guide.md)**       | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
-| **[Verification](verification/verification-guide.md)**             | Manual testing, basic smoke tests                   | Integration + functional tests, performance baseline, UAT          | Full test suite, security + accessibility + performance testing, formal go/no-go |
-| **[Deployment](deployment/deployment-guide.md)**                   | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
-| **[Support](support/support-guide.md)**                            | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
-
----
-
-## Stage-Specific Right-Sizing
-
-Each stage guide contains a detailed Right-Sizing section with a comparison
-table showing exactly what each tier involves for that stage:
-
-- [System Design Guide: Right-Sizing](system-design/system-design-guide.md#right-sizing-system-design)
-- [Increment Design Guide: Right-Sizing](increment-design/increment-design-guide.md#right-sizing-increment-design)
-- [Implementation Guide: Right-Sizing](implementation/implementation-guide.md#right-sizing-implementation)
-- [Verification Guide: Right-Sizing](verification/verification-guide.md#right-sizing-verification)
-- [Deployment Guide: Right-Sizing](deployment/deployment-guide.md#right-sizing-deployment)
-- [Deployment Setup Guide: Right-Sizing](deployment/deployment-setup-guide.md#right-sizing-deployment-setup)
-- [Support Guide: Right-Sizing](support/support-guide.md#right-sizing-support)
-
-- [Initiation Guide: Right-Sizing Initiation](initiation/initiation-guide.md#right-sizing-initiation)
-- [Requirements Guide: Right-Sizing Requirements](requirements/requirements-guide.md#right-sizing-requirements)
-
----
-
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.13.0.
