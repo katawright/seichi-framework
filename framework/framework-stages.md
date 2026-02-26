@@ -5,17 +5,13 @@
 The AI-Assisted SDLC framework uses **8 stages** that balance comprehensive
 coverage with practical simplicity. The stages are designed to be:
 
-- **Methodology-agnostic** - Works for agile, waterfall, and hybrid approaches
-- **Role-appropriate** - Each stage led by the role best suited to the work
-- **Cross-functional** - Clear handoffs between business and technical
+- **Methodology-agnostic** — Works for agile, waterfall, and hybrid approaches
+- **Role-appropriate** — Each stage led by the role best suited to the work
+- **Cross-functional** — Clear handoffs between business and technical
   stakeholders
-- **AI-friendly** - Each stage has specific guidance for leveraging AI
+- **AI-friendly** — Each stage has specific guidance for leveraging AI
   assistance
-- **Measurable** - Success criteria flow from Initiation through Support
-
-The framework recognizes that stages execute in different patterns: some are
-foundational (execute once), some are iterative (repeat per increment), and some
-are continuous (ongoing).
+- **Measurable** — Success criteria flow from Initiation through Support
 
 For operational guidance on AI assistance levels at each stage, see the
 **[AI Assistance Scorecard](framework-ai-assistance.md)**, which evaluates each
@@ -23,157 +19,102 @@ stage across fit, verifiability, risk, and recommended assistance levels.
 
 ---
 
-## Decision Points and Checkpoints
-
-Throughout the SDLC, various checkpoints ensure quality, alignment, and sound
-decision-making. The framework distinguishes five types of checkpoints, each
-with different purposes and outcomes:
-
-### 1. Gates (Investment Decisions)
-
-**Purpose:** Decide whether to continue investing resources in the project
-**Outcome:** Proceed / Pivot / Stop **Real stop option:** Yes - these are
-genuine go/no-go decisions **When used:** Early in the project when stopping is
-still realistic
-
-**Examples:**
-
-- **Gate 1:** End of Initiation - Approve brief and fund Requirements work?
-- **Gate 2:** End of Requirements + System Design - Commit to building this?
-
-**AI validation:** Ensure AI-assisted analysis and recommendations are sound;
-human owns the investment decision.
-
-**After Gate 2:** The project is funded and team committed. Later checkpoints
-focus on "when/how to proceed" rather than "if."
-
-Record gate decisions using the
-[Gate Decision Template](gate-decision-template.md).
-
-### 2. Quality Checkpoints
-
-**Purpose:** Ensure quality and readiness standards are met before proceeding
-**Outcome:** Ready / Not Ready (with remediation needed) **Real stop option:**
-No - fix issues and retry, don't stop the project **When used:** Throughout
-development to maintain quality bars
-
-**Examples:**
-
-- Code review approval
-- Test coverage thresholds met
-- Security scan passed
-- Performance benchmarks achieved
-- Documentation completeness check
-
-**AI validation:** Human review of AI-generated code, tests, and documentation
-is critical. Verify:
-
-- AI-generated code is correct, secure, and maintainable
-- AI-generated tests provide meaningful coverage
-- AI-generated docs are accurate and complete
-
-### 3. Deployment Approvals
-
-**Purpose:** Authorize deployment to a specific environment **Outcome:** Deploy
-/ Hold / Rollback **Real stop option:** No - about timing and rollback, not
-project cancellation **When used:** When releasing to staging, production, or
-progressive rollout milestones
-
-**Examples:**
-
-- Staging deployment approval
-- Production deployment go/no-go
-- Rollout gates (10% → 50% → 100%)
-- Emergency rollback decisions
-
-**AI validation:** Ensure AI-assisted deployment automation is safe and
-monitored. Verify deployment plans and rollback procedures.
-
-Approval authority varies by environment — see the Deployment Guide for
-role-specific guidance.
-Record deployment approvals using the
-[Checkpoint Decision Template](checkpoint-decision-template.md).
-
-### 4. Alignment Reviews
-
-**Purpose:** Synchronize stakeholders, gather feedback, ensure consensus
-**Outcome:** Aligned / Adjustments Needed **Real stop option:** No - about
-refinement and convergence **When used:** When stakeholder input or team
-alignment is needed
-
-**Examples:**
-
-- Design review with stakeholders
-- Sprint review/demo
-- Architecture review
-- Requirements walkthrough
-
-**AI validation:** Review AI-generated designs, architectures, and requirements
-with the team. Ensure AI recommendations align with stakeholder needs and
-constraints.
-
-### 5. Compliance Approvals
-
-**Purpose:** Obtain required sign-offs from legal, security, or regulatory teams
-**Outcome:** Approved / Remediation Required **Real stop option:** Technically
-yes, but rarely - usually remediate and resubmit **When used:** When regulatory,
-legal, or security requirements must be met
-
-**Examples:**
-
-- Legal review (privacy, licensing, terms)
-- Security review (vulnerability assessment, threat modeling)
-- Accessibility compliance verification
-- Data privacy impact assessment
-
-**AI validation:** Ensure AI outputs meet compliance requirements:
-
-- AI-generated code doesn't introduce security vulnerabilities
-- AI-assisted data handling respects privacy regulations
-- AI recommendations consider legal and regulatory constraints
-
-### Using Checkpoints in This Framework
-
-Each stage specifies which checkpoint types apply. For example:
-
-- **Initiation:** Gate 1 (investment decision)
-- **Requirements:** Alignment Reviews (stakeholder walkthroughs)
-- **System Design:** Alignment Reviews (architecture decisions), Gate 2
-  (build/no-build decision)
-- **Implementation:** Quality Checkpoints (code review, tests), Deployment
-  Approvals (to staging)
-- **Verification:** Quality Checkpoints (test execution), Deployment Approvals
-  (production readiness)
-- **Deployment:** Deployment Approvals (production deployment, rollout gates)
-
-**Human validation of AI output is required at all checkpoint types.** The AI
-Assistance Scorecard provides stage-specific guidance on where AI can work more
-independently vs. where human oversight is critical.
-
----
-
 ## Quick Reference
 
 <!-- Keep this table in sync with framework-guide.md and README.md -->
 
-| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                   |
-| --- | ---------------- | --------------------- | ------------ | ------------------------------------------------------------------------- |
-| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                  |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria |
-| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach            |
-| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment              |
-| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                         |
+| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
+| --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                                                   |
+| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
+| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach                                             |
+| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
+| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
 | 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
-| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                     |
-| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                            |
+| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                                                      |
+| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                                                             |
+
+---
+
+## How Stages Execute
+
+The 8 stages follow three execution patterns:
+
+- **Foundational** (Initiation, Requirements, System Design) — Execute once per
+  project to establish the project foundation. Revisit when:
+  - User feedback shows requirements miss the mark
+  - Implementation reveals unanticipated constraints
+  - Business priorities or context shift significantly
+  - Measurement shows objectives are off-target or success criteria need
+    adjustment
+
+- **Iterative** (Increment Design, Implementation, Verification, Deployment) —
+  Repeat for each increment of deliverable work. An "increment" maps to whatever
+  unit your methodology uses: epic, feature, sprint deliverable, or release.
+
+- **Continuous** (Support) — Ongoing after first production deployment. Feeds
+  learnings back into future iterations and may trigger revisits to earlier
+  stages.
+
+### Stage Flow
+
+#### Linear Flow (Waterfall-style)
+
+```
+Initiation → Requirements → System Design → Increment Design
+→ Implementation → Verification → Deployment → Support
+```
+
+#### Iterative Flow (Agile-style)
+
+```
+Initiation (once)
+    ↓
+Requirements (once)
+    ↓
+System Design (once)
+    ↓
+┌────────────────────────────┐
+│ Per Increment:             │
+│   Increment Design         │
+│      ↓                     │
+│   Implementation           │
+│      ↓                     │
+│   Verification             │
+│      ↓                     │
+│   Deployment               │
+└────────────────────────────┘
+    ↓
+Support (continuous)
+```
+
+---
+
+## Measurement Throughline
+
+Measurable success criteria established in Initiation flow through all stages:
+
+| Stage                | How Measurement Is Used                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Initiation**       | Define objectives with measurable success criteria; establish measurement approach and targets                                |
+| **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
+| **System Design**    | Design analytics infrastructure, dashboards, monitoring systems, and data collection                                          |
+| **Increment Design** | Plan test strategy, specify what to measure per increment                                                                     |
+| **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                                               |
+| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
+| **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                                                |
+| **Support**          | Monitor success criteria in production; validate whether objectives achieved; report progress                                 |
+
+This ensures goals aren't just documented and forgotten—they actively guide
+development and enable data-driven validation of success.
 
 ---
 
 ## Stage 1: Initiation
 
-**Primary Role:** Product Manager / Business Analyst **Supporting Roles:**
-Executives, Solutions Architect, Engineers **Execution Pattern:** Foundational
-(once per project, revisitable)
+- **Primary Role:** Product Manager / Business Analyst
+- **Supporting Roles:** Executives, Solutions Architect, Engineers
+- **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
 
@@ -209,8 +150,6 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 - Assess major risks and unknowns
 - Create range-based plan for discovery phase (Requirements + Design)
 - Define success metrics (business, technical, project)
-
----
 
 ### Outputs
 
@@ -249,9 +188,9 @@ success criteria, constraints, and stakeholder list.
 
 ## Stage 2: Requirements
 
-**Primary Role:** Business Analyst / Product Manager **Supporting Roles:**
-Engineers, Architects, QA Engineers **Execution Pattern:** Foundational (once
-per project, revisitable)
+- **Primary Role:** Business Analyst / Product Manager
+- **Supporting Roles:** Engineers, Architects, QA Engineers
+- **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
 
@@ -290,8 +229,6 @@ accurate test planning, and reduced rework from ambiguity.
   success criteria
 - Validate requirements with stakeholders
 
----
-
 ### Outputs
 
 - **Requirements Document** - Functional and non-functional requirements (see
@@ -309,17 +246,17 @@ accurate test planning, and reduced rework from ambiguity.
 
 ### Handoff to Next Stage
 
-System Design stage receives: Requirements document with FR acceptance
-criteria, prioritized backlog, NFRs with verification criteria, and success
-criteria to be instrumented.
+System Design stage receives: Requirements document with FR acceptance criteria,
+prioritized backlog, NFRs with verification criteria, and success criteria to be
+instrumented.
 
 ---
 
 ## Stage 3: System Design
 
-**Primary Role:** Engineers / Solutions Architect **Supporting Roles:** Product
-Manager, QA Engineers, DevOps **Execution Pattern:** Foundational (once per
-project, revisitable)
+- **Primary Role:** Engineers / Solutions Architect
+- **Supporting Roles:** Product Manager, QA Engineers, DevOps
+- **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
 
@@ -358,8 +295,6 @@ guides all subsequent implementation work.
 - Plan for scalability and performance
 - Plan infrastructure (CI/CD, deployment, environments)
 - Create increment plan mapping MoSCoW to increments
-
----
 
 ### Outputs
 
@@ -400,8 +335,9 @@ conventions, data architecture, infrastructure plan, and increment plan.
 
 ## Stage 4: Increment Design
 
-**Primary Role:** Engineers **Supporting Roles:** QA Engineers, Product Manager
-**Execution Pattern:** Iterative (per increment)
+- **Primary Role:** Engineers
+- **Supporting Roles:** QA Engineers, Product Manager
+- **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
 
@@ -437,8 +373,6 @@ Verification.
 - Plan testing approach for Verification stage
 - Document implementation guidance
 
----
-
 ### Outputs
 
 - **Component Designs** — Detailed specifications per component
@@ -464,8 +398,9 @@ models, test strategy, and implementation notes.
 
 ## Stage 5: Implementation
 
-**Primary Role:** Engineers **Supporting Roles:** Architects, DevOps, QA
-Engineers **Execution Pattern:** Iterative (per increment)
+- **Primary Role:** Engineers
+- **Supporting Roles:** Architects, DevOps, QA Engineers
+- **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
 
@@ -502,16 +437,12 @@ increment, following engineering best practices and professional standards.
 - Refactor for code quality
 - Document code and APIs
 
----
-
 ### Outputs
 
 - **Working Code** - Committed to version control
 - Unit tests with passing results
 - Code review approvals
 - Updated documentation
-
----
 
 ### Exit Criteria
 
@@ -529,9 +460,9 @@ results, and implementation notes.
 
 ## Stage 6: Verification
 
-**Primary Role:** QA Engineers / Engineers **Supporting Roles:** Product
-Manager, Business Analyst, DevOps **Execution Pattern:** Iterative (per
-increment)
+- **Primary Role:** QA Engineers / Engineers
+- **Supporting Roles:** Product Manager, Business Analyst, DevOps
+- **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
 
@@ -570,8 +501,6 @@ right thing).
 - Test instrumentation/monitoring systems
 - Verify success criteria are measurable
 
----
-
 ### Outputs
 
 - **Test Results** - All test types with pass/fail status (see
@@ -580,8 +509,6 @@ right thing).
 - UAT sign-off from business stakeholders
 - Performance test results
 - Security scan results
-
----
 
 ### Exit Criteria
 
@@ -601,8 +528,9 @@ deployment checklist.
 
 ## Stage 7: Deployment
 
-**Primary Role:** DevOps / Engineers **Supporting Roles:** Operations, Product
-Manager, Engineers **Execution Pattern:** Iterative (per increment)
+- **Primary Role:** DevOps / Engineers
+- **Supporting Roles:** Operations, Product Manager, Engineers
+- **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
 
@@ -616,9 +544,6 @@ monitoring and rollback capabilities.
 - Verified code with test approvals
 - UAT sign-off
 - Deployment checklist
-
-**Required:**
-
 - Rollback plan (tested and documented)
 
 **Optional:**
@@ -643,8 +568,6 @@ monitoring and rollback capabilities.
 - Update documentation and runbooks
 - Communicate release to stakeholders
 
----
-
 ### Outputs
 
 - **Deployed System** - Increment live in production
@@ -652,8 +575,6 @@ monitoring and rollback capabilities.
 - Updated runbooks and operational procedures
 - Release notes and change documentation
 - Baseline measurements captured
-
----
 
 ### Exit Criteria
 
@@ -672,9 +593,9 @@ baseline measurements for success criteria.
 
 ## Stage 8: Support
 
-**Primary Role:** Engineers / DevOps **Supporting Roles:** Operations, Customer
-Support, Product Manager **Execution Pattern:** Continuous (ongoing after first
-deployment)
+- **Primary Role:** Engineers / DevOps
+- **Supporting Roles:** Operations, Customer Support, Product Manager
+- **Execution Pattern:** Continuous (ongoing after first deployment)
 
 ### Purpose
 
@@ -715,8 +636,6 @@ feedback for future improvements.
 - Gather user feedback
 - Plan for future iterations based on learnings
 
----
-
 ### Outputs
 
 - **System Availability** - Uptime and reliability metrics
@@ -742,130 +661,143 @@ Support stage may trigger revisits to earlier stages:
 
 ---
 
-## Execution Patterns
+## Checkpoints
 
-### Foundational Stages
+Throughout the SDLC, various checkpoints ensure quality, alignment, and sound
+decision-making. The framework distinguishes five types of checkpoints, each
+with different purposes and outcomes:
 
-**Execute once per project, revisit when needed**
+### Gates (Investment Decisions)
 
-- **Initiation** - Set project vision
-- **Requirements** - Define what to build
-- **System Design** - Establish architecture
+- **Purpose:** Decide whether to continue investing resources in the project
+- **Outcome:** Proceed / Pivot / Stop
+- **Real stop option:** Yes — these are genuine go/no-go decisions
+- **When used:** Early in the project when stopping is still realistic
 
-These stages create the project foundation but are not frozen. Revisit when:
+**Examples:**
 
-- User feedback shows requirements miss the mark
-- Implementation reveals unanticipated constraints
-- Business priorities or context shift significantly
-- Measurement shows objectives are off-target or success criteria need
-  adjustment
+- **Gate 1:** End of Initiation — Approve brief and fund Requirements work?
+- **Gate 2:** End of Requirements + System Design — Commit to building this?
 
-### Iterative Stages
+**AI validation:** Ensure AI-assisted analysis and recommendations are sound;
+human owns the investment decision.
 
-**Execute repeatedly per increment/feature/sprint**
+**After Gate 2:** The project is funded and team committed. Later checkpoints
+focus on "when/how to proceed" rather than "if."
 
-- **Increment Design** - Detail design for increment
-- **Implementation** - Build increment
-- **Verification** - Test and validate increment
-- **Deployment** - Release increment
+Record gate decisions using the
+[Gate Decision Template](gate-decision-template.md).
 
-These stages repeat for each deliverable chunk of work. An "increment" might be
-called an epic, feature, sprint deliverable, or release increment depending on
-your methodology.
+### Quality Checkpoints
 
-### Continuous Stages
+- **Purpose:** Ensure quality and readiness standards are met before proceeding
+- **Outcome:** Ready / Not Ready (with remediation needed)
+- **Real stop option:** No — fix issues and retry, don't stop the project
+- **When used:** Throughout development to maintain quality bars
 
-**Ongoing after first production deployment**
+**Examples:**
 
-- **Support** - Monitor, maintain, enhance
+- Code review approval
+- Test coverage thresholds met
+- Security scan passed
+- Performance benchmarks achieved
+- Documentation completeness check
 
-This stage runs continuously, supporting all deployed increments and feeding
-learnings back into future iterations.
+**AI validation:** Human review of AI-generated code, tests, and documentation
+is critical. Verify:
 
----
+- AI-generated code is correct, secure, and maintainable
+- AI-generated tests provide meaningful coverage
+- AI-generated docs are accurate and complete
 
-## Measurement Throughline
+### Deployment Approvals
 
-Measurable success criteria established in Initiation flow through all stages:
+- **Purpose:** Authorize deployment to a specific environment
+- **Outcome:** Deploy / Hold / Rollback
+- **Real stop option:** No — about timing and rollback, not project cancellation
+- **When used:** When releasing to staging, production, or progressive rollout
+  milestones
 
-| Stage                | How Measurement Is Used                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------ |
-| **Initiation**       | Define objectives with measurable success criteria; establish measurement approach and targets   |
-| **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
-| **System Design**    | Design analytics infrastructure, dashboards, monitoring systems, and data collection             |
-| **Increment Design** | Plan test strategy, specify what to measure per increment                                        |
-| **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                  |
-| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria |
-| **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                   |
-| **Support**          | Monitor success criteria in production; validate whether objectives achieved; report progress    |
+**Examples:**
 
-This ensures goals aren't just documented and forgotten—they actively guide
-development and enable data-driven validation of success.
+- Staging deployment approval
+- Production deployment go/no-go
+- Rollout gates (10% → 50% → 100%)
+- Emergency rollback decisions
 
----
+**AI validation:** Ensure AI-assisted deployment automation is safe and
+monitored. Verify deployment plans and rollback procedures.
 
-## Stage Relationships and Flow
+Approval authority varies by environment — see the Deployment Guide for
+role-specific guidance. Record deployment approvals using the
+[Checkpoint Decision Template](checkpoint-decision-template.md).
 
-### Linear Flow (Waterfall-style)
+### Alignment Reviews
 
-```
-Initiation → Requirements → System Design → Increment Design
-→ Implementation → Verification → Deployment → Support
-```
+- **Purpose:** Synchronize stakeholders, gather feedback, ensure consensus
+- **Outcome:** Aligned / Adjustments Needed
+- **Real stop option:** No — about refinement and convergence
+- **When used:** When stakeholder input or team alignment is needed
 
-### Iterative Flow (Agile-style)
+**Examples:**
 
-```
-Initiation (once)
-    ↓
-Requirements (once)
-    ↓
-System Design (once)
-    ↓
-┌────────────────────────────┐
-│ Per Increment:             │
-│   Increment Design         │
-│      ↓                     │
-│   Implementation           │
-│      ↓                     │
-│   Verification             │
-│      ↓                     │
-│   Deployment               │
-└────────────────────────────┘
-    ↓
-Support (continuous)
-```
+- Design review with stakeholders
+- Sprint review/demo
+- Architecture review
+- Requirements walkthrough
 
-### Feedback Loops
+**AI validation:** Review AI-generated designs, architectures, and requirements
+with the team. Ensure AI recommendations align with stakeholder needs and
+constraints.
 
-- **Support → Increment Design:** Scoped enhancements within current boundaries
-- **Support → Requirements:** User feedback reveals new requirements
-- **Support → System Design:** Performance issues need architectural changes
-- **Support → Implementation:** Low-risk patches with documented checkpoint
-  decision
-- **Verification → Implementation:** Test failures require code fixes
-- **Verification → Increment Design:** Design flaws discovered during testing
-- **Support → Initiation:** Objectives/business case need revision
+### Compliance Approvals
 
----
+- **Purpose:** Obtain required sign-offs from legal, security, or regulatory
+  teams
+- **Outcome:** Approved / Remediation Required
+- **Real stop option:** Technically yes, but rarely — usually remediate and
+  resubmit
+- **When used:** When regulatory, legal, or security requirements must be met
 
-## Enterprise Extensions
+**Examples:**
 
-### Adding Governance Stages
+- Legal review (privacy, licensing, terms)
+- Security review (vulnerability assessment, threat modeling)
+- Accessibility compliance verification
+- Data privacy impact assessment
 
-Enterprise organizations may add governance checkpoints:
+**AI validation:** Ensure AI outputs meet compliance requirements:
 
-- Security review stage (after Design or Implementation)
-- Compliance validation (after Verification)
-- Change Advisory Board approval (before Deployment)
+- AI-generated code doesn't introduce security vulnerabilities
+- AI-assisted data handling respects privacy regulations
+- AI recommendations consider legal and regulatory constraints
 
-These can be inserted as gates within stages rather than separate stages to
-maintain the 8-stage simplicity.
+### Checkpoint Mapping by Stage
+
+Each stage specifies which checkpoint types apply. For example:
+
+- **Initiation:** Gate 1 (investment decision)
+- **Requirements:** Alignment Reviews (stakeholder walkthroughs)
+- **System Design:** Alignment Reviews (architecture decisions), Gate 2
+  (build/no-build decision)
+- **Implementation:** Quality Checkpoints (code review, tests), Deployment
+  Approvals (to staging)
+- **Verification:** Quality Checkpoints (test execution), Deployment Approvals
+  (production readiness)
+- **Deployment:** Deployment Approvals (production deployment, rollout gates)
+
+**Human validation of AI output is required at all checkpoint types.** The AI
+Assistance Scorecard provides stage-specific guidance on where AI can work more
+independently vs. where human oversight is critical.
+
+> **Enterprise extensions:** Organizations with additional governance needs can
+> insert security reviews, compliance validation, or Change Advisory Board
+> approvals as checkpoints within stages rather than adding new stages.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-25
 
 Added to framework in v0.9.0.
