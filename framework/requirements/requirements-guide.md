@@ -79,17 +79,15 @@ verification. It answers: _"What exactly must the system do?"_
 
 ## AI Assistance
 
-> **Assistance level:**
-> [AI agent with human gate](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)
-> — Requirements involve business judgment, stakeholder alignment, and domain
-> knowledge that AI cannot independently verify.
+> **Required gates:** Human approval — Requirements involve business judgment,
+> stakeholder alignment, and domain knowledge that AI cannot independently
+> verify. AI can do substantial end-to-end work; humans approve before output is
+> relied on.
 
 ### AI Autonomy Spectrum
 
-Match AI's role to your team's autonomy comfort level. The assistance level for
-this stage
-([Level 2](../framework-ai-assistance.md#level-2-ai-agent-with-human-gate)) sets
-the ceiling; this spectrum adjusts who drives within that ceiling. See the
+Match AI's role to your team's autonomy comfort level. Gate requirements always
+apply regardless of tier. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
@@ -185,8 +183,7 @@ definitions of FR, NFR, AC, MoSCoW, and other framework terms.
 **Stage-specific usage notes:**
 
 - FRs are numbered sequentially (FR-1, FR-2) for traceability
-- FR acceptance criteria use Given/When/Then format and are linked to parent
-  FRs
+- FR acceptance criteria use Given/When/Then format and are linked to parent FRs
 - NFRs include verification criteria and observability requirements to support
   success metrics
 
@@ -206,8 +203,7 @@ highlights:
 - **FRs + FR acceptance criteria** enable objective validation in Verification
   stage
 - **NFRs + NFR verification criteria** (especially observability) shape
-  architecture decisions and testing
-  strategy
+  architecture decisions and testing strategy
 - **Data/integration constraints** prevent schedule slips from unexamined
   limitations
 - **Edge cases** drive significant design complexity — document expected

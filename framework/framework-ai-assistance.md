@@ -3,27 +3,57 @@
 ## Overview
 
 This scorecard provides operational guidance for determining appropriate AI
-assistance levels across the 8 SDLC stages. It evaluates each stage across four
+assistance across the 8 SDLC stages. It evaluates each stage across four
 critical dimensions to help teams make informed decisions about where AI can
 work more independently and where human oversight is essential.
 
-**Purpose:**
+### Purpose
 
 - Define clear boundaries for AI assistance at each stage
 - Help engineers understand where humans maintain control
 - Provide practical guidance for integrating AI safely and effectively
 - Balance productivity gains with appropriate risk management
 
-**Key principle:** AI assistance levels are bounded and controlled with explicit
-human gates. "Assistance" in this context means how independently AI can operate
-before requiring human approval—not uncontrolled or unsupervised operation.
+### Key Principle
 
-**How to use this scorecard:**
+AI assistance levels are bounded and controlled with explicit human gates.
+"Assistance" in this context means how independently AI can operate before
+requiring human approval—not uncontrolled or unsupervised operation.
+
+### How to Use This Scorecard
 
 1. Identify which SDLC stage you're working in
-2. Review the assistance recommendation and "best real work uses"
-3. Consult the assistance level definitions for implementation details
-4. Adjust recommendations based on your organization's risk tolerance
+2. Review the gate requirements and "best real work uses"
+3. Choose your autonomy tier (Human-Led, Collaborative, or AI-Led)
+4. Adjust based on your organization's risk tolerance
+
+---
+
+## Integration with Framework
+
+This scorecard complements the [AI-Assisted SDLC Stages](framework-stages.md)
+document:
+
+- **[AI-Assisted SDLC Stages](framework-stages.md)** defines _what_ to do at
+  each stage (inputs, activities, outputs, criteria)
+- **This scorecard** defines _how much assistance_ AI can have when assisting
+  with those activities
+
+**Workflow integration:**
+
+1. Identify your current stage from
+   [AI-Assisted SDLC Stages](framework-stages.md)
+2. Review this scorecard for gate requirements and autonomy guidance
+3. Use the [Manual Process Guide](framework-manual-process.md) to engage your AI
+   assistant with the framework
+4. Use stage-specific artifacts (checklists, briefs, guides) from stage
+   directories
+5. Implement appropriate human gates based on stage requirements
+6. Validate outputs according to stage exit criteria
+
+**For AI assistance:** Use the Manual Process Guide to work with your AI
+assistant through each stage. Stage guides include example questions and
+explorations that respect the gate requirements defined in this scorecard.
 
 ---
 
@@ -60,359 +90,80 @@ Impact and blast radius if AI produces incorrect output.
 - **Medium:** Rework needed, delays, quality issues
 - **Low:** Minor corrections, easily reversible
 
-### 4. Recommended Assistance Level
+### 4. Required Gates
 
-How far the AI agent can go before a human decision gate. See
-[AI Assistance Levels](#ai-assistance-levels-definitions) for detailed
-definitions.
+The controls that must be in place before AI output is acted upon. Gate
+strictness increases with risk and decreases with verifiability.
+
+- **Human execution required:** Humans perform the action; AI drafts only
+- **Specialized review:** Architecture board, security review, or multi-person
+  approval
+- **Human approval:** Human reviews and approves before merge or adoption
+- **CI validation:** Automated checks provide the primary quality gate; human
+  spot-checks intent
 
 ---
 
 ## Scorecard by Stage
 
-| #   | SDLC Stage           | Fit for AI | Verifiability | Risk if Wrong | Recommended Assistance                  | Best "Real Work" Uses                                                                                                         |
-| --- | -------------------- | ---------- | ------------- | ------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | **AI assist only**                      | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
-| 2   | **Requirements**     | High       | Medium        | High          | **AI agent with human gate**            | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
-| 3   | **System Design**    | High       | Medium        | High          | **AI agent with strong gates**          | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
-| 4   | **Increment Design** | High       | Medium        | Medium        | **AI agent with strong gates**          | Detail component designs, API specs, test strategies, data model changes                                                      |
-| 5   | **Implementation**   | Very High  | High          | Medium        | **High AI assistance in bounded scope** | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
-| 6   | **Verification**     | Very High  | Very High     | Medium        | **High AI assistance with CI gates**    | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
-| 7   | **Deployment**       | Medium     | High          | Very High     | **AI assist only + runbook gates**      | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
-| 8   | **Support**          | High       | Medium        | High          | **AI agent with human gate**            | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
+| #   | SDLC Stage           | Fit for AI | Verifiability | Risk if Wrong | Required Gates                     | Best "Real Work" Uses                                                                                                         |
+| --- | -------------------- | ---------- | ------------- | ------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | Human approval                     | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
+| 2   | **Requirements**     | High       | Medium        | High          | Human approval                     | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
+| 3   | **System Design**    | High       | Medium        | High          | Specialized review                 | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
+| 4   | **Increment Design** | High       | Medium        | Medium        | Specialized review                 | Detail component designs, API specs, test strategies, data model changes                                                      |
+| 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
+| 6   | **Verification**     | Very High  | Very High     | Medium        | CI validation + human spot-check   | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
+| 7   | **Deployment**       | Medium     | High          | Very High     | Human execution required + runbook | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
+| 8   | **Support**          | High       | Medium        | High          | Human approval                     | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
 
 ### Stage-Specific Notes
 
-**System Design (Stage 3):** Requires strong gates with architecture board
-review. Foundational decisions with high blast radius.
-
-**Increment Design (Stage 4):** May use lighter gates as patterns become
-established from System Design. Per-increment detailed design.
-
-**Implementation (Stage 5):** Assistance should be bounded by scope (single
-service/module), constraints (no auth changes, feature-flagged), and automated
-gates (tests, linting, security scans).
-
-**Verification (Stage 6):** High assistance appropriate because tests are
-self-verifying. AI can iterate until tests pass, but humans validate test
-quality and coverage.
-
-**Deployment (Stage 7):** Despite high verifiability, the very high risk demands
-AI assist only. Production actions require human judgment about timing, traffic,
-and rollback decisions.
-
----
-
-## AI Assistance Levels (Definitions)
-
-These levels describe **how far an AI agent can go without a human decision
-gate**. They're operational—you can map them to workflow steps, branch
-protections, and permissions.
-
-### Level 1: AI Assist Only
-
-**What it means:**
-
-- AI produces drafts, analyses, checklists, options, or suggested plans
-- A human explicitly decides what to adopt and owns correctness
-- AI cannot take actions that change project state
-
-**Allowed outputs:**
-
-- Text artifacts (briefs, risks, requirements drafts, design options)
-- Proposed milestones/slices
-- Suggested commands/scripts (not executed)
-- Questions to ask stakeholders
-
-**Not allowed without human action:**
-
-- Committing code or merging PRs
-- Executing deployments or destructive commands
-- Making final scope/priority decisions
-
-**Typical gate:**
-
-- "Engineer/PM approves content and assumptions"
-
-**When to use:**
-
-- Initiation stage (uncertain requirements, strategic decisions)
-- Deployment planning (high-risk production actions)
-- Any work requiring significant business judgment
-
----
-
-### Level 2: AI Agent with Human Gate
-
-**What it means:**
-
-- AI agent can do substantial work end-to-end in a bounded area
-- A human must approve before output becomes "real" (merged, shipped, or relied
-  on operationally)
-- AI handles the iteration, human provides direction and approval
-
-**Allowed outputs:**
-
-- Requirements + acceptance criteria drafts ready for review
-- Design proposals + slice plans
-- Code changes proposed as PRs (branch-only, not merged)
-- Test suites added/updated
-- Runbooks/alerts/dashboards as proposals
-
-**Required human gates:**
-
-- Approve requirements/design decisions
-- Approve PR merge
-- Approve release readiness or change management step
-
-**Typical gate:**
-
-- "Human reviews diffs + evidence (tests, logs) and approves"
-
-**When to use:**
-
-- Requirements stage (convert business goals to technical specs)
-- Support stage (incident response, maintenance planning)
-- Any work where correctness requires domain expertise
-
----
-
-### Level 3: AI Agent with Strong Gates
-
-**What it means:**
-
-- Same as "AI agent with human gate," but the gate is **stricter** because the
-  blast radius is larger
-- Used for architecture, security, data, compliance, and cross-cutting concerns
-- Multiple reviewers or specialized review boards required
-
-**Extra constraints (common):**
-
-- Mandatory design review (architecture council / tech lead signoff)
-- Security review for auth/data flow changes
-- Explicit rollback plan and migration review
-- Two-person approval for certain changes
-
-**Allowed outputs:**
-
-- Architecture diagrams, ADR drafts, threat model drafts
-- API/data model proposals
-- Migration strategies and rollout plans
-- Code changes with architectural impact
-
-**Typical gate:**
-
-- "Tech lead + security/architecture signoff required"
-
-**When to use:**
-
-- System Design stage (especially foundational architecture)
-- Any changes affecting security, data integrity, or system reliability
-- Cross-service interfaces and contracts
-
----
-
-### Level 4: High AI Assistance in Bounded Scope
-
-**What it means:**
-
-- AI agent can implement and iterate quickly within pre-defined boundaries
-- Can open PRs with minimal back-and-forth
-- Humans still gate merge, but AI is trusted to drive most of the implementation
-  loop
-
-**Boundaries examples:**
-
-- Limited to a single service/module
-- No new external dependencies
-- No auth model changes
-- No schema changes (or only additive, reviewed separately)
-- Feature flag required for runtime changes
-
-**Allowed outputs:**
-
-- Full slice implementation on a branch
-- Refactors, cleanup, dependency bumps (within policy)
-- Routine test additions
-- Documentation updates
-
-**Typical gate:**
-
-- "Human reviews PR + CI results, then merges"
-
-**When to use:**
-
-- Implementation stage (well-defined features in isolated modules)
-- Refactoring within established patterns
-- Code generation from clear specifications
-
----
-
-### Level 5: High AI Assistance with CI Gates
-
-**What it means:**
-
-- AI agent is allowed to keep iterating until **objective gates pass** (CI,
-  tests, linters, coverage thresholds, security scans)
-- Human review focuses on intent and risk, not line-by-line mechanics
-- Automation provides the primary quality gate
-
-**Required automated gates (examples):**
-
-- Build + unit/integration tests
-- Lint/format checks
-- SAST + dependency/license scanning
-- Code coverage thresholds
-- Performance checks (where applicable)
-
-**Allowed outputs:**
-
-- Code that passes all automated checks
-- Test suites with measurable coverage improvements
-- Refactors validated by test suite
-
-**Typical gate:**
-
-- "CI green + human spot-check + merge"
-
-**When to use:**
-
-- Verification stage (test generation and expansion)
-- Implementation with strong CI pipeline
-- Test-driven development workflows
-
----
-
-### Level 6: AI Assist Only + Runbook Gates (Production-Sensitive)
-
-**What it means:**
-
-- AI can draft the plan, checklists, and scripts
-- **Humans own all production approval gates**, following a runbook and approval
-  process; pipelines execute deployment steps
-- AI provides guidance but cannot take production-impacting actions
-
-**Why this exists:**
-
-- Production actions have high blast radius
-- Requires real-time context (incident state, traffic levels, stakeholder comms)
-- Timing and rollback decisions require human judgment
-
-**Allowed outputs:**
-
-- Deployment runbooks and checklists
-- Rollback procedures
-- Production change scripts (reviewed, not executed)
-- Release notes and communication templates
-
-**Typical gate:**
-
-- "Change approval + on-call executes steps; AI provides guidance"
-
-**When to use:**
-
-- Deployment stage (production releases)
-- Incident response (production fixes)
-- Any action directly affecting live systems
-
----
-
-## Operational Guidance
-
-### Rule of Thumb
-
-**Increase AI assistance as verifiability increases; tighten human gates as risk
-increases.**
-
-This simple rule captures the core tradeoff:
-
-- **High verifiability** (tests, builds) → AI can iterate independently
-- **High risk** (production, architecture, security) → Require stricter human
-  gates
-
-### Quick Mapping: When to Use Which Level
-
-| Scenario                                    | Recommended Level                       | Rationale                                      |
-| ------------------------------------------- | --------------------------------------- | ---------------------------------------------- |
-| High uncertainty / low verifiability        | **AI assist only**                      | Human judgment required                        |
-| Medium verifiability / high business impact | **AI agent with human gate**            | Substantial work, human validates correctness  |
-| Architecture/security/data/compliance       | **AI agent with strong gates**          | Large blast radius requires specialized review |
-| Code + tests in constrained module          | **High AI assistance in bounded scope** | Clear boundaries enable fast iteration         |
-| Test generation with measurable outcomes    | **High AI assistance with CI gates**    | Objective validation enables assistance        |
-| Anything production-executed                | **AI assist only + runbook gates**      | High risk demands human execution              |
-
-### Adapting to Your Organization
-
-The [AI Autonomy Spectrum](#ai-autonomy-spectrum) provides structured guidance
-for adjusting AI's role to your organization's comfort level. As a quick rule of
-thumb:
-
-**Lean toward AI-Led when:**
-
-- Team has strong CI/CD pipelines and automated testing
-- Organization has high risk tolerance for development environments
-- Engineers are comfortable with AI tooling
-- Rollback procedures are well-established
-
-**Lean toward Human-Led when:**
-
-- Working in regulated industries (finance, healthcare, defense)
-- Team is new to AI-assisted development
-- Legacy systems with limited test coverage
-- Production incidents would have severe business impact
-
-### Practical Takeaway
-
-**AI is strongest where outputs are machine-checkable:** implementation and
-testing. It's still highly useful in requirements/design/support, but you need
-explicit human gates because correctness is less objectively verifiable and
-impact can be high.
-
-Focus your AI adoption efforts on stages with high verifiability first
-(Implementation, Verification), then expand to other stages as your team builds
-confidence and establishes effective gate processes.
-
----
-
-## Integration with Framework
-
-This scorecard complements the [AI-Assisted SDLC Stages](framework-stages.md)
-document:
-
-- **framework-stages.md** defines _what_ to do at each stage (inputs,
-  activities, outputs, criteria)
-- **This scorecard** defines _how much assistance_ AI can have when assisting
-  with those activities
-
-**Workflow integration:**
-
-1. Identify your current stage from
-   [AI-Assisted SDLC Stages](framework-stages.md)
-2. Review this scorecard for assistance recommendations
-3. Use the [Manual Process Guide](framework-manual-process.md) to engage your AI
-   assistant with the framework
-4. Use stage-specific artifacts (checklists, briefs, guides) from stage
-   directories
-5. Implement appropriate human gates based on assistance level
-6. Validate outputs according to stage exit criteria
-
-**For AI assistance:** Use the Manual Process Guide to work with your AI
-assistant through each stage. Stage guides include example questions and
-explorations that respect the assistance levels defined in this scorecard.
+**Initiation (Stage 1):** AI produces drafts, options, and analyses. Humans own
+all decisions — scope, priority, assumptions. AI cannot take actions that change
+project state.
+
+**Requirements (Stage 2):** AI can do substantial end-to-end work (drafting
+requirements, acceptance criteria, traceability matrices). Humans approve before
+output is relied on. Correctness requires domain expertise.
+
+**System Design (Stage 3):** Requires specialized review — architecture council
+or tech lead sign-off, security review for auth/data flow changes, explicit
+rollback plan and migration review. Foundational decisions with high blast
+radius.
+
+**Increment Design (Stage 4):** Same gate type as System Design, but gates may
+be lighter as patterns become established. Per-increment detailed design.
+
+**Implementation (Stage 5):** AI iterates within pre-defined boundaries — single
+service/module, no auth changes, feature-flagged, no unapproved schema changes.
+Humans gate merge via PR review + CI results (tests, linting, security scans).
+
+**Verification (Stage 6):** AI iterates until objective gates pass (tests,
+linters, coverage thresholds, security scans). Human review focuses on intent
+and coverage quality, not line-by-line mechanics.
+
+**Deployment (Stage 7):** AI drafts runbooks, checklists, and scripts. Humans
+own all production approval gates and execute deployment steps. Requires
+real-time judgment on timing, traffic, and rollback decisions.
+
+**Support (Stage 8):** AI triages, clusters logs, and drafts incident
+communications. Humans decide on escalation, prioritization, and
+production-impacting actions.
 
 ---
 
 ## AI Autonomy Spectrum
 
-The scorecard above defines **assistance levels** — how far AI can go before a
-human gate. But within any given level, teams differ in _how much AI drives the
-work_. A cautious team and a progressive team can both operate at Level 4 (High
-AI Assistance in Bounded Scope) yet look very different day to day.
+The scorecard above defines gate requirements per stage — the controls that must
+be in place before AI output is acted upon. But within any stage, teams differ
+in _how much AI drives the work_. A cautious team and a progressive team can
+both operate under the same gate requirements yet look very different day to
+day.
 
 The AI Autonomy Spectrum addresses this by describing three tiers of AI
-involvement. It operates **within** the assistance levels — levels set the
-ceiling based on risk and verifiability; the spectrum adjusts who drives versus
-who assists beneath that ceiling.
+involvement. Gate requirements always apply regardless of tier — the spectrum
+adjusts who drives versus who assists within those constraints.
 
 ### Tier Definitions
 
@@ -432,26 +183,43 @@ This table shows how the three tiers manifest across all eight stages. Each
 stage guide contains a detailed activity-level table in its AI Assistance
 section.
 
-| Stage                          | Human-Led                                  | Collaborative                                         | AI-Led                                                                          |
-| ------------------------------ | ------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **Initiation** (Level 1)       | Human drafts; AI answers questions         | AI interviews and drafts brief; human reviews         | AI drives discovery, cross-references for gaps; human validates                 |
-| **Requirements** (Level 2)     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts and proactively flags contradictions and gaps; human validates        |
-| **System Design** (Level 3)    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs proactively, identifies concerns; human validates       |
-| **Increment Design** (Level 3) | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts and flags cross-cutting concerns proactively; human validates         |
-| **Implementation** (Level 4)   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI implements full slices, identifies issues; engineer validates                |
-| **Verification** (Level 5)     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent                 |
-| **Deployment** (Level 6)       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
-| **Support** (Level 2)          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and identifies patterns proactively; engineer validates             |
+| Stage                | Human-Led                                  | Collaborative                                         | AI-Led                                                                          |
+| -------------------- | ------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Initiation**       | Human drafts; AI answers questions         | AI interviews and drafts brief; human reviews         | AI drives discovery, cross-references for gaps; human validates                 |
+| **Requirements**     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts and proactively flags contradictions and gaps; human validates        |
+| **System Design**    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs proactively, identifies concerns; human validates       |
+| **Increment Design** | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts and flags cross-cutting concerns proactively; human validates         |
+| **Implementation**   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI implements full slices, identifies issues; engineer validates                |
+| **Verification**     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent                 |
+| **Deployment**       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
+| **Support**          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and identifies patterns proactively; engineer validates             |
 
-**Note:** Even at the AI-Led tier, the assistance level ceiling still applies.
-For example, Deployment (Level 6) requires humans to own all production approval
-gates regardless of autonomy tier; pipelines execute deployment steps.
+**Note:** Even at the AI-Led tier, gate requirements still apply. For example,
+Deployment requires humans to own all production approval gates regardless of
+autonomy tier; pipelines execute deployment steps.
 
 ### Choosing Your Tier
 
 Your autonomy tier can — and should — vary by stage. A team might be AI-Led for
 Implementation (high verifiability, fast feedback) but Human-Led for Deployment
 (high risk, low tolerance for error).
+
+As a general rule, lean toward higher autonomy (AI-Led) when conditions support
+it and toward lower autonomy (Human-Led) when they don't:
+
+**Lean toward AI-Led when:**
+
+- Team has strong CI/CD pipelines and automated testing
+- Organization has high risk tolerance for development environments
+- Engineers are comfortable with AI tooling
+- Rollback procedures are well-established
+
+**Lean toward Human-Led when:**
+
+- Working in regulated industries (finance, healthcare, defense)
+- Team is new to AI-assisted development
+- Legacy systems with limited test coverage
+- Production incidents would have severe business impact
 
 **Signals you're ready for AI-Led:**
 
@@ -500,8 +268,45 @@ team turnover, new domain).
 
 ---
 
+## Operational Guidance
+
+### Rule of Thumb
+
+**Increase AI assistance as verifiability increases; tighten human gates as risk
+increases.**
+
+This simple rule captures the core tradeoff:
+
+- **High verifiability** (tests, builds) → AI can iterate independently
+- **High risk** (production, architecture, security) → Require stricter human
+  gates
+
+### Quick Mapping: When to Use Which Gate
+
+| Scenario                                    | Required Gates                     | Rationale                                      |
+| ------------------------------------------- | ---------------------------------- | ---------------------------------------------- |
+| High uncertainty / low verifiability        | Human approval                     | Human judgment required                        |
+| Medium verifiability / high business impact | Human approval                     | Substantial work, human validates correctness  |
+| Architecture/security/data/compliance       | Specialized review                 | Large blast radius requires specialized review |
+| Code + tests in constrained module          | CI validation + human approval     | Clear boundaries enable fast iteration         |
+| Test generation with measurable outcomes    | CI validation + human spot-check   | Objective validation enables assistance        |
+| Anything production-executed                | Human execution required + runbook | High risk demands human execution              |
+
+### Practical Takeaway
+
+**AI is strongest where outputs are machine-checkable:** implementation and
+testing. It's still highly useful in requirements/design/support, but you need
+explicit human gates because correctness is less objectively verifiable and
+impact can be high.
+
+Focus your AI adoption efforts on stages with high verifiability first
+(Implementation, Verification), then expand to other stages as your team builds
+confidence and establishes effective gate processes.
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-25
 
 Added to framework in v0.9.0.
