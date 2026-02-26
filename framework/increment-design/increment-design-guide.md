@@ -74,18 +74,14 @@ in System Design to a concrete set of requirements.
 
 ## AI Assistance
 
-> **Assistance level:**
-> [AI agent with strong gates](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates)
-> — Increment Design produces component-level decisions that shape
-> implementation; gates may be lighter as patterns from System Design become
-> established.
+> **Required gates:** Specialized review — Increment Design produces
+> component-level decisions that shape implementation; gates may be lighter as
+> patterns from System Design become established.
 
 ### AI Autonomy Spectrum
 
-Match AI's role to your team's autonomy comfort level. The assistance level for
-this stage
-([Level 3](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates))
-sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+Match AI's role to your team's autonomy comfort level. Gate requirements always
+apply regardless of tier. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 

@@ -426,26 +426,26 @@ approval — not uncontrolled operation.
 **Core principle:** Increase AI assistance as verifiability increases; tighten
 human gates as risk increases.
 
-| #   | Stage            | Assistance Level               | Best Uses                                                |
-| --- | ---------------- | ------------------------------ | -------------------------------------------------------- |
-| 1   | Initiation       | AI assist only                 | Draft briefs, risks, options, sizing                     |
-| 2   | Requirements     | AI agent + human gate          | Goals → stories + ACs, ambiguity detection, NFR prompts  |
-| 3   | System Design    | AI agent + strong gates        | Propose or assess architectures, ADR drafts, slice plans |
-| 4   | Increment Design | AI agent + strong gates        | Detailed design, test strategy, component specs          |
-| 5   | Implementation   | High assistance, bounded scope | Generate/refactor code, keep PR-sized slices             |
-| 6   | Verification     | High assistance + CI gates     | Generate tests, test matrices, expand coverage           |
-| 7   | Deployment       | AI assist only + runbook gates | Draft release steps, rollback plans; humans execute      |
-| 8   | Support          | AI agent + human gate          | Triage, incident comms, runbooks, dependency updates     |
+| #   | Stage            | Required Gates                     | Best Uses                                                |
+| --- | ---------------- | ---------------------------------- | -------------------------------------------------------- |
+| 1   | Initiation       | Human approval                     | Draft briefs, risks, options, sizing                     |
+| 2   | Requirements     | Human approval                     | Goals → stories + ACs, ambiguity detection, NFR prompts  |
+| 3   | System Design    | Specialized review                 | Propose or assess architectures, ADR drafts, slice plans |
+| 4   | Increment Design | Specialized review                 | Detailed design, test strategy, component specs          |
+| 5   | Implementation   | CI validation + human approval     | Generate/refactor code, keep PR-sized slices             |
+| 6   | Verification     | CI validation + human spot-check   | Generate tests, test matrices, expand coverage           |
+| 7   | Deployment       | Human execution required + runbook | Draft release steps, rollback plans; humans execute      |
+| 8   | Support          | Human approval                     | Triage, incident comms, runbooks, dependency updates     |
 
-Within each assistance level, teams also choose an **AI autonomy tier** —
-Human-Led, Collaborative, or AI-Led — that adjusts who drives the process. The
-assistance level sets the ceiling; the autonomy tier adjusts whether humans set
-the agenda (Collaborative) or AI drives it proactively (AI-Led). See the
+Teams also choose an **AI autonomy tier** — Human-Led, Collaborative, or AI-Led
+— that adjusts who drives the process. Gate requirements always apply regardless
+of tier; the autonomy tier adjusts whether humans set the agenda (Collaborative)
+or AI drives it proactively (AI-Led). See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum)
 for tier definitions and guidance.
 
-For full assistance level definitions (6 levels) and operational guidance, see
-the [AI Assistance Scorecard](framework-ai-assistance.md).
+For full gate definitions and operational guidance, see the
+[AI Assistance Scorecard](framework-ai-assistance.md).
 
 ---
 

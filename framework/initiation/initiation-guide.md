@@ -71,16 +71,15 @@ and scope projects with AI assistance.
 
 ## AI Assistance
 
-> **Assistance level:**
-> [AI assist only](../framework-ai-assistance.md#level-1-ai-assist-only) —
-> Initiation involves business decisions requiring human judgment, stakeholder
-> alignment, and organizational context that AI cannot independently verify.
+> **Required gates:** Human approval — Initiation involves business decisions
+> requiring human judgment, stakeholder alignment, and organizational context
+> that AI cannot independently verify. AI produces drafts and options; humans
+> own all decisions.
 
 ### AI Autonomy Spectrum
 
-Match AI's role to your team's autonomy comfort level. The assistance level for
-this stage ([Level 1](../framework-ai-assistance.md#level-1-ai-assist-only))
-sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+Match AI's role to your team's autonomy comfort level. Gate requirements always
+apply regardless of tier. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 

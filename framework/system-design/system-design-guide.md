@@ -74,17 +74,14 @@ architecture and technical approach for the entire project.
 
 ## AI Assistance
 
-> **Assistance level:**
-> [AI agent with strong gates](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates)
-> — System Design produces foundational decisions with high blast radius,
-> requiring specialized review and architectural judgment.
+> **Required gates:** Specialized review — System Design produces foundational
+> decisions with high blast radius, requiring architecture council or tech lead
+> sign-off, security review, and explicit rollback plans.
 
 ### AI Autonomy Spectrum
 
-Match AI's role to your team's autonomy comfort level. The assistance level for
-this stage
-([Level 3](../framework-ai-assistance.md#level-3-ai-agent-with-strong-gates))
-sets the ceiling; this spectrum adjusts who drives within that ceiling. See the
+Match AI's role to your team's autonomy comfort level. Gate requirements always
+apply regardless of tier. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
@@ -285,9 +282,9 @@ Mermaid or PlantUML for diagram-as-code.
 
 ### Architecture Decision Records (ADRs)
 
-ADRs document significant decisions and reasoning. They are **separate
-project files** stored in `docs/adr/` (or a stage-level `adr/` directory if
-your team uses scoped ADRs).
+ADRs document significant decisions and reasoning. They are **separate project
+files** stored in `docs/adr/` (or a stage-level `adr/` directory if your team
+uses scoped ADRs).
 
 **Create for decisions that are:**
 
