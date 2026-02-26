@@ -31,9 +31,9 @@ now, try a limited pilot first, or defer briefly to close specific gaps.
 Your organization is ready for a full pilot if:
 
 - Teams already use or are evaluating AI coding assistants
-- An AI usage policy exists (even a lightweight one)
 - You want structure instead of ad-hoc AI adoption
 - You need governance guardrails for AI-assisted development
+- You want non-technical stakeholders to initiate projects
 
 ### Try First (Limited Pilot)
 
@@ -47,8 +47,8 @@ A limited pilot builds the evidence base for a wider rollout decision.
 
 ### Defer Briefly
 
-Pause adoption to close these gaps first. Each is actionable and typically
-resolvable in days, not months.
+Pause adoption to close these gaps first. The first two are typically resolvable
+in days, not months. The third takes longer but is equally important.
 
 **No AI usage policy yet**
 
@@ -94,19 +94,56 @@ organization ultimately selects:
 Tool-specific training (e.g., learning a particular IDE extension) becomes
 useful once tools are selected, but these conceptual foundations come first.
 
-### What Each Role Needs
+**Broad organizational resistance to AI tools**
 
-Once foundational AI literacy is in place, each role benefits from
-framework-specific skills:
+Individual skepticism — an engineer who doubts AI code quality or worries about
+added process — is normal and addressable. The
+[Managing Change During Expansion](#managing-change-during-expansion) section
+covers common resistance patterns. But when resistance is widespread across the
+engineering organization, it signals something different: a trust gap between
+leadership and teams that no framework can bridge on its own.
 
-| Role              | Core Skills                       | Framework-Specific Skills             |
-| ----------------- | --------------------------------- | ------------------------------------- |
-| Engineers         | AI tool proficiency, prompt craft | Stage workflows, verification gates   |
-| QA / Test         | Test strategy, automation         | AI-generated test review, coverage    |
-| PM / BA           | Requirements writing, stakeholder | Initiation brief, AI-assisted         |
-|                   | management                        | requirements drafting                 |
-| DevOps            | CI/CD, infrastructure             | Deployment checklist, support handoff |
-| Engineering leads | Architecture review, mentoring    | Tier selection, gate decisions        |
+Signs of organizational resistance:
+
+- Engineers broadly view AI adoption as a threat to their roles or autonomy
+- AI initiatives are seen as top-down mandates rather than team-supported
+  improvements
+- Previous technology or process rollouts failed due to lack of buy-in
+- Teams comply with the letter of new processes but not the spirit (filling in
+  templates without engaging with the content)
+
+**Why it matters:** Adopting the framework into a resistant organization
+produces malicious compliance rather than genuine engagement. Teams go through
+the motions — completing briefs, attending gates — without honestly evaluating
+AI output or providing the feedback that makes the framework effective. The
+pilot appears to succeed on paper but fails to build the trust and experience
+needed for expansion.
+
+**What to do first:**
+
+1. **Listen before prescribing.** Run listening sessions or anonymous surveys to
+   understand the specific concerns. Resistance usually has legitimate roots —
+   job security fears, bad experiences with previous tooling mandates, or
+   concerns about code quality and professional standards.
+2. **Create voluntary exposure.** Give interested engineers access to AI tools
+   without requiring adoption. Let early results speak for themselves. Teams
+   that choose to experiment are far better pilot candidates than teams that are
+   assigned to one.
+3. **Address the real concern.** If the root is job security, leadership needs
+   to communicate clearly about AI's role (augmentation, not replacement) — and
+   back that up with actions, not just messaging. If the root is quality
+   concerns, point to the framework's verification gates and Human-Led mode as
+   evidence that those concerns are taken seriously.
+4. **Find willing teams first.** A successful pilot with a willing team builds
+   organizational evidence that skeptics can evaluate on their own terms.
+   Forcing a pilot on a resistant team risks confirming their fears.
+
+**Further reading:** Resistance to AI adoption shares patterns with broader
+technology change management. Kotter's 8-step change model and the ADKAR
+framework (Awareness, Desire, Knowledge, Ability, Reinforcement) both offer
+structured approaches to building organizational readiness. The key principle
+across all models: sustainable adoption requires genuine buy-in, not mandated
+compliance.
 
 ### Codebase Readiness (Brownfield)
 
@@ -124,314 +161,6 @@ health, and database logic.
 - **Needs Significant Preparation** — Consider treating the preparation project
   as the adoption pilot (see
   [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
-
----
-
-## Pilot Selection
-
-### Choosing a Pilot Team
-
-The right pilot team determines whether the organization sees early wins or
-early frustration. Look for:
-
-**Good pilot team characteristics:**
-
-- Moderate experience — not the most senior (may resist change) or most junior
-  (may lack context to evaluate AI output)
-- Supportive of experimentation — willing to try new approaches and provide
-  honest feedback
-- Existing CI/CD maturity — can verify AI-generated code immediately through
-  automated pipelines
-- Reasonable workload — has capacity to learn the framework without delivery
-  pressure creating shortcuts
-- Cross-functional representation — includes engineers, QA, and ideally a PM or
-  BA
-
-**Avoid for pilot:**
-
-- Teams in crisis mode or under heavy delivery pressure
-- Teams with no automated testing or CI/CD pipeline
-- Teams strongly opposed to AI adoption (address resistance first)
-
-### Choosing a Pilot Project
-
-**Good pilot project characteristics:**
-
-- **Greenfield or well-documented brownfield preferred** — avoids the complexity
-  of undocumented legacy constraints during initial adoption. Most organizations
-  will pilot on brownfield because that's where their work is — this is viable
-  when informed by a
-  [readiness assessment](project-foundation-guide.md#assessing-brownfield-readiness)
-- **Moderate complexity** — complex enough to exercise multiple stages, simple
-  enough to complete in 2–3 increments
-- **Non-critical path** — failure or delay won't impact revenue or contractual
-  obligations
-- **Standard risk tier** — exercises the framework's core practices without
-  Enterprise overhead
-- **Clear success criteria** — stakeholders can objectively evaluate whether the
-  framework helped
-
-**Avoid for pilot:**
-
-- Mission-critical systems with zero tolerance for experimentation
-- Trivial projects that won't exercise the framework meaningfully
-- Projects with heavy regulatory or compliance requirements (save Enterprise
-  tier for post-pilot)
-
-### Brownfield Preparation as a Pilot
-
-When a brownfield codebase needs significant preparation, the preparation
-project itself can serve as the adoption pilot.
-
-**Key insight:** Preparation work — adding tests, documenting architecture,
-mapping dependencies — exercises the framework's stages on familiar code. The
-team builds framework fluency on territory they already know.
-
-**Approach:**
-
-1. Run 1–2 preparation increments through the framework's full cycle (Increment
-   Design → Implementation → Verification → Deployment)
-2. Evaluate results using
-   [Phase 1 success criteria](#phase-1-pilot-1-team-12-increments)
-3. Decide whether to complete the full preparation project or adjust the
-   approach
-
-**Why this works:**
-
-- Preparation outputs (tests, documentation, dependency maps) have immediate
-  value regardless of whether the organization continues with the framework
-- The team gains hands-on framework experience before tackling new feature work
-- Lower risk than piloting on new feature development — preparation changes are
-  additive, not behavior-changing
-
----
-
-## Phased Rollout
-
-Adopt the framework in three phases, with explicit success criteria gating each
-expansion.
-
-### Pre-Pilot Readiness Checklist
-
-Before starting Phase 1, confirm minimum readiness. These items operationalize
-the [Readiness Assessment](#readiness-assessment) — if any are unchecked,
-revisit the assessment for guidance:
-
-- [ ] AI usage policy is documented (approved tools, prohibited data, human
-      review expectations)
-- [ ] CI/test baseline exists for the pilot project (automated build and core
-      tests running on every change)
-- [ ] Rollback readiness is defined (owner, trigger, and basic rollback steps
-      for pilot deployments)
-- [ ] Checkpoint ownership is explicit (who approves gate, quality, deployment,
-      and compliance checkpoints)
-
-### Phase 1: Pilot (1 Team, 1–2 Increments)
-
-**Duration:** 4–8 weeks
-
-**Activities:**
-
-1. Pilot team reads the [Quick Start Guide](README.md) and
-   [Framework Guide](framework-guide.md)
-2. Apply the framework to one project, starting at Initiation
-3. Work through stages iteratively, beginning with Human-Led autonomy
-4. Capture feedback after each stage and at retrospective
-
-**Success criteria for Phase 2:**
-
-- [ ] Team completed at least one full increment cycle (Increment Design →
-      Deployment)
-- [ ] Cycle time was comparable to or better than pre-framework baseline
-- [ ] Defect escape rate did not increase
-- [ ] Team satisfaction survey scores are neutral or positive
-- [ ] At least one concrete improvement identified (speed, quality, clarity, or
-      documentation)
-
-### Phase 2: Expand (2–3 Teams)
-
-**Duration:** 6–12 weeks
-
-**Activities:**
-
-1. Pilot team shares lessons learned with expanding teams
-2. Pilot team members act as mentors or embedded coaches
-3. Expanding teams start with the same approach: one Standard-tier project,
-   Human-Led autonomy
-4. Adjust framework practices based on pilot feedback before expanding
-
-**Success criteria for Phase 3:**
-
-- [ ] All expanding teams completed at least one increment cycle
-- [ ] Cross-team patterns documented (what worked, what didn't)
-- [ ] Framework practices are consistent across teams (shared understanding of
-      tiers, stages, checkpoints)
-- [ ] No significant negative impact on delivery velocity or quality
-
-### Phase 3: Standardize (Default for All New Projects)
-
-**Duration:** Ongoing
-
-**Activities:**
-
-1. Establish the framework as the default approach for new projects
-2. Create organizational templates and tooling (pre-filled briefs, shared
-   checklists)
-3. Define organizational tier policies (see below)
-4. Build internal training materials based on pilot and expansion experience
-5. Assign framework champions per team for ongoing support
-
-**Ongoing governance:**
-
-- Quarterly review of framework effectiveness using
-  [adoption metrics](#measuring-adoption-success)
-- Annual refresh of organizational tier policies
-- Continuous improvement based on retrospective feedback
-
-### Progressing Through Autonomy Tiers
-
-As teams gain experience during rollout, they naturally progress from Human-Led
-to Collaborative to AI-Led. The
-[AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum) defines
-each tier. Expect this progression:
-
-1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and
-   review all output closely. AI is a drafting tool.
-2. **Collaborative (Weeks 4–12):** Humans and AI share initiative. AI
-   proactively suggests approaches; humans evaluate and decide. Trust builds
-   through repeated verification.
-3. **AI-Led (12+ weeks, high-verifiability stages only):** AI drives execution
-   within bounded scope (e.g., generating tests, writing implementation code).
-   Humans validate through automated gates and spot checks.
-
-**Important:** Not every stage should reach AI-Led. Low-verifiability stages
-like Initiation and System Design should remain Human-Led or Collaborative
-regardless of team maturity.
-
----
-
-## Change Management
-
-### Addressing Resistance
-
-The framework is designed to be non-threatening to engineers — AI is positioned
-as an assistant, not a replacement. Common resistance patterns and how to
-address them:
-
-| Resistance Pattern                | Response                                |
-| --------------------------------- | --------------------------------------- |
-| "AI will replace my job"          | Framework explicitly keeps humans in    |
-|                                   | control. AI drafts; humans decide.      |
-| "AI-generated code is unreliable" | That's exactly why the framework adds   |
-|                                   | verification gates. Start Human-Led.    |
-| "This is just more process"       | Framework replaces ad-hoc AI usage with |
-|                                   | structured usage. Right-size to Minimal |
-|                                   | if overhead concerns are valid.         |
-| "I don't need a framework to      | Framework adds governance and           |
-| use AI"                           | consistency — especially valuable when  |
-|                                   | scaling across teams.                   |
-| "AI tools change too fast"        | Framework is tool-agnostic. It governs  |
-|                                   | the process, not the tool.              |
-
-### Demonstrating Early Wins
-
-Focus on visible, measurable improvements in the first increment:
-
-- **Speed:** Compare cycle time for the pilot increment against team historical
-  average
-- **Quality:** Track defects found during verification vs. production escapes
-- **Documentation:** Show how briefs and checklists create an audit trail that
-  didn't exist before
-- **Onboarding:** Note how new team members can read briefs and understand
-  decisions without tribal knowledge
-
-### Framing AI as an Assistant
-
-Use language consistently across the organization:
-
-- Say "AI-assisted" not "AI-driven" or "AI-automated"
-- Say "AI drafts, humans decide" not "AI generates output"
-- Say "AI as a productivity tool" not "AI as a replacement"
-- Refer to "human validation" not "quality control of AI"
-
----
-
-## Incremental Adoption
-
-Teams don't have to adopt all 8 stages at once. Start where the return is
-highest and the risk is lowest.
-
-### Recommended Adoption Sequence
-
-**Start here (highest ROI, highest verifiability):**
-
-1. **Implementation** — AI code generation with automated test verification.
-   Immediate productivity gains.
-2. **Verification** — AI test generation with CI validation. Improves coverage
-   with low risk.
-
-**Add next (moderate ROI, moderate verifiability):**
-
-3. **Increment Design** — AI-assisted design planning. Improves consistency and
-   documentation.
-4. **Deployment** — AI-drafted deployment checklists and runbooks. Reduces
-   operational errors.
-
-**Add when ready (lower verifiability, higher judgment):**
-
-5. **Requirements** — AI-assisted requirements drafting and ambiguity detection.
-   Requires experienced review.
-6. **Initiation** — AI-assisted business case development. Broadens who can
-   initiate projects.
-
-**Add last (strategic value, requires organizational maturity):**
-
-7. **System Design** — AI-assisted architecture exploration. High impact of
-   errors requires strong gates.
-8. **Support** — AI-assisted incident response and triage. Requires established
-   monitoring infrastructure.
-
-### Partial Adoption Is Valid
-
-A team using the framework for Implementation and Verification only is still
-getting value. The framework is designed so each stage works independently — you
-don't need Initiation briefs to benefit from structured AI-assisted
-implementation.
-
-**Measurement throughline note:** End-to-end traceability — from business
-objectives through to production metrics — requires the complete stage sequence.
-Partial adoption delivers structured workflows and verification gates without
-the full measurement chain. Add Initiation and Requirements stages when
-governance reporting and objective traceability become priorities.
-
----
-
-## Organizational Tier Policies
-
-Instead of leaving risk tier selection to individual teams each time,
-organizations can define default tier mappings based on project characteristics.
-
-### Example Tier Policy
-
-| Project Category                  | Default Tier | Override Authority  |
-| --------------------------------- | ------------ | ------------------- |
-| Internal tools, experiments       | Minimal      | Team lead           |
-| Customer-facing features          | Standard     | Engineering manager |
-| Financial systems, payments       | Enterprise   | VP Engineering      |
-| Healthcare / regulated industry   | Enterprise   | VP Engineering +    |
-|                                   |              | Compliance          |
-| Infrastructure / platform changes | Standard     | Engineering manager |
-| Security-sensitive systems        | Enterprise   | Security lead       |
-
-### Defining Your Policy
-
-1. List your project categories (by domain, customer impact, or regulatory
-   exposure)
-2. Assign a default tier to each category using the
-   [Right-Sizing Guide](right-sizing-guide.md) criteria
-3. Define who can override the default (up or down)
-4. Document the policy and communicate to all teams
-5. Review annually or when regulatory requirements change
 
 ---
 
@@ -534,8 +263,310 @@ as the team builds familiarity.
 
 ---
 
+## Phased Rollout
+
+Adopt the framework in three phases, with explicit success criteria gating each
+expansion.
+
+### Phase 1: Pilot (1 Team, 1–2 Increments)
+
+**Duration:** 4–8 weeks
+
+#### Selecting Your Pilot Team
+
+The right pilot team determines whether the organization sees early wins or
+early frustration. Look for:
+
+**Good pilot team characteristics:**
+
+- Moderate experience — not the most senior (may resist change) or most junior
+  (may lack context to evaluate AI output)
+- Supportive of experimentation — willing to try new approaches and provide
+  honest feedback
+- Existing CI/CD maturity — can verify AI-generated code immediately through
+  automated pipelines
+- Reasonable workload — has capacity to learn the framework without delivery
+  pressure creating shortcuts
+- Cross-functional representation — includes engineers, QA, and ideally a PM or
+  BA
+
+**Avoid for pilot:**
+
+- Teams in crisis mode or under heavy delivery pressure
+- Teams with no automated testing or CI/CD pipeline
+- Teams strongly opposed to AI adoption (address resistance first)
+
+#### Selecting Your Pilot Project
+
+**Good pilot project characteristics:**
+
+- **Greenfield or well-documented brownfield preferred** — avoids the complexity
+  of undocumented legacy constraints during initial adoption. Most organizations
+  will pilot on brownfield because that's where their work is — this is viable
+  when informed by a
+  [readiness assessment](project-foundation-guide.md#assessing-brownfield-readiness)
+- **Moderate complexity** — complex enough to exercise multiple stages, simple
+  enough to complete in 2–3 increments
+- **Non-critical path** — failure or delay won't impact revenue or contractual
+  obligations
+- **Standard risk tier** — exercises the framework's core practices without
+  Enterprise overhead
+- **Clear success criteria** — stakeholders can objectively evaluate whether the
+  framework helped
+
+**Avoid for pilot:**
+
+- Mission-critical systems with zero tolerance for experimentation
+- Trivial projects that won't exercise the framework meaningfully
+- Projects with heavy regulatory or compliance requirements (save Enterprise
+  tier for post-pilot)
+
+#### Brownfield Preparation as a Pilot
+
+When a brownfield codebase needs significant preparation, the preparation
+project itself can serve as the adoption pilot.
+
+**Key insight:** Preparation work — adding tests, documenting architecture,
+mapping dependencies — exercises the framework's stages on familiar code. The
+team builds framework fluency on territory they already know.
+
+**Approach:**
+
+1. Run 1–2 preparation increments through the framework's full cycle (Increment
+   Design → Implementation → Verification → Deployment)
+2. Evaluate results using
+   [Phase 1 success criteria](#success-criteria-for-phase-2)
+3. Decide whether to complete the full preparation project or adjust the
+   approach
+
+**Why this works:**
+
+- Preparation outputs (tests, documentation, dependency maps) have immediate
+  value regardless of whether the organization continues with the framework
+- The team gains hands-on framework experience before tackling new feature work
+- Lower risk than piloting on new feature development — preparation changes are
+  additive, not behavior-changing
+
+#### Pre-Pilot Readiness Checklist
+
+Before starting the pilot, confirm minimum readiness. These items operationalize
+the [Readiness Assessment](#readiness-assessment) — if any are unchecked,
+revisit the assessment for guidance:
+
+- [ ] AI usage policy is documented (approved tools, prohibited data, human
+      review expectations)
+- [ ] CI/test baseline exists for the pilot project (automated build and core
+      tests running on every change)
+- [ ] Rollback readiness is defined (owner, trigger, and basic rollback steps
+      for pilot deployments)
+- [ ] Checkpoint ownership is explicit (who approves gate, quality, deployment,
+      and compliance checkpoints)
+
+#### Executing the Pilot
+
+1. Pilot team reads the [README](README.md) and
+   [Framework Guide](framework-guide.md)
+2. Apply the framework to one project, starting at Initiation
+3. Work through stages iteratively, beginning in Human-Led mode
+4. Capture feedback after each stage and at retrospective
+
+#### Success Criteria for Phase 2
+
+- [ ] Team completed at least one full increment cycle (Increment Design →
+      Deployment)
+- [ ] Cycle time was comparable to or better than pre-framework baseline
+- [ ] Defect escape rate did not increase
+- [ ] Team satisfaction survey scores are neutral or positive
+- [ ] At least one concrete improvement identified (speed, quality, clarity, or
+      documentation)
+
+### Phase 2: Expand (2–3 Teams)
+
+**Duration:** 6–12 weeks
+
+#### Expansion Activities
+
+1. Pilot team shares lessons learned with expanding teams
+2. Pilot team members act as mentors or embedded coaches
+3. Expanding teams start with the same approach: one Standard-tier project,
+   Human-Led mode
+4. Adjust framework practices based on pilot feedback before expanding
+
+#### Managing Change During Expansion
+
+Expansion is when resistance from non-pilot teams typically surfaces. The
+framework is designed to be non-threatening — AI is positioned as an assistant,
+not a replacement — but teams encountering it for the first time may still have
+concerns.
+
+##### Addressing Resistance
+
+Common resistance patterns and how to address them:
+
+| Resistance Pattern                | Response                                |
+| --------------------------------- | --------------------------------------- |
+| "AI will replace my job"          | Framework explicitly keeps humans in    |
+|                                   | control. AI drafts; humans decide.      |
+| "AI-generated code is unreliable" | That's exactly why the framework adds   |
+|                                   | verification gates. Start Human-Led.    |
+| "This is just more process"       | Framework replaces ad-hoc AI usage with |
+|                                   | structured usage. Right-size to Minimal |
+|                                   | if overhead concerns are valid.         |
+| "I don't need a framework to      | Framework adds governance and           |
+| use AI"                           | consistency — especially valuable when  |
+|                                   | scaling across teams.                   |
+| "AI tools change too fast"        | Framework is tool-agnostic. It governs  |
+|                                   | the process, not the tool.              |
+
+##### Demonstrating Early Wins
+
+Focus on visible, measurable improvements from the pilot to build confidence in
+expanding teams:
+
+- **Speed:** Compare cycle time for the pilot increment against team historical
+  average
+- **Quality:** Track defects found during verification vs. production escapes
+- **Documentation:** Show how briefs and checklists create an audit trail that
+  didn't exist before
+- **Onboarding:** Note how new team members can read briefs and understand
+  decisions without tribal knowledge
+
+##### Framing AI as an Assistant
+
+Use language consistently across the organization:
+
+- Say "AI-assisted" not "AI-driven" or "AI-automated"
+- Say "AI drafts, humans decide" not "AI generates output"
+- Say "AI as a productivity tool" not "AI as a replacement"
+- Refer to "human validation" not "quality control of AI"
+
+#### Progressing Through Operating Modes
+
+As teams gain experience during rollout, they naturally progress from Human-Led
+to Collaborative to AI-Led. The
+[AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum) defines
+each mode. Expect this progression:
+
+1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and
+   review all output closely. AI is a drafting tool.
+2. **Collaborative (Weeks 4–12):** Humans and AI share initiative. AI
+   proactively suggests approaches; humans evaluate and decide. Trust builds
+   through repeated verification.
+3. **AI-Led (12+ weeks, high-verifiability stages only):** AI drives execution
+   within bounded scope (e.g., generating tests, writing implementation code).
+   Humans validate through automated gates and spot checks.
+
+**Important:** Not every stage should reach AI-Led. Low-verifiability stages
+like Initiation and System Design should remain Human-Led or Collaborative
+regardless of team maturity.
+
+#### Success Criteria for Phase 3
+
+- [ ] All expanding teams completed at least one increment cycle
+- [ ] Cross-team patterns documented (what worked, what didn't)
+- [ ] Framework practices are consistent across teams (shared understanding of
+      tiers, stages, checkpoints)
+- [ ] No significant negative impact on delivery velocity or quality
+
+### Phase 3: Standardize (Default for All New Projects)
+
+**Duration:** Ongoing
+
+#### Standardization Activities
+
+1. Establish the framework as the default approach for new projects
+2. Create organizational templates and tooling (pre-filled briefs, shared
+   checklists)
+3. Build internal training materials based on pilot and expansion experience
+4. Assign framework champions per team for ongoing support
+
+#### Stage Adoption Sequence
+
+Teams don't have to adopt all 8 stages at once. Start where the return is
+highest and the risk is lowest.
+
+> **Note:** This sequence describes which stages to introduce to your
+> organization first — not the order a project executes them. Individual
+> projects still start at Initiation and follow the stage sequence described in
+> the [Stage Overview](README.md#stage-overview).
+
+**Start here (highest ROI, highest verifiability):**
+
+1. **Implementation** — AI code generation with automated test verification.
+   Immediate productivity gains.
+2. **Verification** — AI test generation with CI validation. Improves coverage
+   with low risk.
+
+**Add next (moderate ROI, moderate verifiability):**
+
+3. **Increment Design** — AI-assisted design planning. Improves consistency and
+   documentation.
+4. **Deployment** — AI-drafted deployment checklists and runbooks. Reduces
+   operational errors.
+
+**Add when ready (lower verifiability, higher judgment):**
+
+5. **Requirements** — AI-assisted requirements drafting and ambiguity detection.
+   Requires experienced review.
+6. **Initiation** — AI-assisted business case development. Broadens who can
+   initiate projects.
+
+**Add last (strategic value, requires organizational maturity):**
+
+7. **System Design** — AI-assisted architecture exploration. High impact of
+   errors requires strong gates.
+8. **Support** — AI-assisted incident response and triage. Requires established
+   monitoring infrastructure.
+
+**Partial adoption is valid.** A team using the framework for Implementation and
+Verification only is still getting value. The framework is designed so each
+stage works independently — you don't need Initiation briefs to benefit from
+structured AI-assisted implementation.
+
+**Measurement throughline note:** End-to-end traceability — from business
+objectives through to production metrics — requires the complete stage sequence.
+Partial adoption delivers structured workflows and verification gates without
+the full measurement chain. Add Initiation and Requirements stages when
+governance reporting and objective traceability become priorities.
+
+#### Organizational Tier Policies
+
+Instead of leaving risk tier selection to individual teams each time,
+organizations can define default tier mappings based on project characteristics.
+
+##### Example Tier Policy
+
+| Project Category                  | Default Tier | Override Authority  |
+| --------------------------------- | ------------ | ------------------- |
+| Internal tools, experiments       | Minimal      | Team lead           |
+| Customer-facing features          | Standard     | Engineering manager |
+| Financial systems, payments       | Enterprise   | VP Engineering      |
+| Healthcare / regulated industry   | Enterprise   | VP Engineering +    |
+|                                   |              | Compliance          |
+| Infrastructure / platform changes | Standard     | Engineering manager |
+| Security-sensitive systems        | Enterprise   | Security lead       |
+
+##### Defining Your Policy
+
+1. List your project categories (by domain, customer impact, or regulatory
+   exposure)
+2. Assign a default tier to each category using the
+   [Right-Sizing Guide](right-sizing-guide.md) criteria
+3. Define who can override the default (up or down)
+4. Document the policy and communicate to all teams
+5. Review annually or when regulatory requirements change
+
+#### Ongoing Governance
+
+- Quarterly review of framework effectiveness using
+  [adoption metrics](#measuring-adoption-success)
+- Annual refresh of organizational tier policies
+- Continuous improvement based on retrospective feedback
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-24
+**Last Updated:** 2026-02-25
 
 _Added to framework in v0.17.0_

@@ -169,12 +169,18 @@ patterns, see [AI-Assisted SDLC Stages](framework-stages.md).
 Use this quick screen to decide: **adopt now**, **try first** (limited pilot),
 or **defer briefly**.
 
-**Good fit if:**
+**Good fit — adopt now if:**
 
 - Your teams already use or are evaluating AI coding assistants
 - You want structure instead of ad-hoc AI adoption
 - You need governance guardrails for AI-assisted development
 - You want non-technical stakeholders to initiate projects
+
+**Try first (limited pilot) if:**
+
+- You have an AI usage policy but limited practical experience
+- Only one or two teams have used AI tools — others are curious but untested
+- Leadership supports experimentation but hasn't committed to broader adoption
 
 **Defer if:**
 
@@ -184,6 +190,9 @@ or **defer briefly**.
 - Teams have zero experience with AI tools (see
   [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for
   foundational skill areas to target before adopting)
+- Engineering teams are broadly resistant to AI adoption (see
+  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for how to
+  build organizational readiness before introducing the framework)
 
 > **What does a pilot require?** One project team, one Standard-tier project,
 > two increments (~4–8 weeks depending on scope). No special tooling beyond the
@@ -318,6 +327,6 @@ wider pilot.
 
 **Framework Version:** 0.19.0
 
-**Last Updated:** 2026-02-24
+**Last Updated:** 2026-02-25
 
 Added to framework in v0.17.0.
