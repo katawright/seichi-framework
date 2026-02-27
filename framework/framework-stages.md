@@ -259,7 +259,7 @@ accurate test planning, and reduced rework from ambiguity.
 ### Outputs
 
 - **Requirements Document** - Functional and non-functional requirements (see
-  [Requirements Brief Template](requirements/requirements-brief-template.md))
+  [Requirements Brief Template](templates/requirements-brief-template.md))
 - User stories or use cases with FR acceptance criteria
 - Prioritized feature backlog
 - Requirements traceability to objectives and success criteria

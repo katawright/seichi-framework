@@ -49,7 +49,7 @@ each stage guide's Right-Sizing section for full details.
 | Stage                                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
 | ------------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | **[Initiation](initiation/README.md)**                             | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
-| **[Requirements](requirements/requirements-guide.md)**             | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
+| **[Requirements](requirements/README.md)**                         | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
 | **[System Design](system-design/system-design-guide.md)**          | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
 | **[Increment Design](increment-design/increment-design-guide.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
 | **[Implementation](implementation/implementation-guide.md)**       | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
@@ -175,7 +175,7 @@ Requirements, where expansion triggers signal that your project may need more
 rigor:
 
 - [Initiation Guide: Right-Sizing Initiation](initiation/README.md#right-sizing-initiation)
-- [Requirements Guide: Right-Sizing Requirements](requirements/requirements-guide.md#right-sizing-requirements)
+- [Requirements Stage Guide: Right-Sizing Requirements](requirements/README.md#right-sizing-requirements)
 
 ---
 

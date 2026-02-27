@@ -1,9 +1,36 @@
 # Requirements Reference
 
-Optional deep-dive companion to the [Requirements Guide](requirements-guide.md),
-[Requirements Brief Template](requirements-brief-template.md), and
-[Requirements Checklist](requirements-checklist.md). Consult when you need
-specifics or a starting point for AI-assisted exploration.
+## Overview
+
+Detailed definitions, examples, and format guidance for requirements terminology
+and brownfield constraints.
+
+### Why Requirements Terminology
+
+Ambiguous terms like "requirement," "acceptance criteria," and "non-functional
+requirement" mean different things to different teams. Shared definitions
+prevent miscommunication during elicitation, review, and handoff to System
+Design.
+
+### Purpose
+
+- Define key requirements terms (FR, AC, NFR) with format guidance and examples
+- Provide brownfield constraint categories with NFR templates
+- Give practitioners concrete starting points for AI-assisted requirements work
+
+### Key Principle
+
+Every term definition includes good and bad examples — use the examples to
+calibrate your own requirements before moving to System Design.
+
+### How to Use This Reference
+
+1. Look up terms in [**Requirements Terminology**](#requirements-terminology)
+   when writing or reviewing FRs, ACs, or NFRs
+2. Use [**Brownfield Constraint Categories**](#brownfield-constraint-categories)
+   to identify existing system constraints for brownfield projects
+3. Copy the [**Constraint NFR Template**](#constraint-nfr-template) as a
+   starting point for documenting constraints as NFRs
 
 ---
 
@@ -97,7 +124,8 @@ decisions, testing plans, or risk.
 - "Code should be maintainable." — Implementation concern
 - "Use microservices architecture." — Design decision
 
-> **AI exploration:** _"Help me write testable requirements and acceptance criteria for [describe your feature and user personas]."_
+> **AI exploration:** _"Help me write testable requirements and acceptance
+> criteria for [describe your feature and user personas]."_
 
 ---
 
@@ -125,12 +153,10 @@ for conceptual overview.
 performance regressions, breaking changes, security/compliance violations, and
 deployment failures.
 
-### Constraint Categories
-
 Document constraints across these categories as **Non-Functional Requirements
 (NFRs)** in your Requirements Document:
 
-#### 1. Performance Constraints
+### 1. Performance Constraints
 
 Existing SLAs and performance targets that new work must maintain or improve.
 
@@ -144,7 +170,7 @@ Existing SLAs and performance targets that new work must maintain or improve.
 existing API response times; all endpoints must maintain p95 <1s under current
 load."
 
-#### 2. Security Policies
+### 2. Security Policies
 
 Authentication, authorization, encryption, and audit requirements already
 enforced.
@@ -158,7 +184,7 @@ enforced.
 **Document as NFR:** "NFR-Security-1: New endpoints must use existing OAuth 2.0
 authentication; all admin operations must write to existing audit log table."
 
-#### 3. API Contracts
+### 3. API Contracts
 
 Existing API interfaces and integration contracts that must remain compatible.
 
@@ -171,7 +197,7 @@ Existing API interfaces and integration contracts that must remain compatible.
 **Document as NFR:** "NFR-Integration-1: New user fields must be added to
 existing GET /api/v1/users response without breaking existing clients."
 
-#### 4. Data Schemas and Constraints
+### 4. Data Schemas and Constraints
 
 Existing database schemas, data formats, validation rules, and referential
 integrity.
@@ -185,7 +211,7 @@ integrity.
 **Document as NFR:** "NFR-Data-1: New customer fields must be added to existing
 customer table; must not violate existing foreign key constraints."
 
-#### 5. Compliance Requirements
+### 5. Compliance Requirements
 
 Regulatory, legal, and audit requirements already enforced.
 
@@ -198,7 +224,7 @@ Regulatory, legal, and audit requirements already enforced.
 **Document as NFR:** "NFR-Compliance-1: New features handling user data must
 support existing GDPR data deletion workflow."
 
-#### 6. Architectural Constraints
+### 6. Architectural Constraints
 
 Technology stack, frameworks, patterns, and coding standards already in use.
 
@@ -211,7 +237,7 @@ Technology stack, frameworks, patterns, and coding standards already in use.
 **Document as NFR:** "NFR-Architecture-1: New backend features must use existing
 FastAPI framework and follow established service patterns."
 
-#### 7. Operational Constraints
+### 7. Operational Constraints
 
 Deployment windows, rollback procedures, monitoring standards, and on-call
 processes.
@@ -241,24 +267,31 @@ change windows; database schema changes must be backward-compatible."
 
 ### Brownfield Constraint Examples
 
-```markdown
+```
 ## Non-Functional Requirements (NFRs)
 
 ### Performance Constraints (Existing System)
 
-**NFR-Perf-1: API Response Time SLA** Constraint: All API endpoints must
-maintain p95 response time <1 second under production load. Rationale:
-Contractual SLA with enterprise customers. Impact: New search feature may
-require caching or async processing. Validation: Load testing; p95 latency
-monitoring.
+**NFR-Perf-1: API Response Time SLA**
+
+**Constraint:** All API endpoints must maintain p95 response
+time <1 second under production load.
+**Rationale:** Contractual SLA with enterprise customers.
+**Impact on new work:** New search feature may require
+caching or async processing.
+**Validation:** Load testing; p95 latency monitoring.
 
 ### Integration Constraints (Existing System)
 
-**NFR-Integration-1: Public API Compatibility** Constraint: GET /api/v1/users
-endpoint must maintain backward compatibility. Rationale: 50+ external
-integrations depend on current API contract. Impact: New user attributes must be
-added as optional fields; response schema extension only. Validation: API
-contract tests; schema validation.
+**NFR-Integration-1: Public API Compatibility**
+
+**Constraint:** GET /api/v1/users endpoint must maintain
+backward compatibility.
+**Rationale:** 50+ external integrations depend on current
+API contract.
+**Impact on new work:** New user attributes must be added as
+optional fields; response schema extension only.
+**Validation:** API contract tests; schema validation.
 ```
 
 ### How to Capture Existing Constraints
@@ -296,89 +329,13 @@ contract tests; schema validation.
 - **"The API can change"** — Breaking changes disrupt partners
 - **"Performance will be fine"** — New work degrades existing SLAs
 
-> **AI exploration:** _"Help me identify existing system constraints for [describe your brownfield project and existing system architecture]."_
+> **AI exploration:** _"Help me identify existing system constraints for
+> [describe your brownfield project and existing system architecture]."_
 
 ---
 
-## Why Each Requirements Section Matters
+## Notes
 
-This section explains the rationale behind each section of the
-[Requirements Brief Template](requirements-brief-template.md).
+**Last Updated:** 2026-02-27
 
-**Context (Section 1):** Provides quick orientation — what triggered this work,
-where it sits in the roadmap.
-
-**Users/Personas (Section 2):** Keeps requirements user-centered and helps
-identify different needs.
-
-**Problem (Section 3):** Prevents solution-first bias and provides context for
-why requirements exist.
-
-**Goals/Metrics (Section 4):** Success metrics from Initiation establish the
-measurement throughline (see
-[Framework Guide](../framework-guide.md#measurement-throughline)). Your role:
-translate metrics into NFRs.
-
-**Scope Baseline (Section 5):** MoSCoW prevents scope creep and enables faster
-trade-off decisions.
-
-**Functional Requirements (Section 6):** FRs define what the system must do.
-Testable FRs enable objective validation. Each FR should pass the "testability
-test."
-
-**Acceptance Criteria (Section 7):** ACs define "done" and prevent subjective
-debates during testing.
-
-**NFRs (Section 8):** Shape architecture, testing, and user experience.
-Observability is critical — translate success metrics into instrumentation
-requirements.
-
-**Data/Integrations (Section 9):** Many schedule slips come from unexamined
-constraints (rate limits, SLAs, data ownership).
-
-**Edge Cases (Section 10):** Often drive significant design complexity. Document
-expected behavior early.
-
-**Open Questions (Section 11):** Unresolved questions block System Design. Flag
-blockers vs. nice-to-know.
-
-**Requirements Readiness (Section 12):** Quality checkpoint confirming readiness
-for System Design.
-
-**Gate 2 Planning (Section 13):** Helps plan what System Design should produce
-for the build/no-build decision.
-
-> **AI exploration:** _"Review my requirements document for completeness and flag any missing sections or weak areas: [paste your requirements brief]."_
-
----
-
-## Checklist Reference
-
-### Exit Criteria Alignment
-
-This checklist validates the Requirements stage exit criteria from
-[AI-Assisted SDLC Stages](../framework-stages.md#stage-2-requirements):
-
-- All high-priority requirements have acceptance criteria (Items 5-6)
-- Requirements reviewed and approved by stakeholders (Item 12)
-- NFRs include measurement/instrumentation needs (Item 7)
-- Requirements are testable and unambiguous (Items 5-6)
-
-### Critical Items
-
-If items 5-7 and 11-12 are weak, requirements aren't ready for System Design:
-
-- **Item 5 (Testable FRs):** System Design can't architect for vague
-  requirements
-- **Item 6 (Objective ACs):** System Design needs clear "done" definition for
-  test planning
-- **Item 7 (Key NFRs):** Architecture depends on performance, security,
-  scalability requirements
-- **Item 11 (Prioritization):** System Design needs focus for foundational pass
-- **Item 12 (Review):** Prevents rework from misalignment
-
----
-
-**Last Updated:** 2026-02-16
-
-_Added to framework in v0.12.0_
+Added to framework in v0.12.0.
