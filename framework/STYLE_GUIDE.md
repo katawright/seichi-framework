@@ -174,6 +174,68 @@ Within-section writing patterns:
 
 ---
 
+## Checklist Conventions
+
+Structure for stage checklist files:
+
+1. **H1 title**
+2. **Purpose + Usage** — one-line purpose and one-line usage instruction
+3. **[H] marker convention** — blockquote explaining human-judgment markers
+4. **Numbered items with checkboxes** — one assertion per item,
+   observable/verifiable language. If the checklist has blocking items, split
+   into **Core** (H3) and **Supporting** (H3) subsections; otherwise a flat list
+   is fine
+5. **Final Decision** — checkbox pair (Ready / Not Ready) with circulation
+   guidance
+6. **Core Items** — table mapping each blocking item to its rationale (omit if
+   no Core/Supporting split)
+7. **Related Documents** — links to template, guide, reference, and stages
+8. **Notes** — standard format
+
+Item format:
+
+```
+N. [ ] **Bold assertion** (parenthetical qualifier)
+N. [ ] **[H] Bold assertion** (parenthetical qualifier)
+```
+
+- The number and checkbox come first: `1. [ ] **...**`
+- The assertion is bold and states a single observable quality
+- Parenthetical qualifiers after the bold provide clarification or thresholds
+- `[H]` goes inside the bold, before the assertion text, for items requiring
+  human judgment
+
+Item design rules:
+
+- One assertion per item — each item tests a single, observable quality
+- Order items from most critical to least critical — all items apply at every
+  tier, with depth varying by project complexity
+- When using a Core/Supporting split, core items are exactly the items mapped in
+  the Core Items rationale table
+- Use the 60-90 second completion goal as the constraint on item count rather
+  than a fixed number
+- AI assistance callout at end of Core Items section
+
+---
+
+## Stage Directory Conventions
+
+Canonical file set per stage directory:
+
+| File                   | Purpose                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| `README.md`            | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
+| `[stage]-checklist.md` | Quick validation gate with critical items                                                              |
+| `[stage]-reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
+
+Templates live in `/framework/templates/`:
+
+| File                    | Purpose                               |
+| ----------------------- | ------------------------------------- |
+| `[stage]-*-template.md` | Pure fill-in-the-blank stage artifact |
+
+---
+
 ## Heading Conventions
 
 - **H1:** Document title (one per file)
@@ -187,6 +249,6 @@ Within-section writing patterns:
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-27
 
 Added to framework in v0.19.0.

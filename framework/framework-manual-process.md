@@ -91,7 +91,7 @@ I'm using the AI-Assisted SDLC framework for a software project.
 Please read these framework documents:
 - framework/framework-stages.md
 - framework/framework-guide.md
-- framework/initiation/initiation-guide.md
+- framework/initiation/README.md
 
 [rest of prompt...]
 ```
@@ -153,7 +153,7 @@ I'm using the AI-Assisted SDLC framework for a software project.
 Please read these framework documents:
 - framework/framework-stages.md (stage definitions)
 - framework/framework-guide.md (key concepts)
-- framework/initiation/initiation-guide.md (Initiation stage guidance)
+- framework/initiation/README.md (Initiation stage guidance)
 
 Help me work through the Initiation stage for my project:
 
