@@ -1,12 +1,38 @@
 # Manual Process Guide
 
----
+## Overview
 
-## Purpose
+Bootstrap prompt and step-by-step instructions for starting AI-assisted SDLC
+sessions with any AI tool.
 
-This document provides a starting prompt to help teams begin using the
-AI-Assisted SDLC framework with their AI assistant of choice. Use this as a
-template and adapt it to your specific project context and AI tool capabilities.
+### Why a Manual Process Guide
+
+The framework documents explain what to do at each stage, but don't provide a
+ready-to-use prompt for getting started with an AI assistant. This guide bridges
+that gap with a copy-paste template and tool-specific adaptation tips.
+
+### Purpose
+
+- Provide a bootstrap prompt template for any AI tool
+- Explain how to customize the prompt for your project and tooling
+- Guide iterative, multi-session stage work
+- Demonstrate stage progression with concrete examples
+
+### Key Principle
+
+Start simple, adapt freely — the bootstrap prompt is a starting point, not a
+prescription.
+
+### How to Use This Guide
+
+1. [**Bootstrap Prompt Template**](#bootstrap-prompt-template) — copy the
+   starting prompt
+2. [**How to Use This Prompt**](#how-to-use-this-prompt) — customize and adapt
+   for your tool
+3. [**Example: Starting the Initiation Stage**](#example-starting-the-initiation-stage)
+   — see a concrete usage
+4. [**Progression Through Stages**](#progression-through-stages) — advance to
+   subsequent stages
 
 ---
 
@@ -235,6 +261,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.9.0.

@@ -2,10 +2,21 @@
 
 ## Overview
 
-This scorecard provides operational guidance for determining appropriate AI
-assistance across the 8 SDLC stages. It evaluates each stage across four
-critical dimensions to help teams make informed decisions about where AI can
-work more independently and where human oversight is essential.
+Operational guidance for determining appropriate AI assistance across the 8 SDLC
+stages — evaluating each stage across four critical dimensions to help teams
+decide where AI can work more independently and where human oversight is
+essential.
+
+### Why a Scorecard
+
+AI is not equally useful or equally safe across all SDLC stages. Implementation
+and verification produce outputs that are directly testable — AI can iterate
+fast and mistakes are caught by CI. But system design and deployment involve
+high-stakes decisions where errors have large blast radius and correctness
+depends on human judgment. Without explicit guidance on where AI can work
+independently and where human oversight is essential, teams either
+over-constrain AI (losing productivity in low-risk stages) or under-constrain it
+(introducing risk in high-stakes ones).
 
 ### Purpose
 
@@ -26,6 +37,25 @@ requiring human approval—not uncontrolled or unsupervised operation.
 2. Review the gate requirements and "best real work uses"
 3. Choose your autonomy tier (Human-Led, Collaborative, or AI-Led)
 4. Adjust based on your organization's risk tolerance
+
+---
+
+## Quick Reference
+
+| #   | SDLC Stage           | Fit for AI | Verifiability | Risk if Wrong | Required Gates                     | Best "Real Work" Uses                                                                                                         |
+| --- | -------------------- | ---------- | ------------- | ------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | Human approval                     | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
+| 2   | **Requirements**     | High       | Medium        | High          | Human approval                     | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
+| 3   | **System Design**    | High       | Medium        | High          | Specialized review                 | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
+| 4   | **Increment Design** | High       | Medium        | Medium        | Specialized review                 | Detail component designs, API specs, test strategies, data model changes                                                      |
+| 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
+| 6   | **Verification**     | Very High  | Very High     | Medium        | CI validation + human spot-check   | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
+| 7   | **Deployment**       | Medium     | High          | Very High     | Human execution required + runbook | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
+| 8   | **Support**          | High       | Medium        | High          | Human approval                     | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
+
+For evaluation dimension definitions, see
+[Evaluation Dimensions](#evaluation-dimensions). For stage-specific notes, see
+[Stage-Specific Notes](#stage-specific-notes).
 
 ---
 
@@ -104,20 +134,7 @@ strictness increases with risk and decreases with verifiability.
 
 ---
 
-## Scorecard by Stage
-
-| #   | SDLC Stage           | Fit for AI | Verifiability | Risk if Wrong | Required Gates                     | Best "Real Work" Uses                                                                                                         |
-| --- | -------------------- | ---------- | ------------- | ------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | Human approval                     | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
-| 2   | **Requirements**     | High       | Medium        | High          | Human approval                     | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
-| 3   | **System Design**    | High       | Medium        | High          | Specialized review                 | Propose architectures, interfaces, data models, slice plans, threat-model checklists, ADR drafts                              |
-| 4   | **Increment Design** | High       | Medium        | Medium        | Specialized review                 | Detail component designs, API specs, test strategies, data model changes                                                      |
-| 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized slices                                            |
-| 6   | **Verification**     | Very High  | Very High     | Medium        | CI validation + human spot-check   | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
-| 7   | **Deployment**       | Medium     | High          | Very High     | Human execution required + runbook | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
-| 8   | **Support**          | High       | Medium        | High          | Human approval                     | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
-
-### Stage-Specific Notes
+## Stage-Specific Notes
 
 **Initiation (Stage 1):** AI produces drafts, options, and analyses. Humans own
 all decisions — scope, priority, assumptions. AI cannot take actions that change
@@ -307,6 +324,6 @@ confidence and establishes effective gate processes.
 
 ## Notes
 
-**Last Updated:** 2026-02-25
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.9.0.

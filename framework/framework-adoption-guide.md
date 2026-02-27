@@ -1,23 +1,38 @@
 # Organizational Adoption Guide
 
-> Practical guidance for planning and executing an organizational rollout of the
-> AI-Assisted SDLC framework — from pilot selection through full
-> standardization.
+## Overview
 
-**Audience:** CTOs, engineering leaders, and executives evaluating or planning
-organizational adoption of AI-assisted development practices.
+Practical guidance for planning and executing an organizational rollout of the
+AI-Assisted SDLC framework — from pilot selection through full standardization.
 
----
-
-## Why Organizational Adoption Matters
+### Why Organizational Adoption Matters
 
 The framework is designed for per-project use, but organizational adoption
 requires additional planning: which team goes first, how to measure success, how
-to handle resistance, and when to expand. This guide covers those decisions.
+to handle resistance, and when to expand. Without a deliberate rollout strategy,
+teams adopt inconsistently — some over-invest in process, others skip governance
+entirely — and leadership loses the visibility that makes the framework
+valuable.
 
-**Key insight:** You don't need to adopt all 8 stages at once. Start with the
-stages that offer the highest return and lowest risk, then expand as confidence
-grows.
+### Purpose
+
+- Provide a structured rollout path from pilot through standardization
+- Define readiness criteria, success metrics, and expansion gates
+- Address change management and resistance patterns specific to AI adoption
+
+### Key Principle
+
+You don't need to adopt all 8 stages at once. Start with the stages that offer
+the highest return and lowest risk, then expand as confidence grows.
+
+### How to Use This Guide
+
+1. Complete the [**Readiness Assessment**](#readiness-assessment) to determine
+   whether to adopt now, try a limited pilot, or defer
+2. Review [**Measuring Adoption Success**](#measuring-adoption-success) to
+   establish baselines before starting
+3. Follow the [**Phased Rollout**](#phased-rollout) sequence: Pilot → Expand →
+   Standardize
 
 ---
 
@@ -567,6 +582,6 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-02-25
+**Last Updated:** 2026-02-26
 
-_Added to framework in v0.17.0_
+Added to framework in v0.17.0.
