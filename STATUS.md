@@ -81,7 +81,8 @@ Progress) **Current Branch:** feat/verification-stage **Framework Version:**
   - Simplified to left-border-only format (removed problematic right borders)
   - Emoji width was causing misalignment in terminals
 - ✅ Implemented ADR support for implementation-stage decisions
-  - Moved design-adr-template.md to framework/adr-template.md (shared template)
+  - Moved design-adr-template.md to framework/templates/adr-template.md (shared
+    template)
   - Updated template for dual-stage use (Design and Implementation)
   - Added "reasonable engineer test" threshold for when to create ADRs
   - Updated implementation-brief-template.md with ADR table + inline structure
@@ -117,7 +118,7 @@ Progress) **Current Branch:** feat/verification-stage **Framework Version:**
   - Added ADRs as artifact #5
 - design/README.md:
   - Updated ADR template reference to ../adr-template.md
-- framework/adr-template.md (moved from design/):
+- framework/templates/adr-template.md (moved from design/):
   - Updated for dual-stage use
   - Added location guidance (design/adr/ vs implementation/adr/)
   - Added "reasonable engineer test" to tips
@@ -172,7 +173,8 @@ Verification stage (v0.6.0).
 
 **ADR Approach:**
 
-- Same template (framework/adr-template.md) for both Design and Implementation
+- Same template (framework/templates/adr-template.md) for both Design and
+  Implementation
 - Different locations: design/adr/ vs implementation/adr/
 - Keep "ADR" naming (not IDR/DDR)
 - Threshold: "reasonable engineer test" - if reasonable engineer might ask "why

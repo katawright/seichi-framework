@@ -1,11 +1,11 @@
 # Checkpoint Decision: [Checkpoint — Short Title]
 
-**Last Updated:** 2026-02-23
+**Last Updated:** YYYY-MM-DD
 
 **Date:** YYYY-MM-DD
 
-**Checkpoint Type:** Quality Checkpoint / Deployment Approval /
-Support Readiness / Compliance Approval / Other Non-Investment Checkpoint
+**Checkpoint Type:** Quality Checkpoint / Deployment Approval / Support
+Readiness / Compliance Approval / Other Non-Investment Checkpoint
 
 **Status:** Pending / Approved / Held / Rejected / Rolled Back
 
@@ -29,8 +29,8 @@ Support Readiness / Compliance Approval / Other Non-Investment Checkpoint
 - (List of artifacts and evidence evaluated)
 - _Example (Deployment):_ "Verification brief, deployment checklist, rollback
   plan, monitoring baselines"
-- _Example (Support Readiness):_ "Support readiness checklist, runbooks,
-  on-call plan, escalation contacts"
+- _Example (Support Readiness):_ "Support readiness checklist, runbooks, on-call
+  plan, escalation contacts"
 
 ---
 
@@ -66,10 +66,7 @@ Support Readiness / Compliance Approval / Other Non-Investment Checkpoint
 
 ---
 
-> **Note:** Use this template for non-investment checkpoints.
-> For Gate 1 and Gate 2 investment decisions, use the
-> [Gate Decision Template](gate-decision-template.md).
+<!-- For Gate 1 and Gate 2 investment decisions, use
+     gate-decision-template.md instead of this template. -->
 
-**Template Last Updated:** 2026-02-23
-
-Added to framework in v0.18.1.
+<!-- Template Last Updated: 2026-02-26 | Added in v0.18.1 -->

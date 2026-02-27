@@ -38,6 +38,8 @@ See `PROJECT_CONTEXT.md` for full details.
   model, and measurement philosophy
 - `framework/framework-stages.md`: Authoritative definition of the 8 SDLC
   stages with inputs, outputs, and criteria
+- `framework/STYLE_GUIDE.md`: Source of truth for document style, organization,
+  and formatting — read before creating or editing framework files
 
 ## Design Principles
 
@@ -69,11 +71,7 @@ See `PROJECT_CONTEXT.md` for full details.
   - `README.md` files include `Framework Version` and `Last Updated`
   - Stage artifacts include `Last Updated` and version-introduction note
   - On each release, update framework version in all README files
-- Markdown formatting:
-  - Maximum line length: 80 characters
-  - Break lines at natural points
-  - Preserve markdown structure
-  - Use file title as link text (not raw filename)
+- Markdown formatting: follow `framework/STYLE_GUIDE.md`
 
 ## Workflow
 
@@ -95,7 +93,6 @@ When refining stage artifacts, apply these patterns:
 2. README measurement-throughline callout after Stage Outputs
 3. Gate decision references should point to the Gate Decision Template
 4. Avoid "DRI" jargon; prefer "project lead"
-5. Use file title as link text, not filename
 
 Use Initiation stage artifacts as reference implementations.
 
@@ -113,19 +110,18 @@ When building the application:
 These rules apply to AI coding assistants working in this repository.
 
 1. Read `PROJECT_CONTEXT.md` at session start for full context.
-2. Prefer minimal, targeted edits; preserve existing voice and structure.
-3. Keep markdown wrapped to 80 characters unless an existing section clearly
-   uses a different style.
-4. Validate link text conventions when adding links.
-5. Do not invent process details not grounded in current framework documents.
-6. When changing one stage artifact, check related artifacts for consistency
+2. Follow `framework/STYLE_GUIDE.md` for all document formatting, structure,
+   and style decisions.
+3. Prefer minimal, targeted edits; preserve existing voice and structure.
+4. Do not invent process details not grounded in current framework documents.
+5. When changing one stage artifact, check related artifacts for consistency
    drift.
-7. Before finalizing changes, run lightweight repository checks where relevant:
+6. Before finalizing changes, run lightweight repository checks where relevant:
    - Search for broken references or renamed files
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
-8. Do not commit or create tags unless the user explicitly requests it.
+7. Do not commit or create tags unless the user explicitly requests it.
 
 ## Notes
 
-Last Updated: 2026-02-22
+Last Updated: 2026-02-26

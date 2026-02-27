@@ -232,9 +232,8 @@ continuous improvement.
 
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
-[Checkpoint Decision Template](../checkpoint-decision-template.md) to record
-this decision
-when the team confirms readiness.
+[Checkpoint Decision Template](../templates/checkpoint-decision-template.md) to
+record this decision when the team confirms readiness.
 
 **Key question:** Is the team prepared to own this system in production?
 
@@ -259,7 +258,7 @@ For a quick verification, use the
 - [Support Brief Template](support-brief-template.md)
 - [Support Reference](support-reference.md)
 - [Deployment Setup Guide](../deployment/deployment-setup-guide.md)
-- [Checkpoint Decision Template](../checkpoint-decision-template.md)
+- [Checkpoint Decision Template](../templates/checkpoint-decision-template.md)
 
 ---
 

@@ -57,7 +57,7 @@ For assistance level details, see the
 4. **Reference:** Consult `initiation-guide.md` for deeper guidance
 5. **Gate 1:** The brief proposes decision criteria; present to stakeholders and
    record the actual proceed/pivot/stop decision using the
-   [Gate Decision Template](../gate-decision-template.md)
+   [Gate Decision Template](../templates/gate-decision-template.md)
 
 ## Stage Outputs
 
@@ -81,5 +81,3 @@ starting point.
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.2.0.
-
-

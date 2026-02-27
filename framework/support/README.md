@@ -72,9 +72,9 @@ based on scope:
 
 - **Increment Design** — for scoped enhancements that fit existing objectives
   and architecture
-- **Implementation** — for clearly low-risk patches that can be safely
-  delivered without design or requirements changes (document rationale and
-  rollback using the Checkpoint Decision Template)
+- **Implementation** — for clearly low-risk patches that can be safely delivered
+  without design or requirements changes (document rationale and rollback using
+  the Checkpoint Decision Template)
 - **Requirements** — for new or changed user/business requirements
 - **System Design** — for architectural or infrastructure changes
 - **Initiation** — only when objectives, business case, or success criteria
@@ -96,8 +96,8 @@ based on scope:
 
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
-[Checkpoint Decision Template](../checkpoint-decision-template.md) to record
-when the team confirms readiness to own the system in production.
+[Checkpoint Decision Template](../templates/checkpoint-decision-template.md) to
+record when the team confirms readiness to own the system in production.
 
 ---
 
@@ -108,5 +108,3 @@ when the team confirms readiness to own the system in production.
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.8.0.
-
-

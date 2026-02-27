@@ -260,7 +260,7 @@ fix is low-risk.
 **Low-risk patch fast path:** For clearly low-risk, scoped patches, teams may
 route directly to Implementation. Record the rationale, rollback approach, and
 approver using the
-[Checkpoint Decision Template](../checkpoint-decision-template.md).
+[Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
 
 **Otherwise:** Add to backlog with severity tag, prioritize in sprint planning,
 and follow the appropriate SDLC stage path.

@@ -83,7 +83,7 @@ For assistance level details, see the
 support runbook.
 
 **Deployment Approval:** Record the deployment decision using the
-[Checkpoint Decision Template](../checkpoint-decision-template.md).
+[Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
 
 ---
 
@@ -94,5 +94,3 @@ support runbook.
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.7.0.
-
-

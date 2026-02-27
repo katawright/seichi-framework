@@ -110,7 +110,7 @@ _Example:_ "1 TL + 1 BE + 1 FE + 0.5 PM for 2–4 weeks to reach Gate 2
 
 > These are **proposed criteria** for stakeholders to evaluate at the end of
 > Initiation. The actual gate decision is recorded separately using the
-> [Gate Decision Template](../gate-decision-template.md).
+> [Gate Decision Template](../templates/gate-decision-template.md).
 
 **Proposed criteria:**
 
@@ -136,14 +136,13 @@ foundational pass)
 
 - **Outputs expected:**
   - FRs with acceptance criteria drafted and reviewed
-  - NFRs with verification criteria drafted and reviewed (performance,
-    security, observability, and others as needed)
+  - NFRs with verification criteria drafted and reviewed (performance, security,
+    observability, and others as needed)
   - High-level design direction documented (key trade-offs identified)
   - Top risks addressed (spikes/prototypes/reviews) with mitigations/fallbacks
   - Slice plan with dependencies (for iterative delivery)
   - Updated staffing/timeline range + confidence
-  - Cost estimates updated (labor + infrastructure/tooling, with
-    assumptions)
+  - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
   - Recommendation: proceed / pivot / stop
 
 ## Project lead and stakeholders

@@ -57,7 +57,7 @@ For assistance level details, see the
 10. Conduct UAT with business stakeholders
 11. Validate instrumentation and monitoring
 12. Assess production readiness (go/no-go) using the
-    [Checkpoint Decision Template](../checkpoint-decision-template.md)
+    [Checkpoint Decision Template](../templates/checkpoint-decision-template.md)
 13. Run `verification-checklist.md`
 14. Complete verification brief
 
@@ -94,5 +94,3 @@ fresh brief.
 **Last Updated:** 2026-02-21
 
 Added to framework in v0.6.0.
-
-
