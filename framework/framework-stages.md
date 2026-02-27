@@ -181,7 +181,7 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 ### Outputs
 
 - **Initiation Brief** - One-page summary of project (see
-  [Initiation Brief Template](initiation/initiation-brief-template.md))
+  [Initiation Brief Template](templates/initiation-brief-template.md))
 - Objectives with measurable success criteria documented
 - Assumptions and risks list
 - High-level timeline and resource estimate (range-based)

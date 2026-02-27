@@ -36,8 +36,8 @@ See `PROJECT_CONTEXT.md` for full details.
 
 - `PROJECT_CONTEXT.md`: Complete project vision, design principles, execution
   model, and measurement philosophy
-- `framework/framework-stages.md`: Authoritative definition of the 8 SDLC
-  stages with inputs, outputs, and criteria
+- `framework/framework-stages.md`: Authoritative definition of the 8 SDLC stages
+  with inputs, outputs, and criteria
 - `framework/STYLE_GUIDE.md`: Source of truth for document style, organization,
   and formatting — read before creating or editing framework files
 
@@ -51,8 +51,8 @@ See `PROJECT_CONTEXT.md` for full details.
 
 ## SDLC Execution Model
 
-- Foundational stages (once per project, revisitable): Initiation,
-  Requirements, System Design
+- Foundational stages (once per project, revisitable): Initiation, Requirements,
+  System Design
 - Iterative stages (per increment): Increment Design, Implementation,
   Verification, Deployment
 - Continuous stage: Support
@@ -78,8 +78,8 @@ See `PROJECT_CONTEXT.md` for full details.
 1. Maintain consistency across stage artifacts
 2. Tailor language to role (business-first in PM/BA stages, technical in
    engineering stages)
-3. Each stage should include: brief, checklist, reference, AI agent prompt,
-   README
+3. Each stage directory should include: README (stage guide), checklist,
+   reference (if needed). Templates live in `framework/templates/`
 4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
@@ -110,8 +110,8 @@ When building the application:
 These rules apply to AI coding assistants working in this repository.
 
 1. Read `PROJECT_CONTEXT.md` at session start for full context.
-2. Follow `framework/STYLE_GUIDE.md` for all document formatting, structure,
-   and style decisions.
+2. Follow `framework/STYLE_GUIDE.md` for all document formatting, structure, and
+   style decisions.
 3. Prefer minimal, targeted edits; preserve existing voice and structure.
 4. Do not invent process details not grounded in current framework documents.
 5. When changing one stage artifact, check related artifacts for consistency

@@ -48,7 +48,7 @@ each stage guide's Right-Sizing section for full details.
 
 | Stage                                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
 | ------------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| **[Initiation](initiation/initiation-guide.md)**                   | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
+| **[Initiation](initiation/README.md)**                             | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
 | **[Requirements](requirements/requirements-guide.md)**             | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
 | **[System Design](system-design/system-design-guide.md)**          | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
 | **[Increment Design](increment-design/increment-design-guide.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
@@ -174,7 +174,7 @@ Reassess your tier at major milestones — particularly after Initiation and
 Requirements, where expansion triggers signal that your project may need more
 rigor:
 
-- [Initiation Guide: Right-Sizing Initiation](initiation/initiation-guide.md#right-sizing-initiation)
+- [Initiation Guide: Right-Sizing Initiation](initiation/README.md#right-sizing-initiation)
 - [Requirements Guide: Right-Sizing Requirements](requirements/requirements-guide.md#right-sizing-requirements)
 
 ---
