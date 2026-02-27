@@ -1,5 +1,7 @@
 # Project Foundation Guide
 
+## Overview
+
 Practical walkthrough for foundation work — the infrastructure, discovery, or
 preparation that happens before your first feature increment. Foundation work
 may be a single bootstrap increment or a multi-increment preparation project,
@@ -11,18 +13,39 @@ For detailed activity lists and project-type comparisons, see the
 [Framework Guide](framework-guide.md) section on
 [Project Foundation: The Critical Difference](framework-guide.md#project-foundation-the-critical-difference).
 
----
-
-## Purpose
-
-Foundation work is the bridge between foundational planning and feature
-delivery. It takes the infrastructure decisions made during System Design and
-turns them into working systems — CI/CD pipelines, environments, monitoring, and
-operational processes.
+### Why Foundation Work
 
 Without foundation work, teams jump from architecture documents to feature work
-and discover infrastructure gaps mid-sprint. With it, the first feature
-increment starts on solid ground.
+and discover infrastructure gaps mid-sprint — missing CI/CD pipelines, uncreated
+environments, absent monitoring. Foundation work closes those gaps so the first
+feature increment starts on solid ground.
+
+### Purpose
+
+- Bridge the gap between foundational planning and feature delivery
+- Turn infrastructure decisions from System Design into working systems — CI/CD
+  pipelines, environments, monitoring, and operational processes
+- Route you to the right stage-specific guides based on your project type
+  (greenfield or brownfield)
+
+### Key Principle
+
+Foundation work bridges planning and delivery. It converts architecture
+decisions into working infrastructure so your first feature increment starts on
+solid ground.
+
+### How to Use This Guide
+
+1. Read [**When It Happens**](#when-it-happens) to understand where foundation
+   work fits in the project lifecycle
+2. Follow the [**Greenfield Foundation**](#greenfield-foundation-bootstrap) or
+   [**Brownfield Foundation**](#brownfield-foundation) section based on your
+   project type
+3. Use
+   [**How Foundation Work Flows Through Stages**](#how-foundation-work-flows-through-stages)
+   to plan your foundation increment(s) like any other increment
+
+---
 
 ## When It Happens
 
@@ -46,6 +69,8 @@ delivery. See
 [Greenfield vs. Brownfield Projects](framework-guide.md#greenfield-vs-brownfield-projects)
 in the Framework Guide for how to determine your project type.
 
+---
+
 ## Greenfield Foundation (Bootstrap)
 
 Greenfield projects use the foundation phase to **establish infrastructure from
@@ -67,6 +92,8 @@ increment builds it.
 **Completion signal:** A "hello world" application deploys successfully through
 the full pipeline to production, monitoring captures its metrics, and on-call
 processes are defined.
+
+---
 
 ## Brownfield Foundation
 
@@ -184,6 +211,8 @@ is fully ready for AI-assisted feature work.
    tools analyze application code effectively but need explicit documentation
    for database-layer logic
 
+---
+
 ## How Foundation Work Flows Through Stages
 
 Foundation work uses the same iterative stages as feature increments — the
@@ -206,6 +235,6 @@ functionality.
 
 ## Notes
 
-**Last Updated:** 2026-02-24
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.14.0.

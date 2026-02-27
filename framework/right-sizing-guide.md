@@ -2,10 +2,17 @@
 
 ## Overview
 
-This guide helps teams scale framework practices to fit their project's actual
-risk and context — preventing both over-engineering (heavyweight processes that
-slow down small projects) and under-engineering (skipping critical practices
-that would have caught production failures early).
+Practical guidance for scaling framework practices to fit a project's actual
+risk and context.
+
+### Why Right-Size
+
+Not every project needs every practice. A prototype for five internal users
+doesn't need contractual SLAs, and a regulated financial platform shouldn't rely
+on informal monitoring. Without right-sizing, teams fall into one of two traps:
+over-engineering (heavyweight processes that slow down small projects and
+frustrate teams) or under-engineering (skipping critical practices that would
+have caught production failures early).
 
 ### Purpose
 
@@ -24,10 +31,12 @@ surrounds it, and AI autonomy determines _how much AI drives_ the work.
 
 ### How to Use This Guide
 
-1. Review the **Cross-Stage Overview** table to see what each tier looks like
-   across all 8 stages
-2. Understand the **Three Dimensions** that shape your process choices
-3. Use **Choosing Your Tier** to select and evolve your tier
+1. Review the [**Cross-Stage Overview**](#cross-stage-overview) table to see
+   what each tier looks like across all 8 stages
+2. Understand the [**Three Dimensions**](#the-three-dimensions) that shape your
+   process choices
+3. Use [**Choosing Your Tier**](#choosing-your-tier) to select and evolve your
+   tier
 4. Drill into individual stage guides for detailed right-sizing tables
 
 ---

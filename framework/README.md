@@ -1,9 +1,41 @@
 # AI-Assisted SDLC Framework
 
-> A practical, stage-by-stage guide for AI-assisted software delivery. Gives
-> teams clear guidance at each stage and gives leaders the visibility and
-> control they need — overlaying your existing process (agile, waterfall, or
-> hybrid), not replacing it.
+## Overview
+
+A practical, stage-by-stage guide for AI-assisted software delivery — giving
+teams clear guidance at each stage and leaders the visibility and control they
+need.
+
+### Why This Framework
+
+Teams are adopting AI development tools rapidly, but without structure the
+results are inconsistent — some teams over-rely on AI without adequate review,
+others avoid it and miss productivity gains, and leadership has no visibility
+into how AI is being used or whether it's helping. Ad-hoc adoption also means no
+shared language for discussing AI's role, no consistent quality gates, and no
+way to scale what works from one team to the next.
+
+### Purpose
+
+- Overlay your existing process (agile, waterfall, or hybrid), not replace it
+- Provide structured AI assistance with appropriate human oversight at every
+  stage
+- Give leaders explicit investment gates and checkpoint records for governance
+
+### Key Principle
+
+AI assistance increases as verifiability increases. Early stages use AI for
+drafting and analysis under tighter human control; later stages allow higher
+autonomy because outputs are directly testable.
+
+### How to Use This Guide
+
+1. Use the [**Start Here**](#start-here) table below to pick a path matching
+   your interest
+2. Review the [**Stage Overview**](#stage-overview) to understand the eight
+   stages
+3. See [**How AI Fits In**](#how-ai-fits-in) to understand operating modes
+4. Follow the [**Adoption Path**](#adoption-path) when ready to pilot
 
 ---
 
@@ -327,6 +359,6 @@ wider pilot.
 
 **Framework Version:** 0.19.0
 
-**Last Updated:** 2026-02-25
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.17.0.

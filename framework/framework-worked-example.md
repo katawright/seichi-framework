@@ -1,28 +1,63 @@
 # Worked Example: One Requirement Through the Framework
 
-> This document traces a single functional requirement through the full
-> iterative cycle — from Requirements through Deployment — showing what each
-> artifact looks like when filled in. Use this to understand the expected detail
-> level, format, and how artifacts link together.
+## Overview
 
-**Audience:** Engineers, Business Analysts, Architects — anyone who needs to see
-"what good looks like" when filling in the framework templates.
+End-to-end trace of a single requirement through every framework stage — from
+Requirements through Deployment — showing completed artifact examples at each
+step.
 
-**Scenario:** We use the employee onboarding tracker project from the
+### Why a Worked Example
+
+The framework templates and guides explain what each artifact should contain,
+but it's hard to judge the right level of detail without seeing a completed
+example. This document shows exactly what "done" looks like for one requirement
+flowing through every stage.
+
+### Purpose
+
+- Show the expected detail level for each framework artifact
+- Demonstrate how artifacts link together across stages
+- Provide a concrete traceability chain from goal to production
+- Give engineers and analysts a "what good looks like" reference
+
+### Key Principle
+
+Traceability is the throughline — every artifact references the one before it,
+replacing tribal knowledge with documented decisions.
+
+### How to Use This Guide
+
+1. [**Stage 1: Requirements**](#stage-1-requirements) — see what a requirement
+   and its acceptance criteria look like
+2. [**Stage 2: Increment Design**](#stage-2-increment-design) — see how design
+   artifacts reference requirements
+3. [**Stage 3: Implementation**](#stage-3-implementation) — see the completion
+   record
+4. [**Stage 4: Verification**](#stage-4-verification) — see test results mapped
+   to acceptance criteria
+5. [**Stage 5: Deployment**](#stage-5-deployment) — see the release record
+6. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
+   end-to-end flow
+
+---
+
+## Scenario
+
+This example uses the employee onboarding tracker project from the
 [Manual Process Guide](framework-manual-process.md) — a web application for
 tracking employee onboarding tasks, ensuring new hires complete all required
 steps within their first 30 days.
 
-**Project context:**
+Project context:
 
 - Type: Greenfield
 - Team: 3 engineers, 1 QA, 1 product manager
 - Risk tier: Standard
 - Tech stack: React frontend, Node.js/Express API, PostgreSQL
 
-**The requirement we'll trace:** The ability for HR managers to assign
-onboarding tasks to new hires and track completion — this is a core Must Have
-requirement that touches multiple components and has clear acceptance criteria.
+The requirement we trace is the ability for HR managers to assign onboarding
+tasks to new hires and track completion — a core Must Have requirement that
+touches multiple components and has clear acceptance criteria.
 
 ---
 
@@ -351,13 +386,13 @@ From the **Implementation Brief**, Pull Requests section:
 | PR # | Description              | Lines | Status | Link                     |
 | ---- | ------------------------ | ----- | ------ | ------------------------ |
 | #12  | Task library data model  | ~180  | Merged | Example placeholder link |
-|      | and seed data            |       |        |           |
+|      | and seed data            |       |        |                          |
 | #14  | Task assignment API and  | ~340  | Merged | Example placeholder link |
-|      | service layer            |       |        |           |
+|      | service layer            |       |        |                          |
 | #16  | Task assignment UI modal | ~280  | Merged | Example placeholder link |
-|      | and checkbox list        |       |        |           |
+|      | and checkbox list        |       |        |                          |
 | #18  | New hire dashboard with  | ~250  | Merged | Example placeholder link |
-|      | progress tracking        |       |        |           |
+|      | progress tracking        |       |        |                          |
 ```
 
 ### Implementation Approach
@@ -676,6 +711,6 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-26
 
-_Added to framework in v0.17.0_
+Added to framework in v0.17.0.
