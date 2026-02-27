@@ -191,12 +191,6 @@ post-commitment surprises.
 
 ---
 
-## Notes
-
-Added to framework in v0.4.0.
-
----
-
 ## Revision History
 
 | Date       | Author | Change      | Reason           |
@@ -204,93 +198,4 @@ Added to framework in v0.4.0.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
----
-
-## ADR Naming Convention
-
-**File naming:** `ADR-XXX-short-description.md`
-
-**Examples:**
-
-- `ADR-001-database-selection.md`
-- `ADR-002-file-upload-mechanism.md`
-- `ADR-003-authentication-approach.md`
-- `ADR-004-frontend-framework.md`
-
-**Location:** Use `docs/adr/` as the primary project-level ADR registry.
-
-- `docs/adr/` — canonical location for all ADRs (recommended)
-- `system-design/adr/` — alternative for System Design decisions
-- `implementation/adr/` — alternative for increment-specific decisions
-
-Use per-stage directories if your team prefers scoped numbering; use `docs/adr/`
-for a unified ADR registry.
-
-**Numbering:** Use sequential numbers (001, 002, 003...) per directory. Numbers
-are scoped to the directory (system-design/adr/ADR-001 and
-implementation/adr/ADR-001 can both exist).
-
-**Status values:**
-
-- **Proposed:** Decision is under consideration
-- **Accepted:** Decision has been approved and will be/is being implemented
-- **Deprecated:** Decision is no longer relevant but not superseded
-- **Superseded by ADR-XXX:** This decision has been replaced by a newer decision
-
----
-
-## Tips for Writing Good ADRs
-
-1. **Be concise but complete** - Capture enough context for future engineers to
-   understand why
-2. **Document alternatives** - Show what you considered and why you chose this
-   path
-3. **Include costs** - Research and document infrastructure/tooling costs
-4. **Explain trade-offs** - Be honest about what you're accepting/rejecting
-5. **Update status** - Mark as Deprecated or Superseded when decisions change
-6. **Link from brief** - Reference ADRs from your system-design-brief,
-   increment-design-brief, or implementation-brief
-7. **Version control** - Commit ADRs alongside code; they're part of your
-   project history
-8. **Use the "reasonable engineer test"** - If a reasonable engineer might ask
-   "why this instead of alternatives?", document it
-
----
-
-## Example: Referencing ADRs
-
-**In your `system-design-brief.md` (System Design stage):**
-
-```markdown
-## Technology Stack
-
-**Database:** PostgreSQL 15 (see [ADR-001](adr/ADR-001-database-selection.md))
-**File Upload:** Presigned URLs with object storage (see
-[ADR-002](adr/ADR-002-file-upload-mechanism.md)) **Authentication:** JWT tokens
-(see [ADR-003](adr/ADR-003-authentication-approach.md))
-
-For detailed rationale, alternatives, and cost analysis, see ADRs in
-`system-design/adr/`.
-```
-
-**In your `implementation-brief.md` (Implementation stage):**
-
-```markdown
-## Key Implementation Decisions
-
-| #                                                 | Decision                               | Type    | ADR Link | Date |
-| ------------------------------------------------- | -------------------------------------- | ------- | -------- | ---- |
-| 1                                                 | Use Builder pattern for PaymentRequest | Pattern |
-| [ADR-001](adr/ADR-001-payment-builder-pattern.md) |
-| 2024-02-10                                        |
-| 2                                                 | Cache user permissions for 5 minutes   | Caching |
-| [ADR-002](adr/ADR-002-permission-caching.md)      |
-| 2024-02-10                                        |
-```
-
----
-
-**Usage:** This template is used by System Design, Increment Design, and
-Implementation stages for documenting significant technical decisions.
-
-**Template Last Updated:** 2026-02-21
+<!-- Template Last Updated: 2026-02-26 | Added in v0.4.0 -->

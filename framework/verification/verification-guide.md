@@ -219,7 +219,7 @@ Track defects by **severity** (technical impact: Critical → Low) and
 #### Go/No-Go Decision
 
 > For structuring gate decisions, use the
-> [Checkpoint Decision Template](../checkpoint-decision-template.md).
+> [Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
 
 - **Go:** All critical gates passed, UAT approved, rollback plan exists
 - **No-go:** Critical defects, UAT not approved, performance below NFRs

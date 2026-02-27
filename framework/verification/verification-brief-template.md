@@ -185,7 +185,7 @@ section 5]
 ## Production Readiness
 
 > For structuring the go/no-go decision, use the
-> [Checkpoint Decision Template](../checkpoint-decision-template.md).
+> [Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
 
 **Overall:** [✅ Ready / ⚠️ Ready with conditions / ❌ Not Ready]
 

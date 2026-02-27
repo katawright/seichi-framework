@@ -219,7 +219,7 @@ outputs an **assessment and adaptation plan**.
 ### Infrastructure ADRs
 
 Infrastructure decisions are **architectural decisions** and must be documented
-in ADRs. Use the framework's [ADR template](../adr-template.md).
+in ADRs. Use the framework's [ADR template](../templates/adr-template.md).
 
 **Common infrastructure ADRs:**
 
@@ -266,7 +266,7 @@ Even the smallest projects need:
   debt
 
 > **AI exploration:** _"Design an infrastructure plan for [describe your project
-> type, team size, and deployment requirements]."_
+> > type, team size, and deployment requirements]."_
 
 ---
 
@@ -313,7 +313,7 @@ Well-sized increments deliver testable value while fitting your team's cadence.
 **Research backing:** DORA State of DevOps reports show smaller batch sizes and
 frequent deployment correlate with higher performance.
 
-> **AI exploration:** _"Help me size increments for [describe your team size,
+> **AI exploration:** _"Help me size increments for [describe your team size, >
 > methodology, and deployment maturity]."_
 
 ---
@@ -415,7 +415,7 @@ client needs.
 
 Document significant technology choices as ADRs.
 
-> **AI exploration:** _"Compare [technology options] for [describe your use
+> **AI exploration:** _"Compare [technology options] for [describe your use >
 > case, team skills, and NFRs]."_
 
 ---
@@ -446,7 +446,7 @@ to design decisions:
 - Consent tracking and right-to-deletion
 - Encryption and key management
 
-> **AI exploration:** _"Design a security architecture for [describe your
+> **AI exploration:** _"Design a security architecture for [describe your >
 > application, data sensitivity, and compliance requirements]."_
 
 ---
@@ -513,7 +513,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 | ----------------- | -------- | ------------------- |
 | [Criterion]       | [Metric] | [Collection method] |
 
-> **AI exploration:** _"Design an observability strategy for [describe your
+> **AI exploration:** _"Design an observability strategy for [describe your >
 > application, success criteria, and monitoring requirements]."_
 
 ---
@@ -533,7 +533,7 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 - **Golden Hammer** — same tech for everything. Fix: evaluate options per
   problem.
 
-> **AI exploration:** _"Review this design for anti-patterns: [describe your
+> **AI exploration:** _"Review this design for anti-patterns: [describe your >
 > architecture and component structure]."_
 
 ---
@@ -728,7 +728,7 @@ early, establishes development patterns.
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
 > **AI exploration:** _"Help me troubleshoot [describe the checklist item that's
-> failing and your current design state]."_
+> > failing and your current design state]."_
 
 ---
 

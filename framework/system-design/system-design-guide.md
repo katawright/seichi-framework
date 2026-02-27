@@ -222,7 +222,7 @@ priority definitions.
 > **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
 > [System Design Brief Template](system-design-brief-template.md#gate-2-decision-package).
 > Record the proceed/pivot/stop decision using the
-> [Gate Decision Template](../gate-decision-template.md).
+> [Gate Decision Template](../templates/gate-decision-template.md).
 
 ### Infrastructure Planning
 
@@ -295,8 +295,23 @@ uses scoped ADRs).
 Key sections: Context, options considered (with cost analysis), decision and
 rationale, consequences, alternatives.
 
-**File naming:** `ADR-NNN-short-description.md` **Template:**
-[ADR Template](../adr-template.md)
+**File naming:** `ADR-NNN-short-description.md` (e.g.,
+`ADR-001-database-selection.md`, `ADR-002-file-upload-mechanism.md`)
+
+**Template:** [ADR Template](../templates/adr-template.md)
+
+**Location:** Use `docs/adr/` as the primary project-level ADR registry.
+
+- `docs/adr/` — canonical location for all ADRs (recommended)
+- `system-design/adr/` — alternative for System Design decisions
+- `implementation/adr/` — alternative for increment-specific decisions
+
+Use per-stage directories if your team prefers scoped numbering; use `docs/adr/`
+for a unified ADR registry.
+
+**Numbering:** Use sequential numbers (001, 002, 003...) per directory. Numbers
+are scoped to the directory (`system-design/adr/ADR-001` and
+`implementation/adr/ADR-001` can both exist).
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
 
@@ -315,6 +330,56 @@ ADRs follow a propose → review → approve → record → evolve lifecycle:
 4. **Record:** ADR is merged to version control alongside code
 5. **Evolve:** When a decision is superseded, create a new ADR and set the
    original's status to "Superseded by ADR-XXX"
+
+**Status values:**
+
+- **Proposed:** Decision is under consideration
+- **Accepted:** Decision has been approved and will be/is being implemented
+- **Deprecated:** Decision is no longer relevant but not superseded
+- **Superseded by ADR-XXX:** This decision has been replaced by a newer decision
+
+### Tips for Writing Good ADRs
+
+1. **Be concise but complete** — capture enough context for future engineers to
+   understand why
+2. **Document alternatives** — show what you considered and why you chose this
+   path
+3. **Include costs** — research and document infrastructure/tooling costs
+4. **Explain trade-offs** — be honest about what you're accepting/rejecting
+5. **Update status** — mark as Deprecated or Superseded when decisions change
+6. **Link from brief** — reference ADRs from your system-design-brief,
+   increment-design-brief, or implementation-brief
+7. **Version control** — commit ADRs alongside code; they're part of your
+   project history
+8. **Use the "reasonable engineer test"** — if a reasonable engineer might ask
+   "why this instead of alternatives?", document it
+
+### Referencing ADRs from Briefs
+
+In your `system-design-brief.md` (System Design stage):
+
+```markdown
+## Technology Stack
+
+**Database:** PostgreSQL 15 (see [ADR-001](adr/ADR-001-database-selection.md))
+**File Upload:** Presigned URLs with object storage (see
+[ADR-002](adr/ADR-002-file-upload-mechanism.md)) **Authentication:** JWT tokens
+(see [ADR-003](adr/ADR-003-authentication-approach.md))
+
+For detailed rationale, alternatives, and cost analysis, see ADRs in
+`system-design/adr/`.
+```
+
+In your `implementation-brief.md` (Implementation stage):
+
+```markdown
+## Key Implementation Decisions
+
+| #   | Decision                               | Type    | ADR Link                                          | Date       |
+| --- | -------------------------------------- | ------- | ------------------------------------------------- | ---------- |
+| 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-001](adr/ADR-001-payment-builder-pattern.md) | 2024-02-10 |
+| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-002](adr/ADR-002-permission-caching.md)      | 2024-02-10 |
+```
 
 ### System-Level Interface Contracts
 
@@ -416,13 +481,13 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 - [System Design Brief Template](system-design-brief-template.md)
 - [System Design Checklist](system-design-checklist.md)
 - [System Design Reference](system-design-reference.md)
-- [ADR Template](../adr-template.md)
+- [ADR Template](../templates/adr-template.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.12.0.

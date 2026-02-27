@@ -271,7 +271,7 @@ Verification stage what to test and how.
 - [Increment Design Checklist](increment-design-checklist.md)
 - [Increment Design Reference](increment-design-reference.md)
 - [System Design Guide](../system-design/system-design-guide.md)
-- [ADR Template](../adr-template.md)
+- [ADR Template](../templates/adr-template.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---

@@ -70,7 +70,7 @@ technology stack, data, API, security, infrastructure, and more. They are
 
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-XXX-short-description.md`
-- **Template:** [ADR Template](../adr-template.md)
+- **Template:** [ADR Template](../templates/adr-template.md)
 - **Index:** `docs/adr/README.md`
 
 | ADR     | Title   | Category | Status   |
@@ -341,7 +341,7 @@ _Add more increments as needed._
 
 > **Purpose:** Provide executives and stakeholders with the information needed
 > to make the build/no-build decision. Record the decision using the
-> [Gate Decision Template](../gate-decision-template.md).
+> [Gate Decision Template](../templates/gate-decision-template.md).
 
 **Project Timeline:**
 

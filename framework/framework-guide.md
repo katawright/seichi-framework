@@ -1,11 +1,37 @@
 # Framework Guide
 
-> Framework-wide concepts that apply across all stages. Stage-specific guidance
-> is in each stage's guide.
+## Overview
 
-> **Looking for a brief overview?** See the [Quick Start Guide](README.md).
+Framework-wide concepts that apply across all stages — stage definitions,
+checkpoint taxonomy, AI assistance guidance, right-sizing, and governance.
 
----
+### Why a Comprehensive Reference
+
+Individual stage guides cover their own scope, but cross-cutting concepts —
+checkpoints, the measurement throughline, roles, right-sizing,
+greenfield/brownfield adaptation — need a single authoritative home to avoid
+duplication and drift.
+
+### Purpose
+
+- Define the framework's design principles and key benefits
+- Explain cross-stage concepts (checkpoints, measurement, MoSCoW, roles)
+- Document greenfield vs. brownfield adaptation
+- Provide right-sizing and governance guidance
+
+### Key Principle
+
+AI as assistant, not replacement — AI is a productivity tool that humans
+control.
+
+### How to Use This Guide
+
+1. [**What Is This Framework?**](#what-is-this-framework) — design principles
+   and benefits
+2. [**How to Use This Framework**](#how-to-use-this-framework) — getting started
+   (manual process or application)
+3. [**Key Concepts**](#key-concepts) — linked overview of all cross-stage topics
+4. Drill into individual concept sections as needed
 
 ## What Is This Framework?
 
@@ -293,7 +319,7 @@ After Gate 2, the project is funded and team committed. Later checkpoints focus
 on "when/how" rather than "if."
 
 Record gate decisions using the
-[Gate Decision Template](gate-decision-template.md).
+[Gate Decision Template](templates/gate-decision-template.md).
 
 ### 2. Quality Checkpoints
 
@@ -312,7 +338,7 @@ Examples: staging approval, production go/no-go, rollout gates (10% → 50% →
 100%).
 
 Record deployment approvals using the
-[Checkpoint Decision Template](checkpoint-decision-template.md).
+[Checkpoint Decision Template](templates/checkpoint-decision-template.md).
 
 ### 4. Alignment Reviews
 
@@ -462,7 +488,7 @@ For full gate definitions and operational guidance, see the
 significant design decision and the reasoning behind it. Primary storage:
 `docs/adr/`. Alternative: per-stage directories (`system-design/adr/`,
 `implementation/adr/`) for scoped numbering. See the
-[ADR Template](adr-template.md) for guidance.
+[ADR Template](templates/adr-template.md) for guidance.
 
 > **Artifact location note:** Paths like `docs/adr/`, `docs/api/`, and
 > `AGENTS.md` refer to project-level artifacts created in your project
@@ -908,6 +934,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-24
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.9.0.

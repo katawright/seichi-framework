@@ -4,9 +4,8 @@
 
 > **Purpose:** Convert the Initiation Brief into a **clear, testable
 > requirements baseline**: functional requirements with FR acceptance criteria,
-> non-functional requirements (NFRs) with NFR verification criteria, edge
-> cases, and a prioritized scope
-> suitable for System Design and Implementation.
+> non-functional requirements (NFRs) with NFR verification criteria, edge cases,
+> and a prioritized scope suitable for System Design and Implementation.
 >
 > **Handoff:** This document enables the System Design stage (foundational pass)
 > to architect the solution and plan for measurement/instrumentation.
@@ -360,8 +359,8 @@ _Example:_
 **Ready when:**
 
 - All high-priority FRs have acceptance criteria (objective/observable)
-- FRs and FR acceptance criteria reviewed and approved by business and
-  technical stakeholders
+- FRs and FR acceptance criteria reviewed and approved by business and technical
+  stakeholders
 - Key NFRs captured with verification criteria (performance, reliability,
   security, observability)
 - Measurement/instrumentation needs identified (observability NFRs)
@@ -391,7 +390,7 @@ Provide this Requirements Document to System Design team.
 > **Gate 2 differs from Gate 1:** Gate 1 asks "Should we invest in requirements
 > work?" (business case). Gate 2 asks "Should we commit to building?"
 > (requirements + design + estimates). Record the actual decision using the
-> [Gate Decision Template](../gate-decision-template.md).
+> [Gate Decision Template](../templates/gate-decision-template.md).
 
 **Gate 2 expected outputs** (produced during System Design foundational pass):
 

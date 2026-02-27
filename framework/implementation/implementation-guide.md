@@ -194,7 +194,7 @@ maintainability, testability, error handling, standards compliance.
 ### Implementation Decision Records (ADRs)
 
 For significant decisions, create ADRs using the framework's template
-(`../adr-template.md`).
+(`../templates/adr-template.md`).
 
 **"Reasonable engineer test":** If someone might later ask "why this approach
 instead of alternatives?", create an ADR.
@@ -269,7 +269,7 @@ in depth:
 - [Implementation Brief Template](implementation-brief-template.md)
 - [Implementation Checklist](implementation-checklist.md)
 - [Implementation Reference](implementation-reference.md)
-- [ADR Template](../adr-template.md)
+- [ADR Template](../templates/adr-template.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
 ---

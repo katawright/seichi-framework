@@ -2,20 +2,47 @@
 
 ## Overview
 
-The AI-Assisted SDLC framework uses **8 stages** that balance comprehensive
-coverage with practical simplicity. The stages are designed to be:
+**8 stages** that balance comprehensive coverage with practical simplicity for
+AI-assisted software delivery.
 
-- **Methodology-agnostic** — Works for agile, waterfall, and hybrid approaches
-- **Role-appropriate** — Each stage led by the role best suited to the work
-- **Cross-functional** — Clear handoffs between business and technical
-  stakeholders
-- **AI-friendly** — Each stage has specific guidance for leveraging AI
-  assistance
-- **Measurable** — Success criteria flow from Initiation through Support
+### Why Defined Stages
+
+Software projects have natural phases, but without explicit stage definitions
+teams skip critical activities, handoffs between roles break down, and goals set
+early never connect to what gets measured in production. AI amplifies this
+problem — it can generate artifacts quickly, but without clear inputs, outputs,
+and exit criteria for each stage, teams lose track of what's been validated and
+what's just been drafted.
+
+### Purpose
+
+- Define what happens at each stage — inputs, activities, outputs, and exit
+  criteria
+- Provide methodology-agnostic stages that work for agile, waterfall, and hybrid
+  approaches
+- Ensure cross-functional handoffs between business and technical stakeholders
+- Establish a measurement throughline from business objectives to production
+  metrics
 
 For operational guidance on AI assistance levels at each stage, see the
-**[AI Assistance Scorecard](framework-ai-assistance.md)**, which evaluates each
-stage across fit, verifiability, risk, and recommended assistance levels.
+**[AI Assistance Scorecard](framework-ai-assistance.md)**.
+
+### Key Principle
+
+Each stage is led by the role best suited to the work, with AI assistance
+bounded by verifiability and risk. Success criteria established in Initiation
+flow through every subsequent stage.
+
+### How to Use This Guide
+
+1. Review the [**Quick Reference**](#quick-reference) table to see all 8 stages
+   at a glance
+2. Understand [**How Stages Execute**](#how-stages-execute) (Foundational,
+   Iterative, Continuous)
+3. Drill into individual [**stage definitions**](#stage-1-initiation) for
+   inputs, activities, outputs, and exit criteria
+4. See [**Checkpoints**](#checkpoints) for the gate and review types that govern
+   progression
 
 ---
 
@@ -175,7 +202,7 @@ set scope boundaries, and produce a plan to reach the first major decision gate
   - **Criteria:** Business case clear, stakeholders aligned, risks acceptable,
     sponsor committed
   - **Record decision:** Use the
-    [Gate Decision Template](gate-decision-template.md)
+    [Gate Decision Template](templates/gate-decision-template.md)
   - **AI validation:** Human review ensures AI-assisted brief analysis is sound
     and recommendations are appropriate
 
@@ -686,7 +713,7 @@ human owns the investment decision.
 focus on "when/how to proceed" rather than "if."
 
 Record gate decisions using the
-[Gate Decision Template](gate-decision-template.md).
+[Gate Decision Template](templates/gate-decision-template.md).
 
 ### Quality Checkpoints
 
@@ -730,7 +757,7 @@ monitored. Verify deployment plans and rollback procedures.
 
 Approval authority varies by environment — see the Deployment Guide for
 role-specific guidance. Record deployment approvals using the
-[Checkpoint Decision Template](checkpoint-decision-template.md).
+[Checkpoint Decision Template](templates/checkpoint-decision-template.md).
 
 ### Alignment Reviews
 
@@ -798,6 +825,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-02-25
+**Last Updated:** 2026-02-26
 
 Added to framework in v0.9.0.

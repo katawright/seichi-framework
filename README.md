@@ -39,8 +39,8 @@ prompt, and README.
 
 ### Supporting Artifacts
 
-- [ADR Template](framework/adr-template.md) - Architecture Decision Record
-  template
+- [ADR Template](framework/templates/adr-template.md) - Architecture Decision
+  Record template
 - [AGENTS.md Example](framework/AGENTS.md.example) - Team conventions template
   for AI agents
 

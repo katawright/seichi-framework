@@ -2,9 +2,8 @@
 
 ## Overview
 
-This guide defines structural and formatting conventions for framework
-documentation files. It is not framework content — it governs how framework
-content is written.
+Structural and formatting conventions for framework documentation files — not
+framework content itself, but rules governing how framework content is written.
 
 ### Why This Guide
 
@@ -27,12 +26,14 @@ reorientation.
 
 ### How to Use This Guide
 
-1. Read the **Document Structure** section before creating or restructuring a
-   file
-2. Use the **Notes Section Format** and **Section Separators** rules when
-   editing any file
-3. Run the formatting command in **Formatting** on every file you modify
-4. Refer to **Tone and Language** and **Narrative Flow** when writing new prose
+1. Read the [**Document Structure**](#document-structure) section before
+   creating or restructuring a file
+2. Use the [**Notes Section Format**](#notes-section-format) and
+   [**Section Separators**](#section-separators) rules when editing any file
+3. Run the formatting command in [**Formatting**](#formatting) on every file you
+   modify
+4. Refer to [**Tone and Language**](#tone-and-language) and
+   [**Narrative Flow**](#narrative-flow) when writing new prose
 
 ---
 
@@ -41,13 +42,18 @@ reorientation.
 The canonical section order for every framework file:
 
 1. **H1 title** — one per file, matching the document's purpose
-2. **H2 Overview** — 1–2 sentence intro blurb, then H3 metadata:
+2. **H2 Overview** — 1–2 sentence intro blurb written as a noun-phrase fragment,
+   not a "This guide…" sentence (e.g., "Practical guidance for…" or "Operational
+   guidance for…"). Then H3 metadata:
    - **Why [Topic]** — motivates the reader; describes the problem or gap this
-     document addresses. If two files have overlapping Why sections, consider
-     merging them.
+     document addresses. `[Topic]` is the document's subject matter, not the
+     document itself (e.g., "Why Foundation Work", not "Why This Guide"). If two
+     files have overlapping Why sections, consider merging them.
    - **Purpose** — bullet list of what the document delivers
    - **Key Principle** — the single most important idea to remember
-   - **How to Use This [Guide/Scorecard]** — numbered navigation steps
+   - **How to Use This [Guide/Scorecard]** — numbered navigation steps. Bold
+     section names must be anchor links to the referenced heading (e.g.,
+     `[**Quick Reference**](#quick-reference)`).
 3. **Orienting reference table** (position 2, immediately after Overview) — a
    summary table giving readers the landscape before detail. Use when the file's
    content supports it (e.g., Quick Reference, Cross-Stage Overview). Not every
@@ -101,8 +107,9 @@ between H3 subsections within an H2.
 
 ## Cross-Linking
 
-- Link to other framework files by relative path (e.g.,
-  `[Framework Guide](framework-guide.md)`)
+- Use the file's title as link text, not the raw filename (e.g.,
+  `[Framework Guide](framework-guide.md)`, not `framework-guide.md`)
+- Link to other framework files by relative path
 - Use fragment anchors (`#section-name`) only when linking to a specific section
   within another file
 - When renaming or reordering headings, grep for the old anchor across the repo
@@ -118,11 +125,21 @@ Files fall into categories that may have type-specific conventions:
 | ------------------------------- | ---------------- | --------------------------- |
 | **README files**                | `README.md`      | Include `Framework Version` |
 | **Guide files**                 | `*-guide.md`     | Standard structure          |
-| **Template files**              | `*-template.md`  | May omit Overview metadata  |
+| **Template files**              | `*-template.md`  | HTML comment metadata       |
 | **Scorecard / reference files** | `*-scorecard.md` | Standard structure          |
 
-Only README-specific differences are currently defined. If new category-specific
-rules emerge, document them here.
+**Template file conventions:**
+
+- Location: `framework/templates/` — pure fill-in-the-blank files, no guidance
+  prose
+- Omit the `## Notes` section; instead end with an HTML comment:
+  `<!-- Template Last Updated: YYYY-MM-DD | Added in vX.Y.Z -->`
+- Use `YYYY-MM-DD` as a placeholder for dates that users fill in (e.g.,
+  `**Last Updated:** YYYY-MM-DD`)
+- Keep guidance content (naming conventions, tips, examples) in the relevant
+  stage guide, not in the template itself
+- Cross-references to other templates use HTML comments rather than visible
+  blockquotes
 
 ---
 

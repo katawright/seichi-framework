@@ -53,18 +53,18 @@ For assistance level details, see the
 
 ## Artifacts
 
-| File                                                            | Description                                            |
-| --------------------------------------------------------------- | ------------------------------------------------------ |
-| [System Design Guide](system-design-guide.md)                   | Stage-specific guidance and rationale                  |
-| [System Design Brief Template](system-design-brief-template.md) | Template for architecture and system design            |
-| [System Design Checklist](system-design-checklist.md)           | 60-90 second readiness checklist                       |
-| [System Design Reference](system-design-reference.md)           | Detailed practices and examples for deeper exploration |
-| [ADR Template](../adr-template.md)                              | Architecture Decision Record template                  |
+| File                                                            | Description                                                              |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [System Design Guide](system-design-guide.md)                   | Stage-specific guidance and rationale                                    |
+| [System Design Brief Template](system-design-brief-template.md) | Template for architecture and system design                              |
+| [System Design Checklist](system-design-checklist.md)           | 60-90 second readiness checklist                                         |
+| [System Design Reference](system-design-reference.md)           | Detailed practices and examples for deeper exploration                   |
+| [ADR Template](../templates/adr-template.md)                    | Architecture Decision Record template                                    |
 | `adr/`                                                          | Optional project ADR output directory (create in your project as needed) |
 
 > **Note:** The framework provides templates and guidance. Project artifact
-> directories like `adr/`, `docs/adr/`, `docs/api/`, and `AGENTS.md` are
-> created in your project repository as you apply this stage.
+> directories like `adr/`, `docs/adr/`, `docs/api/`, and `AGENTS.md` are created
+> in your project repository as you apply this stage.
 
 ## Suggested Workflow
 
@@ -77,7 +77,7 @@ For assistance level details, see the
 6. Run `system-design-checklist.md`
 7. Conduct alignment review with stakeholders
 8. Proceed to Gate 2 decision; record using the
-   [Gate Decision Template](../gate-decision-template.md)
+   [Gate Decision Template](../templates/gate-decision-template.md)
 
 ## Stage Outputs
 
@@ -100,5 +100,3 @@ foundational conventions.
 **Framework Version:** 0.19.0
 
 **Last Updated:** 2026-02-21
-
-

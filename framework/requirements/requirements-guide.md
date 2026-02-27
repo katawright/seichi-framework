@@ -51,7 +51,8 @@ verification criteria, prioritization)
 > case). Gate 2 asks "Should we commit to building?" (requirements validated,
 > architecture sound, risks mitigated, estimate within budget). Gate 2 occurs at
 > the end of Requirements + System Design foundational pass. Record gate
-> decisions using the [Gate Decision Template](../gate-decision-template.md).
+> decisions using the
+> [Gate Decision Template](../templates/gate-decision-template.md).
 
 **AI assistance:** AI agent with human gate — see
 [Framework Guide: AI Assistance](../framework-guide.md#ai-assistance-overview)
