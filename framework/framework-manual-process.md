@@ -184,7 +184,7 @@ I'm using the AI-Assisted SDLC framework for a software project.
 Please read these framework documents:
 - framework/framework-stages.md
 - framework/framework-guide.md
-- framework/requirements/requirements-guide.md
+- framework/requirements/README.md
 
 I've completed the Initiation stage. Here's my initiation brief:
 

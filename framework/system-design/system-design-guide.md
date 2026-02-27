@@ -432,7 +432,7 @@ Design and trace it through implementation and verification:
 | Concern       | Define at           | Verify at            | Framework Reference                                                                            |
 | ------------- | ------------------- | -------------------- | ---------------------------------------------------------------------------------------------- |
 | Security      | System Design       | Verification         | system-design-brief-template.md (Security section) + verification-checklist.md (security gate) |
-| Performance   | System Design       | Verification         | requirements-brief-template.md (NFR section)                                                   |
+| Performance   | System Design       | Verification         | ../templates/requirements-brief-template.md (NFR section)                                      |
 | Observability | Requirements/Design | Support              | Measurement Throughline                                                                        |
 | Accessibility | Requirements        | Verification         | Checklist                                                                                      |
 | Resilience    | System Design       | Verification/Support | Rollback and DR sections                                                                       |

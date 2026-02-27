@@ -756,8 +756,8 @@ constraints** that new work must satisfy:
 
 These constraints become **Non-Functional Requirements (NFRs)** that shape
 design and testing. See the
-[Requirements Guide](requirements/requirements-guide.md) for detailed guidance
-on capturing brownfield constraints.
+[Requirements Stage Guide](requirements/README.md#constraints) for detailed
+guidance on capturing brownfield constraints.
 
 ### When Both Types Converge
 
@@ -783,8 +783,8 @@ guide:
 
 - **[System Design Guide](system-design/system-design-guide.md)** —
   Infrastructure planning outputs and bootstrap increment guidance
-- **[Requirements Guide](requirements/requirements-guide.md)** — Capturing
-  existing system constraints for brownfield projects
+- **[Requirements Stage Guide](requirements/README.md)** — Capturing existing
+  system constraints for brownfield projects
 - **[Implementation Guide](implementation/implementation-guide.md)** — Bootstrap
   increment execution for greenfield projects
 
