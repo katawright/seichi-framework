@@ -36,11 +36,12 @@ problems early, incident response resolves them quickly, and post-incident
 learning feeds improvements back into the system — closing the loop between
 delivery and development.
 
-### How to Use This Guide
+### Starting Point
 
-**To begin, you need:** a deployed increment live in production, baseline
-measurements captured at deployment, and production monitoring dashboards
-active.
+A deployed increment live in production, baseline measurements captured at
+deployment, and production monitoring dashboards active.
+
+### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to

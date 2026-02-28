@@ -31,6 +31,11 @@ activity in the entire SDLC. For the full stage definition (purpose, roles,
 inputs/outputs, entry/exit criteria, and gate details), see
 [Framework Stages: Initiation](../framework-stages.md#stage-1-initiation).
 
+### Starting Point
+
+A project idea, business opportunity, or problem worth investigating. No prior
+framework artifacts or technical expertise required.
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
@@ -97,13 +102,33 @@ Most internal projects land at **Standard**; use **Minimal** for low-risk
 experiments and **Enterprise** for regulated or multi-team efforts.
 
 Not every project needs a formal business case or comprehensive risk assessment.
-Match your Initiation effort to your project's risk tier — Minimal, Standard, or
-Enterprise. The
-[Initiation Brief Template](../templates/initiation-brief-template.md) includes
-tier-specific guidance inline so you can right-size as you fill it out.
+Match your Initiation effort to your project's risk tier.
 
-For full tier definitions and choosing criteria, see the
-[Right-Sizing Guide](../right-sizing-guide.md).
+| Practice                  | Minimal                       | Standard                                    | Enterprise                                           |
+| ------------------------- | ----------------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| **Problem statement**     | Brief description of the need | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
+| **Business case**         | Informal justification        | Value, urgency, and strategic alignment     | Formal business case with financial analysis         |
+| **Success criteria**      | 1-2 measurable outcomes       | 3-5 criteria with baselines and targets     | Comprehensive KPIs with measurement plans            |
+| **Non-goals/assumptions** | Quick list                    | 3-5 explicit non-goals, key assumptions     | Detailed boundary analysis with stakeholder review   |
+| **Risk assessment**       | Mental note of key risks      | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
+| **Estimation**            | Rough range                   | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
+| **Gate 1 process**        | Informal team agreement       | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
+
+Expand Initiation only when needed:
+
+- **Regulated / compliance-heavy:** Add compliance requirements, formal sign-off
+- **Large data migrations:** Add data scope analysis, migration risks
+- **Material security / privacy impact:** Add threat summary, privacy
+  considerations
+- **Multi-team dependency chain:** Add cross-team coordination, dependency
+  mapping
+- **Hard external deadlines:** Add timeline constraints, phased delivery options
+
+Otherwise, keep the Brief concise and move quickly to Requirements.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
 
 ---
 

@@ -51,6 +51,8 @@ The canonical section order for every framework file:
      files have overlapping Why sections, consider merging them.
    - **Purpose** — bullet list of what the document delivers
    - **Key Principle** — the single most important idea to remember
+   - **Starting Point** — what you need before starting this stage (stage
+     READMEs only)
    - **How to Use This [Guide/Scorecard]** — numbered navigation steps. Bold
      section names must be anchor links to the referenced heading (e.g.,
      `[**Quick Reference**](#quick-reference)`).

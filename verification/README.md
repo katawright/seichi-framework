@@ -36,12 +36,14 @@ implementation realities, and validates acceptance criteria.
 
 AI accelerates every testing activity; humans own the go/no-go decision.
 
-### How to Use This Guide
+### Starting Point
 
-**To begin, you need:** working code from Implementation stage, unit tests
-passing with coverage meeting team threshold (default: 80% line coverage — see
-implementation brief for project-specific target), code review approvals,
-requirements with acceptance criteria, and implementation brief with notes.
+Working code from the Implementation stage with unit tests passing and coverage
+meeting team threshold (default: 80% line coverage — see implementation brief
+for project-specific target), code review approvals, requirements with
+acceptance criteria, and implementation brief with notes.
+
+### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Verification**](#right-sizing-verification) to match

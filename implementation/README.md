@@ -25,11 +25,13 @@ Verification catches problems early or discovers them late.
 Build working, tested code that meets design specifications. AI accelerates
 every step; humans own every gate.
 
-### How to Use This Guide
+### Starting Point
 
-**To begin, you need:** a completed Increment Design Brief with detailed
-component designs, interface contracts, and test strategy. Your development
-environment should be set up and ready.
+A completed Increment Design Brief with detailed component designs, interface
+contracts, and test strategy. Your development environment should be set up and
+ready.
+
+### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Implementation**](#right-sizing-implementation) to match

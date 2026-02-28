@@ -50,6 +50,14 @@ ready for Gate 2.
         NFRs)
 13. [ ] **[H] Alignment Review conducted** (stakeholder sign-off obtained)
 
+### Handoff to Increment Design
+
+14. [ ] **Architecture documented for increment-level design** (sufficient
+        detail for teams to begin)
+15. [ ] **Conventions established** (API patterns, data access, error handling)
+16. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
+        and dependencies clear)
+
 ---
 
 ## Final Decision

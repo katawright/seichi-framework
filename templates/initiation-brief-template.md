@@ -4,32 +4,10 @@
 
 ## Right-Sizing This Brief
 
-Choose your tier before filling out the brief. Each section below includes
-inline hints for what's expected at each level.
+<!-- See initiation/README.md#right-sizing-initiation for the full
+     practice table and expansion triggers. -->
 
-| Practice                  | Minimal                       | Standard                                    | Enterprise                                           |
-| ------------------------- | ----------------------------- | ------------------------------------------- | ---------------------------------------------------- |
-| **Problem statement**     | Brief description of the need | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
-| **Business case**         | Informal justification        | Value, urgency, and strategic alignment     | Formal business case with financial analysis         |
-| **Success criteria**      | 1-2 measurable outcomes       | 3-5 criteria with baselines and targets     | Comprehensive KPIs with measurement plans            |
-| **Non-goals/assumptions** | Quick list                    | 3-5 explicit non-goals, key assumptions     | Detailed boundary analysis with stakeholder review   |
-| **Risk assessment**       | Mental note of key risks      | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
-| **Estimation**            | Rough range                   | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
-| **Gate 1 process**        | Informal team agreement       | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
-
-**Expand Initiation only when needed:**
-
-- **Regulated / compliance-heavy:** Add compliance requirements, formal sign-off
-- **Large data migrations:** Add data scope analysis, migration risks
-- **Material security / privacy impact:** Add threat summary, privacy
-  considerations
-- **Multi-team dependency chain:** Add cross-team coordination, dependency
-  mapping
-- **Hard external deadlines:** Add timeline constraints, phased delivery options
-
-Otherwise, keep the Brief concise and move quickly to Requirements. For full
-tier definitions and choosing criteria, see the
-[Right-Sizing Guide](../right-sizing-guide.md).
+**Tier chosen:** [Minimal / Standard / Enterprise]
 
 ---
 

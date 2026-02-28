@@ -30,13 +30,14 @@ activity in the SDLC. For the full stage definition (purpose, roles,
 inputs/outputs, entry/exit criteria, and gate details), see
 [Framework Stages: System Design](../framework-stages.md#stage-3-system-design).
 
-### How to Use This Guide
+### Starting Point
 
-**To begin, you need:** a completed Requirements Document with MoSCoW
-priorities, non-functional requirements, and success criteria requiring
-instrumentation. For brownfield first AI-assisted projects, also gather existing
-architecture documentation, ADRs, infrastructure configuration, and known
-technical debt.
+A completed Requirements Document with MoSCoW priorities, non-functional
+requirements, and success criteria requiring instrumentation. For brownfield
+first AI-assisted projects, also gather existing architecture documentation,
+ADRs, infrastructure configuration, and known technical debt.
+
+### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing System Design**](#right-sizing-system-design) to
