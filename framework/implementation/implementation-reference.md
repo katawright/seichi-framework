@@ -1,10 +1,28 @@
 # Implementation Reference
 
-Optional deep-dive companion to the
-[Implementation Guide](implementation-guide.md),
-[Implementation Brief Template](implementation-brief-template.md), and
-[Implementation Checklist](implementation-checklist.md). Consult when you need
-specifics or a starting point for AI-assisted exploration.
+## Overview
+
+Optional deep-dive companion to the [Implementation Stage Guide](README.md),
+[Implementation Brief Template](../templates/implementation-brief-template.md),
+and [Implementation Checklist](implementation-checklist.md). Consult when you
+need specifics or a starting point for AI-assisted exploration.
+
+### Purpose
+
+- Provide detailed logging, metrics, and instrumentation guidance
+- Cover security implementation patterns and review checklists
+- Document technical debt management, PR strategy, and branching conventions
+- Supply code quality red flags, unit testing details, and code review focus
+  areas
+
+### How to Use This Reference
+
+1. Start with the [**Implementation Stage Guide**](README.md) for workflow and
+   rationale
+2. Use this reference when you need specifics — detailed examples, checklists,
+   or implementation patterns
+3. Follow **AI exploration** prompts in each section to get AI-assisted help
+   with that topic
 
 ---
 
@@ -174,10 +192,10 @@ team updates.
 ### Progress Log Template
 
 Use the standalone
-[Implementation Session Log Template](implementation-session-log-template.md) to
-track session-by-session progress. Start one from the template at the beginning
-of each increment. Have the AI agent update it at the end of every work session
-so the next session's agent can restore context from it.
+[Implementation Session Log Template](../templates/implementation-session-log-template.md)
+to track session-by-session progress. Start one from the template at the
+beginning of each increment. Have the AI agent update it at the end of every
+work session so the next session's agent can restore context from it.
 
 <!-- prettier-ignore -->
 > **AI exploration:** _"Help me write a session handoff summary
@@ -317,85 +335,14 @@ Broken tests block the team and fix cost increases exponentially over time.
 6. **Error handling** — edge cases and failures?
 7. **Standards compliance** — team conventions?
 
-### Code Quality Checks Template
-
-| Check            | Status  | Tool                      |
-| ---------------- | ------- | ------------------------- |
-| Linting          | [✅/❌] | [ESLint, Pylint, etc.]    |
-| Formatting       | [✅/❌] | [Prettier, Black, etc.]   |
-| Static Analysis  | [✅/❌] | [SonarQube, etc.]         |
-| Security Scan    | [✅/❌] | [Snyk, Checkmarx, etc.]   |
-| Dependency Check | [✅/❌] | [npm audit, safety, etc.] |
-
 <!-- prettier-ignore -->
 > **AI exploration:** _"Review this PR for code quality
 > issues: [paste code or describe changes]."_
 
 ---
 
-## Performance Considerations
+## Notes
 
-### Performance Results Template
+**Last Updated:** 2026-02-27
 
-| Operation | Metric        | Result    | Target     | Status  |
-| --------- | ------------- | --------- | ---------- | ------- |
-| [Op 1]    | Response time | [Xms]     | [<Yms]     | [✅/❌] |
-| [Op 2]    | Throughput    | [X req/s] | [>Y req/s] | [✅/❌] |
-
-### Common Performance Checks
-
-- [ ] No obvious O(n^2) where O(n) possible
-- [ ] Database queries optimized (indexes, no N+1)
-- [ ] Resource usage reasonable (memory, CPU)
-- [ ] Large data sets handled efficiently
-- [ ] Performance-critical paths profiled
-
-<!-- prettier-ignore -->
-> **AI exploration:** _"Profile and optimize [describe your
-> performance-critical code path]."_
-
----
-
-## Requirements Traceability Template
-
-| Requirement | Implementation                     | Unit Tests                  | Ready?  |
-| ----------- | ---------------------------------- | --------------------------- | ------- |
-| FR-X        | `module/component.py` (line XX-YY) | `test_component.py::test_x` | [✅/❌] |
-| FR-Y        | `module/service.py` (line XX-YY)   | `test_service.py::test_y`   | [✅/❌] |
-
----
-
-## Appendix Templates
-
-### Git Commit History
-
-**Branch name:** [feature/increment-name]
-
-**Key commits:**
-
-- [Commit SHA] - [Commit message]
-
-**Merge commit:** [SHA and date merged]
-
-### Deployment Notes
-
-- Database migrations required
-- Configuration changes needed
-- Environment variables to set
-- Feature flags to enable/disable
-
-### Rollback Plan
-
-1. [Step 1: e.g., Disable feature flag X]
-2. [Step 2: e.g., Revert to previous deployment]
-3. [Step 3: e.g., Run rollback migration]
-
-<!-- prettier-ignore -->
-> **AI exploration:** _"Generate a rollback plan for [describe
-> your deployment and changes]."_
-
----
-
-**Last Updated:** 2026-02-18
-
-_Added to framework in v0.12.0_
+Added to framework in v0.12.0.

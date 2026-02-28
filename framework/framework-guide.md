@@ -785,7 +785,7 @@ guide:
   planning outputs and bootstrap increment guidance
 - **[Requirements Stage Guide](requirements/README.md)** — Capturing existing
   system constraints for brownfield projects
-- **[Implementation Guide](implementation/implementation-guide.md)** — Bootstrap
+- **[Implementation Stage Guide](implementation/README.md)** — Bootstrap
   increment execution for greenfield projects
 
 ---
@@ -934,6 +934,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-27
 
 Added to framework in v0.9.0.
