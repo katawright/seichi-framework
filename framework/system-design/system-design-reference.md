@@ -1,10 +1,29 @@
 # System Design Reference
 
-Optional deep-dive companion to the
-[System Design Guide](system-design-guide.md),
-[System Design Brief Template](system-design-brief-template.md), and
-[System Design Checklist](system-design-checklist.md). Consult when you need
+## Overview
+
+Optional deep-dive companion to the [System Design Stage Guide](README.md),
+[System Design Brief Template](../templates/system-design-brief-template.md),
+and [System Design Checklist](system-design-checklist.md). Consult when you need
 specifics or a starting point for AI-assisted exploration.
+
+### Purpose
+
+- Provide detailed examples and format guidance for the System Design Brief
+- Cover infrastructure planning, increment sizing, estimation, and technology
+  selection in depth
+- Document security, performance, observability design patterns, and common
+  anti-patterns
+- Supply checklist troubleshooting when items fail
+
+### How to Use This Reference
+
+1. Start with the [**System Design Stage Guide**](README.md) for workflow and
+   rationale
+2. Use this reference when you need specifics — detailed examples, evaluation
+   criteria, or troubleshooting guidance
+3. Follow **AI exploration** prompts in each section to get AI-assisted help
+   with that topic
 
 ---
 
@@ -265,8 +284,9 @@ Even the smallest projects need:
 - **"Infrastructure isn't architecture"** — poor tooling becomes expensive tech
   debt
 
-> **AI exploration:** _"Design an infrastructure plan for [describe your project
-> > type, team size, and deployment requirements]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design an infrastructure plan for
+> [describe your project type, team size, and deployment requirements]."_
 
 ---
 
@@ -313,8 +333,9 @@ Well-sized increments deliver testable value while fitting your team's cadence.
 **Research backing:** DORA State of DevOps reports show smaller batch sizes and
 frequent deployment correlate with higher performance.
 
-> **AI exploration:** _"Help me size increments for [describe your team size, >
-> methodology, and deployment maturity]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me size increments for
+> [describe your team size, methodology, and deployment maturity]."_
 
 ---
 
@@ -415,8 +436,9 @@ client needs.
 
 Document significant technology choices as ADRs.
 
-> **AI exploration:** _"Compare [technology options] for [describe your use >
-> case, team skills, and NFRs]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Compare [technology options] for
+> [describe your use case, team skills, and NFRs]."_
 
 ---
 
@@ -446,8 +468,9 @@ to design decisions:
 - Consent tracking and right-to-deletion
 - Encryption and key management
 
-> **AI exploration:** _"Design a security architecture for [describe your >
-> application, data sensitivity, and compliance requirements]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design a security architecture for
+> [describe your application, data sensitivity, and compliance requirements]."_
 
 ---
 
@@ -513,8 +536,9 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 | ----------------- | -------- | ------------------- |
 | [Criterion]       | [Metric] | [Collection method] |
 
-> **AI exploration:** _"Design an observability strategy for [describe your >
-> application, success criteria, and monitoring requirements]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Design an observability strategy for
+> [describe your application, success criteria, and monitoring requirements]."_
 
 ---
 
@@ -533,16 +557,17 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 - **Golden Hammer** — same tech for everything. Fix: evaluate options per
   problem.
 
-> **AI exploration:** _"Review this design for anti-patterns: [describe your >
-> architecture and component structure]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Review this design for anti-patterns:
+> [describe your architecture and component structure]."_
 
 ---
 
 ## Design Brief Examples
 
 This section provides detailed examples for the
-[System Design Brief Template](system-design-brief-template.md). Use as a
-reference when filling out your project's brief.
+[System Design Brief Template](../templates/system-design-brief-template.md).
+Use as a reference when filling out your project's brief.
 
 ### System Context Example
 
@@ -631,7 +656,7 @@ Relationships:
 > **Note:** This example shows feature increments (Increment 1+). If your
 > project requires an Increment 0 (bootstrap for greenfield or discovery for
 > brownfield first AI-assisted), it would precede these increments. See
-> [System Design Guide: Infrastructure Planning](system-design-guide.md#infrastructure-planning).
+> [System Design Stage Guide: Infrastructure Planning](README.md#infrastructure-planning).
 
 #### Increment 1: Foundation (Must Have)
 
@@ -727,11 +752,14 @@ early, establishes development patterns.
   deployment strategy
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
-> **AI exploration:** _"Help me troubleshoot [describe the checklist item that's
-> > failing and your current design state]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me troubleshoot
+> [describe the checklist item that's failing and your current design state]."_
 
 ---
 
-**Last Updated:** 2026-02-24
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-27
+
+Added to framework in v0.12.0.

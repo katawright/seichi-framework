@@ -1,3 +1,5 @@
+<!-- For guidance on completing this brief, see system-design/README.md -->
+
 # System Design Brief
 
 **Last Updated:** YYYY-MM-DD
@@ -27,50 +29,28 @@ DevOps Lead]
 
 ### 1.1 System Context
 
-**What to include:**
-
-- System boundaries (in scope vs. external)
-- Key actors (users, administrators, external systems)
-- Major integrations (third-party APIs, databases, services)
-
-_Use a simple context diagram (boxes and arrows). Focus on "what" not "how."_
+<!-- Minimal: Simple context sketch | Standard: C4 context diagram | Enterprise: Context + container diagrams -->
 
 [Describe your system context here]
 
----
-
 ### 1.2 System Architecture
 
-**What to include:**
-
-- Major components and their responsibilities
-- Component relationships and communication patterns
-- Deployment architecture (client, server, databases, caching, etc.)
-- Architectural style (microservices, monolith, serverless, etc.)
-
-_Use architecture diagrams (C4 model recommended). Show data flow between
-components._
+<!-- Minimal: Informal component notes | Standard: C4 container diagram with data flow | Enterprise: Formal architecture with stakeholder sign-off -->
 
 [Describe your system architecture here]
 
-> For examples, see
-> [System Design Reference: Design Brief Examples](system-design-reference.md#design-brief-examples).
+<!-- For examples, see ../system-design/system-design-reference.md#design-brief-examples -->
 
 ---
 
 ## 2. Architecture Decision Records (ADRs)
 
-ADRs document significant decisions across all aspects of the architecture —
-technology stack, data, API, security, infrastructure, and more. They are
-**separate files**, not embedded in this brief.
-
-> **Project artifact note:** `docs/adr/` is a project-level location you create
-> in your own repository when applying this framework. It is not a directory
-> shipped under `framework/`.
+<!-- ADRs are separate files stored in docs/adr/ — not embedded in this brief -->
+<!-- docs/adr/ is a project-level location you create in your own repository -->
 
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-XXX-short-description.md`
-- **Template:** [ADR Template](../templates/adr-template.md)
+- **Template:** [ADR Template](adr-template.md)
 - **Index:** `docs/adr/README.md`
 
 | ADR     | Title   | Category | Status   |
@@ -85,20 +65,17 @@ Data Architecture, API Architecture, etc.).
 
 ## 3. Technology Stack
 
-**What to include:**
+<!-- Minimal: Document briefly | Standard: Evaluate options, reference ADRs | Enterprise: Formal evaluation matrix -->
 
-- Frontend framework and language
-- Backend language and framework
-- Database and data storage
-- Caching layer
-- Authentication and authorization approach
-- Hosting and cloud platform
-- CI/CD tooling
-
-_For each selection, document the choice, justification, and reference the
-relevant ADR._
-
-[Describe your technology stack here]
+| Category     | Choice   | Justification   | ADR     |
+| ------------ | -------- | --------------- | ------- |
+| **Frontend** | [Choice] | [Justification] | ADR-XXX |
+| **Backend**  | [Choice] | [Justification] | ADR-XXX |
+| **Database** | [Choice] | [Justification] | ADR-XXX |
+| **Cache**    | [Choice] | [Justification] | ADR-XXX |
+| **Auth**     | [Choice] | [Justification] | ADR-XXX |
+| **Hosting**  | [Choice] | [Justification] | ADR-XXX |
+| **CI/CD**    | [Choice] | [Justification] | -       |
 
 ---
 
@@ -106,30 +83,13 @@ relevant ADR._
 
 ### 4.1 Data Model Overview
 
-**What to include:**
-
-- Key entities and relationships
-- Data ownership and boundaries
-
-_Use Entity-Relationship Diagrams or simple descriptions. Focus on business
-entities._
+<!-- Minimal: Key entities listed | Standard: ER diagram | Enterprise: Full data model with ownership -->
 
 [Describe your data model here]
 
----
-
 ### 4.2 Data Persistence Strategy
 
-**What to include:**
-
-- Database schema approach and data access patterns (ORM, raw SQL, query
-  builders)
-- Migration strategy
-- Backup and disaster recovery approach
-- Caching strategy
-
-_Document significant data decisions (database selection, schema approach) in
-ADRs._
+<!-- Minimal: Database choice noted | Standard: Schema approach + migration strategy | Enterprise: Full persistence strategy with DR -->
 
 [Describe your persistence strategy here]
 
@@ -145,10 +105,6 @@ ADRs._
 - **Authorization:** [RBAC / ABAC]
 - **Error Format:** [Standard error structure]
 - **Rate Limiting:** [Limits per user/endpoint]
-
-_Document significant API decisions (style, versioning strategy) in ADRs._
-
----
 
 ### 5.2 Integration Points
 
@@ -169,22 +125,15 @@ _Document significant API decisions (style, versioning strategy) in ADRs._
 - **Security Scanning:** [Tools]
 - **Secrets Management:** [Approach]
 
-_Document significant security decisions (auth mechanism, encryption approach,
-secrets management) in ADRs._
-
----
-
 ### 6.2 Compliance Requirements
 
 - **Regulations:** [GDPR / HIPAA / SOC 2 / etc.]
 - **Data Residency:** [Requirements]
 - **Audit Logging:** [Approach and retention]
 
----
-
 ### Threat Model (Standard and Enterprise tiers)
 
-Identify threats using STRIDE or equivalent methodology:
+<!-- Minimal: Skip | Standard: Key threats identified | Enterprise: Full STRIDE analysis -->
 
 | Asset / Surface  | Threat (STRIDE) | Likelihood | Impact | Mitigation        | NFR Ref |
 | ---------------- | --------------- | ---------- | ------ | ----------------- | ------- |
@@ -204,11 +153,6 @@ Link each mitigation to an NFR so it is traceable through Verification.
 - **Dashboards:** [Monitoring dashboards]
 - **Alerts:** [Alert tool and thresholds]
 
-_Document significant observability decisions (stack selection, retention
-policies) in ADRs._
-
----
-
 ### 7.2 Success Criteria Measurement
 
 | Success Criterion (from Initiation) | Metric   | Collection Method | Dashboard |
@@ -227,8 +171,6 @@ policies) in ADRs._
 - **Concurrency:** [Simultaneous users]
 - **Database Query Time:** [p95 target]
 
----
-
 ### 8.2 Scalability Approach
 
 - **Application Tier:** [Horizontal / vertical]
@@ -236,9 +178,6 @@ policies) in ADRs._
 - **Caching:** [Strategy and TTL]
 - **Database Scaling:** [Replicas / sharding]
 - **CDN:** [Static asset delivery]
-
-_Document significant scaling decisions (horizontal vs. vertical, sharding
-strategy) in ADRs._
 
 ---
 
@@ -253,23 +192,12 @@ strategy) in ADRs._
 
 ## 9. Increment Plan
 
-**What to include:**
-
-- Increment definitions with requirements mappings
-- Dependencies between increments
-- Estimated duration and effort ranges for each
-- Could Have evaluation approach
-
-_Start with Must Haves. Be realistic about size (typically 1-3 weeks each). Make
-Could Haves opportunistic._
+<!-- Minimal: Ordered task list | Standard: Sequenced increments with dependencies | Enterprise: Formal roadmap -->
 
 ### Increment 0: [Bootstrap / Discovery] (if applicable)
 
-> **Include Increment 0 when:** greenfield projects need infrastructure
-> bootstrap, or brownfield first AI-assisted projects need discovery and
-> documentation. Subsequent brownfield projects skip Increment 0 and begin at
-> Increment 1. See
-> [System Design Guide: Infrastructure Planning](system-design-guide.md#infrastructure-planning).
+<!-- Include when: greenfield needs bootstrap, or brownfield first AI-assisted needs discovery -->
+<!-- See ../system-design/README.md#infrastructure-planning -->
 
 **Goal:** [Establish infrastructure (greenfield) / Document existing system for
 AI context (brownfield first AI)]
@@ -279,8 +207,6 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 (estimate) **Dependencies:** None
 
 **Why first:** [Foundation must exist before feature delivery can begin]
-
----
 
 ### Increment 1: [Name] (Must Have)
 
@@ -292,8 +218,6 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 
 **Why first:** [Rationale for sequencing]
 
----
-
 ### Increment 2: [Name] ([Priority])
 
 **Goal:** [What this increment delivers]
@@ -302,10 +226,6 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 **Team:** [Composition] **Effort:** [X-Y person-weeks] (estimate)
 **Dependencies:** [Increment N]
 
-_Add more increments as needed._
-
----
-
 ### Could Have Requirements (Opportunistic)
 
 - [FR-X]: [Description]
@@ -313,13 +233,9 @@ _Add more increments as needed._
   - **Effort if easy:** [Duration]
   - **Skip if:** [Condition]
 
----
-
 ### Won't Have (Out of Scope)
 
 - [FR-X]: [Reason for exclusion]
-
----
 
 ### Increment Plan Summary
 
@@ -332,16 +248,11 @@ _Add more increments as needed._
 **Total Must Have:** [Duration range], [Effort range] **Total Project:**
 [Duration range], [Effort range]
 
-> For detailed increment plan examples, see
-> [System Design Reference: Increment Plan Example](system-design-reference.md#increment-plan-example).
-
----
+<!-- For examples, see ../system-design/system-design-reference.md#increment-plan-example -->
 
 ### Gate 2 Decision Package
 
-> **Purpose:** Provide executives and stakeholders with the information needed
-> to make the build/no-build decision. Record the decision using the
-> [Gate Decision Template](../templates/gate-decision-template.md).
+<!-- Record the decision using templates/gate-decision-template.md -->
 
 **Project Timeline:**
 
@@ -402,8 +313,7 @@ mitigation]
 
 **Decision Rationale:** [1-2 paragraphs]
 
-> For cost calculation examples and infrastructure cost templates, see
-> [System Design Reference: Gate 2 Cost Calculation](system-design-reference.md#gate-2-cost-calculation-example).
+<!-- For cost examples, see ../system-design/system-design-reference.md#gate-2-cost-calculation-example -->
 
 ---
 
@@ -426,10 +336,4 @@ Before proceeding to Gate 2, validate:
 - [ ] Conventions established (API patterns, data access, error handling)
 - [ ] Increment plan ready for detailed design work
 
----
-
-## Notes
-
-**Template Last Updated:** 2026-02-21
-
-Added to framework in v0.12.0.
+<!-- Template Last Updated: 2026-02-27 | Added in v0.12.0 -->

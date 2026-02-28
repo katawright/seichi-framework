@@ -781,8 +781,8 @@ project type.
 Stage-specific greenfield and brownfield guidance is documented in each stage's
 guide:
 
-- **[System Design Guide](system-design/system-design-guide.md)** —
-  Infrastructure planning outputs and bootstrap increment guidance
+- **[System Design Stage Guide](system-design/README.md)** — Infrastructure
+  planning outputs and bootstrap increment guidance
 - **[Requirements Stage Guide](requirements/README.md)** — Capturing existing
   system constraints for brownfield projects
 - **[Implementation Guide](implementation/implementation-guide.md)** — Bootstrap
