@@ -71,6 +71,8 @@ See `PROJECT_CONTEXT.md` for full details.
   - `README.md` files include `Framework Version` and `Last Updated`
   - Stage artifacts include `Last Updated` and version-introduction note
   - On each release, update framework version in all README files
+  - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every
+    modified framework file before finishing a change
 - Markdown formatting: follow `framework/STYLE_GUIDE.md`
 
 ## Workflow
