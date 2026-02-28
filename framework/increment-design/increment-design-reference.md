@@ -1,13 +1,31 @@
 # Increment Design Reference
 
-Optional deep-dive companion to the
-[Increment Design Guide](increment-design-guide.md),
-[Increment Design Brief Template](increment-design-brief-template.md), and
-[Increment Design Checklist](increment-design-checklist.md). Consult when you
-need specifics or a starting point for AI-assisted exploration.
+## Overview
 
-> The examples below illustrate two different project types. Adapt the level of
-> detail and applicable sections to your own technology stack.
+Optional deep-dive companion to the [Increment Design Stage Guide](README.md),
+[Increment Design Brief Template](../templates/increment-design-brief-template.md),
+and [Increment Design Checklist](increment-design-checklist.md). Consult when
+you need specifics or a starting point for AI-assisted exploration.
+
+### Purpose
+
+- Provide detailed component design examples across backend and frontend stacks
+- Supply interface specification formats for REST APIs, React components, and
+  other contract types
+- Document testing strategy examples at unit, integration, and acceptance levels
+- Supply checklist troubleshooting when items fail
+
+### How to Use This Reference
+
+1. Start with the [**Increment Design Stage Guide**](README.md) for workflow and
+   rationale
+2. Browse [**Component Design Examples**](#component-design-examples) and
+   [**Interface Specification Examples**](#interface-specification-examples)
+   when filling out the brief
+3. Use [**Testing Strategy Examples**](#testing-strategy-examples) to structure
+   your test plan
+4. Consult [**Checklist Troubleshooting**](#checklist-troubleshooting) when
+   checklist items fail
 
 ---
 
@@ -209,6 +227,7 @@ These formats can be adapted similarly:
 2. Select "Engineering" role filter -> only engineers shown
 3. Click a team member row -> navigates to member detail view
 
+<!-- prettier-ignore -->
 > **AI exploration:** _"Generate a detailed design for [describe your increment scope, requirements, and system architecture]."_
 
 ---
@@ -229,10 +248,13 @@ These formats can be adapted similarly:
   patterns
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
+<!-- prettier-ignore -->
 > **AI exploration:** _"Help me troubleshoot [describe the checklist item that's failing and your current design state]."_
 
 ---
 
-**Last Updated:** 2026-02-18
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-27
+
+Added to framework in v0.12.0.
