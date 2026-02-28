@@ -4,31 +4,10 @@
 
 ## Right-Sizing This Brief
 
-Choose your tier before filling out the brief. Each section below includes
-inline hints for what's expected at each level.
+<!-- See requirements/README.md#right-sizing-requirements for the full
+     practice table and expansion triggers. -->
 
-| Practice                        | Minimal                     | Standard                                     | Enterprise                                                          |
-| ------------------------------- | --------------------------- | -------------------------------------------- | ------------------------------------------------------------------- |
-| **Functional requirements**     | Brief behavior descriptions | Numbered FRs with testable statements        | Formal FRs with traceability matrix                                 |
-| **Acceptance criteria**         | Informal "done" definition  | Given/When/Then for each FR                  | Comprehensive ACs with edge cases documented                        |
-| **NFRs**                        | Note key quality concerns   | Documented NFRs including observability      | Full NFR catalog with SLOs and compliance mapping                   |
-| **Prioritization**              | Informal must/nice-to-have  | MoSCoW classification for all requirements   | MoSCoW baseline plus weighted scoring with formal stakeholder input |
-| **Edge cases/data constraints** | Acknowledge known issues    | Document top edge cases and data constraints | Comprehensive edge case analysis, data mapping                      |
-| **Stakeholder review**          | Informal check-in           | Alignment review with engineering            | Formal review cycles with sign-off                                  |
-| **Compliance**                  | Basic awareness             | Documented compliance requirements           | Full compliance matrix with audit trail                             |
-
-**Expand Requirements only when needed:**
-
-- **Regulated / compliance-heavy:** Add control requirements, compliance
-  sign-off
-- **Complex data migrations:** Add data mapping, transformation rules
-- **Multi-team interface work:** Add interface contracts, cross-team SLAs
-- **High availability / performance:** Add detailed SLOs, fault tolerance specs
-- **Security-sensitive:** Add threat model, audit requirements
-
-Otherwise, keep Requirements concise and move to System Design. For full tier
-definitions and choosing criteria, see the
-[Right-Sizing Guide](../right-sizing-guide.md).
+**Tier chosen:** [Minimal / Standard / Enterprise]
 
 ---
 

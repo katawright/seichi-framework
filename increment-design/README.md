@@ -27,14 +27,14 @@ how will we verify it works?"_
 Provide enough detail for engineers to implement without guessing. Reference
 architecture from System Design.
 
+### Starting Point
+
+A completed System Design with architecture, technology decisions, and increment
+plan. The current increment should be identified from the increment plan, and
+foundational conventions established (coding patterns, error handling,
+technology-specific conventions).
+
 ### How to Use This Guide
-
-**To begin, you need:**
-
-- Completed System Design (architecture, technology decisions, increment plan)
-- Current increment identified from increment plan
-- Foundational conventions established (coding patterns, error handling,
-  technology-specific conventions)
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Increment Design**](#right-sizing-increment-design) to

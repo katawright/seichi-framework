@@ -32,6 +32,12 @@ For the full stage definition (purpose, roles, inputs/outputs, entry/exit
 criteria, and gate details), see
 [Framework Stages: Requirements](../framework-stages.md#stage-2-requirements).
 
+### Starting Point
+
+A completed Initiation Brief with Gate 1 approval to proceed. The brief provides
+the business case, success criteria, scope boundaries, and constraints that
+Requirements will convert into testable specifications.
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level

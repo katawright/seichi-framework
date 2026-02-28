@@ -2,22 +2,27 @@
 
 ## Overview
 
-Framework-wide concepts that apply across all stages — stage definitions,
-checkpoint taxonomy, AI assistance guidance, right-sizing, and governance.
+Cross-cutting concepts that apply across all stages — design principles, roles,
+governance, greenfield/brownfield adaptation, and pointers to the authoritative
+references for stages, checkpoints, measurement, AI assistance, and
+right-sizing.
 
-### Why a Comprehensive Reference
+### Why This Guide
 
-Individual stage guides cover their own scope, but cross-cutting concepts —
-checkpoints, the measurement throughline, roles, right-sizing,
-greenfield/brownfield adaptation — need a single authoritative home to avoid
-duplication and drift.
+Individual stage guides cover their own scope. Dedicated references cover stages
+([framework-stages.md](framework-stages.md)), AI assistance
+([framework-ai-assistance.md](framework-ai-assistance.md)), and right-sizing
+([right-sizing-guide.md](right-sizing-guide.md)). This guide is the hub for
+concepts that span multiple documents: roles, governance, MoSCoW,
+greenfield/brownfield adaptation, compliance, and key terms.
 
 ### Purpose
 
 - Define the framework's design principles and key benefits
-- Explain cross-stage concepts (checkpoints, measurement, MoSCoW, roles)
+- Explain cross-stage concepts (MoSCoW, roles, governance, compliance)
 - Document greenfield vs. brownfield adaptation
-- Provide right-sizing and governance guidance
+- Link to authoritative references for stages, checkpoints, measurement, AI
+  assistance, and right-sizing
 
 ### Key Principle
 
@@ -146,267 +151,73 @@ framework's flexibility. It is planned for future release.
 
 This guide covers the major concepts that structure the framework:
 
-**[SDLC Stages](#sdlc-stages)** — The framework defines stages that work for any
-methodology (agile, waterfall, hybrid). Stages follow different execution
-patterns: foundational (once per project), iterative (per deliverable
-increment), and continuous (ongoing).
+**[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
+(foundational, iterative, continuous). Full reference:
+[framework-stages.md](framework-stages.md).
 
-**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five types of checkpoints
-ensure quality and alignment: Gates (investment decisions), Quality Checkpoints
-(standards verification), Deployment Approvals (release authorization),
-Alignment Reviews (stakeholder sync), and Compliance Approvals (regulatory
-sign-offs).
+**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five checkpoint types ensuring
+quality and alignment. Full reference:
+[framework-stages.md § Checkpoints](framework-stages.md#checkpoints).
 
 **[Measurement Throughline](#measurement-throughline)** — Measurable success
-criteria established in the Initiation stage flow through all subsequent stages,
-ensuring goals actively guide development and enable data-driven validation.
+criteria flowing from Initiation through all stages. Full reference:
+[framework-stages.md § Measurement](framework-stages.md#measurement-throughline).
 
-**[MoSCoW Prioritization](#moscow-prioritization)** — A coarse prioritization
-method (Must/Should/Could/Won't Have) used during Requirements to organize
-features before increment boundaries are defined.
+**[MoSCoW Prioritization](#moscow-prioritization)** — Coarse prioritization
+(Must/Should/Could/Won't Have) used during Requirements before increment
+boundaries are defined.
 
 **[Greenfield vs. Brownfield Projects](#greenfield-vs-brownfield-projects)** —
-How the framework adapts for new projects built from scratch versus extensions
-to existing systems, including infrastructure setup and constraint management.
+How the framework adapts for new projects versus extensions to existing systems.
 
 **[Right-Sizing Your Process](#right-sizing-your-process)** — Match process
-rigor to project risk (Minimal, Standard, Enterprise) and team size. Each stage
-guide includes a right-sizing table with expansion triggers. See the
-[Right-Sizing Guide](right-sizing-guide.md) for the full model.
+rigor to project risk and team size. Full reference:
+[right-sizing-guide.md](right-sizing-guide.md).
 
-**[AI Assistance Overview](#ai-assistance-overview)** — Guidance for how
-independently AI can operate at each stage before requiring human approval,
-balanced against verifiability and risk.
+**[AI Assistance Overview](#ai-assistance-overview)** — Stage-by-stage gate
+requirements and AI autonomy tiers. Full reference:
+[framework-ai-assistance.md](framework-ai-assistance.md).
 
-**[Roles and Responsibilities](#roles-and-responsibilities)** — A cross-stage
-RACI matrix showing who is Responsible, Accountable, Consulted, and Informed for
-each stage and gate decision.
+**[Roles and Responsibilities](#roles-and-responsibilities)** — Cross-stage RACI
+matrix for stages and gate decisions.
 
 **[Architecture Governance](#architecture-governance)** — Tiered governance
-models for architecture decisions, from self-review (Minimal) to formal
-architecture council (Enterprise).
+models from self-review (Minimal) to architecture council (Enterprise).
 
 **[Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)**
-— Key compliance considerations for AI-assisted development, including IP, data
-privacy, audit trails, and emerging AI regulation.
+— IP, data privacy, audit trails, and emerging AI regulation considerations.
 
 ---
 
 ## SDLC Stages
 
-The framework defines stages with different execution patterns: **foundational**
-(execute once per project), **iterative** (repeat per deliverable increment),
-and **continuous** (ongoing). An "increment" is a discrete, deliverable chunk of
-work — map it to your methodology's terminology (epic, feature, sprint,
-milestone, etc.).
-
-This section provides a high-level overview. For complete stage definitions
-including inputs, outputs, entry/exit criteria, and handoffs, see the
-[AI-Assisted SDLC Stages](framework-stages.md) document.
-
-### Execution Patterns
-
-**Foundational stages** execute once per project but can be revisited when
-significant new information emerges:
-
-- **Initiation** — project vision and business case
-- **Requirements** — what to build
-- **System Design** — system architecture
-
-**Iterative stages** repeat for each deliverable increment:
-
-- **Increment Design** — detailed design for the current increment
-- **Implementation** — build the increment
-- **Verification** — test and validate the increment
-- **Deployment** — release the increment
-
-**Continuous stages** run ongoing after first deployment:
-
-- **Support** — monitor, maintain, enhance
-
-### Stage Overview
-
-<!-- Keep this table in sync with README.md and framework-stages.md -->
-
-| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
-| --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
-| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                                                   |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
-| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach                                             |
-| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
-| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
-| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
-| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                                                      |
-| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                                                             |
-
-> **Guide structure:** Each stage guide follows a consistent structure: Quick
-> Reference, What Is [Stage], AI Assistance, Right-Sizing, Workflow, Guidance
-> (stage-specific subsections), When to Revisit, Related Documents, and Notes.
-
-**Key principle: Design plans, Implementation and Verification execute**
-
-The Increment Design stage plans BOTH how to build the increment AND how to test
-it. Implementation and Verification execute those plans:
-
-- **Increment Design → Implementation:** Architecture and component designs
-  guide developers in writing code
-- **Increment Design → Verification:** Test strategy guides QA in validating the
-  code
-
-This ensures testability is designed in from the start, not retrofitted after
-implementation. Test planning happens when architectural decisions are made,
-preventing costly rework.
-
-### Terminology: Increments
-
-The framework uses **"increment"** as a neutral term for a discrete, deliverable
-chunk of work. Map it to your methodology:
-
-- **Agile/Scrum:** Epic, Feature, or Sprint deliverable
-- **SAFe:** Feature or Capability
-- **Kanban:** Work Item or Deliverable
-- **Traditional PM:** Milestone or Work Package
-- **Lean/XP:** Story collection or Release increment
-
-### Stage Flow
-
-**Linear (waterfall-style):**
-
-```
-Initiation → Requirements → System Design →
-Increment Design → Implementation → Verification →
-Deployment → Support
-```
-
-**Iterative (agile-style):**
-
-```
-Initiation (once)
-  → Requirements (once)
-    → System Design - foundational (once)
-      → [Per increment: Increment Design →
-         Implementation → Verification → Deployment]
-        → Support (continuous)
-```
-
-**Feedback loops:**
-
-- Support → Increment Design (scoped enhancements within current boundaries)
-- Support → Requirements (user feedback)
-- Support → System Design (performance issues)
-- Support → Implementation (low-risk patches with documented checkpoint
-  decision)
-- Verification → Implementation (test failures)
-- Verification → Increment Design (design flaws)
-- Support → Initiation (only when objectives/business case need revision)
+The framework defines eight stages across three execution patterns —
+foundational (once per project), iterative (per increment), and continuous
+(ongoing). For complete stage definitions including inputs, outputs, entry/exit
+criteria, stage flow diagrams, and handoffs, see the
+[AI-Assisted SDLC Stages](framework-stages.md) reference.
 
 ---
 
 ## Checkpoint Taxonomy
 
-Throughout the SDLC, checkpoints ensure quality, alignment, and sound
-decision-making. The framework defines five types:
-
-### 1. Gates (Investment Decisions)
-
-**Purpose:** Decide whether to continue investing **Outcome:** Proceed / Pivot /
-Stop **Real stop option:** Yes
-
-- **Gate 1** (end of Initiation): Approve brief and fund Requirements work?
-- **Gate 2** (end of Requirements + System Design): Commit to building this?
-
-After Gate 2, the project is funded and team committed. Later checkpoints focus
-on "when/how" rather than "if."
-
-Record gate decisions using the
-[Gate Decision Template](templates/gate-decision-template.md).
-
-### 2. Quality Checkpoints
-
-**Purpose:** Ensure standards met before proceeding **Outcome:** Ready / Not
-Ready (remediate and retry) **Real stop option:** No
-
-Examples: code review, test coverage thresholds, security scan pass,
-documentation completeness.
-
-### 3. Deployment Approvals
-
-**Purpose:** Authorize deployment to an environment **Outcome:** Deploy / Hold /
-Rollback **Real stop option:** No (timing, not cancellation)
-
-Examples: staging approval, production go/no-go, rollout gates (10% → 50% →
-100%).
-
-Record deployment approvals using the
-[Checkpoint Decision Template](templates/checkpoint-decision-template.md).
-
-### 4. Alignment Reviews
-
-**Purpose:** Synchronize stakeholders, gather feedback **Outcome:** Aligned /
-Adjustments Needed **Real stop option:** No
-
-Examples: design review, sprint review/demo, architecture review, requirements
-walkthrough.
-
-### 5. Compliance Approvals
-
-**Purpose:** Required sign-offs from legal, security, or regulatory teams
-**Outcome:** Approved / Remediation Required **Real stop option:** Rarely
-(usually remediate)
-
-Examples: legal review, security review, accessibility compliance, data privacy
-assessment.
-
-**Human validation of AI output is required at all checkpoint types.** See the
-[AI Assistance Scorecard](framework-ai-assistance.md) for stage-specific
-guidance.
-
-### Checkpoint Decision Rights
-
-The table below summarizes who approves each checkpoint type, what evidence is
-required, and where the decision is recorded.
-
-| Checkpoint Type     | Approver             | Required Evidence                      | Decision Record              |
-| ------------------- | -------------------- | -------------------------------------- | ---------------------------- |
-| Gate (1 & 2)        | Executive (A)        | Stage brief, risk assessment           | Gate Decision Template       |
-| Quality Checkpoint  | Tech lead / QA (A)   | Code review, test results, CI          | PR history, CI logs          |
-| Deployment Approval | DevOps / Eng (A)     | Deployment checklist, UAT              | Checkpoint Decision Template |
-| Alignment Review    | PM/BA or Arch (A)    | Design artifacts, stakeholder sign-off | ADR or meeting notes         |
-| Compliance Approval | Legal / Security (A) | Audit artifacts, scan results          | Compliance record / ADR      |
+The framework defines five checkpoint types — Gates, Quality Checkpoints,
+Deployment Approvals, Alignment Reviews, and Compliance Approvals — each with
+distinct decision rights, required evidence, and decision records. For the full
+taxonomy including decision-rights matrix, see the
+[AI-Assisted SDLC Stages § Checkpoints](framework-stages.md#checkpoints)
+reference.
 
 ---
 
 ## Measurement Throughline
 
-Measurable success criteria established in Initiation flow through all stages,
-ensuring goals actively guide development.
-
-| Stage                | How Measurement Is Used                                                                                                       |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Initiation**       | Define objectives with measurable success criteria; set targets                                                               |
-| **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
-| **System Design**    | Design or assess analytics infrastructure, dashboards, monitoring, data collection                                            |
-| **Increment Design** | Plan measurement instrumentation for the increment                                                                            |
-| **Implementation**   | Implement logging, metrics collection, instrumentation                                                                        |
-| **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
-| **Deployment**       | Deploy with monitoring configured; capture baseline measurements                                                              |
-| **Support**          | Monitor success criteria in production; validate objectives achieved; report progress                                         |
-
-**Example business KPIs flowing through the framework:**
-
-| KPI                   | Initiation Target          | Support Measurement            |
-| --------------------- | -------------------------- | ------------------------------ |
-| Time-to-market        | "First release in 8 weeks" | Actual release date vs. target |
-| Customer satisfaction | "NPS > 40 within 90 days"  | NPS tracked via in-app survey  |
-| Defect escape rate    | "< 5 prod bugs/month"      | Production incident count      |
-| Cost per feature      | "< $15K average"           | Actual hours × blended rate    |
-
-**The framework is agnostic to goal-setting methodology.** Use OKRs, SMART
-goals, KPIs, Balanced Scorecard, or simple success metrics — whatever fits your
-organization.
-
-**Minimum requirement:** At least one measurable success criterion per project,
-with baseline (current state) and target (desired state).
+Measurable success criteria defined during Initiation flow through every
+subsequent stage, ensuring goals actively guide development and enable
+data-driven validation. For the stage-by-stage breakdown and example KPIs, see
+the
+[AI-Assisted SDLC Stages § Measurement Throughline](framework-stages.md#measurement-throughline)
+reference.
 
 ---
 
@@ -445,32 +256,10 @@ maps MoSCoW priorities to specific increments:
 
 ## AI Assistance Overview
 
-AI assistance levels are bounded and controlled with explicit human gates.
-"Assistance" means how independently AI can operate before requiring human
-approval — not uncontrolled operation.
-
-**Core principle:** Increase AI assistance as verifiability increases; tighten
-human gates as risk increases.
-
-| #   | Stage            | Required Gates                     | Best Uses                                                |
-| --- | ---------------- | ---------------------------------- | -------------------------------------------------------- |
-| 1   | Initiation       | Human approval                     | Draft briefs, risks, options, sizing                     |
-| 2   | Requirements     | Human approval                     | Goals → stories + ACs, ambiguity detection, NFR prompts  |
-| 3   | System Design    | Specialized review                 | Propose or assess architectures, ADR drafts, slice plans |
-| 4   | Increment Design | Specialized review                 | Detailed design, test strategy, component specs          |
-| 5   | Implementation   | CI validation + human approval     | Generate/refactor code, keep PR-sized slices             |
-| 6   | Verification     | CI validation + human spot-check   | Generate tests, test matrices, expand coverage           |
-| 7   | Deployment       | Human execution required + runbook | Draft release steps, rollback plans; humans execute      |
-| 8   | Support          | Human approval                     | Triage, incident comms, runbooks, dependency updates     |
-
-Teams also choose an **AI autonomy tier** — Human-Led, Collaborative, or AI-Led
-— that adjusts who drives the process. Gate requirements always apply regardless
-of tier; the autonomy tier adjusts whether humans set the agenda (Collaborative)
-or AI drives it proactively (AI-Led). See the
-[AI Assistance Scorecard: AI Autonomy Spectrum](framework-ai-assistance.md#ai-autonomy-spectrum)
-for tier definitions and guidance.
-
-For full gate definitions and operational guidance, see the
+AI assistance levels are bounded and controlled with explicit human gates at
+every stage. Teams also choose an AI autonomy tier (Human-Led, Collaborative, or
+AI-Led) that adjusts who drives the process. For stage-by-stage gate
+requirements, the autonomy spectrum, and operational guidance, see the
 [AI Assistance Scorecard](framework-ai-assistance.md).
 
 ---
@@ -792,45 +581,12 @@ guide:
 
 ## Right-Sizing Your Process
 
-Right-sizing has two independent dimensions:
-
-- **Project risk tier** determines _what_ practices you adopt — Minimal (low
-  risk), Standard (moderate), or Enterprise (high). Each stage guide includes a
-  tier table showing exactly what each level involves.
-- **Team size** determines _how formally_ you apply those practices — a solo
-  developer on a Standard-tier project still does code review, but it might be a
-  self-review checklist rather than a pull request with two approvers.
-
-For the full two-dimension model, tier definitions, and choosing criteria, see
-the [Right-Sizing Guide](right-sizing-guide.md).
-
-The framework's eight stages remain the same regardless of risk tier or team
-size. What changes is the level of formality, documentation detail, and
-coordination mechanisms.
-
-**Solo developer:**
-
-- You fulfill all roles—that's expected
-- Lighter documentation is appropriate (brief notes vs. formal docs, mental
-  ADRs)
-- Gates become self-checkpoints or quick stakeholder check-ins
-- **Don't skip measurement**—success criteria are still your north star
-
-**Small teams (2-5):**
-
-- Role overlap is natural and expected
-- Keep process lightweight; favor communication over documentation
-
-**Large teams (6+):**
-
-- Parallel increments require explicit coordination:
-  - Establish shared architecture authority to resolve cross-team conflicts
-  - Manage cross-team dependencies in increment planning
-  - Plan integration testing and deployment orchestration
-- More formal gates and handoffs maintain alignment
-
-**Key principle:** Stages define _what_ work to do. Team size determines _how
-formal_ and _how coordinated_.
+Right-sizing has two independent dimensions: **project risk tier** (Minimal,
+Standard, Enterprise) determines _what_ practices you adopt, while **team size**
+determines _how formally_ you apply them. The framework's eight stages remain
+the same regardless — what changes is formality, documentation detail, and
+coordination. For the full model, tier definitions, team-size guidance, and
+choosing criteria, see the [Right-Sizing Guide](right-sizing-guide.md).
 
 ---
 
@@ -934,6 +690,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.9.0.

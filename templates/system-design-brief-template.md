@@ -315,25 +315,4 @@ mitigation]
 
 <!-- For cost examples, see ../system-design/system-design-reference.md#gate-2-cost-calculation-example -->
 
----
-
-## Checklist
-
-Before proceeding to Gate 2, validate:
-
-- [ ] System architecture addresses all requirements
-- [ ] Technology stack justified with ADRs
-- [ ] Increment plan created with boundaries
-- [ ] Security and compliance addressed
-- [ ] Observability and monitoring designed
-- [ ] Performance and scalability defined
-- [ ] Infrastructure plan complete
-- [ ] Alignment Review conducted and approved
-
-**Handoff to Increment Design:**
-
-- [ ] Architecture documented for increment-level design
-- [ ] Conventions established (API patterns, data access, error handling)
-- [ ] Increment plan ready for detailed design work
-
 <!-- Template Last Updated: 2026-02-27 | Added in v0.12.0 -->

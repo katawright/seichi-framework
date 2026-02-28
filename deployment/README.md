@@ -27,11 +27,13 @@ and capturing monitoring baselines for ongoing Support.
 Every deployment must be reversible and observable. If you can't roll back
 quickly and you can't see what's happening, you aren't ready to deploy.
 
-### How to Use This Guide
+### Starting Point
 
-**To begin, you need:** a verified increment (all tests passing), UAT sign-off
-from business stakeholders, production readiness checklist passed, and test
-results and known issues documented.
+A verified increment with all tests passing, UAT sign-off from business
+stakeholders, production readiness checklist passed, and test results and known
+issues documented.
+
+### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
