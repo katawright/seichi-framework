@@ -15,6 +15,10 @@ For detailed setup guidance, see the
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
+> Not every item applies at every scale — mark items N/A with justification when
+> they don't fit your project's risk tier. See
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
 ## Greenfield: New Infrastructure
 
 1. [ ] **CI/CD pipeline operational** (build, test, package, deploy stages
