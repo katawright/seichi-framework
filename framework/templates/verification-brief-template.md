@@ -1,3 +1,5 @@
+<!-- For guidance on completing this brief, see ../verification/README.md -->
+
 # Verification Brief: [Increment Name]
 
 **Last Updated:** YYYY-MM-DD
@@ -41,7 +43,7 @@ being tested]
 
 ## Cycle Context
 
-_For Cycle 2 and beyond. Delete this section for Cycle 1._
+<!-- For Cycle 2 and beyond. Delete this section for Cycle 1. -->
 
 **Prior cycle brief:** [Link to previous cycle's completed brief]
 
@@ -116,8 +118,8 @@ section 5]
 - NFR validation: [List NFRs and whether met]
 - Evidence: [Link to load test results]
 
-> For detailed performance test result tables, see
-> [Verification Reference: Performance Testing](verification-reference.md#performance-testing).
+<!-- For detailed performance test result tables, see
+     ../verification/verification-reference.md#performance-testing -->
 
 ### Security Tests
 
@@ -126,8 +128,8 @@ section 5]
 - Accepted risks: [List with justification]
 - Evidence: [Link to scan report]
 
-> For vulnerability scan result tables, see
-> [Verification Reference: Security Testing](verification-reference.md#security-testing).
+<!-- For vulnerability scan result tables, see
+     ../verification/verification-reference.md#security-testing -->
 
 ### Accessibility Tests
 
@@ -137,15 +139,12 @@ section 5]
 
 ### Monitoring and Instrumentation
 
-- [ ] Logging captures key events (no PII)
-- [ ] Metrics collection working
-- [ ] Dashboards display correctly
-- [ ] Alerts trigger as expected
-- [ ] Success criteria measurement working
 - **Status:** [✅ Passed / ⚠️ Issues / ❌ Failed]
+- Issues: [List any issues]
+- Evidence: [Link to validation report]
 
-> For detailed instrumentation validation checklists, see
-> [Verification Reference: Monitoring ](verification-reference.md#monitoring-and-instrumentation-validation).
+<!-- For detailed instrumentation validation checklists, see
+     ../verification/verification-reference.md#monitoring-and-instrumentation-validation -->
 
 ---
 
@@ -177,15 +176,15 @@ section 5]
 - All critical/high: [Fixed and verified]
 - Deferred: [X defects — list with justification]
 
-> For defect tracking table template and severity definitions, see
-> [Verification Reference: Defect Management](verification-reference.md#defect-management).
+<!-- For defect tracking table template and severity definitions, see
+     ../verification/verification-reference.md#defect-management -->
 
 ---
 
 ## Production Readiness
 
-> For structuring the go/no-go decision, use the
-> [Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
+<!-- For structuring the go/no-go decision, use the
+     Checkpoint Decision Template (checkpoint-decision-template.md) -->
 
 **Overall:** [✅ Ready / ⚠️ Ready with conditions / ❌ Not Ready]
 
@@ -211,21 +210,9 @@ section 5]
 
 ## Handoff to Deployment
 
-- [ ] All tests passed or issues documented/deferred
-- [ ] UAT approved by business stakeholders
-- [ ] Rollback plan documented and tested
-- [ ] Monitoring and alerting configured
-- [ ] Stakeholders notified of deployment plan
-
 **Deployment notes:**
 
 - [Important info for deployment team]
-
-**Post-deployment validation:**
-
-- [ ] Health check endpoint returns 200
-- [ ] Smoke test suite passes
-- [ ] Success criteria measurements available
 
 ---
 
@@ -254,6 +241,4 @@ section 5]
 
 ---
 
-**Template Last Updated:** 2026-02-18
-
-_Added to framework in v0.6.0_
+<!-- Template Last Updated: 2026-02-27 | Added in v0.6.0 -->

@@ -531,7 +531,7 @@ right thing).
 ### Outputs
 
 - **Test Results** - All test types with pass/fail status (see
-  [Verification Brief Template](verification/verification-brief-template.md))
+  [Verification Brief Template](templates/verification-brief-template.md))
 - Defect reports and resolution status
 - UAT sign-off from business stakeholders
 - Performance test results

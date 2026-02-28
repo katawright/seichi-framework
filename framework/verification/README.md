@@ -1,26 +1,121 @@
 # AI-Assisted SDLC: Verification Stage
 
-**Stage:** 6 of 8 (Verification)
+## Overview
 
-**Primary Audience:** QA Engineers, Engineers
+Practical guidance for validating that implemented increments work correctly and
+meet business needs before deployment.
 
-**Execution Pattern:** Iterative (per increment)
+### Why Verification
+
+Verification answers two critical questions:
+
+1. **Verification:** Did we build it correctly? (Meets technical specifications)
+2. **Validation:** Did we build the right thing? (Meets business needs)
+
+This stage encompasses both — testing technical correctness AND validating
+business value before deployment.
+
+Verification **executes and refines** the test strategy planned during Increment
+Design. The Increment Design stage identifies what to test, coverage targets,
+and test approaches. Verification executes those tests, adapts based on
+implementation realities, and validates acceptance criteria.
+
+**Increment Design plans → Verification executes → Deployment deploys**
+
+### Purpose
+
+- Execute the test strategy planned in Increment Design to validate implemented
+  increments
+- Verify all acceptance criteria through comprehensive testing
+- Obtain UAT approval from business stakeholders
+- Confirm instrumentation and monitoring work correctly
+- Assess production readiness and make the go/no-go decision
+- Document test results and defect resolutions
+
+### Key Principle
+
+AI accelerates every testing activity; humans own the go/no-go decision.
+
+### How to Use This Guide
+
+**To begin, you need:** working code from Implementation stage, unit tests
+passing with coverage meeting team threshold (default: 80% line coverage — see
+implementation brief for project-specific target), code review approvals,
+requirements with acceptance criteria, and implementation brief with notes.
+
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+2. Read [**Right-Sizing Verification**](#right-sizing-verification) to match
+   effort to project complexity
+3. Execute the [**Verification Workflow**](#verification-workflow) — plan tests,
+   execute tests, conduct UAT, assess readiness
+4. Complete the [Verification Checklist](verification-checklist.md) (60-90
+   second readiness review)
+5. Complete the
+   [Verification Brief](../templates/verification-brief-template.md) with test
+   results documented
 
 For cross-cutting framework concepts, see
 [Framework Guide](../framework-guide.md).
 
-## Starting Point
+### Verification Workflow
 
-**To begin, you need:**
+AI assists at every step; humans maintain ownership through review and approval
+gates.
 
-- Working code from Implementation stage
-- Unit tests passing with coverage meeting team threshold (default: 80% line
-  coverage — see implementation brief for project-specific target)
-- Code review approvals
-- Requirements with acceptance criteria
-- Implementation brief with notes
+```
+-- PHASE 1: TEST PLANNING --
+   (builds on Increment Design stage test strategy)
+
+ 1. Review requirements and acceptance criteria
+ 2. Review test strategy from Increment Design stage
+    (increment-design-brief section 5)
+ 3. Refine test strategy based on implementation
+    [Human approves strategy]
+ 4. Prepare test environment and data
+
+-- PHASE 2: TEST EXECUTION --
+
+ 5. Execute integration tests [CI gate]
+ 6. Execute functional tests [Gate: all ACs]
+ 7. Execute performance tests [Gate: meets NFRs]
+ 8. Execute security tests [Gate: no critical vulns]
+ 9. Track and resolve defects
+    [Return to Implementation if needed]
+
+-- PHASE 3: ACCEPTANCE AND READINESS --
+
+ 10. Conduct UAT [Business stakeholder sign-off]
+ 11. Validate instrumentation and monitoring
+ 12. Assess production readiness [Go/no-go]
+ 13. Complete verification brief
+
+HANDOFF TO DEPLOYMENT
+```
+
+**When verification fails:** If the go/no-go decision (step 12) results in
+**no-go**, work returns to the Implementation stage for defect fixes. Once fixes
+are complete, a **new verification cycle** begins — start a fresh brief from the
+template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
+brief. This preserves each cycle's results as a clean historical record and
+makes it easy to see what changed between cycles. The new brief's Cycle Context
+section links to the prior brief and summarizes what was fixed.
+
+---
 
 ## How AI Helps
+
+### AI Autonomy Spectrum
+
+Match AI's role to your team's autonomy comfort level. Gate requirements always
+apply regardless of tier. See the
+[AI Assistance Scorecard: AI Autonomy Spectrum](../framework-ai-assistance.md#ai-autonomy-spectrum)
+for full tier definitions.
+
+| Human-Led                                | Collaborative                                         | AI-Led                                                          |
+| ---------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
+| Engineer writes tests; AI suggests cases | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent |
+
+### AI Assistance Patterns
 
 - **Test case generation:** Describe your acceptance criteria — AI generates
   comprehensive test cases covering happy paths, edge cases, and error scenarios
@@ -31,40 +126,136 @@ For cross-cutting framework concepts, see
 - **Checklist review:** AI walks through the verification checklist and flags
   gaps before the go/no-go decision
 
+> **Required gates:** CI validation + human spot-check — Tests are
+> self-verifying, so AI can iterate until objective gates pass; humans validate
+> test quality and coverage intent.
+
 For assistance level details, see the
 [AI Assistance Scorecard](../framework-ai-assistance.md).
 
-## Artifacts
+---
 
-| File                             | Description                                            |
-| -------------------------------- | ------------------------------------------------------ |
-| `verification-brief-template.md` | Template for test planning and results                 |
-| `verification-guide.md`          | Stage-specific guidance and rationale                  |
-| `verification-checklist.md`      | 60-90 second readiness checklist                       |
-| `verification-reference.md`      | Detailed practices and examples for deeper exploration |
+## Right-Sizing Verification
 
-## Suggested Workflow
+Not every project needs a full test suite across all test types. Match your
+Verification effort to your project's risk tier.
 
-1. Review requirements and acceptance criteria
-2. Review test strategy from Increment Design brief
-3. Refine test strategy and coverage approach for this cycle
-4. Prepare test environment and data
-5. Execute integration tests
-6. Execute functional tests against acceptance criteria
-7. Execute performance tests against NFRs
-8. Execute security tests
-9. Track and resolve defects
-10. Conduct UAT with business stakeholders
-11. Validate instrumentation and monitoring
-12. Assess production readiness (go/no-go) using the
-    [Checkpoint Decision Template](../templates/checkpoint-decision-template.md)
-13. Run `verification-checklist.md`
-14. Complete verification brief
+| Test Type               | Minimal                           | Standard                                   | Enterprise                                         |
+| ----------------------- | --------------------------------- | ------------------------------------------ | -------------------------------------------------- |
+| **Integration tests**   | Smoke tests for critical paths    | Integration tests for key workflows        | Comprehensive integration coverage                 |
+| **Functional tests**    | Manual testing against specs      | Automated functional tests, CI enforcement | Full automated suite with traceability to specs    |
+| **UAT**                 | Informal stakeholder demo         | Structured UAT with acceptance criteria    | Formal UAT sign-off with documented results        |
+| **Performance tests**   | None or basic load check          | Performance baseline, key scenario testing | Load, stress, and soak testing with SLO validation |
+| **Security tests**      | Basic vulnerability awareness     | Dependency scanning, OWASP top 10 review   | Penetration testing, SAST/DAST, compliance checks  |
+| **Accessibility tests** | Basic usability check             | WCAG conformance for key flows             | Full WCAG audit, assistive technology testing      |
+| **Regression tests**    | Manual check of existing features | Automated regression suite in CI           | Comprehensive regression with risk-based selection |
+| **Go/no-go decision**   | Informal team agreement           | Checklist-based go/no-go meeting           | Formal gate with stakeholder sign-off              |
 
-If verification fails (step 12 results in no-go), work returns to Implementation
-for defect fixes. When fixes are complete, start a new verification cycle with a
-**fresh brief** — do not overwrite the previous cycle's brief, so each cycle's
-results are preserved as a clean historical record.
+Expand Verification only when needed:
+
+- **Regulated / compliance-heavy:** Add formal test traceability, compliance
+  verification, documented UAT sign-off
+- **High availability / performance-critical:** Add load, stress, and soak
+  testing with SLO validation
+- **Security-sensitive:** Add penetration testing, SAST/DAST scanning,
+  compliance checks
+- **Accessibility requirements:** Add WCAG audit, assistive technology testing
+- **Large user base or high-risk changes:** Add comprehensive regression suite,
+  canary validation, extended UAT
+
+Otherwise, keep Verification focused and move to Deployment.
+
+> These triggers help you decide when to move from Minimal to Standard or
+> Enterprise. For full tier definitions and choosing criteria, see the
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
+---
+
+## Why These Verification Elements Matter
+
+### Test Types
+
+Unit tests are already done during Implementation; Verification focuses on
+higher-level testing.
+
+| Test Type     | Purpose                  | Key Question                         |
+| ------------- | ------------------------ | ------------------------------------ |
+| Integration   | Components work together | Do APIs, DB, and services connect?   |
+| Functional    | Acceptance criteria met  | Does it do what was specified?       |
+| UAT           | Business needs met       | Does it solve the business problem?  |
+| Performance   | NFRs met                 | Is it fast and stable enough?        |
+| Security      | No vulnerabilities       | Is it safe?                          |
+| Accessibility | Usable by all            | Is it accessible?                    |
+| Regression    | Nothing broke            | Did changes break existing features? |
+
+> For detailed test strategies, best practices, and result templates for each
+> test type, see the [Verification Reference](verification-reference.md).
+
+### Defect Management
+
+Track defects by **severity** (technical impact: Critical → Low) and
+**priority** (business urgency: P0 → P3).
+
+**Key rules:**
+
+- No critical or high-severity defects open at deployment
+- Deferred defects must have justification and target version
+- Fixed defects must be retested and verified
+- Regular triage meetings to review and prioritize
+
+> For severity definitions, defect lifecycle, triage process, and tracking
+> templates, see
+> [Verification Reference: Defect Management](verification-reference.md#defect-management).
+
+### Production Readiness
+
+#### Go/No-Go Decision
+
+> For structuring gate decisions, use the
+> [Checkpoint Decision Template](../templates/checkpoint-decision-template.md).
+
+- **Go:** All critical gates passed, UAT approved, rollback plan exists
+- **No-go:** Critical defects, UAT not approved, performance below NFRs
+- **Conditional go:** Minor issues accepted with workarounds documented
+
+#### Readiness Requirements
+
+- All test types executed with passing results
+- 100% of acceptance criteria verified
+- UAT approved by business stakeholders
+- Monitoring and instrumentation verified
+- Deployment artifacts prepared (code tagged, runbook created, rollback plan
+  documented)
+
+### Measurement Validation
+
+Verification validates that measurement systems work correctly. See
+[Framework Guide: Measurement Throughline](../framework-guide.md#measurement-throughline).
+
+**Verification activities:**
+
+- Test logging and metrics collection
+- Validate dashboards and monitoring
+- Confirm alerts trigger correctly
+- Verify instrumentation captures required data
+- Test success criteria measurement mechanisms
+
+### Additional Topics
+
+The [Verification Reference](verification-reference.md) covers these topics in
+depth:
+
+- **Integration testing** — strategies, best practices, component pair testing
+- **Functional testing** — test design strategies, traceability, BDD
+- **User acceptance testing** — process, participants, sign-off
+- **Performance testing** — load, stress, spike, soak testing with result
+  templates
+- **Security testing** — SAST/DAST, dependency scanning, vulnerability templates
+- **Accessibility testing** — WCAG conformance, tools, result templates
+- **Regression testing** — automated suites, risk-based selection
+- **Test data management** — strategies, fixtures, synthetic data
+
+---
 
 ## Stage Outputs
 
@@ -87,10 +278,32 @@ fresh brief.
 
 ---
 
+## When to Revisit Verification
+
+**During current iteration:**
+
+- New defects from UAT or performance testing
+- Requirements or design changes
+- Regression in previously passing tests
+
+**After deployment:**
+
+- Production incidents reveal test gaps
+- Real-world usage uncovers untested scenarios
+- Monitoring reveals instrumentation issues
+
+**For future iterations:**
+
+- Update test strategy based on production learnings
+- Expand coverage for high-risk areas
+- Improve test data realism
+
+---
+
 ## Notes
 
 **Framework Version:** 0.19.0
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-27
 
 Added to framework in v0.6.0.
