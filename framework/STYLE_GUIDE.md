@@ -182,13 +182,20 @@ Structure for stage checklist files:
 2. **Purpose + Usage** — one-line purpose and one-line usage instruction
 3. **[H] marker convention** — blockquote explaining human-judgment markers
 4. **Numbered items with checkboxes** — one assertion per item,
-   observable/verifiable language. If the checklist has blocking items, split
-   into **Core** (H3) and **Supporting** (H3) subsections; otherwise a flat list
-   is fine
+   observable/verifiable language. Organize items using the structure that best
+   fits the checklist's purpose:
+   - **Core/Supporting split** (H3 subsections) — when some items are blocking
+     and others are nice to have but non-blocking (e.g., initiation checklist)
+   - **Phase or category groupings** (H2 sections) — when items follow a
+     sequential workflow or belong to mutually exclusive contexts (e.g.,
+     deployment phases, greenfield vs. brownfield). Each group gets its own gate
+     statement
+   - **Flat list** — when all items are equally important and ungrouped
 5. **Final Decision** — checkbox pair (Ready / Not Ready) with circulation
-   guidance
-6. **Core Items** — table mapping each blocking item to its rationale (omit if
-   no Core/Supporting split)
+   guidance. For phase-based checklists, the final group's gate statement serves
+   this role
+6. **Core Items** — table mapping each blocking item to its rationale (only when
+   using Core/Supporting split)
 7. **Related Documents** — links to template, guide, reference, and stages
 8. **Notes** — standard format
 
@@ -234,6 +241,11 @@ Templates live in `/framework/templates/`:
 | ----------------------- | ------------------------------------- |
 | `[stage]-*-template.md` | Pure fill-in-the-blank stage artifact |
 
+README files link to related documents inline (via How to Use steps and body
+content) and do not need a separate Related Documents section. Non-README files
+(checklists, references, guides) include a Related Documents section before
+Notes.
+
 ---
 
 ## Heading Conventions
@@ -249,6 +261,6 @@ Templates live in `/framework/templates/`:
 
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.19.0.

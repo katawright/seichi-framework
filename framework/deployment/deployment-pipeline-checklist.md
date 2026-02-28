@@ -12,47 +12,70 @@ For detailed setup guidance, see the
 
 ---
 
+> Items marked **[H]** require human judgment. Other items can be verified or
+> assisted by AI.
+
 ## Greenfield: New Infrastructure
 
-- [ ] CI/CD pipeline operational (build, test, package, deploy)
-- [ ] All environments provisioned (dev, staging, production at minimum)
-- [ ] Infrastructure as Code set up and version-controlled
-- [ ] Environment parity validated (staging matches production architecture)
-- [ ] Secrets management configured (no secrets in code or config files)
-- [ ] Configuration externalized per environment
-- [ ] Monitoring and alerting operational
-- [ ] On-call rotation and escalation path defined
-- [ ] Skeleton application deployed end-to-end through pipeline
-- [ ] Rollback procedure tested successfully
-- [ ] Deployment scripts idempotent (safe to re-run)
-- [ ] Pipeline stages documented for team reference
+1. [ ] **CI/CD pipeline operational** (build, test, package, deploy stages
+       working)
+2. [ ] **All environments provisioned** (dev, staging, production at minimum)
+3. [ ] **Infrastructure as Code set up and version-controlled** (Terraform,
+       CloudFormation, or equivalent)
+4. [ ] **Environment parity validated** (staging matches production
+       architecture)
+5. [ ] **Secrets management configured** (no secrets in code or config files)
+6. [ ] **Configuration externalized per environment** (environment-specific
+       values)
+7. [ ] **Monitoring and alerting operational** (APM, logs, dashboards, alerts)
+8. [ ] **[H] On-call rotation and escalation path defined** (contacts and
+       procedures documented)
+9. [ ] **Skeleton application deployed end-to-end through pipeline** (walking
+       skeleton validated)
+10. [ ] **Rollback procedure tested successfully** (previous version restored
+        and verified)
+11. [ ] **Deployment scripts idempotent** (safe to re-run without side effects)
+12. [ ] **Pipeline stages documented for team reference** (runbook or wiki)
 
-**Gate:** All items checked → Ready for first increment deployment
+**Gate:** All items checked → ready for first increment deployment.
 
 ---
 
 ## Brownfield: Existing Infrastructure
 
-- [ ] Current deployment process documented end-to-end
-- [ ] All environments inventoried with access and configuration details
-- [ ] Manual steps identified and documented
-- [ ] Tribal knowledge captured from experienced team members
-- [ ] Secrets management practices reviewed
-- [ ] Monitoring coverage assessed
-- [ ] Gap analysis completed against greenfield checklist
-- [ ] High-priority improvements addressed
-- [ ] Improvement backlog created and prioritized
-- [ ] Rollback capability verified
+1. [ ] **Current deployment process documented end-to-end** (no undocumented
+       steps)
+2. [ ] **All environments inventoried** (with access and configuration details)
+3. [ ] **Manual steps identified and documented** (automation candidates
+       flagged)
+4. [ ] **[H] Tribal knowledge captured from experienced team members**
+       (workarounds and gotchas recorded)
+5. [ ] **Secrets management practices reviewed** (no secrets in code, rotation
+       policies checked)
+6. [ ] **Monitoring coverage assessed** (gaps identified and prioritized)
+7. [ ] **Gap analysis completed against greenfield checklist** (improvement
+       areas identified)
+8. [ ] **High-priority improvements addressed** (critical gaps resolved)
+9. [ ] **Improvement backlog created and prioritized** (lower-priority items
+       tracked)
+10. [ ] **Rollback capability verified** (tested or documented)
 
-**Gate:** Process documented and critical gaps addressed → Ready for first
-increment deployment
+**Gate:** Process documented and critical gaps addressed → ready for first
+increment deployment.
 
 ---
 
-> **AI suggestion:** _"Walk me through this checklist for [describe your project and infrastructure] and flag any items that need extra attention."_
+## Related Documents
+
+- [Deployment Setup Guide](deployment-setup-guide.md)
+- [Deployment Stage Guide](README.md)
+- [Deployment Checklist](deployment-checklist.md)
+- [Deployment Reference](deployment-reference.md)
 
 ---
 
-**Last Updated:** 2026-02-19
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-28
+
+Added to framework in v0.12.0.

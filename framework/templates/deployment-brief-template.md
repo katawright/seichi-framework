@@ -1,6 +1,8 @@
+<!-- For guidance on completing this brief, see deployment/README.md -->
+
 # Deployment Brief
 
-**Last Updated:** 2026-02-21 **Increment:** [Increment name/ID] **Deployment
+**Last Updated:** YYYY-MM-DD **Increment:** [Increment name/ID] **Deployment
 Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 / In Progress / Completed / Rolled Back]
 
@@ -50,20 +52,7 @@ Bang]
 US-East, EU-Central, Global] **Infrastructure:** [e.g., AWS ECS, Kubernetes, VM
 fleet]
 
----
-
-## Pre-Deployment Checklist
-
-- [ ] Deployment plan reviewed and approved
-- [ ] Deployment package validated (version, checksum)
-- [ ] All Verification stage tests passing
-- [ ] UAT sign-off obtained
-- [ ] Environment health verified and backups completed
-- [ ] Rollback procedure documented and tested
-- [ ] Configuration and secrets reviewed
-- [ ] Monitoring dashboards and alerting configured
-- [ ] Stakeholders notified of deployment schedule
-- [ ] Team availability confirmed
+<!-- Pre-deployment readiness: use deployment-checklist.md -->
 
 ---
 
@@ -77,15 +66,11 @@ fleet]
 | [Traffic Switch]     | [X min]  | [Role]      | [Y/N]          |
 | [Validation]         | [X min]  | [Role]      | [Y/N]          |
 
-> For detailed phased deployment steps with CLI examples and validation
-> commands, see the [Deployment Reference](deployment-reference.md).
+<!-- For detailed phased deployment steps, see ../deployment/deployment-reference.md -->
 
 ---
 
 ## Data and State Changes
-
-_Fill in the subsections that apply to this increment. Remove or mark "N/A" for
-subsections that don't apply._
 
 ### Database Migrations
 
@@ -158,8 +143,7 @@ unavailable]
 - [ ] Schedule retrospective
 - [ ] Update deployment brief with details
 
-> For detailed rollback procedures (traffic switch vs. redeploy options with
-> commands), see the [Deployment Reference](deployment-reference.md).
+<!-- For detailed rollback procedures, see ../deployment/deployment-reference.md -->
 
 ---
 
@@ -231,17 +215,15 @@ tracker]
 - [ ] Known issues documented with workarounds
 - [ ] Escalation contacts updated
 
-> For detailed support handoff with access credentials and documentation links,
-> see the [Deployment Reference](deployment-reference.md).
+<!-- For support handoff details, see ../deployment/deployment-reference.md -->
 
 ---
 
 ## Production Ownership Transfer
 
-_Complete this section when production responsibility transfers from the
-deploying team to the accepting (support/ops) team. For Minimal-tier projects
-where the same team deploys and supports, a lightweight acknowledgment is
-sufficient._
+<!-- Complete when production responsibility transfers to the accepting team.
+     For Minimal-tier projects where the same team deploys and supports,
+     a lightweight acknowledgment is sufficient. -->
 
 | Field              | Value                                              |
 | ------------------ | -------------------------------------------------- |
@@ -302,6 +284,4 @@ sufficient._
 
 ---
 
-**Template Last Updated:** 2026-02-21
-
-_Added to framework in v0.7.0_
+<!-- Template Last Updated: 2026-02-28 | Added in v0.7.0 -->
