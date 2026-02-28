@@ -8,7 +8,6 @@ this repository.
 It is agent-agnostic and complements:
 
 - `README.md` for project overview
-- `PROJECT_CONTEXT.md` for full framework context
 - `CLAUDE.md` for Claude-specific guidance
 
 ## Project Overview
@@ -23,23 +22,26 @@ all SDLC stages. The framework is designed to:
 - Democratize project initiation for business stakeholders
 - Support iterative delivery with adaptive feedback loops
 
-See `PROJECT_CONTEXT.md` for full details.
-
 ## Quick Context
 
 - Phase: Phase 2 - Framework Refinement
 - Goal: Review and refine framework for completeness and usability
-- Target audience: Engineers (primary), Product Managers, Business Analysts,
-  Executives (secondary)
+
+### Target Audience
+
+- **Primary:** Engineers — may be skeptical about AI tools or concerned about
+  AI as a threat to their roles
+- **Secondary:** Non-technical stakeholders (Product Managers, Business
+  Analysts, Executives) who need to initiate and plan software projects
+- **Tertiary:** Other organizations seeking structured AI integration across
+  their product development lifecycle
 
 ## Key Documents
 
-- `PROJECT_CONTEXT.md`: Complete project vision, design principles, execution
-  model, and measurement philosophy
-- `framework/framework-stages.md`: Authoritative definition of the 8 SDLC stages
-  with inputs, outputs, and criteria
-- `framework/STYLE_GUIDE.md`: Source of truth for document style, organization,
-  and formatting — read before creating or editing framework files
+- `framework-stages.md`: Authoritative definition of the 8 SDLC stages with
+  inputs, outputs, and criteria
+- `STYLE_GUIDE.md`: Source of truth for document style, organization, and
+  formatting — read before creating or editing framework files
 
 ## Design Principles
 
@@ -61,7 +63,7 @@ See `PROJECT_CONTEXT.md` for full details.
 ## Standards
 
 - Versioning: Semantic Versioning (MAJOR.MINOR.PATCH)
-  - `framework/VERSION` is the canonical framework version
+  - `VERSION` is the canonical framework version
   - Framework and application versions stay synchronized
 - Commits: Conventional Commits (`type(scope): description`)
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`
@@ -73,7 +75,7 @@ See `PROJECT_CONTEXT.md` for full details.
   - On each release, update framework version in all README files
   - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every
     modified framework file before finishing a change
-- Markdown formatting: follow `framework/STYLE_GUIDE.md`
+- Markdown formatting: follow `STYLE_GUIDE.md`
 
 ## Workflow
 
@@ -81,7 +83,7 @@ See `PROJECT_CONTEXT.md` for full details.
 2. Tailor language to role (business-first in PM/BA stages, technical in
    engineering stages)
 3. Each stage directory should include: README (stage guide), checklist,
-   reference (if needed). Templates live in `framework/templates/`
+   reference (if needed). Templates live in `templates/`
 4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
@@ -107,13 +109,30 @@ When building the application:
 - Framework and application release together with aligned version numbers
 - Framework changes require application updates in the same commit
 
+## Measurement Philosophy
+
+Projects should define measurable success criteria during Initiation, tracked
+through all subsequent stages. Each stage integrates measurement differently:
+
+- **Initiation** — Define objectives with measurable success criteria
+- **Requirements** — Capture instrumentation needs as NFRs
+- **System Design** — Design measurement infrastructure
+- **Increment Design** — Plan metrics collection for increment
+- **Implementation** — Implement metrics collection
+- **Verification** — Test measurement systems
+- **Deployment** — Capture baseline measurements
+- **Support** — Monitor and validate success criteria
+
+The framework is agnostic to goal-setting methodology (OKRs, SMART, KPIs,
+etc.) — what matters is that criteria are clearly defined, measurable, and
+trackable.
+
 ## Agent Execution Rules
 
 These rules apply to AI coding assistants working in this repository.
 
-1. Read `PROJECT_CONTEXT.md` at session start for full context.
-2. Follow `framework/STYLE_GUIDE.md` for all document formatting, structure, and
-   style decisions.
+1. Follow `STYLE_GUIDE.md` for all document formatting, structure, and style
+   decisions.
 3. Prefer minimal, targeted edits; preserve existing voice and structure.
 4. Do not invent process details not grounded in current framework documents.
 5. When changing one stage artifact, check related artifacts for consistency
