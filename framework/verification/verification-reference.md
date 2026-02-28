@@ -1,9 +1,29 @@
 # Verification Reference
 
-Optional deep-dive companion to the [Verification Guide](verification-guide.md),
-[Verification Brief Template](verification-brief-template.md), and
+## Overview
+
+Optional deep-dive companion to the [Verification Stage Guide](README.md),
+[Verification Brief Template](../templates/verification-brief-template.md), and
 [Verification Checklist](verification-checklist.md). Consult when you need
 specifics or a starting point for AI-assisted exploration.
+
+### Purpose
+
+- Provide detailed testing strategies, best practices, and result templates for
+  each test type
+- Cover defect management with severity definitions, lifecycle, and triage
+  process
+- Document monitoring and instrumentation validation checklists
+- Supply red flags reference and common troubleshooting guidance
+
+### How to Use This Reference
+
+1. Start with the [**Verification Stage Guide**](README.md) for workflow and
+   rationale
+2. Use this reference when you need specifics — detailed strategies, checklists,
+   or result templates
+3. Follow **AI exploration** prompts in each section to get AI-assisted help
+   with that topic
 
 ---
 
@@ -247,7 +267,7 @@ criteria.
 
 ### Triage Process
 
-Regular triage meetings to review, assign severity/ priority, and decide: fix
+Regular triage meetings to review, assign severity/priority, and decide: fix
 now, fix before deploy, defer, or won't fix.
 
 ### Defect Tracking Template
@@ -293,56 +313,6 @@ now, fix before deploy, defer, or won't fix.
 
 <!-- prettier-ignore -->
 > **AI exploration:** _"Review our monitoring setup for [describe your stack] and identify instrumentation gaps."_
-
----
-
-## Production Readiness Details
-
-### Quality Gate Status Template
-
-| Gate              | Criteria              | Status   | Notes |
-| ----------------- | --------------------- | -------- | ----- |
-| Integration Tests | All tests pass        | [Status] |       |
-| Functional Tests  | All AC verified       | [Status] |       |
-| Performance Tests | NFRs met              | [Status] |       |
-| Security Tests    | No critical vulns     | [Status] |       |
-| UAT               | Business approval     | [Status] |       |
-| Monitoring        | Instrumented          | [Status] |       |
-| Defects           | No critical/high open | [Status] |       |
-
-### Go/No-Go Decision
-
-- **Go:** All critical gates passed, UAT approved, rollback plan exists
-- **No-go:** Critical defects, UAT not approved, performance below NFRs
-- **Conditional go:** Minor issues accepted with workarounds documented
-
-### Deployment Prerequisites
-
-- Code tagged and versioned
-- Deployment runbook created
-- Rollback plan documented
-- Database migrations tested
-- Monitoring and alerting configured
-
----
-
-## Test Evidence and Artifacts
-
-### Test Artifacts Checklist
-
-- Integration test report: [Link]
-- Functional test report: [Link]
-- Performance test report: [Link]
-- Security scan report: [Link]
-- UAT execution log: [Link]
-- Defect tracking: [Link to Jira/GitHub/etc.]
-
-### Test Code Locations
-
-- Integration tests: [Repository path]
-- Functional tests: [Repository path]
-- Performance tests: [Repository path]
-- Test data/fixtures: [Repository path]
 
 ---
 
@@ -403,6 +373,8 @@ measure success without working monitoring.
 
 ---
 
-**Last Updated:** 2026-02-18
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-27
+
+Added to framework in v0.12.0.
