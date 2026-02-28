@@ -1,3 +1,5 @@
+<!-- For guidance on completing this runbook, see ../support/README.md -->
+
 # Runbook: [Procedure Name]
 
 **Purpose:** [One-sentence description of what this runbook accomplishes]
@@ -45,9 +47,9 @@ check VPN status and retry"]
 
 ### Step 3: [Action Description] _(Critical Step)_
 
-> **Caution:** This step [describe why it's critical — e.g., "modifies >
-> production data" or "cannot be undone without a restore"]. Verify the expected
-> output before proceeding.
+> **Caution:** This step [describe why it's critical — e.g., "modifies
+> production data" or "cannot be undone without a restore"]. Verify the
+> expected output before proceeding.
 
 ```bash
 # [Command to execute]
@@ -66,9 +68,6 @@ check VPN status and retry"]
 ```
 
 **Expected output:** [What you should see]
-
-_Add or remove steps as needed. For critical steps, always include a
-verification check before proceeding._
 
 ---
 
@@ -129,8 +128,4 @@ If rollback fails or the situation worsens:
 | ---------- | ------ | ----------------------- |
 | YYYY-MM-DD | [Name] | Initial runbook created |
 
----
-
-**Last Updated:** 2026-02-21
-
-_Added to framework in v0.17.0_
+<!-- Template Last Updated: 2026-02-28 | Added in v0.17.0 -->

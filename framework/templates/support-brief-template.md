@@ -1,3 +1,5 @@
+<!-- For guidance on completing this brief, see ../support/README.md -->
+
 # Support Brief
 
 **Last Updated:** YYYY-MM-DD **Project:** [Project name] **Support Team:** [Team
@@ -9,8 +11,9 @@ name or members] **Status:** [Active / Maintenance Mode / End of Life]
 
 **Purpose:** [Brief description of what this system does and why it exists]
 
-**Support Level:** [Minimal / Standard / Enterprise] _(see
-[Support Operations Guide](support-operations-guide.md) for level definitions)_
+**Support Level:** [Minimal / Standard / Enterprise]
+
+<!-- See Support Operations Guide (../support/support-operations-guide.md) for level definitions -->
 
 **Current Version:** [v1.2.0 or release identifier] **Deployed:** [Date of most
 recent production deployment]
@@ -56,7 +59,7 @@ recent production deployment]
 
 ## Monitoring Setup
 
-_(All levels — scope to your support level)_
+<!-- All levels — scope to your support level -->
 
 **Primary Dashboard:** [Link]
 
@@ -82,15 +85,13 @@ _(All levels — scope to your support level)_
 - Info (email): [Deployment completed, job queue backlog]
 - Channels: Critical → [PagerDuty], Warning → [#alerts], Info → [email list]
 
-For detailed threshold tables, see
-[Support Reference: Monitoring Thresholds](support-reference.md#monitoring-thresholds-and-baselines).
+<!-- For detailed threshold tables, see Support Reference: Monitoring Thresholds (../support/support-reference.md#monitoring-thresholds-and-baselines) -->
 
 ---
 
 ## On-Call and Escalation
 
-_(Standard and Enterprise levels — Minimal projects may use informal contact
-list instead)_
+<!-- Standard and Enterprise levels — Minimal projects may use informal contact list instead -->
 
 **Current On-Call:** [Name, contact, Slack handle] **Backup On-Call:** [Name,
 contact, Slack handle] **Rotation:** [Weekly / daily, rotation day]
@@ -104,9 +105,7 @@ contact, Slack handle] **Rotation:** [Weekly / daily, rotation day]
 | P2    | Minor feature, <10%  | 2 hours  | Optional     |
 | P3    | Cosmetic, no impact  | Next day | Not required |
 
-For detailed severity descriptions and incident response procedures, see
-[Support Reference: Severity Levels](support-reference.md#severity-level-details)
-and [Incident Response Process](support-reference.md#incident-response-process).
+<!-- For detailed severity descriptions and incident response procedures, see Support Reference (../support/support-reference.md#severity-level-details) -->
 
 **Escalation Contacts:**
 
@@ -129,7 +128,7 @@ manager name]
 
 ## Success Criteria Tracking
 
-_(All levels — Minimal projects may track informally)_
+<!-- All levels — Minimal projects may track informally -->
 
 **Success Criterion 1:** [Description]
 
@@ -156,14 +155,13 @@ _(All levels — Minimal projects may track informally)_
   attendees]
 - Monthly: [Comprehensive report to stakeholders]
 
-For report templates, see
-[Support Reference: Report Template](support-reference.md#success-criteria-report-template).
+<!-- For report templates, see Support Reference (../support/support-reference.md#success-criteria-report-template) -->
 
 ---
 
 ## Maintenance Schedule
 
-_(Standard and Enterprise levels)_
+<!-- Standard and Enterprise levels -->
 
 **Weekly:** Dependency vulnerability scan, alert tuning, runbook review
 
@@ -210,8 +208,4 @@ limitations]
 **Brief Status:** [Active / Needs Update / Under Review] **Next Review Date:**
 [YYYY-MM-DD — quarterly recommended]
 
----
-
-**Template Last Updated:** 2026-02-19
-
-_Added to framework in v0.8.0_
+<!-- Template Last Updated: 2026-02-28 | Added in v0.8.0 -->
