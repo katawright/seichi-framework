@@ -1,3 +1,5 @@
+<!-- For guidance on completing this brief, see ../implementation/README.md -->
+
 # Implementation Brief: [Increment Name]
 
 **Last Updated:** YYYY-MM-DD
@@ -15,11 +17,9 @@
 
 ## Progress Log
 
-Session-by-session progress is tracked in a separate
-[Implementation Session Log](implementation-session-log-template.md). Start one
-from the template at the beginning of each increment. Have the AI agent update
-it at the end of every work session so the next session's agent can restore
-context from it.
+<!-- Session-by-session progress is tracked in a separate Implementation Session Log (implementation-session-log-template.md). Start one from the template at the beginning of each increment. -->
+
+[Link to session log for this increment]
 
 ---
 
@@ -33,8 +33,7 @@ context from it.
 | FR-Y           | [Brief description] | [✅/⚠️/❌] |
 | NFR-Z          | [Brief description] | [✅/⚠️/❌] |
 
-> Status key: ✓ Complete · ⚠ In progress · ✗ Not started
-> (Text alternative: Done / In Progress / Not Started)
+<!-- Status key: ✓ Complete · ⚠ In progress · ✗ Not started -->
 
 ### Scope Summary
 
@@ -77,8 +76,6 @@ components, deviations from design]
 | --- | -------- | ------------------------------ | ---------- |
 | 1   | [Title]  | [ADR-001](adr/ADR-001-slug.md) | YYYY-MM-DD |
 
-_If none: "No separate ADRs for this increment."_
-
 **Minor Decisions:**
 
 - [Decision]: [Brief explanation]
@@ -99,8 +96,7 @@ _If none: "No separate ADRs for this increment."_
 
 - [Gap with reason and plan to address]
 
-> For detailed test scenario categories and test quality checklists, see
-> [Implementation Reference: Unit Testing](implementation-reference.md#unit-testing-details).
+<!-- See Implementation Reference: Unit Testing (../implementation/implementation-reference.md#unit-testing-details) -->
 
 ---
 
@@ -118,9 +114,7 @@ _If none: "No separate ADRs for this increment."_
 
 **Alerts configured:** [Summary]
 
-> For logging best practices and instrumentation code examples, see
-> [Implementation Reference: Logging](implementation-reference.md#logging-best-practices)
-> and [Metrics](implementation-reference.md#metrics-and-telemetry).
+<!-- See Implementation Reference: Logging (../implementation/implementation-reference.md#logging-best-practices) and Metrics (../implementation/implementation-reference.md#metrics-and-telemetry) -->
 
 ---
 
@@ -135,8 +129,7 @@ _If none: "No separate ADRs for this increment."_
 **Quality checks:** Linting [✅/❌] | Formatting [✅/❌] | Static Analysis
 [✅/❌] | Security Scan [✅/❌]
 
-> For detailed code review focus areas and quality check templates, see
-> [Implementation Reference: Code Review](implementation-reference.md#code-review-focus-areas).
+<!-- See Implementation Reference: Code Review (../implementation/implementation-reference.md#code-review-focus-areas) -->
 
 ---
 
@@ -154,8 +147,7 @@ _If none: "No separate ADRs for this increment."_
 
 - [Debt item]: Reason: [X] | Plan: [X]
 
-> For technical debt tracking template, see
-> [Implementation Reference: Technical Debt](implementation-reference.md#technical-debt-management).
+<!-- See Implementation Reference: Technical Debt (../implementation/implementation-reference.md#technical-debt-management) -->
 
 ---
 
@@ -197,16 +189,57 @@ _If none: "No separate ADRs for this increment."_
 | Lead Engineer | [Name] | YYYY-MM-DD | [✅ Approved] |
 | Code Reviewer | [Name] | YYYY-MM-DD | [✅ Approved] |
 
-**Readiness declaration:**
-
-- [ ] All requirements implemented
-- [ ] Unit tests passing
-- [ ] Code review approved
-- [ ] Documentation complete
-- [ ] Ready for Verification
-
 ---
 
-**Template Last Updated:** 2026-02-21
+## Appendix
 
-_Added to framework in v0.5.0_
+<!-- These sections are optional — include the ones relevant to your increment. -->
+
+### Requirements Traceability
+
+| Requirement | Implementation                     | Unit Tests                  | Ready?  |
+| ----------- | ---------------------------------- | --------------------------- | ------- |
+| FR-X        | `module/component.py` (line XX-YY) | `test_component.py::test_x` | [✅/❌] |
+| FR-Y        | `module/service.py` (line XX-YY)   | `test_service.py::test_y`   | [✅/❌] |
+
+### Code Quality Checks
+
+| Check            | Status  | Tool                      |
+| ---------------- | ------- | ------------------------- |
+| Linting          | [✅/❌] | [ESLint, Pylint, etc.]    |
+| Formatting       | [✅/❌] | [Prettier, Black, etc.]   |
+| Static Analysis  | [✅/❌] | [SonarQube, etc.]         |
+| Security Scan    | [✅/❌] | [Snyk, Checkmarx, etc.]   |
+| Dependency Check | [✅/❌] | [npm audit, safety, etc.] |
+
+### Performance Results
+
+| Operation | Metric        | Result    | Target     | Status  |
+| --------- | ------------- | --------- | ---------- | ------- |
+| [Op 1]    | Response time | [Xms]     | [<Yms]     | [✅/❌] |
+| [Op 2]    | Throughput    | [X req/s] | [>Y req/s] | [✅/❌] |
+
+### Git Commit History
+
+**Branch name:** [feature/increment-name]
+
+**Key commits:**
+
+- [Commit SHA] - [Commit message]
+
+**Merge commit:** [SHA and date merged]
+
+### Deployment Notes
+
+- Database migrations required
+- Configuration changes needed
+- Environment variables to set
+- Feature flags to enable/disable
+
+### Rollback Plan
+
+1. [Step 1: e.g., Disable feature flag X]
+2. [Step 2: e.g., Revert to previous deployment]
+3. [Step 3: e.g., Run rollback migration]
+
+<!-- Template Last Updated: 2026-02-27 | Added in v0.5.0 -->
