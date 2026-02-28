@@ -1,91 +1,85 @@
 # System Design Readiness Checklist
 
-**Purpose:** Quick validation (about 3-5 minutes) that system design is
-complete and ready for Gate 2.
+**Purpose:** Quick validation (60-90 seconds) that system design is complete and
+ready for Gate 2.
 
-**Usage:** Check every item before proceeding to Gate 2 decision.
+**Usage:** Review before presenting the design to stakeholders for Gate 2.
 
 ---
 
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-## Architecture and Technology
+---
 
-- [ ] System architecture diagram exists (components, boundaries, interactions)
-- [ ] Technology stack documented with justification
-- [ ] ADRs created for significant technology selections
-- [ ] Data architecture defined (entity model, relationships, persistence)
-- [ ] ADRs created for significant data decisions
+## Checklist Items
 
-## API and Integration
+### Core
 
-- [ ] API design principles established (versioning, auth, error handling)
-- [ ] Integration points identified and documented
-- [ ] Authentication/authorization approach defined
-- [ ] ADRs created for significant API decisions
+1. [ ] **System architecture documented** (components, boundaries, interactions)
+2. [ ] **Technology stack justified with ADRs** (significant selections have
+       decision records)
+3. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
+       (Must Haves first, dependencies identified)
+4. [ ] **Security architecture designed** (auth, encryption, input validation)
+5. [ ] **Infrastructure plan covers CI/CD, environments, deployment** (bootstrap
+       or assessment complete)
+6. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
+       NFRs)
 
-## Non-Functional Requirements
+### Supporting
 
-- [ ] Security architecture designed (auth, encryption, input validation)
-- [ ] **[H]** Compliance requirements addressed (GDPR, HIPAA, etc.)
-- [ ] Performance targets specified (response time, throughput, concurrency)
-- [ ] Scalability approach defined
-- [ ] ADRs created for significant non-functional requirements decisions
-
-## Observability and Measurement
-
-- [ ] Monitoring and logging strategy designed
-- [ ] Success criteria instrumentation planned
-- [ ] **[H]** Measurement throughline validated (NFRs include instrumentation
-      needs)
-- [ ] ADRs created for significant observability decisions
-
-## Infrastructure
-
-- [ ] CI/CD pipeline designed
-- [ ] Environment strategy defined (dev, staging, production)
-- [ ] Deployment strategy documented
-- [ ] ADRs created for significant infrastructure decisions
-
-## Increment Plan
-
-- [ ] **[H]** Increment 0 need assessed (bootstrap for greenfield, discovery for
-      brownfield first AI-assisted, or not needed for subsequent brownfield)
-- [ ] Increment plan created with MoSCoW mapping
-- [ ] **[H]** Must Have requirements in first increments
-- [ ] Should Have requirements sequenced
-- [ ] Could Have evaluation approach defined
-- [ ] Won't Have requirements documented
-
-## Readiness for Gate 2
-
-- [ ] All requirements have architectural approach
-- [ ] **[H]** No major technical unknowns remain
-- [ ] **[H]** Design is implementable within constraints
-- [ ] **[H]** Alignment Review conducted
+7. [ ] **Data architecture defined** (entity model, relationships, persistence)
+8. [ ] **API design principles established** (versioning, auth, error handling)
+9. [ ] **[H] Compliance requirements addressed** (GDPR, HIPAA, etc.)
+10. [ ] **Performance targets specified with scalability approach** (p95/p99,
+        throughput)
+11. [ ] **Monitoring and logging strategy designed** (observability stack,
+        alerting)
+12. [ ] **[H] Success criteria instrumentation planned** (measurement
+        throughline)
+13. [ ] **[H] Alignment Review conducted** (stakeholder sign-off obtained)
 
 ---
 
-## Decision: Ready to Proceed?
+## Final Decision
 
-- [ ] **Ready for Gate 2** — All items checked
-- [ ] **Not Ready** — Address unchecked items
+> **If core items (1-6) are missing, the design is usually not ready to present
+> for Gate 2.**
+
+- [ ] **Ready** — Present to stakeholders for Gate 2
+- [ ] **Not Ready** — Address weak items and re-check
 
 ---
 
-> For common issues and troubleshooting when items fail, see
-> [System Design Reference: Checklist Troubleshooting](system-design-reference.md#checklist-troubleshooting).
+## Core Items
+
+Why the core items are blocking — if any of these are missing, downstream work
+is unreliable:
+
+| Item                     | Why It's Blocking                                                |
+| ------------------------ | ---------------------------------------------------------------- |
+| 1. Architecture          | Without documented architecture, teams build incompatible pieces |
+| 2. Technology ADRs       | Unjustified choices lead to costly reversals                     |
+| 3. Increment plan        | No plan means no sequencing, no dependencies, no estimates       |
+| 4. Security architecture | Retrofitting security is orders of magnitude more expensive      |
+| 5. Infrastructure plan   | No CI/CD or environments blocks all feature delivery             |
+| 6. Requirements coverage | Orphaned requirements surface as late-stage surprises            |
 
 > **AI suggestion:** _"Walk me through this checklist for [describe your design]
 > and flag items needing attention."_
 
 ---
 
-**Related Documents:**
+> For common issues and troubleshooting when items fail, see
+> [System Design Reference: Checklist Troubleshooting](system-design-reference.md#checklist-troubleshooting).
 
-- [System Design Brief Template](system-design-brief-template.md)
-- [System Design Guide](system-design-guide.md)
+---
+
+## Related Documents
+
+- [System Design Brief Template](../templates/system-design-brief-template.md)
+- [AI-Assisted SDLC: System Design Stage](README.md)
 - [System Design Reference](system-design-reference.md)
 - [AI-Assisted SDLC Stages](../framework-stages.md)
 
@@ -93,6 +87,6 @@ complete and ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-27
 
 Added to framework in v0.12.0.
