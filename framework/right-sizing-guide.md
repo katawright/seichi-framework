@@ -46,16 +46,16 @@ surrounds it, and AI autonomy determines _how much AI drives_ the work.
 This table summarizes what each tier looks like across all eight stages. See
 each stage guide's Right-Sizing section for full details.
 
-| Stage                                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
-| ------------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| **[Initiation](initiation/README.md)**                             | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
-| **[Requirements](requirements/README.md)**                         | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
-| **[System Design](system-design/README.md)**                       | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
-| **[Increment Design](increment-design/increment-design-guide.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
-| **[Implementation](implementation/implementation-guide.md)**       | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
-| **[Verification](verification/verification-guide.md)**             | Manual testing, basic smoke tests                   | Integration + functional tests, performance baseline, UAT          | Full test suite, security + accessibility + performance testing, formal go/no-go |
-| **[Deployment](deployment/deployment-guide.md)**                   | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
-| **[Support](support/support-guide.md)**                            | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
+| Stage                                                        | Minimal                                             | Standard                                                           | Enterprise                                                                       |
+| ------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **[Initiation](initiation/README.md)**                       | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
+| **[Requirements](requirements/README.md)**                   | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
+| **[System Design](system-design/README.md)**                 | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
+| **[Increment Design](increment-design/README.md)**           | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
+| **[Implementation](implementation/implementation-guide.md)** | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
+| **[Verification](verification/verification-guide.md)**       | Manual testing, basic smoke tests                   | Integration + functional tests, performance baseline, UAT          | Full test suite, security + accessibility + performance testing, formal go/no-go |
+| **[Deployment](deployment/deployment-guide.md)**             | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
+| **[Support](support/support-guide.md)**                      | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
 
 ---
 
@@ -181,6 +181,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-27
 
 Added to framework in v0.13.0.

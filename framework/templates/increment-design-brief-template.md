@@ -1,3 +1,5 @@
+<!-- For guidance on completing this brief, see increment-design/README.md -->
+
 # Increment Design Brief
 
 **Last Updated:** YYYY-MM-DD
@@ -45,15 +47,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 ### 2.1 Components in This Increment
 
-For each component, document:
-
-- **Responsibilities** — what the component does
-- **Structure** — classes, modules, functions
-- **Dependencies** — libraries, other components
-- **State** — stateless/stateful, state management
-
-_Provide enough detail for engineers to implement without guessing. Reference
-architecture from System Design._
+<!-- Minimal: brief notes per component | Standard: component specs with responsibilities | Enterprise: detailed design docs with review -->
 
 **Component: [Name]**
 
@@ -68,17 +62,7 @@ architecture from System Design._
 **Dependencies:** [Libraries, other components] **State:** [Stateless /
 stateful, approach]
 
-_Add more components as needed._
-
----
-
 ### 2.2 Component Interactions
-
-Document how components communicate for this increment's features:
-
-- Sequence diagrams or flow descriptions
-- Calls, events, or data flow between components
-- Error handling paths (happy path + key errors)
 
 **[Feature Name] Flow:**
 
@@ -94,20 +78,13 @@ Document how components communicate for this increment's features:
 
 ## 3. Data and State Changes
 
-_Include sections below that apply to your project. Not all projects require
-data storage or schema changes._
+<!-- Include sections below that apply to your project. Not all projects require data storage or schema changes. -->
 
 ### 3.1 State Management Changes
 
-Describe how this increment affects application state:
-
-- New state introduced (local state, shared state, persisted data)
-- State flow between components
-- State initialization and cleanup
+<!-- Minimal: note what changes | Standard: migration plan, rollback approach | Enterprise: formal data migration plan with validation steps -->
 
 ### 3.2 Schema/Storage Changes (if applicable)
-
-_Include this section if your project uses a database or persistent storage._
 
 **New/Modified Structures:**
 
@@ -117,8 +94,6 @@ _Include this section if your project uses a database or persistent storage._
 
 **Migration Strategy:** [Migration path/name or approach] **Rollback:**
 [Rollback strategy]
-
----
 
 ### 3.3 Data Access Patterns (if applicable)
 
@@ -130,20 +105,12 @@ _Include this section if your project uses a database or persistent storage._
 
 ## 4. Interface Specifications
 
-_Include sections below that apply to your project. Choose the interface types
-relevant to your technology stack._
+<!-- Include sections below that apply to your project. Choose the interface types relevant to your technology stack. -->
 
 ### 4.1 Interfaces
 
-For each interface this increment introduces or modifies, document:
-
-- Interface type and identifier (e.g., API endpoint, event, prop contract, CLI
-  command)
-- Input/output formats
-- Validation rules
-- Success and error cases
-
-_Follow conventions established in System Design._
+<!-- Minimal: informal agreements or conventions | Standard: documented API contracts and component props | Enterprise: formal interface specs with versioning strategy -->
+<!-- For detailed interface specification examples, see ../increment-design/increment-design-reference.md#interface-specification-examples -->
 
 **[Interface identifier]**
 
@@ -151,22 +118,6 @@ _Follow conventions established in System Design._
 - **Input:** [Parameters, props, request body, arguments]
 - **Output:** [Return value, response, emitted event]
 - **Error cases:** [Validation failures, error states]
-
-_Add more interfaces as needed._
-
-**Examples of interface types by project:**
-
-- **REST API:** `POST /api/v1/users` — method, path, request/response bodies,
-  status codes
-- **UI component:** `<UserCard user={User} onDelete={fn}>` — props, callbacks,
-  rendered output
-- **Event-driven:** `user.created` event — payload schema, consumers
-- **CLI tool:** `migrate --dry-run` — arguments, flags, stdout output
-- **Library/SDK:** `createClient(config): Client` — function signatures, return
-  types
-
-> For detailed interface specification examples, see
-> [Increment Design Reference](increment-design-reference.md#interface-specification-examples).
 
 ---
 
@@ -197,8 +148,7 @@ _Add more interfaces as needed._
 - Tools and approach
 - Success criteria
 
-> For detailed testing strategy examples, see
-> [Increment Design Reference: Testing Strategy Example](increment-design-reference.md#testing-strategy-example).
+<!-- For detailed testing strategy examples, see ../increment-design/increment-design-reference.md#testing-strategy-example -->
 
 ---
 
@@ -218,29 +168,6 @@ Guidance, tips, and considerations for engineers:
 
 - [Patterns to follow, conventions, gotchas]
 
----
+<!-- Before proceeding to Implementation, run the Increment Design Checklist: ../increment-design/increment-design-checklist.md -->
 
-## Checklist
-
-Before proceeding to Implementation, validate:
-
-- [ ] Increment scope clear (in/out of scope)
-- [ ] Component designs detailed and implementable
-- [ ] Data/state changes specified (with migrations if applicable)
-- [ ] Interface specifications complete and follow conventions
-- [ ] Testing strategy covers unit, integration, acceptance, performance
-- [ ] Implementation notes provide guidance
-
-**Handoff to Implementation:**
-
-- [ ] Engineers understand what to build and how
-- [ ] No major unknowns or blockers
-- [ ] Ready to proceed to Implementation stage
-
----
-
-## Notes
-
-**Template Last Updated:** 2026-02-21
-
-Added to framework in v0.12.0.
+<!-- Template Last Updated: 2026-02-27 | Added in v0.12.0 -->
