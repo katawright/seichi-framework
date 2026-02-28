@@ -1,9 +1,42 @@
 # Support Operations Guide
 
-Strategic guide for establishing support operations. Use this guide when setting
-up support for a new project or improving support for an existing one.
+## Overview
 
-For per-increment support operations, see the [Support Guide](support-guide.md).
+Strategic guidance for establishing support operations before accepting
+production ownership.
+
+### Why Support Operations Setup
+
+Support processes fail when they are informal, undocumented, or inconsistent.
+Teams that skip structured setup end up reactive — scrambling during incidents
+without clear escalation paths, losing tribal knowledge when people leave, and
+missing business objectives because nobody is tracking success criteria. A
+deliberate setup process prevents these failures whether you are building
+support from scratch or formalizing what already exists.
+
+### Purpose
+
+- Guide greenfield projects through first-time support infrastructure setup
+- Help brownfield projects discover, document, and improve existing processes
+- Right-size support operations to project risk and team context
+- Validate readiness before accepting production ownership
+
+### Key Principle
+
+Prove support readiness before accepting production ownership. The cost of
+structured setup is small compared to the cost of an unplanned outage with no
+runbooks, no escalation path, and no on-call rotation.
+
+### How to Use This Guide
+
+1. Review Right-Sizing via the
+   [Support Stage Guide](README.md#right-sizing-support) to choose your tier
+2. Follow the [**Greenfield Path**](#greenfield-path) or
+   [**Brownfield Path**](#brownfield-path) below
+3. Complete the [Support Readiness Checklist](support-readiness-checklist.md) to
+   verify readiness
+4. For ongoing per-increment operations, see the
+   [Support Stage Guide](README.md)
 
 ---
 
@@ -23,7 +56,7 @@ For per-increment support operations, see the [Support Guide](support-guide.md).
 For tier definitions (Minimal, Standard, Enterprise) and criteria for choosing,
 see the [Right-Sizing Guide](../right-sizing-guide.md). For a detailed
 comparison of what each tier looks like for Support specifically, see
-[Support Guide: Right-Sizing Support](support-guide.md#right-sizing-support).
+[Support Stage Guide: Right-Sizing Support](README.md#right-sizing-support).
 
 The greenfield and brownfield paths below include per-step guidance for each
 tier — follow the tier that matches your project.
@@ -64,7 +97,8 @@ accepting production ownership for your first increment.
 ### 1. Choose Your Support Level
 
 Review the right-sizing table above and select Minimal, Standard, or Enterprise.
-Document your choice in the [Support Brief](support-brief-template.md).
+Document your choice in the
+[Support Brief](../templates/support-brief-template.md).
 
 Consider:
 
@@ -100,7 +134,7 @@ escalation paths. See
 **Enterprise:** 24x7 coverage with follow-the-sun or shift-based rotation.
 Automated escalation if on-call does not acknowledge within SLA.
 
-### On-Call Expectations
+#### On-Call Expectations
 
 | Expectation                 | Standard             | Enterprise           |
 | --------------------------- | -------------------- | -------------------- |
@@ -142,13 +176,13 @@ contact for help.
 
 **Standard:** Add runbooks for common incidents, database maintenance,
 dependency updates, and scaling procedures. Use the
-[Runbook Template](runbook-template.md) as a starting point. See
+[Runbook Template](../templates/runbook-template.md) as a starting point. See
 [Support Reference: Runbook Examples](support-reference.md#operational-runbook-examples)
 for example content.
 
 **Enterprise:** Comprehensive runbook library covering all operational
 scenarios, regularly tested and updated. Use the
-[Runbook Template](runbook-template.md) for consistent formatting.
+[Runbook Template](../templates/runbook-template.md) for consistent formatting.
 
 ### 7. Establish Success Criteria Tracking
 
@@ -161,11 +195,9 @@ problems.
 **Enterprise:** Automated dashboards with real-time tracking. Defined escalation
 when metrics deviate from targets.
 
-> **AI exploration:** \_"Help me set up support operations for [describe >
-> your >
->
-> > project, team size, user base, and risk level]. Suggest the right support
-> > level and what to prioritize first."\_
+> **AI exploration:** _"Help me set up support operations for [describe your
+> project, team size, user base, and risk level]. Suggest the right support
+> level and what to prioritize first."_
 
 ---
 
@@ -223,7 +255,7 @@ Prioritize improvements based on risk and effort:
 Address high-priority items immediately. Lower-priority items become backlog for
 continuous improvement.
 
-> **AI exploration:** _"Review our current support operations [describe > them]
+> **AI exploration:** _"Review our current support operations [describe them]
 > and suggest improvements prioritized by risk reduction."_
 
 ---
@@ -253,15 +285,17 @@ For a quick verification, use the
 
 ## Related Documents
 
-- [Support Guide](support-guide.md)
+- [Support Stage Guide](README.md)
 - [Support Readiness Checklist](support-readiness-checklist.md)
-- [Support Brief Template](support-brief-template.md)
+- [Support Brief Template](../templates/support-brief-template.md)
 - [Support Reference](support-reference.md)
 - [Deployment Setup Guide](../deployment/deployment-setup-guide.md)
 - [Checkpoint Decision Template](../templates/checkpoint-decision-template.md)
 
 ---
 
-**Last Updated:** 2026-02-21
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-28
+
+Added to framework in v0.12.0.
