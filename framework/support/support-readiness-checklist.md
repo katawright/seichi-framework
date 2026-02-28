@@ -12,6 +12,10 @@ setup. For ongoing operational readiness, use the
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
+> Not every item applies at every scale — mark items N/A with justification when
+> they don't fit your project's risk tier. See
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
 ## Minimal Level
 
 For MVPs, experiments, prototypes, and small internal tools.
@@ -70,6 +74,7 @@ for mission-critical production ownership.
 
 ---
 
+<!-- prettier-ignore -->
 > **AI suggestion:** _"Walk me through this checklist for [describe your
 > project, support level, and team] and flag any items that need extra
 > attention."_

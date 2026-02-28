@@ -10,6 +10,10 @@ and ready for Verification.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
+> Not every item applies at every scale — mark items N/A with justification when
+> they don't fit your project's risk tier. See
+> [Right-Sizing Guide](../right-sizing-guide.md).
+
 ## Checklist Items
 
 ### Requirements and Code Quality
