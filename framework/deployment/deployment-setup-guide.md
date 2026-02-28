@@ -1,11 +1,47 @@
 # Deployment Setup Guide
 
-Strategic guide for setting up deployment infrastructure. Use this guide during
-**Increment 0** (before your first increment deployment) or when making
-significant infrastructure changes.
+## Overview
 
-For per-increment deployment execution, see the
-[Deployment Guide](deployment-guide.md).
+Strategic guidance for setting up deployment infrastructure before your first
+increment deployment.
+
+### Why Deployment Setup
+
+Per-increment deployments fail when the underlying infrastructure isn't ready —
+missing pipelines, unconfigured environments, no rollback capability, or secrets
+committed to code. Setting up deployment infrastructure during Increment 0
+prevents these failures and gives the team a validated pipeline before business
+complexity enters the picture.
+
+### Purpose
+
+- Guide greenfield projects through building deployment infrastructure from
+  scratch
+- Guide brownfield projects through documenting and improving existing
+  infrastructure
+- Provide right-sizing tables so teams invest appropriately for their risk tier
+- Validate the pipeline end-to-end with a skeleton deployment before the first
+  real increment
+
+### Key Principle
+
+Prove the pipeline works before you need it. A skeleton deployment during
+Increment 0 catches infrastructure issues when the stakes are low.
+
+### How to Use This Guide
+
+1. Review [**Right-Sizing Deployment Setup**](#right-sizing-deployment-setup) to
+   match investment to your risk tier
+2. Follow the [**Greenfield Path**](#greenfield-path) or
+   [**Brownfield Path**](#brownfield-path) based on your starting point
+3. Complete the
+   [Deployment Pipeline Checklist](deployment-pipeline-checklist.md) to verify
+   readiness
+4. For per-increment deployment execution, see the
+   [Deployment Stage Guide](README.md)
+
+For cross-cutting framework concepts, see
+[Framework Guide](../framework-guide.md).
 
 ---
 
@@ -174,7 +210,8 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your stack, team size, and deployment frequency targets]."_
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your
+> stack, team size, and deployment frequency targets]."_
 
 ---
 
@@ -240,7 +277,8 @@ Prioritize improvements based on risk and effort:
 Address high-priority items before the first increment deployment.
 Lower-priority items become backlog for future iterations.
 
-> **AI exploration:** _"Review our current deployment process [describe it] and identify gaps compared to modern deployment practices."_
+> **AI exploration:** _"Review our current deployment process [describe it] and
+> identify gaps compared to modern deployment practices."_
 
 ---
 
@@ -248,8 +286,8 @@ Lower-priority items become backlog for future iterations.
 
 - **System Design** makes deployment strategy decisions (this guide implements
   them)
-- **Deployment Guide** covers per-increment deployment execution (this guide
-  covers one-time setup)
+- **Deployment Stage Guide** covers per-increment deployment execution (this
+  guide covers one-time setup)
 - **Deployment Pipeline Checklist** provides a quick readiness check for the
   infrastructure built here
 
@@ -258,12 +296,14 @@ Lower-priority items become backlog for future iterations.
 ## Related Documents
 
 - [Deployment Pipeline Checklist](deployment-pipeline-checklist.md)
-- [Deployment Guide](deployment-guide.md)
+- [Deployment Stage Guide](README.md)
 - [Deployment Reference](deployment-reference.md)
 - [System Design](../system-design/README.md)
 
 ---
 
-**Last Updated:** 2026-02-22
+## Notes
 
-_Added to framework in v0.12.0_
+**Last Updated:** 2026-02-28
+
+Added to framework in v0.12.0.

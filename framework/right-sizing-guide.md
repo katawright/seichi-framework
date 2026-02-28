@@ -54,7 +54,7 @@ each stage guide's Right-Sizing section for full details.
 | **[Increment Design](increment-design/README.md)** | Task list with key decisions noted                  | Component specs, interface contracts, test strategy                | Detailed design docs, formal interface specs, risk assessment                    |
 | **[Implementation](implementation/README.md)**     | Self-review, basic tests, working code              | PR reviews, unit test coverage targets, instrumentation            | Formal code review, security scanning, audit trail, comprehensive tests          |
 | **[Verification](verification/README.md)**         | Manual testing, basic smoke tests                   | Integration + functional tests, performance baseline, UAT          | Full test suite, security + accessibility + performance testing, formal go/no-go |
-| **[Deployment](deployment/deployment-guide.md)**   | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
+| **[Deployment](deployment/README.md)**             | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
 | **[Support](support/support-guide.md)**            | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
 
 ---

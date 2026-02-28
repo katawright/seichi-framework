@@ -1,9 +1,38 @@
 # Deployment Reference
 
-Optional deep-dive companion to the [Deployment Guide](deployment-guide.md),
-[Deployment Brief Template](deployment-brief-template.md), and
-[Deployment Checklist](deployment-checklist.md). Consult when you need specifics
-or a starting point for AI-assisted exploration.
+## Overview
+
+Detailed deployment practices, strategy-specific checklists, rollback
+procedures, and operational templates — companion to the
+[Deployment Stage Guide](README.md).
+
+### Why This Reference
+
+Stage guides keep guidance concise by design. When you need strategy-specific
+checklists, rollback procedures, monitoring thresholds, communication templates,
+or decision trees, this reference provides the detail.
+
+### Purpose
+
+- Provide detailed deployment strategy comparisons with per-strategy checklists
+- Document rollback procedures, triggers, and decision authority
+- Supply monitoring thresholds, alert configuration, and health check details
+- Offer communication templates and deployment patterns
+- Collect security checklists, decision trees, and red flags in one place
+
+### Key Principle
+
+Consult this reference when the stage guide's summary isn't enough — use it as a
+starting point for AI-assisted exploration tailored to your stack.
+
+### How to Use This Reference
+
+1. Start with the [**Deployment Stage Guide**](README.md) for workflow and
+   guidance summaries
+2. Drill into sections here when you need specifics (e.g., strategy-specific
+   checklists, rollback steps, monitoring thresholds)
+3. Use the AI exploration prompts at the end of each section to generate
+   stack-specific guidance
 
 ---
 
@@ -73,15 +102,8 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your system, traffic patterns, and risk tolerance] and recommend an approach."_
-
----
-
-## Environment Management
-
-For environment provisioning, pipeline setup, environment parity, and
-Infrastructure as Code guidance, see the
-[Deployment Setup Guide](deployment-setup-guide.md).
+> **AI exploration:** _"Compare deployment strategies for [describe your
+> system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
 
@@ -126,7 +148,8 @@ plan cleanup of old structures.
 - Creating index without CONCURRENTLY on large tables (locks table)
 - Renaming column without expand-contract (breaks old code immediately)
 
-> **AI exploration:** _"Review our migration plan for [describe schema changes] and identify risks or suggest a safer approach."_
+> **AI exploration:** _"Review our migration plan for [describe schema changes]
+> and identify risks or suggest a safer approach."_
 
 ### Cache Invalidation
 
@@ -165,17 +188,6 @@ When using feature flags as part of deployment:
 - Confirm flag state in each environment before deployment
 - Plan flag cleanup after successful rollout
 - Consider flag dependencies (enabling flag A requires flag B)
-
----
-
-## Configuration and Secrets Management
-
-For configuration principles and secrets management setup, see the
-[Deployment Setup Guide](deployment-setup-guide.md).
-
-Per-increment configuration changes are tracked in the
-[Deployment Brief Template](deployment-brief-template.md) under Configuration
-Changes.
 
 ---
 
@@ -249,7 +261,8 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe your deployment strategy and infrastructure]."_
+> **AI exploration:** _"Help me design a rollback procedure for [describe
+> your deployment strategy and infrastructure]."_
 
 ---
 
@@ -330,7 +343,8 @@ lag.
 - [ ] Background jobs running on schedule
 - [ ] Webhooks and callbacks working
 
-> **AI exploration:** _"Suggest monitoring thresholds and alert rules tuned to [describe your stack, traffic patterns, and SLAs]."_
+> **AI exploration:** _"Suggest monitoring thresholds and alert rules tuned to
+> [describe your stack, traffic patterns, and SLAs]."_
 
 ---
 
@@ -395,7 +409,8 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your deployment and audience]."_
+> **AI exploration:** _"Draft deployment communications for [describe your
+> deployment and audience]."_
 
 ---
 
@@ -425,14 +440,8 @@ For breaking changes requiring downtime:
 4. Deploy and validate
 5. Bring online and notify completion
 
-> **AI exploration:** _"Help me plan a [hotfix / scheduled maintenance] deployment for [describe the situation]."_
-
----
-
-## CI/CD Pipeline and Automation
-
-For pipeline design, structure, and best practices, see the
-[Deployment Setup Guide](deployment-setup-guide.md).
+> **AI exploration:** _"Help me plan a [hotfix / scheduled maintenance]
+> deployment for [describe the situation]."_
 
 ---
 
@@ -452,7 +461,8 @@ For pipeline design, structure, and best practices, see the
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe your stack and compliance requirements]."_
+> **AI exploration:** _"Audit our deployment security posture for [describe
+> your stack and compliance requirements]."_
 
 ---
 
@@ -509,7 +519,8 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe your deployment process and risk tolerance]."_
+> **AI exploration:** _"Create deployment decision trees tailored to [describe
+> your deployment process and risk tolerance]."_
 
 ---
 
@@ -532,43 +543,13 @@ vulnerability discovered, success criteria instrumentation not working.
 **Action:** If any red flag present, STOP and address immediately. Consider
 rollback if critical.
 
-> **AI exploration:** _"Given our recent deployment [describe what happened], identify which red flags apply and suggest remediations."_
+> **AI exploration:** _"Given our recent deployment [describe what happened],
+> identify which red flags apply and suggest remediations."_
 
 ---
 
-## Support Handoff Details
+## Notes
 
-### Support Documentation
+**Last Updated:** 2026-02-28
 
-- **Support Runbook:** [Link or location]
-- **Troubleshooting Guide:** [Link or location]
-- **API Documentation:** [Link — if APIs deployed]
-- **User Documentation:** [Link — if user-facing]
-
-### Production Access
-
-**Environment URLs:**
-
-- Production: [URL]
-- Admin panel: [URL]
-- Monitoring dashboard: [URL]
-
-**Access Credentials:**
-
-- Documented in: [Password manager, Wiki, etc.]
-- Access granted to: [Support team members]
-
-### Escalation Contacts
-
-- **Primary On-Call:** [Name, Contact]
-- **Secondary On-Call:** [Name, Contact]
-- **Deployment Engineer:** [Name, Contact] — Available for [Duration] after
-  deployment
-
-> **AI exploration:** _"Generate a support handoff checklist tailored to [describe your team structure and tooling]."_
-
----
-
-**Last Updated:** 2026-02-19
-
-_Added to framework in v0.12.0_
+Added to framework in v0.12.0.
