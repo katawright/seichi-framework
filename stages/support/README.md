@@ -1,3 +1,28 @@
+---
+id: support
+stage_number: 8
+execution_pattern: continuous
+inputs:
+  - deployed-system
+  - monitoring-dashboards
+  - runbooks
+  - success-criteria
+  - incident-response-procedures
+outputs:
+  - artifact: system-availability-metrics
+  - artifact: success-criteria-reports
+  - artifact: incident-reports
+  - artifact: enhancement-backlog
+    template: templates/support-brief.md
+gates:
+  - type: human-approval
+    name: "Production Ownership Decision"
+feeds_into:
+  [requirements, system-design, increment-design, implementation, initiation]
+checklist: stages/support/checklist.md
+reference: stages/support/reference.md
+---
+
 # AI-Assisted SDLC: Support Stage
 
 ## Overview
@@ -46,20 +71,18 @@ deployment, and production monitoring dashboards active.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
    your project's risk tier
-3. Fill out the [Support Brief Template](../../templates/support-brief.md)
-   for your support plan and operations
+3. Fill out the [Support Brief Template](../../templates/support-brief.md) for
+   your support plan and operations
 4. Operate using the [**Support Workflow**](#support-workflow)
-5. Run the [Support Checklist](checklist.md) regularly (weekly
-   recommended)
+5. Run the [Support Checklist](checklist.md) regularly (weekly recommended)
 6. Record the ownership decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 
 > **First time setting up support?** Start with the
-> [Support Operations Guide](operations.md) to choose your support
-> level and establish one-time infrastructure (incident response, on-call,
-> runbooks). Use the
-> [Support Readiness Checklist](readiness-checklist.md) to verify
-> readiness before accepting production ownership.
+> [Support Operations Guide](operations.md) to choose your support level and
+> establish one-time infrastructure (incident response, on-call, runbooks). Use
+> the [Support Readiness Checklist](readiness-checklist.md) to verify readiness
+> before accepting production ownership.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -187,8 +210,8 @@ track progress toward business objectives.
 
 Monitoring **infrastructure and tooling** (dashboards, APM, log aggregation) is
 set up during deployment — see the
-[Deployment Setup Guide](../deployment/setup.md). This section
-covers the **operational practices** for using that infrastructure day-to-day.
+[Deployment Setup Guide](../deployment/setup.md). This section covers the
+**operational practices** for using that infrastructure day-to-day.
 
 **What to monitor:**
 
@@ -206,8 +229,8 @@ covers the **operational practices** for using that infrastructure day-to-day.
 
 For specific thresholds, baselines, and alerting design patterns, see
 [Support Reference: Monitoring](reference.md#monitoring-thresholds-and-baselines)
-and [Alerting Design](reference.md#alerting-design), or use AI to
-suggest thresholds tuned to your traffic patterns and SLAs.
+and [Alerting Design](reference.md#alerting-design), or use AI to suggest
+thresholds tuned to your traffic patterns and SLAs.
 
 ### Incident Response
 
@@ -356,8 +379,7 @@ knowledge management setup (choosing tools, creating first runbooks), see the
 [Support Operations Guide](operations.md).
 
 For rotation structures, burnout prevention strategies, and documentation best
-practices, see
-[Support Reference: On-Call](reference.md#on-call-operations) and
+practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 [Knowledge Management](reference.md#knowledge-management).
 
 ---
@@ -378,8 +400,8 @@ practices, see
 
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
-[Checkpoint Decision Template](../../templates/checkpoint-decision.md) to
-record when the team confirms readiness to own the system in production.
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md) to record
+when the team confirms readiness to own the system in production.
 
 ---
 

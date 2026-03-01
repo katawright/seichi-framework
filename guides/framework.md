@@ -1,3 +1,10 @@
+---
+id: framework
+type: guide
+concerns:
+  [design-principles, roles, governance, greenfield-brownfield, compliance]
+---
+
 # Framework Guide
 
 ## Overview
@@ -10,9 +17,8 @@ right-sizing.
 ### Why This Guide
 
 Individual stage guides cover their own scope. Dedicated references cover stages
-([stages.md](stages.md)), AI assistance
-([ai-assistance.md](ai-assistance.md)), and right-sizing
-([right-sizing.md](right-sizing.md)). This guide is the hub for
+([stages.md](stages.md)), AI assistance ([ai-assistance.md](ai-assistance.md)),
+and right-sizing ([right-sizing.md](right-sizing.md)). This guide is the hub for
 concepts that span multiple documents: roles, governance, MoSCoW,
 greenfield/brownfield adaptation, compliance, and key terms.
 
@@ -103,9 +109,8 @@ assistant helps you apply them to your specific project context.
 
 **Getting started:**
 
-See the **[Manual Process Guide](manual-process.md)** for a
-comprehensive guide to using the framework with any AI assistant. The guide
-includes:
+See the **[Manual Process Guide](manual-process.md)** for a comprehensive guide
+to using the framework with any AI assistant. The guide includes:
 
 - Template prompt with project context placeholders
 - Guidance for different AI tools (Claude Code, ChatGPT, Copilot, etc.)
@@ -152,8 +157,7 @@ framework's flexibility. It is planned for future release.
 This guide covers the major concepts that structure the framework:
 
 **[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
-(foundational, iterative, continuous). Full reference:
-[stages.md](stages.md).
+(foundational, iterative, continuous). Full reference: [stages.md](stages.md).
 
 **[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five checkpoint types ensuring
 quality and alignment. Full reference:
@@ -205,8 +209,7 @@ The framework defines five checkpoint types — Gates, Quality Checkpoints,
 Deployment Approvals, Alignment Reviews, and Compliance Approvals — each with
 distinct decision rights, required evidence, and decision records. For the full
 taxonomy including decision-rights matrix, see the
-[AI-Assisted SDLC Stages § Checkpoints](stages.md#checkpoints)
-reference.
+[AI-Assisted SDLC Stages § Checkpoints](stages.md#checkpoints) reference.
 
 ---
 
@@ -406,15 +409,15 @@ project types deliver features using the same iterative cycle.
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                | Greenfield                                | Brownfield (First AI)                                                                                                          | Brownfield (Has Context)                          |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                  | Understand existing system + define new goals     |
-| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                                                 | New requirements + existing system constraints    |
-| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                           | Adapt/extend architecture + assess infrastructure |
-| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                                               | Plan first feature increment details              |
+| Stage                | Greenfield                                | Brownfield (First AI)                                                                                                    | Brownfield (Has Context)                          |
+| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                            | Understand existing system + define new goals     |
+| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                                           | New requirements + existing system constraints    |
+| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                     | Adapt/extend architecture + assess infrastructure |
+| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                                         | Plan first feature increment details              |
 | **Foundation**       | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](project-foundation.md#assessing-brownfield-readiness)) | N/A — proceed directly to feature delivery        |
-| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                                   | Deliver features with established infra           |
-| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                                   | Monitor changes, consider existing user base      |
+| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                             | Deliver features with established infra           |
+| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                             | Monitor changes, consider existing user base      |
 
 ### Project Foundation: The Critical Difference
 
@@ -545,8 +548,8 @@ constraints** that new work must satisfy:
 
 These constraints become **Non-Functional Requirements (NFRs)** that shape
 design and testing. See the
-[Requirements Stage Guide](../stages/requirements/README.md#constraints) for detailed
-guidance on capturing brownfield constraints.
+[Requirements Stage Guide](../stages/requirements/README.md#constraints) for
+detailed guidance on capturing brownfield constraints.
 
 ### When Both Types Converge
 
@@ -570,12 +573,12 @@ project type.
 Stage-specific greenfield and brownfield guidance is documented in each stage's
 guide:
 
-- **[System Design Stage Guide](../stages/system-design/README.md)** — Infrastructure
-  planning outputs and bootstrap increment guidance
-- **[Requirements Stage Guide](../stages/requirements/README.md)** — Capturing existing
-  system constraints for brownfield projects
-- **[Implementation Stage Guide](../stages/implementation/README.md)** — Bootstrap
-  increment execution for greenfield projects
+- **[System Design Stage Guide](../stages/system-design/README.md)** —
+  Infrastructure planning outputs and bootstrap increment guidance
+- **[Requirements Stage Guide](../stages/requirements/README.md)** — Capturing
+  existing system constraints for brownfield projects
+- **[Implementation Stage Guide](../stages/implementation/README.md)** —
+  Bootstrap increment execution for greenfield projects
 
 ---
 

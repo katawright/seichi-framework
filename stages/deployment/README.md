@@ -1,3 +1,27 @@
+---
+id: deployment
+stage_number: 7
+execution_pattern: iterative
+inputs:
+  - verified-code
+  - uat-sign-off
+  - deployment-checklist
+  - rollback-plan
+outputs:
+  - artifact: deployed-system
+  - artifact: deployment-log
+  - artifact: updated-runbooks
+  - artifact: release-notes
+  - artifact: baseline-measurements
+    template: templates/deployment-brief.md
+gates:
+  - type: human-execution-required
+    name: "Production Deployment Approval"
+feeds_into: [support]
+checklist: stages/deployment/checklist.md
+reference: stages/deployment/reference.md
+---
+
 # AI-Assisted SDLC: Deployment Stage
 
 ## Overview
@@ -38,20 +62,19 @@ issues documented.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
    to your project's risk tier
-3. Fill out the
-   [Deployment Brief Template](../../templates/deployment-brief.md) for
-   this increment's deployment plan
+3. Fill out the [Deployment Brief Template](../../templates/deployment-brief.md)
+   for this increment's deployment plan
 4. Deploy using the [**Deployment Workflow**](#deployment-workflow)
-5. Run the [Deployment Checklist](checklist.md) before, during, and
-   after deployment
+5. Run the [Deployment Checklist](checklist.md) before, during, and after
+   deployment
 6. Record the deployment decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 
 > **First time deploying this project?** If deployment infrastructure doesn't
 > exist yet (or isn't documented), start with the
 > [Deployment Setup Guide](setup.md) and
-> [Deployment Pipeline Checklist](pipeline-checklist.md) before using
-> this guide. This guide covers per-increment deployment execution.
+> [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
+> guide. This guide covers per-increment deployment execution.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -258,16 +281,15 @@ long deployments, at completion, and immediately on rollback.
 
 ### Additional Topics
 
-The [Deployment Setup Guide](setup.md) covers project-level
-setup (do these once, during Increment 0):
+The [Deployment Setup Guide](setup.md) covers project-level setup (do these
+once, during Increment 0):
 
 - **CI/CD pipeline** — design, build, and validate your pipeline
 - **Environment management** — provisioning, parity, Infrastructure as Code
 - **Configuration and secrets** — externalization principles, secrets management
   tools
 
-The [Deployment Reference](reference.md) covers per-increment
-deep-dive topics:
+The [Deployment Reference](reference.md) covers per-increment deep-dive topics:
 
 - **Deployment patterns** — hotfix workflow, scheduled maintenance
 - **Security** — pre- and post-deployment security checks

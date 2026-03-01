@@ -1,3 +1,26 @@
+---
+id: verification
+stage_number: 6
+execution_pattern: iterative
+inputs:
+  - working-code
+  - requirements-with-acceptance-criteria
+  - test-strategy
+outputs:
+  - artifact: test-results
+    template: templates/verification-brief.md
+  - artifact: defect-reports
+  - artifact: uat-sign-off
+  - artifact: performance-test-results
+  - artifact: security-scan-results
+gates:
+  - type: ci-validation-human-spot-check
+    name: "Test Execution + Coverage Review"
+feeds_into: [deployment]
+checklist: stages/verification/checklist.md
+reference: stages/verification/reference.md
+---
+
 # AI-Assisted SDLC: Verification Stage
 
 ## Overview
@@ -50,11 +73,10 @@ acceptance criteria, and implementation brief with notes.
    effort to project complexity
 3. Execute the [**Verification Workflow**](#verification-workflow) — plan tests,
    execute tests, conduct UAT, assess readiness
-4. Complete the [Verification Checklist](checklist.md) (60-90
-   second readiness review)
-5. Complete the
-   [Verification Brief](../../templates/verification-brief.md) with test
-   results documented
+4. Complete the [Verification Checklist](checklist.md) (60-90 second readiness
+   review)
+5. Complete the [Verification Brief](../../templates/verification-brief.md) with
+   test results documented
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -244,8 +266,7 @@ Verification validates that measurement systems work correctly. See
 
 ### Additional Topics
 
-The [Verification Reference](reference.md) covers these topics in
-depth:
+The [Verification Reference](reference.md) covers these topics in depth:
 
 - **Integration testing** — strategies, best practices, component pair testing
 - **Functional testing** — test design strategies, traceability, BDD

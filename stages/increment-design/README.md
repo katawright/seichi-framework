@@ -1,3 +1,26 @@
+---
+id: increment-design
+stage_number: 4
+execution_pattern: iterative
+inputs:
+  - system-architecture
+  - increment-plan
+  - requirements-with-acceptance-criteria
+outputs:
+  - artifact: component-designs
+  - artifact: api-specifications
+  - artifact: data-model-changes
+  - artifact: test-strategy
+  - artifact: implementation-notes
+    template: templates/increment-design-brief.md
+gates:
+  - type: specialized-review
+    name: "Design Review"
+feeds_into: [implementation]
+checklist: stages/increment-design/checklist.md
+reference: stages/increment-design/reference.md
+---
+
 # AI-Assisted SDLC: Increment Design Stage
 
 ## Overview
@@ -49,8 +72,8 @@ technology-specific conventions).
 6. Specify
    [interfaces, data/state changes, component interactions](#why-these-increment-design-elements-matter)
 7. Define [test strategy](#test-strategy) for Verification stage
-8. Complete the [Increment Design Checklist](checklist.md)
-   using AI according to your chosen autonomy level
+8. Complete the [Increment Design Checklist](checklist.md) using AI according to
+   your chosen autonomy level
 9. Obtain design approval — peer review or tech lead sign-off (optional for
    Minimal; recommended for Standard; required for Enterprise — see
    [Right-Sizing Guide](../../guides/right-sizing.md))

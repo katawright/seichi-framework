@@ -1,3 +1,24 @@
+---
+id: initiation
+stage_number: 1
+execution_pattern: foundational
+inputs:
+  - business-opportunity
+  - stakeholder-list
+  - budget-constraints
+outputs:
+  - artifact: initiation-brief
+    template: templates/initiation-brief.md
+  - artifact: assumptions-risks-list
+  - artifact: timeline-estimate
+gates:
+  - type: human-approval
+    name: "Gate 1 (Investment Decision)"
+feeds_into: [requirements]
+checklist: stages/initiation/checklist.md
+reference: null
+---
+
 # AI-Assisted SDLC: Initiation Stage
 
 ## Overview
@@ -41,18 +62,16 @@ framework artifacts or technical expertise required.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to prepare for
    right-sizing decisions when filling out the brief
-3. Fill out the
-   [Initiation Brief Template](../../templates/initiation-brief.md) using
-   AI according to your chosen autonomy level — refer to
+3. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
+   using AI according to your chosen autonomy level — refer to
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
-5. Complete the [Initiation Checklist](checklist.md) using AI
-   according to your chosen autonomy level
+5. Complete the [Initiation Checklist](checklist.md) using AI according to your
+   chosen autonomy level
 6. Complete Gate 1 — present to stakeholders and record the proceed/pivot/stop
-   decision using the
-   [Gate Decision Template](../../templates/gate-decision.md)
+   decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
