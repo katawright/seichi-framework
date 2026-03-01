@@ -40,6 +40,7 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Stage execution guidance:** `stages/[stage]/README.md`
 - **Cross-cutting concepts and governance:** `guides/framework.md`
 - **AI autonomy and scoring:** `guides/ai-assistance.md`
+- **Agentic workflow and stage routing:** `guides/agentic-workflow.md`
 - **Right-sizing tiers:** `guides/right-sizing.md`
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
