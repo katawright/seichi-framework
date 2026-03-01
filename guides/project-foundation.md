@@ -1,0 +1,245 @@
+# Project Foundation Guide
+
+## Overview
+
+Practical walkthrough for foundation work — the infrastructure, discovery, or
+preparation that happens before your first feature increment. Foundation work
+may be a single bootstrap increment or a multi-increment preparation project,
+depending on the project's starting point. This guide explains when foundation
+work applies, what it involves, and routes you to the stage-specific guides
+where the actual work is defined.
+
+For detailed activity lists and project-type comparisons, see the
+[Framework Guide](framework.md) section on
+[Project Foundation: The Critical Difference](framework.md#project-foundation-the-critical-difference).
+
+### Why Foundation Work
+
+Without foundation work, teams jump from architecture documents to feature work
+and discover infrastructure gaps mid-sprint — missing CI/CD pipelines, uncreated
+environments, absent monitoring. Foundation work closes those gaps so the first
+feature increment starts on solid ground.
+
+### Purpose
+
+- Bridge the gap between foundational planning and feature delivery
+- Turn infrastructure decisions from System Design into working systems — CI/CD
+  pipelines, environments, monitoring, and operational processes
+- Route you to the right stage-specific guides based on your project type
+  (greenfield or brownfield)
+
+### Key Principle
+
+Foundation work bridges planning and delivery. It converts architecture
+decisions into working infrastructure so your first feature increment starts on
+solid ground.
+
+### How to Use This Guide
+
+1. Read [**When It Happens**](#when-it-happens) to understand where foundation
+   work fits in the project lifecycle
+2. Follow the [**Greenfield Foundation**](#greenfield-foundation-bootstrap) or
+   [**Brownfield Foundation**](#brownfield-foundation) section based on your
+   project type
+3. Use
+   [**How Foundation Work Flows Through Stages**](#how-foundation-work-flows-through-stages)
+   to plan your foundation increment(s) like any other increment
+
+---
+
+## When It Happens
+
+Foundation work occurs after Gate 2 (System Design complete) and before your
+first feature increment:
+
+```
+Foundational Stages           Foundation           Feature Delivery
+┌────────────────────┐      ┌───────────┐      ┌──────────────────┐
+│ Initiation         │      │ Bootstrap │      │ Increment 1      │
+│ Requirements       │─────>│    or     │─────>│ Increment 2      │
+│ System Design      │      │ Discovery │      │ Increment 3      │
+│                    │      │           │      │ ...              │
+└────────────────────┘      └───────────┘      └──────────────────┘
+        Gate 1  Gate 2
+```
+
+**Not every project needs a foundation phase.** Brownfield projects with
+existing infrastructure and documented AI context can skip directly to feature
+delivery. See
+[Greenfield vs. Brownfield Projects](framework.md#greenfield-vs-brownfield-projects)
+in the Framework Guide for how to determine your project type.
+
+> Similarly, not every project needs deployment infrastructure. Local-only
+> projects (console tools, spikes, experiments) may skip the deployment setup
+> routes below entirely. If deployment becomes necessary later, see
+> [Introducing Deployment Retroactively](../stages/deployment/setup.md#introducing-deployment-retroactively).
+
+---
+
+## Greenfield Foundation (Bootstrap)
+
+Greenfield projects use the foundation phase to **establish infrastructure from
+scratch**. System Design has already defined _what_ to build; the bootstrap
+increment builds it.
+
+**Route to these guides:**
+
+- **Infrastructure decisions →**
+  [System Design Reference: Greenfield Infrastructure Planning](../stages/system-design/reference.md#greenfield-infrastructure-planning)
+  — review the infrastructure plan that drives bootstrap activities
+- **CI/CD, environments, monitoring →**
+  [Deployment Setup Guide: Greenfield Path](../stages/deployment/setup.md#greenfield-path)
+  — implement pipelines, provision environments, configure observability
+- **Incident response, on-call, runbooks →**
+  [Support Operations Guide: Greenfield Path](../stages/support/operations.md#greenfield-path)
+  — establish operational processes alongside infrastructure
+
+**Completion signal:** A "hello world" application deploys successfully through
+the full pipeline to production, monitoring captures its metrics, and on-call
+processes are defined.
+
+---
+
+## Brownfield Foundation
+
+Brownfield projects using AI assistance for the first time invest foundation
+work in building the basis for effective AI collaboration. The scope of that
+investment depends on the current state of the codebase — from a focused
+discovery pass to a multi-increment preparation project.
+
+### Assessing Brownfield Readiness
+
+Before planning foundation activities, assess the codebase across five
+dimensions. This assessment shapes whether foundation work is a straightforward
+discovery exercise or requires deeper preparation.
+
+| Dimension                 | Ready                                      | Needs Preparation                           | Needs Significant Prep                                              |
+| ------------------------- | ------------------------------------------ | ------------------------------------------- | ------------------------------------------------------------------- |
+| Test coverage             | Automated tests cover critical paths       | Partial coverage, gaps in key areas         | Little or no test coverage                                          |
+| Documentation             | Architecture documented                    | Some docs but gaps or stale                 | Undocumented, tribal knowledge only                                 |
+| Architectural consistency | Consistent patterns across codebase        | Mostly consistent, some divergence          | Inconsistent, multiple conflicting approaches                       |
+| Dependency health         | Single repo or clear multi-repo boundaries | Some cross-repo tangles, manageable         | Tangled cross-repo dependencies, unclear boundaries                 |
+| Database and data logic   | Business logic in application code         | Some logic in stored procedures, documented | Significant untested logic in stored procedures, triggers, or views |
+
+> **Interpretation:** A single critical gap — such as zero test coverage or
+> entirely undocumented architecture — can shift the overall assessment
+> rightward regardless of other dimensions. Focus on the weakest dimension when
+> choosing a path.
+
+### Ready: Discovery Only
+
+When most dimensions are "Ready," foundation work is a focused discovery and
+documentation effort — no structural changes needed.
+
+**Route to these guides:**
+
+- **Existing architecture discovery →**
+  [System Design Reference: First AI-Assisted Project (Discovery)](../stages/system-design/reference.md#first-ai-assisted-project-discovery)
+  — document architecture, components, and data flows
+- **Existing deployment infrastructure →**
+  [Deployment Setup Guide: Brownfield Path](../stages/deployment/setup.md#brownfield-path)
+  — inventory environments, capture tribal knowledge, identify gaps
+- **Existing operational processes →**
+  [Support Operations Guide: Brownfield Path](../stages/support/operations.md#brownfield-path)
+  — document incident response, monitoring, and support workflows
+
+**Completion signal:** Architecture, infrastructure, and operational processes
+are documented in a structure (AGENTS.md, docs/) that AI tools can reference
+effectively.
+
+### Needs Preparation: Extended Foundation
+
+When the codebase is organized enough to work with but has notable gaps —
+limited test coverage, stale documentation, or some tangled dependencies —
+extend foundation work beyond pure discovery to address the highest-priority
+gaps.
+
+**Typical additional activities:**
+
+- Add test coverage to critical business paths
+- Clarify and document key architectural patterns
+- Map cross-repository dependencies and contracts
+- Document business logic in stored procedures or database views
+
+Keep this time-boxed. The goal is "enough foundation to start," not perfection.
+Address remaining gaps incrementally during feature work.
+
+**Completion signal:** AI context is documented AND the team can verify
+AI-generated changes in the areas targeted for pilot work.
+
+### Needs Significant Preparation: Preparation Project
+
+When the codebase has pervasive gaps — poor test coverage, inconsistent
+architecture, tangled multi-repo dependencies, or significant untested database
+logic — a single increment is not enough. Treat preparation as a dedicated
+project that runs through the framework's own stages across multiple increments.
+
+**Illustrative increment sequence** (adapt to your situation):
+
+1. **Increment 1:** Document architecture, map repositories and dependencies
+2. **Increment 2:** Establish test coverage for critical business paths
+3. **Increment 3:** Extract or document database-layer business logic
+4. **Increment 4:** Stabilize patterns in areas targeted for feature work
+
+**How AI helps with preparation:** AI tools accelerate preparation itself —
+generating initial test suites for existing code, drafting architecture
+documentation from code analysis, mapping dependency graphs, and documenting
+stored procedure logic. Preparation is faster with AI even before the codebase
+is fully ready for AI-assisted feature work.
+
+> **Preparation as a pilot:** This preparation project can serve as your
+> organization's adoption pilot. Run 1–2 preparation increments, evaluate
+> results, then decide whether to complete the full preparation. See the
+> [Organizational Adoption Guide](adoption.md#brownfield-preparation-as-a-pilot)
+> for details.
+
+**Completion signal:** Areas targeted for AI-assisted feature work meet the
+"Ready" level on assessment dimensions.
+
+### Multi-Repository and Database Considerations
+
+"The codebase" may extend beyond a single repository. Consider:
+
+- **Multiple repositories** with shared dependencies or a central dependency
+  repo
+- **Cross-repository contracts** — API boundaries, shared types, and dependency
+  graphs that span repos
+- **Database-layer business logic** — stored procedures, triggers, and views
+  containing business rules that AI tools cannot analyze directly from
+  application code
+
+**Sequencing advice:**
+
+1. Start with the central or most-depended-upon repository
+2. Document cross-repo contracts and integration points
+3. Treat database logic as a separate documentation and testing effort — AI
+   tools analyze application code effectively but need explicit documentation
+   for database-layer logic
+
+---
+
+## How Foundation Work Flows Through Stages
+
+Foundation work uses the same iterative stages as feature increments — the
+difference is focus (infrastructure instead of features):
+
+| Stage                | Feature Increment            | Foundation Work                                        |
+| -------------------- | ---------------------------- | ------------------------------------------------------ |
+| **Increment Design** | Plan feature scope and tasks | Plan infrastructure/discovery scope and tasks          |
+| **Implementation**   | Build features               | Build pipelines, configure environments, write docs    |
+| **Verification**     | Test features                | Validate pipeline, test deployments, verify monitoring |
+| **Deployment**       | Deploy features to users     | Validate infrastructure with skeleton deployment       |
+
+Design foundation work the same way you would design any increment — using the
+[Increment Design](../stages/increment-design/README.md) stage artifacts to define scope,
+break down tasks, and set acceptance criteria. The only difference is that the
+acceptance criteria focus on infrastructure readiness rather than user-facing
+functionality.
+
+---
+
+## Notes
+
+**Last Updated:** 2026-02-28
+
+Added to framework in v0.14.0.

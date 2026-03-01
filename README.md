@@ -69,7 +69,7 @@ Teams choose an operating mode per stage:
 Humans remain accountable for decisions and correctness in every mode. For a
 pilot, start with Human-Led and adjust as team confidence grows.
 
-See the [AI Assistance Scorecard](framework-ai-assistance.md) for selection
+See the [AI Assistance Scorecard](guides/ai-assistance.md) for selection
 criteria and full guidance.
 
 ---
@@ -81,17 +81,17 @@ The framework defines eight stages. Foundational stages run once per project
 
 | Stage                                          | Type         | What happens                                            |
 | ---------------------------------------------- | ------------ | ------------------------------------------------------- |
-| [Initiation](initiation/README.md)             | Foundational | Define the problem, stakeholders, and success criteria  |
-| [Requirements](requirements/README.md)         | Foundational | Capture what to build and how to verify it              |
-| [System Design](system-design/README.md)       | Foundational | Choose architecture, patterns, and tech stack           |
-| [Increment Design](increment-design/README.md) | Iterative    | Plan one increment's scope and approach                 |
-| [Implementation](implementation/README.md)     | Iterative    | Build the increment with AI assistance                  |
-| [Verification](verification/README.md)         | Iterative    | Test, review, and validate the increment                |
-| [Deployment](deployment/README.md)             | Iterative    | Release to production                                   |
-| [Support](support/README.md)                   | Continuous   | Monitor, maintain, and feed back into future increments |
+| [Initiation](stages/initiation/README.md)             | Foundational | Define the problem, stakeholders, and success criteria  |
+| [Requirements](stages/requirements/README.md)         | Foundational | Capture what to build and how to verify it              |
+| [System Design](stages/system-design/README.md)       | Foundational | Choose architecture, patterns, and tech stack           |
+| [Increment Design](stages/increment-design/README.md) | Iterative    | Plan one increment's scope and approach                 |
+| [Implementation](stages/implementation/README.md)     | Iterative    | Build the increment with AI assistance                  |
+| [Verification](stages/verification/README.md)         | Iterative    | Test, review, and validate the increment                |
+| [Deployment](stages/deployment/README.md)             | Iterative    | Release to production                                   |
+| [Support](stages/support/README.md)                   | Continuous   | Monitor, maintain, and feed back into future increments |
 
 For full stage definitions, inputs, outputs, and criteria, see
-[AI-Assisted SDLC Stages](framework-stages.md).
+[AI-Assisted SDLC Stages](guides/stages.md).
 
 ---
 
@@ -166,7 +166,7 @@ Track these during a pilot to validate ROI:
 | Defect and rework trend              | Are we catching issues earlier?        |
 | Stakeholder confidence in governance | Do leaders trust the process?          |
 
-For a deeper measurement model, see the [Framework Guide](framework-guide.md).
+For a deeper measurement model, see the [Framework Guide](guides/framework.md).
 
 ---
 
@@ -190,9 +190,9 @@ deployment timing, and compliance — not whether to continue.
 > point before the full build begins.
 
 For full checkpoint types and decision records, see
-[Checkpoint Taxonomy](framework-guide.md#checkpoint-taxonomy) in the
-[Framework Guide](framework-guide.md). For stage definitions and execution
-patterns, see [AI-Assisted SDLC Stages](framework-stages.md).
+[Checkpoint Taxonomy](guides/framework.md#checkpoint-taxonomy) in the
+[Framework Guide](guides/framework.md). For stage definitions and execution
+patterns, see [AI-Assisted SDLC Stages](guides/stages.md).
 
 ---
 
@@ -217,13 +217,13 @@ or **defer briefly**.
 **Defer if:**
 
 - Your organization has no AI usage policy yet (see
-  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for what to
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for what to
   include and how to create one quickly)
 - Teams have zero experience with AI tools (see
-  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for
   foundational skill areas to target before adopting)
 - Engineering teams are broadly resistant to AI adoption (see
-  [Readiness Assessment](framework-adoption-guide.md#defer-briefly) for how to
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for how to
   build organizational readiness before introducing the framework)
 
 > **What does a pilot require?** One project team, one Standard-tier project,
@@ -233,7 +233,7 @@ or **defer briefly**.
 
 If there are no defer signals, continue to [Adoption Path](#adoption-path). For
 detailed pre-pilot readiness criteria, see the
-[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-checklist).
+[Organizational Adoption Guide](guides/adoption.md#pre-pilot-readiness-checklist).
 
 ---
 
@@ -241,7 +241,7 @@ detailed pre-pilot readiness criteria, see the
 
 Whether you chose "adopt now" or "try first," the recommended path is a **single
 pilot project**. This section is an overview; see the
-[Organizational Adoption Guide](framework-adoption-guide.md) for full detail. If
+[Organizational Adoption Guide](guides/adoption.md) for full detail. If
 you want to try the framework on your own before proposing an organizational
 pilot, start with [Try It Now](#try-it-now).
 
@@ -251,16 +251,16 @@ pilot, start with [Try It Now](#try-it-now).
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                                        |
 | **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                                  |
-| **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](project-foundation-guide.md#assessing-brownfield-readiness) to determine scope |
+| **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](guides/project-foundation.md#assessing-brownfield-readiness) to determine scope |
 
 **Brownfield without documented context?** The
-[Project Foundation Guide](project-foundation-guide.md#brownfield-foundation)
+[Project Foundation Guide](guides/project-foundation.md#brownfield-foundation)
 walks you through a readiness assessment that determines your next step — a
 focused discovery pass, extended foundation work that addresses gaps, or a
 dedicated preparation project for codebases with pervasive issues.
 
 See
-[Greenfield vs. Brownfield](framework-guide.md#greenfield-vs-brownfield-projects)
+[Greenfield vs. Brownfield](guides/framework.md#greenfield-vs-brownfield-projects)
 for conceptual overview.
 
 ### Pre-pilot prerequisites
@@ -273,25 +273,25 @@ Confirm these before pilot kickoff:
 - **Ownership baseline:** Named owners for gate and checkpoint decisions
 
 For detailed readiness criteria, see the
-[Organizational Adoption Guide](framework-adoption-guide.md#pre-pilot-readiness-checklist).
+[Organizational Adoption Guide](guides/adoption.md#pre-pilot-readiness-checklist).
 
 ### Pilot sequence
 
 **1. Pre-pilot setup**
 
-- Select project rigor using the [Right-Sizing Guide](right-sizing-guide.md).
+- Select project rigor using the [Right-Sizing Guide](guides/right-sizing.md).
 - Choose initial AI operating mode (typically Human-Led) using the
-  [AI Assistance Scorecard](framework-ai-assistance.md).
+  [AI Assistance Scorecard](guides/ai-assistance.md).
 
 **2. Pilot execution**
 
 - Run one Standard-tier project through two increments.
 - Copy the bootstrap prompt from the
-  [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
+  [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
   and fill in your project details (~15 minutes).
-- Start with the [Initiation stage](initiation/README.md) — use the guide, brief
+- Start with the [Initiation stage](stages/initiation/README.md) — use the guide, brief
   template, and checklist.
-- Use the [Framework Guide](framework-guide.md) when deeper context is needed.
+- Use the [Framework Guide](guides/framework.md) when deeper context is needed.
 
 **3. Expansion decision**
 
@@ -308,14 +308,14 @@ to try the framework solo or with your team first, skip to
 
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
-2. Choose project rigor level ([Right-Sizing Guide](right-sizing-guide.md)).
+2. Choose project rigor level ([Right-Sizing Guide](guides/right-sizing.md)).
 3. Select initial AI operating mode
-   ([AI Assistance Scorecard](framework-ai-assistance.md)).
+   ([AI Assistance Scorecard](guides/ai-assistance.md)).
 4. Copy and complete the bootstrap prompt
-   ([Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template))
+   ([Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template))
    — plan ~15 minutes.
 5. Complete Initiation artifacts using the
-   [Initiation stage](initiation/README.md) guide, brief template, and
+   [Initiation stage](stages/initiation/README.md) guide, brief template, and
    checklist.
 6. Schedule and run the Gate 1 decision.
 
@@ -326,7 +326,7 @@ to try the framework solo or with your team first, skip to
 - A clear go/no-go decision for requirements work
 
 > **Your first session:** Complete steps 1–4, then open the
-> [Initiation stage](initiation/README.md) guide and work through the brief
+> [Initiation stage](stages/initiation/README.md) guide and work through the brief
 > template with your AI assistant. Most teams complete the first stage in a
 > single working session.
 
@@ -338,16 +338,16 @@ No organizational approval needed — try the framework on a real task in under 
 hour.
 
 1. **Learn the operating modes (~10 min).** Read the
-   [AI Assistance Scorecard](framework-ai-assistance.md) overview to understand
+   [AI Assistance Scorecard](guides/ai-assistance.md) overview to understand
    Human-Led, Collaborative, and AI-Led modes.
 2. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
-   [Manual Process Guide](framework-manual-process.md#bootstrap-prompt-template)
+   [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
    and fill in your project details.
 3. **Work through Initiation (~20 min).** Open the
-   [Initiation stage](initiation/README.md) guide and complete the brief
+   [Initiation stage](stages/initiation/README.md) guide and complete the brief
    template with your AI assistant.
 4. **Calibrate process weight (~5 min).** Use the
-   [Right-Sizing Guide](right-sizing-guide.md) to match framework rigor to your
+   [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
 
 If the experiment goes well, see [Adoption Path](#adoption-path) to propose a
@@ -357,7 +357,7 @@ wider pilot.
 
 ## Notes
 
-**Framework Version:** 0.20.0
+**Framework Version:** 0.21.0
 
 **Last Updated:** 2026-02-26
 

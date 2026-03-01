@@ -7,12 +7,11 @@ This file contains instructions specific to Claude Code.
 All project-level guidance (standards, workflow, formatting, artifact
 conventions, and context) lives in `AGENTS.md`.
 
-## Load Order
+## Project Conventions
 
-1. Read `AGENTS.md` first.
-2. Use `AGENTS.md` as the source of truth for project conventions.
-3. Apply only the Claude Code-specific rules in this file in addition to
-   `AGENTS.md`.
+See @AGENTS.md — this is the source of truth for project standards, workflow,
+formatting, and artifact conventions. Apply the Claude Code-specific rules
+below in addition to AGENTS.md.
 
 ## Claude Code Specific Rules
 
@@ -21,6 +20,15 @@ conventions, and context) lives in `AGENTS.md`.
 - Reference files with explicit paths when summarizing changes.
 - Do not commit, tag, or push unless explicitly asked.
 
+## Subagent Model Selection
+
+Right-size the model when spawning subagents:
+
+- **Haiku** — mechanical edits, simple search, well-defined transformations
+  (e.g., file moves, link find-and-replace, renaming patterns)
+- **Sonnet** — moderate reasoning, code changes with some context needed
+- **Opus** — architectural decisions, complex analysis, ambiguous requirements
+
 ## Notes
 
-Last Updated: 2026-02-22
+Last Updated: 2026-03-01
