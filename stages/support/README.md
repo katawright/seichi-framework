@@ -183,7 +183,7 @@ Otherwise, keep support lightweight and scale as the system matures.
 -- PERIODIC ACTIVITIES --
 
  6. Weekly: Review alerts, tune thresholds,
-    team retrospective
+    team retrospective (see templates/retrospective.md)
  7. Monthly: Success criteria report to
     stakeholders, dependency updates
  8. Quarterly: Business review, strategic
@@ -402,6 +402,11 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 > Initiation are tracked against real production data here. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Support closes the **learning throughline** — ongoing retrospectives surface
+> systemic patterns from production and feed improvements back into planning.
+> Use the [Retrospective Template](../../templates/retrospective.md). See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 ### Readiness Decision
 
 Support does not have a numbered gate, but the team should make a deliberate
@@ -429,6 +434,6 @@ when the team confirms readiness to own the system in production.
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.8.0.

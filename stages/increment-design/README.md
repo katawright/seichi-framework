@@ -264,6 +264,11 @@ notes.
 > that Verification will execute against. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Increment Design continues the **learning throughline** by reviewing
+> pre-mortem assumptions from Initiation and carrying forward action items from
+> prior retrospectives. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** Implementation stage receives detailed design specs, interface
 contracts, and test strategy.
 
@@ -293,6 +298,6 @@ contracts, and test strategy.
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

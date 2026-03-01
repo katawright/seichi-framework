@@ -83,6 +83,15 @@ For each:
 - **Risk/unknown:** … **Impact if wrong:** … **Likelihood:** L / M / H
   **Mitigation:** [spike/review/fallback]
 
+## Pre-Mortem (Optional)
+
+<!-- Imagine the project has failed. What went wrong? Identify 2-3 plausible
+     failure modes before committing resources. -->
+
+For each:
+
+- **Failure mode:** … **Why plausible:** … **Early signal to watch:** …
+
 ## Constraints and Dependencies
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team
@@ -121,4 +130,4 @@ foundational pass)
   - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
   - Recommendation: proceed / pivot / stop
 
-<!-- Template Last Updated: 2026-02-28 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-01 | Added in v0.2.0 -->

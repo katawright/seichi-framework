@@ -329,6 +329,11 @@ Deployment validates that measurement systems work in production. See
 > throughline transitions from "tested in staging" to "live in production." See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Deployment is the natural point to run an increment retrospective (optional)
+> or project retrospective (recommended at wrap-up). Use the
+> [Retrospective Template](../../templates/retrospective.md). See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** Support stage receives deployed system, monitoring dashboards, and
 support runbook. Record the deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
@@ -360,6 +365,6 @@ support runbook. Record the deployment decision using the
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.7.0.

@@ -300,6 +300,11 @@ The [Verification Reference](reference.md) covers these topics in depth:
 > See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Verification continues the **learning throughline** by capturing what tests
+> reveal about design assumptions — where expectations diverged from reality
+> becomes input for the retrospective. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** On **go** or **conditional go**, Deployment stage receives verified
 code, test results, and UAT approval. On **no-go**, work returns to
 Implementation for defect fixes, then a new verification cycle begins with a
@@ -333,6 +338,6 @@ fresh brief.
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.6.0.

@@ -2,7 +2,14 @@
 id: framework
 type: guide
 concerns:
-  [design-principles, roles, governance, greenfield-brownfield, compliance]
+  [
+    design-principles,
+    roles,
+    governance,
+    greenfield-brownfield,
+    compliance,
+    continuous-learning,
+  ]
 ---
 
 # Framework Guide
@@ -167,6 +174,10 @@ quality and alignment. Full reference:
 criteria flowing from Initiation through all stages. Full reference:
 [stages.md § Measurement](stages.md#measurement-throughline).
 
+**[Learning Throughline](#learning-throughline)** — Pre-mortems at project start
+and retrospectives at increment/project boundaries drive continuous improvement.
+Full reference: [stages.md § Learning](stages.md#learning-throughline).
+
 **[MoSCoW Prioritization](#moscow-prioritization)** — Coarse prioritization
 (Must/Should/Could/Won't Have) used during Requirements before increment
 boundaries are defined.
@@ -220,6 +231,18 @@ subsequent stage, ensuring goals actively guide development and enable
 data-driven validation. For the stage-by-stage breakdown and example KPIs, see
 the
 [AI-Assisted SDLC Stages § Measurement Throughline](stages.md#measurement-throughline)
+reference.
+
+---
+
+## Learning Throughline
+
+Pre-mortems at project start identify likely failure modes before the team
+commits resources; retrospectives at increment and project boundaries capture
+what actually happened and feed improvements forward. Together they form a
+lightweight learning loop that mirrors the measurement throughline. For the
+stage-by-stage breakdown, see the
+[AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline)
 reference.
 
 ---
@@ -693,6 +716,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.9.0.
