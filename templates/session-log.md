@@ -40,6 +40,10 @@
 
 - [Decision and rationale]
 
+**Deviations from Plan:**
+
+- [Where implementation diverged from design and why]
+
 **Blockers:**
 
 - [Issues preventing progress]
