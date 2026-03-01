@@ -145,7 +145,9 @@ documentation effort — no structural changes needed.
 
 **Completion signal:** Architecture, infrastructure, and operational processes
 are documented in a structure (AGENTS.md, docs/) that AI tools can reference
-effectively.
+effectively. Create an AGENTS.md at your project root with project-specific
+conventions, tech stack, and workflow — your AI assistant can help generate
+one.
 
 ### Needs Preparation: Extended Foundation
 
