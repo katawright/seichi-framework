@@ -186,6 +186,21 @@ Increment Design creates test strategy; Verification stage executes it:
 System Design is revisited rarely; Increment Design is adjusted based on
 implementation feedback.
 
+### Prior Learnings
+
+For Increment 2+, review before planning:
+
+- **Retrospective action items** — open actions from the previous increment's
+  retrospective that affect this increment's design or process
+- **Pre-mortem assumptions** — check whether any Initiation pre-mortem failure
+  modes are becoming relevant based on what the team has learned so far
+- **Surprises from Implementation** — deviations noted during the last increment
+  that should inform this one's design
+
+This is the point in the cycle where the
+[learning throughline](../../guides/framework.md#learning-throughline) feeds
+back into planning.
+
 ### Component Design Principles
 
 For each component in the increment, document:
