@@ -1,3 +1,9 @@
+---
+id: stages
+type: guide
+concerns: [stage-definitions, inputs-outputs, gates, execution-patterns]
+---
+
 # AI-Assisted SDLC Stages
 
 ## Overview
@@ -586,9 +592,9 @@ monitoring and rollback capabilities.
 - Deployment plan reviewed
 
 > **First-time setup:** If no production environment exists, see the
-> [Deployment Setup Guide](../stages/deployment/setup.md) for
-> infrastructure setup during foundation work. Projects with no deployment
-> target (local-only tools, spikes) may
+> [Deployment Setup Guide](../stages/deployment/setup.md) for infrastructure
+> setup during foundation work. Projects with no deployment target (local-only
+> tools, spikes) may
 > [skip this stage](../stages/deployment/setup.md#when-you-dont-need-this-guide).
 
 ### Key Activities

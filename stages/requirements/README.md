@@ -1,3 +1,24 @@
+---
+id: requirements
+stage_number: 2
+execution_pattern: foundational
+inputs:
+  - initiation-brief
+  - stakeholder-list
+outputs:
+  - artifact: requirements-document
+    template: templates/requirements-brief.md
+  - artifact: user-stories-with-acceptance-criteria
+  - artifact: prioritized-feature-backlog
+  - artifact: requirements-traceability
+gates:
+  - type: human-approval
+    name: "Requirements Readiness"
+feeds_into: [system-design]
+checklist: stages/requirements/checklist.md
+reference: stages/requirements/reference.md
+---
+
 # AI-Assisted SDLC: Requirements Stage
 
 ## Overview
@@ -44,14 +65,14 @@ Requirements will convert into testable specifications.
 2. Read [**Right-Sizing Requirements**](#right-sizing-requirements) to prepare
    for right-sizing decisions when filling out the brief
 3. Fill out the
-   [Requirements Brief Template](../../templates/requirements-brief.md)
-   using AI according to your chosen autonomy level — refer to
+   [Requirements Brief Template](../../templates/requirements-brief.md) using AI
+   according to your chosen autonomy level — refer to
    [**Why These Requirements Elements Matter**](#why-these-requirements-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
-5. Complete the [Requirements Checklist](checklist.md) using AI
-   according to your chosen autonomy level
+5. Complete the [Requirements Checklist](checklist.md) using AI according to
+   your chosen autonomy level
 6. Complete Gate 2 (after System Design) — present to stakeholders and record
    the proceed/pivot/stop decision using the
    [Gate Decision Template](../../templates/gate-decision.md)
@@ -135,9 +156,9 @@ Otherwise, keep Requirements concise and move to System Design.
 ## Why These Requirements Elements Matter
 
 Each section of the
-[Requirements Brief Template](../../templates/requirements-brief.md)
-exists because skipping it causes predictable failures. This section explains
-why each element is included:
+[Requirements Brief Template](../../templates/requirements-brief.md) exists
+because skipping it causes predictable failures. This section explains why each
+element is included:
 
 1. [**Context**](#context) — carry-forward from Initiation
 2. [**Users/Personas**](#userspersonas) — user-centered requirements prevent

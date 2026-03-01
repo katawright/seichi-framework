@@ -1,3 +1,9 @@
+---
+id: right-sizing
+type: guide
+concerns: [risk-tiers, team-size, process-scaling]
+---
+
 # Right-Sizing Guide
 
 ## Overview
@@ -46,8 +52,8 @@ surrounds it, and AI autonomy determines _how much AI drives_ the work.
 This table summarizes what each tier looks like across all eight stages. See
 each stage guide's Right-Sizing section for full details.
 
-| Stage                                              | Minimal                                             | Standard                                                           | Enterprise                                                                       |
-| -------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| Stage                                                        | Minimal                                             | Standard                                                           | Enterprise                                                                       |
+| ------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | **[Initiation](../stages/initiation/README.md)**             | Brief problem statement, informal stakeholders      | Structured brief, identified stakeholders and risks                | Formal brief, governance structure, compliance scope                             |
 | **[Requirements](../stages/requirements/README.md)**         | Core user stories, basic acceptance criteria        | Prioritized backlog, NFRs, edge cases documented                   | Full requirements spec, compliance requirements, formal sign-off                 |
 | **[System Design](../stages/system-design/README.md)**       | Informal architecture notes, key technology choices | Architecture document, ADRs for major decisions, security baseline | Formal architecture review, comprehensive ADRs, security and compliance design   |
@@ -87,8 +93,8 @@ for detailed guidance on solo, small-team, and large-team formality adjustments.
 ### AI Autonomy → _How Much AI Drives_
 
 AI autonomy determines how independently AI operates within each stage's gate
-requirements. The [AI Assistance Scorecard](ai-assistance.md) defines
-three tiers:
+requirements. The [AI Assistance Scorecard](ai-assistance.md) defines three
+tiers:
 
 | Tier              | Philosophy                 | AI Role                                                                                                     |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -182,8 +188,8 @@ Projects evolve, and your tier should evolve with them. Common transitions:
 - **Local-only → deployed:** Project that started without deployment
   infrastructure gains users or moves to production. Introduce deployment using
   the [Deployment Setup Guide](../stages/deployment/setup.md) and
-  [Project Foundation Guide](project-foundation.md) — treat it as
-  foundation work for the deployment dimension.
+  [Project Foundation Guide](project-foundation.md) — treat it as foundation
+  work for the deployment dimension.
 
 Reassess your tier at major milestones — particularly after Initiation and
 Requirements, where expansion triggers signal that your project may need more

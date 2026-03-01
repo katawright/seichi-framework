@@ -123,12 +123,12 @@ between H3 subsections within an H2.
 
 Files fall into categories that may have type-specific conventions:
 
-| Category                        | Example pattern  | Notes section extras        |
-| ------------------------------- | ---------------- | --------------------------- |
-| **README files**                | `README.md`      | Include `Framework Version` |
-| **Guide files** (`guides/`)     | `*.md`           | Standard structure          |
-| **Template files** (`templates/`) | `*.md`         | HTML comment metadata       |
-| **Scorecard / reference files** | `*-scorecard.md` | Standard structure          |
+| Category                          | Example pattern  | Notes section extras        |
+| --------------------------------- | ---------------- | --------------------------- |
+| **README files**                  | `README.md`      | Include `Framework Version` |
+| **Guide files** (`guides/`)       | `*.md`           | Standard structure          |
+| **Template files** (`templates/`) | `*.md`           | HTML comment metadata       |
+| **Scorecard / reference files**   | `*-scorecard.md` | Standard structure          |
 
 **Template file conventions:**
 
@@ -230,22 +230,94 @@ Item design rules:
 
 Canonical file set per stage directory:
 
-| File            | Purpose                                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------------------ |
-| `README.md`     | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
-| `checklist.md`  | Quick validation gate with critical items                                                              |
-| `reference.md`  | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
+| File           | Purpose                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| `README.md`    | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
+| `checklist.md` | Quick validation gate with critical items                                                              |
+| `reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
 
 Stage directories live under `stages/[stage]/`. Templates live in `templates/`:
 
-| File         | Purpose                               |
-| ------------ | ------------------------------------- |
-| `[name].md`  | Pure fill-in-the-blank stage artifact |
+| File        | Purpose                               |
+| ----------- | ------------------------------------- |
+| `[name].md` | Pure fill-in-the-blank stage artifact |
 
 README files link to related documents inline (via How to Use steps and body
 content) and do not need a separate Related Documents section. Non-README files
 (checklists, references, guides) include a Related Documents section before
 Notes.
+
+---
+
+## Front Matter Conventions
+
+Framework files use YAML front matter (`---` delimited block above the H1 title)
+as a dual-audience convention:
+
+- **Front matter = agent interface** — machine-parseable structured data
+- **Body = human interface** — prose, tables, and narrative for human readers
+
+Same file, two audiences, no duplication.
+
+### Which Files Use Front Matter
+
+| File category        | Front matter schema                                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Stage READMEs**    | `id`, `stage_number`, `execution_pattern`, `inputs`, `outputs`, `gates`, `feeds_into`, `checklist`, `reference` |
+| **Guide files**      | `id`, `type` (guide / style-guide / reference), `concerns`                                                      |
+| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                            |
+| **Templates**        | No front matter — templates use HTML comment metadata                                                           |
+| **Checklists**       | No front matter                                                                                                 |
+| **Stage references** | No front matter                                                                                                 |
+
+### Stage README Schema
+
+```yaml
+---
+id: stage-name # kebab-case identifier
+stage_number: 1 # 1-8
+execution_pattern: foundational # foundational | iterative | continuous
+inputs:
+  - input-name # kebab-case
+outputs:
+  - artifact: artifact-name
+    template: templates/artifact-name.md # optional, only if template exists
+gates:
+  - type: gate-type # human-approval | specialized-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
+    name: "Human-readable gate name"
+feeds_into: [next-stage-id] # list of stage ids this feeds into
+checklist: stages/stage-name/checklist.md
+reference: stages/stage-name/reference.md # null if not yet created
+---
+```
+
+### Guide File Schema
+
+```yaml
+---
+id: guide-name # kebab-case identifier
+type: guide # guide | style-guide | reference
+concerns: [topic-1, topic-2] # what this guide covers
+---
+```
+
+### Root README Schema
+
+```yaml
+---
+agent_entry_point: guides/agentic-workflow.md
+---
+```
+
+Minimal — routes agents to the agentic workflow guide. No stage metadata needed.
+
+### Placement Rules
+
+- Front matter goes above the H1 title
+- Delimited by `---` on its own line (opening and closing)
+- No blank line between closing `---` and H1
+- Values derived from `guides/stages.md` — front matter reflects what is already
+  documented, not new metadata
 
 ---
 

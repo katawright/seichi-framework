@@ -1,3 +1,29 @@
+---
+id: system-design
+stage_number: 3
+execution_pattern: foundational
+inputs:
+  - requirements-document
+  - non-functional-requirements
+  - success-criteria
+outputs:
+  - artifact: architecture-diagrams
+  - artifact: technology-stack-adrs
+  - artifact: data-api-architecture
+  - artifact: infrastructure-plan
+  - artifact: increment-plan
+  - artifact: gate-2-decision-package
+    template: templates/system-design-brief.md
+gates:
+  - type: alignment-review
+    name: "Architecture Review"
+  - type: human-approval
+    name: "Gate 2 (Investment Decision)"
+feeds_into: [increment-design]
+checklist: stages/system-design/checklist.md
+reference: stages/system-design/reference.md
+---
+
 # AI-Assisted SDLC: System Design Stage
 
 ## Overview
@@ -43,17 +69,16 @@ ADRs, infrastructure configuration, and known technical debt.
 2. Read [**Right-Sizing System Design**](#right-sizing-system-design) to
    calibrate effort to your project's risk tier
 3. Fill out the
-   [System Design Brief Template](../../templates/system-design-brief.md)
-   using AI according to your chosen autonomy level — refer to
+   [System Design Brief Template](../../templates/system-design-brief.md) using
+   AI according to your chosen autonomy level — refer to
    [**Why These System Design Elements Matter**](#why-these-system-design-elements-matter)
    for rationale as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
-5. Complete the [System Design Checklist](checklist.md) using AI
-   according to your chosen autonomy level
+5. Complete the [System Design Checklist](checklist.md) using AI according to
+   your chosen autonomy level
 6. Complete Gate 2 — present to stakeholders and record the proceed/pivot/stop
-   decision using the
-   [Gate Decision Template](../../templates/gate-decision.md)
+   decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -413,19 +438,18 @@ at System Design to enable parallel increment work.
 The following concerns apply across all stages. Define your approach at System
 Design and trace it through implementation and verification:
 
-| Concern       | Define at           | Verify at            | Framework Reference                                                                                                             |
-| ------------- | ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Concern       | Define at           | Verify at            | Framework Reference                                                                                                       |
+| ------------- | ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Security      | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Security section) + Verification Checklist (security gate) |
 | Performance   | System Design       | Verification         | [Requirements Brief](../../templates/requirements-brief.md) (NFR section)                                                 |
-| Observability | Requirements/Design | Support              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                                        |
-| Accessibility | Requirements        | Verification         | Verification Checklist                                                                                                          |
+| Observability | Requirements/Design | Support              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                              |
+| Accessibility | Requirements        | Verification         | Verification Checklist                                                                                                    |
 | Resilience    | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
 | Data privacy  | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
 
 ### Additional Topics
 
-The [System Design Reference](reference.md) covers these topics in
-depth:
+The [System Design Reference](reference.md) covers these topics in depth:
 
 - **Security and compliance design** — authentication, authorization,
   encryption, OWASP, compliance mapping

@@ -1,3 +1,9 @@
+---
+id: ai-assistance
+type: guide
+concerns: [autonomy, gates, evaluation]
+---
+
 # AI Assistance Scorecard
 
 ## Overview
@@ -61,21 +67,19 @@ For evaluation dimension definitions, see
 
 ## Integration with Framework
 
-This scorecard complements the [AI-Assisted SDLC Stages](stages.md)
-document:
+This scorecard complements the [AI-Assisted SDLC Stages](stages.md) document:
 
-- **[AI-Assisted SDLC Stages](stages.md)** defines _what_ to do at
-  each stage (inputs, activities, outputs, criteria)
+- **[AI-Assisted SDLC Stages](stages.md)** defines _what_ to do at each stage
+  (inputs, activities, outputs, criteria)
 - **This scorecard** defines _how much assistance_ AI can have when assisting
   with those activities
 
 **Workflow integration:**
 
-1. Identify your current stage from
-   [AI-Assisted SDLC Stages](stages.md)
+1. Identify your current stage from [AI-Assisted SDLC Stages](stages.md)
 2. Review this scorecard for gate requirements and autonomy guidance
-3. Use the [Manual Process Guide](manual-process.md) to engage your AI
-   assistant with the framework
+3. Use the [Manual Process Guide](manual-process.md) to engage your AI assistant
+   with the framework
 4. Use stage-specific artifacts (checklists, briefs, guides) from stage
    directories
 5. Implement appropriate human gates based on stage requirements

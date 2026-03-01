@@ -1,3 +1,26 @@
+---
+id: implementation
+stage_number: 5
+execution_pattern: iterative
+inputs:
+  - detailed-design
+  - architecture-diagrams
+  - requirements-with-acceptance-criteria
+  - success-criteria
+outputs:
+  - artifact: working-code
+  - artifact: unit-tests
+  - artifact: code-review-approvals
+  - artifact: updated-documentation
+    template: templates/implementation-brief.md
+gates:
+  - type: ci-validation-human-approval
+    name: "PR Review + CI"
+feeds_into: [verification]
+checklist: stages/implementation/checklist.md
+reference: stages/implementation/reference.md
+---
+
 # AI-Assisted SDLC: Implementation Stage
 
 ## Overview
@@ -42,8 +65,8 @@ ready.
    instrumentation, submit PR for peer review, address feedback, get approval
    and merge (see [workflow detail](#implementation-workflow) below)
 5. Update the session log at the end of each work session
-6. After all PRs merge, complete the
-   [Implementation Checklist](checklist.md) and finalize the
+6. After all PRs merge, complete the [Implementation Checklist](checklist.md)
+   and finalize the
    [Implementation Brief](../../templates/implementation-brief.md)
 7. Hand off to Verification stage
 
@@ -208,8 +231,7 @@ Success criteria from Initiation must be measurable in production — see
 - Alert configuration
 
 > For logging best practices, metric types, code examples, and alert guidance,
-> see
-> [Implementation Reference: Logging](reference.md#logging-best-practices)
+> see [Implementation Reference: Logging](reference.md#logging-best-practices)
 > and [Metrics](reference.md#metrics-and-telemetry).
 
 ### Multi-Session Work
@@ -226,8 +248,7 @@ session, the AI agent reads the log to restore context and suggest priorities.
 
 ### Additional Topics
 
-The [Implementation Reference](reference.md) covers these topics
-in depth:
+The [Implementation Reference](reference.md) covers these topics in depth:
 
 - **Security implementation** — input validation, SQL injection, XSS, secrets
   management

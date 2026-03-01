@@ -72,8 +72,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 - File versioning:
   - `README.md` files include `Framework Version` and `Last Updated`
   - Stage artifacts include `Last Updated` and version-introduction note
-  - When `VERSION` is bumped, update the `Framework Version` field in all
-    README files to match
+  - When `VERSION` is bumped, update the `Framework Version` field in all README
+    files to match
   - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every modified
     framework file before finishing a change
 - Markdown formatting: follow `STYLE_GUIDE.md`
@@ -84,8 +84,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 2. Tailor language to role (business-first in PM/BA stages, technical in
    engineering stages)
 3. Each stage directory should include: README (stage guide), checklist,
-   reference (if needed). Templates live in `templates/`. Stage directories
-   are under `stages/`
+   reference (if needed). Templates live in `templates/`. Stage directories are
+   under `stages/`
 4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
@@ -124,6 +124,23 @@ Do not read or reference files in these directories:
 
 - `.ignore/` — personal scratch work and draft notes
 - `.obsidian/` — Obsidian vault configuration
+
+## Front Matter Convention
+
+Framework files use YAML front matter (`---` delimited block above the H1 title)
+as a dual-audience convention:
+
+- **Front matter (agent fast path):** structured, machine-parseable metadata —
+  stage routing, inputs/outputs, gates, dependencies. Agents read this first to
+  orient and make programmatic decisions.
+- **Body (human + agent deep path):** prose, tables, and narrative providing
+  rationale, examples, and guidance. Both humans and agents read the body for
+  context that doesn't reduce to structured fields.
+
+The front matter answers _what do I need, what do I produce, what gates apply_.
+The body answers _why this approach, what are the tradeoffs, how do I handle
+edge cases_. See `STYLE_GUIDE.md` for the front matter schema and formatting
+rules.
 
 ## Agent Execution Rules
 

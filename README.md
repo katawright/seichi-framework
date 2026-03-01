@@ -1,3 +1,7 @@
+---
+agent_entry_point: guides/agentic-workflow.md
+---
+
 # AI-Assisted SDLC Framework
 
 ## Overview
@@ -79,8 +83,8 @@ criteria and full guidance.
 The framework defines eight stages. Foundational stages run once per project
 (though they can be revisited); iterative stages repeat each increment.
 
-| Stage                                          | Type         | What happens                                            |
-| ---------------------------------------------- | ------------ | ------------------------------------------------------- |
+| Stage                                                 | Type         | What happens                                            |
+| ----------------------------------------------------- | ------------ | ------------------------------------------------------- |
 | [Initiation](stages/initiation/README.md)             | Foundational | Define the problem, stakeholders, and success criteria  |
 | [Requirements](stages/requirements/README.md)         | Foundational | Capture what to build and how to verify it              |
 | [System Design](stages/system-design/README.md)       | Foundational | Choose architecture, patterns, and tech stack           |
@@ -217,14 +221,14 @@ or **defer briefly**.
 **Defer if:**
 
 - Your organization has no AI usage policy yet (see
-  [Readiness Assessment](guides/adoption.md#defer-briefly) for what to
-  include and how to create one quickly)
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for what to include
+  and how to create one quickly)
 - Teams have zero experience with AI tools (see
-  [Readiness Assessment](guides/adoption.md#defer-briefly) for
-  foundational skill areas to target before adopting)
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for foundational
+  skill areas to target before adopting)
 - Engineering teams are broadly resistant to AI adoption (see
-  [Readiness Assessment](guides/adoption.md#defer-briefly) for how to
-  build organizational readiness before introducing the framework)
+  [Readiness Assessment](guides/adoption.md#defer-briefly) for how to build
+  organizational readiness before introducing the framework)
 
 > **What does a pilot require?** One project team, one Standard-tier project,
 > two increments (~4–8 weeks depending on scope). No special tooling beyond the
@@ -241,16 +245,16 @@ detailed pre-pilot readiness criteria, see the
 
 Whether you chose "adopt now" or "try first," the recommended path is a **single
 pilot project**. This section is an overview; see the
-[Organizational Adoption Guide](guides/adoption.md) for full detail. If
-you want to try the framework on your own before proposing an organizational
-pilot, start with [Try It Now](#try-it-now).
+[Organizational Adoption Guide](guides/adoption.md) for full detail. If you want
+to try the framework on your own before proposing an organizational pilot, start
+with [Try It Now](#try-it-now).
 
 ### Choose your project type
 
-| Project type                                         | When to choose                                                                                       | First step                                                                                                 |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                                        |
-| **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                                  |
+| Project type                                         | When to choose                                                                                       | First step                                                                                                  |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                                         |
+| **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                                   |
 | **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](guides/project-foundation.md#assessing-brownfield-readiness) to determine scope |
 
 **Brownfield without documented context?** The
@@ -287,10 +291,10 @@ For detailed readiness criteria, see the
 
 - Run one Standard-tier project through two increments.
 - Copy the bootstrap prompt from the
-  [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
-  and fill in your project details (~15 minutes).
-- Start with the [Initiation stage](stages/initiation/README.md) — use the guide, brief
-  template, and checklist.
+  [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template) and
+  fill in your project details (~15 minutes).
+- Start with the [Initiation stage](stages/initiation/README.md) — use the
+  guide, brief template, and checklist.
 - Use the [Framework Guide](guides/framework.md) when deeper context is needed.
 
 **3. Expansion decision**
@@ -326,9 +330,9 @@ to try the framework solo or with your team first, skip to
 - A clear go/no-go decision for requirements work
 
 > **Your first session:** Complete steps 1–4, then open the
-> [Initiation stage](stages/initiation/README.md) guide and work through the brief
-> template with your AI assistant. Most teams complete the first stage in a
-> single working session.
+> [Initiation stage](stages/initiation/README.md) guide and work through the
+> brief template with your AI assistant. Most teams complete the first stage in
+> a single working session.
 
 ---
 
@@ -336,6 +340,11 @@ to try the framework solo or with your team first, skip to
 
 No organizational approval needed — try the framework on a real task in under an
 hour.
+
+**Using an AI coding agent?** Point your agent at this framework's `README.md` —
+it will find the agent entry point automatically and guide you through the
+process. See the [Agentic Workflow Guide](guides/agentic-workflow.md) for
+details.
 
 1. **Learn the operating modes (~10 min).** Read the
    [AI Assistance Scorecard](guides/ai-assistance.md) overview to understand
