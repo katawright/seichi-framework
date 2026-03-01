@@ -133,16 +133,17 @@ For assistance level details, see the
 Not every project needs the full support infrastructure described in this guide.
 Match your ongoing support effort to your project's risk tier.
 
-| Dimension             | Minimal                                    | Standard                                        | Enterprise                                     |
-| --------------------- | ------------------------------------------ | ----------------------------------------------- | ---------------------------------------------- |
-| **Monitoring**        | Basic health checks, error tracking        | APM, log aggregation, custom dashboards         | Full observability, distributed tracing        |
-| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel            |
-| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                  |
-| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms           |
-| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)           | Contractual SLAs with penalties                |
-| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                   | Tiered support (L1/L2/L3), knowledge base      |
-| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                  | Comprehensive knowledge base, training program |
-| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                 | Dashboards with automated reporting            |
+| Dimension             | Minimal                                    | Standard                                        | Enterprise                                       |
+| --------------------- | ------------------------------------------ | ----------------------------------------------- | ------------------------------------------------ |
+| **Monitoring**        | Basic health checks, error tracking        | APM, log aggregation, custom dashboards         | Full observability, distributed tracing          |
+| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel              |
+| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                    |
+| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms             |
+| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)           | Contractual SLAs with penalties                  |
+| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                   | Tiered support (L1/L2/L3), knowledge base        |
+| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                  | Comprehensive knowledge base, training program   |
+| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                 | Dashboards with automated reporting              |
+| **Security**          | Scan weekly, patch critical in 7 days      | CVE monitoring, patch per severity SLA          | Continuous monitoring, formal vulnerability mgmt |
 
 Expand Support only when needed:
 
@@ -406,6 +407,10 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 > systemic patterns from production and feed improvements back into planning.
 > Use the [Retrospective Template](../../templates/retrospective.md). See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Support closes the **security throughline** — monitoring CVE feeds, patching
+> vulnerabilities per SLA, and maintaining incident response readiness for
+> security events. See [Security Guide](../../guides/security.md).
 
 ### Readiness Decision
 

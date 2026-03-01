@@ -8,9 +8,7 @@ project conventions.
 ## Claude Code Specific Rules
 
 - Keep responses concise and execution-focused.
-- Prefer making direct, minimal edits over broad rewrites.
 - Reference files with explicit paths when summarizing changes.
-- Do not commit, tag, or push unless explicitly asked.
 
 ## Subagent Model Selection
 

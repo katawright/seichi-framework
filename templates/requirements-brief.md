@@ -107,7 +107,9 @@
 
 - **Performance:** [NFR] | **Verification criteria:** [how validated]
 - **Reliability:** [NFR] | **Verification criteria:** [how validated]
-- **Security/Privacy:** [NFR] | **Verification criteria:** [how validated]
+- **Security/Privacy:** [NFR — derive from Initiation data sensitivity
+  classification; consider auth, encryption, audit logging, data retention] |
+  **Verification criteria:** [how validated]
 - **Scalability (if relevant):** [NFR] | **Verification criteria:** [how
   validated]
 - **Observability:** [NFR] | **Verification criteria:** [how validated]

@@ -164,14 +164,14 @@ For assistance level details, see the
 Not every project needs formal pull request processes or comprehensive
 instrumentation. Match your Implementation effort to your project's risk tier.
 
-| Practice               | Minimal                            | Standard                                        | Enterprise                                         |
-| ---------------------- | ---------------------------------- | ----------------------------------------------- | -------------------------------------------------- |
-| **Code review**        | Self-review or informal peer check | PR-based review with at least one reviewer      | Formal review with multiple reviewers, audit trail |
-| **ADRs**               | Brief notes on key decisions       | ADRs for significant implementation choices     | Comprehensive ADRs with compliance traceability    |
-| **Unit test coverage** | Tests for critical paths           | Coverage targets (e.g., 80%), CI enforcement    | High coverage targets, mutation testing            |
-| **Instrumentation**    | Basic logging                      | Structured logging, key metrics, error tracking | Full observability — traces, metrics, logs, alerts |
-| **Security practices** | Avoid known vulnerabilities        | Dependency scanning, basic security review      | SAST/DAST scanning, security review gates          |
-| **PR size/process**    | Commit directly or small PRs       | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
+| Practice               | Minimal                                   | Standard                                        | Enterprise                                         |
+| ---------------------- | ----------------------------------------- | ----------------------------------------------- | -------------------------------------------------- |
+| **Code review**        | Self-review or informal peer check        | PR-based review with at least one reviewer      | Formal review with multiple reviewers, audit trail |
+| **ADRs**               | Brief notes on key decisions              | ADRs for significant implementation choices     | Comprehensive ADRs with compliance traceability    |
+| **Unit test coverage** | Tests for critical paths                  | Coverage targets (e.g., 80%), CI enforcement    | High coverage targets, mutation testing            |
+| **Instrumentation**    | Basic logging                             | Structured logging, key metrics, error tracking | Full observability — traces, metrics, logs, alerts |
+| **Security practices** | AI-automated dep scan + secrets detection | Dependency scanning, SAST, security review      | SAST/DAST scanning, security review gates          |
+| **PR size/process**    | Commit directly or small PRs              | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
 
 Expand Implementation only when needed:
 
@@ -285,6 +285,11 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 > deviations as they happen — capturing where reality diverges from the design
 > so retrospectives have concrete data. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Implementation continues the **security throughline** by applying secure
+> coding practices with AI-automated scanning — dependency checks, SAST, and
+> secrets detection run in CI with zero additional effort. See
+> [Security Guide](../../guides/security.md).
 
 **Handoff:** Verification stage receives working code, test results, session
 log, and review approvals. Before handoff, ensure:

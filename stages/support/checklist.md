@@ -71,7 +71,9 @@ For initial setup before accepting production ownership, use the
         regularly)
 19. [ ] **Dependency scanning active** (vulnerabilities tracked and patched per
         schedule)
-20. [ ] **[H] Documentation updated after incidents and releases** (runbooks and
+20. [ ] **Vulnerability scan results reviewed per SLA** (critical patched within
+        7 days, no overdue items)
+21. [ ] **[H] Documentation updated after incidents and releases** (runbooks and
         knowledge base current)
 
 **Gate:** All items checked → ongoing operations are healthy and sustainable.
@@ -80,11 +82,11 @@ For initial setup before accepting production ownership, use the
 
 ## Success Criteria
 
-21. [ ] **Success criteria from Initiation are being measured per schedule**
+22. [ ] **Success criteria from Initiation are being measured per schedule**
         (daily, weekly, or monthly as defined)
-22. [ ] **[H] Trends analyzed** (improving, declining, or stable assessed)
-23. [ ] **[H] Reports distributed to stakeholders** (monthly at minimum)
-24. [ ] **[H] Action items created when metrics are behind target** (assigned
+23. [ ] **[H] Trends analyzed** (improving, declining, or stable assessed)
+24. [ ] **[H] Reports distributed to stakeholders** (monthly at minimum)
+25. [ ] **[H] Action items created when metrics are behind target** (assigned
         with due dates)
 
 **Gate:** All items checked → business objectives are actively tracked.

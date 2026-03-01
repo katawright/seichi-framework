@@ -33,11 +33,13 @@ successful completion.
 8. [ ] **Monitoring dashboards and alerting configured** (thresholds set)
 9. [ ] **Success criteria instrumentation verified** (Verification tested it
        works; confirm it will be active in production)
-10. [ ] **[H] Configuration and secrets reviewed** (no secrets in code, values
+10. [ ] **Security pre-deployment checks passed** (no new critical CVEs since
+        last scan, SBOM generated, artifact integrity verified)
+11. [ ] **[H] Configuration and secrets reviewed** (no secrets in code, values
         correct per environment)
-11. [ ] **[H] Stakeholders notified of deployment schedule** (timeline and
+12. [ ] **[H] Stakeholders notified of deployment schedule** (timeline and
         expected impact communicated)
-12. [ ] **Deployment team available and on communication channel** (on-call
+13. [ ] **Deployment team available and on communication channel** (on-call
         confirmed)
 
 **Gate:** All items checked → proceed to deployment.

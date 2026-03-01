@@ -137,6 +137,7 @@ your per-increment deployment effort to your project's risk tier.
 | **Monitoring cadence** | Check health after deploy          | Watch dashboards for 15-30 min post-deploy     | Automated canary analysis, extended observation   |
 | **Communication**      | Notify team in chat                | Deployment announcement to stakeholders        | Change management process, scheduled windows      |
 | **Data/state changes** | Apply manually if needed           | Migration scripts with rollback                | Versioned migrations, dry-run validation, backups |
+| **Security**           | Basic release verification         | SBOM generated, artifact integrity verified    | Full supply chain verification, signed artifacts  |
 
 Expand Deployment only when needed:
 
@@ -333,6 +334,10 @@ Deployment validates that measurement systems work in production. See
 > or project retrospective (recommended at wrap-up). Use the
 > [Retrospective Template](../../templates/retrospective.md). See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Deployment continues the **security throughline** by verifying release
+> integrity, generating an SBOM, and running pre-deployment security checks. See
+> [Security Guide](../../guides/security.md).
 
 **Handoff:** Support stage receives deployed system, monitoring dashboards, and
 support runbook. Record the deployment decision using the

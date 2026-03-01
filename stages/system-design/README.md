@@ -488,6 +488,10 @@ Package.
 > documenting them in ADRs. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
 
+> System Design continues the **security throughline** by designing the security
+> architecture and creating a threat model scaled to the project's risk tier.
+> See [Security Guide](../../guides/security.md).
+
 **Handoff:** Increment Design stage receives architecture, increment plan, and
 foundational conventions.
 

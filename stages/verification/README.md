@@ -305,6 +305,11 @@ The [Verification Reference](reference.md) covers these topics in depth:
 > becomes input for the retrospective. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
 
+> Verification continues the **security throughline** by validating that
+> security controls work correctly — from dependency scanning through
+> penetration testing, scaled by project risk tier. See
+> [Security Guide](../../guides/security.md).
+
 **Handoff:** On **go** or **conditional go**, Deployment stage receives verified
 code, test results, and UAT approval. On **no-go**, work returns to
 Implementation for defect fixes, then a new verification cycle begins with a
