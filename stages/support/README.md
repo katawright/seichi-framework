@@ -102,6 +102,10 @@ for full tier definitions.
 | ---------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------- |
 | Engineer triages; AI surfaces data | AI triages and drafts responses; engineer decides | AI monitors and identifies patterns proactively; engineer validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Operations setup:** AI helps draft incident response procedures, on-call

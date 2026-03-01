@@ -102,6 +102,10 @@ for full tier definitions.
 | ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
 | Human designs; AI suggests patterns | AI proposes architecture; human decides | AI evaluates trade-offs proactively, identifies concerns; human validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Architecture exploration:** Describe your requirements and constraints — AI
