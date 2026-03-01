@@ -3,9 +3,9 @@
 ## Overview
 
 Optional deep-dive companion to the [Implementation Stage Guide](README.md),
-[Implementation Brief Template](../../templates/implementation-brief.md),
-and [Implementation Checklist](checklist.md). Consult when you
-need specifics or a starting point for AI-assisted exploration.
+[Implementation Brief Template](../../templates/implementation-brief.md), and
+[Implementation Checklist](checklist.md). Consult when you need specifics or a
+starting point for AI-assisted exploration.
 
 ### Purpose
 
@@ -341,8 +341,71 @@ Broken tests block the team and fix cost increases exponentially over time.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+- Full slice implementation: feature code, tests, and instrumentation together
+- Code generation and refactoring within the defined module boundary
+- Database migrations and infrastructure-as-code
+- PR-sized slices following the increment design specifications
+- Proactive identification of issues and inconsistencies with the design or
+  adjacent code
+
+### What Humans Validate
+
+- PR review — checking intent, correctness, and security, not just that tests
+  pass
+- CI results: tests, linting, and security scans
+- No auth changes, schema changes, or cross-service boundary changes proceed
+  without explicit human approval
+- Feature flag compliance — incomplete work is behind flags before merge
+
+### Oversight Intensity at This Stage
+
+**Active, Passive, or Minimal.** Implementation has high verifiability via CI,
+so Passive is often appropriate for standard work. Active when working on
+security-sensitive code, data migrations, or cross-service changes. Minimal is
+possible for well-bounded, low-risk modules with strong test coverage and a
+mature CI pipeline.
+
+### Common Failure Modes
+
+- **Over-engineering** — implementing beyond what the increment design
+  specifies, adding abstractions or features not asked for
+- **Design drift** — deviating from increment design specifications without
+  flagging the deviation
+- **Incomplete error handling** — happy path works but edge cases and failures
+  are unhandled
+- **Security vulnerabilities** — injection, XSS, or auth bypass introduced
+  during generation
+- **Oversized PRs** — bundling too much work into a single PR, making review
+  impractical
+
+### Fallback Protocol
+
+- Run tests after every meaningful change — don't accumulate failures
+- Revert to last known-good state if tests fail after reasonable remediation
+  attempts (don't dig deeper into a broken state)
+- Request human review for any changes that touch outside the defined module
+  boundary
+- Flag deviations from design specs explicitly rather than silently adapting
+
+### Session Handoff Notes
+
+Capture the following at the end of each session:
+
+- PRs submitted and their current review status
+- PRs in progress and the current implementation state
+- Test suite status (passing or failing, and what's failing)
+- Remaining implementation tasks from the increment design
+- Any environment or dependency issues encountered that the next session needs
+  to know about
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

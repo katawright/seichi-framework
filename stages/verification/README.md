@@ -142,6 +142,8 @@ for full tier definitions.
 At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
 see
 [AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+For detailed AI-Led patterns, see
+[Stage Reference](reference.md#ai-led-patterns).
 
 ### AI Assistance Patterns
 

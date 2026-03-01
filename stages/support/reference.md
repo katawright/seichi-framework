@@ -183,7 +183,7 @@ How we fixed it: [Mitigation/resolution]
 Prevention: [Key action items with owners and due dates]
 ```
 
-> **AI exploration:** _"Draft incident communication messages for [describe
+> **AI exploration:** _"Draft incident communication messages for [describe >
 > the current incident situation]."_
 
 ---
@@ -220,7 +220,7 @@ Prevention: [Key action items with owners and due dates]
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your
+> **AI exploration:** _"Customize these severity levels for [describe your >
 > product, user base, and SLA commitments]."_
 
 ---
@@ -292,8 +292,8 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** _"Help me build a bug triage process for [describe
-> team size, product, and release cadence]."_
+> **AI exploration:** _"Help me build a bug triage process for [describe > team
+> size, product, and release cadence]."_
 
 ---
 
@@ -416,9 +416,8 @@ appropriate to your support level), see the
 ### Documentation Types
 
 - **Runbooks** — operational procedures (deploy, rollback, scale, restore,
-  incident handling). See the
-  [Runbook Template](../../templates/runbook.md) for a fillable starting
-  point.
+  incident handling). See the [Runbook Template](../../templates/runbook.md) for
+  a fillable starting point.
 - **Troubleshooting guides** — common issues, diagnostic steps, log locations
 - **Architecture documentation** — system design, data flow, integrations
 - **User documentation** — guides, API docs, FAQ
@@ -430,7 +429,7 @@ appropriate to your support level), see the
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your
+> **AI exploration:** _"Generate a runbook template for [describe your >
 > deployment process and tooling]."_
 
 ---
@@ -632,9 +631,9 @@ no knowledge transfer, team disengaged.
 The maturity model describes how support operations **grow over time** within a
 project — from reactive fire-fighting to optimized operations. This is distinct
 from support levels (Minimal, Standard, Enterprise) defined in the
-[Support Operations Guide](operations.md), which describe
-**right-sizing for project type** — not every project needs to reach Level 4. A
-Minimal-level project operating well at Level 2 is a success.
+[Support Operations Guide](operations.md), which describe **right-sizing for
+project type** — not every project needs to reach Level 4. A Minimal-level
+project operating well at Level 2 is a success.
 
 ### Level 1: Reactive Fire-Fighting
 
@@ -790,7 +789,7 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** _"Help me create a disaster recovery plan for [describe
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe >
 > your system, infrastructure, and business requirements]."_
 
 ---
@@ -805,8 +804,65 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+- Log clustering and pattern identification
+- Incident triage and severity classification
+- Incident communication drafts (status updates, post-mortems)
+- Runbook updates based on incident learnings
+- Dependency update analysis and risk assessment
+- Enhancement backlog grooming
+- Success criteria monitoring and reporting
+- Proactive anomaly detection
+
+### What Humans Validate
+
+Escalation decisions (when to page on-call, when to escalate severity).
+Prioritization of bugs vs. enhancements. All production-impacting actions
+(restarts, rollbacks, config changes). Incident severity classification
+confirmation. Stakeholder communications before sending.
+
+### Oversight Intensity at This Stage
+
+- **Active:** During incident response or when onboarding new monitoring
+- **Passive:** For routine operations (log analysis, report generation, backlog
+  grooming)
+- **Minimal:** Only for well-instrumented systems with mature runbooks and
+  established escalation paths
+
+### Common Failure Modes
+
+- Misclassifying incident severity (especially under-classifying)
+- Ignoring cascading failure patterns
+- Over-automating incident responses without human judgment
+- Alert fatigue from poorly tuned thresholds
+- Missing correlations between seemingly unrelated issues
+
+### Fallback Protocol
+
+- Default to higher severity classification when uncertain (easier to downgrade
+  than to catch a missed escalation)
+- Escalate early rather than late
+- Request human triage for any incident affecting customer-facing services
+- Compile full incident timeline before recommending root cause
+
+### Session Handoff Notes
+
+Capture these when ending a support session:
+
+- Active incidents and their current status
+- Monitoring state and any anomalies under investigation
+- Recent changes that could affect system behavior
+- Pending post-incident reviews
+- Enhancement backlog priorities
+- Success criteria measurement status
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.
