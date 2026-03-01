@@ -410,7 +410,7 @@ Verification.
 
 **Optional:**
 
-- Previous increment learnings
+- Previous increment learnings and retrospective action items
 - Updated constraints from implementation feedback
 
 ### Entry Criteria
