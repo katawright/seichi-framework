@@ -102,7 +102,7 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your
+> **AI exploration:** _"Compare deployment strategies for [describe your >
 > system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
@@ -261,8 +261,8 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe
-> your deployment strategy and infrastructure]."_
+> **AI exploration:** _"Help me design a rollback procedure for [describe > your
+> deployment strategy and infrastructure]."_
 
 ---
 
@@ -409,7 +409,7 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your
+> **AI exploration:** _"Draft deployment communications for [describe your >
 > deployment and audience]."_
 
 ---
@@ -461,7 +461,7 @@ For breaking changes requiring downtime:
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe
+> **AI exploration:** _"Audit our deployment security posture for [describe >
 > your stack and compliance requirements]."_
 
 ---
@@ -519,7 +519,7 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe
+> **AI exploration:** _"Create deployment decision trees tailored to [describe >
 > your deployment process and risk tolerance]."_
 
 ---
@@ -548,8 +548,68 @@ rollback if critical.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+- Drafting release steps and runbook content
+- Canary and rollback plan generation
+- Release notes drafting
+- Monitoring configuration and threshold recommendations
+- Deployment checklist preparation
+- Pipeline observation and status reporting
+- Evidence gathering for gate decisions
+
+### What Humans Validate
+
+ALL production approval gates — humans own every production deployment decision.
+Deployment execution and timing. Rollback decisions during incidents. Traffic
+management and canary promotion decisions. This is the stage with the highest
+risk if wrong (production outages, data loss).
+
+### Oversight Intensity at This Stage
+
+**Active** is strongly recommended — Deployment has "Very High" risk if wrong.
+Even at AI-Led tier, the agent's role is primarily drafting and recommending;
+humans execute and approve.
+
+- **Active:** Required for all production deployments
+- **Passive:** Acceptable only for non-production environments with established
+  rollback procedures
+- **Minimal:** Not recommended for production deployments
+
+### Common Failure Modes
+
+- Incomplete rollback plans that don't cover all failure scenarios
+- Missing monitoring coverage for new features
+- Premature deployment recommendations without sufficient evidence
+- Underestimating data migration risks
+- Incomplete communication to stakeholders
+
+### Fallback Protocol
+
+- Always defer to human for any production decision regardless of oversight
+  level
+- Present deployment readiness evidence rather than making go/no-go
+  recommendations
+- Escalate immediately if monitoring shows unexpected behavior post-deployment
+- Default to delaying deployment when evidence is insufficient
+
+### Session Handoff Notes
+
+Capture these when ending a deployment session:
+
+- Deployment checklist completion status
+- Environment state (which environments have been deployed to)
+- Pending approval gates
+- Monitoring baseline values
+- Rollback plan readiness
+- Stakeholder communication status
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

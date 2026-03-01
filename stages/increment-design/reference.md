@@ -4,8 +4,8 @@
 
 Optional deep-dive companion to the [Increment Design Stage Guide](README.md),
 [Increment Design Brief Template](../../templates/increment-design-brief.md),
-and [Increment Design Checklist](checklist.md). Consult when
-you need specifics or a starting point for AI-assisted exploration.
+and [Increment Design Checklist](checklist.md). Consult when you need specifics
+or a starting point for AI-assisted exploration.
 
 ### Purpose
 
@@ -253,8 +253,65 @@ These formats can be adapted similarly:
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+- Component designs with interface specifications
+- API specifications and data model change proposals
+- Test strategy drafts
+- Implementation notes per component
+- Proactive flagging of cross-cutting concerns (logging, auth, error handling)
+  before humans ask
+
+### What Humans Validate
+
+- Design coherence with the system architecture
+- Interface contract completeness — no missing inputs, outputs, or error cases
+- Test coverage strategy adequacy — right levels, right scenarios
+- Absence of architectural drift from System Design decisions
+
+### Oversight Intensity at This Stage
+
+**Active or Passive.** Passive is common once architectural patterns are
+established from earlier increments — AI can work within known patterns with
+light spot-checking. Active is appropriate for the first increment or when
+introducing new architectural patterns that haven't been validated yet.
+
+### Common Failure Modes
+
+- **Architectural drift** — ignoring ADRs or system design decisions, proposing
+  patterns that conflict with established architecture
+- **Incomplete interface specifications** — missing error cases or edge
+  conditions that cause integration failures downstream
+- **Under-specified test strategies** — vague coverage statements without
+  concrete scenario lists
+- **Missing cross-cutting concerns** — error handling, logging, and auth left as
+  afterthoughts rather than designed in
+
+### Fallback Protocol
+
+- Cross-reference all designs against system architecture ADRs before finalizing
+- Request architect review when proposing patterns not established in System
+  Design
+- Default to more detailed specification when uncertain about interface
+  contracts — over-specification is safer than under-specification at this stage
+
+### Session Handoff Notes
+
+Capture the following at the end of each session:
+
+- Design decisions made and their rationale (especially deviations from initial
+  plans)
+- Interface contracts defined, particularly cross-component contracts
+- Test strategy choices and coverage targets
+- Open questions about system architecture fit that need resolution before
+  implementation
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

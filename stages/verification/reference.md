@@ -4,8 +4,8 @@
 
 Optional deep-dive companion to the [Verification Stage Guide](README.md),
 [Verification Brief Template](../../templates/verification-brief.md), and
-[Verification Checklist](checklist.md). Consult when you need
-specifics or a starting point for AI-assisted exploration.
+[Verification Checklist](checklist.md). Consult when you need specifics or a
+starting point for AI-assisted exploration.
 
 ### Purpose
 
@@ -373,8 +373,71 @@ measure success without working monitoring.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+- Test generation from acceptance criteria — functional, integration, and edge
+  case tests
+- Test matrix expansion beyond the obvious scenarios
+- Synthetic test data creation for realistic, scalable test coverage
+- Contract test implementation for cross-service boundaries
+- Coverage gap identification and iteration until CI passes
+- Performance test scripting and security scan configuration
+
+### What Humans Validate
+
+- Test intent and coverage quality — are the right things being tested, not just
+  that line coverage numbers are met
+- Edge case adequacy — does the test suite cover the scenarios that actually
+  matter for this feature
+- Acceptance criteria coverage completeness — every AC has a corresponding test
+- Whether tests verify behavior rather than implementation details
+
+### Oversight Intensity at This Stage
+
+**Passive or Minimal.** Verification has very high verifiability — test results
+are machine-checkable. Minimal oversight is appropriate when acceptance criteria
+are clear and the CI pipeline is mature. Active oversight is reserved for
+complex business logic or security-critical paths where test intent is harder to
+assess automatically.
+
+### Common Failure Modes
+
+- **Testing implementation, not behavior** — brittle tests tied to internal
+  structure rather than observable behavior; break on refactoring even when
+  behavior is correct
+- **Ignoring edge cases and error paths** — good coverage of happy paths but
+  poor coverage of validation failures, timeouts, and error states
+- **Coverage padding** — generating tests for getters, setters, or trivial code
+  to hit coverage targets, with no real verification value
+- **Tests that don't validate requirements** — tests pass but don't actually
+  assert that acceptance criteria are met
+
+### Fallback Protocol
+
+- Re-read acceptance criteria and requirements when uncertain what to test —
+  tests should trace back to documented requirements
+- Consult the increment design test strategy as the authoritative source for
+  what coverage targets and test types were planned
+- Request human clarification on ambiguous acceptance criteria before generating
+  tests for them — incorrect tests are worse than missing tests
+- Never mark verification complete with failing tests, even low-priority ones
+
+### Session Handoff Notes
+
+Capture the following at the end of each session:
+
+- Test coverage status: current coverage vs. target, by test type
+- Remaining test scenarios from the test matrix not yet implemented
+- Known test gaps and their priority (deferral rationale if deferred)
+- Defects discovered during verification and their current status
+- Performance and security test results with pass/fail against NFRs
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

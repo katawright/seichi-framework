@@ -3,9 +3,9 @@
 ## Overview
 
 Optional deep-dive companion to the [System Design Stage Guide](README.md),
-[System Design Brief Template](../../templates/system-design-brief.md),
-and [System Design Checklist](checklist.md). Consult when you need
-specifics or a starting point for AI-assisted exploration.
+[System Design Brief Template](../../templates/system-design-brief.md), and
+[System Design Checklist](checklist.md). Consult when you need specifics or a
+starting point for AI-assisted exploration.
 
 ### Purpose
 
@@ -566,8 +566,8 @@ Map each success criterion to metrics, instrumentation, and dashboards:
 ## Design Brief Examples
 
 This section provides detailed examples for the
-[System Design Brief Template](../../templates/system-design-brief.md).
-Use as a reference when filling out your project's brief.
+[System Design Brief Template](../../templates/system-design-brief.md). Use as a
+reference when filling out your project's brief.
 
 ### System Context Example
 
@@ -758,8 +758,130 @@ early, establishes development patterns.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+At the AI-Led tier, AI takes ownership of the architecture exploration and
+documentation process rather than waiting for human direction. Concretely, this
+includes:
+
+- Proposing multiple architecture options with explicit trade-off analysis —
+  presenting options rather than a single recommendation, so humans choose
+- Drafting interface and API designs based on requirements, including data
+  contracts and error handling patterns
+- Producing initial data model drafts with entity relationships and constraint
+  analysis
+- Generating threat-model checklists covering OWASP Top 10 and infrastructure
+  attack surfaces relevant to the project context
+- Drafting Architecture Decision Records (ADRs) for significant technology
+  choices, including cost analysis
+- Planning infrastructure across environments (CI/CD, monitoring, deployment
+  strategy) and flagging gaps against requirements
+- Proposing increment sizing based on the requirements set and project
+  complexity
+
+### What Humans Validate
+
+System Design has the highest blast radius of the foundational stages —
+foundational decisions are difficult and expensive to reverse. Human validation
+is non-negotiable in the following areas:
+
+- **Architecture decisions:** Require specialized review — architecture council
+  or tech lead sign-off. AI proposes; humans decide.
+- **Security model and data flow:** No security-critical decision should be
+  finalized without human review. This includes authentication architecture,
+  authorization model, data residency, and encryption choices.
+- **Rollback and migration plans:** AI drafts these, but humans must verify that
+  they are executable against the actual production environment and team
+  capabilities.
+- **Technology selections with organizational fit:** AI evaluates technologies
+  against stated requirements, but cannot assess organizational politics,
+  existing vendor relationships, team hiring pipelines, or undocumented
+  constraints.
+- **Gate 2 (Investment Decision):** Requires thorough human approval — this gate
+  commits the organization to a specific architecture and investment level.
+
+### Oversight Intensity at This Stage
+
+**Active oversight is strongly recommended for System Design.** System Design
+produces foundational decisions that are difficult and expensive to reverse —
+architecture, data model, security model, and infrastructure choices all have
+downstream consequences across every subsequent stage.
+
+Active oversight (human reviews every gate thoroughly) should be the default
+unless the following conditions are both true:
+
+- The design follows well-established organizational patterns — the team has
+  built multiple systems using the same stack, and the architecture is a
+  well-understood variation of prior work
+- A tech lead or architect is engaged throughout the process, not just at gates
+
+Passive oversight (human reviews at hard gates only) is appropriate only when
+both conditions above are met. Even then, the Gate 2 investment decision
+requires active review regardless of tier.
+
+**Minimal oversight is not appropriate for System Design** under any
+circumstances — the blast radius of a flawed architecture or missed security
+concern is too high.
+
+### Common Failure Modes
+
+- **Over-engineering:** Adding architectural complexity for hypothetical future
+  needs that are not grounded in stated requirements — microservices for a
+  two-person team, event sourcing for a simple CRUD application. Mitigation:
+  anchor every architectural element to a specific requirement or stated NFR; if
+  no requirement motivates the complexity, remove it.
+- **Ignoring operational constraints:** Designing a system that meets functional
+  requirements but cannot be deployed, monitored, or supported given actual team
+  capacity, deployment windows, or infrastructure budget. Mitigation: review the
+  design against the operational constraints section of the brief before
+  finalizing.
+- **Resume-driven architecture:** Choosing technologies for novelty or prestige
+  rather than fit — the team's tool preferences, not the project's requirements,
+  drive the stack. Mitigation: every technology selection must trace to a
+  specific requirement, NFR, or organizational standard documented in an ADR.
+- **Insufficient attention to data migration and rollback:** AI focuses on the
+  happy-path architecture and omits migration complexity, rollback procedures,
+  and backward compatibility constraints. Mitigation: require explicit migration
+  and rollback sections in the design brief before Gate 2.
+
+### Fallback Protocol
+
+When AI-generated content is uncertain or potentially incorrect:
+
+- Present multiple architecture options with explicit trade-off tables rather
+  than committing to a single approach — this preserves the human decision
+  rather than encoding AI preference into the artifact
+- Escalate to the architecture council when uncertain about trade-offs between
+  non-trivial options; do not resolve architectural ambiguity through AI
+  inference alone
+- Document all design assumptions in ADRs with an explicit "Assumed" status —
+  treat assumed constraints as open questions until verified by relevant
+  stakeholders
+- Never finalize security-critical decisions (authentication architecture, data
+  flow for PII, encryption choices) without human review, regardless of
+  confidence level
+
+### Session Handoff Notes
+
+When handing off between AI sessions during System Design, capture the following
+state so the next session can continue without re-deriving context:
+
+- Key ADRs drafted and their current status — Proposed, Accepted, or Needs
+  Review — and which decisions are still open
+- Unresolved trade-offs between architecture options where a human decision is
+  required before the session can proceed
+- Pending specialized reviews — which ADRs or design sections are awaiting
+  architecture council, security review, or tech lead sign-off
+- Infrastructure decisions that affect downstream stages — CI/CD choices,
+  environment strategy, deployment patterns — so that Increment Design and
+  Implementation can build on confirmed decisions rather than assumed ones
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

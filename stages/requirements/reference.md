@@ -334,8 +334,114 @@ optional fields; response schema extension only.
 
 ---
 
+## AI-Led Patterns
+
+### What AI Drives
+
+At the AI-Led tier, AI takes ownership of the requirements drafting process end
+to end rather than waiting for human direction. Concretely, this includes:
+
+- Converting Initiation Brief goals into user stories with acceptance criteria
+  formatted to the Given/When/Then structure
+- Proactively detecting ambiguity across requirements — flagging terms that
+  could be interpreted multiple ways and surfacing them for stakeholder
+  clarification
+- Enumerating edge cases beyond the happy path — boundary conditions, error
+  states, concurrent-user scenarios, and data-quality failures
+- Prompting for NFRs across all categories (performance, reliability, security,
+  scalability, usability, observability, compliance) without being asked
+- Generating traceability matrices that map requirements to Initiation Brief
+  success criteria
+- Flagging contradictions between requirements with both interpretations
+  explicit, so stakeholders can choose rather than guess
+
+### What Humans Validate
+
+Domain correctness is the non-delegable human contribution to requirements.
+Specifically:
+
+- **Domain correctness:** Whether requirements reflect how the business actually
+  works, not just how AI inferred it should work from the brief
+- **Business priority and MoSCoW ranking:** AI can draft an initial ranking
+  based on brief language, but stakeholders own the final prioritization
+- **Stakeholder alignment:** Whether the requirements set reflects consensus
+  among all parties consulted during Initiation
+- **Acceptance criteria accuracy:** Whether the Given/When/Then criteria
+  actually test the right behavior — AI can generate structurally correct
+  criteria that test the wrong thing
+
+### Oversight Intensity at This Stage
+
+**Active or Passive oversight is typical for Requirements.** Active oversight is
+recommended when:
+
+- The domain is complex or novel and AI lacks reliable context — medical,
+  financial, legal, or highly specialized business logic
+- Requirements volatility is high — stakeholder alignment is still forming and
+  scope is shifting
+- The team is new to AI-Led requirements drafting
+
+Passive oversight (human reviews at gates, AI proceeds between them) is
+appropriate when:
+
+- Requirements patterns are well-established within the organization — the team
+  has done similar work before and the acceptance criteria format is consistent
+- Domain expertise is available for fast spot-checks at gates
+
+### Common Failure Modes
+
+- **Missing domain-specific context:** AI generates requirements that are
+  structurally correct but wrong for the domain — for example, a requirement
+  that makes sense for a generic e-commerce system but conflicts with the
+  organization's existing order management rules. Mitigation: domain expert
+  review of every requirement before the requirements document is finalized.
+- **Over-specifying implementation details:** AI conflates "what the system must
+  do" with "how the system should do it" — producing requirements that constrain
+  design unnecessarily. Mitigation: review each requirement against the
+  behavior/implementation distinction in
+  [**Requirements Terminology**](#requirements-terminology).
+- **Inconsistent acceptance criteria:** Criteria for related stories use
+  different thresholds, formats, or terminology — creating ambiguity during
+  Verification. Mitigation: review acceptance criteria across related stories as
+  a group, not individually.
+- **Plausible but misaligned requirements:** AI generates requirements that
+  sound correct based on the brief but do not reflect what stakeholders actually
+  want — the brief described what they want to build, not why. Mitigation: trace
+  each requirement back to a specific Initiation Brief success criterion.
+
+### Fallback Protocol
+
+When AI-generated content is uncertain or potentially incorrect:
+
+- Flag contradictions explicitly with both interpretations presented, and
+  request a stakeholder decision before resolving them — never silently choose
+  one interpretation
+- Request domain expert review for any requirement set touching unfamiliar
+  domains; tag affected requirements with **[NEEDS DOMAIN REVIEW]**
+- Default to more conservative scope when ambiguous — requirements that could go
+  either way should start narrow and expand based on stakeholder input, not AI
+  inference
+- When acceptance criteria cannot be made objective, flag the requirement as
+  needing a measurability review rather than proceeding with subjective criteria
+
+### Session Handoff Notes
+
+When handing off between AI sessions during Requirements, capture the following
+state so the next session can continue without re-eliciting:
+
+- Open requirements questions needing stakeholder input — specific ambiguities
+  identified, not just a general note that "some things are unclear"
+- Pending domain expert reviews — which requirements are tagged [NEEDS DOMAIN
+  REVIEW] and who the relevant expert is
+- Current coverage gaps — which Initiation Brief success criteria are not yet
+  traced to requirements, which NFR categories have not been addressed
+- Traceability status — what percentage of stories have accepted acceptance
+  criteria and trace to at least one brief goal
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.
