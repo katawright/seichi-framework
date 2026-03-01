@@ -36,6 +36,7 @@ all SDLC stages. The framework is designed to:
 Canonical sources — other docs should link here, not re-explain. Read
 `guides/stages.md` and `STYLE_GUIDE.md` first when creating or editing files.
 
+- **Quick start:** `QUICKSTART.md`
 - **Stage definitions:** `guides/stages.md`
 - **Stage execution guidance:** `stages/[stage]/README.md`
 - **Cross-cutting concepts and governance:** `guides/framework.md`
