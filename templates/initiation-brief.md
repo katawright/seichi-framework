@@ -92,6 +92,18 @@ For each:
 
 - **Failure mode:** … **Why plausible:** … **Early signal to watch:** …
 
+## Data Sensitivity and Compliance
+
+<!-- Security throughline: classify data sensitivity so downstream stages know the
+     security posture required. See guides/security.md. -->
+
+**Data sensitivity:** [Public / Internal / Confidential / Restricted]
+
+**Compliance scope:** [None / GDPR / HIPAA / SOC 2 / PCI-DSS / Other: ___]
+
+**Notes:** [Brief justification — e.g., "Handles customer PII → Confidential;
+GDPR applies because EU users are in scope"]
+
 ## Constraints and Dependencies
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team

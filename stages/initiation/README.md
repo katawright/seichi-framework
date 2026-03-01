@@ -136,15 +136,16 @@ Match your Initiation effort to your project's risk tier.
 > See
 > [Framework Guide: Greenfield vs. Brownfield Projects](../../guides/framework.md#greenfield-vs-brownfield-projects).
 
-| Practice                  | Minimal                       | Standard                                    | Enterprise                                           |
-| ------------------------- | ----------------------------- | ------------------------------------------- | ---------------------------------------------------- |
-| **Problem statement**     | Brief description of the need | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
-| **Business case**         | Informal justification        | Value, urgency, and strategic alignment     | Formal business case with financial analysis         |
-| **Success criteria**      | 1-2 measurable outcomes       | 3-5 criteria with baselines and targets     | Comprehensive KPIs with measurement plans            |
-| **Non-goals/assumptions** | Quick list                    | 3-5 explicit non-goals, key assumptions     | Detailed boundary analysis with stakeholder review   |
-| **Risk assessment**       | Mental note of key risks      | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
-| **Estimation**            | Rough range                   | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
-| **Gate 1 process**        | Informal team agreement       | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
+| Practice                  | Minimal                         | Standard                                    | Enterprise                                           |
+| ------------------------- | ------------------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| **Problem statement**     | Brief description of the need   | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
+| **Business case**         | Informal justification          | Value, urgency, and strategic alignment     | Formal business case with financial analysis         |
+| **Success criteria**      | 1-2 measurable outcomes         | 3-5 criteria with baselines and targets     | Comprehensive KPIs with measurement plans            |
+| **Non-goals/assumptions** | Quick list                      | 3-5 explicit non-goals, key assumptions     | Detailed boundary analysis with stakeholder review   |
+| **Risk assessment**       | Mental note of key risks        | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
+| **Estimation**            | Rough range                     | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
+| **Gate 1 process**        | Informal team agreement         | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
+| **Security**              | Note if sensitive data involved | Classify data sensitivity, note compliance  | Formal data classification with compliance mapping   |
 
 Expand Initiation only when needed:
 
@@ -502,6 +503,10 @@ are updated with higher confidence.
 > throughline** — identifying top failure modes before committing resources so
 > later stages can watch for early signals. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Initiation starts the **security throughline** by classifying data sensitivity
+> and compliance scope so downstream stages know the security posture required.
+> See [Security Guide](../../guides/security.md).
 
 **Handoff:** If proceeding, Requirements stage uses your Initiation Brief as its
 starting point.

@@ -32,14 +32,19 @@ and ready for Implementation.
 6. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
+### Security
+
+7. [ ] **Security implications assessed** (auth, data, or API changes flagged;
+       applicable threats from threat model identified)
+
 ### Testing and Readiness
 
-7. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
+8. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
        performance where applicable)
-8. [ ] **Implementation notes provided** (security, performance, patterns)
-9. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
-       available, risks mitigated)
-10. [ ] **[H] Engineers understand the design and can implement independently**
+9. [ ] **Implementation notes provided** (security, performance, patterns)
+10. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
+        available, risks mitigated)
+11. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
 ---

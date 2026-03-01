@@ -30,16 +30,21 @@ to circulate.
 6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/pivot/stop)
 7. [ ] **A project lead is named**
 
+### Security
+
+8. [ ] **Data sensitivity and compliance scope noted** (public/internal/
+       confidential/restricted; relevant regulations identified)
+
 ### Risks and Constraints
 
-8. [ ] **Top assumptions (<=5) are written down**
-9. [ ] **[H] Top risks/unknowns (<=5) with likelihood + mitigations**
-10. [ ] **Constraints and dependencies identified** with owners where possible
+9. [ ] **Top assumptions (<=5) are written down**
+10. [ ] **[H] Top risks/unknowns (<=5) with likelihood + mitigations**
+11. [ ] **Constraints and dependencies identified** with owners where possible
 
 ### Alternatives and Hypothesis
 
-11. [ ] **At least one alternative option considered**
-12. [ ] **Hypothesis includes a time range and confidence level**
+12. [ ] **At least one alternative option considered**
+13. [ ] **Hypothesis includes a time range and confidence level**
 
 ---
 

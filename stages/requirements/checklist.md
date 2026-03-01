@@ -29,26 +29,28 @@ System Design.
 
 4. [ ] **Key NFRs are captured** (performance, reliability, security/privacy,
        observability for success metrics)
-5. [ ] **Data sources and integrations identified** (rate limits, SLAs,
+5. [ ] **Security NFRs captured from data sensitivity classification** (auth,
+       encryption, audit logging, data retention — scaled to tier)
+6. [ ] **Data sources and integrations identified** (rate limits, SLAs,
        authentication, data ownership documented)
 
 ### Users and Problem Context
 
-6. [ ] **Users/personas are identified** (primary and secondary users documented
+7. [ ] **Users/personas are identified** (primary and secondary users documented
        with relevant context)
-7. [ ] **Problem statement is problem-first** (describes what users can't do,
+8. [ ] **Problem statement is problem-first** (describes what users can't do,
        focuses on behavior not implementation)
-8. [ ] **Goals include measurable success metrics** (carried forward from
+9. [ ] **Goals include measurable success metrics** (carried forward from
        Initiation Brief, baseline → target)
 
 ### Quality and Traceability
 
-9. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
-       behavior)
-10. [ ] **Open questions listed** (critical blockers flagged with owners)
-11. [ ] **Traceability summary present** (FRs traced to Initiation objectives
+10. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
+        behavior)
+11. [ ] **Open questions listed** (critical blockers flagged with owners)
+12. [ ] **Traceability summary present** (FRs traced to Initiation objectives
         and success metrics)
-12. [ ] **[H] Review occurred** (engineering + product, and security/compliance
+13. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
 
 ---

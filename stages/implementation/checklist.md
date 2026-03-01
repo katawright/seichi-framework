@@ -24,7 +24,7 @@ and ready for Verification.
 3. [ ] **Error handling covers failure scenarios** (graceful degradation, no
        unhandled exceptions)
 4. [ ] **[H] No critical security vulnerabilities** (input validation, secrets
-       managed, dependencies scanned, no PII in logs)
+       managed, dependencies scanned, SAST clean, no PII in logs)
 
 ### Testing and Review
 
@@ -60,8 +60,7 @@ and ready for Verification.
 > increment] and flag items needing attention."_
 
 > For red flags, code quality details, testing guidance, and troubleshooting
-> when items fail, see the
-> [Implementation Reference](reference.md).
+> when items fail, see the [Implementation Reference](reference.md).
 
 ---
 

@@ -141,6 +141,7 @@ your Requirements effort to your project's risk tier.
 | **Edge cases/data constraints** | Acknowledge known issues    | Document top edge cases and data constraints | Comprehensive edge case analysis, data mapping                      |
 | **Stakeholder review**          | Informal check-in           | Alignment review with engineering            | Formal review cycles with sign-off                                  |
 | **Compliance**                  | Basic awareness             | Documented compliance requirements           | Full compliance matrix with audit trail                             |
+| **Security**                    | Note key security concerns  | Security NFRs with verification criteria     | Full security requirements catalog with compliance traceability     |
 
 Expand Requirements only when needed:
 
@@ -622,6 +623,10 @@ gives the System Design team a clear target.
 > assumption-heavy requirements as learning risks — areas where the team's
 > understanding is weakest and surprises are most likely. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Requirements continues the **security throughline** by defining security NFRs
+> from the data sensitivity classification established in Initiation. See
+> [Security Guide](../../guides/security.md).
 
 **Handoff:** System Design stage uses your Requirements Document as its starting
 point.

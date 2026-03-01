@@ -158,7 +158,23 @@ Guidance, tips, and considerations for engineers:
 
 ### Security Notes
 
-- [Security considerations specific to this increment]
+<!-- Security throughline: assess whether this increment introduces security-relevant
+     changes. See guides/security.md. -->
+
+**Security-relevant changes in this increment:**
+
+- [Auth/authz changes, new API surfaces, data model changes, third-party
+  integrations, PII handling — or "None"]
+
+**Applicable threats (from threat model):**
+
+- [Reference relevant threats from System Design threat model — or "N/A if no
+  threat model"]
+
+**Security test cases for Verification:**
+
+- [Specific security tests needed for this increment — or "Standard scanning
+  sufficient"]
 
 ### Performance Notes
 

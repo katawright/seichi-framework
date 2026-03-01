@@ -123,6 +123,24 @@ fleet]
 
 ---
 
+## Release Security
+
+<!-- Security throughline: verify release integrity before deployment.
+     See guides/security.md. -->
+
+- [ ] **No new critical CVEs** since last dependency scan
+- [ ] **SBOM generated** for this release (attach or link)
+- [ ] **Artifact integrity verified** (checksums match CI build output)
+- [ ] **No secrets embedded** in build artifacts or container images
+- [ ] **Security scan results reviewed** (all critical/high findings resolved or
+      accepted with justification)
+
+**SBOM location:** [Link or path to SBOM file]
+
+**Security sign-off:** [Name, date — or N/A for Minimal tier]
+
+---
+
 ## Rollback Plan
 
 **Example triggers (adjust to your baseline):**

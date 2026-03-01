@@ -159,6 +159,30 @@ manager name]
 
 ---
 
+## Vulnerability Management
+
+<!-- Security throughline: monitor and patch vulnerabilities per SLA.
+     See guides/security.md. -->
+
+**Scanning tool:** [Dependabot / Snyk / Trivy / Other: ___]
+
+**Scan frequency:** [Continuous / Daily / Weekly]
+
+**Patch SLAs:**
+
+| Severity | Patch deadline        |
+| -------- | --------------------- |
+| Critical | Within 7 days         |
+| High     | Within 14 days        |
+| Medium   | Within 30 days        |
+| Low      | Next scheduled update |
+
+**Current open vulnerabilities:** [Count — or link to dashboard]
+
+**SBOM location:** [Link or path to latest SBOM]
+
+---
+
 ## Maintenance Schedule
 
 <!-- Standard and Enterprise levels -->

@@ -165,6 +165,31 @@ at increment boundaries (optional) and at project wrap-up (recommended). See the
 
 ---
 
+## Security Throughline
+
+Security activities flow through every stage, from data classification in
+Initiation through vulnerability management in Support. AI automation makes
+baseline security nearly free at the Minimal tier:
+
+| Stage                | Security role                                               |
+| -------------------- | ----------------------------------------------------------- |
+| **Initiation**       | Classify data sensitivity and compliance scope              |
+| **Requirements**     | Define security NFRs from sensitivity classification        |
+| **System Design**    | Design security architecture; threat model at tier level    |
+| **Increment Design** | Assess security implications; flag auth/data/API changes    |
+| **Implementation**   | Secure coding + AI-automated scanning (SAST, deps, secrets) |
+| **Verification**     | Validate security controls (dep scan through pen testing)   |
+| **Deployment**       | Verify release integrity; SBOM; pre-deployment checks       |
+| **Support**          | Monitor CVEs; patch per SLA; incident response              |
+
+Security decisions compound across stages — data sensitivity classified in
+Initiation drives NFRs in Requirements, which drive architecture in System
+Design, which drive scanning in Implementation. For the full stage-by-stage
+breakdown, AI automation tiers, and SSDF traceability, see the
+[Security Guide](security.md).
+
+---
+
 ## Stage 1: Initiation
 
 - **Primary Role:** Product Manager / Business Analyst

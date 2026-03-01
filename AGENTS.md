@@ -41,6 +41,7 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Cross-cutting concepts and governance:** `guides/framework.md`
 - **AI autonomy and scoring:** `guides/ai-assistance.md`
 - **Agentic workflow and stage routing:** `guides/agentic-workflow.md`
+- **Security throughline:** `guides/security.md`
 - **Right-sizing tiers:** `guides/right-sizing.md`
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
@@ -155,6 +156,7 @@ These rules apply to AI coding assistants working in this repository.
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
 6. Do not commit or create tags unless the user explicitly requests it.
+7. Never commit directly to main; always use a feature branch.
 
 ### Agent Execution Model
 

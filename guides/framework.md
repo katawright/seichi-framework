@@ -178,6 +178,11 @@ criteria flowing from Initiation through all stages. Full reference:
 and retrospectives at increment/project boundaries drive continuous improvement.
 Full reference: [stages.md § Learning](stages.md#learning-throughline).
 
+**[Security Throughline](#security-throughline)** — Security activities at every
+stage, from data classification through vulnerability management, with AI
+automation making baseline security nearly free. Full reference:
+[security.md](security.md).
+
 **[MoSCoW Prioritization](#moscow-prioritization)** — Coarse prioritization
 (Must/Should/Could/Won't Have) used during Requirements before increment
 boundaries are defined.
@@ -244,6 +249,17 @@ lightweight learning loop that mirrors the measurement throughline. For the
 stage-by-stage breakdown, see the
 [AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline)
 reference.
+
+---
+
+## Security Throughline
+
+Security activities flow through every stage — from data classification in
+Initiation through vulnerability management in Support. AI automation handles
+dependency scanning, SAST, secrets detection, and SBOM generation automatically,
+making baseline security nearly free at the Minimal tier. For the full
+stage-by-stage breakdown, AI automation tiers, right-sizing guidance, and NIST
+SSDF traceability, see the [Security Guide](security.md).
 
 ---
 

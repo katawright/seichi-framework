@@ -133,14 +133,15 @@ For assistance level details, see the
 Not every increment needs formal component specs or detailed interface
 contracts. Match your Increment Design effort to your project's risk tier.
 
-| Practice               | Minimal                            | Standard                                      | Enterprise                                        |
-| ---------------------- | ---------------------------------- | --------------------------------------------- | ------------------------------------------------- |
-| **Component design**   | Mental model, brief notes          | Component specs with responsibilities defined | Detailed design docs with review and sign-off     |
-| **Interface specs**    | Informal agreements or conventions | Documented API contracts and component props  | Formal interface specs with versioning strategy   |
-| **Data/state changes** | Note what changes                  | Migration plan, rollback approach             | Formal data migration plan with validation steps  |
-| **Test strategy**      | List what to test                  | Test plan with coverage targets               | Comprehensive test strategy with risk-based focus |
-| **Risk assessment**    | Quick mental check                 | Known risks documented with mitigations       | Formal risk register with probability and impact  |
-| **Dependency mapping** | Awareness of key dependencies      | Dependencies documented, owners identified    | Cross-team dependency tracking with SLAs          |
+| Practice               | Minimal                            | Standard                                       | Enterprise                                        |
+| ---------------------- | ---------------------------------- | ---------------------------------------------- | ------------------------------------------------- |
+| **Component design**   | Mental model, brief notes          | Component specs with responsibilities defined  | Detailed design docs with review and sign-off     |
+| **Interface specs**    | Informal agreements or conventions | Documented API contracts and component props   | Formal interface specs with versioning strategy   |
+| **Data/state changes** | Note what changes                  | Migration plan, rollback approach              | Formal data migration plan with validation steps  |
+| **Test strategy**      | List what to test                  | Test plan with coverage targets                | Comprehensive test strategy with risk-based focus |
+| **Risk assessment**    | Quick mental check                 | Known risks documented with mitigations        | Formal risk register with probability and impact  |
+| **Dependency mapping** | Awareness of key dependencies      | Dependencies documented, owners identified     | Cross-team dependency tracking with SLAs          |
+| **Security**           | Quick security mental check        | Document security-relevant changes and threats | Formal security assessment with test cases        |
 
 Expand Increment Design only when needed:
 
@@ -283,6 +284,10 @@ notes.
 > pre-mortem assumptions from Initiation and carrying forward action items from
 > prior retrospectives. See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
+> Increment Design continues the **security throughline** by assessing security
+> implications of the current increment and flagging auth, data, or API changes
+> that require security review. See [Security Guide](../../guides/security.md).
 
 **Handoff:** Implementation stage receives detailed design specs, interface
 contracts, and test strategy.
