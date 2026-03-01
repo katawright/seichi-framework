@@ -119,6 +119,10 @@ much ceremony_ surrounds it. AI autonomy determines _how much AI drives_ the
 work. A solo developer on an Enterprise project still needs security reviews and
 compliance checks — they just don't need a change advisory board.
 
+> **Project type is a separate dimension.** Greenfield and brownfield projects
+> use the same tiers but differ in foundation work and stage emphasis. See
+> [Framework Guide: Greenfield vs. Brownfield Projects](framework-guide.md#greenfield-vs-brownfield-projects).
+
 ---
 
 ## Choosing Your Tier
@@ -135,6 +139,12 @@ Choose Minimal when:
 
 **Examples:** Hackathon project, internal dashboard, proof of concept, team
 utility script, design spike.
+
+> **Not every stage applies.** Some Minimal projects (console tools, spikes,
+> experiments) run locally and never deploy to shared infrastructure. If your
+> project has no deployment target, the Deployment and Support stages may not
+> apply — or may be deferred until the project grows. See
+> [Deployment Setup Guide](deployment/deployment-setup-guide.md#when-you-dont-need-this-guide).
 
 ### Standard
 
@@ -169,6 +179,11 @@ Projects evolve, and your tier should evolve with them. Common transitions:
 - **Minimal → Standard:** Prototype gains traction and real users
 - **Standard → Enterprise:** Product signs contractual SLAs or enters a
   regulated market
+- **Local-only → deployed:** Project that started without deployment
+  infrastructure gains users or moves to production. Introduce deployment using
+  the [Deployment Setup Guide](deployment/deployment-setup-guide.md) and
+  [Project Foundation Guide](project-foundation-guide.md) — treat it as
+  foundation work for the deployment dimension.
 
 Reassess your tier at major milestones — particularly after Initiation and
 Requirements, where expansion triggers signal that your project may need more
@@ -181,6 +196,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.13.0.

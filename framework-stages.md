@@ -585,6 +585,12 @@ monitoring and rollback capabilities.
 - Production environment ready
 - Deployment plan reviewed
 
+> **First-time setup:** If no production environment exists, see the
+> [Deployment Setup Guide](deployment/deployment-setup-guide.md) for
+> infrastructure setup during foundation work. Projects with no deployment
+> target (local-only tools, spikes) may
+> [skip this stage](deployment/deployment-setup-guide.md#when-you-dont-need-this-guide).
+
 ### Key Activities
 
 - Execute deployment procedures
@@ -825,6 +831,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.9.0.

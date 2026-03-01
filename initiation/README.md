@@ -104,6 +104,13 @@ experiments and **Enterprise** for regulated or multi-team efforts.
 Not every project needs a formal business case or comprehensive risk assessment.
 Match your Initiation effort to your project's risk tier.
 
+> **Project type matters too.** Whether you're building from scratch
+> (greenfield) or extending an existing system (brownfield) affects foundation
+> work, infrastructure planning, and which stages apply. Capture your project
+> type in the Initiation Brief — it informs decisions from System Design onward.
+> See
+> [Framework Guide: Greenfield vs. Brownfield Projects](../framework-guide.md#greenfield-vs-brownfield-projects).
+
 | Practice                  | Minimal                       | Standard                                    | Enterprise                                           |
 | ------------------------- | ----------------------------- | ------------------------------------------- | ---------------------------------------------------- |
 | **Problem statement**     | Brief description of the need | Structured who/what/why/impact format       | Formal problem analysis with stakeholder input       |
@@ -468,8 +475,8 @@ starting point.
 
 ## Notes
 
-**Framework Version:** 0.19.0
+**Framework Version:** 0.20.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.2.0.

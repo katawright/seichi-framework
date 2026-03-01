@@ -1,7 +1,10 @@
 # Support Checklist
 
 **Purpose:** Verify ongoing operational readiness and production health.
+
 **Usage:** Review regularly (weekly recommended) throughout the support stage.
+For initial setup before accepting production ownership, use the
+[Support Readiness Checklist](support-readiness-checklist.md) instead.
 
 ---
 

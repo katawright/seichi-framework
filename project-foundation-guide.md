@@ -69,6 +69,11 @@ delivery. See
 [Greenfield vs. Brownfield Projects](framework-guide.md#greenfield-vs-brownfield-projects)
 in the Framework Guide for how to determine your project type.
 
+> Similarly, not every project needs deployment infrastructure. Local-only
+> projects (console tools, spikes, experiments) may skip the deployment setup
+> routes below entirely. If deployment becomes necessary later, see
+> [Introducing Deployment Retroactively](deployment/deployment-setup-guide.md#introducing-deployment-retroactively).
+
 ---
 
 ## Greenfield Foundation (Bootstrap)
@@ -235,6 +240,6 @@ functionality.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.14.0.

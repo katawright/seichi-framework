@@ -9,6 +9,16 @@
 
 **Tier chosen:** [Minimal / Standard / Enterprise]
 
+**Project type:** [Greenfield / Brownfield (first AI project) / Brownfield (has
+context)]
+
+<!-- See framework-guide.md#greenfield-vs-brownfield-projects -->
+
+**Deployment intent:** [Production service / Internal tool / Local-only (CLI,
+spike, experiment) / TBD]
+
+<!-- Local-only projects may skip Deployment and Support setup. -->
+
 ---
 
 ## Problem Statement
@@ -111,4 +121,4 @@ foundational pass)
   - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
   - Recommendation: proceed / pivot / stop
 
-<!-- Template Last Updated: 2026-02-26 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-02-28 | Added in v0.2.0 -->

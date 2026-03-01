@@ -80,6 +80,38 @@ Deployment strategy decisions (e.g., blue/green vs. rolling, number of
 environments, IaC approach) should be made during
 [System Design](../system-design/README.md) and implemented here.
 
+### When You Don't Need This Guide
+
+Some projects don't require deployment infrastructure:
+
+- **Console tools or CLIs** that run locally on a developer's machine
+- **Spikes or experiments** that validate an idea and may be discarded
+- **Libraries or packages** consumed by other projects (publishing is not
+  deploying)
+- **Prototypes** built for a demo and not intended for ongoing use
+
+If your Initiation Brief's deployment intent is "Local-only," skip this guide
+and the Deployment stage entirely. If the project later grows into a deployed
+service, return here and treat deployment setup as retroactive foundation work
+(see
+[Introducing Deployment Retroactively](#introducing-deployment-retroactively)
+below).
+
+---
+
+## Relationship to Other Guides
+
+This guide covers **one-time deployment infrastructure setup**. Other guides
+cover the decisions that feed into it and the ongoing work that uses it.
+
+| Responsibility            | Owner                                                              | This Guide's Role                  |
+| ------------------------- | ------------------------------------------------------------------ | ---------------------------------- |
+| Deployment strategy       | [System Design](../system-design/README.md)                        | Implements those decisions         |
+| Per-increment deployment  | [Deployment Stage Guide](README.md)                                | Uses the infrastructure built here |
+| Pipeline readiness check  | [Deployment Pipeline Checklist](deployment-pipeline-checklist.md)  | Validates what this guide produces |
+| Monitoring infrastructure | This guide                                                         | Configures tools and dashboards    |
+| Operational processes     | [Support Operations Guide](../support/support-operations-guide.md) | Uses monitoring infrastructure     |
+
 ---
 
 ## Greenfield Path
@@ -210,7 +242,7 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your
+> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your > >
 > stack, team size, and deployment frequency targets]."_
 
 ---
@@ -282,14 +314,23 @@ Lower-priority items become backlog for future iterations.
 
 ---
 
-## Relationship to Other Stages
+## Introducing Deployment Retroactively
 
-- **System Design** makes deployment strategy decisions (this guide implements
-  them)
-- **Deployment Stage Guide** covers per-increment deployment execution (this
-  guide covers one-time setup)
-- **Deployment Pipeline Checklist** provides a quick readiness check for the
-  infrastructure built here
+If a project started without deployment infrastructure and now needs it
+(prototype gained users, CLI became a service, spike became a product):
+
+1. **Reassess your right-sizing tier** — a project gaining deployment needs has
+   likely moved from Minimal to Standard. See
+   [Right-Sizing Guide: Your Tier Can Change](../right-sizing-guide.md#your-tier-can-change).
+2. **Treat deployment setup as foundation work** — follow the greenfield path
+   above as a foundation increment. See the
+   [Project Foundation Guide](../project-foundation-guide.md) for how foundation
+   work flows through stages.
+3. **Update your Initiation Brief** — change the deployment intent field to
+   reflect the new target.
+
+This is a normal project evolution, not a failure. The framework's right-sizing
+model expects projects to grow.
 
 ---
 

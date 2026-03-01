@@ -330,7 +330,7 @@ support runbook. Record the deployment decision using the
 
 ## Notes
 
-**Framework Version:** 0.19.0
+**Framework Version:** 0.20.0
 
 **Last Updated:** 2026-02-28
 
