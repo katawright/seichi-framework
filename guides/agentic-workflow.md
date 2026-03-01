@@ -393,9 +393,20 @@ At the end of every session:
 
 ### Session Log Template
 
-Use [templates/session-log.md](../templates/session-log.md) for the log
-structure. Each stage's work gets its own session log file, stored alongside the
-stage's artifacts.
+Each stage's work gets its own session log file, stored alongside the stage's
+artifacts. Create a new log file per stage (e.g.,
+`stages/initiation/session-log.md`) and update it at the start and end of every
+session.
+
+Use [Session Log](../templates/session-log.md) (`templates/session-log.md`) for
+all stages. The generalized template captures stage name, autonomy tier,
+oversight level, artifact progress, and per-session entries including decisions
+made and context for the next session.
+
+For the Implementation stage specifically, use the
+[Implementation Session Log](../templates/implementation-session-log.md)
+(`templates/implementation-session-log.md`) — a specialized variant optimized
+for code-focused session tracking.
 
 ---
 
