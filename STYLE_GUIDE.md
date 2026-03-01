@@ -79,8 +79,6 @@ Added to framework in vX.Y.Z.
 
 Rules:
 
-- `**Framework Version:** X.Y.Z` appears only in README files, on the line
-  immediately before `**Last Updated:**`
 - "Added to framework" line is plain text (not italic, not bold)
 - Update the **Last Updated** date whenever the file is modified
 
@@ -123,12 +121,12 @@ between H3 subsections within an H2.
 
 Files fall into categories that may have type-specific conventions:
 
-| Category                          | Example pattern  | Notes section extras        |
-| --------------------------------- | ---------------- | --------------------------- |
-| **README files**                  | `README.md`      | Include `Framework Version` |
-| **Guide files** (`guides/`)       | `*.md`           | Standard structure          |
-| **Template files** (`templates/`) | `*.md`           | HTML comment metadata       |
-| **Scorecard / reference files**   | `*-scorecard.md` | Standard structure          |
+| Category                          | Example pattern  | Notes section extras  |
+| --------------------------------- | ---------------- | --------------------- |
+| **README files**                  | `README.md`      | Standard structure    |
+| **Guide files** (`guides/`)       | `*.md`           | Standard structure    |
+| **Template files** (`templates/`) | `*.md`           | HTML comment metadata |
+| **Scorecard / reference files**   | `*-scorecard.md` | Standard structure    |
 
 **Template file conventions:**
 

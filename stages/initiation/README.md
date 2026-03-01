@@ -530,8 +530,6 @@ starting point.
 
 ## Notes
 
-**Framework Version:** 0.22.0
-
 **Last Updated:** 2026-03-01
 
 Added to framework in v0.2.0.

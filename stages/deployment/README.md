@@ -363,8 +363,6 @@ support runbook. Record the deployment decision using the
 
 ## Notes
 
-**Framework Version:** 0.22.0
-
 **Last Updated:** 2026-03-01
 
 Added to framework in v0.7.0.

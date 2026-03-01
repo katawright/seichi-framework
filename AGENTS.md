@@ -71,10 +71,7 @@ Canonical sources — other docs should link here, not re-explain. Read
   - Scopes: stage names, framework, ci
   - Breaking changes: `!` or `BREAKING CHANGE:` in commit body
 - File versioning:
-  - `README.md` files include `Framework Version` and `Last Updated`
   - Stage artifacts include `Last Updated` and version-introduction note
-  - When `VERSION` is bumped, update the `Framework Version` field in all README
-    files to match
   - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every modified
     framework file before finishing a change
 - Markdown formatting: follow `STYLE_GUIDE.md`
