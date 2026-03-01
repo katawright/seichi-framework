@@ -3,8 +3,7 @@
 ## Overview
 
 End-to-end trace of a single requirement through every framework stage — from
-Requirements through Deployment — showing completed artifact examples at each
-step.
+Initiation through Support — showing completed artifact examples at each step.
 
 ### Why a Worked Example
 
@@ -27,16 +26,17 @@ replacing tribal knowledge with documented decisions.
 
 ### How to Use This Guide
 
-1. [**Stage 1: Requirements**](#stage-1-requirements) — see what a requirement
-   and its acceptance criteria look like
-2. [**Stage 2: Increment Design**](#stage-2-increment-design) — see how design
-   artifacts reference requirements
-3. [**Stage 3: Implementation**](#stage-3-implementation) — see the completion
-   record
-4. [**Stage 4: Verification**](#stage-4-verification) — see test results mapped
-   to acceptance criteria
-5. [**Stage 5: Deployment**](#stage-5-deployment) — see the release record
-6. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
+1. [**Requirements**](#stage-2-requirements) — see what a requirement and its
+   acceptance criteria look like
+2. [**System Design**](#stage-3-system-design) — see foundational technology and
+   increment planning decisions
+3. [**Increment Design**](#stage-4-increment-design) — see how design artifacts
+   reference requirements
+4. [**Implementation**](#stage-5-implementation) — see the completion record
+5. [**Verification**](#stage-6-verification) — see test results mapped to
+   acceptance criteria
+6. [**Deployment**](#stage-7-deployment) — see the release record
+7. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
    end-to-end flow
 
 ---
@@ -61,17 +61,17 @@ touches multiple components and has clear acceptance criteria.
 
 ---
 
-## Stage 1: Requirements
+## Stage 2: Requirements
 
 The Requirements stage defines _what_ to build. Here's how our requirement
 appears in the Requirements Brief.
 
 ### Functional Requirement
 
-From the **Requirements Brief**, Section 7 (Functional Requirements):
+From the **Requirements Brief**, Functional Requirements section:
 
 ```markdown
-## 7. Functional requirements (FRs)
+## Functional Requirements (FRs)
 
 - **FR-3:** The system shall allow HR managers to assign onboarding tasks to a
   new hire from a predefined task library, with a due date calculated relative
@@ -89,10 +89,10 @@ schema).
 
 ### Acceptance Criteria
 
-From the **Requirements Brief**, Section 8 (Acceptance Criteria):
+From the **Requirements Brief**, Acceptance Criteria section:
 
 ```markdown
-## 8. Acceptance criteria (AC)
+## Acceptance Criteria (AC)
 
 - **AC for FR-3:**
   - **AC-3.1:** Given an HR manager is viewing a new hire's profile When they
@@ -111,7 +111,7 @@ From the **Requirements Brief**, Section 8 (Acceptance Criteria):
 
 ### MoSCoW Classification
 
-From the **Requirements Brief**, Section 6 (Scope Baseline):
+From the **Requirements Brief**, Scope Baseline section:
 
 ```markdown
 ### Must Have (first usable release)
@@ -124,7 +124,7 @@ From the **Requirements Brief**, Section 6 (Scope Baseline):
 
 ### Traceability
 
-From the **Requirements Brief**, Section 9 (Traceability Summary):
+From the **Requirements Brief**, Traceability Summary section:
 
 ```markdown
 | FR ID | Initiation Objective    | MoSCoW | ACs             | Success Metric        |
@@ -142,7 +142,78 @@ From the **Requirements Brief**, Section 9 (Traceability Summary):
 
 ---
 
-## Stage 2: Increment Design
+## Stage 3: System Design
+
+The System Design stage establishes foundational technical decisions that apply
+across all increments. It doesn't design individual features — that happens in
+Increment Design — but it sets the technology stack, API conventions, and
+increment plan that every later stage builds on.
+
+### Technology Stack
+
+From the **System Design Brief**, Technology Stack (§ 3):
+
+```markdown
+## 3. Technology Stack
+
+| Category     | Choice            | Justification                          | ADR     |
+| ------------ | ----------------- | -------------------------------------- | ------- |
+| **Frontend** | React             | Component model suits task-based UI;   | ADR-001 |
+|              |                   | team experience                        |         |
+| **Backend**  | Node.js / Express | JavaScript end-to-end; lightweight for | ADR-002 |
+|              |                   | REST API                               |         |
+| **Database** | PostgreSQL        | Relational model fits structured       | ADR-003 |
+|              |                   | onboarding data; strong FK support     |         |
+| **Auth**     | JWT + RBAC        | Stateless auth with role-based access  | ADR-004 |
+|              |                   | (HR Manager vs New Hire)               |         |
+```
+
+### Increment Plan
+
+From the **System Design Brief**, Increment Plan (§ 9):
+
+```markdown
+## 9. Increment Plan
+
+### Increment 1: Core Task Management (Must Have)
+
+**Goal:** Deliver task library, task assignment, progress tracking, and task
+completion — the minimum viable onboarding workflow.
+
+**Requirements:** FR-1, FR-3, FR-4, FR-5 **Duration:** 3–4 weeks (estimate)
+**Dependencies:** None
+
+**Why first:** These four FRs form the smallest set that delivers end-to-end
+value — an HR manager can assign tasks and a new hire can complete them.
+```
+
+### API Conventions
+
+From the **System Design Brief**, API Architecture (§ 5):
+
+```markdown
+## 5. API Architecture
+
+### 5.1 API Design Principles
+
+- **Style:** REST
+- **Versioning:** URL-based (`/api/v1/`)
+- **Authentication:** JWT
+- **Authorization:** RBAC (HR Manager, New Hire)
+- **Error Format:** `{ "error": { "code": "<HTTP_STATUS>", "message": "..." } }`
+```
+
+**What to notice:**
+
+- System Design provides foundational context — technology choices, API
+  conventions, increment sequencing — not requirement-specific design
+- FR-3 appears in the Increment Plan (placed in Increment 1) but the stage
+  doesn't design FR-3's components or interfaces; that's Increment Design's job
+- ADR references link each technology choice to a recorded decision
+
+---
+
+## Stage 4: Increment Design
 
 The Increment Design stage plans _how_ to build and _how_ to test. FR-3 is part
 of Increment 1 (core task management). Here's how it appears in the Increment
@@ -339,7 +410,7 @@ From the **Increment Design Brief**, Section 5:
 
 ---
 
-## Stage 3: Implementation
+## Stage 5: Implementation
 
 The Implementation stage _executes_ the design plan. Here's how FR-3 appears in
 the Implementation Brief after the work is done.
@@ -448,7 +519,7 @@ coverage.
 
 ---
 
-## Stage 4: Verification
+## Stage 6: Verification
 
 The Verification stage _validates_ that what was built meets the acceptance
 criteria defined in Requirements. Here's how FR-3 appears in verification
@@ -531,7 +602,7 @@ Alex (start date: March 15).
 
 ---
 
-## Stage 5: Deployment
+## Stage 7: Deployment
 
 The Deployment stage releases the verified increment to production. Here's how
 FR-3 appears in the Deployment Brief.
@@ -676,6 +747,11 @@ Requirements
   AC-3.1, AC-3.2, AC-3.3: Testable Given/When/Then criteria
   MoSCoW: Must Have → Increment 1
     ↓
+System Design
+  Tech stack: React, Node.js/Express, PostgreSQL
+  API conventions: REST, /api/v1/, JWT + RBAC
+  Increment plan: FR-3 in Increment 1 (core task management)
+    ↓
 Increment Design
   Component: TaskAssignmentService, TaskAssignmentUI
   API: POST /api/v1/hires/:hireId/tasks
@@ -711,6 +787,6 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.17.0.

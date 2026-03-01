@@ -29,8 +29,8 @@ all SDLC stages. The framework is designed to:
 
 ### Target Audience
 
-- **Primary:** Engineers — may be skeptical about AI tools or concerned about
-  AI as a threat to their roles
+- **Primary:** Engineers — may be skeptical about AI tools or concerned about AI
+  as a threat to their roles
 - **Secondary:** Non-technical stakeholders (Product Managers, Business
   Analysts, Executives) who need to initiate and plan software projects
 - **Tertiary:** Other organizations seeking structured AI integration across
@@ -42,6 +42,18 @@ all SDLC stages. The framework is designed to:
   inputs, outputs, and criteria
 - `STYLE_GUIDE.md`: Source of truth for document style, organization, and
   formatting — read before creating or editing framework files
+
+## Document Hierarchy
+
+Canonical sources — other docs should link here, not re-explain:
+
+- **Stage definitions:** `framework-stages.md`
+- **Stage execution guidance:** `[stage]/README.md`
+- **Cross-cutting concepts and governance:** `framework-guide.md`
+- **AI autonomy and scoring:** `framework-ai-assistance.md`
+- **Right-sizing tiers:** `right-sizing-guide.md`
+- **Deep-dive best practices:** `[stage]/[stage]-reference.md`
+- **Document style and formatting:** `STYLE_GUIDE.md`
 
 ## Design Principles
 
@@ -72,9 +84,10 @@ all SDLC stages. The framework is designed to:
 - File versioning:
   - `README.md` files include `Framework Version` and `Last Updated`
   - Stage artifacts include `Last Updated` and version-introduction note
-  - On each release, update framework version in all README files
-  - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every
-    modified framework file before finishing a change
+  - When `VERSION` is bumped, update the `Framework Version` field in all
+    README files to match
+  - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every modified
+    framework file before finishing a change
 - Markdown formatting: follow `STYLE_GUIDE.md`
 
 ## Workflow
@@ -123,9 +136,15 @@ through all subsequent stages. Each stage integrates measurement differently:
 - **Deployment** — Capture baseline measurements
 - **Support** — Monitor and validate success criteria
 
-The framework is agnostic to goal-setting methodology (OKRs, SMART, KPIs,
-etc.) — what matters is that criteria are clearly defined, measurable, and
-trackable.
+The framework is agnostic to goal-setting methodology (OKRs, SMART, KPIs, etc.)
+— what matters is that criteria are clearly defined, measurable, and trackable.
+
+## Excluded Directories
+
+Do not read or reference files in these directories:
+
+- `.ignore/` — personal scratch work and draft notes
+- `.obsidian/` — Obsidian vault configuration
 
 ## Agent Execution Rules
 
@@ -133,16 +152,16 @@ These rules apply to AI coding assistants working in this repository.
 
 1. Follow `STYLE_GUIDE.md` for all document formatting, structure, and style
    decisions.
-3. Prefer minimal, targeted edits; preserve existing voice and structure.
-4. Do not invent process details not grounded in current framework documents.
-5. When changing one stage artifact, check related artifacts for consistency
+2. Prefer minimal, targeted edits; preserve existing voice and structure.
+3. Do not invent process details not grounded in current framework documents.
+4. When changing one stage artifact, check related artifacts for consistency
    drift.
-6. Before finalizing changes, run lightweight repository checks where relevant:
+5. Before finalizing changes, run lightweight repository checks where relevant:
    - Search for broken references or renamed files
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
-7. Do not commit or create tags unless the user explicitly requests it.
+6. Do not commit or create tags unless the user explicitly requests it.
 
 ## Notes
 
-Last Updated: 2026-02-26
+Last Updated: 2026-02-28

@@ -42,9 +42,9 @@ prescription.
 I'm using the AI-Assisted SDLC framework for a software project.
 
 Please read these framework documents:
-- framework/framework-stages.md (stage definitions)
-- framework/framework-guide.md (key concepts)
-- [current-stage]/[current-stage]-guide.md (stage-specific guidance)
+- framework-stages.md (stage definitions)
+- framework-guide.md (key concepts)
+- [current-stage]/README.md (stage-specific guidance)
 
 Help me work through the [STAGE NAME] stage for my project:
 
@@ -55,7 +55,7 @@ Help me work through the [STAGE NAME] stage for my project:
 - Team size: [solo/small (2-5)/large (6+)]
 - Risk tier: [Minimal / Standard / Enterprise]
 (See Right-Sizing Guide if unsure:
-framework/right-sizing-guide.md)
+right-sizing-guide.md)
 
 Guide me through the key activities for this stage, help me complete the
 stage brief template, and validate against the checklist criteria. We may
@@ -89,16 +89,15 @@ file paths and the tool will read them.
 I'm using the AI-Assisted SDLC framework for a software project.
 
 Please read these framework documents:
-- framework/framework-stages.md
-- framework/framework-guide.md
-- framework/initiation/README.md
+- framework-stages.md
+- framework-guide.md
+- initiation/README.md
 
 [rest of prompt...]
 ```
 
 > Use paths relative to your repository root. If your tool requires absolute
-> paths, substitute your local root (e.g.,
-> `C:\your-repo\framework\framework-stages.md`).
+> paths, substitute your local root (e.g., `C:\your-repo\framework-stages.md`).
 
 **ChatGPT / Claude.ai (Web-based):**
 
@@ -151,9 +150,9 @@ Here's a concrete example of the bootstrap prompt for a real project:
 I'm using the AI-Assisted SDLC framework for a software project.
 
 Please read these framework documents:
-- framework/framework-stages.md (stage definitions)
-- framework/framework-guide.md (key concepts)
-- framework/initiation/README.md (Initiation stage guidance)
+- framework-stages.md (stage definitions)
+- framework-guide.md (key concepts)
+- initiation/README.md (Initiation stage guidance)
 
 Help me work through the Initiation stage for my project:
 
@@ -182,9 +181,9 @@ After completing Initiation, adapt the prompt for the next stage:
 I'm using the AI-Assisted SDLC framework for a software project.
 
 Please read these framework documents:
-- framework/framework-stages.md
-- framework/framework-guide.md
-- framework/requirements/README.md
+- framework-stages.md
+- framework-guide.md
+- requirements/README.md
 
 I've completed the Initiation stage. Here's my initiation brief:
 
@@ -261,6 +260,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-02-28
 
 Added to framework in v0.9.0.

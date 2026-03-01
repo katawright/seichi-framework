@@ -63,7 +63,7 @@ tier — follow the tier that matches your project.
 
 ---
 
-## Relationship to Deployment
+## Relationship to Other Guides
 
 The [Deployment Setup Guide](../deployment/deployment-setup-guide.md) sets up
 monitoring and alerting **infrastructure and tooling** — the dashboards, log
@@ -195,7 +195,7 @@ problems.
 **Enterprise:** Automated dashboards with real-time tracking. Defined escalation
 when metrics deviate from targets.
 
-> **AI exploration:** _"Help me set up support operations for [describe your
+> **AI exploration:** _"Help me set up support operations for [describe your >
 > project, team size, user base, and risk level]. Suggest the right support
 > level and what to prioritize first."_
 
