@@ -143,6 +143,28 @@ development and enable data-driven validation of success.
 
 ---
 
+## Learning Throughline
+
+Continuous learning — anticipating failure modes early and reflecting on what
+actually happened — keeps teams from repeating mistakes across increments:
+
+| Stage                | Learning role                                                    |
+| -------------------- | ---------------------------------------------------------------- |
+| **Initiation**       | Pre-mortem: identify top failure modes before committing         |
+| **Requirements**     | Flag ambiguous or assumption-heavy requirements as learning risk |
+| **System Design**    | Pre-mortem lens on architecture: what's hardest to reverse?      |
+| **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
+| **Implementation**   | Note surprises and deviations as they happen                     |
+| **Verification**     | Capture what tests reveal about design assumptions               |
+| **Deployment**       | Run increment retrospective (optional) or project retrospective  |
+| **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
+
+Pre-mortems happen once at the project level (Initiation); retrospectives happen
+at increment boundaries (optional) and at project wrap-up (recommended). See the
+[Retrospective Template](../templates/retrospective.md).
+
+---
+
 ## Stage 1: Initiation
 
 - **Primary Role:** Product Manager / Business Analyst
@@ -837,6 +859,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.9.0.

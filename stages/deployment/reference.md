@@ -102,7 +102,7 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your >
+> **AI exploration:** _"Compare deployment strategies for [describe your > >
 > system, traffic patterns, and risk tolerance] and recommend an approach."_
 
 ---
@@ -257,12 +257,12 @@ Define decision maker BEFORE deployment:
 
 1. Notify stakeholders (reason and impact)
 2. Preserve evidence (logs, metrics, error reports)
-3. Schedule retrospective
+3. Schedule [retrospective](../../templates/retrospective.md)
 4. Fix root cause before redeploying
 5. Update deployment brief
 
 > **AI exploration:** _"Help me design a rollback procedure for [describe > your
-> deployment strategy and infrastructure]."_
+> > deployment strategy and infrastructure]."_
 
 ---
 
@@ -409,7 +409,7 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your >
+> **AI exploration:** _"Draft deployment communications for [describe your > >
 > deployment and audience]."_
 
 ---
@@ -461,7 +461,7 @@ For breaking changes requiring downtime:
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe >
+> **AI exploration:** _"Audit our deployment security posture for [describe > >
 > your stack and compliance requirements]."_
 
 ---
@@ -520,7 +520,7 @@ Stable for 24 hours?
 ```
 
 > **AI exploration:** _"Create deployment decision trees tailored to [describe >
-> your deployment process and risk tolerance]."_
+> > your deployment process and risk tolerance]."_
 
 ---
 

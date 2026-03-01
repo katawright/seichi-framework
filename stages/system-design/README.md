@@ -483,6 +483,11 @@ Package.
 > validating that NFR targets are architecturally achievable. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> System Design continues the **learning throughline** by applying a pre-mortem
+> lens to architecture — identifying decisions that are hardest to reverse and
+> documenting them in ADRs. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** Increment Design stage receives architecture, increment plan, and
 foundational conventions.
 
@@ -528,6 +533,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.12.0.

@@ -181,11 +181,12 @@ predictable failures. This section explains why each element is included:
    ownership and accountability
 7. [**Assumptions**](#assumptions) — hidden scope made explicit
 8. [**Risks**](#risks) — unknowns that affect estimates and planning
-9. [**Constraints and Dependencies**](#constraints-and-dependencies) — hard
-   limits and external factors
-10. [**Options Considered**](#options-considered) — forces comparison of
+9. [**Pre-Mortem**](#pre-mortem) — anticipate failure modes before committing
+10. [**Constraints and Dependencies**](#constraints-and-dependencies) — hard
+    limits and external factors
+11. [**Options Considered**](#options-considered) — forces comparison of
     alternatives
-11. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
+12. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
 
 ### Problem Statement
 
@@ -384,6 +385,30 @@ investment.
 > week 1. Fallback: Use a self-hosted alternative at higher infrastructure
 > cost."
 
+### Pre-Mortem
+
+A pre-mortem inverts the typical risk exercise: instead of asking "what could go
+wrong?", the team imagines the project has already failed and works backward to
+identify why. This reframe makes it psychologically safe to name uncomfortable
+failure modes — team members aren't predicting failure, they're explaining a
+hypothetical one. Pre-mortems surface risks that traditional risk lists miss
+because they tap into intuition and experience rather than checklist thinking.
+
+The pre-mortem lives in the Initiation Brief (not as a standalone artifact)
+because it's a project-level exercise, not a per-increment one. Increment Design
+already handles tactical risk identification for each increment.
+
+**Good pre-mortem entry:**
+
+> "Failure mode: The project ships on time but nobody uses it because support
+> agents find it slower than their current workflow. Why plausible: We haven't
+> observed the current workflow firsthand. Early signal: Agents in the pilot
+> group stop logging in after the first week."
+
+**Bad pre-mortem entry:**
+
+> "The project might fail."
+
 ### Constraints and Dependencies
 
 Hard limits and external dependencies bound the solution space. Constraints are
@@ -473,6 +498,11 @@ are updated with higher confidence.
 > flows through all subsequent stages. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> The optional pre-mortem in the Initiation Brief starts the **learning
+> throughline** — identifying top failure modes before committing resources so
+> later stages can watch for early signals. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** If proceeding, Requirements stage uses your Initiation Brief as its
 starting point.
 
@@ -502,6 +532,6 @@ starting point.
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.2.0.

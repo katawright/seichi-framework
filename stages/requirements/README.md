@@ -618,6 +618,11 @@ gives the System Design team a clear target.
 > targets. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Requirements continues the **learning throughline** by flagging ambiguous or
+> assumption-heavy requirements as learning risks — areas where the team's
+> understanding is weakest and surprises are most likely. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** System Design stage uses your Requirements Document as its starting
 point.
 
@@ -649,6 +654,6 @@ Requirements is foundational but revisitable.
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.3.0.

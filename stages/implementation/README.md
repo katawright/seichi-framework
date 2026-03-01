@@ -281,6 +281,11 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 > telemetry that Verification and Support stages rely on. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
+> Implementation continues the **learning throughline** by noting surprises and
+> deviations as they happen — capturing where reality diverges from the design
+> so retrospectives have concrete data. See
+> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+
 **Handoff:** Verification stage receives working code, test results, session
 log, and review approvals. Before handoff, ensure:
 
@@ -314,6 +319,6 @@ log, and review approvals. Before handoff, ensure:
 
 **Framework Version:** 0.22.0
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.5.0.
