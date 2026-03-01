@@ -364,6 +364,13 @@ wider pilot.
 
 ---
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest improvements or submit
+changes.
+
+---
+
 ## Notes
 
 **Framework Version:** 0.23.0

@@ -451,6 +451,9 @@ At the end of every session:
 5. Write "Context for Next Session" — the critical information the next
    agent/human needs to continue without re-reading everything
 6. List specific "Next Steps" as actionable items
+7. Record any framework-level observations (template gaps, unclear guidance,
+   missing checklist items) in the retrospective's Framework Feedback section;
+   flag these for human review
 
 ### Session Log Template
 
