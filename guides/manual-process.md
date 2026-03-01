@@ -7,6 +7,11 @@ sessions with any AI tool.
 
 ### Why a Manual Process Guide
 
+> **Using an AI coding agent with filesystem access?** Agents like Claude Code
+> or Cursor can read the framework files directly. Point your agent at
+> [guides/agentic-workflow.md](agentic-workflow.md) instead — it provides
+> structured metadata and routing for autonomous operation.
+
 The framework documents explain what to do at each stage, but don't provide a
 ready-to-use prompt for getting started with an AI assistant. This guide bridges
 that gap with a copy-paste template and tool-specific adaptation tips.
