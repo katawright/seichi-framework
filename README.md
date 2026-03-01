@@ -10,6 +10,9 @@ A practical, stage-by-stage guide for AI-assisted software delivery — giving
 teams clear guidance at each stage and leaders the visibility and control they
 need.
 
+> **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
+> first stage in under 5 minutes.
+
 ### Why This Framework
 
 Teams are adopting AI development tools rapidly, but without structure the
