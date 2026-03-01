@@ -99,6 +99,10 @@ for full tier definitions.
 | ----------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
 | Human writes reqs; AI reviews | AI drafts reqs from brief; human validates | AI drafts and proactively flags contradictions and gaps; human validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Interview-based drafting:** Share the Initiation Brief with AI — it asks

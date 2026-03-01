@@ -198,6 +198,45 @@ adjusts who drives versus who assists within those constraints.
 in each stage guide assumes the Collaborative tier. If your team is just getting
 started, Collaborative is a safe starting point.
 
+### Oversight Intensity
+
+Within the AI-Led tier, teams operate across a wide range — from actively
+reviewing every output to trusting AI for most intermediate work. Oversight
+intensity is the dial teams tune to match their trust level and the risk profile
+of the current work.
+
+| Level       | Description                                       | Gate Behavior                                               | Typical Context                                                                |
+| ----------- | ------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Active**  | Human reviews every gate thoroughly               | All checkpoints get detailed human review                   | Enterprise-tier projects, regulated industries, early AI-Led adoption          |
+| **Passive** | Human spot-checks, approves unless concerns arise | Human reviews at hard gates only; AI proceeds between gates | Standard-tier projects with established CI/CD and team confidence              |
+| **Minimal** | Human reviews summary or final deliverable only   | AI self-validates intermediate checkpoints                  | Minimal-tier projects, highly verifiable stages (Implementation, Verification) |
+
+Risk tier constrains which oversight levels are available:
+
+| Risk Tier      | Allowed Oversight Levels    |
+| -------------- | --------------------------- |
+| **Enterprise** | Active (minimum)            |
+| **Standard**   | Active or Passive           |
+| **Minimal**    | Active, Passive, or Minimal |
+
+**Lean toward Active when:**
+
+- Working in regulated or compliance-heavy environments
+- Team is newly adopting AI-Led for this stage
+- Stage outputs have high blast radius (System Design, Deployment)
+- Organization requires detailed audit trails
+
+**Lean toward Minimal when:**
+
+- Stage outputs are highly verifiable (machine-checkable)
+- Strong CI/CD pipelines catch errors automatically
+- Team has extensive experience with AI-Led operation
+- Project risk tier is Minimal
+
+Teams typically start at Active oversight and relax toward Passive or Minimal as
+confidence, tooling, and experience mature. Moving back toward Active is healthy
+when risk context changes (new regulations, team turnover, unfamiliar domain).
+
 ### Cross-Stage Summary
 
 This table shows how the three tiers manifest across all eight stages. Each
@@ -328,6 +367,6 @@ confidence and establishes effective gate processes.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.9.0.

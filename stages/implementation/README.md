@@ -132,6 +132,10 @@ for full tier definitions.
 | ------------------------------------------ | ------------------------------------------------- | ---------------------------------------------------------------- |
 | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full slices, identifies issues; engineer validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Code generation and scaffolding:** Describe a component or function — AI

@@ -95,6 +95,10 @@ for full tier definitions.
 | ---------------------------------- | --------------------------------------------- | --------------------------------------------------------------- |
 | Human drafts; AI answers questions | AI interviews and drafts brief; human reviews | AI drives discovery, cross-references for gaps; human validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Interview-based drafting:** Describe your idea to AI — it asks structured

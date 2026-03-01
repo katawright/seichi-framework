@@ -139,6 +139,10 @@ for full tier definitions.
 | ---------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
 | Engineer writes tests; AI suggests cases | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Test case generation:** Describe your acceptance criteria — AI generates

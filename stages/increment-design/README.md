@@ -101,6 +101,10 @@ for full tier definitions.
 | --------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------- |
 | Human designs; AI generates boilerplate | AI drafts component and test specs; human reviews | AI drafts and flags cross-cutting concerns proactively; human validates |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Component design generation:** Describe your increment scope and system

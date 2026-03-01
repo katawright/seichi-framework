@@ -106,6 +106,11 @@ Your autonomy tier can vary by stage — a team might be AI-Led for Implementati
 but Human-Led for Deployment. Tiers evolve as teams build confidence with AI
 tooling.
 
+Within the AI-Led tier, teams also tune **oversight intensity** — from Active
+(review every gate thoroughly) to Minimal (review summary only). See
+[AI Assistance Scorecard: Oversight Intensity](ai-assistance.md#oversight-intensity)
+for the full model and risk-tier mapping.
+
 For detailed tier definitions, cross-stage summary, and choosing guidance, see
 the
 [AI Assistance Scorecard: AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum).
@@ -202,6 +207,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.13.0.

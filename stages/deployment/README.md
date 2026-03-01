@@ -98,6 +98,10 @@ for full tier definitions.
 | ------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------- |
 | Engineer writes runbook; AI templates | AI drafts runbook; engineer reviews | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
 
+At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
+see
+[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+
 ### AI Assistance Patterns
 
 - **Deployment script generation:** Describe your infrastructure and AI produces
