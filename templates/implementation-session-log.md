@@ -1,3 +1,4 @@
+<!-- For non-implementation stages, use the generalized templates/session-log.md instead. -->
 <!-- For guidance on session logging, see ../implementation/README.md -->
 
 # Implementation Session Log: [Increment Name]
