@@ -366,8 +366,8 @@ wider pilot.
 
 ## Notes
 
-**Framework Version:** 0.22.0
+**Framework Version:** 0.23.0
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.17.0.

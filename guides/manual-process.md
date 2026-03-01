@@ -67,6 +67,10 @@ stage brief template, and validate against the checklist criteria. We may
 need multiple sessions to complete this stage.
 ```
 
+> **AI coding agents:** If your tool has filesystem access (Claude Code, Cursor,
+> etc.), skip this prompt — point the agent at `guides/agentic-workflow.md`
+> instead. It provides structured metadata and routing for autonomous operation.
+
 ---
 
 ## How to Use This Prompt
@@ -144,6 +148,29 @@ As you work through each stage:
 2. **Complete the stage brief** - Fill out the template for your project
 3. **Validate with checklist** - Ensure nothing critical is missed
 4. **Progress to next stage** - Once exit criteria are met
+
+### AI-Led Bootstrap Prompt
+
+For teams operating at the AI-Led autonomy tier with an AI coding agent that has
+filesystem access, use this streamlined prompt:
+
+```
+Read guides/agentic-workflow.md and orient yourself in the AI-Assisted SDLC
+framework.
+
+I need to work through the [STAGE NAME] stage for:
+- Project: [brief description]
+- Risk tier: [Minimal / Standard / Enterprise]
+- Autonomy: AI-Led
+- Oversight: [Active / Passive / Minimal]
+
+Drive the stage activities autonomously. Flag assumptions, pause at gates
+for my review, and maintain a session log.
+```
+
+This prompt relies on the agent reading the framework files directly — no need
+to paste context. The agent will parse the structured front matter for stage
+routing and follow the fallback protocols documented in the stage reference.
 
 ---
 
@@ -265,6 +292,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 
 Added to framework in v0.9.0.
