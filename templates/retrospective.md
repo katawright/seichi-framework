@@ -51,6 +51,18 @@
 
 - [item]
 
+## Framework Feedback
+
+<!-- Did anything about the AI-Assisted SDLC Framework itself help or hinder
+     your work? Note observations here — missing checklist items, unclear
+     guidance, template gaps, etc. Framework maintainers can act on these
+     directly. External users: consider filing an issue or PR at the framework
+     repository (see CONTRIBUTING.md). Agents: record observations here and
+     flag them for human review — do not file issues or PRs without explicit
+     permission. -->
+
+- [item]
+
 ---
 
 <!-- Template Last Updated: 2026-03-01 | Added in v0.23.0 -->
