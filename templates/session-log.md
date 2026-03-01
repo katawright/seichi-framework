@@ -52,4 +52,4 @@
 
 - [Specific actions for the next session]
 
-<!-- Template Last Updated: 2026-03-01 | Added in v0.24.0 -->
+<!-- Template Last Updated: 2026-03-01 | Added in v0.23.0 -->

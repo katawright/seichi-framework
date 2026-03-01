@@ -159,6 +159,23 @@ These rules apply to AI coding assistants working in this repository.
    - Review diffs for formatting and consistency
 6. Do not commit or create tags unless the user explicitly requests it.
 
+### Agent Execution Model
+
+Recommended workflow for AI coding agents operating in this repository:
+
+1. **Orient** — read `guides/agentic-workflow.md` (parse front matter first for
+   stage routing, then body for context)
+2. **Locate stage** — identify the current stage from the routing table; read
+   the stage README, checklist, and reference
+3. **Check front matter** — verify required inputs are available; flag any
+   missing inputs with `[ASSUMED]`
+4. **Execute** — follow the stage guide activities at the appropriate autonomy
+   tier; self-validate against the checklist
+5. **Gate** — present completed artifacts for human review at defined gates;
+   follow fallback protocols from `stages/[stage]/reference.md` if blocked
+6. **Log** — for multi-session work, maintain a session log using
+   `templates/session-log.md`; read on start, write on end
+
 ## Notes
 
 Last Updated: 2026-03-01
