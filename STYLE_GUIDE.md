@@ -110,7 +110,7 @@ between H3 subsections within an H2.
 ## Cross-Linking
 
 - Use the file's title as link text, not the raw filename (e.g.,
-  `[Framework Guide](framework-guide.md)`, not `framework-guide.md`)
+  `[Framework Guide](guides/framework.md)`, not `guides/framework.md`)
 - Link to other framework files by relative path
 - Use fragment anchors (`#section-name`) only when linking to a specific section
   within another file
@@ -126,14 +126,13 @@ Files fall into categories that may have type-specific conventions:
 | Category                        | Example pattern  | Notes section extras        |
 | ------------------------------- | ---------------- | --------------------------- |
 | **README files**                | `README.md`      | Include `Framework Version` |
-| **Guide files**                 | `*-guide.md`     | Standard structure          |
-| **Template files**              | `*-template.md`  | HTML comment metadata       |
+| **Guide files** (`guides/`)     | `*.md`           | Standard structure          |
+| **Template files** (`templates/`) | `*.md`         | HTML comment metadata       |
 | **Scorecard / reference files** | `*-scorecard.md` | Standard structure          |
 
 **Template file conventions:**
 
-- Location: `framework/templates/` — pure fill-in-the-blank files, no guidance
-  prose
+- Location: `templates/` — pure fill-in-the-blank files, no guidance prose
 - Omit the `## Notes` section; instead end with an HTML comment:
   `<!-- Template Last Updated: YYYY-MM-DD | Added in vX.Y.Z -->`
 - Use `YYYY-MM-DD` as a placeholder for dates that users fill in (e.g.,
@@ -231,17 +230,17 @@ Item design rules:
 
 Canonical file set per stage directory:
 
-| File                   | Purpose                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------ |
-| `README.md`            | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
-| `[stage]-checklist.md` | Quick validation gate with critical items                                                              |
-| `[stage]-reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
+| File            | Purpose                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| `README.md`     | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
+| `checklist.md`  | Quick validation gate with critical items                                                              |
+| `reference.md`  | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
 
-Templates live in `/framework/templates/`:
+Stage directories live under `stages/[stage]/`. Templates live in `templates/`:
 
-| File                    | Purpose                               |
-| ----------------------- | ------------------------------------- |
-| `[stage]-*-template.md` | Pure fill-in-the-blank stage artifact |
+| File         | Purpose                               |
+| ------------ | ------------------------------------- |
+| `[name].md`  | Pure fill-in-the-blank stage artifact |
 
 README files link to related documents inline (via How to Use steps and body
 content) and do not need a separate Related Documents section. Non-README files

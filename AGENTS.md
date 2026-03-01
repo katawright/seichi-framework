@@ -38,7 +38,7 @@ all SDLC stages. The framework is designed to:
 
 ## Key Documents
 
-- `framework-stages.md`: Authoritative definition of the 8 SDLC stages with
+- `guides/stages.md`: Authoritative definition of the 8 SDLC stages with
   inputs, outputs, and criteria
 - `STYLE_GUIDE.md`: Source of truth for document style, organization, and
   formatting — read before creating or editing framework files
@@ -47,12 +47,12 @@ all SDLC stages. The framework is designed to:
 
 Canonical sources — other docs should link here, not re-explain:
 
-- **Stage definitions:** `framework-stages.md`
-- **Stage execution guidance:** `[stage]/README.md`
-- **Cross-cutting concepts and governance:** `framework-guide.md`
-- **AI autonomy and scoring:** `framework-ai-assistance.md`
-- **Right-sizing tiers:** `right-sizing-guide.md`
-- **Deep-dive best practices:** `[stage]/[stage]-reference.md`
+- **Stage definitions:** `guides/stages.md`
+- **Stage execution guidance:** `stages/[stage]/README.md`
+- **Cross-cutting concepts and governance:** `guides/framework.md`
+- **AI autonomy and scoring:** `guides/ai-assistance.md`
+- **Right-sizing tiers:** `guides/right-sizing.md`
+- **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
 
 ## Design Principles
@@ -96,7 +96,8 @@ Canonical sources — other docs should link here, not re-explain:
 2. Tailor language to role (business-first in PM/BA stages, technical in
    engineering stages)
 3. Each stage directory should include: README (stage guide), checklist,
-   reference (if needed). Templates live in `templates/`
+   reference (if needed). Templates live in `templates/`. Stage directories
+   are under `stages/`
 4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
@@ -164,4 +165,4 @@ These rules apply to AI coding assistants working in this repository.
 
 ## Notes
 
-Last Updated: 2026-02-28
+Last Updated: 2026-03-01
