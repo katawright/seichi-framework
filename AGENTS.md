@@ -22,12 +22,7 @@ all SDLC stages. The framework is designed to:
 - Democratize project initiation for business stakeholders
 - Support iterative delivery with adaptive feedback loops
 
-## Quick Context
-
-- Phase: Phase 2 - Framework Refinement
-- Goal: Review and refine framework for completeness and usability
-
-### Target Audience
+## Target Audience
 
 - **Primary:** Engineers — may be skeptical about AI tools or concerned about AI
   as a threat to their roles
@@ -36,16 +31,10 @@ all SDLC stages. The framework is designed to:
 - **Tertiary:** Other organizations seeking structured AI integration across
   their product development lifecycle
 
-## Key Documents
-
-- `guides/stages.md`: Authoritative definition of the 8 SDLC stages with
-  inputs, outputs, and criteria
-- `STYLE_GUIDE.md`: Source of truth for document style, organization, and
-  formatting — read before creating or editing framework files
-
 ## Document Hierarchy
 
-Canonical sources — other docs should link here, not re-explain:
+Canonical sources — other docs should link here, not re-explain. Read
+`guides/stages.md` and `STYLE_GUIDE.md` first when creating or editing files.
 
 - **Stage definitions:** `guides/stages.md`
 - **Stage execution guidance:** `stages/[stage]/README.md`
@@ -76,10 +65,9 @@ Canonical sources — other docs should link here, not re-explain:
 
 - Versioning: Semantic Versioning (MAJOR.MINOR.PATCH)
   - `VERSION` is the canonical framework version
-  - Framework and application versions stay synchronized
 - Commits: Conventional Commits (`type(scope): description`)
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`
-  - Scopes: stage names, framework, application, ci
+  - Scopes: stage names, framework, ci
   - Breaking changes: `!` or `BREAKING CHANGE:` in commit body
 - File versioning:
   - `README.md` files include `Framework Version` and `Last Updated`
@@ -101,7 +89,6 @@ Canonical sources — other docs should link here, not re-explain:
 4. Include role metadata and execution pattern
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
-6. Only commit changes when explicitly directed by the user
 
 ## Cross-Cutting Refinement Patterns
 
@@ -113,15 +100,6 @@ When refining stage artifacts, apply these patterns:
 4. Avoid "DRI" jargon; prefer "project lead"
 
 Use Initiation stage artifacts as reference implementations.
-
-## Framework-Application Synchronization
-
-When building the application:
-
-- Markdown framework artifacts are the source of truth
-- Application reads framework files (runtime or build-time)
-- Framework and application release together with aligned version numbers
-- Framework changes require application updates in the same commit
 
 ## Measurement Philosophy
 

@@ -2,16 +2,8 @@
 
 ## Purpose
 
-This file contains instructions specific to Claude Code.
-
-All project-level guidance (standards, workflow, formatting, artifact
-conventions, and context) lives in `AGENTS.md`.
-
-## Project Conventions
-
-See @AGENTS.md — this is the source of truth for project standards, workflow,
-formatting, and artifact conventions. Apply the Claude Code-specific rules
-below in addition to AGENTS.md.
+Claude Code-specific rules for this repository. See @AGENTS.md for all
+project conventions.
 
 ## Claude Code Specific Rules
 

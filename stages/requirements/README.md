@@ -620,7 +620,7 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Framework Version:** 0.21.0
+**Framework Version:** 0.22.0
 
 **Last Updated:** 2026-02-27
 
