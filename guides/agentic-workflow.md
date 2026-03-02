@@ -7,7 +7,7 @@ stages:
     execution_pattern: foundational
     readme: stages/initiation/README.md
     checklist: stages/initiation/checklist.md
-    reference: null
+    reference: stages/initiation/reference.md
     default_autonomy: collaborative
     gates: [{ type: human-approval, name: "Gate 1 (Investment Decision)" }]
     inputs: [business-opportunity, stakeholder-list, budget-constraints]

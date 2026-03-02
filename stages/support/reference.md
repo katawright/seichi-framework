@@ -183,8 +183,9 @@ How we fixed it: [Mitigation/resolution]
 Prevention: [Key action items with owners and due dates]
 ```
 
-> **AI exploration:** _"Draft incident communication messages for [describe >
-> the current incident situation]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Draft incident communication messages
+> for [describe the current incident situation]."_
 
 ---
 
@@ -220,8 +221,9 @@ Prevention: [Key action items with owners and due dates]
 - Enhancement requests, documentation updates
 - Post-mortem not required
 
-> **AI exploration:** _"Customize these severity levels for [describe your >
-> product, user base, and SLA commitments]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Customize these severity levels for
+> [describe your product, user base, and SLA commitments]."_
 
 ---
 
@@ -292,8 +294,9 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** _"Help me build a bug triage process for [describe > team
-> size, product, and release cadence]."_
+> **AI exploration:** \_"Help me build a bug triage process for [describe > team
+>
+> > size, product, and release cadence]."\_
 
 ---
 
@@ -429,8 +432,9 @@ appropriate to your support level), see the
 - **Make actionable** — step-by-step procedures, copy-pasteable commands,
   expected results
 
-> **AI exploration:** _"Generate a runbook template for [describe your >
-> deployment process and tooling]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Generate a runbook template for
+> [describe your deployment process and tooling]."_
 
 ---
 
@@ -789,8 +793,9 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** _"Help me create a disaster recovery plan for [describe >
-> your system, infrastructure, and business requirements]."_
+> **AI exploration:** \_"Help me create a disaster recovery plan for [describe >
+>
+> > your system, infrastructure, and business requirements]."\_
 
 ---
 

@@ -47,9 +47,10 @@ check VPN status and retry"]
 
 ### Step 3: [Action Description] _(Critical Step)_
 
-> **Caution:** This step [describe why it's critical — e.g., "modifies
-> production data" or "cannot be undone without a restore"]. Verify the
-> expected output before proceeding.
+<!-- prettier-ignore -->
+> **Caution:** This step [describe why it's critical — e.g.,
+> "modifies production data" or "cannot be undone without a restore"].
+> Verify the expected output before proceeding.
 
 ```bash
 # [Command to execute]

@@ -102,8 +102,10 @@ redeployment.
 - [ ] Gradually roll out (percentage or user segments)
 - [ ] Toggle features on/off without redeployment
 
-> **AI exploration:** _"Compare deployment strategies for [describe your > >
-> system, traffic patterns, and risk tolerance] and recommend an approach."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Compare deployment strategies for
+> [describe your system, traffic patterns, and risk tolerance]
+> and recommend an approach."_
 
 ---
 
@@ -261,8 +263,10 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe > your
-> > deployment strategy and infrastructure]."_
+> **AI exploration:** \_"Help me design a rollback procedure for [describe >
+> your
+>
+> > deployment strategy and infrastructure]."\_
 
 ---
 
@@ -409,8 +413,9 @@ Deployment completed successfully at [Time].
 - Email for formal notifications
 - Incident channel for issues (#incident-YYYY-MM-DD)
 
-> **AI exploration:** _"Draft deployment communications for [describe your > >
-> deployment and audience]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Draft deployment communications for
+> [describe your deployment and audience]."_
 
 ---
 
@@ -461,8 +466,9 @@ For breaking changes requiring downtime:
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe > >
-> your stack and compliance requirements]."_
+> **AI exploration:** \_"Audit our deployment security posture for [describe > >
+>
+> > your stack and compliance requirements]."\_
 
 ---
 
@@ -519,8 +525,10 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe >
-> > your deployment process and risk tolerance]."_
+> **AI exploration:** \_"Create deployment decision trees tailored to
+> [describe >
+>
+> > your deployment process and risk tolerance]."\_
 
 ---
 

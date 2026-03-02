@@ -27,17 +27,23 @@ spike, experiment) / TBD]
 
 - [Who is affected, what they can't do, why, and the impact]
 
+---
+
 ## Business Case + Why Now
 
 <!-- Minimal: informal justification | Standard: value, urgency, and strategic alignment | Enterprise: formal business case with financial analysis -->
 
 - [What value this creates or risk it reduces, and why it matters now]
 
+---
+
 ## Goals and Success Metrics
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
 
 - [1–3 measurable outcomes with baseline and target where possible]
+
+---
 
 ## Scope Boundaries
 
@@ -50,6 +56,8 @@ spike, experiment) / TBD]
 <!-- Minimal: quick list | Standard: 3-5 explicit non-goals | Enterprise: detailed boundary analysis with stakeholder review -->
 
 - [What this project will not do — 3-5 items]
+
+---
 
 ## Gate 1 — Proposed Decision Criteria
 
@@ -64,15 +72,21 @@ spike, experiment) / TBD]
 **Next step if proceeding:** This brief becomes input to Requirements stage (per
 [AI-Assisted SDLC Stages](../guides/stages.md#stage-1-initiation)).
 
+---
+
 ## Project Lead and Stakeholders
 
 - **Project lead:** [name]
 - **Approvers:** [engineering/product/security as needed]
 - **Stakeholders:**
 
+---
+
 ## Assumptions (Top 5)
 
 - [Assumptions that, if wrong, materially change effort or scope]
+
+---
 
 ## Risks / Unknowns (Top 5)
 
@@ -83,6 +97,8 @@ For each:
 - **Risk/unknown:** … **Impact if wrong:** … **Likelihood:** L / M / H
   **Mitigation:** [spike/review/fallback]
 
+---
+
 ## Pre-Mortem (Optional)
 
 <!-- Imagine the project has failed. What went wrong? Identify 2-3 plausible
@@ -91,6 +107,8 @@ For each:
 For each:
 
 - **Failure mode:** … **Why plausible:** … **Early signal to watch:** …
+
+---
 
 ## Data Sensitivity and Compliance
 
@@ -104,17 +122,23 @@ For each:
 **Notes:** [Brief justification — e.g., "Handles customer PII → Confidential;
 GDPR applies because EU users are in scope"]
 
+---
+
 ## Constraints and Dependencies
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team
   capacity, technology restrictions]
 - **Dependencies:** [teams, vendors, approvals]
 
+---
+
 ## Options Considered (At Least One Alternative)
 
 - **Option A:** … [pros/cons]
 - **Option B:** … [pros/cons]
 - **Recommendation:** …
+
+---
 
 ## Hypothesis: Staffing + Time Range
 

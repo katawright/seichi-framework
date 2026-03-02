@@ -10,6 +10,8 @@ It is agent-agnostic and complements:
 - `README.md` for project overview
 - `CLAUDE.md` for Claude-specific guidance
 
+---
+
 ## Project Overview
 
 This project develops a practical framework for integrating AI assistance across
@@ -22,6 +24,8 @@ all SDLC stages. The framework is designed to:
 - Democratize project initiation for business stakeholders
 - Support iterative delivery with adaptive feedback loops
 
+---
+
 ## Target Audience
 
 - **Primary:** Engineers — may be skeptical about AI tools or concerned about AI
@@ -30,6 +34,8 @@ all SDLC stages. The framework is designed to:
   Analysts, Executives) who need to initiate and plan software projects
 - **Tertiary:** Other organizations seeking structured AI integration across
   their product development lifecycle
+
+---
 
 ## Document Hierarchy
 
@@ -47,6 +53,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
 
+---
+
 ## Design Principles
 
 1. AI as assistant, not replacement (non-threatening language)
@@ -54,6 +62,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 3. Cross-functional accessibility (business and technical stakeholders)
 4. Role-appropriate guidance
 5. Methodology-agnostic (agile, waterfall, hybrid)
+
+---
 
 ## SDLC Execution Model
 
@@ -63,6 +73,8 @@ Canonical sources — other docs should link here, not re-explain. Read
   Verification, Deployment
 - Continuous stage: Support
 - Increment = neutral term mapping to epic/feature/sprint/milestone/deliverable
+
+---
 
 ## Standards
 
@@ -78,6 +90,8 @@ Canonical sources — other docs should link here, not re-explain. Read
     framework file before finishing a change
 - Markdown formatting: follow `STYLE_GUIDE.md`
 
+---
+
 ## Workflow
 
 1. Maintain consistency across stage artifacts
@@ -90,6 +104,8 @@ Canonical sources — other docs should link here, not re-explain. Read
    (foundational/iterative/continuous) in each stage
 5. Use feature branches and PRs (main branch is protected)
 
+---
+
 ## Cross-Cutting Refinement Patterns
 
 When refining stage artifacts, apply these patterns:
@@ -100,6 +116,8 @@ When refining stage artifacts, apply these patterns:
 4. Avoid "DRI" jargon; prefer "project lead"
 
 Use Initiation stage artifacts as reference implementations.
+
+---
 
 ## Measurement Philosophy
 
@@ -118,6 +136,8 @@ through all subsequent stages. Each stage integrates measurement differently:
 The framework is agnostic to goal-setting methodology (OKRs, SMART, KPIs, etc.)
 — what matters is that criteria are clearly defined, measurable, and trackable.
 
+---
+
 ## Excluded Directories
 
 Do not read or reference files in these directories:
@@ -126,6 +146,8 @@ Do not read or reference files in these directories:
 - `.obsidian/` — Obsidian vault configuration
 - `.evaluation/` — contributor-facing evaluation tooling (rubrics, simulation
   plans); not framework guidance
+
+---
 
 ## Front Matter Convention
 
@@ -143,6 +165,8 @@ The front matter answers _what do I need, what do I produce, what gates apply_.
 The body answers _why this approach, what are the tradeoffs, how do I handle
 edge cases_. See `STYLE_GUIDE.md` for the front matter schema and formatting
 rules.
+
+---
 
 ## Agent Execution Rules
 
@@ -177,6 +201,8 @@ Recommended workflow for AI coding agents operating in this repository:
    follow fallback protocols from `stages/[stage]/reference.md` if blocked
 6. **Log** — for multi-session work, maintain a session log using
    `templates/session-log.md`; read on start, write on end
+
+---
 
 ## Notes
 

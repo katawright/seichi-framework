@@ -7,8 +7,7 @@ your first increment deployment or after major infrastructure changes.
 Increment 0. For per-increment deployment readiness, use the
 [Deployment Checklist](checklist.md) instead.
 
-For detailed setup guidance, see the
-[Deployment Setup Guide](setup.md).
+For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 
 ---
 
