@@ -337,8 +337,9 @@ Format: "The system shall..." or user story format.
 **Gate** — A checkpoint with a real option to stop the project. A genuine
 go/no-go investment decision.
 
-**Increment** — A discrete, deliverable chunk of work. See
-[Terminology: Increments](#terminology-increments).
+**Increment** — A discrete, deliverable chunk of work. A neutral term that maps
+to epic, feature, sprint, milestone, or deliverable depending on your
+methodology.
 
 **Iterative stage** — Repeats for each increment in the Increment Design →
 Implementation → Verification → Deployment cycle.
