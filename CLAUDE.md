@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Claude Code-specific rules for this repository. See @AGENTS.md for all
-project conventions.
+Claude Code-specific rules for this repository. See @AGENTS.md for all project
+conventions.
 
 ## Claude Code Specific Rules
 
@@ -21,4 +21,6 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-Last Updated: 2026-03-01
+**Last Updated:** 2026-03-01
+
+Added to framework in v0.9.0.

@@ -6,12 +6,16 @@ Open a GitHub issue describing what you'd like to change and why. Include enough
 context for maintainers to evaluate the suggestion without needing a follow-up
 conversation.
 
+---
+
 ## How to Submit Changes
 
 1. Fork the repository
 2. Create a feature branch from `main`
 3. Make your changes
 4. Open a pull request against `main`
+
+---
 
 ## What Makes a Good Suggestion
 
@@ -23,6 +27,8 @@ The best suggestions are:
 - **Sourced from retrospectives** — the Framework Feedback section of
   `templates/retrospective.md` is the intended place to capture observations
   during project work; reference those notes when filing issues
+
+---
 
 ## Conventions
 
@@ -37,6 +43,18 @@ Follow these when making changes:
   [Conventional Commits](https://www.conventionalcommits.org/)
   (`type(scope): description`)
 
+---
+
+## Evaluation Tooling
+
+Review rubrics and simulation plans live in `.evaluation/`. See
+[Evaluation Rubric](.evaluation/rubric.md) for instructions on running a
+framework evaluation.
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-01
+
+Added to framework in v0.24.0.

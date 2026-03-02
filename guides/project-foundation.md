@@ -1,3 +1,9 @@
+---
+id: project-foundation
+type: guide
+concerns: [foundation-work, greenfield-bootstrap, brownfield-readiness]
+---
+
 # Project Foundation Guide
 
 ## Overview
@@ -146,8 +152,7 @@ documentation effort — no structural changes needed.
 **Completion signal:** Architecture, infrastructure, and operational processes
 are documented in a structure (AGENTS.md, docs/) that AI tools can reference
 effectively. Create an AGENTS.md at your project root with project-specific
-conventions, tech stack, and workflow — your AI assistant can help generate
-one.
+conventions, tech stack, and workflow — your AI assistant can help generate one.
 
 ### Needs Preparation: Extended Foundation
 
@@ -233,10 +238,10 @@ difference is focus (infrastructure instead of features):
 | **Deployment**       | Deploy features to users     | Validate infrastructure with skeleton deployment       |
 
 Design foundation work the same way you would design any increment — using the
-[Increment Design](../stages/increment-design/README.md) stage artifacts to define scope,
-break down tasks, and set acceptance criteria. The only difference is that the
-acceptance criteria focus on infrastructure readiness rather than user-facing
-functionality.
+[Increment Design](../stages/increment-design/README.md) stage artifacts to
+define scope, break down tasks, and set acceptance criteria. The only difference
+is that the acceptance criteria focus on infrastructure readiness rather than
+user-facing functionality.
 
 ---
 
