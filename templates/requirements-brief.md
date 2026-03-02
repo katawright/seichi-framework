@@ -206,7 +206,7 @@ Provide this Requirements Document to System Design team.
   stage)
 - Top risks addressed with spikes/prototypes/reviews and mitigations (System
   Design stage)
-- Iteration plan with dependencies for iterative delivery (System Design stage)
+- Increment plan with dependencies for iterative delivery (System Design stage)
 - Updated staffing/timeline estimates with improved confidence (System Design
   stage)
 - Recommendation: proceed / pivot / stop (System Design stage)

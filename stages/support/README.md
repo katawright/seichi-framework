@@ -289,8 +289,8 @@ route directly to Implementation. Record the rationale, rollback approach, and
 approver using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
-**Otherwise:** Add to backlog with severity tag, prioritize in sprint planning,
-and follow the appropriate SDLC stage path.
+**Otherwise:** Add to backlog with severity tag, prioritize in increment
+planning, and follow the appropriate SDLC stage path.
 
 For the full decision matrix and hotfix workflow, see
 [Support Reference: Bug Triage](reference.md#bug-triage-decision-matrix).

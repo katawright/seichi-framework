@@ -194,14 +194,14 @@ for project-level measurement guidance.
 
 ### Baseline First
 
-Capture metrics for 2 sprints (or 4 weeks) before framework adoption to
+Capture metrics for 2 increments (or 4 weeks) before framework adoption to
 establish a meaningful comparison. Without a baseline, you cannot measure
 improvement.
 
 **What to capture:**
 
 - Current deployment frequency and lead time
-- Recent defect escape rate (production bugs per sprint)
+- Recent defect escape rate (production bugs per increment)
 - Current test coverage percentage
 - PR review turnaround time
 - Team satisfaction (run the 5-question survey before adoption)
@@ -224,7 +224,7 @@ AI-assisted development on your engineering operations:
 
 **How to measure:**
 
-- **Deployment frequency:** Count production deployments per week or sprint.
+- **Deployment frequency:** Count production deployments per week or increment.
   Source: CI/CD pipeline logs.
 - **Lead time:** Measure time from first commit on a branch to production
   deployment. Source: Git + CI/CD timestamps.
@@ -253,7 +253,7 @@ AI-assisted development on your engineering operations:
 | increment            | deployment                    | decrease     |
 | PR review turnaround | Time from PR opened to merged | Decrease     |
 | Throughput           | Story points or increments    | Increase     |
-|                      | completed per sprint          |              |
+|                      | completed per increment       |              |
 
 ### Developer Experience
 
@@ -275,10 +275,10 @@ as the team builds familiarity.
 
 ### Framework Overhead
 
-- Time spent on briefs, checklists, and gate decisions as a percentage of sprint
-  time
-- Should decrease as teams get comfortable (target: <5% of sprint time after 3
-  increments)
+- Time spent on briefs, checklists, and gate decisions as a percentage of
+  increment time
+- Should decrease as teams get comfortable (target: <5% of increment time after
+  3 increments)
 - If overhead remains >10% after 3 increments, review whether the team is
   over-documenting or using the wrong risk tier
 

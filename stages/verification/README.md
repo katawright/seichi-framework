@@ -319,7 +319,7 @@ fresh brief.
 
 ## When to Revisit Verification
 
-**During current iteration:**
+**During current increment:**
 
 - New defects from UAT or performance testing
 - Requirements or design changes

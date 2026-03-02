@@ -272,7 +272,7 @@ deployed buggy code."
 | Critical | High        | Hotfix today        |
 | Critical | Low         | Hotfix within 48h   |
 | High     | High        | Hotfix today        |
-| High     | Medium      | Next sprint         |
+| High     | Medium      | Next increment      |
 | Medium   | Any         | Backlog, prioritize |
 | Low      | Any         | Backlog, prioritize |
 
@@ -578,7 +578,7 @@ Are success criteria metrics on track?
 Is this a critical bug (P0/P1)?
   → Yes: Does it need immediate hotfix?
     → Yes: Deploy hotfix today
-    → No: Plan for next sprint
+    → No: Plan for next increment
   → No: Add to backlog, prioritize normally
 ```
 
