@@ -311,6 +311,37 @@ it and toward lower autonomy (Human-Led) when they don't:
 - Team has completed at least 1 increment using AI assistance
 - Code review includes at least one reviewer checking AI-generated output
 
+### Example: Configuring Autonomy by Team Profile
+
+Most teams vary their autonomy tier by stage. Here are three common
+configurations:
+
+| Stage            | Startup (3 engineers) | Mid-size product team | Regulated enterprise |
+| ---------------- | --------------------- | --------------------- | -------------------- |
+| Initiation       | Collaborative         | Collaborative         | Human-Led            |
+| Requirements     | Collaborative         | Collaborative         | Human-Led            |
+| System Design    | AI-Led                | Collaborative         | Human-Led            |
+| Increment Design | AI-Led                | AI-Led                | Collaborative        |
+| Implementation   | AI-Led                | AI-Led                | Collaborative        |
+| Verification     | AI-Led                | Collaborative         | Human-Led            |
+| Deployment       | Collaborative         | Collaborative         | Human-Led            |
+| Support          | AI-Led                | Collaborative         | Human-Led            |
+
+**Startup (3 engineers, greenfield):** Maximize AI autonomy where outputs are
+machine-verifiable (implementation, verification). Stay Collaborative for
+business-facing stages where stakeholder alignment matters.
+
+**Mid-size product team (8-12 engineers, established product):** AI-Led for
+design and implementation where patterns are established. Collaborative
+elsewhere to maintain team knowledge transfer and review quality.
+
+**Regulated enterprise (finance, healthcare):** Human-Led for all stages with
+compliance or audit implications. Collaborative for implementation only after
+establishing review processes and AI governance policies.
+
+Use these as starting points, not prescriptions. Your team's actual
+configuration depends on CI maturity, domain risk, and AI experience.
+
 ### Your Tier Can Evolve
 
 Teams typically progress from Human-Led to Collaborative to AI-Led as they build
