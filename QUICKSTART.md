@@ -69,6 +69,20 @@ If your team is adopting the framework on a project already in progress:
 > stage. Document enough context for the current stage's inputs to be
 > understood, then follow the framework forward.
 
+### Minimum Viable Adoption
+
+If you want the highest value for the least process, start with just three
+artifacts at the Minimal tier:
+
+1. **Initiation Brief** — forces problem-first thinking and prevents building
+   the wrong thing
+2. **Increment Design Brief** — gives engineers enough spec to implement without
+   guessing
+3. **Verification Checklist** — prevents shipping untested work
+
+These three create a lightweight loop: define the problem, design the solution,
+verify it works. Add more artifacts only when you feel the gaps.
+
 ---
 
 ## What's Next

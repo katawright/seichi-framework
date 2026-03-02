@@ -198,6 +198,10 @@ For Increment 2+, review before planning:
   modes are becoming relevant based on what the team has learned so far
 - **Surprises from Implementation** — deviations noted during the last increment
   that should inform this one's design
+- **Technical debt** — review known debt items from previous increments and
+  decide which to address in this increment's scope (fix now, schedule later, or
+  accept). Include selected debt items in the increment's scope baseline and
+  test strategy.
 
 This is the point in the cycle where the
 [learning throughline](../../guides/framework.md#learning-throughline) feeds
