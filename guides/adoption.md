@@ -356,7 +356,7 @@ team builds framework fluency on territory they already know.
 1. Run 1–2 preparation increments through the framework's full cycle (Increment
    Design → Implementation → Verification → Deployment)
 2. Evaluate results using
-   [Phase 1 success criteria](#success-criteria-for-phase-2)
+   [Success Criteria for Phase 2](#success-criteria-for-phase-2)
 3. Decide whether to complete the full preparation project or adjust the
    approach
 
