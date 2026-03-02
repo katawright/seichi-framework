@@ -14,11 +14,15 @@
 
 - [item]
 
+---
+
 ## What Didn't Work
 
 <!-- Friction points, process gaps, or mistakes. Be specific. -->
 
 - [item]
+
+---
 
 ## Surprises and Deviations
 
@@ -26,6 +30,8 @@
      anticipate during planning. -->
 
 - [item]
+
+---
 
 ## Pre-Mortem Follow-Up
 
@@ -37,11 +43,15 @@
 | ---------------------- | ------------- | ----- |
 | [mode]                 | Yes / No      | …     |
 
+---
+
 ## Action Items
 
 | Action | Owner | Target date |
 | ------ | ----- | ----------- |
 | …      | …     | YYYY-MM-DD  |
+
+---
 
 ## Carry Forward
 
@@ -50,6 +60,8 @@
      future projects. -->
 
 - [item]
+
+---
 
 ## Framework Feedback
 

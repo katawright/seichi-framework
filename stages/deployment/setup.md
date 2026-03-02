@@ -34,8 +34,7 @@ Increment 0 catches infrastructure issues when the stakes are low.
    match investment to your risk tier
 2. Follow the [**Greenfield Path**](#greenfield-path) or
    [**Brownfield Path**](#brownfield-path) based on your starting point
-3. Complete the
-   [Deployment Pipeline Checklist](pipeline-checklist.md) to verify
+3. Complete the [Deployment Pipeline Checklist](pipeline-checklist.md) to verify
    readiness
 4. For per-increment deployment execution, see the
    [Deployment Stage Guide](README.md)
@@ -104,13 +103,13 @@ below).
 This guide covers **one-time deployment infrastructure setup**. Other guides
 cover the decisions that feed into it and the ongoing work that uses it.
 
-| Responsibility            | Owner                                                              | This Guide's Role                  |
-| ------------------------- | ------------------------------------------------------------------ | ---------------------------------- |
-| Deployment strategy       | [System Design](../system-design/README.md)                        | Implements those decisions         |
-| Per-increment deployment  | [Deployment Stage Guide](README.md)                                | Uses the infrastructure built here |
-| Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md)             | Validates what this guide produces |
-| Monitoring infrastructure | This guide                                                         | Configures tools and dashboards    |
-| Operational processes     | [Support Operations Guide](../support/operations.md) | Uses monitoring infrastructure     |
+| Responsibility            | Owner                                                  | This Guide's Role                  |
+| ------------------------- | ------------------------------------------------------ | ---------------------------------- |
+| Deployment strategy       | [System Design](../system-design/README.md)            | Implements those decisions         |
+| Per-increment deployment  | [Deployment Stage Guide](README.md)                    | Uses the infrastructure built here |
+| Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md) | Validates what this guide produces |
+| Monitoring infrastructure | This guide                                             | Configures tools and dashboards    |
+| Operational processes     | [Support Operations Guide](../support/operations.md)   | Uses monitoring infrastructure     |
 
 ---
 
@@ -215,8 +214,8 @@ Set up observability infrastructure:
 - Infrastructure metrics dashboards
 - Alert routing and escalation policies
 - On-call rotation tooling configured (see
-  [Support Operations Guide](../support/operations.md) for
-  rotation structure and escalation process)
+  [Support Operations Guide](../support/operations.md) for rotation structure
+  and escalation process)
 
 For configuring ongoing operational processes that use this infrastructure
 (incident response, on-call procedures, runbooks), see the
@@ -242,8 +241,10 @@ Validate the entire pipeline end-to-end before the first real increment:
 This "walking skeleton" proves the pipeline works before adding business
 complexity.
 
-> **AI exploration:** _"Help me design a CI/CD pipeline for [describe your > >
-> stack, team size, and deployment frequency targets]."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me design a CI/CD pipeline for
+> [describe your stack, team size, and deployment frequency
+> targets]."_
 
 ---
 
@@ -324,8 +325,8 @@ If a project started without deployment infrastructure and now needs it
    [Right-Sizing Guide: Your Tier Can Change](../../guides/right-sizing.md#your-tier-can-change).
 2. **Treat deployment setup as foundation work** — follow the greenfield path
    above as a foundation increment. See the
-   [Project Foundation Guide](../../guides/project-foundation.md) for how foundation
-   work flows through stages.
+   [Project Foundation Guide](../../guides/project-foundation.md) for how
+   foundation work flows through stages.
 3. **Update your Initiation Brief** — change the deployment intent field to
    reflect the new target.
 

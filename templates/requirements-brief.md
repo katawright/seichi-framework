@@ -17,11 +17,15 @@
 
 - [What triggered this requirements work / where it sits in the roadmap]
 
+---
+
 ## Users / Personas
 
 <!-- For guidance, see requirements/README.md#userspersonas -->
 
 - [Primary users and secondary stakeholders with brief context]
+
+---
 
 ## Problem to Solve (Summary)
 
@@ -30,12 +34,16 @@
 - [Problem in problem-first form (no solutions), carried forward from Initiation
   Brief]
 
+---
+
 ## Goals and Success Metrics (from Initiation)
 
 <!-- For guidance, see requirements/README.md#goals-and-success-metrics -->
 <!-- Measurement throughline: These metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
 
 - [Measurable success criteria from Initiation Brief (baseline → target)]
+
+---
 
 ## Constraints
 
@@ -51,6 +59,8 @@
 
 - [New constraints surfaced during stakeholder interviews, technical discovery,
   or requirements elicitation]
+
+---
 
 ## Scope Baseline
 
@@ -73,6 +83,8 @@
 
 - [Explicitly excluded to prevent scope creep]
 
+---
+
 ## Functional Requirements (FRs)
 
 <!-- For guidance, see requirements/README.md#functional-requirements -->
@@ -84,6 +96,8 @@
 - FR-4:
 - FR-5:
 
+---
+
 ## Acceptance Criteria (AC)
 
 <!-- For guidance, see requirements/README.md#acceptance-criteria -->
@@ -93,12 +107,16 @@
 - **AC for FR-2:**
 - **AC for FR-3:**
 
+---
+
 ## Traceability Summary
 
 | FR ID | Initiation Objective | MoSCoW | ACs    | Success Metric |
 | ----- | -------------------- | ------ | ------ | -------------- |
 | FR-1  | [objective ref]      | Must   | AC-1.1 | [metric ref]   |
 | FR-2  | [objective ref]      | Should | AC-2.1 | [metric ref]   |
+
+---
 
 ## Non-Functional Requirements (NFRs) — Minimal Set
 
@@ -115,6 +133,8 @@
 - **Observability:** [NFR] | **Verification criteria:** [how validated]
 - **Compliance (if any):** [NFR] | **Verification criteria:** [how validated]
 
+---
+
 ## Data and Integrations (Constraints)
 
 <!-- For guidance, see requirements/README.md#data-and-integrations -->
@@ -122,13 +142,17 @@
 - [Data sources with ownership, retention, access patterns]
 - [External/internal integrations with constraints (rate limits, SLAs, auth)]
 
+---
+
 ## Edge Cases and Error Handling
 
 <!-- For guidance, see requirements/README.md#edge-cases -->
 
 - [Top edge cases with expected behavior]
--
--
+- [edge case]
+- [edge case]
+
+---
 
 ## Open Questions / Blockers
 
@@ -136,6 +160,8 @@
 
 - **Q1:**
 - **Q2:**
+
+---
 
 ## Requirements Readiness (Ready for System Design)
 
@@ -164,6 +190,8 @@ Provide this Requirements Document to System Design team.
 | [name]   | Engineering | YYYY-MM-DD | Approved / Revisions needed |
 | [name]   | Product     | YYYY-MM-DD | Approved / Revisions needed |
 | [name]   | Security    | YYYY-MM-DD | Approved / Revisions needed |
+
+---
 
 ## (Optional) Gate 2 Planning
 

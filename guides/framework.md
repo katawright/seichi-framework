@@ -51,6 +51,8 @@ control.
 3. [**Key Concepts**](#key-concepts) — linked overview of all cross-stage topics
 4. Drill into individual concept sections as needed
 
+---
+
 ## What Is This Framework?
 
 The AI-Assisted SDLC framework is a lightweight, practical guide for integrating

@@ -33,8 +33,8 @@ runbooks, no escalation path, and no on-call rotation.
    [Support Stage Guide](README.md#right-sizing-support) to choose your tier
 2. Follow the [**Greenfield Path**](#greenfield-path) or
    [**Brownfield Path**](#brownfield-path) below
-3. Complete the [Support Readiness Checklist](readiness-checklist.md) to
-   verify readiness
+3. Complete the [Support Readiness Checklist](readiness-checklist.md) to verify
+   readiness
 4. For ongoing per-increment operations, see the
    [Support Stage Guide](README.md)
 
@@ -65,9 +65,9 @@ tier — follow the tier that matches your project.
 
 ## Relationship to Other Guides
 
-The [Deployment Setup Guide](../deployment/setup.md) sets up
-monitoring and alerting **infrastructure and tooling** — the dashboards, log
-aggregation, APM, and alert routing that make observability possible.
+The [Deployment Setup Guide](../deployment/setup.md) sets up monitoring and
+alerting **infrastructure and tooling** — the dashboards, log aggregation, APM,
+and alert routing that make observability possible.
 
 This guide configures the **operational processes** that use that infrastructure
 — who responds to alerts, how incidents are managed, and what gets reported to
@@ -83,9 +83,8 @@ stakeholders.
 | Success criteria       | Capture baseline measurements at deployment   | Track, analyze, and report on metrics            |
 
 If you are setting up both deployment infrastructure and support operations for
-the first time, complete the
-[Deployment Setup Guide](../deployment/setup.md) first —
-support processes depend on the infrastructure being in place.
+the first time, complete the [Deployment Setup Guide](../deployment/setup.md)
+first — support processes depend on the infrastructure being in place.
 
 ---
 
@@ -97,8 +96,7 @@ accepting production ownership for your first increment.
 ### 1. Choose Your Support Level
 
 Review the right-sizing table above and select Minimal, Standard, or Enterprise.
-Document your choice in the
-[Support Brief](../../templates/support-brief.md).
+Document your choice in the [Support Brief](../../templates/support-brief.md).
 
 Consider:
 
@@ -195,9 +193,10 @@ problems.
 **Enterprise:** Automated dashboards with real-time tracking. Defined escalation
 when metrics deviate from targets.
 
-> **AI exploration:** _"Help me set up support operations for [describe your >
-> project, team size, user base, and risk level]. Suggest the right support
-> level and what to prioritize first."_
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me set up support operations for
+> [describe your project, team size, user base, and risk level].
+> Suggest the right support level and what to prioritize first."_
 
 ---
 
@@ -264,8 +263,8 @@ continuous improvement.
 
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
-[Checkpoint Decision Template](../../templates/checkpoint-decision.md) to
-record this decision when the team confirms readiness.
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md) to record
+this decision when the team confirms readiness.
 
 **Key question:** Is the team prepared to own this system in production?
 

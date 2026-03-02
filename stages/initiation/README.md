@@ -16,7 +16,7 @@ gates:
     name: "Gate 1 (Investment Decision)"
 feeds_into: [requirements]
 checklist: stages/initiation/checklist.md
-reference: null
+reference: stages/initiation/reference.md
 ---
 
 # AI-Assisted SDLC: Initiation Stage
