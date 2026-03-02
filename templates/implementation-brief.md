@@ -18,6 +18,7 @@
 ## Progress Log
 
 <!-- Session-by-session progress is tracked in a separate Implementation Session Log (implementation-session-log.md). Start one from the template at the beginning of each increment. -->
+<!-- Artifact storage: Store this brief and the session log alongside your project artifacts (e.g., docs/ directory or your team's document management system). The brief is the final record; the session log is the working journal. -->
 
 [Link to session log for this increment]
 

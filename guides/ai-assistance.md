@@ -243,16 +243,16 @@ This table shows how the three tiers manifest across all eight stages. Each
 stage guide contains a detailed activity-level table in its AI Assistance
 section.
 
-| Stage                | Human-Led                                  | Collaborative                                         | AI-Led                                                                          |
-| -------------------- | ------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **Initiation**       | Human drafts; AI answers questions         | AI interviews and drafts brief; human reviews         | AI drives discovery, cross-references for gaps; human validates                 |
-| **Requirements**     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts and proactively flags contradictions and gaps; human validates        |
-| **System Design**    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs proactively, identifies concerns; human validates       |
-| **Increment Design** | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts and flags cross-cutting concerns proactively; human validates         |
-| **Implementation**   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI implements full slices, identifies issues; engineer validates                |
-| **Verification**     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent                 |
-| **Deployment**       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
-| **Support**          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and identifies patterns proactively; engineer validates             |
+| Stage                | Human-Led                                  | Collaborative                                         | AI-Led                                                                       |
+| -------------------- | ------------------------------------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Initiation**       | Human drafts; AI answers questions         | AI interviews and drafts brief; human reviews         | AI drafts brief, cross-references for gaps; human steers and validates       |
+| **Requirements**     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts reqs, flags contradictions and gaps; human steers and validates    |
+| **System Design**    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs, surfaces concerns; human steers and validates       |
+| **Increment Design** | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts specs, flags cross-cutting concerns; human steers and validates    |
+| **Implementation**   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI generates full slices from specs; engineer reviews and validates          |
+| **Verification**     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes tests and iterates on CI feedback; engineer reviews intent         |
+| **Deployment**       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI drafts runbook, recommends gate decisions with evidence; engineer decides |
+| **Support**          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and surfaces patterns; engineer triages and validates            |
 
 **Note:** Even at the AI-Led tier, gate requirements still apply. For example,
 Deployment requires humans to own all production approval gates regardless of

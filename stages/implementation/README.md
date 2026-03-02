@@ -68,7 +68,15 @@ ready.
 6. After all PRs merge, complete the [Implementation Checklist](checklist.md)
    and finalize the
    [Implementation Brief](../../templates/implementation-brief.md)
+
 7. Hand off to Verification stage
+
+> **Brief vs. Session Log:** The
+> [Implementation Brief](../../templates/implementation-brief.md) is the final
+> record of what was built — scope, decisions, and outcomes. The
+> [Session Log](../../templates/implementation-session-log.md) is the working
+> journal — session-by-session progress, blockers, and handoff notes. Start the
+> session log at the beginning of each increment; finalize the brief at the end.
 
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
 the checklist before proceeding.
