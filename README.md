@@ -7,8 +7,8 @@ agent_entry_point: guides/agentic-workflow.md
 ## Overview
 
 A practical, stage-by-stage guide for AI-assisted software delivery — giving
-teams clear guidance at each stage and leaders the visibility and control they
-need.
+teams and leaders the guidance, visibility, and oversight they need at every
+stage.
 
 > **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
 > first stage in under 5 minutes.
