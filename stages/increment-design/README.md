@@ -6,6 +6,7 @@ inputs:
   - system-architecture
   - increment-plan
   - requirements-with-acceptance-criteria
+  - retrospective-action-items
 outputs:
   - artifact: component-designs
   - artifact: api-specifications
