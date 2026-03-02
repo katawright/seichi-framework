@@ -115,6 +115,7 @@ deployment decision using the
 - [Deployment Stage Guide](README.md)
 - [Deployment Reference](reference.md)
 - [Deployment Pipeline Checklist](pipeline-checklist.md)
+- [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---
 

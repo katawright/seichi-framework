@@ -78,6 +78,7 @@ the increment is ready for deployment.
 
 - [Verification Brief Template](../../templates/verification-brief.md)
 - [AI-Assisted SDLC: Verification Stage](README.md)
+- [Verification Reference](reference.md)
 - [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---

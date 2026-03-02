@@ -106,6 +106,7 @@ For initial setup before accepting production ownership, use the
 - [Support Readiness Checklist](readiness-checklist.md)
 - [Support Operations Guide](operations.md)
 - [Support Reference](reference.md)
+- [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---
 

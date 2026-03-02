@@ -86,6 +86,7 @@ for mission-critical production ownership.
 - [Support Operations Guide](operations.md)
 - [Support Stage Guide](README.md)
 - [Support Checklist](checklist.md)
+- [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---
 

@@ -74,6 +74,7 @@ increment deployment.
 - [Deployment Stage Guide](README.md)
 - [Deployment Checklist](checklist.md)
 - [Deployment Reference](reference.md)
+- [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---
 
