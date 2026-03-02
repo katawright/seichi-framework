@@ -195,7 +195,7 @@ when metrics deviate from targets.
 
 <!-- prettier-ignore -->
 > **AI exploration:** _"Help me set up support operations for
-> [describe your project, team size, user base, and risk level].
+> [describe your project, team size, user base, and risk tier].
 > Suggest the right support level and what to prioritize first."_
 
 ---

@@ -534,7 +534,7 @@ both project types:
 - Deployment strategy (blue-green, canary, rolling, etc.)
 - Monitoring and observability architecture
 - Security and compliance infrastructure
-- Iteration plan identifying **Increment 0 = establish infrastructure**
+- Increment plan identifying **Increment 0 = establish infrastructure**
 
 **Brownfield infrastructure planning (first AI-assisted project) includes:**
 
