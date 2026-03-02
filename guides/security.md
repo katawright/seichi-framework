@@ -90,11 +90,11 @@ starts from scratch.
 
 ## How AI Makes Security Cheap
 
-Security work falls into three automation tiers. At the Minimal project risk
-tier, Tier 1 activities run automatically with zero additional effort — making
-baseline security coverage effectively free.
+Security work falls into three automation levels. At the Minimal project risk
+tier, Automated activities run as part of CI with zero additional effort —
+making baseline security coverage effectively free.
 
-### Tier 1: Fully Automated
+### Fully Automated (CI/Pipeline)
 
 AI handles these without human intervention. They run as part of CI/CD or agent
 workflows:
@@ -108,7 +108,7 @@ workflows:
 - **CVE monitoring** — watch vulnerability databases for newly disclosed issues
   in project dependencies
 
-### Tier 2: AI-Drafted, Human-Reviewed
+### AI-Drafted, Human-Reviewed
 
 AI produces the first draft; a human reviews for accuracy and completeness:
 
@@ -121,7 +121,7 @@ AI produces the first draft; a human reviews for accuracy and completeness:
 - **Security test cases** — AI generates test scenarios from threat model; human
   reviews coverage
 
-### Tier 3: Human-Led, AI-Assisted
+### Human-Led, AI-Assisted
 
 Humans drive these activities; AI provides research and drafting support:
 
@@ -134,13 +134,13 @@ Humans drive these activities; AI provides research and drafting support:
 - **Incident response** — human leads investigation and decisions; AI correlates
   logs and suggests root causes
 
-### What This Means by Tier
+### What This Means by Risk Tier
 
-| Project risk tier | Security effort                                                            |
-| ----------------- | -------------------------------------------------------------------------- |
-| **Minimal**       | Zero additional effort — Tier 1 activities run automatically via CI/AI     |
-| **Standard**      | Tier 1 automatic + Tier 2 reviews during design and verification           |
-| **Enterprise**    | All tiers active + formal compliance mapping, pen testing, security review |
+| Project risk tier | Security effort                                                             |
+| ----------------- | --------------------------------------------------------------------------- |
+| **Minimal**       | Zero additional effort — Automated activities run via CI/AI                 |
+| **Standard**      | Automated + AI-Drafted reviews during design and verification               |
+| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review |
 
 ---
 

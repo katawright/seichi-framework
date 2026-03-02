@@ -160,6 +160,28 @@ better approach.
 
 ---
 
+## Team Onboarding
+
+When new engineers join a project mid-increment or mid-project:
+
+1. **Read the project foundation** — `AGENTS.md` (or equivalent project
+   context), recent ADRs, and the current increment design brief
+2. **Read the session log** — the
+   [Implementation Session Log](../../templates/implementation-session-log.md)
+   captures what's been built, what's in progress, and current blockers
+3. **Start with a small, well-defined task** — pick a task with clear acceptance
+   criteria and existing patterns to follow in the codebase
+4. **Pair on the first PR** — have an existing team member review the first
+   contribution synchronously to transfer conventions and context
+5. **Update the session log** — new engineers should update the log from their
+   first session to build the habit and contribute to team continuity
+
+> **For AI agents onboarding to an existing codebase:** Read `AGENTS.md` first,
+> then the session log, then the increment design brief. Parse front matter for
+> structured context before reading prose.
+
+---
+
 ## Multi-Session and Multi-Engineer Work
 
 ### Continuity Mechanisms

@@ -161,6 +161,15 @@ The framework improves delivery outcomes in four ways:
 | Governance       | Ad hoc decision trail            | Explicit gates and checkpoint records     |
 | Project pipeline | Depends on technical gatekeepers | Structured initiation for all roles       |
 
+### Industry Context
+
+Published studies on AI-assisted development report productivity gains ranging
+from 20–55% on well-scoped coding tasks (GitHub/Microsoft Copilot research,
+2023–2024). These numbers measure code generation speed in controlled settings —
+actual project-level ROI depends on team experience, AI maturity, task fit, and
+process overhead. This framework does not guarantee specific gains; it provides
+the structure to realize and measure them.
+
 ### Measuring Success
 
 Track these during a pilot to validate ROI:
@@ -172,6 +181,9 @@ Track these during a pilot to validate ROI:
 | Budget predictability                | Are estimates holding?                 |
 | Defect and rework trend              | Are we catching issues earlier?        |
 | Stakeholder confidence in governance | Do leaders trust the process?          |
+
+Your pilot generates the first real ROI data for your organization — industry
+benchmarks provide context, not targets.
 
 For a deeper measurement model, see the [Framework Guide](guides/framework.md).
 

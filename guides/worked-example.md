@@ -32,17 +32,19 @@ replacing tribal knowledge with documented decisions.
 
 ### How to Use This Guide
 
-1. [**Requirements**](#stage-2-requirements) — see what a requirement and its
+1. [**Initiation**](#stage-1-initiation) — see how the project starts with a
+   problem statement and success criteria
+2. [**Requirements**](#stage-2-requirements) — see what a requirement and its
    acceptance criteria look like
-2. [**System Design**](#stage-3-system-design) — see foundational technology and
+3. [**System Design**](#stage-3-system-design) — see foundational technology and
    increment planning decisions
-3. [**Increment Design**](#stage-4-increment-design) — see how design artifacts
+4. [**Increment Design**](#stage-4-increment-design) — see how design artifacts
    reference requirements
-4. [**Implementation**](#stage-5-implementation) — see the completion record
-5. [**Verification**](#stage-6-verification) — see test results mapped to
+5. [**Implementation**](#stage-5-implementation) — see the completion record
+6. [**Verification**](#stage-6-verification) — see test results mapped to
    acceptance criteria
-6. [**Deployment**](#stage-7-deployment) — see the release record
-7. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
+7. [**Deployment**](#stage-7-deployment) — see the release record
+8. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
    end-to-end flow
 
 ---
@@ -64,6 +66,45 @@ Project context:
 The requirement we trace is the ability for HR managers to assign onboarding
 tasks to new hires and track completion — a core Must Have requirement that
 touches multiple components and has clear acceptance criteria.
+
+---
+
+## Stage 1: Initiation
+
+The Initiation stage defines _why_ this project matters. Here's the relevant
+excerpt from the Initiation Brief.
+
+### Problem Statement
+
+HR managers at mid-size companies (50–500 employees) track new hire onboarding
+using spreadsheets and email chains. Tasks fall through the cracks, new hires
+miss deadlines, and HR has no visibility into completion status. Average
+onboarding completion rate is 68%, with 15% of required tasks completed late.
+
+### Goals and Success Metrics
+
+| Goal                       | Baseline | Target |
+| -------------------------- | -------- | ------ |
+| Onboarding task completion | 68%      | 95%    |
+| Tasks completed on time    | 85%      | 97%    |
+| HR time per new hire       | 4 hours  | 1 hour |
+
+### Scope Boundaries
+
+**In scope:** Task assignment, progress tracking, deadline management, HR
+dashboard.
+
+**Out of scope:** Payroll integration, document signing, IT provisioning
+automation.
+
+### Gate 1 Decision
+
+**Proceed** — clear problem with measurable impact, small team can deliver MVP
+in 8–10 weeks, low technical risk (standard web stack).
+
+> **Traceability:** This Initiation Brief becomes the primary input to the
+> Requirements stage. The success metrics above flow into NFRs (observability)
+> and verification criteria downstream.
 
 ---
 

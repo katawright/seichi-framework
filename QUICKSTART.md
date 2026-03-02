@@ -53,6 +53,22 @@ through the first stage interactively.
 3. Paste it into your AI chat and start working through the
    [Initiation stage](stages/initiation/README.md)
 
+### Path C: Joining a Project Mid-Stream
+
+If your team is adopting the framework on a project already in progress:
+
+1. Identify where the project is in the stage lifecycle (which stages are
+   already complete?)
+2. Create lightweight retroactive artifacts for completed stages — a brief
+   summary of decisions made and constraints in play, not full briefs
+3. Pick up the framework at the current stage and follow it forward
+4. Use the [Worked Example](guides/worked-example.md) to calibrate the expected
+   detail level for artifacts
+
+> **Key insight:** You don't need to go back and formally complete every prior
+> stage. Document enough context for the current stage's inputs to be
+> understood, then follow the framework forward.
+
 ---
 
 ## What's Next

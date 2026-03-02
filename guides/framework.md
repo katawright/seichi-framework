@@ -140,24 +140,19 @@ to using the framework with any AI assistant. The guide includes:
 Your AI assistant helps you think through the activities and produce the
 artifacts. You remain in control of all decisions and outputs.
 
-### Option 2: Framework Application (In Development)
+### Option 2: Framework Application (Planned)
 
-A dedicated application is being developed (using this framework itself -
-dogfooding) that will:
+A dedicated application is planned that would automate framework orchestration —
+reading framework documents, generating contextual prompts, managing artifact
+progression, and tracking completion across stages.
 
-- Read framework documents automatically
-- Generate contextual prompts based on your project
-- Manage workflow and artifact progression
-- Track completion across stages
-- Adapt to your chosen AI tool and team structure
+**Current status:** This application does not exist yet. No timeline is
+committed. Use **Option 1: AI-Assisted Manual Process** — it is the production
+workflow today, not a stopgap.
 
-**Current state (February 23, 2026):** This application is not yet generally
-available for production use. Use **Option 1: AI-Assisted Manual Process** now.
-Treat the application as a future accelerator, not a prerequisite to adopt this
-framework.
-
-This application will provide a more structured experience while maintaining the
-framework's flexibility. It is planned for future release.
+If the application is developed, it will complement the manual process as an
+accelerator. The framework documents remain the source of truth regardless of
+tooling.
 
 ---
 

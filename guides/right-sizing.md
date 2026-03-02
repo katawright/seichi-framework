@@ -134,6 +134,30 @@ compliance checks — they just don't need a change advisory board.
 > use the same tiers but differ in foundation work and stage emphasis. See
 > [Framework Guide: Greenfield vs. Brownfield Projects](framework.md#greenfield-vs-brownfield-projects).
 
+### Time-Cost Estimates by Stage
+
+Rough time ranges per stage, assuming a small team (2–5 people) at Standard
+tier. Actual time depends on project scope, team experience, and AI maturity.
+Minimal-tier projects trend toward the low end; Enterprise toward the high end
+or beyond.
+
+| Stage            | Typical Duration | Primary Cost Driver                       |
+| ---------------- | ---------------- | ----------------------------------------- |
+| Initiation       | 1–3 days         | Stakeholder alignment, scope clarity      |
+| Requirements     | 3–10 days        | Elicitation breadth, domain complexity    |
+| System Design    | 3–10 days        | Architecture complexity, unknowns         |
+| Increment Design | 1–3 days         | Increment scope, interface complexity     |
+| Implementation   | 1–4 weeks        | Feature scope, technical complexity       |
+| Verification     | 2–5 days         | Test coverage requirements, NFR targets   |
+| Deployment       | 1–3 days         | Infrastructure maturity, rollout strategy |
+| Support          | Ongoing          | Incident volume, SLA commitments          |
+
+> These estimates cover stage activities, not elapsed calendar time (which
+> includes review cycles, stakeholder availability, and parallel work).
+> Foundation work (greenfield bootstrap or brownfield discovery) adds 1–4 weeks
+> depending on scope. See the [Project Foundation Guide](project-foundation.md)
+> for details.
+
 ---
 
 ## Choosing Your Tier
