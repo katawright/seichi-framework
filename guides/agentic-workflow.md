@@ -1,6 +1,7 @@
 ---
 id: agentic-workflow
 type: guide
+concerns: [stage-routing, agent-orchestration, fallback-protocols]
 stages:
   - id: initiation
     stage_number: 1
@@ -142,7 +143,6 @@ stages:
         updated-runbooks,
         release-notes,
         baseline-measurements,
-        retrospective,
       ]
     feeds_into: [support]
   - id: support
