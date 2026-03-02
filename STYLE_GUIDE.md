@@ -222,6 +222,24 @@ Item design rules:
   than a fixed number
 - AI assistance callout at end of Core Items section
 
+### Severity Convention for Agent Parsing
+
+Checklist items have implicit severity based on their structural position:
+
+- **Blocking** — items under a `### Core Items` heading, or items whose failure
+  triggers the "NOT READY" decision path. An agent must not proceed past the
+  stage gate if any blocking item fails.
+- **Advisory** — items under a `### Supporting Items` heading, or items
+  explicitly marked as optional. An agent should flag advisory failures for
+  human review but may proceed if the gate owner approves.
+
+For checklists using phase groupings (e.g., deployment phases), each group's
+gate statement defines which items are blocking for that phase.
+
+> **For future checklists:** Consider adding an inline `<!-- blocking -->` or
+> `<!-- advisory -->` comment after each item for direct machine parsing. This
+> convention is optional for existing checklists.
+
 ---
 
 ## Stage Directory Conventions

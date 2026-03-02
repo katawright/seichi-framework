@@ -10,10 +10,19 @@ stages:
     checklist: stages/initiation/checklist.md
     reference: stages/initiation/reference.md
     default_autonomy: collaborative
-    gates: [{ type: human-approval, name: "Gate 1 (Investment Decision)" }]
+    default_oversight_intensity: active
+    gates:
+      [
+        {
+          type: human-approval,
+          name: "Gate 1 (Investment Decision)",
+          hard_gate: true,
+        },
+      ]
     inputs: [business-opportunity, stakeholder-list, budget-constraints]
     outputs: [initiation-brief, assumptions-risks-list, timeline-estimate]
     feeds_into: [requirements]
+    revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
   - id: requirements
     stage_number: 2
     execution_pattern: foundational
@@ -21,7 +30,15 @@ stages:
     checklist: stages/requirements/checklist.md
     reference: stages/requirements/reference.md
     default_autonomy: collaborative
-    gates: [{ type: human-approval, name: "Requirements Readiness" }]
+    default_oversight_intensity: active
+    gates:
+      [
+        {
+          type: human-approval,
+          name: "Requirements Readiness",
+          hard_gate: false,
+        },
+      ]
     inputs: [initiation-brief, stakeholder-list]
     outputs:
       [
@@ -31,6 +48,8 @@ stages:
         requirements-traceability,
       ]
     feeds_into: [system-design]
+    revisit_conditions:
+      [scope-creep, new-stakeholder-requirements, failed-verification]
   - id: system-design
     stage_number: 3
     execution_pattern: foundational
@@ -38,10 +57,19 @@ stages:
     checklist: stages/system-design/checklist.md
     reference: stages/system-design/reference.md
     default_autonomy: collaborative
+    default_oversight_intensity: active
     gates:
       [
-        { type: alignment-review, name: "Architecture Review" },
-        { type: human-approval, name: "Gate 2 (Investment Decision)" },
+        {
+          type: alignment-review,
+          name: "Architecture Review",
+          hard_gate: false,
+        },
+        {
+          type: human-approval,
+          name: "Gate 2 (Investment Decision)",
+          hard_gate: true,
+        },
       ]
     inputs:
       [requirements-document, non-functional-requirements, success-criteria]
@@ -55,6 +83,12 @@ stages:
         gate-2-decision-package,
       ]
     feeds_into: [increment-design]
+    revisit_conditions:
+      [
+        technology-constraint-change,
+        scale-requirement-change,
+        security-incident,
+      ]
   - id: increment-design
     stage_number: 4
     execution_pattern: iterative
@@ -62,7 +96,9 @@ stages:
     checklist: stages/increment-design/checklist.md
     reference: stages/increment-design/reference.md
     default_autonomy: collaborative
-    gates: [{ type: specialized-review, name: "Design Review" }]
+    default_oversight_intensity: balanced
+    gates:
+      [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
       [
         system-architecture,
@@ -79,6 +115,7 @@ stages:
         implementation-notes,
       ]
     feeds_into: [implementation]
+    revisit_conditions: [requirements-change, design-review-rejection]
   - id: implementation
     stage_number: 5
     execution_pattern: iterative
@@ -86,7 +123,15 @@ stages:
     checklist: stages/implementation/checklist.md
     reference: stages/implementation/reference.md
     default_autonomy: ai-led
-    gates: [{ type: ci-validation-human-approval, name: "PR Review + CI" }]
+    default_oversight_intensity: passive
+    gates:
+      [
+        {
+          type: ci-validation-human-approval,
+          name: "PR Review + CI",
+          hard_gate: false,
+        },
+      ]
     inputs:
       [
         detailed-design,
@@ -97,6 +142,7 @@ stages:
     outputs:
       [working-code, unit-tests, code-review-approvals, updated-documentation]
     feeds_into: [verification]
+    revisit_conditions: [design-change, blocking-dependency]
   - id: verification
     stage_number: 6
     execution_pattern: iterative
@@ -104,11 +150,13 @@ stages:
     checklist: stages/verification/checklist.md
     reference: stages/verification/reference.md
     default_autonomy: ai-led
+    default_oversight_intensity: passive
     gates:
       [
         {
           type: ci-validation-human-spot-check,
           name: "Test Execution + Coverage Review",
+          hard_gate: false,
         },
       ]
     inputs: [working-code, requirements-with-acceptance-criteria, test-strategy]
@@ -121,6 +169,7 @@ stages:
         security-scan-results,
       ]
     feeds_into: [deployment]
+    revisit_conditions: [new-defects, requirements-change, uat-rejection]
   - id: deployment
     stage_number: 7
     execution_pattern: iterative
@@ -128,11 +177,13 @@ stages:
     checklist: stages/deployment/checklist.md
     reference: stages/deployment/reference.md
     default_autonomy: human-led
+    default_oversight_intensity: active
     gates:
       [
         {
           type: human-execution-required,
           name: "Production Deployment Approval",
+          hard_gate: true,
         },
       ]
     inputs: [verified-code, uat-sign-off, deployment-checklist, rollback-plan]
@@ -145,6 +196,7 @@ stages:
         baseline-measurements,
       ]
     feeds_into: [support]
+    revisit_conditions: [deployment-failure, rollback-required]
   - id: support
     stage_number: 8
     execution_pattern: continuous
@@ -152,7 +204,15 @@ stages:
     checklist: stages/support/checklist.md
     reference: stages/support/reference.md
     default_autonomy: collaborative
-    gates: [{ type: human-approval, name: "Production Ownership Decision" }]
+    default_oversight_intensity: balanced
+    gates:
+      [
+        {
+          type: human-approval,
+          name: "Production Ownership Decision",
+          hard_gate: false,
+        },
+      ]
     inputs:
       [
         deployed-system,
@@ -176,6 +236,16 @@ stages:
         implementation,
         initiation,
       ]
+    revisit_conditions:
+      [incident-pattern, success-criteria-miss, enhancement-request]
+artifact_paths:
+  briefs: "docs/briefs/"
+  adrs: "docs/adr/"
+  session_logs: "docs/session-logs/"
+  convention:
+    "Store project artifacts in a docs/ directory at the repository root. Agents
+    should check for existing directory structure before creating new paths. If
+    no docs/ directory exists, propose one during the first foundational stage."
 fallback:
   missing_input:
     "Request from human or derive from available context with [ASSUMED] flag"
