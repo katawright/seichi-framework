@@ -456,7 +456,9 @@ expanding teams:
 
 Use language consistently across the organization:
 
-- Say "AI-assisted" not "AI-driven" or "AI-automated"
+- Say "AI-assisted" not "AI-driven" or "AI-automated" (exception: "AI-automated"
+  is acceptable for CI pipeline tasks that run without human interaction, such
+  as security scanning and dependency checks)
 - Say "AI drafts, humans decide" not "AI generates output"
 - Say "AI as a productivity tool" not "AI as a replacement"
 - Refer to "human validation" not "quality control of AI"
