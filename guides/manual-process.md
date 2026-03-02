@@ -1,3 +1,9 @@
+---
+id: manual-process
+type: guide
+concerns: [bootstrap-prompts, ai-tool-usage, session-management]
+---
+
 # Manual Process Guide
 
 ## Overview

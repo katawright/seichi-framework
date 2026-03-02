@@ -1,3 +1,9 @@
+---
+id: worked-example
+type: guide
+concerns: [traceability, artifact-examples, end-to-end-walkthrough]
+---
+
 # Worked Example: One Requirement Through the Framework
 
 ## Overview
@@ -44,9 +50,9 @@ replacing tribal knowledge with documented decisions.
 ## Scenario
 
 This example uses the employee onboarding tracker project from the
-[Manual Process Guide](manual-process.md) — a web application for
-tracking employee onboarding tasks, ensuring new hires complete all required
-steps within their first 30 days.
+[Manual Process Guide](manual-process.md) — a web application for tracking
+employee onboarding tasks, ensuring new hires complete all required steps within
+their first 30 days.
 
 Project context:
 

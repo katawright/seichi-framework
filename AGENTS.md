@@ -124,6 +124,8 @@ Do not read or reference files in these directories:
 
 - `.ignore/` — personal scratch work and draft notes
 - `.obsidian/` — Obsidian vault configuration
+- `.evaluation/` — contributor-facing evaluation tooling (rubrics, simulation
+  plans); not framework guidance
 
 ## Front Matter Convention
 
@@ -178,4 +180,6 @@ Recommended workflow for AI coding agents operating in this repository:
 
 ## Notes
 
-Last Updated: 2026-03-01
+**Last Updated:** 2026-03-01
+
+Added to framework in v0.1.0.

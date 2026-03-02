@@ -1,3 +1,9 @@
+---
+id: adoption
+type: guide
+concerns: [organizational-rollout, readiness-assessment, change-management]
+---
+
 # Organizational Adoption Guide
 
 ## Overview
@@ -459,8 +465,8 @@ Use language consistently across the organization:
 
 As teams gain experience during rollout, they naturally progress from Human-Led
 to Collaborative to AI-Led. The
-[AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum) defines
-each mode. Expect this progression:
+[AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum) defines each mode.
+Expect this progression:
 
 1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and
    review all output closely. AI is a drafting tool.
