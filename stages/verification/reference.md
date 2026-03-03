@@ -217,6 +217,32 @@ deployment.
 
 ---
 
+## Brownfield Verification Patterns
+
+### Scoped Infrastructure Changes
+
+When modifying existing endpoints, shared components, or infrastructure in a
+brownfield codebase, use this pattern to verify changes don't introduce
+regressions beyond the intended scope:
+
+1. **Identify blast radius** — list all endpoints, services, and data flows that
+   could be affected by the change, including indirect consumers
+2. **Baseline non-targeted endpoints** — before deploying changes, capture
+   current response times, error rates, and output samples for endpoints outside
+   the intended change scope
+3. **Verify after changes** — re-run baseline checks post-deployment and
+   compare; any deviation in non-targeted endpoints indicates unintended side
+   effects
+4. **Scope validation** — confirm that only the intended behavior changed;
+   non-targeted endpoints should show no statistically significant difference in
+   response times, error rates, or output format
+
+> **When to use:** Any time a brownfield change touches shared infrastructure
+> (database schemas, middleware, authentication, API gateways) or modifies an
+> endpoint that other services consume.
+
+---
+
 ## Test Data Management
 
 ### Strategies
@@ -438,6 +464,6 @@ Capture the following at the end of each session:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.
