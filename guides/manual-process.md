@@ -155,6 +155,17 @@ As you work through each stage:
 3. **Validate with checklist** - Ensure nothing critical is missed
 4. **Progress to next stage** - Once exit criteria are met
 
+### Step 5: Store Artifacts Consistently
+
+Store project artifacts using the convention from the
+[Agentic Workflow Guide](agentic-workflow.md):
+
+- **Briefs:** `docs/briefs/`
+- **ADRs:** `docs/adr/`
+- **Session logs:** `docs/session-logs/`
+
+If no `docs/` directory exists yet, create one during Initiation.
+
 ### AI-Led Bootstrap Prompt
 
 For teams operating at the AI-Led autonomy tier with an AI coding agent that has

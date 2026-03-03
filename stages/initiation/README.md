@@ -494,6 +494,9 @@ are updated with higher confidence.
 - **Initiation Brief** containing: problem statement, business case, measurable
   success criteria, scope boundaries, assumptions, risks, options, estimation,
   and Gate 1 definition
+- **Success Criteria Register** — define measurable goals, baselines, and targets
+  in the [Success Criteria Register](../../templates/success-criteria-register.md)
+  so every downstream stage references one source of truth
 
 > Success criteria defined here establish the **measurement throughline** that
 > flows through all subsequent stages. See

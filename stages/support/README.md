@@ -319,7 +319,10 @@ For prioritization framework details, see
 
 ### Success Criteria Tracking
 
-Support closes the measurement loop established in Initiation. See
+Support closes the measurement loop established in Initiation. Use the
+[Success Criteria Register](../../templates/success-criteria-register.md) as the
+input for outcomes review — compare actuals against the baselines and targets
+defined during Initiation. See
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
 #### Measurement Cadence
