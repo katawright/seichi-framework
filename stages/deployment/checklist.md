@@ -102,9 +102,11 @@ successful completion.
        complete)
 2. [ ] **[H] DevOps lead reviews and approves outcome** (operational readiness
        confirmed)
-3. [ ] **[H] Product manager acknowledges completion** (business acceptance)
-4. [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
-5. [ ] **Follow-up issues logged in backlog** (nothing lost)
+3. [ ] **[H] Project manager confirms release coordination complete** (schedule,
+       dependencies, and stakeholder communication verified)
+4. [ ] **[H] Product manager acknowledges completion** (business acceptance)
+5. [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
+6. [ ] **Follow-up issues logged in backlog** (nothing lost)
 
 **Final gate:** All sign-offs obtained → hand off to Support stage. Record the
 deployment decision using the

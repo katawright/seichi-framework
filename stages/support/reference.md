@@ -322,9 +322,10 @@ high-value / low-effort items first.
 2. Product manager reviews (weekly)
 3. Engineering estimates effort
 4. Prioritization (monthly/quarterly)
-5. Approved enhancements become new increments (start at Initiation stage)
-6. Follow full SDLC process
-7. Monitor impact on success criteria after delivery
+5. Project manager tracks approved enhancements against the delivery schedule
+6. Approved enhancements become new increments (start at Initiation stage)
+7. Follow full SDLC process
+8. Monitor impact on success criteria after delivery
 
 ### Sources
 
@@ -868,6 +869,6 @@ Capture these when ending a support session:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.

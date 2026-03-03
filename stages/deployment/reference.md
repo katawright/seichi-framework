@@ -217,6 +217,7 @@ Define decision maker BEFORE deployment:
 
 - Deployment engineer — technical issues
 - DevOps lead — major incidents
+- Project manager — cross-team impact and stakeholder communication
 - Product manager — business impact assessment
 - Escalation path documented
 
@@ -618,6 +619,6 @@ Capture these when ending a deployment session:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.

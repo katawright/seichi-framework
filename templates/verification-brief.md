@@ -276,7 +276,7 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
 - Status: [✅ Approved / ⚠️ Conditions / ❌ Not approved]
 - Comments:
 
-**Product Owner:**
+**Product Manager:**
 
 - Name: [Name]
 - Date: YYYY-MM-DD
