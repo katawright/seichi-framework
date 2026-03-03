@@ -28,8 +28,8 @@ and ready for Verification.
 
 ### Testing and Review
 
-5. [ ] **Unit tests pass with adequate coverage** (coverage target met; happy
-       path, edge cases, and error scenarios)
+5. [ ] **Unit tests pass with adequate coverage** (report both overall and
+       critical-path coverage; happy path, edge cases, and error scenarios)
 6. [ ] **[H] Code review approved and all PRs merged** (feedback addressed, CI
        green)
 
@@ -41,7 +41,8 @@ and ready for Verification.
        significant choices)
 9. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
 10. [ ] **Test environment prepared for Verification** (setup instructions, test
-        data ready)
+        data ready; for local-only tools, satisfied by setup instructions and
+        test data)
 11. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
 
 ---
@@ -75,6 +76,6 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-02
 
 Added to framework in v0.5.0.

@@ -19,7 +19,8 @@ the increment is ready for deployment.
 ### Test Execution
 
 1. [ ] **All acceptance criteria verified with passing tests** (functional tests
-       cover every AC)
+       cover every AC; at Minimal tier, manual acceptance tests with documented
+       results are sufficient)
 2. [ ] **Integration tests pass** (component interactions, API contracts, data
        flow)
 3. [ ] **Regression tests passing** (existing functionality unaffected by
@@ -33,7 +34,8 @@ the increment is ready for deployment.
 ### Acceptance and Instrumentation
 
 7. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
-       feedback addressed)
+       feedback addressed; Minimal: informal approval with documented
+       participants and feedback; Standard+: formal sign-off)
 8. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
        working)
 
@@ -51,7 +53,8 @@ the increment is ready for deployment.
         rollback plan documented)
 13. [ ] **Verification brief completed with test results documented**
 14. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
-        monitoring configured)
+        monitoring configured; if Deployment was skipped at Gate 2, reference
+        that decision and confirm no re-evaluation triggers activated)
 15. [ ] **[H] Stakeholders notified of deployment plan**
 
 ---
@@ -85,6 +88,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-02
 
 Added to framework in v0.6.0.

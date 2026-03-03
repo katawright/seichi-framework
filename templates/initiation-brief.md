@@ -2,6 +2,9 @@
 
 # Initiation Brief
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 ## Right-Sizing This Brief
 
 <!-- See initiation/README.md#right-sizing-initiation for the full
@@ -166,4 +169,16 @@ foundational pass)
   - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
   - Recommendation: proceed / pivot / stop
 
-<!-- Template Last Updated: 2026-03-01 | Added in v0.2.0 -->
+---
+
+## Self-Validation Against Initiation Checklist
+
+<!-- Before submitting for gate review, self-assess against the Initiation
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled [Initiation Checklist](../stages/initiation/checklist.md) with
+      self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-02 | Added in v0.2.0 -->

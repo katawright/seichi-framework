@@ -21,7 +21,7 @@ to circulate.
 1. [ ] **Problem statement is problem-first** (not solution-first)
 2. [ ] **Business case + "why now"** stated in 1-3 bullets
 3. [ ] **Goals include at least one measurable success metric** (baseline →
-       target where possible)
+       target; if baseline is unknown, state that explicitly)
 
 ### Scope and Governance
 
@@ -38,7 +38,8 @@ to circulate.
 ### Risks and Constraints
 
 9. [ ] **Top assumptions (<=5) are written down**
-10. [ ] **[H] Top risks/unknowns (<=5) with likelihood + mitigations**
+10. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
+        mitigations**
 11. [ ] **Constraints and dependencies identified** with owners where possible
 
 ### Alternatives and Hypothesis
@@ -72,6 +73,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-02
 
 Added to framework in v0.2.0.
