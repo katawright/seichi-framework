@@ -49,8 +49,9 @@ successful completion.
 ## Deployment Execution
 
 1. [ ] **Deployment package validated** (version and checksum match)
-2. [ ] **Database backup or snapshot taken** (immediately before migrations; N/A
-       if no data or state changes)
+2. [ ] **Database backup or snapshot taken** — backup identifier recorded in
+       deployment brief (e.g., snapshot name, timestamp, or storage path; N/A if
+       no data or state changes)
 3. [ ] **Data and state changes applied** (migrations, cache invalidation — if
        applicable)
 4. [ ] **Each deployment phase completed and validated** (per chosen strategy)

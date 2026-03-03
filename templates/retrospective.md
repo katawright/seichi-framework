@@ -56,8 +56,15 @@
 ## Carry Forward
 
 <!-- For increment retros: actions and insights to carry into the next
-     increment. For project retros: lessons and recommendations to carry into
-     future projects. -->
+     increment. For project retros: lessons and recommendations for future
+     projects.
+
+     Consider these categories to ensure nothing is lost:
+     1. Regression test planning — features needing regression coverage
+     2. Instrumentation gaps — success criteria not yet measurable
+     3. Unresolved edge cases — open questions deferred from this increment
+     4. Stakeholder feedback — UAT findings not addressed
+     5. Test coverage improvements — areas where testing was insufficient -->
 
 - [item]
 
@@ -77,4 +84,4 @@
 
 ---
 
-<!-- Template Last Updated: 2026-03-01 | Added in v0.23.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.23.0 -->

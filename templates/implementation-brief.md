@@ -127,6 +127,11 @@ components, deviations from design]
 <!-- Map each success criterion from Initiation to its instrumentation status.
      This section makes SC coverage gaps visible before handoff to Verification,
      preventing measurement gaps from propagating undetected across stages. -->
+<!-- For foundation/bootstrap increments, most success criteria will be
+     "Not Started" or "N/A" — this is expected. Foundation increments
+     establish infrastructure that enables measurement in subsequent
+     feature increments. Note which SCs are now measurable (e.g., uptime
+     monitoring) vs. which remain deferred. -->
 
 | Success Criterion | Criterion ID | Metric(s) Implemented | Instrumentation Status                | Gap / Notes |
 | ----------------- | ------------ | --------------------- | ------------------------------------- | ----------- |

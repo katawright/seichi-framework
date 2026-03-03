@@ -30,9 +30,27 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 ---
 
+## Carry Forward Resolution (if applicable)
+
+<!-- If a retrospective was conducted before this increment, list each
+     carry-forward item and how it is addressed in this increment's scope.
+     Reference the retrospective by filename. Omit this section for the
+     first increment. -->
+
+| Carry-Forward Item | Source       | Disposition in This Increment                    |
+| ------------------ | ------------ | ------------------------------------------------ |
+| [item]             | [retro file] | [Addressed in FR-X / Deferred with reason / N/A] |
+
+---
+
 ## 1. Increment Scope
 
 **Requirements in Scope:**
+
+<!-- For foundation/bootstrap increments (e.g., Increment 0), list
+     infrastructure concerns and NFR-IDs rather than FR-IDs. The purpose
+     is to define what the increment delivers, regardless of whether
+     deliverables map to numbered functional requirements. -->
 
 - [List requirement IDs from increment plan]
 
@@ -202,4 +220,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-02 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.12.0 -->
