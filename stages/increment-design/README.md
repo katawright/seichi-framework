@@ -163,6 +163,13 @@ Otherwise, keep design focused and move to Implementation.
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+> **Discovery increments:** Discovery and foundation increments map
+> documentation deliverables onto the code-oriented template sections. For
+> example, "Component Design" becomes "Deliverable Design" describing
+> documentation or spike outputs, and scope uses deliverable IDs (D-1, D-2)
+> rather than FR-IDs. Right-size accordingly — most discovery increments fit the
+> Minimal tier.
+
 ---
 
 ## Why These Increment Design Elements Matter
@@ -321,6 +328,6 @@ contracts, and test strategy.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.
