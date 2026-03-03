@@ -2,6 +2,9 @@
 
 # Verification Brief: [Increment Name]
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 **Last Updated:** YYYY-MM-DD
 
 **Increment ID:** [e.g., INC-001, Epic-42]
@@ -216,6 +219,22 @@ section 5]
 
 ---
 
+## Project Closeout (Optional)
+
+<!-- Include this section when Deployment and Support stages were skipped
+     (e.g., local-only tools, spikes, experiments). This brief then serves
+     as the de facto project conclusion. -->
+
+**Distribution method:** [How users obtain the tool — e.g., clone repo, pip
+install, download binary]
+
+**Informal support owner:** [Who handles questions or issues post-delivery]
+
+**Post-delivery measurement plan:** [How success metrics will be validated after
+delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
+
+---
+
 ## Sign-Off
 
 **QA Lead:**
@@ -241,4 +260,14 @@ section 5]
 
 ---
 
-<!-- Template Last Updated: 2026-02-27 | Added in v0.6.0 -->
+## Self-Validation Against Verification Checklist
+
+<!-- Before submitting for gate review, self-assess against the Verification
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled [Verification Checklist](../stages/verification/checklist.md)
+      with self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-02 | Added in v0.6.0 -->

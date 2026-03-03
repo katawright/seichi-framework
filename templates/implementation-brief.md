@@ -2,6 +2,9 @@
 
 # Implementation Brief: [Increment Name]
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 **Last Updated:** YYYY-MM-DD
 
 | Field               | Value                                  |
@@ -73,8 +76,8 @@ components, deviations from design]
 
 **Significant Decisions (ADRs):**
 
-| #   | Decision | ADR Link                       | Date       |
-| --- | -------- | ------------------------------ | ---------- |
+| #   | Decision | ADR Link                          | Date       |
+| --- | -------- | --------------------------------- | ---------- |
 | 1   | [Title]  | `ADR-001` · `adr/ADR-001-slug.md` | YYYY-MM-DD |
 
 **Minor Decisions:**
@@ -243,4 +246,17 @@ components, deviations from design]
 2. [Step 2: e.g., Revert to previous deployment]
 3. [Step 3: e.g., Run rollback migration]
 
-<!-- Template Last Updated: 2026-02-27 | Added in v0.5.0 -->
+---
+
+## Self-Validation Against Implementation Checklist
+
+<!-- Before submitting for gate review, self-assess against the Implementation
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled
+      [Implementation Checklist](../stages/implementation/checklist.md) with
+      self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-02 | Added in v0.5.0 -->

@@ -2,6 +2,9 @@
 
 # Increment Design Brief
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 **Last Updated:** YYYY-MM-DD
 
 ---
@@ -186,4 +189,17 @@ Guidance, tips, and considerations for engineers:
 
 <!-- Before proceeding to Implementation, run the Increment Design Checklist: ../stages/increment-design/checklist.md -->
 
-<!-- Template Last Updated: 2026-02-27 | Added in v0.12.0 -->
+---
+
+## Self-Validation Against Increment Design Checklist
+
+<!-- Before submitting for gate review, self-assess against the Increment Design
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled
+      [Increment Design Checklist](../stages/increment-design/checklist.md) with
+      self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-02 | Added in v0.12.0 -->

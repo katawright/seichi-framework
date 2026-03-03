@@ -2,6 +2,9 @@
 
 # Requirements Brief
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 ## Right-Sizing This Brief
 
 <!-- See requirements/README.md#right-sizing-requirements for the full
@@ -154,6 +157,17 @@
 
 ---
 
+## Interface Examples (Optional)
+
+<!-- Include representative examples of the primary user interface to help
+     downstream stages (System Design, Increment Design) understand the
+     expected interaction model.
+     - For CLI tools: representative terminal input/output
+     - For APIs: example requests and responses
+     - For UIs: wireframes, mockups, or annotated screenshots -->
+
+---
+
 ## Open Questions / Blockers
 
 <!-- For guidance, see requirements/README.md#open-questions -->
@@ -226,4 +240,16 @@ Provide this Requirements Document to System Design team.
 | ---------- | ----------------------------- | ----------------- | ------ | ----------- |
 | YYYY-MM-DD | Initial requirements document | All               | N/A    | [name]      |
 
-<!-- Template Last Updated: 2026-02-27 | Added in v0.3.0 -->
+---
+
+## Self-Validation Against Requirements Checklist
+
+<!-- Before submitting for gate review, self-assess against the Requirements
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled [Requirements Checklist](../stages/requirements/checklist.md)
+      with self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-02 | Added in v0.3.0 -->

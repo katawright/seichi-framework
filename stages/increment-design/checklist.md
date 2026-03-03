@@ -28,7 +28,8 @@ and ready for Implementation.
 ### Interfaces, Data, and Conventions
 
 4. [ ] **Interface specifications complete** (inputs, outputs, error cases)
-5. [ ] **Data/state changes specified** (with migrations if applicable)
+5. [ ] **Data/state changes specified** (with migrations if applicable; N/A for
+       stateless tools — document in-memory data flow instead)
 6. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
@@ -40,7 +41,8 @@ and ready for Implementation.
 ### Testing and Readiness
 
 8. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
-       performance where applicable)
+       performance where applicable; for single-process tools, integration tests
+       may be N/A if unit tests cover the full pipeline)
 9. [ ] **Implementation notes provided** (security, performance, patterns)
 10. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
@@ -79,6 +81,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-02
 
 Added to framework in v0.12.0.

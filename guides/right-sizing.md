@@ -69,23 +69,23 @@ Which templates to produce at each tier. **Required** = must complete before the
 stage gate. **Recommended** = high value, skip only with justification.
 **Optional** = use when the tier-specific guidance calls for it.
 
-| Template                                                      | Stage            | Minimal     | Standard    | Enterprise  |
-| ------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
-| [Initiation Brief](../templates/initiation-brief.md)          | Initiation       | Required    | Required    | Required    |
-| [Gate Decision](../templates/gate-decision.md)                | Initiation       | Optional    | Required    | Required    |
-| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation | Optional | Recommended | Required    |
-| [Requirements Brief](../templates/requirements-brief.md)      | Requirements     | Recommended | Required    | Required    |
-| [System Design Brief](../templates/system-design-brief.md)    | System Design    | Optional    | Required    | Required    |
-| [ADR](../templates/adr.md)                                    | System Design    | Optional    | Recommended | Required    |
-| [Increment Design Brief](../templates/increment-design-brief.md) | Increment Design | Optional | Required    | Required    |
-| [Implementation Brief](../templates/implementation-brief.md)  | Implementation   | Optional    | Required    | Required    |
-| [Session Log](../templates/session-log.md)                    | Implementation   | Optional    | Recommended | Required    |
-| [Verification Brief](../templates/verification-brief.md)      | Verification     | Optional    | Required    | Required    |
-| [Deployment Brief](../templates/deployment-brief.md)          | Deployment       | Optional    | Required    | Required    |
-| [Runbook](../templates/runbook.md)                            | Deployment       | Optional    | Recommended | Required    |
-| [Support Brief](../templates/support-brief.md)                | Support          | Optional    | Required    | Required    |
-| [Retrospective](../templates/retrospective.md)                | Deployment       | Optional    | Recommended | Required    |
-| [Checkpoint Decision](../templates/checkpoint-decision.md)    | Any              | Optional    | Optional    | Recommended |
+| Template                                                               | Stage            | Minimal     | Standard    | Enterprise  |
+| ---------------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
+| [Initiation Brief](../templates/initiation-brief.md)                   | Initiation       | Required    | Required    | Required    |
+| [Gate Decision](../templates/gate-decision.md)                         | Initiation       | Optional    | Required    | Required    |
+| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation       | Optional    | Recommended | Required    |
+| [Requirements Brief](../templates/requirements-brief.md)               | Requirements     | Recommended | Required    | Required    |
+| [System Design Brief](../templates/system-design-brief.md)             | System Design    | Optional    | Required    | Required    |
+| [ADR](../templates/adr.md)                                             | System Design    | Optional    | Recommended | Required    |
+| [Increment Design Brief](../templates/increment-design-brief.md)       | Increment Design | Optional    | Required    | Required    |
+| [Implementation Brief](../templates/implementation-brief.md)           | Implementation   | Optional    | Required    | Required    |
+| [Session Log](../templates/session-log.md)                             | Implementation   | Optional    | Recommended | Required    |
+| [Verification Brief](../templates/verification-brief.md)               | Verification     | Optional    | Required    | Required    |
+| [Deployment Brief](../templates/deployment-brief.md)                   | Deployment       | Optional    | Required    | Required    |
+| [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |
+| [Support Brief](../templates/support-brief.md)                         | Support          | Optional    | Required    | Required    |
+| [Retrospective](../templates/retrospective.md)                         | Deployment       | Optional    | Recommended | Required    |
+| [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
 
 > **Minimal tier:** The Initiation Brief is the only universally required
 > artifact. Everything else scales with risk. A Minimal project that never
@@ -203,6 +203,10 @@ Choose Minimal when:
 **Examples:** Hackathon project, internal dashboard, proof of concept, team
 utility script, design spike.
 
+> **Greenfield Minimal projects** typically merge Increment 0 (bootstrap) and
+> Increment 1 into a single increment, since the infrastructure setup is trivial
+> enough to bundle with the first feature delivery.
+
 > **Not every stage applies.** Some Minimal projects (console tools, spikes,
 > experiments) run locally and never deploy to shared infrastructure. If your
 > project has no deployment target, the Deployment and Support stages may not
@@ -259,6 +263,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-02
 
 Added to framework in v0.13.0.
