@@ -326,10 +326,25 @@ log, and review approvals. Before handoff, ensure:
 5. Update documentation and brief
 6. Communicate if schedule impacted
 
+### Rework Briefs (Delta-Only)
+
+When rework is triggered by verification failure, use delta-only briefs:
+
+- **Document only what changed** — don't duplicate the full implementation brief
+  from the prior cycle
+- **Reference the prior cycle** — e.g., "Rework addresses defects D-1 and D-3
+  from verification-brief-i2-c1.md"
+- **Scope narrowly** — rework briefs cover the fix, not a re-examination of the
+  full increment
+
+See
+[Agentic Workflow Guide: Rework Cycles](../../guides/agentic-workflow.md#rework-cycles)
+for the full convention.
+
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.5.0.

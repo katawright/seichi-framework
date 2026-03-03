@@ -23,39 +23,42 @@ the increment is ready for deployment.
        results are sufficient)
 2. [ ] **Integration tests pass** (component interactions, API contracts, data
        flow)
-3. [ ] **Regression tests passing** (existing functionality unaffected by
+3. [ ] **Implementation matches component interaction flows from Increment
+       Design Brief** (no unauthorized simplifications — verify key interaction
+       sequences align with design)
+4. [ ] **Regression tests passing** (existing functionality unaffected by
        changes)
-4. [ ] **Performance tests meet NFR targets** (or confirmed N/A with
+5. [ ] **Performance tests meet NFR targets** (or confirmed N/A with
        justification)
-5. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
+6. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
        N/A)
-6. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
+7. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
 
 ### Acceptance and Instrumentation
 
-7. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
+8. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
        feedback addressed; Minimal: informal approval with documented
        participants and feedback; Standard+: formal sign-off)
-8. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
+9. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
        working)
 
 ### Defect Status
 
-9. [ ] **[H] No critical or high-severity defects open** (all resolved or
-       deferred with justification)
-10. [ ] **[H] Deferred defects documented** (justification and target version
+10. [ ] **[H] No critical or high-severity defects open** (all resolved or
+        deferred with justification)
+11. [ ] **[H] Deferred defects documented** (justification and target version
         included)
-11. [ ] **Fixed defects retested and verified** (no regressions from fixes)
+12. [ ] **Fixed defects retested and verified** (no regressions from fixes)
 
 ### Production Readiness
 
-12. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
+13. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
         rollback plan documented)
-13. [ ] **Verification brief completed with test results documented**
-14. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
+14. [ ] **Verification brief completed with test results documented**
+15. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
-15. [ ] **[H] Stakeholders notified of deployment plan**
+16. [ ] **[H] Stakeholders notified of deployment plan**
 
 ---
 
@@ -88,6 +91,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-02
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.6.0.
