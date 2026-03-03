@@ -50,7 +50,13 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 <!-- For foundation/bootstrap increments (e.g., Increment 0), list
      infrastructure concerns and NFR-IDs rather than FR-IDs. The purpose
      is to define what the increment delivers, regardless of whether
-     deliverables map to numbered functional requirements. -->
+     deliverables map to numbered functional requirements.
+
+     Foundation scope example (discovery increment):
+     - D-1: AGENTS.md with project conventions and tech stack
+     - D-2: CI/CD pipeline configuration and documentation
+     - D-3: Architecture documentation (C4 context + container)
+     - D-4: Test coverage baseline with gap analysis -->
 
 - [List requirement IDs from increment plan]
 

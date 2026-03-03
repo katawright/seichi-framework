@@ -127,6 +127,12 @@ section 5]
      will need regression testing in the next increment. This smooths the
      N/A-to-populated transition. -->
 
+<!-- Brownfield regression guidance:
+     - Discovery increments: confirm pre-existing tests still pass after
+       documentation or tooling changes. No new regression suite expected.
+     - Feature increments: run the full existing test suite and note any
+       tests affected by changes. Document new regressions with root cause. -->
+
 ### Performance Tests
 
 - **Status:** [✅ Passed / ⚠️ Issues / ❌ Failed / ⏸ N/A]
@@ -166,6 +172,12 @@ section 5]
 ## User Acceptance Testing
 
 **Participants:** [Name, Role] for each participant
+
+<!-- Discovery increment UAT: For discovery or foundation increments, UAT
+     focuses on artifact review (documentation accuracy, spike report
+     completeness, data validation results) rather than functional workflow
+     testing. Replace the scenario table below with an artifact review
+     checklist if appropriate. -->
 
 **UAT Results:**
 
