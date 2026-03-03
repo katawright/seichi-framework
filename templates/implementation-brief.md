@@ -75,7 +75,7 @@ components, deviations from design]
 
 | #   | Decision | ADR Link                       | Date       |
 | --- | -------- | ------------------------------ | ---------- |
-| 1   | [Title]  | [ADR-001](adr/ADR-001-slug.md) | YYYY-MM-DD |
+| 1   | [Title]  | `ADR-001` · `adr/ADR-001-slug.md` | YYYY-MM-DD |
 
 **Minor Decisions:**
 

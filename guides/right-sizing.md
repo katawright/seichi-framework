@@ -63,6 +63,34 @@ each stage guide's Right-Sizing section for full details.
 | **[Deployment](../stages/deployment/README.md)**             | Manual or scripted deploy, basic monitoring         | CI/CD pipeline, staging environment, rollback plan                 | Multi-environment promotion, canary/blue-green, change management                |
 | **[Support](../stages/support/README.md)**                   | Basic health checks, informal response              | APM + alerting, on-call rotation, runbooks                         | Full observability, 24x7 coverage, SLAs, incident management                     |
 
+### Minimum Viable Artifacts
+
+Which templates to produce at each tier. **Required** = must complete before the
+stage gate. **Recommended** = high value, skip only with justification.
+**Optional** = use when the tier-specific guidance calls for it.
+
+| Template                                                      | Stage            | Minimal     | Standard    | Enterprise  |
+| ------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
+| [Initiation Brief](../templates/initiation-brief.md)          | Initiation       | Required    | Required    | Required    |
+| [Gate Decision](../templates/gate-decision.md)                | Initiation       | Optional    | Required    | Required    |
+| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation | Optional | Recommended | Required    |
+| [Requirements Brief](../templates/requirements-brief.md)      | Requirements     | Recommended | Required    | Required    |
+| [System Design Brief](../templates/system-design-brief.md)    | System Design    | Optional    | Required    | Required    |
+| [ADR](../templates/adr.md)                                    | System Design    | Optional    | Recommended | Required    |
+| [Increment Design Brief](../templates/increment-design-brief.md) | Increment Design | Optional | Required    | Required    |
+| [Implementation Brief](../templates/implementation-brief.md)  | Implementation   | Optional    | Required    | Required    |
+| [Session Log](../templates/session-log.md)                    | Implementation   | Optional    | Recommended | Required    |
+| [Verification Brief](../templates/verification-brief.md)      | Verification     | Optional    | Required    | Required    |
+| [Deployment Brief](../templates/deployment-brief.md)          | Deployment       | Optional    | Required    | Required    |
+| [Runbook](../templates/runbook.md)                            | Deployment       | Optional    | Recommended | Required    |
+| [Support Brief](../templates/support-brief.md)                | Support          | Optional    | Required    | Required    |
+| [Retrospective](../templates/retrospective.md)                | Deployment       | Optional    | Recommended | Required    |
+| [Checkpoint Decision](../templates/checkpoint-decision.md)    | Any              | Optional    | Optional    | Recommended |
+
+> **Minimal tier:** The Initiation Brief is the only universally required
+> artifact. Everything else scales with risk. A Minimal project that never
+> deploys may skip Deployment, Support, and their artifacts entirely.
+
 ---
 
 ## The Three Dimensions

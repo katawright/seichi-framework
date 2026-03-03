@@ -235,6 +235,8 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 
 - **Initiation Brief** - One-page summary of project (see
   [Initiation Brief Template](../templates/initiation-brief.md))
+- **Success Criteria Register** - Measurable goals with baselines and targets
+  (see [Success Criteria Register](../templates/success-criteria-register.md))
 - Objectives with measurable success criteria documented
 - Assumptions and risks list
 - High-level timeline and resource estimate (range-based)
@@ -697,6 +699,8 @@ feedback for future improvements.
 - Monitoring dashboards and alerts
 - Runbooks and operational procedures
 - Defined success criteria and baseline measurements
+- [Success Criteria Register](../templates/success-criteria-register.md) with
+  baselines and targets
 - Incident response procedures
 
 **Optional:**

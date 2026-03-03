@@ -20,7 +20,13 @@ stages:
         },
       ]
     inputs: [business-opportunity, stakeholder-list, budget-constraints]
-    outputs: [initiation-brief, assumptions-risks-list, timeline-estimate]
+    outputs:
+      [
+        initiation-brief,
+        success-criteria-register,
+        assumptions-risks-list,
+        timeline-estimate,
+      ]
     feeds_into: [requirements]
     revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
   - id: requirements
@@ -242,6 +248,7 @@ artifact_paths:
   briefs: "docs/briefs/"
   adrs: "docs/adr/"
   session_logs: "docs/session-logs/"
+  success_criteria: "docs/success-criteria-register.md"
   convention:
     "Store project artifacts in a docs/ directory at the repository root. Agents
     should check for existing directory structure before creating new paths. If
@@ -289,6 +296,12 @@ stages. This guide is that interface.
 Front matter is the agent's primary interface; the body provides human-readable
 context for the same information. Parse the YAML first, read the prose when you
 need rationale or nuance.
+
+> **Schema authority:** The front matter in this file is **prescriptive** — it is
+> the authoritative source for stage routing, artifact dependencies, and gate
+> requirements when consumed by agents. If a conflict exists between this schema
+> and the prose in `stages/*/README.md`, this schema takes precedence for agent
+> routing decisions.
 
 ### How to Use This Guide
 
@@ -353,6 +366,7 @@ All template paths are relative to `templates/`.
 | Stage            | Artifact                 | Template                    | Depends On                                     | Feeds Into                          | Gate                             |
 | ---------------- | ------------------------ | --------------------------- | ---------------------------------------------- | ----------------------------------- | -------------------------------- |
 | Initiation       | Initiation Brief         | `initiation-brief.md`       | _External inputs_                              | Requirements                        | Gate 1 (Investment Decision)     |
+| Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                           | All stages (referenced)             | Gate 1                           |
 | Initiation       | Assumptions & Risks List | —                           | _External inputs_                              | Requirements                        | Gate 1                           |
 | Initiation       | Timeline Estimate        | —                           | _External inputs_                              | Requirements                        | Gate 1                           |
 | Requirements     | Requirements Document    | `requirements-brief.md`     | Initiation Brief                               | System Design                       | Requirements Readiness           |
