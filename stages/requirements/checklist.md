@@ -33,27 +33,29 @@ System Design.
        encryption, audit logging, data retention — scaled to tier)
 6. [ ] **Data sources and integrations identified** (rate limits, SLAs,
        authentication, data ownership documented)
+7. [ ] **API contracts documented with example requests/responses** (for
+       API-centric projects; mark N/A for UI-only or internal-tool projects)
 
 ### Users and Problem Context
 
-7. [ ] **Users/personas are identified** (primary and secondary users documented
+8. [ ] **Users/personas are identified** (primary and secondary users documented
        with relevant context)
-8. [ ] **Problem statement is problem-first** (describes what users can't do,
+9. [ ] **Problem statement is problem-first** (describes what users can't do,
        focuses on behavior not implementation)
-9. [ ] **Goals include measurable success metrics** (carried forward from
-       Initiation Brief, baseline → target)
+10. [ ] **Goals include measurable success metrics** (carried forward from
+        Initiation Brief, baseline → target)
 
 ### Quality and Traceability
 
-10. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
+11. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
         behavior)
-11. [ ] **Open questions listed** (critical blockers flagged with owners)
-12. [ ] **Traceability summary present** (FRs traced to Initiation objectives
+12. [ ] **Open questions listed** (critical blockers flagged with owners)
+13. [ ] **Traceability summary present** (FRs traced to Initiation objectives
         and success metrics)
-13. [ ] **Success Criteria Register referenced (Standard+)** — all success
+14. [ ] **Success Criteria Register referenced (Standard+)** — all success
         criteria have supporting FRs/NFRs and register measurement methods are
         feasible
-14. [ ] **[H] Review occurred** (engineering + product, and security/compliance
+15. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
 
 ---
