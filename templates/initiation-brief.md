@@ -133,6 +133,26 @@ GDPR applies because EU users are in scope"]
   capacity, technology restrictions]
 - **Dependencies:** [teams, vendors, approvals]
 
+## Brownfield Readiness Assessment (if applicable)
+
+<!-- Include this section for brownfield projects (first AI-assisted). Omit for
+     greenfield or subsequent brownfield projects. See
+     guides/project-foundation.md#assessing-brownfield-readiness for assessment
+     guidance and indicative thresholds. -->
+
+| Dimension                 | Current State | Assessment                                    |
+| ------------------------- | ------------- | --------------------------------------------- |
+| Test coverage             | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+| Documentation             | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+| Architectural consistency | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+| Dependency health         | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+| Database/business logic   | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+
+**Overall readiness:** [Ready / Needs Preparation / Needs Significant Prep]
+
+**Foundation work implications:** [Discovery only / Extended foundation /
+Preparation project — and estimated scope]
+
 ---
 
 ## Options Considered (At Least One Alternative)
@@ -181,4 +201,4 @@ foundational pass)
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-02 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.2.0 -->

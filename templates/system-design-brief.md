@@ -211,6 +211,26 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 
 **Why first:** [Foundation must exist before feature delivery can begin]
 
+#### Brownfield Readiness Assessment (refined)
+
+<!-- Include for brownfield first AI-assisted projects. Refine the Initiation
+     assessment with evidence gathered during System Design discovery. -->
+
+| Dimension                 | Initiation Assessment | Refined Assessment | Evidence                              |
+| ------------------------- | --------------------- | ------------------ | ------------------------------------- |
+| Test coverage             | [from initiation]     | [updated]          | [e.g., measured 62% coverage]         |
+| Documentation             | [from initiation]     | [updated]          | [e.g., 3 of 7 services documented]    |
+| Architectural consistency | [from initiation]     | [updated]          | [e.g., 2 patterns found in API layer] |
+| Dependency health         | [from initiation]     | [updated]          | [e.g., 4 deps >1 year outdated]       |
+| Database/business logic   | [from initiation]     | [updated]          | [e.g., 12 stored procs identified]    |
+
+**Readiness change:** [Summary of how assessment changed from Initiation — e.g.,
+"Test coverage moved from Needs Prep to Ready after measuring 62%; database
+logic remains Needs Significant Prep"]
+
+**Impact on Increment 0:** [How refined assessment changes Increment 0 scope,
+duration, or deliverables]
+
 ### Increment 1: [Name] (Must Have)
 
 **Goal:** [What this increment delivers]
