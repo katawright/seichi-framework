@@ -67,6 +67,22 @@
 - [New constraints surfaced during stakeholder interviews, technical discovery,
   or requirements elicitation]
 
+### Brownfield Constraints (if applicable)
+
+<!-- Include for brownfield projects. These constraints shape System Design
+     decisions and increment planning. -->
+
+- **Existing API contracts:** [APIs that must maintain backward compatibility —
+  versions, consumers, SLAs]
+- **Database schema constraints:** [Schema elements that cannot change or
+  require migration strategy — shared tables, stored procedures, triggers]
+- **Performance SLAs:** [Existing SLAs that must be maintained during and after
+  changes — response times, throughput, availability]
+- **Integration dependencies:** [Upstream/downstream systems that constrain
+  change scope — shared message queues, event buses, batch jobs]
+- **Deployment constraints:** [Deployment windows, blue-green requirements,
+  rollback expectations, feature flag infrastructure]
+
 ---
 
 ## Scope Baseline

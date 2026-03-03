@@ -62,6 +62,17 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 - [What's NOT included to prevent scope creep]
 
+### Foundation Readiness Targets (if applicable)
+
+<!-- Include for foundation/discovery increments in brownfield projects. Maps
+     readiness dimensions to concrete deliverables for this increment. See
+     guides/project-foundation.md#assessing-brownfield-readiness. -->
+
+| Readiness Dimension   | Pre-State       | Target Post-State | Deliverables                        |
+| --------------------- | --------------- | ----------------- | ----------------------------------- |
+| [e.g., Test coverage] | [current state] | [target state]    | [e.g., add tests for auth module]   |
+| [e.g., Documentation] | [current state] | [target state]    | [e.g., AGENTS.md, architecture doc] |
+
 ---
 
 ## 2. Component Design
