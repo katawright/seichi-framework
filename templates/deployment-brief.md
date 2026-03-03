@@ -154,6 +154,20 @@ fleet]
 **Decision Authority:** [Name, Role] **Escalation:** [Who to contact if
 unavailable]
 
+**Rollback Steps:**
+
+<!-- Order matters: revert application code before reverting schema changes.
+     Reversing this order can cause runtime errors if the running code
+     references columns or tables that a premature migration rollback removed. -->
+
+1. [ ] Revert application code to previous version
+2. [ ] Revert configuration and environment variables
+3. [ ] Roll back database migrations (if applicable)
+4. [ ] Invalidate or reset caches to match reverted state
+5. [ ] Validate reverted system health and run smoke tests
+
+<!-- For detailed rollback procedures, see ../stages/deployment/reference.md -->
+
 **Post-Rollback Actions:**
 
 - [ ] Document rollback reason and timeline
@@ -302,4 +316,4 @@ tracker]
 
 ---
 
-<!-- Template Last Updated: 2026-02-28 | Added in v0.7.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.7.0 -->

@@ -49,14 +49,16 @@ successful completion.
 ## Deployment Execution
 
 1. [ ] **Deployment package validated** (version and checksum match)
-2. [ ] **Data and state changes applied** (migrations, cache invalidation — if
+2. [ ] **Database backup or snapshot taken** (immediately before migrations; N/A
+       if no data or state changes)
+3. [ ] **Data and state changes applied** (migrations, cache invalidation — if
        applicable)
-3. [ ] **Each deployment phase completed and validated** (per chosen strategy)
-4. [ ] **Application deployed and health checks passing** (all instances
+4. [ ] **Each deployment phase completed and validated** (per chosen strategy)
+5. [ ] **Application deployed and health checks passing** (all instances
        healthy)
-5. [ ] **Configuration and secrets applied correctly** (environment variables
+6. [ ] **Configuration and secrets applied correctly** (environment variables
        verified)
-6. [ ] **Traffic routed to new version** (load balancer updated — if applicable)
+7. [ ] **Traffic routed to new version** (load balancer updated — if applicable)
 
 **Gate:** All steps completed → validate production.
 
@@ -121,6 +123,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.7.0.

@@ -122,6 +122,22 @@ components, deviations from design]
 
 ---
 
+## Measurement Throughline
+
+<!-- Map each success criterion from Initiation to its instrumentation status.
+     This section makes SC coverage gaps visible before handoff to Verification,
+     preventing measurement gaps from propagating undetected across stages. -->
+
+| Success Criterion | Criterion ID | Metric(s) Implemented | Instrumentation Status                | Gap / Notes |
+| ----------------- | ------------ | --------------------- | ------------------------------------- | ----------- |
+| [Criterion 1]     | SC-1         | [metric name(s)]      | [✅ Active / ⚠️ Partial / ❌ Missing] |             |
+| [Criterion 2]     | SC-2         | [metric name(s)]      | [✅ Active / ⚠️ Partial / ❌ Missing] |             |
+
+**Success criteria register:** [Link to Initiation brief or requirements
+register]
+
+---
+
 ## Code Review
 
 **Reviewers:** [Names] **Status:** [✅ Approved by all reviewers]
@@ -259,4 +275,4 @@ components, deviations from design]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-02 | Added in v0.5.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.5.0 -->
