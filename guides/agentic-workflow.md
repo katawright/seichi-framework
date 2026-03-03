@@ -297,8 +297,8 @@ Front matter is the agent's primary interface; the body provides human-readable
 context for the same information. Parse the YAML first, read the prose when you
 need rationale or nuance.
 
-> **Schema authority:** The front matter in this file is **prescriptive** — it is
-> the authoritative source for stage routing, artifact dependencies, and gate
+> **Schema authority:** The front matter in this file is **prescriptive** — it
+> is the authoritative source for stage routing, artifact dependencies, and gate
 > requirements when consumed by agents. If a conflict exists between this schema
 > and the prose in `stages/*/README.md`, this schema takes precedence for agent
 > routing decisions.
@@ -351,6 +351,23 @@ for programmatic access; use this table for quick human reference.
 
 For full stage definitions, see [AI-Assisted SDLC Stages](stages.md).
 
+### Brownfield-First Project Routing
+
+For brownfield projects introducing AI assistance for the first time, route
+through stages with additional focus:
+
+1. **Initiation** — assess brownfield readiness across five dimensions (test
+   coverage, documentation, architectural consistency, dependency health,
+   database/business logic). See
+   [Project Foundation Guide](project-foundation.md#assessing-brownfield-readiness)
+2. **System Design** — refine the readiness assessment with evidence, plan
+   discovery or preparation increments, and define feature flag strategy for
+   modifying existing endpoints
+3. **Increment Design** — map scope to readiness dimensions; discovery
+   increments use deliverable-oriented scope (D-1, D-2 IDs) rather than
+   feature-oriented scope
+4. **Subsequent stages** — proceed normally using iterative stage patterns
+
 ---
 
 ## Artifact Dependencies
@@ -363,37 +380,37 @@ parse the `stages` array in this file's front matter.
 
 All template paths are relative to `templates/`.
 
-| Stage            | Artifact                 | Template                    | Depends On                                     | Feeds Into                          | Gate                             |
-| ---------------- | ------------------------ | --------------------------- | ---------------------------------------------- | ----------------------------------- | -------------------------------- |
-| Initiation       | Initiation Brief         | `initiation-brief.md`       | _External inputs_                              | Requirements                        | Gate 1 (Investment Decision)     |
-| Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                           | All stages (referenced)             | Gate 1                           |
-| Initiation       | Assumptions & Risks List | —                           | _External inputs_                              | Requirements                        | Gate 1                           |
-| Initiation       | Timeline Estimate        | —                           | _External inputs_                              | Requirements                        | Gate 1                           |
-| Requirements     | Requirements Document    | `requirements-brief.md`     | Initiation Brief                               | System Design                       | Requirements Readiness           |
-| Requirements     | User Stories + ACs       | —                           | Initiation Brief                               | Increment Design, Implementation    | Requirements Readiness           |
-| Requirements     | Feature Backlog          | —                           | Initiation Brief                               | Increment Design                    | Requirements Readiness           |
-| Requirements     | Traceability Matrix      | —                           | Requirements Document                          | System Design                       | Requirements Readiness           |
-| System Design    | Architecture Diagrams    | `system-design-brief.md`    | Requirements Document, NFRs                    | Increment Design, Implementation    | Architecture Review + Gate 2     |
-| System Design    | Technology ADRs          | `adr.md`                    | Requirements Document                          | Implementation                      | Architecture Review + Gate 2     |
-| System Design    | Increment Plan           | —                           | Requirements Document                          | Increment Design                    | Architecture Review + Gate 2     |
-| System Design    | Infrastructure Plan      | —                           | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
-| System Design    | Gate 2 Decision Package  | `gate-decision.md`          | All System Design outputs                      | —                                   | Gate 2 (Investment Decision)     |
-| Increment Design | Component Designs        | `increment-design-brief.md` | Architecture, Increment Plan, Stories + ACs    | Implementation                      | Design Review                    |
-| Increment Design | API Specifications       | —                           | Architecture                                   | Implementation                      | Design Review                    |
-| Increment Design | Test Strategy            | —                           | Stories + ACs                                  | Implementation, Verification        | Design Review                    |
-| Implementation   | Working Code             | `implementation-brief.md`   | Component Designs, Architecture, Stories + ACs | Verification                        | PR Review + CI                   |
-| Implementation   | Unit Tests               | —                           | Working Code, Test Strategy                    | Verification                        | PR Review + CI                   |
-| Verification     | Test Results             | `verification-brief.md`     | Working Code, Stories + ACs, Test Strategy     | Deployment                          | Test Execution + Coverage Review |
-| Verification     | UAT Sign-Off             | —                           | Test Results                                   | Deployment                          | Test Execution + Coverage Review |
-| Verification     | Defect Reports           | —                           | Test Results                                   | Implementation _(rework)_           | Test Execution + Coverage Review |
-| Deployment       | Deployed System          | `deployment-brief.md`       | Verified Code, UAT Sign-Off, Rollback Plan     | Support                             | Production Deployment Approval   |
-| Deployment       | Release Notes            | —                           | Deployed System                                | Support                             | Production Deployment Approval   |
-| Deployment       | Updated Runbooks         | `runbook.md`                | Deployed System                                | Support                             | Production Deployment Approval   |
-| Deployment       | Baseline Measurements    | —                           | Deployed System, Success Criteria              | Support                             | Production Deployment Approval   |
-| Deployment       | Retrospective            | `retrospective.md`          | Deployed System, Session Logs                  | Increment Design _(next increment)_ | —                                |
-| Support          | Availability Metrics     | `support-brief.md`          | Deployed System, Monitoring                    | —                                   | Production Ownership Decision    |
-| Support          | Success Criteria Reports | —                           | Baseline Measurements                          | Initiation _(reassess)_             | Production Ownership Decision    |
-| Support          | Enhancement Backlog      | —                           | Incident Reports                               | Requirements, Increment Design      | Production Ownership Decision    |
+| Stage            | Artifact                  | Template                       | Depends On                                     | Feeds Into                          | Gate                             |
+| ---------------- | ------------------------- | ------------------------------ | ---------------------------------------------- | ----------------------------------- | -------------------------------- |
+| Initiation       | Initiation Brief          | `initiation-brief.md`          | _External inputs_                              | Requirements                        | Gate 1 (Investment Decision)     |
+| Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                              | All stages (referenced)             | Gate 1                           |
+| Initiation       | Assumptions & Risks List  | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
+| Initiation       | Timeline Estimate         | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
+| Requirements     | Requirements Document     | `requirements-brief.md`        | Initiation Brief                               | System Design                       | Requirements Readiness           |
+| Requirements     | User Stories + ACs        | —                              | Initiation Brief                               | Increment Design, Implementation    | Requirements Readiness           |
+| Requirements     | Feature Backlog           | —                              | Initiation Brief                               | Increment Design                    | Requirements Readiness           |
+| Requirements     | Traceability Matrix       | —                              | Requirements Document                          | System Design                       | Requirements Readiness           |
+| System Design    | Architecture Diagrams     | `system-design-brief.md`       | Requirements Document, NFRs                    | Increment Design, Implementation    | Architecture Review + Gate 2     |
+| System Design    | Technology ADRs           | `adr.md`                       | Requirements Document                          | Implementation                      | Architecture Review + Gate 2     |
+| System Design    | Increment Plan            | —                              | Requirements Document                          | Increment Design                    | Architecture Review + Gate 2     |
+| System Design    | Infrastructure Plan       | —                              | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
+| System Design    | Gate 2 Decision Package   | `gate-decision.md`             | All System Design outputs                      | —                                   | Gate 2 (Investment Decision)     |
+| Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Stories + ACs    | Implementation                      | Design Review                    |
+| Increment Design | API Specifications        | —                              | Architecture                                   | Implementation                      | Design Review                    |
+| Increment Design | Test Strategy             | —                              | Stories + ACs                                  | Implementation, Verification        | Design Review                    |
+| Implementation   | Working Code              | `implementation-brief.md`      | Component Designs, Architecture, Stories + ACs | Verification                        | PR Review + CI                   |
+| Implementation   | Unit Tests                | —                              | Working Code, Test Strategy                    | Verification                        | PR Review + CI                   |
+| Verification     | Test Results              | `verification-brief.md`        | Working Code, Stories + ACs, Test Strategy     | Deployment                          | Test Execution + Coverage Review |
+| Verification     | UAT Sign-Off              | —                              | Test Results                                   | Deployment                          | Test Execution + Coverage Review |
+| Verification     | Defect Reports            | —                              | Test Results                                   | Implementation _(rework)_           | Test Execution + Coverage Review |
+| Deployment       | Deployed System           | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan     | Support                             | Production Deployment Approval   |
+| Deployment       | Release Notes             | —                              | Deployed System                                | Support                             | Production Deployment Approval   |
+| Deployment       | Updated Runbooks          | `runbook.md`                   | Deployed System                                | Support                             | Production Deployment Approval   |
+| Deployment       | Baseline Measurements     | —                              | Deployed System, Success Criteria              | Support                             | Production Deployment Approval   |
+| Deployment       | Retrospective             | `retrospective.md`             | Deployed System, Session Logs                  | Increment Design _(next increment)_ | —                                |
+| Support          | Availability Metrics      | `support-brief.md`             | Deployed System, Monitoring                    | —                                   | Production Ownership Decision    |
+| Support          | Success Criteria Reports  | —                              | Baseline Measurements                          | Initiation _(reassess)_             | Production Ownership Decision    |
+| Support          | Enhancement Backlog       | —                              | Incident Reports                               | Requirements, Increment Design      | Production Ownership Decision    |
 
 ### Stage Flow Diagram
 
@@ -558,8 +575,28 @@ for code-focused session tracking.
 
 ---
 
+## Rework Cycles
+
+When verification fails and work returns to Increment Design or Implementation,
+use delta-only briefs to document the rework cycle efficiently.
+
+**Delta-only brief convention:**
+
+- **New briefs document only what changed** — reference the prior cycle's brief
+  for unchanged context rather than duplicating it
+- **Reference the prior cycle explicitly** — e.g., "This rework addresses
+  verification failures from Increment 2, Cycle 1 (see verification-brief-i2.md
+  for defect details)"
+- **Design briefs are typically not revised** — unless the verification failure
+  reveals a design-level issue, rework stays within Implementation scope
+- **Update the Measurement Throughline only if instrumentation changes** — if
+  rework doesn't affect how success criteria are measured, carry forward the
+  existing measurement plan without revision
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

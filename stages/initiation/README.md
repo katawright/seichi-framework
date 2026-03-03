@@ -410,6 +410,13 @@ already handles tactical risk identification for each increment.
 
 > "The project might fail."
 
+**Brownfield-specific prompt:** _"The project failed because data reconciliation
+between old and new systems produced silent mismatches — records looked correct
+but calculations diverged due to undocumented business rules in stored
+procedures. Why plausible: We haven't fully inventoried database-layer logic.
+Early signal: Validation queries show discrepancies between old and new outputs
+during the first integration test."_
+
 ### Constraints and Dependencies
 
 Hard limits and external dependencies bound the solution space. Constraints are
@@ -494,9 +501,10 @@ are updated with higher confidence.
 - **Initiation Brief** containing: problem statement, business case, measurable
   success criteria, scope boundaries, assumptions, risks, options, estimation,
   and Gate 1 definition
-- **Success Criteria Register** — define measurable goals, baselines, and targets
-  in the [Success Criteria Register](../../templates/success-criteria-register.md)
-  so every downstream stage references one source of truth
+- **Success Criteria Register** — define measurable goals, baselines, and
+  targets in the
+  [Success Criteria Register](../../templates/success-criteria-register.md) so
+  every downstream stage references one source of truth
 
 > Success criteria defined here establish the **measurement throughline** that
 > flows through all subsequent stages. See
@@ -538,6 +546,6 @@ starting point.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.2.0.

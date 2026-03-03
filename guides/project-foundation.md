@@ -147,6 +147,18 @@ discovery exercise or requires deeper preparation.
 > rightward regardless of other dimensions. Focus on the weakest dimension when
 > choosing a path.
 
+### Indicative Thresholds
+
+Use these thresholds as starting points — adjust to your organization's context.
+
+| Dimension                 | Ready                             | Needs Preparation                | Needs Significant Prep            |
+| ------------------------- | --------------------------------- | -------------------------------- | --------------------------------- |
+| Test coverage             | ≥70% on critical paths            | 50–69% or gaps in key areas      | <50% or no automated tests        |
+| Documentation             | Architecture docs current         | Docs exist but partially stale   | Undocumented / tribal knowledge   |
+| Architectural consistency | One dominant pattern per layer    | Minor divergence, mostly aligned | Multiple conflicting patterns     |
+| Dependency health         | Clear repo boundaries, <6 mo deps | Some tangles, manageable debt    | Tangled cross-repo, outdated deps |
+| Database/business logic   | Logic in application code         | Some stored procs, documented    | Significant untested DB logic     |
+
 ### Ready: Discovery Only
 
 When most dimensions are "Ready," foundation work is a focused discovery and
