@@ -124,6 +124,12 @@ brief. This preserves each cycle's results as a clean historical record and
 makes it easy to see what changed between cycles. The new brief's Cycle Context
 section links to the prior brief and summarizes what was fixed.
 
+**Rework briefs are delta-only:** When work returns to Implementation, the
+rework brief documents only what changed — reference the prior cycle's brief for
+unchanged context. See
+[Agentic Workflow Guide: Rework Cycles](../../guides/agentic-workflow.md#rework-cycles)
+for the full convention.
+
 ---
 
 ## How AI Helps
@@ -248,6 +254,12 @@ Track defects by **severity** (technical impact: Critical → Low) and
 - **No-go:** Critical defects, UAT not approved, performance below NFRs
 - **Conditional go:** Minor issues accepted with workarounds documented
 
+> **Best practice for NO-GO decisions:** A no-go should include: (1) root cause
+> of the failure, (2) exact components requiring modification, (3) specific test
+> cases that must pass before the next cycle, and (4) estimated rework effort.
+> This gives the Implementation team a clear, actionable scope rather than a
+> vague "fix the issues" directive.
+
 #### Readiness Requirements
 
 - All test types executed with passing results
@@ -341,6 +353,6 @@ fresh brief.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.6.0.
