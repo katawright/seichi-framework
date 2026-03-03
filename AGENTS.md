@@ -31,7 +31,8 @@ all SDLC stages. The framework is designed to:
 - **Primary:** Engineers — may be skeptical about AI tools or concerned about AI
   as a threat to their roles
 - **Secondary:** Non-technical stakeholders (Product Managers, Business
-  Analysts, Executives) who need to initiate and plan software projects
+  Analysts, Project Managers / Delivery Leads, Executives) who need to initiate,
+  plan, and coordinate software projects
 - **Tertiary:** Other organizations seeking structured AI integration across
   their product development lifecycle
 

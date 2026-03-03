@@ -308,8 +308,8 @@ early frustration. Look for:
   automated pipelines
 - Reasonable workload — has capacity to learn the framework without delivery
   pressure creating shortcuts
-- Cross-functional representation — includes engineers, QA, and ideally a PM or
-  BA
+- Cross-functional representation — includes engineers, QA, a project
+  coordinator or delivery lead, and ideally a PM or BA
 
 **Avoid for pilot:**
 
@@ -590,6 +590,6 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-02-26
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.17.0.

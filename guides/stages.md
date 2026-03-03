@@ -193,7 +193,8 @@ breakdown, AI automation tiers, and SSDF traceability, see the
 ## Stage 1: Initiation
 
 - **Primary Role:** Product Manager / Business Analyst
-- **Supporting Roles:** Executives, Solutions Architect, Engineers
+- **Supporting Roles:** Executives, Solutions Architect, Engineers, Project
+  Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
@@ -271,7 +272,7 @@ success criteria, constraints, and stakeholder list.
 ## Stage 2: Requirements
 
 - **Primary Role:** Business Analyst / Product Manager
-- **Supporting Roles:** Engineers, Architects, QA Engineers
+- **Supporting Roles:** Engineers, Architects, QA Engineers, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
@@ -337,7 +338,7 @@ instrumented.
 ## Stage 3: System Design
 
 - **Primary Role:** Engineers / Solutions Architect
-- **Supporting Roles:** Product Manager, QA Engineers, DevOps
+- **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 
 ### Purpose
@@ -418,7 +419,7 @@ conventions, data architecture, infrastructure plan, and increment plan.
 ## Stage 4: Increment Design
 
 - **Primary Role:** Engineers
-- **Supporting Roles:** QA Engineers, Product Manager
+- **Supporting Roles:** QA Engineers, Product Manager, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
@@ -611,7 +612,7 @@ deployment checklist.
 ## Stage 7: Deployment
 
 - **Primary Role:** DevOps / Engineers
-- **Supporting Roles:** Operations, Product Manager, Engineers
+- **Supporting Roles:** Operations, Product Manager, Engineers, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 
 ### Purpose
@@ -888,6 +889,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.9.0.

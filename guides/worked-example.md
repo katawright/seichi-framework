@@ -59,7 +59,8 @@ their first 30 days.
 Project context:
 
 - Type: Greenfield
-- Team: 3 engineers, 1 QA, 1 product manager
+- Team: 3 engineers, 1 QA, 1 product manager (also filling the project
+  coordination role on this small team)
 - Risk tier: Standard
 - Tech stack: React frontend, Node.js/Express API, PostgreSQL
 
@@ -834,6 +835,6 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.17.0.

@@ -11,7 +11,7 @@
 
 **Project Name:** [Project Name] **Date:** [YYYY-MM-DD] **Author(s):** [Lead
 Architect / Engineering Lead] **Reviewers:** [Engineering Team, Product Manager,
-DevOps Lead]
+DevOps Lead, Project Manager]
 
 ---
 
@@ -21,7 +21,7 @@ DevOps Lead]
 - **Execution Pattern:** Foundational (see
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Engineers / Solutions Architect
-- **Supporting Roles:** Product Manager, QA Engineers, DevOps
+- **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
 - **Checkpoints:** Alignment Review, Gate 2
 - **Gate:** Gate 2 (build/no-build decision after System Design + Requirements
   complete)

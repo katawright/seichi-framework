@@ -299,6 +299,12 @@ tracker]
 - Date: YYYY-MM-DD
 - Notes:
 
+**Project Manager:**
+
+- Name: [PjM Name]
+- Date: YYYY-MM-DD
+- Notes: [Release coordination, dependency, and schedule confirmation]
+
 **Product Manager:**
 
 - Name: [PM Name]

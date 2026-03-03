@@ -222,6 +222,11 @@ limitations]
 - Name: [Lead name] — Date: YYYY-MM-DD
 - Notes: [Any comments or concerns]
 
+**Project Manager:**
+
+- Name: [PjM name] — Date: YYYY-MM-DD
+- Notes: [Delivery handoff acknowledgment and schedule closure]
+
 **Product Manager:**
 
 - Name: [PM name] — Date: YYYY-MM-DD
@@ -232,4 +237,4 @@ limitations]
 **Brief Status:** [Active / Needs Update / Under Review] **Next Review Date:**
 [YYYY-MM-DD — quarterly recommended]
 
-<!-- Template Last Updated: 2026-02-28 | Added in v0.8.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.8.0 -->

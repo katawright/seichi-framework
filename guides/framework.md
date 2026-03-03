@@ -100,6 +100,9 @@ the organization.
 - **Engineering Leaders and Executives** — governance visibility across the
   development lifecycle with auditable checkpoints and measurable success
   criteria
+- **Project Managers and Delivery Leads** — structured coordination points at
+  every gate and increment boundary, with clear accountability for delivery
+  tracking and cross-team dependency management
 - **Organizations** — a repeatable, scalable approach to AI-assisted development
   that works across teams and methodologies
 
@@ -366,23 +369,40 @@ designations from each stage guide into a single cross-stage view.
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
 Informed (kept in the loop)
 
-| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | Exec |
-| -------------------- | ----- | --------- | --------- | --- | ------ | ---- |
-| **Initiation**       | R/A   | C         | C         | -   | -      | I    |
-| Gate 1 decision      | R     | -         | -         | -   | -      | A    |
-| **Requirements**     | R/A   | C         | C         | C   | -      | I    |
-| **System Design**    | C     | C         | R/A       | C   | C      | I    |
-| Gate 2 decision      | C     | C         | R         | C   | C      | A    |
-| **Increment Design** | C     | R/A       | C         | C   | -      | -    |
-| **Implementation**   | -     | R/A       | C         | C   | C      | -    |
-| **Verification**     | C     | R         | C         | R/A | -      | -    |
-| **Deployment**       | I     | C         | C         | C   | R/A    | I    |
-| **Support**          | I     | C         | C         | -   | R/A    | I    |
+| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | Exec | PjM |
+| -------------------- | ----- | --------- | --------- | --- | ------ | ---- | --- |
+| **Initiation**       | R/A   | C         | C         | -   | -      | I    | C   |
+| Gate 1 decision      | R     | -         | -         | -   | -      | A    | C   |
+| **Requirements**     | R/A   | C         | C         | C   | -      | I    | C   |
+| **System Design**    | C     | C         | R/A       | C   | C      | I    | C   |
+| Gate 2 decision      | C     | C         | R         | C   | C      | A    | C   |
+| **Increment Design** | C     | R/A       | C         | C   | -      | -    | C   |
+| **Implementation**   | -     | R/A       | C         | C   | C      | -    | I   |
+| **Verification**     | C     | R         | C         | R/A | -      | -    | I   |
+| **Deployment**       | I     | C         | C         | C   | R/A    | I    | C   |
+| **Support**          | I     | C         | C         | -   | R/A    | I    | I   |
 
 > **Note:** This matrix represents the most common role assignments. Adapt to
-> your team structure — in smaller teams, one person may hold multiple roles. In
-> larger organizations, additional roles (security, compliance) may be Consulted
-> or Accountable at specific stages.
+> your team structure — in smaller teams, one person may hold multiple roles
+> (e.g., one person may hold both PM and PjM). In larger organizations,
+> additional roles (security, compliance) may be Consulted or Accountable at
+> specific stages. PjM maps to Scrum Master, Delivery Lead, TPM, or Engineering
+> Manager depending on methodology.
+
+**Project Manager (PjM)** owns delivery coordination across the lifecycle —
+schedule management, gate facilitation, cross-increment coordination, dependency
+tracking, and progress reporting. PjM is Consulted at stages where active
+coordination input is needed (foundational stages, gates, increment design,
+deployment) and Informed where it passively tracks progress (implementation,
+verification, support). The following cross-cutting activities give PjM clear
+R/A accountability:
+
+| Activity                               | PjM | PM/BA | Engineers | Architect | QA  | DevOps | Exec |
+| -------------------------------------- | --- | ----- | --------- | --------- | --- | ------ | ---- |
+| Delivery schedule & progress reporting | R/A | I     | C         | -         | -   | -      | I    |
+| Gate facilitation                      | R   | -     | -         | -         | -   | -      | A    |
+| Cross-increment coordination           | R   | A     | C         | C         | -   | -      | I    |
+| Dependency & blocker management        | R/A | C     | C         | C         | -   | -      | -    |
 
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:
@@ -730,6 +750,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.9.0.

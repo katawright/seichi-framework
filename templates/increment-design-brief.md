@@ -11,7 +11,7 @@
 
 **Project Name:** [Project Name] **Increment Number/Name:** [e.g., Increment 1:
 Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
-**Reviewers:** [Engineering Team, QA Engineers]
+**Reviewers:** [Engineering Team, QA Engineers, Project Manager]
 
 ---
 
@@ -22,7 +22,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Execution Pattern:** Iterative (see
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Engineers
-- **Supporting Roles:** QA Engineers, Product Manager
+- **Supporting Roles:** QA Engineers, Product Manager, Project Manager
 - **Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
   Standard; required for Enterprise)
 - **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this
