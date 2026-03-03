@@ -275,6 +275,12 @@ conventions for effective AI assistance. Feature delivery begins at Increment 1.
 proceeds to **feature delivery**, using and updating existing documentation.
 Infrastructure adaptations are included within feature increments.
 
+**Feature flags for brownfield modifications:** When modifying existing
+endpoints or shared components, consider feature flags to de-risk the change —
+new behavior deploys dark, validates in production, and replaces the old path
+only after confirmation. For flags that span multiple increments, create an ADR
+documenting the flag lifecycle, cleanup timeline, and ownership.
+
 Infrastructure decisions are architectural decisions and must be documented in
 ADRs.
 
@@ -535,6 +541,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.
