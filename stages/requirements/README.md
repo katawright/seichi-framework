@@ -488,6 +488,15 @@ behavior early prevents edge cases from being discovered during testing — when
 the cost to address them is highest. Focus on cases that affect user experience
 or require specific error handling.
 
+**Edge case categories to consider (Standard+ tier):**
+
+1. **Temporal** — date/time boundaries, scheduling conflicts, timezone issues
+2. **State transitions** — reassignment, cancellation, concurrent status changes
+3. **Data consistency** — concurrent edits, partial saves, cascade deletes
+4. **Integration boundaries** — external dependency failures, timeout handling,
+   retry behavior
+5. **Role boundaries** — permission edge cases, role transitions
+
 **What to include:**
 
 - Common failure scenarios with expected behavior
@@ -657,6 +666,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.3.0.

@@ -43,6 +43,10 @@
 
 <!-- For guidance, see requirements/README.md#goals-and-success-metrics -->
 <!-- Measurement throughline: These metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
+<!-- For Standard+ tier, add a Measurement Throughline column mapping each
+     success criterion to its supporting FR/NFR IDs. This makes the
+     FR-to-SC traceability explicit and catches gaps before System Design.
+     Example: SC-1 maps to FR-4, FR-6, NFR-OBS-1. -->
 
 - [Measurable success criteria from Initiation Brief (baseline → target)]
 
@@ -252,4 +256,4 @@ Provide this Requirements Document to System Design team.
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-02 | Added in v0.3.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.3.0 -->

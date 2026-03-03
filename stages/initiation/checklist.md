@@ -29,23 +29,25 @@ to circulate.
 5. [ ] **Non-goals are explicit** (3-5 items)
 6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/pivot/stop)
 7. [ ] **A project lead is named**
+8. [ ] **Success Criteria Register produced (Standard+)** with baselines,
+       targets, and measurement methods for each success criterion
 
 ### Security
 
-8. [ ] **Data sensitivity and compliance scope noted** (public/internal/
+9. [ ] **Data sensitivity and compliance scope noted** (public/internal/
        confidential/restricted; relevant regulations identified)
 
 ### Risks and Constraints
 
-9. [ ] **Top assumptions (<=5) are written down**
-10. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
+10. [ ] **Top assumptions (<=5) are written down**
+11. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
         mitigations**
-11. [ ] **Constraints and dependencies identified** with owners where possible
+12. [ ] **Constraints and dependencies identified** with owners where possible
 
 ### Alternatives and Hypothesis
 
-12. [ ] **At least one alternative option considered**
-13. [ ] **Hypothesis includes a time range and confidence level**
+13. [ ] **At least one alternative option considered**
+14. [ ] **Hypothesis includes a time range and confidence level**
 
 ---
 
@@ -73,6 +75,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-03-02
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.2.0.

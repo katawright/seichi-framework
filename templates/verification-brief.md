@@ -122,6 +122,11 @@ section 5]
 - Issues: [List any regressions with IDs]
 - Evidence: [Link to test report]
 
+<!-- When regression test status is N/A (greenfield or first increment),
+     document forward planning: list features from this increment that
+     will need regression testing in the next increment. This smooths the
+     N/A-to-populated transition. -->
+
 ### Performance Tests
 
 - **Status:** [✅ Passed / ⚠️ Issues / ❌ Failed / ⏸ N/A]

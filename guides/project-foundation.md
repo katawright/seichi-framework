@@ -104,6 +104,21 @@ increment builds it.
 the full pipeline to production, monitoring captures its metrics, and on-call
 processes are defined.
 
+### Handoff to Feature Increments
+
+The bootstrap increment's implementation brief serves as the platform reference
+for subsequent feature increments. Key carry-forward items:
+
+- **Database migration sequence** — next available migration number
+- **CI/CD pipeline** — stages, deployment mechanism, branch strategy
+- **Environment configuration** — staging/production URLs, infrastructure IDs
+- **Platform conventions** — logging format, error handling patterns, health
+  endpoint schema
+- **Monitoring baseline** — alerting thresholds, dashboard locations
+
+Feature increment design briefs should reference these decisions without
+re-ingesting the full bootstrap artifact set.
+
 ---
 
 ## Brownfield Foundation
@@ -247,6 +262,6 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.14.0.

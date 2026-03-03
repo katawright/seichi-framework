@@ -50,7 +50,10 @@ System Design.
 11. [ ] **Open questions listed** (critical blockers flagged with owners)
 12. [ ] **Traceability summary present** (FRs traced to Initiation objectives
         and success metrics)
-13. [ ] **[H] Review occurred** (engineering + product, and security/compliance
+13. [ ] **Success Criteria Register referenced (Standard+)** — all success
+        criteria have supporting FRs/NFRs and register measurement methods are
+        feasible
+14. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
 
 ---
@@ -82,6 +85,6 @@ System Design.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.3.0.

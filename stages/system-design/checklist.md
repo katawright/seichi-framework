@@ -37,8 +37,9 @@ ready for Gate 2.
 
 8. [ ] **Monitoring and logging strategy designed** (observability stack,
        alerting)
-9. [ ] **[H] Success criteria instrumentation planned** (measurement
-       throughline)
+9. [ ] **[H] Success criteria instrumentation planned** — each criterion from
+       the Success Criteria Register (Standard+) has a defined collection
+       method, metric name, and delivery increment
 10. [ ] **Infrastructure plan covers CI/CD, environments, deployment**
         (bootstrap or assessment complete)
 
@@ -90,6 +91,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.12.0.
