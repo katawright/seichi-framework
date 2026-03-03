@@ -115,6 +115,13 @@ section 5]
 - Issues: [List any issues with IDs]
 - Evidence: [Link to test report]
 
+### Regression Tests
+
+- Tests executed: [X] | Passed: [X] | Failed: [X]
+- **Status:** [✅ Passed / ⚠️ Issues / ❌ Failed / ⏸ N/A — greenfield project]
+- Issues: [List any regressions with IDs]
+- Evidence: [Link to test report]
+
 ### Performance Tests
 
 - **Status:** [✅ Passed / ⚠️ Issues / ❌ Failed / ⏸ N/A]
@@ -195,6 +202,7 @@ section 5]
 | ----------------- | ------------ | ----- |
 | Integration Tests | [✅/⚠️/❌]   |       |
 | Functional Tests  | [✅/⚠️/❌]   |       |
+| Regression Tests  | [✅/⚠️/❌/⏸] |       |
 | Performance Tests | [✅/⚠️/❌/⏸] |       |
 | Security Tests    | [✅/⚠️/❌/⏸] |       |
 | UAT               | [✅/⚠️/❌]   |       |
@@ -270,4 +278,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-02 | Added in v0.6.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.6.0 -->
