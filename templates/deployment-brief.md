@@ -251,6 +251,9 @@ tracker]
 
 ---
 
+> For full readiness verification before accepting production ownership, see the
+> [Support Readiness Checklist](../stages/support/readiness-checklist.md).
+
 ## Production Ownership Transfer
 
 <!-- Complete when production responsibility transfers to the accepting team.

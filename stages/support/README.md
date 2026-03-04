@@ -68,6 +68,12 @@ deployment, and production monitoring dashboards active.
 
 ### How to Use This Guide
 
+> **First time setting up support?** Start with the
+> [Support Operations Guide](operations.md) to choose your support level and
+> establish one-time infrastructure (incident response, on-call, runbooks). Use
+> the [Support Readiness Checklist](readiness-checklist.md) to verify readiness
+> before accepting production ownership.
+
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
    your project's risk tier
@@ -77,12 +83,6 @@ deployment, and production monitoring dashboards active.
 5. Run the [Support Checklist](checklist.md) regularly (weekly recommended)
 6. Record the ownership decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
-
-> **First time setting up support?** Start with the
-> [Support Operations Guide](operations.md) to choose your support level and
-> establish one-time infrastructure (incident response, on-call, runbooks). Use
-> the [Support Readiness Checklist](readiness-checklist.md) to verify readiness
-> before accepting production ownership.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
