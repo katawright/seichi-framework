@@ -108,27 +108,22 @@
 
 ---
 
-## Functional Requirements (FRs)
+## Functional Requirements and Acceptance Criteria
 
-<!-- For guidance, see requirements/README.md#functional-requirements -->
-<!-- Minimal: brief behavior descriptions | Standard: numbered FRs with testable statements | Enterprise: formal FRs with traceability matrix -->
+<!-- For guidance, see requirements/README.md#functional-requirements and
+     requirements/README.md#acceptance-criteria -->
+<!-- Minimal: brief behavior descriptions with informal "done" definitions |
+     Standard: numbered FRs with Given/When/Then ACs |
+     Enterprise: formal FRs with comprehensive ACs and edge cases -->
 
-- FR-1:
-- FR-2:
-- FR-3:
-- FR-4:
-- FR-5:
+- **FR-1:** [requirement description]
+  - **AC-1.1:** [acceptance criterion]
 
----
+- **FR-2:** [requirement description]
+  - **AC-2.1:** [acceptance criterion]
 
-## Acceptance Criteria (AC)
-
-<!-- For guidance, see requirements/README.md#acceptance-criteria -->
-<!-- Minimal: informal "done" definition | Standard: Given/When/Then for each FR | Enterprise: comprehensive ACs with edge cases -->
-
-- **AC for FR-1:**
-- **AC for FR-2:**
-- **AC for FR-3:**
+- **FR-3:** [requirement description]
+  - **AC-3.1:** [acceptance criterion]
 
 ---
 
