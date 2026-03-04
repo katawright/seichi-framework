@@ -15,9 +15,11 @@ depending on the project's starting point. This guide explains when foundation
 work applies, what it involves, and routes you to the stage-specific guides
 where the actual work is defined.
 
-For detailed activity lists and project-type comparisons, see the
-[Framework Guide](framework.md) section on
-[Project Foundation: The Critical Difference](framework.md#project-foundation-the-critical-difference).
+For the conceptual overview and stage adaptation table, see the
+[Framework Guide](framework.md#greenfield-vs-brownfield-projects). For
+infrastructure planning details by project type, see
+[Infrastructure Planning by Project Type](#infrastructure-planning-by-project-type)
+below.
 
 ### Why Foundation Work
 
@@ -252,6 +254,82 @@ is fully ready for AI-assisted feature work.
 
 ---
 
+## Infrastructure Planning by Project Type
+
+During **System Design**, infrastructure planning is a **required output** for
+all project types. The following lists detail what each project type includes in
+its infrastructure plan.
+
+For the conceptual overview of greenfield vs. brownfield adaptation, see the
+[Framework Guide](framework.md#greenfield-vs-brownfield-projects).
+
+### Greenfield Infrastructure Planning
+
+- Architecture Decision Records (ADRs) for infrastructure choices
+- CI/CD pipeline design (tools, stages, quality gates)
+- Environment strategy (dev, staging, production)
+- Deployment strategy (blue-green, canary, rolling, etc.)
+- Monitoring and observability architecture
+- Security and compliance infrastructure
+- Increment plan identifying **Increment 0 = establish infrastructure**
+
+### Brownfield Infrastructure Planning (First AI-Assisted Project)
+
+- Assessment of existing infrastructure capabilities (team's tribal knowledge)
+- ADRs for infrastructure adaptations or extensions
+- Integration plan with existing CI/CD pipelines
+- Deployment strategy within existing constraints
+- Monitoring extensions or dashboard updates
+- Security and compliance adjustments
+- Readiness assessment using the
+  [dimensions above](#assessing-brownfield-readiness) to determine foundation
+  scope
+- Preparation plan if readiness assessment identifies gaps beyond documentation
+  (test coverage, pattern stabilization, dependency mapping, database logic)
+- Increment plan identifying **Increment 0 = document existing context for AI**
+  - What to document: architecture, conventions, constraints, infrastructure
+  - Documentation structure approach (use existing or propose new)
+  - Discovery approach (AI tools + team expert verification)
+  - **Note:** If Increment 0 reveals significant gaps in team's understanding,
+    may trigger return to System Design stage to reassess plans
+
+### Brownfield Infrastructure Planning (Subsequent Projects)
+
+- Assessment of existing infrastructure capabilities (use documented context)
+- ADRs for infrastructure adaptations or extensions
+- Integration plan with existing CI/CD pipelines
+- Deployment strategy within existing constraints
+- Monitoring extensions or dashboard updates
+- Security and compliance adjustments
+- Increment plan identifying **Increment 1 = first feature** (no foundation work
+  needed)
+
+**Key output:** All project types exit System Design with a clear plan that
+enables subsequent feature delivery — greenfield and brownfield-first establish
+foundations (infrastructure or documentation), brownfield-subsequent proceeds to
+features.
+
+### Brownfield Requirements: Capturing Constraints
+
+During **Requirements**, brownfield projects must **capture existing system
+constraints** that new work must satisfy:
+
+- **Performance constraints:** Existing SLAs (e.g., "API responses < 1 second")
+- **Security policies:** Authentication, authorization, data encryption
+  standards
+- **API contracts:** Existing interfaces that must remain compatible
+- **Data schemas:** Database structures, data formats, integration formats
+- **Compliance requirements:** Regulatory constraints already in place
+- **Architectural constraints:** Patterns, frameworks, languages in use
+- **Operational constraints:** Deployment windows, rollback requirements
+
+These constraints become **Non-Functional Requirements (NFRs)** that shape
+design and testing. See the
+[Requirements Stage Guide](../stages/requirements/README.md#constraints) for
+detailed guidance.
+
+---
+
 ## How Foundation Work Flows Through Stages
 
 Foundation work uses the same iterative stages as feature increments — the
@@ -274,6 +352,6 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.14.0.

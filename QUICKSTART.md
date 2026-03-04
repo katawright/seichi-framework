@@ -6,22 +6,16 @@ Get from zero to your first stage in under 5 minutes.
 
 ## The Framework in 30 Seconds
 
-Eight stages, three execution patterns:
+Eight stages across three execution patterns guide AI-assisted software delivery
+from idea to production:
 
-| Stage            | What happens                                           |
-| ---------------- | ------------------------------------------------------ |
-| Initiation       | Define the problem, stakeholders, and success criteria |
-| Requirements     | Capture what to build and how to verify it             |
-| System Design    | Choose architecture, patterns, and tech stack          |
-| Increment Design | Plan one increment's scope and approach                |
-| Implementation   | Build the increment with AI assistance                 |
-| Verification     | Test, review, and validate the increment               |
-| Deployment       | Release to production                                  |
-| Support          | Monitor, maintain, and feed back into future work      |
+- **Foundational** (once per project): Initiation → Requirements → System Design
+- **Iterative** (per increment): Increment Design → Implementation →
+  Verification → Deployment
+- **Continuous** (ongoing): Support
 
-The first three stages run once per project. The next four repeat per increment
-(epic, sprint, milestone — whatever your team calls a unit of deliverable work).
-Support is continuous.
+See the [README Stage Overview](README.md#stage-overview) for what happens at
+each stage.
 
 Scale the process to fit your project with three tiers: **Minimal** (MVPs,
 prototypes), **Standard** (production apps), or **Enterprise** (regulated,
@@ -102,6 +96,6 @@ verify it works. Add more artifacts only when you feel the gaps.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.26.0.
