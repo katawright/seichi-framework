@@ -476,166 +476,30 @@ emphasis differ:
 | **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                             | Deliver features with established infra           |
 | **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                             | Monitor changes, consider existing user base      |
 
-### Project Foundation: The Critical Difference
+### Project Foundation
 
-> For a practical walkthrough of foundation activities — including sequencing
+> For a practical walkthrough of foundation activities — including sequencing,
+> infrastructure planning by project type, brownfield requirements constraints,
 > and links to stage-specific setup guides — see the
 > [Project Foundation Guide](project-foundation.md).
 
-**Greenfield foundation** is the **bootstrap increment** — establishing the
-foundational infrastructure before feature development begins:
+**Greenfield** projects invest foundation work in a **bootstrap increment** —
+establishing CI/CD, environments, monitoring, and deployment from scratch.
 
-- Set up version control, branching strategy, code organization
-- Establish CI/CD pipelines (build, test, deploy automation) — see
-  [Deployment Setup Guide](../stages/deployment/setup.md)
-- Configure development, staging, and production environments
-- Implement monitoring, logging, and observability infrastructure
-- Set up security scanning, secret management, and access controls
-- Create deployment runbooks and rollback procedures
-- Establish support operations (incident response, on-call) — see
-  [Support Operations Guide](../stages/support/operations.md)
-- Implement measurement/telemetry systems (from success criteria)
-- Deploy a "hello world" application to validate the full pipeline
+**Brownfield (first AI-assisted)** projects invest foundation work in a
+**discovery increment** — documenting architecture, infrastructure, and
+conventions for AI context. When discovery reveals deeper gaps, foundation may
+extend into active preparation. See
+[Assessing Brownfield Readiness](project-foundation.md#assessing-brownfield-readiness).
 
-**Outcome:** Working infrastructure that can support feature delivery. Increment
-1+ delivers features.
-
-**Brownfield Foundation (First AI-Assisted Project)** is the **discovery
-increment** — documenting existing architecture, infrastructure, and conventions
-for AI context:
-
-- Use AI tools to discover system architecture, tech stack, and patterns
-- Document architecture overview, components, and data flows
-- Capture infrastructure setup (CI/CD, deployment, monitoring)
-- Record coding conventions and established practices
-- Create retroactive ADRs for significant existing decisions
-- Document constraints (SLAs, policies, API contracts)
-- Store in AGENTS.md and docs/ structure for future AI use
-
-When discovery reveals deeper gaps — poor test coverage, inconsistent patterns,
-tangled dependencies, or untested database logic — foundation work may extend
-beyond documentation into active preparation, or become a multi-increment
-preparation project. See the
-[Project Foundation Guide](project-foundation.md#assessing-brownfield-readiness)
-for the readiness assessment and preparation paths.
-
-**Outcome:** Documented context and structural readiness (test coverage in
-critical paths, pattern clarity, dependency mapping) that enable effective AI
-assistance on future projects. Increment 1+ delivers features.
-
-**Brownfield (Subsequent Projects)** requires no foundation work and proceeds
-directly to **feature delivery** because infrastructure exists and AI context is
-documented:
-
-- Infrastructure is already operational
-- CI/CD pipelines exist (may need minor adaptation)
-- Monitoring and deployment systems are in place
-- AI context documented from prior projects
-- Focus is on delivering the first new feature/capability
-
-**Outcome:** First feature increment (Increment 1) delivered using existing
-infrastructure, with updated documentation.
-
-### System Design Stage: Infrastructure Planning
-
-During **System Design**, infrastructure planning is a **required output** for
-both project types:
-
-**Greenfield infrastructure planning includes:**
-
-- Architecture Decision Records (ADRs) for infrastructure choices
-- CI/CD pipeline design (tools, stages, quality gates)
-- Environment strategy (dev, staging, production)
-- Deployment strategy (blue-green, canary, rolling, etc.)
-- Monitoring and observability architecture
-- Security and compliance infrastructure
-- Increment plan identifying **Increment 0 = establish infrastructure**
-
-**Brownfield infrastructure planning (first AI-assisted project) includes:**
-
-- Assessment of existing infrastructure capabilities (team's tribal knowledge)
-- ADRs for infrastructure adaptations or extensions
-- Integration plan with existing CI/CD pipelines
-- Deployment strategy within existing constraints
-- Monitoring extensions or dashboard updates
-- Security and compliance adjustments
-- Readiness assessment using the
-  [Project Foundation Guide dimensions](project-foundation.md#assessing-brownfield-readiness)
-  to determine foundation scope
-- Preparation plan if readiness assessment identifies gaps beyond documentation
-  (test coverage, pattern stabilization, dependency mapping, database logic)
-- Increment plan identifying **Increment 0 = document existing context for AI**
-  - What to document: architecture, conventions, constraints, infrastructure
-  - Documentation structure approach (use existing or propose new)
-  - Discovery approach (AI tools + team expert verification)
-  - **Note:** If Increment 0 reveals significant gaps in team's understanding,
-    may trigger return to System Design stage to reassess plans
-
-**Brownfield infrastructure planning (subsequent projects) includes:**
-
-- Assessment of existing infrastructure capabilities (use documented context)
-- ADRs for infrastructure adaptations or extensions
-- Integration plan with existing CI/CD pipelines
-- Deployment strategy within existing constraints
-- Monitoring extensions or dashboard updates
-- Security and compliance adjustments
-- Increment plan identifying **Increment 1 = first feature** (no foundation work
-  needed)
-
-**Key output:** All project types exit System Design with a clear plan that
-enables subsequent feature delivery — greenfield and brownfield-first establish
-foundations (infrastructure or documentation), brownfield-subsequent proceeds to
-features.
-
-### Requirements Stage: Capturing Constraints
-
-During **Requirements**, brownfield projects must **capture existing system
-constraints** that new work must satisfy:
-
-**Brownfield-specific requirements include:**
-
-- **Performance constraints:** Existing SLAs (e.g., "API responses < 1 second")
-- **Security policies:** Authentication, authorization, data encryption
-  standards
-- **API contracts:** Existing interfaces that must remain compatible
-- **Data schemas:** Database structures, data formats, integration formats
-- **Compliance requirements:** Regulatory constraints already in place
-- **Architectural constraints:** Patterns, frameworks, languages in use
-- **Operational constraints:** Deployment windows, rollback requirements
-
-These constraints become **Non-Functional Requirements (NFRs)** that shape
-design and testing. See the
-[Requirements Stage Guide](../stages/requirements/README.md#constraints) for
-detailed guidance on capturing brownfield constraints.
+**Brownfield (subsequent)** projects require no foundation work — proceed
+directly to feature delivery.
 
 ### When Both Types Converge
 
 After foundation work (where applicable), **both greenfield and brownfield
-projects operate identically**:
-
-- Infrastructure is established and operational
-- Feature delivery follows the same iterative cycle: Increment Design →
-  Implementation → Verification → Deployment
-- Deployment processes are consistent
-- Monitoring and observability are in place
-- Support operates the same way
-
-**This normalization is the key insight:** By investing in infrastructure setup
-upfront (greenfield) or leveraging existing infrastructure (brownfield), the
-framework provides a consistent experience for feature delivery regardless of
-project type.
-
-### Detailed Guidance
-
-Stage-specific greenfield and brownfield guidance is documented in each stage's
-guide:
-
-- **[System Design Stage Guide](../stages/system-design/README.md)** —
-  Infrastructure planning outputs and bootstrap increment guidance
-- **[Requirements Stage Guide](../stages/requirements/README.md)** — Capturing
-  existing system constraints for brownfield projects
-- **[Implementation Stage Guide](../stages/implementation/README.md)** —
-  Bootstrap increment execution for greenfield projects
+projects operate identically** — infrastructure is established, and feature
+delivery follows the same iterative cycle.
 
 ---
 
@@ -750,6 +614,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.9.0.
