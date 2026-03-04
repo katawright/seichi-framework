@@ -51,6 +51,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Agentic workflow and stage routing:** `guides/agentic-workflow.md`
 - **Security throughline:** `guides/security.md`
 - **Right-sizing tiers:** `guides/right-sizing.md`
+- **Brownfield assessment and routing:** `guides/brownfield-readiness.md`
+- **Brownfield preparation runbook:** `guides/brownfield-preparation.md`
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
 
@@ -209,6 +211,6 @@ Recommended workflow for AI coding agents operating in this repository:
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.1.0.

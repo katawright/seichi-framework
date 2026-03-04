@@ -137,7 +137,7 @@ GDPR applies because EU users are in scope"]
 
 <!-- Include this section for brownfield projects (first AI-assisted). Omit for
      greenfield or subsequent brownfield projects. See
-     guides/project-foundation.md#assessing-brownfield-readiness for assessment
+     guides/brownfield-readiness.md#5-dimension-readiness-assessment for assessment
      guidance and indicative thresholds. -->
 
 | Dimension                 | Current State | Assessment                                    |

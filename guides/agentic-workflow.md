@@ -381,7 +381,7 @@ through stages with additional focus:
 1. **Initiation** — assess brownfield readiness across five dimensions (test
    coverage, documentation, architectural consistency, dependency health,
    database/business logic). See
-   [Project Foundation Guide](project-foundation.md#assessing-brownfield-readiness)
+   [Project Foundation Guide](brownfield-readiness.md#5-dimension-readiness-assessment)
 2. **System Design** — refine the readiness assessment with evidence, plan
    discovery or preparation increments, and define feature flag strategy for
    modifying existing endpoints

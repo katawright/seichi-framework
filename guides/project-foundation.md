@@ -1,7 +1,7 @@
 ---
 id: project-foundation
 type: guide
-concerns: [foundation-work, greenfield-bootstrap, brownfield-readiness]
+concerns: [foundation-work, greenfield-bootstrap]
 ---
 
 # Project Foundation Guide
@@ -126,131 +126,22 @@ re-ingesting the full bootstrap artifact set.
 ## Brownfield Foundation
 
 Brownfield projects using AI assistance for the first time invest foundation
-work in building the basis for effective AI collaboration. The scope of that
-investment depends on the current state of the codebase — from a focused
-discovery pass to a multi-increment preparation project.
+work in building the basis for effective AI collaboration. Brownfield codebases
+exist on a spectrum — from AI-Ready (well-tested, documented, consistent
+patterns) through Discovery Only and Needs Preparation to Needs Significant
+Preparation and, at the far end, Consider AI-Native Replacement. The scope of
+foundation work depends on where your codebase falls on this spectrum.
 
-### Assessing Brownfield Readiness
+- **Assess readiness -->** [Brownfield Readiness Guide](brownfield-readiness.md)
+  — 5-dimension assessment, spectrum routing, multi-repo and database
+  considerations, requirements constraints
+- **Plan and execute preparation -->**
+  [Brownfield Preparation Guide](brownfield-preparation.md) — discovery
+  activities, preparation by dimension, infrastructure planning, preparation as
+  adoption pilot
 
-Before planning foundation activities, assess the codebase across five
-dimensions. This assessment shapes whether foundation work is a straightforward
-discovery exercise or requires deeper preparation.
-
-| Dimension                 | Ready                                      | Needs Preparation                           | Needs Significant Prep                                              |
-| ------------------------- | ------------------------------------------ | ------------------------------------------- | ------------------------------------------------------------------- |
-| Test coverage             | Automated tests cover critical paths       | Partial coverage, gaps in key areas         | Little or no test coverage                                          |
-| Documentation             | Architecture documented                    | Some docs but gaps or stale                 | Undocumented, tribal knowledge only                                 |
-| Architectural consistency | Consistent patterns across codebase        | Mostly consistent, some divergence          | Inconsistent, multiple conflicting approaches                       |
-| Dependency health         | Single repo or clear multi-repo boundaries | Some cross-repo tangles, manageable         | Tangled cross-repo dependencies, unclear boundaries                 |
-| Database and data logic   | Business logic in application code         | Some logic in stored procedures, documented | Significant untested logic in stored procedures, triggers, or views |
-
-> **Interpretation:** A single critical gap — such as zero test coverage or
-> entirely undocumented architecture — can shift the overall assessment
-> rightward regardless of other dimensions. Focus on the weakest dimension when
-> choosing a path.
-
-### Indicative Thresholds
-
-Use these thresholds as starting points — adjust to your organization's context.
-
-| Dimension                 | Ready                             | Needs Preparation                | Needs Significant Prep            |
-| ------------------------- | --------------------------------- | -------------------------------- | --------------------------------- |
-| Test coverage             | ≥70% on critical paths            | 50–69% or gaps in key areas      | <50% or no automated tests        |
-| Documentation             | Architecture docs current         | Docs exist but partially stale   | Undocumented / tribal knowledge   |
-| Architectural consistency | One dominant pattern per layer    | Minor divergence, mostly aligned | Multiple conflicting patterns     |
-| Dependency health         | Clear repo boundaries, <6 mo deps | Some tangles, manageable debt    | Tangled cross-repo, outdated deps |
-| Database/business logic   | Logic in application code         | Some stored procs, documented    | Significant untested DB logic     |
-
-### Ready: Discovery Only
-
-When most dimensions are "Ready," foundation work is a focused discovery and
-documentation effort — no structural changes needed.
-
-**Route to these guides:**
-
-- **Existing architecture discovery →**
-  [System Design Reference: First AI-Assisted Project (Discovery)](../stages/system-design/reference.md#first-ai-assisted-project-discovery)
-  — document architecture, components, and data flows
-- **Existing deployment infrastructure →**
-  [Deployment Setup Guide: Brownfield Path](../stages/deployment/setup.md#brownfield-path)
-  — inventory environments, capture tribal knowledge, identify gaps
-- **Existing operational processes →**
-  [Support Operations Guide: Brownfield Path](../stages/support/operations.md#brownfield-path)
-  — document incident response, monitoring, and support workflows
-
-**Completion signal:** Architecture, infrastructure, and operational processes
-are documented in a structure (AGENTS.md, docs/) that AI tools can reference
-effectively. Create an AGENTS.md at your project root with project-specific
-conventions, tech stack, and workflow — your AI assistant can help generate one.
-
-### Needs Preparation: Extended Foundation
-
-When the codebase is organized enough to work with but has notable gaps —
-limited test coverage, stale documentation, or some tangled dependencies —
-extend foundation work beyond pure discovery to address the highest-priority
-gaps.
-
-**Typical additional activities:**
-
-- Add test coverage to critical business paths
-- Clarify and document key architectural patterns
-- Map cross-repository dependencies and contracts
-- Document business logic in stored procedures or database views
-
-Keep this time-boxed. The goal is "enough foundation to start," not perfection.
-Address remaining gaps incrementally during feature work.
-
-**Completion signal:** AI context is documented AND the team can verify
-AI-generated changes in the areas targeted for pilot work.
-
-### Needs Significant Preparation: Preparation Project
-
-When the codebase has pervasive gaps — poor test coverage, inconsistent
-architecture, tangled multi-repo dependencies, or significant untested database
-logic — a single increment is not enough. Treat preparation as a dedicated
-project that runs through the framework's own stages across multiple increments.
-
-**Illustrative increment sequence** (adapt to your situation):
-
-1. **Increment 1:** Document architecture, map repositories and dependencies
-2. **Increment 2:** Establish test coverage for critical business paths
-3. **Increment 3:** Extract or document database-layer business logic
-4. **Increment 4:** Stabilize patterns in areas targeted for feature work
-
-**How AI helps with preparation:** AI tools accelerate preparation itself —
-generating initial test suites for existing code, drafting architecture
-documentation from code analysis, mapping dependency graphs, and documenting
-stored procedure logic. Preparation is faster with AI even before the codebase
-is fully ready for AI-assisted feature work.
-
-> **Preparation as a pilot:** This preparation project can serve as your
-> organization's adoption pilot. Run 1–2 preparation increments, evaluate
-> results, then decide whether to complete the full preparation. See the
-> [Organizational Adoption Guide](adoption.md#brownfield-preparation-as-a-pilot)
-> for details.
-
-**Completion signal:** Areas targeted for AI-assisted feature work meet the
-"Ready" level on assessment dimensions.
-
-### Multi-Repository and Database Considerations
-
-"The codebase" may extend beyond a single repository. Consider:
-
-- **Multiple repositories** with shared dependencies or a central dependency
-  repo
-- **Cross-repository contracts** — API boundaries, shared types, and dependency
-  graphs that span repos
-- **Database-layer business logic** — stored procedures, triggers, and views
-  containing business rules that AI tools cannot analyze directly from
-  application code
-
-**Sequencing advice:**
-
-1. Start with the central or most-depended-upon repository
-2. Document cross-repo contracts and integration points
-3. Treat database logic as a separate documentation and testing effort — AI
-   tools analyze application code effectively but need explicit documentation
-   for database-layer logic
+For the conceptual overview and stage adaptation table, see the
+[Framework Guide](framework.md#greenfield-vs-brownfield-projects).
 
 ---
 
@@ -261,7 +152,9 @@ all project types. The following lists detail what each project type includes in
 its infrastructure plan.
 
 For the conceptual overview of greenfield vs. brownfield adaptation, see the
-[Framework Guide](framework.md#greenfield-vs-brownfield-projects).
+[Framework Guide](framework.md#greenfield-vs-brownfield-projects). For
+brownfield-specific infrastructure planning, see the
+[Brownfield Preparation Guide](brownfield-preparation.md#brownfield-infrastructure-planning).
 
 ### Greenfield Infrastructure Planning
 
@@ -272,61 +165,6 @@ For the conceptual overview of greenfield vs. brownfield adaptation, see the
 - Monitoring and observability architecture
 - Security and compliance infrastructure
 - Increment plan identifying **Increment 0 = establish infrastructure**
-
-### Brownfield Infrastructure Planning (First AI-Assisted Project)
-
-- Assessment of existing infrastructure capabilities (team's tribal knowledge)
-- ADRs for infrastructure adaptations or extensions
-- Integration plan with existing CI/CD pipelines
-- Deployment strategy within existing constraints
-- Monitoring extensions or dashboard updates
-- Security and compliance adjustments
-- Readiness assessment using the
-  [dimensions above](#assessing-brownfield-readiness) to determine foundation
-  scope
-- Preparation plan if readiness assessment identifies gaps beyond documentation
-  (test coverage, pattern stabilization, dependency mapping, database logic)
-- Increment plan identifying **Increment 0 = document existing context for AI**
-  - What to document: architecture, conventions, constraints, infrastructure
-  - Documentation structure approach (use existing or propose new)
-  - Discovery approach (AI tools + team expert verification)
-  - **Note:** If Increment 0 reveals significant gaps in team's understanding,
-    may trigger return to System Design stage to reassess plans
-
-### Brownfield Infrastructure Planning (Subsequent Projects)
-
-- Assessment of existing infrastructure capabilities (use documented context)
-- ADRs for infrastructure adaptations or extensions
-- Integration plan with existing CI/CD pipelines
-- Deployment strategy within existing constraints
-- Monitoring extensions or dashboard updates
-- Security and compliance adjustments
-- Increment plan identifying **Increment 1 = first feature** (no foundation work
-  needed)
-
-**Key output:** All project types exit System Design with a clear plan that
-enables subsequent feature delivery — greenfield and brownfield-first establish
-foundations (infrastructure or documentation), brownfield-subsequent proceeds to
-features.
-
-### Brownfield Requirements: Capturing Constraints
-
-During **Requirements**, brownfield projects must **capture existing system
-constraints** that new work must satisfy:
-
-- **Performance constraints:** Existing SLAs (e.g., "API responses < 1 second")
-- **Security policies:** Authentication, authorization, data encryption
-  standards
-- **API contracts:** Existing interfaces that must remain compatible
-- **Data schemas:** Database structures, data formats, integration formats
-- **Compliance requirements:** Regulatory constraints already in place
-- **Architectural constraints:** Patterns, frameworks, languages in use
-- **Operational constraints:** Deployment windows, rollback requirements
-
-These constraints become **Non-Functional Requirements (NFRs)** that shape
-design and testing. See the
-[Requirements Stage Guide](../stages/requirements/README.md#constraints) for
-detailed guidance.
 
 ---
 
