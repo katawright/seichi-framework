@@ -14,6 +14,7 @@ outputs:
   - artifact: performance-test-results
   - artifact: security-scan-results
   - artifact: verified-code
+  - artifact: production-readiness-assessment
 gates:
   - type: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
@@ -305,11 +306,15 @@ The [Verification Reference](reference.md) covers these topics in depth:
 
 ## Stage Outputs
 
-- Comprehensive test results (all test types)
-- UAT approval from business stakeholders
-- Production readiness assessment
-- Deployment checklist
-- Defect resolution documentation
+- **Test Results** — comprehensive results across all test types
+- **Defect Reports** — documented defects with severity, resolution, and
+  retest status
+- **UAT Sign-Off** — business stakeholder approval of acceptance criteria
+- **Performance Test Results** — load, stress, and capacity test outcomes
+- **Security Scan Results** — SAST/DAST findings and resolution status
+- **Verified Code** — code confirmed ready for deployment
+- **Production Readiness Assessment** — go/no-go decision with evidence and
+  deployment readiness checklist (for Deployment stage)
 
 > Verification continues the **measurement throughline** by validating that the
 > instrumentation embedded during Implementation actually works — confirming
@@ -358,6 +363,6 @@ fresh brief.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.6.0.

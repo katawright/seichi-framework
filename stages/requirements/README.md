@@ -620,9 +620,17 @@ gives the System Design team a clear target.
 
 ## Stage Outputs
 
-- **Requirements Document** containing: FRs with unique identifiers, ACs for
-  each FR, NFRs (including observability), MoSCoW prioritization, data/
-  integration constraints, edge cases, open questions
+- **Requirements Brief** — FRs with unique identifiers, ACs for each FR, NFRs
+  (including observability), MoSCoW prioritization, data/integration
+  constraints, edge cases, open questions
+- **Requirements with Acceptance Criteria** — testable acceptance criteria for
+  each functional requirement
+- **Prioritized Feature Backlog** — MoSCoW-classified requirements ready for
+  increment planning
+- **Requirements Traceability** — mapping of FRs to Initiation objectives,
+  success criteria, and acceptance criteria
+- **Non-Functional Requirements** — quality attributes including performance,
+  security, observability, and compliance
 
 > Requirements ensures the **measurement throughline** by translating success
 > metrics from Initiation into NFRs with observability and instrumentation
@@ -667,6 +675,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.3.0.

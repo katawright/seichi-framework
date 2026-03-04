@@ -14,6 +14,8 @@ outputs:
   - artifact: release-notes
   - artifact: baseline-measurements
   - artifact: monitoring-dashboards
+  - artifact: incident-response-procedures
+  - artifact: rollback-procedure
   - artifact: retrospective-action-items
 gates:
   - type: human-execution-required
@@ -321,10 +323,17 @@ Deployment validates that measurement systems work in production. See
 
 ## Stage Outputs
 
-- Live production release
-- Deployment brief with execution details
-- Monitoring baselines captured
-- Rollback procedure tested and documented
+- **Deployed System** — live production release
+- **Deployment Log** — execution details, timing, and issues encountered
+- **Updated Runbooks** — operational procedures reflecting current deployment
+- **Release Notes** — summary of changes for stakeholders
+- **Baseline Measurements** — initial production metrics for post-deployment
+  comparison
+- **Monitoring Dashboards** — configured and validated production dashboards
+- **Incident Response Procedures** — escalation paths and response playbooks
+- **Rollback Procedure** — tested and documented rollback steps
+- **Retrospective Action Items** — improvement items from deployment
+  retrospective
 
 > Deployment confirms that success criteria instrumentation is **active in
 > production** and captures initial baselines. This is where the measurement
@@ -371,6 +380,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.7.0.

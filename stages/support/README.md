@@ -396,11 +396,14 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 
 ## Stage Outputs
 
-- Production health reports
-- Success criteria progress reports
-- Incident post-mortems
-- Bug fixes and enhancement releases
-- Enhancement requests for new increments
+- **System Availability Metrics** (`system-availability-metrics`) — production
+  health reports and uptime tracking
+- **Success Criteria Reports** (`success-criteria-reports`) — progress reports
+  comparing actuals against Initiation baselines and targets
+- **Incident Reports** (`incident-reports`) — incident post-mortems with root
+  cause analysis and action items
+- **Enhancement Backlog** (`enhancement-backlog`) — prioritized enhancement
+  requests and bug fixes routed to appropriate SDLC stages
 
 > Support closes the **measurement throughline** — success criteria defined in
 > Initiation are tracked against real production data here. See
@@ -440,6 +443,6 @@ when the team confirms readiness to own the system in production.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.8.0.

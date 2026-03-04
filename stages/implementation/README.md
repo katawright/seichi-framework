@@ -13,6 +13,9 @@ outputs:
   - artifact: unit-tests
   - artifact: code-review-approvals
   - artifact: updated-documentation
+  - artifact: implementation-brief
+  - artifact: session-log
+  - artifact: observability-instrumentation
 gates:
   - type: ci-validation-human-approval
     name: "PR Review + CI"
@@ -278,11 +281,15 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 
 ## Stage Outputs
 
-- Working code with unit tests passing
-- Code review approval
-- Implementation brief with decisions documented
-- Session log with progress across work sessions
-- Instrumentation for observability
+- **Working Code** — production-ready code with unit tests passing
+- **Unit Tests** — comprehensive test coverage meeting team threshold
+- **Code Review Approvals** — peer review sign-off on all PRs
+- **Updated Documentation** — project documentation reflecting implemented
+  changes
+- **Implementation Brief** — decisions, scope, and outcomes documented
+- **Session Log** — progress across work sessions for continuity
+- **Observability Instrumentation** — logging, metrics, and telemetry for
+  success criteria measurement
 
 > Implementation continues the **measurement throughline** by instrumenting
 > success criteria for observability — embedding the metrics, logging, and
@@ -345,6 +352,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.5.0.
