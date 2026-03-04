@@ -316,6 +316,12 @@ speeds up the gate review itself.
 > remain. Pivot if: problem is validated but business case is weak — refine
 > scope. Stop if: problem cannot be validated or strategic alignment is absent."
 
+> **Brownfield projects:** If the quick-pass readiness assessment estimates **T3
+> or below**, include preparation cost in the Gate 1 decision. The decision may
+> be to proceed (with preparation factored into timeline and budget), postpone
+> (if the opportunity doesn't justify the prep investment now), or abandon. See
+> [Brownfield Readiness Guide: When to Assess](../../guides/brownfield-readiness.md#when-to-assess).
+
 > **Common mistake:** Confusing Gate 1 and Gate 2 outputs. Initiation produces
 > the brief; Requirements + Design produce Gate 2 outputs (detailed
 > requirements, design direction, updated estimates).
@@ -547,6 +553,6 @@ starting point.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.2.0.

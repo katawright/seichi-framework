@@ -24,189 +24,290 @@ about effectively).
 
 ### Purpose
 
-- Define the full brownfield readiness spectrum from AI-Ready to Consider
-  AI-Native Replacement
-- Provide a 5-dimension assessment framework for evaluating codebase readiness
-- Route teams to the right preparation path based on assessment results
+- Define the full brownfield readiness spectrum from Ready to Rebuild
+- Provide a scored rubric for evaluating codebase readiness across six axes
+- Route teams to the right preparation path and AI operating mode based on
+  assessment results
 - Address multi-repository and database considerations that extend beyond a
   single codebase
 
 ### Key Principle
 
-Assess the weakest dimension, not the average. A single critical gap — such as
-zero test coverage or entirely undocumented architecture — can shift the overall
-assessment rightward regardless of other dimensions.
+Assess the weakest axis, not the average. A single critical gap — such as zero
+test coverage or entirely undocumented architecture — can shift the overall
+assessment regardless of other axes. If any axis scores 0 (the worst score),
+bump the tier down at least one level unless the blast radius of that axis is
+small.
 
 ### How to Use This Guide
 
-1. Review the [**Readiness Spectrum**](#readiness-spectrum) to understand the
-   full range of brownfield states
-2. Complete the
-   [**5-Dimension Readiness Assessment**](#5-dimension-readiness-assessment) for
-   your codebase
-3. Follow the [**Routing by Spectrum Level**](#routing-by-spectrum-level) to
-   determine your preparation path
+1. Score your codebase using the [**Readiness Rubric**](#readiness-rubric) (six
+   axes, 0-4 each)
+2. Map your total score to a [**Readiness Tier**](#readiness-tiers) (T0-T5)
+3. Follow the [**AI Operating Mode**](#ai-operating-modes) for your tier
 4. Check
    [**Multi-Repository and Database Considerations**](#multi-repository-and-database-considerations)
    if your system extends beyond a single repository
 
----
+### When to Assess
 
-## Readiness Spectrum
+The readiness rubric is scored twice — once roughly, once with evidence:
 
-Brownfield codebases exist on a spectrum. The framework defines five levels,
-expanding from the original three-path model to cover the full range of
-real-world brownfield states:
+- **Initiation (quick pass):** A technical person familiar with the codebase
+  scores the rubric roughly (~15 minutes) to get an approximate tier and cost
+  signal for the Gate 1 investment decision. The goal is a go/no-go on the
+  preparation investment, not a detailed preparation plan. Capture the estimated
+  tier, rough preparation effort, and Gate 1 implication in the
+  [Initiation Brief](../templates/initiation-brief.md#brownfield-readiness--quick-pass-if-applicable).
+- **System Design (detailed pass):** Score with evidence — test reports, CI
+  logs, architecture diagrams, dependency audits — to confirm the tier, identify
+  specific preparation needs, and scope Increment 0. This feeds into the Gate 2
+  investment decision and the
+  [Brownfield Preparation Guide](brownfield-preparation.md).
 
-| Level                              | Description                                                                         | Foundation Work                   |
-| ---------------------------------- | ----------------------------------------------------------------------------------- | --------------------------------- |
-| **AI-Ready**                       | Well-tested, documented, consistent patterns. AI tools can work effectively as-is.  | Minimal — AGENTS.md + conventions |
-| **Discovery Only**                 | Mostly ready, needs documentation for AI context. No structural changes needed.     | Focused discovery increment       |
-| **Needs Preparation**              | Organized enough to work with but has notable gaps in tests, docs, or consistency.  | Extended foundation (time-boxed)  |
-| **Needs Significant Preparation**  | Pervasive gaps across multiple dimensions. Single increment is not enough.          | Dedicated preparation project     |
-| **Consider AI-Native Replacement** | Codebase state makes AI-assisted modification impractical or higher-risk than value | Flag for strategic evaluation     |
-
-> **Note:** Most brownfield codebases fall in the middle three levels. The
-> endpoints (AI-Ready and Consider AI-Native Replacement) are less common but
-> important to recognize when they apply.
-
----
-
-## 5-Dimension Readiness Assessment
-
-Before planning foundation activities, assess the codebase across five
-dimensions. This assessment shapes whether foundation work is a straightforward
-discovery exercise or requires deeper preparation.
-
-| Dimension                 | Ready                                      | Needs Preparation                           | Needs Significant Prep                                              |
-| ------------------------- | ------------------------------------------ | ------------------------------------------- | ------------------------------------------------------------------- |
-| Test coverage             | Automated tests cover critical paths       | Partial coverage, gaps in key areas         | Little or no test coverage                                          |
-| Documentation             | Architecture documented                    | Some docs but gaps or stale                 | Undocumented, tribal knowledge only                                 |
-| Architectural consistency | Consistent patterns across codebase        | Mostly consistent, some divergence          | Inconsistent, multiple conflicting approaches                       |
-| Dependency health         | Single repo or clear multi-repo boundaries | Some cross-repo tangles, manageable         | Tangled cross-repo dependencies, unclear boundaries                 |
-| Database and data logic   | Business logic in application code         | Some logic in stored procedures, documented | Significant untested logic in stored procedures, triggers, or views |
-
-> **Interpretation:** A single critical gap — such as zero test coverage or
-> entirely undocumented architecture — can shift the overall assessment
-> rightward regardless of other dimensions. Focus on the weakest dimension when
-> choosing a path.
-
-### Indicative Thresholds
-
-Use these thresholds as starting points — adjust to your organization's context.
-
-| Dimension                 | Ready                             | Needs Preparation                | Needs Significant Prep            |
-| ------------------------- | --------------------------------- | -------------------------------- | --------------------------------- |
-| Test coverage             | >=70% on critical paths           | 50-69% or gaps in key areas      | <50% or no automated tests        |
-| Documentation             | Architecture docs current         | Docs exist but partially stale   | Undocumented / tribal knowledge   |
-| Architectural consistency | One dominant pattern per layer    | Minor divergence, mostly aligned | Multiple conflicting patterns     |
-| Dependency health         | Clear repo boundaries, <6 mo deps | Some tangles, manageable debt    | Tangled cross-repo, outdated deps |
-| Database/business logic   | Logic in application code         | Some stored procs, documented    | Significant untested DB logic     |
+The quick pass may shift by a tier once detailed scoring happens — that's
+expected and acceptable. The point is to surface order-of-magnitude cost before
+committing to Requirements and System Design work.
 
 ---
 
-## Routing by Spectrum Level
+## Readiness Rubric
 
-### AI-Ready
+Score each axis **0-4** (4 = best). Total score range **0-24**.
 
-When all dimensions are "Ready" and AI context documentation already exists (or
-is trivially producible), the codebase is AI-Ready. Foundation work is minimal.
+**Scoring scope:** The rubric can be applied at two levels:
 
-**What to do:**
+- **System-level** — score the entire codebase for the initial assessment to
+  determine tier and preparation strategy
+- **Area-level** — score only the target area when deciding if
+  [bounded preparation](#bounded-preparation) is sufficient to begin AI-assisted
+  feature work there
 
-- Create an AGENTS.md at your project root with project-specific conventions,
-  tech stack, and workflow
-- Verify existing documentation is accessible to AI tools
-- Proceed directly to feature delivery
+The axis definitions work at both scopes. Use system-level scoring to plan; use
+area-level scoring to decide when a prepared area is ready.
 
-**Completion signal:** AGENTS.md exists and AI tools can reference project
-conventions effectively.
+### Bounded Preparation
 
-### Discovery Only
+The goal of preparation is not to fix the entire codebase — it's to make a
+specific target area ready for AI-assisted feature work. Define the area,
+prepare it, deliver features, then expand preparation incrementally to
+additional areas. This keeps preparation focused and time-boxed, but has two
+consequences:
 
-When most dimensions are "Ready," foundation work is a focused discovery and
-documentation effort — no structural changes needed.
+- Future projects touching unprepared areas may need their own preparation pass
+  — preparation is a per-area investment, not a one-time cost
+- When modularity is low and coupling is high, isolating a target area may not
+  be feasible — invest in isolation (seams, anti-corruption layers) first, or
+  widen the preparation scope
 
-**Route to these guides:**
+See the [Brownfield Preparation Guide](brownfield-preparation.md#key-principle)
+for operational details.
 
-- **Existing architecture discovery -->**
-  [System Design Reference: First AI-Assisted Project (Discovery)](../stages/system-design/reference.md#first-ai-assisted-project-discovery)
-  — document architecture, components, and data flows
-- **Existing deployment infrastructure -->**
-  [Deployment Setup Guide: Brownfield Path](../stages/deployment/setup.md#brownfield-path)
-  — inventory environments, capture tribal knowledge, identify gaps
-- **Existing operational processes -->**
-  [Support Operations Guide: Brownfield Path](../stages/support/operations.md#brownfield-path)
-  — document incident response, monitoring, and support workflows
+### Verifiability
 
-**Completion signal:** Architecture, infrastructure, and operational processes
-are documented in a structure (AGENTS.md, docs/) that AI tools can reference
-effectively. Create an AGENTS.md at your project root with project-specific
-conventions, tech stack, and workflow — your AI assistant can help generate one.
+_Tests + CI signal: can you verify that changes — including database logic —
+don't break things?_
 
-### Needs Preparation: Extended Foundation
+AI generates code confidently but can't self-verify correctness. Without
+automated tests, every AI-generated change requires manual verification,
+eliminating the speed advantage.
 
-When the codebase is organized enough to work with but has notable gaps —
-limited test coverage, stale documentation, or some tangled dependencies —
-extend foundation work beyond pure discovery to address the highest-priority
-gaps.
+| Score | Definition                                                                                                                                        |
+| ----: | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     4 | Strong unit/integration coverage in critical domains; stable CI; fast feedback.                                                                   |
+|     3 | Good automated regression safety net; CI mostly stable.                                                                                           |
+|     2 | E2E exists but limited or flaky; unit tests sparse; CI reliability issues.                                                                        |
+|     1 | Minimal automated regression; tests don't cover core flows reliably. Database-layer logic (stored procedures, triggers, scheduled jobs) untested. |
+|     0 | No meaningful automated tests; validation is manual or production-only. Database-layer logic unverified and unverifiable without manual effort.   |
 
-**Typical additional activities:**
+### Modularity
 
-- Add test coverage to critical business paths
-- Clarify and document key architectural patterns
-- Map cross-repository dependencies and contracts
-- Document business logic in stored procedures or database views
+_Coupling + architecture boundaries: can you change one thing — within or across
+projects — without breaking another?_
 
-Keep this time-boxed. The goal is "enough foundation to start," not perfection.
-Address remaining gaps incrementally during feature work.
+AI reasons best within clear boundaries. High coupling means AI must understand
+the entire system to change one part, increasing hallucination risk and blast
+radius.
 
-**Completion signal:** AI context is documented AND the team can verify
-AI-generated changes in the areas targeted for pilot work.
+| Score | Definition                                                                                                                                                 |
+| ----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     4 | Clear module/service boundaries (service, package, project, or bounded context); consistent patterns; low coupling.                                        |
+|     3 | Mostly consistent; some legacy hotspots; boundaries usually respected.                                                                                     |
+|     2 | Mixed patterns; notable coupling; changes often ripple across modules. Cross-project references or shared dependencies add hidden coupling.                |
+|     1 | High coupling + unclear ownership; business logic split across tiers without contracts. Cross-project shared dependencies make isolated changes difficult. |
+|     0 | Pervasive shared state; no stable seams to test or replace.                                                                                                |
 
-For operational guidance on preparation activities, see the
-[Brownfield Preparation Guide](brownfield-preparation.md).
+### Deployability
 
-### Needs Significant Preparation: Preparation Project
+_Environments + releases + schema: can you ship changes safely and roll back?_
 
-When the codebase has pervasive gaps — poor test coverage, inconsistent
-architecture, tangled multi-repo dependencies, or significant untested database
-logic — a single increment is not enough. Treat preparation as a dedicated
-project that runs through the framework's own stages across multiple increments.
+AI can produce changes faster than teams can ship them. Without safe, automated
+deploys, AI-generated changes pile up or ship without rollback options.
 
-**Illustrative increment sequence** (adapt to your situation):
+| Score | Definition                                                                               |
+| ----: | ---------------------------------------------------------------------------------------- |
+|     4 | Automated deploys; easy rollback; automated DB migrations; reproducible environments.    |
+|     3 | Automated deploys; schema mostly disciplined; environments mostly reproducible.          |
+|     2 | Deploy pipeline exists but brittle; partial automation; schema changes sometimes manual. |
+|     1 | Manual deploy steps; environment drift; schema changes manual or risky.                  |
+|     0 | Releases are rare/high-risk; environments are snowflakes; schema is unmanaged.           |
 
-1. **Increment 1:** Document architecture, map repositories and dependencies
-2. **Increment 2:** Establish test coverage for critical business paths
-3. **Increment 3:** Extract or document database-layer business logic
-4. **Increment 4:** Stabilize patterns in areas targeted for feature work
+### Operability
 
-**How AI helps with preparation:** AI tools accelerate preparation itself —
-generating initial test suites for existing code, drafting architecture
-documentation from code analysis, mapping dependency graphs, and documenting
-stored procedure logic. Preparation is faster with AI even before the codebase
-is fully ready for AI-assisted feature work.
+_Observability + incident readiness: can you see what's happening and respond?_
 
-> **Preparation as a pilot:** This preparation project can serve as your
-> organization's adoption pilot. Run 1-2 preparation increments, evaluate
-> results, then decide whether to complete the full preparation. See the
+AI-generated changes may have subtle behavioral differences. Without
+observability, teams can't tell whether AI-assisted changes are working
+correctly in production.
+
+| Score | Definition                                                                 |
+| ----: | -------------------------------------------------------------------------- |
+|     4 | Strong metrics, logs, and tracing; SLOs defined; runbooks; fast diagnosis. |
+|     3 | Good logs and metrics; reasonable alerting; some runbooks.                 |
+|     2 | Partial visibility; diagnosis often depends on specific people.            |
+|     1 | Weak observability; incidents are long and chaotic; limited runbooks.      |
+|     0 | Failures hard to detect or understand; recovery is ad hoc.                 |
+
+### Discoverability
+
+_Docs + ownership + workflow: can a new team member (or AI) understand the
+system?_
+
+AI tools rely on written context. Tribal knowledge is invisible to AI, so
+undocumented systems force AI to guess — producing plausible but wrong output.
+
+| Score | Definition                                                                                       |
+| ----: | ------------------------------------------------------------------------------------------------ |
+|     4 | Docs and ADRs current; clear ownership; onboarding reliable; decisions traceable.                |
+|     3 | Reasonable docs; ownership mostly clear; tribal knowledge limited.                               |
+|     2 | Docs incomplete; ownership unclear in places; key-person dependencies exist.                     |
+|     1 | Major silos; limited docs; repeated rediscovery; inconsistent review standards.                  |
+|     0 | System understanding lives in tribal knowledge; changes depend on finding someone who remembers. |
+
+### Transparency
+
+_Database logic + ETL + event-driven side effects: is business logic visible to
+AI tools?_
+
+AI tools analyze application code directly but cannot see into database-layer
+logic, ETL pipelines, or event-driven side effects. Hidden logic creates blind
+spots where AI-generated changes silently conflict with business rules.
+
+| Score | Definition                                                                                                               |
+| ----: | ------------------------------------------------------------------------------------------------------------------------ |
+|     4 | Business logic in application code; DB is a persistence layer; data flows are documented.                                |
+|     3 | Some stored procedures or triggers, but documented and accessible; data pipelines are visible.                           |
+|     2 | Moderate logic in stored procedures or ETL jobs; partially documented.                                                   |
+|     1 | Significant logic in DB layer or event consumers; not accessible to AI tools without separate documentation.             |
+|     0 | Critical business rules live in stored procedures, triggers, or scheduled jobs — invisible to AI tools and undocumented. |
+
+---
+
+## Readiness Tiers
+
+Map your total score (sum of all six axes) to a readiness tier.
+
+| Total | Tier | Label            | Default Posture                                                    |
+| ----: | ---- | ---------------- | ------------------------------------------------------------------ |
+| 20-24 | T5   | **Ready**        | AI can accelerate broadly with normal controls.                    |
+| 15-19 | T4   | **Approachable** | One focused enablement increment, then operate as T5.              |
+| 10-14 | T3   | **Constrained**  | AI in narrow lanes while hardening continuously.                   |
+|   6-9 | T2   | **Challenging**  | Dedicated enablement program before AI helps at scale.             |
+|   2-5 | T1   | **Entrenched**   | Multi-phase stabilization + architecture work; expect slow gains.  |
+|   0-1 | T0   | **Rebuild**      | Consider strangler or parallel build; remediation ROI likely poor. |
+
+> **Override rule:** If any single axis scores **0**, bump down at least one
+> tier unless the blast radius of that axis is contained to a small, isolatable
+> area.
+
+### Mapping to Foundation Work
+
+| Tier | Foundation Work                                                                                                 |
+| ---- | --------------------------------------------------------------------------------------------------------------- |
+| T5   | Minimal — create AGENTS.md with conventions                                                                     |
+| T4   | Focused discovery increment (1-2 weeks)                                                                         |
+| T3   | Extended foundation — discovery + targeted preparation (time-boxed)                                             |
+| T2   | Dedicated enablement project spanning multiple increments                                                       |
+| T1   | Multi-phase stabilization; may need architecture changes before preparation yields value                        |
+| T0   | Strategic evaluation — strangler/parallel build likely more cost-effective than preparing the existing codebase |
+
+See [Bounded preparation](#readiness-rubric) above for how preparation scope
+affects foundation work.
+
+---
+
+## AI Operating Modes
+
+Each tier defines how AI tools should be used — not just whether preparation is
+needed, but what "using AI" means at that readiness level.
+
+### T5 — Ready
+
+AI writes and refactors code routinely; generates tests; assists reviews. Normal
+guardrails apply: lint/type checks, CI gates, PR review.
+
+### T4 — Approachable
+
+Run an **enablement increment** (2-4 weeks) targeting the lowest-scoring axis.
+Focus on documentation and discovery — creating AGENTS.md, documenting
+architecture, and capturing conventions. After the increment, operate as T5.
+
+**Next step:**
+[Brownfield Preparation Guide: Discovery Activities](brownfield-preparation.md#discovery-activities)
+
+### T3 — Constrained
+
+AI use is allowed but scoped to well-understood areas:
+
+- AI for **analysis, documentation, test scaffolding, and refactor suggestions**
+  broadly
+- AI writes production code only in **well-covered modules** (Verifiability and
+  Modularity scored 3-4 for that area)
+- Smaller PRs, stricter review, more "proof by tests"
+
+Harden continuously while delivering features. Target the 2-3 lowest axes each
+cycle.
+
+**Next step:**
+[Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
+
+### T2 — Challenging
+
+AI is mostly **advisory** until safety improves. AI assists with analysis,
+documentation drafting, test generation, and code review — but does not drive
+production code changes at scale.
+
+Run an **enablement program** (2-4 months) through the framework's iterative
+stages before expecting major velocity gains from AI-assisted feature work.
+
+**Next step:**
+[Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
+
+> **Preparation as a pilot:** This enablement program can serve as your
+> organization's adoption pilot. See the
 > [Organizational Adoption Guide](adoption.md#brownfield-preparation-as-a-pilot)
 > for details.
 
-**Completion signal:** Areas targeted for AI-assisted feature work meet the
-"Ready" level on assessment dimensions.
+### T1 — Entrenched
 
-For operational guidance on preparation activities, see the
-[Brownfield Preparation Guide](brownfield-preparation.md).
+AI can help locally (single-module improvements, documentation, test
+generation), but system-level change remains expensive due to deep structural
+issues.
 
-### Consider AI-Native Replacement
+Use a **strangler strategy** — focus on creating seams and contracts that
+isolate areas for AI-assisted work. Expect multi-phase stabilization over
+quarters, not weeks.
 
-When a codebase's state makes AI-assisted modification impractical — the cost of
-preparation exceeds the value of incremental improvement — teams should flag
-this for strategic evaluation rather than forcing AI-assisted work onto an
-unsuitable codebase.
+**Next step:**
+[Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
 
-**Indicators:**
+### T0 — Rebuild
+
+Don't "AI your way out" of fundamental structural problems. When remediation ROI
+is poor, plan a **parallel build + migration** — use AI to accelerate the new
+build and migration tooling rather than trying to improve the existing codebase.
+
+**Indicators that T0 applies:**
 
 - Preparation effort estimated at 6+ months with uncertain outcomes
 - Architecture is fundamentally incompatible with incremental modification
@@ -215,7 +316,27 @@ unsuitable codebase.
 
 > **TODO (deferred):** How far the framework should go on this end of the
 > spectrum — flag-only vs. light evaluation criteria vs. full decision guide.
-> Currently this level serves as a recognition flag, not a decision framework.
+> Currently this tier serves as a recognition flag, not a decision framework.
+
+---
+
+## Assessment Output Template
+
+The readiness assessment produces a structured output that feeds into Initiation
+and System Design:
+
+```
+Tier:                T__
+Axis scores:         Verifiability__ Modularity__ Deployability__
+                     Operability__ Discoverability__ Transparency__
+                     (total: __)
+Top 3 risks:         (1) ...  (2) ...  (3) ...
+Next 2 workstreams:  ..., ...
+AI operating mode:   T__ mode
+```
+
+For the initiation brief template, see the
+[Brownfield Readiness — Quick Pass section](../templates/initiation-brief.md#brownfield-readiness--quick-pass-if-applicable).
 
 ---
 
@@ -238,6 +359,11 @@ unsuitable codebase.
 3. Treat database logic as a separate documentation and testing effort — AI
    tools analyze application code effectively but need explicit documentation
    for database-layer logic
+
+**Scoring note:** When the system spans multiple repositories, score each axis
+for the repository targeted for initial AI-assisted work. Note cross-repo
+dependencies that affect Modularity and Transparency even if they originate in
+other repositories.
 
 ---
 
@@ -265,8 +391,6 @@ detailed guidance.
 ## Key Concepts
 
 The following concepts are important for brownfield readiness decisions.
-Structural placeholders are included for content that will be expanded in a
-subsequent refinement pass.
 
 ### Logic Authority
 
@@ -275,7 +399,7 @@ business logic may be split across application code, stored procedures,
 triggers, views, and external services. Identifying logic authority per domain
 area is critical for scoping AI-assisted work — AI tools can reason about
 application code but need explicit documentation for database-layer and
-external-service logic.
+external-service logic. This directly affects Transparency scoring.
 
 ### Wrap vs. Extract Decision
 
@@ -291,7 +415,8 @@ fixture.
 Systems where external processes write directly to the database — ETL jobs,
 partner integrations, manual data fixes — create hidden dependencies that
 AI-assisted changes may break. Identify and document external write paths during
-readiness assessment.
+readiness assessment. These affect both Modularity (hidden coupling) and
+Transparency (hidden logic).
 
 ---
 

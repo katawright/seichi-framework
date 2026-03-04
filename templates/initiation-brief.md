@@ -133,25 +133,30 @@ GDPR applies because EU users are in scope"]
   capacity, technology restrictions]
 - **Dependencies:** [teams, vendors, approvals]
 
-## Brownfield Readiness Assessment (if applicable)
+## Brownfield Readiness — Quick Pass (if applicable)
 
 <!-- Include this section for brownfield projects (first AI-assisted). Omit for
-     greenfield or subsequent brownfield projects. See
-     guides/brownfield-readiness.md#5-dimension-readiness-assessment for assessment
-     guidance and indicative thresholds. -->
+     greenfield or subsequent brownfield projects. A technical person familiar
+     with the codebase scores the readiness rubric roughly (~15 min) to get a
+     cost signal for Gate 1. The detailed, evidence-based pass happens at System
+     Design (Gate 2). See guides/brownfield-readiness.md#when-to-assess for the
+     two-pass model and #readiness-rubric for axis definitions. -->
 
-| Dimension                 | Current State | Assessment                                    |
-| ------------------------- | ------------- | --------------------------------------------- |
-| Test coverage             | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
-| Documentation             | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
-| Architectural consistency | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
-| Dependency health         | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
-| Database/business logic   | [describe]    | [Ready / Needs Prep / Needs Significant Prep] |
+**Estimated readiness tier:** [T0-T5] — [Ready / Approachable / Constrained /
+Challenging / Entrenched / Rebuild]
 
-**Overall readiness:** [Ready / Needs Preparation / Needs Significant Prep]
+**Estimated preparation effort:** [e.g., "None", "1-2 week discovery", "2-4
+month enablement program"]
 
-**Foundation work implications:** [Discovery only / Extended foundation /
-Preparation project — and estimated scope]
+**Gate 1 implication:**
+
+- [ ] Proceed — preparation cost is negligible or already factored into
+      timeline/budget
+- [ ] Proceed with prep — preparation approved as prerequisite; include in scope
+      and estimates
+- [ ] Postpone — opportunity validated but preparation cost exceeds current
+      budget; revisit when [condition]
+- [ ] Abandon — preparation investment not justified by the opportunity
 
 ---
 
@@ -201,4 +206,4 @@ foundational pass)
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-04 | Added in v0.2.0 -->

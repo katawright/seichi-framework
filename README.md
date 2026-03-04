@@ -266,16 +266,16 @@ with [Try It Now](#try-it-now).
 
 ### Choose your project type
 
-| Project type                                         | When to choose                                                                                       | First step                                                                                                      |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                                             |
-| **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                                       |
-| **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](guides/brownfield-readiness.md#5-dimension-readiness-assessment) to determine scope |
+| Project type                                         | When to choose                                                                                       | First step                                                                                      |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Greenfield** (new project)                         | Preferred for first pilot — fewer legacy constraints                                                 | Start at Initiation                                                                             |
+| **Brownfield** (existing codebase, AI-ready)         | Architecture and conventions already documented for AI use (e.g., prior project completed discovery) | Start at feature delivery                                                                       |
+| **Brownfield** (existing codebase, not yet AI-ready) | Most common — existing system without AI context documented                                          | [Assess codebase readiness](guides/brownfield-readiness.md#readiness-rubric) to determine scope |
 
 **Brownfield without documented context?** The
 [Brownfield Readiness Guide](guides/brownfield-readiness.md) walks you through a
-5-dimension readiness assessment that determines your next step — from a focused
-discovery pass to extended preparation or a dedicated preparation project for
+scored readiness rubric (six axes, 0-4 each, 4 = best) that determines your tier
+and AI operating mode — from focused discovery to enablement programs for
 codebases with pervasive issues.
 
 See

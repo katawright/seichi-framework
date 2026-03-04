@@ -172,17 +172,16 @@ Organizational readiness covers people, policy, and process. For brownfield
 projects, **codebase readiness** also matters — the state of the existing
 codebase affects how quickly teams can start AI-assisted feature work.
 
-Use the [Brownfield Readiness Guide](brownfield-readiness.md) to evaluate test
-coverage, documentation, architectural consistency, dependency health, and
-database logic across the full readiness spectrum.
+Use the [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
+to score the codebase across six axes and determine the readiness tier.
 
-- **AI-Ready / Discovery Only** — Proceed with standard Increment 0 discovery
-- **Needs Preparation** — Factor extended Increment 0 into timeline
-- **Needs Significant Preparation** — Consider treating the preparation project
+- **T5 Ready / T4 Approachable** — Proceed with standard discovery increment
+- **T3 Constrained** — Factor targeted preparation into timeline
+- **T2 Challenging / T1 Entrenched** — Consider treating the enablement program
   as the adoption pilot (see
   [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
-- **Consider AI-Native Replacement** — Flag for strategic evaluation before
-  committing to AI-assisted modification
+- **T0 Rebuild** — Flag for strategic evaluation before committing to
+  AI-assisted modification
 
 ---
 
@@ -326,7 +325,7 @@ early frustration. Look for:
   of undocumented legacy constraints during initial adoption. Most organizations
   will pilot on brownfield because that's where their work is — this is viable
   when informed by a
-  [readiness assessment](brownfield-readiness.md#5-dimension-readiness-assessment)
+  [readiness assessment](brownfield-readiness.md#readiness-rubric)
 - **Moderate complexity** — complex enough to exercise multiple stages, simple
   enough to complete in 2–3 increments
 - **Non-critical path** — failure or delay won't impact revenue or contractual

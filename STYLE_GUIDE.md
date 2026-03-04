@@ -265,6 +265,17 @@ Notes.
 
 ---
 
+## Cross-Document Navigation Labels
+
+Use consistent labels to signal why a link is included:
+
+- **Next step:** — process flow; the reader has reached a decision point and
+  should follow this link to act on it
+- **See:** / **See these guides:** — cross-reference; related content for
+  deeper context, not a required next action
+
+---
+
 ## Front Matter Conventions
 
 Framework files use YAML front matter (`---` delimited block above the H1 title)
@@ -350,6 +361,6 @@ Minimal — routes agents to the agentic workflow guide. No stage metadata neede
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.19.0.
