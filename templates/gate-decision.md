@@ -78,8 +78,8 @@ quality]
 
 **Reviewer sign-off on AI contributions:**
 
-| Reviewer | Role | AI Contributions Reviewed | Assessment |
-| -------- | ---- | ------------------------- | ---------- |
+| Reviewer | Role | AI Contributions Reviewed | Assessment                     |
+| -------- | ---- | ------------------------- | ------------------------------ |
 | [name]   | …    | [what was reviewed]       | Acceptable / Revised / Flagged |
 
 ---

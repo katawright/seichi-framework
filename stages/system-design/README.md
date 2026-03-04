@@ -489,8 +489,8 @@ The [System Design Reference](reference.md) covers these topics in depth:
   records
 - **Data/API Architecture** — data models, API conventions, integration patterns
 - **Infrastructure Plan** — CI/CD, environments, deployment strategy
-- **Security Approach** — threat model, authentication, authorization, compliance
-  mapping
+- **Security Approach** — threat model, authentication, authorization,
+  compliance mapping
 - **Observability Strategy** — logging, metrics, alerting, success criteria
   instrumentation
 - **Increment Plan** — sequenced increments with requirements mapping

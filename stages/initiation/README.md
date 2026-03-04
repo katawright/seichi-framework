@@ -82,9 +82,8 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Initiation at whatever autonomy tier your team is
-comfortable with — from answering questions to driving the entire discovery
-process.
+AI can assist with Initiation at whatever autonomy tier your team is comfortable
+with — from answering questions to driving the entire discovery process.
 
 ### AI Autonomy Spectrum
 
