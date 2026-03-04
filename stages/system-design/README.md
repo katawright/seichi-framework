@@ -3,7 +3,7 @@ id: system-design
 stage_number: 3
 execution_pattern: foundational
 inputs:
-  - requirements-document
+  - requirements-brief
   - non-functional-requirements
   - success-criteria-register
 outputs:
@@ -60,7 +60,7 @@ inputs/outputs, entry/exit criteria, and gate details), see
 
 ### Starting Point
 
-A completed Requirements Document with MoSCoW priorities, non-functional
+A completed Requirements Brief with MoSCoW priorities, non-functional
 requirements, and success criteria requiring instrumentation. For brownfield
 first AI-assisted projects, also gather existing architecture documentation,
 ADRs, infrastructure configuration, and known technical debt.

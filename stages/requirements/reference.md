@@ -154,7 +154,7 @@ performance regressions, breaking changes, security/compliance violations, and
 deployment failures.
 
 Document constraints across these categories as **Non-Functional Requirements
-(NFRs)** in your Requirements Document:
+(NFRs)** in your Requirements Brief:
 
 ### 1. Performance Constraints
 

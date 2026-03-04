@@ -314,7 +314,7 @@ accurate test planning, and reduced rework from ambiguity.
 
 ### Outputs
 
-- **Requirements Document** - Functional and non-functional requirements (see
+- **Requirements Brief** - Functional and non-functional requirements (see
   [Requirements Brief Template](../templates/requirements-brief.md))
 - User stories or use cases with FR acceptance criteria
 - Prioritized feature backlog
@@ -329,7 +329,7 @@ accurate test planning, and reduced rework from ambiguity.
 
 ### Handoff to Next Stage
 
-System Design stage receives: Requirements document with FR acceptance criteria,
+System Design stage receives: Requirements Brief with FR acceptance criteria,
 prioritized backlog, NFRs with verification criteria, and success criteria to be
 instrumented.
 
@@ -351,7 +351,7 @@ guides all subsequent implementation work.
 
 **Required:**
 
-- Requirements document with FR acceptance criteria
+- Requirements Brief with FR acceptance criteria
 - Non-functional requirements (performance, security, etc.)
 - Success criteria requiring instrumentation
 
