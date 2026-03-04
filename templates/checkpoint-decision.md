@@ -55,6 +55,23 @@ Readiness / Compliance Approval / Other Non-Investment Checkpoint
 
 ---
 
+## AI Validation Summary (Optional)
+
+<!-- Record how AI-assisted work was validated during this stage.
+     Optional for CI-validation checkpoints where AI involvement is
+     limited to automated scanning. Required when AI contributed
+     significantly to stage artifacts. -->
+
+**AI tools/models used:** [List AI tools — or "N/A" if AI was not used]
+
+**Validation approach:** [Brief description of how AI outputs were validated —
+e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
+
+**Concerns or corrections:** [Note any significant corrections to AI output, or
+"None"]
+
+---
+
 ## Next Steps
 
 - (What happens next based on the decision)
@@ -69,4 +86,4 @@ Readiness / Compliance Approval / Other Non-Investment Checkpoint
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-02-26 | Added in v0.18.1 -->
+<!-- Template Last Updated: 2026-03-04 | Added in v0.18.1 -->
