@@ -48,7 +48,7 @@ stages:
     inputs: [initiation-brief, stakeholder-list]
     outputs:
       [
-        requirements-document,
+        requirements-brief,
         requirements-with-acceptance-criteria,
         prioritized-feature-backlog,
         requirements-traceability,
@@ -80,7 +80,7 @@ stages:
       ]
     inputs:
       [
-        requirements-document,
+        requirements-brief,
         non-functional-requirements,
         success-criteria-register,
       ]
@@ -408,13 +408,13 @@ All template paths are relative to `templates/`.
 | Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                              | All stages (referenced)             | Gate 1                           |
 | Initiation       | Assumptions & Risks List  | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
 | Initiation       | Timeline Estimate         | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
-| Requirements     | Requirements Document     | `requirements-brief.md`        | Initiation Brief                               | System Design                       | Requirements Readiness           |
+| Requirements     | Requirements Brief     | `requirements-brief.md`        | Initiation Brief                               | System Design                       | Requirements Readiness           |
 | Requirements     | User Stories + ACs        | —                              | Initiation Brief                               | Increment Design, Implementation    | Requirements Readiness           |
 | Requirements     | Feature Backlog           | —                              | Initiation Brief                               | Increment Design                    | Requirements Readiness           |
-| Requirements     | Traceability Matrix       | —                              | Requirements Document                          | System Design                       | Requirements Readiness           |
-| System Design    | Architecture Diagrams     | `system-design-brief.md`       | Requirements Document, NFRs                    | Increment Design, Implementation    | Architecture Review + Gate 2     |
-| System Design    | Technology ADRs           | `adr.md`                       | Requirements Document                          | Implementation                      | Architecture Review + Gate 2     |
-| System Design    | Increment Plan            | —                              | Requirements Document                          | Increment Design                    | Architecture Review + Gate 2     |
+| Requirements     | Traceability Matrix       | —                              | Requirements Brief                          | System Design                       | Requirements Readiness           |
+| System Design    | Architecture Diagrams     | `system-design-brief.md`       | Requirements Brief, NFRs                    | Increment Design, Implementation    | Architecture Review + Gate 2     |
+| System Design    | Technology ADRs           | `adr.md`                       | Requirements Brief                          | Implementation                      | Architecture Review + Gate 2     |
+| System Design    | Increment Plan            | —                              | Requirements Brief                          | Increment Design                    | Architecture Review + Gate 2     |
 | System Design    | Infrastructure Plan       | —                              | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
 | System Design    | Gate 2 Decision Package   | `gate-decision.md`             | All System Design outputs                      | —                                   | Gate 2 (Investment Decision)     |
 | Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Stories + ACs    | Implementation                      | Design Review                    |

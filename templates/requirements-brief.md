@@ -210,7 +210,7 @@
 **Decision:** Ready for System Design / Revise requirements / Stop
 
 **Next step if ready:** Proceed to System Design stage (foundational pass).
-Provide this Requirements Document to System Design team.
+Provide this Requirements Brief to System Design team.
 
 **Review sign-off:**
 

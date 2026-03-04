@@ -6,7 +6,7 @@ inputs:
   - initiation-brief
   - stakeholder-list
 outputs:
-  - artifact: requirements-document
+  - artifact: requirements-brief
     template: templates/requirements-brief.md
   - artifact: requirements-with-acceptance-criteria
   - artifact: prioritized-feature-backlog
@@ -588,7 +588,7 @@ gives the System Design team a clear target.
    Have, Could Have, or Won't Have
 7. **Review with engineering** — conduct alignment review to validate
    feasibility and completeness
-8. **Prepare for Gate 2** — compile Requirements Document for the Gate 2
+8. **Prepare for Gate 2** — compile Requirements Brief for the Gate 2
    decision package
 
 ---
@@ -646,7 +646,7 @@ gives the System Design team a clear target.
 > from the data sensitivity classification established in Initiation. See
 > [Security Guide](../../guides/security.md).
 
-**Handoff:** System Design stage uses your Requirements Document as its starting
+**Handoff:** System Design stage uses your Requirements Brief as its starting
 point.
 
 ---
@@ -665,7 +665,7 @@ Requirements is foundational but revisitable.
 
 **Process:**
 
-1. Update Requirements Document with changes
+1. Update Requirements Brief with changes
 2. Conduct alignment review with stakeholders
 3. Re-run the Requirements Checklist
 4. Update System Design artifacts to reflect changes
