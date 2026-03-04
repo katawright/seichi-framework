@@ -185,7 +185,9 @@ predictable failures. This section explains why each element is included:
    API boundaries for parallel work
 8. [**Cross-Cutting Concerns**](#cross-cutting-concerns) — security,
    performance, observability traceability
-9. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
+9. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
+   requirements to architectural decisions and verification methods
+10. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
 
 ### Architecture Principles
 

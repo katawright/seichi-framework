@@ -69,6 +69,10 @@ If your team is adopting the framework on a project already in progress:
 > stage. Document enough context for the current stage's inputs to be
 > understood, then follow the framework forward.
 
+> **Joining to operate an already-deployed system?** Start at the
+> [Support Stage Guide](stages/support/README.md) and complete the
+> [Support Readiness Checklist](stages/support/readiness-checklist.md).
+
 ### Minimum Viable Adoption
 
 If you want the highest value for the least process, start with just three
@@ -98,6 +102,6 @@ verify it works. Add more artifacts only when you feel the gaps.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.26.0.

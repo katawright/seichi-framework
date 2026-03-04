@@ -268,6 +268,8 @@ Verification stage what to test and how.
   stakeholders
 - **Performance tests:** Load test scenarios validating NFRs, tools and
   approach, success criteria
+- **Security tests:** Threat-model-driven test cases, input validation, auth
+  boundary checks (see checklist item 7)
 
 #### Why Test Strategy Belongs in Design
 

@@ -340,8 +340,10 @@ Deployment validates that measurement systems work in production. See
 > integrity, generating an SBOM, and running pre-deployment security checks. See
 > [Security Guide](../../guides/security.md).
 
-**Handoff:** Support stage receives deployed system, monitoring dashboards, and
-support runbook. Record the deployment decision using the
+**Handoff:** Support stage receives the deployed system, monitoring dashboards,
+support runbooks, release notes, baseline measurements, and escalation contacts
+(see [Deployment Checklist — Support Handoff](checklist.md)). Record the
+deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ---
