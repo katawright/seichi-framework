@@ -14,7 +14,6 @@ outputs:
   - artifact: data-model-changes
   - artifact: test-strategy
   - artifact: implementation-notes
-  - artifact: rollback-plan
 gates:
   - type: specialized-review
     name: "Design Review"

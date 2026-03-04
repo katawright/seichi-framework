@@ -14,7 +14,6 @@ outputs:
   - artifact: release-notes
   - artifact: baseline-measurements
   - artifact: monitoring-dashboards
-  - artifact: incident-response-procedures
   - artifact: retrospective-action-items
 gates:
   - type: human-execution-required
