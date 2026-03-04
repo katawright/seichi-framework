@@ -53,6 +53,7 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Right-sizing tiers:** `guides/right-sizing.md`
 - **Brownfield assessment and routing:** `guides/brownfield-readiness.md`
 - **Brownfield preparation runbook:** `guides/brownfield-preparation.md`
+- **DevOps integration routing:** `guides/devops-integration.md`
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
 

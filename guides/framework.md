@@ -404,6 +404,55 @@ R/A accountability:
 | Cross-increment coordination           | R   | A     | C         | C         | -   | -      | I    |
 | Dependency & blocker management        | R/A | C     | C         | C         | -   | -      | -    |
 
+### Gate Review Facilitation
+
+PjM facilitates gate reviews to keep decisions timely and well-documented.
+
+**Pre-read expectations.** Distribute gate artifacts to all reviewers at least
+two business days before the scheduled review. Artifacts should be final drafts,
+not works in progress.
+
+**Suggested agenda:**
+
+1. Context recap — 5 min
+2. Criteria walkthrough (checklist + evidence) — 10–15 min
+3. Discussion and open questions — 15–30 min
+4. Decision and next steps — 5 min
+
+**Time-boxing guidelines:**
+
+| Gate   | Recommended Duration |
+| ------ | -------------------- |
+| Gate 1 | 30–60 min            |
+| Gate 2 | 45–90 min            |
+
+**Decision recording.** Capture the outcome using
+[`templates/gate-decision.md`](../templates/gate-decision.md). Record the
+decision (Go / Conditional Go / No-Go), conditions, and accountable owners for
+any follow-up actions.
+
+### Cadence Mapping
+
+The framework is methodology-agnostic (see [Stage Definitions](stages.md) for
+details). The table below shows how stages and gates typically map to common
+delivery cadences.
+
+| Framework Element    | 2-Week Sprint              | 1-Week Sprint            | Kanban / Flow              |
+| -------------------- | -------------------------- | ------------------------ | -------------------------- |
+| Foundational stages  | Span 1–3 sprints           | Span 2–6 sprints         | Complete before flow start |
+| Gate 1               | End of foundational sprint | End of foundational week | Explicit pull trigger      |
+| One increment        | ≈ 1 sprint                 | ≈ 1–2 sprints            | WIP-limited batch          |
+| Gate 2               | End of last increment      | End of last increment    | Explicit pull trigger      |
+| Cross-increment sync | Sprint review / planning   | Weekly sync              | Standup + board review     |
+
+**Notes:**
+
+- Foundational stages often span multiple sprints; do not force them into a
+  single iteration.
+- One increment maps roughly to one sprint; scope accordingly.
+- Track cross-increment dependencies using the
+  [Dependency Register](../templates/dependency-register.md).
+
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:
 

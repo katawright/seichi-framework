@@ -251,6 +251,26 @@ processes.
 **Document as NFR:** "NFR-Operations-1: New features must deploy within existing
 change windows; database schema changes must be backward-compatible."
 
+### Operational NFR Catalog
+
+Design-time targets by right-sizing tier. These define _what to require_ during
+requirements elicitation — for runtime monitoring thresholds and alerting rules,
+see
+[Support Reference — Monitoring Thresholds and Baselines](../stages/support/reference.md#monitoring-thresholds-and-baselines).
+
+| Category           | Minimal         | Standard                        | Enterprise                           |
+| ------------------ | --------------- | ------------------------------- | ------------------------------------ |
+| Availability       | No formal SLO   | 99.5 % monthly                  | 99.9 %+                              |
+| Recovery (RTO/RPO) | Best effort     | < 4 h / < 24 h                  | < 1 h / < 1 h                        |
+| Resilience (MTTR)  | Not tracked     | < 2 h                           | < 30 min                             |
+| Throughput         | Not specified   | Defined at design               | Load-tested                          |
+| Latency            | No SLA          | p95 < 1 s                       | p50 < 200 ms / p95 < 1 s / p99 < 2 s |
+| Deployment         | Ad hoc          | Weekly; < 30 min rollback       | Daily+; < 5 min rollback             |
+| Observability      | 7-day retention | 30-day; < 30 min alert response | 90-day; < 15 min alert response      |
+
+Use these targets as starting points when writing operational NFRs. Adjust
+values to match your domain, contractual obligations, and user expectations.
+
 ### Constraint NFR Template
 
 ```markdown
@@ -442,6 +462,6 @@ state so the next session can continue without re-eliciting:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.12.0.
