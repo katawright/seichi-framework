@@ -251,6 +251,10 @@ Track defects by **severity** (technical impact: Critical → Low) and
 > For structuring gate decisions, use the
 > [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
+Complete the Production Readiness section of the Verification Brief as your
+primary artifact; use the Checkpoint Decision Template only when a separate
+formal decision record is required (Standard+ tiers).
+
 - **Go:** All critical gates passed, UAT approved, rollback plan exists
 - **No-go:** Critical defects, UAT not approved, performance below NFRs
 - **Conditional go:** Minor issues accepted with workarounds documented

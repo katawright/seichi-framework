@@ -60,6 +60,12 @@ issues documented.
 
 ### How to Use This Guide
 
+> **First time deploying this project?** If deployment infrastructure doesn't
+> exist yet (or isn't documented), start with the
+> [Deployment Setup Guide](setup.md) and
+> [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
+> guide. This guide covers per-increment deployment execution.
+
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
    to your project's risk tier
@@ -70,12 +76,6 @@ issues documented.
    deployment
 6. Record the deployment decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
-
-> **First time deploying this project?** If deployment infrastructure doesn't
-> exist yet (or isn't documented), start with the
-> [Deployment Setup Guide](setup.md) and
-> [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
-> guide. This guide covers per-increment deployment execution.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
