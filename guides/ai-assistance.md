@@ -194,9 +194,11 @@ adjusts who drives versus who assists within those constraints.
 | **Collaborative** | Shared work with gates     | AI executes tasks within human-set agenda; humans review and approve at defined gates                                    |
 | **AI-Led**        | AI drives, humans validate | AI drives the process — setting agendas, identifying gaps, iterating proactively; humans steer and validate at key gates |
 
-**Collaborative is the default.** The guidance elsewhere in this scorecard and
-in each stage guide assumes the Collaborative tier. If your team is just getting
-started, Collaborative is a safe starting point.
+**Start with Human-Led for new teams.** If your team is just getting started
+with AI assistance, begin at the Human-Led tier to build confidence and
+establish effective gate processes. The guidance in this scorecard and in each
+stage guide assumes the Collaborative tier as the typical operating tier once
+your team is comfortable with AI-assisted workflows.
 
 ### Oversight Intensity
 
@@ -398,6 +400,6 @@ confidence and establishes effective gate processes.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.9.0.
