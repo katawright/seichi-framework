@@ -172,16 +172,17 @@ Organizational readiness covers people, policy, and process. For brownfield
 projects, **codebase readiness** also matters — the state of the existing
 codebase affects how quickly teams can start AI-assisted feature work.
 
-Use the
-[Project Foundation Guide: Assessing Brownfield Readiness](project-foundation.md#assessing-brownfield-readiness)
-to evaluate test coverage, documentation, architectural consistency, dependency
-health, and database logic.
+Use the [Brownfield Readiness Guide](brownfield-readiness.md) to evaluate test
+coverage, documentation, architectural consistency, dependency health, and
+database logic across the full readiness spectrum.
 
-- **Ready** — Proceed with standard Increment 0 discovery
+- **AI-Ready / Discovery Only** — Proceed with standard Increment 0 discovery
 - **Needs Preparation** — Factor extended Increment 0 into timeline
 - **Needs Significant Preparation** — Consider treating the preparation project
   as the adoption pilot (see
   [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
+- **Consider AI-Native Replacement** — Flag for strategic evaluation before
+  committing to AI-assisted modification
 
 ---
 
@@ -325,7 +326,7 @@ early frustration. Look for:
   of undocumented legacy constraints during initial adoption. Most organizations
   will pilot on brownfield because that's where their work is — this is viable
   when informed by a
-  [readiness assessment](project-foundation.md#assessing-brownfield-readiness)
+  [readiness assessment](brownfield-readiness.md#5-dimension-readiness-assessment)
 - **Moderate complexity** — complex enough to exercise multiple stages, simple
   enough to complete in 2–3 increments
 - **Non-critical path** — failure or delay won't impact revenue or contractual
@@ -345,28 +346,11 @@ early frustration. Look for:
 #### Brownfield Preparation as a Pilot
 
 When a brownfield codebase needs significant preparation, the preparation
-project itself can serve as the adoption pilot.
-
-**Key insight:** Preparation work — adding tests, documenting architecture,
-mapping dependencies — exercises the framework's stages on familiar code. The
-team builds framework fluency on territory they already know.
-
-**Approach:**
-
-1. Run 1–2 preparation increments through the framework's full cycle (Increment
-   Design → Implementation → Verification → Deployment)
-2. Evaluate results using
-   [Success Criteria for Phase 2](#success-criteria-for-phase-2)
-3. Decide whether to complete the full preparation project or adjust the
-   approach
-
-**Why this works:**
-
-- Preparation outputs (tests, documentation, dependency maps) have immediate
-  value regardless of whether the organization continues with the framework
-- The team gains hands-on framework experience before tackling new feature work
-- Lower risk than piloting on new feature development — preparation changes are
-  additive, not behavior-changing
+project itself can serve as the adoption pilot. The team builds framework
+fluency on familiar code while producing immediately valuable outputs (tests,
+documentation, dependency maps). See the
+[Brownfield Preparation Guide](brownfield-preparation.md#preparation-as-adoption-pilot)
+for the full approach, rationale, and sequencing guidance.
 
 #### Pre-Pilot Readiness Checklist
 
@@ -590,6 +574,6 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.17.0.

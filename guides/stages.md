@@ -121,6 +121,12 @@ System Design (once)
 Support (continuous)
 ```
 
+> **Brownfield projects:** If you are working with an existing codebase, the
+> scope of foundation work between Gate 2 and your first feature increment
+> depends on codebase readiness. See the
+> [Brownfield Readiness Guide](brownfield-readiness.md) for the assessment and
+> routing.
+
 ---
 
 ## Measurement Throughline
@@ -892,6 +898,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.9.0.
