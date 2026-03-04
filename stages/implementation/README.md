@@ -3,16 +3,16 @@ id: implementation
 stage_number: 5
 execution_pattern: iterative
 inputs:
-  - detailed-design
+  - component-designs
   - architecture-diagrams
   - requirements-with-acceptance-criteria
-  - success-criteria
+  - success-criteria-register
 outputs:
   - artifact: working-code
+    template: templates/implementation-brief.md
   - artifact: unit-tests
   - artifact: code-review-approvals
   - artifact: updated-documentation
-    template: templates/implementation-brief.md
 gates:
   - type: ci-validation-human-approval
     name: "PR Review + CI"

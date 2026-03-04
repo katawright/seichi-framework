@@ -299,7 +299,7 @@ outputs:
   - artifact: artifact-name
     template: templates/artifact-name.md # optional, only if template exists
 gates:
-  - type: gate-type # human-approval | specialized-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
+  - type: gate-type # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable gate name"
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
@@ -350,6 +350,6 @@ Minimal — routes agents to the agentic workflow guide. No stage metadata neede
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.19.0.

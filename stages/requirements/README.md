@@ -8,9 +8,10 @@ inputs:
 outputs:
   - artifact: requirements-document
     template: templates/requirements-brief.md
-  - artifact: user-stories-with-acceptance-criteria
+  - artifact: requirements-with-acceptance-criteria
   - artifact: prioritized-feature-backlog
   - artifact: requirements-traceability
+  - artifact: non-functional-requirements
 gates:
   - type: human-approval
     name: "Requirements Readiness"

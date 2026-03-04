@@ -193,7 +193,9 @@ Recommended workflow for AI coding agents operating in this repository:
 1. **Orient** — read `guides/agentic-workflow.md` (parse front matter first for
    stage routing, then body for context)
 2. **Locate stage** — identify the current stage from the routing table; read
-   the stage README, checklist, and reference
+   the stage README, checklist, and reference. If the current stage is not clear
+   from the human's request, check for existing session logs or artifacts to
+   infer project state; if no artifacts exist, start at Initiation.
 3. **Check front matter** — verify required inputs are available; flag any
    missing inputs with `[ASSUMED]`
 4. **Execute** — follow the stage guide activities at the appropriate autonomy
@@ -207,6 +209,6 @@ Recommended workflow for AI coding agents operating in this repository:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.1.0.

@@ -49,9 +49,10 @@ stages:
     outputs:
       [
         requirements-document,
-        user-stories-with-acceptance-criteria,
+        requirements-with-acceptance-criteria,
         prioritized-feature-backlog,
         requirements-traceability,
+        non-functional-requirements,
       ]
     feeds_into: [system-design]
     revisit_conditions:
@@ -78,7 +79,11 @@ stages:
         },
       ]
     inputs:
-      [requirements-document, non-functional-requirements, success-criteria]
+      [
+        requirements-document,
+        non-functional-requirements,
+        success-criteria-register,
+      ]
     outputs:
       [
         architecture-diagrams,
@@ -107,7 +112,7 @@ stages:
       [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
       [
-        system-architecture,
+        architecture-diagrams,
         increment-plan,
         requirements-with-acceptance-criteria,
         retrospective-action-items,
@@ -119,6 +124,7 @@ stages:
         data-model-changes,
         test-strategy,
         implementation-notes,
+        rollback-plan,
       ]
     feeds_into: [implementation]
     revisit_conditions: [requirements-change, design-review-rejection]
@@ -140,10 +146,10 @@ stages:
       ]
     inputs:
       [
-        detailed-design,
+        component-designs,
         architecture-diagrams,
         requirements-with-acceptance-criteria,
-        success-criteria,
+        success-criteria-register,
       ]
     outputs:
       [working-code, unit-tests, code-review-approvals, updated-documentation]
@@ -173,8 +179,9 @@ stages:
         uat-sign-off,
         performance-test-results,
         security-scan-results,
+        verified-code,
       ]
-    feeds_into: [deployment]
+    feeds_into: [deployment, implementation]
     revisit_conditions: [new-defects, requirements-change, uat-rejection]
   - id: deployment
     stage_number: 7
@@ -192,7 +199,7 @@ stages:
           hard_gate: true,
         },
       ]
-    inputs: [verified-code, uat-sign-off, deployment-checklist, rollback-plan]
+    inputs: [verified-code, uat-sign-off, rollback-plan]
     outputs:
       [
         deployed-system,
@@ -200,6 +207,9 @@ stages:
         updated-runbooks,
         release-notes,
         baseline-measurements,
+        monitoring-dashboards,
+        incident-response-procedures,
+        retrospective-action-items,
       ]
     feeds_into: [support]
     revisit_conditions: [deployment-failure, rollback-required]
@@ -223,8 +233,8 @@ stages:
       [
         deployed-system,
         monitoring-dashboards,
-        runbooks,
-        success-criteria,
+        updated-runbooks,
+        success-criteria-register,
         incident-response-procedures,
       ]
     outputs:
@@ -331,16 +341,16 @@ need rationale or nuance.
 This table mirrors the `stages` array in the front matter. Use the front matter
 for programmatic access; use this table for quick human reference.
 
-| #   | Stage            | Pattern      | Default Autonomy | Gate Type                         | Feeds Into       |
-| --- | ---------------- | ------------ | ---------------- | --------------------------------- | ---------------- |
-| 1   | Initiation       | Foundational | Collaborative    | Human approval                    | Requirements     |
-| 2   | Requirements     | Foundational | Collaborative    | Human approval                    | System Design    |
-| 3   | System Design    | Foundational | Collaborative    | Alignment review + human approval | Increment Design |
-| 4   | Increment Design | Iterative    | Collaborative    | Specialized review                | Implementation   |
-| 5   | Implementation   | Iterative    | AI-Led           | CI validation + human approval    | Verification     |
-| 6   | Verification     | Iterative    | AI-Led           | CI validation + human spot-check  | Deployment       |
-| 7   | Deployment       | Iterative    | Human-Led        | Human execution required          | Support          |
-| 8   | Support          | Continuous   | Collaborative    | Human approval                    | Multiple stages  |
+| #   | Stage            | Pattern      | Default Autonomy | Gate Type                         | Feeds Into                 |
+| --- | ---------------- | ------------ | ---------------- | --------------------------------- | -------------------------- |
+| 1   | Initiation       | Foundational | Collaborative    | Human approval                    | Requirements               |
+| 2   | Requirements     | Foundational | Collaborative    | Human approval                    | System Design              |
+| 3   | System Design    | Foundational | Collaborative    | Alignment review + human approval | Increment Design           |
+| 4   | Increment Design | Iterative    | Collaborative    | Specialized review                | Implementation             |
+| 5   | Implementation   | Iterative    | AI-Led           | CI validation + human approval    | Verification               |
+| 6   | Verification     | Iterative    | AI-Led           | CI validation + human spot-check  | Deployment, Implementation |
+| 7   | Deployment       | Iterative    | Human-Led        | Human execution required          | Support                    |
+| 8   | Support          | Continuous   | Collaborative    | Human approval                    | Multiple stages            |
 
 **Execution patterns:**
 
@@ -411,6 +421,14 @@ All template paths are relative to `templates/`.
 | Support          | Availability Metrics      | `support-brief.md`             | Deployed System, Monitoring                    | —                                   | Production Ownership Decision    |
 | Support          | Success Criteria Reports  | —                              | Baseline Measurements                          | Initiation _(reassess)_             | Production Ownership Decision    |
 | Support          | Enhancement Backlog       | —                              | Incident Reports                               | Requirements, Increment Design      | Production Ownership Decision    |
+
+### Gate Decision Template Selection
+
+- **Hard gates** (Gate 1, Gate 2, Production Deployment Approval): use
+  `templates/gate-decision.md`
+- **Soft gates** (all others): use `templates/checkpoint-decision.md`
+- **PR Review + CI**: the PR approval itself serves as the gate artifact; no
+  separate decision template is required
 
 ### Stage Flow Diagram
 
@@ -524,6 +542,24 @@ unavailable).
 4. Do not proceed past hard gates (Gate 1, Gate 2, production deployment)
    without human approval
 
+### Precedence and Compound Conditions
+
+When multiple fallback conditions apply simultaneously, resolve in this order:
+
+1. **Hard gate constraints take priority** — if a hard gate blocks and the human
+   is unreachable, log all context and halt. Do not proceed past hard gates
+   without human approval under any circumstances.
+2. **Unreachable Human** — determine whether to wait or continue based on gate
+   type and autonomy tier.
+3. **Missing Input** — attempt to derive or request; if the human is
+   unreachable, follow step 1/2 above.
+4. **Ambiguous Requirements** — lowest priority; resolve after inputs and human
+   availability are determined.
+
+Stage-specific fallback guidance in `stages/[stage]/reference.md` extends these
+central protocols. Where a stage-specific protocol contradicts this section, the
+stage-specific protocol takes precedence for that stage.
+
 ---
 
 ## Session Continuity Protocol
@@ -560,8 +596,8 @@ At the end of every session:
 
 Each stage's work gets its own session log file, stored alongside the stage's
 artifacts. Create a new log file per stage (e.g.,
-`stages/initiation/session-log.md`) and update it at the start and end of every
-session.
+`docs/session-logs/initiation-session-log.md`) and update it at the start and
+end of every session.
 
 Use [Session Log](../templates/session-log.md) (`templates/session-log.md`) for
 all stages. The generalized template captures stage name, autonomy tier,
