@@ -68,7 +68,7 @@ issues documented.
 > [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
 > guide. This guide covers per-increment deployment execution.
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
    to your project's risk tier
 3. Fill out the [Deployment Brief Template](../../templates/deployment-brief.md)
@@ -86,7 +86,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Deployment at whatever autonomy level your team is
+AI can assist with Deployment at whatever autonomy tier your team is
 comfortable with — from generating scripts to monitoring pipelines.
 
 ### AI Autonomy Spectrum

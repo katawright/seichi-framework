@@ -74,7 +74,7 @@ deployment, and production monitoring dashboards active.
 > the [Support Readiness Checklist](readiness-checklist.md) to verify readiness
 > before accepting production ownership.
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
    your project's risk tier
 3. Fill out the [Support Brief Template](../../templates/support-brief.md) for

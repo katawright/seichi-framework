@@ -463,11 +463,11 @@ Use language consistently across the organization:
 - Say "AI as a productivity tool" not "AI as a replacement"
 - Refer to "human validation" not "quality control of AI"
 
-#### Progressing Through Operating Modes
+#### Progressing Through Autonomy Tiers
 
 As teams gain experience during rollout, they naturally progress from Human-Led
 to Collaborative to AI-Led. The
-[AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum) defines each mode.
+[AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum) defines each tier.
 Expect this progression:
 
 1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and

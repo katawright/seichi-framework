@@ -41,7 +41,7 @@ autonomy because outputs are directly testable.
    your interest
 2. Review the [**Stage Overview**](#stage-overview) to understand the eight
    stages
-3. See [**How AI Fits In**](#how-ai-fits-in) to understand operating modes
+3. See [**How AI Fits In**](#how-ai-fits-in) to understand autonomy tiers
 4. Follow the [**Adoption Path**](#adoption-path) when ready to pilot
 
 ---
@@ -65,9 +65,9 @@ requirements) use AI for drafting and analysis under tighter human control.
 Later stages (implementation, verification) allow higher AI autonomy because
 outputs are directly testable.
 
-Teams choose an operating mode per stage:
+Teams choose an autonomy tier per stage:
 
-| Mode              | Human role                        | AI role                       | Typical stages                  |
+| Tier              | Human role                        | AI role                       | Typical stages                  |
 | ----------------- | --------------------------------- | ----------------------------- | ------------------------------- |
 | **Human-Led**     | Drives all decisions              | Suggests, drafts on request   | Initiation, Requirements        |
 | **Collaborative** | Reviews, selects, approves        | Co-authors, generates options | System Design, Increment Design |
@@ -299,7 +299,7 @@ For detailed readiness criteria, see the
 **1. Pre-pilot setup**
 
 - Select project rigor using the [Right-Sizing Guide](guides/right-sizing.md).
-- Choose initial AI operating mode (typically Human-Led) using the
+- Choose initial AI autonomy tier (typically Human-Led) using the
   [AI Assistance Scorecard](guides/ai-assistance.md).
 
 **2. Pilot execution**
@@ -328,7 +328,7 @@ to try the framework solo or with your team first, skip to
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
 2. Choose project rigor level ([Right-Sizing Guide](guides/right-sizing.md)).
-3. Select initial AI operating mode
+3. Select initial AI autonomy tier
    ([AI Assistance Scorecard](guides/ai-assistance.md)).
 4. Copy and complete the bootstrap prompt
    ([Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template))
@@ -361,7 +361,7 @@ it will find the agent entry point automatically and guide you through the
 process. See the [Agentic Workflow Guide](guides/agentic-workflow.md) for
 details.
 
-1. **Learn the operating modes (~10 min).** Read the
+1. **Learn the autonomy tiers (~10 min).** Read the
    [AI Assistance Scorecard](guides/ai-assistance.md) overview to understand
    Human-Led, Collaborative, and AI-Led modes.
 2. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
@@ -388,6 +388,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.17.0.

@@ -60,7 +60,7 @@ technology-specific conventions).
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Increment Design**](#right-sizing-increment-design) to
    calibrate effort to your project's risk tier
 3. Review increment plan for current increment scope
@@ -74,7 +74,7 @@ technology-specific conventions).
    [interfaces, data/state changes, component interactions](#why-these-increment-design-elements-matter)
 7. Define [test strategy](#test-strategy) for Verification stage
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
-   your chosen autonomy level
+   your chosen autonomy tier
 9. Obtain design approval — peer review or tech lead sign-off (optional for
    Minimal; recommended for Standard; required for Enterprise — see
    [Right-Sizing Guide](../../guides/right-sizing.md))
@@ -87,7 +87,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Increment Design at whatever autonomy level your team is
+AI can assist with Increment Design at whatever autonomy tier your team is
 comfortable with — from generating boilerplate to drafting complete component
 specs with cross-cutting concerns flagged.
 

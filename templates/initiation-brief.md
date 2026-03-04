@@ -40,7 +40,7 @@ spike, experiment) / TBD]
 
 ---
 
-## Goals and Success Metrics
+## Goals and Success Criteria
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
 

@@ -67,18 +67,18 @@ ADRs, infrastructure configuration, and known technical debt.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing System Design**](#right-sizing-system-design) to
    calibrate effort to your project's risk tier
 3. Fill out the
    [System Design Brief Template](../../templates/system-design-brief.md) using
-   AI according to your chosen autonomy level — refer to
+   AI according to your chosen autonomy tier — refer to
    [**Why These System Design Elements Matter**](#why-these-system-design-elements-matter)
    for rationale as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [System Design Checklist](checklist.md) using AI according to
-   your chosen autonomy level
+   your chosen autonomy tier
 6. Complete Gate 2 — present to stakeholders and record the proceed/pivot/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
@@ -89,7 +89,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with System Design at whatever autonomy level your team is
+AI can assist with System Design at whatever autonomy tier your team is
 comfortable with — from suggesting patterns to driving the entire architecture
 exploration.
 

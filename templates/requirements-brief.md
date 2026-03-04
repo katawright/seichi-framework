@@ -39,9 +39,9 @@
 
 ---
 
-## Goals and Success Metrics (from Initiation)
+## Goals and Success Criteria (from Initiation)
 
-<!-- For guidance, see requirements/README.md#goals-and-success-metrics -->
+<!-- For guidance, see requirements/README.md#goals-and-success-criteria -->
 <!-- Measurement throughline: These metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
 <!-- For Standard+ tier, add a Measurement Throughline column mapping each
      success criterion to its supporting FR/NFR IDs. This makes the

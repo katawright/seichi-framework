@@ -62,18 +62,18 @@ Requirements will convert into testable specifications.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Requirements**](#right-sizing-requirements) to prepare
    for right-sizing decisions when filling out the brief
 3. Fill out the
    [Requirements Brief Template](../../templates/requirements-brief.md) using AI
-   according to your chosen autonomy level — refer to
+   according to your chosen autonomy tier — refer to
    [**Why These Requirements Elements Matter**](#why-these-requirements-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [Requirements Checklist](checklist.md) using AI according to
-   your chosen autonomy level
+   your chosen autonomy tier
 6. Complete Gate 2 (after System Design) — present to stakeholders and record
    the proceed/pivot/stop decision using the
    [Gate Decision Template](../../templates/gate-decision.md)
@@ -85,7 +85,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Requirements at whatever autonomy level your team is
+AI can assist with Requirements at whatever autonomy tier your team is
 comfortable with — from reviewing your draft to driving the entire elicitation
 process.
 
@@ -172,7 +172,7 @@ element is included:
 2. [**Users/Personas**](#userspersonas) — user-centered requirements prevent
    blind spots
 3. [**Problem Statement**](#problem-statement) — carry-forward from Initiation
-4. [**Goals and Success Metrics**](#goals-and-success-metrics) — measurement
+4. [**Goals and Success Criteria**](#goals-and-success-criteria) — measurement
    throughline
 5. [**Constraints**](#constraints) — hard limits that shape requirements and
    design
@@ -263,9 +263,9 @@ behavior-focused — what users can't do and why.
 
 > "Build a unified dashboard."
 
-### Goals and Success Metrics
+### Goals and Success Criteria
 
-Success metrics from the Initiation Brief establish the measurement throughline
+Success criteria from the Initiation Brief establish the measurement throughline
 that flows through all subsequent stages (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).
 Your role in Requirements: translate metrics into NFRs with instrumentation
