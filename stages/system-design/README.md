@@ -12,6 +12,8 @@ outputs:
   - artifact: technology-stack-adrs
   - artifact: data-api-architecture
   - artifact: infrastructure-plan
+  - artifact: security-approach
+  - artifact: observability-strategy
   - artifact: increment-plan
   - artifact: gate-2-decision-package
 gates:
@@ -482,9 +484,18 @@ The [System Design Reference](reference.md) covers these topics in depth:
 
 ## Stage Outputs
 
-Architecture diagrams, technology stack with ADRs, data/API architecture,
-security approach, observability strategy, increment plan, Gate 2 Decision
-Package.
+- **Architecture Diagrams** — system context, container, and component diagrams
+- **Technology Stack with ADRs** — justified technology choices with decision
+  records
+- **Data/API Architecture** — data models, API conventions, integration patterns
+- **Infrastructure Plan** — CI/CD, environments, deployment strategy
+- **Security Approach** — threat model, authentication, authorization, compliance
+  mapping
+- **Observability Strategy** — logging, metrics, alerting, success criteria
+  instrumentation
+- **Increment Plan** — sequenced increments with requirements mapping
+- **Gate 2 Decision Package** — compiled evidence for the build/no-build
+  decision
 
 > System Design ensures the **measurement throughline** by designing analytics
 > infrastructure, instrumenting success criteria into observability systems, and
@@ -543,6 +554,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.12.0.

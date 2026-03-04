@@ -90,6 +90,8 @@ stages:
         technology-stack-adrs,
         data-api-architecture,
         infrastructure-plan,
+        security-approach,
+        observability-strategy,
         increment-plan,
         gate-2-decision-package,
       ]
@@ -152,7 +154,15 @@ stages:
         success-criteria-register,
       ]
     outputs:
-      [working-code, unit-tests, code-review-approvals, updated-documentation]
+      [
+        working-code,
+        unit-tests,
+        code-review-approvals,
+        updated-documentation,
+        implementation-brief,
+        session-log,
+        observability-instrumentation,
+      ]
     feeds_into: [verification]
     revisit_conditions: [design-change, blocking-dependency]
   - id: verification
@@ -180,6 +190,7 @@ stages:
         performance-test-results,
         security-scan-results,
         verified-code,
+        production-readiness-assessment,
       ]
     feeds_into: [deployment, implementation]
     revisit_conditions: [new-defects, requirements-change, uat-rejection]
@@ -209,6 +220,7 @@ stages:
         baseline-measurements,
         monitoring-dashboards,
         incident-response-procedures,
+        rollback-procedure,
         retrospective-action-items,
       ]
     feeds_into: [support]
