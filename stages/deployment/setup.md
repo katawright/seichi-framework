@@ -145,7 +145,43 @@ Manual Approval → Deploy to Production → Monitor
 - Automatically roll back if health checks fail
 - Log every deployment step for auditability
 
-### 2. Environment Provisioning
+### 2. Pipeline Gate Policy
+
+Define automated quality gates that must pass before code advances through the
+pipeline. Align gate strictness with your project's right-sizing tier.
+
+**Required status checks by tier:**
+
+| Check Category   | Minimal   | Standard  | Enterprise |
+| ---------------- | --------- | --------- | ---------- |
+| Unit / Int tests | Must pass | Must pass | Must pass  |
+| SAST             | —         | Required  | Required   |
+| Dependency scan  | —         | Required  | Required   |
+| DAST             | —         | —         | Required   |
+| SBOM generation  | —         | —         | Required   |
+| Artifact signing | —         | —         | Required   |
+
+For scan definitions and tool guidance, see
+[Security Guide — Fully Automated (CI/Pipeline)](../../guides/security.md#fully-automated-cipipeline).
+
+**Branch protection rules:**
+
+- Protect `main` and `release/*` branches.
+- Require at least one PR review before merge.
+- Require all configured status checks to pass before merge.
+- Disable force-push on protected branches.
+
+**Override policy:**
+
+- **Who:** designated on-call lead or incident commander only.
+- **When:** critical production incident requiring a hotfix — not for
+  convenience.
+- **Audit trail:** every override must be logged with justification, approver,
+  and timestamp.
+- **Post-override:** run the full gate check suite within 24 hours and address
+  any failures.
+
+### 3. Environment Provisioning
 
 Set up your environment pipeline:
 
@@ -162,7 +198,7 @@ Development → Staging/QA → Pre-Production → Production
   infrastructure
 - **Production** — live system, real users, controlled monitored releases
 
-### 3. Infrastructure as Code
+### 4. Infrastructure as Code
 
 Define infrastructure declaratively to ensure consistency:
 
@@ -171,7 +207,7 @@ Define infrastructure declaratively to ensure consistency:
 - Apply the same templates across environments
 - Document environment-specific differences explicitly
 
-### 4. Environment Parity
+### 5. Environment Parity
 
 Differences between staging and production cause "works in staging, fails in
 production" issues. Achieve parity across:
@@ -182,7 +218,7 @@ production" issues. Achieve parity across:
 - Resource allocation (scale down, but same architecture)
 - Network topology and security groups
 
-### 5. Configuration and Secrets Management
+### 6. Configuration and Secrets Management
 
 Establish patterns before your first deployment:
 
@@ -205,7 +241,7 @@ Establish patterns before your first deployment:
 **Never commit:** API keys, passwords, database credentials, private keys, OAuth
 tokens.
 
-### 6. Monitoring and Alerting
+### 7. Monitoring and Alerting
 
 Set up observability infrastructure:
 
@@ -221,7 +257,7 @@ For configuring ongoing operational processes that use this infrastructure
 (incident response, on-call procedures, runbooks), see the
 [Support Operations Guide](../support/operations.md).
 
-### 7. Skeleton Deployment
+### 8. Skeleton Deployment
 
 Validate the entire pipeline end-to-end before the first real increment:
 
@@ -346,6 +382,6 @@ model expects projects to grow.
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.12.0.

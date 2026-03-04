@@ -1,0 +1,86 @@
+---
+id: devops-integration
+type: guide
+concerns: [ci-cd, security-scanning, release-patterns, observability]
+---
+
+# DevOps Integration Guide
+
+Entry point for DevOps engineers. Each section maps a DevOps concern to the
+authoritative framework location — follow the links for full guidance.
+
+## CI/CD Pipeline Controls
+
+Pipeline setup, gate enforcement, and deployment checklists.
+
+| Topic                | Reference                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| Pipeline setup       | [Deployment Setup — CI/CD Pipeline Setup](../stages/deployment/setup.md#1-cicd-pipeline-setup)  |
+| Pipeline gate policy | [Deployment Setup — Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) |
+| Pipeline checklist   | [Pipeline Checklist](../stages/deployment/pipeline-checklist.md)                                |
+
+## Security Scanning and Supply Chain
+
+Automated security checks integrated into CI pipelines.
+
+| Topic               | Reference                                                                                |
+| ------------------- | ---------------------------------------------------------------------------------------- |
+| CI/pipeline scans   | [Security Guide — Fully Automated (CI/Pipeline)](security.md#fully-automated-cipipeline) |
+| Deployment security | [Security Guide — Deployment stage](security.md) (Deployment section)                    |
+
+## Release Patterns
+
+Deployment strategies and rollback approaches.
+
+| Topic                | Reference                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------- |
+| Strategy definitions | [Deployment Reference — Deployment Strategies](../stages/deployment/reference.md#deployment-strategies) |
+| Stage-level guidance | [Deployment README — Deployment Strategies](../stages/deployment/README.md#deployment-strategies)       |
+
+## Environments and Secrets
+
+Environment provisioning, parity, and secrets management.
+
+| Topic                    | Reference                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Environment provisioning | [Deployment Setup — Environment Provisioning](../stages/deployment/setup.md#3-environment-provisioning)                         |
+| Environment parity       | [Deployment Setup — Environment Parity](../stages/deployment/setup.md#5-environment-parity)                                     |
+| Secrets management       | [Deployment Setup — Configuration and Secrets Management](../stages/deployment/setup.md#6-configuration-and-secrets-management) |
+
+## Observability
+
+Monitoring, alerting, and instrumentation across the lifecycle.
+
+| Topic                          | Reference                                                                                                                         |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| Monitoring thresholds          | [Deployment Reference — Monitoring Thresholds and Cadence](../stages/deployment/reference.md#monitoring-thresholds-and-cadence)   |
+| Baselines and SLOs             | [Support Reference — Monitoring Thresholds and Baselines](../stages/support/reference.md#monitoring-thresholds-and-baselines)     |
+| Alerting design                | [Support Reference — Alerting Design](../stages/support/reference.md#alerting-design)                                             |
+| Implementation instrumentation | [Implementation README — Instrumentation and Observability](../stages/implementation/README.md#instrumentation-and-observability) |
+
+## Operational NFRs
+
+Design-time targets for availability, recovery, latency, and more.
+
+| Topic       | Reference                                                                                                       |
+| ----------- | --------------------------------------------------------------------------------------------------------------- |
+| NFR catalog | [Requirements Reference — Operational NFR Catalog](../stages/requirements/reference.md#operational-nfr-catalog) |
+
+## Templates
+
+Operational templates used across deployment and support stages.
+
+| Template             | Path                                                                        |
+| -------------------- | --------------------------------------------------------------------------- |
+| Deployment brief     | [`templates/deployment-brief.md`](../templates/deployment-brief.md)         |
+| Support brief        | [`templates/support-brief.md`](../templates/support-brief.md)               |
+| Post-incident review | [`templates/post-incident-review.md`](../templates/post-incident-review.md) |
+| Runbook              | [`templates/runbook.md`](../templates/runbook.md)                           |
+
+---
+
+**Notes**
+
+**Last Updated:** 2026-03-04
+
+Added to framework in v0.38.0.
