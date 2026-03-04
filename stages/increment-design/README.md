@@ -3,17 +3,18 @@ id: increment-design
 stage_number: 4
 execution_pattern: iterative
 inputs:
-  - system-architecture
+  - architecture-diagrams
   - increment-plan
   - requirements-with-acceptance-criteria
   - retrospective-action-items
 outputs:
   - artifact: component-designs
+    template: templates/increment-design-brief.md
   - artifact: api-specifications
   - artifact: data-model-changes
   - artifact: test-strategy
   - artifact: implementation-notes
-    template: templates/increment-design-brief.md
+  - artifact: rollback-plan
 gates:
   - type: specialized-review
     name: "Design Review"

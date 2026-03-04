@@ -9,6 +9,8 @@ inputs:
 outputs:
   - artifact: initiation-brief
     template: templates/initiation-brief.md
+  - artifact: success-criteria-register
+    template: templates/success-criteria-register.md
   - artifact: assumptions-risks-list
   - artifact: timeline-estimate
 gates:

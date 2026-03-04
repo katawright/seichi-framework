@@ -5,15 +5,17 @@ execution_pattern: iterative
 inputs:
   - verified-code
   - uat-sign-off
-  - deployment-checklist
   - rollback-plan
 outputs:
   - artifact: deployed-system
+    template: templates/deployment-brief.md
   - artifact: deployment-log
   - artifact: updated-runbooks
   - artifact: release-notes
   - artifact: baseline-measurements
-    template: templates/deployment-brief.md
+  - artifact: monitoring-dashboards
+  - artifact: incident-response-procedures
+  - artifact: retrospective-action-items
 gates:
   - type: human-execution-required
     name: "Production Deployment Approval"
@@ -368,6 +370,6 @@ support runbook. Record the deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.7.0.

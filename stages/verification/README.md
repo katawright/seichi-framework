@@ -13,10 +13,11 @@ outputs:
   - artifact: uat-sign-off
   - artifact: performance-test-results
   - artifact: security-scan-results
+  - artifact: verified-code
 gates:
   - type: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
-feeds_into: [deployment]
+feeds_into: [deployment, implementation]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md
 ---

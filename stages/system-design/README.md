@@ -5,15 +5,15 @@ execution_pattern: foundational
 inputs:
   - requirements-document
   - non-functional-requirements
-  - success-criteria
+  - success-criteria-register
 outputs:
   - artifact: architecture-diagrams
+    template: templates/system-design-brief.md
   - artifact: technology-stack-adrs
   - artifact: data-api-architecture
   - artifact: infrastructure-plan
   - artifact: increment-plan
   - artifact: gate-2-decision-package
-    template: templates/system-design-brief.md
 gates:
   - type: alignment-review
     name: "Architecture Review"

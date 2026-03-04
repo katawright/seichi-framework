@@ -5,14 +5,16 @@
 
 **Last Updated:** YYYY-MM-DD
 
-| Field              | Value                                |
-| ------------------ | ------------------------------------ |
-| **Project**        | [Project Name]                       |
-| **Stage**          | [Stage Name]                         |
-| **Increment**      | [Increment Number/Name or N/A]       |
-| **Autonomy Tier**  | [Human-Led / Collaborative / AI-Led] |
-| **Oversight**      | [Active / Passive / Minimal or N/A]  |
-| **Participant(s)** | [Names / Agent IDs]                  |
+| Field              | Value                                            |
+| ------------------ | ------------------------------------------------ |
+| **Project**        | [Project Name]                                   |
+| **Stage**          | [Stage Name]                                     |
+| **Increment**      | [Increment Number/Name or N/A]                   |
+| **Autonomy Tier**  | [Human-Led / Collaborative / AI-Led]             |
+| **Oversight**      | [Active / Passive / Minimal or N/A]              |
+| **Participant(s)** | [Names / Agent IDs]                              |
+| **Stage Status**   | [Not Started / In Progress / Blocked / Complete] |
+| **Gate Status**    | [Pending / Approved / Rejected — Approver: name] |
 
 ---
 
@@ -48,6 +50,14 @@
 
 - [Issues preventing progress]
 
+**Assumed Inputs (`[ASSUMED]`):**
+
+- [Items flagged as assumed and why]
+
+**Pending Questions for Human Review:**
+
+- [Unresolved items requiring human input]
+
 **Context for Next Session:**
 
 - [Critical context the next agent/human needs to continue]
@@ -56,4 +66,4 @@
 
 - [Specific actions for the next session]
 
-<!-- Template Last Updated: 2026-03-01 | Added in v0.23.0 -->
+<!-- Template Last Updated: 2026-03-03 | Added in v0.23.0 -->

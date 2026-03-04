@@ -5,15 +5,15 @@ execution_pattern: continuous
 inputs:
   - deployed-system
   - monitoring-dashboards
-  - runbooks
-  - success-criteria
+  - updated-runbooks
+  - success-criteria-register
   - incident-response-procedures
 outputs:
   - artifact: system-availability-metrics
+    template: templates/support-brief.md
   - artifact: success-criteria-reports
   - artifact: incident-reports
   - artifact: enhancement-backlog
-    template: templates/support-brief.md
 gates:
   - type: human-approval
     name: "Production Ownership Decision"
@@ -440,6 +440,6 @@ when the team confirms readiness to own the system in production.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.8.0.
