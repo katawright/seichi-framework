@@ -107,7 +107,7 @@ stages:
     checklist: stages/increment-design/checklist.md
     reference: stages/increment-design/reference.md
     default_autonomy: collaborative
-    default_oversight_intensity: balanced
+    default_oversight_intensity: active
     gates:
       [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
@@ -220,7 +220,7 @@ stages:
     checklist: stages/support/checklist.md
     reference: stages/support/reference.md
     default_autonomy: collaborative
-    default_oversight_intensity: balanced
+    default_oversight_intensity: active
     gates:
       [
         {
@@ -633,6 +633,6 @@ use delta-only briefs to document the rework cycle efficiently.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
