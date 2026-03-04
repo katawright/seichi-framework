@@ -197,7 +197,7 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate   | When                                | Decision                             |
 | ------ | ----------------------------------- | ------------------------------------ |
 | Gate 1 | End of Initiation                   | Continue to requirements work? (Y/N) |
-| Gate 2 | End of Requirements + System Design | Commit to building? (Y/N)            |
+| Gate 2 | After Requirements + System Design  | Commit to building? (Y/N)            |
 
 After Gate 2, the project is committed. Subsequent checkpoints govern quality,
 deployment timing, and compliance — not whether to continue.
@@ -388,6 +388,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-03
 
 Added to framework in v0.17.0.
