@@ -402,7 +402,8 @@ guides all subsequent implementation work.
 
 - **Alignment Review:** Architecture and technology decisions reviewed with
   stakeholders
-- **Gate 2 (Investment Decision):** End of Requirements + System Design
+- **Gate 2 (Investment Decision):** After Requirements and System Design are
+  both complete
   - **Decision:** Commit to building this, pivot to change approach, or stop
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
   - **Criteria:** Technical approach sound, costs acceptable, risks manageable
@@ -768,7 +769,8 @@ with different purposes and outcomes:
 **Examples:**
 
 - **Gate 1:** End of Initiation — Approve brief and fund Requirements work?
-- **Gate 2:** End of Requirements + System Design — Commit to building this?
+- **Gate 2:** After Requirements and System Design are both complete — Commit to
+  building this?
 
 **AI validation:** Ensure AI-assisted analysis and recommendations are sound;
 human owns the investment decision.
@@ -871,6 +873,7 @@ Each stage specifies which checkpoint types apply. For example:
 - **Requirements:** Alignment Reviews (stakeholder walkthroughs)
 - **System Design:** Alignment Reviews (architecture decisions), Gate 2
   (build/no-build decision)
+- **Increment Design:** Quality Checkpoints (design review)
 - **Implementation:** Quality Checkpoints (code review, tests), Deployment
   Approvals (to staging)
 - **Verification:** Quality Checkpoints (test execution), Deployment Approvals
