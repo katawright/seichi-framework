@@ -70,7 +70,7 @@ acceptance criteria, and implementation brief with notes.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Verification**](#right-sizing-verification) to match
    effort to project complexity
 3. Execute the [**Verification Workflow**](#verification-workflow) — plan tests,

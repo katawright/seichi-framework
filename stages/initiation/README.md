@@ -61,17 +61,17 @@ framework artifacts or technical expertise required.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy level
+1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to prepare for
    right-sizing decisions when filling out the brief
 3. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
-   using AI according to your chosen autonomy level — refer to
+   using AI according to your chosen autonomy tier — refer to
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [Initiation Checklist](checklist.md) using AI according to your
-   chosen autonomy level
+   chosen autonomy tier
 6. Complete Gate 1 — present to stakeholders and record the proceed/pivot/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
@@ -82,7 +82,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Initiation at whatever autonomy level your team is
+AI can assist with Initiation at whatever autonomy tier your team is
 comfortable with — from answering questions to driving the entire discovery
 process.
 
@@ -174,7 +174,7 @@ predictable failures. This section explains why each element is included:
 
 1. [**Problem Statement**](#problem-statement) — what's wrong and why it matters
 2. [**Business Case**](#business-case) — value, urgency, and strategic alignment
-3. [**Success Metrics**](#success-metrics) — measurable criteria that flow
+3. [**Success Criteria**](#success-criteria) — measurable criteria that flow
    through all stages
 4. [**Scope Boundaries and Non-Goals**](#scope-boundaries-and-non-goals) —
    what's in and what's out
@@ -243,9 +243,9 @@ can't be stated clearly, the project isn't ready for investment.
 
 > "This would be a nice improvement for the team."
 
-### Success Metrics
+### Success Criteria
 
-Success metrics are the guardrails that keep delivery honest. They flow through
+Success criteria are the guardrails that keep delivery honest. They flow through
 every later stage — Requirements traces features to them, Testing validates
 them, and Support monitors them in production (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).

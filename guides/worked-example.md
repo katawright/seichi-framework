@@ -82,7 +82,7 @@ using spreadsheets and email chains. Tasks fall through the cracks, new hires
 miss deadlines, and HR has no visibility into completion status. Average
 onboarding completion rate is 68%, with 15% of required tasks completed late.
 
-### Goals and Success Metrics
+### Goals and Success Criteria
 
 | Goal                       | Baseline | Target |
 | -------------------------- | -------- | ------ |
