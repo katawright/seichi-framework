@@ -2,6 +2,9 @@
 
 # Support Brief
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 **Last Updated:** YYYY-MM-DD **Project:** [Project name] **Support Team:** [Team
 name or members] **Status:** [Active / Maintenance Mode / End of Life]
 
@@ -237,4 +240,16 @@ limitations]
 **Brief Status:** [Active / Needs Update / Under Review] **Next Review Date:**
 [YYYY-MM-DD — quarterly recommended]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.8.0 -->
+---
+
+## Self-Validation Against Support Checklist
+
+<!-- Before submitting for gate review, self-assess against the Support
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled [Support Checklist](../stages/support/checklist.md) with
+      self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-04 | Added in v0.8.0 -->
