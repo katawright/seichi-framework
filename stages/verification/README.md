@@ -307,8 +307,8 @@ The [Verification Reference](reference.md) covers these topics in depth:
 ## Stage Outputs
 
 - **Test Results** — comprehensive results across all test types
-- **Defect Reports** — documented defects with severity, resolution, and
-  retest status
+- **Defect Reports** — documented defects with severity, resolution, and retest
+  status
 - **UAT Sign-Off** — business stakeholder approval of acceptance criteria
 - **Performance Test Results** — load, stress, and capacity test outcomes
 - **Security Scan Results** — SAST/DAST findings and resolution status

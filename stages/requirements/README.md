@@ -588,8 +588,8 @@ gives the System Design team a clear target.
    Have, Could Have, or Won't Have
 7. **Review with engineering** — conduct alignment review to validate
    feasibility and completeness
-8. **Prepare for Gate 2** — compile Requirements Brief for the Gate 2
-   decision package
+8. **Prepare for Gate 2** — compile Requirements Brief for the Gate 2 decision
+   package
 
 ---
 

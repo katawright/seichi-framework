@@ -86,8 +86,8 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Deployment at whatever autonomy tier your team is
-comfortable with — from generating scripts to monitoring pipelines.
+AI can assist with Deployment at whatever autonomy tier your team is comfortable
+with — from generating scripts to monitoring pipelines.
 
 ### AI Autonomy Spectrum
 
