@@ -96,21 +96,27 @@ successful completion.
 
 ---
 
-## Sign-Off
+## Final Decision
 
-1. [ ] **[H] Deployment engineer signs off on success** (technical validation
-       complete)
-2. [ ] **[H] DevOps lead reviews and approves outcome** (operational readiness
-       confirmed)
-3. [ ] **[H] Project manager confirms release coordination complete** (schedule,
-       dependencies, and stakeholder communication verified)
-4. [ ] **[H] Product manager acknowledges completion** (business acceptance)
-5. [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
-6. [ ] **Follow-up issues logged in backlog** (nothing lost)
+**Readiness summary:**
 
-**Final gate:** All sign-offs obtained → hand off to Support stage. Record the
-deployment decision using the
-[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+- [ ] All checklist sections above are complete
+- [ ] **[H] Deployment engineer signs off on success** (technical validation
+      complete)
+- [ ] **[H] DevOps lead reviews and approves outcome** (operational readiness
+      confirmed)
+- [ ] **[H] Project manager confirms release coordination complete** (schedule,
+      dependencies, and stakeholder communication verified)
+- [ ] **[H] Product manager acknowledges completion** (business acceptance)
+- [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
+- [ ] **Follow-up issues logged in backlog** (nothing lost)
+
+**Decision:** Ready / Not Ready
+
+**If Ready:** Hand off to Support stage. Record the deployment decision using
+the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+
+**If Not Ready:** Document blocking items, resolve, and re-run this checklist.
 
 ---
 
@@ -126,6 +132,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.7.0.

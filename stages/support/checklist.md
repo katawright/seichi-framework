@@ -100,6 +100,24 @@ For initial setup before accepting production ownership, use the
 
 ---
 
+## Final Decision
+
+**Readiness summary:**
+
+- [ ] All checklist sections above are complete
+- [ ] **[H] Support team confirms readiness to own production system**
+- [ ] **[H] Escalation paths tested and contacts current**
+- [ ] **[H] Success criteria tracking active and reporting on schedule**
+
+**Decision:** Ready / Not Ready
+
+**If Ready:** Record the ownership decision using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+
+**If Not Ready:** Document blocking items, resolve, and re-run this checklist.
+
+---
+
 ## Related Documents
 
 - [Support Stage Guide](README.md)
@@ -112,6 +130,6 @@ For initial setup before accepting production ownership, use the
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.8.0.

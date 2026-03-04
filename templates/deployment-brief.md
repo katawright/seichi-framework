@@ -2,6 +2,9 @@
 
 # Deployment Brief
 
+> **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
+> brief for gate reviewers to audit.
+
 **Last Updated:** YYYY-MM-DD **Increment:** [Increment name/ID] **Deployment
 Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 / In Progress / Completed / Rolled Back]
@@ -325,4 +328,14 @@ tracker]
 
 ---
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.7.0 -->
+## Self-Validation Against Deployment Checklist
+
+<!-- Before submitting for gate review, self-assess against the Deployment
+     Checklist. This catches issues before formal review and improves
+     first-pass quality. -->
+
+- [ ] Pre-filled [Deployment Checklist](../stages/deployment/checklist.md) with
+      self-assessment and evidence for each item
+- **Items needing attention:** [List any items that don't fully pass]
+
+<!-- Template Last Updated: 2026-03-04 | Added in v0.7.0 -->
