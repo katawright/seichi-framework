@@ -90,7 +90,7 @@ Greenfield projects use the foundation phase to **establish infrastructure from
 scratch**. System Design has already defined _what_ to build; the bootstrap
 increment builds it.
 
-**Route to these guides:**
+**See these guides:**
 
 - **Infrastructure decisions →**
   [System Design Reference: Greenfield Infrastructure Planning](../stages/system-design/reference.md#greenfield-infrastructure-planning)
@@ -127,17 +127,17 @@ re-ingesting the full bootstrap artifact set.
 
 Brownfield projects using AI assistance for the first time invest foundation
 work in building the basis for effective AI collaboration. Brownfield codebases
-exist on a spectrum — from AI-Ready (well-tested, documented, consistent
-patterns) through Discovery Only and Needs Preparation to Needs Significant
-Preparation and, at the far end, Consider AI-Native Replacement. The scope of
-foundation work depends on where your codebase falls on this spectrum.
+exist on a readiness spectrum scored across six axes — from T5 (Ready) through
+T4 (Approachable) and T3 (Constrained) to T2/T1 (Challenging/Entrenched) and T0
+(Rebuild). The scope of foundation work depends on where your codebase falls on
+this spectrum.
 
 - **Assess readiness -->** [Brownfield Readiness Guide](brownfield-readiness.md)
-  — 5-dimension assessment, spectrum routing, multi-repo and database
+  — scored rubric, tier mapping, AI operating modes, multi-repo and database
   considerations, requirements constraints
 - **Plan and execute preparation -->**
-  [Brownfield Preparation Guide](brownfield-preparation.md) — discovery
-  activities, preparation by dimension, infrastructure planning, preparation as
+  [Brownfield Preparation Guide](brownfield-preparation.md) — enablement
+  workstreams, preparation by axis, infrastructure planning, preparation as
   adoption pilot
 
 For the conceptual overview and stage adaptation table, see the

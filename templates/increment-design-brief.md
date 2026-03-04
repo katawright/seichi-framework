@@ -71,8 +71,8 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 ### Foundation Readiness Targets (if applicable)
 
 <!-- Include for foundation/discovery increments in brownfield projects. Maps
-     readiness dimensions to concrete deliverables for this increment. See
-     guides/brownfield-readiness.md#5-dimension-readiness-assessment. -->
+     readiness axes to concrete deliverables for this increment. See
+     guides/brownfield-readiness.md#readiness-rubric. -->
 
 | Readiness Dimension   | Pre-State       | Target Post-State | Deliverables                        |
 | --------------------- | --------------- | ----------------- | ----------------------------------- |

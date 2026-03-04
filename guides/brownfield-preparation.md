@@ -13,13 +13,12 @@ work — from discovery activities through multi-increment preparation projects.
 
 ### Why Brownfield Preparation
 
-Brownfield codebases that score below "AI-Ready" on the
-[readiness assessment](brownfield-readiness.md#5-dimension-readiness-assessment)
-need preparation work before AI tools can assist feature development
-effectively. Without structured preparation guidance, teams either prepare too
-little (AI-assisted work fails on an unsuitable codebase) or too much
-(preparation becomes an open-ended refactoring project that never reaches
-feature work).
+Brownfield codebases that score below T5 on the
+[readiness rubric](brownfield-readiness.md#readiness-rubric) need preparation
+work before AI tools can assist feature development effectively. Without
+structured preparation guidance, teams either prepare too little (AI-assisted
+work fails on an unsuitable codebase) or too much (preparation becomes an
+open-ended refactoring project that never reaches feature work).
 
 ### Purpose
 
@@ -34,19 +33,29 @@ Preparation is bounded, not open-ended. The goal is "enough to start AI-assisted
 feature work in targeted areas," not "perfect codebase." Define the target area,
 prepare it, deliver features, then expand preparation incrementally.
 
+The trade-off: bounded preparation means future projects that touch unprepared
+areas of the codebase may need their own preparation pass. Factor this into
+project planning — preparation is a per-area investment, not a one-time cost.
+
+When modularity is low and coupling is high, isolating a target area may not be
+feasible — changes ripple across boundaries and foundational layers can't be
+sliced. In these cases, invest in creating isolation first (seams,
+anti-corruption layers) or widen the preparation scope to cover the coupled
+areas.
+
 ### How to Use This Guide
 
-1. Complete the readiness assessment in the
-   [Brownfield Readiness Guide](brownfield-readiness.md#5-dimension-readiness-assessment)
-   first
+1. Complete the readiness rubric in the
+   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric) first
 2. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
-   projects (Discovery Only and above)
-3. Use
-   [**Preparation Activities by Dimension**](#preparation-activities-by-dimension)
-   for codebases that need preparation beyond discovery
-4. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
+   projects (T4 and below)
+3. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
+   that scored highest
+4. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
+   what "enough" looks like per axis
+5. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
    System Design outputs specific to brownfield projects
-5. Consider [**Preparation as Adoption Pilot**](#preparation-as-adoption-pilot)
+6. Consider [**Preparation as Adoption Pilot**](#preparation-as-adoption-pilot)
    when treating preparation as your organization's first framework experience
 
 ---
@@ -89,7 +98,7 @@ minimum foundation work for any brownfield project adopting AI assistance.
   documented context, can accurately describe the system's architecture,
   conventions, and constraints
 
-**Route to stage-specific guides:**
+**See these guides:**
 
 - **Architecture discovery -->**
   [System Design Reference: First AI-Assisted Project (Discovery)](../stages/system-design/reference.md#first-ai-assisted-project-discovery)
@@ -100,34 +109,117 @@ minimum foundation work for any brownfield project adopting AI assistance.
 
 ---
 
-## Preparation Activities by Dimension
+## Enablement Workstreams
 
-For codebases assessed at "Needs Preparation" or "Needs Significant
-Preparation," address gaps in the dimensions that scored lowest. The table below
-defines what "enough preparation" looks like per dimension for the area targeted
-for initial AI-assisted feature work.
+Enablement workstreams are the levers that most directly move a codebase up the
+readiness spectrum. Pick 2-3 per cycle based on the axes that scored lowest in
+the [readiness rubric](brownfield-readiness.md#readiness-rubric).
 
-| Dimension                 | Preparation Activities                                                                                | "Enough" Threshold                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Test coverage             | Add tests to critical business paths in the target area; prioritize integration tests over unit tests | AI-generated changes in the target area can be verified by existing tests |
-| Documentation             | Document architecture, key patterns, and constraints; create AGENTS.md                                | AI tools can reason about the target area without hallucinating structure |
-| Architectural consistency | Clarify the dominant pattern for the target area; document exceptions                                 | One clear pattern per layer in the target area; deviations are documented |
-| Dependency health         | Map cross-repo dependencies for the target area; document API contracts                               | Changes in the target area have predictable cross-repo impact             |
-| Database/business logic   | Document stored procedures, triggers, and views that affect the target area; add tests where possible | Business logic affecting the target area is documented and testable       |
+The tactics listed under each workstream are examples to spark ideation, not
+exhaustive checklists. Teams should determine which approaches fit their
+codebase and constraints — AI tools can help brainstorm and prioritize tactics
+for your specific situation.
+
+### Verifiability
+
+Build the automated verification foundation that makes AI-generated changes safe
+to merge.
+
+- **Golden-flow e2e stability** — identify the 5-10 critical user paths and
+  ensure they have stable, non-flaky end-to-end tests
+- **Contract and integration tests at seams** — test the boundaries between
+  modules, services, and external dependencies
+- **Test data strategy** — reproducible test data that doesn't depend on
+  production state or manual setup
+
+### Modularity
+
+Create the architectural boundaries that let AI reason about one area without
+understanding the entire system.
+
+- **Define bounded contexts and API contracts** — explicit interfaces between
+  modules or services
+- **Reduce cross-module coupling** — extract shared state into explicit
+  contracts or services
+- **Anti-corruption layers** — wrap legacy hotspots behind clean interfaces so
+  AI-assisted code doesn't need to understand legacy internals
+
+### Deployability
+
+Ensure AI-generated changes can ship safely and roll back quickly.
+
+- **One-click deploy and rollback** — automate the deploy pipeline end-to-end
+- **Environment reproducibility** — infrastructure as code or documented
+  provisioning so environments don't drift
+- **Schema discipline** — DB migration tooling, backward-compatible schema
+  changes, migration runbooks with rollback strategy
+- **Release gating** — health checks, canary or blue-green where possible
+
+### Operability
+
+Ensure the team can see the impact of changes and diagnose issues quickly.
+
+- **Service-level dashboards** — key metrics visible at a glance
+- **Structured logs and traces** — in critical paths, enabling fast diagnosis
+  without depending on specific people
+- **Incident runbooks** — documented response procedures for common failure
+  modes
+
+### Discoverability
+
+Replace tribal knowledge with documented, AI-accessible context.
+
+- **Ownership map** — who owns what, how to reach them, decision authority
+- **ADR cadence** — document significant decisions as they happen, not
+  retroactively
+- **"How to change X safely" guides** — for the top 5 most-changed or
+  highest-risk areas of the codebase
+- **AGENTS.md** — project conventions, tech stack, and workflow in a format AI
+  tools can reference
+
+### Transparency
+
+Surface hidden business logic so AI tools can reason about it.
+
+- **Document stored procedures, triggers, and views** — especially those
+  containing business rules or data transformations
+- **Map external write paths** — ETL jobs, partner integrations, scheduled jobs,
+  and event consumers that modify data
+- **Add tests for database-layer logic** — contract tests that verify stored
+  procedure behavior without requiring full integration tests
+- **Extract where practical** — move business logic from the database layer to
+  application code where the cost of extraction is justified
+
+---
+
+## Preparation Activities by Axis
+
+For codebases assessed at T3 (Constrained) or below, address gaps in the axes
+that scored lowest. "Enough preparation" means the target area — not the entire
+system — scores high enough on the
+[readiness rubric](brownfield-readiness.md#readiness-rubric) that the axis no
+longer blocks AI-assisted work in that area. Re-score the target area after each
+preparation cycle to decide whether to continue preparing or start feature work.
 
 > **Bounded preparation:** You don't need to prepare the entire codebase — only
 > the area targeted for initial AI-assisted feature work. Expand preparation to
-> additional areas as you expand AI-assisted development.
+> additional areas as you expand AI-assisted development. When low modularity
+> makes isolation infeasible, create seams first or widen the preparation scope
+> (see [Key Principle](#key-principle)).
 
 ### Illustrative Preparation Sequence
 
-For codebases needing significant preparation, treat preparation as a dedicated
-project with its own increments:
+For codebases at T2-T1, treat preparation as a dedicated project with its own
+increments:
 
 1. **Increment 1:** Document architecture, map repositories and dependencies
-2. **Increment 2:** Establish test coverage for critical business paths
-3. **Increment 3:** Extract or document database-layer business logic
-4. **Increment 4:** Stabilize patterns in areas targeted for feature work
+   (Discoverability, Modularity)
+2. **Increment 2:** Establish test coverage for critical business paths (Safety
+   Net)
+3. **Increment 3:** Surface and document database-layer business logic
+   (Transparency)
+4. **Increment 4:** Harden deployability and observability (Deployability,
+   Operability)
 
 Each increment follows the framework's iterative cycle (Increment Design -->
 Implementation --> Verification --> Deployment). See the
@@ -151,8 +243,8 @@ needs depending on whether this is the first or subsequent AI-assisted project.
 - Monitoring extensions or dashboard updates
 - Security and compliance adjustments
 - Readiness assessment using the
-  [5-dimension assessment](brownfield-readiness.md#5-dimension-readiness-assessment)
-  to determine foundation scope
+  [readiness rubric](brownfield-readiness.md#readiness-rubric) to determine
+  foundation scope
 - Preparation plan if readiness assessment identifies gaps beyond documentation
   (test coverage, pattern stabilization, dependency mapping, database logic)
 - Increment plan identifying **Increment 0 = document existing context for AI**
@@ -211,46 +303,40 @@ For the full organizational adoption context, see the
 
 ---
 
-## Structural Placeholders
+## Common Blind Spots
 
-The following topics are identified for expansion in a subsequent content
-refinement pass. They are listed here to establish their structural home within
-the preparation guide.
+Preparation scoped too narrowly is the most common cause of brownfield project
+failure. Teams focus on the code directly in front of them and miss constraints
+that live outside the repository or outside the codebase entirely. When these
+surface mid-delivery, preparation scope expands unexpectedly — timelines slip,
+stakeholder confidence erodes, and the project loses organizational support.
 
-### Bounded Preparation Pattern
+The items below are not exhaustive — use AI to help identify project-specific
+blind spots by prompting it with your architecture context and asking what
+preparation gaps it can infer.
 
-_How to define and enforce preparation boundaries — avoiding open-ended
-refactoring while ensuring enough preparation for effective AI-assisted work._
-
-### Definition of Enough Preparation
-
-_Concrete criteria for deciding when preparation is sufficient to begin
-AI-assisted feature work in a target area. Includes readiness re-assessment gate
-to validate that preparation achieved its goals._
-
-### Service Provider Contract Documentation
-
-_Guidance for documenting contracts and interfaces with external service
-providers, legacy systems, and third-party integrations that constrain
-AI-assisted development._
-
-### Migration Framework Setup
-
-_Checklist for establishing the infrastructure needed when AI-assisted work
-involves migrating from legacy patterns — feature flags, parallel-run
-capability, rollback mechanisms._
-
-### Cross-Increment Dependency Mapping
-
-_How to identify and manage dependencies between preparation increments and
-between preparation and feature work — preventing preparation from becoming a
-serial bottleneck._
-
-### Business Justification for Preparation
-
-_How to frame preparation work in business terms — connecting codebase
-preparation investment to delivery velocity, risk reduction, and AI adoption
-ROI._
+- **External service contracts** — vendor APIs, third-party integrations, and
+  legacy system interfaces that constrain what AI can safely change. A
+  preparation effort that ignores these boundaries will hit them during feature
+  delivery, forcing unplanned preparation work under delivery pressure.
+- **Database-layer side effects** — triggers, stored procedures, and scheduled
+  jobs that fire in response to application changes. The Transparency workstream
+  covers documentation, but these are commonly overlooked during preparation
+  scoping. AI-assisted changes that unknowingly trigger cascading side effects
+  can cause production incidents.
+- **Shared cross-repo dependencies** — a change in one repository that silently
+  breaks another. Dependency graphs that span repos are easy to miss when
+  preparing a single repo, and failures only surface during integration or
+  deployment.
+- **Undocumented environment-specific behavior** — config, feature flags, and
+  infrastructure differences between environments that aren't captured in code.
+  AI tools reason about code, not runtime context, so preparation that looks
+  complete locally can fail in staging or production.
+- **Compliance and regulatory constraints** — data handling rules, audit
+  requirements, and regulatory obligations that exist as policy but aren't
+  documented alongside the code they constrain. Discovering a compliance
+  boundary mid-delivery can halt work entirely until the constraint is
+  understood and addressed.
 
 ---
 

@@ -454,29 +454,30 @@ logic in database-layer artifacts (stored procedures, triggers, views).
 **Greenfield projects invest foundation work in establishing infrastructure;
 brownfield first AI-assisted projects invest foundation work in discovering and
 documenting existing systems.** The scope of brownfield foundation work varies
-along a spectrum — from AI-Ready codebases that need only an AGENTS.md, through
-Discovery Only and Needs Preparation, to codebases requiring significant
-preparation or even consideration of AI-native replacement. See the
-[Brownfield Readiness Guide](brownfield-readiness.md) for the 5-dimension
-assessment and spectrum routing, and the
-[Brownfield Preparation Guide](brownfield-preparation.md) for operational
-preparation guidance. After foundation work (where applicable), all project
-types deliver features using the same iterative cycle.
+along a scored readiness spectrum — from T5 (Ready) codebases that need only an
+AGENTS.md, through T4-T3 (Approachable/Constrained) that need discovery or
+targeted preparation, to T2-T1 (Challenging/Entrenched) requiring dedicated
+enablement programs, and T0 (Rebuild) where remediation ROI is poor. See the
+[Brownfield Readiness Guide](brownfield-readiness.md) for the rubric and tier
+routing, and the [Brownfield Preparation Guide](brownfield-preparation.md) for
+enablement workstreams and operational preparation guidance. After foundation
+work (where applicable), all project types deliver features using the same
+iterative cycle.
 
 ### How the Framework Adapts
 
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                | Greenfield                                | Brownfield (First AI)                                                                                                        | Brownfield (Has Context)                          |
-| -------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                | Understand existing system + define new goals     |
-| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                                               | New requirements + existing system constraints    |
-| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                         | Adapt/extend architecture + assess infrastructure |
-| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                                             | Plan first feature increment details              |
-| **Foundation**       | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#5-dimension-readiness-assessment)) | N/A — proceed directly to feature delivery        |
-| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                                 | Deliver features with established infra           |
-| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                                 | Monitor changes, consider existing user base      |
+| Stage                | Greenfield                                | Brownfield (First AI)                                                                                        | Brownfield (Has Context)                          |
+| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                | Understand existing system + define new goals     |
+| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                               | New requirements + existing system constraints    |
+| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                         | Adapt/extend architecture + assess infrastructure |
+| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                             | Plan first feature increment details              |
+| **Foundation**       | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) | N/A — proceed directly to feature delivery        |
+| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                 | Deliver features with established infra           |
+| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                 | Monitor changes, consider existing user base      |
 
 ### Project Foundation
 

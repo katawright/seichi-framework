@@ -92,6 +92,10 @@ quality]
 - _Example (Gate 2, Proceed):_ "Begin Increment Design for first increment"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
   stakeholders"
+- _Example (Gate 1, Proceed with prep):_ "Proceed — preparation project approved
+  as prerequisite. Begin Requirements with preparation scope included."
+- _Example (Gate 1, Postpone):_ "Opportunity validated but preparation cost
+  exceeds current budget. Revisit when platform modernization completes."
 
 ---
 

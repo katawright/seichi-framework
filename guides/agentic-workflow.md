@@ -378,10 +378,9 @@ For full stage definitions, see [AI-Assisted SDLC Stages](stages.md).
 For brownfield projects introducing AI assistance for the first time, route
 through stages with additional focus:
 
-1. **Initiation** — assess brownfield readiness across five dimensions (test
-   coverage, documentation, architectural consistency, dependency health,
-   database/business logic). See
-   [Project Foundation Guide](brownfield-readiness.md#5-dimension-readiness-assessment)
+1. **Initiation** — assess brownfield readiness across six axes (safety net,
+   modularity, deployability, operability, discoverability, transparency). See
+   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
 2. **System Design** — refine the readiness assessment with evidence, plan
    discovery or preparation increments, and define feature flag strategy for
    modifying existing endpoints
