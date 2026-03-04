@@ -240,9 +240,8 @@ Prevention: [Key action items with owners and due dates]
 5. **What went wrong** — gaps in process or tooling
 6. **Action items** — specific, assigned, with due dates
 
-Use the
-[Post-Incident Review Template](../../templates/post-incident-review.md) to
-document post-incident reviews.
+Use the [Post-Incident Review Template](../../templates/post-incident-review.md)
+to document post-incident reviews.
 
 **Blameless culture:** Focus on systems and processes, not individuals. "The
 deployment process allowed untested code to reach production" — not "Alice

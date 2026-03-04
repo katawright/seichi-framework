@@ -194,10 +194,10 @@ For a deeper measurement model, see the [Framework Guide](guides/framework.md).
 The framework uses **two investment gates** — explicit continue/pivot/stop
 decisions where "investment" means committing team capacity, time, and budget.
 
-| Gate   | When                                | Decision                             |
-| ------ | ----------------------------------- | ------------------------------------ |
-| Gate 1 | End of Initiation                   | Continue to requirements work? (Y/N) |
-| Gate 2 | After Requirements + System Design  | Commit to building? (Y/N)            |
+| Gate   | When                               | Decision                             |
+| ------ | ---------------------------------- | ------------------------------------ |
+| Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) |
+| Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            |
 
 After Gate 2, the project is committed. Subsequent checkpoints govern quality,
 deployment timing, and compliance — not whether to continue.

@@ -27,14 +27,14 @@
 
 <!-- Detection through resolution. Use UTC timestamps. -->
 
-| Time (UTC) | Event                       |
-| ---------- | --------------------------- |
-| HH:MM      | [Incident detected — how?]  |
-| HH:MM      | [First responder engaged]   |
-| HH:MM      | [Root cause identified]     |
-| HH:MM      | [Mitigation applied]        |
-| HH:MM      | [Service restored]          |
-| HH:MM      | [All-clear communicated]    |
+| Time (UTC) | Event                      |
+| ---------- | -------------------------- |
+| HH:MM      | [Incident detected — how?] |
+| HH:MM      | [First responder engaged]  |
+| HH:MM      | [Root cause identified]    |
+| HH:MM      | [Mitigation applied]       |
+| HH:MM      | [Service restored]         |
+| HH:MM      | [All-clear communicated]   |
 
 ---
 
@@ -76,11 +76,11 @@
 
 ## Incident Metrics
 
-| Metric | Value   | Goal              |
-| ------ | ------- | ----------------- |
-| MTTD   | [time]  | < 5 min critical  |
-| MTTA   | [time]  | < 15 min P0/P1    |
-| MTTR   | [time]  | < 1 hour P1       |
+| Metric | Value  | Goal             |
+| ------ | ------ | ---------------- |
+| MTTD   | [time] | < 5 min critical |
+| MTTA   | [time] | < 15 min P0/P1   |
+| MTTR   | [time] | < 1 hour P1      |
 
 ---
 
