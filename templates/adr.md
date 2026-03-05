@@ -44,6 +44,10 @@ play?
 - [Disadvantage 1]
 - [Disadvantage 2]
 
+**Cost:**
+
+- [One-time and recurring costs for this option]
+
 ### Option 2: [Name]
 
 **Description:**
@@ -198,4 +202,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-02-26 | Added in v0.4.0 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.4.0 -->

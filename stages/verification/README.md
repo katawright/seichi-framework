@@ -94,7 +94,7 @@ gates.
 
  1. Review requirements and acceptance criteria
  2. Review test strategy from Increment Design stage
-    (increment-design-brief section 5)
+    (increment-design-brief "Testing Strategy for This Increment")
  3. Refine test strategy based on implementation
     [Human approves strategy]
  4. Prepare test environment and data
@@ -363,6 +363,6 @@ fresh brief.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.6.0.

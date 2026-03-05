@@ -35,9 +35,9 @@ and ready for Verification.
 7. [ ] **Stored procedure integration tests pass** (N/A for greenfield or
        applications without database-layer logic; brownfield: confirm
        application changes don't break stored procedure contracts)
-8. [ ] **Schema compatibility verified** (N/A for non-database changes; confirm
-       migrations are backward-compatible with existing consumers and
-       rollback-safe)
+8. [ ] **Schema compatibility verified** (N/A for non-database changes or
+       greenfield with no existing consumers; confirm migrations are
+       backward-compatible with existing consumers and rollback-safe)
 
 ### Instrumentation and Handoff
 
@@ -82,6 +82,6 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.5.0.

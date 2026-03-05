@@ -70,6 +70,22 @@ then:
 > [Support Stage Guide](stages/support/README.md) and complete the
 > [Support Readiness Checklist](stages/support/readiness-checklist.md).
 
+> **Joining in a specific role?**
+>
+> - **Product Managers / Business Analysts:** Start with
+>   [Initiation](stages/initiation/README.md) to build your business case (Path
+>   B above shows the AI-assisted approach)
+> - **Project Managers / Delivery Leads:** Start with the
+>   [Delivery Operating Guide](guides/delivery-operating-guide.md) for
+>   week-by-week operating rhythm
+> - **DevOps / Platform Engineers:** Start with the
+>   [DevOps Integration Guide](guides/devops-integration.md) or jump to
+>   [Deployment Setup](stages/deployment/setup.md) +
+>   [Pipeline Checklist](stages/deployment/pipeline-checklist.md)
+> - **Support / Operations:** Start with the
+>   [Support Readiness Checklist](stages/support/readiness-checklist.md) and
+>   review the [Support Operations Guide](stages/support/operations.md)
+
 ### Minimum Viable Adoption
 
 If you want the highest value for the least process, start with just three
@@ -83,6 +99,9 @@ artifacts at the Minimal tier:
 
 These three create a lightweight loop: define the problem, design the solution,
 verify it works. Add more artifacts only when you feel the gaps.
+
+> For projects deploying to production, add a **Deployment Brief** and
+> **Rollback Procedure** to this minimum set.
 
 ---
 

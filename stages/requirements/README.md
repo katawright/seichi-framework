@@ -4,7 +4,6 @@ stage_number: 2
 execution_pattern: foundational
 inputs:
   - initiation-brief
-  - stakeholder-list
 outputs:
   - artifact: requirements-brief
     template: templates/requirements-brief.md
@@ -12,6 +11,7 @@ outputs:
   - artifact: prioritized-feature-backlog
   - artifact: requirements-traceability
   - artifact: non-functional-requirements
+  - artifact: success-criteria-register
 gates:
   - type: human-approval
     name: "Requirements Readiness"
@@ -44,7 +44,7 @@ engineering teams.
 - Provide stage-specific guidance and rationale for Requirements
 - Describe how AI assists at each activity
 - Explain right-sizing Requirements effort to project complexity
-- Guide practitioners from Initiation Brief to Gate 2 decision
+- Guide practitioners from Initiation Brief to Requirements Readiness checkpoint
 
 ### Key Principle
 
@@ -74,9 +74,16 @@ Requirements will convert into testable specifications.
 4. Review the brief for correctness — you own the final content
 5. Complete the [Requirements Checklist](checklist.md) using AI according to
    your chosen autonomy tier
-6. Complete Gate 2 (after System Design) — present to stakeholders and record
-   the proceed/pivot/stop decision using the
-   [Gate Decision Template](../../templates/gate-decision.md)
+6. Complete the Requirements Readiness checkpoint — present to stakeholders and
+   record the proceed/revise/stop decision using the
+   [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
+   (checkpoints verify quality readiness; gates are investment decisions — see
+   [Gate Decision Template](../../templates/gate-decision.md) for comparison)
+
+> **See a completed example:** The
+> [Worked Example: Requirements](../../guides/worked-example.md#stage-2-requirements)
+> shows completed functional requirements with acceptance criteria and
+> traceability.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -675,6 +682,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.3.0.

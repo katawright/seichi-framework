@@ -301,6 +301,12 @@ pre-deployment security checks passed.
 **SSDF reference:** PS/RV (Protect the Software / Respond to Vulnerabilities) —
 protect released software and verify integrity.
 
+Integrate these checks into your CI/CD pipeline — see
+[Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
+tier-specific gate configuration. For security accountability by stage, see the
+[Roles and Responsibilities](framework.md#roles-and-responsibilities) RACI
+matrix.
+
 ### Support
 
 Monitor for new vulnerabilities, patch per SLA, and maintain incident response
@@ -359,6 +365,6 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.25.0.

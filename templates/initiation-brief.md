@@ -1,5 +1,9 @@
 <!-- For guidance on completing this brief, see initiation/README.md -->
 
+> **Need an example?** See the
+> [Worked Example: Initiation](../guides/worked-example.md#stage-1-initiation)
+> for a completed brief.
+
 # Initiation Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -206,4 +210,4 @@ foundational pass)
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-04 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.2.0 -->

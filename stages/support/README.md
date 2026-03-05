@@ -68,11 +68,9 @@ deployment, and production monitoring dashboards active.
 
 ### How to Use This Guide
 
-> **First time setting up support?** Start with the
-> [Support Operations Guide](operations.md) to choose your support level and
-> establish one-time infrastructure (incident response, on-call, runbooks). Use
-> the [Support Readiness Checklist](readiness-checklist.md) to verify readiness
-> before accepting production ownership.
+> **First time setting up support?** Complete the
+> [Support Operations Guide](operations.md) first, then return here at step 1 to
+> fill out the brief and complete the checklist.
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
@@ -443,6 +441,6 @@ when the team confirms readiness to own the system in production.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.8.0.

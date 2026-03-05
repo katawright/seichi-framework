@@ -94,6 +94,9 @@ successful completion.
 4. [ ] **Support runbook created or updated** (reflects current deployment)
 5. [ ] **[H] On-call rotation and escalation path updated** (contacts current)
 6. [ ] **First-week monitoring schedule defined** (observation cadence agreed)
+7. [ ] **[H] Support team confirms receipt of all Support stage inputs**
+       (deployed system access, monitoring dashboards, updated runbooks, success
+       criteria register, incident response procedures)
 
 **Gate:** Support team ready to own production system.
 
@@ -117,7 +120,7 @@ successful completion.
 **Decision:** Ready / Not Ready
 
 **If Ready:** Hand off to Support stage. Record the deployment decision using
-the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+the [Gate Decision Template](../../templates/gate-decision.md).
 
 **If Not Ready:** Document blocking items, resolve, and re-run this checklist.
 
@@ -135,6 +138,6 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.7.0.

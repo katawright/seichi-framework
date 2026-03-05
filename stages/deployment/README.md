@@ -19,7 +19,7 @@ outputs:
 gates:
   - type: human-execution-required
     name: "Production Deployment Approval"
-feeds_into: [support]
+feeds_into: [support, increment-design]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
 ---
@@ -67,6 +67,10 @@ issues documented.
 > [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
 > guide. This guide covers per-increment deployment execution.
 
+> **DevOps and Platform Engineers:** For pipeline setup, environment promotion,
+> and release patterns across the full lifecycle, see the
+> [DevOps Integration Guide](../../guides/devops-integration.md).
+
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
    to your project's risk tier
@@ -76,7 +80,7 @@ issues documented.
 5. Run the [Deployment Checklist](checklist.md) before, during, and after
    deployment
 6. Record the deployment decision using the
-   [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
+   [Gate Decision Template](../../templates/gate-decision.md)
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -193,6 +197,10 @@ Otherwise, keep deployment straightforward and hand off to Support.
 HANDOFF TO SUPPORT
 ```
 
+> Steps 5–8 vary by deployment strategy — see
+> [Deployment Reference: Strategy-Specific Checklists](reference.md#deployment-strategies)
+> for per-strategy details.
+
 ---
 
 ## Deployment Guidance
@@ -261,6 +269,10 @@ Every deployment must be reversible. Plan rollback before deploying.
 Define rollback decision authority BEFORE deployment: deployment engineer for
 technical issues, DevOps lead for major incidents, product manager for business
 impact.
+
+Document authority and escalation contacts in the
+[Deployment Brief](../../templates/deployment-brief.md#rollback-plan) before
+deployment begins.
 
 > For detailed rollback procedures, data/state rollback considerations, and
 > post-rollback actions, see
@@ -399,7 +411,11 @@ Deployment validates that measurement systems work in production. See
 support runbooks, release notes, baseline measurements, and escalation contacts
 (see [Deployment Checklist — Support Handoff](checklist.md)). Record the
 deployment decision using the
-[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+[Gate Decision Template](../../templates/gate-decision.md).
+
+The Support team should verify readiness using the
+[Support Readiness Checklist](../support/readiness-checklist.md) before
+accepting ownership.
 
 ---
 

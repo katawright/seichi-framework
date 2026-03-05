@@ -40,6 +40,9 @@ the highest return and lowest risk, then expand as confidence grows.
 3. Follow the [**Phased Rollout**](#phased-rollout) sequence: Pilot → Expand →
    Standardize
 
+- For governance model and business value framing, see the
+  [README](../README.md#business-value)
+
 ---
 
 ## Readiness Assessment
@@ -573,6 +576,6 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.17.0.

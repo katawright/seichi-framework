@@ -32,10 +32,12 @@ Automated security checks integrated into CI pipelines.
 
 Deployment strategies and rollback approaches.
 
-| Topic                | Reference                                                                                               |
-| -------------------- | ------------------------------------------------------------------------------------------------------- |
-| Strategy definitions | [Deployment Reference — Deployment Strategies](../stages/deployment/reference.md#deployment-strategies) |
-| Stage-level guidance | [Deployment README — Deployment Strategies](../stages/deployment/README.md#deployment-strategies)       |
+| Topic                         | Reference                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Strategy definitions          | [Deployment Reference — Deployment Strategies](../stages/deployment/reference.md#deployment-strategies) |
+| Stage-level guidance          | [Deployment README — Deployment Strategies](../stages/deployment/README.md#deployment-strategies)       |
+| Rollback procedures           | [Deployment Reference](../stages/deployment/reference.md#rollback-procedures)                           |
+| Shadow mode / gradual rollout | [Deployment Guide](../stages/deployment/README.md#shadow-mode-and-gradual-rollout)                      |
 
 ## Environments and Secrets
 
@@ -111,6 +113,6 @@ Operational templates used across deployment and support stages.
 
 **Notes**
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.
