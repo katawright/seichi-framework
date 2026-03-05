@@ -90,7 +90,11 @@ verify it works. Add more artifacts only when you feel the gaps.
 - [**Right-Sizing Guide**](guides/right-sizing.md) — calibrate process weight to
   your project's risk and team size
 - [**Worked Example**](guides/worked-example.md) — see what "done" looks like
-  across all stages
+  across all stages (greenfield)
+- [**Brownfield Worked Example**](guides/worked-example-brownfield.md) — see
+  preparation, exit checkpoint, and feature delivery for an existing codebase
+- [**Delivery Operating Guide**](guides/delivery-operating-guide.md) —
+  week-by-week operating rhythm for Sprint and Kanban delivery
 
 ---
 

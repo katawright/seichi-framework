@@ -435,7 +435,8 @@ any follow-up actions.
 
 The framework is methodology-agnostic (see [Stage Definitions](stages.md) for
 details). The table below shows how stages and gates typically map to common
-delivery cadences.
+delivery cadences. For a week-by-week operating view of one increment cycle, see
+the [Delivery Operating Guide](delivery-operating-guide.md).
 
 | Framework Element    | 2-Week Sprint              | 1-Week Sprint            | Kanban / Flow              |
 | -------------------- | -------------------------- | ------------------------ | -------------------------- |

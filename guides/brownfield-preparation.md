@@ -210,6 +210,10 @@ preparation cycle to decide whether to continue preparing or start feature work
 
 ### Illustrative Preparation Sequence
 
+For a complete traced example of a T2 codebase going through preparation and
+into feature work, see the
+[Brownfield Worked Example](worked-example-brownfield.md).
+
 For codebases at T2-T1, treat preparation as a dedicated project with its own
 increments:
 

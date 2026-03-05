@@ -1,0 +1,170 @@
+---
+id: delivery-operating-guide
+type: guide
+concerns: [delivery-cadence, sprint-rhythm, kanban-flow, status-reporting]
+---
+
+# Delivery Operating Guide
+
+## Overview
+
+Week-by-week operating rhythm for running one increment through the framework —
+composing existing stage guides, RACI, and gate facilitation into an actionable
+delivery view.
+
+### Why a Delivery Operating Guide
+
+The [Cadence Mapping](framework.md#cadence-mapping) table in the Framework Guide
+shows _what_ maps _where_, and the RACI matrix shows _who_ does _what_. But a
+PjM looking at a 2-week sprint still has to mentally assemble the operating
+rhythm from stage guides, gate facilitation notes, and RACI tables. This guide
+composes those pieces into a week-by-week view so PjMs can run delivery without
+cross-referencing multiple documents.
+
+### Purpose
+
+- Provide a concrete week-by-week operating rhythm for one increment cycle
+- Cover Sprint and Kanban/Flow delivery modes
+- Include a minimal status template for progress reporting
+- Link to (not duplicate) existing framework content for RACI, gates, and stage
+  details
+
+### Key Principle
+
+This guide composes existing content — it does not replace it. If the RACI
+matrix, gate facilitation agenda, or stage definitions change, those changes are
+authoritative. This guide provides the operating view that connects them.
+
+### How to Use This Guide
+
+1. Choose your delivery mode:
+   [**Sprint Rhythm**](#sprint-rhythm-2-week-increment) or
+   [**Kanban / Flow Rhythm**](#kanban--flow-rhythm)
+2. Walk through the week-by-week activities for one increment cycle
+3. Use the [**Status Template**](#status-template) for progress reporting
+4. Follow links to authoritative sources for RACI, gate agendas, and stage
+   guides
+
+---
+
+## Sprint Rhythm (2-Week Increment)
+
+One increment maps roughly to one sprint. This view assumes foundational stages
+(Initiation, Requirements, System Design) are complete and Gate 1 has passed.
+
+### Week 1: Design and Start Build
+
+| Day     | Activity                                                     | Lead      | Reference                                                                 |
+| ------- | ------------------------------------------------------------ | --------- | ------------------------------------------------------------------------- |
+| Monday  | Sprint kickoff: confirm increment scope from backlog         | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
+| Mon–Tue | Increment Design Brief — component breakdown, test plan, API | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
+| Tuesday | Review increment design brief; resolve ambiguities           | PjM + Eng | [RACI — Increment Design](framework.md#roles-and-responsibilities)        |
+| Wed–Fri | Implementation begins — PRs, tests, instrumentation          | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
+| Friday  | Mid-sprint check-in: blockers, dependency status, scope risk | PjM       | [Dependency Register](../templates/dependency-register.md)                |
+
+### Week 2: Finish Build, Verify, Deploy
+
+| Day       | Activity                                                    | Lead      | Reference                                                         |
+| --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------- |
+| Mon–Tue   | Implementation continues; PRs reviewed and merged           | Engineers | [Implementation Guide](../stages/implementation/README.md)        |
+| Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
+| Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md)     |
+| Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
+| Friday PM | Sprint review: demo, retrospective, Gate 2 check (if final) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+
+**Cross-increment sync:** Sprint review doubles as the sync point. Review
+completed increment, preview next increment scope, surface cross-increment
+dependencies.
+
+> **Gate 2:** If this is the final planned increment, run a Gate 2 review using
+> the [Gate Decision Template](../templates/gate-decision.md). See
+> [Gate Review Facilitation](framework.md#gate-review-facilitation) for agenda
+> and time-boxing.
+
+---
+
+## Kanban / Flow Rhythm
+
+Kanban replaces time-boxed sprints with WIP-limited flow. Stages still apply —
+they become columns on the board rather than calendar blocks.
+
+### Board Structure
+
+| Column | WIP Limit | Maps to Stage    | Exit Criteria                          |
+| ------ | --------- | ---------------- | -------------------------------------- |
+| Ready  | 3         | Backlog          | Increment design brief approved        |
+| Design | 2         | Increment Design | Brief complete, test plan defined      |
+| Build  | 3         | Implementation   | PRs merged, tests passing              |
+| Verify | 2         | Verification     | Test results documented, UAT approved  |
+| Deploy | 1         | Deployment       | Production deployment confirmed        |
+| Done   | —         | —                | Monitoring confirmed, handoff complete |
+
+### Operating Cadence
+
+| Frequency  | Activity                                                 | Lead | Reference                                                         |
+| ---------- | -------------------------------------------------------- | ---- | ----------------------------------------------------------------- |
+| Daily      | Standup + board review: WIP, blockers, pull signals      | PjM  | —                                                                 |
+| Twice/week | Replenishment: pull items into Ready when capacity opens | PjM  | [Dependency Register](../templates/dependency-register.md)        |
+| Weekly     | Metrics review: cycle time, throughput, blocked time     | PjM  | [Cadence Mapping](framework.md#cadence-mapping)                   |
+| On trigger | Gate 2 review when all planned items reach Done          | PjM  | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+
+**Pull triggers:** Items move between columns only when the next column has WIP
+capacity and the exit criteria for the current column are met. PjM monitors flow
+and escalates when items are blocked.
+
+---
+
+## Status Template
+
+Minimal status report for cross-increment visibility. Fill in once per sprint
+(or weekly for Kanban).
+
+```markdown
+## Status: [Project Name] — [Date]
+
+**Increment:** [N] of [total planned] **Stage:** [current stage] **Health:**
+Green / Amber / Red
+
+### Completed This Period
+
+- (key deliverables or milestones)
+
+### In Progress
+
+- (active work items with expected completion)
+
+### Blockers / Risks
+
+- (items needing escalation or decision)
+
+### Dependencies
+
+- (cross-team or external dependencies with status)
+
+### Next Period
+
+- (planned activities)
+```
+
+> **Reporting cadence:** Sprint teams report at sprint review. Kanban teams
+> report weekly. Escalate blockers immediately rather than waiting for the next
+> report.
+
+---
+
+## Related Documents
+
+- [Framework Guide — Roles and Responsibilities](framework.md#roles-and-responsibilities)
+- [Framework Guide — Cadence Mapping](framework.md#cadence-mapping)
+- [Framework Guide — Gate Review Facilitation](framework.md#gate-review-facilitation)
+- [Stage Definitions](stages.md)
+- [Gate Decision Template](../templates/gate-decision.md)
+- [Dependency Register Template](../templates/dependency-register.md)
+
+---
+
+## Notes
+
+**Last Updated:** 2026-03-04
+
+Added to framework in v0.40.0.
