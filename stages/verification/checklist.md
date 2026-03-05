@@ -33,32 +33,39 @@ the increment is ready for deployment.
 6. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
        N/A)
 7. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
+8. [ ] **Schema compatibility with existing consumers verified** (N/A for
+       greenfield or non-database changes; brownfield: confirm schema changes
+       are backward-compatible with stored procedures, external write paths, and
+       cross-schema dependencies)
+9. [ ] **[H] Readiness re-assessment completed** (N/A except after brownfield
+       preparation increments; re-score target area per
+       [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol))
 
 ### Acceptance and Instrumentation
 
-8. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
-       feedback addressed; Minimal: informal approval with documented
-       participants and feedback; Standard+: formal sign-off)
-9. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
-       working)
+10. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
+        feedback addressed; Minimal: informal approval with documented
+        participants and feedback; Standard+: formal sign-off)
+11. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
+        working)
 
 ### Defect Status
 
-10. [ ] **[H] No critical or high-severity defects open** (all resolved or
+12. [ ] **[H] No critical or high-severity defects open** (all resolved or
         deferred with justification)
-11. [ ] **[H] Deferred defects documented** (justification and target version
+13. [ ] **[H] Deferred defects documented** (justification and target version
         included)
-12. [ ] **Fixed defects retested and verified** (no regressions from fixes)
+14. [ ] **Fixed defects retested and verified** (no regressions from fixes)
 
 ### Production Readiness
 
-13. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
+15. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
         rollback plan documented)
-14. [ ] **Verification brief completed with test results documented**
-15. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
+16. [ ] **Verification brief completed with test results documented**
+17. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
-16. [ ] **[H] Stakeholders notified of deployment plan**
+18. [ ] **[H] Stakeholders notified of deployment plan**
 
 ---
 
@@ -91,6 +98,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.6.0.
