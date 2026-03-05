@@ -835,6 +835,8 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-04
 
-Added to framework in v0.17.0.
+Added to framework in v0.17.0. For a brownfield adoption example showing
+preparation increments, exit checkpoints, and shadow mode, see the
+[Brownfield Worked Example](worked-example-brownfield.md).

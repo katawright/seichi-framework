@@ -66,6 +66,36 @@ Design-time targets for availability, recovery, latency, and more.
 | ----------- | --------------------------------------------------------------------------------------------------------------- |
 | NFR catalog | [Requirements Reference — Operational NFR Catalog](../stages/requirements/reference.md#operational-nfr-catalog) |
 
+## Minimum Pipeline Controls
+
+Baseline controls that every project needs regardless of tier. For full
+checklists by context (greenfield / brownfield), see the
+[Pipeline Checklist](../stages/deployment/pipeline-checklist.md).
+
+### Baseline (All Tiers)
+
+- CI builds and runs automated tests on every push
+- Secrets stored in a secrets manager, never in code or config files
+- At least one non-production environment for pre-production validation
+- Rollback capability tested and documented
+- Basic monitoring and health checks operational
+
+### Enterprise Add-Ons
+
+- Blue-green or canary deployment strategy
+- SBOM generation and signed artifacts
+- Multi-environment promotion pipeline (dev → staging → production)
+- Automated security scanning in CI
+  ([Security Guide](security.md#fully-automated-cipipeline))
+- Compliance gate before production deployment
+
+> **Right-sizing:** Baseline controls apply at Minimal, Standard, and Enterprise
+> tiers. Enterprise add-ons apply at Enterprise tier or when regulatory /
+> compliance requirements demand them. See the
+> [Right-Sizing Guide](right-sizing.md) for tier definitions.
+
+---
+
 ## Templates
 
 Operational templates used across deployment and support stages.
@@ -83,4 +113,4 @@ Operational templates used across deployment and support stages.
 
 **Last Updated:** 2026-03-04
 
-Added to framework in v0.38.0.
+Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.

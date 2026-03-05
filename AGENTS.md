@@ -56,6 +56,8 @@ Canonical sources — other docs should link here, not re-explain. Read
 - **Brownfield preparation exit decision:**
   `templates/brownfield-preparation-decision.md`
 - **DevOps integration routing:** `guides/devops-integration.md`
+- **Delivery operating rhythm:** `guides/delivery-operating-guide.md`
+- **Brownfield worked example:** `guides/worked-example-brownfield.md`
 - **Deep-dive best practices:** `stages/[stage]/reference.md`
 - **Document style and formatting:** `STYLE_GUIDE.md`
 

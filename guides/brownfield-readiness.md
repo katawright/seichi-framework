@@ -304,7 +304,9 @@ AI use is allowed but scoped to well-understood areas:
 Harden continuously while delivering features. Target the 2-3 lowest axes each
 cycle. For high-risk changes in constrained areas, consider
 [shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
-validate behavior under production conditions before user impact.
+validate behavior under production conditions before user impact. See the
+[Brownfield Worked Example](worked-example-brownfield.md#shadow-mode-deployment)
+for a concrete illustration of shadow mode in a T3 brownfield project.
 
 **Next step:**
 [Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
