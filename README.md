@@ -298,7 +298,7 @@ For detailed readiness criteria, see the
 
 **1. Pre-pilot setup**
 
-- Select project rigor using the [Right-Sizing Guide](guides/right-sizing.md).
+- Select risk tier using the [Right-Sizing Guide](guides/right-sizing.md).
 - Choose initial AI autonomy tier (typically Human-Led) using the
   [AI Assistance Scorecard](guides/ai-assistance.md).
 
@@ -327,7 +327,7 @@ to try the framework solo or with your team first, skip to
 
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
-2. Choose project rigor level ([Right-Sizing Guide](guides/right-sizing.md)).
+2. Choose risk tier ([Right-Sizing Guide](guides/right-sizing.md)).
 3. Select initial AI autonomy tier
    ([AI Assistance Scorecard](guides/ai-assistance.md)).
 4. Copy and complete the bootstrap prompt
@@ -388,6 +388,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.17.0.

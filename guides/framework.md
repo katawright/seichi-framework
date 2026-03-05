@@ -428,8 +428,8 @@ not works in progress.
 
 **Decision recording.** Capture the outcome using
 [`templates/gate-decision.md`](../templates/gate-decision.md). Record the
-decision (Go / Conditional Go / No-Go), conditions, and accountable owners for
-any follow-up actions.
+decision (Proceed / Proceed with conditions / Pivot / Stop), conditions, and
+accountable owners for any follow-up actions.
 
 ### Cadence Mapping
 
@@ -519,15 +519,15 @@ iterative cycle.
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                | Greenfield                                | Brownfield (First AI)                                                                                        | Brownfield (Has Context)                          |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| **Initiation**       | Define vision and objectives from scratch | Understand existing system + define new goals                                                                | Understand existing system + define new goals     |
-| **Requirements**     | All requirements are new                  | New requirements + existing system constraints                                                               | New requirements + existing system constraints    |
-| **System Design**    | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                         | Adapt/extend architecture + assess infrastructure |
-| **Increment Design** | Plan bootstrap increment details          | Plan discovery increment details                                                                             | Plan first feature increment details              |
-| **Foundation**       | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) | N/A — proceed directly to feature delivery        |
-| **Increment 1+**     | Deliver features with established infra   | Deliver features with established infra + documented context                                                 | Deliver features with established infra           |
-| **Support**          | Monitor new system                        | Monitor changes, consider existing user base                                                                 | Monitor changes, consider existing user base      |
+| Stage                                   | Greenfield                                | Brownfield (First AI)                                                                                                                                                     | Brownfield (Has Context)                          |
+| --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Initiation**                          | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                                                             | Understand existing system + define new goals     |
+| **Requirements**                        | All requirements are new                  | New requirements + existing system constraints                                                                                                                            | New requirements + existing system constraints    |
+| **System Design**                       | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                                                                      | Adapt/extend architecture + assess infrastructure |
+| **Increment Design**                    | Plan bootstrap increment details          | Plan discovery increment details                                                                                                                                          | Plan first feature increment details              |
+| **Increment 0 (bootstrap / discovery)** | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) (not a separate stage — executed using the iterative stages) | N/A — proceed directly to feature delivery        |
+| **Increment 1+**                        | Deliver features with established infra   | Deliver features with established infra + documented context                                                                                                              | Deliver features with established infra           |
+| **Support**                             | Monitor new system                        | Monitor changes, consider existing user base                                                                                                                              | Monitor changes, consider existing user base      |
 
 ### Project Foundation
 
@@ -668,6 +668,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.9.0.

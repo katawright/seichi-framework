@@ -189,6 +189,8 @@ predictable failures. This section explains why each element is included:
 11. [**Options Considered**](#options-considered) — forces comparison of
     alternatives
 12. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
+13. [**Data Sensitivity and Compliance**](#data-sensitivity-and-compliance) —
+    regulatory and privacy constraints
 
 ### Problem Statement
 
@@ -501,6 +503,17 @@ are updated with higher confidence.
 
 > "4 weeks."
 
+### Data Sensitivity and Compliance
+
+Identifying data sensitivity and compliance requirements early prevents costly
+rework when regulatory constraints surface mid-delivery. Projects handling
+personal data, financial records, or health information carry obligations that
+shape architecture, tooling, and AI usage from day one. Capturing these
+constraints during Initiation ensures that Requirements includes them as NFRs
+and System Design accounts for them structurally. See the
+[Security Guide](../../guides/security.md) for the framework's security
+throughline and classification approach.
+
 ---
 
 ## Stage Outputs
@@ -553,6 +566,6 @@ starting point.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.2.0.

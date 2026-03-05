@@ -4,7 +4,7 @@
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Approved / Rejected
+**Status:** Pending / Proceed / Pivot / Stop
 
 **Usage:** Gate 1 and Gate 2 investment decisions
 
@@ -102,4 +102,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-03-04 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.13.0 -->

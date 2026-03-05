@@ -4,8 +4,8 @@
 
 **Date:** YYYY-MM-DD
 
-**Checkpoint Type:** Quality Checkpoint / Deployment Approval / Support
-Readiness / Compliance Approval / Other Non-Investment Checkpoint
+**Checkpoint Type:** Quality Checkpoint / Deployment Approval / Production
+Ownership / Compliance Approval / Other Non-Investment Checkpoint
 
 **Status:** Pending / Approved / Held / Rejected / Rolled Back
 
@@ -29,8 +29,8 @@ Readiness / Compliance Approval / Other Non-Investment Checkpoint
 - (List of artifacts and evidence evaluated)
 - _Example (Deployment):_ "Verification brief, deployment checklist, rollback
   plan, monitoring baselines"
-- _Example (Support Readiness):_ "Support readiness checklist, runbooks, on-call
-  plan, escalation contacts"
+- _Example (Production Ownership):_ "Support readiness checklist, runbooks,
+  on-call plan, escalation contacts"
 
 ---
 
@@ -47,7 +47,7 @@ Readiness / Compliance Approval / Other Non-Investment Checkpoint
 - **Decision type (choose one):**
   - **Quality checkpoint:** Ready / Not Ready
   - **Deployment:** Deploy / Hold / Rollback
-  - **Support readiness:** Accept / Accept with conditions / Do not accept
+  - **Production ownership:** Accept / Accept with conditions / Do not accept
   - **Compliance approval:** Approve / Remediation required / Reject
   - **Other:** [Decision terms defined by your checkpoint]
 - **Rationale:** (why this decision was made)
@@ -86,4 +86,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-03-04 | Added in v0.18.1 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.18.1 -->
