@@ -42,9 +42,8 @@ team that perfects the entire codebase before writing a line of new code.
 1. Read the [**Scenario**](#scenario) to understand the starting point
 2. Follow the [**Readiness Assessment**](#readiness-assessment) to see scoring
    in action
-3. Walk through the
-   [**Preparation Increment**](#preparation-increment-increment-0) and
-   [**Exit Checkpoint**](#exit-checkpoint) to see how "enough" is determined
+3. Walk through the [**Discovery Increment**](#discovery-increment-increment-0)
+   and [**Exit Checkpoint**](#exit-checkpoint) to see how "enough" is determined
 4. See the [**Feature Increment**](#feature-increment-increment-1) for
    AI-assisted delivery under brownfield constraints
 5. Review the
@@ -167,9 +166,9 @@ prepare the target area, not the entire system.
 
 ---
 
-## Preparation Increment (Increment 0)
+## Discovery Increment (Increment 0)
 
-The preparation increment follows the framework's iterative cycle (Increment
+The discovery increment follows the framework's iterative cycle (Increment
 Design → Implementation → Verification → Deployment) but the "features" are
 preparation outputs. See the
 [Brownfield Preparation Guide](brownfield-preparation.md) for the full
@@ -373,7 +372,7 @@ Requirements + System Design
   Detailed readiness: T2 confirmed
   Preparation scope: customer account area
     ↓
-Increment 0 (Preparation)                        ← brownfield-only
+Increment 0 (Discovery)                          ← brownfield-only
   Outputs: tests, docs, AGENTS.md, deploy runbook
     ↓
 Exit Checkpoint                                   ← brownfield-only
@@ -423,6 +422,6 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.40.0.

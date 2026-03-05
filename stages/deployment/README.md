@@ -5,7 +5,6 @@ execution_pattern: iterative
 inputs:
   - verified-code
   - uat-sign-off
-  - rollback-plan
 outputs:
   - artifact: deployed-system
     template: templates/deployment-brief.md
@@ -427,6 +426,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.

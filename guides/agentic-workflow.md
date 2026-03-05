@@ -126,7 +126,6 @@ stages:
         data-model-changes,
         test-strategy,
         implementation-notes,
-        rollback-plan,
       ]
     feeds_into: [implementation]
     revisit_conditions: [requirements-change, design-review-rejection]
@@ -210,7 +209,7 @@ stages:
           hard_gate: true,
         },
       ]
-    inputs: [verified-code, uat-sign-off, rollback-plan]
+    inputs: [verified-code, uat-sign-off]
     outputs:
       [
         deployed-system,
@@ -644,6 +643,6 @@ use delta-only briefs to document the rework cycle efficiently.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

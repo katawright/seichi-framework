@@ -51,6 +51,9 @@ through the first stage interactively.
 
 If your team is adopting the framework on a project already in progress:
 
+Review the [stage lifecycle](guides/stages.md) to identify which stages apply,
+then:
+
 1. Identify where the project is in the stage lifecycle (which stages are
    already complete?)
 2. Create lightweight retroactive artifacts for completed stages — a brief
@@ -100,6 +103,6 @@ verify it works. Add more artifacts only when you feel the gaps.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.26.0.
