@@ -199,7 +199,8 @@ that scored lowest. "Enough preparation" means the target area — not the entir
 system — scores high enough on the
 [readiness rubric](brownfield-readiness.md#readiness-rubric) that the axis no
 longer blocks AI-assisted work in that area. Re-score the target area after each
-preparation cycle to decide whether to continue preparing or start feature work.
+preparation cycle to decide whether to continue preparing or start feature work
+(see [Exit Checkpoint Protocol](#exit-checkpoint-protocol)).
 
 > **Bounded preparation:** You don't need to prepare the entire codebase — only
 > the area targeted for initial AI-assisted feature work. Expand preparation to
@@ -225,6 +226,45 @@ Each increment follows the framework's iterative cycle (Increment Design -->
 Implementation --> Verification --> Deployment). See the
 [Project Foundation Guide](project-foundation.md#how-foundation-work-flows-through-stages)
 for how foundation work maps to stages.
+
+---
+
+## Exit Checkpoint Protocol
+
+After each preparation increment, evaluate whether the target area is ready for
+AI-assisted feature work. Run the exit checkpoint at minimum after the second
+preparation increment — the first increment rarely provides enough signal.
+
+### Decision Framework
+
+| Decision           | Criteria                                                                                                   |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| **Go**             | Target area meets exit thresholds for intended AI operating mode; no critical gaps remain                  |
+| **Conditional Go** | Most thresholds met; remaining gaps have documented mitigations that don't block feature work              |
+| **Extend**         | Clear progress but specific axes still below threshold; one more increment has a concrete improvement plan |
+| **Pivot**          | No meaningful improvement after a preparation increment; structural issues resist incremental preparation  |
+
+### Thresholds
+
+Exit thresholds depend on the intended AI operating mode for feature work:
+
+| Intended Mode     | Exit Threshold                              |
+| ----------------- | ------------------------------------------- |
+| T5 (Ready)        | All axes 3+ in target area                  |
+| T4 (Approachable) | All axes 2+, no axis 0                      |
+| T3 (Constrained)  | Verifiability and Modularity 3+; rest 2+    |
+| Below T3          | Consider Pivot — preparation ROI diminishes |
+
+### Recording the Decision
+
+Use the
+[Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md)
+to record the before/after scores, completed increments, remaining gaps, and the
+go/no-go decision.
+
+> **Cross-reference:** The
+> [Readiness Re-Assessment Protocol](brownfield-readiness.md#readiness-re-assessment-protocol)
+> describes how to re-score the target area between checkpoints.
 
 ---
 
@@ -344,4 +384,4 @@ preparation gaps it can infer.
 
 **Last Updated:** 2026-03-04
 
-Added to framework in v0.37.0.
+Added to framework in v0.37.0. Exit Checkpoint Protocol added in v0.39.0.

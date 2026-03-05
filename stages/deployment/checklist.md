@@ -41,6 +41,9 @@ successful completion.
         expected impact communicated)
 13. [ ] **Deployment team available and on communication channel** (on-call
         confirmed)
+14. [ ] **[H] Cross-repo deployment ordering confirmed** (N/A for single-repo
+        projects; multi-repo: verify deployment sequence, per-service validation
+        gates, and rollback ordering)
 
 **Gate:** All items checked → proceed to deployment.
 

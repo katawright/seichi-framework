@@ -222,17 +222,53 @@ Map your total score (sum of all six axes) to a readiness tier.
 
 ### Mapping to Foundation Work
 
-| Tier | Foundation Work                                                                                                 |
-| ---- | --------------------------------------------------------------------------------------------------------------- |
-| T5   | Minimal — create AGENTS.md with conventions                                                                     |
-| T4   | Focused discovery increment (1-2 weeks)                                                                         |
-| T3   | Extended foundation — discovery + targeted preparation (time-boxed)                                             |
-| T2   | Dedicated enablement project spanning multiple increments                                                       |
-| T1   | Multi-phase stabilization; may need architecture changes before preparation yields value                        |
-| T0   | Strategic evaluation — strangler/parallel build likely more cost-effective than preparing the existing codebase |
+| Tier | Foundation Work                                                                                                 | Exit Threshold                           |
+| ---- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| T5   | Minimal — create AGENTS.md with conventions                                                                     | N/A — already ready                      |
+| T4   | Focused discovery increment (1-2 weeks)                                                                         | All axes 2+, no axis 0                   |
+| T3   | Extended foundation — discovery + targeted preparation (time-boxed)                                             | Verifiability and Modularity 3+; rest 2+ |
+| T2   | Dedicated enablement project spanning multiple increments                                                       | Target area reaches T3+ thresholds       |
+| T1   | Multi-phase stabilization; may need architecture changes before preparation yields value                        | Target area reaches T3+ thresholds       |
+| T0   | Strategic evaluation — strangler/parallel build likely more cost-effective than preparing the existing codebase | N/A — different approach                 |
 
 See [Bounded preparation](#readiness-rubric) above for how preparation scope
 affects foundation work.
+
+---
+
+## Readiness Re-Assessment Protocol
+
+After preparation increments, re-score the target area to measure progress and
+inform the
+[Exit Checkpoint](brownfield-preparation.md#exit-checkpoint-protocol).
+
+### When to Re-Assess
+
+- After each preparation increment completes
+- Before running an exit checkpoint
+- After significant codebase events (major refactor, dependency upgrade,
+  infrastructure migration)
+
+### How to Re-Assess
+
+1. Re-score the target area using the same [Readiness Rubric](#readiness-rubric)
+   at **area-level** scope
+2. Compare against the initial assessment scores
+3. Record the before/after comparison in the
+   [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md)
+
+### What Changes Between Assessments
+
+| Aspect       | Initial Assessment                | Re-Assessment                            |
+| ------------ | --------------------------------- | ---------------------------------------- |
+| **Scope**    | System-level or target area       | Target area only                         |
+| **Evidence** | Estimates, tribal knowledge       | Concrete artifacts from preparation work |
+| **Speed**    | 15 min (quick) to 2 hours         | 30-60 min (evidence already exists)      |
+| **Audience** | Gate 1/Gate 2 investment decision | Exit checkpoint go/no-go decision        |
+
+> **Pivot signal:** If a re-assessment shows no meaningful improvement after a
+> preparation increment, this is a strong signal to Pivot rather than Extend.
+> The preparation approach may not be addressing the root structural issues.
 
 ---
 
@@ -266,7 +302,9 @@ AI use is allowed but scoped to well-understood areas:
 - Smaller PRs, stricter review, more "proof by tests"
 
 Harden continuously while delivering features. Target the 2-3 lowest axes each
-cycle.
+cycle. For high-risk changes in constrained areas, consider
+[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
+validate behavior under production conditions before user impact.
 
 **Next step:**
 [Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
@@ -279,6 +317,9 @@ production code changes at scale.
 
 Run an **enablement program** (2-4 months) through the framework's iterative
 stages before expecting major velocity gains from AI-assisted feature work.
+During the preparation-to-feature transition, consider
+[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
+supplement limited test coverage with production-level validation.
 
 **Next step:**
 [Brownfield Preparation Guide: Enablement Workstreams](brownfield-preparation.md#enablement-workstreams)
@@ -424,4 +465,5 @@ Transparency (hidden logic).
 
 **Last Updated:** 2026-03-04
 
-Added to framework in v0.37.0.
+Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
+in v0.39.0.

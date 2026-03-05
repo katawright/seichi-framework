@@ -24,29 +24,32 @@ and ready for Implementation.
 2. [ ] **Components detailed enough to implement** (responsibilities, structure,
        dependencies)
 3. [ ] **Component interactions documented** (flows, error handling paths)
+4. [ ] **[H] Carry-forward items from previous increment resolved** (N/A for
+       first increment; each item addressed, deferred with justification, or
+       marked N/A)
 
 ### Interfaces, Data, and Conventions
 
-4. [ ] **Interface specifications complete** (inputs, outputs, error cases)
-5. [ ] **Data/state changes specified** (with migrations if applicable; N/A for
+5. [ ] **Interface specifications complete** (inputs, outputs, error cases)
+6. [ ] **Data/state changes specified** (with migrations if applicable; N/A for
        stateless tools — document in-memory data flow instead)
-6. [ ] **[H] Design follows conventions from System Design** (patterns,
+7. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
 ### Security
 
-7. [ ] **Security implications assessed** (auth, data, or API changes flagged;
+8. [ ] **Security implications assessed** (auth, data, or API changes flagged;
        applicable threats from threat model identified)
 
 ### Testing and Readiness
 
-8. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
+9. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
        performance where applicable; for single-process tools, integration tests
        may be N/A if unit tests cover the full pipeline)
-9. [ ] **Implementation notes provided** (security, performance, patterns)
-10. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
+10. [ ] **Implementation notes provided** (security, performance, patterns)
+11. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
-11. [ ] **[H] Engineers understand the design and can implement independently**
+12. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
 ---
@@ -81,6 +84,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-03-02
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.12.0.

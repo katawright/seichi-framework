@@ -32,18 +32,24 @@ and ready for Verification.
        critical-path coverage; happy path, edge cases, and error scenarios)
 6. [ ] **[H] Code review approved and all PRs merged** (feedback addressed, CI
        green)
+7. [ ] **Stored procedure integration tests pass** (N/A for greenfield or
+       applications without database-layer logic; brownfield: confirm
+       application changes don't break stored procedure contracts)
+8. [ ] **Schema compatibility verified** (N/A for non-database changes; confirm
+       migrations are backward-compatible with existing consumers and
+       rollback-safe)
 
 ### Instrumentation and Handoff
 
-7. [ ] **[H] Instrumentation implemented for success criteria** (logging,
+9. [ ] **[H] Instrumentation implemented for success criteria** (logging,
        metrics, alerts)
-8. [ ] **Implementation brief completed with decisions documented** (ADRs for
-       significant choices)
-9. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
-10. [ ] **Test environment prepared for Verification** (setup instructions, test
+10. [ ] **Implementation brief completed with decisions documented** (ADRs for
+        significant choices)
+11. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
+12. [ ] **Test environment prepared for Verification** (setup instructions, test
         data ready; for local-only tools, satisfied by setup instructions and
         test data)
-11. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
+13. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
 
 ---
 
@@ -76,6 +82,6 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-03-02
+**Last Updated:** 2026-03-04
 
 Added to framework in v0.5.0.

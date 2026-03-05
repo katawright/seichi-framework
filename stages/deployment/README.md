@@ -267,6 +267,53 @@ impact.
 > post-rollback actions, see
 > [Deployment Reference: Rollback Procedures](reference.md#rollback-procedures).
 
+### Shadow Mode and Gradual Rollout
+
+Shadow mode deploys a feature against real production data with user-visible
+effects suppressed. The system processes real inputs through the new code path
+but does not execute the final side effect (sending emails, charging payments,
+updating user-facing state). This validates behavior under production conditions
+before any user impact.
+
+**When to use:**
+
+- High-risk changes where production behavior may differ from test environments
+- Brownfield systems where production data volumes, patterns, or edge cases
+  exceed what test environments cover
+- Changes dependent on production data that cannot be fully replicated in
+  staging
+
+**Shadow mode pattern:**
+
+1. **Deploy alongside** — deploy the new code path next to the existing one
+2. **Route inputs through both** — production inputs flow through old and new
+   paths simultaneously
+3. **Compare outputs** — log discrepancies between old and new outputs without
+   executing the new path's side effects
+4. **Promote after validation** — once discrepancies are understood and
+   resolved, promote the new path to active
+
+**Gradual rollout progression:**
+
+| Phase   | Traffic | Duration | Gate                                      |
+| ------- | ------: | -------- | ----------------------------------------- |
+| Shadow  |    100% | 24-48h   | No unexpected discrepancies in output     |
+| Canary  |    1-5% | 2-4h     | Error rate and latency within baseline    |
+| Partial |  10-50% | 4-24h    | Business metrics stable at partial volume |
+| Full    |    100% | —        | All gates passed                          |
+
+**Relationship to other strategies:** Shadow mode complements feature flags,
+canary, and blue-green deployments rather than replacing them. Feature flags
+provide the mechanism to route traffic; shadow mode defines the progression from
+zero user impact to full rollout. Not every deployment needs shadow mode — use
+it when production validation justifies the additional complexity.
+
+> **Brownfield projects:** Shadow mode is especially valuable for T2-T3 projects
+> transitioning from preparation to feature work, where test coverage may not
+> yet capture all production edge cases. See the
+> [Brownfield Readiness Guide](../../guides/brownfield-readiness.md#ai-operating-modes)
+> for tier-specific guidance.
+
 ### Monitoring and Observability
 
 Monitor application health, infrastructure health, database metrics, and
@@ -382,4 +429,4 @@ deployment decision using the
 
 **Last Updated:** 2026-03-04
 
-Added to framework in v0.7.0.
+Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
