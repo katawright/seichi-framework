@@ -45,7 +45,7 @@ stages:
           hard_gate: false,
         },
       ]
-    inputs: [initiation-brief, stakeholder-list]
+    inputs: [initiation-brief]
     outputs:
       [
         requirements-brief,
@@ -53,6 +53,7 @@ stages:
         prioritized-feature-backlog,
         requirements-traceability,
         non-functional-requirements,
+        success-criteria-register,
       ]
     feeds_into: [system-design]
     revisit_conditions:
@@ -151,6 +152,7 @@ stages:
         architecture-diagrams,
         requirements-with-acceptance-criteria,
         success-criteria-register,
+        test-strategy,
       ]
     outputs:
       [
@@ -222,7 +224,7 @@ stages:
         rollback-procedure,
         retrospective-action-items,
       ]
-    feeds_into: [support]
+    feeds_into: [support, increment-design]
     revisit_conditions: [deployment-failure, rollback-required]
   - id: support
     stage_number: 8
@@ -360,7 +362,7 @@ for programmatic access; use this table for quick human reference.
 | 4   | Increment Design | Iterative    | Collaborative    | Specialized review                | Implementation             |
 | 5   | Implementation   | Iterative    | AI-Led           | CI validation + human approval    | Verification               |
 | 6   | Verification     | Iterative    | AI-Led           | CI validation + human spot-check  | Deployment, Implementation |
-| 7   | Deployment       | Iterative    | Human-Led        | Human execution required          | Support                    |
+| 7   | Deployment       | Iterative    | Human-Led        | Human execution required          | Support, Increment Design  |
 | 8   | Support          | Continuous   | Collaborative    | Human approval                    | Multiple stages            |
 
 **Execution patterns:**
@@ -453,15 +455,17 @@ flowchart LR
     Dep --> Sup[8. Support]
 
     Ver -.->|defects| Impl
+    Dep -.->|next increment| ID
     Sup -.->|enhancements| Req
     Sup -.->|enhancements| ID
     Sup -.->|reassess| Init
 ```
 
 **Solid arrows** show the primary forward flow. **Dashed arrows** show feedback
-loops — defects return to Implementation for rework, enhancements feed back to
-Requirements or Increment Design, and Support findings may trigger reassessment
-of Initiation assumptions.
+loops — defects return to Implementation for rework, Deployment feeds into
+Increment Design for the next increment, enhancements feed back to Requirements
+or Increment Design, and Support findings may trigger reassessment of Initiation
+assumptions.
 
 ---
 
@@ -551,6 +555,8 @@ unavailable).
 3. Compile a decision log for the human to review when available
 4. Do not proceed past hard gates (Gate 1, Gate 2, production deployment)
    without human approval
+5. At Human-Led tier, halt and log all context for human review rather than
+   continuing autonomously
 
 ### Precedence and Compound Conditions
 
@@ -558,7 +564,9 @@ When multiple fallback conditions apply simultaneously, resolve in this order:
 
 1. **Hard gate constraints take priority** — if a hard gate blocks and the human
    is unreachable, log all context and halt. Do not proceed past hard gates
-   without human approval under any circumstances.
+   without human approval under any circumstances. Attempt to derive missing
+   inputs with `[ASSUMED]` flag before halting, so context is maximally prepared
+   for human review upon return.
 2. **Unreachable Human** — determine whether to wait or continue based on gate
    type and autonomy tier.
 3. **Missing Input** — attempt to derive or request; if the human is
@@ -568,7 +576,9 @@ When multiple fallback conditions apply simultaneously, resolve in this order:
 
 Stage-specific fallback guidance in `stages/[stage]/reference.md` extends these
 central protocols. Where a stage-specific protocol contradicts this section, the
-stage-specific protocol takes precedence for that stage.
+stage-specific protocol takes precedence for that stage. Stage-specific fallback
+protocols apply at all autonomy tiers unless the stage reference explicitly
+restricts them to a specific tier.
 
 ---
 

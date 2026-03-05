@@ -6,6 +6,12 @@
 For initial setup before accepting production ownership, use the
 [Support Readiness Checklist](readiness-checklist.md) instead.
 
+> **Which checklist?** This checklist covers ongoing support operations. For
+> one-time setup before accepting production ownership, use the
+> [Support Readiness Checklist](readiness-checklist.md) instead. If you have
+> already completed the Readiness Checklist, the items in the Support Readiness
+> section below should already be satisfied — re-verify during ongoing reviews.
+
 ---
 
 > Items marked **[H]** require human judgment. Other items can be verified or
@@ -130,6 +136,6 @@ For initial setup before accepting production ownership, use the
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.8.0.

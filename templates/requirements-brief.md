@@ -1,5 +1,9 @@
 <!-- For guidance on completing this brief, see requirements/README.md -->
 
+> **Need an example?** See the
+> [Worked Example: Requirements](../guides/worked-example.md#stage-2-requirements)
+> for completed functional requirements with acceptance criteria.
+
 # Requirements Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -267,4 +271,4 @@ Provide this Requirements Brief to System Design team.
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.3.0 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.3.0 -->

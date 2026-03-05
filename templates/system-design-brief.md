@@ -5,6 +5,10 @@
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit.
 
+> **AI suggestion:** _"Help me complete this system design brief for [project].
+> Start with the architecture overview based on these requirements: [link to >
+> requirements brief]."_
+
 **Last Updated:** YYYY-MM-DD
 
 ---
@@ -350,4 +354,4 @@ mitigation]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-05 | Added in v0.12.0 -->

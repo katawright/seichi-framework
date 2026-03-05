@@ -11,6 +11,7 @@
 **Decision makers:**
 
 - **Decided by:** (names/roles)
+- **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)
 
 ---

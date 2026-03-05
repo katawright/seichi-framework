@@ -4,11 +4,11 @@
 
 ## Dependencies
 
-| ID   | Output / Artifact    | Producing Increment | Consuming Increment | Type          | Status   | Notes                        |
-| ---- | -------------------- | ------------------- | ------------------- | ------------- | -------- | ---------------------------- |
-| D-01 | Auth API endpoints   | Increment 1         | Increment 2         | Hard          | Pending  | Blocks user-profile feature  |
-| D-02 | Design token library | Increment 1         | Increment 3         | Soft          | Complete | Can use placeholder tokens   |
-| D-03 | Analytics event spec | Increment 2         | Increment 4         | Informational | At Risk  | Spec draft delayed by 1 week |
+| ID   | Output / Artifact    | Producing Increment | Consuming Increment | Type          | Status   | Owner  | Target Date | Notes                        |
+| ---- | -------------------- | ------------------- | ------------------- | ------------- | -------- | ------ | ----------- | ---------------------------- |
+| D-01 | Auth API endpoints   | Increment 1         | Increment 2         | Hard          | Pending  | [name] | YYYY-MM-DD  | Blocks user-profile feature  |
+| D-02 | Design token library | Increment 1         | Increment 3         | Soft          | Complete | [name] | YYYY-MM-DD  | Can use placeholder tokens   |
+| D-03 | Analytics event spec | Increment 2         | Increment 4         | Informational | At Risk  | [name] | YYYY-MM-DD  | Spec draft delayed by 1 week |
 
 ## Type Definitions
 
@@ -29,4 +29,4 @@
 
 **Notes**
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05

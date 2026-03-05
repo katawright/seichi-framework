@@ -381,6 +381,11 @@ Informed (kept in the loop)
 | **Verification**     | C     | R         | C         | R/A | -      | -    | I   |
 | **Deployment**       | I     | C         | C         | C   | R/A    | I    | C   |
 | **Support**          | I     | C         | C         | -   | R/A    | I    | I   |
+| Deployment Approval  | I     | C         | C         | C   | R/A    | I    | C   |
+| Compliance Approval  | C     | -         | C         | -   | C      | I    | C   |
+
+> **Note:** For security and compliance accountability at checkpoint level, see
+> the [accountability table](#compliance-and-regulatory-considerations) below.
 
 > **Note:** This matrix represents the most common role assignments. Adapt to
 > your team structure — in smaller teams, one person may hold multiple roles
@@ -453,6 +458,10 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
 - One increment maps roughly to one sprint; scope accordingly.
 - Track cross-increment dependencies using the
   [Dependency Register](../templates/dependency-register.md).
+- Gate 2 in the cadence mapping reflects _confirmation_ that Gate 2 criteria
+  remain met at project close. The initial Gate 2 decision occurs after
+  Requirements and System Design (see
+  [Governance at a Glance](../README.md#governance-at-a-glance)).
 
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:

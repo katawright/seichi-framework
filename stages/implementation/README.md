@@ -7,6 +7,7 @@ inputs:
   - architecture-diagrams
   - requirements-with-acceptance-criteria
   - success-criteria-register
+  - test-strategy
 outputs:
   - artifact: working-code
     template: templates/implementation-brief.md
@@ -71,7 +72,6 @@ ready.
 6. After all PRs merge, complete the [Implementation Checklist](checklist.md)
    and finalize the
    [Implementation Brief](../../templates/implementation-brief.md)
-
 7. Hand off to Verification stage
 
 > **Brief vs. Session Log:** The
@@ -352,6 +352,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.5.0.

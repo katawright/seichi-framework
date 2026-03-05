@@ -24,7 +24,7 @@ the increment is ready for deployment.
 2. [ ] **Integration tests pass** (component interactions, API contracts, data
        flow)
 3. [ ] **Implementation matches component interaction flows from Increment
-       Design Brief** (no unauthorized simplifications — verify key interaction
+       Design Brief** (no undocumented simplifications — verify key interaction
        sequences align with design)
 4. [ ] **Regression tests passing** (existing functionality unaffected by
        changes)
@@ -98,6 +98,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.6.0.

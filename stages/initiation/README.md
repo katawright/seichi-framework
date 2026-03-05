@@ -69,11 +69,18 @@ framework artifacts or technical expertise required.
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
-4. Review the brief for correctness — you own the final content
-5. Complete the [Initiation Checklist](checklist.md) using AI according to your
+4. For Standard+ tier, populate the
+   [Success Criteria Register](../../templates/success-criteria-register.md)
+   with the success criteria from your brief
+5. Review the brief for correctness — you own the final content
+6. Complete the [Initiation Checklist](checklist.md) using AI according to your
    chosen autonomy tier
-6. Complete Gate 1 — present to stakeholders and record the proceed/pivot/stop
+7. Complete Gate 1 — present to stakeholders and record the proceed/pivot/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
+
+> **See a completed example:** The
+> [Worked Example: Initiation](../../guides/worked-example.md#stage-1-initiation)
+> shows a finished brief for calibration.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).

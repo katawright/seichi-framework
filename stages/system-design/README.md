@@ -82,6 +82,10 @@ ADRs, infrastructure configuration, and known technical debt.
 6. Complete Gate 2 — present to stakeholders and record the proceed/pivot/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
+> **See a completed example:** The
+> [Worked Example: System Design](../../guides/worked-example.md#stage-3-system-design)
+> shows a finished brief for calibration.
+
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
 
@@ -463,6 +467,16 @@ Design and trace it through implementation and verification:
 | Resilience    | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
 | Data privacy  | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
 
+### NFR Traceability
+
+Map each non-functional requirement from the
+[Requirements Brief](../../templates/requirements-brief.md) to the architectural
+decision that addresses it and the verification method that will confirm it.
+Create one row per NFR in the
+[System Design Brief](../../templates/system-design-brief.md) NFR Traceability
+table, linking each to the relevant ADR. The Verification stage uses this table
+to confirm every NFR has been tested — gaps here become gaps in test coverage.
+
 ### Additional Topics
 
 The [System Design Reference](reference.md) covers these topics in depth:
@@ -554,6 +568,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-05
 
 Added to framework in v0.12.0.
