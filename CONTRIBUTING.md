@@ -35,10 +35,8 @@ The best suggestions are:
 Follow these when making changes:
 
 - **Document formatting:** follow [STYLE_GUIDE.md](STYLE_GUIDE.md)
-- **Project working instructions:** follow [AGENTS.md](AGENTS.md) (AI agents
+- **Project working instructions:** follow [CLAUDE.md](CLAUDE.md) (AI agents
   should read this before making changes)
-- **Claude Code rules:** see [CLAUDE.md](CLAUDE.md) for Claude Code-specific
-  guidance
 - **Commit messages:** use
   [Conventional Commits](https://www.conventionalcommits.org/)
   (`type(scope): description`)
@@ -55,6 +53,6 @@ framework evaluation.
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-18
 
 Added to framework in v0.24.0.

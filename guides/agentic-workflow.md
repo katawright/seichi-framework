@@ -508,6 +508,27 @@ For oversight intensity within AI-Led (Active / Passive / Minimal), see the
 
 ---
 
+## Agent Execution Model
+
+Recommended workflow for AI coding agents operating in this repository:
+
+1. **Orient** — read `guides/agentic-workflow.md` (parse front matter first for
+   stage routing, then body for context)
+2. **Locate stage** — identify the current stage from the routing table; read
+   the stage README, checklist, and reference. If the current stage is not clear
+   from the human's request, check for existing session logs or artifacts to
+   infer project state; if no artifacts exist, start at Initiation.
+3. **Check front matter** — verify required inputs are available; flag any
+   missing inputs with `[ASSUMED]`
+4. **Execute** — follow the stage guide activities at the appropriate autonomy
+   tier; self-validate against the checklist
+5. **Gate** — present completed artifacts for human review at defined gates;
+   follow fallback protocols from `stages/[stage]/reference.md` if blocked
+6. **Log** — for multi-session work, maintain a session log using
+   `templates/session-log.md`; read on start, write on end
+
+---
+
 ## Error and Fallback Guidance
 
 These protocols match the `fallback` section in the front matter. Use them when
@@ -653,6 +674,6 @@ use delta-only briefs to document the rework cycle efficiently.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-18
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

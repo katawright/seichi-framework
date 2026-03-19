@@ -271,8 +271,8 @@ Use consistent labels to signal why a link is included:
 
 - **Next step:** — process flow; the reader has reached a decision point and
   should follow this link to act on it
-- **See:** / **See these guides:** — cross-reference; related content for
-  deeper context, not a required next action
+- **See:** / **See these guides:** — cross-reference; related content for deeper
+  context, not a required next action
 
 ---
 
@@ -359,8 +359,21 @@ Minimal — routes agents to the agentic workflow guide. No stage metadata neede
 
 ---
 
+## Cross-Cutting Refinement Patterns
+
+When refining stage artifacts, apply these patterns:
+
+1. README "How AI Helps" section after Starting Point, before Artifacts
+2. README measurement-throughline callout after Stage Outputs
+3. Gate decision references should point to the Gate Decision Template
+4. Avoid "DRI" jargon; prefer "project lead"
+
+Use Initiation stage artifacts as reference implementations.
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-18
 
 Added to framework in v0.19.0.
