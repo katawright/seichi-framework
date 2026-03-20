@@ -1,4 +1,13 @@
+<!-- For guidance on the learning throughline, see guides/framework.md#learning-throughline -->
+
 # Retrospective
+
+**Purpose:** Capture learnings, action items, and feedback from an increment or
+project.
+
+**Usage:** Run at the end of each increment and at project wrap-up. See the
+[Learning Throughline](../guides/framework.md#learning-throughline) for how
+retrospective findings feed back into the framework.
 
 **Scope:** [Increment N / Project Wrap-Up]
 
@@ -119,5 +128,5 @@
 
 ---
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.23.0 | Future Value
+<!-- Template Last Updated: 2026-03-20 | Added in v0.23.0 | Future Value
      Candidates section added in v0.42.0 -->

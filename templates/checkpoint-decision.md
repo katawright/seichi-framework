@@ -1,4 +1,15 @@
+<!-- For guidance on checkpoint types and usage, see guides/framework.md#checkpoint-taxonomy -->
+
 # Checkpoint Decision: [Checkpoint — Short Title]
+
+**Purpose:** Record a non-investment checkpoint decision (quality, deployment,
+production ownership, or compliance).
+
+**Usage:** Use this template for operational checkpoints between stages. For
+Gate 1 and Gate 2 investment decisions, use [gate-decision.md](gate-decision.md)
+instead. See the
+[Checkpoint Taxonomy](../guides/framework.md#checkpoint-taxonomy) for the full
+list of checkpoint types.
 
 **Last Updated:** YYYY-MM-DD
 
@@ -101,4 +112,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.18.1 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.18.1 -->

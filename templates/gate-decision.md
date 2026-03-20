@@ -1,12 +1,21 @@
+<!-- For guidance on gates and investment decisions, see guides/stages.md#gates-investment-decisions -->
+
 # Gate Decision: [Gate N — Short Title]
+
+**Purpose:** Record a Gate 1 or Gate 2 investment decision.
+
+**Usage:** Use this template for investment gates that decide whether a project
+proceeds, is revised, or is stopped. For non-investment checkpoints (quality,
+deployment, production ownership), use
+[checkpoint-decision.md](checkpoint-decision.md) instead. See the
+[Checkpoint Taxonomy](../guides/framework.md#checkpoint-taxonomy) for the full
+decision framework.
 
 **Last Updated:** YYYY-MM-DD
 
 **Date:** YYYY-MM-DD
 
 **Status:** Pending / Proceed / Revise / Stop
-
-**Usage:** Gate 1 and Gate 2 investment decisions
 
 **Decision makers:**
 
@@ -117,4 +126,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.13.0 -->

@@ -1,4 +1,13 @@
+<!-- For guidance on brownfield exit decisions, see guides/brownfield-preparation.md#exit-checkpoint-protocol -->
+
 # Preparation Exit Decision: [Project — Target Area]
+
+**Purpose:** Record the go/no-go decision at the brownfield preparation exit
+checkpoint.
+
+**Usage:** Complete after the final preparation increment. See the
+[Brownfield Preparation Guide](../guides/brownfield-preparation.md#exit-checkpoint-protocol)
+for exit criteria and decision options.
 
 **Last Updated:** YYYY-MM-DD
 
@@ -80,4 +89,4 @@ dates)
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.39.0 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.39.0 -->

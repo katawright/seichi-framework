@@ -1,7 +1,14 @@
 <!-- For non-implementation stages, use the generalized templates/session-log.md instead. -->
-<!-- For guidance on session logging, see ../implementation/README.md -->
+<!-- For guidance on session logging, see stages/implementation/README.md -->
 
 # Implementation Session Log: [Increment Name]
+
+**Purpose:** Session-by-session engineering log capturing completed work,
+decisions, blockers, and handoff context.
+
+**Usage:** Update at the end of each implementation session. See the
+[Implementation README multi-session work section](../stages/implementation/README.md#multi-session-work)
+for logging conventions and AI agent guidance.
 
 **Last Updated:** YYYY-MM-DD
 
@@ -77,4 +84,4 @@
 
 _Add more session entries as needed._
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.12.0 -->

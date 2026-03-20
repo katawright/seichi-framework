@@ -1,4 +1,14 @@
+<!-- For guidance on measurement across stages, see guides/framework.md#measurement-throughline -->
+
 # Success Criteria Register
+
+**Purpose:** Single source of truth for project success criteria — goals,
+metrics, baselines, targets, and tracking status.
+
+**Usage:** Created during Initiation and referenced throughout all stages. See
+the "How This Register Is Used" table below for stage-by-stage usage, and the
+[Measurement Throughline](../guides/framework.md#measurement-throughline) for
+how criteria flow through the framework.
 
 **Project:** [Project Name] **Created:** YYYY-MM-DD **Last Updated:** YYYY-MM-DD
 **Owner:** [Name / Role]
@@ -56,4 +66,4 @@
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.29.0 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.29.0 -->
