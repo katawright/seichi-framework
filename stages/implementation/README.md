@@ -209,6 +209,30 @@ Otherwise, keep Implementation lightweight and move to Verification.
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+### CD Projects: Per-Slice Gates
+
+For projects using Continuous Deployment, each merged slice is independently
+reviewed, CI-tested, and deployed. The per-slice PR gate replaces the batch
+increment gate — quality is validated continuously rather than in a single
+end-of-increment ceremony.
+
+**Increment-close activities:** When all slices for an increment are merged,
+increment-close becomes a retrospective confirmation rather than a quality gate:
+
+1. **Review acknowledgment** — confirm all slices were PR-reviewed and CI-passed
+2. **Cross-slice integration check** — verify no emergent issues from the
+   combination of slices
+3. **Session log and brief finalized** — complete the implementation brief and
+   session log
+4. **Retrospective scheduled or completed** — capture learnings from the
+   increment
+
+Note the CD workflow in the implementation brief so downstream stages
+(Verification, Deployment) know the project uses per-slice delivery.
+
+For the full CD model, see
+[Framework Guide: CD Workflow Adaptations](../../guides/framework.md#cd-workflow-adaptations).
+
 ---
 
 ## Why These Implementation Elements Matter
@@ -364,6 +388,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.5.0.

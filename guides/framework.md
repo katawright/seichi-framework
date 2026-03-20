@@ -11,6 +11,7 @@ concerns:
     continuous-learning,
     working-locations,
     mid-stage-discovery,
+    cd-workflow,
   ]
 ---
 
@@ -194,6 +195,9 @@ boundaries are defined.
 
 **[Greenfield vs. Brownfield Projects](#greenfield-vs-brownfield-projects)** —
 How the framework adapts for new projects versus extensions to existing systems.
+
+**[CD Workflow Adaptations](#cd-workflow-adaptations)** — How the framework
+adapts for projects that deploy continuously per-slice rather than in batches.
 
 **[Right-Sizing Your Process](#right-sizing-your-process)** — Match process
 rigor to project risk and team size. Full reference:
@@ -558,6 +562,11 @@ existing system, codebase, or infrastructure.
 **Brownfield project** — A project that extends, modifies, or enhances an
 existing system with established codebase, infrastructure, and constraints.
 
+**CD (Continuous Deployment / Continuous Delivery)** — A delivery practice where
+each merged slice is automatically deployed to production. CD changes _when_
+iterative stage activities happen (per-slice instead of per-increment), not
+_whether_ they happen. See [CD Workflow Adaptations](#cd-workflow-adaptations).
+
 ---
 
 ## Roles and Responsibilities
@@ -767,6 +776,60 @@ delivery follows the same iterative cycle.
 
 ---
 
+## CD Workflow Adaptations
+
+Continuous Deployment (CD) deploys every merged slice to production
+automatically rather than batching slices into a discrete deployment event. The
+framework supports CD by treating it as a delivery practice modifier — CD
+changes _when_ iterative stage activities happen (per-slice instead of
+per-increment), not _whether_ they happen.
+
+### CD Is a Delivery Practice, Not a Risk Tier
+
+CD is orthogonal to the three risk tiers (Minimal, Standard, Enterprise). A
+project can be Minimal+CD or Enterprise+CD. The risk tier determines _what_
+practices you adopt; CD determines _when_ they execute. The 3-tier model is
+unchanged — CD simply shifts the execution cadence from batch to continuous for
+the iterative stages.
+
+### How CD Changes Stage Timing
+
+| Stage          | Batch (default)                 | CD                                         |
+| -------------- | ------------------------------- | ------------------------------------------ |
+| Implementation | All slices, then increment gate | Per-slice gate (PR + CI); summary at close |
+| Verification   | Batch verification after code   | Per-slice CI; increment-close summary      |
+| Deployment     | Discrete deployment event       | Per-merge automated pipeline               |
+| Support        | Handoff after deployment        | Monitoring active from first deploy        |
+
+Foundational stages (Initiation, Requirements, System Design, Increment Design)
+are unaffected — CD applies only to the iterative execution stages.
+
+### When Stages Can Be Folded
+
+CD doesn't skip stages — it folds their concerns into the continuous flow. When
+the CD pipeline fully automates a stage's activities (e.g., deployment is a
+zero-touch pipeline, support monitoring is active from the first deploy), the
+stage's per-increment ceremony can be folded into the continuous workflow.
+
+When folding Deployment or Support, record the rationale using the
+[Checkpoint Decision Template](../templates/checkpoint-decision.md). Include
+re-evaluation triggers so the team revisits the decision if conditions change
+(e.g., a breaking migration requires manual deployment coordination).
+
+### Stage-Specific CD Guidance
+
+Each iterative stage includes a CD subsection with stage-specific adaptations:
+
+- [Implementation: CD Projects — Per-Slice Gates](../stages/implementation/README.md#cd-projects-per-slice-gates)
+- [Verification: CD Projects — Lightweight Verification](../stages/verification/README.md#cd-projects-lightweight-verification)
+- [Deployment: CD Projects — Minimal Deployment](../stages/deployment/README.md#cd-projects-minimal-deployment)
+- [Support: CD Projects — Minimal Support](../stages/support/README.md#cd-projects-minimal-support)
+
+For how CD interacts with right-sizing tiers, see
+[Right-Sizing Guide: CD as a Delivery Practice Modifier](right-sizing.md#cd-as-a-delivery-practice-modifier).
+
+---
+
 ## Right-Sizing Your Process
 
 Right-sizing has two independent dimensions: **project risk tier** (Minimal,
@@ -878,6 +941,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.9.0.

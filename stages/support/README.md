@@ -165,6 +165,45 @@ Otherwise, keep support lightweight and scale as the system matures.
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+### CD Projects: Minimal Support
+
+For CD projects, monitoring is active from the first deployed slice — support
+concerns are addressed continuously rather than in a post-deployment handoff.
+The full support checklist covers operational maturity that builds over time;
+the minimal checklist below covers what must be true from the first deploy.
+
+**CD minimal support (~4 items):**
+
+1. **Monitoring active** — health checks and error tracking operational
+2. **Error notifications routing** — alerts reaching the responsible person
+3. **Known issues documented** — current issues tracked in README or issue
+   tracker
+4. **Rollback understood** — at least one person can revert a bad deploy
+
+**Relationship to readiness checklist:** These four items are a subset of the
+Minimal tier in the [Support Readiness Checklist](readiness-checklist.md). If
+Minimal readiness is satisfied, CD minimal support is already covered.
+
+**Increment-boundary activities:** At increment boundaries, review:
+
+- Monitoring trends across the increment's slices
+- Bug triage and resolution status
+- Documentation updates for user-facing changes
+- Success criteria check-in against Initiation targets
+
+### Marking Support N/A
+
+For projects that never reach production (local tools, spikes, experiments),
+Support does not apply — mark it N/A with a brief note in the project artifacts.
+
+For CD projects that deploy to production, Support is not N/A — it is folded
+into the development loop. Monitoring, alerting, and incident response are
+active from the first deploy. Record the folding rationale using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+
+For the full CD model, see
+[Framework Guide: CD Workflow Adaptations](../../guides/framework.md#cd-workflow-adaptations).
+
 ---
 
 ## Support Workflow
@@ -448,6 +487,6 @@ when the team confirms readiness to own the system in production.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.8.0.

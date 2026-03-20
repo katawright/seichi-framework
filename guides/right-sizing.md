@@ -91,6 +91,10 @@ stage gate. **Recommended** = high value, skip only with justification.
 > artifact. Everything else scales with risk. A Minimal project that never
 > deploys may skip Deployment, Support, and their artifacts entirely.
 
+> **CD projects:** Verification Brief, Deployment Brief, and Support Brief
+> remain applicable but shift to increment-close summaries. See each stage's CD
+> subsection for what to include.
+
 ---
 
 ## The Three Dimensions
@@ -161,6 +165,28 @@ compliance checks — they just don't need a change advisory board.
 > **Project type is a separate dimension.** Greenfield and brownfield projects
 > use the same tiers but differ in foundation work and stage emphasis. See
 > [Framework Guide: Greenfield vs. Brownfield Projects](framework.md#greenfield-vs-brownfield-projects).
+
+### CD as a Delivery Practice Modifier
+
+CD (Continuous Deployment) is orthogonal to risk tiers — it changes _when_
+iterative stage activities happen, not _whether_ they happen. A project can be
+Minimal+CD or Enterprise+CD.
+
+| Stage          | Without CD (batch)              | With CD (per-slice)                        |
+| -------------- | ------------------------------- | ------------------------------------------ |
+| Implementation | All slices, then increment gate | Per-slice gate (PR + CI); summary at close |
+| Verification   | Batch verification after code   | Per-slice CI; increment-close summary      |
+| Deployment     | Discrete deployment event       | Per-merge automated pipeline               |
+| Support        | Handoff after deployment        | Monitoring active from first deploy        |
+
+For the full model, see
+[Framework Guide: CD Workflow Adaptations](framework.md#cd-workflow-adaptations).
+For stage-specific CD guidance:
+
+- [Implementation: Per-Slice Gates](../stages/implementation/README.md#cd-projects-per-slice-gates)
+- [Verification: Lightweight Verification](../stages/verification/README.md#cd-projects-lightweight-verification)
+- [Deployment: Minimal Deployment](../stages/deployment/README.md#cd-projects-minimal-deployment)
+- [Support: Minimal Support](../stages/support/README.md#cd-projects-minimal-support)
 
 ### Time-Cost Estimates by Stage
 
@@ -263,6 +289,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.13.0.
