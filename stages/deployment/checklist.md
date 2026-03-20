@@ -97,6 +97,10 @@ successful completion.
 7. [ ] **[H] Support team confirms receipt of all Support stage inputs**
        (deployed system access, monitoring dashboards, updated runbooks, success
        criteria register, incident response procedures)
+8. [ ] **[H] Increment retrospective completed or scheduled** (run the
+       [Retrospective Template](../../templates/retrospective.md) now or
+       schedule within one week; triage Captured Feedback entries; log
+       carry-forward items for next Increment Design)
 
 **Gate:** Support team ready to own production system.
 
@@ -138,6 +142,6 @@ the [Gate Decision Template](../../templates/gate-decision.md).
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.7.0.

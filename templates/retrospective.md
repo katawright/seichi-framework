@@ -8,6 +8,19 @@
 
 ---
 
+## Captured Feedback
+
+<!-- In-the-moment observations captured during the increment. Append entries
+     as they arise — no classification required at capture time. During the
+     retrospective session, triage these entries into the analysis sections
+     below. -->
+
+| Timestamp  | Stage        | Observation   |
+| ---------- | ------------ | ------------- |
+| YYYY-MM-DD | [stage-name] | [observation] |
+
+---
+
 ## What Went Well
 
 <!-- Practices, decisions, or tools that helped. Keep for next time. -->
@@ -84,4 +97,4 @@
 
 ---
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.23.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.23.0 -->

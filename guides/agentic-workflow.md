@@ -676,9 +676,10 @@ At the end of every session:
 5. Write "Context for Next Session" — the critical information the next
    agent/human needs to continue without re-reading everything
 6. List specific "Next Steps" as actionable items
-7. Record any framework-level observations (template gaps, unclear guidance,
-   missing checklist items) in the retrospective's Framework Feedback section;
-   flag these for human review
+7. Capture any in-the-moment observations (surprises, deviations, framework
+   gaps) by appending a row to the retrospective's Captured Feedback table — see
+   [Feedback Capture Protocol](#feedback-capture-protocol) below; do not
+   classify at capture time
 
 ### Session Log Template
 
@@ -696,6 +697,32 @@ For the Implementation stage specifically, use the
 [Implementation Session Log](../templates/implementation-session-log.md)
 (`templates/implementation-session-log.md`) — a specialized variant optimized
 for code-focused session tracking.
+
+### Feedback Capture Protocol
+
+When an observation arises during any stage — a surprise, a deviation from
+design, a process friction point, or a framework gap — capture it immediately
+rather than waiting for the retrospective session.
+
+**Steps:**
+
+1. Locate the current increment's retrospective artifact in the project's
+   artifact location (e.g., `retrospectives/retro-increment-N.md`).
+2. If the file does not exist, create it from the
+   [Retrospective Template](../templates/retrospective.md). Set the Scope and
+   Date fields; leave analysis sections as placeholders.
+3. Append a row to the **Captured Feedback** table:
+   - **Timestamp:** today's date (YYYY-MM-DD)
+   - **Stage:** current stage name
+   - **Observation:** concise description
+4. Do not classify the observation. Classification happens during the
+   retrospective session — framework observations move to Framework Feedback,
+   process items to What Went Well / What Didn't Work, actionable items to
+   Action Items.
+
+> Agents: this is a write action. Follow artifact location conventions in
+> [Working Locations](../guides/framework.md#working-locations) and verify the
+> correct artifacts path before writing.
 
 ---
 

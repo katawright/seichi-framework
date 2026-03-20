@@ -162,12 +162,14 @@ actually happened — keeps teams from repeating mistakes across increments:
 | **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
 | **Implementation**   | Note surprises and deviations as they happen                     |
 | **Verification**     | Capture what tests reveal about design assumptions               |
-| **Deployment**       | Run increment retrospective (optional) or project retrospective  |
+| **Deployment**       | Run increment retrospective; triage Captured Feedback entries    |
 | **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
 
 Pre-mortems happen once at the project level (Initiation); retrospectives happen
-at increment boundaries (optional) and at project wrap-up (recommended). See the
-[Retrospective Template](../templates/retrospective.md).
+at every increment boundary and at project wrap-up. Use the Captured Feedback
+section of the [Retrospective Template](../templates/retrospective.md) to
+accumulate observations throughout the increment; triage them during the
+retrospective session.
 
 ---
 
