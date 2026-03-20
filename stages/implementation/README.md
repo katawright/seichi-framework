@@ -352,6 +352,12 @@ See
 [Agentic Workflow Guide: Rework Cycles](../../guides/agentic-workflow.md#rework-cycles)
 for the full convention.
 
+> **Mid-stage discovery?** If a library doesn't support concurrent writes as
+> assumed, or an implementation assumption is invalidated, see the
+> [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
+> tree to classify the severity — cosmetic, significant, or fundamental — and
+> determine the right response.
+
 ---
 
 ## Notes

@@ -160,8 +160,8 @@ actually happened — keeps teams from repeating mistakes across increments:
 | **Requirements**     | Flag ambiguous or assumption-heavy requirements as learning risk |
 | **System Design**    | Pre-mortem lens on architecture: what's hardest to reverse?      |
 | **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
-| **Implementation**   | Note surprises and deviations as they happen                     |
-| **Verification**     | Capture what tests reveal about design assumptions               |
+| **Implementation**   | Note surprises and deviations; route mid-stage discoveries       |
+| **Verification**     | Capture what tests reveal; classify rework by severity           |
 | **Deployment**       | Run increment retrospective; triage Captured Feedback entries    |
 | **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
 

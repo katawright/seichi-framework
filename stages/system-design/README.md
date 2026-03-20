@@ -562,6 +562,12 @@ In addition to reactive triggers, consider scheduled architecture reviews:
   failure), create a new ADR and mark the original as "Superseded by ADR-XXX"
   with a brief rationale.
 
+> **Mid-stage discovery?** If a technology choice can't meet an NFR or an
+> architectural assumption is invalidated, see the
+> [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
+> tree to classify the severity and determine whether to rework, amend scope, or
+> defer.
+
 ---
 
 ## Notes

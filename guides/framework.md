@@ -10,6 +10,7 @@ concerns:
     compliance,
     continuous-learning,
     working-locations,
+    mid-stage-discovery,
   ]
 ---
 
@@ -179,6 +180,9 @@ criteria flowing from Initiation through all stages. Full reference:
 and retrospectives at increment/project boundaries drive continuous improvement.
 Full reference: [stages.md § Learning](stages.md#learning-throughline).
 
+**[Mid-Stage Discovery](#mid-stage-discovery)** — Decision tree for handling
+discoveries during active work: rework, scope amendment, or defer.
+
 **[Security Throughline](#security-throughline)** — Security activities at every
 stage, from data classification through vulnerability management, with AI
 automation making baseline security nearly free. Full reference:
@@ -253,6 +257,79 @@ lightweight learning loop that mirrors the measurement throughline. For the
 stage-by-stage breakdown, see the
 [AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline)
 reference.
+
+---
+
+## Mid-Stage Discovery
+
+Discoveries during active stage work are inevitable — a broken assumption, a
+small enhancement opportunity, or a large new requirement. When something
+unexpected surfaces mid-stage, use this decision tree to determine the right
+response rather than defaulting to scope creep or unnecessary ceremony.
+
+### Decision Tree
+
+Assess the discovery's impact to choose the correct path:
+
+1. **Breaks something** (design infeasible, NFR unmet, assumption invalidated) →
+   **Rework.** Classify by severity (see below) and follow the rework process.
+2. **Adds something small and safe** (no AC impact, low cost, immediate benefit,
+   no new risk) → **Scope amendment.** Record the decision and proceed.
+3. **Adds something large or risky** (changes ACs, introduces risk, significant
+   effort) → **Defer** to the next increment or project backlog.
+
+### Rework Classification
+
+When a discovery breaks something, classify it by severity to determine the
+appropriate process:
+
+| Severity        | Definition                                    | Process                                                 | ADR Required | Re-gate |
+| --------------- | --------------------------------------------- | ------------------------------------------------------- | ------------ | ------- |
+| **Cosmetic**    | Minor fix with no design impact               | Fix in place, update the artifact                       | No           | No      |
+| **Significant** | Requires revisiting the stage; design changes | Delta-only brief, update affected artifacts             | Yes          | No      |
+| **Fundamental** | Invalidates a prior gate decision             | Delta-only brief, update artifacts, amend gate decision | Yes          | Yes     |
+
+**Examples:**
+
+- **Significant:** During Implementation, a library doesn't support concurrent
+  writes as assumed — swap the library, update the ADR.
+- **Fundamental:** During Verification, p95 latency is 10x the NFR target and no
+  optimization will fix it — the technology choice must change, requiring a gate
+  decision amendment.
+
+**Recording guidance:** Record an ADR for significant and fundamental changes.
+For fundamental changes, amend the original gate decision with new information
+and a new decision — don't reopen the gate from scratch.
+
+### Scope Amendment Criteria
+
+A discovery qualifies as a scope amendment only when **all four** criteria are
+met:
+
+1. **No AC impact** — existing acceptance criteria are unchanged
+2. **Small cost** — the addition is low-effort relative to current work
+3. **Immediate benefit** — the value is realized in the current increment
+4. **No new risk** — no new technical, security, or schedule risk introduced
+
+Record scope amendments in the session log for the current stage. If any
+criterion is not met, the discovery is either rework (if it breaks something) or
+a deferral (if it adds something large).
+
+### Deferral
+
+When a discovery adds something valuable but large or risky, capture it for
+future action rather than absorbing it into the current increment:
+
+- Add the item to the project backlog or parking lot
+- If the discovery is a value idea (feature possibility, technical improvement,
+  architectural opportunity), tag it in the retrospective's Captured Feedback
+  table so it surfaces during the Future Value Candidates harvest at project
+  wrap-up (see [Retrospective Template](../templates/retrospective.md))
+
+> **Stage-specific triggers:** Each stage has a "When to Revisit" section with
+> triggers specific to that stage's concerns. The decision tree above applies
+> universally; stage-specific triggers help you recognize when a discovery has
+> occurred.
 
 ---
 
@@ -446,6 +523,11 @@ go/no-go investment decision.
 **Increment** — A discrete, deliverable chunk of work. A neutral term that maps
 to epic, feature, sprint, milestone, or deliverable depending on your
 methodology.
+
+**Mid-stage discovery** — Something unexpected that surfaces during active stage
+work — a broken assumption, a small enhancement opportunity, or a large new
+requirement. See [Mid-Stage Discovery](#mid-stage-discovery) for the decision
+tree.
 
 **Iterative stage** — Repeats for each increment in the Increment Design →
 Implementation → Verification → Deployment cycle.

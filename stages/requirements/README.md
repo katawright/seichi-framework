@@ -681,6 +681,11 @@ Requirements is foundational but revisitable.
 4. Update System Design artifacts to reflect changes
 5. Assess impact on schedule/scope/risk
 
+> **Mid-stage discovery?** If something unexpected surfaces during active work,
+> see the [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery)
+> decision tree to classify the impact — cosmetic, significant, or fundamental —
+> and determine whether to rework, amend scope, or defer.
+
 ---
 
 ## Notes

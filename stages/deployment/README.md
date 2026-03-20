@@ -442,6 +442,10 @@ accepting ownership.
 
 - Incidents, new compliance requirements, access control gaps
 
+> **Mid-stage discovery?** If something unexpected surfaces during deployment,
+> see the [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery)
+> decision tree to determine whether to rework, amend scope, or defer.
+
 ---
 
 ## Notes

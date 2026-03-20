@@ -572,6 +572,10 @@ starting point.
 4. Re-run the Initiation Checklist
 5. Communicate changes to downstream stages
 
+> **Mid-stage discovery?** If something unexpected surfaces during active work,
+> see the [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery)
+> decision tree to determine whether to rework, amend scope, or defer.
+
 ---
 
 ## Notes
