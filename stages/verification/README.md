@@ -211,6 +211,39 @@ Otherwise, keep Verification focused and move to Deployment.
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+### CD Projects: Lightweight Verification
+
+For CD projects, per-slice CI already validates each change before it reaches
+production. The full 13-step verification workflow is redundant when every slice
+passes automated tests at merge time. Instead, focus verification effort at
+increment boundaries on four concerns that per-slice CI cannot cover:
+
+| Concern               | What to check                                              |
+| --------------------- | ---------------------------------------------------------- |
+| Traceability matrix   | Every requirement has at least one passing test            |
+| Goal alignment        | Increment outcomes align with success criteria             |
+| Cross-cutting quality | Security scan summary, performance baseline, accessibility |
+| Known gaps            | Deferred defects, skipped test types, tech debt introduced |
+
+**CD verification workflow (4 steps replacing 13):**
+
+1. Review CI results across all slices in the increment
+2. Complete the four-concern summary above
+3. Record in the verification brief (mark batch-only sections N/A)
+4. Confirm no emergent cross-slice issues
+
+**Using the verification brief template with CD:** Mark Phase 1 (Test Planning)
+and Phase 2 (Test Execution) as "Satisfied by per-slice CI." Focus on the
+Production Readiness and Defect Summary sections for increment-level concerns.
+
+> **CD does not exempt verification types that cannot run per-slice.** UAT,
+> performance/load testing, penetration testing, and accessibility audits still
+> require dedicated effort — schedule these at increment boundaries even in CD
+> projects.
+
+For the full CD model, see
+[Framework Guide: CD Workflow Adaptations](../../guides/framework.md#cd-workflow-adaptations).
+
 ---
 
 ## Why These Verification Elements Matter
@@ -372,6 +405,6 @@ fresh brief.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.6.0.

@@ -167,6 +167,54 @@ Otherwise, keep deployment straightforward and hand off to Support.
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+### CD Projects: Minimal Deployment
+
+For CD projects, deployment happens automatically when each slice merges. The
+37-item deployment checklist is designed for discrete deployment events — most
+items are satisfied by the CD pipeline on every merge. Use the per-merge
+checklist below for each slice; reserve the full checklist for increment-level
+review.
+
+**Per-merge deployment checklist (~5 items):**
+
+1. **Pipeline green** — CI/CD passed for this merge
+2. **Health check passing** — post-deploy health endpoint returns healthy
+3. **Monitoring stable** — no new alerts triggered within observation window
+4. **Rollback path exists** — automated rollback or revert-merge available
+5. **Release noted** — commit message or changelog entry describes the change
+
+**Increment-level deployment review:** At increment boundaries, confirm:
+
+- All slices deployed successfully with no unresolved rollbacks
+- Monitoring baselines captured across the full increment
+- No lingering deployment-related issues
+- Retrospective completed
+
+**Using the 37-item checklist with CD:** Mark items that the CD pipeline handles
+as "Satisfied by CD pipeline" rather than N/A — this preserves traceability
+while acknowledging automated coverage. Focus manual review on the Handoff to
+Support and Final Decision sections.
+
+> **CD does not exempt human judgment concerns.** Breaking database migrations,
+> cross-service deployment ordering, and infrastructure changes still require
+> manual coordination — even with a fully automated pipeline.
+
+### Marking Deployment N/A
+
+When the CD pipeline fully automates deployment with no human decisions required
+per-increment, the Deployment stage can be marked N/A for that increment. Record
+the decision using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md) with:
+
+- **Justification:** what the pipeline automates and why no human decision is
+  needed
+- **Re-evaluation triggers:** conditions that would require reinstating manual
+  deployment (e.g., breaking DB migration, cross-service ordering, new
+  infrastructure)
+
+For the full CD model, see
+[Framework Guide: CD Workflow Adaptations](../../guides/framework.md#cd-workflow-adaptations).
+
 ---
 
 ## Deployment Workflow
@@ -450,6 +498,6 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-20
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
