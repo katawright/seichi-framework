@@ -1,4 +1,13 @@
+<!-- For guidance on incident response, see stages/support/README.md#incident-response -->
+
 # Post-Incident Review
+
+**Purpose:** Document root-cause analysis and action items from a production
+incident.
+
+**Usage:** Complete after incident resolution. See the
+[Support stage incident response section](../stages/support/README.md#incident-response)
+for the full incident workflow.
 
 **Incident ID:** [e.g., INC-001]
 
@@ -84,4 +93,4 @@
 
 ---
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.35.0 -->
+<!-- Template Last Updated: 2026-03-20 | Added in v0.35.0 -->

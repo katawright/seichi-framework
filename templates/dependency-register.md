@@ -1,5 +1,13 @@
 # Cross-Increment Dependency Register
 
+**Purpose:** Track cross-increment dependencies so producing and consuming teams
+stay aligned.
+
+**Usage:** The PjM maintains this register throughout the project. Review during
+increment planning and sync meetings. See the
+[Delivery Operating Guide](../guides/delivery-operating-guide.md) for
+coordination practices.
+
 <!-- PjM-owned artifact. See guides/framework.md for PjM R/A accountability. -->
 
 ## Dependencies
@@ -27,6 +35,4 @@
 
 ---
 
-**Notes**
-
-**Last Updated:** 2026-03-05
+<!-- Template Last Updated: 2026-03-20 | Added in v0.27.0 -->
