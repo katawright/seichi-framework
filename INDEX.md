@@ -41,14 +41,14 @@ Load the index first, then load only what you need.
 
 ## Root Files (6)
 
-| Path              | Description                                                            | Keywords                                                  | Refs                                           | Tier |
-| ----------------- | ---------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------- | ---- |
-| `README.md`       | Project overview, stage summary table, and navigation entry point.     | framework, SDLC, overview, navigation, stages             | —                                              | core |
-| `QUICKSTART.md`   | Zero-to-first-stage guide for agents, chat AI, and mid-stream joining. | quick-start, bootstrap, onboarding, execution-paths       | agentic-workflow, manual-process, right-sizing | core |
-| `AGENTS.md`       | Redirect to CLAUDE.md for non-Claude agents.                           | agent-rules, redirect                                     | CLAUDE.md                                      | ref  |
+| Path              | Description                                                            | Keywords                                                    | Refs                                           | Tier |
+| ----------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------- | ---- |
+| `README.md`       | Project overview, stage summary table, and navigation entry point.     | framework, SDLC, overview, navigation, stages               | —                                              | core |
+| `QUICKSTART.md`   | Zero-to-first-stage guide for agents, chat AI, and mid-stream joining. | quick-start, bootstrap, onboarding, execution-paths         | agentic-workflow, manual-process, right-sizing | core |
+| `AGENTS.md`       | Redirect to CLAUDE.md for non-Claude agents.                           | agent-rules, redirect                                       | CLAUDE.md                                      | ref  |
 | `CLAUDE.md`       | Project working instructions, conventions, and execution guidance.     | agent-rules, workflow, conventions, governance, claude-code | stages, agentic-workflow, framework            | core |
-| `CONTRIBUTING.md` | Contribution guidelines emphasizing specific, grounded improvements.   | contributions, pull-requests, conventions, retrospectives | —                                              | ref  |
-| `STYLE_GUIDE.md`  | Structural and formatting conventions for all framework documents.     | style, formatting, structure, front-matter, tone          | —                                              | core |
+| `CONTRIBUTING.md` | Contribution guidelines emphasizing specific, grounded improvements.   | contributions, pull-requests, conventions, retrospectives   | —                                              | ref  |
+| `STYLE_GUIDE.md`  | Structural and formatting conventions for all framework documents.     | style, formatting, structure, front-matter, tone            | —                                              | core |
 
 ## Guides (15)
 
@@ -152,7 +152,7 @@ Load the index first, then load only what you need.
 | `templates/verification-brief.md`              | Test cycle covering requirements validation and acceptance results.      | verification, testing, acceptance-criteria, requirements-validation | Verification               | ref  |
 | `templates/deployment-brief.md`                | Deployment plan: release strategy, verification, and rollback readiness. | deployment, release, strategy, rollback, verification               | Deployment                 | ref  |
 | `templates/support-brief.md`                   | Support operations: environment, runbooks, escalation, and monitoring.   | support, operations, runbooks, escalation, monitoring               | Support                    | ref  |
-| `templates/gate-decision.md`                   | Investment gate decision with criteria, evidence, and outcome.           | gate, decision, investment, criteria, proceed-pivot-stop            | Initiation–System Design   | ref  |
+| `templates/gate-decision.md`                   | Investment gate decision with criteria, evidence, and outcome.           | gate, decision, investment, criteria, proceed-revise-stop           | Initiation–System Design   | ref  |
 | `templates/checkpoint-decision.md`             | Quality or deployment checkpoint approval and readiness gate.            | checkpoint, quality, deployment, approval, gate                     | Deployment–Support         | ref  |
 | `templates/brownfield-preparation-decision.md` | Exit decision from brownfield preparation assessing readiness gaps.      | brownfield, preparation, readiness, exit-decision                   | Requirements–System Design | ref  |
 | `templates/adr.md`                             | Architecture Decision Record: context, options, rationale, and status.   | ADR, architecture, decision, options, rationale                     | System Design              | ref  |
@@ -168,6 +168,6 @@ Load the index first, then load only what you need.
 
 ## Notes
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.41.0.

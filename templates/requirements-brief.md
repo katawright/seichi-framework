@@ -7,7 +7,10 @@
 # Requirements Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
-> brief for gate reviewers to audit.
+> brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
+> be **confirmed** (verified — remove tag), **challenged** (incorrect — update
+> and remove tag), or **carried forward** (unverifiable now — leave tag and note
+> as a gate condition).
 
 ## Right-Sizing This Brief
 
@@ -242,7 +245,7 @@ Provide this Requirements Brief to System Design team.
 - Increment plan with dependencies for iterative delivery (System Design stage)
 - Updated staffing/timeline estimates with improved confidence (System Design
   stage)
-- Recommendation: proceed / pivot / stop (System Design stage)
+- Recommendation: proceed / revise / stop (System Design stage)
 
 **For System Design team:** Focus foundational design pass on:
 

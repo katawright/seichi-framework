@@ -4,7 +4,7 @@
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Proceed / Pivot / Stop
+**Status:** Pending / Proceed / Revise / Stop
 
 **Usage:** Gate 1 and Gate 2 investment decisions
 
@@ -48,7 +48,7 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
-## Decision: Proceed / Pivot / Stop
+## Decision: Proceed / Revise / Stop
 
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any — e.g., "proceed but address X first")
@@ -89,7 +89,7 @@ quality]
 
 - (What happens next based on the decision)
 - _Example (Gate 1, Proceed):_ "Begin Requirements stage"
-- _Example (Gate 1, Pivot):_ "Refine problem statement, re-present"
+- _Example (Gate 1, Revise):_ "Refine problem statement, re-present"
 - _Example (Gate 2, Proceed):_ "Begin Increment Design for first increment"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
   stakeholders"

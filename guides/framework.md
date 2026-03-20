@@ -433,7 +433,7 @@ not works in progress.
 
 **Decision recording.** Capture the outcome using
 [`templates/gate-decision.md`](../templates/gate-decision.md). Record the
-decision (Proceed / Proceed with conditions / Pivot / Stop), conditions, and
+decision (Proceed / Proceed with conditions / Revise / Stop), conditions, and
 accountable owners for any follow-up actions.
 
 ### Cadence Mapping
@@ -677,6 +677,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.9.0.

@@ -75,7 +75,7 @@ framework artifacts or technical expertise required.
 5. Review the brief for correctness — you own the final content
 6. Complete the [Initiation Checklist](checklist.md) using AI according to your
    chosen autonomy tier
-7. Complete Gate 1 — present to stakeholders and record the proceed/pivot/stop
+7. Complete Gate 1 — present to stakeholders and record the proceed/revise/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
 > **See a completed example:** The
@@ -185,7 +185,7 @@ predictable failures. This section explains why each element is included:
 4. [**Scope Boundaries and Non-Goals**](#scope-boundaries-and-non-goals) —
    what's in and what's out
 5. [**Gate 1 Decision Criteria**](#gate-1-decision-criteria) —
-   proceed/pivot/stop framework
+   proceed/revise/stop framework
 6. [**Project Lead and Stakeholders**](#project-lead-and-stakeholders) —
    ownership and accountability
 7. [**Assumptions**](#assumptions) — hidden scope made explicit
@@ -306,7 +306,7 @@ Makes the approval decision explicit and repeatable. Without criteria, gate
 reviews become subjective debates where seniority or enthusiasm drives the
 outcome. Pre-defined criteria tell reviewers exactly what "ready" looks like and
 give the team a concrete target to prepare for. They also make the
-proceed/pivot/stop options concrete — reviewers aren't choosing between "yes"
+proceed/revise/stop options concrete — reviewers aren't choosing between "yes"
 and "no" but between well-defined paths. This reduces decision fatigue and
 speeds up the gate review itself.
 
@@ -315,14 +315,14 @@ speeds up the gate review itself.
 - Decision criteria — what conditions must be true to proceed
 - Thresholds — quantified where possible (e.g., "business case shows positive
   ROI within 12 months")
-- Decision options — define proceed, pivot, and stop with expected next steps
+- Decision options — define proceed, revise, and stop with expected next steps
   for each
 
 **Example:**
 
 > "Proceed if: problem is validated by at least two stakeholders, business case
 > shows positive ROI within 12 months, and no unmitigated high-impact risks
-> remain. Pivot if: problem is validated but business case is weak — refine
+> remain. Revise if: problem is validated but business case is weak — refine
 > scope. Stop if: problem cannot be validated or strategic alignment is absent."
 
 > **Brownfield projects:** If the quick-pass readiness assessment estimates **T3
@@ -573,6 +573,6 @@ starting point.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.2.0.

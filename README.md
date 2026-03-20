@@ -191,7 +191,7 @@ For a deeper measurement model, see the [Framework Guide](guides/framework.md).
 
 ## Governance at a Glance
 
-The framework uses **two investment gates** — explicit continue/pivot/stop
+The framework uses **two investment gates** — explicit continue/revise/stop
 decisions where "investment" means committing team capacity, time, and budget.
 
 | Gate   | When                               | Decision                             |
@@ -388,6 +388,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.17.0.

@@ -246,7 +246,7 @@ organizational judgment, stakeholder authority, or accountability. Specifically:
   stakeholders can confirm or refute them
 - Risk acceptance — whether identified risks are acceptable, require mitigation,
   or should block the Gate 1 decision
-- The Gate 1 proceed/pivot/stop decision itself — this is always human-owned
+- The Gate 1 proceed/revise/stop decision itself — this is always human-owned
 
 ### Oversight Intensity at This Stage
 
@@ -295,7 +295,10 @@ Initiation outputs actively until brief quality is consistently high.
 When AI-generated content is uncertain or potentially incorrect:
 
 - Tag all unverified assumptions with **[ASSUMED]** in the brief — this makes
-  them visible to reviewers and creates a validation checklist for Requirements
+  them visible to reviewers and creates a validation checklist for Requirements.
+  See
+  [Reviewing \[ASSUMED\] Items](../../guides/agentic-workflow.md#reviewing-assumed-items)
+  for reviewer disposition guidance
 - Escalate investment decisions to the project sponsor rather than allowing AI
   to frame them as recommendations; AI presents options, humans decide
 - Present multiple scope options with explicit trade-offs rather than a single
@@ -321,6 +324,6 @@ state so the next session can continue without re-discovery:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.23.0.

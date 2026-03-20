@@ -27,7 +27,7 @@ to circulate.
 
 4. [ ] **Scope boundaries are explicit** (in-scope and out-of-scope)
 5. [ ] **Non-goals are explicit** (3-5 items)
-6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/pivot/stop)
+6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/revise/stop)
 7. [ ] **A project lead is named**
 8. [ ] **Success Criteria Register produced (Standard+)** with baselines,
        targets, and measurement methods for each success criterion
@@ -75,6 +75,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.2.0.

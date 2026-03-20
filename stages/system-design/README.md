@@ -79,7 +79,7 @@ ADRs, infrastructure configuration, and known technical debt.
 4. Review the brief for correctness — you own the final content
 5. Complete the [System Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
-6. Complete Gate 2 — present to stakeholders and record the proceed/pivot/stop
+6. Complete Gate 2 — present to stakeholders and record the proceed/revise/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
 > **See a completed example:** The
@@ -262,7 +262,7 @@ priority definitions.
 
 > **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
 > [System Design Brief Template](../../templates/system-design-brief.md#gate-2-decision-package).
-> Record the proceed/pivot/stop decision using the
+> Record the proceed/revise/stop decision using the
 > [Gate Decision Template](../../templates/gate-decision.md).
 
 ### Infrastructure Planning
@@ -568,6 +568,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.

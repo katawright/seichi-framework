@@ -7,7 +7,10 @@
 # Initiation Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
-> brief for gate reviewers to audit.
+> brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
+> be **confirmed** (verified — remove tag), **challenged** (incorrect — update
+> and remove tag), or **carried forward** (unverifiable now — leave tag and note
+> as a gate condition).
 
 ## Right-Sizing This Brief
 
@@ -73,7 +76,7 @@ spike, experiment) / TBD]
 **Proposed criteria:**
 
 - **Proceed if:** [conditions]
-- **Pivot if:** [conditions]
+- **Revise if:** [conditions]
 - **Stop if:** [conditions]
 
 **Next step if proceeding:** This brief becomes input to Requirements stage (per
@@ -196,7 +199,7 @@ foundational pass)
   - Slice plan with dependencies (for iterative delivery)
   - Updated staffing/timeline range + confidence
   - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
-  - Recommendation: proceed / pivot / stop
+  - Recommendation: proceed / revise / stop
 
 ---
 

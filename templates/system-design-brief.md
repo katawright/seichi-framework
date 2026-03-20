@@ -3,10 +3,13 @@
 # System Design Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
-> brief for gate reviewers to audit.
+> brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
+> be **confirmed** (verified — remove tag), **challenged** (incorrect — update
+> and remove tag), or **carried forward** (unverifiable now — leave tag and note
+> as a gate condition).
 
 > **AI suggestion:** _"Help me complete this system design brief for [project].
-> Start with the architecture overview based on these requirements: [link to >
+> Start with the architecture overview based on these requirements: [link to > >
 > requirements brief]."_
 
 **Last Updated:** YYYY-MM-DD
@@ -335,7 +338,7 @@ mitigation]
 **Recommendation:**
 
 - [ ] **Proceed** — Business case sound, cost acceptable
-- [ ] **Pivot** — [What would change]
+- [ ] **Revise** — [What would change]
 - [ ] **Stop** — [Why]
 
 **Decision Rationale:** [1-2 paragraphs]
