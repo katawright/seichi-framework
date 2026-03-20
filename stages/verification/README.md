@@ -68,6 +68,10 @@ meeting team threshold (default: 80% line coverage — see implementation brief
 for project-specific target), code review approvals, requirements with
 acceptance criteria, and implementation brief with notes.
 
+> Tests run in the **source code location**; the verification brief is stored in
+> the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
@@ -363,6 +367,6 @@ fresh brief.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.6.0.

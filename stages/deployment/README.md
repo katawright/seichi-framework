@@ -59,6 +59,9 @@ A verified increment with all tests passing, UAT sign-off from business
 stakeholders, production readiness checklist passed, and test results and known
 issues documented.
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 > **First time deploying this project?** If deployment infrastructure doesn't
@@ -442,6 +445,6 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.

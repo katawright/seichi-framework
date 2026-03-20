@@ -58,6 +58,9 @@ plan. The current increment should be identified from the increment plan, and
 foundational conventions established (coding patterns, error handling,
 technology-specific conventions).
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
@@ -330,6 +333,6 @@ contracts, and test strategy.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.

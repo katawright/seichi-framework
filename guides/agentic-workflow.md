@@ -1,7 +1,8 @@
 ---
 id: agentic-workflow
 type: guide
-concerns: [stage-routing, agent-orchestration, fallback-protocols]
+concerns:
+  [stage-routing, agent-orchestration, fallback-protocols, working-locations]
 stages:
   - id: initiation
     stage_number: 1
@@ -11,6 +12,7 @@ stages:
     reference: stages/initiation/reference.md
     default_autonomy: collaborative
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [
         {
@@ -37,6 +39,7 @@ stages:
     reference: stages/requirements/reference.md
     default_autonomy: collaborative
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [
         {
@@ -66,6 +69,7 @@ stages:
     reference: stages/system-design/reference.md
     default_autonomy: collaborative
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [
         {
@@ -111,6 +115,7 @@ stages:
     reference: stages/increment-design/reference.md
     default_autonomy: collaborative
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
@@ -138,6 +143,7 @@ stages:
     reference: stages/implementation/reference.md
     default_autonomy: ai-led
     default_oversight_intensity: passive
+    working_location: source-code
     gates:
       [
         {
@@ -174,6 +180,7 @@ stages:
     reference: stages/verification/reference.md
     default_autonomy: ai-led
     default_oversight_intensity: passive
+    working_location: source-code
     gates:
       [
         {
@@ -203,6 +210,7 @@ stages:
     reference: stages/deployment/reference.md
     default_autonomy: human-led
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [
         {
@@ -234,6 +242,7 @@ stages:
     reference: stages/support/reference.md
     default_autonomy: collaborative
     default_oversight_intensity: active
+    working_location: artifacts
     gates:
       [
         {
@@ -273,9 +282,24 @@ artifact_paths:
   session_logs: "docs/session-logs/"
   success_criteria: "docs/success-criteria-register.md"
   convention:
-    "Store project artifacts in a docs/ directory at the repository root. Agents
-    should check for existing directory structure before creating new paths. If
-    no docs/ directory exists, propose one during the first foundational stage."
+    "Store project artifacts in a docs/ directory at the artifacts location
+    root. Agents should check for existing directory structure before creating
+    new paths. If no docs/ directory exists, propose one during the first
+    foundational stage. See working_locations for the three-location model."
+working_locations:
+  framework:
+    role: "Read-only reference material"
+    writable: false
+    contains: [guides, stages, templates, checklists]
+  artifacts:
+    role: "Project governance artifacts"
+    writable: true
+    default_root: "docs/"
+    contains: [briefs, adrs, session-logs, gate-decisions, success-criteria]
+  source_code:
+    role: "Project codebase"
+    writable: true
+    contains: [application-code, tests, ci-cd-config]
 fallback:
   missing_input:
     "Request from human or derive from available context with [ASSUMED] flag"
@@ -354,16 +378,21 @@ need rationale or nuance.
 This table mirrors the `stages` array in the front matter. Use the front matter
 for programmatic access; use this table for quick human reference.
 
-| #   | Stage            | Pattern      | Default Autonomy | Gate Type                         | Feeds Into                 |
-| --- | ---------------- | ------------ | ---------------- | --------------------------------- | -------------------------- |
-| 1   | Initiation       | Foundational | Collaborative    | Human approval                    | Requirements               |
-| 2   | Requirements     | Foundational | Collaborative    | Human approval                    | System Design              |
-| 3   | System Design    | Foundational | Collaborative    | Alignment review + human approval | Increment Design           |
-| 4   | Increment Design | Iterative    | Collaborative    | Specialized review                | Implementation             |
-| 5   | Implementation   | Iterative    | AI-Led           | CI validation + human approval    | Verification               |
-| 6   | Verification     | Iterative    | AI-Led           | CI validation + human spot-check  | Deployment, Implementation |
-| 7   | Deployment       | Iterative    | Human-Led        | Human execution required          | Support, Increment Design  |
-| 8   | Support          | Continuous   | Collaborative    | Human approval                    | Multiple stages            |
+| #   | Stage            | Pattern      | Default Autonomy | Location    | Gate Type                         | Feeds Into                 |
+| --- | ---------------- | ------------ | ---------------- | ----------- | --------------------------------- | -------------------------- |
+| 1   | Initiation       | Foundational | Collaborative    | Artifacts   | Human approval                    | Requirements               |
+| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Human approval                    | System Design              |
+| 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment review + human approval | Increment Design           |
+| 4   | Increment Design | Iterative    | Collaborative    | Artifacts   | Specialized review                | Implementation             |
+| 5   | Implementation   | Iterative    | AI-Led           | Source Code | CI validation + human approval    | Verification               |
+| 6   | Verification     | Iterative    | AI-Led           | Source Code | CI validation + human spot-check  | Deployment, Implementation |
+| 7   | Deployment       | Iterative    | Human-Led        | Artifacts   | Human execution required          | Support, Increment Design  |
+| 8   | Support          | Continuous   | Collaborative    | Artifacts   | Human approval                    | Multiple stages            |
+
+The **Location** column indicates where the agent should operate during each
+stage — either the artifacts repository (`docs/`) or the source code repository.
+See [Working Locations](framework.md#working-locations) for the full
+three-location model.
 
 **Execution patterns:**
 
@@ -513,7 +542,8 @@ For oversight intensity within AI-Led (Active / Passive / Minimal), see the
 Recommended workflow for AI coding agents operating in this repository:
 
 1. **Orient** — read `guides/agentic-workflow.md` (parse front matter first for
-   stage routing, then body for context)
+   stage routing, then body for context). Determine your working location from
+   the `working_location` field for the current stage.
 2. **Locate stage** — identify the current stage from the routing table; read
    the stage README, checklist, and reference. If the current stage is not clear
    from the human's request, check for existing session logs or artifacts to

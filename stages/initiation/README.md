@@ -59,6 +59,9 @@ inputs/outputs, entry/exit criteria, and gate details), see
 A project idea, business opportunity, or problem worth investigating. No prior
 framework artifacts or technical expertise required.
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
