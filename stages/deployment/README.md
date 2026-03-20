@@ -401,8 +401,9 @@ Deployment validates that measurement systems work in production. See
 > throughline transitions from "tested in staging" to "live in production." See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
-> Deployment is the natural point to run an increment retrospective (optional)
-> or project retrospective (recommended at wrap-up). Use the
+> Deployment is the point to run the increment retrospective (or project
+> retrospective at wrap-up). Triage Captured Feedback entries accumulated during
+> the increment into the retrospective's analysis sections. Use the
 > [Retrospective Template](../../templates/retrospective.md). See
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
 

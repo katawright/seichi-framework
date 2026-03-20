@@ -84,7 +84,7 @@ stage gate. **Recommended** = high value, skip only with justification.
 | [Deployment Brief](../templates/deployment-brief.md)                   | Deployment       | Optional    | Required    | Required    |
 | [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |
 | [Support Brief](../templates/support-brief.md)                         | Support          | Optional    | Required    | Required    |
-| [Retrospective](../templates/retrospective.md)                         | Deployment       | Optional    | Recommended | Required    |
+| [Retrospective](../templates/retrospective.md)                         | Deployment       | Recommended | Recommended | Required    |
 | [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
 
 > **Minimal tier:** The Initiation Brief is the only universally required
@@ -263,6 +263,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-03-02
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.13.0.
