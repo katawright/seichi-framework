@@ -61,6 +61,9 @@ System Design.
         feasible
 15. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
+16. [ ] **All required stage outputs produced** (requirements brief, acceptance
+        criteria, prioritized backlog, NFRs — verify against stage README front
+        matter)
 
 ---
 

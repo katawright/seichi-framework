@@ -106,30 +106,32 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
  1. Review design brief for current increment
  2. Set up / verify development environment
+ 3. Start session log from template
 
 -- FOR EACH PR --
 
- 3. Create feature branch
- 4. Write code for this PR's scope
+ 4. Create feature branch
+ 5. Write code for this PR's scope
     Human review: correctness and security [GATE]
- 5. Implement instrumentation (logging, metrics)
+ 6. Implement instrumentation (logging, metrics)
     Human review: measurement completeness [GATE]
- 6. Document code
- 7. Run tests locally, verify passing
- 8. Update implementation brief (progress log)
- 9. Submit PR for peer review [GATE]
- 10. Address review feedback
- 11. Get approval and merge [GATE]
-     More PRs needed? Return to step 3.
+ 7. Document code
+ 8. Run tests locally, verify passing
+ 9. Update implementation brief (progress log)
+ 10. Submit PR for peer review [GATE]
+ 11. Address review feedback
+ 12. Get approval and merge [GATE]
+     More PRs needed? Return to step 4.
 
 -- ONCE PER INCREMENT (after all PRs merged) --
 
- 12. Run implementation checklist
+ 13. Run implementation checklist
      Human sign-off [GATE]
- 13. Finalize implementation brief
- 14. Prepare handoff to Verification [FINAL GATE]
+ 14. Finalize session log [GATE]
+ 15. Finalize implementation brief
+ 16. Prepare handoff to Verification [FINAL GATE]
 
- 15. Proceed to Verification stage
+ 17. Proceed to Verification stage
 ```
 
 ---

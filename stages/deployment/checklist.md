@@ -101,6 +101,9 @@ successful completion.
        [Retrospective Template](../../templates/retrospective.md) now or
        schedule within one week; triage Captured Feedback entries; log
        carry-forward items for next Increment Design)
+9. [ ] **All required stage outputs produced** (deployment brief, deployment
+       log, release notes, updated runbooks — verify against stage README front
+       matter)
 
 **Gate:** Support team ready to own production system.
 

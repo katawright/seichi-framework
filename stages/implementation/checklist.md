@@ -45,11 +45,16 @@ and ready for Verification.
        metrics, alerts)
 10. [ ] **Implementation brief completed with decisions documented** (ADRs for
         significant choices)
-11. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
-12. [ ] **Test environment prepared for Verification** (setup instructions, test
+11. [ ] **Session log finalized** (all sessions recorded, deviations and
+        decisions documented, context for Verification included)
+12. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
+13. [ ] **Test environment prepared for Verification** (setup instructions, test
         data ready; for local-only tools, satisfied by setup instructions and
         test data)
-13. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
+14. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
+15. [ ] **All required stage outputs produced** (implementation brief, session
+        log, working code, test results — verify against stage README front
+        matter)
 
 ---
 
@@ -82,6 +87,6 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.5.0.

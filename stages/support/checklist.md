@@ -94,6 +94,8 @@ For initial setup before accepting production ownership, use the
 24. [ ] **[H] Reports distributed to stakeholders** (monthly at minimum)
 25. [ ] **[H] Action items created when metrics are behind target** (assigned
         with due dates)
+26. [ ] **All required stage outputs produced** (support brief, runbooks,
+        monitoring dashboards — verify against stage README front matter)
 
 **Gate:** All items checked → business objectives are actively tracked.
 
@@ -136,6 +138,6 @@ For initial setup before accepting production ownership, use the
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.8.0.

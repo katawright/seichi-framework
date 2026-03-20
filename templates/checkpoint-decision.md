@@ -34,6 +34,21 @@ Ownership / Compliance Approval / Other Non-Investment Checkpoint
 
 ---
 
+## Artifact Completeness
+
+Verify that all required stage outputs listed in the stage README front matter
+`outputs` field have been produced before proceeding.
+
+| Artifact | Status                   | Location       |
+| -------- | ------------------------ | -------------- |
+| …        | Produced / Missing / N/A | (path or link) |
+
+**Blocking:** Any artifact with status "Missing" blocks the checkpoint decision
+unless the checkpoint reviewer explicitly approves the omission with documented
+rationale.
+
+---
+
 ## Criteria Evaluated
 
 | Criterion | Evidence | Assessment                |
@@ -86,4 +101,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.18.1 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.18.1 -->
