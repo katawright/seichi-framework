@@ -66,6 +66,8 @@ the increment is ready for deployment.
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
 18. [ ] **[H] Stakeholders notified of deployment plan**
+19. [ ] **All required stage outputs produced** (verification brief, test
+        results, defect reports — verify against stage README front matter)
 
 ---
 
@@ -98,6 +100,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.6.0.

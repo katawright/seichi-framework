@@ -53,6 +53,9 @@ to circulate.
 
 13. [ ] **At least one alternative option considered**
 14. [ ] **Hypothesis includes a time range and confidence level**
+15. [ ] **All required stage outputs produced** (initiation brief, success
+        criteria register [Standard+] — verify against stage README front
+        matter)
 
 ---
 

@@ -139,6 +139,9 @@ Files fall into categories that may have type-specific conventions:
   stage guide, not in the template itself
 - Cross-references to other templates use HTML comments rather than visible
   blockquotes
+- For revision history role definitions (Author, Reviewer, Approver) in artifact
+  templates, see
+  [Agentic Workflow Guide: Revision History Roles](guides/agentic-workflow.md#revision-history-roles)
 
 ---
 
@@ -374,6 +377,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.19.0.

@@ -65,6 +65,9 @@ ready for Gate 2.
 16. [ ] **Conventions established** (API patterns, data access, error handling)
 17. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
         and dependencies clear)
+18. [ ] **All required stage outputs produced** (system design brief, ADRs,
+        architecture diagrams, increment plan — verify against stage README
+        front matter)
 
 ---
 

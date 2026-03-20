@@ -225,6 +225,66 @@ work session so the next session's agent can restore context from it.
 
 ---
 
+## Slicing: Decomposing Increments into PRs
+
+Slicing breaks an increment's scope into PR-sized implementation units — each
+independently reviewable, testable, and mergeable. Good slices keep PRs small
+(see [PR Size](#pr-size) below) while ensuring each slice delivers a coherent
+change.
+
+### Cross-Cutting Slices
+
+A cross-cutting slice spans multiple components or layers to establish shared
+infrastructure or conventions that subsequent slices depend on.
+
+**When to use:** Foundation increments (I0), shared dependencies, cross-cutting
+concerns (auth, logging, error handling), database schema setup.
+
+**Example:** "Set up project structure, CI pipeline, and database schema" —
+touches multiple layers but is a prerequisite for all feature work.
+
+### Vertical Slices
+
+A vertical slice delivers a thin, end-to-end path through all layers — from UI
+(if applicable) through business logic to data storage — for a single
+user-facing behavior.
+
+**When to use:** Feature increments (I1+), user stories,
+acceptance-criteria-driven work.
+
+**Example:** "User can create a new project" — includes the API endpoint,
+validation logic, database write, and confirmation response.
+
+### Choosing a Slicing Strategy
+
+| Factor            | Cross-Cutting                      | Vertical                            |
+| ----------------- | ---------------------------------- | ----------------------------------- |
+| Best for          | Foundation, shared infra, I0       | Feature delivery, I1+               |
+| PR scope          | Multiple components, one concern   | All layers, one behavior            |
+| Dependency risk   | Later slices depend on this        | Independent of other feature slices |
+| Testability       | Infrastructure tests, smoke tests  | End-to-end acceptance tests         |
+| Review complexity | Higher — reviewers need broad view | Lower — reviewers follow one flow   |
+
+Most increments use a mix: one or two cross-cutting slices for setup, followed
+by vertical slices for features.
+
+### Decomposition Steps
+
+1. List the increment's requirements and acceptance criteria
+2. Identify shared dependencies and cross-cutting concerns → cross-cutting
+   slices
+3. Group remaining requirements by user-facing behavior → vertical slices
+4. Order slices by dependency (cross-cutting first, then vertical by priority)
+5. Validate each slice is independently reviewable and testable
+6. Record the slice plan in the implementation brief
+
+<!-- prettier-ignore -->
+> **AI exploration:** _"Help me decompose [describe your
+> increment scope] into PR-sized slices, identifying which
+> are cross-cutting and which are vertical."_
+
+---
+
 ## PR Strategy and Branching
 
 ### PR Size
@@ -428,6 +488,6 @@ Capture the following at the end of each session:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.

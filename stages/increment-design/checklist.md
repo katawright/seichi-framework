@@ -58,6 +58,9 @@ and ready for Implementation.
         quality, testing, security, local dev, documentation, onboarding)
 14. [ ] **Deferred concerns documented with justification** (conscious
         deferrals, not omissions)
+15. [ ] **All required stage outputs produced** (increment design brief,
+        component designs, test strategy — verify against stage README front
+        matter)
 
 ---
 

@@ -487,6 +487,17 @@ code repo (e.g., `docs/design/`). Engineers update the canonical copy during
 implementation; the artifact-repo snapshot remains untouched as a point-in-time
 record.
 
+### Cross-Location Handoff
+
+Stages that cross location boundaries — particularly Implementation (source
+code) feeding back to artifacts (briefs, session logs) — require explicit
+sync-back of decisions, deferrals, and deviations. Without deliberate handoff,
+implementation decisions stay in the engineer's head or in code comments, and
+artifacts drift from reality.
+
+For the full protocol — what flows back, sync points, and agent steps — see
+[Agentic Workflow Guide: Cross-Location Handoff Protocol](agentic-workflow.md#cross-location-handoff-protocol).
+
 ---
 
 ## Key Terms

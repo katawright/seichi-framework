@@ -704,6 +704,37 @@ For the Implementation stage specifically, use the
 (`templates/implementation-session-log.md`) — a specialized variant optimized
 for code-focused session tracking.
 
+### Revision History Roles
+
+When recording revision history in artifacts (Author, Approved By columns), use
+these role definitions to clarify each contributor's relationship to the
+content:
+
+- **Author** — shaped the content. The person or agent who drove the substance
+  of the artifact, not merely the one who typed or generated text.
+- **Reviewer** — reviewed the artifact and provided substantive feedback that
+  influenced the final content.
+- **Approver** — approved the artifact without substantive changes. Confirms the
+  artifact meets gate criteria.
+
+**Format:** `Name (Role)` — e.g., `Jane Smith (Author)`,
+`Claude Sonnet (Reviewer)`.
+
+**Agent-specific guidance:** Role reflects who drove the work, not who typed. An
+agent that generates an artifact from a detailed human brief is typically listed
+as Author only if it made substantive decisions beyond mechanical translation.
+Consider the autonomy tier:
+
+| Autonomy Tier | Typical Author            | Rationale                              |
+| ------------- | ------------------------- | -------------------------------------- |
+| Human-Led     | Human                     | Human shaped all content               |
+| Collaborative | Human and/or agent        | Depends on who drove each section      |
+| AI-Led        | Agent (human as Approver) | Agent drove substance; human validated |
+
+When multiple contributors share authorship, list each with their role. When in
+doubt, credit the contributor who made the substantive decisions rather than the
+one who generated text.
+
 ### Feedback Capture Protocol
 
 When an observation arises during any stage — a surprise, a deviation from
@@ -732,6 +763,48 @@ immediately rather than waiting for the retrospective session.
 > Agents: this is a write action. Follow artifact location conventions in
 > [Working Locations](../guides/framework.md#working-locations) and verify the
 > correct artifacts path before writing.
+
+### Cross-Location Handoff Protocol
+
+When work crosses location boundaries — especially from source code
+(Implementation) back to artifacts (briefs, session logs) or forward to
+Verification — decisions, deferrals, and deviations must flow back explicitly.
+
+#### What Flows Back
+
+| Item Type              | Example                                | Target Artifact                                     |
+| ---------------------- | -------------------------------------- | --------------------------------------------------- |
+| Decisions              | Chose library X over Y for concurrency | Implementation brief + session log                  |
+| Deferrals              | Deferred pagination to next increment  | Implementation brief "Known Issues" + carry-forward |
+| Deviations from design | API endpoint changed from POST to PUT  | Session log + implementation brief                  |
+| Emergent requirements  | Discovered need for rate limiting      | Retrospective Captured Feedback                     |
+
+#### Sync Points
+
+1. **End of session** — update session log with decisions and deviations
+2. **End of increment** — finalize implementation brief, sync deferrals to
+   carry-forward list
+3. **Verification handoff** — ensure all implementation decisions are documented
+   for testers
+4. **Next increment design start** — review carry-forward items and
+   retrospective feedback before scoping
+
+#### Agent Protocol
+
+At each sync point, agents should:
+
+1. Review the session log for undocumented decisions or deviations
+2. Update the implementation brief with any decisions not yet recorded
+3. Record deferrals in the implementation brief "Known Issues" section and flag
+   them for carry-forward
+4. Capture emergent requirements in the retrospective's Captured Feedback table
+   (see [Feedback Capture Protocol](#feedback-capture-protocol))
+5. Verify that the artifacts location reflects the current state of work in the
+   source code location
+
+> See [Working Locations](framework.md#working-locations) for the three-location
+> model and [Session Continuity Protocol](#session-continuity-protocol) for
+> session log conventions.
 
 ---
 

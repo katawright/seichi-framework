@@ -33,6 +33,20 @@
 
 ---
 
+## Artifact Completeness
+
+Verify that all required stage outputs listed in the stage README front matter
+`outputs` field have been produced before proceeding.
+
+| Artifact | Status                   | Location       |
+| -------- | ------------------------ | -------------- |
+| …        | Produced / Missing / N/A | (path or link) |
+
+**Blocking:** Any artifact with status "Missing" blocks the gate decision unless
+the gate reviewer explicitly approves the omission with documented rationale.
+
+---
+
 ## Criteria Evaluated
 
 Criteria may match or differ from what the preceding stage proposed.
@@ -103,4 +117,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.13.0 -->
