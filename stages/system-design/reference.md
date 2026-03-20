@@ -609,24 +609,24 @@ Components:
 
 ### Technology Stack Example
 
-| Category     | Choice               | Justification             | ADR     |
-| ------------ | -------------------- | ------------------------- | ------- |
-| **Frontend** | React 18             | Team expertise, ecosystem | ADR-004 |
-| **Backend**  | Node.js 20 + Express | JS full-stack             | ADR-005 |
-| **Database** | PostgreSQL 15        | ACID, relational          | ADR-001 |
-| **Cache**    | Redis 7              | In-memory, pub/sub        | ADR-006 |
-| **Auth**     | JWT tokens           | Stateless, standard       | ADR-003 |
-| **Hosting**  | Cloud managed        | Scalability, reduced ops  | ADR-007 |
-| **CI/CD**    | GitHub Actions       | Integrated, free tier     | -       |
+| Category     | Choice               | Justification             | ADR      |
+| ------------ | -------------------- | ------------------------- | -------- |
+| **Frontend** | React 18             | Team expertise, ecosystem | ADR-D004 |
+| **Backend**  | Node.js 20 + Express | JS full-stack             | ADR-D005 |
+| **Database** | PostgreSQL 15        | ACID, relational          | ADR-D001 |
+| **Cache**    | Redis 7              | In-memory, pub/sub        | ADR-D006 |
+| **Auth**     | JWT tokens           | Stateless, standard       | ADR-D003 |
+| **Hosting**  | Cloud managed        | Scalability, reduced ops  | ADR-D007 |
+| **CI/CD**    | GitHub Actions       | Integrated, free tier     | -        |
 
 ### ADR List Example
 
-| ADR     | Title                           | Status   | Cost Impact |
-| ------- | ------------------------------- | -------- | ----------- |
-| ADR-001 | Database Selection (PostgreSQL) | Accepted | ~$3-6K/yr   |
-| ADR-002 | File Upload (Presigned URLs)    | Accepted | ~$60-180/yr |
-| ADR-003 | Authentication (JWT)            | Accepted | Minimal     |
-| ADR-004 | Frontend Framework (React)      | Accepted | Free (OSS)  |
+| ADR      | Title                           | Status   | Cost Impact |
+| -------- | ------------------------------- | -------- | ----------- |
+| ADR-D001 | Database Selection (PostgreSQL) | Accepted | ~$3-6K/yr   |
+| ADR-D002 | File Upload (Presigned URLs)    | Accepted | ~$60-180/yr |
+| ADR-D003 | Authentication (JWT)            | Accepted | Minimal     |
+| ADR-D004 | Frontend Framework (React)      | Accepted | Free (OSS)  |
 
 ### Data Model Example
 
@@ -882,6 +882,6 @@ state so the next session can continue without re-deriving context:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.

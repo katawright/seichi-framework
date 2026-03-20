@@ -1,4 +1,8 @@
-# ADR-XXX: [Title - Short Present Tense Phrase]
+# ADR-DXXX: [Title - Short Present Tense Phrase]
+
+<!-- Draft numbering: use ADR-DNNN (e.g., ADR-D001) during System Design.    -->
+<!-- When published to the source code repo at Gate 2, renumber to ADR-NNN    -->
+<!-- to fit the code repo's sequential scheme.                                -->
 
 **Last Updated:** YYYY-MM-DD
 
@@ -202,4 +206,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.4.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.4.0 -->

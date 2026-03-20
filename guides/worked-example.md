@@ -204,16 +204,16 @@ From the **System Design Brief**, Technology Stack (§ 3):
 ```markdown
 ## 3. Technology Stack
 
-| Category     | Choice            | Justification                          | ADR     |
-| ------------ | ----------------- | -------------------------------------- | ------- |
-| **Frontend** | React             | Component model suits task-based UI;   | ADR-001 |
-|              |                   | team experience                        |         |
-| **Backend**  | Node.js / Express | JavaScript end-to-end; lightweight for | ADR-002 |
-|              |                   | REST API                               |         |
-| **Database** | PostgreSQL        | Relational model fits structured       | ADR-003 |
-|              |                   | onboarding data; strong FK support     |         |
-| **Auth**     | JWT + RBAC        | Stateless auth with role-based access  | ADR-004 |
-|              |                   | (HR Manager vs New Hire)               |         |
+| Category     | Choice            | Justification                          | ADR      |
+| ------------ | ----------------- | -------------------------------------- | -------- |
+| **Frontend** | React             | Component model suits task-based UI;   | ADR-D001 |
+|              |                   | team experience                        |          |
+| **Backend**  | Node.js / Express | JavaScript end-to-end; lightweight for | ADR-D002 |
+|              |                   | REST API                               |          |
+| **Database** | PostgreSQL        | Relational model fits structured       | ADR-D003 |
+|              |                   | onboarding data; strong FK support     |          |
+| **Auth**     | JWT + RBAC        | Stateless auth with role-based access  | ADR-D004 |
+|              |                   | (HR Manager vs New Hire)               |          |
 ```
 
 ### Increment Plan
@@ -835,7 +835,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.17.0. For a brownfield adoption example showing
 preparation increments, exit checkpoints, and shadow mode, see the
