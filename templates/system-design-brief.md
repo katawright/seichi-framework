@@ -8,9 +8,10 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
-> **AI suggestion:** _"Help me complete this system design brief for [project].
+> **AI suggestion:** \_"Help me complete this system design brief for [project].
 > Start with the architecture overview based on these requirements: [link to > >
-> requirements brief]."_
+>
+> > requirements brief]."\_
 
 **Last Updated:** YYYY-MM-DD
 
@@ -56,17 +57,17 @@ DevOps Lead, Project Manager]
 ## 2. Architecture Decision Records (ADRs)
 
 <!-- ADRs are separate files stored in docs/adr/ — not embedded in this brief -->
-<!-- docs/adr/ is a project-level location you create in your own repository -->
+<!-- Use draft numbering (ADR-DNNN) during System Design; renumber at Gate 2  -->
 
 - **Directory:** `docs/adr/`
-- **File naming:** `ADR-XXX-short-description.md`
+- **File naming:** `ADR-DXXX-short-description.md` (draft prefix during design)
 - **Template:** [ADR Template](adr.md)
 - **Index:** `docs/adr/README.md`
 
-| ADR     | Title   | Category | Status   |
-| ------- | ------- | -------- | -------- |
-| ADR-001 | [Title] | [Area]   | [Status] |
-| ADR-002 | [Title] | [Area]   | [Status] |
+| ADR      | Title   | Category | Status   |
+| -------- | ------- | -------- | -------- |
+| ADR-D001 | [Title] | [Area]   | [Status] |
+| ADR-D002 | [Title] | [Area]   | [Status] |
 
 Reference individual ADRs from the relevant sections below (Technology Stack,
 Data Architecture, API Architecture, etc.).
@@ -193,10 +194,10 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ## NFR Traceability
 
-| NFR ID | Description            | Architectural Approach      | ADR   | Verification Method      |
-| ------ | ---------------------- | --------------------------- | ----- | ------------------------ |
-| NFR-1  | p95 response < 200ms   | CDN + Redis caching layer   | ADR-6 | Load test in Increment 2 |
-| NFR-2  | Data encrypted at rest | AES-256 via managed service | ADR-3 | Security scan + audit    |
+| NFR ID | Description            | Architectural Approach      | ADR      | Verification Method      |
+| ------ | ---------------------- | --------------------------- | -------- | ------------------------ |
+| NFR-1  | p95 response < 200ms   | CDN + Redis caching layer   | ADR-D006 | Load test in Increment 2 |
+| NFR-2  | Data encrypted at rest | AES-256 via managed service | ADR-D003 | Security scan + audit    |
 
 ---
 
@@ -357,4 +358,4 @@ mitigation]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0 -->

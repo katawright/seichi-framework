@@ -333,8 +333,8 @@ Mermaid or PlantUML for diagram-as-code.
 ### Architecture Decision Records (ADRs)
 
 ADRs document significant decisions and reasoning. They are **separate project
-files** stored in `docs/adr/` (or a stage-level `adr/` directory if your team
-uses scoped ADRs).
+files** — drafted in the artifacts repo during System Design and published to
+the source code repo at Gate 2.
 
 **Create for decisions that are:**
 
@@ -345,23 +345,18 @@ uses scoped ADRs).
 Key sections: Context, options considered (with cost analysis), decision and
 rationale, consequences, alternatives.
 
-**File naming:** `ADR-NNN-short-description.md` (e.g.,
-`ADR-001-database-selection.md`, `ADR-002-file-upload-mechanism.md`)
+**Draft numbering:** Use a `D` prefix during System Design:
+`ADR-DNNN-short-description.md` (e.g., `ADR-D001-database-selection.md`,
+`ADR-D002-file-upload-mechanism.md`). The prefix makes draft status self-evident
+and keeps numbering scoped to the current project's artifacts.
 
 **Template:** [ADR Template](../../templates/adr.md)
 
-**Location:** Use `docs/adr/` as the primary project-level ADR registry.
-
-- `docs/adr/` — canonical location for all ADRs (recommended)
-- `system-design/adr/` — alternative for System Design decisions
-- `implementation/adr/` — alternative for increment-specific decisions
-
-Use per-stage directories if your team prefers scoped numbering; use `docs/adr/`
-for a unified ADR registry.
-
-**Numbering:** Use sequential numbers (001, 002, 003...) per directory. Numbers
-are scoped to the directory (`system-design/adr/ADR-001` and
-`implementation/adr/ADR-001` can both exist).
+**Location during System Design:** Store draft ADRs in `docs/adr/` within the
+artifacts repo. At Gate 2, ADRs are published to the source code repo and
+renumbered to fit the code repo's sequential scheme. See
+[Artifact Placement: ADR Publishing](../../guides/framework.md#adr-publishing)
+for the full publishing workflow.
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
 
@@ -406,18 +401,18 @@ ADRs follow a propose → review → approve → record → evolve lifecycle:
 
 #### Referencing ADRs from Briefs
 
-In your `system-design-brief.md` (System Design stage):
+In your `system-design-brief.md` (System Design stage — draft numbering):
 
 ```markdown
 ## Technology Stack
 
-**Database:** PostgreSQL 15 (see [ADR-001](adr/ADR-001-database-selection.md))
+**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001-database-selection.md))
 **File Upload:** Presigned URLs with object storage (see
-[ADR-002](adr/ADR-002-file-upload-mechanism.md)) **Authentication:** JWT tokens
-(see [ADR-003](adr/ADR-003-authentication-approach.md))
+[ADR-D002](adr/ADR-D002-file-upload-mechanism.md)) **Authentication:** JWT
+tokens (see [ADR-D003](adr/ADR-D003-authentication-approach.md))
 
 For detailed rationale, alternatives, and cost analysis, see ADRs in
-`system-design/adr/`.
+`docs/adr/`.
 ```
 
 In your `implementation-brief.md` (Implementation stage):

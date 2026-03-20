@@ -358,6 +358,58 @@ code location.
 > Design. See the [Project Foundation Guide](project-foundation.md) for
 > sequencing details.
 
+### Artifact Placement
+
+Not all project artifacts stay in the artifacts location. Some are drafted in
+the artifacts repo during design stages and then published to the source code
+repo when implementation begins. Understanding which artifacts live where — and
+when they move — prevents duplication, lost context, and orphaned records.
+
+| Artifact              | Home Location | Notes                                                        |
+| --------------------- | ------------- | ------------------------------------------------------------ |
+| Briefs                | Artifacts     | Governance records; stay in artifacts for the project's life |
+| Gate decisions        | Artifacts     | Governance records; stay in artifacts                        |
+| Session logs          | Artifacts     | Governance records; stay in artifacts                        |
+| Success criteria reg. | Artifacts     | Governance records; stay in artifacts                        |
+| Retrospectives        | Artifacts     | Governance records; stay in artifacts                        |
+| ADRs                  | Source Code   | Drafted in artifacts; published to source code at Gate 2     |
+| Design diagrams       | Source Code   | Snapshot in artifacts; canonical copy in `docs/design/`      |
+| API contracts         | Source Code   | Drafted during design; canonical copy with owning service    |
+
+> **Snapshot preservation:** Artifact-repo copies of published artifacts (ADRs,
+> diagrams) remain as point-in-time records of design-stage decisions. They are
+> not deleted or moved — they serve as the governance record of what was decided
+> and when.
+
+#### ADR Publishing
+
+ADRs are drafted in the artifacts repo during System Design and published to the
+source code repo when implementation begins (Gate 2).
+
+**Draft numbering:** Use a `D` prefix during System Design (`ADR-D001`,
+`ADR-D002`). The prefix makes draft status self-evident and keeps numbering
+scoped to the current project's artifacts.
+
+**Publishing at Gate 2:** When ADRs move to the source code repo, renumber them
+to fit the code repo's existing sequential scheme (e.g., `ADR-D001` →
+`ADR-023`). Update the artifact-repo copy with a pointer:
+
+> Published as ADR-023 in [code repo].
+
+**Traceability:** One-directional by default — the artifact-repo copy points
+forward to the published ADR. Bidirectional pointers (code repo back to artifact
+repo) are optional and useful when a unique project identifier is available
+(e.g., platform-enforced project numbers). Without a project identifier,
+`ADR-D001` is ambiguous across projects, so the back-reference is omitted.
+
+#### Design Diagrams
+
+System design diagrams follow the same pattern as ADRs: the artifacts repo holds
+a snapshot from the design stage, while the canonical copy lives in the source
+code repo (e.g., `docs/design/`). Engineers update the canonical copy during
+implementation; the artifact-repo snapshot remains untouched as a point-in-time
+record.
+
 ---
 
 ## Key Terms
@@ -370,10 +422,11 @@ code location.
 "done" for a requirement. Format: Given/When/Then or measurable conditions.
 
 **Architecture Decision Record (ADR)** — A short document capturing a
-significant design decision and the reasoning behind it. Primary storage:
-`docs/adr/`. Alternative: per-stage directories (`system-design/adr/`,
-`implementation/adr/`) for scoped numbering. See the
-[ADR Template](../templates/adr.md) for guidance.
+significant design decision and the reasoning behind it. ADRs are drafted in the
+artifacts repo during System Design (using `ADR-DNNN` draft numbering) and
+published to the source code repo at Gate 2 (renumbered to `ADR-NNN`). See
+[Artifact Placement: ADR Publishing](#adr-publishing) for the full lifecycle and
+the [ADR Template](../templates/adr.md) for the document format.
 
 > **Artifact location note:** Paths like `docs/adr/`, `docs/api/`, and
 > `AGENTS.md` refer to project-level artifacts created in your project
