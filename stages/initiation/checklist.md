@@ -10,6 +10,10 @@ to circulate.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
+> **AI-Led mode:** AI completes the full checklist and presents results to the
+> human reviewer. Humans review all items and confirm **[H]** items, which
+> require human judgment that AI cannot substitute for.
+
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
@@ -20,8 +24,9 @@ to circulate.
 
 1. [ ] **Problem statement is problem-first** (not solution-first)
 2. [ ] **Business case + "why now"** stated in 1-3 bullets
-3. [ ] **Goals include at least one measurable success metric** (baseline →
-       target; if baseline is unknown, state that explicitly)
+3. [ ] **Goals include at least one success criterion with a clear definition of
+       done** (measurable with baseline → target where applicable; qualitative
+       with explicit evaluation criteria otherwise)
 
 ### Scope and Governance
 

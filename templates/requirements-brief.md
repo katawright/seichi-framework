@@ -41,6 +41,10 @@
 
 <!-- For guidance, see requirements/README.md#problem-statement -->
 
+> **Guard against solutioning:** This section describes _what is wrong_, not
+> _how to fix it_. If you find yourself naming technologies, UI patterns, or
+> implementation approaches, move that content to System Design.
+
 - [Problem in problem-first form (no solutions), carried forward from Initiation
   Brief]
 
@@ -124,22 +128,25 @@
      Enterprise: formal FRs with comprehensive ACs and edge cases -->
 
 - **FR-1:** [requirement description]
+  - **Why:** [One-line rationale — what need or problem this serves]
   - **AC-1.1:** [acceptance criterion]
 
 - **FR-2:** [requirement description]
+  - **Why:** [One-line rationale — what need or problem this serves]
   - **AC-2.1:** [acceptance criterion]
 
 - **FR-3:** [requirement description]
+  - **Why:** [One-line rationale — what need or problem this serves]
   - **AC-3.1:** [acceptance criterion]
 
 ---
 
 ## Traceability Summary
 
-| FR ID | Initiation Objective | MoSCoW | ACs    | Success Metric |
-| ----- | -------------------- | ------ | ------ | -------------- |
-| FR-1  | [objective ref]      | Must   | AC-1.1 | [metric ref]   |
-| FR-2  | [objective ref]      | Should | AC-2.1 | [metric ref]   |
+| FR ID | Short Name      | Initiation Objective | MoSCoW | ACs    | Success Metric |
+| ----- | --------------- | -------------------- | ------ | ------ | -------------- |
+| FR-1  | [2-4 word name] | [objective ref]      | Must   | AC-1.1 | [metric ref]   |
+| FR-2  | [2-4 word name] | [objective ref]      | Should | AC-2.1 | [metric ref]   |
 
 ---
 
@@ -270,8 +277,13 @@ Provide this Requirements Brief to System Design team.
      Checklist. This catches issues before formal review and improves
      first-pass quality. -->
 
+> **Timing:** Complete this section after drafting the brief and before the
+> Requirements Readiness checkpoint. Reviewers use it to confirm that
+> self-assessment was performed, not skipped.
+
 - [ ] Pre-filled [Requirements Checklist](../stages/requirements/checklist.md)
       with self-assessment and evidence for each item
-- **Items needing attention:** [List any items that don't fully pass]
+- **Items needing attention:** [List any items that don't fully pass, or "None"
+  if all items pass]
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.3.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.3.0 -->

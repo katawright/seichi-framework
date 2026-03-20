@@ -273,6 +273,11 @@ behavior-focused — what users can't do and why.
 
 > "Build a unified dashboard."
 
+> **Agent instruction (Collaborative/AI-Led):** If the user introduces solution
+> language during requirements elicitation, acknowledge the idea, capture it as
+> a design consideration for System Design, then redirect to the behavior the
+> user needs.
+
 ### Goals and Success Criteria
 
 Success criteria from the Initiation Brief establish the measurement throughline
@@ -375,6 +380,7 @@ output?
 **What to include:**
 
 - Numbered requirements (FR-1, FR-2) for traceability
+- One-line rationale ("Why") — the business need or user problem this FR serves
 - Behavior-focused statements (what, not how)
 - Unambiguous language with a single interpretation
 
@@ -427,13 +433,13 @@ System Design or later.
 
 **What to include:**
 
-- One row per FR with columns for Initiation objective, MoSCoW classification,
-  acceptance criteria references, and success metric
+- One row per FR with columns for short name (2-4 words), Initiation objective,
+  MoSCoW classification, acceptance criteria references, and success metric
 
 **Good example:**
 
-> "FR-1 → Reduce handle time objective → Must Have → AC-1.1, AC-1.2 → p90
-> time-to-context metric."
+> "FR-1 (Unified inbox) → Reduce handle time objective → Must Have → AC-1.1,
+> AC-1.2 → p90 time-to-context metric."
 
 **Bad example:**
 

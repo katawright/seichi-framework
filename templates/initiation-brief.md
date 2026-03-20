@@ -50,8 +50,11 @@ spike, experiment) / TBD]
 ## Goals and Success Criteria
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
+<!-- Qualitative criteria (PoCs, spikes, exploratory projects) are acceptable when numeric baselines are not feasible. Use the Question / Evaluation criteria / Timeframe template from initiation/reference.md#when-criteria-are-qualitative. -->
 
-- [1–3 measurable outcomes with baseline and target where possible]
+- [outcomes with baseline and target where measurable; explicit evaluation
+  criteria where qualitative]
+  - **Why:** [One-line rationale — why this goal matters]
 
 ---
 
@@ -209,8 +212,13 @@ foundational pass)
      Checklist. This catches issues before formal review and improves
      first-pass quality. -->
 
+> **Timing:** Complete this section after drafting the brief and before
+> submitting for Gate 1 review. Reviewers use it to confirm that self-assessment
+> was performed, not skipped.
+
 - [ ] Pre-filled [Initiation Checklist](../stages/initiation/checklist.md) with
       self-assessment and evidence for each item
-- **Items needing attention:** [List any items that don't fully pass]
+- **Items needing attention:** [List any items that don't fully pass, or "None"
+  if all items pass]
 
-<!-- Template Last Updated: 2026-03-05 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.2.0 -->

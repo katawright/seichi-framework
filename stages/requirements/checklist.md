@@ -10,6 +10,10 @@ System Design.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
+> **AI-Led mode:** AI completes the full checklist and presents results to the
+> human reviewer. Humans review all items and confirm **[H]** items, which
+> require human judgment that AI cannot substitute for.
+
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
@@ -87,6 +91,6 @@ System Design.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.3.0.
