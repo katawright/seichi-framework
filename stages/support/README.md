@@ -66,6 +66,9 @@ delivery and development.
 A deployed increment live in production, baseline measurements captured at
 deployment, and production monitoring dashboards active.
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 > **First time setting up support?** Complete the
@@ -441,6 +444,6 @@ when the team confirms readiness to own the system in production.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.8.0.

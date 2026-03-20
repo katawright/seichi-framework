@@ -9,6 +9,7 @@ concerns:
     greenfield-brownfield,
     compliance,
     continuous-learning,
+    working-locations,
   ]
 ---
 
@@ -198,6 +199,9 @@ rigor to project risk and team size. Full reference:
 requirements and AI autonomy tiers. Full reference:
 [ai-assistance.md](ai-assistance.md).
 
+**[Working Locations](#working-locations)** — Three repository locations that
+structure where framework guidance, project artifacts, and source code live.
+
 **[Roles and Responsibilities](#roles-and-responsibilities)** — Cross-stage RACI
 matrix for stages and gate decisions.
 
@@ -306,6 +310,56 @@ requirements, the autonomy spectrum, and operational guidance, see the
 
 ---
 
+## Working Locations
+
+The framework operates across three distinct locations. Keeping them separate —
+even when they share a single repository — ensures that framework guidance
+remains stable, project decisions are traceable, and source code stays clean.
+
+| Location    | Role                | Contents                                                                                     | Write Access                 |
+| ----------- | ------------------- | -------------------------------------------------------------------------------------------- | ---------------------------- |
+| Framework   | Read-only reference | Guides, stages, templates, checklists                                                        | Never                        |
+| Artifacts   | Project governance  | `docs/briefs/`, `docs/adr/`, `docs/session-logs/`, gate decisions, success criteria register | All stages                   |
+| Source Code | Project codebase    | Application code, tests, CI/CD config                                                        | Implementation, Verification |
+
+### Stage-Location Mapping
+
+| Stage                       | Operating Location      | Notes                                                     |
+| --------------------------- | ----------------------- | --------------------------------------------------------- |
+| Initiation–Increment Design | Artifacts               | Read framework; write to `docs/`                          |
+| Implementation              | Source Code             | Read artifacts and framework; write code                  |
+| Verification                | Source Code + Artifacts | Tests run in source code; verification brief in artifacts |
+| Deployment                  | Artifacts               | References source code for build artifacts                |
+| Support                     | Artifacts               | References deployed system                                |
+
+> **Monorepo note:** When all three locations share the same repository, the
+> distinctions still apply conceptually — treat framework files as read-only and
+> route project artifacts to `docs/`.
+
+### Working Locally
+
+To set up a local environment that respects the three-location model:
+
+1. **Clone or reference the framework repo** (read-only) — this provides guides,
+   stages, templates, and checklists
+2. **Create or clone the artifacts repo** — this is where project governance
+   artifacts live (`docs/briefs/`, `docs/adr/`, `docs/session-logs/`)
+3. **Create or clone the source code repo** — this is the project codebase
+
+**Protection rule:** Agents must not modify framework files. Framework content
+is consumed as read-only reference material at every stage.
+
+**Working directory:** Use the artifacts location as your working directory for
+all stages except Implementation and Verification, which operate from the source
+code location.
+
+> **Greenfield note:** Create the artifacts repo first during Initiation. The
+> source code repo is created when the tech stack is decided during System
+> Design. See the [Project Foundation Guide](project-foundation.md) for
+> sequencing details.
+
+---
+
 ## Key Terms
 
 > **Canonical glossary:** This section is the single authoritative source for
@@ -324,7 +378,8 @@ significant design decision and the reasoning behind it. Primary storage:
 > **Artifact location note:** Paths like `docs/adr/`, `docs/api/`, and
 > `AGENTS.md` refer to project-level artifacts created in your project
 > repository when applying this framework. They are not directories shipped
-> under `framework/`.
+> under `framework/`. See [Working Locations](#working-locations) for how
+> framework, artifacts, and source code locations relate.
 
 **Foundational stage** — Executes once per project but can be revisited. Sets
 the project foundation.

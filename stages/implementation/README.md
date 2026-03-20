@@ -58,6 +58,10 @@ A completed Increment Design Brief with detailed component designs, interface
 contracts, and test strategy. Your development environment should be set up and
 ready.
 
+> This stage operates from the **source code location**. Design briefs and
+> session logs are read from the artifacts location. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
@@ -352,6 +356,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.5.0.

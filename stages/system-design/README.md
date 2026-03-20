@@ -65,6 +65,9 @@ requirements, and success criteria requiring instrumentation. For brownfield
 first AI-assisted projects, also gather existing architecture documentation,
 ADRs, infrastructure configuration, and known technical debt.
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier

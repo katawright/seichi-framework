@@ -60,6 +60,9 @@ A completed Initiation Brief with Gate 1 approval to proceed. The brief provides
 the business case, success criteria, scope boundaries, and constraints that
 Requirements will convert into testable specifications.
 
+> This stage operates from the **artifacts location**. See
+> [Working Locations](../../guides/framework.md#working-locations).
+
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier

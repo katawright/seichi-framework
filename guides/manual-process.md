@@ -52,10 +52,15 @@ prescription.
 ```
 I'm using the AI-Assisted SDLC framework for a software project.
 
+**Locations:**
+- Framework location: [path or "pasted below"]
+- Artifacts location: [path or "same as source code"]
+- Source code location: [path or "not created yet"]
+
 Please read these framework documents:
-- guides/stages.md (stage definitions)
-- guides/framework.md (key concepts)
-- stages/[current-stage]/README.md (stage-specific guidance)
+- [framework-path]/guides/stages.md (stage definitions)
+- [framework-path]/guides/framework.md (key concepts)
+- [framework-path]/stages/[current-stage]/README.md (stage-specific guidance)
 
 Help me work through the [STAGE NAME] stage for my project:
 
@@ -66,7 +71,7 @@ Help me work through the [STAGE NAME] stage for my project:
 - Team size: [solo/small (2-5)/large (6+)]
 - Risk tier: [Minimal / Standard / Enterprise]
 (See Right-Sizing Guide if unsure:
-guides/right-sizing.md)
+[framework-path]/guides/right-sizing.md)
 
 Guide me through the key activities for this stage, help me complete the
 stage brief template, and validate against the checklist criteria. We may
@@ -157,8 +162,8 @@ As you work through each stage:
 
 ### Step 5: Store Artifacts Consistently
 
-Store project artifacts using the convention from the
-[Agentic Workflow Guide](agentic-workflow.md):
+Store project artifacts in the **artifacts location** using the convention from
+the [Working Locations](framework.md#working-locations) model:
 
 - **Briefs:** `docs/briefs/`
 - **ADRs:** `docs/adr/`
@@ -166,17 +171,28 @@ Store project artifacts using the convention from the
 
 If no `docs/` directory exists yet, create one during Initiation.
 
+### Setting Up a New Project
+
+For greenfield projects, create the artifacts repository first during Initiation
+— this is where governance artifacts (`docs/briefs/`, `docs/adr/`,
+`docs/session-logs/`) will live. Create the source code repository later when
+the tech stack is decided during System Design. See the
+[Project Foundation Guide](project-foundation.md) for sequencing details.
+
 ### AI-Led Bootstrap Prompt
 
 For teams operating at the AI-Led autonomy tier with an AI coding agent that has
 filesystem access, use this streamlined prompt:
 
 ```
-Read guides/agentic-workflow.md and orient yourself in the AI-Assisted SDLC
-framework.
+Read [framework-path]/guides/agentic-workflow.md and orient yourself in the
+AI-Assisted SDLC framework. Detect working locations from the front matter.
 
 I need to work through the [STAGE NAME] stage for:
 - Project: [brief description]
+- Framework location: [framework-path]
+- Artifacts location: [path]
+- Source code location: [path or "not created yet"]
 - Risk tier: [Minimal / Standard / Enterprise]
 - Autonomy: AI-Led
 - Oversight: [Active / Passive / Minimal]
@@ -309,6 +325,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.9.0.

@@ -31,21 +31,26 @@ details.
 Point your agent at the framework and let it self-orient:
 
 ```text
-Read guides/agentic-workflow.md in this repository. Parse the front matter
-for stage routing, then guide me through the Initiation stage for my project:
-[describe your project in 1-2 sentences].
+Read [framework-path]/guides/agentic-workflow.md. Parse the front matter for
+stage routing and working locations, then guide me through the Initiation
+stage for my project: [describe your project in 1-2 sentences].
 ```
 
-The agent will read the stage routing table, check required inputs, and walk you
-through the first stage interactively.
+Replace `[framework-path]` with the path to your local clone of this framework
+repository (e.g., `../ai-assisted-sdlc` or an absolute path). The agent will
+read the stage routing table, determine the correct working location, check
+required inputs, and walk you through the first stage interactively.
 
 ### Path B: Chat-Based AI (ChatGPT, Claude.ai, etc.)
 
 1. Copy the bootstrap prompt from the
    [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
-2. Fill in your project details (~5 minutes)
+2. Fill in your project details and location context (~5 minutes)
 3. Paste it into your AI chat and start working through the
    [Initiation stage](stages/initiation/README.md)
+
+The bootstrap prompt includes location setup guidance so the AI understands
+where framework, artifacts, and source code live.
 
 ### Path C: Joining a Project Mid-Stream
 
@@ -122,6 +127,6 @@ verify it works. Add more artifacts only when you feel the gaps.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.26.0.
