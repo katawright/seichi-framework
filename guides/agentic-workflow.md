@@ -2,7 +2,13 @@
 id: agentic-workflow
 type: guide
 concerns:
-  [stage-routing, agent-orchestration, fallback-protocols, working-locations]
+  [
+    stage-routing,
+    agent-orchestration,
+    fallback-protocols,
+    working-locations,
+    mid-stage-discovery,
+  ]
 stages:
   - id: initiation
     stage_number: 1
@@ -701,8 +707,9 @@ for code-focused session tracking.
 ### Feedback Capture Protocol
 
 When an observation arises during any stage — a surprise, a deviation from
-design, a process friction point, or a framework gap — capture it immediately
-rather than waiting for the retrospective session.
+design, a process friction point, a framework gap, or a value idea (feature
+possibility, technical improvement, architectural opportunity) — capture it
+immediately rather than waiting for the retrospective session.
 
 **Steps:**
 
@@ -714,11 +721,13 @@ rather than waiting for the retrospective session.
 3. Append a row to the **Captured Feedback** table:
    - **Timestamp:** today's date (YYYY-MM-DD)
    - **Stage:** current stage name
-   - **Observation:** concise description
+   - **Observation:** concise description of the surprise, friction, or value
+     idea
 4. Do not classify the observation. Classification happens during the
    retrospective session — framework observations move to Framework Feedback,
    process items to What Went Well / What Didn't Work, actionable items to
-   Action Items.
+   Action Items, and value ideas surface during the Future Value Candidates
+   harvest at project wrap-up.
 
 > Agents: this is a write action. Follow artifact location conventions in
 > [Working Locations](../guides/framework.md#working-locations) and verify the
@@ -728,10 +737,19 @@ rather than waiting for the retrospective session.
 
 ## Rework Cycles
 
-When verification fails and work returns to Increment Design or Implementation,
-use delta-only briefs to document the rework cycle efficiently.
+When a mid-stage discovery breaks something — a design proves infeasible, an NFR
+is unmet, or an assumption is invalidated — classify the rework by severity and
+follow the corresponding process. See
+[Framework Guide: Mid-Stage Discovery](framework.md#mid-stage-discovery) for the
+full decision tree and classification table.
 
-**Delta-only brief convention:**
+- **Cosmetic** — fix in place, update the artifact. No additional process.
+- **Significant** — produce a delta-only brief documenting what changed, update
+  affected artifacts, and record an ADR for the decision.
+- **Fundamental** — produce a delta-only brief, record an ADR, and amend the
+  original gate decision with new information and a new decision.
+
+### Delta-Only Brief Convention
 
 - **New briefs document only what changed** — reference the prior cycle's brief
   for unchanged context rather than duplicating it

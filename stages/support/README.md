@@ -440,6 +440,10 @@ when the team confirms readiness to own the system in production.
 - **User satisfaction declining** — CSAT/NPS dropping, increasing tickets
 - **Architecture or team changes** — new infrastructure, tools, team members
 
+> **Mid-stage discovery?** If something unexpected surfaces during support, see
+> the [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery)
+> decision tree to determine whether to rework, amend scope, or defer.
+
 ---
 
 ## Notes

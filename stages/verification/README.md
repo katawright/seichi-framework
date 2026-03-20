@@ -363,6 +363,11 @@ fresh brief.
 - Expand coverage for high-risk areas
 - Improve test data realism
 
+> **Mid-stage discovery?** If p95 latency is 10x the NFR target and no
+> optimization will fix it, or tests reveal a fundamental design flaw, see the
+> [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
+> tree to classify rework by severity and determine the right response.
+
 ---
 
 ## Notes

@@ -329,6 +329,11 @@ contracts, and test strategy.
 5. Communicate to affected team members
 6. Update test strategy if needed
 
+> **Mid-stage discovery?** If an API can't support the interaction pattern
+> designed, or a design assumption proves invalid, see the
+> [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
+> tree to classify the severity and determine the right response.
+
 ---
 
 ## Notes
