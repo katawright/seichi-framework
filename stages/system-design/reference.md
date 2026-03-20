@@ -662,6 +662,9 @@ Relationships:
 
 **Goal:** Establish authentication, database, and core API infrastructure
 
+**Value Delivered:** Secure user accounts and API access — enables all
+user-facing features
+
 **Requirements:** FR-1, FR-2, NFR-1, NFR-2, NFR-3 **Duration:** 1.5-2.5 weeks
 (estimate) **Team:** 2 engineers + 0.25 architect **Effort:** 3.5-5.5
 person-weeks (estimate) **Dependencies:** None
@@ -673,6 +676,9 @@ early, establishes development patterns.
 
 **Goal:** Deliver primary user-facing functionality
 
+**Value Delivered:** Users can create and manage content — core product
+experience is usable
+
 **Requirements:** FR-3, FR-4, FR-5, NFR-4 **Duration:** 1.5-2.5 weeks (estimate)
 **Team:** 2 engineers + 0.5 QA **Effort:** 4-6 person-weeks (estimate)
 **Dependencies:** Increment 1
@@ -681,10 +687,19 @@ early, establishes development patterns.
 
 #### Increment 3: Enhancements (Should Have)
 
+**Goal:** Add search, filtering, and notification capabilities
+
+**Value Delivered:** Improved content discoverability and user engagement
+
 **Requirements:** FR-6, FR-7, FR-8, NFR-5 **Duration:** 1.5-2.5 weeks (estimate)
 **Dependencies:** Increment 2
 
 #### Increment 4: Advanced Features (Should Have)
+
+**Goal:** Add analytics dashboard and bulk operations
+
+**Value Delivered:** Admin visibility into usage patterns and efficient content
+management
 
 **Requirements:** FR-9, FR-10, NFR-6 **Duration:** 1.5-2.5 weeks (estimate)
 **Dependencies:** Increment 3
@@ -704,14 +719,14 @@ early, establishes development patterns.
 
 #### Increment Plan Summary Table
 
-| Inc | Type        | Requirements      | Duration      | Effort     |
-| --- | ----------- | ----------------- | ------------- | ---------- |
-| 1   | Must Have   | FR-1,2, NFR-1,2,3 | 1.5-2.5 wk    | 3.5-5.5 pw |
-| 2   | Must Have   | FR-3,4,5, NFR-4   | 1.5-2.5 wk    | 4-6 pw     |
-| 3   | Should Have | FR-6,7,8, NFR-5   | 1.5-2.5 wk    | 4-6 pw     |
-| 4   | Should Have | FR-9,10, NFR-6    | 1.5-2.5 wk    | 4.5-6.5 pw |
-| -   | Could Have  | FR-11,12,13       | Opportunistic | TBD        |
-| -   | Won't Have  | FR-14,15,16,17    | Out of scope  | N/A        |
+| Inc | Type        | Value Delivered        | Requirements      | Duration      | Effort     | Dependencies |
+| --- | ----------- | ---------------------- | ----------------- | ------------- | ---------- | ------------ |
+| 1   | Must Have   | Auth + API foundation  | FR-1,2, NFR-1,2,3 | 1.5-2.5 wk    | 3.5-5.5 pw | None         |
+| 2   | Must Have   | Core content mgmt      | FR-3,4,5, NFR-4   | 1.5-2.5 wk    | 4-6 pw     | Inc 1        |
+| 3   | Should Have | Search + notifications | FR-6,7,8, NFR-5   | 1.5-2.5 wk    | 4-6 pw     | Inc 2        |
+| 4   | Should Have | Analytics + bulk ops   | FR-9,10, NFR-6    | 1.5-2.5 wk    | 4.5-6.5 pw | Inc 3        |
+| -   | Could Have  | -                      | FR-11,12,13       | Opportunistic | TBD        | Varies       |
+| -   | Won't Have  | -                      | FR-14,15,16,17    | Out of scope  | N/A        | -            |
 
 ### Gate 2 Cost Calculation Example
 

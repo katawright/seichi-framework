@@ -201,7 +201,23 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ---
 
-## 9. Increment Plan
+## 9. Versioning Strategy
+
+<!-- Most relevant for greenfield projects. Brownfield projects with existing
+     conventions should document and follow them rather than inventing new ones. -->
+
+- **App Versioning Scheme:** [e.g., Semantic Versioning (MAJOR.MINOR.PATCH),
+  CalVer, custom]
+- **API Versioning Approach:** [e.g., URL path (/v1/), header-based, query
+  parameter; backward compatibility policy]
+- **Release Tagging Convention:** [e.g., v1.2.3 git tags, branch strategy for
+  releases]
+- **Changelog Approach:** [e.g., automated from commits, manually curated,
+  hybrid; audience and cadence]
+
+---
+
+## 10. Increment Plan
 
 <!-- Minimal: Ordered task list | Standard: Sequenced increments with dependencies | Enterprise: Formal roadmap -->
 
@@ -212,6 +228,8 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 **Goal:** [Establish infrastructure (greenfield) / Document existing system for
 AI context (brownfield first AI)]
+
+**Value Delivered:** [What users or the project gains when this increment ships]
 
 **Requirements:** [Infrastructure NFRs / Discovery scope] **Duration:** [X-Y
 weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
@@ -243,6 +261,8 @@ duration, or deliverables]
 
 **Goal:** [What this increment delivers]
 
+**Value Delivered:** [What users or the project gains when this increment ships]
+
 **Requirements:** [FR-X, FR-Y, NFR-Z] **Duration:** [X-Y weeks] (estimate)
 **Team:** [Composition] **Effort:** [X-Y person-weeks] (estimate)
 **Dependencies:** [None / Increment 0]
@@ -252,6 +272,8 @@ duration, or deliverables]
 ### Increment 2: [Name] ([Priority])
 
 **Goal:** [What this increment delivers]
+
+**Value Delivered:** [What users or the project gains when this increment ships]
 
 **Requirements:** [FR-X, FR-Y, NFR-Z] **Duration:** [X-Y weeks] (estimate)
 **Team:** [Composition] **Effort:** [X-Y person-weeks] (estimate)
@@ -270,11 +292,11 @@ duration, or deliverables]
 
 ### Increment Plan Summary
 
-| Inc | Type                  | Requirements    | Duration | Effort  |
-| --- | --------------------- | --------------- | -------- | ------- |
-| 0   | Bootstrap / Discovery | [If applicable] | [Range]  | [Range] |
-| 1   | [Priority]            | [FRs, NFRs]     | [Range]  | [Range] |
-| 2   | [Priority]            | [FRs, NFRs]     | [Range]  | [Range] |
+| Inc | Type                  | Value Delivered | Requirements    | Duration | Effort  | Dependencies |
+| --- | --------------------- | --------------- | --------------- | -------- | ------- | ------------ |
+| 0   | Bootstrap / Discovery | [Short phrase]  | [If applicable] | [Range]  | [Range] | None         |
+| 1   | [Priority]            | [Short phrase]  | [FRs, NFRs]     | [Range]  | [Range] | [Inc N]      |
+| 2   | [Priority]            | [Short phrase]  | [FRs, NFRs]     | [Range]  | [Range] | [Inc N]      |
 
 **Total Must Have:** [Duration range], [Effort range] **Total Project:**
 [Duration range], [Effort range]
@@ -358,4 +380,4 @@ mitigation]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0 -->

@@ -28,6 +28,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Supporting Roles:** QA Engineers, Product Manager, Project Manager
 - **Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
   Standard; required for Enterprise)
+- **Depends On:** [e.g., Increment 0 / None — inter-increment dependencies]
 - **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this
   increment's design]
 
@@ -73,9 +74,18 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 ### Foundation Readiness Targets (if applicable)
 
-<!-- Include for foundation/discovery increments in brownfield projects. Maps
-     readiness axes to concrete deliverables for this increment. See
-     guides/brownfield-readiness.md#readiness-rubric. -->
+<!-- Include for foundation/discovery increments (greenfield or brownfield).
+     Maps readiness axes to concrete deliverables for this increment. See
+     guides/brownfield-readiness.md#readiness-rubric.
+
+     Foundation concern areas to consider:
+     1. Code quality tooling — linting, formatting, pre-commit hooks
+     2. Testing infrastructure — framework setup, fixture/seed strategy, coverage
+     3. Security tooling — SAST, dependency scanning, secrets detection
+     4. Local dev environment — devcontainers, Docker Compose, env var management
+     5. Documentation tooling — API docs generation, architecture diagrams, changelog
+     6. Developer onboarding — PR templates, code review standards, setup runbooks
+     See stages/increment-design/README.md#i0-foundation-concerns for tier guidance. -->
 
 | Readiness Dimension   | Pre-State       | Target Post-State | Deliverables                        |
 | --------------------- | --------------- | ----------------- | ----------------------------------- |
@@ -240,4 +250,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0 -->

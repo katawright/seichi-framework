@@ -52,6 +52,13 @@ and ready for Implementation.
 12. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
+### Foundation Concerns (I0 / foundation increments only)
+
+13. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
+        quality, testing, security, local dev, documentation, onboarding)
+14. [ ] **Deferred concerns documented with justification** (conscious
+        deferrals, not omissions)
+
 ---
 
 ## Final Decision
@@ -84,6 +91,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.
