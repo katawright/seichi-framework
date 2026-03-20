@@ -43,20 +43,27 @@ ready for Gate 2.
 10. [ ] **Infrastructure plan covers CI/CD, environments, deployment**
         (bootstrap or assessment complete)
 
+### Versioning and Conventions
+
+11. [ ] **Versioning strategy defined** (app versioning, API versioning, release
+        tagging, changelog approach; N/A if brownfield with existing
+        conventions)
+
 ### Increment Plan and Readiness
 
-11. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
-        (Must Haves first, dependencies identified)
-12. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
+12. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
+        (Must Haves first, dependencies identified, each increment articulates
+        value delivered)
+13. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
         NFRs)
-13. [ ] **[H] Alignment Review conducted** (stakeholder sign-off obtained)
+14. [ ] **[H] Alignment Review conducted** (stakeholder sign-off obtained)
 
 ### Handoff to Increment Design
 
-14. [ ] **Architecture documented for increment-level design** (sufficient
+15. [ ] **Architecture documented for increment-level design** (sufficient
         detail for teams to begin)
-15. [ ] **Conventions established** (API patterns, data access, error handling)
-16. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
+16. [ ] **Conventions established** (API patterns, data access, error handling)
+17. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
         and dependencies clear)
 
 ---
@@ -91,6 +98,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.12.0.

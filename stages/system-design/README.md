@@ -196,7 +196,9 @@ predictable failures. This section explains why each element is included:
    performance, observability traceability
 9. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
    requirements to architectural decisions and verification methods
-10. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
+10. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
+    release tagging, changelogs
+11. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
 
 ### Architecture Principles
 
@@ -239,6 +241,8 @@ priority definitions.
 - **De-risk early:** technically uncertain work in early increments
 - **Allow for discovery:** don't over-plan distant increments
 - **Make Could Haves truly optional:** don't commit in timelines
+- **Articulate value per increment:** state what users or the project gains when
+  the increment ships
 
 #### Planning Process
 
@@ -249,7 +253,8 @@ priority definitions.
    Increment 0; brownfield first AI-assisted projects require a discovery
    Increment 0; subsequent brownfield projects skip directly to Increment 1
 4. **Assess risk and complexity** — uncertain items first
-5. **Group into increments** — Must Haves first, delivering testable value
+5. **Group into increments** — Must Haves first, delivering testable value;
+   articulate the value each increment delivers to users or the project
 6. **Sequence increments** — dependencies first, then risk/value balance
 7. **Map Should Haves** — assign to later increments
 8. **Handle Could Haves** — mark as opportunistic
@@ -474,6 +479,25 @@ Create one row per NFR in the
 [System Design Brief](../../templates/system-design-brief.md) NFR Traceability
 table, linking each to the relevant ADR. The Verification stage uses this table
 to confirm every NFR has been tested — gaps here become gaps in test coverage.
+
+### Versioning Strategy
+
+Define how you version your software, APIs, and releases. This is most relevant
+for greenfield projects; brownfield projects with existing conventions should
+document and follow them.
+
+- **App versioning:** Semantic Versioning (MAJOR.MINOR.PATCH), CalVer, or
+  project-specific scheme. Choose based on release cadence and audience
+  expectations.
+- **API versioning:** URL path (`/v1/`), header-based, or query parameter.
+  Decide on backward compatibility guarantees and deprecation policy.
+- **Release tagging:** Git tag convention (e.g., `v1.2.3`), branch strategy for
+  releases, and relationship between tags and deployments.
+- **Changelog approach:** Automated from commit history, manually curated, or
+  hybrid. Define audience (developers, end users, or both) and update cadence.
+
+Document versioning decisions as ADRs when they involve trade-offs (e.g.,
+choosing between URL-based and header-based API versioning).
 
 ### Additional Topics
 

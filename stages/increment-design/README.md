@@ -217,6 +217,27 @@ This is the point in the cycle where the
 [learning throughline](../../guides/framework.md#learning-throughline) feeds
 back into planning.
 
+### I0 Foundation Concerns
+
+Right-size to your current project tier, but consider your target tier when the
+cost of adding now is low and the cost of retrofitting later is high.
+
+| Concern                | Examples                                              | Minimal     | Standard    | Enterprise |
+| ---------------------- | ----------------------------------------------------- | ----------- | ----------- | ---------- |
+| Code quality tooling   | Linting, formatting, pre-commit hooks                 | Optional    | Recommended | Required   |
+| Testing infrastructure | Framework setup, fixture/seed strategy, coverage      | Recommended | Required    | Required   |
+| Security tooling       | SAST, dependency scanning, secrets detection          | Optional    | Recommended | Required   |
+| Local dev environment  | Devcontainers, Docker Compose, env var management     | Optional    | Recommended | Required   |
+| Documentation tooling  | API docs generation, architecture diagrams, changelog | Optional    | Recommended | Required   |
+| Developer onboarding   | PR templates, code review standards, setup runbooks   | Optional    | Recommended | Required   |
+
+All items are visible regardless of tier — skipped items are conscious
+deferrals, not failures. Document deferred concerns with a brief justification
+so the decision is traceable.
+
+For infrastructure concerns (CI/CD, environments, monitoring, deployment), see
+[Project Foundation Guide](../../guides/project-foundation.md).
+
 ### Component Design Principles
 
 For each component in the increment, document:
