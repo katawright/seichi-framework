@@ -3,7 +3,10 @@
 # Deployment Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
-> brief for gate reviewers to audit.
+> brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
+> be **confirmed** (verified — remove tag), **challenged** (incorrect — update
+> and remove tag), or **carried forward** (unverifiable now — leave tag and note
+> as a gate condition).
 
 **Last Updated:** YYYY-MM-DD **Increment:** [Increment name/ID] **Deployment
 Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready

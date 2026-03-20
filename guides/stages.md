@@ -207,7 +207,7 @@ breakdown, AI automation tiers, and SSDF traceability, see the
 
 Establish the business case, define objectives with measurable success criteria,
 set scope boundaries, and produce a plan to reach the first major decision gate
-(proceed/pivot/stop).
+(proceed/revise/stop).
 
 ### Inputs
 
@@ -258,8 +258,8 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 ### Checkpoints
 
 - **Gate 1 (Investment Decision):** End of Initiation stage
-  - **Decision:** Approve brief and proceed to Requirements, pivot to refine the
-    idea, or stop the project
+  - **Decision:** Approve brief and proceed to Requirements, revise to refine
+    the idea, or stop the project
   - **Based on:** Completed Initiation Brief (which proposes decision criteria)
   - **Criteria:** Business case clear, stakeholders aligned, risks acceptable,
     sponsor committed
@@ -402,7 +402,7 @@ guides all subsequent implementation work.
 - Increment plan created with MoSCoW mapping
 - Security, performance, and observability addressed
 - Infrastructure plan complete
-- Gate 2 decision made (proceed/pivot/stop)
+- Gate 2 decision made (proceed/revise/stop)
 
 ### Checkpoints
 
@@ -410,7 +410,7 @@ guides all subsequent implementation work.
   stakeholders
 - **Gate 2 (Investment Decision):** After Requirements and System Design are
   both complete
-  - **Decision:** Commit to building this, pivot to change approach, or stop
+  - **Decision:** Commit to building this, revise the approach, or stop
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
   - **Criteria:** Technical approach sound, costs acceptable, risks manageable
   - **AI validation:** Human review ensures AI-assisted design is
@@ -768,7 +768,7 @@ with different purposes and outcomes:
 ### Gates (Investment Decisions)
 
 - **Purpose:** Decide whether to continue investing resources in the project
-- **Outcome:** Proceed / Pivot / Stop
+- **Outcome:** Proceed / Revise / Stop
 - **Real stop option:** Yes — these are genuine go/no-go decisions
 - **When used:** Early in the project when stopping is still realistic
 
@@ -898,6 +898,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.9.0.

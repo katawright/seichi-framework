@@ -545,6 +545,23 @@ An expected input artifact is unavailable or incomplete.
 4. Do not proceed past a gate with assumed inputs unless the human explicitly
    approves
 
+### Reviewing [ASSUMED] Items
+
+When an artifact reaches gate review, every `[ASSUMED]` item requires an
+explicit disposition:
+
+- **Confirm** — the assumption has been verified as correct. Remove the
+  `[ASSUMED]` tag and update the artifact.
+- **Challenge** — the assumption is incorrect or needs revision. Correct the
+  content, remove the `[ASSUMED]` tag, and note the correction.
+- **Carry forward** — the assumption cannot be verified at this gate (e.g.,
+  depends on future discovery). Leave the tag, document the item as a condition
+  in the [Gate Decision Template](../templates/gate-decision.md), and assign an
+  owner to resolve it before the next gate.
+
+Do not proceed past a gate with unaddressed `[ASSUMED]` items — each one must
+have a recorded disposition.
+
 ### Failed Gate
 
 A gate check fails — checklist criteria not met, tests failing, or review
@@ -674,6 +691,6 @@ use delta-only briefs to document the rework cycle efficiently.
 
 ## Notes
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

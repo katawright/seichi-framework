@@ -664,7 +664,7 @@ Requirements is foundational but revisitable.
 
 **Triggers:**
 
-- System Design reveals better approach (pivot decision)
+- System Design reveals better approach (revise decision)
 - Business priorities shift or new constraints emerge
 - Technical infeasibility discovered
 - Stakeholder feedback indicates misalignment
@@ -682,6 +682,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-19
 
 Added to framework in v0.3.0.
