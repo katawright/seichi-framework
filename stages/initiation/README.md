@@ -65,20 +65,23 @@ framework artifacts or technical expertise required.
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
-2. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to prepare for
+2. **For Collaborative or AI-Led tiers:** Confirm the autonomy tier and
+   right-sizing tier with the user before drafting. Do not begin populating the
+   brief until both tiers are agreed.
+3. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to prepare for
    right-sizing decisions when filling out the brief
-3. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
+4. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
    using AI according to your chosen autonomy tier — refer to
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    for rationale and examples as you complete each section. See the
    [Manual Process Guide](../../guides/manual-process.md) for prompting tips
-4. For Standard+ tier, populate the
+5. For Standard+ tier, populate the
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief
-5. Review the brief for correctness — you own the final content
-6. Complete the [Initiation Checklist](checklist.md) using AI according to your
+6. Review the brief for correctness — you own the final content
+7. Complete the [Initiation Checklist](checklist.md) using AI according to your
    chosen autonomy tier
-7. Complete Gate 1 — present to stakeholders and record the proceed/revise/stop
+8. Complete Gate 1 — present to stakeholders and record the proceed/revise/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
 > **See a completed example:** The
@@ -278,6 +281,13 @@ Prefer a small set of metrics:
 **Bad example:**
 
 > "Improve support agent experience."
+
+Not all projects lend themselves to numeric baselines and targets. For PoCs,
+spikes, and exploratory projects, qualitative criteria with explicit evaluation
+conditions are acceptable — the key is a clear definition of done, not the
+presence of a number. See
+[Initiation Reference: When criteria are qualitative](reference.md#when-criteria-are-qualitative)
+for templates and examples.
 
 ### Scope Boundaries and Non-Goals
 

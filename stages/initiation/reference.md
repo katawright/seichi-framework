@@ -206,6 +206,34 @@ a baseline in the first increment before declaring success:
 > "No baseline exists — capture baseline in Increment 1; target defined as [X]
 > relative to that baseline."
 
+### When criteria are qualitative
+
+Some projects — PoCs, spikes, and exploratory work — do not lend themselves to
+numeric baselines and targets. In these cases, qualitative success criteria are
+acceptable provided they include an explicit evaluation condition that makes the
+outcome unambiguous.
+
+**Template:**
+
+<!-- prettier-ignore -->
+> "Question: [What we need to learn]. Evaluation criteria: [Observable
+> condition that answers the question]. Timeframe: [When the evaluation
+> occurs]."
+
+**Good example:**
+
+> "Question: Can the vendor geocoding API meet our latency needs? Evaluation
+> criteria: p95 response time < 200ms over 1,000 representative requests.
+> Timeframe: End of 2-day spike."
+
+**Bad example:**
+
+> "See if the API works."
+
+Prefer measurable criteria when feasible — qualitative criteria are a pragmatic
+fallback, not the default. When a project matures past the exploratory phase,
+revisit qualitative criteria and convert them to measurable ones.
+
 <!-- prettier-ignore -->
 > **AI exploration:** _"Help me write measurable success criteria for [describe your project goal, target user, and available analytics]."_
 
