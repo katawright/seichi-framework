@@ -6,8 +6,11 @@ inputs:
   - deployed-system
   - monitoring-dashboards
   - updated-runbooks
-  - success-criteria-register
   - incident-response-procedures
+  - baseline-measurements
+  - release-notes
+  - success-criteria-register
+  - rollback-procedure
 outputs:
   - artifact: system-availability-metrics
     template: templates/support-brief.md
@@ -17,6 +20,7 @@ outputs:
 gates:
   - type: human-approval
     name: "Production Ownership Decision"
+    hard_gate: false
 feeds_into:
   [requirements, system-design, increment-design, implementation, initiation]
 checklist: stages/support/checklist.md
@@ -63,8 +67,10 @@ delivery and development.
 
 ### Starting Point
 
-A deployed increment live in production, baseline measurements captured at
-deployment, and production monitoring dashboards active.
+A deployed increment live in production with: baseline measurements captured at
+deployment, production monitoring dashboards active, updated runbooks, release
+notes, rollback procedure, incident response procedures, and the success
+criteria register for ongoing measurement.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -72,8 +78,9 @@ deployment, and production monitoring dashboards active.
 ### How to Use This Guide
 
 > **First time setting up support?** Complete the
-> [Support Operations Guide](operations.md) first, then return here at step 1 to
-> fill out the brief and complete the checklist.
+> [Support Operations Guide](operations.md) and verify production readiness
+> using the [Support Readiness Checklist](readiness-checklist.md) first, then
+> return here at step 1 to fill out the brief and complete the checklist.
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
@@ -114,7 +121,7 @@ For detailed AI-Led patterns, see
 - **Operations setup:** AI helps draft incident response procedures, on-call
   rotation plans, and SLA definitions based on your project context
 - **Incident response:** AI analyzes logs and metrics during incidents, suggests
-  root causes, and drafts post-mortem reports
+  root causes, and drafts post-incident review reports
 - **Runbook generation:** Describe your infrastructure and AI generates
   operational runbooks tailored to your stack
 - **Success criteria reporting:** AI drafts progress reports from your metrics
@@ -238,7 +245,7 @@ For the full CD model, see
 
 ---
 
-## Support Guidance
+## Why These Support Elements Matter
 
 ### Core Responsibilities
 
@@ -300,7 +307,7 @@ response process minimizes impact and prevents recurrence.
 3. **Communicate** — notify stakeholders per severity
 4. **Resolve** — rollback, hotfix, workaround, or config fix
 5. **Validate** — confirm metrics return to baseline
-6. **Close** — update tracker, schedule post-mortem if needed
+6. **Close** — update tracker, schedule post-incident review if needed
 
 #### Post-Incident Reviews
 
@@ -308,7 +315,7 @@ Required for P0/P1. Focus on systems and processes, not individuals (blameless
 culture). Action items must be specific, assigned, and tracked to completion.
 
 For the detailed six-phase response process, escalation tiers, incident metrics
-(MTTD/MTTA/MTTR), and post-mortem templates, see
+(MTTD/MTTA/MTTR), and post-incident review process, see
 [Support Reference: Incident Response](reference.md#incident-response-process).
 
 ### Bug Management and Hotfixes
@@ -440,7 +447,7 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
   health reports and uptime tracking
 - **Success Criteria Reports** (`success-criteria-reports`) — progress reports
   comparing actuals against Initiation baselines and targets
-- **Incident Reports** (`incident-reports`) — incident post-mortems with root
+- **Incident Reports** (`incident-reports`) — post-incident reviews with root
   cause analysis and action items
 - **Enhancement Backlog** (`enhancement-backlog`) — prioritized enhancement
   requests and bug fixes routed to appropriate SDLC stages

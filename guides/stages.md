@@ -58,9 +58,9 @@ flow through every subsequent stage.
 
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
 | --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
-| 1   | Initiation       | PM / BA               | Foundational | Establish business case with measurable success criteria                                                   |
-| 2   | Requirements     | BA / PM               | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
-| 3   | System Design    | Engineers / Architect | Foundational | Establish or assess system architecture and technical approach                                             |
+| 1   | Initiation       | Product Mgr / BA      | Foundational | Establish business case with measurable success criteria                                                   |
+| 2   | Requirements     | BA / Product Mgr      | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
+| 3   | System Design    | Architect             | Foundational | Establish or assess system architecture and technical approach                                             |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
 | 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
@@ -179,21 +179,21 @@ Security activities flow through every stage, from data classification in
 Initiation through vulnerability management in Support. AI automation makes
 baseline security nearly free at the Minimal tier:
 
-| Stage                | Security role                                               |
+| Stage                | AppSec activity                                             |
 | -------------------- | ----------------------------------------------------------- |
 | **Initiation**       | Classify data sensitivity and compliance scope              |
 | **Requirements**     | Define security NFRs from sensitivity classification        |
 | **System Design**    | Design security architecture; threat model at tier level    |
 | **Increment Design** | Assess security implications; flag auth/data/API changes    |
-| **Implementation**   | Secure coding + AI-automated scanning (SAST, deps, secrets) |
+| **Implementation**   | Secure coding + AI-automated scanning (SAST — static analysis, deps, secrets) |
 | **Verification**     | Validate security controls (dep scan through pen testing)   |
-| **Deployment**       | Verify release integrity; SBOM; pre-deployment checks       |
+| **Deployment**       | Verify release integrity; SBOM (software bill of materials); pre-deployment checks       |
 | **Support**          | Monitor CVEs; patch per SLA; incident response              |
 
 Security decisions compound across stages — data sensitivity classified in
 Initiation drives NFRs in Requirements, which drive architecture in System
 Design, which drive scanning in Implementation. For the full stage-by-stage
-breakdown, AI automation tiers, and SSDF traceability, see the
+breakdown, AI automation tiers, and Secure Software Development Framework (SSDF) traceability, see the
 [Security Guide](security.md).
 
 ---
@@ -201,9 +201,10 @@ breakdown, AI automation tiers, and SSDF traceability, see the
 ## Stage 1: Initiation
 
 - **Primary Role:** Product Manager / Business Analyst
-- **Supporting Roles:** Executives, Solutions Architect, Engineers, Project
+- **Supporting Roles:** Executives, Architect, Engineers, Project
   Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
+- **Stage Guide:** [Initiation](../stages/initiation/README.md)
 
 ### Purpose
 
@@ -282,6 +283,7 @@ success criteria, constraints, and stakeholder list.
 - **Primary Role:** Business Analyst / Product Manager
 - **Supporting Roles:** Engineers, Architects, QA Engineers, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
+- **Stage Guide:** [Requirements](../stages/requirements/README.md)
 
 ### Purpose
 
@@ -345,9 +347,10 @@ instrumented.
 
 ## Stage 3: System Design
 
-- **Primary Role:** Engineers / Solutions Architect
+- **Primary Role:** Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
+- **Stage Guide:** [System Design](../stages/system-design/README.md)
 
 ### Purpose
 
@@ -385,7 +388,7 @@ guides all subsequent implementation work.
 - Assess security and compliance requirements
 - Plan for scalability and performance
 - Plan infrastructure (CI/CD, deployment, environments)
-- Create increment plan mapping MoSCoW to increments
+- Create increment plan mapping MoSCoW (Must / Should / Could / Won't Have) priorities to increments
 
 ### Outputs
 
@@ -430,6 +433,7 @@ conventions, data architecture, infrastructure plan, and increment plan.
 - **Primary Role:** Engineers
 - **Supporting Roles:** QA Engineers, Product Manager, Project Manager
 - **Execution Pattern:** Iterative (per increment)
+- **Stage Guide:** [Increment Design](../stages/increment-design/README.md)
 
 ### Purpose
 
@@ -493,6 +497,7 @@ models, test strategy, and implementation notes.
 - **Primary Role:** Engineers
 - **Supporting Roles:** Architects, DevOps, QA Engineers
 - **Execution Pattern:** Iterative (per increment)
+- **Stage Guide:** [Implementation](../stages/implementation/README.md)
 
 ### Purpose
 
@@ -555,6 +560,7 @@ results, and implementation notes.
 - **Primary Role:** QA Engineers / Engineers
 - **Supporting Roles:** Product Manager, Business Analyst, DevOps
 - **Execution Pattern:** Iterative (per increment)
+- **Stage Guide:** [Verification](../stages/verification/README.md)
 
 ### Purpose
 
@@ -623,6 +629,7 @@ deployment checklist.
 - **Primary Role:** DevOps / Engineers
 - **Supporting Roles:** Operations, Product Manager, Engineers, Project Manager
 - **Execution Pattern:** Iterative (per increment)
+- **Stage Guide:** [Deployment](../stages/deployment/README.md)
 
 ### Purpose
 
@@ -694,6 +701,7 @@ baseline measurements for success criteria.
 - **Primary Role:** Engineers / DevOps
 - **Supporting Roles:** Operations, Customer Support, Product Manager
 - **Execution Pattern:** Continuous (ongoing after first deployment)
+- **Stage Guide:** [Support](../stages/support/README.md)
 
 ### Purpose
 
@@ -873,6 +881,29 @@ constraints.
 - AI-assisted data handling respects privacy regulations
 - AI recommendations consider legal and regulatory constraints
 
+### Decision-Rights Matrix
+
+Each checkpoint has defined roles for who prepares evidence, who decides, and
+who is informed. Roles reference the canonical set defined in the
+[RACI Matrix](../guides/framework.md#raci-matrix).
+
+| Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
+| --- | --- | --- | --- | --- | --- |
+| Gate 1 (Investment Decision) | Initiation | Gate | PM/BA | Exec | All roles\*\* |
+| Requirements Readiness | Requirements | Quality | PM/BA | PM/BA (peer\*) | PjM |
+| Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM/BA, PjM |
+| Gate 2 (Investment Decision) | System Design | Gate | PM/BA, Architect, AppSec | Exec | All roles\*\* |
+| Design Review | Increment Design | Alignment | Engineer | Architect | PM/BA, PjM |
+| PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
+| Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
+| Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | PjM | PM/BA, Exec |
+| Production Ownership Decision | Support | Quality | DevOps | PjM | PM/BA, Exec |
+
+\* **Peer** — a second person in the same role (or a senior in a related role)
+who was not the primary author.
+
+\*\* **All roles** — all roles that have participated up to that point.
+
 ### Checkpoint Mapping by Stage
 
 Each stage specifies which checkpoint types apply. For example:
@@ -887,6 +918,7 @@ Each stage specifies which checkpoint types apply. For example:
 - **Verification:** Quality Checkpoints (test execution), Deployment Approvals
   (production readiness)
 - **Deployment:** Deployment Approvals (production deployment, rollout gates)
+- **Support:** Quality Checkpoints (production ownership decision)
 
 **Human validation of AI output is required at all checkpoint types.** The AI
 Assistance Scorecard provides stage-specific guidance on where AI can work more

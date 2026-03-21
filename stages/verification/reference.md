@@ -298,9 +298,9 @@ now, fix before deploy, defer, or won't fix.
 
 ### Defect Tracking Template
 
-| ID      | Description | Severity | Priority | Test Type | Status   | Assignee |
-| ------- | ----------- | -------- | -------- | --------- | -------- | -------- |
-| DEF-001 | [Issue]     | [Sev]    | [Pri]    | [Type]    | [Status] | [Name]   |
+| ID      | Description | Severity | Priority | Component / File | Test Type | Status   | Assignee |
+| ------- | ----------- | -------- | -------- | ---------------- | --------- | -------- | -------- |
+| DEF-001 | [Issue]     | [Sev]    | [Pri]    | [Path]           | [Type]    | [Status] | [Name]   |
 
 <!-- prettier-ignore -->
 > **AI exploration:** _"Help me triage these defects and recommend fix-vs-defer decisions: [paste defect list]."_

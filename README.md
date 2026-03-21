@@ -55,15 +55,11 @@ Pick the path that matches your interest. Each takes under 5 minutes.
 | Understand the ROI and governance model | [Business Value](#business-value) | [Governance](#governance-at-a-glance) | [Readiness Check](#readiness-check) |
 | See how AI fits into each stage         | [How AI Fits In](#how-ai-fits-in) | [Stage Overview](#stage-overview)     | [Adoption Path](#adoption-path)     |
 | Start using the framework now           | [Try It Now](#try-it-now)         | [Stage Overview](#stage-overview)     | [How AI Fits In](#how-ai-fits-in)   |
+| Coordinate delivery and manage gates   | [Governance](#governance-at-a-glance) | [Stage Overview](#stage-overview) | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
 
 ---
 
 ## How AI Fits In
-
-AI assistance increases as verifiability increases. Early stages (initiation,
-requirements) use AI for drafting and analysis under tighter human control.
-Later stages (implementation, verification) allow higher AI autonomy because
-outputs are directly testable.
 
 Teams choose an autonomy tier per stage:
 
@@ -159,6 +155,10 @@ The framework improves delivery outcomes in four ways:
 | Time-to-value    | Slow, inconsistent starts        | Faster starts, clearer execution flow     |
 | Delivery quality | Ambiguity discovered late        | Earlier clarity, fewer downstream defects |
 | Governance       | Ad hoc decision trail            | Explicit gates and checkpoint records     |
+
+**Pilot cost.** First-project setup (Initiation through Gate 1) takes 2-4 hours
+at the Minimal tier. Most of that time is thinking, not process — AI drafts the
+brief, you review it.
 | Project pipeline | Depends on technical gatekeepers | Structured initiation for all roles       |
 
 ### Industry Context
@@ -185,7 +185,9 @@ Track these during a pilot to validate ROI:
 Your pilot generates the first real ROI data for your organization — industry
 benchmarks provide context, not targets.
 
-For a deeper measurement model, see the [Framework Guide](guides/framework.md).
+For a deeper measurement model — DORA metrics, quality metrics, and developer
+experience surveys — see
+[Measuring Adoption Success](guides/adoption.md#measuring-adoption-success).
 
 ---
 
@@ -194,13 +196,18 @@ For a deeper measurement model, see the [Framework Guide](guides/framework.md).
 The framework uses **two investment gates** — explicit continue/revise/stop
 decisions where "investment" means committing team capacity, time, and budget.
 
-| Gate   | When                               | Decision                             |
-| ------ | ---------------------------------- | ------------------------------------ |
-| Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) |
-| Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            |
+| Gate   | When                               | Decision                             | Accountable |
+| ------ | ---------------------------------- | ------------------------------------ | ----------- |
+| Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) | Executive   |
+| Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            | Executive   |
 
 After Gate 2, the project is committed. Subsequent checkpoints govern quality,
 deployment timing, and compliance — not whether to continue.
+
+**Executive role.** The Executive (sponsor, VP, or department head) reviews the
+Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. Their
+evidence is the stage brief plus the gate-decision record prepared by the
+project team.
 
 > **Why two gates?** Gate 1 is a low-cost screen: spend a little to learn
 > whether the idea is worth full requirements and design work. Gate 2 is the
@@ -337,6 +344,8 @@ to try the framework solo or with your team first, skip to
    [Initiation stage](stages/initiation/README.md) guide, brief template, and
    checklist.
 6. Schedule and run the Gate 1 decision.
+7. **(Executives)** Review the Initiation Brief and gate-decision record; make
+   the Gate 1 proceed/revise/stop decision.
 
 **Expected early outputs:**
 

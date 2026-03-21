@@ -9,6 +9,30 @@ concerns: [ci-cd, security-scanning, release-patterns, observability]
 Entry point for DevOps engineers. Each section maps a DevOps concern to the
 authoritative framework location — follow the links for full guidance.
 
+## Getting Started
+
+**Setting up CI/CD and PR checks?** Start here:
+[CI/CD Pipeline Setup](../stages/deployment/setup.md#1-cicd-pipeline-setup) →
+[Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy)
+(status checks, branch protection, merge requirements) →
+[Minimum Pipeline Controls](#minimum-pipeline-controls) below.
+
+**Adding security scanning to your pipeline?** Go to
+[Security Scanning and Supply Chain](#security-scanning-and-supply-chain).
+
+**Setting up environments and secrets?** Go to
+[Environments and Secrets](#environments-and-secrets).
+
+**Setting up monitoring, alerting, or on-call?** Go to
+[Observability](#observability) for instrumentation and dashboards;
+see [Support Operations](../stages/support/operations.md) for on-call
+rotation, incident response, and escalation.
+
+**Choosing a release or rollback strategy?** Go to
+[Release Patterns](#release-patterns).
+
+---
+
 ## CI/CD Pipeline Controls
 
 Pipeline setup, gate enforcement, and deployment checklists.
@@ -26,7 +50,7 @@ Automated security checks integrated into CI pipelines.
 | Topic               | Reference                                                                                |
 | ------------------- | ---------------------------------------------------------------------------------------- |
 | CI/pipeline scans   | [Security Guide — Fully Automated (CI/Pipeline)](security.md#fully-automated-cipipeline) |
-| Deployment security | [Security Guide — Deployment stage](security.md) (Deployment section)                    |
+| Deployment security | [Security Guide — Deployment stage](security.md#deployment)                              |
 
 ## Release Patterns
 

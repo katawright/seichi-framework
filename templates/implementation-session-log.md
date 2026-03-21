@@ -1,5 +1,8 @@
 <!-- For non-implementation stages, use the generalized templates/session-log.md instead. -->
 <!-- For guidance on session logging, see stages/implementation/README.md -->
+<!-- IMPORTANT: Do not record API keys, tokens, credentials, secrets, or other
+     sensitive data in this log. Use placeholder references (e.g., "API key
+     stored in vault") instead of actual values. -->
 
 # Implementation Session Log: [Increment Name]
 

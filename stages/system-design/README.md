@@ -7,8 +7,9 @@ inputs:
   - non-functional-requirements
   - success-criteria-register
 outputs:
-  - artifact: architecture-diagrams
+  - artifact: system-design-brief
     template: templates/system-design-brief.md
+  - artifact: architecture-diagrams
   - artifact: technology-stack-adrs
   - artifact: data-api-architecture
   - artifact: infrastructure-plan
@@ -19,8 +20,10 @@ outputs:
 gates:
   - type: alignment-review
     name: "Architecture Review"
+    hard_gate: false
   - type: human-approval
     name: "Gate 2 (Investment Decision)"
+    hard_gate: true
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
@@ -60,10 +63,16 @@ inputs/outputs, entry/exit criteria, and gate details), see
 
 ### Starting Point
 
-A completed Requirements Brief with MoSCoW priorities, non-functional
-requirements, and success criteria requiring instrumentation. For brownfield
-first AI-assisted projects, also gather existing architecture documentation,
-ADRs, infrastructure configuration, and known technical debt.
+Three upstream artifacts feed into System Design:
+
+- **Requirements Brief** — with MoSCoW priorities and acceptance criteria
+- **Non-Functional Requirements** — performance, security, scalability, and
+  other quality attributes
+- **Success Criteria Register** — measurable success criteria requiring
+  instrumentation
+
+For brownfield first AI-assisted projects, also gather existing architecture
+documentation, ADRs, infrastructure configuration, and known technical debt.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -194,11 +203,15 @@ predictable failures. This section explains why each element is included:
    API boundaries for parallel work
 8. [**Cross-Cutting Concerns**](#cross-cutting-concerns) — security,
    performance, observability traceability
-9. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
-   requirements to architectural decisions and verification methods
-10. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
+9. [**Observability and Monitoring Design**](#observability-and-monitoring-design) —
+   instrumentation strategy and success criteria measurement
+10. [**Performance and Scalability Design**](#performance-and-scalability-design) —
+    performance targets and scaling approach
+11. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
+    requirements to architectural decisions and verification methods
+12. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
     release tagging, changelogs
-11. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
+13. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
 
 ### Architecture Principles
 
@@ -350,20 +363,35 @@ the source code repo at Gate 2.
 Key sections: Context, options considered (with cost analysis), decision and
 rationale, consequences, alternatives.
 
-**Draft numbering:** Use a `D` prefix during System Design:
-`ADR-DNNN-short-description.md` (e.g., `ADR-D001-database-selection.md`,
-`ADR-D002-file-upload-mechanism.md`). The prefix makes draft status self-evident
-and keeps numbering scoped to the current project's artifacts.
+**Draft numbering:** Use a `D` prefix during System Design: `ADR-DNNN.md`
+(e.g., `ADR-D001.md`, `ADR-D002.md`). The title is in the ADR heading, not the
+filename. The prefix makes draft status self-evident and keeps numbering scoped
+to the current project's artifacts.
 
 **Template:** [ADR Template](../../templates/adr.md)
 
 **Location during System Design:** Store draft ADRs in `docs/adr/` within the
 artifacts repo. At Gate 2, ADRs are published to the source code repo and
-renumbered to fit the code repo's sequential scheme. See
+renumbered to 4-digit sequential format (`ADR-NNNN.md`). See
 [Artifact Placement: ADR Publishing](../../guides/framework.md#adr-publishing)
 for the full publishing workflow.
 
 **Critical:** ADRs must include cost research to prevent budget surprises.
+
+#### ADR Workflow Checklist
+
+End-to-end flow from draft to publication:
+
+1. **Draft** — Create ADRs using the [ADR template](../../templates/adr.md)
+   with draft numbering (`ADR-DNNN.md`) in `docs/adr/`.
+2. **Record in brief** — List all ADRs in the System Design Brief's
+   [ADR section](../../templates/system-design-brief.md#2-architecture-decision-records-adrs)
+   with status and category.
+3. **Review** — ADRs are reviewed as part of the Architecture Review checkpoint
+   (see [Checkpoints](../../guides/stages.md#checkpoints)).
+4. **Publish at Gate 2** — Renumber accepted ADRs from draft (`ADR-DNNN.md`) to
+   final (`ADR-NNNN.md`) and update the ADR index at `docs/adr/README.md`. See
+   [ADR Publishing](../../guides/framework.md#adr-publishing).
 
 #### ADR Lifecycle
 
@@ -411,10 +439,10 @@ In your `system-design-brief.md` (System Design stage — draft numbering):
 ```markdown
 ## Technology Stack
 
-**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001-database-selection.md))
+**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001.md))
 **File Upload:** Presigned URLs with object storage (see
-[ADR-D002](adr/ADR-D002-file-upload-mechanism.md)) **Authentication:** JWT
-tokens (see [ADR-D003](adr/ADR-D003-authentication-approach.md))
+[ADR-D002](adr/ADR-D002.md)) **Authentication:** JWT
+tokens (see [ADR-D003](adr/ADR-D003.md))
 
 For detailed rationale, alternatives, and cost analysis, see ADRs in
 `docs/adr/`.
@@ -427,7 +455,7 @@ In your `implementation-brief.md` (Implementation stage):
 
 | #   | Decision                               | Type    | ADR Link                                          | Date       |
 | --- | -------------------------------------- | ------- | ------------------------------------------------- | ---------- |
-| 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-001](adr/ADR-001-payment-builder-pattern.md) | 2024-02-10 |
+| 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-0001](adr/ADR-0001.md) | 2024-02-10 |
 | 2   | Cache user permissions for 5 minutes   | Caching | [ADR-002](adr/ADR-002-permission-caching.md)      | 2024-02-10 |
 ```
 

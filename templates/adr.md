@@ -1,7 +1,8 @@
 # ADR-DXXX: [Title - Short Present Tense Phrase]
 
 <!-- Draft numbering: use ADR-DNNN (e.g., ADR-D001) during System Design.    -->
-<!-- When published to the source code repo at Gate 2, renumber to ADR-NNN    -->
+<!-- File naming: ADR-DNNN.md (draft), ADR-NNNN.md (published).              -->
+<!-- When published to the source code repo at Gate 2, renumber to ADR-NNNN   -->
 <!-- to fit the code repo's sequential scheme.                                -->
 
 **Last Updated:** YYYY-MM-DD

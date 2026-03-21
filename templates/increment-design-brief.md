@@ -104,6 +104,8 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 **Responsibilities:** [What it does]
 
+**Constraining ADRs:** [ADR-DNNN, ADR-DNNN — or "None"]
+
 **Structure:**
 
 ```
@@ -236,6 +238,16 @@ Guidance, tips, and considerations for engineers:
 - [Patterns to follow, conventions, gotchas]
 
 <!-- Before proceeding to Implementation, run the Increment Design Checklist: ../stages/increment-design/checklist.md -->
+
+---
+
+## Open Questions
+
+<!-- Tag each question with the consulted role (e.g., @Architect, @AppSec).
+     See guides/framework.md#consultation-protocol -->
+
+- **Q1:** [@Role]
+- **Q2:** [@Role]
 
 ---
 

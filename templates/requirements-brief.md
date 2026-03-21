@@ -1,5 +1,7 @@
 <!-- For guidance on completing this brief, see requirements/README.md -->
 
+> **Stage guide:** [Requirements](../stages/requirements/README.md)
+
 > **Need an example?** See the
 > [Worked Example: Requirements](../guides/worked-example.md#stage-2-requirements)
 > for completed functional requirements with acceptance criteria.
@@ -221,7 +223,7 @@
 - Requirements are testable and unambiguous
 - Open questions documented with owners (blockers resolved or mitigated)
 
-**Decision:** Ready for System Design / Revise requirements / Stop
+**Decision:** Ready for System Design / Not ready — [reason and action needed]
 
 **Next step if ready:** Proceed to System Design stage (foundational pass).
 Provide this Requirements Brief to System Design team.
@@ -232,7 +234,7 @@ Provide this Requirements Brief to System Design team.
 | -------- | ----------- | ---------- | --------------------------- |
 | [name]   | Engineering | YYYY-MM-DD | Approved / Revisions needed |
 | [name]   | Product     | YYYY-MM-DD | Approved / Revisions needed |
-| [name]   | Security    | YYYY-MM-DD | Approved / Revisions needed |
+| [name]   | AppSec      | YYYY-MM-DD | Approved / Revisions needed |
 
 ---
 

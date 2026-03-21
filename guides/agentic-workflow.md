@@ -30,10 +30,10 @@ stages:
     inputs: [business-opportunity, stakeholder-list, budget-constraints]
     outputs:
       [
-        initiation-brief,
-        success-criteria-register,
-        assumptions-risks-list,
-        timeline-estimate,
+        { artifact: initiation-brief, template: templates/initiation-brief.md },
+        { artifact: success-criteria-register, template: templates/success-criteria-register.md },
+        { artifact: assumptions-risks-list, embedded_in: initiation-brief },
+        { artifact: timeline-estimate, embedded_in: initiation-brief },
       ]
     feeds_into: [requirements]
     revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
@@ -54,15 +54,15 @@ stages:
           hard_gate: false,
         },
       ]
-    inputs: [initiation-brief]
+    inputs: [initiation-brief, success-criteria-register]
     outputs:
       [
-        requirements-brief,
-        requirements-with-acceptance-criteria,
-        prioritized-feature-backlog,
-        requirements-traceability,
-        non-functional-requirements,
-        success-criteria-register,
+        { artifact: requirements-brief, template: templates/requirements-brief.md },
+        { artifact: requirements-with-acceptance-criteria, embedded_in: requirements-brief },
+        { artifact: prioritized-feature-backlog, embedded_in: requirements-brief },
+        { artifact: requirements-traceability, embedded_in: requirements-brief },
+        { artifact: non-functional-requirements, embedded_in: requirements-brief },
+        { artifact: success-criteria-register },
       ]
     feeds_into: [system-design]
     revisit_conditions:
@@ -97,14 +97,15 @@ stages:
       ]
     outputs:
       [
-        architecture-diagrams,
-        technology-stack-adrs,
-        data-api-architecture,
-        infrastructure-plan,
-        security-approach,
-        observability-strategy,
-        increment-plan,
-        gate-2-decision-package,
+        { artifact: system-design-brief, template: templates/system-design-brief.md },
+        { artifact: architecture-diagrams },
+        { artifact: technology-stack-adrs, template: templates/adr.md },
+        { artifact: data-api-architecture, embedded_in: system-design-brief },
+        { artifact: infrastructure-plan, embedded_in: system-design-brief },
+        { artifact: security-approach, embedded_in: system-design-brief },
+        { artifact: observability-strategy, embedded_in: system-design-brief },
+        { artifact: increment-plan, embedded_in: system-design-brief },
+        { artifact: gate-2-decision-package, template: templates/gate-decision.md },
       ]
     feeds_into: [increment-design]
     revisit_conditions:
@@ -133,11 +134,11 @@ stages:
       ]
     outputs:
       [
-        component-designs,
-        api-specifications,
-        data-model-changes,
-        test-strategy,
-        implementation-notes,
+        { artifact: component-designs, template: templates/increment-design-brief.md },
+        { artifact: api-specifications },
+        { artifact: data-model-changes },
+        { artifact: test-strategy },
+        { artifact: implementation-notes },
       ]
     feeds_into: [implementation]
     revisit_conditions: [requirements-change, design-review-rejection]
@@ -150,6 +151,7 @@ stages:
     default_autonomy: ai-led
     default_oversight_intensity: passive
     working_location: source-code
+    session_log_template: templates/implementation-session-log.md
     gates:
       [
         {
@@ -168,13 +170,13 @@ stages:
       ]
     outputs:
       [
-        working-code,
-        unit-tests,
-        code-review-approvals,
-        updated-documentation,
-        implementation-brief,
-        session-log,
-        observability-instrumentation,
+        { artifact: working-code },
+        { artifact: unit-tests },
+        { artifact: code-review-approvals },
+        { artifact: updated-documentation },
+        { artifact: implementation-brief, template: templates/implementation-brief.md },
+        { artifact: session-log },
+        { artifact: observability-instrumentation },
       ]
     feeds_into: [verification]
     revisit_conditions: [design-change, blocking-dependency]
@@ -195,16 +197,22 @@ stages:
           hard_gate: false,
         },
       ]
-    inputs: [working-code, requirements-with-acceptance-criteria, test-strategy]
+    inputs:
+      [
+        working-code,
+        requirements-with-acceptance-criteria,
+        test-strategy,
+        implementation-brief,
+      ]
     outputs:
       [
-        test-results,
-        defect-reports,
-        uat-sign-off,
-        performance-test-results,
-        security-scan-results,
-        verified-code,
-        production-readiness-assessment,
+        { artifact: test-results, template: templates/verification-brief.md },
+        { artifact: defect-reports },
+        { artifact: uat-sign-off },
+        { artifact: performance-test-results },
+        { artifact: security-scan-results },
+        { artifact: verified-code },
+        { artifact: production-readiness-assessment },
       ]
     feeds_into: [deployment, implementation]
     revisit_conditions: [new-defects, requirements-change, uat-rejection]
@@ -222,21 +230,28 @@ stages:
         {
           type: human-execution-required,
           name: "Production Deployment Approval",
-          hard_gate: true,
+          hard_gate: false,
         },
       ]
-    inputs: [verified-code, uat-sign-off]
+    inputs:
+      [
+        verified-code,
+        uat-sign-off,
+        production-readiness-assessment,
+        infrastructure-plan,
+        implementation-brief,
+      ]
     outputs:
       [
-        deployed-system,
-        deployment-log,
-        updated-runbooks,
-        release-notes,
-        baseline-measurements,
-        monitoring-dashboards,
-        incident-response-procedures,
-        rollback-procedure,
-        retrospective-action-items,
+        { artifact: deployed-system, template: templates/deployment-brief.md },
+        { artifact: deployment-log },
+        { artifact: updated-runbooks },
+        { artifact: release-notes },
+        { artifact: baseline-measurements },
+        { artifact: monitoring-dashboards },
+        { artifact: incident-response-procedures },
+        { artifact: rollback-procedure },
+        { artifact: retrospective-action-items },
       ]
     feeds_into: [support, increment-design]
     revisit_conditions: [deployment-failure, rollback-required]
@@ -264,13 +279,16 @@ stages:
         updated-runbooks,
         success-criteria-register,
         incident-response-procedures,
+        baseline-measurements,
+        release-notes,
+        rollback-procedure,
       ]
     outputs:
       [
-        system-availability-metrics,
-        success-criteria-reports,
-        incident-reports,
-        enhancement-backlog,
+        { artifact: system-availability-metrics, template: templates/support-brief.md },
+        { artifact: success-criteria-reports },
+        { artifact: incident-reports },
+        { artifact: enhancement-backlog },
       ]
     feeds_into:
       [
@@ -310,12 +328,19 @@ fallback:
   missing_input:
     "Request from human or derive from available context with [ASSUMED] flag"
   failed_gate:
-    "Document failure reason, attempt remediation, escalate to human if
-    unresolved"
+    "Document failure reason, attempt remediation, re-run gate check. If
+    unresolved after one retry, escalate to human"
   ambiguous_requirements:
-    "List interpretations, recommend one, request human decision"
+    "List interpretations, recommend one, halt for human confirmation
+    before proceeding"
   unreachable_human:
-    "Continue with lowest-risk option, flag all decisions for review"
+    "Continue with lowest-risk option, flag all decisions for review.
+    Hard-gate exception: do not proceed past hard gates (Gate 1, Gate 2)
+    without human approval — halt and log context. Human-Led exception:
+    halt entirely and log all context for human review."
+  stage_overrides:
+    "stages/[stage]/reference.md extends these protocols; stage-specific
+    overrides take precedence for that stage"
 session:
   log_template: templates/session-log.md
   protocol: "Read log at session start, write log at session end"
@@ -387,7 +412,7 @@ for programmatic access; use this table for quick human reference.
 | #   | Stage            | Pattern      | Default Autonomy | Location    | Gate Type                         | Feeds Into                 |
 | --- | ---------------- | ------------ | ---------------- | ----------- | --------------------------------- | -------------------------- |
 | 1   | Initiation       | Foundational | Collaborative    | Artifacts   | Human approval                    | Requirements               |
-| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Human approval                    | System Design              |
+| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Checkpoint (human approval)       | System Design              |
 | 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment review + human approval | Increment Design           |
 | 4   | Increment Design | Iterative    | Collaborative    | Artifacts   | Specialized review                | Implementation             |
 | 5   | Implementation   | Iterative    | AI-Led           | Source Code | CI validation + human approval    | Verification               |
@@ -443,11 +468,11 @@ All template paths are relative to `templates/`.
 | Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                              | All stages (referenced)             | Gate 1                           |
 | Initiation       | Assumptions & Risks List  | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
 | Initiation       | Timeline Estimate         | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
-| Requirements     | Requirements Brief        | `requirements-brief.md`        | Initiation Brief                               | System Design                       | Requirements Readiness           |
-| Requirements     | User Stories + ACs        | —                              | Initiation Brief                               | Increment Design, Implementation    | Requirements Readiness           |
-| Requirements     | Feature Backlog           | —                              | Initiation Brief                               | Increment Design                    | Requirements Readiness           |
+| Requirements     | Requirements Brief        | `requirements-brief.md`        | Initiation Brief, Success Criteria Register    | System Design                       | Requirements Readiness           |
+| Requirements     | User Stories + ACs        | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register    | Increment Design, Implementation    | Requirements Readiness           |
+| Requirements     | Feature Backlog           | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register    | Increment Design                    | Requirements Readiness           |
 | Requirements     | Traceability Matrix       | —                              | Requirements Brief                             | System Design                       | Requirements Readiness           |
-| System Design    | Architecture Diagrams     | `system-design-brief.md`       | Requirements Brief, NFRs                       | Increment Design, Implementation    | Architecture Review + Gate 2     |
+| System Design    | System Design Brief       | `system-design-brief.md`       | Requirements Brief, NFRs                       | Increment Design, Implementation    | Architecture Review + Gate 2     |
 | System Design    | Technology ADRs           | `adr.md`                       | Requirements Brief                             | Implementation                      | Architecture Review + Gate 2     |
 | System Design    | Increment Plan            | —                              | Requirements Brief                             | Increment Design                    | Architecture Review + Gate 2     |
 | System Design    | Infrastructure Plan       | —                              | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
@@ -455,12 +480,13 @@ All template paths are relative to `templates/`.
 | Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Stories + ACs    | Implementation                      | Design Review                    |
 | Increment Design | API Specifications        | —                              | Architecture                                   | Implementation                      | Design Review                    |
 | Increment Design | Test Strategy             | —                              | Stories + ACs                                  | Implementation, Verification        | Design Review                    |
-| Implementation   | Working Code              | `implementation-brief.md`      | Component Designs, Architecture, Stories + ACs | Verification                        | PR Review + CI                   |
+| Implementation   | Working Code              | —                              | Component Designs, Architecture, Stories + ACs | Verification                        | PR Review + CI                   |
 | Implementation   | Unit Tests                | —                              | Working Code, Test Strategy                    | Verification                        | PR Review + CI                   |
-| Verification     | Test Results              | `verification-brief.md`        | Working Code, Stories + ACs, Test Strategy     | Deployment                          | Test Execution + Coverage Review |
+| Implementation   | Implementation Brief      | `implementation-brief.md`      | Working Code, Session Logs                     | Verification, Deployment            | PR Review + CI                   |
+| Verification     | Test Results              | `verification-brief.md`        | Working Code, Stories + ACs, Test Strategy, Implementation Brief | Deployment               | Test Execution + Coverage Review |
 | Verification     | UAT Sign-Off              | —                              | Test Results                                   | Deployment                          | Test Execution + Coverage Review |
 | Verification     | Defect Reports            | —                              | Test Results                                   | Implementation _(rework)_           | Test Execution + Coverage Review |
-| Deployment       | Deployed System           | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan     | Support                             | Production Deployment Approval   |
+| Deployment       | Deployed System           | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan, Implementation Brief | Support                    | Production Deployment Approval   |
 | Deployment       | Release Notes             | —                              | Deployed System                                | Support                             | Production Deployment Approval   |
 | Deployment       | Updated Runbooks          | `runbook.md`                   | Deployed System                                | Support                             | Production Deployment Approval   |
 | Deployment       | Baseline Measurements     | —                              | Deployed System, Success Criteria              | Support                             | Production Deployment Approval   |
@@ -471,9 +497,9 @@ All template paths are relative to `templates/`.
 
 ### Gate Decision Template Selection
 
-- **Hard gates** (Gate 1, Gate 2, Production Deployment Approval): use
-  `templates/gate-decision.md`
-- **Soft gates** (all others): use `templates/checkpoint-decision.md`
+- **Hard gates** (Gate 1, Gate 2): use `templates/gate-decision.md`
+- **Soft gates** (all others, including Production Deployment Approval): use
+  `templates/checkpoint-decision.md`
 - **PR Review + CI**: the PR approval itself serves as the gate artifact; no
   separate decision template is required
 
@@ -627,8 +653,7 @@ unavailable).
 1. Continue with the lowest-risk option
 2. Flag every decision made without human input
 3. Compile a decision log for the human to review when available
-4. Do not proceed past hard gates (Gate 1, Gate 2, production deployment)
-   without human approval
+4. Do not proceed past hard gates (Gate 1, Gate 2) without human approval
 5. At Human-Led tier, halt and log all context for human review rather than
    continuing autonomously
 

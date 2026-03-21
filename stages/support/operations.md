@@ -117,10 +117,33 @@ contacts. See
 [Support Reference: Incident Response](reference.md#incident-response-process)
 for templates.
 
-**Enterprise:** Formal incident commander role, communication templates, war
+**Enterprise:** Formal incident commander role,
+[communication templates](reference.md#incident-communication-templates), war
 room procedures, and post-incident review process.
 
-### 3. Establish On-Call or Monitoring Responsibility
+### 3. Verify Monitoring and Alerting Infrastructure
+
+Confirm that the monitoring set up during Deployment is active and correctly
+routed before establishing on-call responsibilities.
+
+**All tiers:**
+
+- [ ] Health check endpoints returning healthy
+- [ ] Error tracking capturing real errors (not silently failing)
+- [ ] Alert routing delivering to the correct channels (test with a synthetic
+  alert)
+
+**Standard and Enterprise additionally:**
+
+- [ ] APM dashboards showing real production data
+- [ ] Log aggregation capturing application and infrastructure logs
+- [ ] Severity-based alert routing verified (page for P0, Slack for P1, etc.)
+
+If monitoring gaps exist, resolve them before proceeding — on-call without
+working alerts is an incident waiting to happen. See the
+[Deployment Setup Guide](../deployment/setup.md) for infrastructure setup.
+
+### 4. Establish On-Call or Monitoring Responsibility
 
 **Minimal:** Assign a team member to check dashboards daily during work hours.
 No formal on-call needed.
@@ -144,7 +167,7 @@ Automated escalation if on-call does not acknowledge within SLA.
 Handoff: At rotation change, brief incoming on-call on all active incidents,
 known instabilities, and any elevated alert states.
 
-### 4. Set Up User Support Channels
+### 5. Set Up User Support Channels
 
 **Minimal:** Publish a contact email or Slack channel. Set expectations that
 response is best-effort during business hours.
@@ -155,7 +178,7 @@ resolution time targets.
 **Enterprise:** Tiered support (L1 triage, L2 engineering, L3 specialists).
 SLA-backed response times. Self-service knowledge base.
 
-### 5. Define SLAs and SLOs (if Applicable)
+### 6. Define SLAs and SLOs (if Applicable)
 
 **Minimal:** Skip — best-effort support is appropriate.
 
@@ -165,7 +188,7 @@ but do not penalize.
 **Enterprise:** Formal SLAs with contractual commitments. Monitoring dashboards
 that track compliance. Escalation when SLA breach is imminent.
 
-### 6. Create Initial Runbooks
+### 7. Create Initial Runbooks
 
 Document procedures the team will need:
 
@@ -182,7 +205,7 @@ for example content.
 scenarios, regularly tested and updated. Use the
 [Runbook Template](../../templates/runbook.md) for consistent formatting.
 
-### 7. Establish Success Criteria Tracking
+### 8. Establish Success Criteria Tracking
 
 **Minimal:** Informal check-ins — review metrics when convenient, act on obvious
 problems.

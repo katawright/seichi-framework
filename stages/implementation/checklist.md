@@ -25,34 +25,38 @@ and ready for Verification.
        unhandled exceptions)
 4. [ ] **[H] No critical security vulnerabilities** (input validation, secrets
        managed, dependencies scanned, SAST clean, no PII in logs)
+5. [ ] **Implementation aligns with Increment Design Brief** (component
+       interaction flows, API contracts, and data model match design — document
+       deviations in implementation brief)
 
 ### Testing and Review
 
-5. [ ] **Unit tests pass with adequate coverage** (report both overall and
-       critical-path coverage; happy path, edge cases, and error scenarios)
-6. [ ] **[H] Code review approved and all PRs merged** (feedback addressed, CI
+6. [ ] **Unit tests pass with adequate coverage** (default: 80% line coverage —
+       see implementation brief for project-specific target; report both overall
+       and critical-path coverage; happy path, edge cases, and error scenarios)
+7. [ ] **[H] Code review approved and all PRs merged** (feedback addressed, CI
        green)
-7. [ ] **Stored procedure integration tests pass** (N/A for greenfield or
+8. [ ] **Stored procedure integration tests pass** (N/A for greenfield or
        applications without database-layer logic; brownfield: confirm
        application changes don't break stored procedure contracts)
-8. [ ] **Schema compatibility verified** (N/A for non-database changes or
+9. [ ] **Schema compatibility verified** (N/A for non-database changes or
        greenfield with no existing consumers; confirm migrations are
        backward-compatible with existing consumers and rollback-safe)
 
 ### Instrumentation and Handoff
 
-9. [ ] **[H] Instrumentation implemented for success criteria** (logging,
-       metrics, alerts)
-10. [ ] **Implementation brief completed with decisions documented** (ADRs for
+10. [ ] **[H] Instrumentation implemented for success criteria** (logging,
+        metrics, alerts)
+11. [ ] **Implementation brief completed with decisions documented** (ADRs for
         significant choices)
-11. [ ] **Session log finalized** (all sessions recorded, deviations and
+12. [ ] **Session log finalized** (all sessions recorded, deviations and
         decisions documented, context for Verification included)
-12. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
-13. [ ] **Test environment prepared for Verification** (setup instructions, test
+13. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
+14. [ ] **Test environment prepared for Verification** (setup instructions, test
         data ready; for local-only tools, satisfied by setup instructions and
         test data)
-14. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
-15. [ ] **All required stage outputs produced** (implementation brief, session
+15. [ ] **[H] Engineers can explain implementation decisions and trade-offs**
+16. [ ] **All required stage outputs produced** (implementation brief, session
         log, working code, test results — verify against stage README front
         matter)
 

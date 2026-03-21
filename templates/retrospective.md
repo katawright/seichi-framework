@@ -72,9 +72,9 @@ retrospective findings feed back into the framework.
 
 ## Action Items
 
-| Action | Owner | Target date |
-| ------ | ----- | ----------- |
-| …      | …     | YYYY-MM-DD  |
+| Action | Owner | Stage Target | Target date |
+| ------ | ----- | ------------ | ----------- |
+| …      | …     | [stage name] | YYYY-MM-DD  |
 
 ---
 

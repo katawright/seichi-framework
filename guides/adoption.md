@@ -553,7 +553,7 @@ organizations can define default tier mappings based on project characteristics.
 | Healthcare / regulated industry   | Enterprise   | VP Engineering +    |
 |                                   |              | Compliance          |
 | Infrastructure / platform changes | Standard     | Engineering manager |
-| Security-sensitive systems        | Enterprise   | Security lead       |
+| Security-sensitive systems        | Enterprise   | AppSec lead         |
 
 ##### Defining Your Policy
 

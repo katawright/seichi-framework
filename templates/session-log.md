@@ -1,5 +1,8 @@
 <!-- Session log template for multi-session stage work.
-     See guides/agentic-workflow.md for session continuity protocol. -->
+     See guides/agentic-workflow.md for session continuity protocol.
+     IMPORTANT: Do not record API keys, tokens, credentials, secrets, or other
+     sensitive data in this log. Use placeholder references (e.g., "API key
+     stored in vault") instead of actual values. -->
 
 # Session Log: [Stage Name] — [Project/Increment Name]
 
@@ -15,6 +18,7 @@
 | **Participant(s)** | [Names / Agent IDs]                              |
 | **Stage Status**   | [Not Started / In Progress / Blocked / Complete] |
 | **Gate Status**    | [Pending / Approved / Rejected — Approver: name] |
+| **Duration**       | [Optional — total time spent across sessions]    |
 
 ---
 

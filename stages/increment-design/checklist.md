@@ -1,4 +1,4 @@
-# Increment Design Readiness Checklist
+# Increment Design Checklist
 
 **Purpose:** Quick validation (60-90 seconds) that increment design is complete
 and ready for Implementation.

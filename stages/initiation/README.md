@@ -12,10 +12,13 @@ outputs:
   - artifact: success-criteria-register
     template: templates/success-criteria-register.md
   - artifact: assumptions-risks-list
+    embedded_in: initiation-brief
   - artifact: timeline-estimate
+    embedded_in: initiation-brief
 gates:
   - type: human-approval
     name: "Gate 1 (Investment Decision)"
+    hard_gate: true
 feeds_into: [requirements]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md
@@ -56,10 +59,12 @@ inputs/outputs, entry/exit criteria, and gate details), see
 
 ### Starting Point
 
-A project idea, business opportunity, or problem worth investigating. No prior
-framework artifacts or technical expertise required.
+A business opportunity or problem worth investigating, a stakeholder list, and
+budget context. No prior framework artifacts or technical expertise required.
 
-> This stage operates from the **artifacts location**. See
+> This stage operates from the **artifacts location**. For greenfield projects,
+> create the artifacts directory structure first (e.g., `docs/briefs/`,
+> `docs/adr/`). See
 > [Working Locations](../../guides/framework.md#working-locations).
 
 ### How to Use This Guide
@@ -204,6 +209,8 @@ predictable failures. This section explains why each element is included:
 12. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
 13. [**Data Sensitivity and Compliance**](#data-sensitivity-and-compliance) —
     regulatory and privacy constraints
+14. [**Brownfield Readiness — Quick Pass**](#brownfield-readiness--quick-pass) —
+    cost signal for Gate 1 on brownfield projects
 
 ### Problem Statement
 
@@ -260,7 +267,7 @@ can't be stated clearly, the project isn't ready for investment.
 ### Success Criteria
 
 Success criteria are the guardrails that keep delivery honest. They flow through
-every later stage — Requirements traces features to them, Testing validates
+every later stage — Requirements traces features to them, Verification validates
 them, and Support monitors them in production (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).
 Without measurable criteria, teams declare success based on "we shipped it"

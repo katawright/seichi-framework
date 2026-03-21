@@ -5,6 +5,9 @@ execution_pattern: iterative
 inputs:
   - verified-code
   - uat-sign-off
+  - production-readiness-assessment
+  - infrastructure-plan
+  - implementation-brief
 outputs:
   - artifact: deployed-system
     template: templates/deployment-brief.md
@@ -19,6 +22,7 @@ outputs:
 gates:
   - type: human-execution-required
     name: "Production Deployment Approval"
+    hard_gate: false
 feeds_into: [support, increment-design]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
@@ -70,8 +74,8 @@ issues documented.
 > [Deployment Pipeline Checklist](pipeline-checklist.md) before using this
 > guide. This guide covers per-increment deployment execution.
 
-> **DevOps and Platform Engineers:** For pipeline setup, environment promotion,
-> and release patterns across the full lifecycle, see the
+> **DevOps and Platform Engineers:** For pipeline setup, release patterns, and
+> CI/CD integration across the full lifecycle, see the
 > [DevOps Integration Guide](../../guides/devops-integration.md).
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
@@ -83,7 +87,7 @@ issues documented.
 5. Run the [Deployment Checklist](checklist.md) before, during, and after
    deployment
 6. Record the deployment decision using the
-   [Gate Decision Template](../../templates/gate-decision.md)
+   [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
@@ -254,7 +258,7 @@ HANDOFF TO SUPPORT
 
 ---
 
-## Deployment Guidance
+## Why These Deployment Elements Matter
 
 ### Core Principles
 
@@ -460,10 +464,12 @@ Deployment validates that measurement systems work in production. See
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** Support stage receives the deployed system, monitoring dashboards,
-support runbooks, release notes, baseline measurements, and escalation contacts
+updated runbooks, incident response procedures, baseline measurements, release
+notes, and success criteria register. Retrospective action items feed into the
+next Increment Design cycle
 (see [Deployment Checklist — Support Handoff](checklist.md)). Record the
 deployment decision using the
-[Gate Decision Template](../../templates/gate-decision.md).
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 The Support team should verify readiness using the
 [Support Readiness Checklist](../support/readiness-checklist.md) before

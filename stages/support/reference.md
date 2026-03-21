@@ -297,9 +297,8 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** \_"Help me build a bug triage process for [describe > team
->
-> > size, product, and release cadence]."\_
+> **AI exploration:** _"Help me build a bug triage process for [describe team
+> size, product, and release cadence]."_
 
 ---
 
@@ -647,7 +646,7 @@ project operating well at Level 2 is a success.
 
 - No proactive monitoring; react to user reports
 - Tribal knowledge, undocumented procedures
-- Frequent incidents, no post-mortems
+- Frequent incidents, no post-incident reviews
 - **Goal:** Establish basic monitoring and runbooks
 
 ### Level 2: Basic Operations
@@ -797,9 +796,8 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** \_"Help me create a disaster recovery plan for [describe >
->
-> > your system, infrastructure, and business requirements]."\_
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe
+> your system, infrastructure, and business requirements]."_
 
 ---
 
@@ -819,7 +817,7 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 
 - Log clustering and pattern identification
 - Incident triage and severity classification
-- Incident communication drafts (status updates, post-mortems)
+- Incident communication drafts (status updates, post-incident reviews)
 - Runbook updates based on incident learnings
 - Dependency update analysis and risk assessment
 - Enhancement backlog grooming

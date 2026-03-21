@@ -23,6 +23,14 @@ decision framework.
 - **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)
 
+**Division of labor:** The Responsible role (R) prepares the gate package —
+completing Context, Inputs Reviewed, Artifact Completeness, and Criteria
+Evaluated with evidence. The Accountable role (A) reviews the package, leads the
+decision discussion, and records the final Decision and Next Steps. The
+Facilitator (PjM) manages agenda and time-boxing per the
+[Gate Review Facilitation](../guides/framework.md#gate-review-facilitation)
+protocol.
+
 ---
 
 ## Context
@@ -37,7 +45,7 @@ decision framework.
 
 - (List of artifacts and evidence evaluated)
 - _Example (Gate 1):_ "Initiation Brief, stakeholder feedback"
-- _Example (Gate 2):_ "Requirements doc, system design brief, spike results,
+- _Example (Gate 2):_ "Requirements Brief, system design brief, spike results,
   updated estimates"
 
 ---

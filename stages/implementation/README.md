@@ -10,16 +10,17 @@ inputs:
   - test-strategy
 outputs:
   - artifact: working-code
-    template: templates/implementation-brief.md
   - artifact: unit-tests
   - artifact: code-review-approvals
   - artifact: updated-documentation
   - artifact: implementation-brief
+    template: templates/implementation-brief.md
   - artifact: session-log
   - artifact: observability-instrumentation
 gates:
   - type: ci-validation-human-approval
     name: "PR Review + CI"
+    hard_gate: false
 feeds_into: [verification]
 checklist: stages/implementation/checklist.md
 reference: stages/implementation/reference.md
@@ -55,8 +56,10 @@ every step; humans own every gate.
 ### Starting Point
 
 A completed Increment Design Brief with detailed component designs, interface
-contracts, and test strategy. Your development environment should be set up and
-ready.
+contracts, and test strategy. Also required: architecture diagrams from System
+Design, requirements with acceptance criteria, and the success criteria register
+for measurement throughline continuity. Your development environment should be
+set up and ready.
 
 > This stage operates from the **source code location**. Design briefs and
 > session logs are read from the artifacts location. See
@@ -98,6 +101,9 @@ For cross-cutting framework concepts, see
 
 ### Implementation Workflow
 
+> See [How to Use This Guide](#how-to-use-this-guide) for the summary-level
+> steps. This section details the per-PR workflow.
+
 AI assists at every step; humans maintain ownership through review and approval
 gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
@@ -138,6 +144,10 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
 ## How AI Helps
 
+AI can assist with Implementation at whatever autonomy tier your team is
+comfortable with — from generating code snippets to driving the entire
+implementation process.
+
 ### AI Autonomy Spectrum
 
 Match AI's role to your team's autonomy comfort level. Gate requirements always
@@ -147,7 +157,7 @@ for full tier definitions.
 
 | Human-Led                                  | Collaborative                                     | AI-Led                                                           |
 | ------------------------------------------ | ------------------------------------------------- | ---------------------------------------------------------------- |
-| Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full slices, identifies issues; engineer validates |
+| Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full increments, identifies issues; engineer validates |
 
 At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
 see
@@ -187,7 +197,7 @@ instrumentation. Match your Implementation effort to your project's risk tier.
 | **ADRs**               | Brief notes on key decisions              | ADRs for significant implementation choices     | Comprehensive ADRs with compliance traceability    |
 | **Unit test coverage** | Tests for critical paths                  | Coverage targets (e.g., 80%), CI enforcement    | High coverage targets, mutation testing            |
 | **Instrumentation**    | Basic logging                             | Structured logging, key metrics, error tracking | Full observability — traces, metrics, logs, alerts |
-| **Security practices** | AI-automated dep scan + secrets detection | Dependency scanning, SAST, security review      | SAST/DAST scanning, security review gates          |
+| **Security practices** | AI-automated dep scan + secrets detection | Dependency scanning, SAST (static analysis), security review | SAST/DAST (static + dynamic analysis) scanning, security review gates |
 | **PR size/process**    | Commit directly or small PRs              | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
 
 Expand Implementation only when needed:
@@ -262,7 +272,7 @@ decisions with implications.
 **Document inline when:** Single obvious approach, team standard practice,
 easily reversible.
 
-Store in `implementation/adr/` with sequential numbering.
+Store in `docs/adr/` with sequential numbering.
 
 ### Instrumentation and Observability
 

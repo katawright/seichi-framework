@@ -80,6 +80,11 @@ then:
 > - **Product Managers / Business Analysts:** Start with
 >   [Initiation](stages/initiation/README.md) to build your business case (Path
 >   B above shows the AI-assisted approach)
+> - **Architects / Engineers:** Start with
+>   [System Design](stages/system-design/README.md) for architecture work,
+>   [Increment Design](stages/increment-design/README.md) for component specs
+>   and test strategy, or
+>   [Implementation](stages/implementation/README.md) for development
 > - **Project Managers / Delivery Leads:** Start with the
 >   [Delivery Operating Guide](guides/delivery-operating-guide.md) for
 >   week-by-week operating rhythm
@@ -105,8 +110,8 @@ artifacts at the Minimal tier:
 These three create a lightweight loop: define the problem, design the solution,
 verify it works. Add more artifacts only when you feel the gaps.
 
-> For projects deploying to production, add a **Deployment Brief** and
-> **Rollback Procedure** to this minimum set.
+> For projects deploying to production, add a **Deployment Brief**,
+> **Rollback Procedure**, and **Support Brief** to this minimum set.
 
 ---
 
