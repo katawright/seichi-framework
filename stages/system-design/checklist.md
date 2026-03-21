@@ -1,4 +1,4 @@
-# System Design Readiness Checklist
+# System Design Checklist
 
 **Purpose:** Quick validation (60-90 seconds) that system design is complete and
 ready for Gate 2.

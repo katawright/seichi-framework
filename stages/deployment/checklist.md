@@ -127,7 +127,7 @@ successful completion.
 **Decision:** Ready / Not Ready
 
 **If Ready:** Hand off to Support stage. Record the deployment decision using
-the [Gate Decision Template](../../templates/gate-decision.md).
+the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 **If Not Ready:** Document blocking items, resolve, and re-run this checklist.
 

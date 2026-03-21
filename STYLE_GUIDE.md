@@ -312,14 +312,23 @@ inputs:
 outputs:
   - artifact: artifact-name
     template: templates/artifact-name.md # optional, only if template exists
+    embedded_in: parent-artifact # optional, when output is a section of another artifact
 gates:
   - type: gate-type # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable gate name"
+    hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for quality checkpoints
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
 ---
 ```
+
+The `agentic-workflow.md` front matter extends this schema with additional
+agent-facing fields: `default_autonomy` (human-led | collaborative | ai-led),
+`default_oversight_intensity` (active | passive | minimal),
+`working_location` (artifacts | source-code), and
+`session_log_template` (path to stage-specific session log template; stages
+without this field use `templates/session-log.md` as fallback).
 
 ### Guide File Schema
 

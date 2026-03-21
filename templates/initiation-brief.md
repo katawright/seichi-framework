@@ -1,5 +1,7 @@
 <!-- For guidance on completing this brief, see initiation/README.md -->
 
+> **Stage guide:** [Initiation](../stages/initiation/README.md)
+
 > **Need an example?** See the
 > [Worked Example: Initiation](../guides/worked-example.md#stage-1-initiation)
 > for a completed brief.
@@ -199,7 +201,7 @@ foundational pass)
     observability, and others as needed)
   - High-level design direction documented (key trade-offs identified)
   - Top risks addressed (spikes/prototypes/reviews) with mitigations/fallbacks
-  - Slice plan with dependencies (for iterative delivery)
+  - Increment plan with dependencies (for iterative delivery)
   - Updated staffing/timeline range + confidence
   - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
   - Recommendation: proceed / revise / stop

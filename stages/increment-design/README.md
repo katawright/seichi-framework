@@ -17,6 +17,7 @@ outputs:
 gates:
   - type: specialized-review
     name: "Design Review"
+    hard_gate: false
 feeds_into: [implementation]
 checklist: stages/increment-design/checklist.md
 reference: stages/increment-design/reference.md

@@ -6,6 +6,7 @@ inputs:
   - working-code
   - requirements-with-acceptance-criteria
   - test-strategy
+  - implementation-brief
 outputs:
   - artifact: test-results
     template: templates/verification-brief.md
@@ -18,6 +19,7 @@ outputs:
 gates:
   - type: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
+    hard_gate: false
 feeds_into: [deployment, implementation]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md
@@ -139,6 +141,10 @@ for the full convention.
 ---
 
 ## How AI Helps
+
+AI can assist with Verification at whatever autonomy tier your team is
+comfortable with — from generating test cases to driving the entire testing
+process.
 
 ### AI Autonomy Spectrum
 

@@ -29,7 +29,7 @@ right-sizing.
 Individual stage guides cover their own scope. Dedicated references cover stages
 ([stages.md](stages.md)), AI assistance ([ai-assistance.md](ai-assistance.md)),
 and right-sizing ([right-sizing.md](right-sizing.md)). This guide is the hub for
-concepts that span multiple documents: roles, governance, MoSCoW,
+concepts that span multiple documents: roles, governance, MoSCoW (Must / Should / Could / Won't Have),
 greenfield/brownfield adaptation, compliance, and key terms.
 
 ### Purpose
@@ -236,31 +236,23 @@ criteria, stage flow diagrams, and handoffs, see the
 The framework defines five checkpoint types — Gates, Quality Checkpoints,
 Deployment Approvals, Alignment Reviews, and Compliance Approvals — each with
 distinct decision rights, required evidence, and decision records. For the full
-taxonomy including decision-rights matrix, see the
+taxonomy and the per-checkpoint decision-rights matrix, see the
 [AI-Assisted SDLC Stages § Checkpoints](stages.md#checkpoints) reference.
 
 ---
 
 ## Measurement Throughline
 
-Measurable success criteria defined during Initiation flow through every
-subsequent stage, ensuring goals actively guide development and enable
-data-driven validation. For the stage-by-stage breakdown and example KPIs, see
-the
-[AI-Assisted SDLC Stages § Measurement Throughline](stages.md#measurement-throughline)
-reference.
+For the stage-by-stage breakdown of how success criteria flow from Initiation
+through Support, see
+[AI-Assisted SDLC Stages § Measurement Throughline](stages.md#measurement-throughline).
 
 ---
 
 ## Learning Throughline
 
-Pre-mortems at project start identify likely failure modes before the team
-commits resources; retrospectives at increment and project boundaries capture
-what actually happened and feed improvements forward. Together they form a
-lightweight learning loop that mirrors the measurement throughline. For the
-stage-by-stage breakdown, see the
-[AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline)
-reference.
+For the stage-by-stage breakdown of pre-mortems and retrospectives, see
+[AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline).
 
 ---
 
@@ -277,7 +269,7 @@ Assess the discovery's impact to choose the correct path:
 
 1. **Breaks something** (design infeasible, NFR unmet, assumption invalidated) →
    **Rework.** Classify by severity (see below) and follow the rework process.
-2. **Adds something small and safe** (no AC impact, low cost, immediate benefit,
+2. **Adds something small and safe** (no acceptance-criteria (AC) impact, low cost, immediate benefit,
    no new risk) → **Scope amendment.** Record the decision and proceed.
 3. **Adds something large or risky** (changes ACs, introduces risk, significant
    effort) → **Defer** to the next increment or project backlog.
@@ -339,12 +331,8 @@ future action rather than absorbing it into the current increment:
 
 ## Security Throughline
 
-Security activities flow through every stage — from data classification in
-Initiation through vulnerability management in Support. AI automation handles
-dependency scanning, SAST, secrets detection, and SBOM generation automatically,
-making baseline security nearly free at the Minimal tier. For the full
-stage-by-stage breakdown, AI automation tiers, right-sizing guidance, and NIST
-SSDF traceability, see the [Security Guide](security.md).
+For the full stage-by-stage breakdown, AI automation tiers, and NIST SSDF
+traceability, see the [Security Guide](security.md).
 
 ---
 
@@ -467,15 +455,16 @@ when they move — prevents duplication, lost context, and orphaned records.
 ADRs are drafted in the artifacts repo during System Design and published to the
 source code repo when implementation begins (Gate 2).
 
-**Draft numbering:** Use a `D` prefix during System Design (`ADR-D001`,
-`ADR-D002`). The prefix makes draft status self-evident and keeps numbering
-scoped to the current project's artifacts.
+**Draft numbering:** Use a `D` prefix during System Design (`ADR-D001.md`,
+`ADR-D002.md`). The prefix makes draft status self-evident and keeps numbering
+scoped to the current project's artifacts. The title is in the ADR heading, not
+the filename.
 
 **Publishing at Gate 2:** When ADRs move to the source code repo, renumber them
-to fit the code repo's existing sequential scheme (e.g., `ADR-D001` →
-`ADR-023`). Update the artifact-repo copy with a pointer:
+to 4-digit sequential format (e.g., `ADR-D001.md` → `ADR-0023.md`). Update the
+artifact-repo copy with a pointer:
 
-> Published as ADR-023 in [code repo].
+> Published as ADR-0023 in [code repo].
 
 **Traceability:** One-directional by default — the artifact-repo copy points
 forward to the published ADR. Bidirectional pointers (code repo back to artifact
@@ -516,7 +505,7 @@ For the full protocol — what flows back, sync points, and agent steps — see
 **Architecture Decision Record (ADR)** — A short document capturing a
 significant design decision and the reasoning behind it. ADRs are drafted in the
 artifacts repo during System Design (using `ADR-DNNN` draft numbering) and
-published to the source code repo at Gate 2 (renumbered to `ADR-NNN`). See
+published to the source code repo at Gate 2 (renumbered to `ADR-NNNN`). See
 [Artifact Placement: ADR Publishing](#adr-publishing) for the full lifecycle and
 the [ADR Template](../templates/adr.md) for the document format.
 
@@ -579,30 +568,57 @@ designations from each stage guide into a single cross-stage view.
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
 Informed (kept in the loop)
 
-| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | Exec | PjM |
-| -------------------- | ----- | --------- | --------- | --- | ------ | ---- | --- |
-| **Initiation**       | R/A   | C         | C         | -   | -      | I    | C   |
-| Gate 1 decision      | R     | -         | -         | -   | -      | A    | C   |
-| **Requirements**     | R/A   | C         | C         | C   | -      | I    | C   |
-| **System Design**    | C     | C         | R/A       | C   | C      | I    | C   |
-| Gate 2 decision      | C     | C         | R         | C   | C      | A    | C   |
-| **Increment Design** | C     | R/A       | C         | C   | -      | -    | C   |
-| **Implementation**   | -     | R/A       | C         | C   | C      | -    | I   |
-| **Verification**     | C     | R         | C         | R/A | -      | -    | I   |
-| **Deployment**       | I     | C         | C         | C   | R/A    | I    | C   |
-| **Support**          | I     | C         | C         | -   | R/A    | I    | I   |
-| Deployment Approval  | I     | C         | C         | C   | R/A    | I    | C   |
-| Compliance Approval  | C     | -         | C         | -   | C      | I    | C   |
+| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
+| -------------------- | ----- | --------- | --------- | --- | ------ | -------- | ---- | --- |
+| **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C   |
+| Gate 1 decision      | R     | -         | -         | -   | -      | C        | A    | C   |
+| **Requirements**     | R/A   | C         | C         | C   | -      | C        | I    | C   |
+| **System Design**    | C     | C         | R/A       | C   | C      | C        | I    | C   |
+| Gate 2 decision      | C     | C         | R         | C   | C      | R        | A    | C   |
+| **Increment Design** | C     | R/A       | C         | C   | -      | C        | -    | C   |
+| **Implementation**   | -     | R/A       | C         | C   | C      | C        | -    | I   |
+| **Verification**     | C     | R         | C         | R/A | -      | R        | -    | I   |
+| **Deployment**       | I     | C         | C         | C   | R/A    | C        | I    | C   |
+| **Support**          | I     | C         | C         | -   | R/A    | C        | I    | I   |
+| Deployment Approval  | I     | C         | C         | C   | R/A    | C        | I    | C   |
+| Compliance Approval  | C     | -         | C         | -   | C      | R/A      | I    | C   |
+
+**Verification responsibility split:** Engineers (R) fix defects found during
+testing, complete unit test gaps, and support integration test debugging. QA
+(R/A) owns test execution, coverage assessment, UAT coordination, and the
+verification brief. AppSec (R) owns security-specific testing (dependency
+scans, SAST review, penetration testing at Enterprise tier).
+
+**Consultation Protocol**
+
+When a stage requires input from a Consulted (C) role:
+
+1. **Request.** The Responsible role adds the question to the stage artifact's
+   open-questions section, tagging the consulted role.
+2. **Response.** The Consulted role responds inline in the open-questions
+   section or attaches a referenced addendum to the artifact.
+3. **Resolution.** The Responsible role records the decision and rationale in
+   the artifact, noting the consulted role's input.
+
+For time-sensitive consultations, the Responsible role may proceed with the
+lowest-risk option and flag the decision for review, following the
+unreachable-human fallback protocol.
+
+**Information Protocol**
+
+When a stage completes its checkpoint, the Responsible role distributes the
+checkpoint decision artifact (gate-decision or checkpoint-decision) to all
+Informed (I) roles. I-roles receive completed artifacts for awareness — no
+response or action is required unless they identify a concern, in which case
+they raise it with the Accountable role.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
 > the [accountability table](#compliance-and-regulatory-considerations) below.
 
 > **Note:** This matrix represents the most common role assignments. Adapt to
 > your team structure — in smaller teams, one person may hold multiple roles
-> (e.g., one person may hold both PM and PjM). In larger organizations,
-> additional roles (security, compliance) may be Consulted or Accountable at
-> specific stages. PjM maps to Scrum Master, Delivery Lead, TPM, or Engineering
-> Manager depending on methodology.
+> (e.g., one person may hold both PM and PjM). PjM maps to Scrum Master,
+> Delivery Lead, TPM, or Engineering Manager depending on methodology.
 
 **Project Manager (PjM)** owns delivery coordination across the lifecycle —
 schedule management, gate facilitation, cross-increment coordination, dependency
@@ -641,10 +657,56 @@ not works in progress.
 | Gate 1 | 30–60 min            |
 | Gate 2 | 45–90 min            |
 
+**Scope.** PjM facilitates Gate 1 and Gate 2 — the two investment-decision gates.
+Soft checkpoints (Quality, Deployment Approval, Alignment Review, Compliance
+Approval, Production Ownership) are owned and run by the stage's Responsible
+role; PjM tracks their completion for scheduling purposes but does not
+facilitate them. See the
+[Decision-Rights Matrix](stages.md#checkpoints) for per-checkpoint roles.
+
 **Decision recording.** Capture the outcome using
 [`templates/gate-decision.md`](../templates/gate-decision.md). Record the
 decision (Proceed / Proceed with conditions / Revise / Stop), conditions, and
 accountable owners for any follow-up actions.
+
+### Application Security (AppSec)
+
+**AppSec** provides security and compliance input across the lifecycle. AppSec is
+Consulted at most stages (reviewing artifacts for security implications) and
+Responsible at Verification (security testing), Gate 2 (risk posture input), and
+Compliance Approval. For details on security activities by stage, see the
+[Security Guide](security.md).
+
+| Stage / Checkpoint   | RACI | AppSec Activity                                                    |
+| -------------------- | ---- | ------------------------------------------------------------------ |
+| **Initiation**       | C    | Review data sensitivity classification and compliance scope        |
+| Gate 1               | C    | Confirm risk and policy exposure is captured                       |
+| **Requirements**     | C    | Review security NFRs for completeness                              |
+| **System Design**    | C    | Review threat model and security architecture                      |
+| Gate 2               | R    | Provide risk posture assessment for investment decision            |
+| **Increment Design** | C    | Flag security-relevant changes (auth, data, API surface)           |
+| **Implementation**   | C    | Review security scan results; advise on findings                   |
+| **Verification**     | R    | Own security testing (dependency scans, SAST, pen testing at E)    |
+| **Deployment**       | C    | Verify SBOM, artifact integrity, pre-deployment security checks    |
+| **Support**          | C    | Advise on CVE prioritization and incident response                 |
+| Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                     |
+
+**Security Escalation Protocol**
+
+When AppSec identifies a security finding during any stage, the severity
+determines the orchestration response:
+
+| Severity     | Orchestration Response                                                       |
+| ------------ | ---------------------------------------------------------------------------- |
+| **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint    |
+| **High**     | Conditional proceed; finding tracked with fix deadline before deployment     |
+| **Medium**   | Track in defect backlog; fix targeted for current or next increment          |
+| **Low**      | Log in backlog; address opportunistically                                    |
+
+Severity classification follows the project's defect management definitions (see
+[Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
+At Enterprise tier, Critical and High findings require documented
+fix/accept/defer decisions with AppSec sign-off.
 
 ### Cadence Mapping
 
@@ -658,7 +720,7 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
 | Foundational stages  | Span 1–3 sprints           | Span 2–6 sprints         | Complete before flow start |
 | Gate 1               | End of foundational sprint | End of foundational week | Explicit pull trigger      |
 | One increment        | ≈ 1 sprint                 | ≈ 1–2 sprints            | WIP-limited batch          |
-| Gate 2               | End of last increment      | End of last increment    | Explicit pull trigger      |
+| Gate 2 confirmation  | End of last increment      | End of last increment    | Explicit pull trigger      |
 | Cross-increment sync | Sprint review / planning   | Weekly sync              | Standup + board review     |
 
 **Notes:**
@@ -678,11 +740,11 @@ level, especially for regulated or enterprise environments:
 
 | Stage / Checkpoint                      | Accountable Role                     | Typical Trigger                                                |
 | --------------------------------------- | ------------------------------------ | -------------------------------------------------------------- |
-| Initiation (risk and policy framing)    | Project lead + security/compliance   | Sensitive data, regulated domains, external AI tools           |
-| Gate 1 / Gate 2 input (risk posture)    | Security/compliance (advisory A\*)   | New legal/privacy/security risk exposure                       |
-| Verification (control evidence)         | QA/engineering + security/compliance | Security, privacy, or audit controls required for release      |
-| Compliance Approval checkpoint          | Security/compliance/legal (A)        | Contractual, regulatory, or internal policy sign-off required  |
-| Deployment Approval (release readiness) | DevOps/engineering + security (C/A)  | Production change with material risk, data impact, or exposure |
+| Initiation (risk and policy framing)    | Project lead + AppSec/compliance     | Sensitive data, regulated domains, external AI tools           |
+| Gate 1 / Gate 2 input (risk posture)    | AppSec/compliance (advisory A\*)     | New legal/privacy/security risk exposure                       |
+| Verification (control evidence)         | QA/engineering + AppSec/compliance   | Security, privacy, or audit controls required for release      |
+| Compliance Approval checkpoint          | AppSec/compliance/legal (A)          | Contractual, regulatory, or internal policy sign-off required  |
+| Deployment Approval (release readiness) | DevOps/engineering + AppSec (C/A)    | Production change with material risk, data impact, or exposure |
 
 \*Investment gate ownership remains with executive decision-makers; security and
 compliance provide required risk and policy input before approval.
@@ -877,8 +939,8 @@ Not every change needs formal review. Use this guide:
 | Database schema change       | Self-review | Tech lead   | Team review    |
 | New service or component     | Self-review | Design sync | Council review |
 | Technology stack change      | N/A         | Tech lead   | Council vote   |
-| Security architecture change | Self-review | Security +  | Council +      |
-|                              |             | tech lead   | security       |
+| Security architecture change | Self-review | AppSec +    | Council +      |
+|                              |             | tech lead   | AppSec         |
 
 ---
 

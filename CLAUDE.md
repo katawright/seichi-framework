@@ -35,8 +35,9 @@ all SDLC stages. The framework is designed to:
 
 ## Document Hierarchy
 
-Read `guides/stages.md` and `STYLE_GUIDE.md` first when creating or editing
-files. See `INDEX.md` for the full file inventory and canonical sources.
+Read `guides/agentic-workflow.md` (front matter first for stage routing, then
+body for context), `guides/stages.md`, and `STYLE_GUIDE.md` when creating or
+editing files. See `INDEX.md` for the full file inventory and canonical sources.
 
 ---
 

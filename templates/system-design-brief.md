@@ -28,7 +28,7 @@ DevOps Lead, Project Manager]
 - **Related Requirements:** [Link to requirements-brief.md]
 - **Execution Pattern:** Foundational (see
   [AI-Assisted SDLC Stages](../guides/stages.md))
-- **Primary Role:** Engineers / Solutions Architect
+- **Primary Role:** Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
 - **Checkpoints:** Alignment Review, Gate 2
 - **Gate:** Gate 2 (build/no-build decision after System Design + Requirements
@@ -60,7 +60,8 @@ DevOps Lead, Project Manager]
 <!-- Use draft numbering (ADR-DNNN) during System Design; renumber at Gate 2  -->
 
 - **Directory:** `docs/adr/`
-- **File naming:** `ADR-DXXX-short-description.md` (draft prefix during design)
+- **File naming:** `ADR-DNNN.md` (draft prefix during design; title is in the
+  ADR heading, not the filename)
 - **Template:** [ADR Template](adr.md)
 - **Index:** `docs/adr/README.md`
 
@@ -192,7 +193,7 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ---
 
-## NFR Traceability
+## 9. NFR Traceability
 
 | NFR ID | Description            | Architectural Approach      | ADR      | Verification Method      |
 | ------ | ---------------------- | --------------------------- | -------- | ------------------------ |
@@ -201,7 +202,7 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ---
 
-## 9. Versioning Strategy
+## 10. Versioning Strategy
 
 <!-- Most relevant for greenfield projects. Brownfield projects with existing
      conventions should document and follow them rather than inventing new ones. -->
@@ -217,7 +218,7 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ---
 
-## 10. Increment Plan
+## 11. Increment Plan
 
 <!-- Minimal: Ordered task list | Standard: Sequenced increments with dependencies | Enterprise: Formal roadmap -->
 
@@ -367,6 +368,16 @@ mitigation]
 **Decision Rationale:** [1-2 paragraphs]
 
 <!-- For cost examples, see ../stages/system-design/reference.md#gate-2-cost-calculation-example -->
+
+---
+
+## Open Questions
+
+<!-- Tag each question with the consulted role (e.g., @Architect, @AppSec).
+     See guides/framework.md#consultation-protocol -->
+
+- **Q1:** [@Role]
+- **Q2:** [@Role]
 
 ---
 

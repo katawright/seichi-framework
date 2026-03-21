@@ -1,5 +1,7 @@
 <!-- For guidance on completing this brief, see deployment/README.md -->
 
+> **Stage guide:** [Deployment](../stages/deployment/README.md)
+
 # Deployment Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the

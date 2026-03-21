@@ -4,6 +4,7 @@ stage_number: 2
 execution_pattern: foundational
 inputs:
   - initiation-brief
+  - success-criteria-register
 outputs:
   - artifact: requirements-brief
     template: templates/requirements-brief.md
@@ -15,6 +16,7 @@ outputs:
 gates:
   - type: human-approval
     name: "Requirements Readiness"
+    hard_gate: false
 feeds_into: [system-design]
 checklist: stages/requirements/checklist.md
 reference: stages/requirements/reference.md
@@ -78,10 +80,8 @@ Requirements will convert into testable specifications.
 5. Complete the [Requirements Checklist](checklist.md) using AI according to
    your chosen autonomy tier
 6. Complete the Requirements Readiness checkpoint — present to stakeholders and
-   record the proceed/revise/stop decision using the
+   record the ready/not-ready decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
-   (checkpoints verify quality readiness; gates are investment decisions — see
-   [Gate Decision Template](../../templates/gate-decision.md) for comparison)
 
 > **See a completed example:** The
 > [Worked Example: Requirements](../../guides/worked-example.md#stage-2-requirements)
@@ -202,7 +202,10 @@ element is included:
 13. [**Open Questions**](#open-questions) — blockers for System Design
 14. [**Requirements Readiness**](#requirements-readiness) — quality checkpoint
     before System Design
-15. [**Gate 2 Planning**](#gate-2-planning) — outputs needed for the build
+15. [**Interface Examples**](#interface-examples) — representative examples of
+    primary user interactions
+16. [**Change Log**](#change-log) — requirement amendments and review history
+17. [**Gate 2 Planning**](#gate-2-planning) — outputs needed for the build
     decision
 
 ### Context
@@ -560,7 +563,7 @@ causing rework downstream.
 **What to include:**
 
 - Readiness criteria (testable FRs, objective ACs, key NFRs, stakeholder review)
-- Decision (ready / revise / stop)
+- Decision (ready / not-ready)
 - Reviewer sign-off table
 
 **Good example:**
@@ -647,6 +650,8 @@ gives the System Design team a clear target.
   success criteria, and acceptance criteria
 - **Non-Functional Requirements** — quality attributes including performance,
   security, observability, and compliance
+- **Success Criteria Register** — updated register carried forward from
+  Initiation with refined metrics and measurement approaches
 
 > Requirements ensures the **measurement throughline** by translating success
 > metrics from Initiation into NFRs with observability and instrumentation
