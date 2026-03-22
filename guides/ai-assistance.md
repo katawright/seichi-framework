@@ -159,8 +159,9 @@ or tech lead sign-off, security review for auth/data flow changes, explicit
 rollback plan and migration review. Foundational decisions with high blast
 radius.
 
-**Increment Design (Stage 4):** Same gate type as System Design, but gates may
-be lighter as patterns become established. Per-increment detailed design.
+**Increment Design (Stage 4):** Requires design review — Architect reviews
+component designs for architecture conformance. Gates may be lighter as
+patterns become established. Per-increment detailed design.
 
 **Implementation (Stage 5):** AI iterates within pre-defined boundaries — single
 service/module, no auth changes, feature-flagged, no unapproved schema changes.

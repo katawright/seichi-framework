@@ -6,7 +6,7 @@ Detailed deployment practices, strategy-specific checklists, rollback
 procedures, and operational templates — companion to the
 [Deployment Stage Guide](README.md).
 
-### Why This Reference
+### Why Deployment Practices
 
 Stage guides keep guidance concise by design. When you need strategy-specific
 checklists, rollback procedures, monitoring thresholds, communication templates,

@@ -72,9 +72,9 @@ retrospective findings feed back into the framework.
 
 ## Action Items
 
-| Action | Owner | Stage Target | Target date |
-| ------ | ----- | ------------ | ----------- |
-| …      | …     | [stage name] | YYYY-MM-DD  |
+| Action | Owner | Role | Stage Target | Target date |
+| ------ | ----- | ---- | ------------ | ----------- |
+| …      | …     | …    | [stage name] | YYYY-MM-DD  |
 
 The facilitator (PjM) distributes each action item to the assigned Owner and confirms
 receipt. Items targeting the next increment are carried forward into the

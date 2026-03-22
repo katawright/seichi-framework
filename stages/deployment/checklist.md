@@ -38,7 +38,8 @@ successful completion (60-90 seconds).
 9. [ ] **Success criteria instrumentation verified** (Verification tested it
        works; confirm it will be active in production)
 10. [ ] **Security pre-deployment checks passed** (no new critical CVEs since
-        last scan, SBOM generated, artifact integrity verified)
+        last scan, SBOM generated, artifact integrity verified; consult
+        [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities))
 11. [ ] **[H] Configuration and secrets reviewed** (no secrets in code, values
         correct per environment)
 12. [ ] **[H] Stakeholders notified of deployment schedule** (timeline and

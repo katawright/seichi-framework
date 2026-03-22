@@ -8,6 +8,8 @@
 
 # Initiation Brief
 
+**Last Updated:** YYYY-MM-DD
+
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
 > be **confirmed** (verified — remove tag), **challenged** (incorrect — update

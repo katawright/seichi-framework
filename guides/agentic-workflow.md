@@ -90,6 +90,7 @@ stages:
           type: human-approval,
           name: "Gate 2 (Investment Decision)",
           hard_gate: true,
+          responsible_roles: [architect, appsec],
         },
       ]
     inputs:
@@ -135,6 +136,7 @@ stages:
         increment-plan,
         requirements-with-acceptance-criteria,
         retrospective-action-items,
+        system-design-brief,
       ]
     outputs:
       [
@@ -171,6 +173,8 @@ stages:
         requirements-with-acceptance-criteria,
         success-criteria-register,
         test-strategy,
+        defect-reports,  # rework cycle only
+        verification-brief,  # rework cycle only
       ]
     outputs:
       [
@@ -208,14 +212,16 @@ stages:
         requirements-with-acceptance-criteria,
         test-strategy,
         implementation-brief,
+        increment-design-brief,
       ]
     outputs:
       [
-        { artifact: test-results, template: templates/verification-brief.md },
+        { artifact: verification-brief, template: templates/verification-brief.md },
+        { artifact: test-results, embedded_in: verification-brief },
         { artifact: defect-reports },
         { artifact: uat-sign-off },
         { artifact: performance-test-results },
-        { artifact: security-scan-results },
+        { artifact: security-scan-results, embedded_in: verification-brief },
         { artifact: verified-code },
         { artifact: production-readiness-assessment, embedded_in: verification-brief },
       ]
@@ -227,7 +233,8 @@ stages:
     readme: stages/deployment/README.md
     checklist: stages/deployment/checklist.md
     reference: stages/deployment/reference.md
-    default_autonomy: human-led  # applies to execution (steps 5-8); preparation (steps 1-4) proceeds at collaborative
+    default_autonomy: human-led
+    preparation_autonomy: collaborative  # steps 1-4 (brief, runbook, environment prep) proceed at collaborative
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
@@ -249,7 +256,8 @@ stages:
       ]
     outputs:
       [
-        { artifact: deployed-system, template: templates/deployment-brief.md },
+        { artifact: deployment-brief, template: templates/deployment-brief.md },
+        { artifact: deployed-system },
         { artifact: deployment-log },
         { artifact: updated-runbooks },
         { artifact: release-notes },
@@ -257,7 +265,8 @@ stages:
         { artifact: monitoring-dashboards },
         { artifact: incident-response-procedures },
         { artifact: rollback-procedure },
-        { artifact: retrospective-action-items },
+        { artifact: retrospective, template: templates/retrospective.md },
+        { artifact: retrospective-action-items, embedded_in: retrospective },
       ]
     feeds_into: [support, increment-design]
     revisit_conditions: [deployment-failure, rollback-required]
@@ -292,7 +301,8 @@ stages:
       ]
     outputs:
       [
-        { artifact: system-availability-metrics, template: templates/support-brief.md },
+        { artifact: support-brief, template: templates/support-brief.md },
+        { artifact: system-availability-metrics, embedded_in: support-brief },
         { artifact: success-criteria-reports },
         { artifact: incident-reports },
         { artifact: enhancement-backlog },
@@ -333,17 +343,19 @@ working_locations:
     contains: [application-code, tests, ci-cd-config]
 fallback:
   missing_input:
-    "Request from human or derive from available context with [ASSUMED] flag"
+    default: "Request from human or derive from available context with [ASSUMED] flag"
+    human_led: "Halt and present to human; do not derive inputs autonomously"
   failed_gate:
-    "Document failure reason, attempt remediation, re-run gate check. If
-    unresolved after one retry, escalate to human"
+    default: "Document failure reason, attempt remediation, re-run gate check. If unresolved after one retry, escalate to human"
+    hard_gate: "Do not attempt remediation; escalate to human immediately with failure reason"
   ambiguous_requirements:
-    "List interpretations, recommend one, halt for human confirmation
-    before proceeding"
+    default: "List interpretations, recommend one, halt for human confirmation before proceeding"
+    human_led: "Present the ambiguity without recommending; wait for human direction"
   unreachable_human:
     default: "Continue with lowest-risk option, flag all decisions for review"
     hard_gate: "Do not proceed past hard gates (Gate 1, Gate 2) without human approval — halt and log context"
     human_led: "Halt entirely and log all context for human review"
+    collaborative: "Continue work within current stage only; do not advance to next stage or pass gates without human approval"
   stage_overrides:
     "stages/[stage]/reference.md extends these protocols; stage-specific
     overrides take precedence for that stage"

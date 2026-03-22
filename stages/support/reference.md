@@ -5,7 +5,7 @@
 Detailed support practices, operational templates, decision trees, and maturity
 guidance — companion to the Support Stage Guide.
 
-### Why This Reference
+### Why Support Practices
 
 Stage guides keep guidance concise so practitioners can move quickly. When you
 need specific thresholds, response process details, triage matrices, or

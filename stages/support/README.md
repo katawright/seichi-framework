@@ -9,7 +9,7 @@ inputs:
   - incident-response-procedures
   - baseline-measurements
   - release-notes
-  - success-criteria-register
+  - success-criteria-register  # originates from Initiation; persists cross-stage
   - rollback-procedure
 outputs:
   - artifact: support-brief
@@ -84,8 +84,9 @@ criteria register for ongoing measurement.
 > using the [Support Readiness Checklist](readiness-checklist.md) first, then
 > return here at step 4 to fill out the brief and complete the checklist.
 
-1. Verify deployment handoff inputs are present (monitoring dashboards,
-   runbooks, incident response procedures, rollback procedure) — see front
+1. Verify deployment handoff inputs are present (deployed system, monitoring
+   dashboards, runbooks, incident response procedures, rollback procedure,
+   baseline measurements, release notes, success criteria register) — see front
    matter inputs list
 2. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 3. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
@@ -453,6 +454,8 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 
 ## Stage Outputs
 
+- **Support Brief** — primary container document for this stage's outputs (see
+  [template](../../templates/support-brief.md))
 - **System Availability Metrics** (`system-availability-metrics`) — production
   health reports and uptime tracking
 - **Success Criteria Reports** (`success-criteria-reports`) — progress reports

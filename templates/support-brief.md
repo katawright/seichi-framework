@@ -97,6 +97,25 @@ recent production deployment]
 
 ---
 
+## System Availability Metrics
+
+<!-- Track production health and uptime. Update regularly (weekly recommended). -->
+
+**Uptime Target:** [e.g., 99.9% — define measurement window]
+
+**Current Availability:** [Percentage over reporting period]
+
+| Metric | Target | Current | Trend |
+| ------ | ------ | ------- | ----- |
+| Uptime | …%     | …%      | ↑/↓/→ |
+| P50 latency | …ms | …ms  | ↑/↓/→ |
+| P99 latency | …ms | …ms  | ↑/↓/→ |
+| Error rate | …%   | …%    | ↑/↓/→ |
+
+**Measurement Source:** [Dashboard URL or monitoring tool]
+
+---
+
 ## On-Call and Escalation
 
 <!-- Standard and Enterprise levels — Minimal projects may use informal contact list instead -->

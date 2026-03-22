@@ -7,6 +7,18 @@ Optional deep-dive companion to the [Increment Design Stage Guide](README.md),
 and [Increment Design Checklist](checklist.md). Consult when you need specifics
 or a starting point for AI-assisted exploration.
 
+### Why Increment Design
+
+Component-level design decisions made during Increment Design determine
+implementation quality, testability, and integration risk. Getting these
+decisions right — component boundaries, API contracts, data model changes, and
+test strategy — reduces rework during Implementation and Verification.
+
+### Key Principle
+
+Design each increment as a self-contained, testable unit that conforms to the
+system architecture established in System Design.
+
 ### Purpose
 
 - Provide detailed component design examples across backend and frontend stacks

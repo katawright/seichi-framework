@@ -72,7 +72,8 @@ AI accelerates every testing activity; humans own the go/no-go decision.
 Working code from the Implementation stage with unit tests passing and coverage
 meeting team threshold (default: 80% line coverage — see implementation brief
 for project-specific target), code review approvals, requirements with
-acceptance criteria, and implementation brief with notes. Check the
+acceptance criteria, implementation brief with notes, and increment design brief
+for plan-vs-actual comparison. Check the
 Implementation Brief's Requirements Implemented table for any acceptance
 criteria modifications before planning test cases.
 
@@ -256,7 +257,8 @@ section links to the prior brief and summarizes what was fixed.
 decision and populated Rework Handoff section is the trigger artifact for the
 Implementation rework cycle. Engineers should treat publication of this brief to the artifacts location
 (e.g., `docs/briefs/verification-brief-inc1-cycle1.md`) as the activation
-signal — monitor this location or coordinate with QA for notification.
+signal — QA notifies the engineering lead when the verification brief is
+published.
 
 **Rework briefs are delta-only:** When work returns to Implementation, the
 rework brief documents only what changed — reference the prior cycle's brief for
@@ -311,7 +313,8 @@ Track defects by **severity** (technical impact: Critical → Low) and
 #### Go/No-Go Decision
 
 > For structuring gate decisions, use the
-> [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+> [Checkpoint Decision Template](../../templates/checkpoint-decision.md) with
+> the **Quality Checkpoint** type (Ready / Not Ready).
 
 Complete the Production Readiness section of the Verification Brief as your
 primary artifact. At Standard+ tiers, additionally complete the
@@ -368,6 +371,8 @@ The [Verification Reference](reference.md) covers these topics in depth:
 
 ## Stage Outputs
 
+- **Verification Brief** — primary container document for this stage's outputs
+  (see [template](../../templates/verification-brief.md))
 - **Test Results** — comprehensive results across all test types
 - **Defect Reports** — documented defects with severity, resolution, and retest
   status

@@ -60,6 +60,10 @@ weekly rhythm:
 - **Week 3-4:** System Design — architecture, ADRs, increment plan, threat
   model; facilitate [Gate 2](../stages/system-design/README.md) decision
 
+Throughout the foundational phase, PjM establishes the delivery schedule, sets
+up the Dependency Register, and confirms consultation touchpoints per the
+[RACI matrix](framework.md#roles-and-responsibilities).
+
 Timelines vary by project complexity. See each stage guide for detailed
 activities. Gate 1 and Gate 2 are the hard gates — use the
 [Gate Decision Template](../templates/gate-decision.md) and
@@ -70,7 +74,7 @@ activities. Gate 1 and Gate 2 are the hard gates — use the
 ## Sprint Rhythm (2-Week Increment)
 
 One increment maps roughly to one sprint. This view assumes foundational stages
-(Initiation, Requirements, System Design) are complete and Gate 1 has passed.
+(Initiation, Requirements, System Design) are complete and Gate 2 has passed.
 
 ### Week 1: Design and Start Build
 
@@ -90,14 +94,15 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
 | Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md)     |
 | Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
-| Friday PM | Sprint review: demo, retrospective, Gate 2 close-out confirmation (if final increment) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+| Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
 
 **Cross-increment sync:** Sprint review doubles as the sync point. Review
 completed increment, preview next increment scope, surface cross-increment
 dependencies.
 
-> **Gate 2:** If this is the final planned increment, run a Gate 2 review using
-> the [Gate Decision Template](../templates/gate-decision.md). See
+> **Close-out review:** If this is the final planned increment, run a close-out
+> review to confirm Gate 2 criteria are still met, using the
+> [Gate Decision Template](../templates/gate-decision.md). See
 > [Gate Review Facilitation](framework.md#gate-review-facilitation) for agenda
 > and time-boxing.
 

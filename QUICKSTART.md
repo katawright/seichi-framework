@@ -97,10 +97,16 @@ then:
 >   execution, or review the
 >   [Verification Checklist](stages/verification/checklist.md) for quality
 >   criteria
+> - **Executives / Leadership:** Start with the
+>   [README Business Value](README.md) and
+>   [Governance](guides/framework.md#checkpoint-taxonomy) sections for ROI
+>   framing and gate responsibilities
 > - **Support / Operations:** Start with the
+>   [Support Stage Guide](stages/support/README.md) for the full workflow,
+>   then the
 >   [Support Readiness Checklist](stages/support/readiness-checklist.md),
->   review the [Support Operations Guide](stages/support/operations.md), and
->   fill out the [Support Brief](templates/support-brief.md)
+>   [Support Operations Guide](stages/support/operations.md), and
+>   [Support Brief](templates/support-brief.md)
 
 ### Minimum Viable Adoption
 
