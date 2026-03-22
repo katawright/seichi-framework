@@ -180,7 +180,7 @@ month enablement program"]
 
 ---
 
-## Hypothesis: Staffing + Time Range
+## Range-Based Estimation
 
 <!-- Minimal: rough range | Standard: range-based with confidence label | Enterprise: multiple estimation techniques, sensitivity analysis -->
 

@@ -15,7 +15,7 @@ decision framework.
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Proceed / Revise / Stop
+**Status:** Pending / Proceed / Proceed with conditions / Revise / Stop
 
 **Decision makers:**
 
@@ -79,7 +79,20 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
-## Decision: Proceed / Revise / Stop
+## Security Risk Posture
+
+<!-- Gate 2 only. AppSec prepares this section as part of the evidence package. -->
+
+- **Overall risk assessment:** [Low / Medium / High / Critical]
+- **Open security findings:** [count and severity breakdown, or "None"]
+- **Mitigations in place:** [list key mitigations for identified risks]
+- **Residual risk acceptance:** [risks accepted and rationale]
+- **Compliance status:** [applicable standards and current status]
+- **AppSec recommendation:** [Proceed / Proceed with conditions / Revise]
+
+---
+
+## Decision: Proceed / Proceed with conditions / Revise / Stop
 
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any — e.g., "proceed but address X first")

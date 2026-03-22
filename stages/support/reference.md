@@ -239,6 +239,7 @@ Prevention: [Key action items with owners and due dates]
 4. **What went well** — effective responses
 5. **What went wrong** — gaps in process or tooling
 6. **Action items** — specific, assigned, with due dates
+7. **Incident metrics** — MTTD, MTTA, MTTR for this incident
 
 Use the [Post-Incident Review Template](../../templates/post-incident-review.md)
 to document post-incident reviews.

@@ -88,6 +88,11 @@ set up and ready.
 > journal — session-by-session progress, blockers, and handoff notes. Start the
 > session log at the beginning of each increment; finalize the brief at the end.
 
+**Blockers and escalation:** When you encounter a cross-increment dependency or
+blocker that you cannot resolve within the current scope, document it in the
+session log Blockers section and flag for PjM review. PjM monitors session log
+blockers as part of dependency and blocker management.
+
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
 the checklist before proceeding.
 
@@ -99,7 +104,7 @@ proceed with a red pipeline.
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
 
-### Implementation Workflow
+## Implementation Workflow
 
 > See [How to Use This Guide](#how-to-use-this-guide) for the summary-level
 > steps. This section details the per-PR workflow.

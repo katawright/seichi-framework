@@ -60,8 +60,9 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 ### Starting Point
 
 A verified increment with all tests passing, UAT sign-off from business
-stakeholders, production readiness checklist passed, and test results and known
-issues documented.
+stakeholders, production readiness assessment passed, infrastructure plan from
+System Design, implementation brief documenting what was built, and test results
+and known issues documented.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -444,7 +445,10 @@ Deployment validates that measurement systems work in production. See
   comparison
 - **Monitoring Dashboards** — configured and validated production dashboards
 - **Incident Response Procedures** — escalation paths and response playbooks
-- **Rollback Procedure** — tested and documented rollback steps
+  (section in Deployment Brief or standalone runbook using
+  [Support Reference](../support/reference.md#incident-response-process))
+- **Rollback Procedure** — tested and documented rollback steps (section in
+  Deployment Brief or standalone runbook)
 - **Retrospective Action Items** — improvement items from deployment
   retrospective
 
@@ -467,7 +471,7 @@ Deployment validates that measurement systems work in production. See
 updated runbooks, incident response procedures, baseline measurements, release
 notes, and success criteria register. Retrospective action items feed into the
 next Increment Design cycle
-(see [Deployment Checklist — Support Handoff](checklist.md)). Record the
+(see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). Record the
 deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 

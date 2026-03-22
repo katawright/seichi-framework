@@ -1,6 +1,8 @@
 <!-- For guidance on completing this brief, see deployment/README.md -->
 
 > **Stage guide:** [Deployment](../stages/deployment/README.md)
+>
+> **Need an example?** See [Worked Example: Deployment](../guides/worked-example.md#stage-7-deployment)
 
 # Deployment Brief
 

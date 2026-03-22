@@ -328,7 +328,9 @@ agent-facing fields: `default_autonomy` (human-led | collaborative | ai-led),
 `default_oversight_intensity` (active | passive | minimal),
 `working_location` (artifacts | source-code), and
 `session_log_template` (path to stage-specific session log template; stages
-without this field use `templates/session-log.md` as fallback).
+without this field use `templates/session-log.md` as fallback), and
+`revisit_conditions` (list of trigger conditions for revisiting a foundational
+stage during iterative execution).
 
 ### Guide File Schema
 

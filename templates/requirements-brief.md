@@ -39,7 +39,7 @@
 
 ---
 
-## Problem to Solve (Summary)
+## Problem Statement
 
 <!-- For guidance, see requirements/README.md#problem-statement -->
 

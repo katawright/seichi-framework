@@ -310,9 +310,15 @@ Verification stage what to test and how.
 
 ## Stage Outputs
 
-Detailed component designs, interface specifications (if applicable), data/state
-changes (if applicable), test strategy for Verification stage, implementation
-notes.
+- **Increment Design Brief** — the containing artifact for the increment's
+  design deliverables, produced from the
+  [Increment Design Brief Template](../../templates/increment-design-brief.md)
+- **Detailed component designs** — per-component specs with responsibilities
+- **Interface specifications** (if applicable) — API contracts, component props
+- **Data/state changes** (if applicable) — migration plans, schema changes
+- **Test strategy** — verification approach for the increment
+- **Implementation notes** — constraints, dependencies, and guidance for
+  engineers
 
 > Increment Design continues the **measurement throughline** by translating
 > success criteria into testable specifications — defining the test strategy

@@ -93,8 +93,9 @@ then:
 >   [Deployment Setup](stages/deployment/setup.md) +
 >   [Pipeline Checklist](stages/deployment/pipeline-checklist.md)
 > - **Support / Operations:** Start with the
->   [Support Readiness Checklist](stages/support/readiness-checklist.md) and
->   review the [Support Operations Guide](stages/support/operations.md)
+>   [Support Readiness Checklist](stages/support/readiness-checklist.md),
+>   review the [Support Operations Guide](stages/support/operations.md), and
+>   fill out the [Support Brief](templates/support-brief.md)
 
 ### Minimum Viable Adoption
 

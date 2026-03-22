@@ -11,12 +11,19 @@ outputs:
     template: templates/system-design-brief.md
   - artifact: architecture-diagrams
   - artifact: technology-stack-adrs
+    template: templates/adr.md
   - artifact: data-api-architecture
+    embedded_in: system-design-brief
   - artifact: infrastructure-plan
+    embedded_in: system-design-brief
   - artifact: security-approach
+    embedded_in: system-design-brief
   - artifact: observability-strategy
+    embedded_in: system-design-brief
   - artifact: increment-plan
+    embedded_in: system-design-brief
   - artifact: gate-2-decision-package
+    template: templates/gate-decision.md
 gates:
   - type: alignment-review
     name: "Architecture Review"
@@ -527,6 +534,25 @@ document and follow them.
 Document versioning decisions as ADRs when they involve trade-offs (e.g.,
 choosing between URL-based and header-based API versioning).
 
+### Observability and Monitoring Design
+
+Designing observability into the system from the start ensures that production
+issues can be detected, diagnosed, and resolved quickly. This includes logging
+strategy, metrics collection, alerting thresholds, and dashboard design. Without
+upfront observability design, teams add monitoring reactively after incidents,
+leaving gaps in coverage during the most critical early production period. See
+[System Design Reference: Observability](reference.md) for detailed guidance.
+
+### Performance and Scalability Design
+
+Performance targets and scalability approaches must be defined during system
+design, not discovered during load testing. This section captures response time
+targets, throughput requirements, caching strategy, database optimization
+approach, and scaling triggers. Defining these early ensures that architecture
+decisions account for load characteristics and that verification has concrete
+targets to test against. See
+[System Design Reference: Performance](reference.md) for detailed guidance.
+
 ### Additional Topics
 
 The [System Design Reference](reference.md) covers these topics in depth:
@@ -548,6 +574,9 @@ The [System Design Reference](reference.md) covers these topics in depth:
 
 ## Stage Outputs
 
+- **System Design Brief** — the containing artifact for the design deliverables
+  below, produced from the
+  [System Design Brief Template](../../templates/system-design-brief.md)
 - **Architecture Diagrams** — system context, container, and component diagrams
 - **Technology Stack with ADRs** — justified technology choices with decision
   records

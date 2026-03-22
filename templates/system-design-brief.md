@@ -8,10 +8,9 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
-> **AI suggestion:** \_"Help me complete this system design brief for [project].
-> Start with the architecture overview based on these requirements: [link to > >
->
-> > requirements brief]."\_
+> **AI suggestion:** _"Help me complete this system design brief for [project].
+> Start with the architecture overview based on these requirements:
+> [link to requirements brief]."_
 
 **Last Updated:** YYYY-MM-DD
 
@@ -123,6 +122,15 @@ Data Architecture, API Architecture, etc.).
 | Integration | Purpose   | Pattern   | Error Handling |
 | ----------- | --------- | --------- | -------------- |
 | [Service]   | [Purpose] | [Pattern] | [Strategy]     |
+
+### 5.3 System-Level Interface Contracts
+
+| Interface        | Provider    | Consumer    | Contract Format | Versioning   |
+| ---------------- | ----------- | ----------- | --------------- | ------------ |
+| [API / Event]    | [Component] | [Component] | [OpenAPI / etc] | [Strategy]   |
+
+- **Contract testing approach:** [How contracts are validated — e.g., consumer-driven contract tests, schema validation]
+- **Breaking change policy:** [How breaking changes are communicated and managed]
 
 ---
 

@@ -18,6 +18,8 @@
 | **Start Date**      | YYYY-MM-DD                             |
 | **Completion Date** | YYYY-MM-DD                             |
 | **Status**          | [In Progress / Code Review / Complete] |
+| **Related System Design** | [Link to system-design-brief.md]  |
+| **Constraining ADRs**     | [ADR-NNNN, ADR-NNNN]             |
 
 ---
 
@@ -34,11 +36,15 @@
 
 ### Requirements Implemented
 
-| Requirement ID | Description         | AC Met     |
-| -------------- | ------------------- | ---------- |
-| FR-X           | [Brief description] | [✅/⚠️/❌] |
-| FR-Y           | [Brief description] | [✅/⚠️/❌] |
-| NFR-Z          | [Brief description] | [✅/⚠️/❌] |
+| Requirement ID | Description         | AC Met     | AC Modifications                  |
+| -------------- | ------------------- | ---------- | --------------------------------- |
+| FR-X           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
+| FR-Y           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
+| NFR-Z          | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
+
+AC modifications require PM/BA consultation before implementation. Record the
+agreed modification and rationale in the AC Modifications column as evidence
+that the consultation occurred.
 
 <!-- Status key: ✓ Complete · ⚠ In progress · ✗ Not started -->
 

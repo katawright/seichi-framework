@@ -541,6 +541,15 @@ and System Design accounts for them structurally. See the
 [Security Guide](../../guides/security.md) for the framework's security
 throughline and classification approach.
 
+### Brownfield Readiness -- Quick Pass
+
+Brownfield projects inherit existing code, infrastructure, and operational
+constraints that greenfield projects do not. The brownfield readiness section
+captures the current state assessment — what exists, what technical debt must be
+addressed, and what constraints the existing system imposes on new work. Without
+this quick pass, teams discover integration issues and legacy constraints
+mid-implementation when they are most expensive to address.
+
 ---
 
 ## Stage Outputs

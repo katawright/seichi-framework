@@ -63,7 +63,7 @@ flow through every subsequent stage.
 | 3   | System Design    | Architect             | Foundational | Establish or assess system architecture and technical approach                                             |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
-| 6   | Verification     | QA / Engineers        | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
+| 6   | Verification     | QA Engineers / Engineers | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
 | 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                                                      |
 | 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                                                             |
 
@@ -495,7 +495,7 @@ models, test strategy, and implementation notes.
 ## Stage 5: Implementation
 
 - **Primary Role:** Engineers
-- **Supporting Roles:** Architects, DevOps, QA Engineers
+- **Supporting Roles:** Architects, DevOps, QA Engineers, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Implementation](../stages/implementation/README.md)
 
@@ -558,7 +558,7 @@ results, and implementation notes.
 ## Stage 6: Verification
 
 - **Primary Role:** QA Engineers / Engineers
-- **Supporting Roles:** Product Manager, Business Analyst, DevOps
+- **Supporting Roles:** Product Manager, Business Analyst, DevOps, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Verification](../stages/verification/README.md)
 
@@ -698,8 +698,8 @@ baseline measurements for success criteria.
 
 ## Stage 8: Support
 
-- **Primary Role:** Engineers / DevOps
-- **Supporting Roles:** Operations, Customer Support, Product Manager
+- **Primary Role:** DevOps / Engineers
+- **Supporting Roles:** Operations, Customer Support, Product Manager, Project Manager
 - **Execution Pattern:** Continuous (ongoing after first deployment)
 - **Stage Guide:** [Support](../stages/support/README.md)
 
@@ -867,6 +867,11 @@ constraints.
 - **Real stop option:** Technically yes, but rarely — usually remediate and
   resubmit
 - **When used:** When regulatory, legal, or security requirements must be met
+- **Trigger:** Activate Compliance Approval when the project's risk tier is
+  Standard or Enterprise and regulatory, legal, or security sign-off requirements
+  were identified during Initiation or System Design. Use the
+  [Checkpoint Decision Template](../templates/checkpoint-decision.md) for the
+  approval artifact.
 
 **Examples:**
 
@@ -885,7 +890,7 @@ constraints.
 
 Each checkpoint has defined roles for who prepares evidence, who decides, and
 who is informed. Roles reference the canonical set defined in the
-[RACI Matrix](../guides/framework.md#raci-matrix).
+[RACI Matrix](framework.md#roles-and-responsibilities).
 
 | Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
 | --- | --- | --- | --- | --- | --- |
@@ -896,13 +901,19 @@ who is informed. Roles reference the canonical set defined in the
 | Design Review | Increment Design | Alignment | Engineer | Architect | PM/BA, PjM |
 | PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
 | Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
-| Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | PjM | PM/BA, Exec |
+| Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
 | Production Ownership Decision | Support | Quality | DevOps | PjM | PM/BA, Exec |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
 who was not the primary author.
 
 \*\* **All roles** — all roles that have participated up to that point.
+
+**Gate 2 evidence split:** PM/BA prepares business case and requirements
+coverage. Architect prepares architecture rationale and ADR summary. AppSec
+prepares security risk posture (see
+[Security Risk Posture](#security-risk-posture) section in the gate decision
+template).
 
 ### Checkpoint Mapping by Stage
 

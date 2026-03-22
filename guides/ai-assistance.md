@@ -219,7 +219,11 @@ of the current work.
 | **Passive** | Human spot-checks, approves unless concerns arise | Human reviews at hard gates only; AI proceeds between gates | Standard-tier projects with established CI/CD and team confidence              |
 | **Minimal** | Human reviews summary or final deliverable only   | AI self-validates intermediate checkpoints                  | Minimal-tier projects, highly verifiable stages (Implementation, Verification) |
 
-Risk tier constrains which oversight levels are available:
+Risk tier constrains which oversight levels are available. For the full
+cross-stage view of how risk tier, autonomy, and oversight interact, see
+[Right-Sizing Guide: The Three Dimensions](right-sizing.md#the-three-dimensions).
+
+Constraints by tier:
 
 | Risk Tier      | Allowed Oversight Levels    |
 | -------------- | --------------------------- |

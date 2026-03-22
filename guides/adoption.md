@@ -382,8 +382,10 @@ revisit the assessment for guidance:
 - [ ] Team completed at least one full increment cycle (Increment Design →
       Deployment)
 - [ ] Cycle time was comparable to or better than pre-framework baseline
-- [ ] Defect escape rate did not increase
-- [ ] Team satisfaction survey scores are neutral or positive
+      (e.g., within ±15% of baseline)
+- [ ] Defect escape rate did not increase (e.g., no more than +10% of baseline)
+- [ ] Team satisfaction survey scores are neutral or positive (e.g., ≥3/5
+      average)
 - [ ] At least one concrete improvement identified (speed, quality, clarity, or
       documentation)
 

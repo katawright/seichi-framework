@@ -76,6 +76,10 @@ retrospective findings feed back into the framework.
 | ------ | ----- | ------------ | ----------- |
 | …      | …     | [stage name] | YYYY-MM-DD  |
 
+The facilitator distributes each action item to the assigned Owner and confirms
+receipt. Items targeting the next increment are carried forward into the
+increment-design-brief Carry Forward Resolution section.
+
 ---
 
 ## Carry Forward

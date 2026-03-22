@@ -123,7 +123,10 @@ Please read these framework documents:
 
 These tools cannot access your filesystem. You'll need to paste relevant
 sections of the framework documents into your conversation, or provide links if
-the documents are hosted online.
+the documents are hosted online. For your first Initiation run, paste the
+Initiation README's How to Use section (`stages/initiation/README.md`) and the
+Initiation Brief Template (`templates/initiation-brief.md`). The AI will walk
+you through filling each section.
 
 ```
 I'm using the AI-Assisted SDLC framework for a software project.
