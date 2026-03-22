@@ -417,7 +417,8 @@ guides all subsequent implementation work.
   both complete
   - **Decision:** Commit to building this, revise the approach, or stop
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
-  - **Criteria:** Technical approach sound, costs acceptable, risks manageable
+  - **Criteria:** Technical approach sound, costs acceptable, risks manageable,
+    security risk posture reviewed
   - **AI validation:** Human review ensures AI-assisted design is
     architecturally sound
 
@@ -898,7 +899,7 @@ who is informed. Roles reference the canonical set defined in the
 | Requirements Readiness | Requirements | Quality | PM/BA | PM/BA (peer\*) | PjM |
 | Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM/BA, PjM |
 | Gate 2 (Investment Decision) | System Design | Gate | PM/BA, Architect, AppSec | Exec | All roles\*\* |
-| Design Review | Increment Design | Alignment | Engineer | Architect | PM/BA, PjM |
+| Design Review | Increment Design | Specialized | Engineer | Architect | PM/BA, PjM |
 | PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
 | Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
 | Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
@@ -913,7 +914,7 @@ who was not the primary author.
 **Gate 2 evidence split:** PM/BA prepares business case and requirements
 coverage. Architect prepares architecture rationale and ADR summary. AppSec
 prepares security risk posture (see
-[Security Risk Posture](#security-risk-posture) section in the gate decision
+[Security Risk Posture](../templates/gate-decision.md#security-risk-posture) section in the gate decision
 template).
 
 ### Checkpoint Mapping by Stage
@@ -921,10 +922,10 @@ template).
 Each stage specifies which checkpoint types apply. For example:
 
 - **Initiation:** Gate 1 (investment decision)
-- **Requirements:** Alignment Reviews (stakeholder walkthroughs)
+- **Requirements:** Quality Checkpoint (requirements readiness)
 - **System Design:** Alignment Reviews (architecture decisions), Gate 2
   (build/no-build decision)
-- **Increment Design:** Quality Checkpoints (design review)
+- **Increment Design:** Specialized review (design review)
 - **Implementation:** Quality Checkpoints (code review, tests), Deployment
   Approvals (to staging)
 - **Verification:** Quality Checkpoints (test execution), Deployment Approvals

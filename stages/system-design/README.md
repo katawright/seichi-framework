@@ -541,7 +541,7 @@ issues can be detected, diagnosed, and resolved quickly. This includes logging
 strategy, metrics collection, alerting thresholds, and dashboard design. Without
 upfront observability design, teams add monitoring reactively after incidents,
 leaving gaps in coverage during the most critical early production period. See
-[System Design Reference: Observability](reference.md) for detailed guidance.
+[System Design Reference: Observability](reference.md#observability-and-monitoring-design) for detailed guidance.
 
 ### Performance and Scalability Design
 
@@ -551,7 +551,7 @@ targets, throughput requirements, caching strategy, database optimization
 approach, and scaling triggers. Defining these early ensures that architecture
 decisions account for load characteristics and that verification has concrete
 targets to test against. See
-[System Design Reference: Performance](reference.md) for detailed guidance.
+[System Design Reference: Performance](reference.md#performance-and-scalability-design) for detailed guidance.
 
 ### Additional Topics
 
@@ -605,7 +605,9 @@ The [System Design Reference](reference.md) covers these topics in depth:
 > See [Security Guide](../../guides/security.md).
 
 **Handoff:** Increment Design stage receives architecture, increment plan, and
-foundational conventions.
+foundational conventions. Distribute checkpoint or gate decision artifacts to all
+Informed roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

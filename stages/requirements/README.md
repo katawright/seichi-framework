@@ -72,8 +72,9 @@ Requirements will convert into testable specifications.
 ### How to Use This Guide
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
-2. Read [**Right-Sizing Requirements**](#right-sizing-requirements) to prepare
-   for right-sizing decisions when filling out the brief
+2. Confirm your risk tier (it usually carries forward from Initiation, but
+   review the [**Right-Sizing Requirements**](#right-sizing-requirements)
+   practice table to verify)
 3. Fill out the
    [Requirements Brief Template](../../templates/requirements-brief.md) using AI
    according to your chosen autonomy tier — refer to
@@ -172,6 +173,28 @@ Otherwise, keep Requirements concise and move to System Design.
 > These triggers help you decide when to move from Minimal to Standard or
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
+
+---
+
+## Requirements Workflow
+
+1. **Review Initiation Brief** — understand objectives, success criteria,
+   constraints, and non-goals
+2. **Draft functional requirements** — convert business objectives into testable
+   behavior statements (FR-1, FR-2, etc.)
+3. **Define FR acceptance criteria** — write objective, observable conditions
+   for each FR (Given/When/Then format)
+4. **Identify non-functional requirements** — capture quality attributes
+   including observability NFRs for success metrics, with NFR verification
+   criteria
+5. **Capture brownfield constraints** — document existing system constraints as
+   NFRs (if applicable)
+6. **Prioritize with MoSCoW** — classify all requirements as Must Have, Should
+   Have, Could Have, or Won't Have
+7. **Review with engineering** — conduct alignment review to validate
+   feasibility and completeness
+8. **Prepare for Gate 2** — compile Requirements Brief for the Gate 2 decision
+   package
 
 ---
 
@@ -610,28 +633,6 @@ gives the System Design team a clear target.
 
 ---
 
-## Requirements Workflow
-
-1. **Review Initiation Brief** — understand objectives, success criteria,
-   constraints, and non-goals
-2. **Draft functional requirements** — convert business objectives into testable
-   behavior statements (FR-1, FR-2, etc.)
-3. **Define FR acceptance criteria** — write objective, observable conditions
-   for each FR (Given/When/Then format)
-4. **Identify non-functional requirements** — capture quality attributes
-   including observability NFRs for success metrics, with NFR verification
-   criteria
-5. **Capture brownfield constraints** — document existing system constraints as
-   NFRs (if applicable)
-6. **Prioritize with MoSCoW** — classify all requirements as Must Have, Should
-   Have, Could Have, or Won't Have
-7. **Review with engineering** — conduct alignment review to validate
-   feasibility and completeness
-8. **Prepare for Gate 2** — compile Requirements Brief for the Gate 2 decision
-   package
-
----
-
 ## Common Pitfalls
 
 - **Requirements describe UI, not behavior** → Rewrite as behavior: "The system
@@ -688,7 +689,8 @@ gives the System Design team a clear target.
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** System Design stage uses your Requirements Brief as its starting
-point.
+point. Distribute checkpoint or gate decision artifacts to all Informed roles per
+the [Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

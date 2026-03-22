@@ -1,6 +1,8 @@
-<!-- For guidance on completing this brief, see ../implementation/README.md -->
+<!-- For guidance on completing this brief, see ../stages/implementation/README.md -->
 
 # Implementation Brief: [Increment Name]
+
+> **Stage guide:** [Implementation README](../stages/implementation/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should

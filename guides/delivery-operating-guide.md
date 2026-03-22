@@ -47,6 +47,26 @@ authoritative. This guide provides the operating view that connects them.
 
 ---
 
+## Foundational Phase
+
+Before sprints begin, foundational stages (Initiation, Requirements, System
+Design) establish scope, architecture, and investment approval. A typical
+weekly rhythm:
+
+- **Week 1-2:** Initiation — draft brief, pre-mortem, success criteria;
+  facilitate [Gate 1](../stages/initiation/README.md) decision
+- **Week 2-3:** Requirements — elicit and prioritize requirements, define NFRs
+  and acceptance criteria
+- **Week 3-4:** System Design — architecture, ADRs, increment plan, threat
+  model; facilitate [Gate 2](../stages/system-design/README.md) decision
+
+Timelines vary by project complexity. See each stage guide for detailed
+activities. Gate 1 and Gate 2 are the hard gates — use the
+[Gate Decision Template](../templates/gate-decision.md) and
+[Gate Review Facilitation](framework.md#gate-review-facilitation) guidance.
+
+---
+
 ## Sprint Rhythm (2-Week Increment)
 
 One increment maps roughly to one sprint. This view assumes foundational stages
@@ -56,7 +76,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 
 | Day     | Activity                                                     | Lead      | Reference                                                                 |
 | ------- | ------------------------------------------------------------ | --------- | ------------------------------------------------------------------------- |
-| Monday  | Sprint kickoff: confirm increment scope from backlog         | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
+| Monday  | Sprint kickoff: confirm increment scope from backlog, review prior retrospective action items and dependency register | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
 | Mon–Tue | Increment Design Brief — component breakdown, test plan, API | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
 | Tuesday | Review increment design brief; resolve ambiguities           | PjM + Eng | [RACI — Increment Design](framework.md#roles-and-responsibilities)        |
 | Wed–Fri | Implementation begins — PRs, tests, instrumentation          | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
@@ -70,7 +90,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
 | Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md)     |
 | Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
-| Friday PM | Sprint review: demo, retrospective, Gate 2 check (if final) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+| Friday PM | Sprint review: demo, retrospective, Gate 2 close-out confirmation (if final increment) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
 
 **Cross-increment sync:** Sprint review doubles as the sync point. Review
 completed increment, preview next increment scope, surface cross-increment

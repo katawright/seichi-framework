@@ -138,6 +138,11 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ---
 
+<!-- prettier-ignore -->
+> **AI suggestion:** _"Walk me through this deployment checklist for my project and flag items needing attention."_
+
+---
+
 ## Related Documents
 
 - [Deployment Brief Template](../../templates/deployment-brief.md)

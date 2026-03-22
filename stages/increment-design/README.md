@@ -57,7 +57,8 @@ architecture from System Design.
 A completed System Design with architecture, technology decisions, and increment
 plan. The current increment should be identified from the increment plan, and
 foundational conventions established (coding patterns, error handling,
-technology-specific conventions).
+technology-specific conventions). For Increment 2+, also gather retrospective
+action items from the previous increment.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -335,7 +336,9 @@ Verification stage what to test and how.
 > that require security review. See [Security Guide](../../guides/security.md).
 
 **Handoff:** Implementation stage receives detailed design specs, interface
-contracts, and test strategy.
+contracts, and test strategy. Distribute checkpoint or gate decision artifacts to
+all Informed roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

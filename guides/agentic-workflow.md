@@ -423,7 +423,7 @@ for programmatic access; use this table for quick human reference.
 | #   | Stage            | Pattern      | Default Autonomy | Location    | Gate Type                         | Feeds Into                 |
 | --- | ---------------- | ------------ | ---------------- | ----------- | --------------------------------- | -------------------------- |
 | 1   | Initiation       | Foundational | Collaborative    | Artifacts   | Human approval                    | Requirements               |
-| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Checkpoint (human approval)       | System Design              |
+| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Quality checkpoint (human approval) | System Design              |
 | 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment review + human approval | Increment Design           |
 | 4   | Increment Design | Iterative    | Collaborative    | Artifacts   | Specialized review                | Implementation             |
 | 5   | Implementation   | Iterative    | AI-Led           | Source Code | CI validation + human approval    | Verification               |
@@ -514,7 +514,7 @@ All template paths are relative to `templates/`.
 ### Gate Decision Template Selection
 
 - **Hard gates** (Gate 1, Gate 2): use `templates/gate-decision.md`
-- **Soft gates** (all others, including Production Deployment Approval): use
+- **Non-investment checkpoints** (all others, including Production Deployment Approval): use
   `templates/checkpoint-decision.md`
 - **PR Review + CI**: the PR approval itself serves as the gate artifact; no
   separate decision template is required
@@ -656,6 +656,10 @@ rejected.
 4. If remediation fails after one retry, escalate to the human with a summary of
    what was tried
 
+At hard gates (Gate 1, Gate 2), skip autonomous remediation — escalate to the
+human immediately with the failure reason and do not re-run the gate check
+without human direction.
+
 ### Ambiguous Requirements
 
 Requirements can be interpreted multiple ways.
@@ -677,6 +681,9 @@ unavailable).
 4. Do not proceed past hard gates (Gate 1, Gate 2) without human approval
 5. At Human-Led tier, halt and log all context for human review rather than
    continuing autonomously
+6. At Collaborative tier, "continue" means continue work within the current
+   stage only — do not advance to the next stage or pass a gate without human
+   approval
 
 ### Precedence and Compound Conditions
 

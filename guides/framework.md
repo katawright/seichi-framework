@@ -570,7 +570,7 @@ Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
 | Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
 | -------------------- | ----- | --------- | --------- | --- | ------ | -------- | ---- | --- |
-| **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C   |
+| **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C‡  |
 | Gate 1 decision†     | R     | -         | -         | -   | -      | C        | A    | C   |
 | **Requirements**     | R/A   | C         | C         | C   | -      | C        | I    | C   |
 | **System Design**    | C     | C         | R/A       | C   | C      | C        | I    | C   |
@@ -593,9 +593,12 @@ scans, SAST review, penetration testing at Enterprise tier).
 acceptance criteria (Requirements), test strategy alignment (Increment Design),
 and test gap identification (Implementation). AppSec focuses on security
 implications of requirements, design decisions, and implementation changes.
-Architect focuses on design conformance when consulted at Implementation. At
-Enterprise tier, organizations may elevate Exec from Informed to Consulted or
-Accountable at Deployment Approval for production-impacting changes.
+Architect focuses on design conformance when consulted at Implementation. PM/BA
+consultation focuses on requirements clarification and priority trade-offs
+(System Design, Increment Design) and acceptance criteria interpretation
+(Verification). At Enterprise tier, organizations may elevate Exec from Informed
+to Consulted or Accountable at Deployment Approval for production-impacting
+changes.
 
 **Decision scope test:** A decision during Implementation requires Architect
 consultation if it (a) changes a component boundary, API contract, or data flow
@@ -642,6 +645,9 @@ PjM's RACI designation at that stage.
 † PjM's C designation at Gate 1 and Gate 2 includes gate facilitation
 responsibility (see [Gate Review Facilitation](#gate-review-facilitation) below).
 
+‡ PjM's C designation at Initiation includes gate facilitation — see the PjM
+Activity Table below for full responsibilities.
+
 **Project Manager (PjM)** owns delivery coordination across the lifecycle —
 schedule management, gate facilitation, cross-increment coordination, dependency
 tracking, and progress reporting. PjM is Consulted at stages where active
@@ -680,7 +686,7 @@ not works in progress.
 | Gate 2 | 45–90 min            |
 
 **Scope.** PjM facilitates Gate 1 and Gate 2 — the two investment-decision gates.
-Soft checkpoints (Quality, Deployment Approval, Alignment Review, Compliance
+Non-investment checkpoints (Quality, Deployment Approval, Alignment Review, Compliance
 Approval, Production Ownership) are owned and run by the stage's Responsible
 role; PjM tracks their completion for scheduling purposes but does not
 facilitate them. See the

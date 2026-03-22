@@ -154,7 +154,7 @@ project state.
 requirements, acceptance criteria, traceability matrices). Humans approve before
 output is relied on. Correctness requires domain expertise.
 
-**System Design (Stage 3):** Requires specialized review — architecture council
+**System Design (Stage 3):** Requires alignment review — architecture council
 or tech lead sign-off, security review for auth/data flow changes, explicit
 rollback plan and migration review. Foundational decisions with high blast
 radius.
@@ -348,8 +348,9 @@ design and implementation where patterns are established. Collaborative
 elsewhere to maintain team knowledge transfer and review quality.
 
 **Regulated enterprise (finance, healthcare):** Human-Led for all stages with
-compliance or audit implications. Collaborative for implementation only after
-establishing review processes and AI governance policies.
+compliance or audit implications. Collaborative for implementation
+(Collaborative appropriate once security review processes are established) only
+after establishing review processes and AI governance policies.
 
 Use these as starting points, not prescriptions. Your team's actual
 configuration depends on CI maturity, domain risk, and AI experience.

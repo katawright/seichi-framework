@@ -140,7 +140,9 @@ routed before establishing on-call responsibilities.
 - [ ] Severity-based alert routing verified (page for P0, Slack for P1, etc.)
 
 If monitoring gaps exist, resolve them before proceeding — on-call without
-working alerts is an incident waiting to happen. See the
+working alerts is an incident waiting to happen. If monitoring infrastructure
+does not exist, escalate to the deployment team or DevOps before proceeding —
+this is not a support-scoped activity. See the
 [Deployment Setup Guide](../deployment/setup.md) for infrastructure setup.
 
 ### 4. Establish On-Call or Monitoring Responsibility
