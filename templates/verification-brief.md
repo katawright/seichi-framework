@@ -39,9 +39,9 @@ being tested]
 > If the implementation brief records AC modifications (added, refined, or
 > split criteria), merge those changes here before planning tests.
 
-- [ ] [AC-1: Specific testable criterion]
-- [ ] [AC-2: Specific testable criterion]
-- [ ] [AC-3: Specific testable criterion]
+- [ ] [AC-1.1: Specific testable criterion]
+- [ ] [AC-1.2: Specific testable criterion]
+- [ ] [AC-2.1: Specific testable criterion]
 
 **Success Criteria Being Validated (from Initiation):**
 
@@ -71,7 +71,7 @@ changes, or "None"]
 ## Test Execution Plan
 
 **Increment Design Test Strategy Reference:** [Link to increment-design-brief.md
-section 5]
+"Testing Strategy for This Increment"]
 
 **Test types planned (confirm or note changes):**
 

@@ -296,6 +296,38 @@ tracker]
 
 ---
 
+## Incident Response Procedures
+
+<!-- Minimal tier: document procedures here. Standard+ tiers may reference a
+     standalone incident response document instead. -->
+
+**Escalation path:**
+
+| Severity | Response time | Escalation contact |
+|----------|--------------|-------------------|
+| Critical (service down) | [target] | [contact] |
+| High (degraded) | [target] | [contact] |
+| Low (cosmetic) | [target] | [contact] |
+
+**Rollback authority:** [Who can authorize rollback]
+
+**Communication plan:** [How users/stakeholders are notified during incidents]
+
+---
+
+## Retrospective
+
+> Complete the retrospective at each increment boundary using the
+> [Retrospective Template](retrospective.md).
+
+**Retrospective link:** [path or link to completed retrospective]
+
+**Key action items carried forward:**
+
+1. [Action item from retrospective]
+
+---
+
 ## Sign-Off
 
 **Deployment Status:** [✅ Success / ⚠️ Partial / ❌ Rolled Back]

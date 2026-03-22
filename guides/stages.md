@@ -59,7 +59,7 @@ flow through every subsequent stage.
 | #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
 | --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
 | 1   | Initiation       | Product Mgr / BA      | Foundational | Establish business case with measurable success criteria                                                   |
-| 2   | Requirements     | BA / Product Mgr      | Foundational | Define testable requirements with FR acceptance criteria and NFR verification criteria                     |
+| 2   | Requirements     | BA / Product Mgr      | Foundational | Define testable requirements with functional requirement (FR) acceptance criteria and non-functional requirement (NFR) verification criteria |
 | 3   | System Design    | Architect             | Foundational | Establish or assess system architecture and technical approach                                             |
 | 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
 | 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
@@ -418,6 +418,8 @@ guides all subsequent implementation work.
 - Technology choices documented in ADRs with cost analysis
 - Increment plan created with MoSCoW mapping
 - Security, performance, and observability addressed
+- NFR traceability table links each NFR to architectural approach and
+  verification method
 - Infrastructure plan complete
 - Gate 2 decision made (proceed/revise/stop)
 
@@ -430,7 +432,7 @@ guides all subsequent implementation work.
   - **Decision:** Commit to building this, revise the approach, or stop
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
   - **Criteria:** Technical approach sound, costs acceptable, risks manageable,
-    security risk posture reviewed
+    security risk posture reviewed (AppSec prepares security evidence)
   - **AI validation:** Human review ensures AI-assisted design is
     architecturally sound
 
@@ -549,10 +551,16 @@ increment, following engineering best practices and professional standards.
 
 ### Outputs
 
-- **Working Code** - Committed to version control
-- Unit tests with passing results
-- Code review approvals
-- Updated documentation
+- **Working Code** — Committed to version control
+- **Unit Tests** — With passing results
+- **Code Review Approvals**
+- **Updated Documentation**
+- **Implementation Brief** — Summary of what was built, decisions made, and
+  deviations from design (see
+  [Implementation Brief Template](../templates/implementation-brief.md))
+- **Session Log** — Session-by-session progress log (see
+  [Session Log Template](../templates/implementation-session-log.md))
+- **Observability Instrumentation** — Logging, metrics, and tracing hooks
 
 ### Exit Criteria
 
@@ -761,12 +769,12 @@ feedback for future improvements.
 
 ### Outputs
 
-- **System Availability** - Uptime and reliability metrics
-- **Success Criteria Reports** - Progress toward measurable goals
-- Incident reports and resolutions
-- Bug fixes and patches
-- Enhancement backlog for future increments
-- Performance optimization recommendations
+- **Support Brief** — Primary container artifact for support-stage work (see
+  [Support Brief Template](../templates/support-brief.md))
+- **System Availability Metrics** — Uptime and reliability metrics
+- **Success Criteria Reports** — Progress toward measurable goals
+- **Incident Reports** — Incident reports and resolutions
+- **Enhancement Backlog** — Enhancement backlog for future increments
 
 ### Exit Criteria
 
@@ -936,18 +944,18 @@ template).
 
 Each stage specifies which checkpoint types apply. For example:
 
-- **Initiation:** Gate 1 (investment decision)
-- **Requirements:** Quality Checkpoint (requirements readiness)
-- **System Design:** Alignment Reviews (architecture decisions), Gate 2
-  (build/no-build decision)
-- **Increment Design:** Quality Checkpoint (design review)
-- **Implementation:** Quality Checkpoints (code review, tests), Deployment
+- **Initiation:** Gate 1 (Investment Decision)
+- **Requirements:** Quality Checkpoint (Requirements Readiness)
+- **System Design:** Alignment Reviews (Architecture Review), Gate 2
+  (Investment Decision)
+- **Increment Design:** Quality Checkpoint (Design Review)
+- **Implementation:** Quality Checkpoints (PR Review + CI), Deployment
   Approvals (to staging)
-- **Verification:** Quality Checkpoints (test execution), Deployment Approvals
-  (production readiness)
-- **Deployment:** Deployment Approvals (production deployment, rollout gates),
-  Compliance Approvals (when regulatory/security sign-off required)
-- **Support:** Quality Checkpoints (production ownership decision)
+- **Verification:** Quality Checkpoints (Test Execution + Coverage Review),
+  Deployment Approvals (production readiness)
+- **Deployment:** Deployment Approvals (Production Deployment Approval),
+  Compliance Approvals (Compliance Approval)
+- **Support:** Quality Checkpoints (Production Ownership Decision)
 
 **Human validation of AI output is required at all checkpoint types.** The AI
 Assistance Scorecard provides stage-specific guidance on where AI can work more

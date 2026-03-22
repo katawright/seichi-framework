@@ -106,6 +106,10 @@ the organization.
 - **Project Managers and Delivery Leads** — structured coordination points at
   every gate and increment boundary, with clear accountability for delivery
   tracking and cross-team dependency management
+- **Application Security** — cross-stage security touchpoints from data
+  classification through compliance sign-off, with severity-based escalation
+  authority. See the [Security Guide](security.md) and
+  [AppSec role definition](#application-security-appsec)
 - **Organizations** — a repeatable, scalable approach to AI-assisted development
   that works across teams and methodologies
 
@@ -233,10 +237,19 @@ criteria, stage flow diagrams, and handoffs, see the
 
 ## Checkpoint Taxonomy
 
-The framework defines five checkpoint types — Gates, Quality Checkpoints,
-Deployment Approvals, Alignment Reviews, and Compliance Approvals — each with
-distinct decision rights, required evidence, and decision records. For the full
-taxonomy and the per-checkpoint decision-rights matrix, see the
+The framework defines five checkpoint types — each with distinct decision rights,
+required evidence, and decision records.
+
+| Type                    | When                                   | Purpose                                         |
+| ----------------------- | -------------------------------------- | ------------------------------------------------ |
+| **Gate**                | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop |
+| **Quality Checkpoint**  | End of each stage                      | Peer review of stage artifacts before handoff    |
+| **Alignment Review**    | After Increment Design                 | Design conformance with system architecture      |
+| **Deployment Approval** | Before production release              | Production readiness and rollback verification   |
+| **Compliance Approval** | Before regulated releases              | Regulatory and security sign-off                 |
+
+For the full taxonomy, per-checkpoint decision-rights matrix, and required
+evidence, see the
 [AI-Assisted SDLC Stages § Checkpoints](stages.md#checkpoints) reference.
 
 ---
@@ -751,8 +764,12 @@ determines the orchestration response:
 
 Severity classification follows the project's defect management definitions (see
 [Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
-At Enterprise tier, Critical and High findings require documented
-fix/accept/defer decisions with AppSec sign-off.
+For security findings, classify based on exploitability and blast radius:
+Critical = exploitable with no authentication or user interaction required and
+broad blast radius (e.g., RCE, auth bypass, mass data exposure); High =
+exploitable but requires authentication or has limited blast radius. At
+Enterprise tier, Critical and High findings require documented fix/accept/defer
+decisions with AppSec sign-off.
 
 **Halt communication:** When AppSec halts a stage for a Critical finding, they
 produce a defect report using the standard defect format (see Verification

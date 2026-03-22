@@ -802,16 +802,6 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 
 ---
 
-## Related Documents
-
-- [Support Stage Guide](README.md)
-- [Support Checklist](checklist.md)
-- [Support Operations Guide](operations.md)
-- [Support Brief Template](../../templates/support-brief.md)
-- [Runbook Template](../../templates/runbook.md)
-
----
-
 ## AI-Led Patterns
 
 ### What AI Drives
@@ -866,6 +856,16 @@ Capture these when ending a support session:
 - Pending post-incident reviews
 - Enhancement backlog priorities
 - Success criteria measurement status
+
+---
+
+## Related Documents
+
+- [Support Stage Guide](README.md)
+- [Support Checklist](checklist.md)
+- [Support Operations Guide](operations.md)
+- [Support Brief Template](../../templates/support-brief.md)
+- [Runbook Template](../../templates/runbook.md)
 
 ---
 

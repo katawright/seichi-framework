@@ -11,17 +11,18 @@
 > as a gate condition).
 
 **Last Updated:** YYYY-MM-DD
-
-| Field               | Value                                  |
-| ------------------- | -------------------------------------- |
-| **Project**         | [Project Name]                         |
-| **Increment**       | [Increment Number/Name]                |
-| **Engineers**       | [Names]                                |
-| **Start Date**      | YYYY-MM-DD                             |
-| **Completion Date** | YYYY-MM-DD                             |
-| **Status**          | [In Progress / Code Review / Complete] |
-| **Related System Design** | [Link to system-design-brief.md]  |
-| **Constraining ADRs**     | [ADR-NNNN, ADR-NNNN]             |
+**Project:** [Project Name]
+**Increment:** [Increment Number/Name]
+**Engineers:** [Names]
+**Start Date:** YYYY-MM-DD
+**Completion Date:** YYYY-MM-DD
+**Status:** [In Progress / Code Review / Complete]
+**Related System Design:** [Link to system-design-brief.md]
+**Constraining ADRs:** [ADR-NNNN, ADR-NNNN]
+<!-- Constraining ADRs: list ADRs from System Design or prior increments that
+     restrict implementation choices for this increment (e.g., technology
+     selections, API conventions, data patterns). Omit ADRs that don't affect
+     this increment's work. -->
 
 ---
 

@@ -14,11 +14,6 @@ implementation quality, testability, and integration risk. Getting these
 decisions right — component boundaries, API contracts, data model changes, and
 test strategy — reduces rework during Implementation and Verification.
 
-### Key Principle
-
-Design each increment as a self-contained, testable unit that conforms to the
-system architecture established in System Design.
-
 ### Purpose
 
 - Provide detailed component design examples across backend and frontend stacks
@@ -26,6 +21,11 @@ system architecture established in System Design.
   other contract types
 - Document testing strategy examples at unit, integration, and acceptance levels
 - Supply checklist troubleshooting when items fail
+
+### Key Principle
+
+Design each increment as a self-contained, testable unit that conforms to the
+system architecture established in System Design.
 
 ### How to Use This Reference
 

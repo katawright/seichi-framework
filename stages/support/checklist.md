@@ -27,6 +27,8 @@ For initial setup before accepting production ownership, use the
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Support Readiness
 
 1. [ ] **[H] Support team identified with roles and on-call rotation** (schedule

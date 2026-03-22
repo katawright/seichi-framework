@@ -50,12 +50,18 @@ autonomy because outputs are directly testable.
 
 Pick the path that matches your interest. Each takes under 5 minutes.
 
-| I want to…                              | Start with                        | Then                                  | Next step                           |
-| --------------------------------------- | --------------------------------- | ------------------------------------- | ----------------------------------- |
-| Understand the ROI and governance model | [Business Value](#business-value) | [Governance](#governance-at-a-glance) | [Adoption Path](#adoption-path)     |
-| See how AI fits into each stage         | [How AI Fits In](#how-ai-fits-in) | [Stage Overview](#stage-overview)     | [Adoption Path](#adoption-path)     |
-| Start using the framework now           | [Try It Now](#try-it-now)         | [Stage Overview](#stage-overview)     | [How AI Fits In](#how-ai-fits-in)   |
-| Run delivery and manage sprint cadence  | [Governance](#governance-at-a-glance) | [Stage Overview](#stage-overview) | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
+| I want to…                                        | Start with                                                    | Then                                                          | Next step                                                      |
+| ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------- |
+| Understand the ROI and governance model            | [Business Value](#business-value)                             | [Governance](#governance-at-a-glance)                         | [Adoption Path](#adoption-path)                                |
+| See how AI fits into each stage                    | [How AI Fits In](#how-ai-fits-in)                             | [Stage Overview](#stage-overview)                             | [Adoption Path](#adoption-path)                                |
+| Kick off a new project                             | [Try It Now](#try-it-now)                                     | [Stage Overview](#stage-overview)                             | [Initiation](stages/initiation/README.md)                      |
+| Execute technical stages (design → verification)   | [Stage Overview](#stage-overview)                             | [System Design](stages/system-design/README.md)              | [How AI Fits In](#how-ai-fits-in)                              |
+| Set up deployment pipelines and infrastructure     | [DevOps Integration Guide](guides/devops-integration.md)     | [Deployment Setup](stages/deployment/setup.md)               | [Deployment](stages/deployment/README.md)                      |
+| Run delivery and manage sprint cadence             | [Governance](#governance-at-a-glance)                        | [Stage Overview](#stage-overview)                             | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
+
+For post-deployment operations, start at the
+[Support stage](stages/support/README.md). For security touchpoints, see the
+[Security Guide](guides/security.md).
 
 ---
 
@@ -211,6 +217,9 @@ stages: Quality Checkpoints (peer review of stage artifacts),
 Alignment Reviews (design conformance), Deployment Approval (production
 readiness), and Compliance Approval (regulatory sign-off when required). These
 control quality, deployment timing, and compliance — not whether to continue.
+Security governance flows through every stage via the AppSec role and automated
+scanning — see the [Security Guide](guides/security.md) for the full
+throughline.
 
 **Executive role.** The Executive (sponsor, VP, or department head) reviews the
 Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. After

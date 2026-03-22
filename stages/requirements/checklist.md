@@ -18,6 +18,8 @@ System Design.
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Checklist Items
 
 ### Functional Requirements

@@ -1,7 +1,5 @@
 <!-- For guidance on completing this brief, see system-design/README.md -->
 
-# System Design Brief
-
 > **Stage guide:** [System Design README](../stages/system-design/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -10,9 +8,7 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
-> **AI suggestion:** _"Help me complete this system design brief for [project].
-> Start with the architecture overview based on these requirements:
-> [link to requirements brief]."_
+# System Design Brief
 
 **Last Updated:** YYYY-MM-DD
 
@@ -390,7 +386,7 @@ mitigation]
 
 ---
 
-## Infrastructure Plan
+## 12. Infrastructure Plan
 
 <!-- Scale to project tier:
      Minimal: brief notes on hosting and deployment approach
