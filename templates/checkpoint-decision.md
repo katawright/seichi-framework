@@ -76,6 +76,7 @@ rationale.
   - **Deployment approval:** Deploy / Hold / Rollback
   - **Alignment review:** Aligned / Adjustments Needed
   - **Compliance approval:** Approve / Remediation required / Reject
+  - **Production ownership:** Accept / Accept with conditions / Defer
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any — e.g., "accept with mitigation X by date Y")
 

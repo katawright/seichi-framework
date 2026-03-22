@@ -37,17 +37,18 @@ For MVPs, experiments, prototypes, and small internal tools.
 
 For production applications with real users. Includes all Minimal items plus:
 
-1. [ ] **On-call rotation defined with backup identified** (schedule published)
-2. [ ] **Incident response process documented** (severity levels and response
+1. [ ] **Production access granted** (VPN, MFA, credentials documented)
+2. [ ] **On-call rotation defined with backup identified** (schedule published)
+3. [ ] **Incident response process documented** (severity levels and response
        times)
-3. [ ] **Severity-based alerting configured** (page / Slack / email)
-4. [ ] **Runbooks created for common operational tasks** (deploy, rollback,
+4. [ ] **Severity-based alerting configured** (page / Slack / email)
+5. [ ] **Runbooks created for common operational tasks** (deploy, rollback,
        scale)
-5. [ ] **User support channel established** (ticketing, help desk, or dedicated
+6. [ ] **User support channel established** (ticketing, help desk, or dedicated
        contact)
-6. [ ] **[H] Success criteria tracking cadence defined** (weekly review, monthly
+7. [ ] **[H] Success criteria tracking cadence defined** (weekly review, monthly
        report)
-7. [ ] **Support Brief completed and reviewed** (team has read it)
+8. [ ] **Support Brief completed and reviewed** (team has read it)
 
 **Gate:** All Minimal and Standard items checked → team is prepared for
 structured production ownership.

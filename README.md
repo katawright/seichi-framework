@@ -55,7 +55,7 @@ Pick the path that matches your interest. Each takes under 5 minutes.
 | Understand the ROI and governance model | [Business Value](#business-value) | [Governance](#governance-at-a-glance) | [Adoption Path](#adoption-path)     |
 | See how AI fits into each stage         | [How AI Fits In](#how-ai-fits-in) | [Stage Overview](#stage-overview)     | [Adoption Path](#adoption-path)     |
 | Start using the framework now           | [Try It Now](#try-it-now)         | [Stage Overview](#stage-overview)     | [How AI Fits In](#how-ai-fits-in)   |
-| Coordinate delivery and manage gates   | [Governance](#governance-at-a-glance) | [Stage Overview](#stage-overview) | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
+| Run delivery and manage sprint cadence  | [Governance](#governance-at-a-glance) | [Stage Overview](#stage-overview) | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
 
 ---
 
@@ -205,8 +205,8 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) | Executive   |
 | Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            | Executive   |
 
-After Gate 2, the project is committed. Four checkpoint types govern the
-remaining stages: Quality Checkpoints (peer review of stage artifacts),
+After Gate 2, the project is committed. Checkpoints govern the remaining
+stages: Quality Checkpoints (peer review of stage artifacts),
 Alignment Reviews (design conformance), Deployment Approval (production
 readiness), and Compliance Approval (regulatory sign-off when required). These
 control quality, deployment timing, and compliance — not whether to continue.
@@ -272,8 +272,10 @@ detailed pre-pilot readiness criteria, see the
 
 ## Adoption Path
 
-Whether you chose "adopt now" or "try first," the recommended path is a **single
-pilot project**. This section is an overview; see the
+The recommended path is a **single pilot project**. Scope it to match your
+readiness: "try first" teams should limit to one team and one increment (~4
+weeks) to validate the framework with minimal commitment; "adopt now" teams
+can run a full Standard-tier pilot across two increments (~4–8 weeks). This section is an overview; see the
 [Organizational Adoption Guide](guides/adoption.md) for full detail. If you want
 to try the framework on your own before proposing an organizational pilot, start
 with [Try It Now](#try-it-now).

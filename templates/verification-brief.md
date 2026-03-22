@@ -118,6 +118,12 @@ section 5]
 - Issues: [List any issues with IDs]
 - Evidence: [Link to test report]
 
+**Acceptance Criteria Traceability:**
+
+| AC ID  | Test ID(s) | Result              | Notes |
+| ------ | ---------- | ------------------- | ----- |
+| AC-X.Y | [test IDs] | [Pass / Fail / N/A] |       |
+
 ### Regression Tests
 
 - Tests executed: [X] | Passed: [X] | Failed: [X]
@@ -213,28 +219,6 @@ section 5]
 
 ---
 
-## Rework Handoff
-
-<!-- Include this section when the go/no-go decision is NO-GO and work returns
-     to Implementation. Delete for cycles that proceed to Deployment. -->
-
-**Rework classification:** [Cosmetic / Significant / Fundamental — see
-Agentic Workflow Guide: Rework Cycles]
-
-**Defects requiring rework:**
-
-| ID      | Description | Affected Components | Root Cause Hypothesis | Failing Tests |
-| ------- | ----------- | ------------------- | --------------------- | ------------- |
-| DEF-001 | [desc]      | [files/modules]     | [QA assessment]       | [test IDs]    |
-
-**Rework scope notes:** [Any additional context for the Implementation team —
-API deviations discovered, config issues, dependencies between defects]
-
-**Prior cycle reference:** [Link to this brief once finalized — the
-Implementation rework brief should reference this cycle's verification brief]
-
----
-
 ## Production Readiness
 
 <!-- For structuring the go/no-go decision, use the
@@ -260,6 +244,28 @@ Implementation rework brief should reference this cycle's verification brief]
 **Deployment risks:**
 
 - [Risk: description, likelihood, impact, mitigation]
+
+---
+
+## Rework Handoff
+
+<!-- Include this section when the go/no-go decision is NO-GO and work returns
+     to Implementation. Delete for cycles that proceed to Deployment. -->
+
+**Rework classification:** [Cosmetic / Significant / Fundamental — see
+Agentic Workflow Guide: Rework Cycles]
+
+**Defects requiring rework:**
+
+| ID      | Description | Affected Components | Root Cause Hypothesis | Failing Tests |
+| ------- | ----------- | ------------------- | --------------------- | ------------- |
+| DEF-001 | [desc]      | [files/modules]     | [QA assessment]       | [test IDs]    |
+
+**Rework scope notes:** [Any additional context for the Implementation team —
+API deviations discovered, config issues, dependencies between defects]
+
+**Prior cycle reference:** [Link to this brief once finalized — the
+Implementation rework brief should reference this cycle's verification brief]
 
 ---
 
