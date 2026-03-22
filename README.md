@@ -163,9 +163,8 @@ brief, you review it. A full pilot (two increments through Deployment) depends
 on project scope: a small greenfield team using AI-assisted workflows may
 complete in 3-4 weeks; a brownfield pilot with limited AI tooling should plan
 for 6-8 weeks. See the [Right-Sizing Guide](guides/right-sizing.md) to
-calibrate for your context. Standard-tier overhead is approximately 10-15% of
-increment time initially (right-sizing selection, brief completion, gate
-preparation), decreasing to under 5% as the team builds familiarity.
+calibrate for your context. Standard-tier overhead is modest — primarily right-sizing selection, brief
+completion, and gate preparation — and decreases as the team builds familiarity.
 
 ### Industry Context
 

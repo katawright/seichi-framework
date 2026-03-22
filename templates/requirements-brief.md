@@ -178,7 +178,7 @@
 
 ---
 
-## Edge Cases
+## Edge Cases and Error Handling
 
 <!-- For guidance, see requirements/README.md#edge-cases -->
 
@@ -199,7 +199,7 @@
 
 ---
 
-## Open Questions
+## Open Questions / Blockers
 
 <!-- For guidance, see requirements/README.md#open-questions -->
 <!-- Tag each question with the consulted role (e.g., @Architect, @AppSec). See guides/framework.md#consultation-protocol -->
