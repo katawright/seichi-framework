@@ -94,7 +94,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
 | Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md)     |
 | Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
-| Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+| Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Retrospective Template](../templates/retrospective.md) (if final increment, see [Gate Review Facilitation](framework.md#gate-review-facilitation)) |
 
 **Cross-increment sync:** Sprint review doubles as the sync point. Review
 completed increment, preview next increment scope, surface cross-increment

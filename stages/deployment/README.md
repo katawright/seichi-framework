@@ -462,8 +462,11 @@ Deployment validates that measurement systems work in production. See
   [Support Reference](../support/reference.md#incident-response-process))
 - **Rollback Procedure** — tested and documented rollback steps (section in
   Deployment Brief or standalone runbook)
+- **Retrospective** — increment retrospective capturing what went well, what
+  didn't, and action items (see
+  [Retrospective Template](../../templates/retrospective.md))
 - **Retrospective Action Items** — improvement items from deployment
-  retrospective
+  retrospective (embedded in Retrospective)
 
 > Deployment confirms that success criteria instrumentation is **active in
 > production** and captures initial baselines. This is where the measurement

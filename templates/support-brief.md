@@ -270,6 +270,17 @@ anomaly detection.]
 
 ---
 
+## Incident History
+
+<!-- Minimal tier: track incidents in this table. Standard+ tiers may use a
+     dedicated incident tracking system and link to it instead. -->
+
+| Date | Severity | Summary | Resolution | Post-Mortem Link |
+|------|----------|---------|------------|-----------------|
+| YYYY-MM-DD | [Critical/High/Low] | [Brief description] | [How resolved] | [Link or N/A] |
+
+---
+
 ## Self-Validation Against Support Checklist
 
 <!-- Before submitting for gate review, self-assess against the Support

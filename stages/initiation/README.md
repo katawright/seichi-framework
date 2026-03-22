@@ -80,7 +80,8 @@ budget context. No prior framework artifacts or technical expertise required.
    using AI according to your chosen autonomy tier — refer to
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    for rationale and examples as you complete each section. See the
-   [Manual Process Guide](../../guides/manual-process.md) for prompting tips
+   [Manual Process Guide](../../guides/manual-process.md) for the bootstrap
+   prompt template and prompting tips
 5. For Standard+ tier, populate the
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief

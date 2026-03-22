@@ -49,6 +49,8 @@ For production applications with real users. Includes all Minimal items plus:
 7. [ ] **[H] Success criteria tracking cadence defined** (weekly review, monthly
        report)
 8. [ ] **Support Brief completed and reviewed** (team has read it)
+9. [ ] **Baseline measurements received** (deployment captured initial production
+       metrics for variance analysis)
 
 **Gate:** All Minimal and Standard items checked → team is prepared for
 structured production ownership.

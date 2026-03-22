@@ -69,10 +69,10 @@ delivery and development.
 
 ### Starting Point
 
-A deployed increment live in production with: baseline measurements captured at
-deployment, production monitoring dashboards active, updated runbooks, release
-notes, rollback procedure, incident response procedures, and the success
-criteria register for ongoing measurement.
+A deployed system live in production with: monitoring dashboards active, updated
+runbooks, incident response procedures, baseline measurements captured at
+deployment, release notes, rollback procedure, and the success criteria register
+for ongoing measurement.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -491,8 +491,8 @@ checkpoint or gate decision artifacts to all Informed roles per the
 
 ## When to Revisit Support
 
-- **Incident response ineffective** — high MTTR, recurring incidents, poor
-  communication
+- **Incident response ineffective** — high Mean Time to Resolve (MTTR),
+  recurring incidents, poor communication
 - **Alerts not actionable** — alert fatigue, missing context, team ignoring
   alerts
 - **Success criteria not being met** — consistently missing objectives, no

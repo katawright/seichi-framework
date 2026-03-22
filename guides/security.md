@@ -143,7 +143,13 @@ Humans drive these activities; AI provides research and drafting support:
 | ----------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **Minimal**       | Zero additional effort — Automated activities run via CI/AI                 | Accept residual risk from reduced security review                       |
 | **Standard**      | Automated + AI-Drafted reviews during design and verification               | Staff security reviewer, approve scan tooling budget                    |
-| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs. AppSec is Responsible for security testing, Gate 2 risk posture, and compliance sign-off — see [RACI matrix](framework.md#roles-and-responsibilities). For severity-based escalation (Critical = halt stage), see [Security Escalation Protocol](framework.md#security-escalation-protocol). |
+| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs |
+
+At all tiers, AppSec follows the
+[Security Escalation Protocol](framework.md#security-escalation-protocol) for
+severity-based finding response (Critical = halt stage). At Enterprise tier,
+AppSec is Responsible for security testing, Gate 2 risk posture, and compliance
+sign-off — see [RACI matrix](framework.md#roles-and-responsibilities).
 
 ---
 

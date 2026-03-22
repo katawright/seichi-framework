@@ -18,6 +18,8 @@ successful completion (60-90 seconds).
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Pre-Deployment Readiness
 
 > This section confirms Verification stage outputs are complete. It does not

@@ -98,9 +98,9 @@ then:
 >   [Verification Checklist](stages/verification/checklist.md) for quality
 >   criteria
 > - **Executives / Leadership:** Start with the
->   [README Business Value](README.md) and
->   [Governance](guides/framework.md#checkpoint-taxonomy) sections for ROI
->   framing and gate responsibilities
+>   [README Business Value](README.md#business-value) and
+>   [Governance](README.md#governance-at-a-glance) sections for ROI framing
+>   and gate responsibilities
 > - **Support / Operations:** Start with the
 >   [Support Stage Guide](stages/support/README.md) for the full workflow,
 >   then the

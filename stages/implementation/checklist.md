@@ -18,6 +18,8 @@ and ready for Verification.
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Checklist Items
 
 ### Requirements and Code Quality
