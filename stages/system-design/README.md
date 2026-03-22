@@ -28,10 +28,11 @@ gates:
   - type: alignment-review
     name: "Architecture Review"
     hard_gate: false
+    responsible_roles: [architect, appsec]
   - type: human-approval
     name: "Gate 2 (Investment Decision)"
     hard_gate: true
-    responsible_roles: [architect, appsec]
+    responsible_roles: [pm-ba, architect, appsec]
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
@@ -579,7 +580,7 @@ The [System Design Reference](reference.md) covers these topics in depth:
   below, produced from the
   [System Design Brief Template](../../templates/system-design-brief.md)
 - **Architecture Diagrams** — system context, container, and component diagrams
-- **Technology Stack with ADRs** — justified technology choices with decision
+- **Technology Stack ADRs** — justified technology choices with decision
   records
 - **Data/API Architecture** — data models, API conventions, integration patterns
 - **Infrastructure Plan** — CI/CD, environments, deployment strategy
@@ -614,7 +615,7 @@ Informed roles per the
 
 ## When to Revisit System Design
 
-### Triggers
+**Triggers:**
 
 - Architecture proves infeasible during implementation
 - NFRs can't be met within cost or time constraints
@@ -622,7 +623,7 @@ Informed roles per the
 - Major requirements change or new constraints emerge
 - Production issues reveal architectural problems
 
-### Revision Process
+**Revision process:**
 
 1. Identify trigger (what new information?)
 2. Assess impact (which components/increments?)
@@ -631,7 +632,7 @@ Informed roles per the
 5. Communicate to affected teams
 6. Update increment plan and downstream work
 
-### Proactive Architecture Evolution
+**Proactive architecture evolution:**
 
 In addition to reactive triggers, consider scheduled architecture reviews:
 

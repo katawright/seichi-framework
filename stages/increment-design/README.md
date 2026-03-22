@@ -55,11 +55,12 @@ architecture from System Design.
 
 ### Starting Point
 
-A completed System Design with architecture, technology decisions, and increment
-plan. The current increment should be identified from the increment plan, and
-foundational conventions established (coding patterns, error handling,
-technology-specific conventions). For Increment 2+, also gather retrospective
-action items from the previous increment.
+A completed System Design Brief with architecture diagrams, technology decisions,
+and increment plan, plus requirements with acceptance criteria for traceability. The current
+increment should be identified from the increment plan, and foundational
+conventions established (coding patterns, error handling, technology-specific
+conventions). For Increment 2+, also gather retrospective action items from the
+previous increment.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -83,7 +84,7 @@ action items from the previous increment.
    test coverage levels and acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
-9. Obtain design approval — Architect reviews component designs for
+9. Complete the Design Review — Architect reviews component designs for
    architecture conformance (optional for Minimal; recommended for Standard;
    required for Enterprise — see
    [Right-Sizing Guide](../../guides/right-sizing.md))
@@ -315,12 +316,11 @@ Verification stage what to test and how.
 
 ## Stage Outputs
 
-- **Increment Design Brief** — the containing artifact for the increment's
+- **Component Designs** — the containing artifact for the increment's
   design deliverables, produced from the
   [Increment Design Brief Template](../../templates/increment-design-brief.md)
-- **Detailed component designs** — per-component specs with responsibilities
-- **Interface specifications** (if applicable) — API contracts, component props
-- **Data/state changes** (if applicable) — migration plans, schema changes
+- **API Specifications** (if applicable) — API contracts, component props
+- **Data Model Changes** (if applicable) — migration plans, schema changes
 - **Test strategy** — verification approach for the increment
 - **Implementation notes** — constraints, dependencies, and guidance for
   engineers
@@ -348,14 +348,14 @@ all Informed roles per the
 
 ## When to Revisit Increment Design
 
-### Triggers
+**Triggers:**
 
 - Implementation is blocked by design gaps
 - Code review reveals unhandled edge cases
 - Testing fails due to design issues
 - Requirements are clarified during implementation
 
-### Revision Process
+**Revision process:**
 
 1. Identify trigger (what new information?)
 2. Assess impact (which components affected?)
