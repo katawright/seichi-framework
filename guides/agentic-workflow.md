@@ -20,6 +20,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, appsec, pjm] }
     gates:
       [
         {
@@ -48,6 +49,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, qa, appsec, pjm] }
     gates:
       [
         {
@@ -79,6 +81,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [architect], A: [architect], C: [pm-ba, engineer, qa, devops, appsec, pjm] }
     gates:
       [
         {
@@ -128,6 +131,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [engineer], A: [engineer], C: [pm-ba, architect, qa, appsec, pjm] }
     gates:
       [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
@@ -158,6 +162,7 @@ stages:
     default_oversight_intensity: passive
     working_location: source-code
     session_log_template: templates/implementation-session-log.md
+    raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec] }
     gates:
       [
         {
@@ -198,6 +203,7 @@ stages:
     default_oversight_intensity: passive
     working_location: source-code
     session_log_template: templates/session-log.md
+    raci_roles: { R: [qa, appsec], C: [engineer] }  # AppSec produces security-scan-results
     gates:
       [
         {
@@ -238,6 +244,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm] }
     gates:
       [
         {
@@ -280,6 +287,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec] }
     gates:
       [
         {
@@ -348,6 +356,7 @@ fallback:
   failed_gate:
     default: "Document failure reason, attempt remediation, re-run gate check. If unresolved after one retry, escalate to human"
     hard_gate: "Do not attempt remediation; escalate to human immediately with failure reason"
+    human_led: "Halt and present failure details to human; do not attempt remediation autonomously"
   ambiguous_requirements:
     default: "List interpretations, recommend one, halt for human confirmation before proceeding"
     human_led: "Present the ambiguity without recommending; wait for human direction"

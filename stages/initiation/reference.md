@@ -350,6 +350,15 @@ state so the next session can continue without re-discovery:
 
 ---
 
+## Related Documents
+
+- [Initiation Stage Guide](README.md)
+- [Initiation Checklist](checklist.md)
+- [Initiation Brief Template](../../templates/initiation-brief.md)
+- [Success Criteria Register Template](../../templates/success-criteria-register.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-19

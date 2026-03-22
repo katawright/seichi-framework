@@ -708,7 +708,7 @@ Non-investment checkpoints (Quality, Deployment Approval, Alignment Review, Comp
 Approval, Production Ownership) are owned and run by the stage's Responsible
 role; PjM tracks their completion for scheduling purposes but does not
 facilitate them. See the
-[Decision-Rights Matrix](stages.md#checkpoints) for per-checkpoint roles.
+[Decision-Rights Matrix](stages.md#decision-rights-matrix) for per-checkpoint roles.
 
 **Decision recording.** Capture the outcome using
 [`templates/gate-decision.md`](../templates/gate-decision.md). Record the
@@ -753,6 +753,14 @@ Severity classification follows the project's defect management definitions (see
 [Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
 At Enterprise tier, Critical and High findings require documented
 fix/accept/defer decisions with AppSec sign-off.
+
+**Halt communication:** When AppSec halts a stage for a Critical finding, they
+produce a defect report using the standard defect format (see Verification
+reference) with the `{parent}-appsec-addendum` naming convention (see
+[Consultation Protocol](#consultation-protocol)). The defect report names the
+specific finding, affected scope, and resolution criteria. The stage's
+Responsible role logs the defect, assigns the fix, and verifies resolution
+before the stage resumes.
 
 ### Cadence Mapping
 

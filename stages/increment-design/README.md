@@ -7,6 +7,7 @@ inputs:
   - increment-plan
   - requirements-with-acceptance-criteria
   - retrospective-action-items
+  - system-design-brief
 outputs:
   - artifact: component-designs
     template: templates/increment-design-brief.md
@@ -77,11 +78,14 @@ action items from the previous increment.
    [Increment Design Brief Template](../../templates/increment-design-brief.md)
 6. Specify
    [interfaces, data/state changes, component interactions](#why-these-increment-design-elements-matter)
-7. Define [test strategy](#test-strategy) for Verification stage
+7. Define [test strategy](#test-strategy) for Verification stage; consult
+   [QA per RACI](../../guides/framework.md#roles-and-responsibilities) on
+   test coverage levels and acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
-9. Obtain design approval — peer review or tech lead sign-off (optional for
-   Minimal; recommended for Standard; required for Enterprise — see
+9. Obtain design approval — Architect reviews component designs for
+   architecture conformance (optional for Minimal; recommended for Standard;
+   required for Enterprise — see
    [Right-Sizing Guide](../../guides/right-sizing.md))
 10. Proceed to Implementation stage
 
@@ -338,7 +342,7 @@ Verification stage what to test and how.
 **Handoff:** Implementation stage receives detailed design specs, interface
 contracts, and test strategy. Distribute checkpoint or gate decision artifacts to
 all Informed roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol).
+[Information Protocol](../../guides/framework.md#information-protocol).
 
 ---
 

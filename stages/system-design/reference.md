@@ -895,6 +895,15 @@ state so the next session can continue without re-deriving context:
 
 ---
 
+## Related Documents
+
+- [System Design Stage Guide](README.md)
+- [System Design Checklist](checklist.md)
+- [System Design Brief Template](../../templates/system-design-brief.md)
+- [ADR Template](../../templates/adr.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-19

@@ -317,6 +317,7 @@ gates:
   - type: gate-type # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable gate name"
     hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for quality checkpoints
+    responsible_roles: [role-id] # optional, lists R-roles for the gate per RACI
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
@@ -328,9 +329,13 @@ agent-facing fields: `default_autonomy` (human-led | collaborative | ai-led),
 `default_oversight_intensity` (active | passive | minimal),
 `working_location` (artifacts | source-code), and
 `session_log_template` (path to stage-specific session log template; stages
-without this field use `templates/session-log.md` as fallback), and
+without this field use `templates/session-log.md` as fallback),
 `revisit_conditions` (list of trigger conditions for revisiting a foundational
-stage during iterative execution).
+stage during iterative execution), and
+`preparation_autonomy` (overrides `default_autonomy` for pre-execution
+preparation steps; currently used on the Deployment stage), and
+`raci_roles` (maps R/A/C/I designations to role identifiers for the stage;
+mirrors the RACI matrix in `framework.md` for front-matter discoverability).
 
 ### Guide File Schema
 

@@ -31,6 +31,7 @@ gates:
   - type: human-approval
     name: "Gate 2 (Investment Decision)"
     hard_gate: true
+    responsible_roles: [architect, appsec]
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
@@ -607,7 +608,7 @@ The [System Design Reference](reference.md) covers these topics in depth:
 **Handoff:** Increment Design stage receives architecture, increment plan, and
 foundational conventions. Distribute checkpoint or gate decision artifacts to all
 Informed roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol).
+[Information Protocol](../../guides/framework.md#information-protocol).
 
 ---
 

@@ -33,7 +33,9 @@ successful completion (60-90 seconds).
 6. [ ] **Environment health verified and backups completed** (pre-deployment
        baseline)
 7. [ ] **Infrastructure capacity validated** (resources sufficient for new
-       version)
+       version; consult
+       [Architect per RACI](../../guides/framework.md#roles-and-responsibilities)
+       on infrastructure plan conformance)
 8. [ ] **Monitoring dashboards and alerting configured** (thresholds set)
 9. [ ] **Success criteria instrumentation verified** (Verification tested it
        works; confirm it will be active in production)
@@ -89,6 +91,9 @@ successful completion (60-90 seconds).
 ---
 
 ## Handoff to Support
+
+> When the same role owns both Deployment and Support, apply this section as a
+> self-review rather than a cross-team transfer.
 
 1. [ ] **[H] Support team briefed on deployment outcome** (walkthrough
        completed)

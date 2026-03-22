@@ -166,9 +166,9 @@ unavailable]
 
 **Rollback Steps:**
 
-<!-- Order matters: revert application code before reverting schema changes.
-     Reversing this order can cause runtime errors if the running code
-     references columns or tables that a premature migration rollback removed. -->
+> **Order matters:** revert application code before reverting schema changes.
+> Reversing this order can cause runtime errors if the running code references
+> columns or tables that a premature migration rollback removed.
 
 1. [ ] Revert application code to previous version
 2. [ ] Revert configuration and environment variables

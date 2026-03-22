@@ -19,7 +19,10 @@ outputs:
   - artifact: monitoring-dashboards
   - artifact: incident-response-procedures
   - artifact: rollback-procedure
+  - artifact: retrospective
+    template: templates/retrospective.md
   - artifact: retrospective-action-items
+    embedded_in: retrospective
 gates:
   - type: human-execution-required
     name: "Production Deployment Approval"
@@ -62,7 +65,7 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 
 A verified increment with all tests passing, UAT sign-off from business
 stakeholders, production readiness assessment passed (the Production Readiness
-section of the [Verification Brief](../verification/README.md)),
+section of the [Verification Brief](../../templates/verification-brief.md)),
 [infrastructure plan from System Design](../system-design/README.md#infrastructure-planning),
 implementation brief documenting what was built, and test results and known
 issues documented.
@@ -486,7 +489,7 @@ next Increment Design cycle
 When the same role owns both Deployment and Support, apply the handoff checklist
 as a self-review rather than a cross-team transfer.
 Distribute checkpoint or gate decision artifacts to all Informed roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol). Record
+[Information Protocol](../../guides/framework.md#information-protocol). Record
 the deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 

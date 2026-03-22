@@ -36,6 +36,9 @@ being tested]
 
 **Acceptance Criteria:**
 
+> If the implementation brief records AC modifications (added, refined, or
+> split criteria), merge those changes here before planning tests.
+
 - [ ] [AC-1: Specific testable criterion]
 - [ ] [AC-2: Specific testable criterion]
 - [ ] [AC-3: Specific testable criterion]

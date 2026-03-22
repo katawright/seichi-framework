@@ -8,6 +8,8 @@ inputs:
   - requirements-with-acceptance-criteria
   - success-criteria-register
   - test-strategy
+  - defect-reports  # rework cycle only
+  - verification-brief  # rework cycle only
 outputs:
   - artifact: working-code
   - artifact: unit-tests
@@ -96,7 +98,9 @@ blockers as part of dependency and blocker management.
 **Design-impacting decisions:** For changes that affect component boundaries,
 API contracts, or data flows defined in the System Design Brief, apply the
 [Decision Scope Test](../../guides/framework.md#decision-scope-test) to
-determine whether Architect consultation is required.
+determine whether Architect consultation is required. Consult
+[QA per RACI](../../guides/framework.md#roles-and-responsibilities) when
+implementation changes affect test strategy or acceptance criteria.
 
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
 the checklist before proceeding.

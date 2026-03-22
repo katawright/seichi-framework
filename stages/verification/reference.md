@@ -462,6 +462,14 @@ Capture the following at the end of each session:
 
 ---
 
+## Related Documents
+
+- [Verification Stage Guide](README.md)
+- [Verification Checklist](checklist.md)
+- [Verification Brief Template](../../templates/verification-brief.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-03

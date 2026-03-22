@@ -153,7 +153,7 @@ Match your ongoing support effort to your project's risk tier.
 
 | Dimension             | Minimal                                    | Standard                                        | Enterprise                                       |
 | --------------------- | ------------------------------------------ | ----------------------------------------------- | ------------------------------------------------ |
-| **Monitoring**        | Basic health checks, error tracking        | APM, log aggregation, custom dashboards         | Full observability, distributed tracing          |
+| **Monitoring**        | Basic health checks, error tracking        | Application Performance Monitoring (APM), log aggregation, custom dashboards | Full observability, distributed tracing          |
 | **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel              |
 | **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                    |
 | **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms             |
@@ -485,7 +485,7 @@ decision to accept production ownership. Use the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md) to record
 when the team confirms readiness to own the system in production. Distribute
 checkpoint or gate decision artifacts to all Informed roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol).
+[Information Protocol](../../guides/framework.md#information-protocol).
 
 ---
 

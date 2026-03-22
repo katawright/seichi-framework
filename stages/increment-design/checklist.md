@@ -40,32 +40,35 @@ and ready for Implementation.
 7. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
-### Security
+### Architecture and Security
 
-8. [ ] **Security implications assessed** (auth, data, or API changes flagged;
+8. [ ] **Consult Architect on design conformance per
+       [RACI](../../guides/framework.md#roles-and-responsibilities)** (ADR
+       compliance and architecture alignment)
+9. [ ] **Security implications assessed** (auth, data, or API changes flagged;
        applicable threats from threat model identified)
-9. [ ] **Consult AppSec on security implications per
-       [RACI](../../guides/framework.md#roles-and-responsibilities)** (review
-       auth/data/API changes for this increment)
+10. [ ] **Consult AppSec on security implications per
+        [RACI](../../guides/framework.md#roles-and-responsibilities)** (review
+        auth/data/API changes for this increment)
 
 ### Testing and Readiness
 
-9. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
-       performance where applicable; for single-process tools, integration tests
-       may be N/A if unit tests cover the full pipeline)
-10. [ ] **Implementation notes provided** (security, performance, patterns)
-11. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
+11. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
+        performance where applicable; for single-process tools, integration tests
+        may be N/A if unit tests cover the full pipeline)
+12. [ ] **Implementation notes provided** (security, performance, patterns)
+13. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
-12. [ ] **[H] Engineers understand the design and can implement independently**
+14. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
 ### Foundation Concerns (I0 / foundation increments only)
 
-13. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
+15. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
         quality, testing, security, local dev, documentation, onboarding)
-14. [ ] **Deferred concerns documented with justification** (conscious
+16. [ ] **Deferred concerns documented with justification** (conscious
         deferrals, not omissions)
-15. [ ] **All required stage outputs produced** (increment design brief,
+17. [ ] **All required stage outputs produced** (increment design brief,
         component designs, test strategy — verify against stage README front
         matter)
 

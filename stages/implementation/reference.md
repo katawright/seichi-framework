@@ -486,6 +486,15 @@ Capture the following at the end of each session:
 
 ---
 
+## Related Documents
+
+- [Implementation Stage Guide](README.md)
+- [Implementation Checklist](checklist.md)
+- [Implementation Brief Template](../../templates/implementation-brief.md)
+- [Implementation Session Log Template](../../templates/implementation-session-log.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-19

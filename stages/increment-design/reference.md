@@ -322,6 +322,14 @@ Capture the following at the end of each session:
 
 ---
 
+## Related Documents
+
+- [Increment Design Stage Guide](README.md)
+- [Increment Design Checklist](checklist.md)
+- [Increment Design Brief Template](../../templates/increment-design-brief.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-01
