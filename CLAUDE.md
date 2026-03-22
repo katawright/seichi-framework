@@ -33,7 +33,7 @@ all SDLC stages. The framework is designed to:
 
 ---
 
-## Document Hierarchy
+## Key References
 
 Read `guides/agentic-workflow.md` (front matter first for stage routing, then
 body for context), `guides/stages.md`, and `STYLE_GUIDE.md` when creating or

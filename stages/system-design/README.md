@@ -148,9 +148,9 @@ For detailed AI-Led patterns, see
 For assistance level details, see the
 [AI Assistance Scorecard](../../guides/ai-assistance.md).
 
-> **Required gates:** Specialized review — System Design produces foundational
-> decisions with high blast radius, requiring architecture council or tech lead
-> sign-off, security review, and explicit rollback plans.
+> **Required gates:** Alignment review + human approval — System Design produces
+> foundational decisions with high blast radius, requiring architecture council
+> or tech lead sign-off, security review, and explicit rollback plans.
 
 ---
 

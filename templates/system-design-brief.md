@@ -381,6 +381,32 @@ mitigation]
 
 ---
 
+## Infrastructure Plan
+
+<!-- Scale to project tier:
+     Minimal: brief notes on hosting and deployment approach
+     Standard: CI/CD pipeline, environment strategy, infrastructure components
+     Enterprise: full infrastructure architecture with DR, scaling, and compliance -->
+
+**Hosting / Deployment:** [Cloud provider, service type, region strategy]
+
+**Environments:** [Development, Staging, Production — access controls and
+promotion strategy]
+
+**CI/CD Pipeline:** [Build, test, deploy stages — tool choices and automation
+level]
+
+**Infrastructure as Code:** [Terraform, Pulumi, CloudFormation — or N/A with
+justification]
+
+**Scaling Strategy:** [Horizontal/vertical, auto-scaling triggers, capacity
+planning]
+
+**Disaster Recovery:** [RPO/RTO targets, backup strategy, failover approach —
+Enterprise tier]
+
+---
+
 ## Open Questions
 
 <!-- Tag each question with the consulted role (e.g., @Architect, @AppSec).

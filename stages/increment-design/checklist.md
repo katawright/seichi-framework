@@ -44,6 +44,9 @@ and ready for Implementation.
 
 8. [ ] **Security implications assessed** (auth, data, or API changes flagged;
        applicable threats from threat model identified)
+9. [ ] **Consult AppSec on security implications per
+       [RACI](../../guides/framework.md#roles-and-responsibilities)** (review
+       auth/data/API changes for this increment)
 
 ### Testing and Readiness
 

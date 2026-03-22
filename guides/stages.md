@@ -337,6 +337,18 @@ accurate test planning, and reduced rework from ambiguity.
 - NFRs include verification criteria and measurement/instrumentation needs
 - Requirements are testable and unambiguous
 
+### Checkpoints
+
+- **Requirements Readiness (Quality Checkpoint):** End of Requirements stage
+  - **Decision:** Ready (proceed to System Design) / Not Ready (remediate and
+    re-review)
+  - **Based on:** Requirements Brief with acceptance criteria, prioritized
+    backlog, NFRs with verification criteria
+  - **Criteria:** All high-priority FRs have acceptance criteria, NFRs include
+    verification criteria, requirements are testable and unambiguous
+  - **Record decision:** Use the
+    [Checkpoint Decision Template](../templates/checkpoint-decision.md)
+
 ### Handoff to Next Stage
 
 System Design stage receives: Requirements Brief with FR acceptance criteria,
@@ -890,7 +902,8 @@ constraints.
 ### Decision-Rights Matrix
 
 Each checkpoint has defined roles for who prepares evidence, who decides, and
-who is informed. Roles reference the canonical set defined in the
+who is informed. This matrix covers checkpoint-level decision rights. For
+stage-level role assignments (R/A/C/I), see the
 [RACI Matrix](framework.md#roles-and-responsibilities).
 
 | Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
@@ -899,7 +912,7 @@ who is informed. Roles reference the canonical set defined in the
 | Requirements Readiness | Requirements | Quality | PM/BA | PM/BA (peer\*) | PjM |
 | Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM/BA, PjM |
 | Gate 2 (Investment Decision) | System Design | Gate | PM/BA, Architect, AppSec | Exec | All roles\*\* |
-| Design Review | Increment Design | Specialized | Engineer | Architect | PM/BA, PjM |
+| Design Review | Increment Design | Quality | Engineer | Architect | PM/BA, PjM |
 | PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
 | Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
 | Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
@@ -925,7 +938,7 @@ Each stage specifies which checkpoint types apply. For example:
 - **Requirements:** Quality Checkpoint (requirements readiness)
 - **System Design:** Alignment Reviews (architecture decisions), Gate 2
   (build/no-build decision)
-- **Increment Design:** Specialized review (design review)
+- **Increment Design:** Quality Checkpoint (design review)
 - **Implementation:** Quality Checkpoints (code review, tests), Deployment
   Approvals (to staging)
 - **Verification:** Quality Checkpoints (test execution), Deployment Approvals

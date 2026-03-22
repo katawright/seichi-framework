@@ -35,7 +35,9 @@ the increment is ready for deployment.
 5. [ ] **Performance tests meet NFR targets** (or confirmed N/A with
        justification)
 6. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
-       N/A)
+       N/A; consult
+       [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities)
+       for sign-off)
 7. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
 8. [ ] **Schema compatibility with existing consumers verified** (N/A for
        greenfield or non-database changes; brownfield: confirm schema changes

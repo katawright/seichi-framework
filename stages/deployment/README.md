@@ -61,7 +61,8 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 ### Starting Point
 
 A verified increment with all tests passing, UAT sign-off from business
-stakeholders, production readiness assessment passed,
+stakeholders, production readiness assessment passed (the Production Readiness
+section of the [Verification Brief](../verification/README.md)),
 [infrastructure plan from System Design](../system-design/README.md#infrastructure-planning),
 implementation brief documenting what was built, and test results and known
 issues documented.
@@ -80,6 +81,11 @@ issues documented.
 > **DevOps and Platform Engineers:** For pipeline setup, release patterns, and
 > CI/CD integration across the full lifecycle, see the
 > [DevOps Integration Guide](../../guides/devops-integration.md).
+
+> **Autonomy boundary:** Deployment preparation (steps 1-4: brief, runbook,
+> environment prep) proceeds at Collaborative autonomy. Deployment execution
+> (steps 5-8: production release, monitoring, rollback) requires Human-Led
+> autonomy — humans approve and execute production changes.
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
@@ -439,6 +445,8 @@ Deployment validates that measurement systems work in production. See
 
 ## Stage Outputs
 
+- **Deployment Brief** — primary container document for this stage's outputs
+  (see [template](../../templates/deployment-brief.md))
 - **Deployed System** — live production release
 - **Deployment Log** — execution details, timing, and issues encountered
 - **Updated Runbooks** — operational procedures reflecting current deployment
@@ -475,6 +483,8 @@ notes, and success criteria register (originates from Initiation; verify the
 support team has access during handoff). Retrospective action items feed into the
 next Increment Design cycle
 (see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)).
+When the same role owns both Deployment and Support, apply the handoff checklist
+as a self-review rather than a cross-team transfer.
 Distribute checkpoint or gate decision artifacts to all Informed roles per the
 [Information Protocol](../../guides/framework.md#consultation-protocol). Record
 the deployment decision using the

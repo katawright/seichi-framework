@@ -233,9 +233,9 @@ gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
 
  4. Create feature branch
  5. Write code for this PR's scope
-    Human review: correctness and security [GATE]
+    Human review: correctness and security [SELF-CHECK]
  6. Implement instrumentation (logging, metrics)
-    Human review: measurement completeness [GATE]
+    Human review: measurement completeness [SELF-CHECK]
  7. Document code
  8. Run tests locally, verify passing
     (including database migrations if applicable)
@@ -360,9 +360,10 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** Verification stage receives working code, test results, session
-log, and review approvals. Distribute checkpoint or gate decision artifacts to
-all Informed roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol). Before
+log, and review approvals. The finalized implementation brief (status: Complete)
+signals that Verification can begin. Distribute checkpoint or gate decision
+artifacts to all Informed roles per the
+[Information Protocol](../../guides/framework.md#information-protocol). Before
 handoff, ensure:
 
 - Test environment is available and accessible to QA

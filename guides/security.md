@@ -143,7 +143,7 @@ Humans drive these activities; AI provides research and drafting support:
 | ----------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **Minimal**       | Zero additional effort — Automated activities run via CI/AI                 | Accept residual risk from reduced security review                       |
 | **Standard**      | Automated + AI-Drafted reviews during design and verification               | Staff security reviewer, approve scan tooling budget                    |
-| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs. AppSec is Responsible for security testing, Gate 2 risk posture, and compliance sign-off — see [RACI matrix](framework.md#roles-and-responsibilities). |
+| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs. AppSec is Responsible for security testing, Gate 2 risk posture, and compliance sign-off — see [RACI matrix](framework.md#roles-and-responsibilities). For severity-based escalation (Critical = halt stage), see [Security Escalation Protocol](framework.md#security-escalation-protocol). |
 
 ---
 
@@ -308,7 +308,10 @@ Integrate these checks into your CI/CD pipeline — see
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
 tier-specific gate configuration. For security accountability by stage, see the
 [Roles and Responsibilities](framework.md#roles-and-responsibilities) RACI
-matrix.
+matrix. At Standard and Enterprise tiers, AppSec owns a
+[Compliance Approval](../guides/stages.md#compliance-approvals) checkpoint at
+Deployment — see the
+[Decision-Rights Matrix](../guides/stages.md#decision-rights-matrix).
 
 ### Support
 

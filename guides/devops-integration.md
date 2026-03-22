@@ -11,6 +11,10 @@ authoritative framework location — follow the links for full guidance.
 
 ## Getting Started
 
+**Recommended full-setup sequence:** 1. CI/CD Pipeline → 2. Environments and
+Secrets → 3. Security Scanning → 4. Observability. Jump to any section if you
+only need one area.
+
 **Setting up CI/CD and PR checks?** Start here:
 [CI/CD Pipeline Setup](../stages/deployment/setup.md#1-cicd-pipeline-setup) →
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy)

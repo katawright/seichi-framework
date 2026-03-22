@@ -562,7 +562,10 @@ _whether_ they happen. See [CD Workflow Adaptations](#cd-workflow-adaptations).
 
 This matrix shows who is Responsible, Accountable, Consulted, and Informed for
 key activities at each stage. It consolidates the Primary and Supporting Role
-designations from each stage guide into a single cross-stage view.
+designations from each stage guide into a single cross-stage view. This matrix
+covers stage-level role assignments. For checkpoint-level decision rights (who
+prepares evidence, who decides), see the
+[Decision-Rights Matrix](stages.md#decision-rights-matrix).
 
 **Legend:** **R** = Responsible (does the work), **A** = Accountable
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
@@ -579,9 +582,13 @@ Informed (kept in the loop), **-** = Not involved (no role at this stage)
 | **Implementation**   | -     | R/A       | C         | C   | C      | C        | -    | I   |
 | **Verification**     | C     | R         | C         | R/A | -      | R        | -    | I   |
 | **Deployment**       | I     | C         | C         | C   | R/A    | C        | I    | C   |
-| **Support**          | I     | C         | C         | -   | R/A    | C        | I    | I   |
+| **Support**          | I     | C         | C         | -   | R/A    | C        | I    | I§  |
 | Deployment Approval  | I     | C         | C         | C   | R/A    | C        | I    | C   |
 | Compliance Approval  | C     | -         | C         | -   | C      | R/A      | I    | C   |
+
+§ **PjM at Support:** PjM is Informed at stage level but owns the Production
+Ownership Decision per the
+[Decision-Rights Matrix](stages.md#decision-rights-matrix).
 
 **Verification responsibility split:** Engineers (R) fix defects found during
 testing, complete unit test gaps, and support integration test debugging. QA
@@ -593,14 +600,21 @@ scans, SAST review, penetration testing at Enterprise tier).
 acceptance criteria (Requirements), test strategy alignment (Increment Design),
 and test gap identification (Implementation). AppSec focuses on security
 implications of requirements, design decisions, and implementation changes.
-Architect focuses on design conformance when consulted at Implementation. PM/BA
+Architect focuses on ADR compliance and architecture alignment when consulted at
+Increment Design, design conformance when consulted at Implementation (see
+[Decision Scope Test](#decision-scope-test) below), and infrastructure plan
+conformance when consulted at Deployment. AppSec consultation at Implementation
+is triggered by new authentication flows, cryptographic usage, external API
+integrations, or changes to data handling patterns. PM/BA
 consultation focuses on requirements clarification and priority trade-offs
 (System Design, Increment Design) and acceptance criteria interpretation
 (Verification). At Enterprise tier, organizations may elevate Exec from Informed
 to Consulted or Accountable at Deployment Approval for production-impacting
 changes.
 
-**Decision scope test:** A decision during Implementation requires Architect
+#### Decision Scope Test
+
+A decision during Implementation requires Architect
 consultation if it (a) changes a component boundary, API contract, or data flow
 established in the System Design Brief, (b) is hard to reverse after deployment,
 or (c) conflicts with an accepted ADR. Decisions that do not meet any of these
@@ -613,7 +627,9 @@ When a stage requires input from a Consulted (C) role:
 1. **Request.** The Responsible role adds the question to the stage artifact's
    open-questions section, tagging the consulted role.
 2. **Response.** The Consulted role responds inline in the open-questions
-   section or attaches a referenced addendum to the artifact.
+   section or attaches a referenced addendum to the artifact. Addendums follow
+   the parent artifact's location conventions with the naming pattern
+   `{parent}-{role}-addendum` (e.g., `system-design-brief-appsec-addendum`).
 3. **Resolution.** The Responsible role records the decision and rationale in
    the artifact, noting the consulted role's input.
 
@@ -624,7 +640,7 @@ For time-sensitive consultations, the Responsible role may proceed with the
 lowest-risk option and flag the decision for review, following the
 unreachable-human fallback protocol.
 
-**Information Protocol**
+#### Information Protocol
 
 When a stage completes its checkpoint, the Responsible role distributes the
 checkpoint decision artifact (gate-decision or checkpoint-decision) to all
@@ -632,7 +648,9 @@ Informed (I) roles. I-roles receive completed artifacts for awareness — no
 response or action is required unless they identify a concern, in which case
 they raise it with the Accountable role. Additionally, all checkpoint decisions
 are distributed to PjM for scheduling and coordination purposes, regardless of
-PjM's RACI designation at that stage.
+PjM's RACI designation at that stage. The implementation-brief is also
+distributed to PM/BA when finalized, so that PM/BA has current context for
+Verification consultations.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
 > the [accountability table](#compliance-and-regulatory-considerations) below.
@@ -922,9 +940,10 @@ For how CD interacts with right-sizing tiers, see
 
 ## Right-Sizing Your Process
 
-Right-sizing has two independent dimensions: **project risk tier** (Minimal,
-Standard, Enterprise) determines _what_ practices you adopt, while **team size**
-determines _how formally_ you apply them. The framework's eight stages remain
+Right-sizing has three independent dimensions: **project risk tier** (Minimal,
+Standard, Enterprise) determines _what_ practices you adopt, **team size**
+determines _how formally_ you apply them, and **AI autonomy tier** (Human-Led,
+Collaborative, AI-Led) determines _how much AI involvement_ you allow. The framework's eight stages remain
 the same regardless — what changes is formality, documentation detail, and
 coordination. For the full model, tier definitions, team-size guidance, and
 choosing criteria, see the [Right-Sizing Guide](right-sizing.md).
