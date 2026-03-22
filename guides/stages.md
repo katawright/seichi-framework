@@ -586,6 +586,8 @@ right thing).
 **Required:**
 
 - Working code from Implementation
+- Implementation brief from Implementation
+- Increment design brief from Increment Design
 - Requirements with FR acceptance criteria
 - Test strategy from Increment Design stage
 

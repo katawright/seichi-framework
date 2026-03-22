@@ -28,7 +28,10 @@ and ready for Verification.
 3. [ ] **Error handling covers failure scenarios** (graceful degradation, no
        unhandled exceptions)
 4. [ ] **[H] No critical security vulnerabilities** (input validation, secrets
-       managed, dependencies scanned, SAST clean, no PII in logs)
+       managed, dependencies scanned, SAST clean, no PII in logs; consult
+       [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities)
+       for new auth flows, crypto usage, external API integrations, or data
+       handling changes)
 5. [ ] **Implementation aligns with Increment Design Brief** (component
        interaction flows, API contracts, and data model match design — document
        deviations in implementation brief)

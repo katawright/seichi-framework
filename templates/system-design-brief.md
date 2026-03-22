@@ -39,13 +39,22 @@ DevOps Lead, Project Manager]
 
 ## 1. System Architecture Overview
 
-### 1.1 System Context
+### 1.1 Architecture Principles
+
+<!-- List the guiding principles that shaped this design (e.g., "Prefer managed
+     services over self-hosted", "Minimize cross-service dependencies"). Omit if
+     the project has no explicit architecture principles. -->
+
+- [Principle 1: description and rationale]
+- [Principle 2: description and rationale]
+
+### 1.2 System Context
 
 <!-- Minimal: Simple context sketch | Standard: C4 context diagram | Enterprise: Context + container diagrams -->
 
 [Describe your system context here]
 
-### 1.2 System Architecture
+### 1.3 System Architecture
 
 <!-- Minimal: Informal component notes | Standard: C4 container diagram with data flow | Enterprise: Formal architecture with stakeholder sign-off -->
 

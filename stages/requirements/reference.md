@@ -460,6 +460,14 @@ state so the next session can continue without re-eliciting:
 
 ---
 
+## Related Documents
+
+- [Requirements Stage Guide](README.md)
+- [Requirements Checklist](checklist.md)
+- [Requirements Brief Template](../../templates/requirements-brief.md)
+
+---
+
 ## Notes
 
 **Last Updated:** 2026-03-04

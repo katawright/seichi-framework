@@ -84,7 +84,7 @@ the increment is ready for deployment.
 - [ ] **Ready** — Hand off to Deployment stage
 - [ ] **Ready with conditions** — Document conditions in Verification Brief;
       hand off to Deployment with conditions noted
-- [ ] **Not Ready** — Address blocking items and re-check
+- [ ] **Not Ready** — Route to Implementation for rework (see [Rework Cycle](README.md#when-verification-fails))
 
 ---
 

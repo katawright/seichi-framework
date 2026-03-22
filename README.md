@@ -123,7 +123,7 @@ A quick scenario — building an internal dashboard — to make the stages concr
 
 > In **System Design**, an engineer asks the AI to compare three data pipeline
 > options against latency and cost constraints. The trade-off summary goes into
-> the design record for the Gate 2 review.
+> the System Design Brief for the Gate 2 review.
 >
 > In **Increment Design**, the engineer scopes the first increment and uses AI
 > to break work items into tasks with estimated complexity.

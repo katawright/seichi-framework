@@ -255,7 +255,10 @@ section links to the prior brief and summarizes what was fixed.
 
 **Rework trigger artifact:** The completed verification brief with a no-go
 decision and populated Rework Handoff section is the trigger artifact for the
-Implementation rework cycle. Engineers should treat publication of this brief to the artifacts location
+Implementation rework cycle. **Routing signal:** the Production Readiness field
+in the verification brief determines the path — "Ready" routes to Deployment,
+"Not Ready" routes to Implementation for rework. Engineers should treat
+publication of this brief to the artifacts location
 (e.g., `docs/briefs/verification-brief-inc1-cycle1.md`) as the activation
 signal — QA notifies the engineering lead when the verification brief is
 published.
@@ -404,7 +407,7 @@ code, test results, and UAT approval. On **no-go**, work returns to
 Implementation for defect fixes, then a new verification cycle begins with a
 fresh brief. Distribute checkpoint or gate decision artifacts to all Informed
 roles per the
-[Information Protocol](../../guides/framework.md#consultation-protocol).
+[Information Protocol](../../guides/framework.md#information-protocol).
 
 ---
 
