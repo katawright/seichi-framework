@@ -41,16 +41,15 @@ spike, experiment) / TBD]
 
 ---
 
-## Business Case
+## Business Case + Why Now
 
-<!-- Include the "why now" context as part of your business case -->
 <!-- Minimal: informal justification | Standard: value, urgency, and strategic alignment | Enterprise: formal business case with financial analysis -->
 
 - [What value this creates or risk it reduces, and why it matters now]
 
 ---
 
-## Success Criteria
+## Goals and Success Criteria
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
 <!-- Qualitative criteria (PoCs, spikes, exploratory projects) are acceptable when numeric baselines are not feasible. Use the Question / Evaluation criteria / Timeframe template from initiation/reference.md#when-criteria-are-qualitative. -->
@@ -75,7 +74,7 @@ spike, experiment) / TBD]
 
 ---
 
-## Gate 1 Decision Criteria
+## Gate 1 — Proposed Decision Criteria
 
 <!-- Minimal: informal team agreement | Standard: structured review with decision criteria | Enterprise: formal gate with stakeholder sign-off -->
 
