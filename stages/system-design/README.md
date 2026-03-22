@@ -194,32 +194,34 @@ Otherwise, keep design lightweight and move to Increment Design.
 ## Why These System Design Elements Matter
 
 Each section of the System Design Brief exists because skipping it causes
-predictable failures. This section explains why each element is included:
+predictable failures. This section explains why each element is included,
+ordered to match the
+[System Design Brief Template](../../templates/system-design-brief.md) sections:
 
 1. [**Architecture Principles**](#architecture-principles) — foundational design
-   guardrails
-2. [**Technology Selection**](#technology-selection) — justified choices with
-   cost research
-3. [**Creating Increment Plans**](#creating-increment-plans) — sequenced
-   delivery roadmap
-4. [**Infrastructure Planning**](#infrastructure-planning) — CI/CD,
-   environments, deployment
-5. [**Design Documentation**](#design-documentation) — architecture diagrams and
-   decision records
-6. [**Architecture Decision Records (ADRs)**](#architecture-decision-records-adrs)
-   — significant decisions captured
-7. [**System-Level Interface Contracts**](#system-level-interface-contracts) —
-   API boundaries for parallel work
-8. [**Cross-Cutting Concerns**](#cross-cutting-concerns) — security,
-   performance, observability traceability
-9. [**Observability and Monitoring Design**](#observability-and-monitoring-design) —
-   instrumentation strategy and success criteria measurement
-10. [**Performance and Scalability Design**](#performance-and-scalability-design) —
-    performance targets and scaling approach
-11. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
-    requirements to architectural decisions and verification methods
-12. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
-    release tagging, changelogs
+   guardrails (§1 System Architecture Overview)
+2. [**Architecture Decision Records (ADRs)**](#architecture-decision-records-adrs)
+   — significant decisions captured (§2)
+3. [**Technology Selection**](#technology-selection) — justified choices with
+   cost research (§3 Technology Stack)
+4. [**System-Level Interface Contracts**](#system-level-interface-contracts) —
+   API boundaries for parallel work (§5 API Architecture)
+5. [**Cross-Cutting Concerns**](#cross-cutting-concerns) — security,
+   performance, observability traceability (§6 Security and Compliance Design)
+6. [**Observability and Monitoring Design**](#observability-and-monitoring-design) —
+   instrumentation strategy and success criteria measurement (§7)
+7. [**Performance and Scalability Design**](#performance-and-scalability-design) —
+   performance targets and scaling approach (§8)
+8. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
+   requirements to architectural decisions and verification methods (§9)
+9. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
+   release tagging, changelogs (§10)
+10. [**Creating Increment Plans**](#creating-increment-plans) — sequenced
+    delivery roadmap (§11)
+11. [**Infrastructure Planning**](#infrastructure-planning) — CI/CD,
+    environments, deployment (§12)
+12. [**Design Documentation**](#design-documentation) — architecture diagrams
+    and decision records
 13. [**Additional Topics**](#additional-topics) — deep-dive reference pointer
 
 ### Architecture Principles
@@ -233,129 +235,6 @@ effective.
 Follow established principles — SOLID, Separation of Concerns, DRY, YAGNI, KISS
 — when making design decisions. Consult your team's standards or ask your AI
 agent for guidance.
-
-### Technology Selection
-
-Evaluate team skills, organizational standards, requirements fit, ecosystem
-maturity, maintainability, performance/scalability, and security/compliance when
-choosing technologies.
-
-**Cost research is mandatory** — research pricing BEFORE selecting technology.
-Document costs in ADRs.
-
-> For detailed evaluation criteria, cost research guidance, and common
-> trade-offs, see
-> [System Design Reference: Technology Selection](reference.md#technology-selection-details).
-
-### Creating Increment Plans
-
-The increment plan is a **key output of System Design**. It maps MoSCoW
-priorities from Requirements to specific, deliverable increments. See
-[Framework Guide: MoSCoW](../../guides/framework.md#moscow-prioritization) for
-priority definitions.
-
-#### Planning Best Practices
-
-- **Use range-based estimates:** Express duration and effort as ranges (e.g.,
-  1.5-2.5 weeks), not single points
-- **Deliver value incrementally:** each increment ships something usable
-- **Build foundations first:** auth, database, API framework before features
-- **De-risk early:** technically uncertain work in early increments
-- **Allow for discovery:** don't over-plan distant increments
-- **Make Could Haves truly optional:** don't commit in timelines
-- **Articulate value per increment:** state what users or the project gains when
-  the increment ships
-
-#### Planning Process
-
-1. **Review requirements** — all FRs, NFRs, MoSCoW priorities, acceptance
-   criteria
-2. **Identify dependencies** — which requirements depend on others?
-3. **Determine Increment 0 need** — greenfield projects require a bootstrap
-   Increment 0; brownfield first AI-assisted projects require a discovery
-   Increment 0; subsequent brownfield projects skip directly to Increment 1
-4. **Assess risk and complexity** — uncertain items first
-5. **Group into increments** — Must Haves first, delivering testable value;
-   articulate the value each increment delivers to users or the project
-6. **Sequence increments** — dependencies first, then risk/value balance
-7. **Map Should Haves** — assign to later increments
-8. **Handle Could Haves** — mark as opportunistic
-9. **Document Won't Haves** — explicitly list exclusions
-10. **Estimate duration and effort as ranges**
-11. **Calculate cost range for Gate 2** — effort x blended rate, compare to
-    Initiation estimates
-
-> For increment sizing guidance, estimation techniques, and methodology-specific
-> examples, see
-> [System Design Reference: Increment Sizing](reference.md#increment-sizing-guidance)
-> and [Estimation](reference.md#increment-estimation-guidance).
-
-> **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
-> [System Design Brief Template](../../templates/system-design-brief.md#gate-2-decision-package).
-> Record the proceed/revise/stop decision using the
-> [Gate Decision Template](../../templates/gate-decision.md).
-
-### Infrastructure Planning
-
-Infrastructure planning is a **required output** of System Design. The goal is
-to ensure working development, testing, deployment, and monitoring
-infrastructure exists before feature delivery begins.
-
-**Greenfield projects:** Infrastructure must be created. Increment 0 becomes the
-**bootstrap** increment establishing CI/CD, environments, monitoring, and
-deployment automation. Feature delivery begins at Increment 1.
-
-**Brownfield projects (first AI-assisted):** Increment 0 focuses on **discovery
-and documentation** — capturing existing architecture, infrastructure, and
-conventions for effective AI assistance. Feature delivery begins at Increment 1.
-
-**Brownfield projects (subsequent):** No Increment 0 is needed. Increment 1
-proceeds to **feature delivery**, using and updating existing documentation.
-Infrastructure adaptations are included within feature increments.
-
-**Feature flags for brownfield modifications:** When modifying existing
-endpoints or shared components, consider feature flags to de-risk the change —
-new behavior deploys dark, validates in production, and replaces the old path
-only after confirmation. For flags that span multiple increments, create an ADR
-documenting the flag lifecycle, cleanup timeline, and ownership.
-
-Infrastructure decisions are architectural decisions and must be documented in
-ADRs.
-
-> For detailed greenfield/brownfield planning outputs, discovery approach,
-> infrastructure ADR examples, and anti-patterns, see
-> [System Design Reference: Infrastructure Planning](reference.md#infrastructure-planning).
-
-### Design Documentation
-
-#### What to Document
-
-- **Architecture diagrams:** System context, container, component (C4 model
-  recommended)
-- **Technology decisions:** Stack choices with justification (ADRs)
-- **Data and API architecture:** ER diagrams, API conventions, integration
-  patterns
-- **Increment plan:** Increment definitions with requirements mapping
-
-**C4 diagram levels and when to use them:**
-
-| Level     | What it shows              | When required                 |
-| --------- | -------------------------- | ----------------------------- |
-| Context   | System and external actors | Always (all tiers)            |
-| Container | Major deployable units     | Standard and Enterprise       |
-| Component | Internal structure         | Enterprise or complex systems |
-| Code      | Class/function level       | Rarely needed; use sparingly  |
-
-For Minimal-tier projects, a whiteboard context sketch is sufficient. Use
-Mermaid or PlantUML for diagram-as-code.
-
-#### Documentation Principles
-
-- Keep docs in version control alongside code
-- Document architecture and key decisions; code should be self-explanatory
-- Use diagrams-as-code (Mermaid, PlantUML) when possible
-- Update docs during code reviews
-- Document "why" not "what" — clean code explains what
 
 ### Architecture Decision Records (ADRs)
 
@@ -468,6 +347,19 @@ In your `implementation-brief.md` (Implementation stage):
 | 2   | Cache user permissions for 5 minutes   | Caching | [ADR-0002](adr/ADR-0002.md)                       | 2024-02-10 |
 ```
 
+### Technology Selection
+
+Evaluate team skills, organizational standards, requirements fit, ecosystem
+maturity, maintainability, performance/scalability, and security/compliance when
+choosing technologies.
+
+**Cost research is mandatory** — research pricing BEFORE selecting technology.
+Document costs in ADRs.
+
+> For detailed evaluation criteria, cost research guidance, and common
+> trade-offs, see
+> [System Design Reference: Technology Selection](reference.md#technology-selection-details).
+
 ### System-Level Interface Contracts
 
 For multi-service or multi-team architectures, define formal interface contracts
@@ -507,6 +399,25 @@ Design and trace it through implementation and verification:
 | Resilience    | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
 | Data privacy  | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
 
+### Observability and Monitoring Design
+
+Designing observability into the system from the start ensures that production
+issues can be detected, diagnosed, and resolved quickly. This includes logging
+strategy, metrics collection, alerting thresholds, and dashboard design. Without
+upfront observability design, teams add monitoring reactively after incidents,
+leaving gaps in coverage during the most critical early production period. See
+[System Design Reference: Observability](reference.md#observability-and-monitoring-design) for detailed guidance.
+
+### Performance and Scalability Design
+
+Performance targets and scalability approaches must be defined during system
+design, not discovered during load testing. This section captures response time
+targets, throughput requirements, caching strategy, database optimization
+approach, and scaling triggers. Defining these early ensures that architecture
+decisions account for load characteristics and that verification has concrete
+targets to test against. See
+[System Design Reference: Performance](reference.md#performance-and-scalability-design) for detailed guidance.
+
 ### NFR Traceability
 
 Map each non-functional requirement from the
@@ -536,24 +447,115 @@ document and follow them.
 Document versioning decisions as ADRs when they involve trade-offs (e.g.,
 choosing between URL-based and header-based API versioning).
 
-### Observability and Monitoring Design
+### Creating Increment Plans
 
-Designing observability into the system from the start ensures that production
-issues can be detected, diagnosed, and resolved quickly. This includes logging
-strategy, metrics collection, alerting thresholds, and dashboard design. Without
-upfront observability design, teams add monitoring reactively after incidents,
-leaving gaps in coverage during the most critical early production period. See
-[System Design Reference: Observability](reference.md#observability-and-monitoring-design) for detailed guidance.
+The increment plan is a **key output of System Design**. It maps MoSCoW
+priorities from Requirements to specific, deliverable increments. See
+[Framework Guide: MoSCoW](../../guides/framework.md#moscow-prioritization) for
+priority definitions.
 
-### Performance and Scalability Design
+#### Planning Best Practices
 
-Performance targets and scalability approaches must be defined during system
-design, not discovered during load testing. This section captures response time
-targets, throughput requirements, caching strategy, database optimization
-approach, and scaling triggers. Defining these early ensures that architecture
-decisions account for load characteristics and that verification has concrete
-targets to test against. See
-[System Design Reference: Performance](reference.md#performance-and-scalability-design) for detailed guidance.
+- **Use range-based estimates:** Express duration and effort as ranges (e.g.,
+  1.5-2.5 weeks), not single points
+- **Deliver value incrementally:** each increment ships something usable
+- **Build foundations first:** auth, database, API framework before features
+- **De-risk early:** technically uncertain work in early increments
+- **Allow for discovery:** don't over-plan distant increments
+- **Make Could Haves truly optional:** don't commit in timelines
+- **Articulate value per increment:** state what users or the project gains when
+  the increment ships
+
+#### Planning Process
+
+1. **Review requirements** — all FRs, NFRs, MoSCoW priorities, acceptance
+   criteria
+2. **Identify dependencies** — which requirements depend on others?
+3. **Determine Increment 0 need** — greenfield projects require a bootstrap
+   Increment 0; brownfield first AI-assisted projects require a discovery
+   Increment 0; subsequent brownfield projects skip directly to Increment 1
+4. **Assess risk and complexity** — uncertain items first
+5. **Group into increments** — Must Haves first, delivering testable value;
+   articulate the value each increment delivers to users or the project
+6. **Sequence increments** — dependencies first, then risk/value balance
+7. **Map Should Haves** — assign to later increments
+8. **Handle Could Haves** — mark as opportunistic
+9. **Document Won't Haves** — explicitly list exclusions
+10. **Estimate duration and effort as ranges**
+11. **Calculate cost range for Gate 2** — effort x blended rate, compare to
+    Initiation estimates
+
+> For increment sizing guidance, estimation techniques, and methodology-specific
+> examples, see
+> [System Design Reference: Increment Sizing](reference.md#increment-sizing-guidance)
+> and [Estimation](reference.md#increment-estimation-guidance).
+
+> **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
+> [System Design Brief Template](../../templates/system-design-brief.md#gate-2-decision-package).
+> Record the proceed/revise/stop decision using the
+> [Gate Decision Template](../../templates/gate-decision.md).
+
+### Infrastructure Planning
+
+Infrastructure planning is a **required output** of System Design. The goal is
+to ensure working development, testing, deployment, and monitoring
+infrastructure exists before feature delivery begins.
+
+**Greenfield projects:** Infrastructure must be created. Increment 0 becomes the
+**bootstrap** increment establishing CI/CD, environments, monitoring, and
+deployment automation. Feature delivery begins at Increment 1.
+
+**Brownfield projects (first AI-assisted):** Increment 0 focuses on **discovery
+and documentation** — capturing existing architecture, infrastructure, and
+conventions for effective AI assistance. Feature delivery begins at Increment 1.
+
+**Brownfield projects (subsequent):** No Increment 0 is needed. Increment 1
+proceeds to **feature delivery**, using and updating existing documentation.
+Infrastructure adaptations are included within feature increments.
+
+**Feature flags for brownfield modifications:** When modifying existing
+endpoints or shared components, consider feature flags to de-risk the change —
+new behavior deploys dark, validates in production, and replaces the old path
+only after confirmation. For flags that span multiple increments, create an ADR
+documenting the flag lifecycle, cleanup timeline, and ownership.
+
+Infrastructure decisions are architectural decisions and must be documented in
+ADRs.
+
+> For detailed greenfield/brownfield planning outputs, discovery approach,
+> infrastructure ADR examples, and anti-patterns, see
+> [System Design Reference: Infrastructure Planning](reference.md#infrastructure-planning).
+
+### Design Documentation
+
+#### What to Document
+
+- **Architecture diagrams:** System context, container, component (C4 model
+  recommended)
+- **Technology decisions:** Stack choices with justification (ADRs)
+- **Data and API architecture:** ER diagrams, API conventions, integration
+  patterns
+- **Increment plan:** Increment definitions with requirements mapping
+
+**C4 diagram levels and when to use them:**
+
+| Level     | What it shows              | When required                 |
+| --------- | -------------------------- | ----------------------------- |
+| Context   | System and external actors | Always (all tiers)            |
+| Container | Major deployable units     | Standard and Enterprise       |
+| Component | Internal structure         | Enterprise or complex systems |
+| Code      | Class/function level       | Rarely needed; use sparingly  |
+
+For Minimal-tier projects, a whiteboard context sketch is sufficient. Use
+Mermaid or PlantUML for diagram-as-code.
+
+#### Documentation Principles
+
+- Keep docs in version control alongside code
+- Document architecture and key decisions; code should be self-explanatory
+- Use diagrams-as-code (Mermaid, PlantUML) when possible
+- Update docs during code reviews
+- Document "why" not "what" — clean code explains what
 
 ### Additional Topics
 

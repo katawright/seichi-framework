@@ -49,6 +49,8 @@ validate, switch traffic.
 
 **Checklist:**
 
+These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+
 - [ ] Blue and Green environments identical
 - [ ] Deploy to inactive environment (Green)
 - [ ] Validate Green environment thoroughly
@@ -65,6 +67,8 @@ Deploy to small subset (5-10%), monitor, gradually increase traffic if healthy.
 
 **Checklist:**
 
+These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+
 - [ ] Deploy to canary subset (5-10% of instances/users)
 - [ ] Monitor canary metrics for 15-30 minutes
 - [ ] Gradually increase percentage (25% → 50% → 100%)
@@ -79,6 +83,8 @@ Gradually update instances one at a time or in batches.
 - Slower rollback (must redeploy previous version)
 
 **Checklist:**
+
+These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
 
 - [ ] Update instances/pods one at a time or in batches
 - [ ] Validate each batch before proceeding
@@ -96,6 +102,8 @@ redeployment.
 
 **Checklist:**
 
+These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+
 - [ ] Deploy code with features disabled
 - [ ] Validate deployment successful
 - [ ] Enable features for internal users first
@@ -106,6 +114,13 @@ redeployment.
 > **AI exploration:** _"Compare deployment strategies for
 > [describe your system, traffic patterns, and risk tolerance]
 > and recommend an approach."_
+
+### Shadow Mode and Gradual Rollout
+
+For shadow mode patterns (running new code in parallel without serving results)
+and gradual rollout progressions (traffic percentage ramp-ups with gate
+criteria), see
+[Deployment Stage Guide: Shadow Mode](README.md#shadow-mode-and-gradual-rollout).
 
 ---
 

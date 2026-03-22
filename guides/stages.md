@@ -500,6 +500,16 @@ Verification.
 - Test strategy ready for Verification stage
 - No major unknowns or blockers
 
+### Checkpoints
+
+- **Design Review (Quality Checkpoint):** End of Increment Design
+  - **Decision:** Ready to implement, or revise designs
+  - **Based on:** Increment Design Brief with component designs, API specs, and
+    test strategy
+  - **Criteria:** Designs implementable, test strategy defined, no major unknowns
+  - **Record decision:** Use the
+    [Checkpoint Decision Template](../templates/checkpoint-decision.md)
+
 ### Handoff to Next Stage
 
 Implementation stage receives: Detailed component designs, API specs, data

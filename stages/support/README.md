@@ -74,6 +74,11 @@ runbooks, incident response procedures, baseline measurements captured at
 deployment, release notes, rollback procedure, and the success criteria register
 for ongoing measurement.
 
+If any inputs are missing or incomplete, use the
+[Deployment Checklist: Handoff to Support](../deployment/checklist.md#handoff-to-support)
+to identify what was skipped and escalate to the deployment team before accepting
+ownership.
+
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
 

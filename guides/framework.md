@@ -750,10 +750,12 @@ Compliance Approval. For details on security activities by stage, see the
 | **Support**          | C    | Advise on CVE prioritization and incident response                 |
 | Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                     |
 
-**Security Escalation Protocol**
+#### Security Escalation Protocol
 
 When AppSec identifies a security finding during any stage, the severity
-determines the orchestration response:
+determines the orchestration response. AppSec has unilateral authority to pause
+any stage for a Critical finding; the stage's Responsible role must resolve the
+finding before work resumes.
 
 | Severity     | Orchestration Response                                                       |
 | ------------ | ---------------------------------------------------------------------------- |

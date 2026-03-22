@@ -77,9 +77,10 @@ budget context. No prior framework artifacts or technical expertise required.
    with the user before drafting. Do not begin populating the brief until
    agreed.
 4. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
-   using AI according to your chosen autonomy tier — refer to
+   using AI according to your chosen autonomy tier. For each section of the
+   brief, consult the matching subsection under
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
-   for rationale and examples as you complete each section. See the
+   below for rationale, good/bad examples, and what to include. See the
    [Manual Process Guide](../../guides/manual-process.md) for the bootstrap
    prompt template and prompting tips
 5. For Standard+ tier, populate the
