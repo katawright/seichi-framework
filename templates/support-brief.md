@@ -1,6 +1,8 @@
-<!-- For guidance on completing this brief, see ../support/README.md -->
+<!-- For guidance on completing this brief, see ../stages/support/README.md -->
 
 # Support Brief
+
+> **Stage guide:** [Support README](../stages/support/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should

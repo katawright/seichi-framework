@@ -12,11 +12,11 @@ coordination practices.
 
 ## Dependencies
 
-| ID   | Output / Artifact    | Producing Increment | Consuming Increment | Type          | Status   | Owner  | Target Date | Notes                        |
-| ---- | -------------------- | ------------------- | ------------------- | ------------- | -------- | ------ | ----------- | ---------------------------- |
-| D-01 | Auth API endpoints   | Increment 1         | Increment 2         | Hard          | Pending  | [name] | YYYY-MM-DD  | Blocks user-profile feature  |
-| D-02 | Design token library | Increment 1         | Increment 3         | Soft          | Complete | [name] | YYYY-MM-DD  | Can use placeholder tokens   |
-| D-03 | Analytics event spec | Increment 2         | Increment 4         | Informational | At Risk  | [name] | YYYY-MM-DD  | Spec draft delayed by 1 week |
+| ID   | Output / Artifact    | Producing Increment | Consuming Increment | Type          | Status   | Owner  | Target Date | Impact if Delayed                  | Mitigation                          | Notes                        |
+| ---- | -------------------- | ------------------- | ------------------- | ------------- | -------- | ------ | ----------- | ---------------------------------- | ----------------------------------- | ---------------------------- |
+| D-01 | Auth API endpoints   | Increment 1         | Increment 2         | Hard          | Pending  | [name] | YYYY-MM-DD  | Blocks all user-profile work       | Stub auth endpoints for dev/test    | Blocks user-profile feature  |
+| D-02 | Design token library | Increment 1         | Increment 3         | Soft          | Complete | [name] | YYYY-MM-DD  | UI inconsistency in early builds   | Use placeholder tokens              | Can use placeholder tokens   |
+| D-03 | Analytics event spec | Increment 2         | Increment 4         | Informational | At Risk  | [name] | YYYY-MM-DD  | Analytics integration delayed      | Instrument with provisional schema  | Spec draft delayed by 1 week |
 
 ## Type Definitions
 

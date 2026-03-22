@@ -11,6 +11,8 @@ For initial setup before accepting production ownership, use the
 > [Support Readiness Checklist](readiness-checklist.md) instead. If you have
 > already completed the Readiness Checklist, the items in the Support Readiness
 > section below should already be satisfied — re-verify during ongoing reviews.
+> For one-time setup items (e.g., handoff completed, access granted), mark as
+> "Previously completed" during ongoing reviews rather than re-verifying.
 
 ---
 

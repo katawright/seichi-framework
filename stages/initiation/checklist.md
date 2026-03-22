@@ -40,7 +40,7 @@ to circulate.
 ### Security
 
 9. [ ] **Data sensitivity and compliance scope noted** (public/internal/
-       confidential/restricted; relevant regulations identified)
+       confidential/restricted; relevant regulations identified) (consult AppSec for Enterprise tier or when handling restricted/confidential data)
 
 ### Risks and Constraints
 

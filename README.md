@@ -163,7 +163,9 @@ brief, you review it. A full pilot (two increments through Deployment) depends
 on project scope: a small greenfield team using AI-assisted workflows may
 complete in 3-4 weeks; a brownfield pilot with limited AI tooling should plan
 for 6-8 weeks. See the [Right-Sizing Guide](guides/right-sizing.md) to
-calibrate for your context.
+calibrate for your context. Standard-tier overhead is approximately 10-15% of
+increment time initially (right-sizing selection, brief completion, gate
+preparation), decreasing to under 5% as the team builds familiarity.
 
 ### Industry Context
 
@@ -212,9 +214,11 @@ readiness), and Compliance Approval (regulatory sign-off when required). These
 control quality, deployment timing, and compliance — not whether to continue.
 
 **Executive role.** The Executive (sponsor, VP, or department head) reviews the
-Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. Their
-evidence is the stage brief plus the gate-decision record prepared by the
-project team.
+Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. After
+Gate 2, executives receive notification of checkpoint outcomes but are not
+required to participate — see the
+[RACI matrix](guides/framework.md#roles-and-responsibilities) for the full
+responsibility breakdown.
 
 > **Why two gates?** Gate 1 is a low-cost screen: spend a little to learn
 > whether the idea is worth full requirements and design work. Gate 2 is the

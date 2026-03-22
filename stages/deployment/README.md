@@ -9,8 +9,9 @@ inputs:
   - infrastructure-plan
   - implementation-brief
 outputs:
-  - artifact: deployed-system
+  - artifact: deployment-brief
     template: templates/deployment-brief.md
+  - artifact: deployed-system
   - artifact: deployment-log
   - artifact: updated-runbooks
   - artifact: release-notes
@@ -446,7 +447,7 @@ Deployment validates that measurement systems work in production. See
   comparison
 - **Monitoring Dashboards** — configured and validated production dashboards
 - **Incident Response Procedures** — escalation paths and response playbooks
-  (section in Deployment Brief or standalone runbook using
+  (Minimal: section in deployment brief; Standard+: standalone document) (using
   [Support Reference](../support/reference.md#incident-response-process))
 - **Rollback Procedure** — tested and documented rollback steps (section in
   Deployment Brief or standalone runbook)
@@ -473,8 +474,10 @@ updated runbooks, incident response procedures, baseline measurements, release
 notes, and success criteria register (originates from Initiation; verify the
 support team has access during handoff). Retrospective action items feed into the
 next Increment Design cycle
-(see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). Record the
-deployment decision using the
+(see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)).
+Distribute checkpoint or gate decision artifacts to all Informed roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol). Record
+the deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 The Support team should verify readiness using the

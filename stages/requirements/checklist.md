@@ -75,6 +75,9 @@ System Design.
       stage (foundational pass)
 - [ ] **Not Ready** — Address weak items and re-check
 
+Record the decision using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+
 ---
 
 > **AI suggestion:** _"Walk me through this checklist for my requirements and

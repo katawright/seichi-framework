@@ -12,8 +12,10 @@ inputs:
   - success-criteria-register
   - rollback-procedure
 outputs:
-  - artifact: system-availability-metrics
+  - artifact: support-brief
     template: templates/support-brief.md
+  - artifact: system-availability-metrics
+    embedded_in: support-brief
   - artifact: success-criteria-reports
   - artifact: incident-reports
   - artifact: enhancement-backlog
@@ -80,16 +82,19 @@ criteria register for ongoing measurement.
 > **First time setting up support?** Complete the
 > [Support Operations Guide](operations.md) and verify production readiness
 > using the [Support Readiness Checklist](readiness-checklist.md) first, then
-> return here at step 3 to fill out the brief and complete the checklist.
+> return here at step 4 to fill out the brief and complete the checklist.
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
-2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
+1. Verify deployment handoff inputs are present (monitoring dashboards,
+   runbooks, incident response procedures, rollback procedure) — see front
+   matter inputs list
+2. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+3. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
    your project's risk tier
-3. Fill out the [Support Brief Template](../../templates/support-brief.md) for
+4. Fill out the [Support Brief Template](../../templates/support-brief.md) for
    your support plan and operations
-4. Operate using the [**Support Workflow**](#support-workflow)
-5. Run the [Support Checklist](checklist.md) regularly (weekly recommended)
-6. Record the ownership decision using the
+5. Operate using the [**Support Workflow**](#support-workflow)
+6. Run the [Support Checklist](checklist.md) regularly (weekly recommended)
+7. Record the ownership decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 
 For cross-cutting framework concepts, see
@@ -475,7 +480,9 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 Support does not have a numbered gate, but the team should make a deliberate
 decision to accept production ownership. Use the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md) to record
-when the team confirms readiness to own the system in production.
+when the team confirms readiness to own the system in production. Distribute
+checkpoint or gate decision artifacts to all Informed roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

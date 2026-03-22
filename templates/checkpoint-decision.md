@@ -16,7 +16,7 @@ list of checkpoint types.
 **Date:** YYYY-MM-DD
 
 **Checkpoint Type:** Quality Checkpoint / Deployment Approval / Alignment
-Review / Compliance Approval
+Review / Compliance Approval / Production Ownership
 
 **Status:** Pending / Approved / Held / Rejected / Rolled Back
 

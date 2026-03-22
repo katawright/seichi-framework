@@ -2,6 +2,8 @@
 
 # Increment Design Brief
 
+> **Stage guide:** [Increment Design README](../stages/increment-design/README.md)
+
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
 > be **confirmed** (verified — remove tag), **challenged** (incorrect — update
@@ -25,7 +27,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Execution Pattern:** Iterative (see
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Engineers
-- **Supporting Roles:** QA Engineers, Product Manager, Project Manager
+- **Supporting Roles:** Architect, QA Engineers, Product Manager, Project Manager
 - **Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
   Standard; required for Enterprise)
 - **Depends On:** [e.g., Increment 0 / None — inter-increment dependencies]

@@ -149,7 +149,9 @@ The framework scales along three axes:
 - **AI autonomy tier** (Human-Led / Collaborative / AI-Led) — how much AI
   drives the work (see [How AI Helps](#how-ai-helps) above)
 - **Team size** — solo, small team, or multi-team (see
-  [Right-Sizing Guide](../../guides/right-sizing.md#team-size))
+  [Right-Sizing Guide](../../guides/right-sizing.md#team-size--how-formal))
+
+If your project handles sensitive data, has compliance requirements, or serves external users, start at Standard or Enterprise — see the [Right-Sizing Guide](../../guides/right-sizing.md) for detailed selection criteria.
 
 Select values for all three before starting. Most internal projects land at
 **Standard**; use **Minimal** for low-risk experiments and **Enterprise** for
@@ -586,7 +588,9 @@ mid-implementation when they are most expensive to address.
 > See [Security Guide](../../guides/security.md).
 
 **Handoff:** If proceeding, Requirements stage uses your Initiation Brief as its
-starting point.
+starting point. Distribute checkpoint or gate decision artifacts to all Informed
+roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

@@ -7,15 +7,19 @@ inputs:
   - requirements-with-acceptance-criteria
   - test-strategy
   - implementation-brief
+  - increment-design-brief
 outputs:
-  - artifact: test-results
+  - artifact: verification-brief
     template: templates/verification-brief.md
+  - artifact: test-results
+    embedded_in: verification-brief
   - artifact: defect-reports
   - artifact: uat-sign-off
   - artifact: performance-test-results
   - artifact: security-scan-results
   - artifact: verified-code
   - artifact: production-readiness-assessment
+    embedded_in: verification-brief
 gates:
   - type: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
@@ -68,7 +72,9 @@ AI accelerates every testing activity; humans own the go/no-go decision.
 Working code from the Implementation stage with unit tests passing and coverage
 meeting team threshold (default: 80% line coverage — see implementation brief
 for project-specific target), code review approvals, requirements with
-acceptance criteria, and implementation brief with notes.
+acceptance criteria, and implementation brief with notes. Check the
+Implementation Brief's Requirements Implemented table for any acceptance
+criteria modifications before planning test cases.
 
 > Tests run in the **source code location**; the verification brief is stored in
 > the **artifacts location**. See
@@ -88,60 +94,6 @@ acceptance criteria, and implementation brief with notes.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
-
-## Verification Workflow
-
-AI assists at every step; humans maintain ownership through review and approval
-gates.
-
-```
--- PHASE 1: TEST PLANNING --
-   (builds on Increment Design stage test strategy)
-
- 1. Review requirements and acceptance criteria
- 2. Review test strategy from Increment Design stage
-    (increment-design-brief "Testing Strategy for This Increment")
- 3. Refine test strategy based on implementation
-    [Human approves strategy]
- 4. Prepare test environment and data
-
--- PHASE 2: TEST EXECUTION --
-
- 5. Execute integration tests [CI gate]
- 6. Execute functional tests [Gate: all ACs]
- 7. Execute performance tests [Gate: meets NFRs]
- 8. Execute security tests [Gate: no critical vulns]
- 9. Track and resolve defects
-    [Return to Implementation if needed]
-
--- PHASE 3: ACCEPTANCE AND READINESS --
-
- 10. Conduct UAT [Business stakeholder sign-off]
- 11. Validate instrumentation and monitoring
- 12. Assess production readiness [Go/no-go]
- 13. Complete verification brief
-
-HANDOFF TO DEPLOYMENT
-```
-
-**When verification fails:** If the go/no-go decision (step 12) results in
-**no-go**, work returns to the Implementation stage for defect fixes. Once fixes
-are complete, a **new verification cycle** begins — start a fresh brief from the
-template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
-brief. This preserves each cycle's results as a clean historical record and
-makes it easy to see what changed between cycles. The new brief's Cycle Context
-section links to the prior brief and summarizes what was fixed.
-
-**Rework trigger artifact:** The completed verification brief with a no-go
-decision and populated Rework Handoff section is the trigger artifact for the
-Implementation rework cycle. Engineers should treat publication of this brief as
-the activation signal — no separate notification is required.
-
-**Rework briefs are delta-only:** When work returns to Implementation, the
-rework brief documents only what changed — reference the prior cycle's brief for
-unchanged context. See
-[Agentic Workflow Guide: Rework Cycles](../../guides/agentic-workflow.md#rework-cycles)
-for the full convention.
 
 ---
 
@@ -257,6 +209,67 @@ For the full CD model, see
 
 ---
 
+## Verification Workflow
+
+AI assists at every step; humans maintain ownership through review and approval
+gates.
+
+```
+-- PHASE 1: TEST PLANNING --
+   (builds on Increment Design stage test strategy)
+
+ 1. Review requirements and acceptance criteria
+ 2. Review test strategy from Increment Design stage
+    (increment-design-brief "Testing Strategy for This Increment")
+ 3. Refine test strategy based on implementation
+    [Human approves strategy]
+ 4. Prepare test environment and data
+
+-- PHASE 2: TEST EXECUTION --
+
+ 5. Execute integration tests [CI gate]
+ 6. Execute functional tests [Gate: all ACs]
+ 7. Execute performance tests [Gate: meets NFRs]
+ 8. Execute security tests [Gate: no critical vulns]
+ 9. Track and resolve defects
+    [Return to Implementation if needed]
+
+-- PHASE 3: ACCEPTANCE AND READINESS --
+
+ 10. Conduct UAT [Business stakeholder sign-off]
+ 11. Validate instrumentation and monitoring
+ 12. Assess production readiness [Go/no-go]
+ 13. Complete verification brief
+
+HANDOFF TO DEPLOYMENT
+```
+
+**When verification fails:** If the go/no-go decision (step 12) results in
+**no-go**, work returns to the Implementation stage for defect fixes. Once fixes
+are complete, a **new verification cycle** begins — start a fresh brief from the
+template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
+brief. This preserves each cycle's results as a clean historical record and
+makes it easy to see what changed between cycles. The new brief's Cycle Context
+section links to the prior brief and summarizes what was fixed.
+
+**Rework trigger artifact:** The completed verification brief with a no-go
+decision and populated Rework Handoff section is the trigger artifact for the
+Implementation rework cycle. Engineers should treat publication of this brief to the artifacts location
+(e.g., `docs/briefs/verification-brief-inc1-cycle1.md`) as the activation
+signal — monitor this location or coordinate with QA for notification.
+
+**Rework briefs are delta-only:** When work returns to Implementation, the
+rework brief documents only what changed — reference the prior cycle's brief for
+unchanged context. See
+[Agentic Workflow Guide: Rework Cycles](../../guides/agentic-workflow.md#rework-cycles)
+for the full convention.
+
+**Blockers and escalation:** When you encounter a cross-increment blocking
+defect or an external dependency that prevents test completion, document it in
+the verification brief Blockers section and flag for PjM review.
+
+---
+
 ## Why These Verification Elements Matter
 
 ### Test Types
@@ -301,8 +314,9 @@ Track defects by **severity** (technical impact: Critical → Low) and
 > [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 Complete the Production Readiness section of the Verification Brief as your
-primary artifact; use the Checkpoint Decision Template only when a separate
-formal decision record is required (Standard+ tiers).
+primary artifact. At Standard+ tiers, additionally complete the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md) as a
+separate formal decision record — it supplements the brief, not replaces it.
 
 - **Go:** All critical gates passed, UAT approved, rollback plan exists
 - **No-go:** Critical defects, UAT not approved, performance below NFRs
@@ -383,7 +397,9 @@ The [Verification Reference](reference.md) covers these topics in depth:
 **Handoff:** On **go** or **conditional go**, Deployment stage receives verified
 code, test results, and UAT approval. On **no-go**, work returns to
 Implementation for defect fixes, then a new verification cycle begins with a
-fresh brief.
+fresh brief. Distribute checkpoint or gate decision artifacts to all Informed
+roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol).
 
 ---
 

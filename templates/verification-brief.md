@@ -1,6 +1,8 @@
-<!-- For guidance on completing this brief, see ../verification/README.md -->
+<!-- For guidance on completing this brief, see ../stages/verification/README.md -->
 
 # Verification Brief: [Increment Name]
+
+> **Stage guide:** [Verification README](../stages/verification/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
@@ -29,8 +31,8 @@ being tested]
 
 **Requirements being validated:**
 
-- [REQ-001: Requirement description]
-- [REQ-002: Requirement description]
+- [FR-1: Requirement description]
+- [FR-2: Requirement description]
 
 **Acceptance Criteria:**
 

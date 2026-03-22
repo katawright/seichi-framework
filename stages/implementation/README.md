@@ -93,6 +93,11 @@ blocker that you cannot resolve within the current scope, document it in the
 session log Blockers section and flag for PjM review. PjM monitors session log
 blockers as part of dependency and blocker management.
 
+**Design-impacting decisions:** For changes that affect component boundaries,
+API contracts, or data flows defined in the System Design Brief, apply the
+[Decision Scope Test](../../guides/framework.md#decision-scope-test) to
+determine whether Architect consultation is required.
+
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
 the checklist before proceeding.
 
@@ -103,47 +108,6 @@ proceed with a red pipeline.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
-
-## Implementation Workflow
-
-> See [How to Use This Guide](#how-to-use-this-guide) for the summary-level
-> steps. This section details the per-PR workflow.
-
-AI assists at every step; humans maintain ownership through review and approval
-gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
-
-```
--- ONCE PER INCREMENT --
-
- 1. Review design brief for current increment
- 2. Set up / verify development environment
- 3. Start session log from template
-
--- FOR EACH PR --
-
- 4. Create feature branch
- 5. Write code for this PR's scope
-    Human review: correctness and security [GATE]
- 6. Implement instrumentation (logging, metrics)
-    Human review: measurement completeness [GATE]
- 7. Document code
- 8. Run tests locally, verify passing
- 9. Update implementation brief (progress log)
- 10. Submit PR for peer review [GATE]
- 11. Address review feedback
- 12. Get approval and merge [GATE]
-     More PRs needed? Return to step 4.
-
--- ONCE PER INCREMENT (after all PRs merged) --
-
- 13. Run implementation checklist
-     Human sign-off [GATE]
- 14. Finalize session log [GATE]
- 15. Finalize implementation brief
- 16. Prepare handoff to Verification [FINAL GATE]
-
- 17. Proceed to Verification stage
-```
 
 ---
 
@@ -250,6 +214,50 @@ For the full CD model, see
 
 ---
 
+## Implementation Workflow
+
+> See [How to Use This Guide](#how-to-use-this-guide) for the summary-level
+> steps. This section details the per-PR workflow.
+
+AI assists at every step; humans maintain ownership through review and approval
+gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
+
+```
+-- ONCE PER INCREMENT --
+
+ 1. Review design brief for current increment
+ 2. Set up / verify development environment
+ 3. Start session log from template
+
+-- FOR EACH PR --
+
+ 4. Create feature branch
+ 5. Write code for this PR's scope
+    Human review: correctness and security [GATE]
+ 6. Implement instrumentation (logging, metrics)
+    Human review: measurement completeness [GATE]
+ 7. Document code
+ 8. Run tests locally, verify passing
+    (including database migrations if applicable)
+ 9. Update implementation brief (progress log)
+ 10. Submit PR for peer review [GATE]
+ 11. Address review feedback
+ 12. Get approval and merge [GATE]
+     More PRs needed? Return to step 4.
+
+-- ONCE PER INCREMENT (after all PRs merged) --
+
+ 13. Run implementation checklist
+     Human sign-off [GATE]
+ 14. Finalize session log [GATE]
+ 15. Finalize implementation brief
+ 16. Prepare handoff to Verification [FINAL GATE]
+
+ 17. Proceed to Verification stage
+```
+
+---
+
 ## Why These Implementation Elements Matter
 
 ### Code Quality
@@ -352,7 +360,10 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** Verification stage receives working code, test results, session
-log, and review approvals. Before handoff, ensure:
+log, and review approvals. Distribute checkpoint or gate decision artifacts to
+all Informed roles per the
+[Information Protocol](../../guides/framework.md#consultation-protocol). Before
+handoff, ensure:
 
 - Test environment is available and accessible to QA
 - Test data is prepared or generation scripts are ready
