@@ -566,15 +566,15 @@ designations from each stage guide into a single cross-stage view.
 
 **Legend:** **R** = Responsible (does the work), **A** = Accountable
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
-Informed (kept in the loop)
+Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
 | Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
 | -------------------- | ----- | --------- | --------- | --- | ------ | -------- | ---- | --- |
 | **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C   |
-| Gate 1 decision      | R     | -         | -         | -   | -      | C        | A    | C   |
+| Gate 1 decision†     | R     | -         | -         | -   | -      | C        | A    | C   |
 | **Requirements**     | R/A   | C         | C         | C   | -      | C        | I    | C   |
 | **System Design**    | C     | C         | R/A       | C   | C      | C        | I    | C   |
-| Gate 2 decision      | C     | C         | R         | C   | C      | R        | A    | C   |
+| Gate 2 decision†     | C     | C         | R         | C   | C      | R        | A    | C   |
 | **Increment Design** | C     | R/A       | C         | C   | -      | C        | -    | C   |
 | **Implementation**   | -     | R/A       | C         | C   | C      | C        | -    | I   |
 | **Verification**     | C     | R         | C         | R/A | -      | R        | -    | I   |
@@ -589,7 +589,19 @@ testing, complete unit test gaps, and support integration test debugging. QA
 verification brief. AppSec (R) owns security-specific testing (dependency
 scans, SAST review, penetration testing at Enterprise tier).
 
-**Consultation Protocol**
+**Consultation focus by C-role:** QA consultation focuses on testability of
+acceptance criteria (Requirements), test strategy alignment (Increment Design),
+and test gap identification (Implementation). AppSec focuses on security
+implications of requirements, design decisions, and implementation changes.
+Architect focuses on design conformance when consulted at Implementation.
+
+**Decision scope test:** A decision during Implementation requires Architect
+consultation if it (a) changes a component boundary, API contract, or data flow
+established in the System Design Brief, (b) is hard to reverse after deployment,
+or (c) conflicts with an accepted ADR. Decisions that do not meet any of these
+criteria are within Engineer scope.
+
+#### Consultation Protocol
 
 When a stage requires input from a Consulted (C) role:
 
@@ -599,6 +611,9 @@ When a stage requires input from a Consulted (C) role:
    section or attaches a referenced addendum to the artifact.
 3. **Resolution.** The Responsible role records the decision and rationale in
    the artifact, noting the consulted role's input.
+
+R-roles should consult all C-roles before the stage's checkpoint or gate
+review to ensure cross-functional input is captured before decisions are made.
 
 For time-sensitive consultations, the Responsible role may proceed with the
 lowest-risk option and flag the decision for review, following the
@@ -610,7 +625,9 @@ When a stage completes its checkpoint, the Responsible role distributes the
 checkpoint decision artifact (gate-decision or checkpoint-decision) to all
 Informed (I) roles. I-roles receive completed artifacts for awareness — no
 response or action is required unless they identify a concern, in which case
-they raise it with the Accountable role.
+they raise it with the Accountable role. Additionally, all checkpoint decisions
+are distributed to PjM for scheduling and coordination purposes, regardless of
+PjM's RACI designation at that stage.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
 > the [accountability table](#compliance-and-regulatory-considerations) below.
@@ -619,6 +636,9 @@ they raise it with the Accountable role.
 > your team structure — in smaller teams, one person may hold multiple roles
 > (e.g., one person may hold both PM and PjM). PjM maps to Scrum Master,
 > Delivery Lead, TPM, or Engineering Manager depending on methodology.
+
+† PjM's C designation at Gate 1 and Gate 2 includes gate facilitation
+responsibility (see [Gate Review Facilitation](#gate-review-facilitation) below).
 
 **Project Manager (PjM)** owns delivery coordination across the lifecycle —
 schedule management, gate facilitation, cross-increment coordination, dependency

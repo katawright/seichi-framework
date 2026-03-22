@@ -19,6 +19,7 @@ stages:
     default_autonomy: collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -46,6 +47,7 @@ stages:
     default_autonomy: collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -76,6 +78,7 @@ stages:
     default_autonomy: collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -123,6 +126,7 @@ stages:
     default_autonomy: collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [{ type: specialized-review, name: "Design Review", hard_gate: false }]
     inputs:
@@ -189,6 +193,7 @@ stages:
     default_autonomy: ai-led
     default_oversight_intensity: passive
     working_location: source-code
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -212,7 +217,7 @@ stages:
         { artifact: performance-test-results },
         { artifact: security-scan-results },
         { artifact: verified-code },
-        { artifact: production-readiness-assessment },
+        { artifact: production-readiness-assessment, embedded_in: verification-brief },
       ]
     feeds_into: [deployment, implementation]
     revisit_conditions: [new-defects, requirements-change, uat-rejection]
@@ -222,9 +227,10 @@ stages:
     readme: stages/deployment/README.md
     checklist: stages/deployment/checklist.md
     reference: stages/deployment/reference.md
-    default_autonomy: human-led
+    default_autonomy: human-led  # applies to execution (steps 5-8); preparation (steps 1-4) proceeds at collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -264,6 +270,7 @@ stages:
     default_autonomy: collaborative
     default_oversight_intensity: active
     working_location: artifacts
+    session_log_template: templates/session-log.md
     gates:
       [
         {
@@ -334,10 +341,9 @@ fallback:
     "List interpretations, recommend one, halt for human confirmation
     before proceeding"
   unreachable_human:
-    "Continue with lowest-risk option, flag all decisions for review.
-    Hard-gate exception: do not proceed past hard gates (Gate 1, Gate 2)
-    without human approval — halt and log context. Human-Led exception:
-    halt entirely and log all context for human review."
+    default: "Continue with lowest-risk option, flag all decisions for review"
+    hard_gate: "Do not proceed past hard gates (Gate 1, Gate 2) without human approval — halt and log context"
+    human_led: "Halt entirely and log all context for human review"
   stage_overrides:
     "stages/[stage]/reference.md extends these protocols; stage-specific
     overrides take precedence for that stage"
@@ -380,6 +386,11 @@ need rationale or nuance.
 > requirements when consumed by agents. If a conflict exists between this schema
 > and the prose in `stages/*/README.md`, this schema takes precedence for agent
 > routing decisions.
+
+> **Role assignments:** This guide defines *what* to do at each stage. For *who*
+> does it, see [Roles and Responsibilities](framework.md#roles-and-responsibilities)
+> in the Framework Guide. The RACI matrix defines which role is Responsible,
+> Accountable, Consulted, or Informed at each stage.
 
 ### How to Use This Guide
 
@@ -459,6 +470,11 @@ dependencies, and downstream consumers. Derived from stage front matter
 (`inputs`, `outputs`, `feeds_into`) cross-referenced with
 [AI-Assisted SDLC Stages](stages.md). For the machine-readable source of truth,
 parse the `stages` array in this file's front matter.
+
+**Embedded artifact resolution rule:** When a stage input names an artifact
+declared `embedded_in` a parent artifact, the parent artifact satisfies the
+input requirement. For example, System Design's input `non-functional-requirements`
+is satisfied by the Requirements Brief (which contains the NFR section).
 
 All template paths are relative to `templates/`.
 
@@ -595,6 +611,11 @@ Recommended workflow for AI coding agents operating in this repository:
 
 These protocols match the `fallback` section in the front matter. Use them when
 the agent encounters obstacles during autonomous operation.
+
+> **Human-Led tier:** At Human-Led tier, request human direction before deriving
+> inputs or attempting gate remediation. The protocols below assume collaborative
+> or AI-led autonomy. Human-Led agents should halt and present the situation to
+> the human rather than acting autonomously.
 
 ### Missing Input
 

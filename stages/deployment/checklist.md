@@ -1,7 +1,7 @@
 # Deployment Checklist
 
 **Purpose:** Pre-handoff readiness review for deployment execution and
-successful completion.
+successful completion (60-90 seconds).
 
 **Usage:** Review before, during, and after deployment.
 
@@ -9,6 +9,10 @@ successful completion.
 
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
+
+> **AI-Led mode:** AI completes the full checklist and presents results to the
+> human reviewer. Humans review all items and confirm **[H]** items, which
+> require human judgment that AI cannot substitute for.
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -95,6 +99,9 @@ successful completion.
 5. [ ] **[H] On-call rotation and escalation path updated** (contacts current)
 6. [ ] **First-week monitoring schedule defined** (observation cadence agreed)
 7. [ ] **[H] Support team confirms receipt of all Support stage inputs**
+       (deployed system, monitoring dashboards, updated runbooks, incident
+       response procedures, rollback procedure, baseline measurements, release
+       notes, success criteria register)
        (deployed system access, monitoring dashboards, updated runbooks, success
        criteria register, incident response procedures)
 8. [ ] **[H] Increment retrospective completed or scheduled** (run the

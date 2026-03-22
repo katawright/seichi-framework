@@ -209,6 +209,10 @@ assessment, disaster recovery drill
 severity, resolution, follow-up] **Ongoing Issues:** [Open bugs, known
 limitations]
 
+**Deployment Baselines:** [Initial production metrics from deployment — response
+times, error rates, throughput, resource utilization. Used as reference for
+anomaly detection.]
+
 **Current Focus Areas:**
 
 - [Area 1, e.g., "Monitoring conversion after new checkout"]

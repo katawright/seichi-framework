@@ -32,7 +32,7 @@
 
 ## Session Entries
 
-### Session [N] — YYYY-MM-DD — [Participant]
+### Session [N] — YYYY-MM-DD HH:MM — [Participant]
 
 **Completed:**
 

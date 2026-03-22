@@ -9,9 +9,13 @@ outputs:
   - artifact: requirements-brief
     template: templates/requirements-brief.md
   - artifact: requirements-with-acceptance-criteria
+    embedded_in: requirements-brief
   - artifact: prioritized-feature-backlog
+    embedded_in: requirements-brief
   - artifact: requirements-traceability
+    embedded_in: requirements-brief
   - artifact: non-functional-requirements
+    embedded_in: requirements-brief
   - artifact: success-criteria-register
 gates:
   - type: human-approval
@@ -574,6 +578,22 @@ causing rework downstream.
 **Bad example:**
 
 > No readiness check — team moves to System Design by default.
+
+### Interface Examples
+
+Concrete interface examples bridge the gap between abstract requirements and
+implementable specifications. When BAs include wireframes, API contract
+sketches, or workflow diagrams alongside acceptance criteria, engineers can
+validate feasibility before System Design begins. Without them, ambiguity in
+"the user can do X" leads to divergent interpretations across the team.
+
+### Change Log
+
+Tracking changes to the requirements brief over time creates an audit trail for
+scope decisions. When stakeholders ask "why did the requirements change?" or
+"when was this added?", the change log provides a factual answer. It also helps
+the team distinguish between original scope and additions that may affect
+estimation and delivery timelines.
 
 ### Gate 2 Planning
 

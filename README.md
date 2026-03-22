@@ -52,7 +52,7 @@ Pick the path that matches your interest. Each takes under 5 minutes.
 
 | I want to…                              | Start with                        | Then                                  | Next step                           |
 | --------------------------------------- | --------------------------------- | ------------------------------------- | ----------------------------------- |
-| Understand the ROI and governance model | [Business Value](#business-value) | [Governance](#governance-at-a-glance) | [Readiness Check](#readiness-check) |
+| Understand the ROI and governance model | [Business Value](#business-value) | [Governance](#governance-at-a-glance) | [Adoption Path](#adoption-path)     |
 | See how AI fits into each stage         | [How AI Fits In](#how-ai-fits-in) | [Stage Overview](#stage-overview)     | [Adoption Path](#adoption-path)     |
 | Start using the framework now           | [Try It Now](#try-it-now)         | [Stage Overview](#stage-overview)     | [How AI Fits In](#how-ai-fits-in)   |
 | Coordinate delivery and manage gates   | [Governance](#governance-at-a-glance) | [Stage Overview](#stage-overview) | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
@@ -69,7 +69,7 @@ Teams choose an autonomy tier per stage:
 | **Collaborative** | Reviews, selects, approves        | Co-authors, generates options | System Design, Increment Design |
 | **AI-Led**        | Sets constraints, verifies output | Executes with guardrails      | Implementation, Verification    |
 
-Humans remain accountable for decisions and correctness in every mode. For a
+Humans remain accountable for decisions and correctness at every tier. For a
 pilot, start with Human-Led and adjust as team confidence grows.
 
 See the [AI Assistance Scorecard](guides/ai-assistance.md) for selection
@@ -155,11 +155,15 @@ The framework improves delivery outcomes in four ways:
 | Time-to-value    | Slow, inconsistent starts        | Faster starts, clearer execution flow     |
 | Delivery quality | Ambiguity discovered late        | Earlier clarity, fewer downstream defects |
 | Governance       | Ad hoc decision trail            | Explicit gates and checkpoint records     |
+| Project pipeline | Depends on technical gatekeepers | Structured initiation for all roles       |
 
 **Pilot cost.** First-project setup (Initiation through Gate 1) takes 2-4 hours
 at the Minimal tier. Most of that time is thinking, not process — AI drafts the
-brief, you review it.
-| Project pipeline | Depends on technical gatekeepers | Structured initiation for all roles       |
+brief, you review it. A full pilot (two increments through Deployment) depends
+on project scope: a small greenfield team using AI-assisted workflows may
+complete in 3-4 weeks; a brownfield pilot with limited AI tooling should plan
+for 6-8 weeks. See the [Right-Sizing Guide](guides/right-sizing.md) to
+calibrate for your context.
 
 ### Industry Context
 
@@ -193,7 +197,7 @@ experience surveys — see
 
 ## Governance at a Glance
 
-The framework uses **two investment gates** — explicit continue/revise/stop
+The framework uses **two investment gates** — explicit proceed/revise/stop
 decisions where "investment" means committing team capacity, time, and budget.
 
 | Gate   | When                               | Decision                             | Accountable |
@@ -201,8 +205,11 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) | Executive   |
 | Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            | Executive   |
 
-After Gate 2, the project is committed. Subsequent checkpoints govern quality,
-deployment timing, and compliance — not whether to continue.
+After Gate 2, the project is committed. Four checkpoint types govern the
+remaining stages: Quality Checkpoints (peer review of stage artifacts),
+Alignment Reviews (design conformance), Deployment Approval (production
+readiness), and Compliance Approval (regulatory sign-off when required). These
+control quality, deployment timing, and compliance — not whether to continue.
 
 **Executive role.** The Executive (sponsor, VP, or department head) reviews the
 Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. Their
@@ -282,7 +289,7 @@ with [Try It Now](#try-it-now).
 **Brownfield without documented context?** The
 [Brownfield Readiness Guide](guides/brownfield-readiness.md) walks you through a
 scored readiness rubric (six axes, 0-4 each, 4 = best) that determines your tier
-and AI operating mode — from focused discovery to enablement programs for
+and AI operating tier — from focused discovery to enablement programs for
 codebases with pervasive issues.
 
 See

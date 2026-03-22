@@ -148,6 +148,8 @@ section 5]
 ### Security Tests
 
 - **Status:** [✅ Passed / ⚠️ Accepted risk / ❌ Failed / ⏸ N/A]
+- **AppSec Reviewer:** [Name]
+- **AppSec Disposition:** [Approved / Conditional / Rejected — rationale]
 - Critical/High vulnerabilities: [Count, all resolved]
 - Accepted risks: [List with justification]
 - Evidence: [Link to scan report]

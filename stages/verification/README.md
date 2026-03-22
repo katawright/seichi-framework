@@ -89,7 +89,7 @@ acceptance criteria, and implementation brief with notes.
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
 
-### Verification Workflow
+## Verification Workflow
 
 AI assists at every step; humans maintain ownership through review and approval
 gates.
@@ -131,6 +131,11 @@ template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
 brief. This preserves each cycle's results as a clean historical record and
 makes it easy to see what changed between cycles. The new brief's Cycle Context
 section links to the prior brief and summarizes what was fixed.
+
+**Rework trigger artifact:** The completed verification brief with a no-go
+decision and populated Rework Handoff section is the trigger artifact for the
+Implementation rework cycle. Engineers should treat publication of this brief as
+the activation signal — no separate notification is required.
 
 **Rework briefs are delta-only:** When work returns to Implementation, the
 rework brief documents only what changed — reference the prior cycle's brief for

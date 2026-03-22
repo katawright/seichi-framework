@@ -269,7 +269,7 @@ Validate the entire pipeline end-to-end before the first real increment:
    - No data loss or corruption occurred
    - Monitoring shows baseline metrics restored
 
-   See [Deployment Reference: Rollback Procedures](reference.md) for
+   See [Deployment Reference: Rollback Procedures](reference.md#rollback-procedures) for
    step-by-step rollback instructions.
 
 5. Validate alerting fires correctly (test alert)

@@ -80,7 +80,7 @@ criteria register for ongoing measurement.
 > **First time setting up support?** Complete the
 > [Support Operations Guide](operations.md) and verify production readiness
 > using the [Support Readiness Checklist](readiness-checklist.md) first, then
-> return here at step 1 to fill out the brief and complete the checklist.
+> return here at step 3 to fill out the brief and complete the checklist.
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
 2. Read [**Right-Sizing Support**](#right-sizing-support) to match effort to
@@ -98,6 +98,10 @@ For cross-cutting framework concepts, see
 ---
 
 ## How AI Helps
+
+AI assistants add value across monitoring, incident response, knowledge
+management, and operational improvement — from drafting runbooks to analyzing
+incident patterns and suggesting process refinements.
 
 ### AI Autonomy Spectrum
 
@@ -315,7 +319,8 @@ Required for P0/P1. Focus on systems and processes, not individuals (blameless
 culture). Action items must be specific, assigned, and tracked to completion.
 
 For the detailed six-phase response process, escalation tiers, incident metrics
-(MTTD/MTTA/MTTR), and post-incident review process, see
+(Mean Time to Detect (MTTD), Mean Time to Acknowledge (MTTA), Mean Time to
+Resolve (MTTR)), and post-incident review process, see
 [Support Reference: Incident Response](reference.md#incident-response-process).
 
 ### Bug Management and Hotfixes
@@ -406,7 +411,7 @@ Provide support through synchronous channels (chat, phone), asynchronous
 channels (email, help desk), and self-service (docs, FAQ, knowledge base).
 
 **Key metrics to track:** First response time (<4h), resolution time (<24h),
-CSAT (>90%), first contact resolution (>70%).
+Customer Satisfaction Score (CSAT) (>90%), first contact resolution (>70%).
 
 Maintain FAQ and knowledge base covering getting started, account management,
 feature usage, troubleshooting, and integrations. Update after feature releases
@@ -483,7 +488,7 @@ when the team confirms readiness to own the system in production.
 - **Success criteria not being met** — consistently missing objectives, no
   action on gaps
 - **Team overwhelmed** — on-call burnout, ticket backlog, only reactive work
-- **User satisfaction declining** — CSAT/NPS dropping, increasing tickets
+- **User satisfaction declining** — CSAT/Net Promoter Score (NPS) dropping, increasing tickets
 - **Architecture or team changes** — new infrastructure, tools, team members
 
 > **Mid-stage discovery?** If something unexpected surfaces during support, see
