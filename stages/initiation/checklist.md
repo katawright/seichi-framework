@@ -49,7 +49,7 @@ to circulate.
         mitigations**
 12. [ ] **Constraints and dependencies identified** with owners where possible
 
-### Alternatives and Hypothesis
+### Alternatives and Estimation
 
 13. [ ] **At least one alternative option considered**
 14. [ ] **Hypothesis includes a time range and confidence level**

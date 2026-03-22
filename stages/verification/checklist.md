@@ -80,6 +80,8 @@ the increment is ready for deployment.
 > **If any items are unchecked, address before proceeding.**
 
 - [ ] **Ready** — Hand off to Deployment stage
+- [ ] **Ready with conditions** — Document conditions in Verification Brief;
+      hand off to Deployment with conditions noted
 - [ ] **Not Ready** — Address blocking items and re-check
 
 ---

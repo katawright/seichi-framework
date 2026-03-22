@@ -593,7 +593,9 @@ scans, SAST review, penetration testing at Enterprise tier).
 acceptance criteria (Requirements), test strategy alignment (Increment Design),
 and test gap identification (Implementation). AppSec focuses on security
 implications of requirements, design decisions, and implementation changes.
-Architect focuses on design conformance when consulted at Implementation.
+Architect focuses on design conformance when consulted at Implementation. At
+Enterprise tier, organizations may elevate Exec from Informed to Consulted or
+Accountable at Deployment Approval for production-impacting changes.
 
 **Decision scope test:** A decision during Implementation requires Architect
 consultation if it (a) changes a component boundary, API contract, or data flow
@@ -740,7 +742,7 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
 | Foundational stages  | Span 1–3 sprints           | Span 2–6 sprints         | Complete before flow start |
 | Gate 1               | End of foundational sprint | End of foundational week | Explicit pull trigger      |
 | One increment        | ≈ 1 sprint                 | ≈ 1–2 sprints            | WIP-limited batch          |
-| Gate 2 confirmation  | End of last increment      | End of last increment    | Explicit pull trigger      |
+| Gate 2 close-out check | End of last increment    | End of last increment    | Explicit pull trigger      |
 | Cross-increment sync | Sprint review / planning   | Weekly sync              | Standup + board review     |
 
 **Notes:**
@@ -750,8 +752,8 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
 - One increment maps roughly to one sprint; scope accordingly.
 - Track cross-increment dependencies using the
   [Dependency Register](../templates/dependency-register.md).
-- Gate 2 in the cadence mapping reflects _confirmation_ that Gate 2 criteria
-  remain met at project close. The initial Gate 2 decision occurs after
+- Gate 2 close-out check reflects _confirmation_ that Gate 2 criteria remain
+  met at project close. The initial Gate 2 decision occurs after
   Requirements and System Design (see
   [Governance at a Glance](../README.md#governance-at-a-glance)).
 

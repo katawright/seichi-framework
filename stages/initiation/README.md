@@ -69,12 +69,13 @@ budget context. No prior framework artifacts or technical expertise required.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
-2. **For Collaborative or AI-Led tiers:** Confirm the autonomy tier and
-   right-sizing tier with the user before drafting. Do not begin populating the
-   brief until both tiers are agreed.
-3. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to prepare for
-   right-sizing decisions when filling out the brief
+1. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to understand
+   the three right-sizing axes and select your risk tier
+2. Read [**How AI Helps**](#how-ai-helps) to select your AI autonomy tier (and
+   oversight intensity if AI-Led)
+3. **For Collaborative or AI-Led tiers:** Confirm all right-sizing selections
+   with the user before drafting. Do not begin populating the brief until
+   agreed.
 4. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
    using AI according to your chosen autonomy tier — refer to
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
@@ -142,8 +143,17 @@ For assistance level details, see the
 
 ## Right-Sizing Initiation
 
-Most internal projects land at **Standard**; use **Minimal** for low-risk
-experiments and **Enterprise** for regulated or multi-team efforts.
+The framework scales along three axes:
+
+- **Risk tier** (Minimal / Standard / Enterprise) — how much process to apply
+- **AI autonomy tier** (Human-Led / Collaborative / AI-Led) — how much AI
+  drives the work (see [How AI Helps](#how-ai-helps) above)
+- **Team size** — solo, small team, or multi-team (see
+  [Right-Sizing Guide](../../guides/right-sizing.md#team-size))
+
+Select values for all three before starting. Most internal projects land at
+**Standard**; use **Minimal** for low-risk experiments and **Enterprise** for
+regulated or multi-team efforts.
 
 Not every project needs a formal business case or comprehensive risk assessment.
 Match your Initiation effort to your project's risk tier.

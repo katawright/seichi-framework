@@ -463,7 +463,7 @@ In your `implementation-brief.md` (Implementation stage):
 | #   | Decision                               | Type    | ADR Link                                          | Date       |
 | --- | -------------------------------------- | ------- | ------------------------------------------------- | ---------- |
 | 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-0001](adr/ADR-0001.md) | 2024-02-10 |
-| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-002](adr/ADR-002-permission-caching.md)      | 2024-02-10 |
+| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-0002](adr/ADR-0002.md)                       | 2024-02-10 |
 ```
 
 ### System-Level Interface Contracts

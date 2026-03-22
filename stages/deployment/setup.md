@@ -105,7 +105,7 @@ cover the decisions that feed into it and the ongoing work that uses it.
 
 | Responsibility            | Owner                                                  | This Guide's Role                  |
 | ------------------------- | ------------------------------------------------------ | ---------------------------------- |
-| Deployment strategy       | [System Design](../system-design/README.md)            | Implements those decisions         |
+| Deployment strategy       | [System Design: Infrastructure Planning](../system-design/README.md#infrastructure-planning) | Implements those decisions         |
 | Per-increment deployment  | [Deployment Stage Guide](README.md)                    | Uses the infrastructure built here |
 | Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md) | Validates what this guide produces |
 | Monitoring infrastructure | This guide                                             | Configures tools and dashboards    |
@@ -179,7 +179,8 @@ For scan definitions and tool guidance, see
 - **Audit trail:** every override must be logged with justification, approver,
   and timestamp.
 - **Post-override:** run the full gate check suite within 24 hours and address
-  any failures.
+  any failures. For overrides of security gates (SAST, dependency scan, DAST,
+  SBOM), notify AppSec within 24 hours.
 
 ### 3. Environment Provisioning
 

@@ -902,6 +902,7 @@ who is informed. Roles reference the canonical set defined in the
 | PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
 | Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
 | Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
+| Compliance Approval | Deployment | Compliance | PM/BA, AppSec | AppSec | Exec, PjM |
 | Production Ownership Decision | Support | Quality | DevOps | PjM | PM/BA, Exec |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
@@ -928,7 +929,8 @@ Each stage specifies which checkpoint types apply. For example:
   Approvals (to staging)
 - **Verification:** Quality Checkpoints (test execution), Deployment Approvals
   (production readiness)
-- **Deployment:** Deployment Approvals (production deployment, rollout gates)
+- **Deployment:** Deployment Approvals (production deployment, rollout gates),
+  Compliance Approvals (when regulatory/security sign-off required)
 - **Support:** Quality Checkpoints (production ownership decision)
 
 **Human validation of AI output is required at all checkpoint types.** The AI

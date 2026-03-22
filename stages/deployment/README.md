@@ -60,9 +60,10 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 ### Starting Point
 
 A verified increment with all tests passing, UAT sign-off from business
-stakeholders, production readiness assessment passed, infrastructure plan from
-System Design, implementation brief documenting what was built, and test results
-and known issues documented.
+stakeholders, production readiness assessment passed,
+[infrastructure plan from System Design](../system-design/README.md#infrastructure-planning),
+implementation brief documenting what was built, and test results and known
+issues documented.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -469,7 +470,8 @@ Deployment validates that measurement systems work in production. See
 
 **Handoff:** Support stage receives the deployed system, monitoring dashboards,
 updated runbooks, incident response procedures, baseline measurements, release
-notes, and success criteria register. Retrospective action items feed into the
+notes, and success criteria register (originates from Initiation; verify the
+support team has access during handoff). Retrospective action items feed into the
 next Increment Design cycle
 (see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). Record the
 deployment decision using the

@@ -55,6 +55,9 @@ normal development.
    for your current stage
 4. See [**SSDF Practice Mapping**](#ssdf-practice-mapping) only if your
    organization requires NIST SSDF traceability
+5. **AppSec engineers:** See your
+   [role definition, activity table, and escalation protocol](framework.md#application-security-appsec)
+   in the Framework Guide
 
 ---
 

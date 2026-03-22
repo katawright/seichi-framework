@@ -92,6 +92,11 @@ then:
 >   [DevOps Integration Guide](guides/devops-integration.md) or jump to
 >   [Deployment Setup](stages/deployment/setup.md) +
 >   [Pipeline Checklist](stages/deployment/pipeline-checklist.md)
+> - **QA / Test Engineers:** Start with
+>   [Verification](stages/verification/README.md) for test planning and
+>   execution, or review the
+>   [Verification Checklist](stages/verification/checklist.md) for quality
+>   criteria
 > - **Support / Operations:** Start with the
 >   [Support Readiness Checklist](stages/support/readiness-checklist.md),
 >   review the [Support Operations Guide](stages/support/operations.md), and
