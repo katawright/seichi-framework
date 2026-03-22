@@ -20,13 +20,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, appsec, pjm] }
+    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, appsec, pjm], I: [exec] }
     gates:
       [
         {
           type: human-approval,
           name: "Gate 1 (Investment Decision)",
           hard_gate: true,
+          responsible_roles: [pm-ba],
         },
       ]
     inputs: [business-opportunity, stakeholder-list, budget-constraints]
@@ -49,13 +50,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, qa, appsec, pjm] }
+    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
     gates:
       [
         {
           type: human-approval,
           name: "Requirements Readiness",
           hard_gate: false,
+          responsible_roles: [pm-ba],
         },
       ]
     inputs: [initiation-brief, success-criteria-register]
@@ -81,19 +83,20 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [architect], A: [architect], C: [pm-ba, engineer, qa, devops, appsec, pjm] }
+    raci_roles: { R: [architect], A: [architect], C: [pm-ba, engineer, qa, devops, appsec, pjm], I: [exec] }
     gates:
       [
         {
           type: alignment-review,
           name: "Architecture Review",
           hard_gate: false,
+          responsible_roles: [architect, appsec],
         },
         {
           type: human-approval,
           name: "Gate 2 (Investment Decision)",
           hard_gate: true,
-          responsible_roles: [architect, appsec],
+          responsible_roles: [pm-ba, architect, appsec],
         },
       ]
     inputs:
@@ -133,7 +136,7 @@ stages:
     session_log_template: templates/session-log.md
     raci_roles: { R: [engineer], A: [engineer], C: [pm-ba, architect, qa, appsec, pjm] }
     gates:
-      [{ type: specialized-review, name: "Design Review", hard_gate: false }]
+      [{ type: specialized-review, name: "Design Review", hard_gate: false, responsible_roles: [engineer] }]
     inputs:
       [
         architecture-diagrams,
@@ -162,13 +165,14 @@ stages:
     default_oversight_intensity: passive
     working_location: source-code
     session_log_template: templates/implementation-session-log.md
-    raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec] }
+    raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
     gates:
       [
         {
           type: ci-validation-human-approval,
           name: "PR Review + CI",
           hard_gate: false,
+          responsible_roles: [engineer],
         },
       ]
     inputs:
@@ -203,13 +207,14 @@ stages:
     default_oversight_intensity: passive
     working_location: source-code
     session_log_template: templates/session-log.md
-    raci_roles: { R: [qa, appsec], C: [engineer] }  # AppSec produces security-scan-results
+    raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm-ba, architect], I: [pjm] }
     gates:
       [
         {
           type: ci-validation-human-spot-check,
           name: "Test Execution + Coverage Review",
           hard_gate: false,
+          responsible_roles: [qa, appsec],
         },
       ]
     inputs:
@@ -218,7 +223,7 @@ stages:
         requirements-with-acceptance-criteria,
         test-strategy,
         implementation-brief,
-        increment-design-brief,
+        component-designs,
       ]
     outputs:
       [
@@ -244,13 +249,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm] }
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm], I: [pm-ba, exec] }
     gates:
       [
         {
           type: human-execution-required,
           name: "Production Deployment Approval",
           hard_gate: false,
+          responsible_roles: [devops, appsec],
         },
       ]
     inputs:
@@ -287,13 +293,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec] }
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm-ba, exec, pjm] }
     gates:
       [
         {
           type: human-approval,
           name: "Production Ownership Decision",
           hard_gate: false,
+          responsible_roles: [devops],
         },
       ]
     inputs:
@@ -506,23 +513,23 @@ All template paths are relative to `templates/`.
 | Initiation       | Assumptions & Risks List  | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
 | Initiation       | Timeline Estimate         | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
 | Requirements     | Requirements Brief        | `requirements-brief.md`        | Initiation Brief, Success Criteria Register    | System Design                       | Requirements Readiness           |
-| Requirements     | User Stories + ACs        | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register    | Increment Design, Implementation    | Requirements Readiness           |
-| Requirements     | Feature Backlog           | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register    | Increment Design                    | Requirements Readiness           |
-| Requirements     | Traceability Matrix       | —                              | Requirements Brief                             | System Design                       | Requirements Readiness           |
+| Requirements     | Requirements with Acceptance Criteria | — _(embedded in brief)_ | Initiation Brief, Success Criteria Register    | Increment Design, Implementation    | Requirements Readiness           |
+| Requirements     | Prioritized Feature Backlog | — _(embedded in brief)_      | Initiation Brief, Success Criteria Register    | Increment Design                    | Requirements Readiness           |
+| Requirements     | Requirements Traceability | —                              | Requirements Brief                             | System Design                       | Requirements Readiness           |
 | System Design    | System Design Brief       | `system-design-brief.md`       | Requirements Brief, NFRs                       | Increment Design, Implementation    | Architecture Review + Gate 2     |
-| System Design    | Technology ADRs           | `adr.md`                       | Requirements Brief                             | Implementation                      | Architecture Review + Gate 2     |
+| System Design    | Technology Stack ADRs     | `adr.md`                       | Requirements Brief                             | Implementation                      | Architecture Review + Gate 2     |
 | System Design    | Increment Plan            | —                              | Requirements Brief                             | Increment Design                    | Architecture Review + Gate 2     |
 | System Design    | Infrastructure Plan       | —                              | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
 | System Design    | Gate 2 Decision Package   | `gate-decision.md`             | All System Design outputs                      | —                                   | Gate 2 (Investment Decision)     |
-| Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Stories + ACs    | Implementation                      | Design Review                    |
+| Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Requirements with ACs | Implementation                 | Design Review                    |
 | Increment Design | API Specifications        | —                              | Architecture                                   | Implementation                      | Design Review                    |
-| Increment Design | Test Strategy             | —                              | Stories + ACs                                  | Implementation, Verification        | Design Review                    |
-| Implementation   | Working Code              | —                              | Component Designs, Architecture, Stories + ACs | Verification                        | PR Review + CI                   |
+| Increment Design | Test Strategy             | —                              | Requirements with ACs                          | Implementation, Verification        | Design Review                    |
+| Implementation   | Working Code              | —                              | Component Designs, Architecture, Requirements with ACs | Verification                  | PR Review + CI                   |
 | Implementation   | Unit Tests                | —                              | Working Code, Test Strategy                    | Verification                        | PR Review + CI                   |
 | Implementation   | Implementation Brief      | `implementation-brief.md`      | Working Code, Session Logs                     | Verification, Deployment            | PR Review + CI                   |
-| Verification     | Test Results              | `verification-brief.md`        | Working Code, Stories + ACs, Test Strategy, Implementation Brief | Deployment               | Test Execution + Coverage Review |
-| Verification     | UAT Sign-Off              | —                              | Test Results                                   | Deployment                          | Test Execution + Coverage Review |
-| Verification     | Defect Reports            | —                              | Test Results                                   | Implementation _(rework)_           | Test Execution + Coverage Review |
+| Verification     | Verification Brief        | `verification-brief.md`        | Working Code, Requirements with ACs, Test Strategy, Implementation Brief | Deployment         | Test Execution + Coverage Review |
+| Verification     | UAT Sign-Off              | —                              | Verification Brief                             | Deployment                          | Test Execution + Coverage Review |
+| Verification     | Defect Reports            | —                              | Verification Brief                             | Implementation _(rework)_           | Test Execution + Coverage Review |
 | Deployment       | Deployed System           | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan, Implementation Brief | Support                    | Production Deployment Approval   |
 | Deployment       | Release Notes             | —                              | Deployed System                                | Support                             | Production Deployment Approval   |
 | Deployment       | Updated Runbooks          | `runbook.md`                   | Deployed System                                | Support                             | Production Deployment Approval   |

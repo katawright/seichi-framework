@@ -81,7 +81,8 @@ ready for Gate 2.
 
 > **If any items are unchecked, address before proceeding.**
 
-- [ ] **Ready** — Present to stakeholders for Gate 2
+- [ ] **Ready** — Present to stakeholders for Gate 2; record the decision using
+      the [Gate Decision Template](../../templates/gate-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
 
 ---

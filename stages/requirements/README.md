@@ -62,16 +62,18 @@ criteria, and gate details), see
 
 ### Starting Point
 
-A completed Initiation Brief with Gate 1 approval to proceed. The brief provides
-the business case, success criteria, scope boundaries, and constraints that
-Requirements will convert into testable specifications.
+A completed Initiation Brief with Gate 1 approval to proceed, plus the Success
+Criteria Register. The brief provides the business case, success criteria, scope
+boundaries, and constraints that Requirements will convert into testable
+specifications.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Confirm your AI autonomy tier (it usually carries forward from Initiation;
+   review [**How AI Helps**](#how-ai-helps) if adjusting)
 2. Confirm your risk tier (it usually carries forward from Initiation, but
    review the [**Right-Sizing Requirements**](#right-sizing-requirements)
    practice table to verify)
@@ -633,9 +635,7 @@ gives the System Design team a clear target.
 - Expected Gate 2 outputs (what's done in Requirements vs. System Design)
 - Focus areas for the System Design team
 
----
-
-## Common Pitfalls
+### Common Pitfalls
 
 - **Requirements describe UI, not behavior** → Rewrite as behavior: "The system
   shall allow agents to search by customer phone number."

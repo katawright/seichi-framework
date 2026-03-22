@@ -18,6 +18,8 @@ to circulate.
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Checklist Items
 
 ### Problem and Value
@@ -63,7 +65,8 @@ to circulate.
 
 > **If items are unchecked, address before proceeding.**
 
-- [ ] **Ready** — Share with stakeholders for Gate 1
+- [ ] **Ready** — Share with stakeholders for Gate 1; record the decision using
+      the [Gate Decision Template](../../templates/gate-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
 
 ---
@@ -77,6 +80,7 @@ to circulate.
 
 - [Initiation Brief Template](../../templates/initiation-brief.md)
 - [AI-Assisted SDLC: Initiation Stage](README.md)
+- [Initiation Reference](reference.md)
 - [AI-Assisted SDLC Stages](../../guides/stages.md)
 
 ---

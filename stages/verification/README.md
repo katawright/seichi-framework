@@ -7,7 +7,7 @@ inputs:
   - requirements-with-acceptance-criteria
   - test-strategy
   - implementation-brief
-  - increment-design-brief
+  - component-designs
 outputs:
   - artifact: verification-brief
     template: templates/verification-brief.md
@@ -17,6 +17,7 @@ outputs:
   - artifact: uat-sign-off
   - artifact: performance-test-results
   - artifact: security-scan-results
+    embedded_in: verification-brief
   - artifact: verified-code
   - artifact: production-readiness-assessment
     embedded_in: verification-brief
@@ -72,8 +73,9 @@ AI accelerates every testing activity; humans own the go/no-go decision.
 Working code from the Implementation stage with unit tests passing and coverage
 meeting team threshold (default: 80% line coverage — see implementation brief
 for project-specific target), code review approvals, requirements with
-acceptance criteria, implementation brief with notes, and increment design brief
-for plan-vs-actual comparison. Check the
+acceptance criteria, test strategy from Increment Design for test planning,
+implementation brief with notes, and component designs from Increment Design for
+plan-vs-actual comparison. Check the
 Implementation Brief's Requirements Implemented table for any acceptance
 criteria modifications before planning test cases.
 
@@ -221,7 +223,7 @@ gates.
 
  1. Review requirements and acceptance criteria
  2. Review test strategy from Increment Design stage
-    (increment-design-brief "Testing Strategy for This Increment")
+    (component-designs "Testing Strategy for This Increment")
  3. Refine test strategy based on implementation
     [Human approves strategy]
  4. Prepare test environment and data

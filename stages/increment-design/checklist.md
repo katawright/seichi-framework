@@ -34,8 +34,8 @@ and ready for Implementation.
 
 ### Interfaces, Data, and Conventions
 
-5. [ ] **Interface specifications complete** (inputs, outputs, error cases)
-6. [ ] **Data/state changes specified** (with migrations if applicable; N/A for
+5. [ ] **API specifications complete** (inputs, outputs, error cases)
+6. [ ] **Data model changes specified** (with migrations if applicable; N/A for
        stateless tools — document in-memory data flow instead)
 7. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
@@ -68,9 +68,9 @@ and ready for Implementation.
         quality, testing, security, local dev, documentation, onboarding)
 16. [ ] **Deferred concerns documented with justification** (conscious
         deferrals, not omissions)
-17. [ ] **All required stage outputs produced** (increment design brief,
-        component designs, test strategy — verify against stage README front
-        matter)
+17. [ ] **All required stage outputs produced** (component designs, API
+        specifications, data model changes, test strategy, implementation
+        notes — verify against stage README front matter)
 
 ---
 
@@ -78,7 +78,8 @@ and ready for Implementation.
 
 > **If any items are unchecked, address before proceeding.**
 
-- [ ] **Ready** — Proceed to Implementation
+- [ ] **Ready** — Proceed to Implementation; record the decision using the
+      [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
 
 ---

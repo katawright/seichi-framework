@@ -251,7 +251,7 @@ Canonical file set per stage directory:
 
 | File           | Purpose                                                                                                |
 | -------------- | ------------------------------------------------------------------------------------------------------ |
-| `README.md`    | The stage guide — overview, quick reference, AI assistance, right-sizing, workflow, rationale, outputs |
+| `README.md`    | The stage guide — overview, AI assistance, right-sizing, workflow, rationale, outputs |
 | `checklist.md` | Quick validation gate with critical items                                                              |
 | `reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
 
@@ -317,7 +317,7 @@ gates:
   - type: gate-type # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable gate name"
     hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for quality checkpoints
-    responsible_roles: [role-id] # optional, lists R-roles for the gate per RACI
+    responsible_roles: [role-id] # optional, lists "Prepares Evidence" roles per Decision-Rights Matrix in stages.md
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
@@ -325,17 +325,26 @@ reference: stages/stage-name/reference.md # null if not yet created
 ```
 
 The `agentic-workflow.md` front matter extends this schema with additional
-agent-facing fields: `default_autonomy` (human-led | collaborative | ai-led),
+agent-facing fields: `readme` (path to the stage's README.md for agent
+navigation), `default_autonomy` (human-led | collaborative | ai-led),
 `default_oversight_intensity` (active | passive | minimal),
-`working_location` (artifacts | source-code), and
+`working_location` (artifacts | source-code),
 `session_log_template` (path to stage-specific session log template; stages
 without this field use `templates/session-log.md` as fallback),
 `revisit_conditions` (list of trigger conditions for revisiting a foundational
-stage during iterative execution), and
+stage during iterative execution),
 `preparation_autonomy` (overrides `default_autonomy` for pre-execution
 preparation steps; currently used on the Deployment stage), and
 `raci_roles` (maps R/A/C/I designations to role identifiers for the stage;
-mirrors the RACI matrix in `framework.md` for front-matter discoverability).
+mirrors the RACI matrix in `framework.md` for front-matter discoverability;
+all four designations — Responsible, Accountable, Consulted, Informed — should
+be present when the RACI matrix assigns them).
+
+`agentic-workflow.md` also defines top-level keys outside the `stages` array:
+`artifact_paths` (default file locations for project artifacts),
+`working_locations` (the three-location model: framework, artifacts, source
+code), `fallback` (four fallback protocols with tier-specific overrides), and
+`session` (session log template default and protocol).
 
 ### Guide File Schema
 
@@ -382,7 +391,7 @@ Minimal — routes agents to the agentic workflow guide. No stage metadata neede
 
 When refining stage artifacts, apply these patterns:
 
-1. README "How AI Helps" section after Starting Point, before Artifacts
+1. README "How AI Helps" section after Starting Point, before Right-Sizing
 2. README measurement-throughline callout after Stage Outputs
 3. Gate decision references should point to the Gate Decision Template
 4. Avoid "DRI" jargon; prefer "project lead"

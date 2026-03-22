@@ -18,6 +18,8 @@ the increment is ready for deployment.
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+---
+
 ## Checklist Items
 
 ### Test Execution
@@ -81,9 +83,11 @@ the increment is ready for deployment.
 
 > **If any items are unchecked, address before proceeding.**
 
-- [ ] **Ready** — Hand off to Deployment stage
+- [ ] **Ready** — Hand off to Deployment stage; record the decision using the
+      [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 - [ ] **Ready with conditions** — Document conditions in Verification Brief;
-      hand off to Deployment with conditions noted
+      hand off to Deployment with conditions noted; record the decision using the
+      [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 - [ ] **Not Ready** — Route to Implementation for rework (see [Rework Cycle](README.md#when-verification-fails))
 
 ---
