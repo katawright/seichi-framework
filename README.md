@@ -55,13 +55,13 @@ Pick the path that matches your interest. Each takes under 5 minutes.
 | Understand the ROI and governance model            | [Business Value](#business-value)                             | [Governance](#governance-at-a-glance)                         | [Adoption Path](#adoption-path)                                |
 | See how AI fits into each stage                    | [How AI Fits In](#how-ai-fits-in)                             | [Stage Overview](#stage-overview)                             | [Adoption Path](#adoption-path)                                |
 | Kick off a new project                             | [Try It Now](#try-it-now)                                     | [Stage Overview](#stage-overview)                             | [Initiation](stages/initiation/README.md)                      |
-| Execute technical stages (design → verification)   | [Stage Overview](#stage-overview)                             | [System Design](stages/system-design/README.md)              | [How AI Fits In](#how-ai-fits-in)                              |
+| Execute technical stages (design → verification)   | [Stage Overview](#stage-overview)                             | [System Design](stages/system-design/README.md)              | [Worked Example](guides/worked-example.md)                     |
 | Set up deployment pipelines and infrastructure     | [DevOps Integration Guide](guides/devops-integration.md)     | [Deployment Setup](stages/deployment/setup.md)               | [Deployment](stages/deployment/README.md)                      |
 | Run delivery and manage sprint cadence             | [Governance](#governance-at-a-glance)                        | [Stage Overview](#stage-overview)                             | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
+| Verify and test an increment                       | [Verification](stages/verification/README.md)                | [Verification Brief](templates/verification-brief.md)        | [Verification Checklist](stages/verification/checklist.md)     |
+| Operate and maintain a production system           | [Support](stages/support/README.md)                          | [Support Operations](stages/support/operations.md)           | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
 
-For post-deployment operations, start at the
-[Support stage](stages/support/README.md). For security touchpoints, see the
-[Security Guide](guides/security.md).
+For security touchpoints, see the [Security Guide](guides/security.md).
 
 ---
 
@@ -226,7 +226,9 @@ Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. After
 Gate 2, executives receive notification of checkpoint outcomes but are not
 required to participate — see the
 [RACI matrix](guides/framework.md#roles-and-responsibilities) for the full
-responsibility breakdown.
+responsibility breakdown and the
+[Decision-Rights Matrix](guides/stages.md#decision-rights-matrix) for
+per-checkpoint roles.
 
 > **Why two gates?** Gate 1 is a low-cost screen: spend a little to learn
 > whether the idea is worth full requirements and design work. Gate 2 is the
@@ -392,17 +394,17 @@ process. See the [Agentic Workflow Guide](guides/agentic-workflow.md) for
 details.
 
 1. **Learn the autonomy tiers (~10 min).** Read the
-   [AI Assistance Scorecard](guides/ai-assistance.md) overview to understand
-   Human-Led, Collaborative, and AI-Led modes.
-2. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
-   [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
-   and fill in your project details.
-3. **Work through Initiation (~20 min).** Open the
-   [Initiation stage](stages/initiation/README.md) guide and complete the brief
-   template with your AI assistant.
-4. **Calibrate process weight (~5 min).** Use the
+   [AI Assistance Scorecard Quick Reference](guides/ai-assistance.md#quick-reference)
+   to understand Human-Led, Collaborative, and AI-Led modes.
+2. **Calibrate process weight (~5 min).** Use the
    [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
+3. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
+   [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
+   and fill in your project details.
+4. **Work through Initiation (~20 min).** Open the
+   [Initiation stage](stages/initiation/README.md) guide and complete the brief
+   template with your AI assistant.
 
 If the experiment goes well, see [Adoption Path](#adoption-path) to propose a
 wider pilot.

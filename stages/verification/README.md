@@ -71,8 +71,9 @@ AI accelerates every testing activity; humans own the go/no-go decision.
 ### Starting Point
 
 Working code from the Implementation stage with unit tests passing and coverage
-meeting team threshold (default: 80% line coverage — see implementation brief
-for project-specific target), code review approvals, requirements with
+meeting team threshold (default: 80% line coverage — see
+[Implementation Checklist](../implementation/checklist.md) item 6 for the
+default; override in the implementation brief for project-specific targets), code review approvals, requirements with
 acceptance criteria, test strategy from Increment Design for test planning,
 implementation brief with notes, and component designs from Increment Design for
 plan-vs-actual comparison. Check the
@@ -234,6 +235,7 @@ gates.
  6. Execute functional tests [Gate: all ACs]
  7. Execute performance tests [Gate: meets NFRs]
  8. Execute security tests [Gate: no critical vulns]
+    (AppSec owns — see RACI matrix)
  9. Track and resolve defects
     [Return to Implementation if needed]
 
@@ -255,12 +257,19 @@ brief. This preserves each cycle's results as a clean historical record and
 makes it easy to see what changed between cycles. The new brief's Cycle Context
 section links to the prior brief and summarizes what was fixed.
 
-**Rework trigger artifact:** The completed verification brief with a no-go
+**Routing decision:** The Production Readiness field in the verification brief
+determines the path:
+
+| Production Readiness | Route to       | Action                                                                                 |
+| -------------------- | -------------- | -------------------------------------------------------------------------------------- |
+| Ready                | Deployment     | Hand off verified code, test results, UAT approval                                     |
+| Ready with conditions| Deployment     | Hand off with conditions documented in brief                                           |
+| Not Ready            | Implementation | Publish brief with Rework Handoff section populated; notify engineering lead            |
+
+**Rework trigger artifact:** The completed verification brief with a Not Ready
 decision and populated Rework Handoff section is the trigger artifact for the
-Implementation rework cycle. **Routing signal:** the Production Readiness field
-in the verification brief determines the path — "Ready" routes to Deployment,
-"Not Ready" routes to Implementation for rework. Engineers should treat
-publication of this brief to the artifacts location
+Implementation rework cycle. Engineers should treat publication of this brief to
+the artifacts location
 (e.g., `docs/briefs/verification-brief-inc1-cycle1.md`) as the activation
 signal — QA notifies the engineering lead when the verification brief is
 published.

@@ -16,6 +16,10 @@ setup. For ongoing operational readiness, use the
 > they don't fit your project's risk tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
+All items for your tier must pass before accepting production ownership. If any
+items cannot be satisfied, resolve them before proceeding or document the
+exception in a checkpoint decision.
+
 ## Minimal Level
 
 For MVPs, experiments, prototypes, and small internal tools.

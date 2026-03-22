@@ -59,7 +59,8 @@ every step; humans own every gate.
 
 A completed Increment Design Brief with detailed component designs, interface
 contracts, and test strategy. Also required: architecture diagrams from System
-Design, requirements with acceptance criteria, and the success criteria register
+Design, requirements with acceptance criteria, and the
+[success criteria register](../../templates/initiation-brief.md#goals-and-success-criteria)
 for measurement throughline continuity. Your development environment should be
 set up and ready.
 
@@ -224,7 +225,7 @@ For the full CD model, see
 > steps. This section details the per-PR workflow.
 
 AI assists at every step; humans maintain ownership through review and approval
-gates. For increments with multiple PRs, steps 3-11 repeat for each PR.
+gates. For increments with multiple PRs, steps 4-12 repeat for each PR.
 
 ```
 -- ONCE PER INCREMENT --

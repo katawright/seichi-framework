@@ -54,11 +54,11 @@ Design) establish scope, architecture, and investment approval. A typical
 weekly rhythm:
 
 - **Week 1-2:** Initiation — draft brief, pre-mortem, success criteria;
-  facilitate [Gate 1](../stages/initiation/README.md) decision
+  facilitate [Gate 1](../stages/initiation/README.md#gate-1-decision-criteria) decision
 - **Week 2-3:** Requirements — elicit and prioritize requirements, define NFRs
   and acceptance criteria
 - **Week 3-4:** System Design — architecture, ADRs, increment plan, threat
-  model; facilitate [Gate 2](../stages/system-design/README.md) decision
+  model; facilitate [Gate 2](../stages/system-design/README.md#stage-outputs) decision
 
 Throughout the foundational phase, PjM establishes the delivery schedule, sets
 up the Dependency Register, and confirms consultation touchpoints per the
@@ -92,7 +92,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------- |
 | Mon–Tue   | Implementation continues; PRs reviewed and merged           | Engineers | [Implementation Guide](../stages/implementation/README.md)        |
 | Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
-| Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md)     |
+| Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md), [Deployment Guide](../stages/deployment/README.md) |
 | Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
 | Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Retrospective Template](../templates/retrospective.md) (if final increment, see [Gate Review Facilitation](framework.md#gate-review-facilitation)) |
 

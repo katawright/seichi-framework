@@ -65,7 +65,10 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 
 A verified increment with all tests passing, UAT sign-off from business
 stakeholders, production readiness assessment passed (the Production Readiness
-section of the [Verification Brief](../../templates/verification-brief.md)),
+section of the [Verification Brief](../../templates/verification-brief.md);
+covers test results, security scan results, and performance validation;
+infrastructure readiness is validated separately via the
+[Deployment Pipeline Checklist](pipeline-checklist.md)),
 [infrastructure plan from System Design](../system-design/README.md#infrastructure-planning),
 implementation brief documenting what was built, and test results and known
 issues documented.

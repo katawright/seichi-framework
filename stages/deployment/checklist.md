@@ -109,7 +109,9 @@ successful completion (60-90 seconds).
 7. [ ] **[H] Support team confirms receipt of all Support stage inputs**
        (deployed system, monitoring dashboards, updated runbooks, incident
        response procedures, rollback procedure, baseline measurements, release
-       notes, success criteria register)
+       notes, success criteria register) — confirm by having the support contact
+       verify access to each artifact and sign off in the deployment brief or
+       checkpoint decision
 8. [ ] **[H] Increment retrospective completed or scheduled** (run the
        [Retrospective Template](../../templates/retrospective.md) now or
        schedule within one week; triage Captured Feedback entries; log
