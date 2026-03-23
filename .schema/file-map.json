@@ -1,7 +1,6 @@
 {
   "mappings": [
-    { "glob": "stages/*/README.md", "schema": "stage-readme.schema.json" },
-    { "glob": "guides/agentic-workflow.md", "schema": "agentic-workflow.schema.json" }
+    { "glob": "stages/*/README.md", "schema": "stage-readme.schema.json" }
   ],
   "exclude": [
     ".claude/**",

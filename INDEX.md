@@ -167,7 +167,6 @@ Load the index first, then load only what you need.
 | ---------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------- | ---- |
 | `.schema/schemas/defs.schema.json`             | Shared JSON Schema definitions for front matter validation.      | schema, validation, definitions, front-matter   | ref  |
 | `.schema/schemas/stage-readme.schema.json`     | JSON Schema for stage README front matter.                       | schema, validation, stage-readme, front-matter  | ref  |
-| `.schema/schemas/agentic-workflow.schema.json` | JSON Schema for agentic-workflow.md front matter.                | schema, validation, agentic-workflow            | ref  |
 | `.schema/file-map.json`                        | Maps file glob patterns to their validation schemas.             | schema, validation, file-mapping                | ref  |
 | `.schema/validate.mjs`                         | Front matter validation runner (Node.js).                        | schema, validation, linter, tooling             | ref  |
 | `.schema/hooks/pre-commit`                     | Git pre-commit hook for front matter validation.                 | git-hook, pre-commit, validation                | ref  |

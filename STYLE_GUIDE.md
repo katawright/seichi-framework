@@ -249,11 +249,11 @@ gate statement defines which items are blocking for that phase.
 
 Canonical file set per stage directory:
 
-| File           | Purpose                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
+| File           | Purpose                                                                               |
+| -------------- | ------------------------------------------------------------------------------------- |
 | `README.md`    | The stage guide — overview, AI assistance, right-sizing, workflow, rationale, outputs |
-| `checklist.md` | Quick validation gate with critical items                                                              |
-| `reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it)                  |
+| `checklist.md` | Quick validation gate with critical items                                             |
+| `reference.md` | Examples and format guidance (optional — only if enough concrete examples justify it) |
 
 Stage directories live under `stages/[stage]/`. Templates live in `templates/`:
 
@@ -291,14 +291,14 @@ Same file, two audiences, no duplication.
 
 ### Which Files Use Front Matter
 
-| File category        | Front matter schema                                                                                             |
-| -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| File category        | Front matter schema                                                                                                   |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Stage READMEs**    | `id`, `stage_number`, `execution_pattern`, `inputs`, `outputs`, `checkpoints`, `feeds_into`, `checklist`, `reference` |
-| **Guide files**      | `id`, `type` (guide / style-guide / reference), `concerns`                                                      |
-| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                            |
-| **Templates**        | No front matter — templates use HTML comment metadata                                                           |
-| **Checklists**       | No front matter                                                                                                 |
-| **Stage references** | No front matter                                                                                                 |
+| **Guide files**      | No front matter                                                                                                       |
+| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                                  |
+| **Templates**        | No front matter — templates use HTML comment metadata                                                                 |
+| **Checklists**       | No front matter                                                                                                       |
+| **Stage references** | No front matter                                                                                                       |
 
 The JSON Schema files in `.schema/schemas/` are the machine-readable versions of
 these conventions. Run `node .schema/validate.mjs` to check all front matter
@@ -320,39 +320,26 @@ outputs:
     template: templates/artifact-name.md # optional, only if template exists
     embedded_in: parent-artifact # optional, when output is a section of another artifact
 checkpoints:
-  - protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
+  - type: gate # gate | review | alignment
+    protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable checkpoint name"
-    type: gate|review|alignment # gate for investment gates (Gate 1, Gate 2), review for quality checkpoints, alignment for non-blocking sync
-    responsible_roles: [role-id] # optional, lists "Prepares Evidence" roles per Decision-Rights Matrix in checkpoints.md
+    responsible_roles: [role-id] # roles from Decision-Rights Matrix
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
+default_autonomy: collaborative # human-led | collaborative | ai-led
+default_oversight_intensity: active # active | passive | minimal
+working_location: artifacts # artifacts | source-code
+session_log_template: templates/session-log.md
+raci_roles: { R: [role], A: [role], C: [role], I: [role] } # mirrors framework.md RACI matrix
+revisit_conditions: [trigger-condition] # when to revisit a foundational stage
+# preparation_autonomy: collaborative # optional, overrides default_autonomy for prep steps
 ---
 ```
 
-The `agentic-workflow.md` front matter extends this schema with additional
-agent-facing fields: `readme` (path to the stage's README.md for agent
-navigation), `default_autonomy` (human-led | collaborative | ai-led),
-`default_oversight_intensity` (active | passive | minimal),
-`working_location` (artifacts | source-code),
-`session_log_template` (path to stage-specific session log template; stages
-without this field use `templates/session-log.md` as fallback),
-`revisit_conditions` (list of trigger conditions for revisiting a foundational
-stage during iterative execution),
-`preparation_autonomy` (overrides `default_autonomy` for pre-execution
-preparation steps; currently used on the Deployment stage), and
-`raci_roles` (maps R/A/C/I designations to role identifiers for the stage;
-mirrors the RACI matrix in `framework.md` for front-matter discoverability;
-all four designations — Responsible, Accountable, Consulted, Informed — should
-be present when the RACI matrix assigns them).
-
-`agentic-workflow.md` also defines top-level keys outside the `stages` array:
-`artifact_paths` (default file locations for project artifacts),
-`working_locations` (the three-location model: framework, artifacts, source
-code), `fallback` (four fallback protocols with tier-specific overrides), and
-`session` (session log template default and protocol).
-
-**Schema:** `.schema/schemas/agentic-workflow.schema.json`
+`agentic-workflow.md` has no front matter; it provides cross-cutting guidance
+(artifact paths, working locations, fallback protocols, session conventions) in
+the document body.
 
 ### Root README Schema
 

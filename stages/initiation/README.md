@@ -15,9 +15,16 @@ checkpoints:
   - type: gate
     protocol: human-approval
     name: "Gate 1 (Investment Decision)"
+    responsible_roles: [pm]
 feeds_into: [requirements]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md
+default_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+session_log_template: templates/session-log.md
+raci_roles: { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
+revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
 ---
 
 # AI-Assisted SDLC: Initiation Stage
@@ -618,6 +625,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.2.0.

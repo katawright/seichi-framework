@@ -53,7 +53,7 @@
           "minItems": 1
         }
       },
-      "required": ["type", "protocol", "name"],
+      "required": ["type", "protocol", "name", "responsible_roles"],
       "additionalProperties": false
     },
     "output": {

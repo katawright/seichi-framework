@@ -31,9 +31,9 @@ details.
 Point your agent at the framework and let it self-orient:
 
 ```text
-Read [framework-path]/guides/agentic-workflow.md. Parse the front matter for
-stage routing and working locations, then guide me through the Initiation
-stage for my project: [describe your project in 1-2 sentences].
+Read [framework-path]/guides/agentic-workflow.md for stage routing and
+working locations, then guide me through the Initiation stage for my
+project: [describe your project in 1-2 sentences].
 ```
 
 Replace `[framework-path]` with the path to your local clone of this framework
@@ -83,8 +83,8 @@ then:
 > - **Architects / Engineers:** Start with
 >   [System Design](stages/system-design/README.md) for architecture work,
 >   [Increment Design](stages/increment-design/README.md) for component specs
->   and test strategy, or
->   [Implementation](stages/implementation/README.md) for development
+>   and test strategy, or [Implementation](stages/implementation/README.md) for
+>   development
 > - **Project Managers / Delivery Leads:** Start with the
 >   [Delivery Operating Guide](guides/delivery-operating-guide.md) for
 >   week-by-week operating rhythm
@@ -99,12 +99,11 @@ then:
 >   criteria
 > - **Executives / Leadership:** Start with the
 >   [README Business Value](README.md#business-value) and
->   [Governance](README.md#governance-at-a-glance) sections for ROI framing
->   and gate responsibilities
+>   [Governance](README.md#governance-at-a-glance) sections for ROI framing and
+>   gate responsibilities
 > - **Support / Operations:** Start with the
->   [Support Stage Guide](stages/support/README.md) for the full workflow,
->   then the
->   [Support Readiness Checklist](stages/support/readiness-checklist.md),
+>   [Support Stage Guide](stages/support/README.md) for the full workflow, then
+>   the [Support Readiness Checklist](stages/support/readiness-checklist.md),
 >   [Support Operations Guide](stages/support/operations.md), and
 >   [Support Brief](templates/support-brief.md)
 
@@ -122,8 +121,8 @@ artifacts at the Minimal tier:
 These three create a lightweight loop: define the problem, design the solution,
 verify it works. Add more artifacts only when you feel the gaps.
 
-> For projects deploying to production, add a **Deployment Brief**,
-> **Rollback Procedure**, and **Support Brief** to this minimum set.
+> For projects deploying to production, add a **Deployment Brief**, **Rollback
+> Procedure**, and **Support Brief** to this minimum set.
 
 ---
 

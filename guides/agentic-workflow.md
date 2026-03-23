@@ -1,383 +1,3 @@
----
-id: agentic-workflow
-type: guide
-concerns:
-  [
-    stage-routing,
-    agent-orchestration,
-    fallback-protocols,
-    working-locations,
-    mid-stage-discovery,
-  ]
-stages:
-  - id: initiation
-    stage_number: 1
-    execution_pattern: foundational
-    readme: stages/initiation/README.md
-    checklist: stages/initiation/checklist.md
-    reference: stages/initiation/reference.md
-    default_autonomy: collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
-    checkpoints:
-      [
-        {
-          type: gate,
-          protocol: human-approval,
-          name: "Gate 1 (Investment Decision)",
-          responsible_roles: [pm],
-        },
-      ]
-    inputs: [business-opportunity, stakeholder-list, budget-constraints]
-    outputs:
-      [
-        { artifact: initiation-brief, template: templates/initiation-brief.md },
-        { artifact: success-criteria-register, template: templates/success-criteria-register.md },
-      ]
-    feeds_into: [requirements]
-    revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
-  - id: requirements
-    stage_number: 2
-    execution_pattern: foundational
-    readme: stages/requirements/README.md
-    checklist: stages/requirements/checklist.md
-    reference: stages/requirements/reference.md
-    default_autonomy: collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
-    checkpoints:
-      [
-        {
-          type: review,
-          protocol: human-approval,
-          name: "Requirements Readiness",
-          responsible_roles: [pm],
-        },
-      ]
-    inputs: [initiation-brief, success-criteria-register]
-    outputs:
-      [
-        { artifact: requirements-brief, template: templates/requirements-brief.md },
-        { artifact: requirements-with-acceptance-criteria, embedded_in: requirements-brief },
-        { artifact: prioritized-feature-backlog, embedded_in: requirements-brief },
-        { artifact: requirements-traceability, embedded_in: requirements-brief },
-        { artifact: non-functional-requirements, embedded_in: requirements-brief },
-        { artifact: success-criteria-register },
-      ]
-    feeds_into: [system-design]
-    revisit_conditions:
-      [scope-creep, new-stakeholder-requirements, failed-verification]
-  - id: system-design
-    stage_number: 3
-    execution_pattern: foundational
-    readme: stages/system-design/README.md
-    checklist: stages/system-design/checklist.md
-    reference: stages/system-design/reference.md
-    default_autonomy: collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [architect], A: [architect], C: [pm, engineer, qa, devops, appsec, pjm], I: [exec] }
-    checkpoints:
-      [
-        {
-          type: alignment,
-          protocol: alignment-review,
-          name: "Architecture Review",
-          responsible_roles: [architect, appsec],
-        },
-        {
-          type: gate,
-          protocol: human-approval,
-          name: "Gate 2 (Investment Decision)",
-          responsible_roles: [pm, architect, appsec],
-        },
-      ]
-    inputs:
-      [
-        requirements-brief,
-        non-functional-requirements,
-        success-criteria-register,
-      ]
-    outputs:
-      [
-        { artifact: system-design-brief, template: templates/system-design-brief.md },
-        { artifact: architecture-diagrams },
-        { artifact: technology-stack-adrs, template: templates/adr.md },
-        { artifact: data-api-architecture, embedded_in: system-design-brief },
-        { artifact: infrastructure-plan, embedded_in: system-design-brief },
-        { artifact: security-approach, embedded_in: system-design-brief },
-        { artifact: observability-strategy, embedded_in: system-design-brief },
-        { artifact: increment-plan, embedded_in: system-design-brief },
-        { artifact: gate-2-decision-package, template: templates/gate-decision.md },
-      ]
-    feeds_into: [increment-design]
-    revisit_conditions:
-      [
-        technology-constraint-change,
-        scale-requirement-change,
-        security-incident,
-      ]
-  - id: increment-design
-    stage_number: 4
-    execution_pattern: iterative
-    readme: stages/increment-design/README.md
-    checklist: stages/increment-design/checklist.md
-    reference: stages/increment-design/reference.md
-    default_autonomy: collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
-    checkpoints:
-      [{ type: review, protocol: specialized-review, name: "Design Review", responsible_roles: [engineer] }]
-    inputs:
-      [
-        architecture-diagrams,
-        increment-plan,
-        requirements-with-acceptance-criteria,
-        retrospective-action-items,
-        system-design-brief,
-      ]
-    outputs:
-      [
-        { artifact: component-designs, template: templates/increment-design-brief.md },
-        { artifact: api-specifications },
-        { artifact: data-model-changes },
-        { artifact: test-strategy },
-        { artifact: implementation-notes },
-      ]
-    feeds_into: [implementation]
-    revisit_conditions: [requirements-change, design-review-rejection]
-  - id: implementation
-    stage_number: 5
-    execution_pattern: iterative
-    readme: stages/implementation/README.md
-    checklist: stages/implementation/checklist.md
-    reference: stages/implementation/reference.md
-    default_autonomy: ai-led
-    default_oversight_intensity: passive
-    working_location: source-code
-    session_log_template: templates/implementation-session-log.md
-    raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
-    checkpoints:
-      [
-        {
-          type: review,
-          protocol: ci-validation-human-approval,
-          name: "PR Review + CI",
-          responsible_roles: [engineer],
-        },
-      ]
-    inputs:
-      [
-        component-designs,
-        architecture-diagrams,
-        requirements-with-acceptance-criteria,
-        success-criteria-register,
-        test-strategy,
-        defect-reports,  # rework cycle only
-        verification-brief,  # rework cycle only
-      ]
-    outputs:
-      [
-        { artifact: working-code },
-        { artifact: unit-tests },
-        { artifact: code-review-approvals },
-        { artifact: updated-documentation },
-        { artifact: implementation-brief, template: templates/implementation-brief.md },
-        { artifact: session-log },
-        { artifact: observability-instrumentation },
-      ]
-    feeds_into: [verification]
-    revisit_conditions: [design-change, blocking-dependency]
-  - id: verification
-    stage_number: 6
-    execution_pattern: iterative
-    readme: stages/verification/README.md
-    checklist: stages/verification/checklist.md
-    reference: stages/verification/reference.md
-    default_autonomy: ai-led
-    default_oversight_intensity: passive
-    working_location: source-code
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm, architect], I: [pjm] }
-    checkpoints:
-      [
-        {
-          type: review,
-          protocol: ci-validation-human-spot-check,
-          name: "Test Execution + Coverage Review",
-          responsible_roles: [qa, appsec],
-        },
-      ]
-    inputs:
-      [
-        working-code,
-        requirements-with-acceptance-criteria,
-        test-strategy,
-        implementation-brief,
-        component-designs,
-      ]
-    outputs:
-      [
-        { artifact: verification-brief, template: templates/verification-brief.md },
-        { artifact: test-results, embedded_in: verification-brief },
-        { artifact: defect-reports },
-        { artifact: uat-sign-off },
-        { artifact: performance-test-results },
-        { artifact: security-scan-results, embedded_in: verification-brief },
-        { artifact: verified-code },
-        { artifact: production-readiness-assessment, embedded_in: verification-brief },
-      ]
-    feeds_into: [deployment, implementation]
-    revisit_conditions: [new-defects, requirements-change, uat-rejection]
-  - id: deployment
-    stage_number: 7
-    execution_pattern: iterative
-    readme: stages/deployment/README.md
-    checklist: stages/deployment/checklist.md
-    reference: stages/deployment/reference.md
-    default_autonomy: human-led
-    preparation_autonomy: collaborative  # steps 1-4 (brief, runbook, environment prep) proceed at collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm], I: [pm, exec] }
-    checkpoints:
-      [
-        {
-          type: review,
-          protocol: human-execution-required,
-          name: "Production Deployment Approval",
-          responsible_roles: [devops, appsec],
-        },
-      ]
-    inputs:
-      [
-        verified-code,
-        uat-sign-off,
-        production-readiness-assessment,
-        infrastructure-plan,
-        implementation-brief,
-      ]
-    outputs:
-      [
-        { artifact: deployment-brief, template: templates/deployment-brief.md },
-        { artifact: deployed-system },
-        { artifact: deployment-log },
-        { artifact: updated-runbooks },
-        { artifact: release-notes },
-        { artifact: baseline-measurements },
-        { artifact: monitoring-dashboards },
-        { artifact: incident-response-procedures },
-        { artifact: rollback-procedure },
-        { artifact: retrospective, template: templates/retrospective.md },
-        { artifact: retrospective-action-items, embedded_in: retrospective },
-      ]
-    feeds_into: [support, increment-design]
-    revisit_conditions: [deployment-failure, rollback-required]
-  - id: support
-    stage_number: 8
-    execution_pattern: continuous
-    readme: stages/support/README.md
-    checklist: stages/support/checklist.md
-    reference: stages/support/reference.md
-    default_autonomy: collaborative
-    default_oversight_intensity: active
-    working_location: artifacts
-    session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm, exec, pjm] }
-    checkpoints:
-      [
-        {
-          type: review,
-          protocol: human-approval,
-          name: "Production Ownership Decision",
-          responsible_roles: [devops],
-        },
-      ]
-    inputs:
-      [
-        deployed-system,
-        monitoring-dashboards,
-        updated-runbooks,
-        success-criteria-register,
-        incident-response-procedures,
-        baseline-measurements,
-        release-notes,
-        rollback-procedure,
-      ]
-    outputs:
-      [
-        { artifact: support-brief, template: templates/support-brief.md },
-        { artifact: system-availability-metrics, embedded_in: support-brief },
-        { artifact: success-criteria-reports },
-        { artifact: incident-reports },
-        { artifact: enhancement-backlog },
-      ]
-    feeds_into:
-      [
-        requirements,
-        system-design,
-        increment-design,
-        implementation,
-        initiation,
-      ]
-    revisit_conditions:
-      [incident-pattern, success-criteria-miss, enhancement-request]
-artifact_paths:
-  briefs: "docs/briefs/"
-  adrs: "docs/adr/"
-  session_logs: "docs/session-logs/"
-  success_criteria: "docs/success-criteria-register.md"
-  convention:
-    "Store project artifacts in a docs/ directory at the artifacts location
-    root. Agents should check for existing directory structure before creating
-    new paths. If no docs/ directory exists, propose one during the first
-    foundational stage. See working_locations for the three-location model."
-working_locations:
-  framework:
-    role: "Read-only reference material"
-    writable: false
-    contains: [guides, stages, templates, checklists]
-  artifacts:
-    role: "Project governance artifacts"
-    writable: true
-    default_root: "docs/"
-    contains: [briefs, adrs, session-logs, gate-decisions, success-criteria]
-  source_code:
-    role: "Project codebase"
-    writable: true
-    contains: [application-code, tests, ci-cd-config]
-fallback:
-  missing_input:
-    default: "Request from human or derive from available context with [ASSUMED] flag"
-    human_led: "Halt and present to human; do not derive inputs autonomously"
-  failed_gate:
-    default: "Document failure reason, attempt remediation, re-run gate check. If unresolved after one retry, escalate to human"
-    gate: "Do not attempt remediation; escalate to human immediately with failure reason"
-    human_led: "Halt and present failure details to human; do not attempt remediation autonomously"
-  ambiguous_requirements:
-    default: "List interpretations, recommend one, halt for human confirmation before proceeding"
-    human_led: "Present the ambiguity without recommending; wait for human direction"
-  unreachable_human:
-    default: "Continue with lowest-risk option, flag all decisions for review"
-    gate: "Do not proceed past gates (Gate 1, Gate 2) without human approval — halt and log context"
-    human_led: "Halt entirely and log all context for human review"
-    collaborative: "Continue work within current stage only; do not advance to next stage or pass gates without human approval"
-  stage_overrides:
-    "stages/[stage]/reference.md extends these protocols; stage-specific
-    overrides take precedence for that stage"
-session:
-  log_template: templates/session-log.md
-  protocol: "Read log at session start, write log at session end"
----
-
 # Agentic Workflow Guide
 
 ## Overview
@@ -403,25 +23,21 @@ stages. This guide is that interface.
 
 ### Key Principle
 
-Front matter is the agent's primary interface; the body provides human-readable
-context for the same information. Parse the YAML first, read the prose when you
-need rationale or nuance.
+Stage READMEs (`stages/*/README.md`) are the **canonical source** for all stage
+metadata — inputs, outputs, checkpoints, autonomy levels, RACI roles, and
+revisit conditions. This guide provides cross-cutting concerns: artifact paths,
+working locations, fallback protocols, and session conventions.
 
-> **Schema authority:** The front matter in this file is **prescriptive** — it
-> is the authoritative source for stage routing, artifact dependencies, and gate
-> requirements when consumed by agents. If a conflict exists between this schema
-> and the prose in `stages/*/README.md`, this schema takes precedence for agent
-> routing decisions.
-
-> **Role assignments:** This guide defines *what* to do at each stage. For *who*
-> does it, see [Roles and Responsibilities](framework.md#roles-and-responsibilities)
-> in the Framework Guide. The RACI matrix defines which role is Responsible,
+> **Role assignments:** This guide defines _what_ to do at each stage. For _who_
+> does it, see
+> [Roles and Responsibilities](framework.md#roles-and-responsibilities) in the
+> Framework Guide. The RACI matrix defines which role is Responsible,
 > Accountable, Consulted, or Informed at each stage.
 
 ### How to Use This Guide
 
-1. **Parse the front matter** — stage routing, artifact dependencies, checkpoints, and
-   fallback rules are all in the YAML block above
+1. **Read stage README front matter** — each `stages/*/README.md` contains the
+   canonical stage metadata (inputs, outputs, checkpoints, autonomy, RACI)
 2. **Identify your current stage** from the [**Stage Routing**](#stage-routing)
    table
 3. **Check inputs and outputs** — verify required inputs are available before
@@ -443,14 +59,15 @@ need rationale or nuance.
 
 ## Stage Routing
 
-This table mirrors the `stages` array in the front matter. Use the front matter
-for programmatic access; use this table for quick human reference.
+This table summarizes stage metadata from `stages/*/README.md` front matter. For
+the machine-readable source of truth, parse each stage README directly; use this
+table for quick human reference.
 
 | #   | Stage            | Pattern      | Default Autonomy | Location    | Gate Type                         | Feeds Into                 |
 | --- | ---------------- | ------------ | ---------------- | ----------- | --------------------------------- | -------------------------- |
 | 1   | Initiation       | Foundational | Collaborative    | Artifacts   | Human approval                    | Requirements               |
-| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Review (human approval)             | System Design              |
-| 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment + gate (human approval)   | Increment Design           |
+| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Review (human approval)           | System Design              |
+| 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment + gate (human approval) | Increment Design           |
 | 4   | Increment Design | Iterative    | Collaborative    | Artifacts   | Specialized review                | Implementation             |
 | 5   | Implementation   | Iterative    | AI-Led           | Source Code | CI validation + human approval    | Verification               |
 | 6   | Verification     | Iterative    | AI-Led           | Source Code | CI validation + human spot-check  | Deployment, Implementation |
@@ -492,56 +109,57 @@ through stages with additional focus:
 ## Artifact Dependencies
 
 This table maps each stage's key outputs to their templates, upstream
-dependencies, and downstream consumers. Derived from stage front matter
+dependencies, and downstream consumers. Derived from stage README front matter
 (`inputs`, `outputs`, `feeds_into`) cross-referenced with
 [AI-Assisted SDLC Stages](stages.md). For the machine-readable source of truth,
-parse the `stages` array in this file's front matter.
+parse each `stages/*/README.md` front matter directly.
 
 **Embedded artifact resolution rule:** When a stage input names an artifact
 declared `embedded_in` a parent artifact, the parent artifact satisfies the
-input requirement. For example, System Design's input `non-functional-requirements`
-is satisfied by the Requirements Brief (which contains the NFR section).
+input requirement. For example, System Design's input
+`non-functional-requirements` is satisfied by the Requirements Brief (which
+contains the NFR section).
 
 All template paths are relative to `templates/`.
 
-| Stage            | Artifact                  | Template                       | Depends On                                     | Feeds Into                          | Gate                             |
-| ---------------- | ------------------------- | ------------------------------ | ---------------------------------------------- | ----------------------------------- | -------------------------------- |
-| Initiation       | Initiation Brief          | `initiation-brief.md`          | _External inputs_                              | Requirements                        | Gate 1 (Investment Decision)     |
-| Initiation       | Success Criteria Register | `success-criteria-register.md` | _External inputs_                              | All stages (referenced)             | Gate 1                           |
-| Initiation       | Assumptions & Risks List  | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
-| Initiation       | Timeline Estimate         | —                              | _External inputs_                              | Requirements                        | Gate 1                           |
-| Requirements     | Requirements Brief        | `requirements-brief.md`        | Initiation Brief, Success Criteria Register    | System Design                       | Requirements Readiness           |
-| Requirements     | Requirements with Acceptance Criteria | — _(embedded in brief)_ | Initiation Brief, Success Criteria Register    | Increment Design, Implementation    | Requirements Readiness           |
-| Requirements     | Prioritized Feature Backlog | — _(embedded in brief)_      | Initiation Brief, Success Criteria Register    | Increment Design                    | Requirements Readiness           |
-| Requirements     | Requirements Traceability | —                              | Requirements Brief                             | System Design                       | Requirements Readiness           |
-| System Design    | System Design Brief       | `system-design-brief.md`       | Requirements Brief, NFRs                       | Increment Design, Implementation    | Architecture Review + Gate 2     |
-| System Design    | Technology Stack ADRs     | `adr.md`                       | Requirements Brief                             | Implementation                      | Architecture Review + Gate 2     |
-| System Design    | Increment Plan            | —                              | Requirements Brief                             | Increment Design                    | Architecture Review + Gate 2     |
-| System Design    | Infrastructure Plan       | —                              | NFRs                                           | Deployment                          | Architecture Review + Gate 2     |
-| System Design    | Gate 2 Decision Package   | `gate-decision.md`             | All System Design outputs                      | —                                   | Gate 2 (Investment Decision)     |
-| Increment Design | Component Designs         | `increment-design-brief.md`    | Architecture, Increment Plan, Requirements with ACs | Implementation                 | Design Review                    |
-| Increment Design | API Specifications        | —                              | Architecture                                   | Implementation                      | Design Review                    |
-| Increment Design | Test Strategy             | —                              | Requirements with ACs                          | Implementation, Verification        | Design Review                    |
-| Implementation   | Working Code              | —                              | Component Designs, Architecture, Requirements with ACs | Verification                  | PR Review + CI                   |
-| Implementation   | Unit Tests                | —                              | Working Code, Test Strategy                    | Verification                        | PR Review + CI                   |
-| Implementation   | Implementation Brief      | `implementation-brief.md`      | Working Code, Session Logs                     | Verification, Deployment            | PR Review + CI                   |
-| Verification     | Verification Brief        | `verification-brief.md`        | Working Code, Requirements with ACs, Test Strategy, Implementation Brief | Deployment         | Test Execution + Coverage Review |
-| Verification     | UAT Sign-Off              | —                              | Verification Brief                             | Deployment                          | Test Execution + Coverage Review |
-| Verification     | Defect Reports            | —                              | Verification Brief                             | Implementation _(rework)_           | Test Execution + Coverage Review |
-| Deployment       | Deployed System           | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan, Implementation Brief | Support                    | Production Deployment Approval   |
-| Deployment       | Release Notes             | —                              | Deployed System                                | Support                             | Production Deployment Approval   |
-| Deployment       | Updated Runbooks          | `runbook.md`                   | Deployed System                                | Support                             | Production Deployment Approval   |
-| Deployment       | Baseline Measurements     | —                              | Deployed System, Success Criteria              | Support                             | Production Deployment Approval   |
-| Deployment       | Retrospective             | `retrospective.md`             | Deployed System, Session Logs                  | Increment Design _(next increment)_ | —                                |
-| Support          | Availability Metrics      | `support-brief.md`             | Deployed System, Monitoring                    | —                                   | Production Ownership Decision    |
-| Support          | Success Criteria Reports  | —                              | Baseline Measurements                          | Initiation _(reassess)_             | Production Ownership Decision    |
-| Support          | Enhancement Backlog       | —                              | Incident Reports                               | Requirements, Increment Design      | Production Ownership Decision    |
+| Stage            | Artifact                              | Template                       | Depends On                                                               | Feeds Into                          | Gate                             |
+| ---------------- | ------------------------------------- | ------------------------------ | ------------------------------------------------------------------------ | ----------------------------------- | -------------------------------- |
+| Initiation       | Initiation Brief                      | `initiation-brief.md`          | _External inputs_                                                        | Requirements                        | Gate 1 (Investment Decision)     |
+| Initiation       | Success Criteria Register             | `success-criteria-register.md` | _External inputs_                                                        | All stages (referenced)             | Gate 1                           |
+| Initiation       | Assumptions & Risks List              | —                              | _External inputs_                                                        | Requirements                        | Gate 1                           |
+| Initiation       | Timeline Estimate                     | —                              | _External inputs_                                                        | Requirements                        | Gate 1                           |
+| Requirements     | Requirements Brief                    | `requirements-brief.md`        | Initiation Brief, Success Criteria Register                              | System Design                       | Requirements Readiness           |
+| Requirements     | Requirements with Acceptance Criteria | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register                              | Increment Design, Implementation    | Requirements Readiness           |
+| Requirements     | Prioritized Feature Backlog           | — _(embedded in brief)_        | Initiation Brief, Success Criteria Register                              | Increment Design                    | Requirements Readiness           |
+| Requirements     | Requirements Traceability             | —                              | Requirements Brief                                                       | System Design                       | Requirements Readiness           |
+| System Design    | System Design Brief                   | `system-design-brief.md`       | Requirements Brief, NFRs                                                 | Increment Design, Implementation    | Architecture Review + Gate 2     |
+| System Design    | Technology Stack ADRs                 | `adr.md`                       | Requirements Brief                                                       | Implementation                      | Architecture Review + Gate 2     |
+| System Design    | Increment Plan                        | —                              | Requirements Brief                                                       | Increment Design                    | Architecture Review + Gate 2     |
+| System Design    | Infrastructure Plan                   | —                              | NFRs                                                                     | Deployment                          | Architecture Review + Gate 2     |
+| System Design    | Gate 2 Decision Package               | `gate-decision.md`             | All System Design outputs                                                | —                                   | Gate 2 (Investment Decision)     |
+| Increment Design | Component Designs                     | `increment-design-brief.md`    | Architecture, Increment Plan, Requirements with ACs                      | Implementation                      | Design Review                    |
+| Increment Design | API Specifications                    | —                              | Architecture                                                             | Implementation                      | Design Review                    |
+| Increment Design | Test Strategy                         | —                              | Requirements with ACs                                                    | Implementation, Verification        | Design Review                    |
+| Implementation   | Working Code                          | —                              | Component Designs, Architecture, Requirements with ACs                   | Verification                        | PR Review + CI                   |
+| Implementation   | Unit Tests                            | —                              | Working Code, Test Strategy                                              | Verification                        | PR Review + CI                   |
+| Implementation   | Implementation Brief                  | `implementation-brief.md`      | Working Code, Session Logs                                               | Verification, Deployment            | PR Review + CI                   |
+| Verification     | Verification Brief                    | `verification-brief.md`        | Working Code, Requirements with ACs, Test Strategy, Implementation Brief | Deployment                          | Test Execution + Coverage Review |
+| Verification     | UAT Sign-Off                          | —                              | Verification Brief                                                       | Deployment                          | Test Execution + Coverage Review |
+| Verification     | Defect Reports                        | —                              | Verification Brief                                                       | Implementation _(rework)_           | Test Execution + Coverage Review |
+| Deployment       | Deployed System                       | `deployment-brief.md`          | Verified Code, UAT Sign-Off, Rollback Plan, Implementation Brief         | Support                             | Production Deployment Approval   |
+| Deployment       | Release Notes                         | —                              | Deployed System                                                          | Support                             | Production Deployment Approval   |
+| Deployment       | Updated Runbooks                      | `runbook.md`                   | Deployed System                                                          | Support                             | Production Deployment Approval   |
+| Deployment       | Baseline Measurements                 | —                              | Deployed System, Success Criteria                                        | Support                             | Production Deployment Approval   |
+| Deployment       | Retrospective                         | `retrospective.md`             | Deployed System, Session Logs                                            | Increment Design _(next increment)_ | —                                |
+| Support          | Availability Metrics                  | `support-brief.md`             | Deployed System, Monitoring                                              | —                                   | Production Ownership Decision    |
+| Support          | Success Criteria Reports              | —                              | Baseline Measurements                                                    | Initiation _(reassess)_             | Production Ownership Decision    |
+| Support          | Enhancement Backlog                   | —                              | Incident Reports                                                         | Requirements, Increment Design      | Production Ownership Decision    |
 
 ### Gate Decision Template Selection
 
 - **Hard gates** (Gate 1, Gate 2): use `templates/gate-decision.md`
-- **Non-investment checkpoints** (all others, including Production Deployment Approval): use
-  `templates/checkpoint-decision.md`
+- **Non-investment checkpoints** (all others, including Production Deployment
+  Approval): use `templates/checkpoint-decision.md`
 - **PR Review + CI**: the PR approval itself serves as the gate artifact; no
   separate decision template is required
 
@@ -615,15 +233,15 @@ For oversight intensity within AI-Led (Active / Passive / Minimal), see the
 
 Recommended workflow for AI coding agents operating in this repository:
 
-1. **Orient** — read `guides/agentic-workflow.md` (parse front matter first for
-   stage routing, then body for context). Determine your working location from
-   the `working_location` field for the current stage.
+1. **Orient** — read `guides/agentic-workflow.md` for stage routing and
+   cross-cutting guidance. Determine your working location from the
+   `working_location` field in the current stage's README front matter.
 2. **Locate stage** — identify the current stage from the routing table; read
    the stage README, checklist, and reference. If the current stage is not clear
    from the human's request, check for existing session logs or artifacts to
    infer project state; if no artifacts exist, start at Initiation.
-3. **Check front matter** — verify required inputs are available; flag any
-   missing inputs with `[ASSUMED]`
+3. **Check inputs** — verify required inputs (listed in stage README front
+   matter) are available; flag any missing inputs with `[ASSUMED]`
 4. **Execute** — follow the stage guide activities at the appropriate autonomy
    tier; self-validate against the checklist
 5. **Gate** — present completed artifacts for human review at defined gates;
@@ -635,13 +253,13 @@ Recommended workflow for AI coding agents operating in this repository:
 
 ## Error and Fallback Guidance
 
-These protocols match the `fallback` section in the front matter. Use them when
-the agent encounters obstacles during autonomous operation.
+Use these protocols when the agent encounters obstacles during autonomous
+operation.
 
 > **Human-Led tier:** At Human-Led tier, request human direction before deriving
-> inputs or attempting gate remediation. The protocols below assume collaborative
-> or AI-led autonomy. Human-Led agents should halt and present the situation to
-> the human rather than acting autonomously.
+> inputs or attempting gate remediation. The protocols below assume
+> collaborative or AI-led autonomy. Human-Led agents should halt and present the
+> situation to the human rather than acting autonomously.
 
 ### Missing Input
 
@@ -918,6 +536,6 @@ full decision tree and classification table.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
