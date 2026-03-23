@@ -25,9 +25,16 @@ checkpoints:
   - type: review
     protocol: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
+    responsible_roles: [qa, appsec]
 feeds_into: [deployment, implementation]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md
+default_autonomy: ai-led
+default_oversight_intensity: passive
+working_location: source-code
+session_log_template: templates/session-log.md
+raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm, architect], I: [pjm] }
+revisit_conditions: [new-defects, requirements-change, uat-rejection]
 ---
 
 # AI-Assisted SDLC: Verification Stage
@@ -453,6 +460,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-20
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.6.0.

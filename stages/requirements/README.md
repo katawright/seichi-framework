@@ -21,9 +21,16 @@ checkpoints:
   - type: review
     protocol: human-approval
     name: "Requirements Readiness"
+    responsible_roles: [pm]
 feeds_into: [system-design]
 checklist: stages/requirements/checklist.md
 reference: stages/requirements/reference.md
+default_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+session_log_template: templates/session-log.md
+raci_roles: { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
+revisit_conditions: [scope-creep, new-stakeholder-requirements, failed-verification]
 ---
 
 # AI-Assisted SDLC: Requirements Stage
@@ -727,6 +734,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.3.0.

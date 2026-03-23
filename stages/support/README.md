@@ -23,10 +23,17 @@ checkpoints:
   - type: review
     protocol: human-approval
     name: "Production Ownership Decision"
+    responsible_roles: [devops]
 feeds_into:
   [requirements, system-design, increment-design, implementation, initiation]
 checklist: stages/support/checklist.md
 reference: stages/support/reference.md
+default_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+session_log_template: templates/session-log.md
+raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm, exec, pjm] }
+revisit_conditions: [incident-pattern, success-criteria-miss, enhancement-request]
 ---
 
 # AI-Assisted SDLC: Support Stage
@@ -515,6 +522,6 @@ checkpoint or gate decision artifacts to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-20
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.8.0.

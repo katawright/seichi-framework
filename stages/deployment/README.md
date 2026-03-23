@@ -27,9 +27,23 @@ checkpoints:
   - type: review
     protocol: human-execution-required
     name: "Production Deployment Approval"
+    responsible_roles: [devops, appsec]
 feeds_into: [support, increment-design]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
+default_autonomy: human-led
+preparation_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+session_log_template: templates/session-log.md
+raci_roles:
+  {
+    R: [devops],
+    A: [devops],
+    C: [engineer, architect, qa, appsec, pjm],
+    I: [pm, exec],
+  }
+revisit_conditions: [deployment-failure, rollback-required]
 ---
 
 # AI-Assisted SDLC: Deployment Stage
@@ -532,6 +546,6 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-20
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.

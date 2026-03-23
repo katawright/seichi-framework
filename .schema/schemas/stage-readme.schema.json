@@ -32,12 +32,26 @@
         { "$ref": "defs.schema.json#/$defs/file-path" },
         { "type": "null" }
       ]
-    }
+    },
+    "default_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" },
+    "default_oversight_intensity": { "$ref": "defs.schema.json#/$defs/oversight-intensity" },
+    "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
+    "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
+    "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
+    "revisit_conditions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "preparation_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" }
   },
   "required": [
     "id", "stage_number", "execution_pattern",
     "inputs", "outputs", "checkpoints", "feeds_into",
-    "checklist", "reference"
+    "checklist", "reference",
+    "default_autonomy", "default_oversight_intensity",
+    "working_location", "session_log_template",
+    "raci_roles", "revisit_conditions"
   ],
   "additionalProperties": false
 }

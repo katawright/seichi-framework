@@ -36,6 +36,19 @@ checkpoints:
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
+default_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+session_log_template: templates/session-log.md
+raci_roles:
+  {
+    R: [architect],
+    A: [architect],
+    C: [pm, engineer, qa, devops, appsec, pjm],
+    I: [exec],
+  }
+revisit_conditions:
+  [technology-constraint-change, scale-requirement-change, security-incident]
 ---
 
 # AI-Assisted SDLC: System Design Stage
@@ -661,6 +674,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.12.0.

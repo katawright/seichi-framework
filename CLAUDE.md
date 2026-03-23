@@ -35,9 +35,10 @@ all SDLC stages. The framework is designed to:
 
 ## Key References
 
-Read `guides/agentic-workflow.md` (front matter first for stage routing, then
-body for context), `guides/stages.md`, and `STYLE_GUIDE.md` when creating or
-editing files. See `INDEX.md` for the full file inventory and canonical sources.
+Read `guides/agentic-workflow.md`, `guides/stages.md`, and `STYLE_GUIDE.md` when
+creating or editing files. Stage READMEs (`stages/*/README.md`) contain
+canonical stage metadata in their front matter. See `INDEX.md` for the full file
+inventory and canonical sources.
 
 ---
 
