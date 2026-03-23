@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stages-guide.schema.json",
+  "type": "object",
+  "properties": {
+    "pipeline": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pipeline-stage" },
+      "minItems": 8,
+      "maxItems": 8
+    }
+  },
+  "required": ["pipeline"],
+  "additionalProperties": false,
+  "$defs": {
+    "pipeline-stage": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "defs.schema.json#/$defs/id" },
+        "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "execution_pattern": { "$ref": "defs.schema.json#/$defs/stage-execution-pattern" },
+        "feeds_into": {
+          "type": "array",
+          "items": { "$ref": "defs.schema.json#/$defs/id" },
+          "minItems": 1
+        },
+        "revisit_conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      },
+      "required": ["id", "stage_number", "execution_pattern", "feeds_into", "revisit_conditions"],
+      "additionalProperties": false
+    }
+  }
+}

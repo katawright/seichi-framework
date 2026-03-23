@@ -110,9 +110,9 @@ through stages with additional focus:
 
 This table maps each stage's key outputs to their templates, upstream
 dependencies, and downstream consumers. Derived from stage README front matter
-(`inputs`, `outputs`, `feeds_into`) cross-referenced with
-[AI-Assisted SDLC Stages](stages.md). For the machine-readable source of truth,
-parse each `stages/*/README.md` front matter directly.
+(`inputs`, `outputs`) and pipeline front matter in
+[AI-Assisted SDLC Stages](stages.md) (`feeds_into`). For the machine-readable
+source of truth, parse stage README and `stages.md` front matter directly.
 
 **Embedded artifact resolution rule:** When a stage input names an artifact
 declared `embedded_in` a parent artifact, the parent artifact satisfies the

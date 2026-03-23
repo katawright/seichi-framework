@@ -1,7 +1,5 @@
 ---
 id: support
-stage_number: 8
-execution_pattern: continuous
 inputs:
   - deployed-system
   - monitoring-dashboards
@@ -24,8 +22,6 @@ checkpoints:
     protocol: human-approval
     name: "Production Ownership Decision"
     responsible_roles: [devops]
-feeds_into:
-  [requirements, system-design, increment-design, implementation, initiation]
 checklist: stages/support/checklist.md
 reference: stages/support/reference.md
 default_autonomy: collaborative
@@ -33,7 +29,6 @@ default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm, exec, pjm] }
-revisit_conditions: [incident-pattern, success-criteria-miss, enhancement-request]
 ---
 
 # AI-Assisted SDLC: Support Stage

@@ -1,7 +1,5 @@
 ---
 id: requirements
-stage_number: 2
-execution_pattern: foundational
 inputs:
   - initiation-brief
   - success-criteria-register
@@ -22,7 +20,6 @@ checkpoints:
     protocol: human-approval
     name: "Requirements Readiness"
     responsible_roles: [pm]
-feeds_into: [system-design]
 checklist: stages/requirements/checklist.md
 reference: stages/requirements/reference.md
 default_autonomy: collaborative
@@ -30,7 +27,6 @@ default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
-revisit_conditions: [scope-creep, new-stakeholder-requirements, failed-verification]
 ---
 
 # AI-Assisted SDLC: Requirements Stage
