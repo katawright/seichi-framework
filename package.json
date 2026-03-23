@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "validate": "node .schema/validate.mjs",
-    "install-hooks": "cp .schema/hooks/pre-commit .git/hooks/pre-commit"
+    "install-hooks": "node -e \"require('fs').cpSync('.schema/hooks/pre-commit','.git/hooks/pre-commit')\""
   },
   "devDependencies": {
     "ajv": "^8.17.0",
