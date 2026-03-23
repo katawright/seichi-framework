@@ -25,13 +25,13 @@ outputs:
   - artifact: gate-2-decision-package
     template: templates/gate-decision.md
 checkpoints:
-  - protocol: alignment-review
+  - type: alignment
+    protocol: alignment-review
     name: "Architecture Review"
-    hard_gate: false
     responsible_roles: [architect, appsec]
-  - protocol: human-approval
+  - type: gate
+    protocol: human-approval
     name: "Gate 2 (Investment Decision)"
-    hard_gate: true
     responsible_roles: [pm, architect, appsec]
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md

@@ -1,9 +1,3 @@
----
-id: devops-integration
-type: guide
-concerns: [ci-cd, security-scanning, release-patterns, observability]
----
-
 # DevOps Integration Guide
 
 Entry point for DevOps engineers. Each section maps a DevOps concern to the

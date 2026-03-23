@@ -1,9 +1,3 @@
----
-id: adoption
-type: guide
-concerns: [organizational-rollout, readiness-assessment, change-management]
----
-
 # Organizational Adoption Guide
 
 ## Overview

@@ -3,9 +3,9 @@
   "$id": "stage-readme.schema.json",
   "type": "object",
   "properties": {
-    "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+    "id": { "$ref": "defs.schema.json#/$defs/id" },
     "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
-    "execution_pattern": { "$ref": "defs.schema.json#/$defs/execution-pattern" },
+    "execution_pattern": { "$ref": "defs.schema.json#/$defs/stage-execution-pattern" },
     "inputs": {
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
@@ -13,17 +13,17 @@
     },
     "outputs": {
       "type": "array",
-      "items": { "$ref": "defs.schema.json#/$defs/output-object" },
+      "items": { "$ref": "defs.schema.json#/$defs/output" },
       "minItems": 1
     },
     "checkpoints": {
       "type": "array",
-      "items": { "$ref": "defs.schema.json#/$defs/checkpoint-object" },
+      "items": { "$ref": "defs.schema.json#/$defs/checkpoint" },
       "minItems": 1
     },
     "feeds_into": {
       "type": "array",
-      "items": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+      "items": { "$ref": "defs.schema.json#/$defs/id" },
       "minItems": 1
     },
     "checklist": { "$ref": "defs.schema.json#/$defs/file-path" },

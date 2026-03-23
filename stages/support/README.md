@@ -20,9 +20,9 @@ outputs:
   - artifact: incident-reports
   - artifact: enhancement-backlog
 checkpoints:
-  - protocol: human-approval
+  - type: review
+    protocol: human-approval
     name: "Production Ownership Decision"
-    hard_gate: false
 feeds_into:
   [requirements, system-design, increment-design, implementation, initiation]
 checklist: stages/support/checklist.md

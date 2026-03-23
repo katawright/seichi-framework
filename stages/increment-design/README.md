@@ -16,9 +16,9 @@ outputs:
   - artifact: test-strategy
   - artifact: implementation-notes
 checkpoints:
-  - protocol: specialized-review
+  - type: review
+    protocol: specialized-review
     name: "Design Review"
-    hard_gate: false
 feeds_into: [implementation]
 checklist: stages/increment-design/checklist.md
 reference: stages/increment-design/reference.md

@@ -3,7 +3,7 @@
   "$id": "defs.schema.json",
   "$comment": "Shared type definitions referenced by all front matter schemas via $ref. These formalize the enums, objects, and patterns documented in STYLE_GUIDE.md (Front Matter Conventions).",
   "$defs": {
-    "kebab-case-id": {
+    "id": {
       "$comment": "Lowercase identifier with hyphens, used for stage IDs, artifact names, and feeds_into references.",
       "type": "string",
       "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
@@ -13,8 +13,8 @@
       "type": "string",
       "pattern": "^[a-z].*\\.md$"
     },
-    "execution-pattern": {
-      "$comment": "Stage lifecycle category: foundational (once per project), iterative (per increment), or continuous (ongoing).",
+    "stage-execution-pattern": {
+      "$comment": "Foundational (once per project), iterative (per increment), or continuous (ongoing).",
       "type": "string",
       "enum": ["foundational", "iterative", "continuous"]
     },
@@ -30,28 +30,33 @@
         "human-execution-required"
       ]
     },
-    "role-id": {
+    "role": {
       "$comment": "Role identifiers from the RACI matrix in guides/framework.md.",
       "type": "string",
       "enum": ["pm", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
     },
-    "checkpoint-object": {
-      "$comment": "A stage checkpoint with protocol, display name, and investment-gate flag. responsible_roles lists who prepares evidence per the Decision-Rights Matrix.",
+    "checkpoint-type": {
+      "$comment": "Checkpoint classification: gate (investment decision, hard stop), review (quality/readiness check), alignment (non-blocking synchronization).",
+      "type": "string",
+      "enum": ["gate", "review", "alignment"]
+    },
+    "checkpoint": {
+      "$comment": "A stage checkpoint with type, protocol, display name, and optional responsible roles per the Decision-Rights Matrix.",
       "type": "object",
       "properties": {
+        "type": { "$ref": "#/$defs/checkpoint-type" },
         "protocol": { "$ref": "#/$defs/checkpoint-protocol" },
         "name": { "type": "string", "minLength": 1 },
-        "hard_gate": { "type": "boolean" },
         "responsible_roles": {
           "type": "array",
-          "items": { "$ref": "#/$defs/role-id" },
+          "items": { "$ref": "#/$defs/role" },
           "minItems": 1
         }
       },
-      "required": ["protocol", "name", "hard_gate"],
+      "required": ["type", "protocol", "name"],
       "additionalProperties": false
     },
-    "output-object": {
+    "output": {
       "$comment": "A stage output artifact. template points to a fillable template; embedded_in names the parent artifact when this output is a section rather than a standalone file.",
       "type": "object",
       "properties": {
@@ -78,13 +83,13 @@
       "enum": ["artifacts", "source-code"]
     },
     "raci-roles": {
-      "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role-id arrays. Mirrors guides/framework.md.",
+      "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role arrays. Mirrors guides/framework.md.",
       "type": "object",
       "properties": {
-        "R": { "type": "array", "items": { "$ref": "#/$defs/role-id" }, "minItems": 1 },
-        "A": { "type": "array", "items": { "$ref": "#/$defs/role-id" }, "minItems": 1 },
-        "C": { "type": "array", "items": { "$ref": "#/$defs/role-id" }, "minItems": 1 },
-        "I": { "type": "array", "items": { "$ref": "#/$defs/role-id" }, "minItems": 1 }
+        "R": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
+        "A": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
+        "C": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
+        "I": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 }
       },
       "additionalProperties": false
     }

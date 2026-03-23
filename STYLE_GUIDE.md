@@ -322,7 +322,7 @@ outputs:
 checkpoints:
   - protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable checkpoint name"
-    hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for reviews and alignments
+    type: gate|review|alignment # gate for investment gates (Gate 1, Gate 2), review for quality checkpoints, alignment for non-blocking sync
     responsible_roles: [role-id] # optional, lists "Prepares Evidence" roles per Decision-Rights Matrix in checkpoints.md
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
@@ -353,18 +353,6 @@ code), `fallback` (four fallback protocols with tier-specific overrides), and
 `session` (session log template default and protocol).
 
 **Schema:** `.schema/schemas/agentic-workflow.schema.json`
-
-### Guide File Schema
-
-**Schema:** `.schema/schemas/guide.schema.json`
-
-```yaml
----
-id: guide-name # kebab-case identifier
-type: guide # guide | style-guide | reference
-concerns: [topic-1, topic-2] # what this guide covers
----
-```
 
 ### Root README Schema
 

@@ -1,9 +1,3 @@
----
-id: delivery-operating-guide
-type: guide
-concerns: [delivery-cadence, sprint-rhythm, kanban-flow, status-reporting]
----
-
 # Delivery Operating Guide
 
 ## Overview

@@ -1,9 +1,3 @@
----
-id: project-foundation
-type: guide
-concerns: [foundation-work, greenfield-bootstrap]
----
-
 # Project Foundation Guide
 
 ## Overview

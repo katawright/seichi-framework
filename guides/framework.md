@@ -1,20 +1,3 @@
----
-id: framework
-type: guide
-concerns:
-  [
-    design-principles,
-    roles,
-    governance,
-    greenfield-brownfield,
-    compliance,
-    continuous-learning,
-    working-locations,
-    mid-stage-discovery,
-    cd-workflow,
-  ]
----
-
 # Framework Guide
 
 ## Overview

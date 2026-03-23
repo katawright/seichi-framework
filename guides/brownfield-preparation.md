@@ -1,9 +1,3 @@
----
-id: brownfield-preparation
-type: guide
-concerns: [brownfield-preparation, discovery-activities, codebase-readiness]
----
-
 # Brownfield Preparation Guide
 
 ## Overview

@@ -20,9 +20,9 @@ outputs:
   - artifact: session-log
   - artifact: observability-instrumentation
 checkpoints:
-  - protocol: ci-validation-human-approval
+  - type: review
+    protocol: ci-validation-human-approval
     name: "PR Review + CI"
-    hard_gate: false
 feeds_into: [verification]
 checklist: stages/implementation/checklist.md
 reference: stages/implementation/reference.md
