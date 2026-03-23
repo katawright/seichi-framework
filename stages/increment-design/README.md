@@ -1,7 +1,5 @@
 ---
 id: increment-design
-stage_number: 4
-execution_pattern: iterative
 inputs:
   - architecture-diagrams
   - increment-plan
@@ -20,7 +18,6 @@ checkpoints:
     protocol: specialized-review
     name: "Design Review"
     responsible_roles: [engineer]
-feeds_into: [implementation]
 checklist: stages/increment-design/checklist.md
 reference: stages/increment-design/reference.md
 default_autonomy: collaborative
@@ -28,7 +25,6 @@ default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
-revisit_conditions: [requirements-change, design-review-rejection]
 ---
 
 # AI-Assisted SDLC: Increment Design Stage

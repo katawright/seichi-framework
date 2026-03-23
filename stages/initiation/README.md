@@ -1,7 +1,5 @@
 ---
 id: initiation
-stage_number: 1
-execution_pattern: foundational
 inputs:
   - business-opportunity
   - stakeholder-list
@@ -16,7 +14,6 @@ checkpoints:
     protocol: human-approval
     name: "Gate 1 (Investment Decision)"
     responsible_roles: [pm]
-feeds_into: [requirements]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md
 default_autonomy: collaborative
@@ -24,7 +21,6 @@ default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
-revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
 ---
 
 # AI-Assisted SDLC: Initiation Stage

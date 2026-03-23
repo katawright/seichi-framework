@@ -1,7 +1,5 @@
 ---
 id: system-design
-stage_number: 3
-execution_pattern: foundational
 inputs:
   - requirements-brief
   - non-functional-requirements
@@ -33,7 +31,6 @@ checkpoints:
     protocol: human-approval
     name: "Gate 2 (Investment Decision)"
     responsible_roles: [pm, architect, appsec]
-feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
 default_autonomy: collaborative
@@ -47,8 +44,6 @@ raci_roles:
     C: [pm, engineer, qa, devops, appsec, pjm],
     I: [exec],
   }
-revisit_conditions:
-  [technology-constraint-change, scale-requirement-change, security-incident]
 ---
 
 # AI-Assisted SDLC: System Design Stage

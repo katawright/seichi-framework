@@ -1,7 +1,5 @@
 ---
 id: verification
-stage_number: 6
-execution_pattern: iterative
 inputs:
   - working-code
   - requirements-with-acceptance-criteria
@@ -26,7 +24,6 @@ checkpoints:
     protocol: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
     responsible_roles: [qa, appsec]
-feeds_into: [deployment, implementation]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md
 default_autonomy: ai-led
@@ -34,7 +31,6 @@ default_oversight_intensity: passive
 working_location: source-code
 session_log_template: templates/session-log.md
 raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm, architect], I: [pjm] }
-revisit_conditions: [new-defects, requirements-change, uat-rejection]
 ---
 
 # AI-Assisted SDLC: Verification Stage

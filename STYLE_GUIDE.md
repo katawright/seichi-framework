@@ -291,14 +291,15 @@ Same file, two audiences, no duplication.
 
 ### Which Files Use Front Matter
 
-| File category        | Front matter schema                                                                                                   |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Stage READMEs**    | `id`, `stage_number`, `execution_pattern`, `inputs`, `outputs`, `checkpoints`, `feeds_into`, `checklist`, `reference` |
-| **Guide files**      | No front matter                                                                                                       |
-| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                                  |
-| **Templates**        | No front matter — templates use HTML comment metadata                                                                 |
-| **Checklists**       | No front matter                                                                                                       |
-| **Stage references** | No front matter                                                                                                       |
+| File category        | Front matter schema                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Stage READMEs**    | `id`, `inputs`, `outputs`, `checkpoints`, `checklist`, `reference`, plus agent-facing fields (autonomy, RACI, etc.) |
+| **Stages guide**     | `pipeline` array with stage ordering, execution patterns, dependency graph, and revisit conditions                  |
+| **Other guides**     | No front matter                                                                                                     |
+| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                                |
+| **Templates**        | No front matter — templates use HTML comment metadata                                                               |
+| **Checklists**       | No front matter                                                                                                     |
+| **Stage references** | No front matter                                                                                                     |
 
 The JSON Schema files in `.schema/schemas/` are the machine-readable versions of
 these conventions. Run `node .schema/validate.mjs` to check all front matter
@@ -311,8 +312,6 @@ against the schemas.
 ```yaml
 ---
 id: stage-name # kebab-case identifier
-stage_number: 1 # 1-8
-execution_pattern: foundational # foundational | iterative | continuous
 inputs:
   - input-name # kebab-case
 outputs:
@@ -324,7 +323,6 @@ checkpoints:
     protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable checkpoint name"
     responsible_roles: [role-id] # roles from Decision-Rights Matrix
-feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
 default_autonomy: collaborative # human-led | collaborative | ai-led
@@ -332,14 +330,31 @@ default_oversight_intensity: active # active | passive | minimal
 working_location: artifacts # artifacts | source-code
 session_log_template: templates/session-log.md
 raci_roles: { R: [role], A: [role], C: [role], I: [role] } # mirrors framework.md RACI matrix
-revisit_conditions: [trigger-condition] # when to revisit a foundational stage
 # preparation_autonomy: collaborative # optional, overrides default_autonomy for prep steps
 ---
 ```
 
+Stage READMEs describe how a stage processes inputs into outputs. Pipeline
+topology (stage ordering, execution patterns, dependency graph, revisit
+conditions) lives in `guides/stages.md` front matter.
+
+### Stages Guide Schema
+
+**Schema:** `.schema/schemas/stages-guide.schema.json`
+
+```yaml
+---
+pipeline:
+  - id: stage-name
+    stage_number: 1 # 1-8
+    execution_pattern: foundational # foundational | iterative | continuous
+    feeds_into: [next-stage-id] # downstream stage ids
+    revisit_conditions: [trigger-condition] # when to revisit this stage
+---
+```
+
 `agentic-workflow.md` has no front matter; it provides cross-cutting guidance
-(artifact paths, working locations, fallback protocols, session conventions) in
-the document body.
+(fallback protocols, session conventions) in the document body.
 
 ### Root README Schema
 

@@ -4,8 +4,6 @@
   "type": "object",
   "properties": {
     "id": { "$ref": "defs.schema.json#/$defs/id" },
-    "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
-    "execution_pattern": { "$ref": "defs.schema.json#/$defs/stage-execution-pattern" },
     "inputs": {
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
@@ -21,11 +19,6 @@
       "items": { "$ref": "defs.schema.json#/$defs/checkpoint" },
       "minItems": 1
     },
-    "feeds_into": {
-      "type": "array",
-      "items": { "$ref": "defs.schema.json#/$defs/id" },
-      "minItems": 1
-    },
     "checklist": { "$ref": "defs.schema.json#/$defs/file-path" },
     "reference": {
       "oneOf": [
@@ -38,20 +31,15 @@
     "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
     "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
     "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
-    "revisit_conditions": {
-      "type": "array",
-      "items": { "type": "string", "minLength": 1 },
-      "minItems": 1
-    },
     "preparation_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" }
   },
   "required": [
-    "id", "stage_number", "execution_pattern",
-    "inputs", "outputs", "checkpoints", "feeds_into",
+    "id",
+    "inputs", "outputs", "checkpoints",
     "checklist", "reference",
     "default_autonomy", "default_oversight_intensity",
     "working_location", "session_log_template",
-    "raci_roles", "revisit_conditions"
+    "raci_roles"
   ],
   "additionalProperties": false
 }

@@ -1,7 +1,5 @@
 ---
 id: deployment
-stage_number: 7
-execution_pattern: iterative
 inputs:
   - verified-code
   - uat-sign-off
@@ -28,7 +26,6 @@ checkpoints:
     protocol: human-execution-required
     name: "Production Deployment Approval"
     responsible_roles: [devops, appsec]
-feeds_into: [support, increment-design]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
 default_autonomy: human-led
@@ -43,7 +40,6 @@ raci_roles:
     C: [engineer, architect, qa, appsec, pjm],
     I: [pm, exec],
   }
-revisit_conditions: [deployment-failure, rollback-required]
 ---
 
 # AI-Assisted SDLC: Deployment Stage

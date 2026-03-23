@@ -1,6 +1,7 @@
 {
   "mappings": [
-    { "glob": "stages/*/README.md", "schema": "stage-readme.schema.json" }
+    { "glob": "stages/*/README.md", "schema": "stage-readme.schema.json" },
+    { "glob": "guides/stages.md", "schema": "stages-guide.schema.json" }
   ],
   "exclude": [
     ".claude/**",

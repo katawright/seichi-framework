@@ -1,3 +1,61 @@
+---
+pipeline:
+  - id: initiation
+    stage_number: 1
+    execution_pattern: foundational
+    feeds_into: [requirements]
+    revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
+  - id: requirements
+    stage_number: 2
+    execution_pattern: foundational
+    feeds_into: [system-design]
+    revisit_conditions:
+      [scope-creep, new-stakeholder-requirements, failed-verification]
+  - id: system-design
+    stage_number: 3
+    execution_pattern: foundational
+    feeds_into: [increment-design]
+    revisit_conditions:
+      [
+        technology-constraint-change,
+        scale-requirement-change,
+        security-incident,
+      ]
+  - id: increment-design
+    stage_number: 4
+    execution_pattern: iterative
+    feeds_into: [implementation]
+    revisit_conditions: [requirements-change, design-review-rejection]
+  - id: implementation
+    stage_number: 5
+    execution_pattern: iterative
+    feeds_into: [verification]
+    revisit_conditions: [design-change, blocking-dependency]
+  - id: verification
+    stage_number: 6
+    execution_pattern: iterative
+    feeds_into: [deployment, implementation]
+    revisit_conditions: [new-defects, requirements-change, uat-rejection]
+  - id: deployment
+    stage_number: 7
+    execution_pattern: iterative
+    feeds_into: [support, increment-design]
+    revisit_conditions: [deployment-failure, rollback-required]
+  - id: support
+    stage_number: 8
+    execution_pattern: continuous
+    feeds_into:
+      [
+        requirements,
+        system-design,
+        increment-design,
+        implementation,
+        initiation,
+      ]
+    revisit_conditions:
+      [incident-pattern, success-criteria-miss, enhancement-request]
+---
+
 # AI-Assisted SDLC Stages
 
 ## Overview
@@ -50,16 +108,16 @@ flow through every subsequent stage.
 
 <!-- Keep this table in sync with guides/framework.md and README.md -->
 
-| #   | Stage            | Primary Role          | Pattern      | Purpose                                                                                                    |
-| --- | ---------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
-| 1   | Initiation       | Product Mgr / BA      | Foundational | Establish business case with measurable success criteria                                                   |
-| 2   | Requirements     | BA / Product Mgr      | Foundational | Define testable requirements with functional requirement (FR) acceptance criteria and non-functional requirement (NFR) verification criteria |
-| 3   | System Design    | Architect             | Foundational | Establish or assess system architecture and technical approach                                             |
-| 4   | Increment Design | Engineers             | Iterative    | Plan implementation approach AND test strategy for increment                                               |
-| 5   | Implementation   | Engineers             | Iterative    | Execute implementation plan from Increment Design                                                          |
-| 6   | Verification     | QA Engineers / Engineers | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria |
-| 7   | Deployment       | DevOps / Engineers    | Iterative    | Release to production                                                                                      |
-| 8   | Support          | Engineers / DevOps    | Continuous   | Monitor, maintain, and enhance                                                                             |
+| #   | Stage            | Primary Role             | Pattern      | Purpose                                                                                                                                      |
+| --- | ---------------- | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Initiation       | Product Mgr / BA         | Foundational | Establish business case with measurable success criteria                                                                                     |
+| 2   | Requirements     | BA / Product Mgr         | Foundational | Define testable requirements with functional requirement (FR) acceptance criteria and non-functional requirement (NFR) verification criteria |
+| 3   | System Design    | Architect                | Foundational | Establish or assess system architecture and technical approach                                                                               |
+| 4   | Increment Design | Engineers                | Iterative    | Plan implementation approach AND test strategy for increment                                                                                 |
+| 5   | Implementation   | Engineers                | Iterative    | Execute implementation plan from Increment Design                                                                                            |
+| 6   | Verification     | QA Engineers / Engineers | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria                                   |
+| 7   | Deployment       | DevOps / Engineers       | Iterative    | Release to production                                                                                                                        |
+| 8   | Support          | Engineers / DevOps       | Continuous   | Monitor, maintain, and enhance                                                                                                               |
 
 ---
 
@@ -173,30 +231,29 @@ Security activities flow through every stage, from data classification in
 Initiation through vulnerability management in Support. AI automation makes
 baseline security nearly free at the Minimal tier:
 
-| Stage                | AppSec activity                                             |
-| -------------------- | ----------------------------------------------------------- |
-| **Initiation**       | Classify data sensitivity and compliance scope              |
-| **Requirements**     | Define security NFRs from sensitivity classification        |
-| **System Design**    | Design security architecture; threat model at tier level    |
-| **Increment Design** | Assess security implications; flag auth/data/API changes    |
-| **Implementation**   | Secure coding + AI-automated scanning (SAST — static analysis, deps, secrets) |
-| **Verification**     | Validate security controls (dep scan through pen testing)   |
-| **Deployment**       | Verify release integrity; SBOM (software bill of materials); pre-deployment checks       |
-| **Support**          | Monitor CVEs; patch per SLA; incident response              |
+| Stage                | AppSec activity                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| **Initiation**       | Classify data sensitivity and compliance scope                                     |
+| **Requirements**     | Define security NFRs from sensitivity classification                               |
+| **System Design**    | Design security architecture; threat model at tier level                           |
+| **Increment Design** | Assess security implications; flag auth/data/API changes                           |
+| **Implementation**   | Secure coding + AI-automated scanning (SAST — static analysis, deps, secrets)      |
+| **Verification**     | Validate security controls (dep scan through pen testing)                          |
+| **Deployment**       | Verify release integrity; SBOM (software bill of materials); pre-deployment checks |
+| **Support**          | Monitor CVEs; patch per SLA; incident response                                     |
 
 Security decisions compound across stages — data sensitivity classified in
 Initiation drives NFRs in Requirements, which drive architecture in System
 Design, which drive scanning in Implementation. For the full stage-by-stage
-breakdown, AI automation tiers, and Secure Software Development Framework (SSDF) traceability, see the
-[Security Guide](security.md).
+breakdown, AI automation tiers, and Secure Software Development Framework (SSDF)
+traceability, see the [Security Guide](security.md).
 
 ---
 
 ## Stage 1: Initiation
 
 - **Primary Role:** Product Manager / Business Analyst
-- **Supporting Roles:** Executives, Architect, Engineers, Project
-  Manager
+- **Supporting Roles:** Executives, Architect, Engineers, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [Initiation](../stages/initiation/README.md)
 
@@ -394,7 +451,8 @@ guides all subsequent implementation work.
 - Assess security and compliance requirements
 - Plan for scalability and performance
 - Plan infrastructure (CI/CD, deployment, environments)
-- Create increment plan mapping MoSCoW (Must / Should / Could / Won't Have) priorities to increments
+- Create increment plan mapping MoSCoW (Must / Should / Could / Won't Have)
+  priorities to increments
 
 ### Outputs
 
@@ -419,8 +477,8 @@ guides all subsequent implementation work.
 
 ### Checkpoints
 
-- **Architecture Review (Alignment):** Architecture and technology decisions reviewed with
-  stakeholders
+- **Architecture Review (Alignment):** Architecture and technology decisions
+  reviewed with stakeholders
 - **Gate 2 (Investment Decision):** After Requirements and System Design are
   both complete
   - **Decision:** Commit to building this, revise the approach, or stop
@@ -500,7 +558,8 @@ Verification.
   - **Decision:** Ready to implement, or revise designs
   - **Based on:** Increment Design Brief with component designs, API specs, and
     test strategy
-  - **Criteria:** Designs implementable, test strategy defined, no major unknowns
+  - **Criteria:** Designs implementable, test strategy defined, no major
+    unknowns
   - **Record decision:** Use the
     [Checkpoint Decision Template](../templates/checkpoint-decision.md)
 
@@ -583,7 +642,8 @@ results, and implementation notes.
 ## Stage 6: Verification
 
 - **Primary Role:** QA Engineers / Engineers
-- **Supporting Roles:** Product Manager, Business Analyst, DevOps, Project Manager
+- **Supporting Roles:** Product Manager, Business Analyst, DevOps, Project
+  Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Verification](../stages/verification/README.md)
 
@@ -726,7 +786,8 @@ baseline measurements for success criteria.
 ## Stage 8: Support
 
 - **Primary Role:** DevOps / Engineers
-- **Supporting Roles:** Operations, Customer Support, Product Manager, Project Manager
+- **Supporting Roles:** Operations, Customer Support, Product Manager, Project
+  Manager
 - **Execution Pattern:** Continuous (ongoing after first deployment)
 - **Stage Guide:** [Support](../stages/support/README.md)
 
@@ -799,14 +860,14 @@ Support stage may trigger revisits to earlier stages:
 ## Checkpoints
 
 For the full checkpoint taxonomy (five checkpoint types, Decision-Rights Matrix,
-and per-stage checkpoint mapping), see
-[Checkpoint Taxonomy](checkpoints.md). Each stage definition above references
-its specific checkpoints in the `### Checkpoints` subsection.
+and per-stage checkpoint mapping), see [Checkpoint Taxonomy](checkpoints.md).
+Each stage definition above references its specific checkpoints in the
+`### Checkpoints` subsection.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.9.0.
