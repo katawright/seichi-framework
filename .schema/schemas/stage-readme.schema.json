@@ -16,9 +16,9 @@
       "items": { "$ref": "defs.schema.json#/$defs/output-object" },
       "minItems": 1
     },
-    "gates": {
+    "checkpoints": {
       "type": "array",
-      "items": { "$ref": "defs.schema.json#/$defs/gate-object" },
+      "items": { "$ref": "defs.schema.json#/$defs/checkpoint-object" },
       "minItems": 1
     },
     "feeds_into": {
@@ -36,7 +36,7 @@
   },
   "required": [
     "id", "stage_number", "execution_pattern",
-    "inputs", "outputs", "gates", "feeds_into",
+    "inputs", "outputs", "checkpoints", "feeds_into",
     "checklist", "reference"
   ],
   "additionalProperties": false

@@ -1,4 +1,4 @@
-<!-- For guidance on gates and investment decisions, see guides/stages.md#gates-investment-decisions -->
+<!-- For guidance on gates and investment decisions, see guides/checkpoints.md#gates -->
 
 # Gate Decision: [Gate N — Short Title]
 

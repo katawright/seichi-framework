@@ -21,10 +21,10 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, appsec, pjm], I: [exec] }
-    gates:
+    checkpoints:
       [
         {
-          type: human-approval,
+          protocol: human-approval,
           name: "Gate 1 (Investment Decision)",
           hard_gate: true,
           responsible_roles: [pm-ba],
@@ -51,10 +51,10 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
-    gates:
+    checkpoints:
       [
         {
-          type: human-approval,
+          protocol: human-approval,
           name: "Requirements Readiness",
           hard_gate: false,
           responsible_roles: [pm-ba],
@@ -84,16 +84,16 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [architect], A: [architect], C: [pm-ba, engineer, qa, devops, appsec, pjm], I: [exec] }
-    gates:
+    checkpoints:
       [
         {
-          type: alignment-review,
+          protocol: alignment-review,
           name: "Architecture Review",
           hard_gate: false,
           responsible_roles: [architect, appsec],
         },
         {
-          type: human-approval,
+          protocol: human-approval,
           name: "Gate 2 (Investment Decision)",
           hard_gate: true,
           responsible_roles: [pm-ba, architect, appsec],
@@ -135,8 +135,8 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [engineer], A: [engineer], C: [pm-ba, architect, qa, appsec, pjm] }
-    gates:
-      [{ type: specialized-review, name: "Design Review", hard_gate: false, responsible_roles: [engineer] }]
+    checkpoints:
+      [{ protocol: specialized-review, name: "Design Review", hard_gate: false, responsible_roles: [engineer] }]
     inputs:
       [
         architecture-diagrams,
@@ -166,10 +166,10 @@ stages:
     working_location: source-code
     session_log_template: templates/implementation-session-log.md
     raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
-    gates:
+    checkpoints:
       [
         {
-          type: ci-validation-human-approval,
+          protocol: ci-validation-human-approval,
           name: "PR Review + CI",
           hard_gate: false,
           responsible_roles: [engineer],
@@ -208,10 +208,10 @@ stages:
     working_location: source-code
     session_log_template: templates/session-log.md
     raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm-ba, architect], I: [pjm] }
-    gates:
+    checkpoints:
       [
         {
-          type: ci-validation-human-spot-check,
+          protocol: ci-validation-human-spot-check,
           name: "Test Execution + Coverage Review",
           hard_gate: false,
           responsible_roles: [qa, appsec],
@@ -250,10 +250,10 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm], I: [pm-ba, exec] }
-    gates:
+    checkpoints:
       [
         {
-          type: human-execution-required,
+          protocol: human-execution-required,
           name: "Production Deployment Approval",
           hard_gate: false,
           responsible_roles: [devops, appsec],
@@ -294,10 +294,10 @@ stages:
     working_location: artifacts
     session_log_template: templates/session-log.md
     raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm-ba, exec, pjm] }
-    gates:
+    checkpoints:
       [
         {
-          type: human-approval,
+          protocol: human-approval,
           name: "Production Ownership Decision",
           hard_gate: false,
           responsible_roles: [devops],
@@ -422,7 +422,7 @@ need rationale or nuance.
 
 ### How to Use This Guide
 
-1. **Parse the front matter** — stage routing, artifact dependencies, gates, and
+1. **Parse the front matter** — stage routing, artifact dependencies, checkpoints, and
    fallback rules are all in the YAML block above
 2. **Identify your current stage** from the [**Stage Routing**](#stage-routing)
    table
@@ -451,8 +451,8 @@ for programmatic access; use this table for quick human reference.
 | #   | Stage            | Pattern      | Default Autonomy | Location    | Gate Type                         | Feeds Into                 |
 | --- | ---------------- | ------------ | ---------------- | ----------- | --------------------------------- | -------------------------- |
 | 1   | Initiation       | Foundational | Collaborative    | Artifacts   | Human approval                    | Requirements               |
-| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Quality checkpoint (human approval) | System Design              |
-| 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment review + human approval | Increment Design           |
+| 2   | Requirements     | Foundational | Collaborative    | Artifacts   | Review (human approval)             | System Design              |
+| 3   | System Design    | Foundational | Collaborative    | Artifacts   | Alignment + gate (human approval)   | Increment Design           |
 | 4   | Increment Design | Iterative    | Collaborative    | Artifacts   | Specialized review                | Implementation             |
 | 5   | Implementation   | Iterative    | AI-Led           | Source Code | CI validation + human approval    | Verification               |
 | 6   | Verification     | Iterative    | AI-Led           | Source Code | CI validation + human spot-check  | Deployment, Implementation |

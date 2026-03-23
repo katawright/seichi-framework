@@ -3,7 +3,7 @@
 **Purpose:** Quick validation (60-90 seconds) that verification is complete and
 the increment is ready for deployment.
 
-**Usage:** Review after test execution, before deployment approval.
+**Usage:** Review after test execution, before deployment review.
 
 ---
 

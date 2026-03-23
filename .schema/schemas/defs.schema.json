@@ -1,20 +1,25 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "defs.schema.json",
+  "$comment": "Shared type definitions referenced by all front matter schemas via $ref. These formalize the enums, objects, and patterns documented in STYLE_GUIDE.md (Front Matter Conventions).",
   "$defs": {
     "kebab-case-id": {
+      "$comment": "Lowercase identifier with hyphens, used for stage IDs, artifact names, and feeds_into references.",
       "type": "string",
       "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
     },
     "file-path": {
+      "$comment": "Relative path to a markdown file within the repository (e.g., stages/initiation/checklist.md).",
       "type": "string",
       "pattern": "^[a-z].*\\.md$"
     },
     "execution-pattern": {
+      "$comment": "Stage lifecycle category: foundational (once per project), iterative (per increment), or continuous (ongoing).",
       "type": "string",
       "enum": ["foundational", "iterative", "continuous"]
     },
-    "gate-type": {
+    "checkpoint-protocol": {
+      "$comment": "The six checkpoint protocols defining how each checkpoint is processed. Describes the execution procedure, not the checkpoint type (Gate/Review/Alignment).",
       "type": "string",
       "enum": [
         "human-approval",
@@ -26,13 +31,15 @@
       ]
     },
     "role-id": {
+      "$comment": "Role identifiers from the RACI matrix in guides/framework.md.",
       "type": "string",
       "enum": ["pm-ba", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
     },
-    "gate-object": {
+    "checkpoint-object": {
+      "$comment": "A stage checkpoint with protocol, display name, and investment-gate flag. responsible_roles lists who prepares evidence per the Decision-Rights Matrix.",
       "type": "object",
       "properties": {
-        "type": { "$ref": "#/$defs/gate-type" },
+        "protocol": { "$ref": "#/$defs/checkpoint-protocol" },
         "name": { "type": "string", "minLength": 1 },
         "hard_gate": { "type": "boolean" },
         "responsible_roles": {
@@ -41,10 +48,11 @@
           "minItems": 1
         }
       },
-      "required": ["type", "name", "hard_gate"],
+      "required": ["protocol", "name", "hard_gate"],
       "additionalProperties": false
     },
     "output-object": {
+      "$comment": "A stage output artifact. template points to a fillable template; embedded_in names the parent artifact when this output is a section rather than a standalone file.",
       "type": "object",
       "properties": {
         "artifact": { "type": "string", "minLength": 1 },
@@ -55,18 +63,22 @@
       "additionalProperties": false
     },
     "autonomy-level": {
+      "$comment": "AI autonomy tier from guides/ai-assistance.md. Determines how much independent action the agent takes.",
       "type": "string",
       "enum": ["human-led", "collaborative", "ai-led"]
     },
     "oversight-intensity": {
+      "$comment": "How closely a human monitors agent work: active (review each step), passive (review outputs), minimal (spot-check only).",
       "type": "string",
       "enum": ["active", "passive", "minimal"]
     },
     "working-location-type": {
+      "$comment": "Where the stage's primary work happens: artifacts (docs/ governance files) or source-code (application codebase).",
       "type": "string",
       "enum": ["artifacts", "source-code"]
     },
     "raci-roles": {
+      "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role-id arrays. Mirrors guides/framework.md.",
       "type": "object",
       "properties": {
         "R": { "type": "array", "items": { "$ref": "#/$defs/role-id" }, "minItems": 1 },

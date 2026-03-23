@@ -23,8 +23,8 @@ outputs:
     template: templates/retrospective.md
   - artifact: retrospective-action-items
     embedded_in: retrospective
-gates:
-  - type: human-execution-required
+checkpoints:
+  - protocol: human-execution-required
     name: "Production Deployment Approval"
     hard_gate: false
 feeds_into: [support, increment-design]

@@ -17,8 +17,8 @@ outputs:
   - artifact: non-functional-requirements
     embedded_in: requirements-brief
   - artifact: success-criteria-register
-gates:
-  - type: human-approval
+checkpoints:
+  - protocol: human-approval
     name: "Requirements Readiness"
     hard_gate: false
 feeds_into: [system-design]
@@ -233,7 +233,7 @@ element is included:
     cause schedule slips
 12. [**Edge Cases**](#edge-cases) — drive significant design complexity
 13. [**Open Questions**](#open-questions) — blockers for System Design
-14. [**Requirements Readiness**](#requirements-readiness) — quality checkpoint
+14. [**Requirements Readiness**](#requirements-readiness) — review checkpoint
     before System Design
 15. [**Interface Examples**](#interface-examples) — representative examples of
     primary user interactions
@@ -587,7 +587,7 @@ cause downstream delays. Questions without owners tend to remain unanswered.
 
 ### Requirements Readiness
 
-The requirements readiness section is a quality checkpoint confirming that
+The requirements readiness section is a review checkpoint confirming that
 requirements are ready for System Design. It captures the sign-off from
 reviewers and documents the go/no-go decision. Without an explicit readiness
 check, teams move to System Design with incomplete or unvalidated requirements,

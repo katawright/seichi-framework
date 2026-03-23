@@ -24,12 +24,12 @@ outputs:
     embedded_in: system-design-brief
   - artifact: gate-2-decision-package
     template: templates/gate-decision.md
-gates:
-  - type: alignment-review
+checkpoints:
+  - protocol: alignment-review
     name: "Architecture Review"
     hard_gate: false
     responsible_roles: [architect, appsec]
-  - type: human-approval
+  - protocol: human-approval
     name: "Gate 2 (Investment Decision)"
     hard_gate: true
     responsible_roles: [pm-ba, architect, appsec]
@@ -152,7 +152,7 @@ For detailed AI-Led patterns, see
 For assistance level details, see the
 [AI Assistance Scorecard](../../guides/ai-assistance.md).
 
-> **Required gates:** Alignment review + human approval — System Design produces
+> **Required gates:** Alignment + gate (human approval) — System Design produces
 > foundational decisions with high blast radius, requiring architecture council
 > or tech lead sign-off, security review, and explicit rollback plans.
 
@@ -278,7 +278,7 @@ End-to-end flow from draft to publication:
    [ADR section](../../templates/system-design-brief.md#2-architecture-decision-records-adrs)
    with status and category.
 3. **Review** — ADRs are reviewed as part of the Architecture Review checkpoint
-   (see [Checkpoints](../../guides/stages.md#checkpoints)).
+   (see [Checkpoints](../../guides/checkpoints.md)).
 4. **Publish at Gate 2** — Renumber accepted ADRs from draft (`ADR-DNNN.md`) to
    final (`ADR-NNNN.md`) and update the ADR index at `docs/adr/README.md`. See
    [ADR Publishing](../../guides/framework.md#adr-publishing).

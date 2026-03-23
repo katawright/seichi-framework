@@ -293,7 +293,7 @@ Same file, two audiences, no duplication.
 
 | File category        | Front matter schema                                                                                             |
 | -------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Stage READMEs**    | `id`, `stage_number`, `execution_pattern`, `inputs`, `outputs`, `gates`, `feeds_into`, `checklist`, `reference` |
+| **Stage READMEs**    | `id`, `stage_number`, `execution_pattern`, `inputs`, `outputs`, `checkpoints`, `feeds_into`, `checklist`, `reference` |
 | **Guide files**      | `id`, `type` (guide / style-guide / reference), `concerns`                                                      |
 | **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                            |
 | **Templates**        | No front matter — templates use HTML comment metadata                                                           |
@@ -306,6 +306,8 @@ against the schemas.
 
 ### Stage README Schema
 
+**Schema:** `.schema/schemas/stage-readme.schema.json`
+
 ```yaml
 ---
 id: stage-name # kebab-case identifier
@@ -317,11 +319,11 @@ outputs:
   - artifact: artifact-name
     template: templates/artifact-name.md # optional, only if template exists
     embedded_in: parent-artifact # optional, when output is a section of another artifact
-gates:
-  - type: gate-type # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
-    name: "Human-readable gate name"
-    hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for quality checkpoints
-    responsible_roles: [role-id] # optional, lists "Prepares Evidence" roles per Decision-Rights Matrix in stages.md
+checkpoints:
+  - protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
+    name: "Human-readable checkpoint name"
+    hard_gate: true|false # true for investment gates (Gate 1, Gate 2), false for reviews and alignments
+    responsible_roles: [role-id] # optional, lists "Prepares Evidence" roles per Decision-Rights Matrix in checkpoints.md
 feeds_into: [next-stage-id] # list of stage ids this feeds into
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
@@ -350,7 +352,11 @@ be present when the RACI matrix assigns them).
 code), `fallback` (four fallback protocols with tier-specific overrides), and
 `session` (session log template default and protocol).
 
+**Schema:** `.schema/schemas/agentic-workflow.schema.json`
+
 ### Guide File Schema
+
+**Schema:** `.schema/schemas/guide.schema.json`
 
 ```yaml
 ---
@@ -361,6 +367,8 @@ concerns: [topic-1, topic-2] # what this guide covers
 ```
 
 ### Root README Schema
+
+**Schema:** `.schema/schemas/root-readme.schema.json`
 
 ```yaml
 ---

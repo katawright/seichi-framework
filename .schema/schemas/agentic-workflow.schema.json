@@ -84,9 +84,9 @@
         "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
         "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
         "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
-        "gates": {
+        "checkpoints": {
           "type": "array",
-          "items": { "$ref": "defs.schema.json#/$defs/gate-object" },
+          "items": { "$ref": "defs.schema.json#/$defs/checkpoint-object" },
           "minItems": 1
         },
         "inputs": {
@@ -115,7 +115,7 @@
         "readme", "checklist", "reference",
         "default_autonomy", "default_oversight_intensity",
         "working_location", "session_log_template",
-        "raci_roles", "gates", "inputs", "outputs", "feeds_into"
+        "raci_roles", "checkpoints", "inputs", "outputs", "feeds_into"
       ],
       "additionalProperties": false
     },

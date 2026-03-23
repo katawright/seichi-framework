@@ -52,7 +52,7 @@ requiring human approval—not uncontrolled or unsupervised operation.
 | --- | -------------------- | ---------- | ------------- | ------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | Human approval                     | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
 | 2   | **Requirements**     | High       | Medium        | High          | Human approval                     | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
-| 3   | **System Design**    | High       | Medium        | High          | Alignment review + human approval  | Propose architectures, interfaces, data models, increment plans, threat-model checklists, ADR drafts                              |
+| 3   | **System Design**    | High       | Medium        | High          | Alignment + gate (human approval)  | Propose architectures, interfaces, data models, increment plans, threat-model checklists, ADR drafts                              |
 | 4   | **Increment Design** | High       | Medium        | Medium        | Specialized review                 | Detail component designs, API specs, test strategies, data model changes                                                      |
 | 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized increments                                            |
 | 6   | **Verification**     | Very High  | Very High     | Medium        | CI validation + human spot-check   | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
@@ -131,11 +131,11 @@ The controls that must be in place before AI output is acted upon. Gate
 strictness increases with risk and decreases with verifiability.
 
 - **Human execution required:** Humans perform the action; AI drafts only
-- **Alignment review:** Cross-functional review confirming that the artifact is
+- **Alignment:** Cross-functional checkpoint confirming that the artifact is
   consistent with upstream inputs and downstream expectations — typically
   involving engineering, product, and architecture stakeholders. Unlike a
-  specialized review, an alignment review focuses on coherence across stages
-  rather than deep technical correctness within one domain.
+  specialized review, an alignment focuses on coherence across stages rather
+  than deep technical correctness within one domain.
 - **Specialized review:** Architecture board, security review, or multi-person
   approval
 - **Human approval:** Human reviews and approves before merge or adoption
@@ -154,7 +154,7 @@ project state.
 requirements, acceptance criteria, traceability matrices). Humans approve before
 output is relied on. Correctness requires domain expertise.
 
-**System Design (Stage 3):** Requires alignment review — architecture council
+**System Design (Stage 3):** Requires alignment — architecture council
 or tech lead sign-off, security review for auth/data flow changes, explicit
 rollback plan and migration review. Foundational decisions with high blast
 radius.

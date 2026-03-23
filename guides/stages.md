@@ -1,7 +1,7 @@
 ---
 id: stages
 type: guide
-concerns: [stage-definitions, inputs-outputs, gates, execution-patterns]
+concerns: [stage-definitions, inputs-outputs, execution-patterns]
 ---
 
 # AI-Assisted SDLC Stages
@@ -47,8 +47,8 @@ flow through every subsequent stage.
    Iterative, Continuous)
 3. Drill into individual [**stage definitions**](#stage-1-initiation) for
    inputs, activities, outputs, and exit criteria
-4. See [**Checkpoints**](#checkpoints) for the gate and review types that govern
-   progression
+4. See [**Checkpoint Taxonomy**](checkpoints.md) for the gate and review types
+   that govern progression
 
 ---
 
@@ -339,7 +339,7 @@ accurate test planning, and reduced rework from ambiguity.
 
 ### Checkpoints
 
-- **Requirements Readiness (Quality Checkpoint):** End of Requirements stage
+- **Requirements Readiness (Review):** End of Requirements stage
   - **Decision:** Ready (proceed to System Design) / Not Ready (remediate and
     re-review)
   - **Based on:** Requirements Brief with acceptance criteria, prioritized
@@ -425,7 +425,7 @@ guides all subsequent implementation work.
 
 ### Checkpoints
 
-- **Alignment Review:** Architecture and technology decisions reviewed with
+- **Architecture Review (Alignment):** Architecture and technology decisions reviewed with
   stakeholders
 - **Gate 2 (Investment Decision):** After Requirements and System Design are
   both complete
@@ -502,7 +502,7 @@ Verification.
 
 ### Checkpoints
 
-- **Design Review (Quality Checkpoint):** End of Increment Design
+- **Design Review (Review):** End of Increment Design
   - **Decision:** Ready to implement, or revise designs
   - **Based on:** Increment Design Brief with component designs, API specs, and
     test strategy
@@ -804,176 +804,10 @@ Support stage may trigger revisits to earlier stages:
 
 ## Checkpoints
 
-Throughout the SDLC, various checkpoints ensure quality, alignment, and sound
-decision-making. The framework distinguishes five types of checkpoints, each
-with different purposes and outcomes:
-
-### Gates (Investment Decisions)
-
-- **Purpose:** Decide whether to continue investing resources in the project
-- **Outcome:** Proceed / Revise / Stop
-- **Real stop option:** Yes — these are genuine go/no-go decisions
-- **When used:** Early in the project when stopping is still realistic
-
-**Examples:**
-
-- **Gate 1:** End of Initiation — Approve brief and fund Requirements work?
-- **Gate 2:** After Requirements and System Design are both complete — Commit to
-  building this?
-
-**AI validation:** Ensure AI-assisted analysis and recommendations are sound;
-human owns the investment decision.
-
-**After Gate 2:** The project is funded and team committed. Later checkpoints
-focus on "when/how to proceed" rather than "if."
-
-Record gate decisions using the
-[Gate Decision Template](../templates/gate-decision.md).
-
-### Quality Checkpoints
-
-- **Purpose:** Ensure quality and readiness standards are met before proceeding
-- **Outcome:** Ready / Not Ready (with remediation needed)
-- **Real stop option:** No — fix issues and retry, don't stop the project
-- **When used:** Throughout development to maintain quality bars
-
-**Examples:**
-
-- Code review approval
-- Test coverage thresholds met
-- Security scan passed
-- Performance benchmarks achieved
-- Documentation completeness check
-
-**AI validation:** Human review of AI-generated code, tests, and documentation
-is critical. Verify:
-
-- AI-generated code is correct, secure, and maintainable
-- AI-generated tests provide meaningful coverage
-- AI-generated docs are accurate and complete
-
-### Deployment Approvals
-
-- **Purpose:** Authorize deployment to a specific environment
-- **Outcome:** Deploy / Hold / Rollback
-- **Real stop option:** No — about timing and rollback, not project cancellation
-- **When used:** When releasing to staging, production, or progressive rollout
-  milestones
-
-**Examples:**
-
-- Staging deployment approval
-- Production deployment go/no-go
-- Rollout gates (10% → 50% → 100%)
-- Emergency rollback decisions
-
-**AI validation:** Ensure AI-assisted deployment automation is safe and
-monitored. Verify deployment plans and rollback procedures.
-
-Approval authority varies by environment — see the Deployment Guide for
-role-specific guidance. Record deployment approvals using the
-[Checkpoint Decision Template](../templates/checkpoint-decision.md).
-
-### Alignment Reviews
-
-- **Purpose:** Synchronize stakeholders, gather feedback, ensure consensus
-- **Outcome:** Aligned / Adjustments Needed
-- **Real stop option:** No — about refinement and convergence
-- **When used:** When stakeholder input or team alignment is needed
-
-**Examples:**
-
-- Design review with stakeholders
-- Sprint review/demo
-- Architecture review
-- Requirements walkthrough
-
-**AI validation:** Review AI-generated designs, architectures, and requirements
-with the team. Ensure AI recommendations align with stakeholder needs and
-constraints.
-
-### Compliance Approvals
-
-- **Purpose:** Obtain required sign-offs from legal, security, or regulatory
-  teams
-- **Outcome:** Approved / Remediation Required
-- **Real stop option:** Technically yes, but rarely — usually remediate and
-  resubmit
-- **When used:** When regulatory, legal, or security requirements must be met
-- **Trigger:** Activate Compliance Approval when the project's risk tier is
-  Standard or Enterprise and regulatory, legal, or security sign-off requirements
-  were identified during Initiation or System Design. Use the
-  [Checkpoint Decision Template](../templates/checkpoint-decision.md) for the
-  approval artifact.
-
-**Examples:**
-
-- Legal review (privacy, licensing, terms)
-- Security review (vulnerability assessment, threat modeling)
-- Accessibility compliance verification
-- Data privacy impact assessment
-
-**AI validation:** Ensure AI outputs meet compliance requirements:
-
-- AI-generated code doesn't introduce security vulnerabilities
-- AI-assisted data handling respects privacy regulations
-- AI recommendations consider legal and regulatory constraints
-
-### Decision-Rights Matrix
-
-Each checkpoint has defined roles for who prepares evidence, who decides, and
-who is informed. This matrix covers checkpoint-level decision rights. For
-stage-level role assignments (R/A/C/I), see the
-[RACI Matrix](framework.md#roles-and-responsibilities).
-
-| Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
-| --- | --- | --- | --- | --- | --- |
-| Gate 1 (Investment Decision) | Initiation | Gate | PM/BA | Exec | All roles\*\* |
-| Requirements Readiness | Requirements | Quality | PM/BA | PM/BA (peer\*) | PjM |
-| Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM/BA, PjM |
-| Gate 2 (Investment Decision) | System Design | Gate | PM/BA, Architect, AppSec | Exec | All roles\*\* |
-| Design Review | Increment Design | Quality | Engineer | Architect | PM/BA, PjM |
-| PR Review + CI | Implementation | Quality | Engineer | Engineer (peer\*) | PjM |
-| Test Execution + Coverage Review | Verification | Quality | QA, AppSec | QA | PjM, PM/BA |
-| Production Deployment Approval | Deployment | Deployment | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
-| Compliance Approval | Deployment | Compliance | PM/BA, AppSec | AppSec | Exec, PjM |
-| Production Ownership Decision | Support | Quality | DevOps | PjM | PM/BA, Exec |
-
-\* **Peer** — a second person in the same role (or a senior in a related role)
-who was not the primary author.
-
-\*\* **All roles** — all roles that have participated up to that point.
-
-**Gate 2 evidence split:** PM/BA prepares business case and requirements
-coverage. Architect prepares architecture rationale and ADR summary. AppSec
-prepares security risk posture (see
-[Security Risk Posture](../templates/gate-decision.md#security-risk-posture) section in the gate decision
-template).
-
-### Checkpoint Mapping by Stage
-
-Each stage specifies which checkpoint types apply. For example:
-
-- **Initiation:** Gate 1 (Investment Decision)
-- **Requirements:** Quality Checkpoint (Requirements Readiness)
-- **System Design:** Alignment Reviews (Architecture Review), Gate 2
-  (Investment Decision)
-- **Increment Design:** Quality Checkpoint (Design Review)
-- **Implementation:** Quality Checkpoints (PR Review + CI), Deployment
-  Approvals (to staging)
-- **Verification:** Quality Checkpoints (Test Execution + Coverage Review),
-  Deployment Approvals (production readiness)
-- **Deployment:** Deployment Approvals (Production Deployment Approval),
-  Compliance Approvals (Compliance Approval)
-- **Support:** Quality Checkpoints (Production Ownership Decision)
-
-**Human validation of AI output is required at all checkpoint types.** The AI
-Assistance Scorecard provides stage-specific guidance on where AI can work more
-independently vs. where human oversight is critical.
-
-> **Enterprise extensions:** Organizations with additional governance needs can
-> insert security reviews, compliance validation, or Change Advisory Board
-> approvals as checkpoints within stages rather than adding new stages.
+For the full checkpoint taxonomy (five checkpoint types, Decision-Rights Matrix,
+and per-stage checkpoint mapping), see
+[Checkpoint Taxonomy](checkpoints.md). Each stage definition above references
+its specific checkpoints in the `### Checkpoints` subsection.
 
 ---
 

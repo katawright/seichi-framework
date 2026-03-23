@@ -19,8 +19,8 @@ outputs:
     template: templates/implementation-brief.md
   - artifact: session-log
   - artifact: observability-instrumentation
-gates:
-  - type: ci-validation-human-approval
+checkpoints:
+  - protocol: ci-validation-human-approval
     name: "PR Review + CI"
     hard_gate: false
 feeds_into: [verification]

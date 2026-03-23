@@ -62,7 +62,7 @@ ready for Gate 2.
         value delivered)
 13. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
         NFRs)
-14. [ ] **[H] Alignment Review conducted** (stakeholder sign-off obtained)
+14. [ ] **[H] Alignment conducted** (stakeholder sign-off obtained)
 
 ### Handoff to Increment Design
 

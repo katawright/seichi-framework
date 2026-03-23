@@ -19,8 +19,8 @@ outputs:
   - artifact: success-criteria-reports
   - artifact: incident-reports
   - artifact: enhancement-backlog
-gates:
-  - type: human-approval
+checkpoints:
+  - protocol: human-approval
     name: "Production Ownership Decision"
     hard_gate: false
 feeds_into:
