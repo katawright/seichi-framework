@@ -45,7 +45,7 @@
 | FR-Y           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
 | NFR-Z          | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
 
-AC modifications require PM/BA consultation before implementation. Record the
+AC modifications require PM consultation before implementation. Record the
 agreed modification and rationale in the AC Modifications column as evidence
 that the consultation occurred.
 

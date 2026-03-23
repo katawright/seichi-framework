@@ -32,7 +32,7 @@ checkpoints:
   - protocol: human-approval
     name: "Gate 2 (Investment Decision)"
     hard_gate: true
-    responsible_roles: [pm-ba, architect, appsec]
+    responsible_roles: [pm, architect, appsec]
 feeds_into: [increment-design]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md

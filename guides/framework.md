@@ -582,7 +582,7 @@ prepares evidence, who decides), see the
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
 Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
-| Activity / Stage     | PM/BA | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
+| Activity / Stage     | PM | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
 | -------------------- | ----- | --------- | --------- | --- | ------ | -------- | ---- | --- |
 | **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C‡  |
 | Gate 1 decision†     | R     | -         | -         | -   | -      | C        | A    | C   |
@@ -616,7 +616,7 @@ Increment Design, design conformance when consulted at Implementation (see
 [Decision Scope Test](#decision-scope-test) below), and infrastructure plan
 conformance when consulted at Deployment. AppSec consultation at Implementation
 is triggered by new authentication flows, cryptographic usage, external API
-integrations, or changes to data handling patterns. PM/BA
+integrations, or changes to data handling patterns. PM
 consultation focuses on requirements clarification and priority trade-offs
 (System Design, Increment Design) and acceptance criteria interpretation
 (Verification). PjM consultation focuses on schedule impact and cross-stage
@@ -663,7 +663,7 @@ response or action is required unless they identify a concern, in which case
 they raise it with the Accountable role. Additionally, all checkpoint decisions
 are distributed to PjM for scheduling and coordination purposes, regardless of
 PjM's RACI designation at that stage. The implementation-brief is also
-distributed to PM/BA when finalized, so that PM/BA has current context for
+distributed to PM when finalized, so that PM has current context for
 Verification consultations.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
@@ -688,7 +688,7 @@ deployment) and Informed where it passively tracks progress (implementation,
 verification, support). The following cross-cutting activities give PjM clear
 R/A accountability:
 
-| Activity                               | PjM | PM/BA | Engineers | Architect | QA  | DevOps | Exec |
+| Activity                               | PjM | PM | Engineers | Architect | QA  | DevOps | Exec |
 | -------------------------------------- | --- | ----- | --------- | --------- | --- | ------ | ---- |
 | Delivery schedule & progress reporting | R/A | I     | C         | -         | -   | -      | I    |
 | Gate facilitation                      | R   | -     | -         | -         | -   | -      | A    |
