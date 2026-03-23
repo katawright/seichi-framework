@@ -102,23 +102,23 @@ stage-level role assignments (R/A/C/I), see the
 
 | Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
 | --- | --- | --- | --- | --- | --- |
-| Gate 1 (Investment Decision) | Initiation | Gate | PM/BA | Exec | All roles\*\* |
-| Requirements Readiness | Requirements | Review | PM/BA | PM/BA (peer\*) | PjM |
-| Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM/BA, PjM |
-| Gate 2 (Investment Decision) | System Design | Gate | PM/BA, Architect, AppSec | Exec | All roles\*\* |
-| Design Review | Increment Design | Review | Engineer | Architect | PM/BA, PjM |
+| Gate 1 (Investment Decision) | Initiation | Gate | PM | Exec | All roles\*\* |
+| Requirements Readiness | Requirements | Review | PM | PM (peer\*) | PjM |
+| Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM, PjM |
+| Gate 2 (Investment Decision) | System Design | Gate | PM, Architect, AppSec | Exec | All roles\*\* |
+| Design Review | Increment Design | Review | Engineer | Architect | PM, PjM |
 | PR Review + CI | Implementation | Review | Engineer | Engineer (peer\*) | PjM |
-| Test Execution + Coverage Review | Verification | Review | QA, AppSec | QA | PjM, PM/BA |
-| Production Deployment Approval | Deployment | Review | DevOps, AppSec | DevOps | PM/BA, PjM, Exec |
-| Compliance Approval | Deployment | Review | PM/BA, AppSec | AppSec | Exec, PjM |
-| Production Ownership Decision | Support | Review | DevOps | PjM | PM/BA, Exec |
+| Test Execution + Coverage Review | Verification | Review | QA, AppSec | QA | PjM, PM |
+| Production Deployment Approval | Deployment | Review | DevOps, AppSec | DevOps | PM, PjM, Exec |
+| Compliance Approval | Deployment | Review | PM, AppSec | AppSec | Exec, PjM |
+| Production Ownership Decision | Support | Review | DevOps | PjM | PM, Exec |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
 who was not the primary author.
 
 \*\* **All roles** — all roles that have participated up to that point.
 
-**Gate 2 evidence split:** PM/BA prepares business case and requirements
+**Gate 2 evidence split:** PM prepares business case and requirements
 coverage. Architect prepares architecture rationale and ADR summary. AppSec
 prepares security risk posture (see
 [Security Risk Posture](../templates/gate-decision.md#security-risk-posture)

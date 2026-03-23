@@ -81,7 +81,7 @@ editing files. See `INDEX.md` for the full file inventory and canonical sources.
 ## Workflow
 
 1. Maintain consistency across stage artifacts
-2. Tailor language to role (business-first in PM/BA stages, technical in
+2. Tailor language to role (business-first in PM stages, technical in
    engineering stages)
 3. Each stage directory should include: README (stage guide), checklist,
    reference (if needed). Templates live in `templates/`. Stage directories are

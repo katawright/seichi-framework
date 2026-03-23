@@ -20,14 +20,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, appsec, pjm], I: [exec] }
+    raci_roles: { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
     checkpoints:
       [
         {
           protocol: human-approval,
           name: "Gate 1 (Investment Decision)",
           hard_gate: true,
-          responsible_roles: [pm-ba],
+          responsible_roles: [pm],
         },
       ]
     inputs: [business-opportunity, stakeholder-list, budget-constraints]
@@ -50,14 +50,14 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [pm-ba], A: [pm-ba], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
+    raci_roles: { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
     checkpoints:
       [
         {
           protocol: human-approval,
           name: "Requirements Readiness",
           hard_gate: false,
-          responsible_roles: [pm-ba],
+          responsible_roles: [pm],
         },
       ]
     inputs: [initiation-brief, success-criteria-register]
@@ -83,7 +83,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [architect], A: [architect], C: [pm-ba, engineer, qa, devops, appsec, pjm], I: [exec] }
+    raci_roles: { R: [architect], A: [architect], C: [pm, engineer, qa, devops, appsec, pjm], I: [exec] }
     checkpoints:
       [
         {
@@ -96,7 +96,7 @@ stages:
           protocol: human-approval,
           name: "Gate 2 (Investment Decision)",
           hard_gate: true,
-          responsible_roles: [pm-ba, architect, appsec],
+          responsible_roles: [pm, architect, appsec],
         },
       ]
     inputs:
@@ -134,7 +134,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [engineer], A: [engineer], C: [pm-ba, architect, qa, appsec, pjm] }
+    raci_roles: { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
     checkpoints:
       [{ protocol: specialized-review, name: "Design Review", hard_gate: false, responsible_roles: [engineer] }]
     inputs:
@@ -207,7 +207,7 @@ stages:
     default_oversight_intensity: passive
     working_location: source-code
     session_log_template: templates/session-log.md
-    raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm-ba, architect], I: [pjm] }
+    raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm, architect], I: [pjm] }
     checkpoints:
       [
         {
@@ -249,7 +249,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm], I: [pm-ba, exec] }
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, qa, appsec, pjm], I: [pm, exec] }
     checkpoints:
       [
         {
@@ -293,7 +293,7 @@ stages:
     default_oversight_intensity: active
     working_location: artifacts
     session_log_template: templates/session-log.md
-    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm-ba, exec, pjm] }
+    raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm, exec, pjm] }
     checkpoints:
       [
         {

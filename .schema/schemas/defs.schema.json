@@ -33,7 +33,7 @@
     "role-id": {
       "$comment": "Role identifiers from the RACI matrix in guides/framework.md.",
       "type": "string",
-      "enum": ["pm-ba", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
+      "enum": ["pm", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
     },
     "checkpoint-object": {
       "$comment": "A stage checkpoint with protocol, display name, and investment-gate flag. responsible_roles lists who prepares evidence per the Decision-Rights Matrix.",
