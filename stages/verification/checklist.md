@@ -81,7 +81,8 @@ the increment is ready for deployment.
 
 ## Final Decision
 
-> **If any items are unchecked, address before proceeding.**
+> **If any items are unchecked, address them or document as conditions before
+> selecting a final decision below.**
 
 - [ ] **Ready** — Hand off to Deployment stage; record the decision using the
       [Checkpoint Decision Template](../../templates/checkpoint-decision.md)

@@ -194,8 +194,12 @@ stateful, approach]
 
 ### 5.3 Acceptance Testing
 
-- Manual test scenarios referencing ACs from requirements-brief
-- UAT script for stakeholders
+<!-- Map each acceptance criterion to its planned test approach. QA uses this
+     table as the starting point for the verification brief's AC traceability. -->
+
+| AC ID  | Test Approach        | UAT Required | Notes                     |
+| ------ | -------------------- | ------------ | ------------------------- |
+| AC-X.Y | [manual / automated] | [Yes / No]   | [scenario or script note] |
 
 ### 5.4 Performance Testing (if applicable)
 

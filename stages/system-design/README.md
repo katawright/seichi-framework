@@ -74,11 +74,13 @@ inputs/outputs, entry/exit criteria, and gate details), see
 
 Three upstream artifacts feed into System Design:
 
-- **Requirements Brief** — with MoSCoW priorities and acceptance criteria
+- **[Requirements Brief](../../templates/requirements-brief.md)** — with MoSCoW
+  priorities and acceptance criteria
 - **Non-Functional Requirements** — performance, security, scalability, and
-  other quality attributes
-- **Success Criteria Register** — measurable success criteria requiring
-  instrumentation
+  other quality attributes (in the
+  [Requirements Brief](../../templates/requirements-brief.md#non-functional-requirements))
+- **[Success Criteria Register](../../templates/success-criteria-register.md)**
+  — measurable success criteria requiring instrumentation
 
 For brownfield first AI-assisted projects, also gather existing architecture
 documentation, ADRs, infrastructure configuration, and known technical debt.

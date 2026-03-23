@@ -621,8 +621,11 @@ is triggered by new authentication flows, cryptographic usage, external API
 integrations, or changes to data handling patterns. PM/BA
 consultation focuses on requirements clarification and priority trade-offs
 (System Design, Increment Design) and acceptance criteria interpretation
-(Verification). At Enterprise tier, organizations may elevate Exec from Informed
-to Consulted or Accountable at Deployment Approval for production-impacting
+(Verification). PjM consultation focuses on schedule impact and cross-stage
+dependency assessment; PjM also facilitates Gate 1 and Gate 2 reviews
+(scheduling, convening participants, capturing decisions in the gate decision
+template). At Enterprise tier, organizations may elevate Exec from Informed to
+Consulted or Accountable at Deployment Approval for production-impacting
 changes.
 
 #### Decision Scope Test

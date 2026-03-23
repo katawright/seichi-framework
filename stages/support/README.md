@@ -71,8 +71,9 @@ delivery and development.
 
 A deployed system live in production with: monitoring dashboards active, updated
 runbooks, incident response procedures, baseline measurements captured at
-deployment, release notes, rollback procedure, and the success criteria register
-for ongoing measurement.
+deployment, release notes, rollback procedure, and the
+[success criteria register](../../templates/success-criteria-register.md) for
+ongoing measurement.
 
 If any inputs are missing or incomplete, use the
 [Deployment Checklist: Handoff to Support](../deployment/checklist.md#handoff-to-support)

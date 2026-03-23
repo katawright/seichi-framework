@@ -36,8 +36,11 @@ being tested]
 
 **Acceptance Criteria:**
 
-> If the implementation brief records AC modifications (added, refined, or
-> split criteria), merge those changes here before planning tests.
+> If the [implementation brief](implementation-brief.md) records AC
+> modifications in its Requirements Implemented table (added, refined, or
+> split criteria), merge those changes here before planning tests. Also check
+> the [increment design brief](increment-design-brief.md#acceptance-testing)
+> for the planned AC-to-test mapping.
 
 - [ ] [AC-1.1: Specific testable criterion]
 - [ ] [AC-1.2: Specific testable criterion]
