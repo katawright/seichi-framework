@@ -21,8 +21,8 @@ outputs:
   - artifact: verified-code
   - artifact: production-readiness-assessment
     embedded_in: verification-brief
-gates:
-  - type: ci-validation-human-spot-check
+checkpoints:
+  - protocol: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
     hard_gate: false
 feeds_into: [deployment, implementation]
@@ -330,7 +330,7 @@ Track defects by **severity** (technical impact: Critical → Low) and
 
 > For structuring gate decisions, use the
 > [Checkpoint Decision Template](../../templates/checkpoint-decision.md) with
-> the **Quality Checkpoint** type (Ready / Not Ready).
+> the **Review** type (Ready / Not Ready).
 
 Complete the Production Readiness section of the Verification Brief as your
 primary artifact. At Standard+ tiers, additionally complete the

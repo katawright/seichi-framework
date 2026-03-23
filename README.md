@@ -212,10 +212,9 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            | Executive   |
 
 After Gate 2, the project is committed. Checkpoints govern the remaining
-stages: Quality Checkpoints (peer review of stage artifacts),
-Alignment Reviews (design conformance), Deployment Approval (production
-readiness), and Compliance Approval (regulatory sign-off when required). These
-control quality, deployment timing, and compliance — not whether to continue.
+stages: Reviews (criteria verification at each stage) and Alignments
+(stakeholder consensus). These control quality, readiness, and compliance — not
+whether to continue.
 Security governance flows through every stage via the AppSec role and automated
 scanning — see the [Security Guide](guides/security.md) for the full
 throughline.
@@ -226,7 +225,7 @@ Gate 2, executives receive notification of checkpoint outcomes but are not
 required to participate — see the
 [RACI matrix](guides/framework.md#roles-and-responsibilities) for the full
 responsibility breakdown and the
-[Decision-Rights Matrix](guides/stages.md#decision-rights-matrix) for
+[Decision-Rights Matrix](guides/checkpoints.md#decision-rights-matrix) for
 per-checkpoint roles.
 
 > **Why two gates?** Gate 1 is a low-cost screen: spend a little to learn

@@ -15,8 +15,8 @@ outputs:
     embedded_in: initiation-brief
   - artifact: timeline-estimate
     embedded_in: initiation-brief
-gates:
-  - type: human-approval
+checkpoints:
+  - protocol: human-approval
     name: "Gate 1 (Investment Decision)"
     hard_gate: true
 feeds_into: [requirements]

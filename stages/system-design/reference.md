@@ -802,7 +802,7 @@ System Design has the highest blast radius of the foundational stages —
 foundational decisions are difficult and expensive to reverse. Human validation
 is non-negotiable in the following areas:
 
-- **Architecture decisions:** Require alignment review — architecture council
+- **Architecture decisions:** Require alignment — architecture council
   or tech lead sign-off. AI proposes; humans decide.
 - **Security model and data flow:** No security-critical decision should be
   finalized without human review. This includes authentication architecture,

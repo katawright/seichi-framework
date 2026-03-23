@@ -15,8 +15,8 @@ outputs:
   - artifact: data-model-changes
   - artifact: test-strategy
   - artifact: implementation-notes
-gates:
-  - type: specialized-review
+checkpoints:
+  - protocol: specialized-review
     name: "Design Review"
     hard_gate: false
 feeds_into: [implementation]

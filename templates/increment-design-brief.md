@@ -28,7 +28,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Engineers
 - **Supporting Roles:** Architect, QA Engineers, Product Manager, Project Manager
-- **Checkpoint:** Quality Checkpoint (optional for Minimal; recommended for
+- **Checkpoint:** Review (optional for Minimal; recommended for
   Standard; required for Enterprise)
 - **Depends On:** [e.g., Increment 0 / None — inter-increment dependencies]
 - **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this

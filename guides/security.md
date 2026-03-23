@@ -58,7 +58,7 @@ normal development.
 5. **AppSec engineers:** See your
    [role definition, activity table, and escalation protocol](framework.md#application-security-appsec)
    in the Framework Guide and the
-   [Decision-Rights Matrix](stages.md#decision-rights-matrix) for
+   [Decision-Rights Matrix](checkpoints.md#decision-rights-matrix) for
    checkpoint-level authority (who prepares evidence, who decides)
 
 ---
@@ -317,9 +317,9 @@ Integrate these checks into your CI/CD pipeline — see
 tier-specific gate configuration. For security accountability by stage, see the
 [Roles and Responsibilities](framework.md#roles-and-responsibilities) RACI
 matrix. At Standard and Enterprise tiers, AppSec owns a
-[Compliance Approval](../guides/stages.md#compliance-approvals) checkpoint at
-Deployment — see the
-[Decision-Rights Matrix](../guides/stages.md#decision-rights-matrix).
+[Compliance Approval](../guides/checkpoints.md#reviews) checkpoint
+at Deployment — see the
+[Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix).
 
 ### Support
 

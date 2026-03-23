@@ -27,7 +27,7 @@ DevOps Lead, Project Manager]
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
-- **Checkpoints:** Alignment Review, Gate 2
+- **Checkpoints:** Alignment, Gate 2
 - **Gate:** Gate 2 (build/no-build decision after System Design + Requirements
   complete)
 

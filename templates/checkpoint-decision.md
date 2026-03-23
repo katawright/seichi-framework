@@ -15,8 +15,7 @@ list of checkpoint types.
 
 **Date:** YYYY-MM-DD
 
-**Checkpoint Type:** Quality Checkpoint / Deployment Approval / Alignment
-Review / Compliance Approval
+**Checkpoint Type:** Review / Alignment
 
 **Status:** Pending / Approved / Held / Rejected / Rolled Back
 
@@ -72,11 +71,8 @@ rationale.
 ## Decision
 
 - **Decision type (choose one):**
-  - **Quality checkpoint:** Ready / Not Ready
-  - **Deployment approval:** Deploy / Hold / Rollback
-  - **Alignment review:** Aligned / Adjustments Needed
-  - **Compliance approval:** Approve / Remediation required / Reject
-  - **Production ownership:** Accept / Accept with conditions / Defer
+  - **Review:** Ready / Not Ready
+  - **Alignment:** Aligned / Adjustments Needed
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any — e.g., "accept with mitigation X by date Y")
 

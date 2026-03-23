@@ -175,7 +175,7 @@ This guide covers the major concepts that structure the framework:
 
 **[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five checkpoint types ensuring
 quality and alignment. Full reference:
-[stages.md § Checkpoints](stages.md#checkpoints).
+[Checkpoint Taxonomy](checkpoints.md).
 
 **[Measurement Throughline](#measurement-throughline)** — Measurable success
 criteria flowing from Initiation through all stages. Full reference:
@@ -240,17 +240,15 @@ criteria, stage flow diagrams, and handoffs, see the
 The framework defines five checkpoint types — each with distinct decision rights,
 required evidence, and decision records.
 
-| Type                    | When                                   | Purpose                                         |
-| ----------------------- | -------------------------------------- | ------------------------------------------------ |
-| **Gate**                | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop |
-| **Quality Checkpoint**  | End of each stage                      | Peer review of stage artifacts before handoff    |
-| **Alignment Review**    | After Increment Design                 | Design conformance with system architecture      |
-| **Deployment Approval** | Before production release              | Production readiness and rollback verification   |
-| **Compliance Approval** | Before regulated releases              | Regulatory and security sign-off                 |
+| Type           | When                                   | Purpose                                          |
+| -------------- | -------------------------------------- | ------------------------------------------------ |
+| **Gate**       | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop |
+| **Review**     | End of each stage                      | Criteria verification — does this meet the bar?  |
+| **Alignment**  | After System Design                    | Stakeholder consensus — are we on the same page? |
 
 For the full taxonomy, per-checkpoint decision-rights matrix, and required
 evidence, see the
-[AI-Assisted SDLC Stages § Checkpoints](stages.md#checkpoints) reference.
+[Checkpoint Taxonomy](checkpoints.md) reference.
 
 ---
 
@@ -578,7 +576,7 @@ key activities at each stage. It consolidates the Primary and Supporting Role
 designations from each stage guide into a single cross-stage view. This matrix
 covers stage-level role assignments. For checkpoint-level decision rights (who
 prepares evidence, who decides), see the
-[Decision-Rights Matrix](stages.md#decision-rights-matrix).
+[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
 
 **Legend:** **R** = Responsible (does the work), **A** = Accountable
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
@@ -601,7 +599,7 @@ Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
 § **PjM at Support:** PjM is Informed at stage level but owns the Production
 Ownership Decision per the
-[Decision-Rights Matrix](stages.md#decision-rights-matrix).
+[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
 
 **Verification responsibility split:** Engineers (R) fix defects found during
 testing, complete unit test gaps, and support integration test debugging. QA
@@ -720,11 +718,11 @@ not works in progress.
 | Gate 2 | 45–90 min            |
 
 **Scope.** PjM facilitates Gate 1 and Gate 2 — the two investment-decision gates.
-Non-investment checkpoints (Quality, Deployment Approval, Alignment Review, Compliance
-Approval, Production Ownership) are owned and run by the stage's Responsible
+Non-investment checkpoints (Reviews and Alignments) are owned and run by the
+stage's Responsible
 role; PjM tracks their completion for scheduling purposes but does not
 facilitate them. See the
-[Decision-Rights Matrix](stages.md#decision-rights-matrix) for per-checkpoint roles.
+[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix) for per-checkpoint roles.
 
 **Decision recording.** Capture the outcome using
 [`templates/gate-decision.md`](../templates/gate-decision.md). Record the
