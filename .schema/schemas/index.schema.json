@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "index.schema.json",
+  "type": "object",
+  "properties": {
+    "id": { "const": "index" },
+    "type": { "const": "index" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": ["id", "type", "version", "generated"],
+  "additionalProperties": false
+}

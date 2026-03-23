@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "root-readme.schema.json",
+  "type": "object",
+  "properties": {
+    "agent_entry_point": {
+      "type": "string",
+      "pattern": "^guides/.*\\.md$"
+    }
+  },
+  "required": ["agent_entry_point"],
+  "additionalProperties": false
+}

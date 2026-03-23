@@ -300,6 +300,10 @@ Same file, two audiences, no duplication.
 | **Checklists**       | No front matter                                                                                                 |
 | **Stage references** | No front matter                                                                                                 |
 
+The JSON Schema files in `.schema/schemas/` are the machine-readable versions of
+these conventions. Run `node .schema/validate.mjs` to check all front matter
+against the schemas.
+
 ### Stage README Schema
 
 ```yaml
@@ -402,6 +406,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-22
 
 Added to framework in v0.19.0.

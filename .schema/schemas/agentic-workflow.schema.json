@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agentic-workflow.schema.json",
+  "type": "object",
+  "properties": {
+    "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+    "type": {
+      "type": "string",
+      "enum": ["guide", "style-guide", "reference"]
+    },
+    "concerns": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "stages": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/agentic-stage" },
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "artifact_paths": {
+      "type": "object",
+      "properties": {
+        "briefs": { "type": "string" },
+        "adrs": { "type": "string" },
+        "session_logs": { "type": "string" },
+        "success_criteria": { "type": "string" },
+        "convention": { "type": "string" }
+      },
+      "required": ["briefs", "adrs", "session_logs", "success_criteria", "convention"],
+      "additionalProperties": false
+    },
+    "working_locations": {
+      "type": "object",
+      "properties": {
+        "framework": { "$ref": "#/$defs/location-entry" },
+        "artifacts": { "$ref": "#/$defs/location-entry" },
+        "source_code": { "$ref": "#/$defs/location-entry" }
+      },
+      "required": ["framework", "artifacts", "source_code"],
+      "additionalProperties": false
+    },
+    "fallback": {
+      "type": "object",
+      "properties": {
+        "missing_input": { "type": "object", "additionalProperties": { "type": "string" } },
+        "failed_gate": { "type": "object", "additionalProperties": { "type": "string" } },
+        "ambiguous_requirements": { "type": "object", "additionalProperties": { "type": "string" } },
+        "unreachable_human": { "type": "object", "additionalProperties": { "type": "string" } },
+        "stage_overrides": { "type": "string" }
+      },
+      "required": ["missing_input", "failed_gate", "ambiguous_requirements", "unreachable_human", "stage_overrides"],
+      "additionalProperties": false
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "log_template": { "type": "string" },
+        "protocol": { "type": "string" }
+      },
+      "required": ["log_template", "protocol"],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id", "type", "concerns", "stages",
+    "artifact_paths", "working_locations", "fallback", "session"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "agentic-stage": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+        "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "execution_pattern": { "$ref": "defs.schema.json#/$defs/execution-pattern" },
+        "readme": { "$ref": "defs.schema.json#/$defs/file-path" },
+        "checklist": { "$ref": "defs.schema.json#/$defs/file-path" },
+        "reference": { "$ref": "defs.schema.json#/$defs/file-path" },
+        "default_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" },
+        "preparation_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" },
+        "default_oversight_intensity": { "$ref": "defs.schema.json#/$defs/oversight-intensity" },
+        "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
+        "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
+        "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
+        "gates": {
+          "type": "array",
+          "items": { "$ref": "defs.schema.json#/$defs/gate-object" },
+          "minItems": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "outputs": {
+          "type": "array",
+          "items": { "$ref": "defs.schema.json#/$defs/output-object" },
+          "minItems": 1
+        },
+        "feeds_into": {
+          "type": "array",
+          "items": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+          "minItems": 1
+        },
+        "revisit_conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id", "stage_number", "execution_pattern",
+        "readme", "checklist", "reference",
+        "default_autonomy", "default_oversight_intensity",
+        "working_location", "session_log_template",
+        "raci_roles", "gates", "inputs", "outputs", "feeds_into"
+      ],
+      "additionalProperties": false
+    },
+    "location-entry": {
+      "type": "object",
+      "properties": {
+        "role": { "type": "string" },
+        "writable": { "type": "boolean" },
+        "default_root": { "type": "string" },
+        "contains": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["role", "writable", "contains"],
+      "additionalProperties": false
+    }
+  }
+}

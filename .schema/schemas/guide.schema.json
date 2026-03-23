@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "guide.schema.json",
+  "type": "object",
+  "properties": {
+    "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+    "type": {
+      "type": "string",
+      "enum": ["guide", "style-guide", "reference"]
+    },
+    "concerns": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    }
+  },
+  "required": ["id", "type", "concerns"],
+  "additionalProperties": false
+}

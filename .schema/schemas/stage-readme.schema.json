@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage-readme.schema.json",
+  "type": "object",
+  "properties": {
+    "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+    "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "execution_pattern": { "$ref": "defs.schema.json#/$defs/execution-pattern" },
+    "inputs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "outputs": {
+      "type": "array",
+      "items": { "$ref": "defs.schema.json#/$defs/output-object" },
+      "minItems": 1
+    },
+    "gates": {
+      "type": "array",
+      "items": { "$ref": "defs.schema.json#/$defs/gate-object" },
+      "minItems": 1
+    },
+    "feeds_into": {
+      "type": "array",
+      "items": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+      "minItems": 1
+    },
+    "checklist": { "$ref": "defs.schema.json#/$defs/file-path" },
+    "reference": {
+      "oneOf": [
+        { "$ref": "defs.schema.json#/$defs/file-path" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "required": [
+    "id", "stage_number", "execution_pattern",
+    "inputs", "outputs", "gates", "feeds_into",
+    "checklist", "reference"
+  ],
+  "additionalProperties": false
+}
