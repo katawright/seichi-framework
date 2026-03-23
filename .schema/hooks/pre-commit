@@ -1,0 +1,11 @@
+#!/bin/sh
+# Front matter schema validation for staged .md files
+
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM -- '*.md')
+
+if [ -z "$STAGED_MD" ]; then
+  exit 0
+fi
+
+# shellcheck disable=SC2086
+node .schema/validate.mjs $STAGED_MD

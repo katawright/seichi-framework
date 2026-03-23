@@ -1,0 +1,29 @@
+{
+  "mappings": [
+    { "glob": "stages/*/README.md", "schema": "stage-readme.schema.json" },
+    { "glob": "guides/agentic-workflow.md", "schema": "agentic-workflow.schema.json" },
+    { "glob": "guides/*.md", "schema": "guide.schema.json" },
+    { "glob": "INDEX.md", "schema": "index.schema.json" },
+    { "glob": "README.md", "schema": "root-readme.schema.json" }
+  ],
+  "exclude": [
+    ".claude/**",
+    ".ignore/**",
+    ".obsidian/**",
+    ".evaluation/**",
+    ".schema/**",
+    "node_modules/**",
+    "templates/**",
+    "stages/*/checklist.md",
+    "stages/*/reference.md",
+    "stages/*/setup.md",
+    "stages/*/operations.md",
+    "stages/*/pipeline-checklist.md",
+    "stages/*/readiness-checklist.md",
+    "CLAUDE.md",
+    "STYLE_GUIDE.md",
+    "QUICKSTART.md",
+    "CONTRIBUTING.md",
+    "AGENTS.md"
+  ]
+}
