@@ -73,10 +73,12 @@ AI accelerates every testing activity; humans own the go/no-go decision.
 Working code from the Implementation stage with unit tests passing and coverage
 meeting team threshold (default: 80% line coverage — see
 [Implementation Checklist](../implementation/checklist.md) item 6 for the
-default; override in the implementation brief for project-specific targets), code review approvals, requirements with
-acceptance criteria, test strategy from Increment Design for test planning,
-implementation brief with notes, and component designs from Increment Design for
-plan-vs-actual comparison. Check the
+default; override in the implementation brief for project-specific targets),
+code review approvals,
+[requirements with acceptance criteria](../../templates/requirements-brief.md),
+[test strategy from Increment Design](../../templates/increment-design-brief.md#acceptance-testing),
+[implementation brief](../../templates/implementation-brief.md) with notes, and
+component designs from Increment Design for plan-vs-actual comparison. Check the
 Implementation Brief's Requirements Implemented table for any acceptance
 criteria modifications before planning test cases.
 

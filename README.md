@@ -57,11 +57,10 @@ Pick the path that matches your interest. Each takes under 5 minutes.
 | Kick off a new project                             | [Try It Now](#try-it-now)                                     | [Stage Overview](#stage-overview)                             | [Initiation](stages/initiation/README.md)                      |
 | Execute technical stages (design → verification)   | [Stage Overview](#stage-overview)                             | [System Design](stages/system-design/README.md)              | [Worked Example](guides/worked-example.md)                     |
 | Set up deployment pipelines and infrastructure     | [DevOps Integration Guide](guides/devops-integration.md)     | [Deployment Setup](stages/deployment/setup.md)               | [Deployment](stages/deployment/README.md)                      |
-| Run delivery and manage sprint cadence             | [Governance](#governance-at-a-glance)                        | [Stage Overview](#stage-overview)                             | [Delivery Operating Guide](guides/delivery-operating-guide.md) |
+| Run delivery and manage sprint cadence             | [Delivery Operating Guide](guides/delivery-operating-guide.md) | [Governance](#governance-at-a-glance)                       | [Stage Overview](#stage-overview)                              |
 | Verify and test an increment                       | [Verification](stages/verification/README.md)                | [Verification Brief](templates/verification-brief.md)        | [Verification Checklist](stages/verification/checklist.md)     |
 | Operate and maintain a production system           | [Support](stages/support/README.md)                          | [Support Operations](stages/support/operations.md)           | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
-
-For security touchpoints, see the [Security Guide](guides/security.md).
+| Assess security across stages                      | [Security Guide](guides/security.md)                         | [Governance](#governance-at-a-glance)                         | [Verification](stages/verification/README.md)                  |
 
 ---
 

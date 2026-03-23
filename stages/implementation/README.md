@@ -57,10 +57,11 @@ every step; humans own every gate.
 
 ### Starting Point
 
-A completed Increment Design Brief with detailed component designs, interface
-contracts, and test strategy. Also required: architecture diagrams from System
-Design, requirements with acceptance criteria, and the
-[success criteria register](../../templates/initiation-brief.md#goals-and-success-criteria)
+A completed [Increment Design Brief](../../templates/increment-design-brief.md)
+with detailed component designs, interface contracts, and test strategy. Also
+required: architecture diagrams from System Design,
+[requirements with acceptance criteria](../../templates/requirements-brief.md),
+and the [success criteria register](../../templates/success-criteria-register.md)
 for measurement throughline continuity. Your development environment should be
 set up and ready.
 
