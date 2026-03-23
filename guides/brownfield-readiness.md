@@ -1,9 +1,3 @@
----
-id: brownfield-readiness
-type: guide
-concerns: [brownfield-assessment, readiness-spectrum, codebase-evaluation]
----
-
 # Brownfield Readiness Guide
 
 ## Overview

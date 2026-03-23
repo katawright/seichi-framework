@@ -22,9 +22,9 @@ outputs:
   - artifact: production-readiness-assessment
     embedded_in: verification-brief
 checkpoints:
-  - protocol: ci-validation-human-spot-check
+  - type: review
+    protocol: ci-validation-human-spot-check
     name: "Test Execution + Coverage Review"
-    hard_gate: false
 feeds_into: [deployment, implementation]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md

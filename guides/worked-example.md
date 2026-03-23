@@ -1,9 +1,3 @@
----
-id: worked-example
-type: guide
-concerns: [traceability, artifact-examples, end-to-end-walkthrough]
----
-
 # Worked Example: One Requirement Through the Framework
 
 ## Overview

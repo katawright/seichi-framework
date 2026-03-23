@@ -1,9 +1,3 @@
----
-id: security
-type: guide
-concerns: [security-throughline, ssdf-mapping, ai-security-automation]
----
-
 # Security Guide
 
 ## Overview

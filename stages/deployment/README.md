@@ -24,9 +24,9 @@ outputs:
   - artifact: retrospective-action-items
     embedded_in: retrospective
 checkpoints:
-  - protocol: human-execution-required
+  - type: review
+    protocol: human-execution-required
     name: "Production Deployment Approval"
-    hard_gate: false
 feeds_into: [support, increment-design]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md

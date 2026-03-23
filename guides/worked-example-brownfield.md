@@ -1,10 +1,3 @@
----
-id: worked-example-brownfield
-type: guide
-concerns:
-  [brownfield-traceability, preparation-example, exit-checkpoint, shadow-mode]
----
-
 # Worked Example: Brownfield Adoption
 
 ## Overview

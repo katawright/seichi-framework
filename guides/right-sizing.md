@@ -1,9 +1,3 @@
----
-id: right-sizing
-type: guide
-concerns: [risk-tiers, team-size, process-scaling]
----
-
 # Right-Sizing Guide
 
 ## Overview

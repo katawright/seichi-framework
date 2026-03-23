@@ -24,9 +24,9 @@ stages:
     checkpoints:
       [
         {
+          type: gate,
           protocol: human-approval,
           name: "Gate 1 (Investment Decision)",
-          hard_gate: true,
           responsible_roles: [pm],
         },
       ]
@@ -35,8 +35,6 @@ stages:
       [
         { artifact: initiation-brief, template: templates/initiation-brief.md },
         { artifact: success-criteria-register, template: templates/success-criteria-register.md },
-        { artifact: assumptions-risks-list, embedded_in: initiation-brief },
-        { artifact: timeline-estimate, embedded_in: initiation-brief },
       ]
     feeds_into: [requirements]
     revisit_conditions: [scope-change, stakeholder-change, budget-reallocation]
@@ -54,9 +52,9 @@ stages:
     checkpoints:
       [
         {
+          type: review,
           protocol: human-approval,
           name: "Requirements Readiness",
-          hard_gate: false,
           responsible_roles: [pm],
         },
       ]
@@ -87,15 +85,15 @@ stages:
     checkpoints:
       [
         {
+          type: alignment,
           protocol: alignment-review,
           name: "Architecture Review",
-          hard_gate: false,
           responsible_roles: [architect, appsec],
         },
         {
+          type: gate,
           protocol: human-approval,
           name: "Gate 2 (Investment Decision)",
-          hard_gate: true,
           responsible_roles: [pm, architect, appsec],
         },
       ]
@@ -136,7 +134,7 @@ stages:
     session_log_template: templates/session-log.md
     raci_roles: { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
     checkpoints:
-      [{ protocol: specialized-review, name: "Design Review", hard_gate: false, responsible_roles: [engineer] }]
+      [{ type: review, protocol: specialized-review, name: "Design Review", responsible_roles: [engineer] }]
     inputs:
       [
         architecture-diagrams,
@@ -169,9 +167,9 @@ stages:
     checkpoints:
       [
         {
+          type: review,
           protocol: ci-validation-human-approval,
           name: "PR Review + CI",
-          hard_gate: false,
           responsible_roles: [engineer],
         },
       ]
@@ -211,9 +209,9 @@ stages:
     checkpoints:
       [
         {
+          type: review,
           protocol: ci-validation-human-spot-check,
           name: "Test Execution + Coverage Review",
-          hard_gate: false,
           responsible_roles: [qa, appsec],
         },
       ]
@@ -253,9 +251,9 @@ stages:
     checkpoints:
       [
         {
+          type: review,
           protocol: human-execution-required,
           name: "Production Deployment Approval",
-          hard_gate: false,
           responsible_roles: [devops, appsec],
         },
       ]
@@ -297,9 +295,9 @@ stages:
     checkpoints:
       [
         {
+          type: review,
           protocol: human-approval,
           name: "Production Ownership Decision",
-          hard_gate: false,
           responsible_roles: [devops],
         },
       ]
@@ -362,14 +360,14 @@ fallback:
     human_led: "Halt and present to human; do not derive inputs autonomously"
   failed_gate:
     default: "Document failure reason, attempt remediation, re-run gate check. If unresolved after one retry, escalate to human"
-    hard_gate: "Do not attempt remediation; escalate to human immediately with failure reason"
+    gate: "Do not attempt remediation; escalate to human immediately with failure reason"
     human_led: "Halt and present failure details to human; do not attempt remediation autonomously"
   ambiguous_requirements:
     default: "List interpretations, recommend one, halt for human confirmation before proceeding"
     human_led: "Present the ambiguity without recommending; wait for human direction"
   unreachable_human:
     default: "Continue with lowest-risk option, flag all decisions for review"
-    hard_gate: "Do not proceed past hard gates (Gate 1, Gate 2) without human approval — halt and log context"
+    gate: "Do not proceed past gates (Gate 1, Gate 2) without human approval — halt and log context"
     human_led: "Halt entirely and log all context for human review"
     collaborative: "Continue work within current stage only; do not advance to next stage or pass gates without human approval"
   stage_overrides:

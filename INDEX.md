@@ -1,11 +1,6 @@
----
-id: index
-type: index
-version: 0.41.0
-generated: 2026-03-19
----
-
 # Framework File Index
+
+**Last Updated:** 2026-03-19 | **Framework Version:** 0.41.0
 
 ## Overview
 
@@ -172,10 +167,7 @@ Load the index first, then load only what you need.
 | ---------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------- | ---- |
 | `.schema/schemas/defs.schema.json`             | Shared JSON Schema definitions for front matter validation.      | schema, validation, definitions, front-matter   | ref  |
 | `.schema/schemas/stage-readme.schema.json`     | JSON Schema for stage README front matter.                       | schema, validation, stage-readme, front-matter  | ref  |
-| `.schema/schemas/guide.schema.json`            | JSON Schema for guide file front matter.                         | schema, validation, guide, front-matter         | ref  |
 | `.schema/schemas/agentic-workflow.schema.json` | JSON Schema for agentic-workflow.md front matter.                | schema, validation, agentic-workflow            | ref  |
-| `.schema/schemas/index.schema.json`            | JSON Schema for INDEX.md front matter.                           | schema, validation, index                       | ref  |
-| `.schema/schemas/root-readme.schema.json`      | JSON Schema for root README.md front matter.                     | schema, validation, readme                      | ref  |
 | `.schema/file-map.json`                        | Maps file glob patterns to their validation schemas.             | schema, validation, file-mapping                | ref  |
 | `.schema/validate.mjs`                         | Front matter validation runner (Node.js).                        | schema, validation, linter, tooling             | ref  |
 | `.schema/hooks/pre-commit`                     | Git pre-commit hook for front matter validation.                 | git-hook, pre-commit, validation                | ref  |

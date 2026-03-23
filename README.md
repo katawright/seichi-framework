@@ -1,7 +1,3 @@
----
-agent_entry_point: guides/agentic-workflow.md
----
-
 # AI-Assisted SDLC Framework
 
 ## Overview
@@ -9,6 +5,10 @@ agent_entry_point: guides/agentic-workflow.md
 A practical, stage-by-stage guide for AI-assisted software delivery — giving
 teams and leaders the guidance, visibility, and oversight they need at every
 stage.
+
+> **Agents:** Start at
+> [agentic-workflow.md](guides/agentic-workflow.md) for stage routing, fallback
+> protocols, and execution guidance.
 
 > **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
 > first stage in under 5 minutes.

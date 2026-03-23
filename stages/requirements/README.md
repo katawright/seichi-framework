@@ -18,9 +18,9 @@ outputs:
     embedded_in: requirements-brief
   - artifact: success-criteria-register
 checkpoints:
-  - protocol: human-approval
+  - type: review
+    protocol: human-approval
     name: "Requirements Readiness"
-    hard_gate: false
 feeds_into: [system-design]
 checklist: stages/requirements/checklist.md
 reference: stages/requirements/reference.md

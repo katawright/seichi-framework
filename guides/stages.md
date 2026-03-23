@@ -1,9 +1,3 @@
----
-id: stages
-type: guide
-concerns: [stage-definitions, inputs-outputs, execution-patterns]
----
-
 # AI-Assisted SDLC Stages
 
 ## Overview

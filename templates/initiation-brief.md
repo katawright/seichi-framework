@@ -192,24 +192,6 @@ month enablement program"]
 
 ---
 
-## (Optional) Planning for Future Gates
-
-**Gate 2 — Requirements complete** (end of Requirements + System Design
-foundational pass)
-
-- **Outputs expected:**
-  - FRs with acceptance criteria drafted and reviewed
-  - NFRs with verification criteria drafted and reviewed (performance, security,
-    observability, and others as needed)
-  - High-level design direction documented (key trade-offs identified)
-  - Top risks addressed (spikes/prototypes/reviews) with mitigations/fallbacks
-  - Increment plan with dependencies (for iterative delivery)
-  - Updated staffing/timeline range + confidence
-  - Cost estimates updated (labor + infrastructure/tooling, with assumptions)
-  - Recommendation: proceed / revise / stop
-
----
-
 ## Self-Validation Against Initiation Checklist
 
 <!-- Before submitting for gate review, self-assess against the Initiation

@@ -11,14 +11,10 @@ outputs:
     template: templates/initiation-brief.md
   - artifact: success-criteria-register
     template: templates/success-criteria-register.md
-  - artifact: assumptions-risks-list
-    embedded_in: initiation-brief
-  - artifact: timeline-estimate
-    embedded_in: initiation-brief
 checkpoints:
-  - protocol: human-approval
+  - type: gate
+    protocol: human-approval
     name: "Gate 1 (Investment Decision)"
-    hard_gate: true
 feeds_into: [requirements]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md

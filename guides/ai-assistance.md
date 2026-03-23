@@ -1,9 +1,3 @@
----
-id: ai-assistance
-type: guide
-concerns: [autonomy, gates, evaluation]
----
-
 # AI Assistance Scorecard
 
 ## Overview

@@ -1,9 +1,3 @@
----
-id: checkpoints
-type: guide
-concerns: [checkpoint-taxonomy, decision-rights, checkpoint-protocols]
----
-
 # Checkpoint Taxonomy
 
 Throughout the SDLC, various checkpoints ensure quality, alignment, and sound

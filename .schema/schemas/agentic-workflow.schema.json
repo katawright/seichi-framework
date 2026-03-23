@@ -3,7 +3,7 @@
   "$id": "agentic-workflow.schema.json",
   "type": "object",
   "properties": {
-    "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+    "id": { "$ref": "defs.schema.json#/$defs/id" },
     "type": {
       "type": "string",
       "enum": ["guide", "style-guide", "reference"]
@@ -72,9 +72,9 @@
     "agentic-stage": {
       "type": "object",
       "properties": {
-        "id": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+        "id": { "$ref": "defs.schema.json#/$defs/id" },
         "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
-        "execution_pattern": { "$ref": "defs.schema.json#/$defs/execution-pattern" },
+        "execution_pattern": { "$ref": "defs.schema.json#/$defs/stage-execution-pattern" },
         "readme": { "$ref": "defs.schema.json#/$defs/file-path" },
         "checklist": { "$ref": "defs.schema.json#/$defs/file-path" },
         "reference": { "$ref": "defs.schema.json#/$defs/file-path" },
@@ -86,7 +86,7 @@
         "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
         "checkpoints": {
           "type": "array",
-          "items": { "$ref": "defs.schema.json#/$defs/checkpoint-object" },
+          "items": { "$ref": "defs.schema.json#/$defs/checkpoint" },
           "minItems": 1
         },
         "inputs": {
@@ -96,12 +96,12 @@
         },
         "outputs": {
           "type": "array",
-          "items": { "$ref": "defs.schema.json#/$defs/output-object" },
+          "items": { "$ref": "defs.schema.json#/$defs/output" },
           "minItems": 1
         },
         "feeds_into": {
           "type": "array",
-          "items": { "$ref": "defs.schema.json#/$defs/kebab-case-id" },
+          "items": { "$ref": "defs.schema.json#/$defs/id" },
           "minItems": 1
         },
         "revisit_conditions": {
