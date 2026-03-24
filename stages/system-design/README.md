@@ -621,7 +621,7 @@ The [System Design Reference](reference.md) covers these topics in depth:
 **Handoff:** Increment Design stage receives architecture, increment plan, and
 foundational conventions. Distribute checkpoint or gate decision artifacts to all
 Informed roles per the
-[Information Protocol](../../guides/framework.md#information-protocol).
+[Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

@@ -12,8 +12,9 @@ right-sizing.
 Individual stage guides cover their own scope. Dedicated references cover stages
 ([stages.md](stages.md)), AI assistance ([ai-assistance.md](ai-assistance.md)),
 and right-sizing ([right-sizing.md](right-sizing.md)). This guide is the hub for
-concepts that span multiple documents: roles, governance, MoSCoW (Must / Should / Could / Won't Have),
-greenfield/brownfield adaptation, compliance, and key terms.
+concepts that span multiple documents: roles, governance, MoSCoW (Must / Should
+/ Could / Won't Have), greenfield/brownfield adaptation, compliance, and key
+terms.
 
 ### Purpose
 
@@ -92,7 +93,7 @@ the organization.
 - **Application Security** — cross-stage security touchpoints from data
   classification through compliance sign-off, with severity-based escalation
   authority. See the [Security Guide](security.md) and
-  [AppSec role definition](#application-security-appsec)
+  [AppSec role definition](roles.md#application-security-appsec)
 - **Organizations** — a repeatable, scalable approach to AI-assisted development
   that works across teams and methodologies
 
@@ -157,8 +158,7 @@ This guide covers the major concepts that structure the framework:
 (foundational, iterative, continuous). Full reference: [stages.md](stages.md).
 
 **[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five checkpoint types ensuring
-quality and alignment. Full reference:
-[Checkpoint Taxonomy](checkpoints.md).
+quality and alignment. Full reference: [Checkpoint Taxonomy](checkpoints.md).
 
 **[Measurement Throughline](#measurement-throughline)** — Measurable success
 criteria flowing from Initiation through all stages. Full reference:
@@ -220,18 +220,17 @@ criteria, stage flow diagrams, and handoffs, see the
 
 ## Checkpoint Taxonomy
 
-The framework defines five checkpoint types — each with distinct decision rights,
-required evidence, and decision records.
+The framework defines five checkpoint types — each with distinct decision
+rights, required evidence, and decision records.
 
-| Type           | When                                   | Purpose                                          |
-| -------------- | -------------------------------------- | ------------------------------------------------ |
-| **Gate**       | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop |
-| **Review**     | End of each stage                      | Criteria verification — does this meet the bar?  |
-| **Alignment**  | After System Design                    | Stakeholder consensus — are we on the same page? |
+| Type          | When                                                                    | Purpose                                          |
+| ------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| **Gate**      | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop   |
+| **Review**    | End of each stage                                                       | Criteria verification — does this meet the bar?  |
+| **Alignment** | After System Design                                                     | Stakeholder consensus — are we on the same page? |
 
 For the full taxonomy, per-checkpoint decision-rights matrix, and required
-evidence, see the
-[Checkpoint Taxonomy](checkpoints.md) reference.
+evidence, see the [Checkpoint Taxonomy](checkpoints.md) reference.
 
 ---
 
@@ -263,8 +262,9 @@ Assess the discovery's impact to choose the correct path:
 
 1. **Breaks something** (design infeasible, NFR unmet, assumption invalidated) →
    **Rework.** Classify by severity (see below) and follow the rework process.
-2. **Adds something small and safe** (no acceptance-criteria (AC) impact, low cost, immediate benefit,
-   no new risk) → **Scope amendment.** Record the decision and proceed.
+2. **Adds something small and safe** (no acceptance-criteria (AC) impact, low
+   cost, immediate benefit, no new risk) → **Scope amendment.** Record the
+   decision and proceed.
 3. **Adds something large or risky** (changes ACs, introduces risk, significant
    effort) → **Defer** to the next increment or project backlog.
 
@@ -554,216 +554,9 @@ _whether_ they happen. See [CD Workflow Adaptations](#cd-workflow-adaptations).
 
 ## Roles and Responsibilities
 
-This matrix shows who is Responsible, Accountable, Consulted, and Informed for
-key activities at each stage. It consolidates the Primary and Supporting Role
-designations from each stage guide into a single cross-stage view. This matrix
-covers stage-level role assignments. For checkpoint-level decision rights (who
-prepares evidence, who decides), see the
-[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
-
-**Legend:** **R** = Responsible (does the work), **A** = Accountable
-(approves/owns the outcome), **C** = Consulted (provides input), **I** =
-Informed (kept in the loop), **-** = Not involved (no role at this stage)
-
-| Activity / Stage     | PM | Engineers | Architect | QA  | DevOps | AppSec   | Exec | PjM |
-| -------------------- | ----- | --------- | --------- | --- | ------ | -------- | ---- | --- |
-| **Initiation**       | R/A   | C         | C         | -   | -      | C        | I    | C‡  |
-| Gate 1 decision†     | R     | -         | -         | -   | -      | C        | A    | C   |
-| **Requirements**     | R/A   | C         | C         | C   | -      | C        | I    | C   |
-| **System Design**    | C     | C         | R/A       | C   | C      | C        | I    | C   |
-| Gate 2 decision†     | C     | C         | R         | C   | C      | R        | A    | C   |
-| **Increment Design** | C     | R/A       | C         | C   | -      | C        | -    | C   |
-| **Implementation**   | -     | R/A       | C         | C   | C      | C        | -    | I   |
-| **Verification**     | C     | R         | C         | R/A | -      | R        | -    | I   |
-| **Deployment**       | I     | C         | C         | C   | R/A    | C        | I    | C   |
-| **Support**          | I     | C         | C         | -   | R/A    | C        | I    | I§  |
-| Deployment Approval  | I     | C         | C         | C   | R/A    | C        | I    | C   |
-| Compliance Approval  | C     | -         | C         | -   | C      | R/A      | I    | C   |
-
-§ **PjM at Support:** PjM is Informed at stage level but owns the Production
-Ownership Decision per the
-[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
-
-**Verification responsibility split:** Engineers (R) fix defects found during
-testing, complete unit test gaps, and support integration test debugging. QA
-(R/A) owns test execution, coverage assessment, UAT coordination, and the
-verification brief. AppSec (R) owns security-specific testing (dependency
-scans, SAST review, penetration testing at Enterprise tier).
-
-**Consultation focus by C-role:** QA consultation focuses on testability of
-acceptance criteria (Requirements), test strategy alignment (Increment Design),
-and test gap identification (Implementation). AppSec focuses on security
-implications of requirements, design decisions, and implementation changes.
-Architect focuses on ADR compliance and architecture alignment when consulted at
-Increment Design, design conformance when consulted at Implementation (see
-[Decision Scope Test](#decision-scope-test) below), and infrastructure plan
-conformance when consulted at Deployment. AppSec consultation at Implementation
-is triggered by new authentication flows, cryptographic usage, external API
-integrations, or changes to data handling patterns. PM
-consultation focuses on requirements clarification and priority trade-offs
-(System Design, Increment Design) and acceptance criteria interpretation
-(Verification). PjM consultation focuses on schedule impact and cross-stage
-dependency assessment; PjM also facilitates Gate 1 and Gate 2 reviews
-(scheduling, convening participants, capturing decisions in the gate decision
-template). At Enterprise tier, organizations may elevate Exec from Informed to
-Consulted or Accountable at Deployment Approval for production-impacting
-changes.
-
-#### Decision Scope Test
-
-A decision during Implementation requires Architect
-consultation if it (a) changes a component boundary, API contract, or data flow
-established in the System Design Brief, (b) is hard to reverse after deployment,
-or (c) conflicts with an accepted ADR. Decisions that do not meet any of these
-criteria are within Engineer scope.
-
-#### Consultation Protocol
-
-When a stage requires input from a Consulted (C) role:
-
-1. **Request.** The Responsible role adds the question to the stage artifact's
-   open-questions section, tagging the consulted role.
-2. **Response.** The Consulted role responds inline in the open-questions
-   section or attaches a referenced addendum to the artifact. Addendums follow
-   the parent artifact's location conventions with the naming pattern
-   `{parent}-{role}-addendum` (e.g., `system-design-brief-appsec-addendum`).
-3. **Resolution.** The Responsible role records the decision and rationale in
-   the artifact, noting the consulted role's input.
-
-R-roles should consult all C-roles before the stage's checkpoint or gate
-review to ensure cross-functional input is captured before decisions are made.
-
-For time-sensitive consultations, the Responsible role may proceed with the
-lowest-risk option and flag the decision for review, following the
-unreachable-human fallback protocol.
-
-#### Information Protocol
-
-When a stage completes its checkpoint, the Responsible role distributes the
-checkpoint decision artifact (gate-decision or checkpoint-decision) to all
-Informed (I) roles. I-roles receive completed artifacts for awareness — no
-response or action is required unless they identify a concern, in which case
-they raise it with the Accountable role. Additionally, all checkpoint decisions
-are distributed to PjM for scheduling and coordination purposes, regardless of
-PjM's RACI designation at that stage. The implementation-brief is also
-distributed to PM when finalized, so that PM has current context for
-Verification consultations.
-
-> **Note:** For security and compliance accountability at checkpoint level, see
-> the [accountability table](#compliance-and-regulatory-considerations) below.
-
-> **Note:** This matrix represents the most common role assignments. Adapt to
-> your team structure — in smaller teams, one person may hold multiple roles
-> (e.g., one person may hold both PM and PjM). PjM maps to Scrum Master,
-> Delivery Lead, TPM, or Engineering Manager depending on methodology.
-
-† PjM's C designation at Gate 1 and Gate 2 includes gate facilitation
-responsibility (see [Gate Review Facilitation](#gate-review-facilitation) below).
-
-‡ PjM's C designation at Initiation includes gate facilitation — see the PjM
-Activity Table below for full responsibilities.
-
-**Project Manager (PjM)** owns delivery coordination across the lifecycle —
-schedule management, gate facilitation, cross-increment coordination, dependency
-tracking, and progress reporting. PjM is Consulted at stages where active
-coordination input is needed (foundational stages, gates, increment design,
-deployment) and Informed where it passively tracks progress (implementation,
-verification, support). The following cross-cutting activities give PjM clear
-R/A accountability:
-
-| Activity                               | PjM | PM | Engineers | Architect | QA  | DevOps | Exec |
-| -------------------------------------- | --- | ----- | --------- | --------- | --- | ------ | ---- |
-| Delivery schedule & progress reporting | R/A | I     | C         | -         | -   | -      | I    |
-| Gate facilitation                      | R   | -     | -         | -         | -   | -      | A    |
-| Cross-increment coordination           | R   | A     | C         | C         | -   | -      | I    |
-| Dependency & blocker management        | R/A | C     | C         | C         | -   | -      | -    |
-
-### Gate Review Facilitation
-
-PjM facilitates gate reviews to keep decisions timely and well-documented.
-
-**Pre-read expectations.** Distribute gate artifacts to all reviewers at least
-two business days before the scheduled review. Artifacts should be final drafts,
-not works in progress.
-
-**Suggested agenda:**
-
-1. Context recap — 5 min
-2. Criteria walkthrough (checklist + evidence) — 10–15 min
-3. Discussion and open questions — 15–30 min
-4. Decision and next steps — 5 min
-
-**Time-boxing guidelines:**
-
-| Gate   | Recommended Duration |
-| ------ | -------------------- |
-| Gate 1 | 30–60 min            |
-| Gate 2 | 45–90 min            |
-
-**Scope.** PjM facilitates Gate 1 and Gate 2 — the two investment-decision gates.
-Non-investment checkpoints (Reviews and Alignments) are owned and run by the
-stage's Responsible
-role; PjM tracks their completion for scheduling purposes but does not
-facilitate them. See the
-[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix) for per-checkpoint roles.
-
-**Decision recording.** Capture the outcome using
-[`templates/gate-decision.md`](../templates/gate-decision.md). Record the
-decision (Proceed / Proceed with conditions / Revise / Stop), conditions, and
-accountable owners for any follow-up actions.
-
-### Application Security (AppSec)
-
-**AppSec** provides security and compliance input across the lifecycle. AppSec is
-Consulted at most stages (reviewing artifacts for security implications) and
-Responsible at Verification (security testing), Gate 2 (risk posture input), and
-Compliance Approval. For details on security activities by stage, see the
-[Security Guide](security.md).
-
-| Stage / Checkpoint   | RACI | AppSec Activity                                                    |
-| -------------------- | ---- | ------------------------------------------------------------------ |
-| **Initiation**       | C    | Review data sensitivity classification and compliance scope        |
-| Gate 1               | C    | Confirm risk and policy exposure is captured                       |
-| **Requirements**     | C    | Review security NFRs for completeness                              |
-| **System Design**    | C    | Review threat model and security architecture                      |
-| Gate 2               | R    | Provide risk posture assessment for investment decision            |
-| **Increment Design** | C    | Flag security-relevant changes (auth, data, API surface)           |
-| **Implementation**   | C    | Review security scan results; advise on findings                   |
-| **Verification**     | R    | Own security testing (dependency scans, SAST, pen testing at E)    |
-| **Deployment**       | C    | Verify SBOM, artifact integrity, pre-deployment security checks    |
-| **Support**          | C    | Advise on CVE prioritization and incident response                 |
-| Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                     |
-
-#### Security Escalation Protocol
-
-When AppSec identifies a security finding during any stage, the severity
-determines the orchestration response. AppSec has unilateral authority to pause
-any stage for a Critical finding; the stage's Responsible role must resolve the
-finding before work resumes.
-
-| Severity     | Orchestration Response                                                       |
-| ------------ | ---------------------------------------------------------------------------- |
-| **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint    |
-| **High**     | Conditional proceed; finding tracked with fix deadline before deployment     |
-| **Medium**   | Track in defect backlog; fix targeted for current or next increment          |
-| **Low**      | Log in backlog; address opportunistically                                    |
-
-Severity classification follows the project's defect management definitions (see
-[Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
-For security findings, classify based on exploitability and blast radius:
-Critical = exploitable with no authentication or user interaction required and
-broad blast radius (e.g., RCE, auth bypass, mass data exposure); High =
-exploitable but requires authentication or has limited blast radius. At
-Enterprise tier, Critical and High findings require documented fix/accept/defer
-decisions with AppSec sign-off.
-
-**Halt communication:** When AppSec halts a stage for a Critical finding, they
-produce a defect report using the standard defect format (see Verification
-reference) with the `{parent}-appsec-addendum` naming convention (see
-[Consultation Protocol](#consultation-protocol)). The defect report names the
-specific finding, affected scope, and resolution criteria. The stage's
-Responsible role logs the defect, assigns the fix, and verifies resolution
-before the stage resumes.
+See the [Roles and Responsibilities Guide](roles.md) for role definitions, the
+RACI matrix, consultation and information protocols, and expanded role guidance
+for PjM and AppSec.
 
 ### Cadence Mapping
 
@@ -772,13 +565,13 @@ details). The table below shows how stages and gates typically map to common
 delivery cadences. For a week-by-week operating view of one increment cycle, see
 the [Delivery Operating Guide](delivery-operating-guide.md).
 
-| Framework Element    | 2-Week Sprint              | 1-Week Sprint            | Kanban / Flow              |
-| -------------------- | -------------------------- | ------------------------ | -------------------------- |
-| Foundational stages  | Span 1–3 sprints           | Span 2–6 sprints         | Complete before flow start |
-| Gate 1               | End of foundational sprint | End of foundational week | Explicit pull trigger      |
-| One increment        | ≈ 1 sprint                 | ≈ 1–2 sprints            | WIP-limited batch          |
-| Gate 2 close-out check | End of last increment    | End of last increment    | Explicit pull trigger      |
-| Cross-increment sync | Sprint review / planning   | Weekly sync              | Standup + board review     |
+| Framework Element      | 2-Week Sprint              | 1-Week Sprint            | Kanban / Flow              |
+| ---------------------- | -------------------------- | ------------------------ | -------------------------- |
+| Foundational stages    | Span 1–3 sprints           | Span 2–6 sprints         | Complete before flow start |
+| Gate 1                 | End of foundational sprint | End of foundational week | Explicit pull trigger      |
+| One increment          | ≈ 1 sprint                 | ≈ 1–2 sprints            | WIP-limited batch          |
+| Gate 2 close-out check | End of last increment      | End of last increment    | Explicit pull trigger      |
+| Cross-increment sync   | Sprint review / planning   | Weekly sync              | Standup + board review     |
 
 **Notes:**
 
@@ -787,21 +580,21 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
 - One increment maps roughly to one sprint; scope accordingly.
 - Track cross-increment dependencies using the
   [Dependency Register](../templates/dependency-register.md).
-- Gate 2 close-out check reflects _confirmation_ that Gate 2 criteria remain
-  met at project close. The initial Gate 2 decision occurs after
-  Requirements and System Design (see
+- Gate 2 close-out check reflects _confirmation_ that Gate 2 criteria remain met
+  at project close. The initial Gate 2 decision occurs after Requirements and
+  System Design (see
   [Governance at a Glance](../README.md#governance-at-a-glance)).
 
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:
 
-| Stage / Checkpoint                      | Accountable Role                     | Typical Trigger                                                |
-| --------------------------------------- | ------------------------------------ | -------------------------------------------------------------- |
-| Initiation (risk and policy framing)    | Project lead + AppSec/compliance     | Sensitive data, regulated domains, external AI tools           |
-| Gate 1 / Gate 2 input (risk posture)    | AppSec/compliance (advisory A\*)     | New legal/privacy/security risk exposure                       |
-| Verification (control evidence)         | QA/engineering + AppSec/compliance   | Security, privacy, or audit controls required for release      |
-| Compliance Approval checkpoint          | AppSec/compliance/legal (A)          | Contractual, regulatory, or internal policy sign-off required  |
-| Deployment Approval (release readiness) | DevOps/engineering + AppSec (C/A)    | Production change with material risk, data impact, or exposure |
+| Stage / Checkpoint                      | Accountable Role                   | Typical Trigger                                                |
+| --------------------------------------- | ---------------------------------- | -------------------------------------------------------------- |
+| Initiation (risk and policy framing)    | Project lead + AppSec/compliance   | Sensitive data, regulated domains, external AI tools           |
+| Gate 1 / Gate 2 input (risk posture)    | AppSec/compliance (advisory A\*)   | New legal/privacy/security risk exposure                       |
+| Verification (control evidence)         | QA/engineering + AppSec/compliance | Security, privacy, or audit controls required for release      |
+| Compliance Approval checkpoint          | AppSec/compliance/legal (A)        | Contractual, regulatory, or internal policy sign-off required  |
+| Deployment Approval (release readiness) | DevOps/engineering + AppSec (C/A)  | Production change with material risk, data impact, or exposure |
 
 \*Investment gate ownership remains with executive decision-makers; security and
 compliance provide required risk and policy input before approval.
@@ -954,10 +747,11 @@ For how CD interacts with right-sizing tiers, see
 Right-sizing has three independent dimensions: **project risk tier** (Minimal,
 Standard, Enterprise) determines _what_ practices you adopt, **team size**
 determines _how formally_ you apply them, and **AI autonomy tier** (Human-Led,
-Collaborative, AI-Led) determines _how much AI involvement_ you allow. The framework's eight stages remain
-the same regardless — what changes is formality, documentation detail, and
-coordination. For the full model, tier definitions, team-size guidance, and
-choosing criteria, see the [Right-Sizing Guide](right-sizing.md).
+Collaborative, AI-Led) determines _how much AI involvement_ you allow. The
+framework's eight stages remain the same regardless — what changes is formality,
+documentation detail, and coordination. For the full model, tier definitions,
+team-size guidance, and choosing criteria, see the
+[Right-Sizing Guide](right-sizing.md).
 
 ---
 
@@ -1061,6 +855,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-20
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.9.0.

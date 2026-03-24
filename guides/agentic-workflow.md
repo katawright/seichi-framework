@@ -30,8 +30,8 @@ working locations, fallback protocols, and session conventions.
 
 > **Role assignments:** This guide defines _what_ to do at each stage. For _who_
 > does it, see
-> [Roles and Responsibilities](framework.md#roles-and-responsibilities) in the
-> Framework Guide. The RACI matrix defines which role is Responsible,
+> [Roles and Responsibilities](roles.md#roles-and-responsibilities) in the
+> Roles Guide. The RACI matrix defines which role is Responsible,
 > Accountable, Consulted, or Informed at each stage.
 
 ### How to Use This Guide

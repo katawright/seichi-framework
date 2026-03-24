@@ -38,7 +38,7 @@ System Design.
 5. [ ] **Security NFRs captured from data sensitivity classification** (auth,
        encryption, audit logging, data retention — scaled to tier)
 6. [ ] **Consult AppSec on security NFRs per
-       [RACI](../../guides/framework.md#roles-and-responsibilities)** (finalize
+       [RACI](../../guides/roles.md#raci-matrix)** (finalize
        security requirements, validate data classification)
 7. [ ] **Data sources and integrations identified** (rate limits, SLAs,
        authentication, data ownership documented)

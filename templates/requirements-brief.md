@@ -202,7 +202,7 @@
 ## Open Questions / Blockers
 
 <!-- For guidance, see requirements/README.md#open-questions -->
-<!-- Tag each question with the consulted role (e.g., @Architect, @AppSec). See guides/framework.md#consultation-protocol -->
+<!-- Tag each question with the consulted role (e.g., @Architect, @AppSec). See guides/roles.md#consultation-protocol -->
 
 - **Q1:**
 - **Q2:**

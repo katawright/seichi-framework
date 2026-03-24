@@ -92,7 +92,7 @@ constraints.
 Each checkpoint has defined roles for who prepares evidence, who decides, and
 who is informed. This matrix covers checkpoint-level decision rights. For
 stage-level role assignments (R/A/C/I), see the
-[RACI Matrix](framework.md#roles-and-responsibilities).
+[RACI Matrix](roles.md#raci-matrix).
 
 | Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
 | --- | --- | --- | --- | --- | --- |

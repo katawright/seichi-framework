@@ -8,7 +8,7 @@ increment planning and sync meetings. See the
 [Delivery Operating Guide](../guides/delivery-operating-guide.md) for
 coordination practices.
 
-<!-- PjM-owned artifact. See guides/framework.md for PjM R/A accountability. -->
+<!-- PjM-owned artifact. See guides/roles.md for PjM R/A accountability. -->
 
 ## Dependencies
 

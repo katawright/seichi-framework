@@ -250,7 +250,7 @@ Guidance, tips, and considerations for engineers:
 ## Open Questions
 
 <!-- Tag each question with the consulted role (e.g., @Architect, @AppSec).
-     See guides/framework.md#consultation-protocol -->
+     See guides/roles.md#consultation-protocol -->
 
 - **Q1:** [@Role]
 - **Q2:** [@Role]

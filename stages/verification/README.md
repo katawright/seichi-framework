@@ -423,7 +423,7 @@ code, test results, and UAT approval. On **no-go**, work returns to
 Implementation for defect fixes, then a new verification cycle begins with a
 fresh brief. Distribute checkpoint or gate decision artifacts to all Informed
 roles per the
-[Information Protocol](../../guides/framework.md#information-protocol).
+[Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

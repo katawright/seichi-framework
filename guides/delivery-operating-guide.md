@@ -56,12 +56,12 @@ weekly rhythm:
 
 Throughout the foundational phase, PjM establishes the delivery schedule, sets
 up the Dependency Register, and confirms consultation touchpoints per the
-[RACI matrix](framework.md#roles-and-responsibilities).
+[RACI matrix](roles.md#raci-matrix).
 
 Timelines vary by project complexity. See each stage guide for detailed
 activities. Gate 1 and Gate 2 are the hard gates — use the
 [Gate Decision Template](../templates/gate-decision.md) and
-[Gate Review Facilitation](framework.md#gate-review-facilitation) guidance.
+[Gate Review Facilitation](roles.md#gate-review-facilitation) guidance.
 
 ---
 
@@ -76,7 +76,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | ------- | ------------------------------------------------------------ | --------- | ------------------------------------------------------------------------- |
 | Monday  | Sprint kickoff: confirm increment scope from backlog, review prior retrospective action items and dependency register | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
 | Mon–Tue | Increment Design Brief — component breakdown, test plan, API | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
-| Tuesday | Review increment design brief; resolve ambiguities           | PjM + Eng | [RACI — Increment Design](framework.md#roles-and-responsibilities)        |
+| Tuesday | Review increment design brief; resolve ambiguities           | PjM + Eng | [RACI — Increment Design](roles.md#raci-matrix)        |
 | Wed–Fri | Implementation begins — PRs, tests, instrumentation          | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
 | Friday  | Mid-sprint check-in: blockers, dependency status, scope risk | PjM       | [Dependency Register](../templates/dependency-register.md)                |
 
@@ -88,7 +88,7 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 | Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
 | Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md), [Deployment Guide](../stages/deployment/README.md) |
 | Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
-| Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Retrospective Template](../templates/retrospective.md) (if final increment, see [Gate Review Facilitation](framework.md#gate-review-facilitation)) |
+| Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Retrospective Template](../templates/retrospective.md) (if final increment, see [Gate Review Facilitation](roles.md#gate-review-facilitation)) |
 
 **Cross-increment sync:** Sprint review doubles as the sync point. Review
 completed increment, preview next increment scope, surface cross-increment
@@ -97,7 +97,7 @@ dependencies.
 > **Close-out review:** If this is the final planned increment, run a close-out
 > review to confirm Gate 2 criteria are still met, using the
 > [Gate Decision Template](../templates/gate-decision.md). See
-> [Gate Review Facilitation](framework.md#gate-review-facilitation) for agenda
+> [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda
 > and time-boxing.
 
 ---
@@ -125,7 +125,7 @@ they become columns on the board rather than calendar blocks.
 | Daily      | Standup + board review: WIP, blockers, pull signals      | PjM  | —                                                                 |
 | Twice/week | Replenishment: pull items into Ready when capacity opens | PjM  | [Dependency Register](../templates/dependency-register.md)        |
 | Weekly     | Metrics review: cycle time, throughput, blocked time     | PjM  | [Cadence Mapping](framework.md#cadence-mapping)                   |
-| On trigger | Gate 2 review when all planned items reach Done          | PjM  | [Gate Review Facilitation](framework.md#gate-review-facilitation) |
+| On trigger | Gate 2 review when all planned items reach Done          | PjM  | [Gate Review Facilitation](roles.md#gate-review-facilitation) |
 
 **Pull triggers:** Items move between columns only when the next column has WIP
 capacity and the exit criteria for the current column are met. PjM monitors flow
@@ -173,9 +173,9 @@ Green / Amber / Red
 
 ## Related Documents
 
-- [Framework Guide — Roles and Responsibilities](framework.md#roles-and-responsibilities)
+- [Roles and Responsibilities Guide](roles.md)
 - [Framework Guide — Cadence Mapping](framework.md#cadence-mapping)
-- [Framework Guide — Gate Review Facilitation](framework.md#gate-review-facilitation)
+- [Roles Guide — Gate Review Facilitation](roles.md#gate-review-facilitation)
 - [Stage Definitions](stages.md)
 - [Gate Decision Template](../templates/gate-decision.md)
 - [Dependency Register Template](../templates/dependency-register.md)

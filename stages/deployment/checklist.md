@@ -36,14 +36,14 @@ successful completion (60-90 seconds).
        baseline)
 7. [ ] **Infrastructure capacity validated** (resources sufficient for new
        version; consult
-       [Architect per RACI](../../guides/framework.md#roles-and-responsibilities)
+       [Architect per RACI](../../guides/roles.md#raci-matrix)
        on infrastructure plan conformance)
 8. [ ] **Monitoring dashboards and alerting configured** (thresholds set)
 9. [ ] **Success criteria instrumentation verified** (Verification tested it
        works; confirm it will be active in production)
 10. [ ] **Security pre-deployment checks passed** (no new critical CVEs since
         last scan, SBOM generated, artifact integrity verified; consult
-        [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities))
+        [AppSec per RACI](../../guides/roles.md#raci-matrix))
 11. [ ] **[H] Configuration and secrets reviewed** (no secrets in code, values
         correct per environment)
 12. [ ] **[H] Stakeholders notified of deployment schedule** (timeline and

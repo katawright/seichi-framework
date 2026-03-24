@@ -223,7 +223,7 @@ throughline.
 Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. After
 Gate 2, executives receive notification of checkpoint outcomes but are not
 required to participate — see the
-[RACI matrix](guides/framework.md#roles-and-responsibilities) for the full
+[RACI matrix](guides/roles.md#raci-matrix) for the full
 responsibility breakdown and the
 [Decision-Rights Matrix](guides/checkpoints.md#decision-rights-matrix) for
 per-checkpoint roles.

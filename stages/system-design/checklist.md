@@ -33,9 +33,9 @@ ready for Gate 2.
 
 4. [ ] **API design principles established** (versioning, auth, error handling)
 5. [ ] **Security architecture designed** (auth, encryption, input validation;
-       consult [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities))
+       consult [AppSec per RACI](../../guides/roles.md#raci-matrix))
 6. [ ] **[H] Compliance requirements addressed** (GDPR, HIPAA, etc.; consult
-       [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities))
+       [AppSec per RACI](../../guides/roles.md#raci-matrix))
 7. [ ] **Performance targets specified with scalability approach** (p95/p99,
        throughput)
 
