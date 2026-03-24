@@ -83,7 +83,7 @@ previous increment.
 6. Specify
    [interfaces, data/state changes, component interactions](#why-these-increment-design-elements-matter)
 7. Define [test strategy](#test-strategy) for Verification stage; consult
-   [QA per RACI](../../guides/framework.md#roles-and-responsibilities) on
+   [QA per RACI](../../guides/roles.md#raci-matrix) on
    test coverage levels and acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
@@ -345,7 +345,7 @@ Verification stage what to test and how.
 **Handoff:** Implementation stage receives detailed design specs, interface
 contracts, and test strategy. Distribute checkpoint or gate decision artifacts to
 all Informed roles per the
-[Information Protocol](../../guides/framework.md#information-protocol).
+[Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

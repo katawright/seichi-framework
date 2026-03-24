@@ -493,7 +493,7 @@ decision to accept production ownership. Use the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md) to record
 when the team confirms readiness to own the system in production. Distribute
 checkpoint or gate decision artifacts to all Informed roles per the
-[Information Protocol](../../guides/framework.md#information-protocol).
+[Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

@@ -50,7 +50,7 @@ normal development.
 4. See [**SSDF Practice Mapping**](#ssdf-practice-mapping) only if your
    organization requires NIST SSDF traceability
 5. **AppSec engineers:** See your
-   [role definition, activity table, and escalation protocol](framework.md#application-security-appsec)
+   [role definition, activity table, and escalation protocol](roles.md#application-security-appsec)
    in the Framework Guide and the
    [Decision-Rights Matrix](checkpoints.md#decision-rights-matrix) for
    checkpoint-level authority (who prepares evidence, who decides)
@@ -142,10 +142,10 @@ Humans drive these activities; AI provides research and drafting support:
 | **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs |
 
 At all tiers, AppSec follows the
-[Security Escalation Protocol](framework.md#security-escalation-protocol) for
+[Security Escalation Protocol](roles.md#security-escalation-protocol) for
 severity-based finding response (Critical = halt stage). At Enterprise tier,
 AppSec is Responsible for security testing, Gate 2 risk posture, and compliance
-sign-off — see [RACI matrix](framework.md#roles-and-responsibilities).
+sign-off — see [RACI matrix](roles.md#raci-matrix).
 
 ---
 
@@ -309,7 +309,7 @@ protect released software and verify integrity.
 Integrate these checks into your CI/CD pipeline — see
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
 tier-specific gate configuration. For security accountability by stage, see the
-[Roles and Responsibilities](framework.md#roles-and-responsibilities) RACI
+[Roles and Responsibilities](roles.md#roles-and-responsibilities) RACI
 matrix. At Standard and Enterprise tiers, AppSec owns a
 [Compliance Approval](../guides/checkpoints.md#reviews) checkpoint
 at Deployment — see the

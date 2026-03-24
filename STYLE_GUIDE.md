@@ -329,7 +329,7 @@ default_autonomy: collaborative # human-led | collaborative | ai-led
 default_oversight_intensity: active # active | passive | minimal
 working_location: artifacts # artifacts | source-code
 session_log_template: templates/session-log.md
-raci_roles: { R: [role], A: [role], C: [role], I: [role] } # mirrors framework.md RACI matrix
+raci_roles: { R: [role], A: [role], C: [role], I: [role] } # mirrors roles.md RACI matrix
 # preparation_autonomy: collaborative # optional, overrides default_autonomy for prep steps
 ---
 ```

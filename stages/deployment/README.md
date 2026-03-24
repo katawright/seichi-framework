@@ -505,7 +505,7 @@ next Increment Design cycle
 When the same role owns both Deployment and Support, apply the handoff checklist
 as a self-review rather than a cross-team transfer.
 Distribute checkpoint or gate decision artifacts to all Informed roles per the
-[Information Protocol](../../guides/framework.md#information-protocol). Record
+[Information Protocol](../../guides/roles.md#information-protocol). Record
 the deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 

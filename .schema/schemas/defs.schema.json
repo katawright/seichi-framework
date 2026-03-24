@@ -31,7 +31,7 @@
       ]
     },
     "role": {
-      "$comment": "Role identifiers from the RACI matrix in guides/framework.md.",
+      "$comment": "Role identifiers from the RACI matrix in guides/roles.md.",
       "type": "string",
       "enum": ["pm", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
     },

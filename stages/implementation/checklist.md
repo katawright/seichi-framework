@@ -31,7 +31,7 @@ and ready for Verification.
        unhandled exceptions)
 4. [ ] **[H] No critical security vulnerabilities** (input validation, secrets
        managed, dependencies scanned, SAST clean, no PII in logs; consult
-       [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities)
+       [AppSec per RACI](../../guides/roles.md#raci-matrix)
        for new auth flows, crypto usage, external API integrations, or data
        handling changes)
 5. [ ] **Implementation aligns with Increment Design Brief** (component

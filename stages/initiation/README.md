@@ -591,7 +591,7 @@ mid-implementation when they are most expensive to address.
 **Handoff:** If proceeding, Requirements stage uses your Initiation Brief as its
 starting point. Distribute checkpoint or gate decision artifacts to all Informed
 roles per the
-[Information Protocol](../../guides/framework.md#information-protocol).
+[Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

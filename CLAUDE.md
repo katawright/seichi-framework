@@ -35,10 +35,11 @@ all SDLC stages. The framework is designed to:
 
 ## Key References
 
-Read `guides/agentic-workflow.md`, `guides/stages.md`, and `STYLE_GUIDE.md` when
-creating or editing files. Stage READMEs (`stages/*/README.md`) contain
-canonical stage metadata in their front matter. See `INDEX.md` for the full file
-inventory and canonical sources.
+Read `guides/agentic-workflow.md`, `guides/stages.md`, `guides/roles.md`, and
+`STYLE_GUIDE.md` when creating or editing files. `guides/roles.md` is the
+canonical source for role definitions and the RACI matrix. Stage READMEs
+(`stages/*/README.md`) contain canonical stage metadata in their front matter.
+See `INDEX.md` for the full file inventory and canonical sources.
 
 ---
 
@@ -138,7 +139,10 @@ These rules apply to AI coding assistants working in this repository.
    - Search for broken references or renamed files
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
-   - If files were added, removed, or renamed, update `INDEX.md`
+   - If files were added, removed, or renamed, update `INDEX.md`. INDEX.md lists
+     framework-usage files only (guides, stages, templates, root navigation).
+     Contributor tooling (CLAUDE.md, STYLE_GUIDE.md, AGENTS.md, CONTRIBUTING.md)
+     and schema/CI files are excluded.
 6. Do not commit or create tags unless the user explicitly requests it.
 7. Never commit directly to main; always use a feature branch.
 
@@ -167,6 +171,6 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-03-23
 
 Added to framework in v0.9.0.

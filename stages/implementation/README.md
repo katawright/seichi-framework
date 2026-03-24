@@ -102,9 +102,9 @@ blockers as part of dependency and blocker management.
 
 **Design-impacting decisions:** For changes that affect component boundaries,
 API contracts, or data flows defined in the System Design Brief, apply the
-[Decision Scope Test](../../guides/framework.md#decision-scope-test) to
+[Decision Scope Test](../../guides/roles.md#decision-scope-test) to
 determine whether Architect consultation is required. Consult
-[QA per RACI](../../guides/framework.md#roles-and-responsibilities) when
+[QA per RACI](../../guides/roles.md#raci-matrix) when
 implementation changes affect test strategy or acceptance criteria.
 
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
@@ -372,7 +372,7 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 log, and review approvals. The finalized implementation brief (status: Complete)
 signals that Verification can begin. Distribute checkpoint or gate decision
 artifacts to all Informed roles per the
-[Information Protocol](../../guides/framework.md#information-protocol). Before
+[Information Protocol](../../guides/roles.md#information-protocol). Before
 handoff, ensure:
 
 - Test environment is available and accessible to QA

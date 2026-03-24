@@ -200,7 +200,7 @@ Otherwise, keep Requirements concise and move to System Design.
    MoSCoW classification, acceptance criteria, and success metric
 8. **Review with engineering** — conduct alignment review to validate
    feasibility and completeness; consult
-   [QA per RACI](../../guides/framework.md#roles-and-responsibilities) on
+   [QA per RACI](../../guides/roles.md#raci-matrix) on
    acceptance criteria testability and test strategy implications
 9. **Complete Requirements Readiness checkpoint** — confirm requirements are
    ready for System Design handoff
@@ -697,7 +697,7 @@ gives the System Design team a clear target.
 
 **Handoff:** System Design stage uses your Requirements Brief as its starting
 point. Distribute checkpoint or gate decision artifacts to all Informed roles per
-the [Information Protocol](../../guides/framework.md#information-protocol).
+the [Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 

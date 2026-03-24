@@ -32,7 +32,7 @@ and Criteria Evaluated. AppSec prepares Security Risk Posture.
 The Accountable role (A) reviews the package, leads the decision discussion, and
 records the final Decision and Next Steps. The Facilitator (PjM) manages agenda
 and time-boxing per the
-[Gate Review Facilitation](../guides/framework.md#gate-review-facilitation)
+[Gate Review Facilitation](../guides/roles.md#gate-review-facilitation)
 protocol.
 
 ---

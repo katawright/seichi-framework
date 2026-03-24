@@ -5,8 +5,8 @@ allowed-tools: Read, Edit, Write, Glob, Grep
 
 # /index — Update Framework File Index
 
-You are updating `INDEX.md` to reflect the current state of framework files
-on disk.
+You are updating `INDEX.md` to reflect the current state of framework files on
+disk.
 
 ---
 
@@ -29,6 +29,12 @@ Use Glob to find all `.md` files in these locations:
 - Any other dotfile directory
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
+
+**Exclude** these contributor/tooling files (not framework-usage content):
+
+- `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `STYLE_GUIDE.md`
+- `.schema/` directory
+- `.github/` directory
 
 ---
 
@@ -59,25 +65,23 @@ For each new file:
    - **Description** — one-line summary based on file content
    - **Keywords** — 3–6 comma-separated terms
    - **Refs/Stage** — related stages or guides based on content and location
-   - **Tier** — `core` for READMEs and primary guides, `ref` for everything
-     else
-3. Add the row to the appropriate table section.
+   - **Tier** — `core` for READMEs and primary guides, `ref` for everything else
+3. Insert the row in alphabetical order by file path within its table section.
 
 ### Removed files (in INDEX.md but not on disk)
 
-Remove the row from the table. If a stage subsection becomes empty, remove
-the subsection.
+Remove the row from the table. If a stage subsection becomes empty, remove the
+subsection.
 
 ### Renamed or moved files
 
-If a file path in INDEX.md no longer exists but a file with very similar
-content exists at a new path, update the path rather than removing and
-re-adding.
+If a file path in INDEX.md no longer exists but a file with very similar content
+exists at a new path, update the path rather than removing and re-adding.
 
 ### Existing files
 
-Leave unchanged. Do not regenerate descriptions for files that still exist
-at the same path.
+Leave unchanged. Do not regenerate descriptions for files that still exist at
+the same path.
 
 ---
 
@@ -93,8 +97,8 @@ appear in the body text.
 
 ## Step 5: Update Front Matter
 
-Edit the `generated:` field in the INDEX.md YAML front matter to today's
-date (YYYY-MM-DD format).
+Edit the `generated:` field in the INDEX.md YAML front matter to today's date
+(YYYY-MM-DD format).
 
 Do **not** change the `version:` field — that is managed by `/release`.
 
@@ -103,9 +107,9 @@ Do **not** change the `version:` field — that is managed by `/release`.
 ## Step 6: Write INDEX.md
 
 - If only a few rows changed, use Edit for targeted changes.
-- If the diff is large (many additions/removals), use Write to rewrite the
-  file, preserving the existing structure, section ordering, column format,
-  and Notes section.
+- If the diff is large (many additions/removals), use Write to rewrite the file,
+  preserving the existing structure, section ordering, column format, and Notes
+  section.
 
 ---
 

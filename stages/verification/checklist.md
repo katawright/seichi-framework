@@ -38,7 +38,7 @@ the increment is ready for deployment.
        justification)
 6. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
        N/A; consult
-       [AppSec per RACI](../../guides/framework.md#roles-and-responsibilities)
+       [AppSec per RACI](../../guides/roles.md#raci-matrix)
        for sign-off)
 7. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
 8. [ ] **Schema compatibility with existing consumers verified** (N/A for

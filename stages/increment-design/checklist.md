@@ -43,12 +43,12 @@ and ready for Implementation.
 ### Architecture and Security
 
 8. [ ] **Consult Architect on design conformance per
-       [RACI](../../guides/framework.md#roles-and-responsibilities)** (ADR
+       [RACI](../../guides/roles.md#raci-matrix)** (ADR
        compliance and architecture alignment)
 9. [ ] **Security implications assessed** (auth, data, or API changes flagged;
        applicable threats from threat model identified)
 10. [ ] **Consult AppSec on security implications per
-        [RACI](../../guides/framework.md#roles-and-responsibilities)** (review
+        [RACI](../../guides/roles.md#raci-matrix)** (review
         auth/data/API changes for this increment)
 
 ### Testing and Readiness
