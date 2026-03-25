@@ -26,7 +26,8 @@ default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
-raci_roles: { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
+raci_roles:
+  { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
 ---
 
 # AI-Assisted SDLC: Requirements Stage
@@ -48,7 +49,7 @@ artifacts — the language is intentionally business-focused with technical
 precision, accessible to non-technical stakeholders while rigorous enough for
 engineering teams.
 
-### Purpose
+### Goals of This Guide
 
 - Provide stage-specific guidance and rationale for Requirements
 - Describe how AI assists at each activity
@@ -200,8 +201,8 @@ Otherwise, keep Requirements concise and move to System Design.
    MoSCoW classification, acceptance criteria, and success metric
 8. **Review with engineering** — conduct alignment review to validate
    feasibility and completeness; consult
-   [QA per RACI](../../guides/roles.md#raci-matrix) on
-   acceptance criteria testability and test strategy implications
+   [QA per RACI](../../guides/roles.md#raci-matrix) on acceptance criteria
+   testability and test strategy implications
 9. **Complete Requirements Readiness checkpoint** — confirm requirements are
    ready for System Design handoff
 
@@ -696,8 +697,8 @@ gives the System Design team a clear target.
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** System Design stage uses your Requirements Brief as its starting
-point. Distribute checkpoint or gate decision artifacts to all Informed roles per
-the [Information Protocol](../../guides/roles.md#information-protocol).
+point. Distribute checkpoint or gate decision artifacts to all Informed roles
+per the [Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
 
@@ -730,6 +731,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.3.0.

@@ -14,7 +14,7 @@ structured preparation guidance, teams either prepare too little (AI-assisted
 work fails on an unsuitable codebase) or too much (preparation becomes an
 open-ended refactoring project that never reaches feature work).
 
-### Purpose
+### Goals of This Guide
 
 - Define discovery and preparation activities by readiness dimension
 - Provide infrastructure planning guidance for first AI-assisted projects
@@ -380,6 +380,6 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.37.0. Exit Checkpoint Protocol added in v0.39.0.

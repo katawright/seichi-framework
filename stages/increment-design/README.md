@@ -24,7 +24,8 @@ default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
-raci_roles: { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
+raci_roles:
+  { R: [engineer], A: [engineer], C: [pm, architect, qa, appsec, pjm] }
 ---
 
 # AI-Assisted SDLC: Increment Design Stage
@@ -44,7 +45,7 @@ misaligned implementations, untested edge cases, and costly rework. Increment
 Design exists to answer: _"What exactly are we building in this increment, and
 how will we verify it works?"_
 
-### Purpose
+### Goals of This Guide
 
 - Create detailed component designs for the current increment
 - Specify interfaces, data/state changes, and integration points
@@ -58,12 +59,12 @@ architecture from System Design.
 
 ### Starting Point
 
-A completed System Design Brief with architecture diagrams, technology decisions,
-and increment plan, plus requirements with acceptance criteria for traceability. The current
-increment should be identified from the increment plan, and foundational
-conventions established (coding patterns, error handling, technology-specific
-conventions). For Increment 2+, also gather retrospective action items from the
-previous increment.
+A completed System Design Brief with architecture diagrams, technology
+decisions, and increment plan, plus requirements with acceptance criteria for
+traceability. The current increment should be identified from the increment
+plan, and foundational conventions established (coding patterns, error handling,
+technology-specific conventions). For Increment 2+, also gather retrospective
+action items from the previous increment.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -83,8 +84,8 @@ previous increment.
 6. Specify
    [interfaces, data/state changes, component interactions](#why-these-increment-design-elements-matter)
 7. Define [test strategy](#test-strategy) for Verification stage; consult
-   [QA per RACI](../../guides/roles.md#raci-matrix) on
-   test coverage levels and acceptance criteria testability
+   [QA per RACI](../../guides/roles.md#raci-matrix) on test coverage levels and
+   acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
 9. Complete the Design Review — Architect reviews component designs for
@@ -319,8 +320,8 @@ Verification stage what to test and how.
 
 ## Stage Outputs
 
-- **Component Designs** — the containing artifact for the increment's
-  design deliverables, produced from the
+- **Component Designs** — the containing artifact for the increment's design
+  deliverables, produced from the
   [Increment Design Brief Template](../../templates/increment-design-brief.md)
 - **API Specifications** (if applicable) — API contracts, component props
 - **Data Model Changes** (if applicable) — migration plans, schema changes
@@ -343,8 +344,8 @@ Verification stage what to test and how.
 > that require security review. See [Security Guide](../../guides/security.md).
 
 **Handoff:** Implementation stage receives detailed design specs, interface
-contracts, and test strategy. Distribute checkpoint or gate decision artifacts to
-all Informed roles per the
+contracts, and test strategy. Distribute checkpoint or gate decision artifacts
+to all Informed roles per the
 [Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
@@ -376,6 +377,6 @@ all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

@@ -72,7 +72,7 @@ problem — it can generate artifacts quickly, but without clear inputs, outputs
 and exit criteria for each stage, teams lose track of what's been validated and
 what's just been drafted.
 
-### Purpose
+### Goals of This Guide
 
 - Define what happens at each stage — inputs, activities, outputs, and exit
   criteria
@@ -244,7 +244,7 @@ Secure Software Development Framework (SSDF) traceability, see the
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [Initiation](../stages/initiation/README.md)
 
-### Purpose
+### Goals
 
 Establish the business case, define objectives with measurable success criteria,
 set scope boundaries, and produce a plan to reach the first major decision gate
@@ -323,7 +323,7 @@ success criteria, constraints, and stakeholder list.
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [Requirements](../stages/requirements/README.md)
 
-### Purpose
+### Goals
 
 Convert business objectives into testable requirements with FR acceptance
 criteria and NFR verification criteria that enable coherent design decisions,
@@ -402,7 +402,7 @@ instrumented.
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [System Design](../stages/system-design/README.md)
 
-### Purpose
+### Goals
 
 Establish overall system architecture, technology choices, infrastructure plan,
 and increment roadmap. Translate requirements into a technical foundation that
@@ -489,7 +489,7 @@ conventions, data architecture, infrastructure plan, and increment plan.
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Increment Design](../stages/increment-design/README.md)
 
-### Purpose
+### Goals
 
 Create detailed specifications for implementing a specific increment, including
 component designs, API specs, data model changes, and test strategy for
@@ -564,7 +564,7 @@ models, test strategy, and implementation notes.
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Implementation](../stages/implementation/README.md)
 
-### Purpose
+### Goals
 
 Build working code that implements the detailed design for the current
 increment, following engineering best practices and professional standards.
@@ -634,7 +634,7 @@ results, and implementation notes.
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Verification](../stages/verification/README.md)
 
-### Purpose
+### Goals
 
 Validate that the increment works correctly through comprehensive testing and
 acceptance. Encompasses verification (built correctly) and validation (built the
@@ -705,7 +705,7 @@ deployment checklist.
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Deployment](../stages/deployment/README.md)
 
-### Purpose
+### Goals
 
 Release verified increments to production following controlled procedures, with
 monitoring and rollback capabilities.
@@ -778,7 +778,7 @@ baseline measurements for success criteria.
 - **Execution Pattern:** Continuous (ongoing after first deployment)
 - **Stage Guide:** [Support](../stages/support/README.md)
 
-### Purpose
+### Goals
 
 Monitor production systems, track success criteria, respond to incidents, fix
 bugs, and implement minor enhancements. Ensure system reliability and gather
@@ -855,6 +855,6 @@ Each stage definition above references its specific checkpoints in the
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.9.0.

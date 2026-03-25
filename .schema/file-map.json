@@ -22,5 +22,22 @@
     "QUICKSTART.md",
     "CONTRIBUTING.md",
     "AGENTS.md"
+  ],
+  "structureExclude": [
+    ".claude/**",
+    ".ignore/**",
+    ".obsidian/**",
+    ".evaluation/**",
+    ".schema/**",
+    "node_modules/**",
+    "templates/**",
+    "docs/**",
+    "stages/*/checklist.md",
+    "stages/*/pipeline-checklist.md",
+    "stages/*/readiness-checklist.md",
+    "CLAUDE.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "QUICKSTART.md"
   ]
 }

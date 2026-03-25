@@ -14,7 +14,7 @@ because they don't care, but because security work feels like overhead layered
 on top of "real" work. The result: security is treated as a gate at the end
 rather than a quality layer woven through development.
 
-### Purpose
+### Goals of This Guide
 
 - Define security activities at each SDLC stage, scaled by project risk tier
 - Show how AI agents automate the majority of security work
@@ -309,10 +309,10 @@ protect released software and verify integrity.
 Integrate these checks into your CI/CD pipeline — see
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
 tier-specific gate configuration. For security accountability by stage, see the
-[Roles and Responsibilities](roles.md#roles-and-responsibilities) RACI
-matrix. At Standard and Enterprise tiers, AppSec owns a
-[Compliance Approval](../guides/checkpoints.md#reviews) checkpoint
-at Deployment — see the
+[Roles and Responsibilities](roles.md#roles-and-responsibilities) RACI matrix.
+At Standard and Enterprise tiers, AppSec owns a
+[Compliance Approval](../guides/checkpoints.md#reviews) checkpoint at Deployment
+— see the
 [Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix).
 
 ### Support
@@ -373,6 +373,6 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.25.0.

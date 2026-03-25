@@ -13,7 +13,7 @@ committed to code. Setting up deployment infrastructure during Increment 0
 prevents these failures and gives the team a validated pipeline before business
 complexity enters the picture.
 
-### Purpose
+### Goals of This Guide
 
 - Guide greenfield projects through building deployment infrastructure from
   scratch
@@ -103,13 +103,13 @@ below).
 This guide covers **one-time deployment infrastructure setup**. Other guides
 cover the decisions that feed into it and the ongoing work that uses it.
 
-| Responsibility            | Owner                                                  | This Guide's Role                  |
-| ------------------------- | ------------------------------------------------------ | ---------------------------------- |
+| Responsibility            | Owner                                                                                        | This Guide's Role                  |
+| ------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Deployment strategy       | [System Design: Infrastructure Planning](../system-design/README.md#infrastructure-planning) | Implements those decisions         |
-| Per-increment deployment  | [Deployment Stage Guide](README.md)                    | Uses the infrastructure built here |
-| Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md) | Validates what this guide produces |
-| Monitoring infrastructure | This guide                                             | Configures tools and dashboards    |
-| Operational processes     | [Support Operations Guide](../support/operations.md)   | Uses monitoring infrastructure     |
+| Per-increment deployment  | [Deployment Stage Guide](README.md)                                                          | Uses the infrastructure built here |
+| Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md)                                       | Validates what this guide produces |
+| Monitoring infrastructure | This guide                                                                                   | Configures tools and dashboards    |
+| Operational processes     | [Support Operations Guide](../support/operations.md)                                         | Uses monitoring infrastructure     |
 
 ---
 
@@ -270,8 +270,9 @@ Validate the entire pipeline end-to-end before the first real increment:
    - No data loss or corruption occurred
    - Monitoring shows baseline metrics restored
 
-   See [Deployment Reference: Rollback Procedures](reference.md#rollback-procedures) for
-   step-by-step rollback instructions.
+   See
+   [Deployment Reference: Rollback Procedures](reference.md#rollback-procedures)
+   for step-by-step rollback instructions.
 
 5. Validate alerting fires correctly (test alert)
 
@@ -383,6 +384,6 @@ model expects projects to grow.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

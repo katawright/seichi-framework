@@ -13,7 +13,7 @@ gets informed — work stalls, decisions get revisited, and accountability
 dissolves. Explicit role definitions and a shared RACI matrix give every
 participant a clear answer to "what is expected of me at this stage?"
 
-### Purpose
+### Goals of This Guide
 
 - Define the canonical set of roles used across all framework stages
 - Assign Responsible, Accountable, Consulted, and Informed designations per
@@ -284,6 +284,6 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.10.0.

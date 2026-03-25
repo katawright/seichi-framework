@@ -1,14 +1,49 @@
 # Checkpoint Taxonomy
 
-Throughout the SDLC, various checkpoints ensure quality, alignment, and sound
-decision-making. The framework distinguishes three types of checkpoints, each
-with different purposes and outcomes:
+## Overview
 
-| Type | Purpose | Outcome |
-| --- | --- | --- |
-| **Gate** | Investment decision — should we continue? | Proceed / Revise / Stop |
-| **Review** | Criteria verification — does this meet the bar? | Ready / Not Ready |
+Taxonomy of the three checkpoint types used across all stages — gates, reviews,
+and alignments — with decision-rights assignments and stage mapping.
+
+### Why Checkpoints
+
+Without distinct checkpoint types, all quality gates feel the same — teams
+either rubber-stamp everything or treat every review as a stop/go decision.
+Distinguishing gates (investment decisions) from reviews (criteria verification)
+and alignments (stakeholder consensus) gives each checkpoint the right weight
+and the right decision-maker.
+
+### Goals of This Guide
+
+- Define the three checkpoint types and when each applies
+- Assign decision rights (who prepares evidence, who decides, who is informed)
+- Map checkpoints to stages so every stage has clear exit criteria
+
+### Key Principle
+
+Not every checkpoint is a gate. Gates ask "should we continue?" Reviews ask
+"does this meet the bar?" Alignments ask "are we on the same page?" Matching the
+checkpoint type to the question prevents both rubber-stamping and decision
+fatigue.
+
+### How to Use This Guide
+
+1. Read [**Gates**](#gates), [**Reviews**](#reviews), and
+   [**Alignments**](#alignments) to understand the three types
+2. Use the [**Decision-Rights Matrix**](#decision-rights-matrix) to determine
+   who prepares evidence and who decides at each checkpoint
+3. Refer to [**Checkpoint Mapping by Stage**](#checkpoint-mapping-by-stage) to
+   see which checkpoints apply at each stage
+
+---
+
+| Type          | Purpose                                          | Outcome                      |
+| ------------- | ------------------------------------------------ | ---------------------------- |
+| **Gate**      | Investment decision — should we continue?        | Proceed / Revise / Stop      |
+| **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready            |
 | **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed |
+
+---
 
 ## Gates
 
@@ -94,27 +129,27 @@ who is informed. This matrix covers checkpoint-level decision rights. For
 stage-level role assignments (R/A/C/I), see the
 [RACI Matrix](roles.md#raci-matrix).
 
-| Checkpoint | After Stage | Type | Prepares Evidence | Decides | Informed |
-| --- | --- | --- | --- | --- | --- |
-| Gate 1 (Investment Decision) | Initiation | Gate | PM | Exec | All roles\*\* |
-| Requirements Readiness | Requirements | Review | PM | PM (peer\*) | PjM |
-| Architecture Review | System Design | Alignment | Architect, AppSec | Architect (peer\*) | PM, PjM |
-| Gate 2 (Investment Decision) | System Design | Gate | PM, Architect, AppSec | Exec | All roles\*\* |
-| Design Review | Increment Design | Review | Engineer | Architect | PM, PjM |
-| PR Review + CI | Implementation | Review | Engineer | Engineer (peer\*) | PjM |
-| Test Execution + Coverage Review | Verification | Review | QA, AppSec | QA | PjM, PM |
-| Production Deployment Approval | Deployment | Review | DevOps, AppSec | DevOps | PM, PjM, Exec |
-| Compliance Approval | Deployment | Review | PM, AppSec | AppSec | Exec, PjM |
-| Production Ownership Decision | Support | Review | DevOps | PjM | PM, Exec |
+| Checkpoint                       | After Stage      | Type      | Prepares Evidence     | Decides            | Informed      |
+| -------------------------------- | ---------------- | --------- | --------------------- | ------------------ | ------------- |
+| Gate 1 (Investment Decision)     | Initiation       | Gate      | PM                    | Exec               | All roles\*\* |
+| Requirements Readiness           | Requirements     | Review    | PM                    | PM (peer\*)        | PjM           |
+| Architecture Review              | System Design    | Alignment | Architect, AppSec     | Architect (peer\*) | PM, PjM       |
+| Gate 2 (Investment Decision)     | System Design    | Gate      | PM, Architect, AppSec | Exec               | All roles\*\* |
+| Design Review                    | Increment Design | Review    | Engineer              | Architect          | PM, PjM       |
+| PR Review + CI                   | Implementation   | Review    | Engineer              | Engineer (peer\*)  | PjM           |
+| Test Execution + Coverage Review | Verification     | Review    | QA, AppSec            | QA                 | PjM, PM       |
+| Production Deployment Approval   | Deployment       | Review    | DevOps, AppSec        | DevOps             | PM, PjM, Exec |
+| Compliance Approval              | Deployment       | Review    | PM, AppSec            | AppSec             | Exec, PjM     |
+| Production Ownership Decision    | Support          | Review    | DevOps                | PjM                | PM, Exec      |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
 who was not the primary author.
 
 \*\* **All roles** — all roles that have participated up to that point.
 
-**Gate 2 evidence split:** PM prepares business case and requirements
-coverage. Architect prepares architecture rationale and ADR summary. AppSec
-prepares security risk posture (see
+**Gate 2 evidence split:** PM prepares business case and requirements coverage.
+Architect prepares architecture rationale and ADR summary. AppSec prepares
+security risk posture (see
 [Security Risk Posture](../templates/gate-decision.md#security-risk-posture)
 section in the gate decision template).
 
@@ -143,6 +178,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-22
+**Last Updated:** 2026-03-25
 
 Extracted from `guides/stages.md` in v0.42.0.

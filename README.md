@@ -6,9 +6,8 @@ A practical, stage-by-stage guide for AI-assisted software delivery — giving
 teams and leaders the guidance, visibility, and oversight they need at every
 stage.
 
-> **Agents:** Start at
-> [agentic-workflow.md](guides/agentic-workflow.md) for stage routing, fallback
-> protocols, and execution guidance.
+> **Agents:** Start at [agentic-workflow.md](guides/agentic-workflow.md) for
+> stage routing, fallback protocols, and execution guidance.
 
 > **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
 > first stage in under 5 minutes.
@@ -22,7 +21,7 @@ into how AI is being used or whether it's helping. Ad-hoc adoption also means no
 shared language for discussing AI's role, no consistent quality gates, and no
 way to scale what works from one team to the next.
 
-### Purpose
+### Goals of This Guide
 
 - Overlay your existing process (agile, waterfall, or hybrid), not replace it
 - Provide structured AI assistance with appropriate human oversight at every
@@ -50,17 +49,17 @@ autonomy because outputs are directly testable.
 
 Pick the path that matches your interest. Each takes under 5 minutes.
 
-| I want to…                                        | Start with                                                    | Then                                                          | Next step                                                      |
-| ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------- |
-| Understand the ROI and governance model            | [Business Value](#business-value)                             | [Governance](#governance-at-a-glance)                         | [Adoption Path](#adoption-path)                                |
-| See how AI fits into each stage                    | [How AI Fits In](#how-ai-fits-in)                             | [Stage Overview](#stage-overview)                             | [Adoption Path](#adoption-path)                                |
-| Kick off a new project                             | [Try It Now](#try-it-now)                                     | [Stage Overview](#stage-overview)                             | [Initiation](stages/initiation/README.md)                      |
-| Execute technical stages (design → verification)   | [Stage Overview](#stage-overview)                             | [System Design](stages/system-design/README.md)              | [Worked Example](guides/worked-example.md)                     |
-| Set up deployment pipelines and infrastructure     | [DevOps Integration Guide](guides/devops-integration.md)     | [Deployment Setup](stages/deployment/setup.md)               | [Deployment](stages/deployment/README.md)                      |
-| Run delivery and manage sprint cadence             | [Delivery Operating Guide](guides/delivery-operating-guide.md) | [Governance](#governance-at-a-glance)                       | [Stage Overview](#stage-overview)                              |
-| Verify and test an increment                       | [Verification](stages/verification/README.md)                | [Verification Brief](templates/verification-brief.md)        | [Verification Checklist](stages/verification/checklist.md)     |
-| Operate and maintain a production system           | [Support](stages/support/README.md)                          | [Support Operations](stages/support/operations.md)           | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
-| Assess security across stages                      | [Security Guide](guides/security.md)                         | [Governance](#governance-at-a-glance)                         | [Verification](stages/verification/README.md)                  |
+| I want to…                                       | Start with                                                     | Then                                                  | Next step                                                            |
+| ------------------------------------------------ | -------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| Understand the ROI and governance model          | [Business Value](#business-value)                              | [Governance](#governance-at-a-glance)                 | [Adoption Path](#adoption-path)                                      |
+| See how AI fits into each stage                  | [How AI Fits In](#how-ai-fits-in)                              | [Stage Overview](#stage-overview)                     | [Adoption Path](#adoption-path)                                      |
+| Kick off a new project                           | [Try It Now](#try-it-now)                                      | [Stage Overview](#stage-overview)                     | [Initiation](stages/initiation/README.md)                            |
+| Execute technical stages (design → verification) | [Stage Overview](#stage-overview)                              | [System Design](stages/system-design/README.md)       | [Worked Example](guides/worked-example.md)                           |
+| Set up deployment pipelines and infrastructure   | [DevOps Integration Guide](guides/devops-integration.md)       | [Deployment Setup](stages/deployment/setup.md)        | [Deployment](stages/deployment/README.md)                            |
+| Run delivery and manage sprint cadence           | [Delivery Operating Guide](guides/delivery-operating-guide.md) | [Governance](#governance-at-a-glance)                 | [Stage Overview](#stage-overview)                                    |
+| Verify and test an increment                     | [Verification](stages/verification/README.md)                  | [Verification Brief](templates/verification-brief.md) | [Verification Checklist](stages/verification/checklist.md)           |
+| Operate and maintain a production system         | [Support](stages/support/README.md)                            | [Support Operations](stages/support/operations.md)    | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
+| Assess security across stages                    | [Security Guide](guides/security.md)                           | [Governance](#governance-at-a-glance)                 | [Verification](stages/verification/README.md)                        |
 
 ---
 
@@ -167,9 +166,10 @@ at the Minimal tier. Most of that time is thinking, not process — AI drafts th
 brief, you review it. A full pilot (two increments through Deployment) depends
 on project scope: a small greenfield team using AI-assisted workflows may
 complete in 3-4 weeks; a brownfield pilot with limited AI tooling should plan
-for 6-8 weeks. See the [Right-Sizing Guide](guides/right-sizing.md) to
-calibrate for your context. Standard-tier overhead is modest — primarily right-sizing selection, brief
-completion, and gate preparation — and decreases as the team builds familiarity.
+for 6-8 weeks. See the [Right-Sizing Guide](guides/right-sizing.md) to calibrate
+for your context. Standard-tier overhead is modest — primarily right-sizing
+selection, brief completion, and gate preparation — and decreases as the team
+builds familiarity.
 
 ### Industry Context
 
@@ -211,20 +211,18 @@ decisions where "investment" means committing team capacity, time, and budget.
 | Gate 1 | End of Initiation                  | Continue to requirements work? (Y/N) | Executive   |
 | Gate 2 | After Requirements + System Design | Commit to building? (Y/N)            | Executive   |
 
-After Gate 2, the project is committed. Checkpoints govern the remaining
-stages: Reviews (criteria verification at each stage) and Alignments
-(stakeholder consensus). These control quality, readiness, and compliance — not
-whether to continue.
-Security governance flows through every stage via the AppSec role and automated
-scanning — see the [Security Guide](guides/security.md) for the full
+After Gate 2, the project is committed. Checkpoints govern the remaining stages:
+Reviews (criteria verification at each stage) and Alignments (stakeholder
+consensus). These control quality, readiness, and compliance — not whether to
+continue. Security governance flows through every stage via the AppSec role and
+automated scanning — see the [Security Guide](guides/security.md) for the full
 throughline.
 
 **Executive role.** The Executive (sponsor, VP, or department head) reviews the
 Initiation Brief at Gate 1 and the cost/risk/timeline package at Gate 2. After
 Gate 2, executives receive notification of checkpoint outcomes but are not
-required to participate — see the
-[RACI matrix](guides/roles.md#raci-matrix) for the full
-responsibility breakdown and the
+required to participate — see the [RACI matrix](guides/roles.md#raci-matrix) for
+the full responsibility breakdown and the
 [Decision-Rights Matrix](guides/checkpoints.md#decision-rights-matrix) for
 per-checkpoint roles.
 
@@ -286,11 +284,11 @@ detailed pre-pilot readiness criteria, see the
 
 The recommended path is a **single pilot project**. Scope it to match your
 readiness: "try first" teams should limit to one team and one increment (~4
-weeks) to validate the framework with minimal commitment; "adopt now" teams
-can run a full Standard-tier pilot across two increments (~4–8 weeks). This section is an overview; see the
-[Organizational Adoption Guide](guides/adoption.md) for full detail. If you want
-to try the framework on your own before proposing an organizational pilot, start
-with [Try It Now](#try-it-now).
+weeks) to validate the framework with minimal commitment; "adopt now" teams can
+run a full Standard-tier pilot across two increments (~4–8 weeks). This section
+is an overview; see the [Organizational Adoption Guide](guides/adoption.md) for
+full detail. If you want to try the framework on your own before proposing an
+organizational pilot, start with [Try It Now](#try-it-now).
 
 ### Choose your project type
 
@@ -418,6 +416,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.17.0.

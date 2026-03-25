@@ -59,7 +59,7 @@ production releases incrementally with rollback capability, confirming
 production health and instrumentation, keeping stakeholders informed throughout,
 and capturing monitoring baselines for ongoing Support.
 
-### Purpose
+### Goals of This Guide
 
 - Provide stage-specific guidance and rationale for Deployment
 - Describe how AI assists at each activity
@@ -499,14 +499,14 @@ Deployment validates that measurement systems work in production. See
 **Handoff:** Support stage receives the deployed system, monitoring dashboards,
 updated runbooks, incident response procedures, baseline measurements, release
 notes, and success criteria register (originates from Initiation; verify the
-support team has access during handoff). Retrospective action items feed into the
-next Increment Design cycle
-(see [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)).
-When the same role owns both Deployment and Support, apply the handoff checklist
-as a self-review rather than a cross-team transfer.
-Distribute checkpoint or gate decision artifacts to all Informed roles per the
-[Information Protocol](../../guides/roles.md#information-protocol). Record
-the deployment decision using the
+support team has access during handoff). Retrospective action items feed into
+the next Increment Design cycle (see
+[Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). When
+the same role owns both Deployment and Support, apply the handoff checklist as a
+self-review rather than a cross-team transfer. Distribute checkpoint or gate
+decision artifacts to all Informed roles per the
+[Information Protocol](../../guides/roles.md#information-protocol). Record the
+deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 The Support team should verify readiness using the
@@ -542,6 +542,6 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.

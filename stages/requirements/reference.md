@@ -12,7 +12,7 @@ requirement" mean different things to different teams. Shared definitions
 prevent miscommunication during elicitation, review, and handoff to System
 Design.
 
-### Purpose
+### Goals of This Reference
 
 - Define key requirements terms (FR, AC, NFR) with format guidance and examples
 - Provide brownfield constraint categories with NFR templates
@@ -470,6 +470,6 @@ state so the next session can continue without re-eliciting:
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

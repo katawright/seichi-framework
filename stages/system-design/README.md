@@ -62,7 +62,7 @@ architecture, no increment plan, and no infrastructure — leading to costly
 rework, security afterthoughts, and budget surprises. System Design exists to
 answer: _"How should we build this, and in what order?"_
 
-### Purpose
+### Goals of This Guide
 
 - Provide stage-specific guidance and rationale for System Design
 - Describe how AI assists at each activity
@@ -218,10 +218,10 @@ ordered to match the
    API boundaries for parallel work (§5 API Architecture)
 5. [**Cross-Cutting Concerns**](#cross-cutting-concerns) — security,
    performance, observability traceability (§6 Security and Compliance Design)
-6. [**Observability and Monitoring Design**](#observability-and-monitoring-design) —
-   instrumentation strategy and success criteria measurement (§7)
-7. [**Performance and Scalability Design**](#performance-and-scalability-design) —
-   performance targets and scaling approach (§8)
+6. [**Observability and Monitoring Design**](#observability-and-monitoring-design)
+   — instrumentation strategy and success criteria measurement (§7)
+7. [**Performance and Scalability Design**](#performance-and-scalability-design)
+   — performance targets and scaling approach (§8)
 8. [**NFR Traceability**](#nfr-traceability) — mapping non-functional
    requirements to architectural decisions and verification methods (§9)
 9. [**Versioning Strategy**](#versioning-strategy) — app and API versioning,
@@ -261,8 +261,8 @@ the source code repo at Gate 2.
 Key sections: Context, options considered (with cost analysis), decision and
 rationale, consequences, alternatives.
 
-**Draft numbering:** Use a `D` prefix during System Design: `ADR-DNNN.md`
-(e.g., `ADR-D001.md`, `ADR-D002.md`). The title is in the ADR heading, not the
+**Draft numbering:** Use a `D` prefix during System Design: `ADR-DNNN.md` (e.g.,
+`ADR-D001.md`, `ADR-D002.md`). The title is in the ADR heading, not the
 filename. The prefix makes draft status self-evident and keeps numbering scoped
 to the current project's artifacts.
 
@@ -280,8 +280,8 @@ for the full publishing workflow.
 
 End-to-end flow from draft to publication:
 
-1. **Draft** — Create ADRs using the [ADR template](../../templates/adr.md)
-   with draft numbering (`ADR-DNNN.md`) in `docs/adr/`.
+1. **Draft** — Create ADRs using the [ADR template](../../templates/adr.md) with
+   draft numbering (`ADR-DNNN.md`) in `docs/adr/`.
 2. **Record in brief** — List all ADRs in the System Design Brief's
    [ADR section](../../templates/system-design-brief.md#2-architecture-decision-records-adrs)
    with status and category.
@@ -337,10 +337,9 @@ In your `system-design-brief.md` (System Design stage — draft numbering):
 ```markdown
 ## Technology Stack
 
-**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001.md))
-**File Upload:** Presigned URLs with object storage (see
-[ADR-D002](adr/ADR-D002.md)) **Authentication:** JWT
-tokens (see [ADR-D003](adr/ADR-D003.md))
+**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001.md)) **File Upload:**
+Presigned URLs with object storage (see [ADR-D002](adr/ADR-D002.md))
+**Authentication:** JWT tokens (see [ADR-D003](adr/ADR-D003.md))
 
 For detailed rationale, alternatives, and cost analysis, see ADRs in
 `docs/adr/`.
@@ -351,10 +350,10 @@ In your `implementation-brief.md` (Implementation stage):
 ```markdown
 ## Key Implementation Decisions
 
-| #   | Decision                               | Type    | ADR Link                                          | Date       |
-| --- | -------------------------------------- | ------- | ------------------------------------------------- | ---------- |
+| #   | Decision                               | Type    | ADR Link                    | Date       |
+| --- | -------------------------------------- | ------- | --------------------------- | ---------- |
 | 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-0001](adr/ADR-0001.md) | 2024-02-10 |
-| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-0002](adr/ADR-0002.md)                       | 2024-02-10 |
+| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-0002](adr/ADR-0002.md) | 2024-02-10 |
 ```
 
 ### Technology Selection
@@ -416,7 +415,8 @@ issues can be detected, diagnosed, and resolved quickly. This includes logging
 strategy, metrics collection, alerting thresholds, and dashboard design. Without
 upfront observability design, teams add monitoring reactively after incidents,
 leaving gaps in coverage during the most critical early production period. See
-[System Design Reference: Observability](reference.md#observability-and-monitoring-design) for detailed guidance.
+[System Design Reference: Observability](reference.md#observability-and-monitoring-design)
+for detailed guidance.
 
 ### Performance and Scalability Design
 
@@ -426,7 +426,8 @@ targets, throughput requirements, caching strategy, database optimization
 approach, and scaling triggers. Defining these early ensures that architecture
 decisions account for load characteristics and that verification has concrete
 targets to test against. See
-[System Design Reference: Performance](reference.md#performance-and-scalability-design) for detailed guidance.
+[System Design Reference: Performance](reference.md#performance-and-scalability-design)
+for detailed guidance.
 
 ### NFR Traceability
 
@@ -592,8 +593,7 @@ The [System Design Reference](reference.md) covers these topics in depth:
   below, produced from the
   [System Design Brief Template](../../templates/system-design-brief.md)
 - **Architecture Diagrams** — system context, container, and component diagrams
-- **Technology Stack ADRs** — justified technology choices with decision
-  records
+- **Technology Stack ADRs** — justified technology choices with decision records
 - **Data/API Architecture** — data models, API conventions, integration patterns
 - **Infrastructure Plan** — CI/CD, environments, deployment strategy
 - **Security Approach** — threat model, authentication, authorization,
@@ -619,8 +619,8 @@ The [System Design Reference](reference.md) covers these topics in depth:
 > See [Security Guide](../../guides/security.md).
 
 **Handoff:** Increment Design stage receives architecture, increment plan, and
-foundational conventions. Distribute checkpoint or gate decision artifacts to all
-Informed roles per the
+foundational conventions. Distribute checkpoint or gate decision artifacts to
+all Informed roles per the
 [Information Protocol](../../guides/roles.md#information-protocol).
 
 ---
@@ -669,6 +669,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

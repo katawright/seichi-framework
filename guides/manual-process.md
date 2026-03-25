@@ -16,7 +16,7 @@ The framework documents explain what to do at each stage, but don't provide a
 ready-to-use prompt for getting started with an AI assistant. This guide bridges
 that gap with a copy-paste template and tool-specific adaptation tips.
 
-### Purpose
+### Goals of This Guide
 
 - Provide a bootstrap prompt template for any AI tool
 - Explain how to customize the prompt for your project and tooling
@@ -322,6 +322,6 @@ If you're stuck or unsure how to proceed:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.9.0.

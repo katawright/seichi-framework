@@ -18,7 +18,7 @@ independently and where human oversight is essential, teams either
 over-constrain AI (losing productivity in low-risk stages) or under-constrain it
 (introducing risk in high-stakes ones).
 
-### Purpose
+### Goals of This Scorecard
 
 - Define clear boundaries for AI assistance at each stage
 - Help engineers understand where humans maintain control
@@ -46,9 +46,9 @@ requiring human approval—not uncontrolled or unsupervised operation.
 | --- | -------------------- | ---------- | ------------- | ------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | 1   | **Initiation**       | Medium     | Low–Medium    | Medium        | Human approval                     | Draft assumptions/risks, options/tradeoffs, discovery plan, rough sizing ranges, success criteria templates                   |
 | 2   | **Requirements**     | High       | Medium        | High          | Human approval                     | Convert goals → stories + acceptance criteria, ambiguity detection, edge-case enumeration, NFR prompts, traceability matrices |
-| 3   | **System Design**    | High       | Medium        | High          | Alignment + gate (human approval)  | Propose architectures, interfaces, data models, increment plans, threat-model checklists, ADR drafts                              |
+| 3   | **System Design**    | High       | Medium        | High          | Alignment + gate (human approval)  | Propose architectures, interfaces, data models, increment plans, threat-model checklists, ADR drafts                          |
 | 4   | **Increment Design** | High       | Medium        | Medium        | Specialized review                 | Detail component designs, API specs, test strategies, data model changes                                                      |
-| 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized increments                                            |
+| 5   | **Implementation**   | Very High  | High          | Medium        | CI validation + human approval     | Generate/refactor code, migrations, infra-as-code, glue code; keep PR-sized increments                                        |
 | 6   | **Verification**     | Very High  | Very High     | Medium        | CI validation + human spot-check   | Generate tests, test matrices, synthetic data, contract tests; expand coverage from AC/NFRs                                   |
 | 7   | **Deployment**       | Medium     | High          | Very High     | Human execution required + runbook | Draft release steps, canary/rollback plans, release notes; humans execute/approve                                             |
 | 8   | **Support**          | High       | Medium        | High          | Human approval                     | Triage/log clustering, incident comms drafts, runbooks, dependency update plans, bug minimization                             |
@@ -148,14 +148,13 @@ project state.
 requirements, acceptance criteria, traceability matrices). Humans approve before
 output is relied on. Correctness requires domain expertise.
 
-**System Design (Stage 3):** Requires alignment — architecture council
-or tech lead sign-off, security review for auth/data flow changes, explicit
-rollback plan and migration review. Foundational decisions with high blast
-radius.
+**System Design (Stage 3):** Requires alignment — architecture council or tech
+lead sign-off, security review for auth/data flow changes, explicit rollback
+plan and migration review. Foundational decisions with high blast radius.
 
 **Increment Design (Stage 4):** Requires design review — Architect reviews
-component designs for architecture conformance. Gates may be lighter as
-patterns become established. Per-increment detailed design.
+component designs for architecture conformance. Gates may be lighter as patterns
+become established. Per-increment detailed design.
 
 **Implementation (Stage 5):** AI iterates within pre-defined boundaries — single
 service/module, no auth changes, feature-flagged, no unapproved schema changes.
@@ -256,7 +255,7 @@ section.
 | **Requirements**     | Human writes reqs; AI reviews              | AI drafts reqs from brief; human validates            | AI drafts reqs, flags contradictions and gaps; human steers and validates    |
 | **System Design**    | Human designs; AI suggests patterns        | AI proposes architecture; human decides               | AI evaluates trade-offs, surfaces concerns; human steers and validates       |
 | **Increment Design** | Human designs; AI generates boilerplate    | AI drafts component and test specs; human reviews     | AI drafts specs, flags cross-cutting concerns; human steers and validates    |
-| **Implementation**   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI generates full increments from specs; engineer reviews and validates          |
+| **Implementation**   | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR     | AI generates full increments from specs; engineer reviews and validates      |
 | **Verification**     | Engineer writes tests; AI suggests cases   | AI drafts tests from ACs; engineer validates coverage | AI writes tests and iterates on CI feedback; engineer reviews intent         |
 | **Deployment**       | Engineer writes runbook; AI templates      | AI drafts runbook; engineer reviews                   | AI drafts runbook, recommends gate decisions with evidence; engineer decides |
 | **Support**          | Engineer triages; AI surfaces data         | AI triages and drafts responses; engineer decides     | AI monitors and surfaces patterns; engineer triages and validates            |
@@ -406,6 +405,6 @@ confidence and establishes effective gate processes.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.9.0.

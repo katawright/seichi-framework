@@ -14,7 +14,7 @@ needs a different interface: a single file with structured metadata for
 programmatic routing and enough narrative context to operate autonomously across
 stages. This guide is that interface.
 
-### Purpose
+### Goals of This Guide
 
 - Provide a single entry point for agents to orient in this repository
 - Expose stage routing, inputs/outputs, and gates as structured YAML
@@ -29,9 +29,8 @@ revisit conditions. This guide provides cross-cutting concerns: artifact paths,
 working locations, fallback protocols, and session conventions.
 
 > **Role assignments:** This guide defines _what_ to do at each stage. For _who_
-> does it, see
-> [Roles and Responsibilities](roles.md#roles-and-responsibilities) in the
-> Roles Guide. The RACI matrix defines which role is Responsible,
+> does it, see [Roles and Responsibilities](roles.md#roles-and-responsibilities)
+> in the Roles Guide. The RACI matrix defines which role is Responsible,
 > Accountable, Consulted, or Informed at each stage.
 
 ### How to Use This Guide
@@ -479,6 +478,6 @@ full decision tree and classification table.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

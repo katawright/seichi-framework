@@ -14,7 +14,7 @@ teams adopt inconsistently — some over-invest in process, others skip governan
 entirely — and leadership loses the visibility that makes the framework
 valuable.
 
-### Purpose
+### Goals of This Guide
 
 - Provide a structured rollout path from pilot through standardization
 - Define readiness criteria, success metrics, and expansion gates
@@ -375,8 +375,8 @@ revisit the assessment for guidance:
 
 - [ ] Team completed at least one full increment cycle (Increment Design →
       Deployment)
-- [ ] Cycle time was comparable to or better than pre-framework baseline
-      (e.g., within ±15% of baseline)
+- [ ] Cycle time was comparable to or better than pre-framework baseline (e.g.,
+      within ±15% of baseline)
 - [ ] Defect escape rate did not increase (e.g., no more than +10% of baseline)
 - [ ] Team satisfaction survey scores are neutral or positive (e.g., ≥3/5
       average)
@@ -572,6 +572,6 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.17.0.

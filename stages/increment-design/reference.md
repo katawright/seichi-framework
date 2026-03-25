@@ -14,7 +14,7 @@ implementation quality, testability, and integration risk. Getting these
 decisions right — component boundaries, API contracts, data model changes, and
 test strategy — reduces rework during Implementation and Verification.
 
-### Purpose
+### Goals of This Reference
 
 - Provide detailed component design examples across backend and frontend stacks
 - Supply interface specification formats for REST APIs, React components, and
@@ -332,6 +332,6 @@ Capture the following at the end of each session:
 
 ## Notes
 
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

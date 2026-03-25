@@ -7,7 +7,14 @@ Optional deep-dive companion to the [System Design Stage Guide](README.md),
 [System Design Checklist](checklist.md). Consult when you need specifics or a
 starting point for AI-assisted exploration.
 
-### Purpose
+### Why System Design Practices
+
+System design decisions — infrastructure topology, technology selection,
+security architecture, performance targets — are the hardest to change later.
+This reference provides evaluation frameworks, worked examples, and
+anti-patterns so that design choices are deliberate rather than defaulted.
+
+### Goals of This Reference
 
 - Provide detailed examples and format guidance for the System Design Brief
 - Cover infrastructure planning, increment sizing, estimation, and technology
@@ -15,6 +22,11 @@ starting point for AI-assisted exploration.
 - Document security, performance, observability design patterns, and common
   anti-patterns
 - Supply checklist troubleshooting when items fail
+
+### Key Principle
+
+Design for the constraints you have, not the scale you imagine. Every
+architectural decision should trace to a concrete requirement or risk.
 
 ### How to Use This Reference
 
@@ -802,8 +814,8 @@ System Design has the highest blast radius of the foundational stages —
 foundational decisions are difficult and expensive to reverse. Human validation
 is non-negotiable in the following areas:
 
-- **Architecture decisions:** Require alignment — architecture council
-  or tech lead sign-off. AI proposes; humans decide.
+- **Architecture decisions:** Require alignment — architecture council or tech
+  lead sign-off. AI proposes; humans decide.
 - **Security model and data flow:** No security-critical decision should be
   finalized without human review. This includes authentication architecture,
   authorization model, data residency, and encryption choices.
@@ -906,6 +918,6 @@ state so the next session can continue without re-deriving context:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

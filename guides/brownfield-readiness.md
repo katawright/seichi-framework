@@ -16,7 +16,7 @@ readiness assessment, teams either over-invest in preparation (delaying value)
 or under-invest (setting AI tools up to fail on a codebase they can't reason
 about effectively).
 
-### Purpose
+### Goals of This Guide
 
 - Define the full brownfield readiness spectrum from Ready to Rebuild
 - Provide a scored rubric for evaluating codebase readiness across six axes
@@ -459,7 +459,7 @@ Transparency (hidden logic).
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0.

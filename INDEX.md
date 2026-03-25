@@ -12,7 +12,7 @@ relationships for fast orientation without loading the full corpus.
 Agents and contributors waste context loading files they don't need. A single
 index lets readers identify relevant files before committing to deeper reads.
 
-### Purpose
+### Goals of This Index
 
 - Provide a scannable inventory of framework-usage files
 - Enable agents to locate files by keyword or relationship
@@ -172,6 +172,6 @@ Load the index first, then load only what you need.
 
 ## Notes
 
-**Last Updated:** 2026-03-22
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.41.0.

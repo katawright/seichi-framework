@@ -16,7 +16,7 @@ concepts that span multiple documents: roles, governance, MoSCoW (Must / Should
 / Could / Won't Have), greenfield/brownfield adaptation, compliance, and key
 terms.
 
-### Purpose
+### Goals of This Guide
 
 - Define the framework's design principles and key benefits
 - Explain cross-stage concepts (MoSCoW, roles, governance, compliance)
@@ -855,6 +855,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.9.0.

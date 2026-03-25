@@ -15,7 +15,7 @@ declare victory on delivery rather than outcome. When stakeholders are
 unidentified, decisions stall or conflict. This reference deepens the guidance
 in the stage README with concrete techniques and failure patterns to avoid.
 
-### Purpose
+### Goals of This Reference
 
 - Provide techniques for stakeholder identification and discovery facilitation
 - Detail assumption and risk analysis methods with worked examples
@@ -361,6 +361,6 @@ state so the next session can continue without re-discovery:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.23.0.

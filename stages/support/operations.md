@@ -14,7 +14,7 @@ missing business objectives because nobody is tracking success criteria. A
 deliberate setup process prevents these failures whether you are building
 support from scratch or formalizing what already exists.
 
-### Purpose
+### Goals of This Guide
 
 - Guide greenfield projects through first-time support infrastructure setup
 - Help brownfield projects discover, document, and improve existing processes
@@ -131,7 +131,7 @@ routed before establishing on-call responsibilities.
 - [ ] Health check endpoints returning healthy
 - [ ] Error tracking capturing real errors (not silently failing)
 - [ ] Alert routing delivering to the correct channels (test with a synthetic
-  alert)
+      alert)
 
 **Standard and Enterprise additionally:**
 
@@ -320,6 +320,6 @@ For a quick verification, use the
 
 ## Notes
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

@@ -14,7 +14,7 @@ over-engineering (heavyweight processes that slow down small projects and
 frustrate teams) or under-engineering (skipping critical practices that would
 have caught production failures early).
 
-### Purpose
+### Goals of This Guide
 
 - Prevent over-engineering on low-risk projects and under-engineering on
   high-risk ones
@@ -283,6 +283,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-03-20
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.13.0.
