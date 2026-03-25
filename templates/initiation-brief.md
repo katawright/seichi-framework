@@ -93,9 +93,24 @@ spike, experiment) / TBD]
 
 ## Project Lead and Stakeholders
 
-- **Project lead:** [name]
-- **Approvers:** [engineering/product/security as needed]
-- **Stakeholders:**
+<!-- Identify anyone whose input is needed for requirements, whose sign-off is
+     needed for acceptance, or who will be a primary user of the delivered
+     system. See guides/roles.md#domain-stakeholders for guidance. -->
+
+- **Project lead:** [name, role]
+- **Approvers (Gate 1):** [names/roles — who decides proceed/revise/stop]
+- **Stakeholder advocate:** [name — usually PM; responsible for ensuring
+  stakeholders are engaged per the participation plan below]
+
+### Key Stakeholders
+
+| Name   | Role / Title | Organization | Participation | Stages                                         |
+| ------ | ------------ | ------------ | ------------- | ---------------------------------------------- |
+| [name] | [role]       | [org/dept]   | C or I        | [e.g., Initiation, Requirements, Verification] |
+
+<!-- Participation: C = Consulted (provides input), I = Informed (kept in the loop).
+     Stages: list the stages where this stakeholder should be engaged.
+     Typical pattern: C at Initiation, Requirements, and Verification/UAT; I elsewhere. -->
 
 ---
 
@@ -187,8 +202,10 @@ month enablement program"]
 <!-- Minimal: rough range | Standard: range-based with confidence label | Enterprise: multiple estimation techniques, sensitivity analysis -->
 
 - **Confidence:** Low / Medium / High [why]
-- **Requirements team hypothesis:** [Time range the requirements/design team estimates for foundational stages]
-- **Delivery team hypothesis (optional):** [Time range the delivery team estimates for iterative stages]
+- **Requirements team hypothesis:** [Time range the requirements/design team
+  estimates for foundational stages]
+- **Delivery team hypothesis (optional):** [Time range the delivery team
+  estimates for iterative stages]
 
 ---
 
@@ -207,4 +224,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-25 | Added in v0.2.0 -->

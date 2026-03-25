@@ -140,7 +140,7 @@ stage-level role assignments (R/A/C/I), see the
 | Test Execution + Coverage Review | Verification     | Review    | QA, AppSec            | QA                 | PjM, PM       |
 | Production Deployment Approval   | Deployment       | Review    | DevOps, AppSec        | DevOps             | PM, PjM, Exec |
 | Compliance Approval              | Deployment       | Review    | PM, AppSec            | AppSec             | Exec, PjM     |
-| Production Ownership Decision    | Support          | Review    | DevOps                | PjM                | PM, Exec      |
+| Production Ownership Decision    | Support          | Review    | DevOps                | DevOps (peer\*)    | PM, PjM, Exec |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
 who was not the primary author.

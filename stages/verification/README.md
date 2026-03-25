@@ -30,7 +30,7 @@ default_autonomy: ai-led
 default_oversight_intensity: passive
 working_location: source-code
 session_log_template: templates/session-log.md
-raci_roles: { R: [engineer, qa, appsec], A: [qa], C: [pm, architect], I: [pjm] }
+raci_roles: { R: [eng, qa, appsec], A: [qa], C: [pm, arch], I: [pjm] }
 ---
 
 # AI-Assisted SDLC: Verification Stage

@@ -36,26 +36,31 @@ to circulate.
 5. [ ] **Non-goals are explicit** (3-5 items)
 6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/revise/stop)
 7. [ ] **A project lead is named**
-8. [ ] **Success Criteria Register produced (Standard+)** with baselines,
+8. [ ] **Key stakeholders identified with participation levels** (documented in
+       brief with roles, participation type C/I, and relevant stages; see
+       [Domain Stakeholders](../../guides/roles.md#domain-stakeholders))
+9. [ ] **Success Criteria Register produced (Standard+)** with baselines,
        targets, and measurement methods for each success criterion
 
 ### Security
 
-9. [ ] **Data sensitivity and compliance scope noted** (public/internal/
-       confidential/restricted; relevant regulations identified) (consult AppSec for Enterprise tier or when handling restricted/confidential data)
+10. [ ] **Data sensitivity and compliance scope noted** (public/internal/
+        confidential/restricted; relevant regulations identified) (consult
+        AppSec for Enterprise tier or when handling restricted/confidential
+        data)
 
 ### Risks and Constraints
 
-10. [ ] **Top assumptions (<=5) are written down**
-11. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
+11. [ ] **Top assumptions (<=5) are written down**
+12. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
         mitigations**
-12. [ ] **Constraints and dependencies identified** with owners where possible
+13. [ ] **Constraints and dependencies identified** with owners where possible
 
 ### Alternatives and Estimation
 
-13. [ ] **At least one alternative option considered**
-14. [ ] **Hypothesis includes a time range and confidence level**
-15. [ ] **All required stage outputs produced** (initiation brief, success
+14. [ ] **At least one alternative option considered**
+15. [ ] **Hypothesis includes a time range and confidence level**
+16. [ ] **All required stage outputs produced** (initiation brief, success
         criteria register [Standard+] — verify against stage README front
         matter)
 
@@ -87,6 +92,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.2.0.

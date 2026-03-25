@@ -23,15 +23,19 @@ decision framework.
 - **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)
 
+<!-- Verify against RACI matrix (guides/roles.md#raci-matrix) and the
+     stakeholder table in the Initiation Brief. Were all C-roles and key
+     stakeholders consulted? -->
+
 **Division of labor:** The Responsible role(s) (R) prepare the gate package —
 completing Context, Inputs Reviewed, Artifact Completeness, and Criteria
 Evaluated with evidence. When multiple roles share R designation (e.g., Gate 2:
 Architect and AppSec), each R-role prepares the sections within their domain.
 For Gate 2: Architect prepares Context, Inputs Reviewed, Artifact Completeness,
-and Criteria Evaluated. AppSec prepares Security Risk Posture.
-The Accountable role (A) reviews the package, leads the decision discussion, and
-records the final Decision and Next Steps. The Facilitator (PjM) manages agenda
-and time-boxing per the
+and Criteria Evaluated. AppSec prepares Security Risk Posture. The Accountable
+role (A) reviews the package, leads the decision discussion, and records the
+final Decision and Next Steps. The Facilitator (PjM) manages agenda and
+time-boxing per the
 [Gate Review Facilitation](../guides/roles.md#gate-review-facilitation)
 protocol.
 
@@ -151,4 +155,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-03-25 | Added in v0.13.0 -->
