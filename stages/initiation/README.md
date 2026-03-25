@@ -20,7 +20,8 @@ default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
-raci_roles: { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
+raci_roles:
+  { R: [pm], A: [pm], C: [engineer, architect, appsec, pjm], I: [exec] }
 ---
 
 # AI-Assisted SDLC: Initiation Stage
@@ -41,7 +42,7 @@ expertise or formal role required. The language is intentionally
 business-focused to enable non-technical stakeholders to independently initiate
 and scope projects with AI assistance.
 
-### Purpose
+### Goals of This Guide
 
 - Provide stage-specific guidance and rationale for Initiation
 - Describe how AI assists at each activity
@@ -147,12 +148,15 @@ For assistance level details, see the
 The framework scales along three axes:
 
 - **Risk tier** (Minimal / Standard / Enterprise) — how much process to apply
-- **AI autonomy tier** (Human-Led / Collaborative / AI-Led) — how much AI
-  drives the work (see [How AI Helps](#how-ai-helps) above)
+- **AI autonomy tier** (Human-Led / Collaborative / AI-Led) — how much AI drives
+  the work (see [How AI Helps](#how-ai-helps) above)
 - **Team size** — solo, small team, or multi-team (see
   [Right-Sizing Guide](../../guides/right-sizing.md#team-size--how-formal))
 
-If your project handles sensitive data, has compliance requirements, or serves external users, start at Standard or Enterprise — see the [Right-Sizing Guide](../../guides/right-sizing.md) for detailed selection criteria.
+If your project handles sensitive data, has compliance requirements, or serves
+external users, start at Standard or Enterprise — see the
+[Right-Sizing Guide](../../guides/right-sizing.md) for detailed selection
+criteria.
 
 Select values for all three before starting. Most internal projects land at
 **Standard**; use **Minimal** for low-risk experiments and **Enterprise** for
@@ -621,6 +625,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.2.0.

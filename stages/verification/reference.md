@@ -7,7 +7,15 @@ Optional deep-dive companion to the [Verification Stage Guide](README.md),
 [Verification Checklist](checklist.md). Consult when you need specifics or a
 starting point for AI-assisted exploration.
 
-### Purpose
+### Why Verification Practices
+
+Testing strategies that work on paper often break down in execution — flaky
+integration tests, inconsistent defect triage, and missing coverage in
+non-functional areas. This reference provides concrete strategies, templates,
+and severity definitions so that verification produces trustworthy signals
+rather than checkbox compliance.
+
+### Goals of This Reference
 
 - Provide detailed testing strategies, best practices, and result templates for
   each test type
@@ -15,6 +23,11 @@ starting point for AI-assisted exploration.
   process
 - Document monitoring and instrumentation validation checklists
 - Supply red flags reference and common troubleshooting guidance
+
+### Key Principle
+
+A test that cannot fail is not a test. Verification value comes from surfacing
+real defects early, not from achieving pass rates.
 
 ### How to Use This Reference
 
@@ -472,6 +485,6 @@ Capture the following at the end of each session:
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

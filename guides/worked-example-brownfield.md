@@ -16,7 +16,7 @@ that don't exist in greenfield. Without a concrete example, the brownfield
 guidance stays abstract — engineers and DevOps trust examples over
 prescriptions.
 
-### Purpose
+### Goals of This Example
 
 - Demonstrate the readiness assessment → preparation → exit checkpoint → feature
   work flow
@@ -30,7 +30,7 @@ Preparation is bounded, not open-ended. This example shows a team that prepares
 _enough_ to start AI-assisted feature work in one area, then expands — not a
 team that perfects the entire codebase before writing a line of new code.
 
-### How to Use This Guide
+### How to Use This Example
 
 1. Read the [**Scenario**](#scenario) to understand the starting point
 2. Follow the [**Readiness Assessment**](#readiness-assessment) to see scoring
@@ -415,6 +415,6 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.40.0.

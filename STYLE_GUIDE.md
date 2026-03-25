@@ -11,7 +11,7 @@ As the framework grows, documents drift in structure, tone, and formatting. A
 shared style guide enables batch conformance reviews, speeds onboarding for
 contributors, and keeps every file predictable for readers.
 
-### Purpose
+### Goals of This Guide
 
 - Codify the document structure that emerged during the Phase 2 restructuring of
   the five top-level framework files
@@ -49,7 +49,9 @@ The canonical section order for every framework file:
      document addresses. `[Topic]` is the document's subject matter, not the
      document itself (e.g., "Why Foundation Work", not "Why This Guide"). If two
      files have overlapping Why sections, consider merging them.
-   - **Purpose** — bullet list of what the document delivers
+   - **Goals of This [Type]** — bullet list of what the document delivers.
+     `[Type]` matches the document type used in "How to Use This [Type]" (e.g.,
+     Guide, Reference, Scorecard)
    - **Key Principle** — the single most important idea to remember
    - **Starting Point** — what you need before starting this stage (stage
      READMEs only)
@@ -404,6 +406,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-03-22
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.19.0.

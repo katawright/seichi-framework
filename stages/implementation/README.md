@@ -6,8 +6,8 @@ inputs:
   - requirements-with-acceptance-criteria
   - success-criteria-register
   - test-strategy
-  - defect-reports  # rework cycle only
-  - verification-brief  # rework cycle only
+  - defect-reports # rework cycle only
+  - verification-brief # rework cycle only
 outputs:
   - artifact: working-code
   - artifact: unit-tests
@@ -28,7 +28,8 @@ default_autonomy: ai-led
 default_oversight_intensity: passive
 working_location: source-code
 session_log_template: templates/implementation-session-log.md
-raci_roles: { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
+raci_roles:
+  { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
 ---
 
 # AI-Assisted SDLC: Implementation Stage
@@ -45,7 +46,7 @@ Instrumentation skipped during build is rarely retrofitted. Implementation is
 where design meets reality — the patterns you follow here determine whether
 Verification catches problems early or discovers them late.
 
-### Purpose
+### Goals of This Guide
 
 - Build working code that implements increment requirements
 - Create comprehensive unit tests with meaningful coverage
@@ -64,9 +65,10 @@ A completed [Increment Design Brief](../../templates/increment-design-brief.md)
 with detailed component designs, interface contracts, and test strategy. Also
 required: architecture diagrams from System Design,
 [requirements with acceptance criteria](../../templates/requirements-brief.md),
-and the [success criteria register](../../templates/success-criteria-register.md)
-for measurement throughline continuity. Your development environment should be
-set up and ready.
+and the
+[success criteria register](../../templates/success-criteria-register.md) for
+measurement throughline continuity. Your development environment should be set
+up and ready.
 
 > This stage operates from the **source code location**. Design briefs and
 > session logs are read from the artifacts location. See
@@ -102,10 +104,10 @@ blockers as part of dependency and blocker management.
 
 **Design-impacting decisions:** For changes that affect component boundaries,
 API contracts, or data flows defined in the System Design Brief, apply the
-[Decision Scope Test](../../guides/roles.md#decision-scope-test) to
-determine whether Architect consultation is required. Consult
-[QA per RACI](../../guides/roles.md#raci-matrix) when
-implementation changes affect test strategy or acceptance criteria.
+[Decision Scope Test](../../guides/roles.md#decision-scope-test) to determine
+whether Architect consultation is required. Consult
+[QA per RACI](../../guides/roles.md#raci-matrix) when implementation changes
+affect test strategy or acceptance criteria.
 
 **If the checklist results in NOT READY:** Resolve the blocking items and re-run
 the checklist before proceeding.
@@ -133,8 +135,8 @@ apply regardless of tier. See the
 [AI Assistance Scorecard: AI Autonomy Spectrum](../../guides/ai-assistance.md#ai-autonomy-spectrum)
 for full tier definitions.
 
-| Human-Led                                  | Collaborative                                     | AI-Led                                                           |
-| ------------------------------------------ | ------------------------------------------------- | ---------------------------------------------------------------- |
+| Human-Led                                  | Collaborative                                     | AI-Led                                                               |
+| ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------- |
 | Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full increments, identifies issues; engineer validates |
 
 At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
@@ -169,14 +171,14 @@ For assistance level details, see the
 Not every project needs formal pull request processes or comprehensive
 instrumentation. Match your Implementation effort to your project's risk tier.
 
-| Practice               | Minimal                                   | Standard                                        | Enterprise                                         |
-| ---------------------- | ----------------------------------------- | ----------------------------------------------- | -------------------------------------------------- |
-| **Code review**        | Self-review or informal peer check        | PR-based review with at least one reviewer      | Formal review with multiple reviewers, audit trail |
-| **ADRs**               | Brief notes on key decisions              | ADRs for significant implementation choices     | Comprehensive ADRs with compliance traceability    |
-| **Unit test coverage** | Tests for critical paths                  | Coverage targets (e.g., 80%), CI enforcement    | High coverage targets, mutation testing            |
-| **Instrumentation**    | Basic logging                             | Structured logging, key metrics, error tracking | Full observability — traces, metrics, logs, alerts |
+| Practice               | Minimal                                   | Standard                                                     | Enterprise                                                            |
+| ---------------------- | ----------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |
+| **Code review**        | Self-review or informal peer check        | PR-based review with at least one reviewer                   | Formal review with multiple reviewers, audit trail                    |
+| **ADRs**               | Brief notes on key decisions              | ADRs for significant implementation choices                  | Comprehensive ADRs with compliance traceability                       |
+| **Unit test coverage** | Tests for critical paths                  | Coverage targets (e.g., 80%), CI enforcement                 | High coverage targets, mutation testing                               |
+| **Instrumentation**    | Basic logging                             | Structured logging, key metrics, error tracking              | Full observability — traces, metrics, logs, alerts                    |
 | **Security practices** | AI-automated dep scan + secrets detection | Dependency scanning, SAST (static analysis), security review | SAST/DAST (static + dynamic analysis) scanning, security review gates |
-| **PR size/process**    | Commit directly or small PRs              | Small PRs with descriptive messages             | Small PRs with linked tickets, change management   |
+| **PR size/process**    | Commit directly or small PRs              | Small PRs with descriptive messages                          | Small PRs with linked tickets, change management                      |
 
 Expand Implementation only when needed:
 
@@ -424,6 +426,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.5.0.

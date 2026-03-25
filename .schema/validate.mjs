@@ -164,6 +164,79 @@ for (const file of files) {
   }
 }
 
+// ── Structure checks ────────────────────────────────────────────────
+// Verify that in-scope markdown files follow the canonical document
+// structure defined in STYLE_GUIDE.md (Overview H3 headings, Notes).
+
+const structureExclude = fileMap.structureExclude || [];
+let structureWarnings = 0;
+const structureIssues = [];
+
+// Re-discover files for structure check (the front-matter pass skips
+// files without front matter, but structure checks apply to all).
+const structureFiles =
+  process.argv.length > 2
+    ? process.argv.slice(2).map((f) => relative(repoRoot, resolve(f)))
+    : await fg("**/*.md", { cwd: repoRoot, ignore: ["node_modules/**"] });
+
+for (let file of structureFiles) {
+  file = file.replace(/\\/g, "/");
+
+  if (structureExclude.some((pattern) => minimatch(file, pattern))) continue;
+
+  const absPath = join(repoRoot, file);
+  let content;
+  try {
+    content = readFileSync(absPath, "utf8");
+  } catch {
+    continue;
+  }
+
+  const headings = [...content.matchAll(/^(#{1,3}) (.+)$/gm)].map((m) => ({
+    level: m[1].length,
+    text: m[2],
+  }));
+
+  const issues = [];
+  const hasOverview = headings.some(
+    (h) => h.level === 2 && h.text === "Overview",
+  );
+
+  if (hasOverview) {
+    if (!headings.some((h) => h.level === 3 && h.text.startsWith("Why "))) {
+      issues.push("Missing ### Why [Topic] in Overview");
+    }
+    if (
+      !headings.some(
+        (h) => h.level === 3 && h.text.startsWith("Goals of This "),
+      )
+    ) {
+      issues.push("Missing ### Goals of This [Type] in Overview");
+    }
+    if (
+      !headings.some((h) => h.level === 3 && h.text === "Key Principle")
+    ) {
+      issues.push("Missing ### Key Principle in Overview");
+    }
+    if (
+      !headings.some(
+        (h) => h.level === 3 && h.text.startsWith("How to Use This "),
+      )
+    ) {
+      issues.push("Missing ### How to Use This [Type] in Overview");
+    }
+  }
+
+  if (!headings.some((h) => h.level === 2 && h.text === "Notes")) {
+    issues.push("Missing ## Notes section");
+  }
+
+  if (issues.length > 0) {
+    structureIssues.push({ file, issues });
+    structureWarnings += issues.length;
+  }
+}
+
 // ── Report ──────────────────────────────────────────────────────────
 
 if (failures.length > 0) {
@@ -176,9 +249,22 @@ if (failures.length > 0) {
   }
 }
 
+if (structureIssues.length > 0) {
+  console.log("");
+  for (const { file, issues } of structureIssues) {
+    console.log(`STRUCT  ${file}`);
+    for (const issue of issues) {
+      console.log(`  - ${issue}`);
+    }
+  }
+}
+
 console.log("");
 console.log(
-  `Results: ${passed} passed, ${failed} failed, ${skipped} skipped, ${warned} warned`,
+  `Results: ${passed} passed, ${failed} failed, ${skipped} skipped, ${warned} warned` +
+    (structureWarnings > 0
+      ? `, ${structureWarnings} structure warnings`
+      : ""),
 );
 
 process.exit(failed > 0 ? 1 : 0);

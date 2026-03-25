@@ -12,7 +12,7 @@ Stage guides keep guidance concise by design. When you need strategy-specific
 checklists, rollback procedures, monitoring thresholds, communication templates,
 or decision trees, this reference provides the detail.
 
-### Purpose
+### Goals of This Reference
 
 - Provide detailed deployment strategy comparisons with per-strategy checklists
 - Document rollback procedures, triggers, and decision authority
@@ -49,7 +49,8 @@ validate, switch traffic.
 
 **Checklist:**
 
-These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+These steps replace Deployment Workflow steps 5-8 in the
+[Deployment Stage Guide](README.md#deployment-workflow).
 
 - [ ] Blue and Green environments identical
 - [ ] Deploy to inactive environment (Green)
@@ -67,7 +68,8 @@ Deploy to small subset (5-10%), monitor, gradually increase traffic if healthy.
 
 **Checklist:**
 
-These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+These steps replace Deployment Workflow steps 5-8 in the
+[Deployment Stage Guide](README.md#deployment-workflow).
 
 - [ ] Deploy to canary subset (5-10% of instances/users)
 - [ ] Monitor canary metrics for 15-30 minutes
@@ -84,7 +86,8 @@ Gradually update instances one at a time or in batches.
 
 **Checklist:**
 
-These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+These steps replace Deployment Workflow steps 5-8 in the
+[Deployment Stage Guide](README.md#deployment-workflow).
 
 - [ ] Update instances/pods one at a time or in batches
 - [ ] Validate each batch before proceeding
@@ -102,7 +105,8 @@ redeployment.
 
 **Checklist:**
 
-These steps replace Deployment Workflow steps 5-8 in the [Deployment Stage Guide](README.md#deployment-workflow).
+These steps replace Deployment Workflow steps 5-8 in the
+[Deployment Stage Guide](README.md#deployment-workflow).
 
 - [ ] Deploy code with features disabled
 - [ ] Validate deployment successful
@@ -279,8 +283,8 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe your
-> deployment strategy and infrastructure]."_
+> **AI exploration:** _"Help me design a rollback procedure for [describe your >
+> > deployment strategy and infrastructure]."_
 
 ---
 
@@ -480,8 +484,10 @@ For breaking changes requiring downtime:
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** _"Audit our deployment security posture for [describe your
-> stack and compliance requirements]."_
+> **AI exploration:** \_"Audit our deployment security posture for [describe
+> your
+>
+> > stack and compliance requirements]."\_
 
 ---
 
@@ -538,8 +544,8 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe
-> your deployment process and risk tolerance]."_
+> **AI exploration:** _"Create deployment decision trees tailored to [describe >
+> > your deployment process and risk tolerance]."_
 
 ---
 
@@ -637,6 +643,6 @@ Capture these when ending a deployment session:
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

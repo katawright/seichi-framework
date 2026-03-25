@@ -7,7 +7,7 @@ inputs:
   - incident-response-procedures
   - baseline-measurements
   - release-notes
-  - success-criteria-register  # originates from Initiation; persists cross-stage
+  - success-criteria-register # originates from Initiation; persists cross-stage
   - rollback-procedure
 outputs:
   - artifact: support-brief
@@ -28,7 +28,13 @@ default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
-raci_roles: { R: [devops], A: [devops], C: [engineer, architect, appsec], I: [pm, exec, pjm] }
+raci_roles:
+  {
+    R: [devops],
+    A: [devops],
+    C: [engineer, architect, appsec],
+    I: [pm, exec, pjm],
+  }
 ---
 
 # AI-Assisted SDLC: Support Stage
@@ -54,7 +60,7 @@ feeding production insights into new increments for continuous improvement, and
 keeping dependencies, infrastructure, and documentation current through ongoing
 system maintenance.
 
-### Purpose
+### Goals of This Guide
 
 - Ensure production systems remain healthy and observable
 - Provide structured incident response and bug management
@@ -79,8 +85,8 @@ ongoing measurement.
 
 If any inputs are missing or incomplete, use the
 [Deployment Checklist: Handoff to Support](../deployment/checklist.md#handoff-to-support)
-to identify what was skipped and escalate to the deployment team before accepting
-ownership.
+to identify what was skipped and escalate to the deployment team before
+accepting ownership.
 
 > This stage operates from the **artifacts location**. See
 > [Working Locations](../../guides/framework.md#working-locations).
@@ -159,17 +165,17 @@ For assistance level details, see the
 Not every project needs the full support infrastructure described in this guide.
 Match your ongoing support effort to your project's risk tier.
 
-| Dimension             | Minimal                                    | Standard                                        | Enterprise                                       |
-| --------------------- | ------------------------------------------ | ----------------------------------------------- | ------------------------------------------------ |
+| Dimension             | Minimal                                    | Standard                                                                     | Enterprise                                       |
+| --------------------- | ------------------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------ |
 | **Monitoring**        | Basic health checks, error tracking        | Application Performance Monitoring (APM), log aggregation, custom dashboards | Full observability, distributed tracing          |
-| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)   | Automated escalation, multi-channel              |
-| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation     | 24x7 coverage, follow-the-sun                    |
-| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process | Formal incident commander, war rooms             |
-| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)           | Contractual SLAs with penalties                  |
-| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                   | Tiered support (L1/L2/L3), knowledge base        |
-| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                  | Comprehensive knowledge base, training program   |
-| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                 | Dashboards with automated reporting              |
-| **Security**          | Scan weekly, patch critical in 7 days      | CVE monitoring, patch per severity SLA          | Continuous monitoring, formal vulnerability mgmt |
+| **Alerting**          | Error notifications to team channel        | Severity-based routing (page / Slack / email)                                | Automated escalation, multi-channel              |
+| **On-call**           | Informal — team monitors during work hours | Rotation with backup, documented escalation                                  | 24x7 coverage, follow-the-sun                    |
+| **Incident response** | Investigate when notified, fix or rollback | Documented severity levels and response process                              | Formal incident commander, war rooms             |
+| **SLA/SLO**           | None — best effort                         | Internal targets (e.g., 99.5% uptime)                                        | Contractual SLAs with penalties                  |
+| **User support**      | Direct contact (email, Slack)              | Help desk or ticketing system                                                | Tiered support (L1/L2/L3), knowledge base        |
+| **Knowledge mgmt**    | README and inline comments                 | Runbooks for common operations                                               | Comprehensive knowledge base, training program   |
+| **Success criteria**  | Informal check-ins                         | Monthly reports to stakeholders                                              | Dashboards with automated reporting              |
+| **Security**          | Scan weekly, patch critical in 7 days      | CVE monitoring, patch per severity SLA                                       | Continuous monitoring, formal vulnerability mgmt |
 
 Expand Support only when needed:
 
@@ -506,7 +512,8 @@ checkpoint or gate decision artifacts to all Informed roles per the
 - **Success criteria not being met** — consistently missing objectives, no
   action on gaps
 - **Team overwhelmed** — on-call burnout, ticket backlog, only reactive work
-- **User satisfaction declining** — CSAT/Net Promoter Score (NPS) dropping, increasing tickets
+- **User satisfaction declining** — CSAT/Net Promoter Score (NPS) dropping,
+  increasing tickets
 - **Architecture or team changes** — new infrastructure, tools, team members
 
 > **Mid-stage discovery?** If something unexpected surfaces during support, see
@@ -517,6 +524,6 @@ checkpoint or gate decision artifacts to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.8.0.

@@ -22,7 +22,7 @@ and discover infrastructure gaps mid-sprint — missing CI/CD pipelines, uncreat
 environments, absent monitoring. Foundation work closes those gaps so the first
 feature increment starts on solid ground.
 
-### Purpose
+### Goals of This Guide
 
 - Bridge the gap between foundational planning and feature delivery
 - Turn infrastructure decisions from System Design into working systems — CI/CD
@@ -184,6 +184,6 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.14.0.

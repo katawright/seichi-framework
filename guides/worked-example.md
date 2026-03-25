@@ -12,7 +12,7 @@ but it's hard to judge the right level of detail without seeing a completed
 example. This document shows exactly what "done" looks like for one requirement
 flowing through every stage.
 
-### Purpose
+### Goals of This Example
 
 - Show the expected detail level for each framework artifact
 - Demonstrate how artifacts link together across stages
@@ -24,7 +24,7 @@ flowing through every stage.
 Traceability is the throughline — every artifact references the one before it,
 replacing tribal knowledge with documented decisions.
 
-### How to Use This Guide
+### How to Use This Example
 
 1. [**Initiation**](#stage-1-initiation) — see how the project starts with a
    problem statement and success criteria
@@ -829,7 +829,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.17.0. For a brownfield adoption example showing
 preparation increments, exit checkpoints, and shadow mode, see the

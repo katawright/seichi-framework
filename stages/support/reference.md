@@ -12,7 +12,7 @@ need specific thresholds, response process details, triage matrices, or
 operational templates, this reference provides the depth without cluttering the
 stage guide.
 
-### Purpose
+### Goals of This Reference
 
 - Provide monitoring thresholds and baselines for production health
 - Detail the incident response process, communication templates, and severity
@@ -298,8 +298,8 @@ Deploy hotfix immediately when ALL of these apply:
 5. Deploy to production, monitor closely for 1-2 hours
 6. Merge hotfix back to main
 
-> **AI exploration:** _"Help me build a bug triage process for [describe team
-> size, product, and release cadence]."_
+> **AI exploration:** _"Help me build a bug triage process for [describe team >
+> > size, product, and release cadence]."_
 
 ---
 
@@ -797,8 +797,8 @@ Regular DR drills build confidence and uncover gaps before a real disaster.
 | Operations lead  | [Name] | YYYY-MM-DD |
 ```
 
-> **AI exploration:** _"Help me create a disaster recovery plan for [describe
-> your system, infrastructure, and business requirements]."_
+> **AI exploration:** _"Help me create a disaster recovery plan for [describe >
+> > your system, infrastructure, and business requirements]."_
 
 ---
 
@@ -871,6 +871,6 @@ Capture these when ending a support session:
 
 ## Notes
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

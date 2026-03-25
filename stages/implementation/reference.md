@@ -7,13 +7,26 @@ Optional deep-dive companion to the [Implementation Stage Guide](README.md),
 [Implementation Checklist](checklist.md). Consult when you need specifics or a
 starting point for AI-assisted exploration.
 
-### Purpose
+### Why Implementation Practices
+
+Implementation is where design decisions meet production code. Common failure
+modes — inconsistent logging, missing metrics, unmanaged technical debt, and
+weak code review — are preventable but hard to catch without concrete guidance.
+This reference supplements the stage guide with detailed patterns and
+checklists.
+
+### Goals of This Reference
 
 - Provide detailed logging, metrics, and instrumentation guidance
 - Cover security implementation patterns and review checklists
 - Document technical debt management, PR strategy, and branching conventions
 - Supply code quality red flags, unit testing details, and code review focus
   areas
+
+### Key Principle
+
+Production-readiness is built in during implementation, not bolted on before
+deployment. Every code change should be observable, reviewable, and reversible.
 
 ### How to Use This Reference
 
@@ -497,6 +510,6 @@ Capture the following at the end of each session:
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.12.0.

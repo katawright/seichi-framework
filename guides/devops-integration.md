@@ -1,7 +1,39 @@
 # DevOps Integration Guide
 
-Entry point for DevOps engineers. Each section maps a DevOps concern to the
-authoritative framework location — follow the links for full guidance.
+## Overview
+
+Entry point for DevOps engineers — maps each DevOps concern to its authoritative
+framework location.
+
+### Why DevOps Integration
+
+DevOps responsibilities span multiple framework stages (deployment, support,
+security, observability) and multiple guides. Without a single entry point,
+DevOps engineers have to discover relevant sections by reading every guide. This
+document collects all DevOps-relevant pointers in one place.
+
+### Goals of This Guide
+
+- Route DevOps engineers to the right framework section for each concern
+- Cover CI/CD, security scanning, release patterns, environments, observability,
+  and operational NFRs
+- Provide minimum pipeline control baselines by tier
+
+### Key Principle
+
+This guide is a routing document, not a duplication layer. Each section points
+to the authoritative source — follow the links for full guidance.
+
+### How to Use This Guide
+
+1. Start with [**Getting Started**](#getting-started) for the recommended setup
+   sequence or jump to a specific concern
+2. Use the reference tables in each section to find the authoritative guide for
+   your topic
+3. Review [**Minimum Pipeline Controls**](#minimum-pipeline-controls) for
+   baseline requirements by tier
+
+---
 
 ## Getting Started
 
@@ -22,9 +54,9 @@ only need one area.
 [Environments and Secrets](#environments-and-secrets).
 
 **Setting up monitoring, alerting, or on-call?** Go to
-[Observability](#observability) for instrumentation and dashboards;
-see [Support Operations](../stages/support/operations.md) for on-call
-rotation, incident response, and escalation.
+[Observability](#observability) for instrumentation and dashboards; see
+[Support Operations](../stages/support/operations.md) for on-call rotation,
+incident response, and escalation.
 
 **Choosing a release or rollback strategy?** Go to
 [Release Patterns](#release-patterns).
@@ -133,8 +165,8 @@ Operational templates used across deployment and support stages.
 
 ---
 
-**Notes**
+## Notes
 
-**Last Updated:** 2026-03-05
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.

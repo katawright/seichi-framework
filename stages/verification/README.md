@@ -57,7 +57,7 @@ implementation realities, and validates acceptance criteria.
 
 **Increment Design plans → Verification executes → Deployment deploys**
 
-### Purpose
+### Goals of This Guide
 
 - Execute the test strategy planned in Increment Design to validate implemented
   increments
@@ -265,19 +265,18 @@ section links to the prior brief and summarizes what was fixed.
 **Routing decision:** The Production Readiness field in the verification brief
 determines the path:
 
-| Production Readiness | Route to       | Action                                                                                 |
-| -------------------- | -------------- | -------------------------------------------------------------------------------------- |
-| Ready                | Deployment     | Hand off verified code, test results, UAT approval                                     |
-| Ready with conditions| Deployment     | Hand off with conditions documented in brief                                           |
-| Not Ready            | Implementation | Publish brief with Rework Handoff section populated; notify engineering lead            |
+| Production Readiness  | Route to       | Action                                                                       |
+| --------------------- | -------------- | ---------------------------------------------------------------------------- |
+| Ready                 | Deployment     | Hand off verified code, test results, UAT approval                           |
+| Ready with conditions | Deployment     | Hand off with conditions documented in brief                                 |
+| Not Ready             | Implementation | Publish brief with Rework Handoff section populated; notify engineering lead |
 
 **Rework trigger artifact:** The completed verification brief with a Not Ready
 decision and populated Rework Handoff section is the trigger artifact for the
 Implementation rework cycle. Engineers should treat publication of this brief to
-the artifacts location
-(e.g., `docs/briefs/verification-brief-inc1-cycle1.md`) as the activation
-signal — QA notifies the engineering lead when the verification brief is
-published.
+the artifacts location (e.g., `docs/briefs/verification-brief-inc1-cycle1.md`)
+as the activation signal — QA notifies the engineering lead when the
+verification brief is published.
 
 **Rework briefs are delta-only:** When work returns to Implementation, the
 rework brief documents only what changed — reference the prior cycle's brief for
@@ -456,6 +455,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.6.0.

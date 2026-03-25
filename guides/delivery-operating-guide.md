@@ -15,7 +15,7 @@ rhythm from stage guides, gate facilitation notes, and RACI tables. This guide
 composes those pieces into a week-by-week view so PjMs can run delivery without
 cross-referencing multiple documents.
 
-### Purpose
+### Goals of This Guide
 
 - Provide a concrete week-by-week operating rhythm for one increment cycle
 - Cover Sprint and Kanban/Flow delivery modes
@@ -44,15 +44,17 @@ authoritative. This guide provides the operating view that connects them.
 ## Foundational Phase
 
 Before sprints begin, foundational stages (Initiation, Requirements, System
-Design) establish scope, architecture, and investment approval. A typical
-weekly rhythm:
+Design) establish scope, architecture, and investment approval. A typical weekly
+rhythm:
 
 - **Week 1-2:** Initiation — draft brief, pre-mortem, success criteria;
-  facilitate [Gate 1](../stages/initiation/README.md#gate-1-decision-criteria) decision
+  facilitate [Gate 1](../stages/initiation/README.md#gate-1-decision-criteria)
+  decision
 - **Week 2-3:** Requirements — elicit and prioritize requirements, define NFRs
   and acceptance criteria
 - **Week 3-4:** System Design — architecture, ADRs, increment plan, threat
-  model; facilitate [Gate 2](../stages/system-design/README.md#stage-outputs) decision
+  model; facilitate [Gate 2](../stages/system-design/README.md#stage-outputs)
+  decision
 
 Throughout the foundational phase, PjM establishes the delivery schedule, sets
 up the Dependency Register, and confirms consultation touchpoints per the
@@ -72,22 +74,22 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 
 ### Week 1: Design and Start Build
 
-| Day     | Activity                                                     | Lead      | Reference                                                                 |
-| ------- | ------------------------------------------------------------ | --------- | ------------------------------------------------------------------------- |
+| Day     | Activity                                                                                                              | Lead      | Reference                                                                 |
+| ------- | --------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
 | Monday  | Sprint kickoff: confirm increment scope from backlog, review prior retrospective action items and dependency register | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
-| Mon–Tue | Increment Design Brief — component breakdown, test plan, API | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
-| Tuesday | Review increment design brief; resolve ambiguities           | PjM + Eng | [RACI — Increment Design](roles.md#raci-matrix)        |
-| Wed–Fri | Implementation begins — PRs, tests, instrumentation          | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
-| Friday  | Mid-sprint check-in: blockers, dependency status, scope risk | PjM       | [Dependency Register](../templates/dependency-register.md)                |
+| Mon–Tue | Increment Design Brief — component breakdown, test plan, API                                                          | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
+| Tuesday | Review increment design brief; resolve ambiguities                                                                    | PjM + Eng | [RACI — Increment Design](roles.md#raci-matrix)                           |
+| Wed–Fri | Implementation begins — PRs, tests, instrumentation                                                                   | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
+| Friday  | Mid-sprint check-in: blockers, dependency status, scope risk                                                          | PjM       | [Dependency Register](../templates/dependency-register.md)                |
 
 ### Week 2: Finish Build, Verify, Deploy
 
-| Day       | Activity                                                    | Lead      | Reference                                                         |
-| --------- | ----------------------------------------------------------- | --------- | ----------------------------------------------------------------- |
-| Mon–Tue   | Implementation continues; PRs reviewed and merged           | Engineers | [Implementation Guide](../stages/implementation/README.md)        |
-| Wednesday | Code complete; verification begins — test execution, UAT    | QA + Eng  | [Verification Guide](../stages/verification/README.md)            |
-| Thursday  | Verification results reviewed; deployment brief prepared    | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md), [Deployment Guide](../stages/deployment/README.md) |
-| Friday AM | Deployment to production (or staging promotion)             | DevOps    | [Deployment Guide](../stages/deployment/README.md)                |
+| Day       | Activity                                                                        | Lead      | Reference                                                                                                                                       |
+| --------- | ------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mon–Tue   | Implementation continues; PRs reviewed and merged                               | Engineers | [Implementation Guide](../stages/implementation/README.md)                                                                                      |
+| Wednesday | Code complete; verification begins — test execution, UAT                        | QA + Eng  | [Verification Guide](../stages/verification/README.md)                                                                                          |
+| Thursday  | Verification results reviewed; deployment brief prepared                        | QA + PjM  | [Deployment Brief Template](../templates/deployment-brief.md), [Deployment Guide](../stages/deployment/README.md)                               |
+| Friday AM | Deployment to production (or staging promotion)                                 | DevOps    | [Deployment Guide](../stages/deployment/README.md)                                                                                              |
 | Friday PM | Sprint review: demo, retrospective, close-out confirmation (if final increment) | PjM       | [Retrospective Template](../templates/retrospective.md) (if final increment, see [Gate Review Facilitation](roles.md#gate-review-facilitation)) |
 
 **Cross-increment sync:** Sprint review doubles as the sync point. Review
@@ -97,8 +99,8 @@ dependencies.
 > **Close-out review:** If this is the final planned increment, run a close-out
 > review to confirm Gate 2 criteria are still met, using the
 > [Gate Decision Template](../templates/gate-decision.md). See
-> [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda
-> and time-boxing.
+> [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda and
+> time-boxing.
 
 ---
 
@@ -120,11 +122,11 @@ they become columns on the board rather than calendar blocks.
 
 ### Operating Cadence
 
-| Frequency  | Activity                                                 | Lead | Reference                                                         |
-| ---------- | -------------------------------------------------------- | ---- | ----------------------------------------------------------------- |
-| Daily      | Standup + board review: WIP, blockers, pull signals      | PjM  | —                                                                 |
-| Twice/week | Replenishment: pull items into Ready when capacity opens | PjM  | [Dependency Register](../templates/dependency-register.md)        |
-| Weekly     | Metrics review: cycle time, throughput, blocked time     | PjM  | [Cadence Mapping](framework.md#cadence-mapping)                   |
+| Frequency  | Activity                                                 | Lead | Reference                                                     |
+| ---------- | -------------------------------------------------------- | ---- | ------------------------------------------------------------- |
+| Daily      | Standup + board review: WIP, blockers, pull signals      | PjM  | —                                                             |
+| Twice/week | Replenishment: pull items into Ready when capacity opens | PjM  | [Dependency Register](../templates/dependency-register.md)    |
+| Weekly     | Metrics review: cycle time, throughput, blocked time     | PjM  | [Cadence Mapping](framework.md#cadence-mapping)               |
 | On trigger | Gate 2 review when all planned items reach Done          | PjM  | [Gate Review Facilitation](roles.md#gate-review-facilitation) |
 
 **Pull triggers:** Items move between columns only when the next column has WIP
@@ -184,6 +186,6 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-03-04
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.40.0.
