@@ -31,9 +31,9 @@
       ]
     },
     "role": {
-      "$comment": "Role identifiers from the RACI matrix in guides/roles.md.",
+      "$comment": "Role identifiers from the RACI matrix in guides/roles.md. Ordered by first accountability appearance in the SDLC pipeline.",
       "type": "string",
-      "enum": ["pm", "engineer", "architect", "qa", "devops", "appsec", "pjm", "exec"]
+      "enum": ["pm", "exec", "arch", "eng", "qa", "devops", "appsec", "pjm"]
     },
     "checkpoint-type": {
       "$comment": "Checkpoint classification: gate (investment decision, hard stop), review (quality/readiness check), alignment (non-blocking synchronization).",

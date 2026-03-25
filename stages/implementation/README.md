@@ -21,15 +21,14 @@ checkpoints:
   - type: review
     protocol: ci-validation-human-approval
     name: "PR Review + CI"
-    responsible_roles: [engineer]
+    responsible_roles: [eng]
 checklist: stages/implementation/checklist.md
 reference: stages/implementation/reference.md
 default_autonomy: ai-led
 default_oversight_intensity: passive
 working_location: source-code
 session_log_template: templates/implementation-session-log.md
-raci_roles:
-  { R: [engineer], A: [engineer], C: [architect, qa, devops, appsec], I: [pjm] }
+raci_roles: { R: [eng], A: [eng], C: [arch, qa, devops, appsec], I: [pjm] }
 ---
 
 # AI-Assisted SDLC: Implementation Stage

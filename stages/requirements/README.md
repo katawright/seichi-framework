@@ -26,8 +26,7 @@ default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
-raci_roles:
-  { R: [pm], A: [pm], C: [engineer, architect, qa, appsec, pjm], I: [exec] }
+raci_roles: { R: [pm], A: [pm], C: [arch, eng, qa, appsec, pjm], I: [exec] }
 ---
 
 # AI-Assisted SDLC: Requirements Stage

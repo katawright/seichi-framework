@@ -33,10 +33,12 @@ staffed by a team. What matters is that every function has a clear owner.
    roles and their scope
 2. Use the [**RACI Matrix**](#raci-matrix) to determine who is involved at each
    stage and in what capacity
-3. Follow the [**Consultation Protocol**](#consultation-protocol) and
+3. Read [**Domain Stakeholders**](#domain-stakeholders) to include
+   project-specific participants beyond the canonical roles
+4. Follow the [**Consultation Protocol**](#consultation-protocol) and
    [**Information Protocol**](#information-protocol) when collaborating across
    roles
-4. See the [**Project Manager (PjM)**](#project-manager-pjm) and
+5. See the [**Project Manager (PjM)**](#project-manager-pjm) and
    [**Application Security (AppSec)**](#application-security-appsec) sections
    for expanded cross-cutting role guidance
 
@@ -47,21 +49,65 @@ staffed by a team. What matters is that every function has a clear owner.
 The framework uses eight canonical roles. These identifiers appear in stage
 front matter, the RACI matrix, and checkpoint decision-rights assignments.
 
-| ID          | Role                 | Scope                                                        | Common Mappings                               |
-| ----------- | -------------------- | ------------------------------------------------------------ | --------------------------------------------- |
-| `pm`        | Product Manager      | Business vision, requirements, stakeholder alignment         | Business Analyst in orgs that split the role  |
-| `engineer`  | Engineer             | Design, build, and test code within increments               | Developer, Software Engineer                  |
-| `architect` | Architect            | System design, ADRs, technical standards                     | Tech Lead, Principal Engineer                 |
-| `qa`        | QA Engineer          | Test strategy, execution, and coverage assessment            | SDET, Test Engineer                           |
-| `devops`    | DevOps Engineer      | CI/CD, infrastructure, deployment, and production operations | Platform Engineer, SRE                        |
-| `appsec`    | Application Security | Security testing, compliance, and risk assessment            | Security Engineer                             |
-| `pjm`       | Project Manager      | Delivery coordination, scheduling, and gate facilitation     | Scrum Master, Delivery Lead, TPM, Eng Manager |
-| `exec`      | Executive            | Investment decisions and strategic oversight                 | VP Engineering, CTO, Program Director         |
+| ID       | Role                 | Scope                                                        | Common Mappings                                                  |
+| -------- | -------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `pm`     | Product Manager      | Business vision, requirements, stakeholder alignment         | Business Analyst in orgs that split the role                     |
+| `exec`   | Executive            | Investment decisions and strategic oversight                 | VP Engineering, CTO, Department Head, CEO / Founder (small orgs) |
+| `arch`   | Architect            | System design, ADRs, technical standards                     | Tech Lead, Principal Engineer                                    |
+| `eng`    | Engineer             | Design, build, and test code within increments               | Developer, Software Engineer                                     |
+| `qa`     | QA Engineer          | Test strategy, execution, and coverage assessment            | SDET, Test Engineer                                              |
+| `devops` | DevOps Engineer      | CI/CD, infrastructure, deployment, and production operations | Platform Engineer, SRE                                           |
+| `appsec` | Application Security | Security testing, compliance, and risk assessment            | Security Engineer                                                |
+| `pjm`    | Project Manager      | Delivery coordination, scheduling, and gate facilitation     | Scrum Master, Delivery Lead, TPM, Eng Manager, Program Director  |
 
-> **Note:** This table represents the most common role assignments. Adapt to
+> **Note:** Roles are ordered by first accountability appearance in the SDLC
+> pipeline — PM starts the project, Exec makes the investment call, Architect
+> designs, Engineer builds, QA verifies, DevOps deploys, AppSec approves
+> compliance, PjM coordinates across all stages (no stage-level A). Adapt to
 > your team structure — in smaller teams, one person may hold multiple roles
-> (e.g., one person may hold both PM and PjM). PjM maps to Scrum Master,
-> Delivery Lead, TPM, or Engineering Manager depending on methodology.
+> (e.g., one person may hold both PM and PjM). In consulting or work-for-hire
+> engagements, the client typically fills the exec function.
+
+---
+
+## Domain Stakeholders
+
+Beyond the eight canonical roles, most projects involve **domain stakeholders**
+— people whose expertise, authority, or day-to-day work is directly affected by
+the project's outcome. Examples include end users, department heads,
+subject-matter experts, customers, and regulatory contacts.
+
+Domain stakeholders are not a canonical role because their involvement varies by
+project — a customer service manager is central to a CS tool project but
+irrelevant to an infrastructure migration. Instead of adding a column to the
+RACI matrix, define stakeholder participation per project in the
+[Initiation Brief](../templates/initiation-brief.md#project-lead-and-stakeholders).
+
+**PM remains the stakeholder advocate.** The PM represents stakeholder interests
+across all stages and is responsible for ensuring stakeholders are engaged at
+the right moments. Domain stakeholders supplement PM's perspective with
+firsthand knowledge — they do not replace the PM function.
+
+**Typical participation pattern:**
+
+| Stage        | Participation | Purpose                                              |
+| ------------ | ------------- | ---------------------------------------------------- |
+| Initiation   | Consulted     | Validate problem statement and success criteria      |
+| Requirements | Consulted     | Provide domain knowledge, review acceptance criteria |
+| Verification | Consulted     | UAT sign-off (are we solving the right problem?)     |
+| Other stages | Informed      | Kept in the loop via PM                              |
+
+Adjust this pattern per stakeholder — a regulatory contact may be Consulted at
+System Design but Informed elsewhere; an end user may only participate at
+Requirements and UAT.
+
+> **Work-for-hire and consulting engagements:** When the client is external,
+> they typically hold exec authority (Accountable on gate decisions) and may
+> also function as a domain stakeholder (Consulted on requirements and UAT).
+> Client demos and progress reviews map to the framework's
+> [Alignment checkpoints](checkpoints.md#alignments). Document the client's dual
+> role — investment authority and domain expertise — in the Initiation Brief's
+> stakeholder table.
 
 ---
 
@@ -78,24 +124,25 @@ prepares evidence, who decides), see the
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
 Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
-| Activity / Stage     | PM  | Engineers | Architect | QA  | DevOps | AppSec | Exec | PjM |
-| -------------------- | --- | --------- | --------- | --- | ------ | ------ | ---- | --- |
-| **Initiation**       | R/A | C         | C         | -   | -      | C      | I    | C‡  |
-| Gate 1 decision†     | R   | -         | -         | -   | -      | C      | A    | C   |
-| **Requirements**     | R/A | C         | C         | C   | -      | C      | I    | C   |
-| **System Design**    | C   | C         | R/A       | C   | C      | C      | I    | C   |
-| Gate 2 decision†     | C   | C         | R         | C   | C      | R      | A    | C   |
-| **Increment Design** | C   | R/A       | C         | C   | -      | C      | -    | C   |
-| **Implementation**   | -   | R/A       | C         | C   | C      | C      | -    | I   |
-| **Verification**     | C   | R         | C         | R/A | -      | R      | -    | I   |
-| **Deployment**       | I   | C         | C         | C   | R/A    | C      | I    | C   |
-| **Support**          | I   | C         | C         | -   | R/A    | C      | I    | I§  |
-| Deployment Approval  | I   | C         | C         | C   | R/A    | C      | I    | C   |
-| Compliance Approval  | C   | -         | C         | -   | C      | R/A    | I    | C   |
+| Activity / Stage     | PM  | Exec | Architect | Engineers | QA  | DevOps | AppSec | PjM |
+| -------------------- | --- | ---- | --------- | --------- | --- | ------ | ------ | --- |
+| **Initiation**       | R/A | I    | C         | C         | -   | -      | C      | C‡  |
+| Gate 1 decision†     | R   | A    | -         | -         | -   | -      | C      | C   |
+| **Requirements**     | R/A | I    | C         | C         | C   | -      | C      | C   |
+| **System Design**    | C   | I    | R/A       | C         | C   | C      | C      | C   |
+| Gate 2 decision†     | C   | A    | R         | C         | C   | C      | R      | C   |
+| **Increment Design** | C   | -    | C         | R/A       | C   | -      | C      | C   |
+| **Implementation**   | -   | -    | C         | R/A       | C   | C      | C      | I   |
+| **Verification**     | C   | -    | C         | R         | R/A | -      | R      | I   |
+| **Deployment**       | I   | I    | C         | C         | C   | R/A    | C      | C   |
+| **Support**          | I   | I    | C         | C         | -   | R/A    | C      | I§  |
+| Deployment Approval  | I   | I    | C         | C         | C   | R/A    | C      | C   |
+| Compliance Approval  | C   | I    | C         | -         | -   | C      | R/A    | C   |
 
-§ **PjM at Support:** PjM is Informed at stage level but owns the Production
-Ownership Decision per the
-[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
+§ **PjM across all stages:** PjM is never R/A for a stage because PjM's
+accountability is in cross-cutting delivery activities — schedule, gate
+facilitation, coordination, and dependency management. See
+[Project Manager (PjM)](#project-manager-pjm) for PjM's R/A assignments.
 
 **Verification responsibility split:** Engineers (R) fix defects found during
 testing, complete unit test gaps, and support integration test debugging. QA
@@ -184,12 +231,12 @@ Informed where it passively tracks progress (implementation, verification,
 support). The following cross-cutting activities give PjM clear R/A
 accountability:
 
-| Activity                               | PjM | PM  | Engineers | Architect | QA  | DevOps | Exec |
-| -------------------------------------- | --- | --- | --------- | --------- | --- | ------ | ---- |
-| Delivery schedule & progress reporting | R/A | I   | C         | -         | -   | -      | I    |
-| Gate facilitation                      | R   | -   | -         | -         | -   | -      | A    |
-| Cross-increment coordination           | R   | A   | C         | C         | -   | -      | I    |
-| Dependency & blocker management        | R/A | C   | C         | C         | -   | -      | -    |
+| Activity                               | PjM | PM  | Exec | Architect | Engineers | QA  | DevOps |
+| -------------------------------------- | --- | --- | ---- | --------- | --------- | --- | ------ |
+| Delivery schedule & progress reporting | R/A | I   | I    | -         | C         | -   | -      |
+| Gate facilitation                      | R   | -   | A    | -         | -         | -   | -      |
+| Cross-increment coordination           | R   | A   | I    | C         | C         | -   | -      |
+| Dependency & blocker management        | R/A | C   | -    | C         | C         | -   | -      |
 
 ### Gate Review Facilitation
 

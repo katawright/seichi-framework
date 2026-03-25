@@ -38,8 +38,8 @@ System Design.
 5. [ ] **Security NFRs captured from data sensitivity classification** (auth,
        encryption, audit logging, data retention — scaled to tier)
 6. [ ] **Consult AppSec on security NFRs per
-       [RACI](../../guides/roles.md#raci-matrix)** (finalize
-       security requirements, validate data classification)
+       [RACI](../../guides/roles.md#raci-matrix)** (finalize security
+       requirements, validate data classification)
 7. [ ] **Data sources and integrations identified** (rate limits, SLAs,
        authentication, data ownership documented)
 8. [ ] **API contracts documented with example requests/responses** (for
@@ -53,20 +53,23 @@ System Design.
         focuses on behavior not implementation)
 11. [ ] **Goals include measurable success metrics** (carried forward from
         Initiation Brief, baseline → target)
+12. [ ] **Stakeholders consulted per initiation brief** (key stakeholders marked
+        as Consulted for Requirements have provided input; see stakeholder table
+        in initiation brief)
 
 ### Quality and Traceability
 
-12. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
+13. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
         behavior)
-13. [ ] **Open questions listed** (critical blockers flagged with owners)
-14. [ ] **Traceability summary present** (FRs traced to Initiation objectives
+14. [ ] **Open questions listed** (critical blockers flagged with owners)
+15. [ ] **Traceability summary present** (FRs traced to Initiation objectives
         and success metrics)
-15. [ ] **Success Criteria Register referenced (Standard+)** — all success
+16. [ ] **Success Criteria Register referenced (Standard+)** — all success
         criteria have supporting FRs/NFRs and register measurement methods are
         feasible
-16. [ ] **[H] Review occurred** (engineering + product, and security/compliance
+17. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
-17. [ ] **All required stage outputs produced** (requirements brief, acceptance
+18. [ ] **All required stage outputs produced** (requirements brief, acceptance
         criteria, prioritized backlog, NFRs — verify against stage README front
         matter)
 
@@ -102,6 +105,6 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-25
 
 Added to framework in v0.3.0.

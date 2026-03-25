@@ -34,12 +34,7 @@ default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles:
-  {
-    R: [devops],
-    A: [devops],
-    C: [engineer, architect, qa, appsec, pjm],
-    I: [pm, exec],
-  }
+  { R: [devops], A: [devops], C: [arch, eng, qa, appsec, pjm], I: [pm, exec] }
 ---
 
 # AI-Assisted SDLC: Deployment Stage
