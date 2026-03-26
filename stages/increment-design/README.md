@@ -370,12 +370,12 @@ to all Informed roles per the
 > **Mid-stage discovery?** If an API can't support the interaction pattern
 > designed, or a design assumption proves invalid, see the
 > [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
-> tree to classify the severity and determine the right response.
+> tree to determine whether to assess, amend, or defer.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.12.0.

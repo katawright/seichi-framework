@@ -657,13 +657,12 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 > **Mid-stage discovery?** If a technology choice can't meet an NFR or an
 > architectural assumption is invalidated, see the
 > [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
-> tree to classify the severity and determine whether to rework, amend scope, or
-> defer.
+> tree to determine whether to assess, amend, or defer.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.12.0.

@@ -213,7 +213,7 @@ actually happened — keeps teams from repeating mistakes across increments:
 | **System Design**    | Pre-mortem lens on architecture: what's hardest to reverse?      |
 | **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
 | **Implementation**   | Note surprises and deviations; route mid-stage discoveries       |
-| **Verification**     | Capture what tests reveal; classify rework by severity           |
+| **Verification**     | Capture what tests reveal; assess impact of failures             |
 | **Deployment**       | Run increment retrospective; triage Captured Feedback entries    |
 | **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
 
@@ -855,6 +855,6 @@ Each stage definition above references its specific checkpoints in the
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.9.0.

@@ -447,14 +447,14 @@ roles per the
 - Improve test data realism
 
 > **Mid-stage discovery?** If p95 latency is 10x the NFR target and no
-> optimization will fix it, or tests reveal a fundamental design flaw, see the
+> optimization will fix it, or tests reveal a design flaw, see the
 > [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
-> tree to classify rework by severity and determine the right response.
+> tree to determine whether to assess, amend, or defer.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.6.0.
