@@ -394,9 +394,9 @@ handoff, ensure:
 **Revision process:**
 
 1. Identify what needs to change and why
-2. Assess rework scope
+2. Assess impact scope
 3. Update code and tests
-4. Re-review if significant changes
+4. Re-review if the changes are substantial
 5. Update documentation and brief
 6. Communicate if schedule impacted
 
@@ -418,13 +418,12 @@ for the full convention.
 > **Mid-stage discovery?** If a library doesn't support concurrent writes as
 > assumed, or an implementation assumption is invalidated, see the
 > [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery) decision
-> tree to classify the severity — cosmetic, significant, or fundamental — and
-> determine the right response.
+> tree to determine whether to assess, amend, or defer.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.5.0.

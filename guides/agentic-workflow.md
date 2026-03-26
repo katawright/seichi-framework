@@ -450,16 +450,19 @@ At each sync point, agents should:
 ## Rework Cycles
 
 When a mid-stage discovery breaks something — a design proves infeasible, an NFR
-is unmet, or an assumption is invalidated — classify the rework by severity and
-follow the corresponding process. See
-[Framework Guide: Mid-Stage Discovery](framework.md#mid-stage-discovery) for the
-full decision tree and classification table.
+is unmet, or an assumption is invalidated — assess the impact using the two
+diagnostic questions in the
+[Framework Guide: Mid-Stage Discovery](framework.md#mid-stage-discovery):
 
-- **Cosmetic** — fix in place, update the artifact. No additional process.
-- **Significant** — produce a delta-only brief documenting what changed, update
-  affected artifacts, and record an ADR for the decision.
-- **Fundamental** — produce a delta-only brief, record an ADR, and amend the
-  original gate decision with new information and a new decision.
+1. **Does this change the design?** — if yes, record an ADR and produce a
+   delta-only brief.
+2. **Does this affect the investment assumptions (cost, schedule, risk)?** — if
+   yes, re-evaluate the gate decision with updated evidence and record the new
+   decision in the original gate record.
+
+Both questions are spectrums requiring judgment, not binary gates. See the
+[Impact Assessment](framework.md#impact-assessment) reference table for common
+combinations and process guidance.
 
 ### Delta-Only Brief Convention
 
@@ -478,6 +481,6 @@ full decision tree and classification table.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

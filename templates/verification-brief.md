@@ -37,10 +37,10 @@ being tested]
 **Acceptance Criteria:**
 
 > If the [implementation brief](implementation-brief.md) records AC
-> modifications in its Requirements Implemented table (added, refined, or
-> split criteria), merge those changes here before planning tests. Also check
-> the [increment design brief](increment-design-brief.md#acceptance-testing)
-> for the planned AC-to-test mapping.
+> modifications in its Requirements Implemented table (added, refined, or split
+> criteria), merge those changes here before planning tests. Also check the
+> [increment design brief](increment-design-brief.md#acceptance-testing) for the
+> planned AC-to-test mapping.
 
 - [ ] [AC-1.1: Specific testable criterion]
 - [ ] [AC-1.2: Specific testable criterion]
@@ -260,8 +260,15 @@ changes, or "None"]
 <!-- Include this section when the go/no-go decision is NO-GO and work returns
      to Implementation. Delete for cycles that proceed to Deployment. -->
 
-**Rework classification:** [Cosmetic / Significant / Fundamental — see
-Agentic Workflow Guide: Rework Cycles]
+**Impact assessment:**
+
+- **Does this change the design?** [Yes/No — brief explanation]
+- **Does this affect the investment assumptions (cost, schedule, risk)?**
+  [Yes/No — brief explanation]
+
+See
+[Framework Guide: Impact Assessment](../guides/framework.md#impact-assessment)
+for guidance.
 
 **Defects requiring rework:**
 
@@ -336,4 +343,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.6.0 -->
+<!-- Template Last Updated: 2026-03-26 | Added in v0.6.0 -->

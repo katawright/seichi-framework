@@ -723,13 +723,12 @@ Requirements is foundational but revisitable.
 
 > **Mid-stage discovery?** If something unexpected surfaces during active work,
 > see the [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery)
-> decision tree to classify the impact — cosmetic, significant, or fundamental —
-> and determine whether to rework, amend scope, or defer.
+> decision tree to determine whether to assess, amend, or defer.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.3.0.

@@ -261,35 +261,75 @@ response rather than defaulting to scope creep or unnecessary ceremony.
 Assess the discovery's impact to choose the correct path:
 
 1. **Breaks something** (design infeasible, NFR unmet, assumption invalidated) →
-   **Rework.** Classify by severity (see below) and follow the rework process.
-2. **Adds something small and safe** (no acceptance-criteria (AC) impact, low
-   cost, immediate benefit, no new risk) → **Scope amendment.** Record the
-   decision and proceed.
+   **Assess.** Use the two diagnostic questions below to determine the right
+   response — which may range from a localized fix to stopping the project.
+2. **Adds something small and safe** (no AC impact, low cost, immediate benefit,
+   no new risk) → **Amend.** Record the decision and proceed (see
+   [Scope Amendment Criteria](#scope-amendment-criteria)).
 3. **Adds something large or risky** (changes ACs, introduces risk, significant
    effort) → **Defer** to the next increment or project backlog.
 
-### Rework Classification
+> **Note:** Amend and Defer are direct actions with defined outcomes. Assess is
+> a process — the two diagnostic questions below determine the resolution, which
+> may include fixing in place, recording a design change, re-evaluating the
+> investment decision, adjusting scope, deferring, or stopping the project.
 
-When a discovery breaks something, classify it by severity to determine the
-appropriate process:
+### Impact Assessment
 
-| Severity        | Definition                                    | Process                                                 | ADR Required | Re-gate |
-| --------------- | --------------------------------------------- | ------------------------------------------------------- | ------------ | ------- |
-| **Cosmetic**    | Minor fix with no design impact               | Fix in place, update the artifact                       | No           | No      |
-| **Significant** | Requires revisiting the stage; design changes | Delta-only brief, update affected artifacts             | Yes          | No      |
-| **Fundamental** | Invalidates a prior gate decision             | Delta-only brief, update artifacts, amend gate decision | Yes          | Yes     |
+When a discovery breaks something, answer two independent diagnostic questions
+to determine the appropriate response. Both questions are spectrums — not binary
+yes/no — and the answers depend on project context: remaining budget, schedule
+health, risk appetite, and organizational culture. The framework provides the
+questions and factors to consider; practitioners apply judgment.
 
-**Examples:**
+**Question 1 — Does this change the design?**
 
-- **Significant:** During Implementation, a library doesn't support concurrent
-  writes as assumed — swap the library, update the ADR.
-- **Fundamental:** During Verification, p95 latency is 10x the NFR target and no
-  optimization will fix it — the technology choice must change, requiring a gate
-  decision amendment.
+Ranges from a localized tweak (rename a function, fix a logic error) to an
+architectural shift (replace a core technology, redesign a subsystem). Changes
+further along this spectrum are more likely to warrant an Architecture Decision
+Record (ADR) to capture the rationale and trade-offs.
 
-**Recording guidance:** Record an ADR for significant and fundamental changes.
-For fundamental changes, amend the original gate decision with new information
-and a new decision — don't reopen the gate from scratch.
+**Question 2 — Does this affect the investment assumptions (cost, schedule,
+risk)?**
+
+Ranges from negligible impact to project-threatening. A two-day delay on a
+healthy eight-week project is noise; the same delay on a project already four
+weeks over may be material. Some changes increase cost but also unlock an
+opportunity — weigh both sides. Material changes warrant re-evaluating the gate
+decision: convene the original decision-makers, present updated evidence, and
+record the new decision in the original gate record — even if that decision is
+to continue as planned.
+
+**Common combinations:**
+
+The table below shows how the two questions typically map to process responses.
+These are illustrative, not prescriptive — use them as a reference, not a
+mechanical classifier.
+
+| Design change? | Investment impact? | Process                                                                                               | Example                                                                                            |
+| -------------- | ------------------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| No             | No                 | Fix in place, update artifact. Non-trivial effort: get R/A approval first.                            | Off-by-one bug; performance refactor within existing design and budget                             |
+| No             | Yes                | Re-evaluate gate decision with updated evidence; record new decision in original gate record.         | Service costs 10x assumption — no design alternative, but budget impact requires investment review |
+| Yes            | No                 | Record ADR, delta-only brief, update affected artifacts.                                              | Library can't support concurrent writes — swap library within approved budget and timeline         |
+| Yes            | Yes                | Record ADR, delta-only brief, re-evaluate gate decision; record new decision in original gate record. | Technology can't meet NFR and replacement blows the budget                                         |
+
+> **Assessment doesn't always mean immediate action.** A gate re-evaluation
+> could result in stopping the project or deferring the response to the next
+> increment. A design concern might need further investigation before anyone can
+> decide. When the right response isn't clear or isn't urgent, capture the
+> discovery and the assessment so far, then revisit when more information is
+> available.
+
+**Recording guidance:**
+
+- **ADRs** record design decisions — when the design changes, capture what
+  changed, why, and what alternatives were considered.
+- **Gate record amendments** record investment re-evaluations — when cost,
+  schedule, or risk assumptions change materially, re-evaluate the gate decision
+  with the original decision-makers and update the gate record with new evidence
+  and the resulting decision. Don't reopen the gate from scratch.
+- **Delta-only briefs** document only what changed — reference the prior cycle's
+  brief for unchanged context rather than duplicating it.
 
 ### Scope Amendment Criteria
 
@@ -302,8 +342,8 @@ met:
 4. **No new risk** — no new technical, security, or schedule risk introduced
 
 Record scope amendments in the session log for the current stage. If any
-criterion is not met, the discovery is either rework (if it breaks something) or
-a deferral (if it adds something large).
+criterion is not met, the discovery requires assessment (if it breaks something)
+or deferral (if it adds something large).
 
 ### Deferral
 
@@ -855,6 +895,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-26
 
 Added to framework in v0.9.0.
