@@ -80,6 +80,13 @@ Teams choose an autonomy tier per stage:
 Humans remain accountable for decisions and correctness at every tier. For a
 pilot, start with Human-Led and adjust as team confidence grows.
 
+**Built for increasing AI capability.** The framework separates execution (who
+does the work) from accountability (who owns the outcome). As AI capability
+grows, execution shifts toward AI-Led across all stages — but investment
+decisions (Gates) and compliance sign-offs remain human. The same governance
+structure that guides a cautious first pilot scales to a future where AI agents
+fill most roles and humans govern through checkpoints.
+
 See the [AI Assistance Scorecard](guides/ai-assistance.md) for selection
 criteria and full guidance.
 

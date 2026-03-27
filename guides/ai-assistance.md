@@ -364,6 +364,55 @@ Reassess your tier periodically — after major milestones, incidents, or team
 changes. Moving backward is healthy if circumstances change (new regulations,
 team turnover, new domain).
 
+### Execution, Decision, and Accountability
+
+The autonomy tiers above describe how much AI drives **execution** — the work
+within each stage. But AI involvement has three distinct layers, and they evolve
+independently:
+
+| Layer              | What it governs                          | Can AI do this?                          |
+| ------------------ | ---------------------------------------- | ---------------------------------------- |
+| **Execution**      | Producing artifacts and doing stage work | Yes — this is what autonomy tiers govern |
+| **Decision**       | Evaluating checkpoints and issuing outcomes | Depends on checkpoint type (see below)  |
+| **Accountability** | Owning the outcome and bearing consequences | No — organizational and legal reality   |
+
+The framework already separates these structurally. The
+[RACI matrix](roles.md#raci-matrix) distinguishes Responsible (does the work)
+from Accountable (owns the outcome). The
+[Oversight Intensity](#oversight-intensity) table allows AI to self-validate
+intermediate checkpoints at the Minimal level. What this means in practice:
+
+**Execution (Responsible)** can be fully AI at the AI-Led tier. That is already
+the trajectory described in this section — teams progress from Human-Led to
+AI-Led as confidence and tooling mature.
+
+**Decisions** fall on a spectrum depending on checkpoint type:
+
+- **Gates** (Gate 1, Gate 2) — Always human. These are investment decisions with
+  real stop options. Someone must be accountable for committing resources.
+- **Compliance checkpoints** — Always human. Legal and regulatory sign-off
+  carries liability that cannot be delegated regardless of AI capability.
+- **Reviews** (Design Review, PR Review, Verification, Deployment Approval) —
+  Evolving. These verify objective criteria — checklists, test results, coverage
+  thresholds. CI already decides part of PR Review today. As AI capability and
+  trust increase, more review decisions can shift to AI with human spot-checks.
+- **Alignments** (Architecture Review) — Depends on stakeholders. If
+  stakeholders are human, alignment requires their actual consensus.
+
+**Accountability (Accountable)** remains human at every tier. Even when AI
+executes 100% of the work and evaluates intermediate checkpoints, a human is
+accountable for the outcome. This is not a capability limitation — it is an
+organizational and legal reality.
+
+**What this means for the framework's trajectory.** The governance structure —
+stages, checkpoints, RACI assignments, and decision records — does not assume a
+fixed level of AI capability. As AI agents become more capable, execution shifts
+toward AI-Led across all roles and stages. The framework scales from a
+human-led process with AI assistance to an AI-executed process with human
+governance at investment gates and compliance checkpoints. The same eight stages,
+checkpoint taxonomy, and accountability model apply at every point on that
+spectrum.
+
 ---
 
 ## Operational Guidance
