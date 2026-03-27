@@ -32,6 +32,11 @@ For MVPs, experiments, prototypes, and small internal tools.
 5. [ ] **[H] Rollback procedure understood** (at least one team member can
        execute)
 6. [ ] **Success criteria identified** (even if tracked informally)
+7. [ ] **All deployment handoff inputs received and accessible** (deployed
+       system, monitoring dashboards, updated runbooks, incident response
+       procedures, rollback procedure, baseline measurements, release notes,
+       success criteria register — see
+       [Deployment Checklist: Handoff to Support](../deployment/checklist.md#handoff-to-support))
 
 **Gate:** All items checked → team can respond to basic production issues.
 

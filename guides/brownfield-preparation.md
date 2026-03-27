@@ -44,7 +44,7 @@ areas.
 2. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
    projects (T4 and below)
 3. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
-   that scored highest
+   that scored lowest
 4. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
    what "enough" looks like per axis
 5. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
@@ -213,8 +213,8 @@ increments:
 
 1. **Increment 1:** Document architecture, map repositories and dependencies
    (Discoverability, Modularity)
-2. **Increment 2:** Establish test coverage for critical business paths (Safety
-   Net)
+2. **Increment 2:** Establish test coverage for critical business paths
+   (Verifiability)
 3. **Increment 3:** Surface and document database-layer business logic
    (Transparency)
 4. **Increment 4:** Harden deployability and observability (Deployability,

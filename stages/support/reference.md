@@ -838,14 +838,6 @@ confirmation. Stakeholder communications before sending.
 - Alert fatigue from poorly tuned thresholds
 - Missing correlations between seemingly unrelated issues
 
-### Fallback Protocol
-
-- Default to higher severity classification when uncertain (easier to downgrade
-  than to catch a missed escalation)
-- Escalate early rather than late
-- Request human triage for any incident affecting customer-facing services
-- Compile full incident timeline before recommending root cause
-
 ### Session Handoff Notes
 
 Capture these when ending a support session:
@@ -856,6 +848,20 @@ Capture these when ending a support session:
 - Pending post-incident reviews
 - Enhancement backlog priorities
 - Success criteria measurement status
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Unreachable Human. **Overrides:** none.
+
+- Default to higher severity classification when uncertain (easier to downgrade
+  than to catch a missed escalation)
+- Escalate early rather than late
+- Request human triage for any incident affecting customer-facing services
+- Compile full incident timeline before recommending root cause
 
 ---
 

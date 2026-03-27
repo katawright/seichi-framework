@@ -26,6 +26,10 @@ checkpoints:
     protocol: human-execution-required
     name: "Production Deployment Approval"
     responsible_roles: [devops, appsec]
+  - type: review
+    protocol: human-approval
+    name: "Compliance Approval" # Standard/Enterprise tier with compliance requirements
+    responsible_roles: [pm, appsec]
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
 default_autonomy: human-led
@@ -492,8 +496,8 @@ Deployment validates that measurement systems work in production. See
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** Support stage receives the deployed system, monitoring dashboards,
-updated runbooks, incident response procedures, baseline measurements, release
-notes, and success criteria register (originates from Initiation; verify the
+updated runbooks, incident response procedures, rollback procedure, baseline
+measurements, release notes, and success criteria register (originates from Initiation; verify the
 support team has access during handoff). Retrospective action items feed into
 the next Increment Design cycle (see
 [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). When

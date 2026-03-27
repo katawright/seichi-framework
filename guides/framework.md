@@ -157,7 +157,7 @@ This guide covers the major concepts that structure the framework:
 **[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
 (foundational, iterative, continuous). Full reference: [stages.md](stages.md).
 
-**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Five checkpoint types ensuring
+**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Three checkpoint types ensuring
 quality and alignment. Full reference: [Checkpoint Taxonomy](checkpoints.md).
 
 **[Measurement Throughline](#measurement-throughline)** — Measurable success
@@ -220,7 +220,7 @@ criteria, stage flow diagrams, and handoffs, see the
 
 ## Checkpoint Taxonomy
 
-The framework defines five checkpoint types — each with distinct decision
+The framework defines three checkpoint types — each with distinct decision
 rights, required evidence, and decision records.
 
 | Type          | When                                                                    | Purpose                                          |

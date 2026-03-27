@@ -453,16 +453,6 @@ assess automatically.
 - **Tests that don't validate requirements** — tests pass but don't actually
   assert that acceptance criteria are met
 
-### Fallback Protocol
-
-- Re-read acceptance criteria and requirements when uncertain what to test —
-  tests should trace back to documented requirements
-- Consult the increment design test strategy as the authoritative source for
-  what coverage targets and test types were planned
-- Request human clarification on ambiguous acceptance criteria before generating
-  tests for them — incorrect tests are worse than missing tests
-- Never mark verification complete with failing tests, even low-priority ones
-
 ### Session Handoff Notes
 
 Capture the following at the end of each session:
@@ -472,6 +462,22 @@ Capture the following at the end of each session:
 - Known test gaps and their priority (deferral rationale if deferred)
 - Defects discovered during verification and their current status
 - Performance and security test results with pass/fail against NFRs
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
+
+- Re-read acceptance criteria and requirements when uncertain what to test —
+  tests should trace back to documented requirements
+- Consult the increment design test strategy as the authoritative source for
+  what coverage targets and test types were planned
+- Request human clarification on ambiguous acceptance criteria before generating
+  tests for them — incorrect tests are worse than missing tests
+- Never mark verification complete with failing tests, even low-priority ones
 
 ---
 

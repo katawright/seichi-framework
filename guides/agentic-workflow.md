@@ -38,7 +38,7 @@ working locations, fallback protocols, and session conventions.
 1. **Read stage README front matter** — each `stages/*/README.md` contains the
    canonical stage metadata (inputs, outputs, checkpoints, autonomy, RACI)
 2. **Identify your current stage** from the [**Stage Routing**](#stage-routing)
-   table
+   section
 3. **Check inputs and outputs** — verify required inputs are available before
    starting a stage
 4. **Follow gate requirements** — each stage specifies what human oversight is
@@ -120,15 +120,18 @@ flowchart LR
     Ver -.->|defects| Impl
     Dep -.->|next increment| ID
     Sup -.->|enhancements| Req
+    Sup -.->|perf issues| SD
     Sup -.->|enhancements| ID
+    Sup -.->|patches| Impl
     Sup -.->|reassess| Init
 ```
 
 **Solid arrows** show the primary forward flow. **Dashed arrows** show feedback
 loops — defects return to Implementation for rework, Deployment feeds into
-Increment Design for the next increment, enhancements feed back to Requirements
-or Increment Design, and Support findings may trigger reassessment of Initiation
-assumptions.
+Increment Design for the next increment, and Support findings feed back to
+Requirements (enhancements), System Design (performance issues requiring
+architectural changes), Increment Design (enhancements), Implementation
+(low-risk patches), or Initiation (reassessment).
 
 ---
 
@@ -178,7 +181,7 @@ Recommended workflow for AI coding agents operating in this repository:
 1. **Orient** — read `guides/agentic-workflow.md` for stage routing and
    cross-cutting guidance. Determine your working location from the
    `working_location` field in the current stage's README front matter.
-2. **Locate stage** — identify the current stage from the routing table; read
+2. **Locate stage** — identify the current stage from the routing section; read
    the stage README, checklist, and reference. If the current stage is not clear
    from the human's request, check for existing session logs or artifacts to
    infer project state; if no artifacts exist, start at Initiation.

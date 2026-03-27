@@ -74,6 +74,9 @@ and ready for Verification.
 ## Final Decision
 
 > **If any items are unchecked, address before proceeding.**
+>
+> The PR Review + CI checkpoint is satisfied per-PR during implementation. No
+> additional checkpoint decision record is needed for the Verification handoff.
 
 - [ ] **Ready** — Proceed to Verification
 - [ ] **Not Ready** — Address weak items and re-check

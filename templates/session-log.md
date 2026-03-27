@@ -4,9 +4,13 @@
      sensitive data in this log. Use placeholder references (e.g., "API key
      stored in vault") instead of actual values. -->
 
+> **Do not record API keys, tokens, credentials, secrets, or other sensitive
+> data in this log.** Use placeholder references (e.g., "API key stored in
+> vault") instead of actual values.
+
 # Session Log: [Stage Name] — [Project/Increment Name]
 
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** YYYY-MM-DD HH:MM
 
 | Field              | Value                                            |
 | ------------------ | ------------------------------------------------ |
@@ -66,7 +70,7 @@
 
 - [Critical context the next agent/human needs to continue]
 
-**Next Steps:**
+**Next Steps** (list the most critical action first):
 
 - [Specific actions for the next session]
 

@@ -213,7 +213,11 @@ they raise it with the Accountable role. Additionally, all checkpoint decisions
 are distributed to PjM for scheduling and coordination purposes, regardless of
 PjM's RACI designation at that stage. The implementation-brief is also
 distributed to PM when finalized, so that PM has current context for
-Verification consultations.
+Verification consultations. When a stage agent documents a blocker requiring PjM
+attention (see stage README Blockers and escalation sections), the Responsible
+role notifies PjM at the time of blocker identification. The notification
+mechanism is outside framework scope; the session log or brief Blockers section
+provides the blocker details.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
 > the
@@ -305,7 +309,7 @@ finding before work resumes.
 
 | Severity     | Orchestration Response                                                    |
 | ------------ | ------------------------------------------------------------------------- |
-| **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint |
+| **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint. If unresolved at a gate decision, the gate cannot proceed until the finding is resolved or formally downgraded by AppSec. |
 | **High**     | Conditional proceed; finding tracked with fix deadline before deployment  |
 | **Medium**   | Track in defect backlog; fix targeted for current or next increment       |
 | **Low**      | Log in backlog; address opportunistically                                 |

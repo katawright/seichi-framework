@@ -429,21 +429,6 @@ appropriate when:
   want — the brief described what they want to build, not why. Mitigation: trace
   each requirement back to a specific Initiation Brief success criterion.
 
-### Fallback Protocol
-
-When AI-generated content is uncertain or potentially incorrect:
-
-- Flag contradictions explicitly with both interpretations presented, and
-  request a stakeholder decision before resolving them — never silently choose
-  one interpretation
-- Request domain expert review for any requirement set touching unfamiliar
-  domains; tag affected requirements with **[NEEDS DOMAIN REVIEW]**
-- Default to more conservative scope when ambiguous — requirements that could go
-  either way should start narrow and expand based on stakeholder input, not AI
-  inference
-- When acceptance criteria cannot be made objective, flag the requirement as
-  needing a measurability review rather than proceeding with subjective criteria
-
 ### Session Handoff Notes
 
 When handing off between AI sessions during Requirements, capture the following
@@ -457,6 +442,27 @@ state so the next session can continue without re-eliciting:
   traced to requirements, which NFR categories have not been addressed
 - Traceability status — what percentage of stories have accepted acceptance
   criteria and trace to at least one brief goal
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
+
+When AI-generated content is uncertain or potentially incorrect:
+
+- Flag contradictions explicitly with both interpretations presented, and
+  request a stakeholder decision before resolving them — never silently choose
+  one interpretation
+- Request domain expert review for any requirement set touching unfamiliar
+  domains; tag affected requirements with **[NEEDS DOMAIN REVIEW]**
+- Default to more conservative scope when ambiguous — requirements that could go
+  either way should start narrow and expand based on stakeholder input, not AI
+  inference
+- When acceptance criteria cannot be made objective, flag the requirement as
+  needing a measurability review rather than proceeding with subjective criteria
 
 ---
 

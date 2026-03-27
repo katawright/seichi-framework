@@ -1,4 +1,6 @@
-<!-- For guidance on completing this brief, see initiation/README.md -->
+<!-- For guidance on completing this brief, see ../stages/initiation/README.md -->
+
+# Initiation Brief
 
 > **Stage guide:** [Initiation](../stages/initiation/README.md)
 
@@ -6,15 +8,13 @@
 > [Worked Example: Initiation](../guides/worked-example.md#stage-1-initiation)
 > for a completed brief.
 
-# Initiation Brief
-
-**Last Updated:** YYYY-MM-DD
-
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
 > be **confirmed** (verified — remove tag), **challenged** (incorrect — update
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
+
+**Last Updated:** YYYY-MM-DD
 
 ## Right-Sizing This Brief
 

@@ -1,14 +1,14 @@
-<!-- For guidance on completing this brief, see system-design/README.md -->
+<!-- For guidance on completing this brief, see ../stages/system-design/README.md -->
 
-> **Stage guide:** [System Design README](../stages/system-design/README.md)
+# System Design Brief
+
+> **Stage guide:** [System Design](../stages/system-design/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
 > be **confirmed** (verified — remove tag), **challenged** (incorrect — update
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
-
-# System Design Brief
 
 **Last Updated:** YYYY-MM-DD
 

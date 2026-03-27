@@ -110,8 +110,8 @@ flow through every subsequent stage.
 
 | #   | Stage            | Primary Role             | Pattern      | Purpose                                                                                                                                      |
 | --- | ---------------- | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Initiation       | Product Mgr / BA         | Foundational | Establish business case with measurable success criteria                                                                                     |
-| 2   | Requirements     | BA / Product Mgr         | Foundational | Define testable requirements with functional requirement (FR) acceptance criteria and non-functional requirement (NFR) verification criteria |
+| 1   | Initiation       | Product Manager          | Foundational | Establish business case with measurable success criteria                                                                                     |
+| 2   | Requirements     | Product Manager          | Foundational | Define testable requirements with functional requirement (FR) acceptance criteria and non-functional requirement (NFR) verification criteria |
 | 3   | System Design    | Architect                | Foundational | Establish or assess system architecture and technical approach                                                                               |
 | 4   | Increment Design | Engineers                | Iterative    | Plan implementation approach AND test strategy for increment                                                                                 |
 | 5   | Implementation   | Engineers                | Iterative    | Execute implementation plan from Increment Design                                                                                            |
@@ -239,7 +239,7 @@ Secure Software Development Framework (SSDF) traceability, see the
 
 ## Stage 1: Initiation
 
-- **Primary Role:** Product Manager / Business Analyst
+- **Primary Role:** Product Manager
 - **Supporting Roles:** Executives, Architect, Engineers, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [Initiation](../stages/initiation/README.md)
@@ -318,7 +318,7 @@ success criteria, constraints, and stakeholder list.
 
 ## Stage 2: Requirements
 
-- **Primary Role:** Business Analyst / Product Manager
+- **Primary Role:** Product Manager
 - **Supporting Roles:** Engineers, Architects, QA Engineers, Project Manager
 - **Execution Pattern:** Foundational (once per project, revisitable)
 - **Stage Guide:** [Requirements](../stages/requirements/README.md)
@@ -499,13 +499,13 @@ Verification.
 
 **Required:**
 
-- System architecture and conventions from System Design
+- System design brief and architecture diagrams from System Design
 - Increment plan identifying current increment scope
-- Requirements with FR acceptance criteria for this increment
+- Requirements with acceptance criteria for this increment
 
 **Optional:**
 
-- Previous increment learnings and retrospective action items
+- Retrospective action items from previous increments
 - Updated constraints from implementation feedback
 
 ### Entry Criteria
@@ -621,16 +621,15 @@ increment, following engineering best practices and professional standards.
 
 ### Handoff to Next Stage
 
-Verification stage receives: Working code on branch/environment, unit test
-results, and implementation notes.
+Verification stage receives: Working code, implementation brief, requirements
+with acceptance criteria, test strategy, and component designs.
 
 ---
 
 ## Stage 6: Verification
 
 - **Primary Role:** QA Engineers / Engineers
-- **Supporting Roles:** Product Manager, Business Analyst, DevOps, Project
-  Manager
+- **Supporting Roles:** Product Manager, DevOps, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Verification](../stages/verification/README.md)
 
@@ -675,12 +674,15 @@ right thing).
 
 ### Outputs
 
-- **Test Results** - All test types with pass/fail status (see
+- **Verification Brief** — consolidated verification record (see
   [Verification Brief Template](../templates/verification-brief.md))
+- Test results (all test types with pass/fail status)
 - Defect reports and resolution status
 - UAT sign-off from business stakeholders
 - Performance test results
 - Security scan results
+- Verified code (code that passed all verification checks)
+- Production readiness assessment
 
 ### Exit Criteria
 
@@ -693,15 +695,15 @@ right thing).
 
 ### Handoff to Next Stage
 
-Deployment stage receives: Verified code, test reports, UAT approval, and
-deployment checklist.
+Deployment stage receives: Verified code, UAT sign-off, production readiness
+assessment, and implementation brief.
 
 ---
 
 ## Stage 7: Deployment
 
 - **Primary Role:** DevOps / Engineers
-- **Supporting Roles:** Operations, Product Manager, Engineers, Project Manager
+- **Supporting Roles:** Product Manager, Engineers, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Deployment](../stages/deployment/README.md)
 
@@ -714,15 +716,15 @@ monitoring and rollback capabilities.
 
 **Required:**
 
-- Verified code with test approvals
+- Verified code
 - UAT sign-off
-- Deployment checklist
-- Rollback plan (tested and documented)
+- Production readiness assessment
+- Infrastructure plan (from System Design)
+- Implementation brief
 
 **Optional:**
 
 - Canary or blue-green deployment strategy
-- Release notes
 
 ### Entry Criteria
 
@@ -749,11 +751,17 @@ monitoring and rollback capabilities.
 
 ### Outputs
 
-- **Deployed System** - Increment live in production
-- Deployment log and verification
+- **Deployment Brief** — consolidated deployment record (see
+  [Deployment Brief Template](../templates/deployment-brief.md))
+- **Deployed System** — increment live in production
+- Deployment log
 - Updated runbooks and operational procedures
 - Release notes and change documentation
 - Baseline measurements captured
+- Monitoring dashboards
+- Incident response procedures
+- Rollback procedure
+- Retrospective (with action items for next increment)
 
 ### Exit Criteria
 
@@ -765,16 +773,16 @@ monitoring and rollback capabilities.
 
 ### Handoff to Next Stage
 
-Support stage receives: Deployed system, runbooks, monitoring dashboards, and
-baseline measurements for success criteria.
+Support stage receives: Deployed system, monitoring dashboards, updated runbooks,
+incident response procedures, baseline measurements, release notes, success
+criteria register, and rollback procedure.
 
 ---
 
 ## Stage 8: Support
 
 - **Primary Role:** DevOps / Engineers
-- **Supporting Roles:** Operations, Customer Support, Product Manager, Project
-  Manager
+- **Supporting Roles:** Product Manager, Project Manager
 - **Execution Pattern:** Continuous (ongoing after first deployment)
 - **Stage Guide:** [Support](../stages/support/README.md)
 
@@ -846,7 +854,7 @@ Support stage may trigger revisits to earlier stages:
 
 ## Checkpoints
 
-For the full checkpoint taxonomy (five checkpoint types, Decision-Rights Matrix,
+For the full checkpoint taxonomy (three checkpoint types, Decision-Rights Matrix,
 and per-stage checkpoint mapping), see [Checkpoint Taxonomy](checkpoints.md).
 Each stage definition above references its specific checkpoints in the
 `### Checkpoints` subsection.

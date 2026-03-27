@@ -9,11 +9,14 @@ outputs:
     template: templates/initiation-brief.md
   - artifact: success-criteria-register
     template: templates/success-criteria-register.md
+  - artifact: gate-1-decision-package
+    template: templates/gate-decision.md
 checkpoints:
   - type: gate
     protocol: human-approval
     name: "Gate 1 (Investment Decision)"
     responsible_roles: [pm]
+    accountable_role: [exec]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md
 default_autonomy: collaborative
@@ -88,8 +91,12 @@ budget context. No prior framework artifacts or technical expertise required.
 6. Review the brief for correctness — you own the final content
 7. Complete the [Initiation Checklist](checklist.md) using AI according to your
    chosen autonomy tier
-8. Complete Gate 1 — present to stakeholders and record the proceed/revise/stop
-   decision using the [Gate Decision Template](../../templates/gate-decision.md)
+8. Complete Gate 1 — present to stakeholders; Exec decides proceed/revise/stop
+   (see
+   [Decision-Rights Matrix](../../guides/checkpoints.md#decision-rights-matrix)).
+   At Minimal tier, record the decision and date as a note in the Initiation
+   Brief; at Standard+ tier, use the
+   [Gate Decision Template](../../templates/gate-decision.md)
 
 > **See a completed example:** The
 > [Worked Example: Initiation](../../guides/worked-example.md#stage-1-initiation)
@@ -180,6 +187,7 @@ Match your Initiation effort to your project's risk tier.
 | **Risk assessment**       | Mental note of key risks        | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
 | **Estimation**            | Rough range                     | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
 | **Gate 1 process**        | Informal team agreement         | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
+| **Pre-mortem**            | Skip or 1-sentence risk note    | 2-3 failure modes with mitigations          | Structured pre-mortem with stakeholder input          |
 | **Security**              | Note if sensitive data involved | Classify data sensitivity, note compliance  | Formal data classification with compliance mapping   |
 
 Expand Initiation only when needed:

@@ -8,7 +8,7 @@ production ownership, or compliance).
 **Usage:** Use this template for operational checkpoints between stages. For
 Gate 1 and Gate 2 investment decisions, use [gate-decision.md](gate-decision.md)
 instead. See the
-[Checkpoint Taxonomy](../guides/framework.md#checkpoint-taxonomy) for the full
+[Checkpoint Taxonomy](../guides/checkpoints.md) for the full
 list of checkpoint types.
 
 **Last Updated:** YYYY-MM-DD

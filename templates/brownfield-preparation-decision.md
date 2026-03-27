@@ -13,7 +13,7 @@ for exit criteria and decision options.
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Proceed / Proceed with conditions / Extend / Pivot
+**Status:** Pending / Go / Conditional Go / Extend / Pivot
 
 **Decision makers:**
 

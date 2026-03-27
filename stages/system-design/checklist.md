@@ -62,7 +62,8 @@ ready for Gate 2.
         value delivered)
 13. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
         NFRs)
-14. [ ] **[H] Alignment conducted** (stakeholder sign-off obtained)
+14. [ ] **[H] Alignment conducted** (stakeholder sign-off obtained; record using
+        [Checkpoint Decision Template](../../templates/checkpoint-decision.md))
 
 ### Handoff to Increment Design
 

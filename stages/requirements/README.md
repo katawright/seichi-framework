@@ -15,6 +15,7 @@ outputs:
   - artifact: non-functional-requirements
     embedded_in: requirements-brief
   - artifact: success-criteria-register
+    template: templates/success-criteria-register.md
 checkpoints:
   - type: review
     protocol: human-approval

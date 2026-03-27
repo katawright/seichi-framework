@@ -83,7 +83,15 @@ stage gate. **Recommended** = high value, skip only with justification.
 
 > **Minimal tier:** The Initiation Brief is the only universally required
 > artifact. Everything else scales with risk. A Minimal project that never
-> deploys may skip Deployment, Support, and their artifacts entirely.
+> deploys may skip Deployment, Support, and their artifacts entirely. If your
+> team already does informal code review, writes tests for critical paths, and
+> has basic CI — you are roughly operating at the Minimal tier. The framework
+> names and organizes these practices; it does not add new activities at this
+> tier.
+
+> **Standard and Enterprise tiers:** AI drafts most artifacts from project
+> context — your primary effort is review and refinement, not authoring from
+> scratch. See each stage's "How AI Helps" section for the full model.
 
 > **CD projects:** Verification Brief, Deployment Brief, and Support Brief
 > remain applicable but shift to increment-close summaries. See each stage's CD

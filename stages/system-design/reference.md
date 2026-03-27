@@ -873,7 +873,28 @@ concern is too high.
   and backward compatibility constraints. Mitigation: require explicit migration
   and rollback sections in the design brief before Gate 2.
 
-### Fallback Protocol
+### Session Handoff Notes
+
+When handing off between AI sessions during System Design, capture the following
+state so the next session can continue without re-deriving context:
+
+- Key ADRs drafted and their current status — Proposed, Accepted, or Needs
+  Review — and which decisions are still open
+- Unresolved trade-offs between architecture options where a human decision is
+  required before the session can proceed
+- Pending specialized reviews — which ADRs or design sections are awaiting
+  architecture council, security review, or tech lead sign-off
+- Infrastructure decisions that affect downstream stages — CI/CD choices,
+  environment strategy, deployment patterns — so that Increment Design and
+  Implementation can build on confirmed decisions rather than assumed ones
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
 When AI-generated content is uncertain or potentially incorrect:
 
@@ -889,21 +910,6 @@ When AI-generated content is uncertain or potentially incorrect:
 - Never finalize security-critical decisions (authentication architecture, data
   flow for PII, encryption choices) without human review, regardless of
   confidence level
-
-### Session Handoff Notes
-
-When handing off between AI sessions during System Design, capture the following
-state so the next session can continue without re-deriving context:
-
-- Key ADRs drafted and their current status — Proposed, Accepted, or Needs
-  Review — and which decisions are still open
-- Unresolved trade-offs between architecture options where a human decision is
-  required before the session can proceed
-- Pending specialized reviews — which ADRs or design sections are awaiting
-  architecture council, security review, or tech lead sign-off
-- Infrastructure decisions that affect downstream stages — CI/CD choices,
-  environment strategy, deployment patterns — so that Increment Design and
-  Implementation can build on confirmed decisions rather than assumed ones
 
 ---
 

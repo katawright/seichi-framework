@@ -212,7 +212,7 @@ From the **System Design Brief**, Technology Stack (§ 3):
 
 ### Increment Plan
 
-From the **System Design Brief**, Increment Plan (§ 9):
+From the **System Design Brief**, Increment Plan (§ 11):
 
 ```markdown
 ## 9. Increment Plan

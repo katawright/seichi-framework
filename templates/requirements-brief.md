@@ -1,12 +1,12 @@
-<!-- For guidance on completing this brief, see requirements/README.md -->
+<!-- For guidance on completing this brief, see ../stages/requirements/README.md -->
+
+# Requirements Brief
 
 > **Stage guide:** [Requirements](../stages/requirements/README.md)
 
 > **Need an example?** See the
 > [Worked Example: Requirements](../guides/worked-example.md#stage-2-requirements)
 > for completed functional requirements with acceptance criteria.
-
-# Requirements Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should

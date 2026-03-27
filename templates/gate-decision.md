@@ -8,7 +8,7 @@
 proceeds, is revised, or is stopped. For non-investment checkpoints (quality,
 deployment, production ownership), use
 [checkpoint-decision.md](checkpoint-decision.md) instead. See the
-[Checkpoint Taxonomy](../guides/framework.md#checkpoint-taxonomy) for the full
+[Checkpoint Taxonomy](../guides/checkpoints.md) for the full
 decision framework.
 
 **Last Updated:** YYYY-MM-DD

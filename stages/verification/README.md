@@ -254,13 +254,15 @@ gates.
 HANDOFF TO DEPLOYMENT
 ```
 
-**When verification fails:** If the go/no-go decision (step 12) results in
-**no-go**, work returns to the Implementation stage for defect fixes. Once fixes
-are complete, a **new verification cycle** begins — start a fresh brief from the
-template (Cycle 2, Cycle 3, etc.) rather than overwriting the previous cycle's
-brief. This preserves each cycle's results as a clean historical record and
-makes it easy to see what changed between cycles. The new brief's Cycle Context
-section links to the prior brief and summarizes what was fixed.
+### When Verification Fails
+
+If the go/no-go decision (step 12) results in **no-go**, work returns to the
+Implementation stage for defect fixes. Once fixes are complete, a **new
+verification cycle** begins — start a fresh brief from the template (Cycle 2,
+Cycle 3, etc.) rather than overwriting the previous cycle's brief. This
+preserves each cycle's results as a clean historical record and makes it easy to
+see what changed between cycles. The new brief's Cycle Context section links to
+the prior brief and summarizes what was fixed.
 
 **Routing decision:** The Production Readiness field in the verification brief
 determines the path:
@@ -273,10 +275,16 @@ determines the path:
 
 **Rework trigger artifact:** The completed verification brief with a Not Ready
 decision and populated Rework Handoff section is the trigger artifact for the
-Implementation rework cycle. Engineers should treat publication of this brief to
-the artifacts location (e.g., `docs/briefs/verification-brief-inc1-cycle1.md`)
-as the activation signal — QA notifies the engineering lead when the
-verification brief is published.
+Implementation rework cycle. QA notifies the engineering lead that the
+verification brief is available — the notification is the activation signal. The
+notification mechanism (message, email, automated trigger on file publication)
+is outside framework scope. The verification brief's Rework Handoff section
+provides the defect list, root cause hypotheses, and failing tests that scope
+the rework.
+
+**Rework inputs:** The verification brief's Defect Summary and Rework Handoff
+sections satisfy Implementation's `defect-reports` and `verification-brief`
+rework inputs — no separate defect-reports artifact is needed.
 
 **Rework briefs are delta-only:** When work returns to Implementation, the
 rework brief documents only what changed — reference the prior cycle's brief for
