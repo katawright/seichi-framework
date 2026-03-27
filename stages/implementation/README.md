@@ -67,7 +67,9 @@ required: architecture diagrams from System Design,
 and the
 [success criteria register](../../templates/success-criteria-register.md) for
 measurement throughline continuity. Your development environment should be set
-up and ready.
+up and ready. For rework cycles, also gather defect reports and the
+verification brief from the previous verification cycle (see
+[Rework Briefs](#rework-briefs-delta-only) below).
 
 > This stage operates from the **source code location**. Design briefs and
 > session logs are read from the artifacts location. See
@@ -402,7 +404,11 @@ handoff, ensure:
 
 ### Rework Briefs (Delta-Only)
 
-When rework is triggered by verification failure, use delta-only briefs:
+When rework is triggered by verification failure, the verification brief's
+Rework Handoff section is the primary input — it lists the defects to fix, root
+cause hypotheses, and failing tests that scope the rework. Start from
+[`templates/implementation-brief.md`](../../templates/implementation-brief.md)
+and populate only sections affected by the rework scope:
 
 - **Document only what changed** — don't duplicate the full implementation brief
   from the prior cycle

@@ -611,15 +611,6 @@ humans execute and approve.
 - Underestimating data migration risks
 - Incomplete communication to stakeholders
 
-### Fallback Protocol
-
-- Always defer to human for any production decision regardless of oversight
-  level
-- Present deployment readiness evidence rather than making go/no-go
-  recommendations
-- Escalate immediately if monitoring shows unexpected behavior post-deployment
-- Default to delaying deployment when evidence is insufficient
-
 ### Session Handoff Notes
 
 Capture these when ending a deployment session:
@@ -630,6 +621,21 @@ Capture these when ending a deployment session:
 - Monitoring baseline values
 - Rollback plan readiness
 - Stakeholder communication status
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Failed Gate, Unreachable Human. **Overrides:** none.
+
+- Always defer to human for any production decision regardless of oversight
+  level
+- Present deployment readiness evidence rather than making go/no-go
+  recommendations
+- Escalate immediately if monitoring shows unexpected behavior post-deployment
+- Default to delaying deployment when evidence is insufficient
 
 ---
 

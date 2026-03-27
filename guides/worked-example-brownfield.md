@@ -235,7 +235,7 @@ The team re-scores the **customer account area** (not the full system) using the
 | Axis            | Before | After | Change | Evidence                                                  |
 | --------------- | -----: | ----: | -----: | --------------------------------------------------------- |
 | Verifiability   |      2 |     3 |     +1 | 18 unit tests + existing integration tests; CI stabilized |
-| Modularity      |      2 |     2 |      0 | Service layer boundaries unchanged (acceptable for T3)    |
+| Modularity      |      2 |     2 |      0 | Service layer boundaries unchanged; below T3 threshold    |
 | Deployability   |      1 |     2 |     +1 | Documented runbook; rollback tested; still manual         |
 | Operability     |      2 |     2 |      0 | No change (not targeted this increment)                   |
 | Discoverability |      1 |     3 |     +2 | AGENTS.md, updated architecture docs, procedure docs      |
@@ -250,10 +250,12 @@ Using the
 
 **Decision: Conditional Go**
 
-- **Thresholds met:** Verifiability 3+, Modularity 2+, all others 2+ — meets T3
-  (Constrained) exit thresholds
-- **Remaining gap:** Deployability at 2 (manual deploy) — mitigated by deploy
-  runbook and tested rollback procedure
+- **Thresholds partially met:** Verifiability 3+ and all non-core axes 2+ — but
+  Modularity at 2 falls short of T3's 3+ requirement
+- **Remaining gaps:** Modularity at 2 (service layer boundaries leak) —
+  mitigated by scoping AI-generated code to the customer account service layer
+  where boundaries are clearest; Deployability at 2 (manual deploy) — mitigated
+  by deploy runbook and tested rollback procedure
 - **AI operating mode for feature work:** T3 — AI writes production code in the
   customer account area (well-covered); AI is advisory for changes touching
   other areas

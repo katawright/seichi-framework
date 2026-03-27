@@ -4,6 +4,10 @@
      sensitive data in this log. Use placeholder references (e.g., "API key
      stored in vault") instead of actual values. -->
 
+> **Do not record API keys, tokens, credentials, secrets, or other sensitive
+> data in this log.** Use placeholder references (e.g., "API key stored in
+> vault") instead of actual values.
+
 # Implementation Session Log: [Increment Name]
 
 **Purpose:** Session-by-session engineering log capturing completed work,
@@ -13,7 +17,7 @@ decisions, blockers, and handoff context.
 [Implementation README multi-session work section](../stages/implementation/README.md#multi-session-work)
 for logging conventions and AI agent guidance.
 
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** YYYY-MM-DD HH:MM
 
 | Field             | Value                                            |
 | ----------------- | ------------------------------------------------ |

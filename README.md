@@ -23,7 +23,11 @@ way to scale what works from one team to the next.
 
 ### Goals of This Guide
 
-- Overlay your existing process (agile, waterfall, or hybrid), not replace it
+- Overlay your existing process (agile, waterfall, or hybrid), not replace it —
+  your sprint ceremonies, PR review process, and CI/CD pipeline stay. The
+  framework adds: an initiation brief to define the problem, verification
+  checklists to confirm quality before shipping, and optional stage briefs
+  scaled to your risk tier.
 - Provide structured AI assistance with appropriate human oversight at every
   stage
 - Give leaders explicit investment gates and checkpoint records for governance

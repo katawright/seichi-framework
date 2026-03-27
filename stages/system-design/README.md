@@ -8,6 +8,7 @@ outputs:
   - artifact: system-design-brief
     template: templates/system-design-brief.md
   - artifact: architecture-diagrams
+    embedded_in: system-design-brief
   - artifact: technology-stack-adrs
     template: templates/adr.md
   - artifact: data-api-architecture
@@ -31,6 +32,7 @@ checkpoints:
     protocol: human-approval
     name: "Gate 2 (Investment Decision)"
     responsible_roles: [pm, arch, appsec]
+    accountable_role: [exec]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
 default_autonomy: collaborative

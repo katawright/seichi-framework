@@ -8,11 +8,15 @@ For initial setup before accepting production ownership, use the
 
 > **Which checklist?** This checklist covers ongoing support operations. For
 > one-time setup before accepting production ownership, use the
-> [Support Readiness Checklist](readiness-checklist.md) instead. If you have
-> already completed the Readiness Checklist, the items in the Support Readiness
-> section below should already be satisfied — re-verify during ongoing reviews.
-> For one-time setup items (e.g., handoff completed, access granted), mark as
-> "Previously completed" during ongoing reviews rather than re-verifying.
+> [Support Readiness Checklist](readiness-checklist.md) instead. The Support
+> Readiness section below overlaps with but is not identical to the Readiness
+> Checklist — this section focuses on ongoing operational concerns (team
+> staffing, access, runbooks, escalation), while the Readiness Checklist focuses
+> on one-time setup (monitoring, notifications, rollback understanding, handoff
+> receipt). Complete both during initial setup; re-verify this section during
+> ongoing reviews. For one-time setup items (e.g., handoff completed, access
+> granted), mark as "Previously completed" during ongoing reviews rather than
+> re-verifying.
 
 ---
 

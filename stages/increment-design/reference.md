@@ -301,14 +301,6 @@ introducing new architectural patterns that haven't been validated yet.
 - **Missing cross-cutting concerns** — error handling, logging, and auth left as
   afterthoughts rather than designed in
 
-### Fallback Protocol
-
-- Cross-reference all designs against system architecture ADRs before finalizing
-- Request architect review when proposing patterns not established in System
-  Design
-- Default to more detailed specification when uncertain about interface
-  contracts — over-specification is safer than under-specification at this stage
-
 ### Session Handoff Notes
 
 Capture the following at the end of each session:
@@ -319,6 +311,20 @@ Capture the following at the end of each session:
 - Test strategy choices and coverage targets
 - Open questions about system architecture fit that need resolution before
   implementation
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
+
+- Cross-reference all designs against system architecture ADRs before finalizing
+- Request architect review when proposing patterns not established in System
+  Design
+- Default to more detailed specification when uncertain about interface
+  contracts — over-specification is safer than under-specification at this stage
 
 ---
 

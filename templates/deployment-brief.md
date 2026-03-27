@@ -1,10 +1,10 @@
-<!-- For guidance on completing this brief, see deployment/README.md -->
+<!-- For guidance on completing this brief, see ../stages/deployment/README.md -->
+
+# Deployment Brief
 
 > **Stage guide:** [Deployment](../stages/deployment/README.md)
 >
 > **Need an example?** See [Worked Example: Deployment](../guides/worked-example.md#stage-7-deployment)
-
-# Deployment Brief
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
@@ -63,6 +63,21 @@ US-East, EU-Central, Global] **Infrastructure:** [e.g., AWS ECS, Kubernetes, VM
 fleet]
 
 <!-- Pre-deployment readiness: use checklist.md -->
+
+---
+
+## Release Notes
+
+<!-- Stakeholder-facing summary of what this release delivers. -->
+
+**Audience:** [e.g., End users, Internal teams, API consumers]
+
+**Summary of Changes:**
+
+- [Feature/fix 1]
+- [Feature/fix 2]
+
+**Known Limitations:** [Any caveats or temporary limitations in this release]
 
 ---
 

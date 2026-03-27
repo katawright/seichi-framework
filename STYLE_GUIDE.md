@@ -358,18 +358,6 @@ pipeline:
 `agentic-workflow.md` has no front matter; it provides cross-cutting guidance
 (fallback protocols, session conventions) in the document body.
 
-### Root README Schema
-
-**Schema:** `.schema/schemas/root-readme.schema.json`
-
-```yaml
----
-agent_entry_point: guides/agentic-workflow.md
----
-```
-
-Minimal — routes agents to the agentic workflow guide. No stage metadata needed.
-
 ### Placement Rules
 
 - Front matter goes above the H1 title

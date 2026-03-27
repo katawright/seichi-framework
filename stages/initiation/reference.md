@@ -318,7 +318,27 @@ Initiation outputs actively until brief quality is consistently high.
   domains, or projects with external dependencies. Mitigation: prompt AI to
   enumerate risks by category and review each category explicitly.
 
-### Fallback Protocol
+### Session Handoff Notes
+
+When handing off between AI sessions during Initiation, capture the following
+state so the next session can continue without re-discovery:
+
+- Stakeholders identified so far and their roles (Responsible, Accountable,
+  Consulted, Informed)
+- Preliminary scope decisions made — what is in scope, what has been explicitly
+  excluded
+- Outstanding discovery questions still needing stakeholder input
+- Assumptions tagged [ASSUMED] that require verification
+- Draft artifacts in progress and their completion status (problem statement
+  complete, business case in draft, success criteria not yet started, etc.)
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
 When AI-generated content is uncertain or potentially incorrect:
 
@@ -333,20 +353,6 @@ When AI-generated content is uncertain or potentially incorrect:
   recommended scope when the project boundary is genuinely unclear
 - When a risk cannot be mitigated within Initiation, flag it as a Gate 1 blocker
   or recommend a spike before proceeding
-
-### Session Handoff Notes
-
-When handing off between AI sessions during Initiation, capture the following
-state so the next session can continue without re-discovery:
-
-- Stakeholders identified so far and their roles (Responsible, Accountable,
-  Consulted, Informed)
-- Preliminary scope decisions made — what is in scope, what has been explicitly
-  excluded
-- Outstanding discovery questions still needing stakeholder input
-- Assumptions tagged [ASSUMED] that require verification
-- Draft artifacts in progress and their completion status (problem statement
-  complete, business case in draft, success criteria not yet started, etc.)
 
 ---
 

@@ -65,6 +65,12 @@ activities. Gate 1 and Gate 2 are the hard gates — use the
 [Gate Decision Template](../templates/gate-decision.md) and
 [Gate Review Facilitation](roles.md#gate-review-facilitation) guidance.
 
+Between Gate 2 and the first feature increment, most projects require foundation
+work — infrastructure bootstrap for greenfield projects, or discovery and
+preparation for brownfield projects. Plan one or more foundation increments
+using the [Project Foundation Guide](project-foundation.md) before entering the
+sprint rhythm below.
+
 ---
 
 ## Sprint Rhythm (2-Week Increment)

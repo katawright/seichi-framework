@@ -477,15 +477,6 @@ mature CI pipeline.
 - **Oversized PRs** — bundling too much work into a single PR, making review
   impractical
 
-### Fallback Protocol
-
-- Run tests after every meaningful change — don't accumulate failures
-- Revert to last known-good state if tests fail after reasonable remediation
-  attempts (don't dig deeper into a broken state)
-- Request human review for any changes that touch outside the defined module
-  boundary
-- Flag deviations from design specs explicitly rather than silently adapting
-
 ### Session Handoff Notes
 
 Capture the following at the end of each session:
@@ -496,6 +487,21 @@ Capture the following at the end of each session:
 - Remaining implementation tasks from the increment design
 - Any environment or dependency issues encountered that the next session needs
   to know about
+
+---
+
+## Fallback Protocol
+
+These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+
+**Extends:** Failed Gate, Missing Input. **Overrides:** none.
+
+- Run tests after every meaningful change — don't accumulate failures
+- Revert to last known-good state if tests fail after reasonable remediation
+  attempts (don't dig deeper into a broken state)
+- Request human review for any changes that touch outside the defined module
+  boundary
+- Flag deviations from design specs explicitly rather than silently adapting
 
 ---
 

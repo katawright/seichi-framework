@@ -41,13 +41,18 @@
       "enum": ["gate", "review", "alignment"]
     },
     "checkpoint": {
-      "$comment": "A stage checkpoint with type, protocol, display name, and optional responsible roles per the Decision-Rights Matrix.",
+      "$comment": "A stage checkpoint with type, protocol, display name, responsible roles, and optional accountable role (RACI 'A' — the decision-maker). accountable_role is used on gate-type checkpoints where the decision authority differs from the preparers.",
       "type": "object",
       "properties": {
         "type": { "$ref": "#/$defs/checkpoint-type" },
         "protocol": { "$ref": "#/$defs/checkpoint-protocol" },
         "name": { "type": "string", "minLength": 1 },
         "responsible_roles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/role" },
+          "minItems": 1
+        },
+        "accountable_role": {
           "type": "array",
           "items": { "$ref": "#/$defs/role" },
           "minItems": 1

@@ -39,7 +39,7 @@ fatigue.
 
 | Type          | Purpose                                          | Outcome                      |
 | ------------- | ------------------------------------------------ | ---------------------------- |
-| **Gate**      | Investment decision — should we continue?        | Proceed / Revise / Stop      |
+| **Gate**      | Investment decision — should we continue?        | Proceed / Proceed with conditions / Revise / Stop |
 | **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready            |
 | **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed |
 
@@ -48,9 +48,13 @@ fatigue.
 ## Gates
 
 - **Purpose:** Decide whether to continue investing resources in the project
-- **Outcome:** Proceed / Revise / Stop
+- **Outcome:** Proceed / Proceed with conditions / Revise / Stop
 - **Real stop option:** Yes — these are genuine go/no-go decisions
 - **When used:** Early in the project when stopping is still realistic
+- **"Proceed with conditions":** The project continues, but named conditions
+  must be met before the next stage begins (e.g., "proceed once legal review
+  clears the data-handling approach"). Track conditions in the gate decision
+  record and verify them at the next checkpoint.
 
 **Examples:**
 
@@ -127,7 +131,9 @@ constraints.
 Each checkpoint has defined roles for who prepares evidence, who decides, and
 who is informed. This matrix covers checkpoint-level decision rights. For
 stage-level role assignments (R/A/C/I), see the
-[RACI Matrix](roles.md#raci-matrix).
+[RACI Matrix](roles.md#raci-matrix). The `responsible_roles` field in stage
+README checkpoint front matter lists the roles from the **Prepares Evidence**
+column below. For who decides, see the **Decides** column.
 
 | Checkpoint                       | After Stage      | Type      | Prepares Evidence     | Decides            | Informed      |
 | -------------------------------- | ---------------- | --------- | --------------------- | ------------------ | ------------- |
