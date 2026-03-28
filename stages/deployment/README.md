@@ -357,6 +357,91 @@ deployment begins.
 > post-rollback actions, see
 > [Deployment Reference: Rollback Procedures](reference.md#rollback-procedures).
 
+### Brownfield Database Deployment
+
+Brownfield systems often have database deployment challenges that don't exist
+in greenfield projects. This section covers common situations; adapt to your
+system's specifics.
+
+#### Bootstrapping a Migration Framework
+
+When no migration history exists — schema changes have been applied manually or
+via ad hoc scripts — bootstrapping a migration framework is a preparation
+activity, not a feature activity.
+
+- **Baseline capture:** Capture the current schema as the initial migration
+  (e.g., V001). This migration is never run against the existing database — it
+  documents the starting point. All subsequent migrations apply forward from
+  this baseline.
+- **First production use:** The migration framework itself is untested in
+  production. Validate the framework in staging before the first production
+  run. Take a schema backup immediately before the first migration.
+- **Forward-only migrations:** When the migration tool lacks undo support
+  (e.g., Flyway Community Edition), co-locate manual rollback scripts
+  alongside forward migrations. Establish the convention early — e.g., a
+  `rollback/` directory with scripts numbered to match their forward
+  counterparts. Test rollback scripts in staging before production use.
+
+#### DBA-Mediated Deployment Steps
+
+When database changes require DBA intervention — stored procedure deployment,
+manual migration execution, maintenance window coordination — treat database
+deployment as a **separate phase** from application deployment.
+
+- **Lead time:** DBA teams often require 1-2 weeks notice for production
+  changes. Factor this into increment planning, not just deployment planning.
+- **Maintenance windows:** Database changes that require locks or downtime need
+  scheduled maintenance windows. Coordinate timing between DBA and DevOps.
+- **Rollback duration:** Manual DBA rollback (executing rollback scripts,
+  restoring stored procedures) may take hours, not minutes. Document estimated
+  rollback duration for each DBA-mediated step.
+- **Handoff clarity:** Document exactly what the DBA executes, in what order,
+  and what success looks like for each step. The DBA may not have project
+  context — the deployment brief should be self-contained for their steps.
+
+#### Heterogeneous Rollback
+
+When different deployment components have different rollback timelines, document
+the rollback sequence with per-phase timelines and mechanisms:
+
+| Component        | Rollback mechanism  | Estimated time | Automation |
+| ---------------- | ------------------- | -------------- | ---------- |
+| Feature flags    | Disable in config   | Instant        | Automated  |
+| Application      | Redeploy previous   | Minutes        | Automated  |
+| Schema migration | Run rollback script | Minutes-hours  | Manual     |
+| Stored procedures | DBA executes script | Hours          | Manual     |
+
+**Partial rollback as first response:** Disabling feature flags without rolling
+back database changes may restore a safe state at minimal cost. Consider
+whether partial rollback is sufficient before initiating full rollback —
+especially when database rollback is manual and time-consuming.
+
+**Rollback ordering when phases are interdependent:** If application code
+depends on schema changes, roll back application code before rolling back
+schema. If feature flags gate traffic to new code paths, disable flags first.
+Document the ordering in the deployment brief.
+
+#### Multi-Service Deployment Ordering
+
+When deploying changes across multiple services with dependencies, determine
+deployment order based on the
+[cross-repo dependency graph](../../guides/brownfield-readiness.md#discovery-cross-repo-dependency-graph):
+
+- **Producer before consumer** — deploy the service that provides data or
+  events before the service that consumes them
+- **Database before application** — apply schema changes before deploying code
+  that depends on them
+- **Application before feature activation** — deploy code before enabling
+  flags that route traffic to new paths
+- **Verification between phases** — confirm service A is healthy before
+  deploying service B. Define health check criteria for each phase in the
+  deployment brief.
+
+**Rollback ordering:** Generally the reverse of deployment order. If service B
+depends on service A's new endpoint, roll back service B before rolling back
+service A. Document exceptions — feature flags may roll back independently of
+service deployment order.
+
 ### Shadow Mode and Gradual Rollout
 
 Shadow mode deploys a feature against real production data with user-visible
@@ -541,6 +626,7 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
+Brownfield Database Deployment section added in v0.42.0.

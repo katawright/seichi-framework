@@ -55,24 +55,38 @@ ready for Gate 2.
         tagging, changelog approach; N/A if brownfield with existing
         conventions)
 
+### Brownfield and Cross-Service
+
+12. [ ] **Brownfield preparation plan includes binary readiness re-assessment
+        criteria** (per-dimension pass/fail thresholds for each preparation
+        increment, with named outcomes: Go, Conditional Go, Extend, Pivot; N/A
+        for greenfield or T4+ brownfield)
+13. [ ] **Cross-service security reviewed** (new inter-service communication
+        has authentication and authorization; new database users have minimal
+        grants; N/A for single-service projects)
+
 ### Increment Plan and Readiness
 
-12. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
+14. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
         (Must Haves first, dependencies identified, each increment articulates
         value delivered)
-13. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
+15. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
         NFRs)
-14. [ ] **[H] Alignment conducted** (stakeholder sign-off obtained; record using
+16. [ ] **[H] Design assumptions consistent with upstream artifacts** (user
+        scale, data volume, concurrency, and growth projections align with
+        requirements brief; any departures are justified with documented
+        rationale and business input)
+17. [ ] **[H] Alignment conducted** (stakeholder sign-off obtained; record using
         [Checkpoint Decision Template](../../templates/checkpoint-decision.md))
 
 ### Handoff to Increment Design
 
-15. [ ] **Architecture documented for increment-level design** (sufficient
+18. [ ] **Architecture documented for increment-level design** (sufficient
         detail for teams to begin)
-16. [ ] **Conventions established** (API patterns, data access, error handling)
-17. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
+19. [ ] **Conventions established** (API patterns, data access, error handling)
+20. [ ] **Increment plan ready for detailed design work** (boundaries, goals,
         and dependencies clear)
-18. [ ] **All required stage outputs produced** (system design brief, ADRs,
+21. [ ] **All required stage outputs produced** (system design brief, ADRs,
         architecture diagrams, increment plan — verify against stage README
         front matter)
 
@@ -109,6 +123,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.12.0.
