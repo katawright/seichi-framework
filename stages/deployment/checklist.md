@@ -53,6 +53,14 @@ successful completion (60-90 seconds).
 14. [ ] **[H] Cross-repo deployment ordering confirmed** (N/A for single-repo
         projects; multi-repo: verify deployment sequence, per-service validation
         gates, and rollback ordering)
+15. [ ] **Database migration steps documented separately from application
+        deployment** (DBA coordination confirmed if applicable; rollback scripts
+        tested in staging; heterogeneous rollback timelines documented per
+        component; N/A for non-database changes)
+16. [ ] **Migration scripts reviewed for security** (no privilege escalation
+        via CREATE USER or GRANT; rollback scripts reviewed for destructive
+        operations; migration credentials separate from application credentials;
+        N/A for non-database changes)
 
 **Gate:** All items checked → proceed to deployment.
 
@@ -165,6 +173,7 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-27
 
-Added to framework in v0.7.0.
+Added to framework in v0.7.0. Database migration and migration security items
+added in v0.42.0.

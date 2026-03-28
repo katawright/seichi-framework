@@ -195,6 +195,17 @@ spots where AI-generated changes silently conflict with business rules.
 |     1 | Significant logic in DB layer or event consumers; not accessible to AI tools without separate documentation.             |
 |     0 | Critical business rules live in stored procedures, triggers, or scheduled jobs — invisible to AI tools and undocumented. |
 
+> **Stored procedure systems:** For codebases with significant database-layer
+> business logic, score Transparency based on whether SP contracts (inputs,
+> outputs, side effects, error conditions) are documented and whether
+> [logic authority](#logic-authority) is established — which component is
+> authoritative for each business calculation. SP transparency has a different
+> remediation path than application-code transparency: contract documentation
+> and test wrapping rather than inline documentation and code-level test
+> coverage. See the
+> [Brownfield Preparation Guide](brownfield-preparation.md#enablement-workstreams)
+> for preparation tactics.
+
 ---
 
 ## Readiness Tiers
@@ -351,9 +362,21 @@ build and migration tooling rather than trying to improve the existing codebase.
 - Business logic is distributed across untestable layers with no documentation
 - The system is already a candidate for replacement on other grounds
 
-> **TODO (deferred):** How far the framework should go on this end of the
-> spectrum — flag-only vs. light evaluation criteria vs. full decision guide.
-> Currently this tier serves as a recognition flag, not a decision framework.
+**Decision criteria:** Compare estimated preparation cost (to reach T3 for the
+target area) against estimated parallel-build cost (to reach minimum viable
+replacement):
+
+- **Parallel build cheaper or comparable:** Prefer parallel build + migration.
+  Use AI to accelerate the new build and migration tooling.
+- **Preparation boundable to a specific area:** Even at T0 system-level,
+  bounded preparation of a specific target area may be justified if that
+  area's value supports the investment. Score the target area separately — it
+  may be T2 or T3 even when the system overall is T0.
+- **Wrapping has independent value:** T0 systems where wrapping specific
+  components (testing them as black boxes behind contracts) provides safety
+  for ongoing maintenance may justify partial preparation investment. See
+  [Brownfield Preparation Guide](brownfield-preparation.md) for the
+  wrap-vs-extract decision.
 
 ---
 
@@ -389,18 +412,67 @@ For the initiation brief template, see the
   containing business rules that AI tools cannot analyze directly from
   application code
 
-**Sequencing advice:**
+### Discovery: Cross-Repo Dependency Graph
 
-1. Start with the central or most-depended-upon repository
-2. Document cross-repo contracts and integration points
-3. Treat database logic as a separate documentation and testing effort — AI
-   tools analyze application code effectively but need explicit documentation
-   for database-layer logic
+For multi-repo systems, produce a **cross-repo dependency graph** as a standard
+discovery deliverable. The graph should document:
 
-**Scoring note:** When the system spans multiple repositories, score each axis
-for the repository targeted for initial AI-assisted work. Note cross-repo
-dependencies that affect Modularity and Transparency even if they originate in
-other repositories.
+- Service-to-service API calls, noting direction (and whether bidirectional)
+- Shared database consumers — services or tools that read/write directly to
+  another service's database, bypassing its API
+- Message queue or event bus dependencies
+- Direct database access paths that bypass APIs (ETL jobs, import tools,
+  reporting queries, finance exports)
+- Cross-schema stored procedure calls
+
+This graph feeds into deployment ordering analysis (see
+[Deployment Stage](../stages/deployment/README.md#multi-service-deployment-ordering))
+and becomes a living document maintained across increments.
+
+### AGENTS.md for Multi-Repo Systems
+
+Each per-repo AGENTS.md should contain a **cross-repo context section**:
+
+- Other repos in the system, their boundaries, and their responsibilities
+- Shared dependencies (databases, message queues, configuration services)
+- Warnings about cross-boundary coupling (e.g., "order-service reads directly
+  from inventory schema — changes to inventory tables affect order-service")
+- API contracts that span repos, with links to contract documentation
+
+For systems with **3+ repos**, consider a **system-level AGENTS.md** that
+provides the high-level architecture map and links to per-repo files. This
+gives AI agents system-wide context without duplicating per-repo details.
+
+### Deployment Ordering
+
+When services have dependencies, determine deployment order during discovery:
+
+- **Producer before consumer** — deploy the service that provides data or
+  events before the service that consumes them
+- **Database before application** — apply schema changes before deploying
+  application code that depends on them
+- **Application before feature activation** — deploy code before enabling
+  feature flags that route traffic to it
+
+Document the ordering rationale — it feeds into the
+[Deployment Stage](../stages/deployment/README.md#multi-service-deployment-ordering).
+
+### Rollback Sequencing
+
+Rollback order is generally the **reverse of deployment order**, with
+exceptions:
+
+- Feature flags can roll back independently (instant disable)
+- Application rollback may not require database rollback if schema changes are
+  backward-compatible
+- Different components may have different rollback timelines — see
+  [Heterogeneous Rollback](../stages/deployment/README.md#heterogeneous-rollback)
+
+### Scoring
+
+When the system spans multiple repositories, score each axis for the repository
+targeted for initial AI-assisted work. Note cross-repo dependencies that affect
+Modularity and Transparency even if they originate in other repositories.
 
 ---
 
@@ -459,7 +531,8 @@ Transparency (hidden logic).
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
-in v0.39.0.
+in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo
+expansion added in v0.42.0.

@@ -45,36 +45,42 @@ the increment is ready for deployment.
        greenfield or non-database changes; brownfield: confirm schema changes
        are backward-compatible with stored procedures, external write paths, and
        cross-schema dependencies)
-9. [ ] **[H] Readiness re-assessment completed** (N/A except after brownfield
+9. [ ] **Database-layer logic regression passing** (SP regression suite green;
+       logic authority verified for modified calculations; N/A for systems
+       without database-layer business logic or greenfield)
+10. [ ] **[H] Readiness re-assessment completed** (N/A except after brownfield
        preparation increments; re-score target area per
-       [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol))
+       [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol);
+       for preparation increments, use binary pass/fail criteria per readiness
+       dimension defined at System Design; for discovery increments, verification
+       is document review — mark test execution items N/A with rationale)
 
 ### Acceptance and Instrumentation
 
-10. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
+11. [ ] **[H] UAT approved by business stakeholders** (sign-off obtained,
         feedback addressed; Minimal: informal approval with documented
         participants and feedback; Standard+: formal sign-off)
-11. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
+12. [ ] **Instrumentation validated** (logging, metrics, dashboards, alerts
         working)
 
 ### Defect Status
 
-12. [ ] **[H] No critical or high-severity defects open** (all resolved or
+13. [ ] **[H] No critical or high-severity defects open** (all resolved or
         deferred with justification)
-13. [ ] **[H] Deferred defects documented** (justification and target version
+14. [ ] **[H] Deferred defects documented** (justification and target version
         included)
-14. [ ] **Fixed defects retested and verified** (no regressions from fixes)
+15. [ ] **Fixed defects retested and verified** (no regressions from fixes)
 
 ### Production Readiness
 
-15. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
+16. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
         rollback plan documented)
-16. [ ] **Verification brief completed with test results documented**
-17. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
+17. [ ] **Verification brief completed with test results documented**
+18. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
-18. [ ] **[H] Stakeholders notified of deployment plan**
-19. [ ] **All required stage outputs produced** (verification brief, test
+19. [ ] **[H] Stakeholders notified of deployment plan**
+20. [ ] **All required stage outputs produced** (verification brief, test
         results, defect reports — verify against stage README front matter)
 
 ---
@@ -113,6 +119,7 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-27
 
-Added to framework in v0.6.0.
+Added to framework in v0.6.0. Database-layer logic regression and preparation
+increment verification guidance added in v0.42.0.

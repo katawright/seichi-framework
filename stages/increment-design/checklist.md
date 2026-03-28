@@ -37,38 +37,41 @@ and ready for Implementation.
 5. [ ] **API specifications complete** (inputs, outputs, error cases)
 6. [ ] **Data model changes specified** (with migrations if applicable; N/A for
        stateless tools — document in-memory data flow instead)
-7. [ ] **[H] Design follows conventions from System Design** (patterns,
+7. [ ] **Database-layer logic dependencies identified** (SP contracts
+       referenced in design; logic authority confirmed for affected
+       calculations; N/A for systems without database-layer business logic)
+8. [ ] **[H] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
 ### Architecture and Security
 
-8. [ ] **Consult Architect on design conformance per
+9. [ ] **Consult Architect on design conformance per
        [RACI](../../guides/roles.md#raci-matrix)** (ADR
        compliance and architecture alignment)
-9. [ ] **Security implications assessed** (auth, data, or API changes flagged;
-       applicable threats from threat model identified)
-10. [ ] **Consult AppSec on security implications per
+10. [ ] **Security implications assessed** (auth, data, or API changes flagged;
+        applicable threats from threat model identified)
+11. [ ] **Consult AppSec on security implications per
         [RACI](../../guides/roles.md#raci-matrix)** (review
         auth/data/API changes for this increment)
 
 ### Testing and Readiness
 
-11. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
+12. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
         performance where applicable; for single-process tools, integration tests
         may be N/A if unit tests cover the full pipeline)
-12. [ ] **Implementation notes provided** (security, performance, patterns)
-13. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
+13. [ ] **Implementation notes provided** (security, performance, patterns)
+14. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
-14. [ ] **[H] Engineers understand the design and can implement independently**
+15. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
 ### Foundation Concerns (I0 / foundation increments only)
 
-15. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
+16. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
         quality, testing, security, local dev, documentation, onboarding)
-16. [ ] **Deferred concerns documented with justification** (conscious
+17. [ ] **Deferred concerns documented with justification** (conscious
         deferrals, not omissions)
-17. [ ] **All required stage outputs produced** (component designs, API
+18. [ ] **All required stage outputs produced** (component designs, API
         specifications, data model changes, test strategy, implementation
         notes — verify against stage README front matter)
 
@@ -105,6 +108,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-27
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Database-layer logic item added in v0.42.0.
