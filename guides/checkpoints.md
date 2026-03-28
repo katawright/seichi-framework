@@ -37,11 +37,11 @@ fatigue.
 
 ---
 
-| Type          | Purpose                                          | Outcome                      |
-| ------------- | ------------------------------------------------ | ---------------------------- |
+| Type          | Purpose                                          | Outcome                                           |
+| ------------- | ------------------------------------------------ | ------------------------------------------------- |
 | **Gate**      | Investment decision — should we continue?        | Proceed / Proceed with conditions / Revise / Stop |
-| **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready            |
-| **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed |
+| **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready                                 |
+| **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed                      |
 
 ---
 
@@ -54,7 +54,10 @@ fatigue.
 - **"Proceed with conditions":** The project continues, but named conditions
   must be met before the next stage begins (e.g., "proceed once legal review
   clears the data-handling approach"). Track conditions in the gate decision
-  record and verify them at the next checkpoint.
+  record and verify them at the next checkpoint. If the next checkpoint is
+  skipped (e.g., collapsed tiers at Minimal), resolve conditions in the first
+  artifact produced after the gate — document evidence inline and note which
+  gate condition it satisfies.
 
 **Examples:**
 
@@ -184,6 +187,6 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-27
 
 Extracted from `guides/stages.md` in v0.42.0.

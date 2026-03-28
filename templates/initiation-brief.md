@@ -14,6 +14,13 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
+> **Tier annotations:** Sections marked
+> `<!-- Minimal: skip this section entirely -->` should be omitted in full — do
+> not write N/A. Sections marked
+> `<!-- Minimal: ... | Standard: ... | Enterprise: ... -->` indicate how to
+> adapt the section's content depth for your project tier. Annotations are HTML
+> comments and are invisible in rendered output.
+
 **Last Updated:** YYYY-MM-DD
 
 ## Right-Sizing This Brief
@@ -54,6 +61,9 @@ spike, experiment) / TBD]
 ## Goals and Success Criteria
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
+<!-- For adoption or usage-based criteria, define the measurement method even at
+     Minimal — "how will we know users adopted this?" prevents ad hoc measurement
+     plans at project close -->
 <!-- Qualitative criteria (PoCs, spikes, exploratory projects) are acceptable when numeric baselines are not feasible. Use the Question / Evaluation criteria / Timeframe template from initiation/reference.md#when-criteria-are-qualitative. -->
 
 - [outcomes with baseline and target where measurable; explicit evaluation
@@ -93,6 +103,8 @@ spike, experiment) / TBD]
 
 ## Project Lead and Stakeholders
 
+<!-- Minimal: the stakeholder table may be simplified to a bulleted list if
+     formal participation tracking is unnecessary -->
 <!-- Identify anyone whose input is needed for requirements, whose sign-off is
      needed for acceptance, or who will be a primary user of the delivered
      system. See guides/roles.md#domain-stakeholders for guidance. -->
@@ -116,13 +128,20 @@ spike, experiment) / TBD]
 
 ## Assumptions (Top 5)
 
+<!-- Minimal: top 3 assumptions sufficient | Standard: top 5 with impact
+     analysis | Enterprise: assumption register with owners -->
+
 - [Assumptions that, if wrong, materially change effort or scope]
 
 ---
 
 ## Risks / Unknowns (Top 5)
 
-<!-- Minimal: mental note of key risks | Standard: documented with likelihood/impact | Enterprise: formal risk register with mitigation plans -->
+<!-- Minimal: mental note of key risks | Standard: documented with
+     likelihood/impact | Enterprise: formal risk register with mitigation plans
+     -->
+<!-- For internal tools: include adoption risk explicitly — the risk that the
+     tool is built but not used -->
 
 For each:
 
@@ -131,8 +150,12 @@ For each:
 
 ---
 
-## Pre-Mortem (Optional)
+## Pre-Mortem
 
+<!-- Minimal: 1–2 bullets minimum; do not skip entirely — pre-mortem reliably
+     surfaces adoption and scope risks even on small projects | Standard: 2–3
+     failure modes with early warning signals | Enterprise: structured
+     risk-assumption mapping with stakeholder input -->
 <!-- Imagine the project has failed. What went wrong? Identify 2-3 plausible
      failure modes before committing resources. -->
 
@@ -144,6 +167,8 @@ For each:
 
 ## Data Sensitivity and Compliance
 
+<!-- Minimal: note data classification and compliance scope only; security
+     architecture is addressed in System Design (Gate 2 concern) -->
 <!-- Security throughline: classify data sensitivity so downstream stages know the
      security posture required. See guides/security.md. -->
 
@@ -157,6 +182,9 @@ GDPR applies because EU users are in scope"]
 ---
 
 ## Constraints and Dependencies
+
+<!-- Minimal: brief bulleted list sufficient | Standard: structured with
+     resolution path and owner -->
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team
   capacity, technology restrictions]
@@ -191,6 +219,9 @@ month enablement program"]
 
 ## Options Considered (At Least One Alternative)
 
+<!-- Minimal: 1–2 alternatives noted briefly; prose acceptable | Standard:
+     structured evaluation with pros/cons -->
+
 - **Option A:** … [pros/cons]
 - **Option B:** … [pros/cons]
 - **Recommendation:** …
@@ -199,7 +230,11 @@ month enablement program"]
 
 ## Range-Based Estimation
 
-<!-- Minimal: rough range | Standard: range-based with confidence label | Enterprise: multiple estimation techniques, sensitivity analysis -->
+<!-- Minimal: rough range | Standard: range-based with confidence label |
+     Enterprise: multiple estimation techniques, sensitivity analysis -->
+<!-- Solo or small team: combine into a single range estimate; "requirements team
+     hypothesis" / "delivery team hypothesis" framing assumes a larger split
+     team — omit those fields if not applicable -->
 
 - **Confidence:** Low / Medium / High [why]
 - **Requirements team hypothesis:** [Time range the requirements/design team
@@ -224,4 +259,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-03-25 | Added in v0.2.0 -->
+<!-- Template Last Updated: 2026-03-27 | Added in v0.2.0. Tier annotations added in v0.42.0 -->

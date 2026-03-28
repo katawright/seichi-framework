@@ -83,7 +83,9 @@ code review approvals,
 [implementation brief](../../templates/implementation-brief.md) with notes, and
 component designs from Increment Design for plan-vs-actual comparison. Check the
 Implementation Brief's Requirements Implemented table for any acceptance
-criteria modifications before planning test cases.
+criteria modifications before planning test cases. If the Implementation Brief
+includes a self-review section, review it before planning test cases to avoid
+duplicating coverage.
 
 > Tests run in the **source code location**; the verification brief is stored in
 > the **artifacts location**. See
@@ -463,6 +465,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.6.0.

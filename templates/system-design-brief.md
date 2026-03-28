@@ -10,6 +10,13 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
+> **Tier annotations:** Sections marked
+> `<!-- Minimal: skip this section entirely -->` should be omitted in full — do
+> not write N/A. Sections marked
+> `<!-- Minimal: ... | Standard: ... | Enterprise: ... -->` indicate how to
+> adapt the section's content depth for your project tier. Annotations are HTML
+> comments and are invisible in rendered output.
+
 **Last Updated:** YYYY-MM-DD
 
 ---
@@ -62,6 +69,8 @@ DevOps Lead, Project Manager]
 
 ## 2. Architecture Decision Records (ADRs)
 
+<!-- Minimal: inline decision notes in this brief using a '### Decision: [topic]'
+     sub-heading per decision rather than separate files in docs/adr/ -->
 <!-- ADRs are separate files stored in docs/adr/ — not embedded in this brief -->
 <!-- Use draft numbering (ADR-DNNN) during System Design; renumber at Gate 2  -->
 
@@ -83,7 +92,10 @@ Data Architecture, API Architecture, etc.).
 
 ## 3. Technology Stack
 
-<!-- Minimal: Document briefly | Standard: Evaluate options, reference ADRs | Enterprise: Formal evaluation matrix -->
+<!-- Minimal: omit rows that don't apply to your architecture — a CLI tool has no
+     Frontend, Cache, or Hosting rows; delete inapplicable rows rather than
+     writing N/A | Standard: evaluate options, reference ADRs | Enterprise:
+     formal evaluation matrix -->
 
 | Category     | Choice   | Justification   | ADR     |
 | ------------ | -------- | --------------- | ------- |
@@ -115,6 +127,9 @@ Data Architecture, API Architecture, etc.).
 
 ## 5. API Architecture
 
+<!-- Minimal: skip this section entirely if the system has no external API
+     surface or inter-service integration -->
+
 ### 5.1 API Design Principles
 
 - **Style:** [REST / GraphQL / gRPC]
@@ -132,12 +147,17 @@ Data Architecture, API Architecture, etc.).
 
 ### 5.3 System-Level Interface Contracts
 
-| Interface        | Provider    | Consumer    | Contract Format | Versioning   |
-| ---------------- | ----------- | ----------- | --------------- | ------------ |
-| [API / Event]    | [Component] | [Component] | [OpenAPI / etc] | [Strategy]   |
+<!-- Minimal: skip this section entirely; system-level interface contracts apply
+     to multi-service architectures -->
 
-- **Contract testing approach:** [How contracts are validated — e.g., consumer-driven contract tests, schema validation]
-- **Breaking change policy:** [How breaking changes are communicated and managed]
+| Interface     | Provider    | Consumer    | Contract Format | Versioning |
+| ------------- | ----------- | ----------- | --------------- | ---------- |
+| [API / Event] | [Component] | [Component] | [OpenAPI / etc] | [Strategy] |
+
+- **Contract testing approach:** [How contracts are validated — e.g.,
+  consumer-driven contract tests, schema validation]
+- **Breaking change policy:** [How breaking changes are communicated and
+  managed]
 
 ---
 
@@ -172,6 +192,10 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ## 7. Observability and Monitoring Design
 
+<!-- Minimal: skip this section entirely for local-only or non-production tools
+     with no infrastructure monitoring; note logging approach in Section 1 if
+     relevant -->
+
 ### 7.1 Instrumentation Strategy
 
 - **Logging:** [Approach, tool, centralization]
@@ -189,6 +213,9 @@ Link each mitigation to an NFR so it is traceable through Verification.
 ---
 
 ## 8. Performance and Scalability Design
+
+<!-- Minimal: skip this section entirely for non-production tools; record known
+     performance constraints as NFRs in Section 9 instead -->
 
 ### 8.1 Performance Targets
 
@@ -255,6 +282,8 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 
 #### Brownfield Readiness Assessment (refined)
 
+<!-- Greenfield projects: omit this sub-section entirely; it applies only to
+     brownfield first-AI-assisted increments -->
 <!-- Include for brownfield first AI-assisted projects. Refine the Initiation
      assessment with evidence gathered during System Design discovery. -->
 
@@ -388,6 +417,8 @@ mitigation]
 
 ## 12. Infrastructure Plan
 
+<!-- Minimal: skip this section entirely for local-only tools with no deployment
+     infrastructure; record the skip rationale in Stage Skip Decisions below -->
 <!-- Scale to project tier:
      Minimal: brief notes on hosting and deployment approach
      Standard: CI/CD pipeline, environment strategy, infrastructure components
@@ -412,6 +443,19 @@ Enterprise tier]
 
 ---
 
+## Stage Skip Decisions (if applicable)
+
+<!-- Record any downstream stages that are skipped for this project, with
+     rationale. This section is the formal skip record referenced by Gate 2.
+     Omit this section entirely if no stages are being skipped. -->
+
+| Stage                | Skipped?   | Rationale                                                    |
+| -------------------- | ---------- | ------------------------------------------------------------ |
+| Deployment (Stage 7) | [Yes / No] | [e.g., local-only tool; no deployment infrastructure]        |
+| Support (Stage 8)    | [Yes / No] | [e.g., no production environment; no support runbook needed] |
+
+---
+
 ## Open Questions
 
 <!-- Tag each question with the consulted role (e.g., @Architect, @AppSec).
@@ -432,4 +476,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0 -->
+<!-- Template Last Updated: 2026-03-27 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0 -->
