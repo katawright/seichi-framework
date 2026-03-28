@@ -1,4 +1,4 @@
-<!-- For guidance on brownfield exit decisions, see guides/brownfield-preparation.md#exit-checkpoint-protocol -->
+<!-- For guidance on brownfield exit decisions, see guides/brownfield-approach.md#exit-checkpoint-protocol -->
 
 # Preparation Exit Decision: [Project — Target Area]
 
@@ -6,7 +6,7 @@
 checkpoint.
 
 **Usage:** Complete after the final preparation increment. See the
-[Brownfield Preparation Guide](../guides/brownfield-preparation.md#exit-checkpoint-protocol)
+[Brownfield Approach Guide](../guides/brownfield-approach.md#exit-checkpoint-protocol)
 for exit criteria and decision options.
 
 **Last Updated:** YYYY-MM-DD
@@ -28,10 +28,9 @@ for exit criteria and decision options.
 | --------------- | ------------: | ------------: | -----: | ----: |
 | Verifiability   |               |               |        |       |
 | Modularity      |               |               |        |       |
-| Deployability   |               |               |        |       |
-| Operability     |               |               |        |       |
 | Discoverability |               |               |        |       |
 | Transparency    |               |               |        |       |
+| Consistency     |               |               |        |       |
 
 - **Initial tier:** T\_\_
 - **Current tier:** T\_\_
@@ -89,4 +88,4 @@ dates)
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.39.0 -->
+<!-- Template Last Updated: 2026-03-28 | Added in v0.39.0 -->

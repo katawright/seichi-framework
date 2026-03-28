@@ -157,8 +157,9 @@ This guide covers the major concepts that structure the framework:
 **[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
 (foundational, iterative, continuous). Full reference: [stages.md](stages.md).
 
-**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Three checkpoint types ensuring
-quality and alignment. Full reference: [Checkpoint Taxonomy](checkpoints.md).
+**[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Three checkpoint types
+ensuring quality and alignment. Full reference:
+[Checkpoint Taxonomy](checkpoints.md).
 
 **[Measurement Throughline](#measurement-throughline)** — Measurable success
 criteria flowing from Initiation through all stages. Full reference:
@@ -675,15 +676,11 @@ logic in database-layer artifacts (stored procedures, triggers, views).
 **Greenfield projects invest foundation work in establishing infrastructure;
 brownfield first AI-assisted projects invest foundation work in discovering and
 documenting existing systems.** The scope of brownfield foundation work varies
-along a scored readiness spectrum — from T5 (Ready) codebases that need only an
-AGENTS.md, through T4-T3 (Approachable/Constrained) that need discovery or
-targeted preparation, to T2-T1 (Challenging/Entrenched) requiring dedicated
-enablement programs, and T0 (Rebuild) where remediation ROI is poor. See the
-[Brownfield Readiness Guide](brownfield-readiness.md) for the rubric and tier
-routing, and the [Brownfield Preparation Guide](brownfield-preparation.md) for
-enablement workstreams and operational preparation guidance. After foundation
-work (where applicable), all project types deliver features using the same
-iterative cycle.
+along a scored readiness spectrum (T0-T5) — from codebases that need only a
+discovery pass to those requiring dedicated enablement programs. See the
+[Brownfield Preparation Guide](brownfield.md) for the full
+assessment-to-enablement process. After foundation work (where applicable), all
+project types deliver features using the same iterative cycle.
 
 ### How the Framework Adapts
 
@@ -713,9 +710,8 @@ establishing CI/CD, environments, monitoring, and deployment from scratch.
 **Brownfield (first AI-assisted)** projects invest foundation work in a
 **discovery increment** — documenting architecture, infrastructure, and
 conventions for AI context. When discovery reveals deeper gaps, foundation may
-extend into active preparation. See the
-[Brownfield Readiness Guide](brownfield-readiness.md) for the readiness
-assessment and routing.
+extend into active enablement. See the
+[Brownfield Preparation Guide](brownfield.md) for the full process.
 
 **Brownfield (subsequent)** projects require no foundation work — proceed
 directly to feature delivery.

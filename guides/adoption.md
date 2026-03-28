@@ -170,7 +170,7 @@ projects, **codebase readiness** also matters — the state of the existing
 codebase affects how quickly teams can start AI-assisted feature work.
 
 Use the [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
-to score the codebase across six axes and determine the readiness tier.
+to score the codebase across five axes and determine the readiness tier.
 
 - **T5 Ready / T4 Approachable** — Proceed with standard discovery increment
 - **T3 Constrained** — Factor targeted preparation into timeline
@@ -345,8 +345,8 @@ When a brownfield codebase needs significant preparation, the preparation
 project itself can serve as the adoption pilot. The team builds framework
 fluency on familiar code while producing immediately valuable outputs (tests,
 documentation, dependency maps). See the
-[Brownfield Preparation Guide](brownfield-preparation.md#preparation-as-adoption-pilot)
-for the full approach, rationale, and sequencing guidance.
+[Brownfield Preparation Guide](brownfield.md#preparation-as-adoption-pilot) for
+the full approach, rationale, and sequencing guidance.
 
 #### Pre-Pilot Readiness Checklist
 

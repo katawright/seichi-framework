@@ -79,12 +79,15 @@ for scoring definitions.
 | --------------- | ----: | --------------------------------------------------------------------------------------------- |
 | Verifiability   |     2 | Integration tests exist for payment flows; no unit tests; CI runs tests but is flaky          |
 | Modularity      |     2 | Service layer exists but controller logic leaks into services; no clear bounded contexts      |
-| Deployability   |     1 | Scripted deploy but manual steps remain; no rollback tested; schema changes done via raw SQL  |
-| Operability     |     2 | Application logs exist; basic health check endpoint; no structured alerting or dashboards     |
 | Discoverability |     1 | Wiki is 18 months stale; only the original developer knows the stored procedure logic         |
 | Transparency    |     1 | 30+ stored procedures with business rules; no documentation of what they do or when they fire |
+| Consistency     |     1 | No documented conventions; 5 years of organic growth; patterns vary by area and era           |
 
-**Total: 9 → Tier T2 (Challenging)**
+**Total: 7 → Tier T2 (Challenging)**
+
+> **Supplementary evaluation:** Deployability 1 (scripted deploy but manual
+> steps remain; no rollback tested). Observability 2 (application logs exist;
+> basic health check endpoint; no structured alerting).
 
 ### Quick-Pass Implications
 
@@ -145,16 +148,16 @@ codebase analysis). The detailed scores confirm T2 with one adjustment:
 
 - Modularity moves from 2 → 2 (confirmed — service layer boundaries exist but
   leak)
-- Deployability stays at 1 (confirmed — deploy script has 3 undocumented manual
-  steps)
 - Transparency stays at 1 (confirmed — 30 stored procedures, 12 contain business
   rules)
+- Consistency stays at 1 (confirmed — 3 different data access patterns across
+  the service layer; no documented conventions)
 
-**Total: 9 (confirmed T2)**
+**Total: 7 (confirmed T2)**
 
 The team scopes preparation to the **customer account management** area of the
 codebase — the bounded context where the self-service portal will integrate.
-This is [bounded preparation](brownfield-readiness.md#bounded-preparation):
+This is [bounded preparation](brownfield-approach.md#bounded-preparation):
 prepare the target area, not the entire system.
 
 ---
@@ -164,8 +167,8 @@ prepare the target area, not the entire system.
 The discovery increment follows the framework's iterative cycle (Increment
 Design → Implementation → Verification → Deployment) but the "features" are
 preparation outputs. See the
-[Brownfield Preparation Guide](brownfield-preparation.md) for the full
-preparation approach.
+[Brownfield Enablement Guide](brownfield-enablement.md) for the full preparation
+approach.
 
 ### Increment Design Brief (Preparation)
 
@@ -181,15 +184,20 @@ work can begin there.
    rules in the customer account domain
 2. Discoverability (1→2+): Update architecture documentation for the customer
    account area; create AGENTS.md
-3. Deployability (1→2+): Document deploy process; add rollback capability
+3. Consistency (1→2+): Document canonical patterns in AGENTS.md; establish
+   coding conventions for the target area
 4. Verifiability (2→3): Add unit tests for customer account service layer
+
+**Supplementary preparation:**
+
+- Deployability (1→2+): Document deploy process; add rollback capability
 
 **Deliverables:**
 
 - Stored procedure documentation (what each does, when it fires, business rules
   it enforces)
 - Updated architecture diagram for customer account bounded context
-- AGENTS.md with project conventions and constraints
+- AGENTS.md with project conventions, canonical patterns, and constraints
 - Deploy runbook with rollback procedure tested in staging
 - 15+ unit tests covering customer account service layer
 ```
@@ -225,23 +233,25 @@ The team uses AI in T2 advisory mode during preparation:
 ## Exit Checkpoint
 
 After the preparation increment, the team runs an exit checkpoint per the
-[Exit Checkpoint Protocol](brownfield-preparation.md#exit-checkpoint-protocol).
+[Exit Checkpoint Protocol](brownfield-approach.md#exit-checkpoint-protocol).
 
 ### Re-Assessment (Target Area Only)
 
 The team re-scores the **customer account area** (not the full system) using the
 [Re-Assessment Protocol](brownfield-readiness.md#readiness-re-assessment-protocol):
 
-| Axis            | Before | After | Change | Evidence                                                  |
-| --------------- | -----: | ----: | -----: | --------------------------------------------------------- |
-| Verifiability   |      2 |     3 |     +1 | 18 unit tests + existing integration tests; CI stabilized |
-| Modularity      |      2 |     2 |      0 | Service layer boundaries unchanged; below T3 threshold    |
-| Deployability   |      1 |     2 |     +1 | Documented runbook; rollback tested; still manual         |
-| Operability     |      2 |     2 |      0 | No change (not targeted this increment)                   |
-| Discoverability |      1 |     3 |     +2 | AGENTS.md, updated architecture docs, procedure docs      |
-| Transparency    |      1 |     2 |     +1 | 12 stored procedures documented with business rules       |
+| Axis            | Before | After | Change | Evidence                                                                |
+| --------------- | -----: | ----: | -----: | ----------------------------------------------------------------------- |
+| Verifiability   |      2 |     3 |     +1 | 18 unit tests + existing integration tests; CI stabilized               |
+| Modularity      |      2 |     2 |      0 | Service layer boundaries unchanged; below T3 threshold                  |
+| Discoverability |      1 |     3 |     +2 | AGENTS.md, updated architecture docs, procedure docs                    |
+| Transparency    |      1 |     2 |     +1 | 12 stored procedures documented with business rules                     |
+| Consistency     |      1 |     2 |     +1 | Conventions in AGENTS.md; canonical data access pattern for target area |
 
-**Target area total: 14 → Tier T3 (Constrained)**
+**Target area total: 12 → Tier T3 (Constrained)**
+
+> **Supplementary:** Deployability improved 1→2 (documented runbook; rollback
+> tested; still manual). Observability unchanged at 2.
 
 ### Exit Decision
 
@@ -250,12 +260,13 @@ Using the
 
 **Decision: Conditional Go**
 
-- **Thresholds partially met:** Verifiability 3+ and all non-core axes 2+ — but
+- **Thresholds partially met:** Verifiability 3+ and all other axes 2+ — but
   Modularity at 2 falls short of T3's 3+ requirement
 - **Remaining gaps:** Modularity at 2 (service layer boundaries leak) —
   mitigated by scoping AI-generated code to the customer account service layer
-  where boundaries are clearest; Deployability at 2 (manual deploy) — mitigated
-  by deploy runbook and tested rollback procedure
+  where boundaries are clearest
+- **Supplementary note:** Deployability at 2 (manual deploy) — mitigated by
+  deploy runbook and tested rollback procedure
 - **AI operating mode for feature work:** T3 — AI writes production code in the
   customer account area (well-covered); AI is advisory for changes touching
   other areas
@@ -417,6 +428,8 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-28
 
-Added to framework in v0.40.0.
+Added to framework in v0.40.0. Scores recalculated for five-axis rubric
+(Consistency added; Deployability and Observability moved to supplementary
+considerations).

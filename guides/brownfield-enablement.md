@@ -1,11 +1,14 @@
-# Brownfield Preparation Guide
+# Brownfield Enablement Guide
 
 ## Overview
 
-Operational guide for preparing a brownfield codebase for AI-assisted feature
-work — from discovery activities through multi-increment preparation projects.
+Operational guide for brownfield enablement — discovery activities, enablement
+workstreams, and infrastructure planning. For strategic decisions about
+investment model, preparation scope, and exit criteria, see the
+[Brownfield Approach Guide](brownfield-approach.md). For the overall brownfield
+preparation process, see the [Brownfield Preparation Guide](brownfield.md).
 
-### Why Brownfield Preparation
+### Why Brownfield Enablement
 
 Brownfield codebases that score below T5 on the
 [readiness rubric](brownfield-readiness.md#readiness-rubric) need preparation
@@ -19,38 +22,32 @@ open-ended refactoring project that never reaches feature work).
 - Define discovery and preparation activities by readiness dimension
 - Provide infrastructure planning guidance for first AI-assisted projects
 - Connect preparation work to the framework's iterative stage cycle
-- Establish what "enough preparation" means for each dimension
 
 ### Key Principle
 
-Preparation is bounded, not open-ended. The goal is "enough to start AI-assisted
-feature work in targeted areas," not "perfect codebase." Define the target area,
-prepare it, deliver features, then expand preparation incrementally.
-
-The trade-off: bounded preparation means future projects that touch unprepared
-areas of the codebase may need their own preparation pass. Factor this into
-project planning — preparation is a per-area investment, not a one-time cost.
-
-When modularity is low and coupling is high, isolating a target area may not be
-feasible — changes ripple across boundaries and foundational layers can't be
-sliced. In these cases, invest in creating isolation first (seams,
-anti-corruption layers) or widen the preparation scope to cover the coupled
-areas.
+Preparation is not open-ended. The goal is "enough to start AI-assisted feature
+work," not "perfect codebase." How preparation is scoped — full codebase,
+bounded area, or interleaved with feature work — depends on both codebase state
+and organizational context. See the
+[Brownfield Approach Guide](brownfield-approach.md#preparation-scope) for
+scoping strategy and the
+[Investment Models](brownfield-approach.md#investment-models) for the range of
+approaches.
 
 ### How to Use This Guide
 
-1. Complete the readiness rubric in the
-   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric) first
-2. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
+1. Complete the readiness assessment in the
+   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
+2. Choose your investment model and preparation scope in the
+   [Brownfield Approach Guide](brownfield-approach.md)
+3. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
    projects (T4 and below)
-3. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
+4. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
    that scored lowest
-4. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
+5. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
    what "enough" looks like per axis
-5. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
+6. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
    System Design outputs specific to brownfield projects
-6. Consider [**Preparation as Adoption Pilot**](#preparation-as-adoption-pilot)
-   when treating preparation as your organization's first framework experience
 
 ---
 
@@ -138,27 +135,6 @@ understanding the entire system.
 - **Anti-corruption layers** — wrap legacy hotspots behind clean interfaces so
   AI-assisted code doesn't need to understand legacy internals
 
-### Deployability
-
-Ensure AI-generated changes can ship safely and roll back quickly.
-
-- **One-click deploy and rollback** — automate the deploy pipeline end-to-end
-- **Environment reproducibility** — infrastructure as code or documented
-  provisioning so environments don't drift
-- **Schema discipline** — DB migration tooling, backward-compatible schema
-  changes, migration runbooks with rollback strategy
-- **Release gating** — health checks, canary or blue-green where possible
-
-### Operability
-
-Ensure the team can see the impact of changes and diagnose issues quickly.
-
-- **Service-level dashboards** — key metrics visible at a glance
-- **Structured logs and traces** — in critical paths, enabling fast diagnosis
-  without depending on specific people
-- **Incident runbooks** — documented response procedures for common failure
-  modes
-
 ### Discoverability
 
 Replace tribal knowledge with documented, AI-accessible context.
@@ -184,6 +160,50 @@ Surface hidden business logic so AI tools can reason about it.
 - **Extract where practical** — move business logic from the database layer to
   application code where the cost of extraction is justified
 
+### Consistency
+
+Establish clear conventions so AI follows the right patterns.
+
+- **Document canonical patterns** — for common tasks (API endpoints, error
+  handling, data access, validation), document which pattern is the current
+  standard in AGENTS.md or a conventions guide
+- **Add linting and formatting rules** — automated enforcement catches
+  deviations before review
+- **Converge gradually** — when migrating between patterns, document which is
+  old and which is new; set a migration timeline rather than maintaining both
+  indefinitely
+
+### Deployability
+
+> Deployability is not a readiness rubric axis (see
+> [Supplementary Considerations](brownfield-readiness.md#supplementary-considerations))
+> but remains an important preparation activity for shipping at AI-assisted
+> pace.
+
+Ensure AI-generated changes can ship safely and roll back quickly.
+
+- **One-click deploy and rollback** — automate the deploy pipeline end-to-end
+- **Environment reproducibility** — infrastructure as code or documented
+  provisioning so environments don't drift
+- **Schema discipline** — DB migration tooling, backward-compatible schema
+  changes, migration runbooks with rollback strategy
+- **Release gating** — health checks, canary or blue-green where possible
+
+### Observability
+
+> Observability is not a readiness rubric axis (see
+> [Supplementary Considerations](brownfield-readiness.md#supplementary-considerations))
+> but remains an important preparation activity for monitoring the higher pace
+> of change.
+
+Ensure the team can see the impact of changes and diagnose issues quickly.
+
+- **Service-level dashboards** — key metrics visible at a glance
+- **Structured logs and traces** — in critical paths, enabling fast diagnosis
+  without depending on specific people
+- **Incident runbooks** — documented response procedures for common failure
+  modes
+
 ---
 
 ## Preparation Activities by Axis
@@ -194,7 +214,8 @@ system — scores high enough on the
 [readiness rubric](brownfield-readiness.md#readiness-rubric) that the axis no
 longer blocks AI-assisted work in that area. Re-score the target area after each
 preparation cycle to decide whether to continue preparing or start feature work
-(see [Exit Checkpoint Protocol](#exit-checkpoint-protocol)).
+(see
+[Exit Checkpoint Protocol](brownfield-approach.md#exit-checkpoint-protocol)).
 
 > **Bounded preparation:** You don't need to prepare the entire codebase — only
 > the area targeted for initial AI-assisted feature work. Expand preparation to
@@ -215,54 +236,15 @@ increments:
    (Discoverability, Modularity)
 2. **Increment 2:** Establish test coverage for critical business paths
    (Verifiability)
-3. **Increment 3:** Surface and document database-layer business logic
-   (Transparency)
-4. **Increment 4:** Harden deployability and observability (Deployability,
-   Operability)
+3. **Increment 3:** Surface and document database-layer business logic;
+   establish canonical patterns (Transparency, Consistency)
+4. **Increment 4:** Harden deployability and observability (supplementary
+   preparation)
 
 Each increment follows the framework's iterative cycle (Increment Design -->
 Implementation --> Verification --> Deployment). See the
 [Project Foundation Guide](project-foundation.md#how-foundation-work-flows-through-stages)
 for how foundation work maps to stages.
-
----
-
-## Exit Checkpoint Protocol
-
-After each preparation increment, evaluate whether the target area is ready for
-AI-assisted feature work. Run the exit checkpoint at minimum after the second
-preparation increment — the first increment rarely provides enough signal.
-
-### Decision Framework
-
-| Decision           | Criteria                                                                                                   |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| **Go**             | Target area meets exit thresholds for intended AI operating mode; no critical gaps remain                  |
-| **Conditional Go** | Most thresholds met; remaining gaps have documented mitigations that don't block feature work              |
-| **Extend**         | Clear progress but specific axes still below threshold; one more increment has a concrete improvement plan |
-| **Pivot**          | No meaningful improvement after a preparation increment; structural issues resist incremental preparation  |
-
-### Thresholds
-
-Exit thresholds depend on the intended AI operating mode for feature work:
-
-| Intended Mode     | Exit Threshold                              |
-| ----------------- | ------------------------------------------- |
-| T5 (Ready)        | All axes 3+ in target area                  |
-| T4 (Approachable) | All axes 2+, no axis 0                      |
-| T3 (Constrained)  | Verifiability and Modularity 3+; rest 2+    |
-| Below T3          | Consider Pivot — preparation ROI diminishes |
-
-### Recording the Decision
-
-Use the
-[Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md)
-to record the before/after scores, completed increments, remaining gaps, and the
-go/no-go decision.
-
-> **Cross-reference:** The
-> [Readiness Re-Assessment Protocol](brownfield-readiness.md#readiness-re-assessment-protocol)
-> describes how to re-score the target area between checkpoints.
 
 ---
 
@@ -310,37 +292,6 @@ features.
 
 ---
 
-## Preparation as Adoption Pilot
-
-When a brownfield codebase needs significant preparation, the preparation
-project itself can serve as the organization's adoption pilot for the framework.
-
-**Key insight:** Preparation work — adding tests, documenting architecture,
-mapping dependencies — exercises the framework's stages on familiar code. The
-team builds framework fluency on territory they already know.
-
-**Approach:**
-
-1. Run 1-2 preparation increments through the framework's full cycle (Increment
-   Design --> Implementation --> Verification --> Deployment)
-2. Evaluate results using the
-   [Adoption Guide success criteria](adoption.md#success-criteria-for-phase-2)
-3. Decide whether to complete the full preparation project or adjust the
-   approach
-
-**Why this works:**
-
-- Preparation outputs (tests, documentation, dependency maps) have immediate
-  value regardless of whether the organization continues with the framework
-- The team gains hands-on framework experience before tackling new feature work
-- Lower risk than piloting on new feature development — preparation changes are
-  additive, not behavior-changing
-
-For the full organizational adoption context, see the
-[Organizational Adoption Guide](adoption.md#brownfield-preparation-as-a-pilot).
-
----
-
 ## Common Blind Spots
 
 Preparation scoped too narrowly is the most common cause of brownfield project
@@ -380,6 +331,11 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-28
 
-Added to framework in v0.37.0. Exit Checkpoint Protocol added in v0.39.0.
+Added to framework in v0.37.0. Renamed from Brownfield Preparation Guide to
+Brownfield Enablement Guide as part of the brownfield guide restructuring
+(readiness → approach → enablement). Exit Checkpoint Protocol and Preparation as
+Adoption Pilot moved to the [Brownfield Approach Guide](brownfield-approach.md).
+Consistency workstream added; Operability renamed to Observability; workstreams
+reordered (rubric axes first, then supplementary).
