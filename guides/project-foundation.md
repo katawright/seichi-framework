@@ -121,20 +121,15 @@ re-ingesting the full bootstrap artifact set.
 
 Brownfield projects using AI assistance for the first time invest foundation
 work in building the basis for effective AI collaboration. Brownfield codebases
-exist on a readiness spectrum scored across six axes — from T5 (Ready) through
+exist on a readiness spectrum scored across five axes — from T5 (Ready) through
 T4 (Approachable) and T3 (Constrained) to T2/T1 (Challenging/Entrenched) and T0
 (Rebuild). The scope of foundation work depends on where your codebase falls on
 this spectrum.
 
-- **Assess readiness -->** [Brownfield Readiness Guide](brownfield-readiness.md)
-  — scored rubric, tier mapping, AI operating modes, multi-repo and database
-  considerations, requirements constraints
-- **Plan and execute preparation -->**
-  [Brownfield Preparation Guide](brownfield-preparation.md) — enablement
-  workstreams, preparation by axis, infrastructure planning, preparation as
-  adoption pilot
-
-For the conceptual overview and stage adaptation table, see the
+For the brownfield preparation process (readiness assessment, approach planning,
+and operational enablement), see the
+[Brownfield Preparation Guide](brownfield.md). For the conceptual overview and
+stage adaptation table, see the
 [Framework Guide](framework.md#greenfield-vs-brownfield-projects).
 
 ---
@@ -148,7 +143,7 @@ its infrastructure plan.
 For the conceptual overview of greenfield vs. brownfield adaptation, see the
 [Framework Guide](framework.md#greenfield-vs-brownfield-projects). For
 brownfield-specific infrastructure planning, see the
-[Brownfield Preparation Guide](brownfield-preparation.md#brownfield-infrastructure-planning).
+[Brownfield Enablement Guide](brownfield-enablement.md#brownfield-infrastructure-planning).
 
 ### Greenfield Infrastructure Planning
 

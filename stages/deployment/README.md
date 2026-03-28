@@ -486,7 +486,7 @@ it when production validation justifies the additional complexity.
 > **Brownfield projects:** Shadow mode is especially valuable for T2-T3 projects
 > transitioning from preparation to feature work, where test coverage may not
 > yet capture all production edge cases. See the
-> [Brownfield Readiness Guide](../../guides/brownfield-readiness.md#ai-operating-modes)
+> [Brownfield Approach Guide](../../guides/brownfield-approach.md#ai-operating-modes)
 > for tier-specific guidance.
 
 ### Monitoring and Observability

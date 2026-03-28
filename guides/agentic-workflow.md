@@ -72,8 +72,8 @@ model.
 For brownfield projects introducing AI assistance for the first time, route
 through stages with additional focus:
 
-1. **Initiation** — assess brownfield readiness across six axes (safety net,
-   modularity, deployability, operability, discoverability, transparency). See
+1. **Initiation** — assess brownfield readiness across five axes (verifiability,
+   modularity, discoverability, transparency, consistency). See
    [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
 2. **System Design** — refine the readiness assessment with evidence, plan
    discovery or preparation increments, and define feature flag strategy for
