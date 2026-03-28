@@ -2,13 +2,21 @@
 
 # Increment Design Brief
 
-> **Stage guide:** [Increment Design README](../stages/increment-design/README.md)
+> **Stage guide:**
+> [Increment Design README](../stages/increment-design/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
 > be **confirmed** (verified — remove tag), **challenged** (incorrect — update
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
+
+> **Tier annotations:** Sections marked
+> `<!-- Minimal: skip this section entirely -->` should be omitted in full — do
+> not write N/A. Sections marked
+> `<!-- Minimal: ... | Standard: ... | Enterprise: ... -->` indicate how to
+> adapt the section's content depth for your project tier. Annotations are HTML
+> comments and are invisible in rendered output.
 
 **Last Updated:** YYYY-MM-DD
 
@@ -27,9 +35,10 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Execution Pattern:** Iterative (see
   [AI-Assisted SDLC Stages](../guides/stages.md))
 - **Primary Role:** Engineers
-- **Supporting Roles:** Architect, QA Engineers, Product Manager, Project Manager
-- **Checkpoint:** Review (optional for Minimal; recommended for
-  Standard; required for Enterprise)
+- **Supporting Roles:** Architect, QA Engineers, Product Manager, Project
+  Manager
+- **Checkpoint:** Review (optional for Minimal; recommended for Standard;
+  required for Enterprise)
 - **Depends On:** [e.g., Increment 0 / None — inter-increment dependencies]
 - **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this
   increment's design]
@@ -38,10 +47,8 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 ## Carry Forward Resolution (if applicable)
 
-<!-- If a retrospective was conducted before this increment, list each
-     carry-forward item and how it is addressed in this increment's scope.
-     Reference the retrospective by filename. Omit this section for the
-     first increment. -->
+<!-- Omit this section entirely for the first increment, or if no retrospective
+     was conducted before this increment. Do not write N/A. -->
 
 | Carry-Forward Item | Source       | Disposition in This Increment                    |
 | ------------------ | ------------ | ------------------------------------------------ |
@@ -76,6 +83,8 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 ### Foundation Readiness Targets (if applicable)
 
+<!-- Omit this section entirely for standard feature increments. Include only for
+     Increment 0 (bootstrap/discovery). Do not write N/A. -->
 <!-- Include for foundation/discovery increments (greenfield or brownfield).
      Maps readiness axes to concrete deliverables for this increment. See
      guides/brownfield-readiness.md#readiness-rubric.
@@ -133,7 +142,8 @@ stateful, approach]
 
 ## 3. Data and State Changes
 
-<!-- Include sections below that apply to your project. Not all projects require data storage or schema changes. -->
+<!-- Minimal: omit this section entirely if this increment introduces no schema
+     changes, new data storage, or state management changes. Do not write N/A. -->
 
 ### 3.1 State Management Changes
 
@@ -160,7 +170,8 @@ stateful, approach]
 
 ## 4. Interface Specifications
 
-<!-- Include sections below that apply to your project. Choose the interface types relevant to your technology stack. -->
+<!-- Minimal: omit this section entirely if this increment introduces no new or
+     changed external interfaces. Do not write N/A. -->
 
 ### 4.1 Interfaces
 
@@ -268,4 +279,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0 -->
+<!-- Template Last Updated: 2026-03-27 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0 -->

@@ -145,6 +145,26 @@ Files fall into categories that may have type-specific conventions:
   templates, see
   [Agentic Workflow Guide: Revision History Roles](guides/agentic-workflow.md#revision-history-roles)
 
+**Template annotation convention:**
+
+- Templates use tier-aware HTML comment annotations to signal which sections
+  agents should skip or simplify at a given project tier
+- Three annotation forms:
+  - **Skip:** `<!-- Minimal: skip this section entirely -->`
+  - **Tiered depth:**
+    `<!-- Minimal: [brief] | Standard: [full] | Enterprise: [comprehensive] -->`
+  - **Cross-reference:**
+    `<!-- Minimal: reference [source] rather than restate; include only deviations -->`
+- When a section should be omitted entirely (including its heading), the
+  annotation must say "omit this section entirely" or "skip this section
+  entirely" — "if applicable" alone is insufficient, as agents default to
+  writing N/A instead of omitting
+- Annotations go directly above the section heading or as the first line inside
+  the section (for tiered-depth forms that modify content rather than replace
+  it)
+- See [ADR-003](docs/adr/ADR-003.md) for the decision rationale and alternatives
+  considered
+
 ---
 
 ## Tone and Language
@@ -394,6 +414,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.19.0.

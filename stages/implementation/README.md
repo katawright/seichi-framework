@@ -67,8 +67,8 @@ required: architecture diagrams from System Design,
 and the
 [success criteria register](../../templates/success-criteria-register.md) for
 measurement throughline continuity. Your development environment should be set
-up and ready. For rework cycles, also gather defect reports and the
-verification brief from the previous verification cycle (see
+up and ready. For rework cycles, also gather defect reports and the verification
+brief from the previous verification cycle (see
 [Rework Briefs](#rework-briefs-delta-only) below).
 
 > This stage operates from the **source code location**. Design briefs and
@@ -172,14 +172,14 @@ For assistance level details, see the
 Not every project needs formal pull request processes or comprehensive
 instrumentation. Match your Implementation effort to your project's risk tier.
 
-| Practice               | Minimal                                   | Standard                                                     | Enterprise                                                            |
-| ---------------------- | ----------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |
-| **Code review**        | Self-review or informal peer check        | PR-based review with at least one reviewer                   | Formal review with multiple reviewers, audit trail                    |
-| **ADRs**               | Brief notes on key decisions              | ADRs for significant implementation choices                  | Comprehensive ADRs with compliance traceability                       |
-| **Unit test coverage** | Tests for critical paths                  | Coverage targets (e.g., 80%), CI enforcement                 | High coverage targets, mutation testing                               |
-| **Instrumentation**    | Basic logging                             | Structured logging, key metrics, error tracking              | Full observability — traces, metrics, logs, alerts                    |
-| **Security practices** | AI-automated dep scan + secrets detection | Dependency scanning, SAST (static analysis), security review | SAST/DAST (static + dynamic analysis) scanning, security review gates |
-| **PR size/process**    | Commit directly or small PRs              | Small PRs with descriptive messages                          | Small PRs with linked tickets, change management                      |
+| Practice               | Minimal                                                                                                  | Standard                                                     | Enterprise                                                            |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |
+| **Code review**        | Self-review or informal peer check (requirements coverage, error handling, edge cases, security surface) | PR-based review with at least one reviewer                   | Formal review with multiple reviewers, audit trail                    |
+| **ADRs**               | Brief notes on key decisions                                                                             | ADRs for significant implementation choices                  | Comprehensive ADRs with compliance traceability                       |
+| **Unit test coverage** | Tests for critical paths                                                                                 | Coverage targets (e.g., 80%), CI enforcement                 | High coverage targets, mutation testing                               |
+| **Instrumentation**    | Basic logging                                                                                            | Structured logging, key metrics, error tracking              | Full observability — traces, metrics, logs, alerts                    |
+| **Security practices** | AI-automated dep scan + secrets detection                                                                | Dependency scanning, SAST (static analysis), security review | SAST/DAST (static + dynamic analysis) scanning, security review gates |
+| **PR size/process**    | Commit directly or small PRs                                                                             | Small PRs with descriptive messages                          | Small PRs with linked tickets, change management                      |
 
 Expand Implementation only when needed:
 
@@ -430,6 +430,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-27
 
 Added to framework in v0.5.0.

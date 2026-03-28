@@ -10,6 +10,13 @@
 > and remove tag), or **carried forward** (unverifiable now — leave tag and note
 > as a gate condition).
 
+> **Tier annotations:** Sections marked
+> `<!-- Minimal: skip this section entirely -->` should be omitted in full — do
+> not write N/A. Sections marked
+> `<!-- Minimal: ... | Standard: ... | Enterprise: ... -->` indicate how to
+> adapt the section's content depth for your project tier. Annotations are HTML
+> comments and are invisible in rendered output.
+
 **Last Updated:** YYYY-MM-DD
 **Project:** [Project Name]
 **Increment:** [Increment Number/Name]
@@ -19,6 +26,7 @@
 **Status:** [In Progress / Code Review / Complete]
 **Related System Design:** [Link to system-design-brief.md]
 **Constraining ADRs:** [ADR-NNNN, ADR-NNNN]
+
 <!-- Constraining ADRs: list ADRs from System Design or prior increments that
      restrict implementation choices for this increment (e.g., technology
      selections, API conventions, data patterns). Omit ADRs that don't affect
@@ -39,11 +47,11 @@
 
 ### Requirements Implemented
 
-| Requirement ID | Description         | AC Met     | AC Modifications                  |
-| -------------- | ------------------- | ---------- | --------------------------------- |
-| FR-X           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
-| FR-Y           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
-| NFR-Z          | [Brief description] | [✅/⚠️/❌] | [None / Modified: description]    |
+| Requirement ID | Description         | AC Met     | AC Modifications               |
+| -------------- | ------------------- | ---------- | ------------------------------ |
+| FR-X           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description] |
+| FR-Y           | [Brief description] | [✅/⚠️/❌] | [None / Modified: description] |
+| NFR-Z          | [Brief description] | [✅/⚠️/❌] | [None / Modified: description] |
 
 AC modifications require PM consultation before implementation. Record the
 agreed modification and rationale in the AC Modifications column as evidence
@@ -52,6 +60,10 @@ that the consultation occurred.
 <!-- Status key: ✓ Complete · ⚠ In progress · ✗ Not started -->
 
 ### Scope Summary
+
+<!-- Minimal: reference the Increment Design brief rather than restate scope.
+     Record deviations from the design only — if implementation matched the
+     design, a one-line reference is sufficient. -->
 
 **What was built:**
 
@@ -65,6 +77,9 @@ that the consultation occurred.
 ---
 
 ## Pull Requests
+
+<!-- Minimal: mark N/A for solo developers committing directly to a branch
+     without formal PR review -->
 
 **Branching Strategy:** [Trunk-based / Increment branch] **Target Branch:**
 [main / develop / feature/name]
@@ -234,6 +249,10 @@ register]
 
 ### Requirements Traceability
 
+<!-- Minimal: omit if AC traceability is maintained in the Increment Design and
+     Verification briefs. Include only if this brief is the primary traceability
+     record. -->
+
 | Requirement | Implementation                     | Unit Tests                  | Ready?  |
 | ----------- | ---------------------------------- | --------------------------- | ------- |
 | FR-X        | `module/component.py` (line XX-YY) | `test_component.py::test_x` | [✅/❌] |
@@ -268,12 +287,16 @@ register]
 
 ### Deployment Notes
 
+<!-- Minimal: omit for local-only tools with no deployment infrastructure -->
+
 - Database migrations required
 - Configuration changes needed
 - Environment variables to set
 - Feature flags to enable/disable
 
 ### Rollback Plan
+
+<!-- Minimal: omit for local-only tools with no deployment infrastructure -->
 
 1. [Step 1: e.g., Disable feature flag X]
 2. [Step 2: e.g., Revert to previous deployment]
@@ -302,4 +325,4 @@ register]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.5.0 -->
+<!-- Template Last Updated: 2026-03-27 | Added in v0.5.0. Tier annotations added in v0.42.0 -->
