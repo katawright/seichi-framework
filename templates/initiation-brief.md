@@ -200,7 +200,7 @@ GDPR applies because EU users are in scope"]
      two-pass model and #readiness-rubric for axis definitions. -->
 
 **Estimated readiness tier:** [T0-T5] — [Ready / Approachable / Constrained /
-Challenging / Entrenched / Rebuild]
+Challenging / Hostile / Rebuild]
 
 **Estimated preparation effort:** [e.g., "None", "1-2 week discovery", "2-4
 month enablement program"]

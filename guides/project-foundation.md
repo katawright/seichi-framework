@@ -122,7 +122,7 @@ re-ingesting the full bootstrap artifact set.
 Brownfield projects using AI assistance for the first time invest foundation
 work in building the basis for effective AI collaboration. Brownfield codebases
 exist on a readiness spectrum scored across five axes — from T5 (Ready) through
-T4 (Approachable) and T3 (Constrained) to T2/T1 (Challenging/Entrenched) and T0
+T4 (Approachable) and T3 (Constrained) to T2/T1 (Challenging/Hostile) and T0
 (Rebuild). The scope of foundation work depends on where your codebase falls on
 this spectrum.
 

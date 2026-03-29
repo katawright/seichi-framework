@@ -3,10 +3,10 @@
 ## Overview
 
 Assessment framework for evaluating brownfield codebase readiness for
-AI-assisted development. Score your codebase, determine your readiness tier,
-then proceed to the [Brownfield Approach Guide](brownfield-approach.md) to
-choose your preparation strategy. For the overall brownfield preparation
-process, see the [Brownfield Preparation Guide](brownfield.md).
+AI-assisted development. Understand the readiness tiers and what AI can do at
+each level, then score your codebase to determine where you stand. For the
+overall brownfield preparation process, see the
+[Brownfield Preparation Guide](brownfield.md).
 
 ### Why Brownfield Readiness
 
@@ -21,6 +21,7 @@ about effectively).
 ### Goals of This Guide
 
 - Define the full brownfield readiness spectrum from Ready to Rebuild
+- Describe what AI can and cannot do at each readiness tier
 - Provide a scored rubric for evaluating codebase readiness across five axes
 - Map scores to readiness tiers that inform preparation strategy
 - Address multi-repository and database considerations that extend beyond a
@@ -36,14 +37,15 @@ small.
 
 ### How to Use This Guide
 
-1. Score your codebase using the [**Readiness Rubric**](#readiness-rubric) (five
-   axes, 0-4 each)
-2. Map your total score to a [**Readiness Tier**](#readiness-tiers) (T0-T5)
+1. Read the [**Readiness Tiers**](#readiness-tiers) to understand the spectrum
+   and what AI can do at each level
+2. Score your codebase using the [**Readiness Rubric**](#readiness-rubric) (five
+   axes, 0-4 each) to determine your tier
 3. Check
    [**Multi-Repository and Database Considerations**](#multi-repository-and-database-considerations)
    if your system extends beyond a single repository
 4. Proceed to the [**Brownfield Approach Guide**](brownfield-approach.md) to
-   choose your investment model, AI operating mode, and preparation strategy
+   choose your investment model and preparation strategy
 
 ### When to Assess
 
@@ -70,7 +72,114 @@ committing to Requirements and System Design work.
 
 ---
 
-## Why These Axes
+## Readiness Tiers
+
+Six tiers define the spectrum of brownfield codebase readiness. Each tier
+describes what AI can and cannot do at that readiness level — what "using AI"
+means in practice, where guardrails are needed, and where AI should not be
+trusted. For preparation strategy at each tier, see the
+[Brownfield Approach Guide](brownfield-approach.md#investment-models).
+
+| Total | Tier | Label            | AI Operating Mode                                                |
+| ----: | ---- | ---------------- | ---------------------------------------------------------------- |
+| 17-20 | T5   | **Ready**        | AI accelerates broadly with normal controls.                     |
+| 13-16 | T4   | **Approachable** | Near-full AI capability; closer review for pattern adherence.    |
+|  9-12 | T3   | **Constrained**  | AI scoped to well-understood areas; advisory elsewhere.          |
+|   5-8 | T2   | **Challenging**  | AI mostly advisory; does not drive production code at scale.     |
+|   2-4 | T1   | **Hostile**   | AI helps locally only; system-level change remains human-driven. |
+|   0-1 | T0   | **Rebuild**      | AI limited to knowledge extraction and localized maintenance.    |
+
+> **Override rule:** If any single axis scores **0**, bump down at least one
+> tier unless the blast radius of that axis is contained to a small, isolatable
+> area.
+
+To determine your tier, score your codebase using the
+[Readiness Rubric](#readiness-rubric) below and sum the five axis scores.
+
+### T5 — Ready
+
+AI operates as a force multiplier across the entire codebase. It writes and
+refactors production code, generates tests, assists code reviews, and handles
+large-scale changes like dependency upgrades and cross-cutting refactors. Teams
+can take on ambitious work that would otherwise be too costly or slow — the kind
+of improvements that sit on a backlog for years because the manual effort is
+never justified. Normal guardrails apply: lint/type checks, CI gates, PR review.
+
+### T4 — Approachable
+
+AI is nearly as productive as at T5, but minor gaps in documentation or
+convention coverage mean its output occasionally drifts — using a deprecated
+pattern, missing a project-specific constraint, or structuring code in a way
+that's technically correct but doesn't match the team's approach. The gap is
+small and addressable: the main cost is extra review cycles catching pattern
+deviations, not correctness failures. Once documentation gaps are addressed,
+operates as T5.
+
+### T3 — Constrained
+
+AI delivers real velocity gains in well-understood areas of the codebase, but
+the team works at human pace everywhere else. The value is genuine but uneven —
+prepared areas ship noticeably faster, which makes the gap with unprepared areas
+more visible.
+
+- AI for **analysis, documentation, test scaffolding, and refactor suggestions**
+  broadly across the codebase
+- AI writes production code only in **well-covered modules** (Verifiability and
+  Modularity scored 3-4 for that area)
+- Smaller PRs, stricter review, more "proof by tests" — the cost of verification
+  partially offsets the speed gain
+
+For high-risk changes in constrained areas, consider
+[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
+validate behavior under production conditions before user impact. See the
+[Brownfield Worked Example](worked-example-brownfield.md#shadow-mode-deployment)
+for a concrete illustration.
+
+### T2 — Challenging
+
+AI is mostly **advisory** — it helps the team think and prepare, but doesn't
+deliver the primary speed advantage of writing production code. AI assists with
+analysis, documentation drafting, test generation, and code review, which
+reduces toil and improves quality, but feature delivery still runs at roughly
+human pace. The velocity gains that make AI adoption compelling for leadership
+are largely unrealized at this tier. Gaps in verification, transparency, or
+consistency are too large for AI to produce reliably correct production code
+outside narrow, well-understood areas. Consider
+[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
+supplement limited test coverage with production-level validation when
+transitioning to AI-assisted feature work.
+
+### T1 — Hostile
+
+AI is a convenience tool for isolated tasks, not a force multiplier. It can help
+within individual modules — generating documentation, scaffolding tests,
+suggesting small improvements — but it cannot reason about how modules interact,
+where business logic actually lives, or what a change will break outside its
+immediate scope. System-level change remains expensive and human-driven. The
+team gets marginal efficiency on localized work but none of the transformative
+velocity gains that justify AI adoption investment.
+
+### T0 — Rebuild
+
+AI's value proposition is nearly absent for the existing system. The structural
+issues — pervasive coupling, undocumented business logic, missing tests — mean
+that AI-generated changes carry unacceptable risk and require so much human
+verification that the speed advantage disappears. AI can still contribute in
+limited ways:
+
+- **Knowledge extraction** — analyzing existing code to surface business rules,
+  data flows, and edge cases
+- **Documentation** — drafting architecture and behavior documentation from code
+  analysis, verified by engineers who know the system
+- **Localized maintenance** — bug fixes and small changes within well-understood
+  modules, in advisory mode
+- **New system acceleration** — if the organization chooses to
+  [rebuild](brownfield-approach.md#rebuild-parallel-build), AI operates at full
+  greenfield effectiveness on the replacement system
+
+---
+
+## How Readiness Is Measured
 
 ### The Mental Model
 
@@ -230,7 +339,7 @@ silently conflict with business rules.
 > **Stored procedure systems:** For codebases with significant database-layer
 > business logic, score Transparency based on whether SP contracts (inputs,
 > outputs, side effects, error conditions) are documented and whether
-> [logic authority](brownfield-approach.md#logic-authority) is established —
+> [logic authority](brownfield-enablement.md#logic-authority) is established —
 > which component is authoritative for each business calculation. SP
 > transparency has a different remediation path than application-code
 > transparency: contract documentation and test wrapping rather than inline
@@ -310,30 +419,6 @@ are working correctly in production.
 |     2 | Partial visibility; diagnosis often depends on specific people.            |
 |     1 | Weak observability; incidents are long and chaotic; limited runbooks.      |
 |     0 | Failures hard to detect or understand; recovery is ad hoc.                 |
-
----
-
-## Readiness Tiers
-
-Map your total score (sum of all five axes) to a readiness tier.
-
-| Total | Tier | Label            | Default Posture                                                    |
-| ----: | ---- | ---------------- | ------------------------------------------------------------------ |
-| 17-20 | T5   | **Ready**        | AI can accelerate broadly with normal controls.                    |
-| 13-16 | T4   | **Approachable** | One focused enablement increment, then operate as T5.              |
-|  9-12 | T3   | **Constrained**  | AI in narrow lanes while hardening continuously.                   |
-|   5-8 | T2   | **Challenging**  | Dedicated enablement program before AI helps at scale.             |
-|   2-4 | T1   | **Entrenched**   | Multi-phase stabilization + architecture work; expect slow gains.  |
-|   0-1 | T0   | **Rebuild**      | Consider strangler or parallel build; remediation ROI likely poor. |
-
-> **Override rule:** If any single axis scores **0**, bump down at least one
-> tier unless the blast radius of that axis is contained to a small, isolatable
-> area.
-
-See the
-[Brownfield Approach Guide](brownfield-approach.md#foundation-work-by-tier) for
-what each tier means in terms of foundation work, exit thresholds, and AI
-operating modes.
 
 ---
 
@@ -496,10 +581,11 @@ detailed guidance.
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo
-expansion added in v0.42.0. AI Operating Modes, Foundation Work by Tier, Key
-Concepts, and Bounded Preparation moved to the
-[Brownfield Approach Guide](brownfield-approach.md) as part of the brownfield
-guide restructuring. Rubric restructured from six axes to five: added
-Consistency, moved Deployability and Observability (formerly Operability) to
-supplementary considerations, added "Why These Axes" rationale section, and
-recalculated tier thresholds for 0-20 scoring range.
+expansion added in v0.42.0. Foundation Work by Tier, Key Concepts, and Bounded
+Preparation moved to the [Brownfield Approach Guide](brownfield-approach.md) as
+part of the brownfield guide restructuring. Rubric restructured from six axes to
+five: added Consistency, moved Deployability and Observability (formerly
+Operability) to supplementary considerations, added "How Readiness Is Measured" rationale
+section, and recalculated tier thresholds for 0-20 scoring range. AI Operating
+Modes moved back from the Approach Guide to this guide and restructured as tier
+subsections; tiers moved before the rubric to establish context before scoring.

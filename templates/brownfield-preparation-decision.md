@@ -57,13 +57,26 @@ for exit criteria and decision options.
 
 ## Decision
 
+**Checkpoint timing:** Within committed scope / End of committed scope
+
 **Decision (choose one):**
 
-- **Go** — target area meets exit thresholds; proceed to feature work
+_Within committed scope:_
+
+- **Go** — target area meets target conditions; proceed to feature work (early
+  exit)
 - **Conditional Go** — proceed with specific mitigations or constraints in place
-- **Extend** — run additional preparation increment(s) targeting specific gaps
-- **Pivot** — preparation is not yielding sufficient improvement; change
-  approach
+  (early exit)
+- **Continue** — committed increments remain; continue with next increment
+
+_End of committed scope (requires gate approval):_
+
+- **Close to target** — request gate approval for 1-2 additional increments with
+  concrete plan
+- **Meaningful progress** — request gate re-evaluation: adjust target mode,
+  extend scope, or stop
+- **No meaningful progress** — recommend gate pivot: change investment model or
+  stop
 
 **Rationale:** (why this decision)
 
@@ -78,9 +91,11 @@ dates)
 - _Example (Go):_ "Begin Increment Design for first feature increment"
 - _Example (Conditional Go):_ "Proceed with feature work in target area; limit
   AI to T3 operating mode until Verifiability reaches 3+"
-- _Example (Extend):_ "Run Increment 3 focused on Transparency; re-assess after
-  completion"
-- _Example (Pivot):_ "Evaluate strangler strategy per T0 guidance"
+- _Example (Continue):_ "Proceed to Increment 2 per committed plan"
+- _Example (Close to target):_ "Submit gate request for 1 additional increment
+  focused on Transparency"
+- _Example (No meaningful progress):_ "Submit gate request to re-evaluate;
+  recommend pivot to Rebuild model"
 
 ---
 
