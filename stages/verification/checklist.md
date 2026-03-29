@@ -37,9 +37,8 @@ the increment is ready for deployment.
 5. [ ] **Performance tests meet NFR targets** (or confirmed N/A with
        justification)
 6. [ ] **Security tests pass with no critical vulnerabilities** (or confirmed
-       N/A; consult
-       [AppSec per RACI](../../guides/roles.md#raci-matrix)
-       for sign-off)
+       N/A; consult [AppSec per RACI](../../guides/roles.md#raci-matrix) for
+       sign-off)
 7. [ ] **Accessibility tests pass** (or confirmed N/A with justification)
 8. [ ] **Schema compatibility with existing consumers verified** (N/A for
        greenfield or non-database changes; brownfield: confirm schema changes
@@ -49,11 +48,11 @@ the increment is ready for deployment.
        logic authority verified for modified calculations; N/A for systems
        without database-layer business logic or greenfield)
 10. [ ] **[H] Readiness re-assessment completed** (N/A except after brownfield
-       preparation increments; re-score target area per
-       [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol);
-       for preparation increments, use binary pass/fail criteria per readiness
-       dimension defined at System Design; for discovery increments, verification
-       is document review — mark test execution items N/A with rationale)
+        preparation increments; re-score target area per
+        [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol);
+        for preparation increments, use binary pass/fail criteria per readiness
+        axis defined at System Design; for discovery increments, verification is
+        document review — mark test execution items N/A with rationale)
 
 ### Acceptance and Instrumentation
 
@@ -93,9 +92,10 @@ the increment is ready for deployment.
 - [ ] **Ready** — Hand off to Deployment stage; record the decision using the
       [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 - [ ] **Ready with conditions** — Document conditions in Verification Brief;
-      hand off to Deployment with conditions noted; record the decision using the
-      [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
-- [ ] **Not Ready** — Route to Implementation for rework (see [Rework Cycle](README.md#when-verification-fails))
+      hand off to Deployment with conditions noted; record the decision using
+      the [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
+- [ ] **Not Ready** — Route to Implementation for rework (see
+      [Rework Cycle](README.md#when-verification-fails))
 
 ---
 
@@ -119,7 +119,7 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.6.0. Database-layer logic regression and preparation
 increment verification guidance added in v0.42.0.

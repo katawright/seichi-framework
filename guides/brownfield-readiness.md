@@ -86,7 +86,7 @@ trusted. For preparation strategy at each tier, see the
 | 13-16 | T4   | **Approachable** | Near-full AI capability; closer review for pattern adherence.    |
 |  9-12 | T3   | **Constrained**  | AI scoped to well-understood areas; advisory elsewhere.          |
 |   5-8 | T2   | **Challenging**  | AI mostly advisory; does not drive production code at scale.     |
-|   2-4 | T1   | **Hostile**   | AI helps locally only; system-level change remains human-driven. |
+|   2-4 | T1   | **Hostile**      | AI helps locally only; system-level change remains human-driven. |
 |   0-1 | T0   | **Rebuild**      | AI limited to knowledge extraction and localized maintenance.    |
 
 > **Override rule:** If any single axis scores **0**, bump down at least one
@@ -339,13 +339,13 @@ silently conflict with business rules.
 > **Stored procedure systems:** For codebases with significant database-layer
 > business logic, score Transparency based on whether SP contracts (inputs,
 > outputs, side effects, error conditions) are documented and whether
-> [logic authority](brownfield-enablement.md#logic-authority) is established —
+> [logic authority](brownfield-enablement.md#transparency) is established —
 > which component is authoritative for each business calculation. SP
 > transparency has a different remediation path than application-code
 > transparency: contract documentation and test wrapping rather than inline
 > documentation and code-level test coverage. See the
-> [Brownfield Enablement Guide](brownfield-enablement.md#enablement-workstreams)
-> for preparation tactics.
+> [Brownfield Enablement Guide](brownfield-enablement.md#enablement-tactics) for
+> preparation tactics.
 
 ### Consistency
 
@@ -469,7 +469,7 @@ Axis scores:         Verifiability__ Modularity__ Discoverability__
                      (total: __)
 Supplementary:       Deployability__ Observability__
 Top 3 risks:         (1) ...  (2) ...  (3) ...
-Next 2 workstreams:  ..., ...
+Next 2 tactics:      ..., ...
 AI operating mode:   T__ mode
 ```
 
@@ -556,28 +556,19 @@ Modularity and Transparency even if they originate in other repositories.
 
 ## Brownfield Requirements: Capturing Constraints
 
-During **Requirements**, brownfield projects must **capture existing system
-constraints** that new work must satisfy:
-
-- **Performance constraints:** Existing SLAs (e.g., "API responses < 1 second")
-- **Security policies:** Authentication, authorization, data encryption
-  standards
-- **API contracts:** Existing interfaces that must remain compatible
-- **Data schemas:** Database structures, data formats, integration formats
-- **Compliance requirements:** Regulatory constraints already in place
-- **Architectural constraints:** Patterns, frameworks, languages in use
-- **Operational constraints:** Deployment windows, rollback requirements
-
-These constraints become **Non-Functional Requirements (NFRs)** that shape
-design and testing. See the
-[Requirements Stage Guide](../stages/requirements/README.md#constraints) for
-detailed guidance.
+During Requirements, brownfield projects must capture existing system
+constraints (performance SLAs, API contracts, data schemas, security policies,
+compliance requirements) as Non-Functional Requirements. See the
+[Requirements Stage Guide](../stages/requirements/README.md#constraints) for how
+constraints feed into requirements, and the
+[Requirements Reference](../stages/requirements/reference.md#brownfield-constraint-categories)
+for the full constraint taxonomy with NFR templates and examples.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-28
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo
@@ -585,7 +576,8 @@ expansion added in v0.42.0. Foundation Work by Tier, Key Concepts, and Bounded
 Preparation moved to the [Brownfield Approach Guide](brownfield-approach.md) as
 part of the brownfield guide restructuring. Rubric restructured from six axes to
 five: added Consistency, moved Deployability and Observability (formerly
-Operability) to supplementary considerations, added "How Readiness Is Measured" rationale
-section, and recalculated tier thresholds for 0-20 scoring range. AI Operating
-Modes moved back from the Approach Guide to this guide and restructured as tier
-subsections; tiers moved before the rubric to establish context before scoring.
+Operability) to supplementary considerations, added "How Readiness Is Measured"
+rationale section, and recalculated tier thresholds for 0-20 scoring range. AI
+Operating Modes moved back from the Approach Guide to this guide and
+restructured as tier subsections; tiers moved before the rubric to establish
+context before scoring.

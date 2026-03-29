@@ -260,8 +260,8 @@ Using the
 
 **Decision: Conditional Go**
 
-- **Thresholds partially met:** Verifiability 3+ and all other axes 2+ — but
-  Modularity at 2 falls short of T3's 3+ requirement
+- **Thresholds partially met:** Verifiability and Modularity 3+, rest 2+ (T3
+  target) — but Modularity at 2 falls short of the 3+ requirement
 - **Remaining gaps:** Modularity at 2 (service layer boundaries leak) —
   mitigated by scoping AI-generated code to the customer account service layer
   where boundaries are clearest

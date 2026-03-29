@@ -8,7 +8,7 @@ decisions about preparation scope and execution strategy. For the overall
 brownfield preparation process, see the
 [Brownfield Preparation Guide](brownfield.md).
 
-### Why This Guide
+### Why Brownfield Approach
 
 Assessing a codebase's readiness (see the
 [Brownfield Readiness Guide](brownfield-readiness.md)) tells you where you
@@ -85,8 +85,9 @@ within a reasonable timeframe.
   instead of full replacement. Score the target area separately.
 - Wrapping specific components (testing them as black boxes behind contracts)
   provides enough safety for ongoing maintenance and targeted AI-assisted work.
-  See [Wrap vs. Extract](brownfield-enablement.md#wrap-vs-extract) for the
-  decision framework.
+  See
+  [Brownfield Enablement Guide: Modularity](brownfield-enablement.md#modularity)
+  for the wrap vs. extract decision framework.
 - The organization lacks the financial capacity or leadership alignment for a
   replacement project — in which case a preparation model or
   [no investment](#when-no-investment-is-made) may be the realistic outcome.
@@ -233,7 +234,7 @@ The right model depends on organizational context as much as codebase state:
 > reality. The framework's
 > [Brownfield Enablement Guide](brownfield-enablement.md) provides the most
 > detailed execution guidance for the project-bounded model, but the principles
-> (discovery, enablement workstreams, exit criteria) apply to all models.
+> (discovery, enablement tactics, exit criteria) apply to all models.
 
 ### When No Investment Is Made
 
@@ -396,13 +397,13 @@ decision and reference the exit checkpoint evidence.
 
 ## Notes
 
-**Last Updated:** 2026-03-28
+**Last Updated:** 2026-03-29
 
-Added to framework as part of the brownfield guide restructuring (readiness →
-approach → enablement). Content moved from the Brownfield Readiness Guide
-(Foundation Work by Tier, Preparation Scope, Key Concepts) and the Brownfield
-Enablement Guide (Exit Checkpoint Protocol). Business Justification and
-Preparation as Adoption Pilot moved to the
+Added to framework in v0.42.0 as part of the brownfield guide restructuring
+(readiness → approach → enablement). Content moved from the Brownfield Readiness
+Guide (Foundation Work by Tier, Preparation Scope, Key Concepts) and the
+Brownfield Enablement Guide (Exit Checkpoint Protocol). Business Justification
+and Preparation as Adoption Pilot moved to the
 [Brownfield Preparation Guide](brownfield.md) as process-level content. Added
 Rebuild (Parallel Build) as a fifth investment model, updated comparison table
 to cover T0-T1, and added "When No Investment Is Made" prose section. AI
@@ -411,5 +412,5 @@ Operating Modes moved to the
 subsections — readiness describes what AI can do; approach describes what the
 organization should do about it. Key Decisions (Logic Authority, Wrap vs.
 Extract, External Write Paths) moved to the
-[Brownfield Enablement Guide](brownfield-enablement.md#key-decisions) as
-tactical decisions made during execution.
+[Brownfield Enablement Guide](brownfield-enablement.md#enablement-tactics) as
+tactical decisions folded into per-axis enablement tactics.
