@@ -78,9 +78,8 @@ through stages with additional focus:
 2. **System Design** — refine the readiness assessment with evidence, plan
    discovery or preparation increments, and define feature flag strategy for
    modifying existing endpoints
-3. **Increment Design** — map scope to readiness dimensions; discovery
-   increments use deliverable-oriented scope (D-1, D-2 IDs) rather than
-   feature-oriented scope
+3. **Increment Design** — map scope to readiness axes; discovery increments use
+   deliverable-oriented scope (D-1, D-2 IDs) rather than feature-oriented scope
 4. **Subsequent stages** — proceed normally using iterative stage patterns
 
 ---

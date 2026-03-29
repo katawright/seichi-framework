@@ -287,17 +287,17 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 <!-- Include for brownfield first AI-assisted projects. Refine the Initiation
      assessment with evidence gathered during System Design discovery. -->
 
-| Dimension                 | Initiation Assessment | Refined Assessment | Evidence                              |
-| ------------------------- | --------------------- | ------------------ | ------------------------------------- |
-| Test coverage             | [from initiation]     | [updated]          | [e.g., measured 62% coverage]         |
-| Documentation             | [from initiation]     | [updated]          | [e.g., 3 of 7 services documented]    |
-| Architectural consistency | [from initiation]     | [updated]          | [e.g., 2 patterns found in API layer] |
-| Dependency health         | [from initiation]     | [updated]          | [e.g., 4 deps >1 year outdated]       |
-| Database/business logic   | [from initiation]     | [updated]          | [e.g., 12 stored procs identified]    |
+| Axis            | Initiation Score  | Refined Score | Evidence                                    |
+| --------------- | ----------------- | ------------- | ------------------------------------------- |
+| Verifiability   | [from initiation] | [updated]     | [e.g., measured 62% line coverage]          |
+| Modularity      | [from initiation] | [updated]     | [e.g., service boundaries leak in 2 areas]  |
+| Discoverability | [from initiation] | [updated]     | [e.g., 3 of 7 services documented]          |
+| Transparency    | [from initiation] | [updated]     | [e.g., 12 stored procs with business logic] |
+| Consistency     | [from initiation] | [updated]     | [e.g., 2 conflicting patterns in API layer] |
 
 **Readiness change:** [Summary of how assessment changed from Initiation — e.g.,
-"Test coverage moved from Needs Prep to Ready after measuring 62%; database
-logic remains Needs Significant Prep"]
+"Verifiability moved from 2 to 3 after measuring 62% coverage; Transparency
+remains at 1 — 12 stored procedures with undocumented business logic"]
 
 **Impact on Increment 0:** [How refined assessment changes Increment 0 scope,
 duration, or deliverables]
@@ -476,4 +476,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-27 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0 -->
+<!-- Template Last Updated: 2026-03-29 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0 -->

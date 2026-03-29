@@ -58,11 +58,11 @@ ready for Gate 2.
 ### Brownfield and Cross-Service
 
 12. [ ] **Brownfield preparation plan includes binary readiness re-assessment
-        criteria** (per-dimension pass/fail thresholds for each preparation
-        increment, with named outcomes: Go, Conditional Go, Extend, Pivot; N/A
-        for greenfield or T4+ brownfield)
-13. [ ] **Cross-service security reviewed** (new inter-service communication
-        has authentication and authorization; new database users have minimal
+        criteria** (per-axis pass/fail thresholds for each preparation
+        increment, with named outcomes: Go, Conditional Go, Continue, or
+        returning to gate; N/A for greenfield or T4+ brownfield)
+13. [ ] **Cross-service security reviewed** (new inter-service communication has
+        authentication and authorization; new database users have minimal
         grants; N/A for single-service projects)
 
 ### Increment Plan and Readiness
@@ -123,6 +123,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.12.0.

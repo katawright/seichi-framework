@@ -13,7 +13,7 @@ for exit criteria and decision options.
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Go / Conditional Go / Extend / Pivot
+**Status:** Pending / Go / Conditional Go / Continue / Returning to Gate
 
 **Decision makers:**
 
@@ -103,4 +103,4 @@ dates)
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-03-28 | Added in v0.39.0 -->
+<!-- Template Last Updated: 2026-03-29 | Added in v0.39.0 -->

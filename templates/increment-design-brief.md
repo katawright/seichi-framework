@@ -98,10 +98,10 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
      6. Developer onboarding — PR templates, code review standards, setup runbooks
      See stages/increment-design/README.md#i0-foundation-concerns for tier guidance. -->
 
-| Readiness Dimension   | Pre-State       | Target Post-State | Deliverables                        |
-| --------------------- | --------------- | ----------------- | ----------------------------------- |
-| [e.g., Test coverage] | [current state] | [target state]    | [e.g., add tests for auth module]   |
-| [e.g., Documentation] | [current state] | [target state]    | [e.g., AGENTS.md, architecture doc] |
+| Readiness Axis          | Pre-State       | Target Post-State | Deliverables                        |
+| ----------------------- | --------------- | ----------------- | ----------------------------------- |
+| [e.g., Verifiability]   | [current state] | [target state]    | [e.g., add tests for auth module]   |
+| [e.g., Discoverability] | [current state] | [target state]    | [e.g., AGENTS.md, architecture doc] |
 
 ---
 
@@ -279,4 +279,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-27 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0 -->
+<!-- Template Last Updated: 2026-03-29 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0 -->

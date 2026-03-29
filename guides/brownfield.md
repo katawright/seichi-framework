@@ -118,8 +118,8 @@ each tier means in practice for scope and exit thresholds.
 ### Step 3: Enable AI-Assisted Development
 
 Execute the preparation plan — run discovery activities, target enablement
-workstreams where axes scored low, and plan infrastructure for AI-assisted
-delivery. Map preparation work to the framework's iterative stages.
+tactics where axes scored low, and plan infrastructure for AI-assisted delivery.
+Map preparation work to the framework's iterative stages.
 
 **Next step:** [Brownfield Enablement Guide](brownfield-enablement.md)
 
@@ -268,7 +268,7 @@ For the full organizational adoption context, see the
 | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | [Brownfield Readiness Guide](brownfield-readiness.md)                                 | Readiness tiers, AI operating modes, rubric, re-assessment protocol   |
 | [Brownfield Approach Guide](brownfield-approach.md)                                   | Investment models, key decisions, exit checkpoints                    |
-| [Brownfield Enablement Guide](brownfield-enablement.md)                               | Discovery activities, enablement workstreams, infrastructure planning |
+| [Brownfield Enablement Guide](brownfield-enablement.md)                               | Discovery activities, enablement tactics, rebuild patterns            |
 | [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md) | Record go/no-go decisions at exit checkpoints                         |
 | [Brownfield Worked Example](worked-example-brownfield.md)                             | End-to-end traced example from T2 assessment through feature delivery |
 | [Organizational Adoption Guide](adoption.md#codebase-readiness-brownfield)            | How brownfield readiness fits into organizational adoption planning   |
@@ -277,9 +277,9 @@ For the full organizational adoption context, see the
 
 ## Notes
 
-**Last Updated:** 2026-03-28
+**Last Updated:** 2026-03-29
 
-Added to framework as part of the brownfield guide restructuring (readiness →
-approach → enablement). Umbrella guide providing process overview and routing to
-the three brownfield sub-guides. Added Rebuild to "Connecting to Investment
-Models" list.
+Added to framework in v0.42.0 as part of the brownfield guide restructuring
+(readiness → approach → enablement). Umbrella guide providing process overview
+and routing to the three brownfield sub-guides. Added Rebuild to "Connecting to
+Investment Models" list.
