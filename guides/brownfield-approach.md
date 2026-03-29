@@ -23,9 +23,7 @@ dedicated preparation effort.
 
 - Present the range of investment models for brownfield preparation
 - Help teams choose an approach that fits their organizational context
-- Define AI operating modes for each readiness tier
-- Provide decision frameworks for key preparation choices (wrap vs. extract,
-  preparation scope, logic authority)
+- Define preparation scope — full codebase vs. bounded target area
 - Establish exit criteria for knowing when preparation is sufficient
 
 ### Key Principle
@@ -40,18 +38,15 @@ stalls entirely.
 ### How to Use This Guide
 
 1. Complete the readiness assessment in the
-   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric) first
+   [Brownfield Readiness Guide](brownfield-readiness.md) first — this
+   establishes your tier and AI operating mode
 2. Review [**Investment Models**](#investment-models) to understand the range of
    approaches
-3. Check the [**AI Operating Mode**](#ai-operating-modes) for your readiness
-   tier
-4. Review [**Foundation Work by Tier**](#foundation-work-by-tier) for scope
+3. Review [**Foundation Work by Tier**](#foundation-work-by-tier) for scope
    guidance
-5. Evaluate [**Preparation Scope**](#preparation-scope) to determine whether
+4. Evaluate [**Preparation Scope**](#preparation-scope) to determine whether
    preparation can be bounded
-6. Review [**Key Decisions**](#key-decisions) that shape your preparation
-   strategy
-7. Proceed to the [Brownfield Enablement Guide](brownfield-enablement.md) for
+5. Proceed to the [Brownfield Enablement Guide](brownfield-enablement.md) for
    execution
 
 ---
@@ -59,9 +54,48 @@ stalls entirely.
 ## Investment Models
 
 How an organization invests in brownfield preparation depends on its codebase
-state, leadership support, financial capacity, and business priorities. Four
-models span the spectrum from maximum upfront investment to minimal dedicated
+state, leadership support, financial capacity, and business priorities. Five
+models span the spectrum from full system replacement to minimal dedicated
 effort.
+
+### Rebuild (Parallel Build)
+
+Replace the existing system rather than preparing it. Build a new system in
+parallel — using AI to accelerate the greenfield build and migration tooling —
+while maintaining the existing system until the replacement is ready.
+
+This is the most expensive model and requires the highest level of
+organizational commitment. It is also the only model that addresses codebases
+where preparation itself is not cost-effective — where the structural issues are
+so deep that incremental improvement cannot reach a viable AI-assisted state
+within a reasonable timeframe.
+
+**When this fits:**
+
+- Preparation effort estimated at 6+ months with uncertain outcomes
+- Architecture is fundamentally incompatible with incremental modification
+- Business logic is distributed across untestable layers with no documentation
+- The system is already a candidate for replacement on other grounds
+- Executive leadership understands and supports a full replacement commitment
+
+**When this doesn't fit:**
+
+- Preparation can be bounded to a specific target area — even at T0
+  system-level, a target area may score T2 or T3 and justify bounded preparation
+  instead of full replacement. Score the target area separately.
+- Wrapping specific components (testing them as black boxes behind contracts)
+  provides enough safety for ongoing maintenance and targeted AI-assisted work.
+  See [Wrap vs. Extract](brownfield-enablement.md#wrap-vs-extract) for the
+  decision framework.
+- The organization lacks the financial capacity or leadership alignment for a
+  replacement project — in which case a preparation model or
+  [no investment](#when-no-investment-is-made) may be the realistic outcome.
+
+**Decision criteria:** Compare estimated preparation cost (to reach T3 for the
+target area) against estimated parallel-build cost (to reach minimum viable
+replacement). When preparation is cheaper or boundable, prefer a preparation
+model. When parallel build is cheaper or comparable and the system is already a
+replacement candidate, prefer Rebuild.
 
 ### Full Preparation
 
@@ -87,7 +121,9 @@ future projects don't need their own preparation passes.
 
 - Large codebases where full preparation would take months
 - Organizations under delivery pressure that can't pause feature work
-- T2 or below, where preparation scope is uncertain and may expand
+- T2 or below, where preparation scope is uncertain and may expand — at T1,
+  evaluate whether stabilization is realistic before committing; if not,
+  consider [Rebuild](#rebuild-parallel-build) instead
 
 ### Project-Bounded Preparation
 
@@ -184,14 +220,14 @@ refactor coupling — without building toward a coherent prepared state.
 
 The right model depends on organizational context as much as codebase state:
 
-| Factor                       | Full          | Project-Bounded      | Interleaved            | Opportunistic         |
-| ---------------------------- | ------------- | -------------------- | ---------------------- | --------------------- |
-| **Leadership understanding** | High          | Moderate             | Low-moderate           | Low                   |
-| **Financial capacity**       | Feature pause | Preparation project  | 10-20% overhead        | No dedicated capacity |
-| **Codebase size**            | Small-medium  | Any (bounded area)   | Any                    | Any                   |
-| **Modularity requirement**   | Any           | Moderate+ (isolable) | Any                    | Any                   |
-| **Readiness tier**           | T3-T4         | T2-T4                | T3-T4                  | Any                   |
-| **Time to AI value**         | Fastest       | Moderate             | Gradual (hockey stick) | Slowest / uncertain   |
+| Factor                     | Rebuild              | Full          | Project-Bounded      | Interleaved            | Opportunistic         |
+| -------------------------- | -------------------- | ------------- | -------------------- | ---------------------- | --------------------- |
+| **Leadership commitment**  | Very high            | High          | Moderate             | Low-moderate           | Low                   |
+| **Financial capacity**     | Replacement project  | Feature pause | Preparation project  | 10-20% overhead        | No dedicated capacity |
+| **Codebase size**          | Any                  | Small-medium  | Any (bounded area)   | Any                    | Any                   |
+| **Modularity requirement** | N/A (building new)   | Any           | Moderate+ (isolable) | Any                    | Any                   |
+| **Readiness tier**         | T0-T1                | T1-T4         | T1-T4                | T3-T4                  | Any                   |
+| **Time to AI value**       | Fast (on new system) | Fastest       | Moderate             | Gradual (hockey stick) | Slowest / uncertain   |
 
 > **No model is inherently wrong.** Each reflects a different organizational
 > reality. The framework's
@@ -199,120 +235,52 @@ The right model depends on organizational context as much as codebase state:
 > detailed execution guidance for the project-bounded model, but the principles
 > (discovery, enablement workstreams, exit criteria) apply to all models.
 
----
+### When No Investment Is Made
 
-## AI Operating Modes
+When neither leadership commits to a preparation or rebuild effort nor
+individual engineers self-organize to improve the codebase, the result is no
+AI-assisted development in that area. This is distinct from Opportunistic
+improvement — Opportunistic assumes willing engineers making progress without
+organizational support; no investment means neither organizational nor
+individual effort is applied.
 
-Each tier defines how AI tools should be used — not just whether preparation is
-needed, but what "using AI" means at that readiness level.
+This outcome is not a failure of the assessment process. Recognizing that
+AI-assisted development is not viable for a particular codebase — given current
+organizational constraints — is itself a valuable conclusion. The readiness
+assessment has surfaced the gap between the codebase's current state and what
+AI-assisted work requires; the organization has decided (explicitly or by
+default) not to close it.
 
-### T5 — Ready
-
-AI writes and refactors code routinely; generates tests; assists reviews. Normal
-guardrails apply: lint/type checks, CI gates, PR review.
-
-### T4 — Approachable
-
-Run an **enablement increment** (2-4 weeks) targeting the lowest-scoring axis.
-Focus on documentation and discovery — creating AGENTS.md, documenting
-architecture, and capturing conventions. After the increment, operate as T5.
-
-**Next step:**
-[Brownfield Enablement Guide: Discovery Activities](brownfield-enablement.md#discovery-activities)
-
-### T3 — Constrained
-
-AI use is allowed but scoped to well-understood areas:
-
-- AI for **analysis, documentation, test scaffolding, and refactor suggestions**
-  broadly
-- AI writes production code only in **well-covered modules** (Verifiability and
-  Modularity scored 3-4 for that area)
-- Smaller PRs, stricter review, more "proof by tests"
-
-Harden continuously while delivering features. Target the 2-3 lowest axes each
-cycle. For high-risk changes in constrained areas, consider
-[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
-validate behavior under production conditions before user impact. See the
-[Brownfield Worked Example](worked-example-brownfield.md#shadow-mode-deployment)
-for a concrete illustration of shadow mode in a T3 brownfield project.
-
-**Next step:**
-[Brownfield Enablement Guide: Enablement Workstreams](brownfield-enablement.md#enablement-workstreams)
-
-### T2 — Challenging
-
-AI is mostly **advisory** until safety improves. AI assists with analysis,
-documentation drafting, test generation, and code review — but does not drive
-production code changes at scale.
-
-Run an **enablement program** (2-4 months) through the framework's iterative
-stages before expecting major velocity gains from AI-assisted feature work.
-During the preparation-to-feature transition, consider
-[shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout) to
-supplement limited test coverage with production-level validation.
-
-**Next step:**
-[Brownfield Enablement Guide: Enablement Workstreams](brownfield-enablement.md#enablement-workstreams)
-
-> **Preparation as a pilot:** This enablement program can serve as your
-> organization's adoption pilot. See
-> [Preparation as Adoption Pilot](brownfield.md#preparation-as-adoption-pilot)
-> for details.
-
-### T1 — Entrenched
-
-AI can help locally (single-module improvements, documentation, test
-generation), but system-level change remains expensive due to deep structural
-issues.
-
-Use a **strangler strategy** — focus on creating seams and contracts that
-isolate areas for AI-assisted work. Expect multi-phase stabilization over
-quarters, not weeks.
-
-**Next step:**
-[Brownfield Enablement Guide: Enablement Workstreams](brownfield-enablement.md#enablement-workstreams)
-
-### T0 — Rebuild
-
-Don't "AI your way out" of fundamental structural problems. When remediation ROI
-is poor, plan a **parallel build + migration** — use AI to accelerate the new
-build and migration tooling rather than trying to improve the existing codebase.
-
-**Indicators that T0 applies:**
-
-- Preparation effort estimated at 6+ months with uncertain outcomes
-- Architecture is fundamentally incompatible with incremental modification
-- Business logic is distributed across untestable layers with no documentation
-- The system is already a candidate for replacement on other grounds
-
-**Decision criteria:** Compare estimated preparation cost (to reach T3 for the
-target area) against estimated parallel-build cost (to reach minimum viable
-replacement):
-
-- **Parallel build cheaper or comparable:** Prefer parallel build + migration.
-  Use AI to accelerate the new build and migration tooling.
-- **Preparation boundable to a specific area:** Even at T0 system-level, bounded
-  preparation of a specific target area may be justified if that area's value
-  supports the investment. Score the target area separately — it may be T2 or T3
-  even when the system overall is T0.
-- **Wrapping has independent value:** T0 systems where wrapping specific
-  components (testing them as black boxes behind contracts) provides safety for
-  ongoing maintenance may justify partial preparation investment. See
-  [Wrap vs. Extract](#wrap-vs-extract) for the decision framework.
+The assessment remains valid. If organizational conditions change — new
+leadership support, different financial priorities, a triggering event like a
+major incident or competitive pressure — teams can return to the readiness
+assessment and choose an investment model at that point.
 
 ---
 
 ## Foundation Work by Tier
 
-| Tier | Foundation Work                                                                                                 | Exit Threshold                           |
-| ---- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| T5   | Minimal — create AGENTS.md with conventions                                                                     | N/A — already ready                      |
-| T4   | Focused discovery increment (1-2 weeks)                                                                         | All axes 2+, no axis 0                   |
-| T3   | Extended foundation — discovery + targeted preparation (time-boxed)                                             | Verifiability and Modularity 3+; rest 2+ |
-| T2   | Dedicated enablement project spanning multiple increments                                                       | Target area reaches T3+ thresholds       |
-| T1   | Multi-phase stabilization; may need architecture changes before preparation yields value                        | Target area reaches T3+ thresholds       |
-| T0   | Strategic evaluation — strangler/parallel build likely more cost-effective than preparing the existing codebase | N/A — different approach                 |
+Target conditions define the minimum axis scores at which the target area
+supports safe AI-assisted feature work. They are not total-score targets — they
+ensure the specific axes that matter most for each operating mode are strong
+enough. T4 targets T5 because the gap is small and documentation-level. T3's
+target conditions keep it at T3 — the goal is making T3 mode safe to operate in
+(AI writing production code in well-covered modules), not reaching T4. T2 and T1
+both target T3 because that is the lowest tier at which AI contributes
+production code.
+
+| Tier | Foundation Work                                                                                                     | Target Conditions                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| T5   | Minimal — create AGENTS.md with conventions                                                                         | N/A — already ready                            |
+| T4   | Focused discovery increment (1-2 weeks)                                                                             | All axes 3+; at least two axes 4+ (target: T5) |
+| T3   | Extended foundation — discovery + targeted preparation (time-boxed)                                                 | Verifiability and Modularity 3+; rest 2+       |
+| T2   | Dedicated enablement project spanning multiple increments                                                           | Target area reaches T3 conditions              |
+| T1   | Multi-phase stabilization; may need architecture changes before preparation yields value                            | Target area reaches T3 conditions              |
+| T0   | [Rebuild](#rebuild-parallel-build) — parallel build likely more cost-effective than preparing the existing codebase | N/A — different approach                       |
+
+Teams can choose a different target mode than the defaults above. For example, a
+T2 team that wants to reach T4 (Approachable) before beginning feature work
+should target: all axes 2+; at least three axes 3+.
 
 See [Preparation Scope](#preparation-scope) for how preparation scope affects
 foundation work.
@@ -359,94 +327,70 @@ foundational layers can't be sliced. In these cases:
   prepare the full coupled region rather than trying to slice it.
 - **Choose a different investment model:** If isolation investment is too large
   and the coupled region is too wide, the project-bounded model may not be the
-  right fit. Consider full preparation (if the organization can support it) or
-  feature-interleaved (if it can't).
+  right fit. Consider full preparation (if the organization can support it),
+  feature-interleaved (if it can't), or [Rebuild](#rebuild-parallel-build) if
+  the cost of creating isolation exceeds the value of preparing the existing
+  system.
 
 See the [Brownfield Readiness Guide](brownfield-readiness.md#modularity) to
 score modularity for your target area.
 
 ---
 
-## Key Decisions
-
-These decisions shape preparation strategy and recur across brownfield projects.
-
-### Logic Authority
-
-_Where does the authoritative business logic live?_ In brownfield systems,
-business logic may be split across application code, stored procedures,
-triggers, views, and external services. Identifying logic authority per domain
-area is critical for scoping AI-assisted work — AI tools can reason about
-application code but need explicit documentation for database-layer and
-external-service logic. This directly affects
-[Transparency](brownfield-readiness.md#transparency) scoring.
-
-### Wrap vs. Extract
-
-When existing code is poorly structured for AI-assisted modification, teams face
-a choice: **wrap** the existing code (build new functionality around it,
-treating it as a black box) or **extract** and restructure it (make it
-AI-accessible).
-
-| Factor              | Wrap                                                | Extract                                                                       |
-| ------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Speed**           | Faster — test without modifying                     | Slower — requires restructuring                                               |
-| **Risk**            | Lower — existing behavior unchanged                 | Higher — behavior may change                                                  |
-| **AI visibility**   | Low — AI can't see inside the black box             | High — logic in application code                                              |
-| **When to choose**  | First AI project, time pressure, high SP complexity | Logic needs modification, team lacks DBA support, AI visibility is a priority |
-| **Long-term value** | Safety net for current behavior                     | Architectural improvement                                                     |
-
-> **Default to wrap-first** for initial AI-assisted projects. Wrapping provides
-> sufficient safety for feature work without the cost and risk of extraction.
-> Extraction can follow as a separate decision when it has independent value.
-
-### External Write Paths
-
-Systems where external processes write directly to the database — ETL jobs,
-partner integrations, manual data fixes — create hidden dependencies that
-AI-assisted changes may break. Identify and document external write paths during
-the readiness assessment. These affect both
-[Modularity](brownfield-readiness.md#modularity) (hidden coupling) and
-[Transparency](brownfield-readiness.md#transparency) (hidden logic).
-
----
-
 ## Exit Checkpoint Protocol
 
-After each preparation increment, evaluate whether the target area is ready for
-AI-assisted feature work. Run the exit checkpoint at minimum after the second
-preparation increment — the first increment rarely provides enough signal.
+Gate 2 commits to a specific number of preparation increments — typically 1-3,
+scoped during System Design based on the readiness assessment and the
+[Foundation Work by Tier](#foundation-work-by-tier) table. The exit checkpoint
+runs after each preparation increment as an **early exit opportunity**: have we
+met the target conditions ahead of schedule? If so, stop preparing and start
+delivering features.
 
-### Decision Framework
+### Within Committed Scope
 
-| Decision           | Criteria                                                                                                   |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| **Go**             | Target area meets exit thresholds for intended AI operating mode; no critical gaps remain                  |
-| **Conditional Go** | Most thresholds met; remaining gaps have documented mitigations that don't block feature work              |
-| **Extend**         | Clear progress but specific axes still below threshold; one more increment has a concrete improvement plan |
-| **Pivot**          | No meaningful improvement after a preparation increment; structural issues resist incremental preparation  |
+After each preparation increment, re-score the target area (see
+[Re-Assessment Protocol](brownfield-readiness.md#readiness-re-assessment-protocol))
+and compare against the target conditions in
+[Foundation Work by Tier](#foundation-work-by-tier).
 
-### Thresholds
+| Decision           | When                                                                                          |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| **Go**             | Target area meets conditions for intended operating mode; proceed to feature work             |
+| **Conditional Go** | Most conditions met; remaining gaps have documented mitigations that don't block feature work |
+| **Continue**       | Committed increments remain and conditions are not yet met; continue with the next increment  |
 
-Exit thresholds depend on the intended AI operating mode for feature work:
+**Go** and **Conditional Go** are early exits — preparation ends before the
+committed scope is exhausted because the target area is ready. **Continue** is
+the default when increments remain; it does not require justification beyond
+confirming that the preparation plan is still on track.
 
-| Intended Mode     | Exit Threshold                              |
-| ----------------- | ------------------------------------------- |
-| T5 (Ready)        | All axes 3+ in target area                  |
-| T4 (Approachable) | All axes 2+, no axis 0                      |
-| T3 (Constrained)  | Verifiability and Modularity 3+; rest 2+    |
-| Below T3          | Consider Pivot — preparation ROI diminishes |
+### At the End of Committed Scope
+
+If the final committed increment completes and the target area has not reached
+the intended conditions, this is not a decision the exit checkpoint can make
+alone. It requires a **return to the gate system** for a new investment
+decision:
+
+| Outcome                    | Gate Action                                                                                                     |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Close to target**        | Gate approves 1-2 additional increments with a concrete plan — a new, bounded commitment                        |
+| **Meaningful progress**    | Gate re-evaluates the investment: adjust the target operating mode (e.g., T4 → T3), extend scope, or stop       |
+| **No meaningful progress** | Gate pivots: change the investment model (e.g., from project-bounded to rebuild) or stop preparation investment |
+
+The key distinction: extending preparation beyond the committed scope is an
+**investment decision**, not a preparation-team decision. It goes back through
+the gate process with updated evidence (before/after scores, completed work,
+remaining gaps) so that stakeholders who approved the original investment can
+evaluate whether continued preparation is justified.
 
 ### Recording the Decision
 
 Use the
 [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md)
 to record the before/after scores, completed increments, remaining gaps, and the
-go/no-go decision.
-
-> **Cross-reference:** The
-> [Readiness Re-Assessment Protocol](brownfield-readiness.md#readiness-re-assessment-protocol)
-> describes how to re-score the target area between checkpoints.
+decision. For end-of-scope decisions that require a new gate approval, use the
+[Gate Decision Template](../templates/gate-decision.md) for the investment
+decision and reference the exit checkpoint evidence.
 
 ---
 
@@ -455,8 +399,17 @@ go/no-go decision.
 **Last Updated:** 2026-03-28
 
 Added to framework as part of the brownfield guide restructuring (readiness →
-approach → enablement). Content moved from the Brownfield Readiness Guide (AI
-Operating Modes, Foundation Work by Tier, Preparation Scope, Key Concepts) and
-the Brownfield Enablement Guide (Exit Checkpoint Protocol). Business
-Justification and Preparation as Adoption Pilot moved to the
-[Brownfield Preparation Guide](brownfield.md) as process-level content.
+approach → enablement). Content moved from the Brownfield Readiness Guide
+(Foundation Work by Tier, Preparation Scope, Key Concepts) and the Brownfield
+Enablement Guide (Exit Checkpoint Protocol). Business Justification and
+Preparation as Adoption Pilot moved to the
+[Brownfield Preparation Guide](brownfield.md) as process-level content. Added
+Rebuild (Parallel Build) as a fifth investment model, updated comparison table
+to cover T0-T1, and added "When No Investment Is Made" prose section. AI
+Operating Modes moved to the
+[Brownfield Readiness Guide](brownfield-readiness.md#readiness-tiers) as tier
+subsections — readiness describes what AI can do; approach describes what the
+organization should do about it. Key Decisions (Logic Authority, Wrap vs.
+Extract, External Write Paths) moved to the
+[Brownfield Enablement Guide](brownfield-enablement.md#key-decisions) as
+tactical decisions made during execution.

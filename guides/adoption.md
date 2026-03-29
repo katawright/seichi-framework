@@ -174,7 +174,7 @@ to score the codebase across five axes and determine the readiness tier.
 
 - **T5 Ready / T4 Approachable** — Proceed with standard discovery increment
 - **T3 Constrained** — Factor targeted preparation into timeline
-- **T2 Challenging / T1 Entrenched** — Consider treating the enablement program
+- **T2 Challenging / T1 Hostile** — Consider treating the enablement program
   as the adoption pilot (see
   [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
 - **T0 Rebuild** — Flag for strategic evaluation before committing to

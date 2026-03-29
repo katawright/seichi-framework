@@ -107,11 +107,11 @@ AI-assisted feature work can begin.
 ### Step 2: Choose Your Approach
 
 Based on your readiness tier and organizational context, decide how to invest in
-preparation — from full codebase preparation to opportunistic improvement.
-Choose your AI operating mode, preparation scope, and key technical decisions
-(wrap vs. extract, logic authority). The approach guide includes
+preparation — from full system replacement to opportunistic improvement. Choose
+your preparation scope and key technical decisions (wrap vs. extract, logic
+authority). The approach guide includes
 [foundation work by tier](brownfield-approach.md#foundation-work-by-tier) — what
-each tier means in practice for scope, exit thresholds, and AI operating modes.
+each tier means in practice for scope and exit thresholds.
 
 **Next step:** [Brownfield Approach Guide](brownfield-approach.md)
 
@@ -218,6 +218,8 @@ metrics before preparation starts to demonstrate improvement afterward.
 Different [investment models](brownfield-approach.md#investment-models) have
 different justification profiles:
 
+- **Rebuild:** Justify the full replacement cost against the compounding cost of
+  maintaining and extending a system that resists improvement.
 - **Full preparation:** Justify the upfront pause against the cumulative
   velocity gain across all future projects.
 - **Project-bounded:** Justify the preparation project's timeline against the
@@ -262,14 +264,14 @@ For the full organizational adoption context, see the
 
 ## Supporting Resources
 
-| Resource                                                                              | Purpose                                                                |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [Brownfield Readiness Guide](brownfield-readiness.md)                                 | Readiness rubric, scoring, tier definitions, re-assessment protocol    |
-| [Brownfield Approach Guide](brownfield-approach.md)                                   | Investment models, AI operating modes, key decisions, exit checkpoints |
-| [Brownfield Enablement Guide](brownfield-enablement.md)                               | Discovery activities, enablement workstreams, infrastructure planning  |
-| [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md) | Record go/no-go decisions at exit checkpoints                          |
-| [Brownfield Worked Example](worked-example-brownfield.md)                             | End-to-end traced example from T2 assessment through feature delivery  |
-| [Organizational Adoption Guide](adoption.md#codebase-readiness-brownfield)            | How brownfield readiness fits into organizational adoption planning    |
+| Resource                                                                              | Purpose                                                               |
+| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [Brownfield Readiness Guide](brownfield-readiness.md)                                 | Readiness tiers, AI operating modes, rubric, re-assessment protocol   |
+| [Brownfield Approach Guide](brownfield-approach.md)                                   | Investment models, key decisions, exit checkpoints                    |
+| [Brownfield Enablement Guide](brownfield-enablement.md)                               | Discovery activities, enablement workstreams, infrastructure planning |
+| [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md) | Record go/no-go decisions at exit checkpoints                         |
+| [Brownfield Worked Example](worked-example-brownfield.md)                             | End-to-end traced example from T2 assessment through feature delivery |
+| [Organizational Adoption Guide](adoption.md#codebase-readiness-brownfield)            | How brownfield readiness fits into organizational adoption planning   |
 
 ---
 
@@ -279,4 +281,5 @@ For the full organizational adoption context, see the
 
 Added to framework as part of the brownfield guide restructuring (readiness →
 approach → enablement). Umbrella guide providing process overview and routing to
-the three brownfield sub-guides.
+the three brownfield sub-guides. Added Rebuild to "Connecting to Investment
+Models" list.

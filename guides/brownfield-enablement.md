@@ -42,11 +42,12 @@ approaches.
    [Brownfield Approach Guide](brownfield-approach.md)
 3. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
    projects (T4 and below)
-4. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
+4. Review [**Key Decisions**](#key-decisions) that arise during discovery
+5. Use [**Enablement Workstreams**](#enablement-workstreams) to target the axes
    that scored lowest
-5. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
+6. See [**Preparation Activities by Axis**](#preparation-activities-by-axis) for
    what "enough" looks like per axis
-6. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
+7. See [**Infrastructure Planning**](#brownfield-infrastructure-planning) for
    System Design outputs specific to brownfield projects
 
 ---
@@ -97,6 +98,51 @@ minimum foundation work for any brownfield project adopting AI assistance.
   [Deployment Setup Guide: Brownfield Path](../stages/deployment/setup.md#brownfield-path)
 - **Operational processes -->**
   [Support Operations Guide: Brownfield Path](../stages/support/operations.md#brownfield-path)
+
+---
+
+## Key Decisions
+
+These tactical decisions recur across brownfield projects. They typically arise
+during discovery and shape how enablement workstreams execute.
+
+### Logic Authority
+
+_Where does the authoritative business logic live?_ In brownfield systems,
+business logic may be split across application code, stored procedures,
+triggers, views, and external services. Identifying logic authority per domain
+area is critical for scoping AI-assisted work — AI tools can reason about
+application code but need explicit documentation for database-layer and
+external-service logic. This directly affects
+[Transparency](brownfield-readiness.md#transparency) scoring.
+
+### Wrap vs. Extract
+
+When existing code is poorly structured for AI-assisted modification, teams face
+a choice: **wrap** the existing code (build new functionality around it,
+treating it as a black box) or **extract** and restructure it (make it
+AI-accessible).
+
+| Factor              | Wrap                                                | Extract                                                                       |
+| ------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Speed**           | Faster — test without modifying                     | Slower — requires restructuring                                               |
+| **Risk**            | Lower — existing behavior unchanged                 | Higher — behavior may change                                                  |
+| **AI visibility**   | Low — AI can't see inside the black box             | High — logic in application code                                              |
+| **When to choose**  | First AI project, time pressure, high SP complexity | Logic needs modification, team lacks DBA support, AI visibility is a priority |
+| **Long-term value** | Safety net for current behavior                     | Architectural improvement                                                     |
+
+> **Default to wrap-first** for initial AI-assisted projects. Wrapping provides
+> sufficient safety for feature work without the cost and risk of extraction.
+> Extraction can follow as a separate decision when it has independent value.
+
+### External Write Paths
+
+Systems where external processes write directly to the database — ETL jobs,
+partner integrations, manual data fixes — create hidden dependencies that
+AI-assisted changes may break. Identify and document external write paths during
+discovery. These affect both [Modularity](brownfield-readiness.md#modularity)
+(hidden coupling) and [Transparency](brownfield-readiness.md#transparency)
+(hidden logic).
 
 ---
 
@@ -338,4 +384,7 @@ Brownfield Enablement Guide as part of the brownfield guide restructuring
 (readiness → approach → enablement). Exit Checkpoint Protocol and Preparation as
 Adoption Pilot moved to the [Brownfield Approach Guide](brownfield-approach.md).
 Consistency workstream added; Operability renamed to Observability; workstreams
-reordered (rubric axes first, then supplementary).
+reordered (rubric axes first, then supplementary). Key Decisions (Logic
+Authority, Wrap vs. Extract, External Write Paths) moved from the
+[Brownfield Approach Guide](brownfield-approach.md) as tactical decisions that
+arise during execution.
