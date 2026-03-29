@@ -296,6 +296,17 @@ system, increasing hallucination risk and blast radius.
 |     1 | High coupling + unclear ownership; business logic split across tiers without contracts. Cross-project shared dependencies make isolated changes difficult. |
 |     0 | Pervasive shared state; no stable seams to test or replace.                                                                                                |
 
+> **Shared-data systems:** When multiple components (APIs, services, Lambda
+> functions, scheduled jobs) share databases, score Modularity based on
+> data-layer coupling, not just code-level structure. A project may be
+> well-structured internally but tightly coupled to other projects through
+> shared tables, views, or stored procedures. If a schema change in the target
+> area could break a different component that reads the same tables, that
+> coupling counts against Modularity — even if no code-level dependency exists
+> between the projects. Systems where data ownership is clearly documented
+> (which component is authoritative for which tables) and cross-component
+> dependencies are tested can still score high.
+
 ### Discoverability
 
 _Docs + ownership + workflow: can a new team member (or AI) understand the
@@ -308,13 +319,13 @@ tribal knowledge is invisible to it. Where a human would ask a question, AI
 fills the gap with a plausible guess, producing output that sounds right but may
 be wrong.
 
-| Score | Definition                                                                                       |
-| ----: | ------------------------------------------------------------------------------------------------ |
-|     4 | Docs and ADRs current; clear ownership; onboarding reliable; decisions traceable.                |
-|     3 | Reasonable docs; ownership mostly clear; tribal knowledge limited.                               |
-|     2 | Docs incomplete; ownership unclear in places; key-person dependencies exist.                     |
-|     1 | Major silos; limited docs; repeated rediscovery; inconsistent review standards.                  |
-|     0 | System understanding lives in tribal knowledge; changes depend on finding someone who remembers. |
+| Score | Definition                                                                                                                                                     |
+| ----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     4 | Docs and ADRs current; clear ownership; onboarding reliable; decisions traceable. Cross-component relationships and shared-data dependencies documented.       |
+|     3 | Reasonable docs; ownership mostly clear; tribal knowledge limited. Cross-component dependencies partially documented or inferable from project references.     |
+|     2 | Docs incomplete; ownership unclear in places; key-person dependencies exist. Data-layer relationships between components undocumented or only partially known. |
+|     1 | Major silos; limited docs; repeated rediscovery. Cross-component data dependencies unknown or discoverable only through ad hoc investigation.                  |
+|     0 | System understanding lives in tribal knowledge or intuition; changes depend on finding someone who remembers — or nobody fully knows.                          |
 
 ### Transparency
 
@@ -328,13 +339,13 @@ post-mortems, or stumble on ETL jobs during debugging. AI has no equivalent
 discovery path — hidden logic creates blind spots where AI-generated changes
 silently conflict with business rules.
 
-| Score | Definition                                                                                                               |
-| ----: | ------------------------------------------------------------------------------------------------------------------------ |
-|     4 | Business logic in application code; DB is a persistence layer; data flows are documented.                                |
-|     3 | Some stored procedures or triggers, but documented and accessible; data pipelines are visible.                           |
-|     2 | Moderate logic in stored procedures or ETL jobs; partially documented.                                                   |
-|     1 | Significant logic in DB layer or event consumers; not accessible to AI tools without separate documentation.             |
-|     0 | Critical business rules live in stored procedures, triggers, or scheduled jobs — invisible to AI tools and undocumented. |
+| Score | Definition                                                                                                                                                                                   |
+| ----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     4 | Business logic in application code; DB is a persistence layer; data flows are documented.                                                                                                    |
+|     3 | Some DB-layer or event-driven logic, but contracts documented (inputs, outputs, side effects, business rules) and logic authority established. AI knows what the logic does and who owns it. |
+|     2 | Moderate DB-layer logic; definitions accessible to AI (version-controlled or via MCP) but contracts and logic authority not documented. AI can read the logic but not its business context.  |
+|     1 | Significant DB-layer logic; definitions not accessible to AI tools. Business rules, side effects, and authority discoverable only through manual investigation or DBA consultation.          |
+|     0 | Critical business rules live in stored procedures, triggers, or scheduled jobs — invisible to AI tools and undocumented.                                                                     |
 
 > **Stored procedure systems:** For codebases with significant database-layer
 > business logic, score Transparency based on whether SP contracts (inputs,
@@ -346,6 +357,17 @@ silently conflict with business rules.
 > documentation and code-level test coverage. See the
 > [Brownfield Enablement Guide](brownfield-enablement.md#enablement-tactics) for
 > preparation tactics.
+
+> **Dispersed logic:** When business logic is spread across application code in
+> multiple projects, stored procedures, Lambda functions, and event handlers,
+> score Transparency based on whether AI can determine where a given business
+> rule is implemented and which implementation is authoritative. A system where
+> the same calculation exists in an API's service layer, a stored procedure, and
+> a Lambda function — with no documentation of which is the source of truth —
+> scores low on Transparency even if each implementation is individually visible
+> in its own codebase. Logic authority mapping (see
+> [Enablement Tactics](brownfield-enablement.md#transparency)) addresses this
+> directly.
 
 ### Consistency
 

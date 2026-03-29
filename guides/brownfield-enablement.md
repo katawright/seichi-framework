@@ -514,6 +514,34 @@ Implementation --> Verification --> Deployment). See the
 [Project Foundation Guide](project-foundation.md#how-foundation-work-flows-through-stages)
 for how foundation work maps to stages.
 
+### Completion Signals for Non-Feature Increments
+
+Feature increments are done when acceptance criteria pass. Discovery and
+preparation increments have different completion signals:
+
+- **Discovery increment:** All planned discovery artifacts produced (AGENTS.md,
+  architecture documentation, dependency map, SP inventory, logic authority map)
+  and verified by subject-matter experts who know the system. Verification is
+  document review and cross-verification, not test execution.
+- **Preparation increment:** Target axes improved per the readiness
+  re-assessment, and the
+  [exit checkpoint](brownfield-approach.md#exit-checkpoint-protocol) passed with
+  a Go, Conditional Go, or Continue decision. Verification includes both
+  artifact review and test execution (the new tests and infrastructure are
+  themselves deliverables).
+
+### Documenting Tactical Decisions as ADRs
+
+Several enablement tactics involve decisions with lasting architectural
+consequences — wrap vs. extract, logic authority designation, migration
+strategy, deployment coordination model. These are recurring brownfield decision
+points that warrant formal documentation as Architecture Decision Records.
+Record the context, the choice, and the constraints that drove it so future
+teams (and AI agents) understand why the system is structured the way it is. See
+the
+[System Design Guide](../stages/system-design/README.md#architecture-decision-records-adrs)
+for ADR workflow and templates.
+
 ---
 
 ## Brownfield Infrastructure Planning
