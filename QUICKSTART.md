@@ -71,14 +71,15 @@ my-app/
 ```
 
 `AGENTS.md` tells the agent where to find the framework, project index, and
-source code. The agent also creates its own startup file (e.g., `CLAUDE.md` for
+source code — see the [Bootstrap Guide](guides/bootstrap.md#agentsmd) for the
+template. The agent also creates its own startup file (e.g., `CLAUDE.md` for
 Claude Code) that references `AGENTS.md`, so it re-orients automatically in
 future sessions. On startup, the agent reads `projects/index.md` and asks which
 project you're working on.
 
 > **Want more control over the setup?** The
-> [Bootstrap Guide](guides/bootstrap.md) explains the underlying location model
-> and offers prompts for higher autonomy levels and custom directory structures.
+> [Bootstrap Guide](guides/bootstrap.md) explains the underlying location model,
+> the AGENTS.md template, and offers the multi-repo bootstrap prompt.
 
 ### Joining a Project Mid-Stream
 
