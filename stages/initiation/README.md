@@ -83,8 +83,8 @@ budget context. No prior framework artifacts or technical expertise required.
    brief, consult the matching subsection under
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    below for rationale, good/bad examples, and what to include. See the
-   [Manual Process Guide](../../guides/manual-process.md) for the bootstrap
-   prompt template and prompting tips
+   [Bootstrap Guide](../../guides/bootstrap.md) for the bootstrap prompt
+   template and setup instructions
 5. For Standard+ tier, populate the
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief
@@ -187,7 +187,7 @@ Match your Initiation effort to your project's risk tier.
 | **Risk assessment**       | Mental note of key risks        | Documented risks with likelihood and impact | Formal risk register with mitigation plans           |
 | **Estimation**            | Rough range                     | Range-based with confidence label           | Multiple estimation techniques, sensitivity analysis |
 | **Gate 1 process**        | Informal team agreement         | Structured review with decision criteria    | Formal gate with stakeholder sign-off                |
-| **Pre-mortem**            | Skip or 1-sentence risk note    | 2-3 failure modes with mitigations          | Structured pre-mortem with stakeholder input          |
+| **Pre-mortem**            | Skip or 1-sentence risk note    | 2-3 failure modes with mitigations          | Structured pre-mortem with stakeholder input         |
 | **Security**              | Note if sensitive data involved | Classify data sensitivity, note compliance  | Formal data classification with compliance mapping   |
 
 Expand Initiation only when needed:
@@ -632,6 +632,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.2.0.

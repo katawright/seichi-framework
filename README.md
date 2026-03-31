@@ -10,7 +10,7 @@ stage.
 > stage routing, fallback protocols, and execution guidance.
 
 > **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
-> first stage in under 5 minutes.
+> first stage in one session.
 
 ### Why This Framework
 
@@ -51,7 +51,7 @@ autonomy because outputs are directly testable.
 
 ## Start Here
 
-Pick the path that matches your interest. Each takes under 5 minutes.
+Pick the path that matches your interest.
 
 | I want to…                                       | Start with                                                     | Then                                                  | Next step                                                            |
 | ------------------------------------------------ | -------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
@@ -343,8 +343,8 @@ For detailed readiness criteria, see the
 
 - Run one Standard-tier project through two increments.
 - Copy the bootstrap prompt from the
-  [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template) and
-  fill in your project details (~15 minutes).
+  [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template) and fill in
+  your project details (~15 minutes).
 - Start with the [Initiation stage](stages/initiation/README.md) — use the
   guide, brief template, and checklist.
 - Use the [Framework Guide](guides/framework.md) when deeper context is needed.
@@ -368,8 +368,8 @@ to try the framework solo or with your team first, skip to
 3. Select initial AI autonomy tier
    ([AI Assistance Scorecard](guides/ai-assistance.md)).
 4. Copy and complete the bootstrap prompt
-   ([Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template))
-   — plan ~15 minutes.
+   ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template)) — plan ~15
+   minutes.
 5. Complete Initiation artifacts using the
    [Initiation stage](stages/initiation/README.md) guide, brief template, and
    checklist.
@@ -407,8 +407,8 @@ details.
    [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
 3. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
-   [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
-   and fill in your project details.
+   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template) and fill in
+   your project details.
 4. **Work through Initiation (~20 min).** Open the
    [Initiation stage](stages/initiation/README.md) guide and complete the brief
    template with your AI assistant.
@@ -427,6 +427,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.17.0.

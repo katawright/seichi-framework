@@ -73,8 +73,8 @@ This scorecard complements the [AI-Assisted SDLC Stages](stages.md) document:
 
 1. Identify your current stage from [AI-Assisted SDLC Stages](stages.md)
 2. Review this scorecard for gate requirements and autonomy guidance
-3. Use the [Manual Process Guide](manual-process.md) to engage your AI assistant
-   with the framework
+3. Use the [Bootstrap Guide](bootstrap.md) to set up your project and engage
+   your AI agent with the framework
 4. Use stage-specific artifacts (checklists, briefs, guides) from stage
    directories
 5. Implement appropriate human gates based on stage requirements
@@ -370,11 +370,11 @@ The autonomy tiers above describe how much AI drives **execution** — the work
 within each stage. But AI involvement has three distinct layers, and they evolve
 independently:
 
-| Layer              | What it governs                          | Can AI do this?                          |
-| ------------------ | ---------------------------------------- | ---------------------------------------- |
-| **Execution**      | Producing artifacts and doing stage work | Yes — this is what autonomy tiers govern |
-| **Decision**       | Evaluating checkpoints and issuing outcomes | Depends on checkpoint type (see below)  |
-| **Accountability** | Owning the outcome and bearing consequences | No — organizational and legal reality   |
+| Layer              | What it governs                             | Can AI do this?                          |
+| ------------------ | ------------------------------------------- | ---------------------------------------- |
+| **Execution**      | Producing artifacts and doing stage work    | Yes — this is what autonomy tiers govern |
+| **Decision**       | Evaluating checkpoints and issuing outcomes | Depends on checkpoint type (see below)   |
+| **Accountability** | Owning the outcome and bearing consequences | No — organizational and legal reality    |
 
 The framework already separates these structurally. The
 [RACI matrix](roles.md#raci-matrix) distinguishes Responsible (does the work)
@@ -407,11 +407,10 @@ organizational and legal reality.
 **What this means for the framework's trajectory.** The governance structure —
 stages, checkpoints, RACI assignments, and decision records — does not assume a
 fixed level of AI capability. As AI agents become more capable, execution shifts
-toward AI-Led across all roles and stages. The framework scales from a
-human-led process with AI assistance to an AI-executed process with human
-governance at investment gates and compliance checkpoints. The same eight stages,
-checkpoint taxonomy, and accountability model apply at every point on that
-spectrum.
+toward AI-Led across all roles and stages. The framework scales from a human-led
+process with AI assistance to an AI-executed process with human governance at
+investment gates and compliance checkpoints. The same eight stages, checkpoint
+taxonomy, and accountability model apply at every point on that spectrum.
 
 ---
 
@@ -454,6 +453,6 @@ confidence and establishes effective gate processes.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.9.0.
