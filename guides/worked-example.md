@@ -46,9 +46,9 @@ replacing tribal knowledge with documented decisions.
 ## Scenario
 
 This example uses the employee onboarding tracker project from the
-[Manual Process Guide](manual-process.md) — a web application for tracking
-employee onboarding tasks, ensuring new hires complete all required steps within
-their first 30 days.
+[Bootstrap Guide](bootstrap.md) — a web application for tracking employee
+onboarding tasks, ensuring new hires complete all required steps within their
+first 30 days.
 
 Project context:
 
@@ -829,7 +829,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.17.0. For a brownfield adoption example showing
 preparation increments, exit checkpoints, and shadow mode, see the

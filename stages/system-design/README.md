@@ -103,7 +103,7 @@ documentation, ADRs, infrastructure configuration, and known technical debt.
    AI according to your chosen autonomy tier — refer to
    [**Why These System Design Elements Matter**](#why-these-system-design-elements-matter)
    for rationale as you complete each section. See the
-   [Manual Process Guide](../../guides/manual-process.md) for prompting tips
+   [Bootstrap Guide](../../guides/bootstrap.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [System Design Checklist](checklist.md) using AI according to
    your chosen autonomy tier
@@ -665,6 +665,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.12.0.

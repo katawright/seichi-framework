@@ -86,7 +86,7 @@ specifications.
    according to your chosen autonomy tier — refer to
    [**Why These Requirements Elements Matter**](#why-these-requirements-elements-matter)
    for rationale and examples as you complete each section. See the
-   [Manual Process Guide](../../guides/manual-process.md) for prompting tips
+   [Bootstrap Guide](../../guides/bootstrap.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [Requirements Checklist](checklist.md) using AI according to
    your chosen autonomy tier
@@ -730,6 +730,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.3.0.

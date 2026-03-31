@@ -1,75 +1,162 @@
 # Quick Start
 
-Get from zero to your first stage in under 5 minutes.
+Get from zero to your first stage in under five minutes.
 
 ---
 
 ## The Framework in 30 Seconds
 
-Eight stages across three execution patterns guide AI-assisted software delivery
-from idea to production:
+The framework overlays your existing software development process — agile,
+waterfall, or hybrid — with structured AI assistance at every stage. You choose
+how much autonomy AI gets (from human-driven drafting to fully AI-led
+execution), and checkpoints keep humans in control of key decisions.
+
+Eight stages cover the full lifecycle:
 
 - **Foundational** (once per project): Initiation → Requirements → System Design
 - **Iterative** (per increment): Increment Design → Implementation →
   Verification → Deployment
 - **Continuous** (ongoing): Support
 
-See the [README Stage Overview](README.md#stage-overview) for what happens at
-each stage.
-
-Scale the process to fit your project with three tiers: **Minimal** (MVPs,
-prototypes), **Standard** (production apps), or **Enterprise** (regulated,
-mission-critical). See the [Right-Sizing Guide](guides/right-sizing.md) for
-details.
+Scale the process to fit your project: **Minimal** (MVPs, prototypes),
+**Standard** (production apps), or **Enterprise** (regulated, mission-critical).
+See the [Right-Sizing Guide](guides/right-sizing.md).
 
 ---
 
-## Start in Under 5 Minutes
+## Get Started
 
-### Path A: AI Coding Agent (Claude Code, Cursor, etc.)
+### New Project
 
-Point your agent at the framework and let it self-orient:
+**Prerequisites:** A local agent with filesystem access (Claude Code, Cursor,
+Cowork, or similar).
 
-```text
-Read [framework-path]/guides/agentic-workflow.md for stage routing and
-working locations, then guide me through the Initiation stage for my
-project: [describe your project in 1-2 sentences].
+1. **Create a new, empty folder** for your application (e.g., `my-app/`)
+2. **Start your agent** in that folder
+3. **Paste this prompt:**
+
+> Download the latest release of the AI-Assisted SDLC framework from
+> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> version tag as the directory name (e.g., frameworks/v0.42.0/) if not already
+> present.
+>
+> Then read QUICKSTART.md from the downloaded framework to orient yourself.
+>
+> This is a new, single-repo project. Set up this directory as my workspace —
+> create the project structure, AGENTS.md, and your agent-specific startup file
+> (e.g., CLAUDE.md for Claude Code). Then guide me through the first stage.
+> Drive the process but check decisions with me.
+
+The agent downloads the framework, creates your workspace, and walks you through
+[Initiation](stages/initiation/README.md) interactively — starting with your
+project name and description, then exploring your problem, goals, and
+constraints.
+
+**Workspace structure the agent creates:**
+
+```
+my-app/
+├── AGENTS.md              ← workspace instructions for AI agents
+├── frameworks/
+│   └── v0.42.0/           ← framework release (read-only)
+├── projects/
+│   ├── index.md           ← active and completed projects
+│   └── my-first-project/
+│       ├── project.md     ← project config (locations + context)
+│       └── docs/
+│           ├── briefs/
+│           ├── adr/
+│           └── session-logs/
+└── src/                   ← application source code
 ```
 
-Replace `[framework-path]` with the path to your local clone of this framework
-repository (e.g., `../ai-assisted-sdlc` or an absolute path). The agent will
-read the stage routing table, determine the correct working location, check
-required inputs, and walk you through the first stage interactively.
+`AGENTS.md` tells the agent where to find the framework, project index, and
+source code. The agent also creates its own startup file (e.g., `CLAUDE.md` for
+Claude Code) that references `AGENTS.md`, so it re-orients automatically in
+future sessions. On startup, the agent reads `projects/index.md` and asks which
+project you're working on.
 
-### Path B: Chat-Based AI (ChatGPT, Claude.ai, etc.)
+> **Want more control over the setup?** The
+> [Bootstrap Guide](guides/bootstrap.md) explains the underlying location model
+> and offers prompts for higher autonomy levels and custom directory structures.
 
-1. Copy the bootstrap prompt from the
-   [Manual Process Guide](guides/manual-process.md#bootstrap-prompt-template)
-2. Fill in your project details and location context (~5 minutes)
-3. Paste it into your AI chat and start working through the
-   [Initiation stage](stages/initiation/README.md)
+### Joining a Project Mid-Stream
 
-The bootstrap prompt includes location setup guidance so the AI understands
-where framework, artifacts, and source code live.
+If you're adopting the framework on a project already in progress:
 
-### Path C: Joining a Project Mid-Stream
+1. **Start your agent** in the project's root directory (where `AGENTS.md`
+   lives, if one exists)
+2. **Paste this prompt:**
 
-If your team is adopting the framework on a project already in progress:
+> Download the latest release of the AI-Assisted SDLC framework from
+> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> version tag as the directory name (e.g., frameworks/v0.42.0/) if not already
+> present.
+>
+> Then read QUICKSTART.md from the downloaded framework to orient yourself.
+>
+> This is an existing project that I want to bring under the AI-Assisted SDLC
+> framework. Set up the workspace structure (frameworks/, projects/, and your
+> agent-specific startup file) alongside the existing codebase. If an AGENTS.md
+> already exists, augment it with workspace instructions rather than overwriting
+> it; otherwise create one. Then interview me to understand the project — what
+> we've built, where we are in the development lifecycle, and what decisions
+> have already been made. Create lightweight retroactive artifacts for completed
+> stages based on our conversation, then guide me forward from the current
+> stage. Drive the process but check decisions with me.
 
-Review the [stage lifecycle](guides/stages.md) to identify which stages apply,
-then:
+The agent sets up the governance layer alongside your existing code, interviews
+you to determine which [stages](guides/stages.md) are already complete, creates
+thin retroactive artifacts (briefs summarizing decisions already made — not full
+stage outputs), and picks up the framework at your current stage.
 
-1. Identify where the project is in the stage lifecycle (which stages are
-   already complete?)
-2. Create lightweight retroactive artifacts for completed stages — a brief
-   summary of decisions made and constraints in play, not full briefs
-3. Pick up the framework at the current stage and follow it forward
-4. Use the [Worked Example](guides/worked-example.md) to calibrate the expected
-   detail level for artifacts
+**Workspace structure the agent creates (project with `src/` directory):**
+
+```
+my-existing-app/               ← project root = workspace root
+├── AGENTS.md                  ← augmented with workspace instructions
+├── frameworks/
+│   └── v0.42.0/               ← framework release (read-only)
+├── projects/
+│   ├── index.md               ← active and completed projects
+│   └── my-first-project/
+│       ├── project.md         ← source code: ../../src
+│       └── docs/
+│           ├── briefs/
+│           ├── adr/
+│           └── session-logs/
+├── src/                       ← existing source code
+├── package.json               ← existing project files
+└── ...
+```
+
+**Workspace structure (source files at project root, no `src/` directory):**
+
+```
+my-existing-app/               ← project root = workspace root = source code
+├── AGENTS.md                  ← augmented with workspace instructions
+├── frameworks/
+│   └── v0.42.0/               ← framework release (read-only)
+├── projects/
+│   ├── index.md               ← active and completed projects
+│   └── my-first-project/
+│       ├── project.md         ← source code: ../..
+│       └── docs/
+│           ├── briefs/
+│           ├── adr/
+│           └── session-logs/
+├── app.py                     ← existing source files at root
+├── requirements.txt           ← existing project files
+└── ...
+```
+
+In both cases, the existing codebase is untouched — the agent only adds
+`frameworks/` and `projects/` alongside it.
 
 > **Key insight:** You don't need to go back and formally complete every prior
-> stage. Document enough context for the current stage's inputs to be
-> understood, then follow the framework forward.
+> stage. The agent creates lightweight retroactive artifacts — enough context
+> for the current stage's inputs to be understood — then follows the framework
+> forward.
 
 > **Joining to operate an already-deployed system?** Start at the
 > [Support Stage Guide](stages/support/README.md) and complete the
@@ -77,52 +164,15 @@ then:
 
 > **Joining in a specific role?**
 >
-> - **Product Managers / Business Analysts:** Start with
->   [Initiation](stages/initiation/README.md) to build your business case (Path
->   B above shows the AI-assisted approach)
-> - **Architects / Engineers:** Start with
->   [System Design](stages/system-design/README.md) for architecture work,
->   [Increment Design](stages/increment-design/README.md) for component specs
->   and test strategy, or [Implementation](stages/implementation/README.md) for
->   development
-> - **Project Managers / Delivery Leads:** Start with the
->   [Delivery Operating Guide](guides/delivery-operating-guide.md) for
->   week-by-week operating rhythm
-> - **DevOps / Platform Engineers:** Start with the
->   [DevOps Integration Guide](guides/devops-integration.md) or jump to
->   [Deployment Setup](stages/deployment/setup.md) +
->   [Pipeline Checklist](stages/deployment/pipeline-checklist.md)
-> - **QA / Test Engineers:** Start with
->   [Verification](stages/verification/README.md) for test planning and
->   execution, or review the
->   [Verification Checklist](stages/verification/checklist.md) for quality
->   criteria
-> - **Executives / Leadership:** Start with the
->   [README Business Value](README.md#business-value) and
->   [Governance](README.md#governance-at-a-glance) sections for ROI framing and
->   gate responsibilities
-> - **Support / Operations:** Start with the
->   [Support Stage Guide](stages/support/README.md) for the full workflow, then
->   the [Support Readiness Checklist](stages/support/readiness-checklist.md),
->   [Support Operations Guide](stages/support/operations.md), and
->   [Support Brief](templates/support-brief.md)
-
-### Minimum Viable Adoption
-
-If you want the highest value for the least process, start with just three
-artifacts at the Minimal tier:
-
-1. **Initiation Brief** — forces problem-first thinking and prevents building
-   the wrong thing
-2. **Increment Design Brief** — gives engineers enough spec to implement without
-   guessing
-3. **Verification Checklist** — prevents shipping untested work
-
-These three create a lightweight loop: define the problem, design the solution,
-verify it works. Add more artifacts only when you feel the gaps.
-
-> For projects deploying to production, add a **Deployment Brief**, **Rollback
-> Procedure**, and **Support Brief** to this minimum set.
+> | Role                            | Start here                                                                                               |
+> | ------------------------------- | -------------------------------------------------------------------------------------------------------- |
+> | Product Manager / BA            | [Initiation](stages/initiation/README.md)                                                                |
+> | Architect / Engineer            | [System Design](stages/system-design/README.md) or [Increment Design](stages/increment-design/README.md) |
+> | Project Manager / Delivery Lead | [Delivery Operating Guide](guides/delivery-operating-guide.md)                                           |
+> | DevOps / Platform Engineer      | [DevOps Integration Guide](guides/devops-integration.md)                                                 |
+> | QA / Test Engineer              | [Verification](stages/verification/README.md)                                                            |
+> | Executive / Leadership          | [README: Business Value](README.md#business-value)                                                       |
+> | Support / Operations            | [Support Stage](stages/support/README.md)                                                                |
 
 ---
 
@@ -136,6 +186,8 @@ verify it works. Add more artifacts only when you feel the gaps.
   across all stages (greenfield)
 - [**Brownfield Worked Example**](guides/worked-example-brownfield.md) — see
   preparation, exit checkpoint, and feature delivery for an existing codebase
+- [**Bootstrap Guide**](guides/bootstrap.md) — customize project layout,
+  multi-repo setup, and advanced autonomy levels
 - [**Delivery Operating Guide**](guides/delivery-operating-guide.md) —
   week-by-week operating rhythm for Sprint and Kanban delivery
 
@@ -143,6 +195,6 @@ verify it works. Add more artifacts only when you feel the gaps.
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-03-30
 
 Added to framework in v0.26.0.

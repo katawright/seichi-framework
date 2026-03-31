@@ -49,10 +49,9 @@ working locations, fallback protocols, and session conventions.
    [**Session Continuity Protocol**](#session-continuity-protocol) for
    multi-session work
 
-> **Human readers using chat-based AI tools?** See the
-> [Manual Process Guide](manual-process.md) instead — it provides bootstrap
-> prompts and step-by-step instructions for working with AI assistants that
-> don't have filesystem access.
+> **New to the framework?** See the [Bootstrap Guide](bootstrap.md) for setup
+> instructions, working location configuration, and a ready-to-use prompt
+> template for your first project.
 
 ---
 
@@ -483,6 +482,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

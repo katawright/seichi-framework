@@ -74,8 +74,8 @@ action items from the previous increment.
 2. Read [**Right-Sizing Increment Design**](#right-sizing-increment-design) to
    calibrate effort to your project's risk tier
 3. Review increment plan for current increment scope
-4. Use the [Manual Process Guide](../../guides/manual-process.md) to engage AI
-   assistant in detailing component designs — refer to
+4. Use the [Bootstrap Guide](../../guides/bootstrap.md) to engage your AI agent
+   in detailing component designs — refer to
    [**Why These Increment Design Elements Matter**](#why-these-increment-design-elements-matter)
    for rationale as you complete each section
 5. Fill out the
@@ -376,6 +376,6 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-03-29
 
 Added to framework in v0.12.0.
