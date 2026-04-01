@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-03-19 | **Framework Version:** 0.41.0
+**Last Updated:** 2026-03-31 | **Framework Version:** 0.42.0
 
 ## Overview
 
@@ -21,9 +21,8 @@ index lets readers identify relevant files before committing to deeper reads.
 ### Scope
 
 Lists files needed to **use** the framework: guides, stage artifacts, templates,
-and root navigation files. Excludes contributor tooling (CLAUDE.md,
-STYLE_GUIDE.md, CONTRIBUTING.md, AGENTS.md), schema validation files, and CI
-configuration.
+and root navigation files. Contributor tooling, schema validation, and CI
+configuration are excluded.
 
 ### Sort Order
 
@@ -35,7 +34,7 @@ Load the index first, then load only what you need.
 
 ### How to Use This Index
 
-1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-17) tables
+1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-19) tables
    to find cross-cutting content
 2. Jump to the relevant [**Stage Artifacts**](#stage-artifacts-28) subsection
    for stage-specific files
@@ -174,6 +173,6 @@ Load the index first, then load only what you need.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-03-31
 
 Added to framework in v0.41.0.

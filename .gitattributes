@@ -1,0 +1,15 @@
+# Exclude contributor/tooling files from GitHub release archives
+.claude/             export-ignore
+.evaluation/         export-ignore
+.github/             export-ignore
+.schema/             export-ignore
+docs/                export-ignore
+.gitattributes       export-ignore
+.gitignore           export-ignore
+AGENTS.md            export-ignore
+CLAUDE.md            export-ignore
+CONTRIBUTING.md      export-ignore
+STYLE_GUIDE.md       export-ignore
+package.json         export-ignore
+package-lock.json    export-ignore
+CHANGELOG.md         export-ignore
