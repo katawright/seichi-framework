@@ -19,22 +19,10 @@ Use Glob to find all `.md` files in these locations:
 - `stages/**/*.md`
 - `templates/**/*.md`
 
-**Exclude** files under these directories (per CLAUDE.md and convention):
-
-- `.ignore/`
-- `.obsidian/`
-- `.evaluation/`
-- `.claude/`
-- `node_modules/`
-- Any other dotfile directory
+**Exclude** any file or directory marked `export-ignore` in `.gitattributes` —
+that is the canonical list of contributor/tooling content excluded from releases.
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
-
-**Exclude** these contributor/tooling files (not framework-usage content):
-
-- `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `STYLE_GUIDE.md`
-- `.schema/` directory
-- `.github/` directory
 
 ---
 
@@ -97,10 +85,11 @@ appear in the body text.
 
 ## Step 5: Update Front Matter
 
-Edit the `generated:` field in the INDEX.md YAML front matter to today's date
+Update the `**Last Updated:**` date in the INDEX.md header to today's date
 (YYYY-MM-DD format).
 
-Do **not** change the `version:` field — that is managed by `/release`.
+Do **not** change the `**Framework Version:**` field — that is updated manually
+during release prep, not by this command.
 
 ---
 
