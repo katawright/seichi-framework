@@ -8,8 +8,7 @@
 proceeds, is revised, or is stopped. For non-investment checkpoints (quality,
 deployment, production ownership), use
 [checkpoint-decision.md](checkpoint-decision.md) instead. See the
-[Checkpoint Taxonomy](../guides/checkpoints.md) for the full
-decision framework.
+[Checkpoint Taxonomy](../guides/checkpoints.md) for the full decision framework.
 
 **Last Updated:** YYYY-MM-DD
 
@@ -69,6 +68,10 @@ Verify that all required stage outputs listed in the stage README front matter
 
 **Blocking:** Any artifact with status "Missing" blocks the gate decision unless
 the gate reviewer explicitly approves the omission with documented rationale.
+
+> **Gate 2 — ADR publishing:** Verify draft ADRs (`ADR-DNNN.md`) are ready for
+> publishing to the source code repo. Record published locations in this table.
+> See [ADR Publishing](../guides/framework.md#adr-publishing).
 
 ---
 
@@ -143,6 +146,9 @@ quality]
 - _Example (Gate 1, Proceed):_ "Begin Requirements stage"
 - _Example (Gate 1, Revise):_ "Refine problem statement, re-present"
 - _Example (Gate 2, Proceed):_ "Begin Increment Design for first increment"
+- _Example (Gate 2, Proceed):_ "Publish draft ADRs — copy `ADR-DNNN.md` files to
+  source code repo as `ADR-NNNN.md`; update artifact-repo copies with pointer to
+  published location"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
   stakeholders"
 - _Example (Gate 1, Proceed with prep):_ "Proceed — preparation project approved
@@ -155,4 +161,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-03-25 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-04-05 | Added in v0.13.0 -->

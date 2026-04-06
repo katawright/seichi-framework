@@ -89,6 +89,9 @@ ready for Gate 2.
 21. [ ] **All required stage outputs produced** (system design brief, ADRs,
         architecture diagrams, increment plan — verify against stage README
         front matter)
+22. [ ] **Draft ADRs use correct naming and location** (`ADR-DNNN.md` in
+        project's `docs/adr/`; ready for Gate 2 publishing per
+        [ADR Publishing](../../guides/framework.md#adr-publishing))
 
 ---
 
@@ -123,6 +126,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.12.0.

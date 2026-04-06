@@ -1,9 +1,9 @@
 # ADR-DXXX: [Title - Short Present Tense Phrase]
 
-<!-- Draft numbering: use ADR-DNNN (e.g., ADR-D001) during System Design.    -->
-<!-- File naming: ADR-DNNN.md (draft), ADR-NNNN.md (published).              -->
-<!-- When published to the source code repo at Gate 2, renumber to ADR-NNNN   -->
-<!-- to fit the code repo's sequential scheme.                                -->
+> **Draft ADR (pre-Gate 2):** Name this file `ADR-DNNN.md` (e.g., `ADR-D001.md`)
+> and save to the project's `docs/adr/` in the artifacts workspace. At Gate 2,
+> drafts are copied to the source code repo and renumbered to `ADR-NNNN.md`. See
+> [ADR Publishing](../guides/framework.md#adr-publishing).
 
 **Last Updated:** YYYY-MM-DD
 
@@ -207,4 +207,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.4.0 -->
+<!-- Template Last Updated: 2026-04-05 | Added in v0.4.0 -->
