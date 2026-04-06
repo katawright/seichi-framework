@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.43.0 (2026-04-05)
+
+### Features
+
+* **right-sizing:** promote Success Criteria Register from Optional to
+  Recommended at Minimal tier — agents now surface it for all projects
+* **checklists:** raise [H] items inline during interactive stage execution
+  rather than batching at the end (all 8 stage checklists)
+* **increment-design:** add non-code deliverable cross-reference checklist item
+  to catch platform configuration, documentation, and manual setup tasks
+* **tooling:** add `/release-prep` command combining VERSION, CHANGELOG, and
+  INDEX.md updates into a single step
+
+### Improvements
+
+* **framework:** clarify MoSCoW terminology — replace "release" with "increment"
+  in definitions, distinguish MoSCoW prioritization from increment plan, clarify
+  Won't Have scope (future project or dropped entirely)
+* **requirements:** add MoSCoW guide link to checklist item
+* **bootstrap:** replace hardcoded version references with `v<version>`
+  placeholder in QUICKSTART and Bootstrap Guide
+* **contributing:** document release process
+* **tooling:** merge `/index` command into `/release-prep`
+
+### Bug Fixes
+
+* **framework:** surface draft ADR convention in template, gate decision, and
+  checklist
+* **checklists:** remove stale `(Standard+)` tier qualifiers from success
+  criteria register references
+
 ## 0.42.0 (2026-03-31)
 
 ### Features

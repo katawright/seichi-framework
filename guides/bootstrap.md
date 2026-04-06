@@ -79,7 +79,7 @@ single-repo projects:
 my-app/                            ← workspace root
 ├── AGENTS.md                      ← workspace instructions for AI agents
 ├── frameworks/
-│   └── v0.42.0/                   ← framework release (read-only)
+│   └── v<version>/                   ← framework release (read-only)
 ├── projects/
 │   ├── index.md                   ← active and completed projects
 │   └── onboarding-tracker/
@@ -106,7 +106,7 @@ live in their own git repository alongside the source repos:
 ├── my-project-governance/         ← governance git repo (agent starts here)
 │   ├── AGENTS.md
 │   ├── frameworks/
-│   │   └── v0.42.0/               ← framework release (read-only)
+│   │   └── v<version>/               ← framework release (read-only)
 │   └── projects/
 │       ├── index.md
 │       └── payment-migration/
@@ -270,7 +270,7 @@ A solo project within the standard workspace structure:
 
 ## Locations
 
-- Framework: ../../frameworks/v0.42.0
+- Framework: ../../frameworks/v<version>
 - Artifacts: ./docs
 - Source code:
   - ../../src
@@ -307,7 +307,7 @@ A project spanning two source repositories, with governance in a sibling repo:
 
 ## Locations
 
-- Framework: ../../frameworks/v0.42.0
+- Framework: ../../frameworks/v<version>
 - Artifacts: ./docs
 - Source code:
   - ../../../payment-api
@@ -348,7 +348,7 @@ bootstrap prompt.
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v0.42.0/) if not already
+> version tag as the directory name (e.g., frameworks/v<version>/) if not already
 > present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.

@@ -37,7 +37,7 @@ Cowork, or similar).
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v0.42.0/) if not already
+> version tag as the directory name (e.g., frameworks/v<version>/) if not already
 > present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
@@ -58,7 +58,7 @@ constraints.
 my-app/
 ├── AGENTS.md              ← workspace instructions for AI agents
 ├── frameworks/
-│   └── v0.42.0/           ← framework release (read-only)
+│   └── v<version>/           ← framework release (read-only)
 ├── projects/
 │   ├── index.md           ← active and completed projects
 │   └── my-first-project/
@@ -91,7 +91,7 @@ If you're adopting the framework on a project already in progress:
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v0.42.0/) if not already
+> version tag as the directory name (e.g., frameworks/v<version>/) if not already
 > present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
@@ -117,7 +117,7 @@ stage outputs), and picks up the framework at your current stage.
 my-existing-app/               ← project root = workspace root
 ├── AGENTS.md                  ← augmented with workspace instructions
 ├── frameworks/
-│   └── v0.42.0/               ← framework release (read-only)
+│   └── v<version>/               ← framework release (read-only)
 ├── projects/
 │   ├── index.md               ← active and completed projects
 │   └── my-first-project/
@@ -137,7 +137,7 @@ my-existing-app/               ← project root = workspace root
 my-existing-app/               ← project root = workspace root = source code
 ├── AGENTS.md                  ← augmented with workspace instructions
 ├── frameworks/
-│   └── v0.42.0/               ← framework release (read-only)
+│   └── v<version>/               ← framework release (read-only)
 ├── projects/
 │   ├── index.md               ← active and completed projects
 │   └── my-first-project/

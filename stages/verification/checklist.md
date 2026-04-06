@@ -12,7 +12,9 @@ the increment is ready for deployment.
 
 > **AI-Led mode:** AI completes the full checklist and presents results to the
 > human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for.
+> require human judgment that AI cannot substitute for. **During interactive
+> stage execution, raise [H] items as they arise rather than batching them at
+> the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -119,7 +121,7 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.6.0. Database-layer logic regression and preparation
 increment verification guidance added in v0.42.0.

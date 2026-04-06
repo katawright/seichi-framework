@@ -43,7 +43,7 @@ how criteria flow through the framework.
 
 ---
 
-## Measurement Details (Optional — Standard+ tier)
+## Measurement Details (Optional)
 
 <!-- For each success criterion, expand on the summary table above with
      details that downstream stages (System Design, Implementation) consume. -->
@@ -66,4 +66,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.29.0 -->
+<!-- Template Last Updated: 2026-04-05 | Added in v0.29.0 -->

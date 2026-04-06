@@ -376,26 +376,29 @@ traceability, see the [Security Guide](security.md).
 The framework uses MoSCoW for coarse prioritization at the Requirements stage,
 before increment boundaries are known.
 
-**Must Have** — Critical for the first usable release. Without these, the
-solution cannot deliver core value. The minimum threshold for viability.
+**Must Have** — Critical for initial viability. Without these, the solution
+cannot deliver core value. Prioritized to the earliest increments.
 
 **Should Have** — Important requirements that **will** be delivered (committed)
-in future releases. They add significant value but aren't required for initial
+in later increments. They add significant value but aren't required for initial
 viability.
 
 **Could Have** — Desirable if time/resources permit. **Not committed** —
 opportunistic. "Build if easy, skip if hard."
 
-**Won't Have** — Explicitly excluded from this project scope. Captured as
-non-goals to prevent scope creep.
+**Won't Have** — Explicitly excluded from this project scope. May be deferred to
+a future project or dropped entirely. Captured as non-goals to prevent scope
+creep.
 
 **Key distinction:**
 
 - Should Have = "We WILL build this, just later" (committed)
 - Could Have = "We'd like to, but no commitment" (aspirational)
 
-**How priorities map to increments:** During System Design, the increment plan
-maps MoSCoW priorities to specific increments:
+**How priorities map to increments:** MoSCoW is a prioritization input defined
+during Requirements. The **increment plan** is a separate System Design output
+that groups and sequences requirements into deliverable increments. During
+System Design, the increment plan maps MoSCoW priorities to specific increments:
 
 - Must Have → early increments (Increment 1-2)
 - Should Have → later increments, based on dependencies and value
@@ -851,6 +854,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.9.0.

@@ -12,7 +12,9 @@ System Design.
 
 > **AI-Led mode:** AI completes the full checklist and presents results to the
 > human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for.
+> require human judgment that AI cannot substitute for. **During interactive
+> stage execution, raise [H] items as they arise rather than batching them at
+> the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -28,8 +30,9 @@ System Design.
        be validated in Verification)
 2. [ ] **[H] Each FR has objective acceptance criteria** (ACs define "done" with
        measurable conditions, no subjective language)
-3. [ ] **Requirements prioritized with MoSCoW** (clear Must/Should/Could/Won't
-       Have with dependency understanding)
+3. [ ] **Requirements prioritized with
+       [MoSCoW](../../guides/framework.md#moscow-prioritization)** (clear
+       Must/Should/Could/Won't Have with dependency understanding)
 
 ### Non-Functional and Data
 
@@ -64,9 +67,8 @@ System Design.
 14. [ ] **Open questions listed** (critical blockers flagged with owners)
 15. [ ] **Traceability summary present** (FRs traced to Initiation objectives
         and success metrics)
-16. [ ] **Success Criteria Register referenced (Standard+)** — all success
-        criteria have supporting FRs/NFRs and register measurement methods are
-        feasible
+16. [ ] **Success Criteria Register referenced** — all success criteria have
+        supporting FRs/NFRs and register measurement methods are feasible
 17. [ ] **[H] Review occurred** (engineering + product, and security/compliance
         if relevant, have validated)
 18. [ ] **All required stage outputs produced** (requirements brief, acceptance
@@ -105,6 +107,6 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.3.0.
