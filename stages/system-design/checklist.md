@@ -12,7 +12,9 @@ ready for Gate 2.
 
 > **AI-Led mode:** AI completes the full checklist and presents results to the
 > human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for.
+> require human judgment that AI cannot substitute for. **During interactive
+> stage execution, raise [H] items as they arise rather than batching them at
+> the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -44,8 +46,8 @@ ready for Gate 2.
 8. [ ] **Monitoring and logging strategy designed** (observability stack,
        alerting)
 9. [ ] **[H] Success criteria instrumentation planned** — each criterion from
-       the Success Criteria Register (Standard+) has a defined collection
-       method, metric name, and delivery increment
+       the Success Criteria Register has a defined collection method, metric
+       name, and delivery increment
 10. [ ] **Infrastructure plan covers CI/CD, environments, deployment**
         (bootstrap or assessment complete)
 

@@ -67,7 +67,7 @@ stage gate. **Recommended** = high value, skip only with justification.
 | ---------------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
 | [Initiation Brief](../templates/initiation-brief.md)                   | Initiation       | Required    | Required    | Required    |
 | [Gate Decision](../templates/gate-decision.md)                         | Initiation       | Optional    | Required    | Required    |
-| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation       | Optional    | Recommended | Required    |
+| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation       | Recommended | Recommended | Required    |
 | [Requirements Brief](../templates/requirements-brief.md)               | Requirements     | Recommended | Required    | Required    |
 | [System Design Brief](../templates/system-design-brief.md)             | System Design    | Optional    | Required    | Required    |
 | [ADR](../templates/adr.md)                                             | System Design    | Optional    | Recommended | Required    |
@@ -291,6 +291,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.13.0.

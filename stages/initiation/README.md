@@ -85,7 +85,7 @@ budget context. No prior framework artifacts or technical expertise required.
    below for rationale, good/bad examples, and what to include. See the
    [Bootstrap Guide](../../guides/bootstrap.md) for the bootstrap prompt
    template and setup instructions
-5. For Standard+ tier, populate the
+5. Populate the
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief
 6. Review the brief for correctness — you own the final content
@@ -632,6 +632,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.2.0.

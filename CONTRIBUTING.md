@@ -1,5 +1,15 @@
 # Contributing
 
+## Releasing
+
+```
+/release-prep <version>     # updates VERSION, generates CHANGELOG, updates INDEX.md
+# review, commit, PR, merge to main
+/release                    # tags main, pushes tag, creates GitHub release
+```
+
+---
+
 ## How to Suggest Improvements
 
 Open a GitHub issue describing what you'd like to change and why. Include enough
@@ -53,6 +63,6 @@ framework evaluation.
 
 ## Notes
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.24.0.

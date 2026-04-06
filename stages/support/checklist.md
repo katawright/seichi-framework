@@ -25,7 +25,9 @@ For initial setup before accepting production ownership, use the
 
 > **AI-Led mode:** AI completes the full checklist and presents results to the
 > human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for.
+> require human judgment that AI cannot substitute for. **During interactive
+> stage execution, raise [H] items as they arise rather than batching them at
+> the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -150,6 +152,6 @@ For initial setup before accepting production ownership, use the
 
 ## Notes
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.8.0.

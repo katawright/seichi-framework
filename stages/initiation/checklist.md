@@ -12,7 +12,9 @@ to circulate.
 
 > **AI-Led mode:** AI completes the full checklist and presents results to the
 > human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for.
+> require human judgment that AI cannot substitute for. **During interactive
+> stage execution, raise [H] items as they arise rather than batching them at
+> the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's risk tier. See
@@ -39,8 +41,8 @@ to circulate.
 8. [ ] **Key stakeholders identified with participation levels** (documented in
        brief with roles, participation type C/I, and relevant stages; see
        [Domain Stakeholders](../../guides/roles.md#domain-stakeholders))
-9. [ ] **Success Criteria Register produced (Standard+)** with baselines,
-       targets, and measurement methods for each success criterion
+9. [ ] **Success Criteria Register produced** with baselines, targets, and
+       measurement methods for each success criterion
 
 ### Security
 
@@ -61,8 +63,7 @@ to circulate.
 14. [ ] **At least one alternative option considered**
 15. [ ] **Hypothesis includes a time range and confidence level**
 16. [ ] **All required stage outputs produced** (initiation brief, success
-        criteria register [Standard+] — verify against stage README front
-        matter)
+        criteria register — verify against stage README front matter)
 
 ---
 
@@ -92,6 +93,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-04-05
 
 Added to framework in v0.2.0.
