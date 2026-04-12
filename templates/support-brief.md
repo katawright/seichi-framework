@@ -2,6 +2,10 @@
 
 # Support Brief
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session
+> start so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [Support README](../stages/support/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -291,4 +295,4 @@ anomaly detection.]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-04 | Added in v0.8.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.8.0. Session protocol preamble added in v0.44.0. -->

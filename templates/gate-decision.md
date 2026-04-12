@@ -69,10 +69,6 @@ Verify that all required stage outputs listed in the stage README front matter
 **Blocking:** Any artifact with status "Missing" blocks the gate decision unless
 the gate reviewer explicitly approves the omission with documented rationale.
 
-> **Gate 2 — ADR publishing:** Verify draft ADRs (`ADR-DNNN.md`) are ready for
-> publishing to the source code repo. Record published locations in this table.
-> See [ADR Publishing](../guides/framework.md#adr-publishing).
-
 ---
 
 ## Criteria Evaluated
@@ -107,6 +103,26 @@ Criteria may match or differ from what the preceding stage proposed.
 
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any — e.g., "proceed but address X first")
+
+---
+
+## Post-Decision Actions
+
+<!-- For Gate 1: N/A. These actions apply only to Gate 2. -->
+
+> **Gate 1 decisions:** N/A — no post-decision publishing actions.
+
+### Gate 2: Publish Draft ADRs
+
+If the decision is Proceed, publish draft ADRs to the source code repo. See
+[ADR Publishing](../guides/framework.md#adr-publishing) for the canonical
+procedure.
+
+- [ ] Rename each `ADR-DNNN.md` to `ADR-NNNN.md` (final 4-digit format)
+- [ ] Move ADR files from the artifact repo to the source code repo
+- [ ] Update ADR status from `Draft` / `Proposed` → `Accepted`
+- [ ] Replace artifact-repo ADR copy with a pointer to the published
+      location in the source code repo
 
 ---
 
@@ -161,4 +177,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-04-05 | Added in v0.13.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. -->

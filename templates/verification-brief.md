@@ -2,6 +2,10 @@
 
 # Verification Brief: [Increment Name]
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session
+> start so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [Verification README](../stages/verification/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -343,4 +347,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-26 | Added in v0.6.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.6.0. Session protocol preamble added in v0.44.0. -->

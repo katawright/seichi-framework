@@ -2,6 +2,10 @@
 
 # Initiation Brief
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session
+> start so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [Initiation](../stages/initiation/README.md)
 
 > **Need an example?** See the
@@ -152,10 +156,11 @@ For each:
 
 ## Pre-Mortem
 
-<!-- Minimal: 1–2 bullets minimum; do not skip entirely — pre-mortem reliably
-     surfaces adoption and scope risks even on small projects | Standard: 2–3
-     failure modes with early warning signals | Enterprise: structured
-     risk-assumption mapping with stakeholder input -->
+> **Right-sizing:** All tiers — do not skip. Pre-mortem reliably surfaces
+> adoption and scope risks even on small projects. Minimal: 1–2 bullets
+> minimum. Standard: 2–3 failure modes with early warning signals.
+> Enterprise: structured risk-assumption mapping with stakeholder input.
+
 <!-- Imagine the project has failed. What went wrong? Identify 2-3 plausible
      failure modes before committing resources. -->
 
@@ -259,4 +264,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-03-27 | Added in v0.2.0. Tier annotations added in v0.42.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. -->

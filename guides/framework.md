@@ -376,12 +376,12 @@ traceability, see the [Security Guide](security.md).
 The framework uses MoSCoW for coarse prioritization at the Requirements stage,
 before increment boundaries are known.
 
-**Must Have** — Critical for initial viability. Without these, the solution
-cannot deliver core value. Prioritized to the earliest increments.
+**Must Have** — Critical for core value. Without these, the solution cannot be
+delivered. Prioritized to the earliest increments.
 
 **Should Have** — Important requirements that **will** be delivered (committed)
-in later increments. They add significant value but aren't required for initial
-viability.
+in later increments. They add significant value but aren't required for the
+earliest increments.
 
 **Could Have** — Desirable if time/resources permit. **Not committed** —
 opportunistic. "Build if easy, skip if hard."
@@ -432,16 +432,17 @@ the artifacts repo during design stages and then published to the source code
 repo when implementation begins. Understanding which artifacts live where — and
 when they move — prevents duplication, lost context, and orphaned records.
 
-| Artifact              | Home Location | Notes                                                        |
-| --------------------- | ------------- | ------------------------------------------------------------ |
-| Briefs                | Artifacts     | Governance records; stay in artifacts for the project's life |
-| Gate decisions        | Artifacts     | Governance records; stay in artifacts                        |
-| Session logs          | Artifacts     | Governance records; stay in artifacts                        |
-| Success criteria reg. | Artifacts     | Governance records; stay in artifacts                        |
-| Retrospectives        | Artifacts     | Governance records; stay in artifacts                        |
-| ADRs                  | Source Code   | Drafted in artifacts; published to source code at Gate 2     |
-| Design diagrams       | Source Code   | Snapshot in artifacts; canonical copy in `docs/design/`      |
-| API contracts         | Source Code   | Drafted during design; canonical copy with owning service    |
+| Artifact              | Home Location | Notes                                                             |
+| --------------------- | ------------- | ----------------------------------------------------------------- |
+| Briefs                | Artifacts     | Governance records; stay in artifacts for the project's life      |
+| Gate decisions        | Artifacts     | Governance records; stay in artifacts                             |
+| Session logs          | Artifacts     | Governance records; stay in artifacts                             |
+| Success criteria reg. | Artifacts     | Governance records; stay in artifacts                             |
+| Retrospectives        | Artifacts     | Governance records; stay in artifacts                             |
+| ADRs                  | Source Code   | Drafted in artifacts; published to source code at Gate 2          |
+| Design diagrams       | Source Code   | Snapshot in artifacts; canonical copy in `docs/design/`           |
+| Visual designs        | Source Code   | Canonical in team's design tool; gate-frozen exports in `assets/` |
+| API contracts         | Source Code   | Drafted during design; canonical copy with owning service         |
 
 > **Snapshot preservation:** Artifact-repo copies of published artifacts (ADRs,
 > diagrams) remain as point-in-time records of design-stage decisions. They are
@@ -854,6 +855,7 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-04-11
 
-Added to framework in v0.9.0.
+Added to framework in v0.9.0. Visual designs row added to Artifact Placement
+table in v0.44.0.

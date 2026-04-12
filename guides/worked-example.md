@@ -156,7 +156,7 @@ From the **Requirements Brief**, Acceptance Criteria section:
 From the **Requirements Brief**, Scope Baseline section:
 
 ```markdown
-### Must Have (first usable release)
+### Must Have (earliest increments)
 
 - Predefined task library with default tasks (FR-1)
 - Assign tasks to new hires with relative due dates (FR-3)
@@ -829,7 +829,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-11
 
 Added to framework in v0.17.0. For a brownfield adoption example showing
 preparation increments, exit checkpoints, and shadow mode, see the

@@ -152,7 +152,9 @@ it to `AGENTS.md` for workspace context.
 ### Instructions
 
 1. Read `projects/index.md` to see active projects
-2. Ask which project to work on (or continue the most recent active project)
+2. Ask which project to work on (or continue the most recent active project).
+   If the user wants to start a new project, see "Adding a New Project to an
+   Existing Workspace" in the framework's `QUICKSTART.md`.
 3. Read that project's `project.md` for locations, status, and context
 4. Read the latest session log to pick up where the last session left off
 5. Follow the framework stage guides for the current stage
@@ -183,6 +185,31 @@ Adapt the Workspace Structure section to match the actual layout:
 - **Monorepos** — list the relevant packages or services instead of `src/`
 - **Multi-repo** — replace `src/` with the source repo names and their locations
   relative to the governance repo
+
+### Framework Version Coexistence
+
+Multiple framework versions can coexist in `frameworks/`. Each version lives
+in its own directory (e.g., `frameworks/v0.42.0/`, `frameworks/v0.44.0/`).
+Each project pins its framework version in its `project.md` via the
+`Framework` location field, so projects can use different versions
+simultaneously without interfering with each other.
+
+Upgrading the workspace's latest framework version is additive — adding
+`frameworks/v0.45.0/` alongside `frameworks/v0.44.0/` never breaks existing
+projects. Ongoing projects keep reading their pinned version until the team
+decides to upgrade by editing the `Framework` field in their `project.md`.
+
+**Cleaning up old versions.** When a project is completed and no other
+project references its pinned framework version, that version directory can
+be deleted to reduce clutter. A version directory should only be removed
+when:
+
+- no active project references it in its `project.md`, and
+- no completed project needs to be revisited with that version's conventions
+  (for compliance, audit, or historical review).
+
+If in doubt, leave the old version in place — framework releases are small
+and keeping them costs almost nothing.
 
 ### Project Index
 
@@ -348,8 +375,8 @@ bootstrap prompt.
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v<version>/) if not already
-> present.
+> version tag as the directory name (e.g., `frameworks/v<version>/`) if not
+> already present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
 >
@@ -451,6 +478,6 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-03-30
+**Last Updated:** 2026-04-11
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
