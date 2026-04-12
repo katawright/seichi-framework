@@ -2,6 +2,10 @@
 
 # Increment Design Brief
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session
+> start so nothing is missed as the protocol evolves.
+
 > **Stage guide:**
 > [Increment Design README](../stages/increment-design/README.md)
 
@@ -142,8 +146,9 @@ stateful, approach]
 
 ## 3. Data and State Changes
 
-<!-- Minimal: omit this section entirely if this increment introduces no schema
-     changes, new data storage, or state management changes. Do not write N/A. -->
+> **Right-sizing:** Minimal — omit this section entirely if this increment
+> introduces no schema changes, new data storage, or state management
+> changes. Do not write N/A.
 
 ### 3.1 State Management Changes
 
@@ -170,8 +175,8 @@ stateful, approach]
 
 ## 4. Interface Specifications
 
-<!-- Minimal: omit this section entirely if this increment introduces no new or
-     changed external interfaces. Do not write N/A. -->
+> **Right-sizing:** Minimal — omit this section entirely if this increment
+> introduces no new or changed external interfaces. Do not write N/A.
 
 ### 4.1 Interfaces
 
@@ -279,4 +284,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-29 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. -->

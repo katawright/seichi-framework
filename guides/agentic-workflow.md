@@ -298,6 +298,10 @@ restricts them to a specific tier.
 
 ## Session Continuity Protocol
 
+> **Quick reference:** The step-by-step list lives in
+> [Session Protocol](session-protocol.md). This section has the narrative
+> and edge cases.
+
 Multi-session work requires explicit context handoff. Use the session log
 template to maintain continuity across sessions, agents, or participants.
 
@@ -482,6 +486,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-11
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

@@ -2,6 +2,10 @@
 
 # System Design Brief
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [System Design](../stages/system-design/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -74,6 +78,10 @@ DevOps Lead, Project Manager]
 <!-- ADRs are separate files stored in docs/adr/ — not embedded in this brief -->
 <!-- Use draft numbering (ADR-DNNN) during System Design; renumber at Gate 2  -->
 
+> **Visual architecture:** If the project has a UI, design-system, token,
+> component-library, and responsive-strategy decisions are ADR candidates — see
+> [System Design Guide: Visual Architecture](../../stages/system-design/README.md#visual-architecture).
+
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-DNNN.md` (draft prefix during design; title is in the
   ADR heading, not the filename)
@@ -127,8 +135,8 @@ Data Architecture, API Architecture, etc.).
 
 ## 5. API Architecture
 
-<!-- Minimal: skip this section entirely if the system has no external API
-     surface or inter-service integration -->
+> **Right-sizing:** Minimal — skip this section entirely if the system has no
+> external API surface or inter-service integration.
 
 ### 5.1 API Design Principles
 
@@ -147,8 +155,8 @@ Data Architecture, API Architecture, etc.).
 
 ### 5.3 System-Level Interface Contracts
 
-<!-- Minimal: skip this section entirely; system-level interface contracts apply
-     to multi-service architectures -->
+> **Right-sizing:** Minimal — skip this section entirely. System-level interface
+> contracts apply to multi-service architectures.
 
 | Interface     | Provider    | Consumer    | Contract Format | Versioning |
 | ------------- | ----------- | ----------- | --------------- | ---------- |
@@ -192,9 +200,9 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ## 7. Observability and Monitoring Design
 
-<!-- Minimal: skip this section entirely for local-only or non-production tools
-     with no infrastructure monitoring; note logging approach in Section 1 if
-     relevant -->
+> **Right-sizing:** Minimal — skip this section entirely for local-only or
+> non-production tools with no infrastructure monitoring. Note logging approach
+> in Section 1 if relevant.
 
 ### 7.1 Instrumentation Strategy
 
@@ -214,8 +222,8 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ## 8. Performance and Scalability Design
 
-<!-- Minimal: skip this section entirely for non-production tools; record known
-     performance constraints as NFRs in Section 9 instead -->
+> **Right-sizing:** Minimal — skip this section entirely for non-production
+> tools. Record known performance constraints as NFRs in Section 9 instead.
 
 ### 8.1 Performance Targets
 
@@ -282,8 +290,9 @@ weeks] (estimate) **Team:** [Composition] **Effort:** [X-Y person-weeks]
 
 #### Brownfield Readiness Assessment (refined)
 
-<!-- Greenfield projects: omit this sub-section entirely; it applies only to
-     brownfield first-AI-assisted increments -->
+> **Right-sizing:** Greenfield projects — omit this sub-section entirely. It
+> applies only to brownfield first-AI-assisted increments.
+
 <!-- Include for brownfield first AI-assisted projects. Refine the Initiation
      assessment with evidence gathered during System Design discovery. -->
 
@@ -417,8 +426,10 @@ mitigation]
 
 ## 12. Infrastructure Plan
 
-<!-- Minimal: skip this section entirely for local-only tools with no deployment
-     infrastructure; record the skip rationale in Stage Skip Decisions below -->
+> **Right-sizing:** Minimal — skip this section entirely for local-only tools
+> with no deployment infrastructure. Record the skip rationale in Stage Skip
+> Decisions below.
+
 <!-- Scale to project tier:
      Minimal: brief notes on hosting and deployment approach
      Standard: CI/CD pipeline, environment strategy, infrastructure components
@@ -476,4 +487,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-29 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. -->

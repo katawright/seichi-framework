@@ -2,6 +2,10 @@
 
 # Implementation Brief: [Increment Name]
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session
+> start so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [Implementation README](../stages/implementation/README.md)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
@@ -249,9 +253,9 @@ register]
 
 ### Requirements Traceability
 
-<!-- Minimal: omit if AC traceability is maintained in the Increment Design and
-     Verification briefs. Include only if this brief is the primary traceability
-     record. -->
+> **Right-sizing:** Minimal — omit if AC traceability is maintained in the
+> Increment Design and Verification briefs. Include only if this brief is
+> the primary traceability record.
 
 | Requirement | Implementation                     | Unit Tests                  | Ready?  |
 | ----------- | ---------------------------------- | --------------------------- | ------- |
@@ -287,7 +291,8 @@ register]
 
 ### Deployment Notes
 
-<!-- Minimal: omit for local-only tools with no deployment infrastructure -->
+> **Right-sizing:** Minimal — omit for local-only tools with no deployment
+> infrastructure.
 
 - Database migrations required
 - Configuration changes needed
@@ -296,7 +301,8 @@ register]
 
 ### Rollback Plan
 
-<!-- Minimal: omit for local-only tools with no deployment infrastructure -->
+> **Right-sizing:** Minimal — omit for local-only tools with no deployment
+> infrastructure.
 
 1. [Step 1: e.g., Disable feature flag X]
 2. [Step 2: e.g., Revert to previous deployment]
@@ -325,4 +331,4 @@ register]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-03-27 | Added in v0.5.0. Tier annotations added in v0.42.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.5.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. -->

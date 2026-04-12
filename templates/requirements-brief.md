@@ -2,6 +2,10 @@
 
 # Requirements Brief
 
+> **Before starting a session on this brief:** follow the steps in
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
+
 > **Stage guide:** [Requirements](../stages/requirements/README.md)
 
 > **Need an example?** See the
@@ -103,13 +107,14 @@
 <!-- For guidance, see requirements/README.md#scope-baseline-moscow -->
 <!-- Minimal: informal must/nice-to-have | Standard: MoSCoW for all requirements | Enterprise: MoSCoW plus weighted scoring with formal input -->
 
-### Must Have (first usable release)
+### Must Have (earliest increments)
 
-- [Requirements critical for the first usable release]
+- [Requirements critical for core value — prioritized to the earliest
+  increments]
 
-### Should Have (future releases - committed)
+### Should Have (later increments - committed)
 
-- [Important requirements committed but deferred to future releases]
+- [Important requirements committed but deferred to later increments]
 
 ### Could Have (if time/resources permit - not committed)
 
@@ -162,6 +167,9 @@
 - **Security/Privacy:** [NFR — derive from Initiation data sensitivity
   classification; consider auth, encryption, audit logging, data retention] |
   **Verification criteria:** [how validated]
+- **Usability (if UI in scope):** [NFR — e.g., WCAG 2.2 AA, supported
+  devices/breakpoints, brand/visual compliance] | **Verification criteria:**
+  [how validated]
 - **Scalability (if relevant):** [NFR] | **Verification criteria:** [how
   validated]
 - **Observability:** [NFR] | **Verification criteria:** [how validated]
@@ -289,4 +297,4 @@ Provide this Requirements Brief to System Design team.
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-03-19 | Added in v0.3.0 -->
+<!-- Template Last Updated: 2026-04-11 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. -->

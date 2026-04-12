@@ -395,8 +395,9 @@ scope creep.
 
 **What to include:**
 
-- Must Have — requirements critical for the first usable release
-- Should Have — committed for future releases
+- Must Have — requirements critical for core value, prioritized to the earliest
+  increments
+- Should Have — committed for later increments
 - Could Have — desirable if time/resources permit (not committed)
 - Won't Have — explicitly excluded to prevent scope creep
 
@@ -498,7 +499,8 @@ is meeting its goals in production.
 - **Reliability:** Availability, error budgets, fault tolerance
 - **Security:** Authentication, authorization, data protection, audit
 - **Scalability:** Load capacity, growth projections, concurrency
-- **Usability:** Accessibility, learnability, error recovery
+- **Usability:** Accessibility (e.g., WCAG 2.2 AA), learnability, error
+  recovery, brand/visual compliance, device targets, responsive breakpoints
 - **Observability:** Logging, metrics, traces, SLOs
 - **Compliance:** Regulatory requirements, data retention, privacy
 
@@ -730,6 +732,7 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-11
 
-Added to framework in v0.3.0.
+Added to framework in v0.3.0. Visual NFR examples added to Usability category in
+v0.44.0.

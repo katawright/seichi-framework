@@ -34,7 +34,7 @@ Load the index first, then load only what you need.
 
 ### How to Use This Index
 
-1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-19) tables
+1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-20) tables
    to find cross-cutting content
 2. Jump to the relevant [**Stage Artifacts**](#stage-artifacts-28) subsection
    for stage-specific files
@@ -51,7 +51,7 @@ Load the index first, then load only what you need.
 | `QUICKSTART.md` | Three-step new-project prompt and mid-stream joining guide.        | quick-start, bootstrap, onboarding, execution-paths, location-detection | agentic-workflow, bootstrap, right-sizing | core |
 | `README.md`     | Project overview, stage summary table, and navigation entry point. | framework, SDLC, overview, navigation, stages                           | —                                         | core |
 
-## Guides (19)
+## Guides (20)
 
 | Path                                  | Description                                                                | Keywords                                                                                                               | Refs                                                                                         | Tier |
 | ------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---- |
@@ -71,6 +71,7 @@ Load the index first, then load only what you need.
 | `guides/right-sizing.md`              | Scales framework practices to project risk, size, and context.             | risk-tiers, scaling, team-size, process-weight, tier-selection                                                         | framework                                                                                    | core |
 | `guides/roles.md`                     | Canonical role definitions, RACI matrix, and collaboration protocols.      | roles, RACI, consultation-protocol, information-protocol, PjM, AppSec                                                  | framework, checkpoints, all stages                                                           | core |
 | `guides/security.md`                  | Cross-cutting security throughline with NIST SSDF mapping.                 | security, SSDF, threat-modelling, scanning, risk-tiers                                                                 | all stages, deployment                                                                       | core |
+| `guides/session-protocol.md`          | Per-session start/end steps for any stage; linked from all brief templates. | session-protocol, session-start, session-end, continuity, handoff                                                     | agentic-workflow, session-log                                                                | core |
 | `guides/stages.md`                    | Eight-stage model with inputs, outputs, and execution patterns.            | stage-definitions, inputs-outputs, execution-patterns                                                                  | ai-assistance, checkpoints                                                                   | core |
 | `guides/worked-example.md`            | End-to-end greenfield example tracing one requirement through all stages.  | traceability, greenfield-example, walkthrough, artifact-examples                                                       | all stages                                                                                   | ref  |
 | `guides/worked-example-brownfield.md` | End-to-end brownfield example with preparation and exit checkpoint.        | brownfield-example, preparation, exit-checkpoint, shadow-mode                                                          | worked-example, brownfield, brownfield-readiness, brownfield-approach, brownfield-enablement | ref  |
@@ -173,6 +174,6 @@ Load the index first, then load only what you need.
 
 ## Notes
 
-**Last Updated:** 2026-03-31
+**Last Updated:** 2026-04-11
 
 Added to framework in v0.41.0.

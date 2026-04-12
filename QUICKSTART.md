@@ -37,8 +37,8 @@ Cowork, or similar).
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v<version>/) if not already
-> present.
+> version tag as the directory name (e.g., `frameworks/v<version>/`) if not
+> already present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
 >
@@ -91,8 +91,8 @@ If you're adopting the framework on a project already in progress:
 
 > Download the latest release of the AI-Assisted SDLC framework from
 > https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
-> version tag as the directory name (e.g., frameworks/v<version>/) if not already
-> present.
+> version tag as the directory name (e.g., `frameworks/v<version>/`) if not
+> already present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
 >
@@ -175,6 +175,74 @@ In both cases, the existing codebase is untouched — the agent only adds
 > | Executive / Leadership          | [README: Business Value](README.md#business-value)                                                       |
 > | Support / Operations            | [Support Stage](stages/support/README.md)                                                                |
 
+### Adding a New Project to an Existing Workspace
+
+You've set up a workspace before — it has `AGENTS.md` at the root, a
+`frameworks/` directory with one or more framework versions, and a `projects/`
+subtree with at least one project. Now you want to start a second project
+alongside the existing ones: a new domain, a new experiment, or a clean slate
+while an existing project stays in maintenance.
+
+The framework is designed for this case. Each project pins its own framework
+version in its `project.md`, and `projects/index.md` tracks all active and
+completed projects. You don't need to reinitialize the workspace — just
+download the latest framework release (if you don't already have it), add a
+new project directory, and let the agent guide you through the first stage.
+
+**Prerequisites:** A local agent with filesystem access and an existing
+workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
+
+1. **Start your agent** in the workspace root (where `AGENTS.md` lives)
+2. **Paste this prompt:**
+
+> Download the latest release of the AI-Assisted SDLC framework from
+> https://github.com/jeffogata/ai-assisted-sdlc into `./frameworks/` using the
+> version tag as the directory name (e.g., `frameworks/v<version>/`) if not
+> already present. Keep any previous framework versions in place — existing
+> projects may reference them via their `project.md`.
+>
+> Then read `AGENTS.md` to orient yourself to this workspace, followed by
+> `projects/index.md` to see existing projects and
+> `frameworks/v<version>/QUICKSTART.md` from the version you just downloaded.
+>
+> I want to start a new project in this workspace. Ask me for the project
+> name, a one-line description, and my preferred autonomy level and oversight
+> style (or I'll specify them here). Then create a new project directory
+> under `projects/`, create its `project.md` pinning the framework version
+> to use, create a `docs/` subtree, add an entry to `projects/index.md`, and
+> guide me through Initiation.
+
+The agent downloads the latest framework release (keeping any older versions
+in place), reads the workspace conventions from `AGENTS.md`, creates the new
+project scaffolding, updates `projects/index.md`, and walks you through
+Initiation starting with the project name and description.
+
+**Workspace structure after adding a second project:**
+
+```
+my-workspace/
+├── AGENTS.md
+├── frameworks/
+│   ├── v0.42.0/              ← older version still referenced by first project
+│   └── v<version>/           ← new version (latest)
+├── projects/
+│   ├── index.md              ← now lists both projects
+│   ├── my-first-project/
+│   │   ├── project.md        ← pinned to v0.42.0
+│   │   └── docs/
+│   └── my-second-project/    ← newly created
+│       ├── project.md        ← pinned to v<version>
+│       └── docs/
+└── src/                      ← or source repos alongside, per project.md
+```
+
+> **Key insight:** Framework versions coexist. Each `project.md` pins the
+> version its project uses, so upgrading the workspace's latest version does
+> not force ongoing projects to migrate. See
+> [Framework Version Coexistence](guides/bootstrap.md#framework-version-coexistence)
+> for how multi-version workspaces work and when old versions can be cleaned
+> up.
+
 ---
 
 ## What's Next
@@ -196,6 +264,6 @@ In both cases, the existing codebase is untouched — the agent only adds
 
 ## Notes
 
-**Last Updated:** 2026-03-30
+**Last Updated:** 2026-04-11
 
 Added to framework in v0.26.0.

@@ -396,14 +396,38 @@ at System Design to enable parallel increment work.
 The following concerns apply across all stages. Define your approach at System
 Design and trace it through implementation and verification:
 
-| Concern       | Define at           | Verify at            | Framework Reference                                                                                                       |
-| ------------- | ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Security      | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Security section) + Verification Checklist (security gate) |
-| Performance   | System Design       | Verification         | [Requirements Brief](../../templates/requirements-brief.md) (NFR section)                                                 |
-| Observability | Requirements/Design | Support              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                              |
-| Accessibility | Requirements        | Verification         | Verification Checklist                                                                                                    |
-| Resilience    | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
-| Data privacy  | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
+| Concern             | Define at           | Verify at            | Framework Reference                                                                                                       |
+| ------------------- | ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Security            | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Security section) + Verification Checklist (security gate) |
+| Performance         | System Design       | Verification         | [Requirements Brief](../../templates/requirements-brief.md) (NFR section)                                                 |
+| Observability       | Requirements/Design | Support              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                              |
+| Accessibility       | Requirements        | Verification         | Verification Checklist                                                                                                    |
+| Resilience          | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
+| Data privacy        | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
+| Visual architecture | System Design       | Verification         | [Visual Architecture](#visual-architecture) + Verification Checklist                                                      |
+
+### Visual Architecture
+
+For UI-bearing systems, design-language decisions — design system, component
+library, design tokens, theming, responsive strategy — deserve explicit
+treatment during System Design. Left to Implementation, these decisions happen
+by accident and become expensive to unify later.
+
+**ADR candidates:** design system or component library selection, token scales
+and naming, theming approach, responsive breakpoints, accessibility baseline
+(e.g., WCAG 2.2 AA). Capture each as an ADR alongside technical architecture
+decisions.
+
+**Artifact capture:** canonical live work stays in the team's design tool (e.g.,
+Figma, Sketch, Penpot) and is linked from the System Design Brief. Gate-relevant
+frozen frames — such as the mockup Gate 2 approved — get exported to an
+`assets/` folder in the source-code repo so the governance record survives
+upstream edits. Prototypes stay as external links; they don't belong in the
+repo. See the [Artifact Placement](../../guides/framework.md#artifact-placement)
+table for where visual design artifacts live alongside other project outputs.
+
+These decisions translate to testable criteria at Verification — visual
+regression tests, WCAG audits, and brand-compliance checks.
 
 ### Observability and Monitoring Design
 
@@ -665,6 +689,7 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-11
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Visual architecture cross-cutting concern and
+subsection added in v0.44.0.
