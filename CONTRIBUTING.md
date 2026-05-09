@@ -2,11 +2,65 @@
 
 ## Releasing
 
+A framework release ships two artifacts:
+
+- The **source tree** at a tagged commit on `main` (read by humans and tools
+  browsing the repo).
+- A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the
+  framework surface — `guides/`, `stages/`, `templates/`, `INDEX.md`,
+  `QUICKSTART.md`, `README.md`, `VERSION`, plus a generated `manifest.json`.
+  The zip is the canonical artifact downstream consumers (e.g., Theia)
+  fetch and project; it is attached to the GitHub release and uploaded to
+  S3.
+
+The release flow is two slash commands plus an explicit packaging step:
+
 ```
-/release-prep <version>     # updates VERSION, generates CHANGELOG, updates INDEX.md
-# review, commit, PR, merge to main
-/release                    # tags main, pushes tag, creates GitHub release
+/release-prep <version>     # update VERSION, CHANGELOG, INDEX.md
+                            # then run `npm run release` to produce the zip
+                            # review, commit (lockfile if any), PR, merge to main
+/release                    # tag main, push tag, create GitHub release
+                            # attach dist/framework-vX.Y.Z.zip
 ```
+
+### What `npm run release` does
+
+`scripts/release/index.ts` projects the source tree into a Zod-validated
+`manifest.json`, stages the framework surface into a clean directory
+(excluding maintainer-only paths like `.schema/`, `scripts/`, `.obsidian/`,
+`node_modules/`), and emits a deterministic STORE-mode zip into `dist/`.
+The zip is byte-identical across runs from the same source tree, so the
+artifact attached to the GitHub release is reproducible.
+
+The manifest is *not* committed (`.gitignore`d as a build artifact). It is
+written into the repo root for inspection alongside the zip.
+
+### Prerequisites
+
+- `npm install` (first-time setup, and after dependency changes — see
+  [Dependencies](#dependencies) below).
+- `podman` or `docker` only if regenerating the lockfile after a
+  dependency change.
+
+### Manual release recipe
+
+If you ever need to run the steps without the slash commands:
+
+```bash
+# 1. Bump VERSION and INDEX.md "Last Updated" header to match the release
+# 2. Update CHANGELOG.md with entries since the last tag
+# 3. Build and verify the release artifacts
+npm run release        # writes manifest.json + dist/framework-vX.Y.Z.zip
+# 4. Commit, PR, merge to main
+# 5. Tag and publish
+git tag vX.Y.Z
+git push origin vX.Y.Z
+gh release create vX.Y.Z --title "vX.Y.Z" \
+  --notes-file <(extract-changelog-section vX.Y.Z) \
+  dist/framework-vX.Y.Z.zip
+```
+
+The slash commands automate steps 1–2 and 5.
 
 ---
 

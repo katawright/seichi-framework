@@ -1,13 +1,14 @@
 ---
-description: Update VERSION, generate CHANGELOG entry, and update INDEX.md
-allowed-tools: Bash(git log:*), Bash(git tag:*), Bash(git describe:*), Bash(git diff:*), Read, Edit, Write, Glob, Grep
+description: Update VERSION, generate CHANGELOG entry, update INDEX.md, and build the release zip
+allowed-tools: Bash(git log:*), Bash(git tag:*), Bash(git describe:*), Bash(git diff:*), Bash(npm run release:*), Read, Edit, Write, Glob, Grep
 ---
 
 # /release-prep — Prepare a Framework Release
 
 You are preparing a release of the AI-Assisted SDLC Framework. This command
-updates VERSION, generates a CHANGELOG entry, and updates INDEX.md. After this
-command completes, the user will commit, merge to main, and run `/release`.
+updates VERSION, generates a CHANGELOG entry, updates INDEX.md, and builds
+the release zip via `npm run release`. After this command completes, the
+user will commit, merge to main, and run `/release`.
 
 The version argument is required. Usage: `/release-prep 0.43.0`
 
@@ -169,7 +170,28 @@ Update the `**Framework Version:**` field to match the version from Step 1.
 
 ---
 
-## Step 4: Report
+## Step 4: Build the Release Zip
+
+Run `npm run release` to produce `manifest.json` (gitignored, repo root)
+and `dist/framework-vX.Y.Z.zip`. The script reads VERSION and INDEX.md
+that you just updated, validates the projected manifest against the Zod
+schema, and emits a deterministic STORE-mode zip.
+
+If the script fails with a schema or projection error, the source-tree
+content is inconsistent with what the projector expects (e.g.,
+frontmatter is malformed in a stage README). Surface the error and
+**stop** — do not proceed with the release until it is fixed.
+
+If the script reports a version mismatch (manifest version vs VERSION
+file), that means Step 1 didn't take effect. Re-check VERSION before
+re-running.
+
+Capture the reported zip path and artifact counts (stages, artifacts) for
+the Step 5 summary.
+
+---
+
+## Step 5: Report
 
 Display a summary:
 
@@ -179,9 +201,10 @@ Release prep complete for vX.Y.Z.
   VERSION:   updated
   CHANGELOG: <N> entries added (Features: N, Improvements: N, Fixes: N)
   INDEX.md:  <N> added, <N> removed, <total> entries
+  Zip:       dist/framework-vX.Y.Z.zip (<N> stages, <N> artifacts)
 
 Next steps:
-  1. Review changes and commit
+  1. Review changes and commit (the zip and manifest.json are gitignored)
   2. Create PR and merge to main
   3. Run /release
 ```

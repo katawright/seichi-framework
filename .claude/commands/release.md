@@ -1,13 +1,14 @@
 ---
-description: Tag main, push the tag, and create the GitHub release
-allowed-tools: Bash(git status:*), Bash(git tag:*), Bash(git log:*), Bash(git push:*), Bash(git fetch:*), Bash(git pull:*), Bash(gh release create:*), Read
+description: Tag main, push the tag, and create the GitHub release with the framework zip attached
+allowed-tools: Bash(git status:*), Bash(git tag:*), Bash(git log:*), Bash(git push:*), Bash(git fetch:*), Bash(git pull:*), Bash(npm run release:*), Bash(gh release create:*), Bash(ls:*), Bash(test:*), Read
 ---
 
 # /release — Cut a Framework Release
 
 You are cutting a release of the AI-Assisted SDLC Framework from main. The
-VERSION file on main already contains the correct version — your job is to tag,
-push, and create the GitHub release.
+VERSION file on main already contains the correct version — your job is to
+tag, push, and create the GitHub release with `dist/framework-vX.Y.Z.zip`
+attached.
 
 ---
 
@@ -67,27 +68,46 @@ git push origin vX.Y.Z
 
 ---
 
-## Step 6: Create GitHub Release
+## Step 6: Build the Release Zip
 
-Create a GitHub release from the pushed tag using the `CHANGELOG.md` entry for
-this version as the release body:
+Check whether `dist/framework-vX.Y.Z.zip` already exists locally (it would
+if `/release-prep` was run on the same machine and `dist/` wasn't cleaned).
 
-1. Read `CHANGELOG.md` and extract the section for version `X.Y.Z` (the text
-   between the `## X.Y.Z` heading and the next `## ` heading or end of file).
-2. Create the release:
+- **If present:** trust it. The zip is deterministic and the source-tree
+  state on `main` matches what the prep step ran against, so re-running
+  the build would produce a byte-identical artifact.
+- **If absent:** run `npm run release` to produce it. If the script fails,
+  the source tree on main is inconsistent — surface the error and **stop**.
+
+Either way, verify the zip exists at `dist/framework-vX.Y.Z.zip` before
+proceeding to Step 7.
+
+---
+
+## Step 7: Create GitHub Release
+
+Create a GitHub release from the pushed tag using the `CHANGELOG.md` entry
+for this version as the release body, with the framework zip attached:
+
+1. Read `CHANGELOG.md` and extract the section for version `X.Y.Z` (the
+   text between the `## X.Y.Z` heading and the next `## ` heading or end
+   of file).
+2. Create the release with the zip attached:
 
    ```
-   gh release create vX.Y.Z --title "vX.Y.Z" --notes "<extracted notes>"
+   gh release create vX.Y.Z --title "vX.Y.Z" --notes "<extracted notes>" \
+     dist/framework-vX.Y.Z.zip
    ```
 
    Use a heredoc to pass the notes to `--notes` to preserve formatting.
 
-If `CHANGELOG.md` does not exist or has no entry for this version, create the
-release with `--generate-notes` instead to use GitHub's auto-generated notes.
+If `CHANGELOG.md` does not exist or has no entry for this version, create
+the release with `--generate-notes` instead to use GitHub's auto-generated
+notes (still attaching the zip).
 
 ---
 
-## Step 7: Report
+## Step 8: Report
 
 Display a summary:
 
@@ -96,5 +116,6 @@ Release complete.
 
   Tag:            vX.Y.Z
   Tagged commit:  <short-hash>
+  Asset:          dist/framework-vX.Y.Z.zip
   GitHub release: <release-url>
 ```
