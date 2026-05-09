@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-04-11 | **Framework Version:** 0.44.0
+**Last Updated:** 2026-05-04 | **Framework Version:** 0.44.1
 
 ## Overview
 

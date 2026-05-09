@@ -6,6 +6,9 @@ dist/
 build/
 out/
 
+# Generated framework manifest (emitted by `npm run release`)
+manifest.json
+
 # Environment and secrets
 .env
 .env.*
