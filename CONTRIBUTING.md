@@ -61,8 +61,23 @@ framework evaluation.
 
 ---
 
+## Dependencies
+
+Always commit `package-lock.json` alongside `package.json` changes. CI uses
+`npm ci`, which requires the lockfile to exactly match `package.json` — it
+will fail on any mismatch rather than auto-resolving like `npm install` does.
+
+**Cross-platform lockfile caveat:** `npm install` on Windows strips
+optional Linux-only packages (e.g. `@emnapi/core`, native bindings) from
+the lockfile. This causes `npm ci` to fail on Linux CI. After any manual
+`npm install` on Windows that changes dependencies, regenerate the
+lockfile in a Linux container: `bash scripts/lock-refresh.sh`. Dependabot
+PRs don't need this — they generate lockfiles on Linux already.
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-08
 
 Added to framework in v0.24.0.
