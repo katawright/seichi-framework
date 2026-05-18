@@ -55,7 +55,7 @@ Design. The Increment Design stage identifies what to test, coverage targets,
 and test approaches. Verification executes those tests, adapts based on
 implementation realities, and validates acceptance criteria.
 
-**Increment Design plans → Verification executes → Deployment deploys**
+**Increment Design plans → Verification executes → Deployment releases**
 
 ### Goals of This Guide
 
@@ -234,7 +234,7 @@ gates.
     (component-designs "Testing Strategy for This Increment")
  3. Refine test strategy based on implementation
     [Human approves strategy]
- 4. Prepare test environment and data
+ 4. Prepare the production-representative test environment and data
 
 -- PHASE 2: TEST EXECUTION --
 
@@ -319,6 +319,49 @@ higher-level testing.
 
 > For detailed test strategies, best practices, and result templates for each
 > test type, see the [Verification Reference](reference.md).
+
+### Verification Environment
+
+The environment-dependent test types above — integration, UAT, performance, and
+end-to-end testing — need the increment running in an environment that is
+**representative of production**. How representative is a judgment call:
+
+- **Local can be enough** when it faithfully reproduces the production behavior
+  the test exercises — common for Minimal-tier projects, or where the production
+  target closely matches a developer's environment.
+- **A deployed pre-production / staging environment is needed** when production
+  differs materially from local — containers, a different OS, network and
+  service topology, or production-scale data — or when the risk tier warrants
+  it.
+
+Getting the increment into that environment is a **Verification activity**, not
+a Deployment one: Deployment releases a verified increment to _production_;
+Verification stages it into whatever pre-production environment its tests
+require. Match the environment to your risk tier — see
+[Right-Sizing Verification](#right-sizing-verification) and the Environments row
+of the Deployment guide's
+[right-sizing table](../deployment/README.md#right-sizing-deployment).
+
+### Verification Depth Between Releases
+
+A full Verification pass is the default before every production release, so
+release cadence drives full-verification cadence
+([Deployment: Release Disposition](../deployment/README.md#release-disposition)).
+Between releases, depth is a delivery choice:
+
+- **Recommended:** run at least a light integration/smoke pass each increment,
+  so integration problems surface early rather than accumulating toward the
+  release.
+- **Permitted:** defer the fuller pass to the next releasing increment — record
+  an explicit integration-risk caveat in the verification brief naming the
+  untested integration surface.
+
+The floor is a recorded decision, not a silent omission. Abbreviating or
+skipping verification before a release (an emergency hotfix, for example) is
+permitted, but it is an explicit, recorded risk-acceptance decision — see the
+[hotfix workflow](../deployment/reference.md#hotfix-deployment). For CD
+projects, per-slice CI already provides the continuous light pass; see
+[CD Projects: Lightweight Verification](#cd-projects-lightweight-verification).
 
 ### Defect Management
 
@@ -465,6 +508,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.6.0.
+Added to framework in v0.6.0. Verification Environment and verification-depth
+guidance added in v0.45.0.

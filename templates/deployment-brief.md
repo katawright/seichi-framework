@@ -3,12 +3,13 @@
 # Deployment Brief
 
 > **Before starting a session on this brief:** follow the steps in
-> [Session Protocol](../guides/session-protocol.md). Check it at session
-> start so nothing is missed as the protocol evolves.
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
 
 > **Stage guide:** [Deployment](../stages/deployment/README.md)
 >
-> **Need an example?** See [Worked Example: Deployment](../guides/worked-example.md#stage-7-deployment)
+> **Need an example?** See
+> [Worked Example: Deployment](../guides/worked-example.md#stage-7-deployment)
 
 > **Convention:** Flag unverified assumptions with `[ASSUMED]` throughout the
 > brief for gate reviewers to audit. During review, each `[ASSUMED]` item should
@@ -18,7 +19,7 @@
 
 **Last Updated:** YYYY-MM-DD **Increment:** [Increment name/ID] **Deployment
 Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
-/ In Progress / Completed / Rolled Back]
+/ In Progress / Completed / Deferred / Rolled Back]
 
 ---
 
@@ -49,6 +50,11 @@ Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 
 ## Release Details
 
+<!-- If the disposition is Deferred, record the deferral rationale and
+     integration-risk note here, and complete the release fields below when the
+     release fires. See ../stages/deployment/README.md#release-disposition. -->
+
+- **Release Disposition:** [Released / Deferred]
 - **Release Version:** [e.g., v1.2.0]
 - **Previous Version:** [Currently deployed version]
 - **Build/Package ID:** [CI/CD build number or artifact]
@@ -322,11 +328,11 @@ tracker]
 
 **Escalation path:**
 
-| Severity | Response time | Escalation contact |
-|----------|--------------|-------------------|
-| Critical (service down) | [target] | [contact] |
-| High (degraded) | [target] | [contact] |
-| Low (cosmetic) | [target] | [contact] |
+| Severity                | Response time | Escalation contact |
+| ----------------------- | ------------- | ------------------ |
+| Critical (service down) | [target]      | [contact]          |
+| High (degraded)         | [target]      | [contact]          |
+| Low (cosmetic)          | [target]      | [contact]          |
 
 **Rollback authority:** [Who can authorize rollback]
 
@@ -396,4 +402,4 @@ tracker]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.7.0. Session protocol preamble added in v0.44.0. -->
+<!-- Template Last Updated: 2026-05-18 | Added in v0.7.0. Session protocol preamble added in v0.44.0. Release disposition field added in v0.45.0. -->
