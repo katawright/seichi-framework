@@ -79,8 +79,7 @@ what's just been drafted.
 - Provide methodology-agnostic stages that work for agile, waterfall, and hybrid
   approaches
 - Ensure cross-functional handoffs between business and technical stakeholders
-- Establish a measurement throughline from business objectives to production
-  metrics
+- Establish a measurement throughline from goals to production metrics
 
 For operational guidance on AI assistance levels at each stage, see the
 **[AI Assistance Scorecard](ai-assistance.md)**.
@@ -130,8 +129,7 @@ The 8 stages follow three execution patterns:
   - User feedback shows requirements miss the mark
   - Implementation reveals unanticipated constraints
   - Business priorities or context shift significantly
-  - Measurement shows objectives are off-target or success criteria need
-    adjustment
+  - Measurement shows success criteria are off-target or need adjustment
 
 - **Iterative** (Increment Design, Implementation, Verification, Deployment) —
   Repeat for each increment of deliverable work. An "increment" maps to whatever
@@ -194,7 +192,7 @@ Measurable success criteria established in Initiation flow through all stages:
 | **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                                               |
 | **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
 | **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                                                |
-| **Support**          | Monitor success criteria in production; validate whether objectives achieved; report progress                                 |
+| **Support**          | Monitor success criteria in production; validate whether goals achieved; report progress                                      |
 
 This ensures goals aren't just documented and forgotten—they actively guide
 development and enable data-driven validation of success.
@@ -246,8 +244,8 @@ Secure Software Development Framework (SSDF) traceability, see the
 
 ### Goals
 
-Establish the business case, define objectives with measurable success criteria,
-set scope boundaries, and produce a plan to reach the first major decision gate
+Establish the business case, define goals with measurable success criteria, set
+scope boundaries, and produce a plan to reach the first major decision gate
 (proceed/revise/stop).
 
 ### Inputs
@@ -273,7 +271,7 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 ### Key Activities
 
 - Define business case and value proposition
-- Establish objectives with measurable success criteria
+- Establish goals with measurable success criteria
 - Identify scope boundaries, constraints, and assumptions
 - Assess major risks and unknowns
 - Create range-based plan for discovery phase (Requirements + Design)
@@ -283,15 +281,15 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 
 - **Initiation Brief** - One-page summary of project (see
   [Initiation Brief Template](../templates/initiation-brief.md))
-- **Success Criteria Register** - Measurable goals with baselines and targets
+- **Success Criteria Register** - Success criteria with baselines and targets
   (see [Success Criteria Register](../templates/success-criteria-register.md))
-- Objectives with measurable success criteria documented
+- Goals with measurable success criteria documented
 - Assumptions and risks list
 - High-level timeline and resource estimate (range-based)
 
 ### Exit Criteria
 
-- Stakeholders approve business case and objectives
+- Stakeholders approve business case and goals
 - Success metrics are defined and measurable
 - Scope boundaries are clear
 - Go/no-go decision made
@@ -311,8 +309,8 @@ set scope boundaries, and produce a plan to reach the first major decision gate
 
 ### Handoff to Next Stage
 
-Requirements stage receives: Initiation Brief with objectives, measurable
-success criteria, constraints, and stakeholder list.
+Requirements stage receives: Initiation Brief with goals, measurable success
+criteria, constraints, and stakeholder list.
 
 ---
 
@@ -325,15 +323,15 @@ success criteria, constraints, and stakeholder list.
 
 ### Goals
 
-Convert business objectives into testable requirements with FR acceptance
-criteria and NFR verification criteria that enable coherent design decisions,
-accurate test planning, and reduced rework from ambiguity.
+Convert goals into testable requirements with FR acceptance criteria and NFR
+verification criteria that enable coherent design decisions, accurate test
+planning, and reduced rework from ambiguity.
 
 ### Inputs
 
 **Required:**
 
-- Initiation Brief (with objectives and measurable success criteria)
+- Initiation Brief (with goals and measurable success criteria)
 - Stakeholder list and availability
 
 **Optional:**
@@ -366,7 +364,7 @@ accurate test planning, and reduced rework from ambiguity.
   [Requirements Brief Template](../templates/requirements-brief.md))
 - User stories or use cases with FR acceptance criteria
 - Prioritized feature backlog
-- Requirements traceability to objectives and success criteria
+- Requirements traceability to goals and success criteria
 
 ### Exit Criteria
 
@@ -848,7 +846,7 @@ Support stage may trigger revisits to earlier stages:
 - System Design stage: Performance issues require architectural changes
 - Increment Design stage: Scoped enhancements within current boundaries
 - Implementation stage: Low-risk patches with documented checkpoint decision
-- Initiation stage: Objectives/business case need revision
+- Initiation stage: Goals/business case need revision
 
 ---
 

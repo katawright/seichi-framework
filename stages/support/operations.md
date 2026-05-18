@@ -10,9 +10,9 @@ production ownership.
 Support processes fail when they are informal, undocumented, or inconsistent.
 Teams that skip structured setup end up reactive — scrambling during incidents
 without clear escalation paths, losing tribal knowledge when people leave, and
-missing business objectives because nobody is tracking success criteria. A
-deliberate setup process prevents these failures whether you are building
-support from scratch or formalizing what already exists.
+missing goals because nobody is tracking success criteria. A deliberate setup
+process prevents these failures whether you are building support from scratch or
+formalizing what already exists.
 
 ### Goals of This Guide
 
@@ -320,6 +320,7 @@ For a quick verification, use the
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Goals terminology aligned with the Initiation
+goals layer in v0.45.0.

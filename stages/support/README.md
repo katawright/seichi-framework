@@ -41,19 +41,19 @@ tracking business outcomes through continuous monitoring and improvement.
 
 ### Why Support
 
-Support ensures production health, user satisfaction, and business objectives
-through continuous monitoring and improvement. It closes the feedback loop from
-delivery back to development. Without structured support, teams fall into
-reactive fire-fighting — incidents repeat because root causes aren't fixed,
-success criteria go untracked, and production knowledge lives only in the heads
-of whoever happened to be on-call last night.
+Support ensures production health, user satisfaction, and business goals through
+continuous monitoring and improvement. It closes the feedback loop from delivery
+back to development. Without structured support, teams fall into reactive
+fire-fighting — incidents repeat because root causes aren't fixed, success
+criteria go untracked, and production knowledge lives only in the heads of
+whoever happened to be on-call last night.
 
 Effective support serves five purposes: monitoring systems and responding to
 incidents to maintain production health, helping users succeed with the system,
-tracking success criteria and reporting progress toward business objectives,
-feeding production insights into new increments for continuous improvement, and
-keeping dependencies, infrastructure, and documentation current through ongoing
-system maintenance.
+tracking success criteria and reporting progress toward business goals, feeding
+production insights into new increments for continuous improvement, and keeping
+dependencies, infrastructure, and documentation current through ongoing system
+maintenance.
 
 ### Goals of This Guide
 
@@ -273,13 +273,13 @@ For the full CD model, see
 - **Fix** — address bugs discovered in production
 - **Enhance** — deliver incremental improvements
 - **Support** — help users succeed with the system
-- **Measure** — track progress toward business objectives
+- **Measure** — track progress toward business goals
 - **Maintain** — keep systems secure, updated, and optimized
 
 ### Production Monitoring
 
 Effective monitoring enables teams to detect issues before users report them and
-track progress toward business objectives.
+track progress toward business goals.
 
 Monitoring **infrastructure and tooling** (dashboards, APM, log aggregation) is
 set up during deployment — see the
@@ -376,7 +376,7 @@ approved items route by scope:
 - Increment Design (scoped enhancement in existing boundaries)
 - Requirements (new/changed requirements)
 - System Design (architectural/infrastructure impact)
-- Initiation (only if objectives or business case change materially)
+- Initiation (only if goals or business case change materially)
 
 Then execute through the appropriate SDLC stages and monitor impact after
 delivery.
@@ -504,8 +504,8 @@ checkpoint or gate decision artifacts to all Informed roles per the
   recurring incidents, poor communication
 - **Alerts not actionable** — alert fatigue, missing context, team ignoring
   alerts
-- **Success criteria not being met** — consistently missing objectives, no
-  action on gaps
+- **Success criteria not being met** — consistently missing targets, no action
+  on gaps
 - **Team overwhelmed** — on-call burnout, ticket backlog, only reactive work
 - **User satisfaction declining** — CSAT/Net Promoter Score (NPS) dropping,
   increasing tickets
@@ -519,6 +519,7 @@ checkpoint or gate decision artifacts to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.8.0.
+Added to framework in v0.8.0. Goals terminology aligned with the Initiation
+goals layer in v0.45.0.

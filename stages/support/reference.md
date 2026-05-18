@@ -495,7 +495,7 @@ appropriate to your support level), see the
 
 ## Summary
 
-[Overall progress summary - are we meeting objectives?]
+[Overall progress summary - are we meeting our goals?]
 
 ## Metric 1: [Name]
 
@@ -853,7 +853,9 @@ Capture these when ending a support session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at all autonomy tiers, not only AI-Led. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Missing Input, Unreachable Human. **Overrides:** none.
 
@@ -877,6 +879,7 @@ These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workf
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Success-criteria report summary reworded for the
+goals layer in v0.45.0.
