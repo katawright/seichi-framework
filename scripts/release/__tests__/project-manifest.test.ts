@@ -44,22 +44,60 @@ describe("buildManifest against the framework source at repo root", () => {
     expect(successCriteria?.display_name).toBe("Success Criteria Register");
   });
 
-  it("flags Initiation as a hard gate (Gate 1 = investment_gate)", () => {
+  it("projects Initiation's single checkpoint as an investment gate", () => {
     const initiation = manifest.stages.find((s) => s.name === "initiation");
-    expect(initiation?.is_hard_gate).toBe(true);
-    expect(initiation?.checkpoint_type).toBe("investment_gate");
+    expect(initiation?.checkpoints).toEqual([
+      {
+        name: "Gate 1 (Investment Decision)",
+        type: "investment_gate",
+        is_hard_gate: true,
+        condition: null,
+      },
+    ]);
   });
 
-  it("flags System Design as a hard gate (alignment + gate pair)", () => {
+  it("projects System Design's two checkpoints in sequence (Architecture Review then Gate 2)", () => {
     const systemDesign = manifest.stages.find((s) => s.name === "system-design");
-    expect(systemDesign?.is_hard_gate).toBe(true);
-    expect(systemDesign?.checkpoint_type).toBe("alignment");
-    expect(systemDesign?.checkpoint_name).toBe("Architecture Review");
+    expect(systemDesign?.checkpoints).toEqual([
+      {
+        name: "Architecture Review",
+        type: "alignment",
+        is_hard_gate: false,
+        condition: null,
+      },
+      {
+        name: "Gate 2 (Investment Decision)",
+        type: "investment_gate",
+        is_hard_gate: true,
+        condition: null,
+      },
+    ]);
   });
 
-  it("does not flag Requirements as a hard gate (review checkpoint)", () => {
+  it("projects Requirements' single checkpoint as a non-gate review", () => {
     const requirements = manifest.stages.find((s) => s.name === "requirements");
-    expect(requirements?.is_hard_gate).toBe(false);
+    expect(requirements?.checkpoints).toHaveLength(1);
+    expect(requirements?.checkpoints[0].type).toBe("review");
+    expect(requirements?.checkpoints[0].is_hard_gate).toBe(false);
+  });
+
+  it("projects Deployment as Iterative with a conditional Compliance checkpoint", () => {
+    const deployment = manifest.stages.find((s) => s.name === "deployment");
+    expect(deployment?.pattern).toBe("Iterative");
+    expect(deployment?.checkpoints).toEqual([
+      {
+        name: "Production Deployment Approval",
+        type: "review",
+        is_hard_gate: false,
+        condition: null,
+      },
+      {
+        name: "Compliance Approval",
+        type: "review",
+        is_hard_gate: false,
+        condition: "compliance",
+      },
+    ]);
   });
 
   it("emits same-name artifacts in two stages as independent rows", () => {
@@ -110,6 +148,9 @@ id: initiation
 default_autonomy: collaborative
 default_oversight_intensity: active
 working_location: artifacts
+checkpoints:
+  - type: review
+    name: "Test Checkpoint"
 outputs:
   - artifact: alpha
     embedded_in: ghost
@@ -139,11 +180,28 @@ id: initiation
 default_autonomy: super-led
 default_oversight_intensity: active
 working_location: artifacts
+checkpoints:
+  - type: review
+    name: "Test Checkpoint"
 outputs:
   - artifact: alpha
 ---
 body
 `);
     expect(() => buildManifest(root)).toThrow(/invalid or missing `default_autonomy`/);
+  });
+
+  it("throws when a stage has no checkpoints", () => {
+    const root = makeFixture(`---
+id: initiation
+default_autonomy: collaborative
+default_oversight_intensity: active
+working_location: artifacts
+outputs:
+  - artifact: alpha
+---
+body
+`);
+    expect(() => buildManifest(root)).toThrow(/`checkpoints` is empty or missing/);
   });
 });

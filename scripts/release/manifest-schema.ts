@@ -20,6 +20,8 @@ export const manifestCheckpointTypeSchema = z.enum([
   "alignment",
 ]);
 
+export const manifestCheckpointConditionSchema = z.enum(["compliance"]);
+
 export const manifestAutonomySchema = z.enum([
   "human-led",
   "collaborative",
@@ -46,18 +48,23 @@ export const manifestArtifactSchema = z.object({
   required: z.boolean(),
 });
 
+export const manifestCheckpointSchema = z.object({
+  name: z.string().min(1),
+  type: manifestCheckpointTypeSchema,
+  is_hard_gate: z.boolean(),
+  condition: manifestCheckpointConditionSchema.nullable(),
+});
+
 export const manifestStageSchema = z.object({
   name: slugSchema,
   display_name: z.string().min(1),
   display_order: z.number().int().positive(),
   default_sequence: z.number().int().positive(),
   pattern: manifestStagePatternSchema,
-  checkpoint_name: z.string().nullable(),
-  checkpoint_type: manifestCheckpointTypeSchema.nullable(),
-  is_hard_gate: z.boolean(),
   default_autonomy: manifestAutonomySchema,
   default_oversight_intensity: manifestOversightSchema,
   working_location: manifestWorkingLocationSchema,
+  checkpoints: z.array(manifestCheckpointSchema).min(1),
   artifacts: z.array(manifestArtifactSchema).min(1),
 });
 
@@ -69,4 +76,5 @@ export const manifestSchema = z.object({
 
 export type FrameworkManifest = z.infer<typeof manifestSchema>;
 export type ManifestStage = z.infer<typeof manifestStageSchema>;
+export type ManifestCheckpoint = z.infer<typeof manifestCheckpointSchema>;
 export type ManifestArtifact = z.infer<typeof manifestArtifactSchema>;
