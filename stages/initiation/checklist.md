@@ -28,41 +28,43 @@ to circulate.
 
 1. [ ] **Problem statement is problem-first** (not solution-first)
 2. [ ] **Business case + "why now"** stated in 1-3 bullets
-3. [ ] **Goals include at least one success criterion with a clear definition of
-       done** (measurable with baseline → target where applicable; qualitative
-       with explicit evaluation criteria otherwise)
+3. [ ] **Goals are enumerated as discrete outcomes** (G-1, G-2, …; each a stated
+       outcome, not a feature or a metric)
+4. [ ] **[H] Goal ↔ success-criterion mapping is complete both directions**
+       (every goal has at least one success criterion; every success criterion
+       maps to at least one goal)
 
 ### Scope and Governance
 
-4. [ ] **Scope boundaries are explicit** (in-scope and out-of-scope)
-5. [ ] **Non-goals are explicit** (3-5 items)
-6. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/revise/stop)
-7. [ ] **A project lead is named**
-8. [ ] **Key stakeholders identified with participation levels** (documented in
+5. [ ] **Scope boundaries are explicit** (in-scope and out-of-scope)
+6. [ ] **Non-goals are explicit** (3-5 items)
+7. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/revise/stop)
+8. [ ] **A project lead is named**
+9. [ ] **Key stakeholders identified with participation levels** (documented in
        brief with roles, participation type C/I, and relevant stages; see
        [Domain Stakeholders](../../guides/roles.md#domain-stakeholders))
-9. [ ] **Success Criteria Register produced** with baselines, targets, and
-       measurement methods for each success criterion
+10. [ ] **Success Criteria Register produced** with baselines, targets, and
+        measurement methods for each success criterion
 
 ### Security
 
-10. [ ] **Data sensitivity and compliance scope noted** (public/internal/
+11. [ ] **Data sensitivity and compliance scope noted** (public/internal/
         confidential/restricted; relevant regulations identified) (consult
         AppSec for Enterprise tier or when handling restricted/confidential
         data)
 
 ### Risks and Constraints
 
-11. [ ] **Top assumptions (<=5) are written down**
-12. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
+12. [ ] **Top assumptions (<=5) are written down**
+13. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
         mitigations**
-13. [ ] **Constraints and dependencies identified** with owners where possible
+14. [ ] **Constraints and dependencies identified** with owners where possible
 
 ### Alternatives and Estimation
 
-14. [ ] **At least one alternative option considered**
-15. [ ] **Hypothesis includes a time range and confidence level**
-16. [ ] **All required stage outputs produced** (initiation brief, success
+15. [ ] **At least one alternative option considered**
+16. [ ] **Hypothesis includes a time range and confidence level**
+17. [ ] **All required stage outputs produced** (initiation brief, success
         criteria register — verify against stage README front matter)
 
 ---
@@ -93,6 +95,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.2.0.

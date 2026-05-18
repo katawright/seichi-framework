@@ -3,8 +3,8 @@
 # Initiation Brief
 
 > **Before starting a session on this brief:** follow the steps in
-> [Session Protocol](../guides/session-protocol.md). Check it at session
-> start so nothing is missed as the protocol evolves.
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
 
 > **Stage guide:** [Initiation](../stages/initiation/README.md)
 
@@ -62,17 +62,36 @@ spike, experiment) / TBD]
 
 ---
 
-## Goals and Success Criteria
+## Goals
+
+<!-- Goals are the project's distinct intended outcomes. Most projects have 1-4;
+     fewer is better. The count reflects what the project intends to achieve,
+     not its risk tier. State each as an outcome — not a feature, not a metric.
+     Measurability lives in Success Criteria below. -->
+
+- **G-1:** [Intended outcome, stated as an outcome — not a feature, not a
+  metric]
+  - **Why:** [One-line rationale — why this outcome matters]
+- **G-2:** [Intended outcome]
+  - **Why:** [One-line rationale]
+
+---
+
+## Success Criteria
 
 <!-- Minimal: 1-2 measurable outcomes | Standard: 3-5 criteria with baselines and targets | Enterprise: comprehensive KPIs with measurement plans -->
 <!-- For adoption or usage-based criteria, define the measurement method even at
      Minimal — "how will we know users adopted this?" prevents ad hoc measurement
      plans at project close -->
 <!-- Qualitative criteria (PoCs, spikes, exploratory projects) are acceptable when numeric baselines are not feasible. Use the Question / Evaluation criteria / Timeframe template from initiation/reference.md#when-criteria-are-qualitative. -->
+<!-- Each success criterion maps to one or more goals above. Most map to a
+     single goal; a criterion mapping to several goals is valid but a signal to
+     check that the goals are genuinely distinct. -->
 
-- [outcomes with baseline and target where measurable; explicit evaluation
-  criteria where qualitative]
-  - **Why:** [One-line rationale — why this goal matters]
+- **SC-01:** [Measurable or binary check — baseline and target where measurable;
+  explicit evaluation criteria where qualitative]
+  - **Goals:** [G-ID(s) this criterion verifies — e.g., G-1, or G-1, G-2]
+  - **Why:** [One-line rationale — why this is the right check]
 
 ---
 
@@ -157,9 +176,9 @@ For each:
 ## Pre-Mortem
 
 > **Right-sizing:** All tiers — do not skip. Pre-mortem reliably surfaces
-> adoption and scope risks even on small projects. Minimal: 1–2 bullets
-> minimum. Standard: 2–3 failure modes with early warning signals.
-> Enterprise: structured risk-assumption mapping with stakeholder input.
+> adoption and scope risks even on small projects. Minimal: 1–2 bullets minimum.
+> Standard: 2–3 failure modes with early warning signals. Enterprise: structured
+> risk-assumption mapping with stakeholder input.
 
 <!-- Imagine the project has failed. What went wrong? Identify 2-3 plausible
      failure modes before committing resources. -->
@@ -264,4 +283,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. -->
+<!-- Template Last Updated: 2026-05-18 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. -->

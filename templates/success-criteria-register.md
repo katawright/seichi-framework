@@ -2,8 +2,9 @@
 
 # Success Criteria Register
 
-**Purpose:** Single source of truth for project success criteria — goals,
-metrics, baselines, targets, and tracking status.
+**Purpose:** Single source of truth for project success criteria — each mapped
+to the Initiation Brief goals it verifies, with metrics, baselines, targets, and
+tracking status.
 
 **Usage:** Created during Initiation and referenced throughout all stages. See
 the "How This Register Is Used" table below for stage-by-stage usage, and the
@@ -17,14 +18,16 @@ how criteria flow through the framework.
 
 ## Success Criteria
 
-| Goal                  | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                  | Last Measured |
-| --------------------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | --------------------------------------- | ------------- |
-| [Business outcome]    | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [Not started / Tracking / Met / Missed] | YYYY-MM-DD    |
-| [Operational outcome] | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    |
-| [Adoption outcome]    | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    |
+| SC ID | Goal(s) | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                  | Last Measured |
+| ----- | ------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | --------------------------------------- | ------------- |
+| SC-01 | G-1     | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [Not started / Tracking / Met / Missed] | YYYY-MM-DD    |
+| SC-02 | G-1     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    |
+| SC-03 | G-2     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    |
 
 <!-- Keep this table as the single source of truth for project success criteria.
      Other stages reference this register rather than duplicating criteria.
+     Goal(s): the Initiation Brief goal ID(s) this criterion verifies — usually
+     one; list several only when the metric genuinely serves multiple goals.
      See guides/framework.md#measurement-throughline for how criteria flow through stages. -->
 
 ---
@@ -48,7 +51,7 @@ how criteria flow through the framework.
 <!-- For each success criterion, expand on the summary table above with
      details that downstream stages (System Design, Implementation) consume. -->
 
-### [SC-ID]: [Goal Name]
+### [SC-ID]: [Success Criterion Name]
 
 - **Precise definition:** [Exactly what is measured and how edge cases are
   handled]
@@ -66,4 +69,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-04-05 | Added in v0.29.0 -->
+<!-- Template Last Updated: 2026-05-18 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0 -->

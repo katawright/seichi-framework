@@ -187,7 +187,7 @@ Measurable success criteria established in Initiation flow through all stages:
 
 | Stage                | How Measurement Is Used                                                                                                       |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Initiation**       | Define objectives with measurable success criteria; establish measurement approach and targets                                |
+| **Initiation**       | Define goals and measurable success criteria; establish measurement approach and targets                                      |
 | **Requirements**     | Ensure NFRs include verification criteria and instrumentation/telemetry; FR acceptance criteria ladder up to success criteria |
 | **System Design**    | Design analytics infrastructure, dashboards, monitoring systems, and data collection                                          |
 | **Increment Design** | Plan test strategy, specify what to measure per increment                                                                     |
@@ -773,9 +773,9 @@ monitoring and rollback capabilities.
 
 ### Handoff to Next Stage
 
-Support stage receives: Deployed system, monitoring dashboards, updated runbooks,
-incident response procedures, baseline measurements, release notes, success
-criteria register, and rollback procedure.
+Support stage receives: Deployed system, monitoring dashboards, updated
+runbooks, incident response procedures, baseline measurements, release notes,
+success criteria register, and rollback procedure.
 
 ---
 
@@ -854,15 +854,15 @@ Support stage may trigger revisits to earlier stages:
 
 ## Checkpoints
 
-For the full checkpoint taxonomy (three checkpoint types, Decision-Rights Matrix,
-and per-stage checkpoint mapping), see [Checkpoint Taxonomy](checkpoints.md).
-Each stage definition above references its specific checkpoints in the
-`### Checkpoints` subsection.
+For the full checkpoint taxonomy (three checkpoint types, Decision-Rights
+Matrix, and per-stage checkpoint mapping), see
+[Checkpoint Taxonomy](checkpoints.md). Each stage definition above references
+its specific checkpoints in the `### Checkpoints` subsection.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-26
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.9.0.

@@ -215,25 +215,26 @@ predictable failures. This section explains why each element is included:
 
 1. [**Problem Statement**](#problem-statement) — what's wrong and why it matters
 2. [**Business Case**](#business-case) — value, urgency, and strategic alignment
-3. [**Success Criteria**](#success-criteria) — measurable criteria that flow
+3. [**Goals**](#goals) — enumerated intended outcomes the project will achieve
+4. [**Success Criteria**](#success-criteria) — measurable criteria that flow
    through all stages
-4. [**Scope Boundaries and Non-Goals**](#scope-boundaries-and-non-goals) —
+5. [**Scope Boundaries and Non-Goals**](#scope-boundaries-and-non-goals) —
    what's in and what's out
-5. [**Gate 1 Decision Criteria**](#gate-1-decision-criteria) —
+6. [**Gate 1 Decision Criteria**](#gate-1-decision-criteria) —
    proceed/revise/stop framework
-6. [**Project Lead and Stakeholders**](#project-lead-and-stakeholders) —
+7. [**Project Lead and Stakeholders**](#project-lead-and-stakeholders) —
    ownership and accountability
-7. [**Assumptions**](#assumptions) — hidden scope made explicit
-8. [**Risks**](#risks) — unknowns that affect estimates and planning
-9. [**Pre-Mortem**](#pre-mortem) — anticipate failure modes before committing
-10. [**Constraints and Dependencies**](#constraints-and-dependencies) — hard
+8. [**Assumptions**](#assumptions) — hidden scope made explicit
+9. [**Risks**](#risks) — unknowns that affect estimates and planning
+10. [**Pre-Mortem**](#pre-mortem) — anticipate failure modes before committing
+11. [**Constraints and Dependencies**](#constraints-and-dependencies) — hard
     limits and external factors
-11. [**Options Considered**](#options-considered) — forces comparison of
+12. [**Options Considered**](#options-considered) — forces comparison of
     alternatives
-12. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
-13. [**Data Sensitivity and Compliance**](#data-sensitivity-and-compliance) —
+13. [**Range-Based Estimation**](#range-based-estimation) — honest early sizing
+14. [**Data Sensitivity and Compliance**](#data-sensitivity-and-compliance) —
     regulatory and privacy constraints
-14. [**Brownfield Readiness — Quick Pass**](#brownfield-readiness--quick-pass) —
+15. [**Brownfield Readiness — Quick Pass**](#brownfield-readiness--quick-pass) —
     cost signal for Gate 1 on brownfield projects
 
 ### Problem Statement
@@ -288,11 +289,51 @@ can't be stated clearly, the project isn't ready for investment.
 
 > "This would be a nice improvement for the team."
 
+### Goals
+
+Goals are the concrete, enumerated outcomes a project intends to achieve — what
+success _is_, before deciding how to _measure_ it. Without a goals layer the
+brief jumps straight from the business case to success criteria, leaving those
+criteria with nothing to verify against: there is no way to confirm that every
+intended outcome is checked, or that every check serves a real outcome.
+
+A goal is an outcome — not a feature, a metric, or a task — and it need not be
+measurable; measurability is the job of the success criteria that map to it.
+Each goal carries a one-line "Why" so reviewers can see the reasoning. This
+yields a clean chain: business case → goals → success criteria, where each
+criterion names the goal or goals it verifies. Most criteria verify a single
+goal; one that maps to several goals is valid but a signal to check that the
+goals are genuinely distinct rather than restatements of one another.
+
+Goals root the project's **outcome chain** — not every requirement. Security and
+compliance obligations, for example, descend from the
+[Data Sensitivity and Compliance](#data-sensitivity-and-compliance) section as a
+parallel root, not from a goal. For how goals connect to success criteria,
+requirements, and acceptance criteria across stages, see
+[Framework Guide: The Traceability Chain](../../guides/framework.md#the-traceability-chain).
+
+The number of goals reflects what the project intends to achieve, not its risk
+tier — most projects have one to four, and fewer is better. State at least one
+goal at every tier, including Minimal, where it may be a single bullet.
+
+**Good example:**
+
+> "G-1: HR managers have continuous visibility into onboarding progress without
+> manual chasing. Why: visibility is the outcome the project delivers — today it
+> is absent."
+
+**Bad example:**
+
+> "Build an onboarding dashboard" — that names a feature, not an outcome.
+> "Onboarding completion rate reaches 95%" — that is a metric, and belongs in
+> Success Criteria.
+
 ### Success Criteria
 
-Success criteria are the guardrails that keep delivery honest. They flow through
-every later stage — Requirements traces features to them, Verification validates
-them, and Support monitors them in production (see
+Success criteria are the guardrails that keep delivery honest. Each one is the
+measurable check that a goal was met, and names the goal or goals it verifies.
+They flow through every later stage — Requirements traces features to them,
+Verification validates them, and Support monitors them in production (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).
 Without measurable criteria, teams declare success based on "we shipped it"
 rather than "it worked." Defining baselines and targets during Initiation also
@@ -578,11 +619,11 @@ mid-implementation when they are most expensive to address.
 
 ## Stage Outputs
 
-- **Initiation Brief** containing: problem statement, business case, measurable
+- **Initiation Brief** containing: problem statement, business case, goals,
   success criteria, scope boundaries, assumptions, risks, options, estimation,
   and Gate 1 definition
-- **Success Criteria Register** — define measurable goals, baselines, and
-  targets in the
+- **Success Criteria Register** — record each success criterion with its goal
+  mapping, baseline, and target in the
   [Success Criteria Register](../../templates/success-criteria-register.md) so
   every downstream stage references one source of truth
 
@@ -611,16 +652,16 @@ roles per the
 **Triggers:**
 
 - Business priorities shift or strategic context changes
-- Stakeholder feedback indicates misalignment on objectives
+- Stakeholder feedback indicates misalignment on goals or success criteria
 - Market changes or competitive landscape shifts
-- Success criteria need revision based on new information
+- Goals or success criteria need revision based on new information
 - Scope boundaries (non-goals/assumptions) prove incorrect
 
 **Process:**
 
 1. Revisit the Initiation Brief with updated context
 2. Re-validate problem statement and business case
-3. Update success criteria if objectives changed
+3. Update goals and success criteria if intended outcomes changed
 4. Re-run the Initiation Checklist
 5. Communicate changes to downstream stages
 
@@ -632,6 +673,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.2.0.

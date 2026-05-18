@@ -76,13 +76,23 @@ using spreadsheets and email chains. Tasks fall through the cracks, new hires
 miss deadlines, and HR has no visibility into completion status. Average
 onboarding completion rate is 68%, with 15% of required tasks completed late.
 
-### Goals and Success Criteria
+### Goals
 
-| Goal                       | Baseline | Target |
-| -------------------------- | -------- | ------ |
-| Onboarding task completion | 68%      | 95%    |
-| Tasks completed on time    | 85%      | 97%    |
-| HR time per new hire       | 4 hours  | 1 hour |
+- **G-1:** New hires complete their required onboarding fully and on time.
+  - **Why:** Late and missed tasks are the core failure the project exists to
+    fix.
+- **G-2:** HR administers onboarding with substantially less manual effort per
+  new hire.
+  - **Why:** Freeing HR from manual chasing is part of the business case for the
+    investment.
+
+### Success Criteria
+
+| SC ID | Goal(s) | Metric                     | Baseline | Target |
+| ----- | ------- | -------------------------- | -------- | ------ |
+| SC-01 | G-1     | Onboarding task completion | 68%      | 95%    |
+| SC-02 | G-1     | Tasks completed on time    | 85%      | 97%    |
+| SC-03 | G-2     | HR time per new hire       | 4 hours  | 1 hour |
 
 ### Scope Boundaries
 
@@ -169,15 +179,14 @@ From the **Requirements Brief**, Scope Baseline section:
 From the **Requirements Brief**, Traceability Summary section:
 
 ```markdown
-| FR ID | Initiation Objective    | MoSCoW | ACs             | Success Metric        |
-| ----- | ----------------------- | ------ | --------------- | --------------------- |
-| FR-3  | "100% task coverage for | Must   | AC-3.1, AC-3.2, | Onboarding completion |
-|       | new hires in 30 days"   |        | AC-3.3          | rate > 95% in 30 days |
+| FR ID | Initiation Goal | MoSCoW | ACs                    | Success Metric              |
+| ----- | --------------- | ------ | ---------------------- | --------------------------- |
+| FR-3  | G-1             | Must   | AC-3.1, AC-3.2, AC-3.3 | SC-01: completion 68% → 95% |
 ```
 
 **What to notice:**
 
-- FR-3 traces back to an Initiation objective (measurement throughline)
+- FR-3 traces back to an Initiation goal, G-1 (measurement throughline)
 - It has three acceptance criteria, each testable with Given/When/Then
 - MoSCoW classification is "Must" — it's in the first increment
 - The success metric connects to what we'll measure in production
@@ -782,7 +791,8 @@ Here's how FR-3 flows through the entire framework:
 
 ```
 Initiation
-  Goal: "100% task coverage for new hires in 30 days"
+  Goal G-1: New hires complete required onboarding fully and on time
+  SC-01: Onboarding task completion 68% → 95%
     ↓
 Requirements
   FR-3: "Assign tasks from library with relative due dates"
@@ -829,7 +839,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.17.0. For a brownfield adoption example showing
 preparation increments, exit checkpoints, and shadow mode, see the
