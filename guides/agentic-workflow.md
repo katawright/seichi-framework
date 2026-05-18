@@ -299,8 +299,8 @@ restricts them to a specific tier.
 ## Session Continuity Protocol
 
 > **Quick reference:** The step-by-step list lives in
-> [Session Protocol](session-protocol.md). This section has the narrative
-> and edge cases.
+> [Session Protocol](session-protocol.md). This section has the narrative and
+> edge cases.
 
 Multi-session work requires explicit context handoff. Use the session log
 template to maintain continuity across sessions, agents, or participants.
@@ -326,10 +326,9 @@ At the end of every session:
 5. Write "Context for Next Session" — the critical information the next
    agent/human needs to continue without re-reading everything
 6. List specific "Next Steps" as actionable items
-7. Capture any in-the-moment observations (surprises, deviations, framework
-   gaps) by appending a row to the retrospective's Captured Feedback table — see
-   [Feedback Capture Protocol](#feedback-capture-protocol) below; do not
-   classify at capture time
+7. Capture any in-the-moment friction (surprises, deviations, process gaps,
+   tooling problems) by appending an entry to the project's friction log — see
+   [Feedback Capture Protocol](#feedback-capture-protocol) below
 
 ### Session Log Template
 
@@ -381,28 +380,23 @@ one who generated text.
 
 ### Feedback Capture Protocol
 
-When an observation arises during any stage — a surprise, a deviation from
-design, a process friction point, a framework gap, or a value idea (feature
-possibility, technical improvement, architectural opportunity) — capture it
-immediately rather than waiting for the retrospective session.
+When friction arises during any stage — a surprise, a deviation from design, a
+process gap, a product or tech-debt observation, or a tooling problem — capture
+it immediately rather than waiting for the retrospective session.
 
 **Steps:**
 
-1. Locate the current increment's retrospective artifact in the project's
-   artifact location (e.g., `retrospectives/retro-increment-N.md`).
-2. If the file does not exist, create it from the
-   [Retrospective Template](../templates/retrospective.md). Set the Scope and
-   Date fields; leave analysis sections as placeholders.
-3. Append a row to the **Captured Feedback** table:
-   - **Timestamp:** today's date (YYYY-MM-DD)
-   - **Stage:** current stage name
-   - **Observation:** concise description of the surprise, friction, or value
-     idea
-4. Do not classify the observation. Classification happens during the
-   retrospective session — framework observations move to Framework Feedback,
-   process items to What Went Well / What Didn't Work, actionable items to
-   Action Items, and value ideas surface during the Future Value Candidates
-   harvest at project wrap-up.
+1. Locate the project's friction log. It is a standing, project-spanning
+   artifact created at project start; if it does not yet exist, create it from
+   the [Friction Log Template](../templates/friction-log.md).
+2. Append a numbered entry (`F-NNN`, continuous for the life of the project)
+   recording what was observed, its impact, and a likely improvement.
+3. Type the entry — Process, Execution, Product, or Tooling. See
+   [The Learning Loop](../guides/learning-loop.md#friction-types). If the type
+   is not obvious, leave it for the retrospective to assign.
+4. Leave **Status** as Open and **Disposition** blank. The retrospective triages
+   each entry and routes it — see
+   [The Learning Loop](../guides/learning-loop.md#triage-at-the-retrospective).
 
 > Agents: this is a write action. Follow artifact location conventions in
 > [Working Locations](../guides/framework.md#working-locations) and verify the
@@ -421,7 +415,7 @@ Verification — decisions, deferrals, and deviations must flow back explicitly.
 | Decisions              | Chose library X over Y for concurrency | Implementation brief + session log                  |
 | Deferrals              | Deferred pagination to next increment  | Implementation brief "Known Issues" + carry-forward |
 | Deviations from design | API endpoint changed from POST to PUT  | Session log + implementation brief                  |
-| Emergent requirements  | Discovered need for rate limiting      | Retrospective Captured Feedback                     |
+| Emergent requirements  | Discovered need for rate limiting      | Friction log (Product-type entry)                   |
 
 #### Sync Points
 
@@ -441,8 +435,8 @@ At each sync point, agents should:
 2. Update the implementation brief with any decisions not yet recorded
 3. Record deferrals in the implementation brief "Known Issues" section and flag
    them for carry-forward
-4. Capture emergent requirements in the retrospective's Captured Feedback table
-   (see [Feedback Capture Protocol](#feedback-capture-protocol))
+4. Capture emergent requirements as friction-log entries (see
+   [Feedback Capture Protocol](#feedback-capture-protocol))
 5. Verify that the artifacts location reflects the current state of work in the
    source code location
 
@@ -486,6 +480,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.

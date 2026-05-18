@@ -326,6 +326,8 @@ through Support, see
 
 For the stage-by-stage breakdown of pre-mortems and retrospectives, see
 [AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline).
+For how friction is captured, triaged, and routed into a cross-project idea
+backlog, see [The Learning Loop](learning-loop.md).
 
 ---
 
@@ -432,9 +434,9 @@ future action rather than absorbing it into the current increment:
 
 - Add the item to the project backlog or parking lot
 - If the discovery is a value idea (feature possibility, technical improvement,
-  architectural opportunity), tag it in the retrospective's Captured Feedback
-  table so it surfaces during the Future Value Candidates harvest at project
-  wrap-up (see [Retrospective Template](../templates/retrospective.md))
+  architectural opportunity), log it as a Product-type entry in the project's
+  friction log so it surfaces during the Future Value Candidates harvest at
+  project wrap-up (see [The Learning Loop](learning-loop.md))
 
 > **Stage-specific triggers:** Each stage has a "When to Revisit" section with
 > triggers specific to that stage's concerns. The decision tree above applies
@@ -941,4 +943,5 @@ regulatory requirements.
 
 Added to framework in v0.9.0. Visual designs row added to Artifact Placement
 table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow
-Adaptations reconciled with the elective-release model in v0.45.0.
+Adaptations reconciled with the elective-release model in v0.45.0. Learning
+Throughline and Deferral guidance pointed at the learning loop in v0.45.0.

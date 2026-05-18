@@ -79,6 +79,7 @@ stage gate. **Recommended** = high value, skip only with justification.
 | [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |
 | [Support Brief](../templates/support-brief.md)                         | Support          | Optional    | Required    | Required    |
 | [Retrospective](../templates/retrospective.md)                         | Deployment       | Recommended | Recommended | Required    |
+| [Friction Log](../templates/friction-log.md)                           | All stages       | Recommended | Recommended | Required    |
 | [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
 
 > **Minimal tier:** The Initiation Brief is the only universally required
@@ -291,6 +292,6 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.13.0.

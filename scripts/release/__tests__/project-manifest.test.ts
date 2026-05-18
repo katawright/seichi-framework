@@ -114,7 +114,7 @@ describe("buildManifest against the framework source at repo root", () => {
   });
 
   it("reads generated_at from the INDEX.md `Last Updated:` header", () => {
-    expect(manifest.generated_at).toBe("2026-05-04T00:00:00Z");
+    expect(manifest.generated_at).toBe("2026-05-18T00:00:00Z");
   });
 
   it("reads framework_version from the VERSION file", () => {

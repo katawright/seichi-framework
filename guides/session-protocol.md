@@ -8,14 +8,13 @@ Per-session steps for any stage. Brief templates reference this file.
 
 1. Identify stage and increment from the user request or
    `projects/<name>/project.md`.
-2. Open the session log at
-   `projects/<name>/docs/session-logs/<stage>.md` (or
+2. Open the session log at `projects/<name>/docs/session-logs/<stage>.md` (or
    `<stage>-<increment>.md` for incremented stages). If it does not exist,
    create it from the appropriate template (see
    [Template Selection](#template-selection)).
 3. Read the most recent session entry's "Context for Next Session" block.
-4. Read the current stage README and the brief for this stage/increment if
-   one exists.
+4. Read the current stage README and the brief for this stage/increment if one
+   exists.
 5. Append a new session entry header with today's date and participant.
 
 ---
@@ -26,6 +25,9 @@ Per-session steps for any stage. Brief templates reference this file.
    Deviations from Plan, [H] Items, Context for Next Session.
 2. Update the file's `Last Updated` header.
 3. Update the `Artifact Progress` table if any artifact changed state.
+4. If any friction surfaced this session — process, execution, product, or
+   tooling — append an entry to the project's friction log (see
+   [Feedback Capture Protocol](agentic-workflow.md#feedback-capture-protocol)).
 
 ---
 
@@ -44,11 +46,12 @@ Per-session steps for any stage. Brief templates reference this file.
   — narrative, rationale, and edge cases
 - [Session Log Template](../templates/session-log.md)
 - [Implementation Session Log Template](../templates/implementation-session-log.md)
+- [The Learning Loop](learning-loop.md) — capturing friction as you work
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.44.0.

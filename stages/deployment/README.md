@@ -646,10 +646,10 @@ Deployment validates that measurement systems work in production. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
 > Deployment is the point to run the increment retrospective (or project
-> retrospective at wrap-up). Triage Captured Feedback entries accumulated during
-> the increment into the retrospective's analysis sections. Use the
+> retrospective at wrap-up). Triage the typed entries from the project's
+> friction log into the retrospective's analysis sections. Use the
 > [Retrospective Template](../../templates/retrospective.md). See
-> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+> [The Learning Loop](../../guides/learning-loop.md).
 
 > Deployment continues the **security throughline** by verifying release
 > integrity, generating an SBOM, and running pre-deployment security checks. See

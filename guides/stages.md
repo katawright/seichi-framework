@@ -221,14 +221,14 @@ actually happened — keeps teams from repeating mistakes across increments:
 | **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
 | **Implementation**   | Note surprises and deviations; route mid-stage discoveries       |
 | **Verification**     | Capture what tests reveal; assess impact of failures             |
-| **Deployment**       | Run increment retrospective; triage Captured Feedback entries    |
+| **Deployment**       | Run increment retrospective; triage friction-log entries         |
 | **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
 
 Pre-mortems happen once at the project level (Initiation); retrospectives happen
-at every increment boundary and at project wrap-up. Use the Captured Feedback
-section of the [Retrospective Template](../templates/retrospective.md) to
-accumulate observations throughout the increment; triage them during the
-retrospective session.
+at every increment boundary and at project wrap-up. Capture friction throughout
+the increment in the project's standing friction log; triage its entries during
+the retrospective session. For the full friction → retrospective → idea-backlog
+loop, see [The Learning Loop](learning-loop.md).
 
 ---
 

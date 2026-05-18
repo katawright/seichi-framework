@@ -37,8 +37,7 @@ successful completion (60-90 seconds).
 6. [ ] **Environment health verified and backups completed** (pre-deployment
        baseline)
 7. [ ] **Infrastructure capacity validated** (resources sufficient for new
-       version; consult
-       [Architect per RACI](../../guides/roles.md#raci-matrix)
+       version; consult [Architect per RACI](../../guides/roles.md#raci-matrix)
        on infrastructure plan conformance)
 8. [ ] **Monitoring dashboards and alerting configured** (thresholds set)
 9. [ ] **Success criteria instrumentation verified** (Verification tested it
@@ -59,8 +58,8 @@ successful completion (60-90 seconds).
         deployment** (DBA coordination confirmed if applicable; rollback scripts
         tested in staging; heterogeneous rollback timelines documented per
         component; N/A for non-database changes)
-16. [ ] **Migration scripts reviewed for security** (no privilege escalation
-        via CREATE USER or GRANT; rollback scripts reviewed for destructive
+16. [ ] **Migration scripts reviewed for security** (no privilege escalation via
+        CREATE USER or GRANT; rollback scripts reviewed for destructive
         operations; migration credentials separate from application credentials;
         N/A for non-database changes)
 
@@ -124,8 +123,8 @@ successful completion (60-90 seconds).
        checkpoint decision
 8. [ ] **[H] Increment retrospective completed or scheduled** (run the
        [Retrospective Template](../../templates/retrospective.md) now or
-       schedule within one week; triage Captured Feedback entries; log
-       carry-forward items for next Increment Design)
+       schedule within one week; triage friction-log entries; log carry-forward
+       items for next Increment Design)
 9. [ ] **All required stage outputs produced** (deployment brief, deployment
        log, release notes, updated runbooks — verify against stage README front
        matter)
@@ -175,7 +174,7 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.7.0. Database migration and migration security items
 added in v0.42.0.
