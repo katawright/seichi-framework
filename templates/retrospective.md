@@ -1,4 +1,4 @@
-<!-- For guidance on the learning throughline, see guides/framework.md#learning-throughline -->
+<!-- For guidance on the learning loop and how retrospective findings are routed, see guides/learning-loop.md -->
 
 # Retrospective
 
@@ -6,8 +6,8 @@
 project.
 
 **Usage:** Run at the end of each increment and at project wrap-up. See the
-[Learning Throughline](../guides/framework.md#learning-throughline) for how
-retrospective findings feed back into the framework.
+[Learning Loop](../guides/learning-loop.md) for how friction is captured and how
+retrospective findings are routed.
 
 **Scope:** [Increment N / Project Wrap-Up]
 
@@ -19,17 +19,18 @@ retrospective findings feed back into the framework.
 
 ## Captured Feedback
 
-<!-- In-the-moment observations captured during the increment. Append entries
-     as they arise — no classification required at capture time. Capture
-     surprises, deviations, process friction, framework gaps, AND value ideas
-     (features, technical improvements, architectural possibilities). During
-     the retrospective session, triage these entries into the analysis sections
-     below. Value ideas are harvested in the Future Value Candidates section
-     during project wrap-up retros. -->
+<!-- Friction is captured continuously in the project's standing friction log
+     (friction-log.md) — not here. See the Learning Loop guide. At the
+     retrospective, triage the friction-log entries logged during this
+     increment: route each into the analysis sections below by its type
+     (Execution → Action Items / Carry Forward; Process → Process Feedback;
+     Product → Future Value Candidates; Tooling → Action Items), and record the
+     destination in that entry's Disposition field. List the triaged entries
+     here as the retrospective's record. -->
 
-| Timestamp  | Stage        | Observation   |
-| ---------- | ------------ | ------------- |
-| YYYY-MM-DD | [stage-name] | [observation] |
+| Friction ID | Type   | Observation   | Routed to |
+| ----------- | ------ | ------------- | --------- |
+| F-NNN       | [type] | [observation] | [section] |
 
 ---
 
@@ -76,9 +77,9 @@ retrospective findings feed back into the framework.
 | ------ | ----- | ---- | ------------ | ----------- |
 | …      | …     | …    | [stage name] | YYYY-MM-DD  |
 
-The facilitator (PjM) distributes each action item to the assigned Owner and confirms
-receipt. Items targeting the next increment are carried forward into the
-increment-design-brief Carry Forward Resolution section.
+The facilitator (PjM) distributes each action item to the assigned Owner and
+confirms receipt. Items targeting the next increment are carried forward into
+the increment-design-brief Carry Forward Resolution section.
 
 ---
 
@@ -105,32 +106,37 @@ increment-design-brief Carry Forward Resolution section.
 
      Harvest all "not now" items accumulated across the project: MoSCoW Won't
      Have items, unimplemented Could/Should Have items, deferred scope
-     amendments, value-tagged Captured Feedback entries, and parking lot items.
-     Triage each candidate and share the result with Initiation-level
-     stakeholders — they have the strategic context to evaluate which ideas
-     have value for future projects. -->
+     amendments, Product-type friction-log entries, and parking lot items.
+     Triage each candidate. For every candidate worth keeping, create an idea
+     document in the idea backlog (templates/idea.md) — that is its durable
+     destination; a candidate left only in this section is stranded. Initiation
+     of a future project draws from the backlog. See the Learning Loop guide. -->
 
-| Candidate | Source | Disposition | Notes |
-| --------- | ------ | ----------- | ----- |
-| [item]    | …      | …           | …     |
+| Candidate | Source | Disposition | Idea ID  | Notes |
+| --------- | ------ | ----------- | -------- | ----- |
+| [item]    | …      | …           | IDEA-NNN | …     |
 
-<!-- Dispositions: Discard / Carry to backlog / Future project candidate -->
+<!-- Dispositions: Discard / Add to idea backlog / Promote to future project -->
 
 ---
 
-## Framework Feedback
+## Process Feedback
 
-<!-- Did anything about the AI-Assisted SDLC Framework itself help or hinder
-     your work? Note observations here — missing checklist items, unclear
-     guidance, template gaps, etc. Framework maintainers can act on these
-     directly. External users: consider filing an issue or PR at the framework
-     repository (see CONTRIBUTING.md). Agents: record observations here and
-     flag them for human review — do not file issues or PRs without explicit
-     permission. -->
+<!-- Did anything about the AI-Assisted SDLC framework itself — the development
+     process you followed — help or hinder your work? This section collects the
+     Process-type friction triaged from the friction log: missing checklist
+     items, unclear guidance, template gaps, stage-model issues. For each item
+     worth keeping, create an idea document in the idea backlog
+     (templates/idea.md) with Target: Process — that is its durable
+     destination. External users: also consider filing an issue or PR at the
+     framework repository (see CONTRIBUTING.md). Agents: record observations
+     here and flag them for human review — do not file issues or PRs without
+     explicit permission. -->
 
 - [item]
 
 ---
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.23.0 | Future Value
-     Candidates section added in v0.42.0 -->
+<!-- Template Last Updated: 2026-05-18 | Added in v0.23.0 | Future Value
+     Candidates section added in v0.42.0 | Captured Feedback rewired to the
+     friction log and Framework Feedback renamed Process Feedback in v0.45.0 -->

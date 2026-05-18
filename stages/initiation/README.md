@@ -633,8 +633,9 @@ mid-implementation when they are most expensive to address.
 
 > The optional pre-mortem in the Initiation Brief starts the **learning
 > throughline** — identifying top failure modes before committing resources so
-> later stages can watch for early signals. See
-> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+> later stages can watch for early signals. Initiation is also where the
+> project's standing friction log is created — it accumulates friction from this
+> first stage onward. See [The Learning Loop](../../guides/learning-loop.md).
 
 > Initiation starts the **security throughline** by classifying data sensitivity
 > and compliance scope so downstream stages know the security posture required.

@@ -6,12 +6,11 @@ A framework release ships two artifacts:
 
 - The **source tree** at a tagged commit on `main` (read by humans and tools
   browsing the repo).
-- A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the
-  framework surface — `guides/`, `stages/`, `templates/`, `INDEX.md`,
-  `QUICKSTART.md`, `README.md`, `VERSION`, plus a generated `manifest.json`.
-  The zip is the canonical artifact downstream consumers (e.g., Theia)
-  fetch and project; it is attached to the GitHub release and uploaded to
-  S3.
+- A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the framework
+  surface — `guides/`, `stages/`, `templates/`, `INDEX.md`, `QUICKSTART.md`,
+  `README.md`, `VERSION`, plus a generated `manifest.json`. The zip is the
+  canonical artifact downstream consumers (e.g., Theia) fetch and project; it is
+  attached to the GitHub release and uploaded to S3.
 
 The release flow is two slash commands plus an explicit packaging step:
 
@@ -26,21 +25,21 @@ The release flow is two slash commands plus an explicit packaging step:
 ### What `npm run release` does
 
 `scripts/release/index.ts` projects the source tree into a Zod-validated
-`manifest.json`, stages the framework surface into a clean directory
-(excluding maintainer-only paths like `.schema/`, `scripts/`, `.obsidian/`,
-`node_modules/`), and emits a deterministic STORE-mode zip into `dist/`.
-The zip is byte-identical across runs from the same source tree, so the
-artifact attached to the GitHub release is reproducible.
+`manifest.json`, stages the framework surface into a clean directory (excluding
+maintainer-only paths like `.schema/`, `scripts/`, `.obsidian/`,
+`node_modules/`), and emits a deterministic STORE-mode zip into `dist/`. The zip
+is byte-identical across runs from the same source tree, so the artifact
+attached to the GitHub release is reproducible.
 
-The manifest is *not* committed (`.gitignore`d as a build artifact). It is
+The manifest is _not_ committed (`.gitignore`d as a build artifact). It is
 written into the repo root for inspection alongside the zip.
 
 ### Prerequisites
 
 - `npm install` (first-time setup, and after dependency changes — see
   [Dependencies](#dependencies) below).
-- `podman` or `docker` only if regenerating the lockfile after a
-  dependency change.
+- `podman` or `docker` only if regenerating the lockfile after a dependency
+  change.
 
 ### Manual release recipe
 
@@ -88,9 +87,9 @@ The best suggestions are:
 - **Specific** — point to a concrete template, checklist item, or guide section
 - **Grounded in project experience** — describe what you encountered while using
   the framework, not hypothetical improvements
-- **Sourced from retrospectives** — the Framework Feedback section of
-  `templates/retrospective.md` is the intended place to capture observations
-  during project work; reference those notes when filing issues
+- **Sourced from retrospectives** — the Process Feedback section of
+  `templates/retrospective.md` collects framework friction triaged from the
+  project's friction log; reference those notes when filing issues
 
 ---
 
@@ -118,20 +117,20 @@ framework evaluation.
 ## Dependencies
 
 Always commit `package-lock.json` alongside `package.json` changes. CI uses
-`npm ci`, which requires the lockfile to exactly match `package.json` — it
-will fail on any mismatch rather than auto-resolving like `npm install` does.
+`npm ci`, which requires the lockfile to exactly match `package.json` — it will
+fail on any mismatch rather than auto-resolving like `npm install` does.
 
-**Cross-platform lockfile caveat:** `npm install` on Windows strips
-optional Linux-only packages (e.g. `@emnapi/core`, native bindings) from
-the lockfile. This causes `npm ci` to fail on Linux CI. After any manual
-`npm install` on Windows that changes dependencies, regenerate the
-lockfile in a Linux container: `bash scripts/lock-refresh.sh`. Dependabot
-PRs don't need this — they generate lockfiles on Linux already.
+**Cross-platform lockfile caveat:** `npm install` on Windows strips optional
+Linux-only packages (e.g. `@emnapi/core`, native bindings) from the lockfile.
+This causes `npm ci` to fail on Linux CI. After any manual `npm install` on
+Windows that changes dependencies, regenerate the lockfile in a Linux container:
+`bash scripts/lock-refresh.sh`. Dependabot PRs don't need this — they generate
+lockfiles on Linux already.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-05-08
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.24.0.

@@ -479,9 +479,10 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
 > Support closes the **learning throughline** — ongoing retrospectives surface
-> systemic patterns from production and feed improvements back into planning.
-> Use the [Retrospective Template](../../templates/retrospective.md). See
-> [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
+> systemic patterns from production. Durable improvement ideas flow to the idea
+> backlog, where the Initiation of a future project draws from them. Use the
+> [Retrospective Template](../../templates/retrospective.md). See
+> [The Learning Loop](../../guides/learning-loop.md).
 
 > Support closes the **security throughline** — monitoring CVE feeds, patching
 > vulnerabilities per SLA, and maintaining incident response readiness for
