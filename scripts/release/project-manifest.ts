@@ -5,11 +5,12 @@ import { deriveDisplayName } from "./derive-display-name";
 import type {
   FrameworkManifest,
   ManifestArtifact,
+  ManifestCheckpoint,
   ManifestStage,
 } from "./manifest-schema";
 import { parseStageFrontmatter } from "./parse-frontmatter";
 
-// Stage-pattern map for v0.44.x. The framework's stage patterns are not
+// Stage-pattern map for v0.45.x. The framework's stage patterns are not
 // carried in the stage README frontmatter today — adding a `pattern:` field
 // is a future framework cut concern (Increment Design brief §7 Q3). For
 // now, the mapping is fixed; the projector throws if it encounters a stage
@@ -21,7 +22,7 @@ const STAGE_PATTERN: Record<string, ManifestStage["pattern"]> = {
   "increment-design": "Iterative",
   implementation: "Iterative",
   verification: "Iterative",
-  deployment: "Continuous",
+  deployment: "Iterative",
   support: "Continuous",
 };
 
@@ -36,15 +37,22 @@ const STAGE_DISPLAY_ORDER: Record<string, number> = {
   support: 8,
 };
 
-// Frontmatter checkpoint `type:` values map to manifest schema's
-// `checkpoint_type` enum. The frontmatter uses `gate` for investment gates;
-// the manifest spells it `investment_gate` to match the schema's enum
-// (System Design §4.2, locked at Gate 2).
-const FRONTMATTER_TO_MANIFEST_CHECKPOINT_TYPE: Record<string, ManifestStage["checkpoint_type"]> = {
+// Frontmatter checkpoint `type:` values map to the manifest checkpoint
+// `type` enum. The frontmatter uses `gate` for investment gates; the
+// manifest spells it `investment_gate` to match the schema's enum.
+const FRONTMATTER_TO_MANIFEST_CHECKPOINT_TYPE: Record<
+  string,
+  ManifestCheckpoint["type"]
+> = {
   gate: "investment_gate",
   review: "review",
   alignment: "alignment",
 };
+
+// Allowed `condition:` values on a frontmatter checkpoint. A condition names
+// a project-level fact gating whether the checkpoint applies; an absent
+// `condition` means the checkpoint always applies.
+const CHECKPOINT_CONDITIONS = new Set(["compliance"]);
 
 const AUTONOMY_VALUES = new Set(["human-led", "collaborative", "ai-led"]);
 
@@ -90,6 +98,38 @@ function projectArtifact(
   };
 }
 
+function projectCheckpoint(
+  raw: { type?: string; name?: string; condition?: string },
+  index: number,
+  stageId: string,
+): ManifestCheckpoint {
+  const type =
+    raw.type === undefined
+      ? undefined
+      : FRONTMATTER_TO_MANIFEST_CHECKPOINT_TYPE[raw.type];
+  if (type === undefined) {
+    throw new Error(
+      `Stage ${stageId}: invalid or missing \`checkpoints[${index}].type\`: ${String(raw.type)}`,
+    );
+  }
+  if (typeof raw.name !== "string" || raw.name.length === 0) {
+    throw new Error(
+      `Stage ${stageId}: \`checkpoints[${index}].name\` is empty or missing.`,
+    );
+  }
+  if (raw.condition !== undefined && !CHECKPOINT_CONDITIONS.has(raw.condition)) {
+    throw new Error(
+      `Stage ${stageId}: invalid \`checkpoints[${index}].condition\`: ${raw.condition}`,
+    );
+  }
+  return {
+    name: raw.name,
+    type,
+    is_hard_gate: type === "investment_gate",
+    condition: (raw.condition as ManifestCheckpoint["condition"]) ?? null,
+  };
+}
+
 function pickEnum<T extends string>(
   value: string | undefined,
   allowed: ReadonlySet<string>,
@@ -121,25 +161,18 @@ function projectStage(frameworkDir: string, stageDirName: string): ManifestStage
     );
   }
 
-  // Manifest carries a single primary checkpoint per stage, which is the
-  // first `checkpoints[]` entry in the frontmatter. `is_hard_gate` is true
-  // if *any* checkpoint in the list is a `gate` (handles System Design's
-  // alignment + gate pair, where the manifest's checkpoint_name reflects
-  // the alignment review but the stage still has an investment gate).
-  const checkpoints = fm.checkpoints ?? [];
-  const primary = checkpoints[0];
-  let checkpointType: ManifestStage["checkpoint_type"] = null;
-  if (primary?.type !== undefined) {
-    const mapped = FRONTMATTER_TO_MANIFEST_CHECKPOINT_TYPE[primary.type];
-    if (!mapped) {
-      throw new Error(
-        `Stage ${fm.id}: invalid \`checkpoints[0].type\` value: ${primary.type}`,
-      );
-    }
-    checkpointType = mapped;
+  // Manifest carries the full within-stage checkpoint sequence as an
+  // ordered array, in the same order as the stage README `checkpoints[]`
+  // frontmatter. `is_hard_gate` is derived per checkpoint; `condition`
+  // (when present) names a project-level condition gating whether the
+  // checkpoint applies.
+  const rawCheckpoints = fm.checkpoints ?? [];
+  if (rawCheckpoints.length === 0) {
+    throw new Error(`Stage ${fm.id}: \`checkpoints\` is empty or missing.`);
   }
-  const checkpointName = primary?.name ?? null;
-  const hasInvestmentGate = checkpoints.some((c) => c.type === "gate");
+  const checkpoints = rawCheckpoints.map((raw, i) =>
+    projectCheckpoint(raw, i, fm.id),
+  );
 
   const outputs = fm.outputs ?? [];
   if (outputs.length === 0) {
@@ -163,9 +196,6 @@ function projectStage(frameworkDir: string, stageDirName: string): ManifestStage
     display_order: displayOrder,
     default_sequence: displayOrder,
     pattern,
-    checkpoint_name: checkpointName,
-    checkpoint_type: checkpointType,
-    is_hard_gate: hasInvestmentGate,
     default_autonomy: pickEnum<ManifestStage["default_autonomy"]>(
       fm.default_autonomy,
       AUTONOMY_VALUES,
@@ -184,6 +214,7 @@ function projectStage(frameworkDir: string, stageDirName: string): ManifestStage
       "working_location",
       fm.id,
     ),
+    checkpoints,
     artifacts,
   };
 }

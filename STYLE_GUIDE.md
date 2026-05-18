@@ -345,6 +345,7 @@ checkpoints:
     protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable checkpoint name"
     responsible_roles: [role-id] # roles from Decision-Rights Matrix
+    condition: compliance # optional, names a project-level condition gating whether the checkpoint applies; omit when it always applies
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
 default_autonomy: collaborative # human-led | collaborative | ai-led
@@ -414,6 +415,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.19.0.

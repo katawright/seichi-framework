@@ -28,8 +28,9 @@ checkpoints:
     responsible_roles: [devops, appsec]
   - type: review
     protocol: human-approval
-    name: "Compliance Approval" # Standard/Enterprise tier with compliance requirements
+    name: "Compliance Approval"
     responsible_roles: [pm, appsec]
+    condition: compliance # Standard/Enterprise tier with compliance requirements
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
 default_autonomy: human-led
@@ -626,7 +627,8 @@ accepting ownership.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
-Brownfield Database Deployment section added in v0.42.0.
+Brownfield Database Deployment section added in v0.42.0. Compliance Approval
+`condition` checkpoint metadata added in v0.45.0.

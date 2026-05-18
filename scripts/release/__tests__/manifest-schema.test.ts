@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   manifestArtifactSchema,
+  manifestCheckpointSchema,
   manifestSchema,
   manifestStageSchema,
 } from "../manifest-schema";
@@ -15,18 +16,23 @@ const validArtifact = {
   required: true,
 };
 
+const validCheckpoint = {
+  name: "Requirements Readiness",
+  type: "review",
+  is_hard_gate: false,
+  condition: null,
+};
+
 const validStage = {
   name: "requirements",
   display_name: "Requirements",
   display_order: 2,
   default_sequence: 2,
   pattern: "Foundational",
-  checkpoint_name: "Requirements Readiness",
-  checkpoint_type: "review",
-  is_hard_gate: false,
   default_autonomy: "collaborative",
   default_oversight_intensity: "active",
   working_location: "artifacts",
+  checkpoints: [validCheckpoint],
   artifacts: [validArtifact],
 };
 
@@ -91,13 +97,45 @@ describe("manifestStageSchema", () => {
     expect(result.success).toBe(false);
   });
 
-  it("rejects an invalid checkpoint_type enum", () => {
-    const result = manifestStageSchema.safeParse({ ...validStage, checkpoint_type: "audit" });
+  it("rejects a stage whose checkpoint has an invalid type", () => {
+    const result = manifestStageSchema.safeParse({
+      ...validStage,
+      checkpoints: [{ ...validCheckpoint, type: "audit" }],
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("requires at least one checkpoint", () => {
+    const result = manifestStageSchema.safeParse({ ...validStage, checkpoints: [] });
     expect(result.success).toBe(false);
   });
 
   it("requires at least one artifact", () => {
     const result = manifestStageSchema.safeParse({ ...validStage, artifacts: [] });
+    expect(result.success).toBe(false);
+  });
+});
+
+describe("manifestCheckpointSchema", () => {
+  it("accepts a checkpoint with a null condition", () => {
+    expect(manifestCheckpointSchema.safeParse(validCheckpoint).success).toBe(true);
+  });
+
+  it("accepts a checkpoint with a compliance condition", () => {
+    const result = manifestCheckpointSchema.safeParse({
+      ...validCheckpoint,
+      condition: "compliance",
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("rejects an invalid checkpoint type", () => {
+    const result = manifestCheckpointSchema.safeParse({ ...validCheckpoint, type: "audit" });
+    expect(result.success).toBe(false);
+  });
+
+  it("rejects an unknown condition", () => {
+    const result = manifestCheckpointSchema.safeParse({ ...validCheckpoint, condition: "legal" });
     expect(result.success).toBe(false);
   });
 });
