@@ -235,6 +235,85 @@ evidence, see the [Checkpoint Taxonomy](checkpoints.md) reference.
 
 ---
 
+## The Traceability Chain
+
+The framework's artifacts form a single traceability chain: every requirement,
+test, and metric should trace back to a reason it exists. The chain is anchored
+by the project's **goals** — the enumerated outcomes defined in the Initiation
+Brief.
+
+A goal is the **join point**. From it the chain forks into two branches: a
+**measurement branch** (how you will know the outcome happened) and a
+**construction branch** (what you will build to make it happen).
+
+```
+Business Case            why the project exists, and why now
+      │
+      ▼
+Goal  (G-1, G-2, …)      intended outcomes — not necessarily measurable
+      │
+      ├───────────────►  Success Criterion (SC-01, …)      ─ measurement branch
+      │                    metric + baseline + target;
+      │                    the check that verifies the goal
+      │
+      └───────────────►  Functional Requirement (FR-1, …)  ─ construction branch
+                             │
+                             ├──►  Acceptance Criterion (AC-1.1, …)
+                             │       observable "done" check for the FR
+                             │
+                             └──►  Non-Functional Requirement
+                                     quality bar + verification criteria
+```
+
+Five properties of this chain are worth keeping in mind:
+
+1. **The goal is the join point — success criteria and requirements are
+   siblings, not a sequence.** Both are projections of the same goal: the
+   success criterion projects it onto measurement, the functional requirement
+   onto behavior. You do not derive requirements from success criteria; both are
+   chosen to serve the goal.
+2. **Metrics live on success criteria, not goals.** A goal is a qualitative
+   outcome; the metric, baseline, and target belong to the success criterion
+   that verifies it. A goal is "measurable" only in the sense that it has
+   success criteria.
+3. **Acceptance criteria verify construction; success criteria verify outcome.**
+   Passing every acceptance criterion proves the requirements were built as
+   specified — it does not prove the goal's success criteria were met.
+   Construction is confirmed at Verification; the success criteria are confirmed
+   later, in production, during Support.
+4. **Non-functional requirements are heterogeneous.** Observability NFRs exist
+   to make a success criterion measurable; performance and reliability NFRs are
+   system-level targets that can serve as an early indicator for a
+   performance-flavored success criterion; security and compliance NFRs descend
+   from the Initiation Brief's Data Sensitivity and Compliance section — a
+   parallel root, not from a goal.
+5. **The chain guarantees coverage, not sufficiency.** Tracing every artifact to
+   a goal confirms _coverage_ (no success criterion is unowned, no goal is
+   unchecked) and _alignment_ (everything serves a stated outcome). It does not
+   guarantee that the requirements, once built, will move a success criterion to
+   its target — that is an empirical bet, de-risked progressively through the
+   pre-mortem, verification, and production monitoring.
+
+Because security and compliance obligations enter through a different door, the
+framework has **two roots**, not one:
+
+```
+Business Case  ──►  Goals  ──►  Success Criteria / FRs / ACs    outcome chain
+
+Data Sensitivity & Compliance  ──►  Security & Compliance NFRs  constraint chain
+```
+
+The outcome chain answers _what value the project delivers_; the constraint
+chain answers _what the solution must respect regardless_. Both are established
+in the Initiation Brief and meet downstream in Requirements and System Design.
+
+For the dynamic, stage-by-stage view of how success criteria travel this chain,
+see the [Measurement Throughline](#measurement-throughline). For a worked
+instance of the whole chain on a real feature, see
+[Worked Example: The Full Traceability Chain](worked-example.md#the-full-traceability-chain).
+
+---
+
 ## Measurement Throughline
 
 For the stage-by-stage breakdown of how success criteria flow from Initiation
@@ -855,7 +934,7 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.9.0. Visual designs row added to Artifact Placement
-table in v0.44.0.
+table in v0.44.0. Traceability Chain section added in v0.45.0.
