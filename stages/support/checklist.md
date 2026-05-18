@@ -111,7 +111,7 @@ For initial setup before accepting production ownership, use the
 26. [ ] **All required stage outputs produced** (support brief, runbooks,
         monitoring dashboards — verify against stage README front matter)
 
-**Gate:** All items checked → business objectives are actively tracked.
+**Gate:** All items checked → success criteria are actively tracked.
 
 ---
 
@@ -152,6 +152,7 @@ For initial setup before accepting production ownership, use the
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.8.0.
+Added to framework in v0.8.0. Outcomes-gate terminology aligned with the goals
+layer in v0.45.0.

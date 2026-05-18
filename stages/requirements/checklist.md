@@ -54,8 +54,9 @@ System Design.
        with relevant context)
 10. [ ] **Problem statement is problem-first** (describes what users can't do,
         focuses on behavior not implementation)
-11. [ ] **Goals include measurable success metrics** (carried forward from
-        Initiation Brief, baseline → target)
+11. [ ] **Goals and success criteria carried forward from Initiation**
+        (enumerated goals G-1, G-2, …; success criteria with baseline → target,
+        each mapped to its goal(s))
 12. [ ] **Stakeholders consulted per initiation brief** (key stakeholders marked
         as Consulted for Requirements have provided input; see stakeholder table
         in initiation brief)
@@ -65,8 +66,8 @@ System Design.
 13. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
         behavior)
 14. [ ] **Open questions listed** (critical blockers flagged with owners)
-15. [ ] **Traceability summary present** (FRs traced to Initiation objectives
-        and success metrics)
+15. [ ] **Traceability summary present** (FRs traced to Initiation goals and
+        success metrics)
 16. [ ] **Success Criteria Register referenced** — all success criteria have
         supporting FRs/NFRs and register measurement methods are feasible
 17. [ ] **[H] Review occurred** (engineering + product, and security/compliance
@@ -107,6 +108,7 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.3.0.
+Added to framework in v0.3.0. Item 11 reworded for the goals/success-criteria
+split in v0.45.0.

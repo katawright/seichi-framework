@@ -59,13 +59,26 @@
 ## Goals and Success Criteria (from Initiation)
 
 <!-- For guidance, see requirements/README.md#goals-and-success-criteria -->
-<!-- Measurement throughline: These metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
+<!-- Measurement throughline: These goals and metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
 <!-- For Standard+ tier, add a Measurement Throughline column mapping each
      success criterion to its supporting FR/NFR IDs. This makes the
      FR-to-SC traceability explicit and catches gaps before System Design.
-     Example: SC-1 maps to FR-4, FR-6, NFR-OBS-1. -->
+     Example: SC-01 maps to FR-4, FR-6, NFR-OBS-1. -->
 
-- [Measurable success criteria from Initiation Brief (baseline → target)]
+### Goals
+
+<!-- Carry the enumerated goals (G-1, G-2, …) forward from the Initiation Brief.
+     Each functional requirement below traces to one or more of these. -->
+
+- **G-1:** [Outcome statement carried forward from the Initiation Brief]
+- **G-2:** [Outcome statement carried forward from the Initiation Brief]
+
+### Success Criteria
+
+- **SC-01:** [Measurable or binary check, baseline → target] — **Goal(s):**
+  [G-ID(s) this criterion measures]
+- **SC-02:** [Measurable or binary check, baseline → target] — **Goal(s):**
+  [G-ID(s) this criterion measures]
 
 ---
 
@@ -150,10 +163,13 @@
 
 ## Traceability Summary
 
-| FR ID | Short Name      | Initiation Objective | MoSCoW | ACs    | Success Metric |
-| ----- | --------------- | -------------------- | ------ | ------ | -------------- |
-| FR-1  | [2-4 word name] | [objective ref]      | Must   | AC-1.1 | [metric ref]   |
-| FR-2  | [2-4 word name] | [objective ref]      | Should | AC-2.1 | [metric ref]   |
+<!-- Initiation Goal: the G-ID(s) this FR serves. Usually one; list several only
+     when the FR genuinely serves multiple goals. -->
+
+| FR ID | Short Name      | Initiation Goal | MoSCoW | ACs    | Success Metric |
+| ----- | --------------- | --------------- | ------ | ------ | -------------- |
+| FR-1  | [2-4 word name] | [G-ID(s)]       | Must   | AC-1.1 | [metric ref]   |
+| FR-2  | [2-4 word name] | [G-ID(s)]       | Should | AC-2.1 | [metric ref]   |
 
 ---
 
@@ -297,4 +313,4 @@ Provide this Requirements Brief to System Design team.
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. -->
+<!-- Template Last Updated: 2026-05-18 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. Goals layer threaded into the Goals and Success Criteria section and traceability table in v0.45.0. -->

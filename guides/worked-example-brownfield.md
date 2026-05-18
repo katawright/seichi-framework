@@ -368,7 +368,8 @@ exist in the
 
 ```
 Initiation
-  Goal: "Reduce support tickets by 40% via self-service"
+  Goal G-1: Customers resolve routine account tasks without contacting support
+  SC-01: Support ticket volume reduced 40% (self-service deflection)
   Readiness: T2 (Challenging) — preparation required
     ↓
 Gate 1: Proceed (preparation cost accepted)
@@ -391,7 +392,7 @@ Increment 1 (Feature)
   Shadow mode deployment                          ← brownfield-specific
     ↓
 Support
-  Monitor: Support ticket reduction rate
+  Monitor: SC-01 — support ticket volume vs. 40% reduction target
   Monitor: Shadow mode can be re-enabled for future increments
 ```
 
@@ -428,8 +429,9 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-03-28
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.40.0. Scores recalculated for five-axis rubric
 (Consistency added; Deployability and Observability moved to supplementary
-considerations).
+considerations). Traceability chain's Initiation goal and success criterion
+split per the v0.45.0 goals layer.

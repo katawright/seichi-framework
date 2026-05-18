@@ -34,9 +34,8 @@ raci_roles: { R: [pm], A: [pm], C: [arch, eng, qa, appsec, pjm], I: [exec] }
 
 ## Overview
 
-Practical guidance for converting business objectives from the Initiation Brief
-into testable, prioritized specifications that drive design, implementation, and
-verification.
+Practical guidance for converting goals from the Initiation Brief into testable,
+prioritized specifications that drive design, implementation, and verification.
 
 ### Why Requirements
 
@@ -184,10 +183,10 @@ Otherwise, keep Requirements concise and move to System Design.
 
 ## Requirements Workflow
 
-1. **Review Initiation Brief** — understand objectives, success criteria,
+1. **Review Initiation Brief** — understand goals, success criteria,
    constraints, and non-goals
-2. **Draft functional requirements** — convert business objectives into testable
-   behavior statements (FR-1, FR-2, etc.)
+2. **Draft functional requirements** — convert goals into testable behavior
+   statements (FR-1, FR-2, etc.)
 3. **Define FR acceptance criteria** — write objective, observable conditions
    for each FR (Given/When/Then format)
 4. **Identify non-functional requirements** — capture quality attributes
@@ -197,8 +196,8 @@ Otherwise, keep Requirements concise and move to System Design.
    NFRs (if applicable)
 6. **Prioritize with MoSCoW** — classify all requirements as Must Have, Should
    Have, Could Have, or Won't Have
-7. **Build traceability summary** — map each FR to its Initiation objective,
-   MoSCoW classification, acceptance criteria, and success metric
+7. **Build traceability summary** — map each FR to the Initiation goal(s) it
+   serves, MoSCoW classification, acceptance criteria, and success metric
 8. **Review with engineering** — conduct alignment review to validate
    feasibility and completeness; consult
    [QA per RACI](../../guides/roles.md#raci-matrix) on acceptance criteria
@@ -229,8 +228,8 @@ element is included:
    statements
 8. [**Acceptance Criteria**](#acceptance-criteria) — objective observable
    conditions
-9. [**Traceability Summary**](#traceability-summary) — FRs traced to objectives
-   and metrics
+9. [**Traceability Summary**](#traceability-summary) — FRs traced to goals and
+   metrics
 10. [**Non-Functional Requirements**](#non-functional-requirements) — quality
     attributes that shape architecture
 11. [**Data and Integrations**](#data-and-integrations) — unexamined constraints
@@ -320,32 +319,38 @@ behavior-focused — what users can't do and why.
 
 ### Goals and Success Criteria
 
-Success criteria from the Initiation Brief establish the measurement throughline
-that flows through all subsequent stages (see
+The Initiation Brief delivers two linked layers: enumerated **goals**
+(`G-1, G-2, …`) — the outcomes the project exists to achieve — and the **success
+criteria** (`SC-01, …`) that measure them. Carry both forward.
+
+Each goal forks into two sibling branches: a **measurement branch** (its success
+criteria) and a **construction branch** (the functional requirements that
+deliver it). Requirements owns the construction branch and instruments the
+measurement branch — it does not derive one branch from the other; both are
+chosen to serve the goal. For the full chain — business case, NFR types, the
+parallel security and compliance root — see
+[Framework Guide: The Traceability Chain](../../guides/framework.md#the-traceability-chain).
+
+Your role in Requirements: keep the goals visible so every FR traces to one (see
+[Traceability Summary](#traceability-summary)), and translate each success
+criterion's metric into NFRs with instrumentation targets so it can be measured
+in production. Success criteria establish the measurement throughline that flows
+through all subsequent stages (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).
-Your role in Requirements: translate metrics into NFRs with instrumentation
-targets so they can be measured in production.
 
-**How requirements artifacts relate:**
+**Example:** Goal G-1 — "Support agents resolve contacts without re-asking for
+context."
 
-```
-Initiation Objective
-  → Success Metric (baseline → target)
-    → NFR-Observability (instrumentation to measure it)
-    → FR (behavior that delivers the objective)
-      → AC (observable condition proving the FR works)
-```
-
-**Example:** "Reduce repeat-contact rate from 12% to 10%"
-
-- NFR-Obs-1: Track repeat-contact metric in the dashboard
-- FR-1: Unified conversation view across both tools
-  - AC-1.1: Messages from both tools appear chronologically
+- SC-01: repeat-contact rate 12% → 10% — measurement branch
+  - NFR-Obs-1: track the repeat-contact metric in the dashboard
+- FR-1: unified conversation view across both tools — construction branch
+  - AC-1.1: messages from both tools appear chronologically
 
 **What to include:**
 
-- Measurable success criteria carried forward from Initiation (baseline →
-  target)
+- The Initiation goals (`G-1, G-2, …`), each as a one-line outcome statement
+- Measurable success criteria carried forward from Initiation (`SC-01, …`,
+  baseline → target), each noting the goal(s) it measures
 
 **Good example:**
 
@@ -465,22 +470,24 @@ criterion is met or it isn't.
 
 ### Traceability Summary
 
-The traceability summary maps each functional requirement back to its Initiation
-objective, MoSCoW priority, acceptance criteria, and success metric. This table
-provides a single-glance view that confirms every FR is grounded in a business
-objective and every success metric has at least one FR driving it. Without
-traceability, requirements drift from business goals and gaps go unnoticed until
-System Design or later.
+The traceability summary maps each functional requirement back to the Initiation
+goal it serves, its MoSCoW priority, acceptance criteria, and success metric.
+This table provides a single-glance view that confirms every FR is grounded in a
+stated goal and every success metric has at least one FR driving it. Without
+traceability, requirements drift from the project's goals and gaps go unnoticed
+until System Design or later.
 
 **What to include:**
 
-- One row per FR with columns for short name (2-4 words), Initiation objective,
-  MoSCoW classification, acceptance criteria references, and success metric
+- One row per FR with columns for short name (2-4 words), Initiation goal (the
+  `G-ID(s)` the FR serves — usually one; list several only when the FR genuinely
+  serves multiple goals), MoSCoW classification, acceptance criteria references,
+  and success metric
 
 **Good example:**
 
-> "FR-1 (Unified inbox) → Reduce handle time objective → Must Have → AC-1.1,
-> AC-1.2 → p90 time-to-context metric."
+> "FR-1 (Unified inbox) → G-1 → Must Have → AC-1.1, AC-1.2 → p90 time-to-context
+> metric."
 
 **Bad example:**
 
@@ -677,8 +684,8 @@ gives the System Design team a clear target.
   each functional requirement
 - **Prioritized Feature Backlog** — MoSCoW-classified requirements ready for
   increment planning
-- **Requirements Traceability** — mapping of FRs to Initiation objectives,
-  success criteria, and acceptance criteria
+- **Requirements Traceability** — mapping of FRs to Initiation goals, success
+  criteria, and acceptance criteria
 - **Non-Functional Requirements** — quality attributes including performance,
   security, observability, and compliance
 - **Success Criteria Register** — updated register carried forward from
@@ -732,7 +739,8 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.3.0. Visual NFR examples added to Usability category in
-v0.44.0.
+v0.44.0. Goals layer threaded through the Goals and Success Criteria and
+Traceability Summary sections in v0.45.0.

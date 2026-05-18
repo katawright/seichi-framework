@@ -427,7 +427,7 @@ appropriate when:
 - **Plausible but misaligned requirements:** AI generates requirements that
   sound correct based on the brief but do not reflect what stakeholders actually
   want — the brief described what they want to build, not why. Mitigation: trace
-  each requirement back to a specific Initiation Brief success criterion.
+  each requirement back to a specific Initiation Brief goal.
 
 ### Session Handoff Notes
 
@@ -447,7 +447,9 @@ state so the next session can continue without re-eliciting:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at all autonomy tiers, not only AI-Led. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
@@ -476,6 +478,7 @@ When AI-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Misaligned-requirements mitigation re-pointed to
+Initiation goals in v0.45.0.
