@@ -258,6 +258,9 @@ These formats can be adapted similarly:
   schema definitions and migration strategy if applicable
 - **Design doesn't follow conventions** -> Review System Design for established
   patterns
+- **Brief contradicts itself** -> Trace interface field lists, stated rules, and
+  "the implementation will…" claims against the rest of the brief; see
+  [Tracing Internal Consistency](README.md#tracing-internal-consistency)
 - **Major unknowns remain** -> Prototype or spike risky areas before proceeding
 
 <!-- prettier-ignore -->
@@ -316,7 +319,9 @@ Capture the following at the end of each session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at all autonomy tiers, not only AI-Led. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
@@ -338,6 +343,7 @@ These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workf
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Internal-consistency troubleshooting added in
+v0.45.0.

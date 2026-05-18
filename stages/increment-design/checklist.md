@@ -68,16 +68,21 @@ and ready for Implementation.
 14. [ ] **Implementation notes provided** (security, performance, patterns)
 15. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
-16. [ ] **[H] Engineers understand the design and can implement independently**
+16. [ ] **Brief is internally consistent** (cross-references trace cleanly —
+        interface field lists match the component bodies that populate them,
+        stated rules and invariants agree with the data model and each other,
+        and no "the implementation will…" claim contradicts another part of the
+        brief)
+17. [ ] **[H] Engineers understand the design and can implement independently**
         (no major unknowns)
 
 ### Foundation Concerns (I0 / foundation increments only)
 
-17. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
+18. [ ] **Foundation concerns reviewed and right-sized to project tier** (code
         quality, testing, security, local dev, documentation, onboarding)
-18. [ ] **Deferred concerns documented with justification** (conscious
+19. [ ] **Deferred concerns documented with justification** (conscious
         deferrals, not omissions)
-19. [ ] **All required stage outputs produced** (component designs, API
+20. [ ] **All required stage outputs produced** (component designs, API
         specifications, data model changes, test strategy, implementation notes
         — verify against stage README front matter)
 
@@ -114,6 +119,7 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-05-18
 
 Added to framework in v0.12.0. Database-layer logic item added in v0.42.0.
+Internal-consistency item added in v0.45.0.
