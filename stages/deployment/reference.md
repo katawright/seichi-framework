@@ -283,8 +283,10 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** _"Help me design a rollback procedure for [describe your >
-> > deployment strategy and infrastructure]."_
+> **AI exploration:** \_"Help me design a rollback procedure for [describe
+> your >
+>
+> > deployment strategy and infrastructure]."\_
 
 ---
 
@@ -450,6 +452,13 @@ For critical bugs requiring immediate fix:
 5. Monitor closely
 6. Merge hotfix back to main
 
+A hotfix abbreviates the normal Verification pass — that is permitted, but it is
+an explicit, recorded risk-acceptance decision. Capture who authorized it, what
+verification was skipped, why, and the compensating checks (smoke tests,
+heightened monitoring, a tested rollback) using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md). See
+[Deployment: Release Disposition](README.md#release-disposition).
+
 **Anti-patterns:** bundling other changes, skipping testing, hotfixing minor
 issues.
 
@@ -544,8 +553,10 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** _"Create deployment decision trees tailored to [describe >
-> > your deployment process and risk tolerance]."_
+> **AI exploration:** \_"Create deployment decision trees tailored to
+> [describe >
+>
+> > your deployment process and risk tolerance]."\_
 
 ---
 
@@ -626,7 +637,9 @@ Capture these when ending a deployment session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at all autonomy tiers, not only AI-Led. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Failed Gate, Unreachable Human. **Overrides:** none.
 
@@ -649,6 +662,6 @@ These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workf
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Hotfix risk-acceptance guidance added in v0.45.0.

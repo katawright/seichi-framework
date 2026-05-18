@@ -134,6 +134,9 @@ The 8 stages follow three execution patterns:
 - **Iterative** (Increment Design, Implementation, Verification, Deployment) —
   Repeat for each increment of deliverable work. An "increment" maps to whatever
   unit your methodology uses: epic, feature, sprint deliverable, or release.
+  Each iterative stage occupies one slot per increment; the slot is always
+  present, but whether Deployment produces a production release is an elective
+  per-increment decision — see [Stage 7](#stage-7-deployment).
 
 - **Continuous** (Support) — Ongoing after first production deployment. Feeds
   learnings back into future iterations and may trigger revisits to earlier
@@ -157,19 +160,25 @@ Requirements (once)
     ↓
 System Design (once)
     ↓
-┌────────────────────────────┐
-│ Per Increment:             │
-│   Increment Design         │
-│      ↓                     │
-│   Implementation           │
-│      ↓                     │
-│   Verification             │
-│      ↓                     │
-│   Deployment               │
-└────────────────────────────┘
+┌────────────────────────────────────────────┐
+│ Per Increment:                             │
+│   Increment Design                         │
+│      ↓                                     │
+│   Implementation                           │
+│      ↓                                     │
+│   Verification                             │
+│      ↓                                     │
+│   Deployment   →   release  or  defer      │
+└────────────────────────────────────────────┘
     ↓
 Support (continuous)
 ```
+
+> **Reading the Deployment slot:** Every increment has a Deployment slot, but a
+> production release is elective. Each slot resolves as **Released** (this
+> increment ships) or **Deferred** (work accumulates toward a later release). A
+> full Verification pass normally precedes a release. See
+> [Stage 7: Deployment](#stage-7-deployment).
 
 > **Brownfield projects:** If you are working with an existing codebase, the
 > scope of foundation work between Gate 2 and your first feature increment
@@ -191,7 +200,7 @@ Measurable success criteria established in Initiation flow through all stages:
 | **Increment Design** | Plan test strategy, specify what to measure per increment                                                                     |
 | **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                                               |
 | **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
-| **Deployment**       | Deploy with monitoring configured; capture baseline measurements in production                                                |
+| **Deployment**       | Deploy with monitoring configured; on releasing increments, capture baseline measurements in production                       |
 | **Support**          | Monitor success criteria in production; validate whether goals achieved; report progress                                      |
 
 This ensures goals aren't just documented and forgotten—they actively guide
@@ -656,11 +665,13 @@ right thing).
 ### Entry Criteria
 
 - Code complete and unit tests pass
-- Test environment ready
+- Production-representative test environment available
 - Test data available
 
 ### Key Activities
 
+- Establish a production-representative environment for environment-dependent
+  tests (integration, UAT, performance, end-to-end)
 - Execute integration testing
 - Perform functional testing against FR acceptance criteria
 - Conduct User Acceptance Testing (UAT) with business stakeholders
@@ -707,8 +718,17 @@ assessment, and implementation brief.
 
 ### Goals
 
-Release verified increments to production following controlled procedures, with
-monitoring and rollback capabilities.
+Release verified increments to production through a controlled, human-owned
+decision — made synchronously at deploy time or via a pre-authorized automated
+path — with monitoring and rollback capabilities. The production release is an
+elective per-increment action: each increment's Deployment slot resolves as
+released or deferred.
+
+> **Elective release.** Whether a given increment ships to production is a
+> delivery choice. See
+> [Deployment: Release Disposition](../stages/deployment/README.md#release-disposition)
+> for the released/deferred model, the synchronous vs. pre-positioned decision
+> locus, and the guarantee of at least one release by project end.
 
 ### Inputs
 

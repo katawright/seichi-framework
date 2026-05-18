@@ -46,8 +46,8 @@ raci_roles:
 
 ## Overview
 
-Operational guidance for delivering verified code into live systems safely and
-reliably.
+Operational guidance for releasing verified increments to production safely and
+reliably — and for deciding when a release happens.
 
 ### Why Deployment
 
@@ -57,7 +57,9 @@ afterthought — untested rollbacks, missing monitoring, poor communication, and
 between "code works in testing" and "code delivers value to users" by delivering
 production releases incrementally with rollback capability, confirming
 production health and instrumentation, keeping stakeholders informed throughout,
-and capturing monitoring baselines for ongoing Support.
+and capturing monitoring baselines for ongoing Support. Whether a given
+increment ships now or defers to a later release is an elective, human-owned
+decision this stage owns.
 
 ### Goals of This Guide
 
@@ -65,6 +67,7 @@ and capturing monitoring baselines for ongoing Support.
 - Describe how AI assists at each activity
 - Explain right-sizing Deployment effort to project complexity
 - Guide practitioners from verified increment to production handoff
+- Clarify when an increment releases versus defers, and who owns that decision
 
 ### Key Principle
 
@@ -73,11 +76,13 @@ quickly and you can't see what's happening, you aren't ready to deploy.
 
 ### Starting Point
 
-A verified increment with all tests passing, UAT sign-off from business
-stakeholders, production readiness assessment passed (the Production Readiness
-section of the [Verification Brief](../../templates/verification-brief.md);
-covers test results, security scan results, and performance validation;
-infrastructure readiness is validated separately via the
+When this increment's Deployment slot resolves as **Released** (see
+[Release Disposition](#release-disposition)), the starting point is a verified
+increment with all tests passing, UAT sign-off from business stakeholders,
+production readiness assessment passed (the Production Readiness section of the
+[Verification Brief](../../templates/verification-brief.md); covers test
+results, security scan results, and performance validation; infrastructure
+readiness is validated separately via the
 [Deployment Pipeline Checklist](pipeline-checklist.md)),
 [infrastructure plan from System Design](../system-design/README.md#infrastructure-planning),
 implementation brief documenting what was built, and test results and known
@@ -116,6 +121,59 @@ issues documented.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
+
+---
+
+## Release Disposition
+
+Deployment is an iterative stage — every increment has a Deployment slot — but a
+production release is an **elective action**, not an automatic one. Each
+increment's Deployment slot resolves one of two ways:
+
+- **Released** — this increment ships to production.
+- **Deferred** — the increment is verified (and, where applicable, staged), but
+  its production release is rolled into a later increment's release. Record the
+  deferral and its rationale with the
+  [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+
+### The Release Decision Is Always Human-Owned
+
+What varies is the decision's _locus_, not whether a human makes it:
+
+- **Synchronous** — a human approves the release at deploy time (a manual
+  production gate).
+- **Pre-positioned** — the human encoded the decision earlier: opening the pull
+  request, enabling automerge, or setting a "verification green → promote"
+  pipeline policy. The pipeline then executes a decision a human already made.
+
+A fully automated CD pipeline is the pre-positioned case — it does not remove
+the human decision, it relocates it. See
+[Recording an Automated (Pre-Positioned) Release](#recording-an-automated-pre-positioned-release).
+
+### Verification Precedes a Release
+
+A full Verification pass normally precedes every production release — so a
+project's release cadence drives its full-verification cadence. Releasing
+without a full pass (an emergency hotfix, for example) is permitted, but it is
+an explicit, recorded risk-acceptance decision: who authorized it, what
+verification was skipped, why, and what compensating checks (smoke tests,
+heightened monitoring, a tested rollback) are in place. See the
+[hotfix workflow](reference.md#hotfix-deployment).
+
+### Release Cadence and the Project-End Guarantee
+
+Release cadence is a delivery choice:
+
+- **Release per increment** — every increment's slot resolves as Released.
+- **Release at the end** — intermediate increments defer; the release fires in
+  the final increment's Deployment slot, covering the accumulated work. A thin,
+  dedicated "release increment" is an optional variant.
+
+Whatever the cadence, a project with a deployment target reaches **at least one
+production release by project end**. The only case where Deployment does not
+apply at all is a project with no deployment target — a local-only tool, spike,
+or library — see
+[When You Don't Need This Guide](setup.md#when-you-dont-need-this-guide).
 
 ---
 
@@ -198,11 +256,13 @@ Otherwise, keep deployment straightforward and hand off to Support.
 
 ### CD Projects: Minimal Deployment
 
-For CD projects, deployment happens automatically when each slice merges. The
-37-item deployment checklist is designed for discrete deployment events — most
-items are satisfied by the CD pipeline on every merge. Use the per-merge
-checklist below for each slice; reserve the full checklist for increment-level
-review.
+For CD projects, each merged slice is **released to production via a
+pre-authorized automated path** — the release decision was pre-positioned (pull
+request, automerge, and a green-pipeline policy) and the pipeline executes it,
+so the slot still resolves as Released. The 37-item deployment checklist is
+designed for discrete deployment events — most items are satisfied by the CD
+pipeline on every merge. Use the per-merge checklist below for each slice;
+reserve the full checklist for increment-level review.
 
 **Per-merge deployment checklist (~5 items):**
 
@@ -228,18 +288,32 @@ Support and Final Decision sections.
 > cross-service deployment ordering, and infrastructure changes still require
 > manual coordination — even with a fully automated pipeline.
 
-### Marking Deployment N/A
+### Recording an Automated (Pre-Positioned) Release
 
-When the CD pipeline fully automates deployment with no human decisions required
-per-increment, the Deployment stage can be marked N/A for that increment. Record
-the decision using the
-[Checkpoint Decision Template](../../templates/checkpoint-decision.md) with:
+A fully automated CD pipeline does not make the Deployment stage "not
+applicable" — the deployment still happens and a release still ships. What
+changed is the _locus_ of the release decision: it was **pre-positioned**
+(encoded in the pull request, automerge, and pipeline-gate policy) rather than
+made synchronously at deploy time. The slot still resolves as **Released**.
 
-- **Justification:** what the pipeline automates and why no human decision is
-  needed
-- **Re-evaluation triggers:** conditions that would require reinstating manual
-  deployment (e.g., breaking DB migration, cross-service ordering, new
+Record a pre-positioned release lightly using the per-merge deployment checklist
+above (~5 items). Reserve the full checklist and a
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md) entry for
+the increment-level review; that entry should capture:
+
+- **What the pipeline automates** and what standing policy the green-pipeline
+  gate encodes
+- **Re-evaluation triggers** — conditions that would require reinstating a
+  synchronous gate (e.g., breaking DB migration, cross-service ordering, new
   infrastructure)
+
+If an increment's slot resolves as **Deferred** instead, record that disposition
+and its integration-risk note — see [Release Disposition](#release-disposition).
+
+The only case where Deployment is genuinely **not applicable** is project-level:
+a project with no deployment target at all — a local-only tool, spike, or
+library. See
+[Deployment Setup Guide: When You Don't Need This Guide](setup.md#when-you-dont-need-this-guide).
 
 For the full CD model, see
 [Framework Guide: CD Workflow Adaptations](../../guides/framework.md#cd-workflow-adaptations).
@@ -360,8 +434,8 @@ deployment begins.
 
 ### Brownfield Database Deployment
 
-Brownfield systems often have database deployment challenges that don't exist
-in greenfield projects. This section covers common situations; adapt to your
+Brownfield systems often have database deployment challenges that don't exist in
+greenfield projects. This section covers common situations; adapt to your
 system's specifics.
 
 #### Bootstrapping a Migration Framework
@@ -375,13 +449,13 @@ activity, not a feature activity.
   documents the starting point. All subsequent migrations apply forward from
   this baseline.
 - **First production use:** The migration framework itself is untested in
-  production. Validate the framework in staging before the first production
-  run. Take a schema backup immediately before the first migration.
-- **Forward-only migrations:** When the migration tool lacks undo support
-  (e.g., Flyway Community Edition), co-locate manual rollback scripts
-  alongside forward migrations. Establish the convention early — e.g., a
-  `rollback/` directory with scripts numbered to match their forward
-  counterparts. Test rollback scripts in staging before production use.
+  production. Validate the framework in staging before the first production run.
+  Take a schema backup immediately before the first migration.
+- **Forward-only migrations:** When the migration tool lacks undo support (e.g.,
+  Flyway Community Edition), co-locate manual rollback scripts alongside forward
+  migrations. Establish the convention early — e.g., a `rollback/` directory
+  with scripts numbered to match their forward counterparts. Test rollback
+  scripts in staging before production use.
 
 #### DBA-Mediated Deployment Steps
 
@@ -405,17 +479,17 @@ deployment as a **separate phase** from application deployment.
 When different deployment components have different rollback timelines, document
 the rollback sequence with per-phase timelines and mechanisms:
 
-| Component        | Rollback mechanism  | Estimated time | Automation |
-| ---------------- | ------------------- | -------------- | ---------- |
-| Feature flags    | Disable in config   | Instant        | Automated  |
-| Application      | Redeploy previous   | Minutes        | Automated  |
-| Schema migration | Run rollback script | Minutes-hours  | Manual     |
+| Component         | Rollback mechanism  | Estimated time | Automation |
+| ----------------- | ------------------- | -------------- | ---------- |
+| Feature flags     | Disable in config   | Instant        | Automated  |
+| Application       | Redeploy previous   | Minutes        | Automated  |
+| Schema migration  | Run rollback script | Minutes-hours  | Manual     |
 | Stored procedures | DBA executes script | Hours          | Manual     |
 
 **Partial rollback as first response:** Disabling feature flags without rolling
-back database changes may restore a safe state at minimal cost. Consider
-whether partial rollback is sufficient before initiating full rollback —
-especially when database rollback is manual and time-consuming.
+back database changes may restore a safe state at minimal cost. Consider whether
+partial rollback is sufficient before initiating full rollback — especially when
+database rollback is manual and time-consuming.
 
 **Rollback ordering when phases are interdependent:** If application code
 depends on schema changes, roll back application code before rolling back
@@ -428,12 +502,12 @@ When deploying changes across multiple services with dependencies, determine
 deployment order based on the
 [cross-repo dependency graph](../../guides/brownfield-readiness.md#discovery-cross-repo-dependency-graph):
 
-- **Producer before consumer** — deploy the service that provides data or
-  events before the service that consumes them
+- **Producer before consumer** — deploy the service that provides data or events
+  before the service that consumes them
 - **Database before application** — apply schema changes before deploying code
   that depends on them
-- **Application before feature activation** — deploy code before enabling
-  flags that route traffic to new paths
+- **Application before feature activation** — deploy code before enabling flags
+  that route traffic to new paths
 - **Verification between phases** — confirm service A is healthy before
   deploying service B. Define health check criteria for each phase in the
   deployment brief.
@@ -583,9 +657,9 @@ Deployment validates that measurement systems work in production. See
 
 **Handoff:** Support stage receives the deployed system, monitoring dashboards,
 updated runbooks, incident response procedures, rollback procedure, baseline
-measurements, release notes, and success criteria register (originates from Initiation; verify the
-support team has access during handoff). Retrospective action items feed into
-the next Increment Design cycle (see
+measurements, release notes, and success criteria register (originates from
+Initiation; verify the support team has access during handoff). Retrospective
+action items feed into the next Increment Design cycle (see
 [Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). When
 the same role owns both Deployment and Support, apply the handoff checklist as a
 self-review rather than a cross-team transfer. Distribute checkpoint or gate
@@ -631,4 +705,5 @@ accepting ownership.
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
 Brownfield Database Deployment section added in v0.42.0. Compliance Approval
-`condition` checkpoint metadata added in v0.45.0.
+`condition` checkpoint metadata added in v0.45.0. Release Disposition section
+and the elective-release model added in v0.45.0.

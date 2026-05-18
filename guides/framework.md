@@ -785,12 +785,12 @@ the iterative stages.
 
 ### How CD Changes Stage Timing
 
-| Stage          | Batch (default)                 | CD                                         |
-| -------------- | ------------------------------- | ------------------------------------------ |
-| Implementation | All slices, then increment gate | Per-slice gate (PR + CI); summary at close |
-| Verification   | Batch verification after code   | Per-slice CI; increment-close summary      |
-| Deployment     | Discrete deployment event       | Per-merge automated pipeline               |
-| Support        | Handoff after deployment        | Monitoring active from first deploy        |
+| Stage          | Batch (default)                 | CD                                                  |
+| -------------- | ------------------------------- | --------------------------------------------------- |
+| Implementation | All slices, then increment gate | Per-slice gate (PR + CI); summary at close          |
+| Verification   | Batch verification after code   | Per-slice CI; increment-close summary               |
+| Deployment     | Discrete deployment event       | Per-merge release via pre-authorized automated path |
+| Support        | Handoff after deployment        | Monitoring active from first deploy                 |
 
 Foundational stages (Initiation, Requirements, System Design, Increment Design)
 are unaffected — CD applies only to the iterative execution stages.
@@ -798,9 +798,12 @@ are unaffected — CD applies only to the iterative execution stages.
 ### When Stages Can Be Folded
 
 CD doesn't skip stages — it folds their concerns into the continuous flow. When
-the CD pipeline fully automates a stage's activities (e.g., deployment is a
-zero-touch pipeline, support monitoring is active from the first deploy), the
-stage's per-increment ceremony can be folded into the continuous workflow.
+the CD pipeline fully automates a stage's activities (e.g., the release decision
+is pre-positioned in pipeline policy, support monitoring is active from the
+first deploy), the stage's per-increment ceremony can be folded into the
+continuous workflow. Folding changes how a stage's decisions are recorded and
+executed, not whether they are made — a CD pipeline still ships a human-owned,
+pre-positioned release on every merge.
 
 When folding Deployment or Support, record the rationale using the
 [Checkpoint Decision Template](../templates/checkpoint-decision.md). Include
@@ -937,4 +940,5 @@ regulatory requirements.
 **Last Updated:** 2026-05-18
 
 Added to framework in v0.9.0. Visual designs row added to Artifact Placement
-table in v0.44.0. Traceability Chain section added in v0.45.0.
+table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow
+Adaptations reconciled with the elective-release model in v0.45.0.
