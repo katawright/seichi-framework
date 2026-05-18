@@ -86,7 +86,8 @@ action items from the previous increment.
    [QA per RACI](../../guides/roles.md#raci-matrix) on test coverage levels and
    acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
-   your chosen autonomy tier
+   your chosen autonomy tier — including the
+   [internal-consistency pass](#tracing-internal-consistency)
 9. Complete the Design Review — Architect reviews component designs for
    architecture conformance (optional for Minimal; recommended for Standard;
    required for Enterprise — see
@@ -303,7 +304,7 @@ Verification stage what to test and how.
 - **Performance tests:** Load test scenarios validating NFRs, tools and
   approach, success criteria
 - **Security tests:** Threat-model-driven test cases, input validation, auth
-  boundary checks (see checklist item 7)
+  boundary checks (see checklist item 11)
 
 #### Why Test Strategy Belongs in Design
 
@@ -314,6 +315,42 @@ Verification stage what to test and how.
 
 > For testing strategy examples, see
 > [Increment Design Reference: Testing Strategy Example](reference.md#testing-strategy-examples).
+
+---
+
+## Tracing Internal Consistency
+
+A design review asks whether the design is _sound_ — whether the architecture,
+risk choices, and approach hold up. It does not, on its own, catch a brief that
+**contradicts itself**: a cross-reference or a stated rule that disagrees with
+another part of the same brief. These defects survive even thorough, repeated
+design reviews, because each part reads as reasonable on its own — the
+contradiction surfaces only when you trace one part against another.
+
+A self-contradicting brief cannot be implemented independently, which is the
+Increment Design checkpoint's purpose. The engineer is forced to make a design
+call to resolve the contradiction — either pausing to escalate or making a
+quiet, unreviewed design decision. Consistency defects are also the cheapest
+class to catch: they need no design judgment, only a systematic trace.
+
+Before completing the checklist, run an **internal-consistency pass** over the
+brief — a mechanical trace, distinct from judging whether the design is sound:
+
+- **Interfaces against component bodies.** For every interface or API field
+  list, check each component body that adds to that interface — they must
+  enumerate the same fields. A component that surfaces a derived value the
+  interface does not list is a contradiction.
+- **Rules and invariants against the data model and each other.** Check every
+  stated invariant or rule against the data model and the other rules. "Apply
+  whichever fields are present," for example, cannot hold for a field the data
+  model declares mandatory.
+- **"The implementation will…" claims against the rest of the brief.** Read each
+  such claim and confirm it agrees with the components, interfaces, and data
+  model it depends on. A passage describing two writers contradicts a rule that
+  mandates a single concurrency check.
+
+This pass is mechanical — AI can run it and present the trace for human review.
+[Increment Design Checklist](checklist.md) item 16 records it.
 
 ---
 
@@ -376,6 +413,6 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-05-18
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0.
