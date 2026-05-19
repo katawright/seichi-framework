@@ -22,6 +22,31 @@ successful completion (60-90 seconds).
 
 ---
 
+## Release Disposition
+
+> **Decide this first.** Every increment has a Deployment slot, but a production
+> release is an elective action — see
+> [Release Disposition](README.md#release-disposition).
+
+1. [ ] **[H] Release disposition decided and recorded** — this increment's
+       Deployment slot resolves as **Released** or **Deferred**; the disposition
+       and its rationale are recorded in the deployment brief's Release Details
+       section and a
+       [Checkpoint Decision](../../templates/checkpoint-decision.md)
+
+> **If Deferred:** the increment was verified (and, where applicable, staged),
+> but its production release rolls into a later increment. Record the deferral
+> rationale and integration-risk note. The remaining sections of this checklist
+> do not apply to this increment — record them as deferred, not failed. Still
+> run the increment [Retrospective](../../templates/retrospective.md), which
+> triages the project friction log.
+>
+> **If Released:** continue with Pre-Deployment Readiness below.
+
+**Gate:** Disposition recorded → if Released, proceed; if Deferred, stop here.
+
+---
+
 ## Pre-Deployment Readiness
 
 > This section confirms Verification stage outputs are complete. It does not
@@ -177,4 +202,4 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 **Last Updated:** 2026-05-18
 
 Added to framework in v0.7.0. Database migration and migration security items
-added in v0.42.0.
+added in v0.42.0. Release Disposition section added in v0.45.0.
