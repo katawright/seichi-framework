@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.45.0 (2026-05-18)
+
+### Features
+
+- **release:** the framework repo now owns release packaging — `npm run release`
+  projects a Zod-validated `manifest.json` and builds a deterministic release
+  zip (packaging was previously owned by theia-platform)
+
+### Improvements
+
+- **initiation:** split the Initiation Brief's merged "Goals and Success
+  Criteria" into a distinct enumerated Goals layer (G-1, G-2, …) and measurable
+  Success Criteria that each map to one or more goals
+- **framework:** thread the goals layer through the downstream stages —
+  Requirements, Support, and the guides — wiring the business case → goal →
+  success criteria → FR/NFR/AC traceability chain end to end
+- **increment-design:** add an internal-consistency pass to the design review —
+  a mechanical trace (new checklist item plus a README section) that the brief
+  agrees with itself, distinct from "is the design sound"
+- **deployment:** make the production release an elective per-increment action —
+  each Deployment slot resolves as Released or Deferred, with an explicit
+  staging-vs-production distinction so Verification's environment dependency is
+  honored
+- **framework:** close the friction → retrospective → idea-backlog learning loop
+  — a standing project-spanning friction log, a lightweight idea-backlog
+  convention, and a dedicated `guides/learning-loop.md`
+- **release:** document the release-zip step in the release flow
+
+### Bug Fixes
+
+- **framework:** carry the full checkpoint sequence in the manifest — replace
+  the single-checkpoint scalar fields with a per-stage `checkpoints[]` array so
+  System Design carries both the Architecture Review and Gate 2 (Gate 2 was
+  previously dropped in compilation), and flip Deployment's pattern to
+  `Iterative` (breaking change to the manifest schema)
+- **deployment:** branch the deployment checklist on release disposition so a
+  deferred increment is handled explicitly rather than assuming a release always
+  fires
+- **release:** regenerate `package-lock.json` on Linux for `npm ci`
+  compatibility
+
 ## 0.44.0 (2026-04-11)
 
 ### Features
