@@ -35,6 +35,7 @@
     "stages/*/checklist.md",
     "stages/*/pipeline-checklist.md",
     "stages/*/readiness-checklist.md",
+    "CHANGELOG.md",
     "CLAUDE.md",
     "AGENTS.md",
     "CONTRIBUTING.md",
