@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.46.0 (2026-05-29)
+
+### Improvements
+
+- **framework:** add a per-stage **altitude** model — a single Stage Altitude
+  section in `guides/stages.md` (two-axis abstraction/scope spine, per-stage slip
+  table, the imposed-vs-chosen test, and "code in design briefs" guidance),
+  threaded into the Initiation goal-altitude check (too-low/too-high), the
+  Requirements imposed-vs-chosen discriminator, and the System Design / Increment
+  Design scope boundary (#73, #74)
+
 ## 0.45.0 (2026-05-18)
 
 ### Features
