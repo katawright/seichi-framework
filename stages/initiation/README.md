@@ -328,6 +328,33 @@ goal at every tier, including Minimal, where it may be a single bullet.
 > "Onboarding completion rate reaches 95%" — that is a metric, and belongs in
 > Success Criteria.
 
+**Subtler bad example — too low (a mechanism):**
+
+> "New hires receive automated reminders for upcoming tasks." — this reads like
+> a state of the world, but it is really a _mechanism_. Ask what it enables —
+> "new hires don't miss tasks" — and the real outcome appears. Reminders are one
+> way to get there; they belong in Requirements, not Goals.
+
+**Subtler bad example — too high (above the project):**
+
+> "New hires reach full productivity faster." — a real outcome, and a tempting
+> one, but the onboarding tracker does not control it: ramp speed also turns on
+> training quality, the hiring manager, and role complexity. The project owns
+> getting onboarding _completed on time_; faster productivity is the broader
+> result that completion only contributes to, owned above this project. Drop
+> back to the outcome the project can be held to.
+
+**Altitude check.** Test a candidate goal in both directions. _Too low:_ ask
+_what does this enable?_ — if the answer is itself an outcome ("X happens", "Y
+improves"), you have named a mechanism, so keep peeling. _Too high:_ ask whether
+delivering this project in full would, by itself, achieve the outcome — if it
+also leans on work outside this project, drop to the slice the project owns. The
+right altitude is bracketed from both sides: low enough not to be a mechanism,
+high enough to still be an outcome this project can be held to (peel far enough
+and every chain reaches "grow revenue," which is above any one project). This is
+the same abstraction-and-scope idea applied to Initiation; see
+[Stage Altitude](../../guides/stages.md#stage-altitude).
+
 ### Success Criteria
 
 Success criteria are the guardrails that keep delivery honest. Each one is the
@@ -674,6 +701,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-29
 
-Added to framework in v0.2.0.
+Added to framework in v0.2.0. Goal altitude check added in v0.46.0.

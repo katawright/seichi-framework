@@ -86,6 +86,34 @@ onboarding completion rate is 68%, with 15% of required tasks completed late.
   - **Why:** Freeing HR from manual chasing is part of the business case for the
     investment.
 
+### Goal altitude: a before → after
+
+It is easy to draft a goal one altitude off — in either direction.
+
+_Too low._ Suppose the first pass had read:
+
+> **G-1 (too low):** The system sends new hires automated reminders for upcoming
+> onboarding tasks.
+
+That reads like a goal but names a _mechanism_. Ask _what does this enable?_ →
+"new hires don't miss tasks," the real outcome — **G-1** as stated above.
+Reminders are only one way to get there, so they belong in Requirements, not
+Goals; indeed they live in this project as a functional requirement (FR-12,
+due-date notifications).
+
+_Too high._ Or it might have read:
+
+> **G-1 (too high):** New hires reach full productivity faster.
+
+A real outcome, but ask _would delivering this project, by itself, achieve it?_
+— no: ramp speed also turns on training, the hiring manager, and role
+complexity, none of which an onboarding tracker controls. Drop back to the slice
+the project owns — on-time onboarding completion — which is **G-1** again.
+
+G-1 as written sits between the two: low enough not to be a mechanism, high
+enough to still be an outcome this project can be held to. See
+[Stage Altitude](stages.md#stage-altitude).
+
 ### Success Criteria
 
 | SC ID | Goal(s) | Metric                     | Baseline | Target |
@@ -839,8 +867,9 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-29
 
-Added to framework in v0.17.0. For a brownfield adoption example showing
-preparation increments, exit checkpoints, and shadow mode, see the
+Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. For a
+brownfield adoption example showing preparation increments, exit checkpoints,
+and shadow mode, see the
 [Brownfield Worked Example](worked-example-brownfield.md).
