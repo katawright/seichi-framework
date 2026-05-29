@@ -53,11 +53,20 @@ implementation work.
 
 ### Why System Design
 
-System Design bridges "what we need to build" (Requirements) and "how we'll
-build it" (Implementation). Without it, teams jump straight to coding with no
-architecture, no increment plan, and no infrastructure — leading to costly
-rework, security afterthoughts, and budget surprises. System Design exists to
-answer: _"How should we build this, and in what order?"_
+System Design turns _what we need to build_ (Requirements) into _how we will
+build it_ at the architectural level — the system structure, technology choices,
+conventions, and increment order that every later stage builds within. Without
+it, teams jump straight to coding with no architecture, no increment plan, and
+no infrastructure — leading to costly rework, security afterthoughts, and budget
+surprises. System Design exists to answer: _"How should we build this, and in
+what order?"_
+
+> **Altitude:** System Design works at _architectural_ altitude — whole-system
+> decisions made once. It sets architecture and conventions but does not design
+> individual features; that is
+> [Increment Design](../increment-design/README.md)'s altitude, one increment at
+> a time. See [Stage Altitude](../../guides/stages.md#stage-altitude) for how
+> every stage's abstraction and scope line up.
 
 ### Goals of This Guide
 
@@ -689,7 +698,8 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-05-29
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
-subsection added in v0.44.0.
+subsection added in v0.44.0. Stage altitude note and bridging-sentence
+reconciliation added in v0.46.0.

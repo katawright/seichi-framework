@@ -67,7 +67,9 @@ spike, experiment) / TBD]
 <!-- Goals are the project's distinct intended outcomes. Most projects have 1-4;
      fewer is better. The count reflects what the project intends to achieve,
      not its risk tier. State each as an outcome — not a feature, not a metric.
-     Measurability lives in Success Criteria below. -->
+     Altitude check: ask "what does this enable?" — if the answer is itself an
+     outcome, you've named a mechanism, not a goal. Measurability lives in
+     Success Criteria below. -->
 
 - **G-1:** [Intended outcome, stated as an outcome — not a feature, not a
   metric]
@@ -283,4 +285,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-05-18 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. -->
+<!-- Template Last Updated: 2026-05-29 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. -->

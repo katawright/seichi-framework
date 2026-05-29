@@ -96,9 +96,11 @@ flow through every subsequent stage.
    at a glance
 2. Understand [**How Stages Execute**](#how-stages-execute) (Foundational,
    Iterative, Continuous)
-3. Drill into individual [**stage definitions**](#stage-1-initiation) for
+3. Check [**Stage Altitude**](#stage-altitude) to see the abstraction level and
+   scope each stage works at
+4. Drill into individual [**stage definitions**](#stage-1-initiation) for
    inputs, activities, outputs, and exit criteria
-4. See [**Checkpoint Taxonomy**](checkpoints.md) for the gate and review types
+5. See [**Checkpoint Taxonomy**](checkpoints.md) for the gate and review types
    that govern progression
 
 ---
@@ -185,6 +187,89 @@ Support (continuous)
 > depends on codebase readiness. See the
 > [Brownfield Readiness Guide](brownfield-readiness.md) for the assessment and
 > routing.
+
+---
+
+## Stage Altitude
+
+Every stage works at a characteristic **altitude** — the level of abstraction
+its decisions belong at. A stage stays at altitude when its artifacts sit at its
+own level, and _slips_ when they drift up (re-deciding a higher stage's
+concerns) or down (settling a lower stage's). Altitude slippage — a goal that is
+really a feature, a requirement that is really a design choice — is expensive
+because it is usually caught only on human review, after the artifact has been
+_structured_ around the wrong level.
+
+Altitude runs along two orthogonal axes. The first is **abstraction** — how far
+a decision sits from intent toward built code:
+
+```
+why (Initiation)
+  → outcome (Initiation Goals)
+    → behavior-what (Requirements)
+      → architectural-how + sequencing (System Design)
+        → component-how (Increment Design)
+          → built (Implementation)
+```
+
+The second is **scope** — how much of the system a decision covers. This is the
+[execution pattern](#how-stages-execute) above: foundational stages reason about
+the **whole system, once**; iterative stages reason about **one increment,
+repeated**. The two axes are independent — the System Design → Increment Design
+step is mostly a _scope_ narrowing (whole-system architecture → this increment's
+components), not only an abstraction drop. That is why System Design sets
+architecture and conventions but **does not design individual features**; that
+is Increment Design's altitude.
+
+| Stage              | Altitude (abstraction)            | Scope              | Slips when it…                                                                                                  |
+| ------------------ | --------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Initiation (Goals) | outcome — the _why_ made concrete | whole project      | names a feature, metric, or mechanism dressed as an outcome (too low), or reaches above the project (too high)  |
+| Requirements       | behavior — _what_ the system does | whole system       | states a _chosen_ design framing (too low — belongs in System Design)                                           |
+| System Design      | architectural _how_ + sequencing  | whole system, once | designs an individual feature (too low — belongs in Increment Design)                                           |
+| Increment Design   | component _how_ + test design     | one increment      | re-opens architecture (too high), or drops into implementation code — bodies and logic, not contracts (too low) |
+| Implementation     | built                             | one increment      | redesigns instead of building to the design (too high)                                                          |
+
+**The altitude test — imposed vs chosen.** Naming something concrete — a format,
+a protocol, a limit — is not automatically too low; what matters is _why_ it is
+there. An **imposed constraint** is one the outside world hands you: an external
+mandate, a platform limit, a regulatory rule, or a format or protocol a system
+you must integrate with dictates. It belongs at the stage that records it — name
+it, and name its cause (a third-party API's rate limit is a legitimate
+Requirements constraint). A **chosen mechanism** is one _you_ selected to meet
+the need; it is premature and belongs one stage down. Internal implementation —
+a data structure, an algorithm — is the clearest chosen case, because the
+outside world never dictates it. Ask of any concrete noun: is it _imposed on
+us_, or _chosen by us_?
+
+**Code in design briefs.** Design altitude is not "no code." Code belongs in a
+design brief when it expresses a **contract** — what a unit exposes to the
+outside: signatures, request/response schemas, type or interface definitions,
+shared conventions. It drops too low when it expresses **construction** — the
+logic behind that contract (method bodies, algorithms, queries, control flow),
+which is Implementation's altitude. The two design stages split on scope as
+usual: System Design holds system-wide contracts (API conventions, the
+error-response envelope, a shared data model); Increment Design holds this
+increment's contracts (a service's method signatures, an endpoint's
+request/response shape, a migration's columns). The
+[Worked Example](worked-example.md) shows the gradient end to end — conventions
+at System Design, signatures and schemas at Increment Design, method bodies at
+Implementation.
+
+**Off the ladder — Verification, Deployment, Support.** These are not rungs on
+the abstraction ladder; Implementation is its bottom rung. Each is governed by a
+question rather than an altitude:
+
+- **Verification** — does the built increment match the upper rungs (its
+  behavior-what, and the outcome behind it)?
+- **Deployment** — is this increment ready to release, and should it ship now?
+- **Support** — is the system still meeting its goals in production, and what
+  should feed back into earlier stages?
+
+Goals, success criteria, and requirements relate as **siblings of a goal**, not
+a sequence — see
+[Framework Guide: The Traceability Chain](framework.md#the-traceability-chain).
+Each stage's README carries its own slippage examples (see Initiation § Goals
+and the Requirements Functional Requirements and Common Pitfalls sections).
 
 ---
 
@@ -881,6 +966,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-29
 
-Added to framework in v0.9.0.
+Added to framework in v0.9.0. Stage Altitude section added in v0.46.0.

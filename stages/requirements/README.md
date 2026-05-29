@@ -439,6 +439,19 @@ output?
 
 > "Add a search page."
 
+> **Altitude — behavior, not chosen design.** "What, not how" does not forbid
+> concrete nouns; what matters is _why_ the noun is there. "The system shall
+> export onboarding-task data" is behavior — CSV vs JSON vs Parquet is a System
+> Design call. But "the export must be **CSV**" is legitimate _if_ an outside
+> party imposes it (the payroll vendor's importer accepts nothing else): you are
+> recording a constraint and naming its cause, not picking a format. Same noun,
+> opposite verdicts — decided by _who chose it_. The test reaches even
+> design-level elements: "HR users authenticate against the company's existing
+> **SAML** identity provider" belongs here (their IdP only speaks SAML), whereas
+> choosing SAML yourself would be a System Design call. Ask of any concrete
+> noun: is it _imposed on us_, or _chosen by us_? See
+> [Stage Altitude](../../guides/stages.md#stage-altitude).
+
 > For detailed definitions, formatting guidance, and more examples, see
 > [Requirements Reference: Terminology](reference.md#requirements-terminology).
 
@@ -655,6 +668,11 @@ gives the System Design team a clear target.
 - **Requirements describe UI, not behavior** → Rewrite as behavior: "The system
   shall allow agents to search by customer phone number."
 
+- **Requirements name a chosen design** → Keep the behavior; relocate the chosen
+  mechanism (data structure, wire shape, organising abstraction) to System
+  Design. The test is imposed-constraint vs chosen-mechanism — see
+  [Stage Altitude](../../guides/stages.md#stage-altitude).
+
 - **Acceptance criteria are subjective** → Add observable signals: "Results in
   <2s (p95); displays most recent timestamp."
 
@@ -739,8 +757,9 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-29
 
 Added to framework in v0.3.0. Visual NFR examples added to Usability category in
 v0.44.0. Goals layer threaded through the Goals and Success Criteria and
-Traceability Summary sections in v0.45.0.
+Traceability Summary sections in v0.45.0. Requirements altitude (imposed vs
+chosen) added in v0.46.0.

@@ -37,12 +37,24 @@ implement an increment without guessing.
 
 ### Why Increment Design
 
-Increment Design bridges "how we'll build it" (System Design) and "build it now"
-(Implementation). Without it, engineers start coding from vague requirements
-with no component contracts, no interaction flows, and no test plan — leading to
-misaligned implementations, untested edge cases, and costly rework. Increment
-Design exists to answer: _"What exactly are we building in this increment, and
-how will we verify it works?"_
+Increment Design turns System Design's architecture into _how we build this
+increment_ — the component contracts, interaction flows, interfaces, and test
+plan for one increment — and hands that to Implementation to build. Without it,
+engineers start coding from vague requirements with no component contracts, no
+interaction flows, and no test plan — leading to misaligned implementations,
+untested edge cases, and costly rework. Increment Design exists to answer:
+_"What exactly are we building in this increment, and how will we verify it
+works?"_
+
+> **Altitude:** Increment Design works at _component_ altitude, one increment at
+> a time — it detail-designs features within the architecture System Design set,
+> specifying their contracts (signatures, interfaces, schemas) but not the
+> implementation logic behind them. It should not _casually_ re-open
+> architecture; but if an increment surfaces a genuine architectural problem,
+> that is a signal to escalate, not to push forward — route it through
+> [Mid-Stage Discovery](../../guides/framework.md#mid-stage-discovery), which
+> can trigger a System Design revisit. See
+> [Stage Altitude](../../guides/stages.md#stage-altitude).
 
 ### Goals of This Guide
 
@@ -413,6 +425,7 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-29
 
-Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0.
+Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0. Stage
+altitude note and bridging-sentence reconciliation added in v0.46.0.
