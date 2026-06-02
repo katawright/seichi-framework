@@ -6,16 +6,23 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## At Session Start
 
-1. Identify stage and increment from the user request or
+1. **Confirm the working location.** You must be operating from an artifacts or
+   source-code location — never the read-only framework directory. If the
+   working directory is the framework itself (it contains `guides/`, `stages/`,
+   and `templates/`), stop: the process cannot be run from the framework
+   location. Tell the user and redirect them to their project's artifacts or
+   source-code workspace. See
+   [Working Locations](bootstrap.md#working-locations).
+2. Identify stage and increment from the user request or
    `projects/<name>/project.md`.
-2. Open the session log at `projects/<name>/docs/session-logs/<stage>.md` (or
+3. Open the session log at `projects/<name>/docs/session-logs/<stage>.md` (or
    `<stage>-<increment>.md` for incremented stages). If it does not exist,
    create it from the appropriate template (see
    [Template Selection](#template-selection)).
-3. Read the most recent session entry's "Context for Next Session" block.
-4. Read the current stage README and the brief for this stage/increment if one
+4. Read the most recent session entry's "Context for Next Session" block.
+5. Read the current stage README and the brief for this stage/increment if one
    exists.
-5. Append a new session entry header with today's date and participant.
+6. Append a new session entry header with today's date and participant.
 
 ---
 
@@ -52,6 +59,7 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.44.0.
+Added to framework in v0.44.0. Session-start working-location guard added in
+v0.47.0.

@@ -94,6 +94,10 @@ ready for Gate 2.
 22. [ ] **Draft ADRs use correct naming and location** (`ADR-DNNN.md` in
         project's `docs/adr/`; ready for Gate 2 publishing per
         [ADR Publishing](../../guides/framework.md#adr-publishing))
+23. [ ] **[H] Each draft ADR earns its position** (meets all three criteria —
+        significant, hard to reverse, contested; decisions that fail
+        hard-to-reverse are demoted to design-note subsections in the brief, not
+        kept as ADRs; every load-bearing decision has an ADR)
 
 ---
 
@@ -128,6 +132,7 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. ADR earns-its-position check (item 23) added in
+v0.47.0.

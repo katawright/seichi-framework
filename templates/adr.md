@@ -12,6 +12,24 @@ by ADR-XXX] **Deciders:** [Names of people involved in decision]
 
 ---
 
+## ADR Criteria Justification
+
+> A decision earns ADR status only if it meets **all three** criteria —
+> otherwise it is a design note (a numbered subsection in the System Design
+> Brief).
+
+| Criterion                                          | Met?   | Why |
+| -------------------------------------------------- | ------ | --- |
+| **Significant** (impacts multiple components)      | Yes/No | …   |
+| **Hard to reverse** (changing later is costly)     | Yes/No | …   |
+| **Contested** (multiple viable options/trade-offs) | Yes/No | …   |
+
+> **What is _not_ the ADR:** the swappable implementation or detail captured as
+> a design note — the ADR records the durable decision, not the specifics you
+> could change later behind a stable contract.
+
+---
+
 ## Context
 
 What is the issue we're trying to solve? What are the constraints and forces at
@@ -207,4 +225,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-04-05 | Added in v0.4.0 -->
+<!-- Template Last Updated: 2026-06-01 | Added in v0.4.0. ADR Criteria Justification section added in v0.47.0 -->

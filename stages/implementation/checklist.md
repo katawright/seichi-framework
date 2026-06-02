@@ -62,8 +62,9 @@ and ready for Verification.
         metrics, alerts)
 11. [ ] **Implementation brief completed with decisions documented** (ADRs for
         significant choices)
-12. [ ] **Session log finalized** (all sessions recorded, deviations and
-        decisions documented, context for Verification included)
+12. [ ] **Session log created at increment start and finalized** (all sessions
+        recorded, deviations and decisions documented, context for Verification
+        included)
 13. [ ] **[H] Known issues and limitations documented** (tech debt tracked)
 14. [ ] **Test environment prepared for Verification** (setup instructions, test
         data ready; for local-only tools, satisfied by setup instructions and
@@ -107,6 +108,7 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-04-05
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.5.0.
+Added to framework in v0.5.0. Session-log item covers creation through
+finalization in v0.47.0.
