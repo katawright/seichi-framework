@@ -64,6 +64,9 @@ the organization.
 5. **Cross-functional accessibility** — usable by both technical and
    non-technical stakeholders
 6. **Role-appropriate guidance** — each stage tailored to its primary role
+7. **Outcomes over mechanisms** — the framework specifies what must hold —
+   gates, invariants, required outputs — not the way of working you use to get
+   there; interchangeable techniques are patterns, not process
 
 ### Key Benefits
 
@@ -154,6 +157,10 @@ tooling.
 
 This guide covers the major concepts that structure the framework:
 
+**[Outcomes, Not Mechanisms](#outcomes-not-mechanisms)** — What the framework
+governs (gates, invariants, required outputs) versus the interchangeable ways of
+working that satisfy it.
+
 **[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
 (foundational, iterative, continuous). Full reference: [stages.md](stages.md).
 
@@ -206,6 +213,43 @@ models from self-review (Minimal) to architecture council (Enterprise).
 
 **[Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)**
 — IP, data privacy, audit trails, and emerging AI regulation considerations.
+
+---
+
+## Outcomes, Not Mechanisms
+
+The framework governs **outcomes**: the gates that must be cleared, the
+invariants that must hold, and the artifacts each stage must produce. It does
+not prescribe the **mechanism** you use to reach them. A mechanism is a way of
+working — a review cadence, an orchestration shape, an autonomy mode — and it is
+yours to choose, change, and improve without changing the process itself.
+
+Use one test to tell them apart:
+
+> If a practice changes **what a gate checks, who holds the authority to clear
+> it, or what invariant is guaranteed**, it is part of the framework. If it only
+> changes **how** you reach an outcome the framework already requires, it is a
+> pattern.
+
+So the framework names the invariant — _"before Gate 2, the design is reviewed
+for conformance and coherence"_ — and stays silent on the mechanism that
+satisfies it. Whether you run that review in one pass or two, with one reviewer
+or a panel, is a pattern you can swap without a framework change. The same holds
+for executing increments concurrently (the framework fixes the boundary
+invariants; the orchestration shape is yours) and for AI autonomy (the framework
+fixes who may clear a gate and under what guardrails; how the agent drives the
+work is yours).
+
+Two cautions:
+
+- **Name the invariant, not the mechanism.** Silence is not neutrality. If the
+  framework says nothing about an outcome — for example, what must hold when
+  increments run in parallel — every team re-derives it and some get it wrong.
+  Specify the property; leave the machinery open.
+- **Patterns are not lesser.** Non-normative does not mean unsupported or
+  undocumented. Proven ways of working belong in a patterns layer —
+  illustrative, optional, and free to evolve — kept distinct from the normative
+  process so that improving a technique never reads as amending the process.
 
 ---
 
@@ -939,9 +983,11 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-01
 
 Added to framework in v0.9.0. Visual designs row added to Artifact Placement
 table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow
 Adaptations reconciled with the elective-release model in v0.45.0. Learning
 Throughline and Deferral guidance pointed at the learning loop in v0.45.0.
+"Outcomes over mechanisms" design principle and the Outcomes, Not Mechanisms
+concept section added in v0.47.0.
