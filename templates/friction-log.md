@@ -58,9 +58,11 @@ lands. An entry that fits none should be sharpened until it does; there is no
 - **Likely improvement:** [the change that would prevent or reduce this
   friction]
 - **Status:** [Open / Triaged / Resolved / Won't Fix]
-- **Disposition:** [filled in at the retrospective — where the entry routed:
-  Action Items / Process Feedback / Future Value Candidates / idea IDEA-NNN]
+- **Disposition:** [filled in at the retrospective — where the entry routed and
+  to which owner: Execution → Action Items / Carry Forward (next increment);
+  Process → Process Feedback (framework tracker); Product → Future Value
+  Candidates → idea IDEA-NNN; Tooling → Action Items (tool owner)]
 
 ---
 
-<!-- Template Last Updated: 2026-05-18 | Added in v0.45.0 -->
+<!-- Template Last Updated: 2026-06-01 | Added in v0.45.0. Disposition routing made owner-explicit in v0.47.0 -->

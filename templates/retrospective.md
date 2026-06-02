@@ -125,11 +125,11 @@ the increment-design-brief Carry Forward Resolution section.
 <!-- Did anything about the AI-Assisted SDLC framework itself — the development
      process you followed — help or hinder your work? This section collects the
      Process-type friction triaged from the friction log: missing checklist
-     items, unclear guidance, template gaps, stage-model issues. For each item
-     worth keeping, create an idea document in the idea backlog
-     (templates/idea.md) with Target: Process — that is its durable
-     destination. External users: also consider filing an issue or PR at the
-     framework repository (see CONTRIBUTING.md). Agents: record observations
+     items, unclear guidance, template gaps, stage-model issues. Process
+     feedback routes to the **framework's tracker**, not the product idea
+     backlog — for teams consuming the framework unchanged, file an issue or PR
+     at the framework repository (see CONTRIBUTING.md). Tooling friction routes
+     the same way, to the owning tool's tracker. Agents: record observations
      here and flag them for human review — do not file issues or PRs without
      explicit permission. -->
 
@@ -137,6 +137,8 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-05-18 | Added in v0.23.0 | Future Value
+<!-- Template Last Updated: 2026-06-01 | Added in v0.23.0 | Future Value
      Candidates section added in v0.42.0 | Captured Feedback rewired to the
-     friction log and Framework Feedback renamed Process Feedback in v0.45.0 -->
+     friction log and Framework Feedback renamed Process Feedback in v0.45.0 |
+     Process Feedback routed to the framework tracker (not a Target:Process idea)
+     in v0.47.0 -->

@@ -25,22 +25,23 @@ ends of the loop were left open:
   leaked.
 
 The learning loop closes both ends: a standing capture surface that exists from
-project start, and durable destinations that route each observation to where it
-can actually be acted on.
+project start, and durable destinations that route each observation to the owner
+that can actually act on it.
 
 ### Goals of This Guide
 
 - Define the **friction log** — the standing, project-spanning capture surface
 - Define the **four friction types** and how each routes at the retrospective
-- Define the **idea backlog** — the lightweight cross-project destination for
-  improvement ideas
+- Define the **idea backlog** — the cross-project destination for **product**
+  ideas (candidate future projects)
 - Show how the loop closes from one project's friction into the next project's
   Initiation
 
 ### Key Principle
 
-Friction is data. Capture it where it happens, type it by where the fix lands,
-and route it to a place that acts.
+Friction is data. Capture it where it happens, type it by who owns the fix, and
+route it to that owner — product ideas to the backlog, process and tooling
+friction to the framework or tool that owns them.
 
 ### How to Use This Guide
 
@@ -49,26 +50,33 @@ and route it to a place that acts.
 2. Type each entry using the [**four friction types**](#friction-types)
 3. At each retrospective, [**triage**](#triage-at-the-retrospective) the log's
    entries into the retrospective's analysis sections
-4. Route durable improvement ideas into the
-   [**idea backlog**](#the-idea-backlog), and draw from it when
-   [**initiating future projects**](#closing-the-loop-into-future-projects)
+4. Route **product** ideas into the [**idea backlog**](#the-idea-backlog) and
+   draw from it when
+   [**initiating future projects**](#closing-the-loop-into-future-projects);
+   route **process** and **tooling** friction outward to the owning tracker
 
 ---
 
 ## The Loop at a Glance
 
-| Friction type | What it is                                        | Triaged at the retro into    | Where the fix lands                           |
-| ------------- | ------------------------------------------------- | ---------------------------- | --------------------------------------------- |
-| **Process**   | The development process / SDLC method itself      | Process Feedback             | Framework maintainers; an idea in the backlog |
-| **Execution** | How this team ran the project                     | Action Items / Carry Forward | The next increment                            |
-| **Product**   | The software being built                          | Future Value Candidates      | An idea in the backlog → a future project     |
-| **Tooling**   | The tools and environment used to run the project | Action Items                 | A tool owner; an idea in the backlog          |
+| Friction type | What it is                                        | Triaged at the retro into    | Where the fix lands                         |
+| ------------- | ------------------------------------------------- | ---------------------------- | ------------------------------------------- |
+| **Process**   | The development process / SDLC method itself      | Process Feedback             | The framework's tracker (file upstream)     |
+| **Execution** | How this team ran the project                     | Action Items / Carry Forward | The next increment                          |
+| **Product**   | The software being built                          | Future Value Candidates      | The product's idea backlog → future project |
+| **Tooling**   | The tools and environment used to run the project | Action Items                 | The owning tool's tracker                   |
+
+Only **Product** friction becomes an idea-backlog entry — those are candidate
+future projects for the product. Process and tooling friction route **outward**
+to the owner that can act on them; they are recorded in the friction log's
+Disposition, not added to this project's backlog.
 
 The loop, end to end:
 
 > friction logged during execution (typed) → triaged at each increment
-> retrospective → routed by type → durable improvement ideas land in the idea
-> backlog → triaged into the Initiation of a future project.
+> retrospective → routed by type → **product** ideas land in the idea backlog →
+> triaged into the Initiation of a future project; **process** and **tooling**
+> friction route out to the owning framework / tool tracker.
 
 ---
 
@@ -99,7 +107,7 @@ per-tier guidance.
 ## Friction Types
 
 Every friction-log entry is typed by **where the fix lands**. The type is what
-makes triage mechanical — it tells the retrospective where the entry routes.
+makes triage mechanical — it tells the retrospective who owns the fix.
 
 - **Process** — friction with the development process or SDLC method itself: a
   stage guide, a checklist item, a template, the gate model. The fix lands with
@@ -131,12 +139,12 @@ that increment. The retrospective is where typed friction becomes routed action.
 For each entry, record its destination in the friction log's **Disposition**
 field so the log itself shows the loop closing.
 
-| Friction type | Routes to (Retrospective section)                      |
-| ------------- | ------------------------------------------------------ |
-| **Execution** | Action Items, or Carry Forward                         |
-| **Process**   | Process Feedback                                       |
-| **Product**   | Future Value Candidates (harvested at project wrap-up) |
-| **Tooling**   | Action Items, and escalate to the tool's owner         |
+| Friction type | Retrospective section        | Durable destination                     |
+| ------------- | ---------------------------- | --------------------------------------- |
+| **Execution** | Action Items / Carry Forward | The next increment                      |
+| **Process**   | Process Feedback             | The framework's tracker (file upstream) |
+| **Product**   | Future Value Candidates      | The product's idea backlog              |
+| **Tooling**   | Action Items                 | The owning tool's tracker               |
 
 **Execution friction has a closed within-project loop.** An Execution entry
 becomes a retrospective **Action Item** (with an owner and a target date; the
@@ -146,35 +154,46 @@ Design Brief, whose **Carry Forward Resolution** section records how each one
 was handled. Nothing is lost between increments.
 
 **Process, Product, and Tooling friction routes outward** — beyond the current
-increment, and often beyond the current project. Those entries feed the idea
-backlog.
+increment, and often beyond the current project. Only **Product** friction feeds
+the idea backlog (it is a candidate future project for the product). **Process**
+friction routes to the framework's tracker and **Tooling** friction to the
+owning tool's tracker — recorded in the friction log's Disposition, not added to
+this project's backlog.
 
 ---
 
 ## The Idea Backlog
 
-The **idea backlog** is the durable destination for improvement ideas that
-outlive the project that surfaced them. It is a lightweight convention, not a
-stage: no gate, no checklist, no ceremony. It is the layer where a retrospective
-output stops being stranded in a per-project document and becomes something a
-future project can pick up.
+The **idea backlog** is the durable destination for **product** improvement
+ideas that outlive the project that surfaced them. It is a lightweight
+convention, not a stage: no gate, no checklist, no ceremony. It is the layer
+where a product idea stops being stranded in a per-project document and becomes
+something a future project can pick up.
 
 Each idea is one document, created from the
 [Idea Template](../templates/idea.md) — a problem statement, where it came from,
-a rough sense of scope, a target, and a status. Ideas accumulate in a shared
-backlog location above any single project. Number them `IDEA-001`, `IDEA-002`, …
-across the backlog (idea IDs are portfolio-scoped, not per-project).
+a rough sense of scope, and a status. Ideas accumulate in a shared backlog
+location above any single project. Number them `IDEA-001`, `IDEA-002`, … across
+the backlog (idea IDs are portfolio-scoped, not per-project).
 
-The backlog holds **both** kinds of improvement, distinguished by the idea's
-**Target**:
+The backlog holds **product / portfolio ideas** — features, tech debt, or
+architectural opportunities for the product being built. These typically become,
+or seed, a future project, so every idea's **Target** is **Product**.
 
-- **Product** ideas — features, tech debt, or architectural opportunities for a
-  product. These typically become, or seed, a future project.
-- **Process** ideas — improvements to the framework itself. For teams consuming
-  the framework unchanged, a triaged Process idea is also worth filing upstream
-  (see [CONTRIBUTING.md](../CONTRIBUTING.md)).
-- **Tooling** ideas — improvements to the tools and environment, routed to the
-  relevant tool's owner.
+Process and tooling friction does **not** live here. It routes outward to the
+owner that can act on it — **process** friction to the framework's tracker (file
+upstream; see [CONTRIBUTING.md](../CONTRIBUTING.md)), **tooling** friction to
+the owning tool's tracker — captured in the friction log's **Disposition**, not
+as idea documents. The idea backlog is the layer _above this project_ for its
+own future work; friction owned by a different product (the framework, a tool)
+does not belong in it.
+
+> **Dogfooding caveat.** When the product you are building _is_ the tooling
+> (e.g. a team building its own delivery platform), tooling friction and product
+> ideas can collapse onto the same backlog — they share an owner. That is a
+> special case. For every other product, friction in the tools is a ticket for
+> the tool's owner, not a feature idea for your product; keep the two routed
+> separately.
 
 An idea carries a **Status** (Raw → Triaged → Promoted / Parked / Discarded).
 Triaging the backlog — deciding which ideas have value, and when — is a
@@ -182,7 +201,7 @@ portfolio-level activity owned by the stakeholders who initiate projects.
 
 > A heavier portfolio layer — a continuously triaged, prioritized backlog with a
 > formal idea-to-project promotion workflow — is deliberately out of scope. The
-> idea backlog is a convention and a template; it gives retrospective outputs a
+> idea backlog is a convention and a template; it gives product-idea outputs a
 > durable home without adding a governed stage.
 
 ---
@@ -190,9 +209,11 @@ portfolio-level activity owned by the stakeholders who initiate projects.
 ## Closing the Loop into Future Projects
 
 At project wrap-up, the project retrospective harvests its **Future Value
-Candidates** and **Process Feedback**. Each candidate worth keeping becomes an
-idea document in the backlog, with its origin citing the friction-log entry or
-retrospective it came from.
+Candidates** into the idea backlog — each product candidate worth keeping
+becomes an idea document, with its origin citing the friction-log entry or
+retrospective it came from. **Process Feedback** routes to the framework's
+tracker, and tooling friction to the owning tool's tracker, rather than into the
+backlog.
 
 The loop closes at [Initiation](../stages/initiation/README.md): a new project
 can draw a goal, a scope, or an entire business case from the idea backlog. An
@@ -223,6 +244,8 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.45.0.
+Added to framework in v0.45.0. Idea backlog scoped to product/portfolio ideas;
+process and tooling friction routed to the owning framework/tool tracker in
+v0.47.0.
