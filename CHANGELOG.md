@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.47.0 (2026-06-01)
+
+### Features
+
+- **framework:** session-start location-awareness guard — agents confirm they
+  are operating from an artifacts or source-code location and refuse to run from
+  the read-only framework directory (#80)
+- **implementation:** mark session-log creation as a `[GATE]` in the
+  once-per-increment workflow, matching the existing finalize gate (#82)
+- **system-design:** require ADRs to meet all three criteria (significant, hard
+  to reverse, contested) — add an ADR Criteria Justification section to the
+  template and an "earns its position" checklist item that demotes
+  cheap-to-reverse decisions to design notes (#83)
+
+### Improvements
+
+- **framework:** add the **Outcomes over mechanisms** design principle — the
+  framework specifies gates, invariants, and required outputs, not the
+  interchangeable ways of working that satisfy them
+- **framework:** add a **Project Close-Out** that bookends Initiation — a
+  wrap-up checklist, the `project-closeout.md` summary template, and a Re-check
+  Date for success criteria that need time to measure (#81)
+- **framework:** scope the idea backlog to product/portfolio ideas and route
+  process and tooling friction to the owning framework or tool tracker (#88)
+
 ## 0.46.0 (2026-05-29)
 
 ### Improvements
