@@ -258,14 +258,29 @@ ADRs document significant decisions and reasoning. They are **separate project
 files** — drafted in the artifacts repo during System Design and published to
 the source code repo at Gate 2.
 
-**Create for decisions that are:**
+**Create an ADR only when a decision meets _all three_ criteria:**
 
-- **Significant:** Impact multiple components
+- **Significant:** Impacts multiple components
 - **Hard to reverse:** Changing later is costly
 - **Contested:** Multiple viable options with trade-offs
 
-Key sections: Context, options considered (with cost analysis), decision and
-rationale, consequences, alternatives.
+All three must hold. The common failure mode is drafting an ADR for a decision
+that is significant and contested but **cheap to reverse** — that is a **design
+note** (a numbered subsection in the System Design Brief), not an ADR. The
+discriminator: **separate the durable decision from its swappable
+implementation** — ADR the part that is hard to undo; design-note the specifics
+you could swap later behind a stable contract.
+
+Recurring cases that are **design notes, not ADRs**:
+
+- an additive, single-consumer API field;
+- an implementation choice behind a stable contract or port;
+- a "we chose not to change / not to build X yet" deferral (no commitment
+  introduced);
+- a deliverable artifact (a rubric, an increment plan).
+
+Key sections: Context, ADR criteria justification, options considered (with cost
+analysis), decision and rationale, consequences, alternatives.
 
 **Draft numbering:** Use a `D` prefix during System Design: `ADR-DNNN.md` (e.g.,
 `ADR-D001.md`, `ADR-D002.md`). The title is in the ADR heading, not the
@@ -698,8 +713,9 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-05-29
+**Last Updated:** 2026-06-01
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence
-reconciliation added in v0.46.0.
+reconciliation added in v0.46.0. ADR all-three-criteria rule + design-note
+discriminator added in v0.47.0.

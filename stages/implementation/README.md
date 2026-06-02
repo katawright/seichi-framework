@@ -239,7 +239,7 @@ gates. For increments with multiple PRs, steps 4-12 repeat for each PR.
 
  1. Review design brief for current increment
  2. Set up / verify development environment
- 3. Start session log from template
+ 3. Start session log from template [GATE]
 
 -- FOR EACH PR --
 
@@ -430,6 +430,7 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.5.0.
+Added to framework in v0.5.0. Session-log creation marked [GATE] in the
+ONCE-PER-INCREMENT block in v0.47.0.
