@@ -17,6 +17,8 @@ outputs:
   - artifact: success-criteria-reports
   - artifact: incident-reports
   - artifact: enhancement-backlog
+  - artifact: project-closeout-summary
+    template: templates/project-closeout.md
 checkpoints:
   - type: review
     protocol: human-approval
@@ -473,14 +475,18 @@ practices, see [Support Reference: On-Call](reference.md#on-call-operations) and
   cause analysis and action items
 - **Enhancement Backlog** (`enhancement-backlog`) — prioritized enhancement
   requests and bug fixes routed to appropriate SDLC stages
+- **Project Close-Out Summary** (`project-closeout-summary`) — readable closing
+  synthesis produced at wrap-up (see
+  [template](../../templates/project-closeout.md))
 
 > Support closes the **measurement throughline** — success criteria defined in
 > Initiation are tracked against real production data here. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
 > Support closes the **learning throughline** — ongoing retrospectives surface
-> systemic patterns from production. Durable improvement ideas flow to the idea
-> backlog, where the Initiation of a future project draws from them. Use the
+> systemic patterns from production. **Product** ideas flow to the idea backlog,
+> where the Initiation of a future project draws from them; **process** and
+> **tooling** friction routes to the owning framework / tool tracker. Use the
 > [Retrospective Template](../../templates/retrospective.md). See
 > [The Learning Loop](../../guides/learning-loop.md).
 
@@ -496,6 +502,34 @@ decision to accept production ownership. Use the
 when the team confirms readiness to own the system in production. Distribute
 checkpoint or gate decision artifacts to all Informed roles per the
 [Information Protocol](../../guides/roles.md#information-protocol).
+
+---
+
+## Project Close-Out
+
+Support is continuous, but a project still ends — its final increment ships, or
+it is sunset. The **project close-out** is the terminal bookend to Initiation:
+it guarantees the wrap-up learning triage actually happens, reconciles
+completion and outcomes against the original goals, and produces a single
+readable record of the project.
+
+Run the [Project Close-Out Checklist](project-closeout-checklist.md) once at
+wrap-up. It confirms:
+
+- the project-wrap-up retrospective ran and the friction log is fully triaged,
+  each entry routed to its owner (product → idea backlog; process → the
+  framework's tracker; tooling → the owning tool's tracker — see
+  [The Learning Loop](../../guides/learning-loop.md));
+- every acceptance criterion is met, descoped, or deferred;
+- every success criterion is measured or carries a **Re-check Date** in the
+  [Success Criteria Register](../../templates/success-criteria-register.md);
+- the [Project Close-Out Summary](../../templates/project-closeout.md) is
+  produced.
+
+The close-out summary is a synthesis, not a restatement — it references the
+Initiation Brief, success criteria register, retrospective, and idea backlog by
+ID rather than duplicating them. Right-size it: a few paragraphs for a Minimal
+project, fuller for Enterprise.
 
 ---
 
@@ -520,7 +554,8 @@ checkpoint or gate decision artifacts to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-01
 
 Added to framework in v0.8.0. Goals terminology aligned with the Initiation
-goals layer in v0.45.0.
+goals layer in v0.45.0. Project Close-Out section, checklist, and summary added
+in v0.47.0.

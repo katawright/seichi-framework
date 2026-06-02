@@ -1,4 +1,8 @@
-<!-- For guidance on the idea backlog and how ideas feed future Initiation, see guides/learning-loop.md -->
+<!-- The idea backlog is product/portfolio only — candidate future projects for
+     the product being built. Process friction routes to the framework's tracker
+     and tooling friction to the owning tool's tracker (captured in the friction
+     log's Disposition), not here. For guidance on the idea backlog and how ideas
+     feed future Initiation, see guides/learning-loop.md -->
 
 # Idea: [short title]
 
@@ -6,10 +10,8 @@
 
 **Status:** [Raw / Triaged / Promoted / Parked / Discarded]
 
-**Target:** [Product / Process / Tooling]
-
-**Category:** [optional finer tag — e.g., feature, tech-debt, checklist,
-template, gate-model]
+**Category:** [optional finer tag — e.g., feature, tech-debt,
+architectural-opportunity]
 
 **Raised:** YYYY-MM-DD
 
@@ -53,4 +55,4 @@ template, gate-model]
 
 ---
 
-<!-- Template Last Updated: 2026-05-18 | Added in v0.45.0 -->
+<!-- Template Last Updated: 2026-06-01 | Added in v0.45.0. Scoped to product ideas (Target field removed) in v0.47.0 -->

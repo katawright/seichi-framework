@@ -102,9 +102,13 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 completed increment, preview next increment scope, surface cross-increment
 dependencies.
 
-> **Close-out review:** If this is the final planned increment, run a close-out
-> review to confirm Gate 2 criteria are still met, using the
-> [Gate Decision Template](../templates/gate-decision.md). See
+> **Close-out review:** If this is the final planned increment, run the
+> **project close-out** — confirm every acceptance criterion is met or descoped,
+> every success criterion is measured or carries a re-check date, and learnings
+> are triaged and routed to their owners. Use the
+> [Project Close-Out Checklist](../stages/support/project-closeout-checklist.md)
+> and capture the result in the
+> [Project Close-Out Summary](../templates/project-closeout.md). See
 > [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda and
 > time-boxing.
 
@@ -192,6 +196,7 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-01
 
-Added to framework in v0.40.0.
+Added to framework in v0.40.0. Final-increment close-out review pointed at the
+project close-out (checklist + summary) in v0.47.0.
