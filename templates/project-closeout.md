@@ -1,6 +1,6 @@
 <!-- For guidance on the project close-out, see the Support stage README
      (Project Close-Out) and stages/support/project-closeout-checklist.md.
-     Reference other artifacts by stable ID + label (SC-03, IDEA-014, ADR-D001,
+     Reference other artifacts by stable ID + label (SC-03, IDEA-014, ADR-D01,
      F-007), not relative links — IDs stay resolvable in every viewer, including
      ones that render this file straight from version control. -->
 
@@ -47,7 +47,7 @@ descope / Sunset / Cancelled]
 ## How It Went
 
 <!-- Minimal: a 2–3 sentence narrative is enough; the timeline table is optional. -->
-<!-- A short narrative: key decisions and pivots (cite ADR-DNNN), what changed
+<!-- A short narrative: key decisions and pivots (cite ADR-DCC), what changed
      from the original plan, and a timeline of milestones. With dedicated tooling
      this timeline can be assembled from audit / gate data; in manual mode,
      author it from the gate decisions and session logs. -->
@@ -96,4 +96,4 @@ descope / Sunset / Cancelled]
 
 ---
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.47.0. ADR id examples updated to two-digit draft form in v0.48.0 -->

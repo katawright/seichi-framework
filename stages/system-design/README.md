@@ -282,16 +282,17 @@ Recurring cases that are **design notes, not ADRs**:
 Key sections: Context, ADR criteria justification, options considered (with cost
 analysis), decision and rationale, consequences, alternatives.
 
-**Draft numbering:** Use a `D` prefix during System Design: `ADR-DNNN.md` (e.g.,
-`ADR-D001.md`, `ADR-D002.md`). The title is in the ADR heading, not the
-filename. The prefix makes draft status self-evident and keeps numbering scoped
-to the current project's artifacts.
+**Draft numbering:** Use a `D` prefix with a two-digit counter during System
+Design: `ADR-DCC.md` (e.g., `ADR-D01.md`, `ADR-D02.md`). The title is in the ADR
+heading, not the filename. The prefix makes draft status self-evident and keeps
+numbering scoped to the current project's artifacts.
 
 **Template:** [ADR Template](../../templates/adr.md)
 
 **Location during System Design:** Store draft ADRs in `docs/adr/` within the
-artifacts repo. At Gate 2, ADRs are published to the source code repo and
-renumbered to 4-digit sequential format (`ADR-NNNN.md`). See
+artifacts repo. At Gate 2, accepted ADRs are promoted to the workspace ADR canon
+(top-level `adrs/` in the artifacts location) and renumbered to the
+project-id-scoped format (`ADR-NNNN-CC.md`). See
 [Artifact Placement: ADR Publishing](../../guides/framework.md#adr-publishing)
 for the full publishing workflow.
 
@@ -302,14 +303,15 @@ for the full publishing workflow.
 End-to-end flow from draft to publication:
 
 1. **Draft** — Create ADRs using the [ADR template](../../templates/adr.md) with
-   draft numbering (`ADR-DNNN.md`) in `docs/adr/`.
+   draft numbering (`ADR-DCC.md`) in `docs/adr/`.
 2. **Record in brief** — List all ADRs in the System Design Brief's
    [ADR section](../../templates/system-design-brief.md#2-architecture-decision-records-adrs)
    with status and category.
 3. **Review** — ADRs are reviewed as part of the Architecture Review checkpoint
    (see [Checkpoints](../../guides/checkpoints.md)).
-4. **Publish at Gate 2** — Renumber accepted ADRs from draft (`ADR-DNNN.md`) to
-   final (`ADR-NNNN.md`) and update the ADR index at `docs/adr/README.md`. See
+4. **Publish at Gate 2** — Promote accepted ADRs from draft (`ADR-DCC.md`) to
+   the project-id-scoped final form (`ADR-NNNN-CC.md`) in the workspace ADR
+   canon and update the canon index at `adrs/README.md`. See
    [ADR Publishing](../../guides/framework.md#adr-publishing).
 
 #### ADR Lifecycle
@@ -358,9 +360,9 @@ In your `system-design-brief.md` (System Design stage — draft numbering):
 ```markdown
 ## Technology Stack
 
-**Database:** PostgreSQL 15 (see [ADR-D001](adr/ADR-D001.md)) **File Upload:**
-Presigned URLs with object storage (see [ADR-D002](adr/ADR-D002.md))
-**Authentication:** JWT tokens (see [ADR-D003](adr/ADR-D003.md))
+**Database:** PostgreSQL 15 (see [ADR-D01](adr/ADR-D01.md)) **File Upload:**
+Presigned URLs with object storage (see [ADR-D02](adr/ADR-D02.md))
+**Authentication:** JWT tokens (see [ADR-D03](adr/ADR-D03.md))
 
 For detailed rationale, alternatives, and cost analysis, see ADRs in
 `docs/adr/`.
@@ -371,10 +373,10 @@ In your `implementation-brief.md` (Implementation stage):
 ```markdown
 ## Key Implementation Decisions
 
-| #   | Decision                               | Type    | ADR Link                    | Date       |
-| --- | -------------------------------------- | ------- | --------------------------- | ---------- |
-| 1   | Use Builder pattern for PaymentRequest | Pattern | [ADR-0001](adr/ADR-0001.md) | 2024-02-10 |
-| 2   | Cache user permissions for 5 minutes   | Caching | [ADR-0002](adr/ADR-0002.md) | 2024-02-10 |
+| #   | Decision                               | Type    | ADR         | Date       |
+| --- | -------------------------------------- | ------- | ----------- | ---------- |
+| 1   | Use Builder pattern for PaymentRequest | Pattern | ADR-0012-01 | 2024-02-10 |
+| 2   | Cache user permissions for 5 minutes   | Caching | ADR-0012-02 | 2024-02-10 |
 ```
 
 ### Technology Selection
@@ -713,7 +715,7 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence

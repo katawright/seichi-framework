@@ -91,9 +91,9 @@ ready for Gate 2.
 21. [ ] **All required stage outputs produced** (system design brief, ADRs,
         architecture diagrams, increment plan — verify against stage README
         front matter)
-22. [ ] **Draft ADRs use correct naming and location** (`ADR-DNNN.md` in
-        project's `docs/adr/`; ready for Gate 2 publishing per
-        [ADR Publishing](../../guides/framework.md#adr-publishing))
+22. [ ] **Draft ADRs use correct naming and location** (`ADR-DCC.md` in
+        project's `docs/adr/`; ready for Gate 2 promotion to the workspace ADR
+        canon per [ADR Publishing](../../guides/framework.md#adr-publishing))
 23. [ ] **[H] Each draft ADR earns its position** (meets all three criteria —
         significant, hard to reverse, contested; decisions that fail
         hard-to-reverse are demoted to design-note subsections in the brief, not
@@ -132,7 +132,7 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.12.0. ADR earns-its-position check (item 23) added in
 v0.47.0.

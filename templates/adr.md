@@ -1,8 +1,9 @@
-# ADR-DXXX: [Title - Short Present Tense Phrase]
+# ADR-DCC: [Title - Short Present Tense Phrase]
 
-> **Draft ADR (pre-Gate 2):** Name this file `ADR-DNNN.md` (e.g., `ADR-D001.md`)
-> and save to the project's `docs/adr/` in the artifacts workspace. At Gate 2,
-> drafts are copied to the source code repo and renumbered to `ADR-NNNN.md`. See
+> **Draft ADR (pre-Gate 2):** Name this file `ADR-DCC.md` with a two-digit
+> counter (e.g., `ADR-D01.md`) and save to the project's `docs/adr/` in the
+> artifacts workspace. At Gate 2, accepted drafts are promoted to the workspace
+> ADR canon and renumbered to the project-id-scoped `ADR-NNNN-CC.md`. See
 > [ADR Publishing](../guides/framework.md#adr-publishing).
 
 **Last Updated:** YYYY-MM-DD
@@ -225,4 +226,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.4.0. ADR Criteria Justification section added in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.4.0. ADR Criteria Justification section added in v0.47.0. ADR id scheme and publish target updated in v0.48.0 -->

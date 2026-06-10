@@ -3,8 +3,8 @@
 # Implementation Brief: [Increment Name]
 
 > **Before starting a session on this brief:** follow the steps in
-> [Session Protocol](../guides/session-protocol.md). Check it at session
-> start so nothing is missed as the protocol evolves.
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
 
 > **Stage guide:** [Implementation README](../stages/implementation/README.md)
 
@@ -21,15 +21,11 @@
 > adapt the section's content depth for your project tier. Annotations are HTML
 > comments and are invisible in rendered output.
 
-**Last Updated:** YYYY-MM-DD
-**Project:** [Project Name]
-**Increment:** [Increment Number/Name]
-**Engineers:** [Names]
-**Start Date:** YYYY-MM-DD
-**Completion Date:** YYYY-MM-DD
-**Status:** [In Progress / Code Review / Complete]
-**Related System Design:** [Link to system-design-brief.md]
-**Constraining ADRs:** [ADR-NNNN, ADR-NNNN]
+**Last Updated:** YYYY-MM-DD **Project:** [Project Name] **Increment:**
+[Increment Number/Name] **Engineers:** [Names] **Start Date:** YYYY-MM-DD
+**Completion Date:** YYYY-MM-DD **Status:** [In Progress / Code Review /
+Complete] **Related System Design:** [Link to system-design-brief.md]
+**Constraining ADRs:** [ADR-NNNN-CC, ADR-NNNN-CC]
 
 <!-- Constraining ADRs: list ADRs from System Design or prior increments that
      restrict implementation choices for this increment (e.g., technology
@@ -107,9 +103,9 @@ components, deviations from design]
 
 **Significant Decisions (ADRs):**
 
-| #   | Decision | ADR Link                          | Date       |
-| --- | -------- | --------------------------------- | ---------- |
-| 1   | [Title]  | `ADR-001` · `adr/ADR-001-slug.md` | YYYY-MM-DD |
+| #   | Decision | ADR (bare id) | Date       |
+| --- | -------- | ------------- | ---------- |
+| 1   | [Title]  | `ADR-NNNN-CC` | YYYY-MM-DD |
 
 **Minor Decisions:**
 
@@ -254,8 +250,8 @@ register]
 ### Requirements Traceability
 
 > **Right-sizing:** Minimal — omit if AC traceability is maintained in the
-> Increment Design and Verification briefs. Include only if this brief is
-> the primary traceability record.
+> Increment Design and Verification briefs. Include only if this brief is the
+> primary traceability record.
 
 | Requirement | Implementation                     | Unit Tests                  | Ready?  |
 | ----------- | ---------------------------------- | --------------------------- | ------- |
@@ -331,4 +327,4 @@ register]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.5.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.5.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. ADR id placeholders updated to promoted scheme in v0.48.0. -->

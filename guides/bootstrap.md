@@ -52,11 +52,11 @@ Before starting a new project with the framework:
 
 The framework uses three types of location:
 
-| Location        | Per Project | Role                | Contents                                                          | Agent Access |
-| --------------- | ----------- | ------------------- | ----------------------------------------------------------------- | ------------ |
-| **Framework**   | Shared      | Read-only reference | Guides, stages, templates, checklists                             | Read only    |
-| **Artifacts**   | 1           | Project governance  | `docs/briefs/`, `docs/adr/`, `docs/session-logs/`, gate decisions | Read + write |
-| **Source code** | 1+          | Project codebase    | Application code, tests, CI/CD config                             | Read + write |
+| Location        | Per Project | Role                | Contents                                                                                   | Agent Access |
+| --------------- | ----------- | ------------------- | ------------------------------------------------------------------------------------------ | ------------ |
+| **Framework**   | Shared      | Read-only reference | Guides, stages, templates, checklists                                                      | Read only    |
+| **Artifacts**   | 1           | Project governance  | `docs/briefs/`, `docs/adr/`, `docs/session-logs/`, gate decisions, workspace `adrs/` canon | Read + write |
+| **Source code** | 1+          | Project codebase    | Application code, tests, CI/CD config                                                      | Read + write |
 
 **Framework** releases are stored under `frameworks/` by version tag. Each
 project's `project.md` specifies which version it uses. Agents must not modify
@@ -84,6 +84,7 @@ single-repo projects:
 ```
 my-app/                            ← workspace root
 ├── AGENTS.md                      ← workspace instructions for AI agents
+├── adrs/                          ← accepted ADRs (workspace canon)
 ├── frameworks/
 │   └── v<version>/                   ← framework release (read-only)
 ├── projects/
@@ -92,7 +93,7 @@ my-app/                            ← workspace root
 │       ├── project.md             ← project config (locations + context)
 │       └── docs/                  ← artifacts for this project
 │           ├── briefs/
-│           ├── adr/
+│           ├── adr/               ← draft ADRs (pre-Gate 2)
 │           └── session-logs/
 └── src/                           ← application source code
 ```
@@ -111,6 +112,7 @@ live in their own git repository alongside the source repos:
 ~/work/                            ← common parent directory
 ├── my-project-governance/         ← governance git repo (agent starts here)
 │   ├── AGENTS.md
+│   ├── adrs/                      ← accepted ADRs (workspace canon)
 │   ├── frameworks/
 │   │   └── v<version>/               ← framework release (read-only)
 │   └── projects/
@@ -119,7 +121,7 @@ live in their own git repository alongside the source repos:
 │           ├── project.md
 │           └── docs/
 │               ├── briefs/
-│               ├── adr/
+│               ├── adr/           ← draft ADRs (pre-Gate 2)
 │               └── session-logs/
 ├── payment-api/                   ← source git repo
 └── checkout-frontend/             ← source git repo
@@ -151,8 +153,9 @@ it to `AGENTS.md` for workspace context.
 
 ### Workspace Structure
 
+- `adrs/` — Accepted ADRs (workspace canon)
 - `frameworks/` — AI-Assisted SDLC framework releases (read-only)
-- `projects/` — Project governance (briefs, ADRs, session logs)
+- `projects/` — Project governance (briefs, draft ADRs, session logs)
 - `src/` — Application source code
 
 ### Instructions
@@ -483,7 +486,7 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
 Session-start location guard cross-referenced in v0.47.0.

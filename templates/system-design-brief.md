@@ -76,22 +76,22 @@ DevOps Lead, Project Manager]
 <!-- Minimal: inline decision notes in this brief using a '### Decision: [topic]'
      sub-heading per decision rather than separate files in docs/adr/ -->
 <!-- ADRs are separate files stored in docs/adr/ — not embedded in this brief -->
-<!-- Use draft numbering (ADR-DNNN) during System Design; renumber at Gate 2  -->
+<!-- Use draft numbering (ADR-DCC) during System Design; renumber at Gate 2  -->
 
 > **Visual architecture:** If the project has a UI, design-system, token,
 > component-library, and responsive-strategy decisions are ADR candidates — see
 > [System Design Guide: Visual Architecture](../../stages/system-design/README.md#visual-architecture).
 
 - **Directory:** `docs/adr/`
-- **File naming:** `ADR-DNNN.md` (draft prefix during design; title is in the
-  ADR heading, not the filename)
+- **File naming:** `ADR-DCC.md` (draft prefix with two-digit counter during
+  design; title is in the ADR heading, not the filename)
 - **Template:** [ADR Template](adr.md)
 - **Index:** `docs/adr/README.md`
 
-| ADR      | Title   | Category | Status   |
-| -------- | ------- | -------- | -------- |
-| ADR-D001 | [Title] | [Area]   | [Status] |
-| ADR-D002 | [Title] | [Area]   | [Status] |
+| ADR     | Title   | Category | Status   |
+| ------- | ------- | -------- | -------- |
+| ADR-D01 | [Title] | [Area]   | [Status] |
+| ADR-D02 | [Title] | [Area]   | [Status] |
 
 Reference individual ADRs from the relevant sections below (Technology Stack,
 Data Architecture, API Architecture, etc.).
@@ -245,10 +245,10 @@ Link each mitigation to an NFR so it is traceable through Verification.
 
 ## 9. NFR Traceability
 
-| NFR ID | Description            | Architectural Approach      | ADR      | Verification Method      |
-| ------ | ---------------------- | --------------------------- | -------- | ------------------------ |
-| NFR-1  | p95 response < 200ms   | CDN + Redis caching layer   | ADR-D006 | Load test in Increment 2 |
-| NFR-2  | Data encrypted at rest | AES-256 via managed service | ADR-D003 | Security scan + audit    |
+| NFR ID | Description            | Architectural Approach      | ADR     | Verification Method      |
+| ------ | ---------------------- | --------------------------- | ------- | ------------------------ |
+| NFR-1  | p95 response < 200ms   | CDN + Redis caching layer   | ADR-D06 | Load test in Increment 2 |
+| NFR-2  | Data encrypted at rest | AES-256 via managed service | ADR-D03 | Security scan + audit    |
 
 ---
 
@@ -487,4 +487,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. -->

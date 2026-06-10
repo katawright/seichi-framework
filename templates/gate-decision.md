@@ -114,15 +114,15 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ### Gate 2: Publish Draft ADRs
 
-If the decision is Proceed, publish draft ADRs to the source code repo. See
-[ADR Publishing](../guides/framework.md#adr-publishing) for the canonical
-procedure.
+If the decision is Proceed, promote accepted draft ADRs to the workspace ADR
+canon. See [ADR Publishing](../guides/framework.md#adr-publishing) for the
+canonical procedure.
 
-- [ ] Rename each `ADR-DNNN.md` to `ADR-NNNN.md` (final 4-digit format)
-- [ ] Move ADR files from the artifact repo to the source code repo
+- [ ] Rename each `ADR-DCC.md` to `ADR-NNNN-CC.md` (project id + draft counter)
+- [ ] Move accepted ADRs from the project's `docs/adr/` to the workspace
+      top-level `adrs/` canon
 - [ ] Update ADR status from `Draft` / `Proposed` → `Accepted`
-- [ ] Replace artifact-repo ADR copy with a pointer to the published
-      location in the source code repo
+- [ ] Replace the project's draft copy with a pointer to the promoted id
 
 ---
 
@@ -162,9 +162,9 @@ quality]
 - _Example (Gate 1, Proceed):_ "Begin Requirements stage"
 - _Example (Gate 1, Revise):_ "Refine problem statement, re-present"
 - _Example (Gate 2, Proceed):_ "Begin Increment Design for first increment"
-- _Example (Gate 2, Proceed):_ "Publish draft ADRs — copy `ADR-DNNN.md` files to
-  source code repo as `ADR-NNNN.md`; update artifact-repo copies with pointer to
-  published location"
+- _Example (Gate 2, Proceed):_ "Publish draft ADRs — promote accepted
+  `ADR-DCC.md` files to the workspace `adrs/` canon as `ADR-NNNN-CC.md`; update
+  project draft copies with a pointer to the promoted id"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
   stakeholders"
 - _Example (Gate 1, Proceed with prep):_ "Proceed — preparation project approved
@@ -177,4 +177,4 @@ quality]
 <!-- For deployment/support checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. -->
