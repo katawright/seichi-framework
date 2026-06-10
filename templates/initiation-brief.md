@@ -86,6 +86,9 @@ spike, experiment) / TBD]
      Minimal — "how will we know users adopted this?" prevents ad hoc measurement
      plans at project close -->
 <!-- Qualitative criteria (PoCs, spikes, exploratory projects) are acceptable when numeric baselines are not feasible. Use the Question / Evaluation criteria / Timeframe template from initiation/reference.md#when-criteria-are-qualitative. -->
+<!-- New product with no baseline? Don't invent one — define the measurement
+     method up front, make first-baseline capture itself a criterion, and use
+     absolute targets. See initiation/reference.md#when-criteria-cannot-be-baselined. -->
 <!-- Each success criterion maps to one or more goals above. Most map to a
      single goal; a criterion mapping to several goals is valid but a signal to
      check that the goals are genuinely distinct. -->
@@ -285,4 +288,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-05-29 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer added in v0.48.0. -->
