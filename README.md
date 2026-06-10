@@ -53,17 +53,18 @@ autonomy because outputs are directly testable.
 
 Pick the path that matches your interest.
 
-| I want to…                                       | Start with                                                     | Then                                                  | Next step                                                            |
-| ------------------------------------------------ | -------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| Understand the ROI and governance model          | [Business Value](#business-value)                              | [Governance](#governance-at-a-glance)                 | [Adoption Path](#adoption-path)                                      |
-| See how AI fits into each stage                  | [How AI Fits In](#how-ai-fits-in)                              | [Stage Overview](#stage-overview)                     | [Adoption Path](#adoption-path)                                      |
-| Kick off a new project                           | [Try It Now](#try-it-now)                                      | [Stage Overview](#stage-overview)                     | [Initiation](stages/initiation/README.md)                            |
-| Execute technical stages (design → verification) | [Stage Overview](#stage-overview)                              | [System Design](stages/system-design/README.md)       | [Worked Example](guides/worked-example.md)                           |
-| Set up deployment pipelines and infrastructure   | [DevOps Integration Guide](guides/devops-integration.md)       | [Deployment Setup](stages/deployment/setup.md)        | [Deployment](stages/deployment/README.md)                            |
-| Run delivery and manage sprint cadence           | [Delivery Operating Guide](guides/delivery-operating-guide.md) | [Governance](#governance-at-a-glance)                 | [Stage Overview](#stage-overview)                                    |
-| Verify and test an increment                     | [Verification](stages/verification/README.md)                  | [Verification Brief](templates/verification-brief.md) | [Verification Checklist](stages/verification/checklist.md)           |
-| Operate and maintain a production system         | [Support](stages/support/README.md)                            | [Support Operations](stages/support/operations.md)    | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
-| Assess security across stages                    | [Security Guide](guides/security.md)                           | [Governance](#governance-at-a-glance)                 | [Verification](stages/verification/README.md)                        |
+| I want to…                                       | Start with                                                            | Then                                                                                             | Next step                                                            |
+| ------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| Start from just an idea                          | [Quick Start: I Only Have an Idea](QUICKSTART.md#i-only-have-an-idea) | [Initiation: Arriving with Only an Idea](stages/initiation/README.md#arriving-with-only-an-idea) | [Solo Worked Example](guides/worked-example-solo.md)                 |
+| Understand the ROI and governance model          | [Business Value](#business-value)                                     | [Governance](#governance-at-a-glance)                                                            | [Adoption Path](#adoption-path)                                      |
+| See how AI fits into each stage                  | [How AI Fits In](#how-ai-fits-in)                                     | [Stage Overview](#stage-overview)                                                                | [Adoption Path](#adoption-path)                                      |
+| Kick off a new project                           | [Try It Now](#try-it-now)                                             | [Stage Overview](#stage-overview)                                                                | [Initiation](stages/initiation/README.md)                            |
+| Execute technical stages (design → verification) | [Stage Overview](#stage-overview)                                     | [System Design](stages/system-design/README.md)                                                  | [Worked Example](guides/worked-example.md)                           |
+| Set up deployment pipelines and infrastructure   | [DevOps Integration Guide](guides/devops-integration.md)              | [Deployment Setup](stages/deployment/setup.md)                                                   | [Deployment](stages/deployment/README.md)                            |
+| Run delivery and manage sprint cadence           | [Delivery Operating Guide](guides/delivery-operating-guide.md)        | [Governance](#governance-at-a-glance)                                                            | [Stage Overview](#stage-overview)                                    |
+| Verify and test an increment                     | [Verification](stages/verification/README.md)                         | [Verification Brief](templates/verification-brief.md)                                            | [Verification Checklist](stages/verification/checklist.md)           |
+| Operate and maintain a production system         | [Support](stages/support/README.md)                                   | [Support Operations](stages/support/operations.md)                                               | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
+| Assess security across stages                    | [Security Guide](guides/security.md)                                  | [Governance](#governance-at-a-glance)                                                            | [Verification](stages/verification/README.md)                        |
 
 ---
 
@@ -276,9 +277,6 @@ or **defer briefly**.
 - Teams have zero experience with AI tools (see
   [Readiness Assessment](guides/adoption.md#defer-briefly) for foundational
   skill areas to target before adopting)
-- Engineering teams are broadly resistant to AI adoption (see
-  [Readiness Assessment](guides/adoption.md#defer-briefly) for how to build
-  organizational readiness before introducing the framework)
 
 > **What does a pilot require?** One project team, one Standard-tier project,
 > two increments (~4–8 weeks depending on scope). No special tooling beyond the
@@ -427,6 +425,6 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-06-09
 
-Added to framework in v0.17.0.
+Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
