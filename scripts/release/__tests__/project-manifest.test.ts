@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,11 +23,20 @@ describe("buildManifest against the framework source at repo root", () => {
     expect(manifest.stages).toHaveLength(8);
   });
 
-  it("projects 54 artifacts in total across all 8 stages", () => {
-    // initiation 3, requirements 6, system-design 9, increment-design 5,
-    // implementation 7, verification 8, deployment 11, support 5.
-    const total = manifest.stages.reduce((sum, s) => sum + s.artifacts.length, 0);
-    expect(total).toBe(54);
+  it("projects one artifact per frontmatter `outputs` entry, per stage", () => {
+    // Cross-check against an independent count of `- artifact:` entries in
+    // each stage README's frontmatter, so the expectation tracks the source
+    // instead of pinning a total that rots when stage outputs change.
+    for (const stage of manifest.stages) {
+      const readme = readFileSync(
+        join(REPO_ROOT, "stages", stage.name, "README.md"),
+        "utf8",
+      );
+      const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---/.exec(readme)?.[1] ?? "";
+      const declared = frontmatter.match(/^\s*-\s+artifact:/gm)?.length ?? 0;
+      expect(declared).toBeGreaterThan(0);
+      expect(stage.artifacts).toHaveLength(declared);
+    }
   });
 
   it("orders stages by display_order (Initiation first, Support last)", () => {
@@ -114,11 +123,16 @@ describe("buildManifest against the framework source at repo root", () => {
   });
 
   it("reads generated_at from the INDEX.md `Last Updated:` header", () => {
-    expect(manifest.generated_at).toBe("2026-05-18T00:00:00Z");
+    const index = readFileSync(join(REPO_ROOT, "INDEX.md"), "utf8");
+    const date = /\*\*Last Updated:\*\*\s+(\d{4}-\d{2}-\d{2})/.exec(index)?.[1];
+    expect(date).toBeDefined();
+    expect(manifest.generated_at).toBe(`${date}T00:00:00Z`);
   });
 
   it("reads framework_version from the VERSION file", () => {
-    expect(manifest.framework_version).toBe("0.44.1");
+    const version = readFileSync(join(REPO_ROOT, "VERSION"), "utf8").trim();
+    expect(version).toMatch(/^\d+\.\d+\.\d+$/);
+    expect(manifest.framework_version).toBe(version);
   });
 
   it("is deterministic (two runs return deeply-equal values)", () => {
