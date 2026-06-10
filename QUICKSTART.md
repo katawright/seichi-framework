@@ -115,6 +115,10 @@ my-app/
 └── src/                   ← application source code
 ```
 
+> **Not shown:** a top-level `adrs/` directory — the workspace ADR canon — is
+> added at the first Gate 2 promotion, not during scaffolding. See
+> [ADR Publishing](guides/framework.md#adr-publishing).
+
 `AGENTS.md` tells the agent where to find the framework, project index, and
 source code — see the [Bootstrap Guide](guides/bootstrap.md#agentsmd) for the
 template. The agent also creates its own startup file (e.g., `CLAUDE.md` for
@@ -258,7 +262,8 @@ workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
 > conversation and present them as overridable assumptions (or I'll specify them
 > here). Then create a new project directory under `projects/`, create its
 > `project.md` pinning the framework version to use, create a `docs/` subtree,
-> add an entry to `projects/index.md`, and guide me through Initiation.
+> add an entry with the next sequential project number to `projects/index.md`,
+> and guide me through Initiation.
 
 The agent downloads the latest framework release (keeping any older versions in
 place), reads the workspace conventions from `AGENTS.md`, creates the new

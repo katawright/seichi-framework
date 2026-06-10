@@ -44,6 +44,14 @@ spike, experiment) / TBD]
 
 <!-- Local-only projects may skip Deployment and Support setup. -->
 
+**AI autonomy:** [Human-Led / Collaborative / AI-Led]
+
+**Oversight intensity:** [Active / Passive / Minimal]
+
+<!-- See ../guides/ai-assistance.md for tier definitions. When the agent infers
+     these (zero-to-one or first-time users), they carry [ASSUMED] until
+     confirmed at Gate 1. -->
+
 ---
 
 ## Problem Statement
@@ -288,4 +296,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer added in v0.48.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer and Right-Sizing autonomy/oversight fields added in v0.48.0. -->

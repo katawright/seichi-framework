@@ -84,7 +84,7 @@ single-repo projects:
 ```
 my-app/                            ← workspace root
 ├── AGENTS.md                      ← workspace instructions for AI agents
-├── adrs/                          ← accepted ADRs (workspace canon)
+├── adrs/                          ← accepted ADRs (canon; created at first promotion)
 ├── frameworks/
 │   └── v<version>/                   ← framework release (read-only)
 ├── projects/
@@ -112,7 +112,7 @@ live in their own git repository alongside the source repos:
 ~/work/                            ← common parent directory
 ├── my-project-governance/         ← governance git repo (agent starts here)
 │   ├── AGENTS.md
-│   ├── adrs/                      ← accepted ADRs (workspace canon)
+│   ├── adrs/                      ← accepted ADRs (canon; created at first promotion)
 │   ├── frameworks/
 │   │   └── v<version>/               ← framework release (read-only)
 │   └── projects/
@@ -153,7 +153,7 @@ it to `AGENTS.md` for workspace context.
 
 ### Workspace Structure
 
-- `adrs/` — Accepted ADRs (workspace canon)
+- `adrs/` — Accepted ADRs (workspace canon; created at first Gate 2 promotion)
 - `frameworks/` — AI-Assisted SDLC framework releases (read-only)
 - `projects/` — Project governance (briefs, draft ADRs, session logs)
 - `src/` — Application source code
@@ -230,15 +230,22 @@ working on.
 
 ## Active
 
-- [onboarding-tracker](onboarding-tracker/project.md) — Web app for tracking
-  employee onboarding tasks
+- 0001 [onboarding-tracker](onboarding-tracker/project.md) — Web app for
+  tracking employee onboarding tasks
 
 ## Completed
 
 (none)
 ```
 
-When a project finishes, move it from Active to Completed.
+Each project gets the next sequential number when its index entry is created
+(`0001`, `0002`, …). The number is the project's stable id: it scopes promoted
+ADR ids (see [Framework Guide: ADR Publishing](framework.md#adr-publishing)) and
+must never change or be reused, even after the project moves to Completed. This
+is the manual fallback convention — workspace tooling that assigns project ids
+supersedes it.
+
+When a project finishes, move it from Active to Completed (keeping its number).
 
 ### Stage-Location Mapping
 
@@ -393,7 +400,10 @@ bootstrap prompt.
 > startup file (e.g., CLAUDE.md for Claude Code). The source code lives in
 > sibling repositories alongside this directory. Interview me to find out which
 > repos are involved and where they are. Then guide me through the first stage.
-> Drive the process but check decisions with me.
+> Infer project classifications (risk tier, project type, deployment intent,
+> autonomy, oversight) from our conversation and present them as overridable
+> assumptions instead of asking me to choose. Drive the process but check
+> decisions with me.
 
 The agent creates the workspace structure inside the governance directory, asks
 which source repositories are involved, records their paths in `project.md`, and
@@ -489,4 +499,5 @@ logs to maintain continuity between sessions.
 **Last Updated:** 2026-06-09
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
-Session-start location guard cross-referenced in v0.47.0.
+Session-start location guard cross-referenced in v0.47.0. Workspace ADR canon
+and project-number fallback convention added in v0.48.0.

@@ -928,4 +928,5 @@ When AI-generated content is uncertain or potentially incorrect:
 
 **Last Updated:** 2026-06-09
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. ADR id examples updated to the two-digit draft
+form in v0.48.0.

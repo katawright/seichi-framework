@@ -138,7 +138,8 @@ at Minimal are omitted, not filled with "N/A."
 ### Right-Sizing This Brief
 
 **Tier chosen:** Minimal `[ASSUMED]` **Project type:** Greenfield **Deployment
-intent:** Local-only (personal use)
+intent:** Local-only (personal use) **AI autonomy:** Collaborative `[ASSUMED]`
+**Oversight intensity:** Active `[ASSUMED]`
 
 ### Problem Statement
 

@@ -435,4 +435,5 @@ for the full convention.
 **Last Updated:** 2026-06-09
 
 Added to framework in v0.5.0. Session-log creation marked [GATE] in the
-ONCE-PER-INCREMENT block in v0.47.0.
+ONCE-PER-INCREMENT block in v0.47.0. Implementation-stage ADR drafts aligned
+with the canon promotion convention in v0.48.0.
