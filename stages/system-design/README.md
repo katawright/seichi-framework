@@ -720,4 +720,5 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence
 reconciliation added in v0.46.0. ADR all-three-criteria rule + design-note
-discriminator added in v0.47.0.
+discriminator added in v0.47.0. ADR id scheme and canon promotion updated in
+v0.48.0.

@@ -569,26 +569,33 @@ when they move — prevents duplication, lost context, and orphaned records.
 | Visual designs        | Source Code   | Canonical in team's design tool; gate-frozen exports in `assets/`  |
 | API contracts         | Source Code   | Drafted during design; canonical copy with owning service          |
 
-> **Snapshot preservation:** Artifact-repo copies of published artifacts (ADRs,
-> diagrams) remain as point-in-time records of design-stage decisions. They are
-> not deleted or moved — they serve as the governance record of what was decided
-> and when.
+> **Snapshot preservation:** Artifact-repo copies of artifacts published to the
+> source code repo (diagrams, API contracts) remain as point-in-time records of
+> design-stage decisions — they are not deleted or moved. ADRs differ: at
+> promotion the accepted content moves to the workspace ADR canon, and the
+> project's draft copy is replaced with a pointer stub recording the promoted id
+> (see [ADR Publishing](#adr-publishing)).
 
 #### ADR Publishing
 
 ADRs are drafted in the project's artifacts during System Design and promoted to
 the **workspace ADR canon** — a top-level `adrs/` directory in the artifacts
 (governance) location — when implementation begins (Gate 2). The canon is the
-single home for every accepted ADR across all projects in the workspace.
+single home for every accepted ADR across all projects in the workspace. It is
+created at the first promotion; it is not part of initial workspace scaffolding.
 
 **Draft numbering:** Use a `D` prefix with a two-digit counter during System
 Design (`ADR-D01.md`, `ADR-D02.md` — `ADR-DCC.md` generically). The prefix makes
 draft status self-evident and keeps numbering scoped to the current project's
 artifacts. The title is in the ADR heading, not the filename.
 
-**Project id:** Promoted ids are scoped by a stable numeric project id. Assign
-each project a sequential number when it is created and track it in
-`projects/index.md`; zero-fill to 4 digits in promoted ids.
+**Project id:** Promoted ids are scoped by a stable numeric project id. How ids
+are assigned is a tooling concern — workspace tooling that manages projects
+assigns them. Manual workspaces use the fallback convention in the
+[Bootstrap Guide: Project Index](bootstrap.md#project-index): number each
+project sequentially in `projects/index.md` when it is created. Whatever assigns
+the id, it must be unique within the workspace and never change; zero-fill to 4
+digits in promoted ids.
 
 **Promotion at Gate 2:** Accepted ADRs move within the artifacts location from
 the project's `docs/adr/` to the top-level `adrs/` canon, renumbered to the
@@ -596,7 +603,10 @@ project-id-scoped form `ADR-NNNN-CC` — `NNNN` is the originating project's id
 and `CC` is the draft's two-digit counter (e.g., project 12's `ADR-D01.md` →
 `ADR-0012-01.md`). The promoted id is derived deterministically from the draft
 id plus the project id — there is no shared counter to scan, so promotions from
-different projects cannot collide. Leave a pointer in the project's draft copy:
+different projects cannot collide. The encoding is the framework's default
+convention; the durable requirement is that promoted ids are project-scoped and
+deterministically derived, with no shared allocator. Replace the project's draft
+copy with a pointer stub:
 
 > Promoted as ADR-0012-01.
 
@@ -1008,4 +1018,5 @@ table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow
 Adaptations reconciled with the elective-release model in v0.45.0. Learning
 Throughline and Deferral guidance pointed at the learning loop in v0.45.0.
 "Outcomes over mechanisms" design principle and the Outcomes, Not Mechanisms
-concept section added in v0.47.0.
+concept section added in v0.47.0. ADR publish target moved to the workspace ADR
+canon and project-id-scoped id scheme adopted in v0.48.0.

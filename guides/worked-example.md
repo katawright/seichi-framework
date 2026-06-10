@@ -869,7 +869,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 **Last Updated:** 2026-06-09
 
-Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. For a
-brownfield adoption example showing preparation increments, exit checkpoints,
-and shadow mode, see the
-[Brownfield Worked Example](worked-example-brownfield.md).
+Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
+updated to the two-digit draft form in v0.48.0. For a brownfield adoption
+example showing preparation increments, exit checkpoints, and shadow mode, see
+the [Brownfield Worked Example](worked-example-brownfield.md).
