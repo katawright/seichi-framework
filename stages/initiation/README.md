@@ -508,6 +508,15 @@ speeds up the gate review itself.
 > remain. Revise if: problem is validated but business case is weak — refine
 > scope. Stop if: problem cannot be validated or strategic alignment is absent."
 
+> **Solo builders (Minimal tier):** Gate 1 collapses to a deliberate
+> one-question self-gate: _"Knowing what the brief now says, do I still want to
+> build this?"_ No review meeting, no decision package — but the decision is
+> still recorded: write the answer and the date as a note in the brief. The
+> pause matters because the brief usually changes the idea — "yes, but smaller"
+> is a common answer, and "no" is a successful outcome, not a failure. For the
+> full N=1 role translation, see
+> [Roles Guide: Solo Builders](../../guides/roles.md#solo-builders-n1).
+
 > **Brownfield projects:** If the quick-pass readiness assessment estimates **T3
 > or below**, include preparation cost in the Gate 1 decision. The decision may
 > be to proceed (with preparation factored into timeline and budget), postpone
@@ -535,6 +544,11 @@ whose roadmap conflicts with yours.
 - Approver — the person (or group) with authority to make the Gate 1 decision
 - Consulted — people whose input is needed before decisions are made
 - Informed — people who need to know the outcome but aren't decision-makers
+
+> **Solo builders:** every role above is you, and your users stand in for
+> stakeholders. See
+> [Roles Guide: Solo Builders](../../guides/roles.md#solo-builders-n1) for the
+> N=1 translation.
 
 ### Assumptions
 

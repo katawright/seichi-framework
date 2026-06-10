@@ -68,6 +68,28 @@ front matter, the RACI matrix, and checkpoint decision-rights assignments.
 > (e.g., one person may hold both PM and PjM). In consulting or work-for-hire
 > engagements, the client typically fills the exec function.
 
+### Solo Builders (N=1)
+
+On a solo project, every role in the RACI matrix is the same person — you. The
+matrix still applies; it just collapses. Read the vocabulary as:
+
+| Framework says            | At N=1 this means                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| Executive (Gate 1/Gate 2) | You, wearing the investment hat — "do I still want to spend my time on this?"              |
+| Stakeholders              | You, plus your users — even if that is just future-you                                     |
+| Consulted (C)             | Not applicable — there is no one to consult; record open questions in the artifact instead |
+| Informed (I)              | Not applicable — no distribution needed                                                    |
+| PM / Architect / Engineer | You, switching hats per stage                                                              |
+
+What the roles still buy you at N=1 is **deliberate moments**. "Executive
+approves Gate 1" does not mean a meeting with yourself — it means pausing to
+make a real go/no-go decision instead of drifting into the build. See
+[Initiation: Gate 1 Decision Criteria](../stages/initiation/README.md#gate-1-decision-criteria)
+for the solo one-question self-gate.
+
+This is a translation layer, not a role redesign — the moment a second person
+joins, the full vocabulary applies as written.
+
 ---
 
 ## Domain Stakeholders
@@ -307,12 +329,12 @@ determines the orchestration response. AppSec has unilateral authority to pause
 any stage for a Critical finding; the stage's Responsible role must resolve the
 finding before work resumes.
 
-| Severity     | Orchestration Response                                                    |
-| ------------ | ------------------------------------------------------------------------- |
+| Severity     | Orchestration Response                                                                                                                                                                               |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint. If unresolved at a gate decision, the gate cannot proceed until the finding is resolved or formally downgraded by AppSec. |
-| **High**     | Conditional proceed; finding tracked with fix deadline before deployment  |
-| **Medium**   | Track in defect backlog; fix targeted for current or next increment       |
-| **Low**      | Log in backlog; address opportunistically                                 |
+| **High**     | Conditional proceed; finding tracked with fix deadline before deployment                                                                                                                             |
+| **Medium**   | Track in defect backlog; fix targeted for current or next increment                                                                                                                                  |
+| **Low**      | Log in backlog; address opportunistically                                                                                                                                                            |
 
 Severity classification follows the project's defect management definitions (see
 [Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
@@ -335,6 +357,6 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-09
 
-Added to framework in v0.10.0.
+Added to framework in v0.10.0. Solo-builder translation added in v0.48.0.
