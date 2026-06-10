@@ -297,7 +297,9 @@ decisions with implications.
 **Document inline when:** Single obvious approach, team standard practice,
 easily reversible.
 
-Store in `docs/adr/` with sequential numbering.
+Store drafts in the project's `docs/adr/` using the next two-digit draft counter
+(`ADR-DCC.md`); when accepted, promote to the workspace ADR canon per
+[ADR Publishing](../../guides/framework.md#adr-publishing).
 
 ### Instrumentation and Observability
 
@@ -430,7 +432,7 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.5.0. Session-log creation marked [GATE] in the
 ONCE-PER-INCREMENT block in v0.47.0.

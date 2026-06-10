@@ -557,17 +557,17 @@ the artifacts repo during design stages and then published to the source code
 repo when implementation begins. Understanding which artifacts live where — and
 when they move — prevents duplication, lost context, and orphaned records.
 
-| Artifact              | Home Location | Notes                                                             |
-| --------------------- | ------------- | ----------------------------------------------------------------- |
-| Briefs                | Artifacts     | Governance records; stay in artifacts for the project's life      |
-| Gate decisions        | Artifacts     | Governance records; stay in artifacts                             |
-| Session logs          | Artifacts     | Governance records; stay in artifacts                             |
-| Success criteria reg. | Artifacts     | Governance records; stay in artifacts                             |
-| Retrospectives        | Artifacts     | Governance records; stay in artifacts                             |
-| ADRs                  | Source Code   | Drafted in artifacts; published to source code at Gate 2          |
-| Design diagrams       | Source Code   | Snapshot in artifacts; canonical copy in `docs/design/`           |
-| Visual designs        | Source Code   | Canonical in team's design tool; gate-frozen exports in `assets/` |
-| API contracts         | Source Code   | Drafted during design; canonical copy with owning service         |
+| Artifact              | Home Location | Notes                                                              |
+| --------------------- | ------------- | ------------------------------------------------------------------ |
+| Briefs                | Artifacts     | Governance records; stay in artifacts for the project's life       |
+| Gate decisions        | Artifacts     | Governance records; stay in artifacts                              |
+| Session logs          | Artifacts     | Governance records; stay in artifacts                              |
+| Success criteria reg. | Artifacts     | Governance records; stay in artifacts                              |
+| Retrospectives        | Artifacts     | Governance records; stay in artifacts                              |
+| ADRs                  | Artifacts     | Drafted per project; promoted to the workspace ADR canon at Gate 2 |
+| Design diagrams       | Source Code   | Snapshot in artifacts; canonical copy in `docs/design/`            |
+| Visual designs        | Source Code   | Canonical in team's design tool; gate-frozen exports in `assets/`  |
+| API contracts         | Source Code   | Drafted during design; canonical copy with owning service          |
 
 > **Snapshot preservation:** Artifact-repo copies of published artifacts (ADRs,
 > diagrams) remain as point-in-time records of design-stage decisions. They are
@@ -576,33 +576,51 @@ when they move — prevents duplication, lost context, and orphaned records.
 
 #### ADR Publishing
 
-ADRs are drafted in the artifacts repo during System Design and published to the
-source code repo when implementation begins (Gate 2).
+ADRs are drafted in the project's artifacts during System Design and promoted to
+the **workspace ADR canon** — a top-level `adrs/` directory in the artifacts
+(governance) location — when implementation begins (Gate 2). The canon is the
+single home for every accepted ADR across all projects in the workspace.
 
-**Draft numbering:** Use a `D` prefix during System Design (`ADR-D001.md`,
-`ADR-D002.md`). The prefix makes draft status self-evident and keeps numbering
-scoped to the current project's artifacts. The title is in the ADR heading, not
-the filename.
+**Draft numbering:** Use a `D` prefix with a two-digit counter during System
+Design (`ADR-D01.md`, `ADR-D02.md` — `ADR-DCC.md` generically). The prefix makes
+draft status self-evident and keeps numbering scoped to the current project's
+artifacts. The title is in the ADR heading, not the filename.
 
-**Publishing at Gate 2:** When ADRs move to the source code repo, renumber them
-to 4-digit sequential format (e.g., `ADR-D001.md` → `ADR-0023.md`). Update the
-artifact-repo copy with a pointer:
+**Project id:** Promoted ids are scoped by a stable numeric project id. Assign
+each project a sequential number when it is created and track it in
+`projects/index.md`; zero-fill to 4 digits in promoted ids.
 
-> Published as ADR-0023 in [code repo].
+**Promotion at Gate 2:** Accepted ADRs move within the artifacts location from
+the project's `docs/adr/` to the top-level `adrs/` canon, renumbered to the
+project-id-scoped form `ADR-NNNN-CC` — `NNNN` is the originating project's id
+and `CC` is the draft's two-digit counter (e.g., project 12's `ADR-D01.md` →
+`ADR-0012-01.md`). The promoted id is derived deterministically from the draft
+id plus the project id — there is no shared counter to scan, so promotions from
+different projects cannot collide. Leave a pointer in the project's draft copy:
 
-**Traceability:** One-directional by default — the artifact-repo copy points
-forward to the published ADR. Bidirectional pointers (code repo back to artifact
-repo) are optional and useful when a unique project identifier is available
-(e.g., platform-enforced project numbers). Without a project identifier,
-`ADR-D001` is ambiguous across projects, so the back-reference is omitted.
+> Promoted as ADR-0012-01.
+
+**Why the canon, not the code repo:** Promoting within one repo keeps
+publication synchronous and atomic, works for multi-repo projects (an ADR is a
+project-level decision with no single "the code repo"), and keeps the governance
+record in one place as the portfolio grows. Teams that want ADRs readable next
+to the code can mirror accepted ADRs into the source repo — the mirror is a
+convenience copy, not the system of record. If your organization standardizes on
+a different publish target, document the convention in your workspace
+`AGENTS.md` and apply it consistently.
+
+**Traceability:** Reference ADRs by bare id (`ADR-0012-01`), never by path — ids
+survive workspace reorganization; paths don't. The promoted id carries its own
+provenance (the project id names the originating project), so no back-reference
+machinery is needed.
 
 #### Design Diagrams
 
-System design diagrams follow the same pattern as ADRs: the artifacts repo holds
-a snapshot from the design stage, while the canonical copy lives in the source
-code repo (e.g., `docs/design/`). Engineers update the canonical copy during
-implementation; the artifact-repo snapshot remains untouched as a point-in-time
-record.
+System design diagrams are published to the source code repo: the artifacts repo
+holds a snapshot from the design stage, while the canonical copy lives in the
+source code repo (e.g., `docs/design/`). Engineers update the canonical copy
+during implementation; the artifact-repo snapshot remains untouched as a
+point-in-time record.
 
 ### Cross-Location Handoff
 
@@ -628,8 +646,8 @@ For the full protocol — what flows back, sync points, and agent steps — see
 
 **Architecture Decision Record (ADR)** — A short document capturing a
 significant design decision and the reasoning behind it. ADRs are drafted in the
-artifacts repo during System Design (using `ADR-DNNN` draft numbering) and
-published to the source code repo at Gate 2 (renumbered to `ADR-NNNN`). See
+project's artifacts during System Design (using `ADR-DCC` draft numbering) and
+promoted to the workspace ADR canon at Gate 2 (renumbered to `ADR-NNNN-CC`). See
 [Artifact Placement: ADR Publishing](#adr-publishing) for the full lifecycle and
 the [ADR Template](../templates/adr.md) for the document format.
 
@@ -983,7 +1001,7 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.9.0. Visual designs row added to Artifact Placement
 table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow

@@ -3,8 +3,8 @@
 # Increment Design Brief
 
 > **Before starting a session on this brief:** follow the steps in
-> [Session Protocol](../guides/session-protocol.md). Check it at session
-> start so nothing is missed as the protocol evolves.
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
 
 > **Stage guide:**
 > [Increment Design README](../stages/increment-design/README.md)
@@ -44,8 +44,8 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Checkpoint:** Review (optional for Minimal; recommended for Standard;
   required for Enterprise)
 - **Depends On:** [e.g., Increment 0 / None — inter-increment dependencies]
-- **Constraining ADRs:** [ADR-001, ADR-003 — list decisions that shape this
-  increment's design]
+- **Constraining ADRs:** [ADR-0012-01, ADR-0012-03 — list decisions that shape
+  this increment's design]
 
 ---
 
@@ -119,7 +119,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 **Responsibilities:** [What it does]
 
-**Constraining ADRs:** [ADR-DNNN, ADR-DNNN — or "None"]
+**Constraining ADRs:** [ADR-NNNN-CC, ADR-NNNN-CC — or "None"]
 
 **Structure:**
 
@@ -147,8 +147,8 @@ stateful, approach]
 ## 3. Data and State Changes
 
 > **Right-sizing:** Minimal — omit this section entirely if this increment
-> introduces no schema changes, new data storage, or state management
-> changes. Do not write N/A.
+> introduces no schema changes, new data storage, or state management changes.
+> Do not write N/A.
 
 ### 3.1 State Management Changes
 
@@ -284,4 +284,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. -->
+<!-- Template Last Updated: 2026-06-09 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. ADR id placeholders updated to promoted scheme in v0.48.0. -->
