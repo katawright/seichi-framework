@@ -1,5 +1,55 @@
 # Changelog
 
+## 0.48.0 (2026-06-09)
+
+### Features
+
+- **initiation:** idea-formation entry path — "Arriving with Only an Idea" names
+  the pre-Initiation activity, its exit criteria (candidate problem statement,
+  target user, riskiest assumptions surfaced), and the interview contract;
+  zero-to-one project routing added to the agentic workflow guide (#93)
+- **framework:** QUICKSTART gains a fourth paste-and-go entry path — "I Only
+  Have an Idea" — that interviews from a fuzzy idea to Initiation-ready inputs
+  before any workspace scaffolding (#97)
+- **framework:** classification by inference — agents derive risk tier, project
+  type, deployment intent, autonomy, and oversight from 2–3 natural questions
+  and present them as overridable `[ASSUMED]` defaults instead of menus; all
+  entry prompts aligned (#96)
+- **framework:** solo-builder (N=1) translation of role vocabulary in the Roles
+  Guide; at Minimal/solo, Gate 1 collapses to a recorded one-question self-gate
+  (#94)
+- **initiation:** no-baseline success criteria guidance for brand-new products —
+  define the measurement method up front, treat first-baseline capture as itself
+  a criterion, use absolute targets (#95)
+- **framework:** solo worked example — a fuzzy idea traced through the
+  idea-formation interview to a Minimal-tier Initiation Brief and the Gate 1
+  self-gate (`guides/worked-example-solo.md`) (#98)
+- **framework:** ADR conventions reconciled with ratified platform decisions —
+  accepted ADRs publish to the workspace ADR canon (top-level `adrs/` in the
+  governance location; documented as a swappable convention), drafts use
+  two-digit `ADR-DCC` ids, promoted ids are project-id-scoped `ADR-NNNN-CC`
+  derived with no shared allocator, and references use bare ids (#92)
+
+### Improvements
+
+- **framework:** README front-door fixes — the dated defer-if-resistant
+  readiness branch removed; Start Here gains a "start from just an idea" row
+  (#99)
+- **framework:** INDEX descriptions and keywords refreshed for the on-ramp
+  entries
+
+### Bug Fixes
+
+- **framework:** pre-merge review fixes to the new ADR conventions — project-id
+  assignment stated as a requirement with a manual fallback (sequential project
+  numbers in `projects/index.md`), draft-copy disposition unified as
+  replace-with-pointer, the canon created at first promotion rather than
+  scaffolded; the Initiation Brief's right-sizing section gains AI autonomy and
+  oversight intensity fields
+- **ci:** release-manifest tests read expected values from `VERSION` and
+  `INDEX.md` at test time instead of pinning repo-state snapshots that broke
+  after every release
+
 ## 0.47.0 (2026-06-01)
 
 ### Features
@@ -30,11 +80,11 @@
 ### Improvements
 
 - **framework:** add a per-stage **altitude** model — a single Stage Altitude
-  section in `guides/stages.md` (two-axis abstraction/scope spine, per-stage slip
-  table, the imposed-vs-chosen test, and "code in design briefs" guidance),
+  section in `guides/stages.md` (two-axis abstraction/scope spine, per-stage
+  slip table, the imposed-vs-chosen test, and "code in design briefs" guidance),
   threaded into the Initiation goal-altitude check (too-low/too-high), the
-  Requirements imposed-vs-chosen discriminator, and the System Design / Increment
-  Design scope boundary (#73, #74)
+  Requirements imposed-vs-chosen discriminator, and the System Design /
+  Increment Design scope boundary (#73, #74)
 
 ## 0.45.0 (2026-05-18)
 
