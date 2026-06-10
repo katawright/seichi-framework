@@ -95,12 +95,56 @@ formation:
 2. **Classify by inference** — derive risk tier, project type, deployment
    intent, autonomy tier, and oversight intensity from the conversation and
    present them as overridable `[ASSUMED]` defaults, rather than asking the user
-   to choose from framework taxonomies
+   to choose from framework taxonomies. See
+   [Classification by Inference](#classification-by-inference)
 3. **Scaffold and seed** — only after the interview, create the workspace (see
    [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
    interview output
 4. **Proceed with Initiation** — continue the stage normally at the inferred
    tier; Gate 1 still applies
+
+---
+
+## Classification by Inference
+
+A new project carries five classification decisions: **risk tier** (Minimal /
+Standard / Enterprise), **project type** (greenfield / brownfield), **deployment
+intent** (production service / internal tool / local-only), **AI autonomy tier**
+(Human-Led / Collaborative / AI-Led), and **oversight intensity** (Active /
+Passive / Minimal). A first-time user cannot answer these before understanding
+the framework — do not present them as menus at first contact.
+
+Instead, derive all five from two or three natural questions woven into the
+opening conversation:
+
+- _"Is this just you, or a team?"_ → team size, candidate risk tier
+- _"Is this an experiment, or something you'll run for real?"_ → risk tier,
+  deployment intent
+- _"Deploying anywhere yet, or local for now?"_ → deployment intent
+- _"Starting fresh, or building on existing code?"_ → project type
+
+Present the derived classifications as overridable assumptions using the
+`[ASSUMED]` convention, recorded in the Initiation Brief's right-sizing section:
+
+> `[ASSUMED]` Risk tier: Minimal — solo experiment, no sensitive data.
+> `[ASSUMED]` Project type: Greenfield — empty repository. `[ASSUMED]`
+> Deployment intent: Local-only for now. `[ASSUMED]` Autonomy: Collaborative
+> with Active oversight — framework default for a first project. Say the word
+> and any of these change.
+
+Rules:
+
+1. **Never front a framework taxonomy.** The user should reach the problem
+   conversation without being asked to pick from any framework menu. Introduce
+   vocabulary later, when a classification first matters (typically at Gate 1).
+2. **Default conservatively.** When signals are missing or conflict, prefer the
+   safer value — higher tier, more oversight — and flag it.
+3. **Escalation triggers override inference.** Sensitive data, compliance
+   requirements, or external users force Standard or Enterprise regardless of
+   conversational signals — see the [Right-Sizing Guide](right-sizing.md).
+4. **Inferred values are hypotheses.** Confirm them at Gate 1 like any other
+   `[ASSUMED]` item — see
+   [Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
 
 ---
 
@@ -504,4 +548,4 @@ combinations and process guidance.
 **Last Updated:** 2026-06-09
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
-Zero-to-one routing added in v0.48.0.
+Zero-to-one routing and classification by inference added in v0.48.0.
