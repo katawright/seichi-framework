@@ -26,7 +26,47 @@ See the [Right-Sizing Guide](guides/right-sizing.md).
 
 ## Get Started
 
+### I Only Have an Idea
+
+No project name, no description, no plan — just "I have an idea for X." That is
+enough to start.
+
+**Prerequisites:** A local agent with filesystem access (Claude Code, Cursor,
+Cowork, or similar).
+
+1. **Create a new, empty folder** for your project (e.g., `my-idea/`)
+2. **Start your agent** in that folder
+3. **Paste this prompt:**
+
+> Download the latest release of the AI-Assisted SDLC framework from
+> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> version tag as the directory name (e.g., `frameworks/v<version>/`) if not
+> already present.
+>
+> Then read QUICKSTART.md from the downloaded framework to orient yourself.
+>
+> I only have an idea — I'll describe it, and I want you to interview me about
+> it before any setup: who has the problem, what it costs today, what better
+> would look like, and what would have to be true for it to be worth building.
+> Follow the framework's idea-formation entry path (Initiation: "Arriving with
+> Only an Idea"). Don't ask me to pick framework tiers or classifications —
+> infer them from our conversation and present them as overridable assumptions.
+> Once we have a candidate problem statement, a target user, and the riskiest
+> assumptions, set up the workspace, seed the Initiation Brief with what we
+> found, and guide me through the rest of Initiation.
+>
+> My idea: [describe it in a sentence or two — rough is fine]
+
+The agent downloads the framework, interviews you from the idea to
+Initiation-ready inputs — no workspace ceremony first — then creates the
+workspace and seeds the [Initiation](stages/initiation/README.md) Brief with the
+interview output. See
+[Initiation: Arriving with Only an Idea](stages/initiation/README.md#arriving-with-only-an-idea)
+for what the interview extracts and when it is done.
+
 ### New Project
+
+You have a formed project in mind — a name and a one-line description.
 
 **Prerequisites:** A local agent with filesystem access (Claude Code, Cursor,
 Cowork, or similar).
@@ -274,5 +314,5 @@ my-workspace/
 
 **Last Updated:** 2026-06-09
 
-Added to framework in v0.26.0. Classification-by-inference prompt alignment
-added in v0.48.0.
+Added to framework in v0.26.0. Classification-by-inference prompt alignment and
+idea-path entry added in v0.48.0.
