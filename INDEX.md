@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-06-01 | **Framework Version:** 0.47.0
+**Last Updated:** 2026-06-09 | **Framework Version:** 0.47.0
 
 ## Overview
 
@@ -34,7 +34,7 @@ Load the index first, then load only what you need.
 
 ### How to Use This Index
 
-1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-21) tables
+1. Scan the [**Root Files**](#root-files-2) or [**Guides**](#guides-22) tables
    to find cross-cutting content
 2. Jump to the relevant [**Stage Artifacts**](#stage-artifacts-29) subsection
    for stage-specific files
@@ -51,7 +51,7 @@ Load the index first, then load only what you need.
 | `QUICKSTART.md` | Three-step new-project prompt and mid-stream joining guide.        | quick-start, bootstrap, onboarding, execution-paths, location-detection | agentic-workflow, bootstrap, right-sizing | core |
 | `README.md`     | Project overview, stage summary table, and navigation entry point. | framework, SDLC, overview, navigation, stages                           | —                                         | core |
 
-## Guides (21)
+## Guides (22)
 
 | Path                                  | Description                                                                               | Keywords                                                                                                               | Refs                                                                                         | Tier |
 | ------------------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---- |
@@ -76,6 +76,7 @@ Load the index first, then load only what you need.
 | `guides/stages.md`                    | Eight-stage model with inputs, outputs, and execution patterns.                           | stage-definitions, inputs-outputs, execution-patterns                                                                  | ai-assistance, checkpoints                                                                   | core |
 | `guides/worked-example.md`            | End-to-end greenfield example tracing one requirement through all stages.                 | traceability, greenfield-example, walkthrough, artifact-examples                                                       | all stages                                                                                   | ref  |
 | `guides/worked-example-brownfield.md` | End-to-end brownfield example with preparation and exit checkpoint.                       | brownfield-example, preparation, exit-checkpoint, shadow-mode                                                          | worked-example, brownfield, brownfield-readiness, brownfield-approach, brownfield-enablement | ref  |
+| `guides/worked-example-solo.md`       | Solo example: fuzzy idea through Minimal-tier brief to the Gate 1 self-gate.              | solo-example, idea-formation, zero-to-one, minimal-tier, no-baseline, self-gate                                        | worked-example, initiation, agentic-workflow, roles                                          | ref  |
 
 ## Stage Artifacts (29)
 
@@ -179,6 +180,6 @@ Load the index first, then load only what you need.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.41.0.

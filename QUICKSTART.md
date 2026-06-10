@@ -62,7 +62,9 @@ Initiation-ready inputs — no workspace ceremony first — then creates the
 workspace and seeds the [Initiation](stages/initiation/README.md) Brief with the
 interview output. See
 [Initiation: Arriving with Only an Idea](stages/initiation/README.md#arriving-with-only-an-idea)
-for what the interview extracts and when it is done.
+for what the interview extracts and when it is done, and the
+[Solo Worked Example](guides/worked-example-solo.md) for what the whole path
+looks like completed.
 
 ### New Project
 
@@ -301,6 +303,8 @@ my-workspace/
   your project's risk and team size
 - [**Worked Example**](guides/worked-example.md) — see what "done" looks like
   across all stages (greenfield)
+- [**Solo Worked Example**](guides/worked-example-solo.md) — see a fuzzy idea
+  become a Minimal-tier brief and a Gate 1 self-gate, solo
 - [**Brownfield Worked Example**](guides/worked-example-brownfield.md) — see
   preparation, exit checkpoint, and feature delivery for an existing codebase
 - [**Bootstrap Guide**](guides/bootstrap.md) — customize project layout,
