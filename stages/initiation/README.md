@@ -127,6 +127,10 @@ Idea formation is not a stage. It has no gate, no checklist, and no artifact
 beyond the brief sections it seeds. It ends the moment Initiation can begin —
 expect a single conversation, not days of work.
 
+> **See it done end-to-end:** The
+> [Solo Worked Example](../../guides/worked-example-solo.md) traces a fuzzy idea
+> through the interview, a Minimal-tier brief, and the Gate 1 self-gate.
+
 ### Exit Criteria
 
 Idea formation is complete when three things exist:
