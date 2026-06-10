@@ -45,7 +45,10 @@ Cowork, or similar).
 > This is a new, single-repo project. Set up this directory as my workspace —
 > create the project structure, AGENTS.md, and your agent-specific startup file
 > (e.g., CLAUDE.md for Claude Code). Then guide me through the first stage.
-> Drive the process but check decisions with me.
+> Infer project classifications (risk tier, project type, deployment intent,
+> autonomy, oversight) from our conversation and present them as overridable
+> assumptions instead of asking me to choose. Drive the process but check
+> decisions with me.
 
 The agent downloads the framework, creates your workspace, and walks you through
 [Initiation](stages/initiation/README.md) interactively — starting with your
@@ -104,7 +107,10 @@ If you're adopting the framework on a project already in progress:
 > we've built, where we are in the development lifecycle, and what decisions
 > have already been made. Create lightweight retroactive artifacts for completed
 > stages based on our conversation, then guide me forward from the current
-> stage. Drive the process but check decisions with me.
+> stage. Infer project classifications (risk tier, project type, deployment
+> intent, autonomy, oversight) from our conversation and present them as
+> overridable assumptions instead of asking me to choose. Drive the process but
+> check decisions with me.
 
 The agent sets up the governance layer alongside your existing code, interviews
 you to determine which [stages](guides/stages.md) are already complete, creates
@@ -185,9 +191,9 @@ while an existing project stays in maintenance.
 
 The framework is designed for this case. Each project pins its own framework
 version in its `project.md`, and `projects/index.md` tracks all active and
-completed projects. You don't need to reinitialize the workspace — just
-download the latest framework release (if you don't already have it), add a
-new project directory, and let the agent guide you through the first stage.
+completed projects. You don't need to reinitialize the workspace — just download
+the latest framework release (if you don't already have it), add a new project
+directory, and let the agent guide you through the first stage.
 
 **Prerequisites:** A local agent with filesystem access and an existing
 workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
@@ -205,17 +211,20 @@ workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
 > `projects/index.md` to see existing projects and
 > `frameworks/v<version>/QUICKSTART.md` from the version you just downloaded.
 >
-> I want to start a new project in this workspace. Ask me for the project
-> name, a one-line description, and my preferred autonomy level and oversight
-> style (or I'll specify them here). Then create a new project directory
-> under `projects/`, create its `project.md` pinning the framework version
-> to use, create a `docs/` subtree, add an entry to `projects/index.md`, and
-> guide me through Initiation.
+> I want to start a new project in this workspace. Ask me for the project name
+> and a one-line description; infer autonomy level and oversight style from our
+> conversation and present them as overridable assumptions (or I'll specify them
+> here). Then create a new project directory under `projects/`, create its
+> `project.md` pinning the framework version to use, create a `docs/` subtree,
+> add an entry to `projects/index.md`, and guide me through Initiation.
 
-The agent downloads the latest framework release (keeping any older versions
-in place), reads the workspace conventions from `AGENTS.md`, creates the new
+The agent downloads the latest framework release (keeping any older versions in
+place), reads the workspace conventions from `AGENTS.md`, creates the new
 project scaffolding, updates `projects/index.md`, and walks you through
-Initiation starting with the project name and description.
+Initiation starting with the project name and description. Classifications
+(autonomy, oversight, risk tier) are inferred from the conversation and
+presented as overridable assumptions — see
+[Agentic Workflow Guide: Classification by Inference](guides/agentic-workflow.md#classification-by-inference).
 
 **Workspace structure after adding a second project:**
 
@@ -237,11 +246,10 @@ my-workspace/
 ```
 
 > **Key insight:** Framework versions coexist. Each `project.md` pins the
-> version its project uses, so upgrading the workspace's latest version does
-> not force ongoing projects to migrate. See
+> version its project uses, so upgrading the workspace's latest version does not
+> force ongoing projects to migrate. See
 > [Framework Version Coexistence](guides/bootstrap.md#framework-version-coexistence)
-> for how multi-version workspaces work and when old versions can be cleaned
-> up.
+> for how multi-version workspaces work and when old versions can be cleaned up.
 
 ---
 
@@ -264,6 +272,7 @@ my-workspace/
 
 ## Notes
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-06-09
 
-Added to framework in v0.26.0.
+Added to framework in v0.26.0. Classification-by-inference prompt alignment
+added in v0.48.0.

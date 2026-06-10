@@ -80,8 +80,11 @@ budget context. No prior framework artifacts or technical expertise required.
 2. Read [**How AI Helps**](#how-ai-helps) to select your AI autonomy tier (and
    oversight intensity if AI-Led)
 3. **For Collaborative or AI-Led tiers:** Confirm all right-sizing selections
-   with the user before drafting. Do not begin populating the brief until
-   agreed.
+   with the user before drafting. For first-time or zero-to-one users, infer the
+   selections from the conversation and present them as overridable `[ASSUMED]`
+   defaults rather than asking the user to pick from framework taxonomies — see
+   [Agentic Workflow Guide: Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference).
+   Do not begin populating the brief until agreed.
 4. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
    using AI according to your chosen autonomy tier. For each section of the
    brief, consult the matching subsection under
