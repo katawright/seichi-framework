@@ -81,6 +81,27 @@ through stages with additional focus:
    deliverable-oriented scope (D-1, D-2 IDs) rather than feature-oriented scope
 4. **Subsequent stages** — proceed normally using iterative stage patterns
 
+### Zero-to-One Project Routing
+
+When a user arrives with only an idea — "I have an idea for X," no existing
+artifacts, no workspace, no formed project description — do not ask them to pick
+a framework entry point or answer classification questions. Route into idea
+formation:
+
+1. **Idea formation** — interview the user from the idea to Initiation-ready
+   inputs: a candidate problem statement, a target user, and the riskiest
+   assumptions surfaced. The exit criteria and interview contract are defined in
+   [Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea)
+2. **Classify by inference** — derive risk tier, project type, deployment
+   intent, autonomy tier, and oversight intensity from the conversation and
+   present them as overridable `[ASSUMED]` defaults, rather than asking the user
+   to choose from framework taxonomies
+3. **Scaffold and seed** — only after the interview, create the workspace (see
+   [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
+   interview output
+4. **Proceed with Initiation** — continue the stage normally at the inferred
+   tier; Gate 1 still applies
+
 ---
 
 ## Artifact Dependencies
@@ -480,6 +501,7 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
+Zero-to-one routing added in v0.48.0.
