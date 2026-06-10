@@ -64,6 +64,10 @@ inputs/outputs, entry/exit criteria, and gate details), see
 A business opportunity or problem worth investigating, a stakeholder list, and
 budget context. No prior framework artifacts or technical expertise required.
 
+> **Only have a half-formed idea?** That is enough — see
+> [Arriving with Only an Idea](#arriving-with-only-an-idea) for the short
+> pre-Initiation path that produces these inputs.
+
 > This stage operates from the **artifacts location**. For greenfield projects,
 > create the artifacts directory structure first (e.g., `docs/briefs/`,
 > `docs/adr/`). See
@@ -104,6 +108,73 @@ budget context. No prior framework artifacts or technical expertise required.
 
 For cross-cutting framework concepts, see
 [Framework Guide](../../guides/framework.md).
+
+---
+
+## Arriving with Only an Idea
+
+Initiation assumes its inputs already exist — a business opportunity worth
+investigating, a stakeholder list, and budget context. Many projects do not
+start there. They start with "I have an idea for X": a half-formed product idea,
+no stakeholder list, and no budget framing. **Idea formation** is the
+pre-Initiation activity that closes the gap — a short, structured conversation
+that turns a fuzzy idea into Initiation-ready inputs.
+
+Idea formation is not a stage. It has no gate, no checklist, and no artifact
+beyond the brief sections it seeds. It ends the moment Initiation can begin —
+expect a single conversation, not days of work.
+
+### Exit Criteria
+
+Idea formation is complete when three things exist:
+
+1. **A candidate problem statement** — who is affected, what they cannot do, and
+   what it costs them, stated independently of any solution. "Candidate" is
+   deliberate: Initiation pressure-tests the statement; idea formation only has
+   to produce something concrete enough to test.
+2. **A target user** — whose problem this is. "Me" is a valid answer, and so is
+   "me, and people like me."
+3. **The riskiest assumptions, surfaced** — the beliefs that, if wrong, make the
+   idea not worth building. Typical candidates: someone actually has this
+   problem; existing tools don't already solve it well enough; it is feasible
+   with the time and skills available.
+
+These map directly to Initiation's declared inputs: the candidate problem
+statement is the business opportunity, the target user seeds the stakeholder
+list, and the constraints surfaced alongside the assumptions (time, money,
+skills) provide budget context.
+
+### The Interview Contract
+
+The natural mechanism for idea formation is an interview: the agent (or a
+colleague) asks, the idea-holder answers. How the interview is conducted —
+question order, tone, tooling — is an implementation concern and is left to
+tools and skills. What it must extract is not. Any idea-formation interview must
+extract the rows below and emit them as seeded Initiation Brief sections:
+
+| Extract                                                                    | Seeds in the Initiation Brief                |
+| -------------------------------------------------------------------------- | -------------------------------------------- |
+| The trigger — the moment that produced the idea, the gap that appeared     | Problem Statement (what's wrong)             |
+| The affected user — who hits this problem, and how often                   | Problem Statement (who), Key Stakeholders    |
+| The cost — what the problem costs today (time, money, missed outcomes)     | Problem Statement (impact), Business Case    |
+| What better looks like — the outcome if the problem disappeared            | Goals (candidate)                            |
+| The riskiest assumptions — what must be true for this to be worth building | Assumptions, Risks                           |
+| Constraints — the time, money, and skills available                        | Constraints and Dependencies, budget context |
+
+The interview's output is recorded directly into a draft
+[Initiation Brief](../../templates/initiation-brief.md) — the seeded sections
+above, flagged `[ASSUMED]` wherever the idea-holder is guessing rather than
+reporting. There is no separate idea-formation artifact to create or maintain.
+
+Two cautions for whoever runs the interview:
+
+- **Do not open with "what should we build?"** — solution-first framing is the
+  failure mode the problem statement exists to prevent. Start from the trigger
+  and the user.
+- **Do not front framework classification questions** (risk tier, project type,
+  autonomy tier). The agent infers these from the conversation and presents them
+  as overridable assumptions — see
+  [Agentic Workflow Guide: Zero-to-One Project Routing](../../guides/agentic-workflow.md#zero-to-one-project-routing).
 
 ---
 
@@ -701,6 +772,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-05-29
+**Last Updated:** 2026-06-09
 
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
+Idea-formation entry path added in v0.48.0.
