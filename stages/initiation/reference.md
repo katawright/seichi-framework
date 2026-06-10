@@ -200,11 +200,43 @@ measurement. A three-criterion structure works for most projects:
 ### When criteria cannot be baselined
 
 Sometimes baseline data does not exist — new features, new user segments, or new
-markets. In these cases, document the absence explicitly and commit to capturing
-a baseline in the first increment before declaring success:
+markets. When only the baseline _value_ is missing but the measurement method is
+defined, document the absence explicitly and commit to capturing a baseline in
+the first increment before declaring success:
 
 > "No baseline exists — capture baseline in Increment 1; target defined as [X]
 > relative to that baseline."
+
+**Brand-new products** are the extreme case: nothing is measured because nothing
+exists yet. There is no "p90 is 72 seconds today" because there is no today. Do
+not invent a baseline, and do not skip the section. Write criteria that stand
+without one:
+
+1. **Define the measurement method up front.** Decide _how_ each metric will be
+   observed — analytics events, logs, a manual count, a weekly note — before the
+   first line of code. A criterion without a defined method is unmeasurable no
+   matter how precise the target looks.
+2. **Treat first-baseline capture as itself a success criterion.** For a new
+   product, "we can observe the metric at all" is a real, verifiable outcome.
+   Make it a criterion in its own right rather than a footnote.
+3. **Set absolute targets, not deltas.** With no baseline, "improve by 20%" is
+   meaningless — 20% of what? Use absolute values tied to the problem statement,
+   and revise them once the first baseline exists.
+
+**Good no-baseline criteria:**
+
+> "SC-01: Usage events are captured from first deployment; baseline weekly usage
+> recorded after 4 weeks of real use. Measured by: built-in analytics."
+>
+> "SC-02: I log every workout in the app instead of the spreadsheet for 4
+> consecutive weeks." (An absolute adoption check — no baseline needed.)
+
+**Bad no-baseline criteria:**
+
+> "Increase usage by 20%." (Delta with no baseline.)
+>
+> "Baseline: TBD." (Defers the measurement decision — define the method now,
+> capture the value later.)
 
 ### When criteria are qualitative
 
@@ -336,7 +368,9 @@ state so the next session can continue without re-discovery:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at all autonomy tiers, not only AI-Led. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
@@ -367,6 +401,7 @@ When AI-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-09
 
-Added to framework in v0.23.0.
+Added to framework in v0.23.0. New-product no-baseline guidance added in
+v0.48.0.
