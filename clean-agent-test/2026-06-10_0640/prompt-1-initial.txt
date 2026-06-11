@@ -1,0 +1,7 @@
+Download the latest release of the AI-Assisted SDLC framework from https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the version tag as the directory name (e.g., `frameworks/v<version>/`) if not already present.
+
+Then read QUICKSTART.md from the downloaded framework to orient yourself.
+
+I only have an idea — I'll describe it, and I want you to interview me about it before any setup: who has the problem, what it costs today, what better would look like, and what would have to be true for it to be worth building. Follow the framework's idea-formation entry path (Initiation: "Arriving with Only an Idea"). Don't ask me to pick framework tiers or classifications — infer them from our conversation and present them as overridable assumptions. Once we have a candidate problem statement, a target user, and the riskiest assumptions, set up the workspace, seed the Initiation Brief with what we found, and guide me through the rest of Initiation.
+
+My idea: I keep losing track of stuff in my fridge — leftovers and half-used things — and I end up throwing out food that went bad because I forgot about it. I want something on my phone that helps me remember what's in there and tells me when stuff is about to go off so I stop wasting money.
