@@ -39,9 +39,9 @@ describe("buildManifest against the framework source at repo root", () => {
     }
   });
 
-  it("orders stages by display_order (Initiation first, Support last)", () => {
+  it("orders stages by display_order (Initiation first, Closure last)", () => {
     expect(manifest.stages[0].name).toBe("initiation");
-    expect(manifest.stages[manifest.stages.length - 1].name).toBe("support");
+    expect(manifest.stages[manifest.stages.length - 1].name).toBe("closure");
   });
 
   it("derives display_name for stages and artifacts", () => {

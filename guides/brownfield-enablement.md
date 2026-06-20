@@ -115,8 +115,7 @@ for a traced illustration.
   [System Design Reference: First AI-Assisted Project (Discovery)](../stages/system-design/reference.md#first-ai-assisted-project-discovery)
 - **Deployment infrastructure:**
   [Deployment Setup Guide: Brownfield Path](../stages/deployment/setup.md#brownfield-path)
-- **Operational processes:**
-  [Support Operations Guide: Brownfield Path](../stages/support/operations.md#brownfield-path)
+- **Operational processes:** [Operations Guide](operations.md)
 
 ---
 
@@ -594,7 +593,7 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.37.0. Renamed from Brownfield Preparation Guide to
 Brownfield Enablement Guide as part of the brownfield guide restructuring
@@ -608,4 +607,5 @@ Infrastructure Planning replaced with cross-reference to
 [System Design Reference](../stages/system-design/reference.md#brownfield-infrastructure-planning).
 Preparation Activities by Axis slimmed to Preparation Sequencing. Key Decisions
 (Logic Authority, Wrap vs. Extract, External Write Paths) folded into per-axis
-enablement tactics (Modularity, Transparency).
+enablement tactics (Modularity, Transparency). Operational processes link
+repointed to Operations Guide in v0.49.0.

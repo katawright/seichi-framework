@@ -45,7 +45,7 @@ how criteria flow through the framework.
 | **Implementation** | Implement measurement systems                            |
 | **Verification**   | Validate measurement systems work                        |
 | **Deployment**     | Capture baseline measurements                            |
-| **Support**        | Track actuals vs. targets; report progress               |
+| **Closure**        | Track actuals vs. targets; confirm final status          |
 | **Close-Out**      | Confirm each criterion is Met or carries a Re-check Date |
 
 ---
@@ -73,4 +73,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0. Re-check Date column + Close-Out usage row added in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0. Re-check Date column + Close-Out usage row added in v0.47.0. v0.49 vocabulary/dev-ops-split sweep. -->

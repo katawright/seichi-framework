@@ -7,12 +7,12 @@ can execute a complete three-pass review from this file alone.
 
 ### Files to Review
 
-| Location      | What to Review                                                                                                                                                                   |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Root (`*.md`) | README.md, QUICKSTART.md, AGENTS.md, CLAUDE.md, STYLE_GUIDE.md, CONTRIBUTING.md                                                                                                  |
-| `guides/`     | All 10 guide files                                                                                                                                                               |
-| `stages/`     | All stage directories — README.md, checklist.md, reference.md, plus deployment/setup.md, deployment/pipeline-checklist.md, support/operations.md, support/readiness-checklist.md |
-| `templates/`  | All 15 template files                                                                                                                                                            |
+| Location      | What to Review                                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Root (`*.md`) | README.md, QUICKSTART.md, AGENTS.md, CLAUDE.md, STYLE_GUIDE.md, CONTRIBUTING.md                                           |
+| `guides/`     | All 10 guide files                                                                                                        |
+| `stages/`     | All stage directories — README.md, checklist.md, reference.md, plus deployment/setup.md, deployment/pipeline-checklist.md |
+| `templates/`  | All 15 template files                                                                                                     |
 
 ### Files to Exclude
 
@@ -146,14 +146,14 @@ multiple files.
 
 Check these terms for consistent usage across all files:
 
-| Term                                                     | Canonical Definition Source               |
-| -------------------------------------------------------- | ----------------------------------------- |
-| Gate vs. Checkpoint                                      | `guides/framework.md`                     |
-| Increment (neutral term)                                 | `AGENTS.md`, `guides/stages.md`           |
-| ADR location                                             | `guides/framework.md` or stage references |
-| Risk tiers (Minimal, Standard, Enterprise)               | `guides/right-sizing.md`                  |
-| Operating modes (Human-Led, Collaborative, AI-Led)       | `guides/ai-assistance.md`                 |
-| Execution patterns (foundational, iterative, continuous) | `guides/stages.md`                        |
+| Term                                                            | Canonical Definition Source               |
+| --------------------------------------------------------------- | ----------------------------------------- |
+| Gate vs. Checkpoint                                             | `guides/framework.md`                     |
+| Increment (neutral term)                                        | `AGENTS.md`, `guides/stages.md`           |
+| ADR location                                                    | `guides/framework.md` or stage references |
+| Risk tiers (Minimal, Standard, Enterprise)                      | `guides/right-sizing.md`                  |
+| Operating model (Work Execution, Authority, Required Assurance) | `guides/operating-model.md`               |
+| Execution patterns (foundational, iterative, terminal)          | `guides/stages.md`                        |
 
 Flag any file using variant terminology (e.g., "risk level" instead of "risk
 tier," "phase" instead of "stage").
@@ -162,7 +162,8 @@ tier," "phase" instead of "stage").
 
 For each of the 8 stages, verify that these documents agree:
 
-- **Stage README** — inputs, outputs, gates, execution pattern, autonomy tier
+- **Stage README** — inputs, outputs, gates, execution pattern, operating
+  posture
 - **Stage checklist** — items match the README's described outputs and quality
   criteria
 - **Stage reference** — examples and guidance align with README activities
@@ -194,7 +195,7 @@ Verify each stage README connects to the measurement throughline described in
 - Implementation: implements metrics collection
 - Verification: tests measurement systems
 - Deployment: captures baseline measurements
-- Support: monitors and validates success criteria
+- Operations: monitors and validates success criteria
 
 ### 2.5 Security Throughline
 
@@ -323,8 +324,8 @@ clarity.
 **ai-agent** — An AI coding agent (e.g., Claude Code, Cursor, GitHub Copilot
 Workspace) dropped into this repository cold with no prior context. Focus areas:
 front matter parseability, stage routing accuracy, checklist-passing artifact
-production, fallback protocol clarity, session log conventions, autonomy tier
-interpretation.
+production, fallback protocol clarity, session log conventions,
+operating-posture interpretation.
 
 ### 3C. Audience Language Audit
 
@@ -332,7 +333,7 @@ Verify language alignment per `AGENTS.md` design principles:
 
 - Business-first language in Initiation, Requirements (early stages aimed at
   non-technical stakeholders)
-- Technical language in Implementation, Verification, Deployment, Support
+- Technical language in Implementation, Verification, Deployment, Closure
 - No "DRI" jargon anywhere (per `AGENTS.md` cross-cutting refinement patterns)
 - "AI-assisted" not "AI-driven" or "AI-automated" (per `guides/adoption.md`
   framing guidance)

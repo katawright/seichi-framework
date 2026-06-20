@@ -164,11 +164,11 @@ three are the **same mechanism** — read the log, type what is untyped, route
 each entry by type — fired at a different cadence and feeding the **same**
 destinations (the same idea backlog, the same operator-named trackers).
 
-| Cadence                           | Fires at                            | Triaged into                   | Home                               |
-| --------------------------------- | ----------------------------------- | ------------------------------ | ---------------------------------- |
-| **Increment retrospective**       | the close of each increment         | the increment's retro sections | the SDLC's iterative loop          |
-| **Project wrap-up retrospective** | project close-out                   | a final harvest of the log     | the project's close-out (terminal) |
-| **Operational retrospective**     | periodically, and after an incident | the running system's review    | the operations practice            |
+| Cadence                           | Fires at                            | Triaged into                   | Home                                                        |
+| --------------------------------- | ----------------------------------- | ------------------------------ | ----------------------------------------------------------- |
+| **Increment retrospective**       | the close of each increment         | the increment's retro sections | the SDLC's iterative loop                                   |
+| **Project wrap-up retrospective** | project close-out                   | a final harvest of the log     | the [Closure stage](../stages/closure/README.md) (terminal) |
+| **Operational retrospective**     | periodically, and after an incident | the running system's review    | the [Operations](operations.md) process                     |
 
 The increment retrospective is the primary cadence and the one this guide
 details; the other two are the same triage at the project's terminal and on a
@@ -177,10 +177,12 @@ running system. The project wrap-up retro harvests the whole log one last time
 retro keeps the loop turning after delivery ends, once the system is in standing
 operation.
 
-> The project wrap-up and operational cadences live in framework areas still
-> being defined — the SDLC's terminal close-out stage and a standing-operations
-> practice. Until those are named, treat the homes above as the cadence's
-> intent, not a link.
+> The project wrap-up cadence lands in the
+> [Closure stage](../stages/closure/README.md) — the SDLC's terminal — where the
+> wrap-up retrospective triages the log one last time. The operational cadence
+> lands in the [Operations](operations.md) process, a standing-system practice
+> that is a sibling to the SDLC. Both run the same triage mechanism, fired at a
+> different cadence.
 
 For each entry, record its destination in the friction log's **Disposition**
 field so the log itself shows the loop closing.
@@ -328,8 +330,8 @@ two routes — but through the _same_ adaptive interview, producing the same
   the candidate problem, the target user, and the riskiest assumptions.
 - **Warm (from the backlog).** A **Promoted** `IDEA-NNN` already carries a
   problem statement and an origin. The interview starts there — deepening and
-  validating what the idea records, and setting the project's operating frame —
-  rather than from scratch.
+  validating what the idea records, and seeding the project's operating
+  configuration — rather than from scratch.
 
 Either way, the loop closes at [Initiation](../stages/initiation/README.md): a
 new project draws a goal, a scope, or an entire business case from an idea. An

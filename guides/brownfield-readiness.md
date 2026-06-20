@@ -129,8 +129,8 @@ more visible.
 
 - AI for **analysis, documentation, test scaffolding, and refactor suggestions**
   broadly across the codebase
-- AI writes production code only in **well-covered modules** (Verifiability and
-  Modularity scored 3-4 for that area)
+- an agent writes production code only in **well-covered modules**
+  (Verifiability and Modularity scored 3-4 for that area)
 - Smaller PRs, stricter review, more "proof by tests" — the cost of verification
   partially offsets the speed gain
 
@@ -608,4 +608,5 @@ rationale section, and recalculated tier thresholds for 0-20 scoring range. AI
 Operating Modes moved back from the Approach Guide to this guide and
 restructured as tier subsections; tiers moved before the rubric to establish
 context before scoring. Cross-link to the Operating Model Guide (readiness ≈
-capability coverage) added in v0.49.0.
+capability coverage) added in v0.49.0. Actor-sense "AI writes production code"
+rewritten to "an agent writes production code" in v0.49.0.

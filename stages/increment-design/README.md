@@ -82,7 +82,8 @@ action items from the previous increment.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
+   (see the Operating Model Guide)
 2. Read [**Right-Sizing Increment Design**](#right-sizing-increment-design) to
    calibrate effort to your project's risk tier
 3. Review increment plan for current increment scope
@@ -98,7 +99,7 @@ action items from the previous increment.
    [QA per RACI](../../guides/roles.md#raci-matrix) on test coverage levels and
    acceptance criteria testability
 8. Complete the [Increment Design Checklist](checklist.md) using AI according to
-   your chosen autonomy tier — including the
+   your operating posture — including the
    [internal-consistency pass](#tracing-internal-consistency)
 9. Complete the Design Review — Architect reviews component designs for
    architecture conformance (optional for Minimal; recommended for Standard;
@@ -113,37 +114,27 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Increment Design at whatever autonomy tier your team is
+AI can assist with Increment Design at whatever autonomy level your team is
 comfortable with — from generating boilerplate to drafting complete component
 specs with cross-cutting concerns flagged.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                               | Collaborative                                     | AI-Led                                                                  |
-| --------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------- |
-| Human designs; AI generates boilerplate | AI drafts component and test specs; human reviews | AI drafts and flags cross-cutting concerns proactively; human validates |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
 - **Component design generation:** Describe your increment scope and system
-  architecture — AI drafts component designs with responsibilities, structure,
-  and interactions
-- **Interface specification:** AI generates interface contracts (API endpoints,
-  component props, event schemas) from requirements and conventions
-- **Test strategy creation:** AI suggests test cases across unit, integration,
-  and acceptance levels, including edge cases you may miss
-- **Design review:** AI walks through the checklist and flags gaps in
+  architecture — an agent drafts component designs with responsibilities,
+  structure, and interactions
+- **Interface specification:** An agent generates interface contracts (API
+  endpoints, component props, event schemas) from requirements and conventions
+- **Test strategy creation:** An agent suggests test cases across unit,
+  integration, and acceptance levels, including edge cases you may miss
+- **Design review:** An agent walks through the checklist and flags gaps in
   completeness, consistency, or convention adherence
 
 For assistance level details, see the
@@ -361,8 +352,8 @@ brief — a mechanical trace, distinct from judging whether the design is sound:
   model it depends on. A passage describing two writers contradicts a rule that
   mandates a single concurrency check.
 
-This pass is mechanical — AI can run it and present the trace for human review.
-[Increment Design Checklist](checklist.md) item 16 records it.
+This pass is mechanical — an agent can run it and present the trace for human
+review. [Increment Design Checklist](checklist.md) item 16 records it.
 
 ---
 
@@ -428,4 +419,5 @@ to all Informed roles per the
 **Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0. Stage
-altitude note and bridging-sentence reconciliation added in v0.46.0.
+altitude note and bridging-sentence reconciliation added in v0.46.0. v0.49:
+autonomy vocabulary repointed to the operating model.

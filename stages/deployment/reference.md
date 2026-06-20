@@ -549,7 +549,7 @@ Any rollback triggers present?
   → No: Continue monitoring
 
 Stable for 24 hours?
-  → Yes: Deployment successful, hand off to Support
+  → Yes: Deployment successful, hand off to Closure/Operations
   → No: Continue monitoring and troubleshooting
 ```
 
@@ -584,9 +584,9 @@ rollback if critical.
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
 - Drafting release steps and runbook content
 - Canary and rollback plan generation
@@ -603,16 +603,10 @@ Deployment execution and timing. Rollback decisions during incidents. Traffic
 management and canary promotion decisions. This is the stage with the highest
 risk if wrong (production outages, data loss).
 
-### Oversight Intensity at This Stage
-
-**Active** is strongly recommended — Deployment has "Very High" risk if wrong.
-Even at AI-Led tier, the agent's role is primarily drafting and recommending;
-humans execute and approve.
-
-- **Active:** Required for all production deployments
-- **Passive:** Acceptable only for non-production environments with established
-  rollback procedures
-- **Minimal:** Not recommended for production deployments
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
@@ -637,7 +631,8 @@ Capture these when ending a deployment session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
 [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
 for the central fallback protocols.
 
@@ -662,6 +657,7 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. Hotfix risk-acceptance guidance added in v0.45.0.
+v0.49: vocabulary and oversight model updated; Support reference repointed.

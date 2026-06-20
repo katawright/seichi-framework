@@ -44,7 +44,7 @@ autonomy because outputs are directly testable.
    your interest
 2. Review the [**Stage Overview**](#stage-overview) to understand the eight
    stages
-3. See [**How AI Fits In**](#how-ai-fits-in) to understand autonomy tiers
+3. See [**How AI Fits In**](#how-ai-fits-in) to understand who runs the process
 4. Follow the [**Adoption Path**](#adoption-path) when ready to pilot
 
 ---
@@ -53,43 +53,44 @@ autonomy because outputs are directly testable.
 
 Pick the path that matches your interest.
 
-| I want to…                                       | Start with                                                            | Then                                                                                             | Next step                                                            |
-| ------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| Start from just an idea                          | [Quick Start: I Only Have an Idea](QUICKSTART.md#i-only-have-an-idea) | [Initiation: Arriving with Only an Idea](stages/initiation/README.md#arriving-with-only-an-idea) | [Solo Worked Example](guides/worked-example-solo.md)                 |
-| Understand the ROI and governance model          | [Business Value](#business-value)                                     | [Governance](#governance-at-a-glance)                                                            | [Adoption Path](#adoption-path)                                      |
-| See how AI fits into each stage                  | [How AI Fits In](#how-ai-fits-in)                                     | [Stage Overview](#stage-overview)                                                                | [Adoption Path](#adoption-path)                                      |
-| Kick off a new project                           | [Try It Now](#try-it-now)                                             | [Stage Overview](#stage-overview)                                                                | [Initiation](stages/initiation/README.md)                            |
-| Execute technical stages (design → verification) | [Stage Overview](#stage-overview)                                     | [System Design](stages/system-design/README.md)                                                  | [Worked Example](guides/worked-example.md)                           |
-| Set up deployment pipelines and infrastructure   | [DevOps Integration Guide](guides/devops-integration.md)              | [Deployment Setup](stages/deployment/setup.md)                                                   | [Deployment](stages/deployment/README.md)                            |
-| Run delivery and manage sprint cadence           | [Delivery Operating Guide](guides/delivery-operating-guide.md)        | [Governance](#governance-at-a-glance)                                                            | [Stage Overview](#stage-overview)                                    |
-| Verify and test an increment                     | [Verification](stages/verification/README.md)                         | [Verification Brief](templates/verification-brief.md)                                            | [Verification Checklist](stages/verification/checklist.md)           |
-| Operate and maintain a production system         | [Support](stages/support/README.md)                                   | [Support Operations](stages/support/operations.md)                                               | [Support Readiness Checklist](stages/support/readiness-checklist.md) |
-| Assess security across stages                    | [Security Guide](guides/security.md)                                  | [Governance](#governance-at-a-glance)                                                            | [Verification](stages/verification/README.md)                        |
+| I want to…                                       | Start with                                                            | Then                                                                                             | Next step                                                  |
+| ------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| Start from just an idea                          | [Quick Start: I Only Have an Idea](QUICKSTART.md#i-only-have-an-idea) | [Initiation: Arriving with Only an Idea](stages/initiation/README.md#arriving-with-only-an-idea) | [Solo Worked Example](guides/worked-example-solo.md)       |
+| Understand the ROI and governance model          | [Business Value](#business-value)                                     | [Governance](#governance-at-a-glance)                                                            | [Adoption Path](#adoption-path)                            |
+| See how AI fits into each stage                  | [How AI Fits In](#how-ai-fits-in)                                     | [Stage Overview](#stage-overview)                                                                | [Adoption Path](#adoption-path)                            |
+| Kick off a new project                           | [Try It Now](#try-it-now)                                             | [Stage Overview](#stage-overview)                                                                | [Initiation](stages/initiation/README.md)                  |
+| Execute technical stages (design → verification) | [Stage Overview](#stage-overview)                                     | [System Design](stages/system-design/README.md)                                                  | [Worked Example](guides/worked-example.md)                 |
+| Set up deployment pipelines and infrastructure   | [DevOps Integration Guide](guides/devops-integration.md)              | [Deployment Setup](stages/deployment/setup.md)                                                   | [Deployment](stages/deployment/README.md)                  |
+| Run delivery and manage sprint cadence           | [Delivery Operating Guide](guides/delivery-operating-guide.md)        | [Governance](#governance-at-a-glance)                                                            | [Stage Overview](#stage-overview)                          |
+| Verify and test an increment                     | [Verification](stages/verification/README.md)                         | [Verification Brief](templates/verification-brief.md)                                            | [Verification Checklist](stages/verification/checklist.md) |
+| Close out a project and hand it to operations    | [Closure Stage](stages/closure/README.md)                             | [Operational Handoff Template](templates/operational-handoff.md)                                 | [Operations Guide](guides/operations.md)                   |
+| Operate and maintain a production system         | [Operations Guide](guides/operations.md)                              | [Operating Model Guide](guides/operating-model.md)                                               | [Right-Sizing Guide](guides/right-sizing.md)               |
+| Assess security across stages                    | [Security Guide](guides/security.md)                                  | [Governance](#governance-at-a-glance)                                                            | [Verification](stages/verification/README.md)              |
 
 ---
 
 ## How AI Fits In
 
-Teams choose an autonomy tier per stage:
+The framework separates two questions the old single "autonomy tier" bundled
+together — **who performs the work** and **who decides** — and sets them through
+the [operating model](guides/operating-model.md), per project (with per-stage
+overrides), not as a fixed property of each stage:
 
-| Tier              | Human role                        | AI role                       | Typical stages                  |
-| ----------------- | --------------------------------- | ----------------------------- | ------------------------------- |
-| **Human-Led**     | Drives all decisions              | Suggests, drafts on request   | Initiation, Requirements        |
-| **Collaborative** | Reviews, selects, approves        | Co-authors, generates options | System Design, Increment Design |
-| **AI-Led**        | Sets constraints, verifies output | Executes with guardrails      | Implementation, Verification    |
+| Question                                    | Setting                                                     | Stays human                           |
+| ------------------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
+| **Who performs the work?** (Work Execution) | Humans · Collaborative · Agents                             | —                                     |
+| **Who decides?** (Authority)                | Interactive human · Pre-authorized policy · Delegated agent | investment gates, compliance sign-off |
 
-Humans remain accountable for decisions and correctness at every tier. For a
-pilot, start with Human-Led and adjust as team confidence grows.
+Humans remain accountable for decisions and correctness regardless of setting.
+For a pilot, start conservative (humans drive, agents assist) and shift
+execution toward Agents as confidence and capability grow — investment decisions
+(Gates) and compliance sign-offs stay human throughout. The same governance
+structure that guides a cautious first pilot scales to a future where agents
+fill most of the execution and humans govern through checkpoints.
 
-**Built for increasing AI capability.** The framework separates execution (who
-does the work) from accountability (who owns the outcome). As AI capability
-grows, execution shifts toward AI-Led across all stages — but investment
-decisions (Gates) and compliance sign-offs remain human. The same governance
-structure that guides a cautious first pilot scales to a future where AI agents
-fill most roles and humans govern through checkpoints.
-
-See the [Operating Model Guide](guides/operating-model.md) for who runs the
-process and how autonomously — and where unattended operation is possible.
+See the [Operating Model Guide](guides/operating-model.md) for the full model —
+the configurable functions, capability coverage, and where unattended
+("Lights-Out") operation is possible.
 
 ---
 
@@ -107,7 +108,14 @@ The framework defines eight stages. Foundational stages run once per project
 | [Implementation](stages/implementation/README.md)     | Iterative    | Build the increment with AI assistance                  |
 | [Verification](stages/verification/README.md)         | Iterative    | Test, review, and validate the increment                |
 | [Deployment](stages/deployment/README.md)             | Iterative    | Release to production                                   |
-| [Support](stages/support/README.md)                   | Continuous   | Monitor, maintain, and feed back into future increments |
+| [Closure](stages/closure/README.md)                   | Terminal     | Hand the system off to operations and close the project |
+
+Beyond the eight project stages, the framework defines two more **work-shapes**
+that share the same [operating model](guides/operating-model.md): a
+[**Flow**](guides/stages.md#flow-delivery-mode) delivery mode for small in-place
+changes, and the [**Operations**](guides/operations.md) process for running a
+standing system after a project closes. Together: three work-shapes (Project ·
+Flow · Operations), one operating model.
 
 For full stage definitions, inputs, outputs, and criteria, see
 [AI-Assisted SDLC Stages](guides/stages.md).
@@ -428,4 +436,7 @@ changes.
 **Last Updated:** 2026-06-20
 
 Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
-Autonomy-tier links repointed to the Operating Model Guide in v0.49.0.
+Autonomy-tier links repointed to the Operating Model Guide in v0.49.0. In
+v0.49.0 the dev/ops split renamed the 8th stage Support → Closure (terminal),
+moved standing operations to the [Operations Guide](guides/operations.md), and
+added the [Flow](guides/stages.md#flow-delivery-mode) delivery mode.

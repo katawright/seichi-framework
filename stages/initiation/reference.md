@@ -36,8 +36,8 @@ investment is made. Precision matters less than completeness at this stage.
    populating those sections of the brief
 3. Follow [**Success Criteria Definition**](#success-criteria-definition) to
    write measurable outcomes that hold up through all subsequent stages
-4. Review [**AI-Led Patterns**](#ai-led-patterns) when operating at the AI-Led
-   autonomy tier
+4. Review [**Agent-Led Patterns**](#agent-led-patterns) when operating at the
+   Agent-Led operating posture (see the Operating Model Guide)
 
 ---
 
@@ -271,12 +271,13 @@ revisit qualitative criteria and convert them to measurable ones.
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
-At the AI-Led tier, AI takes ownership of the discovery and drafting process
-rather than waiting for human direction. Concretely, this includes:
+At the Agent-Led operating posture, an agent takes ownership of the discovery
+and drafting process rather than waiting for human direction. Concretely, this
+includes:
 
 - Conducting structured discovery interviews — drafting the questions, following
   up on gaps, and summarizing answers into brief sections
@@ -294,65 +295,48 @@ rather than waiting for human direction. Concretely, this includes:
 
 ### What Humans Validate
 
-All investment decisions belong to humans — AI cannot substitute for
+All investment decisions belong to humans — agents cannot substitute for
 organizational judgment, stakeholder authority, or accountability. Specifically:
 
 - All scope and priority choices — what is in scope, what is explicitly
   excluded, what is deferred
 - Stakeholder alignment — whether the right people have been consulted and are
   aligned
-- Budget and timeline commitments — AI provides ranges; humans commit
-- Assumption challenges — AI lists assumptions, but only domain experts and
-  stakeholders can confirm or refute them
+- Budget and timeline commitments — an agent provides ranges; humans commit
+- Assumption challenges — an agent lists assumptions, but only domain experts
+  and stakeholders can confirm or refute them
 - Risk acceptance — whether identified risks are acceptable, require mitigation,
   or should block the Gate 1 decision
 - The Gate 1 proceed/revise/stop decision itself — this is always human-owned
 
-### Oversight Intensity at This Stage
-
-**Active or Passive oversight is typical for Initiation.** Active oversight
-(human reviews every gate thoroughly) is recommended when:
-
-- Project scope is ambiguous or stakeholders have not yet aligned on the problem
-  statement
-- The project is high-stakes — significant budget, compliance requirements, or
-  cross-team dependencies
-- The team is new to AI-Led operation and building trust in AI's discovery
-  outputs
-
-Passive oversight (human spot-checks and approves unless concerns arise) is
-appropriate when:
-
-- The project scope is well-understood and stakeholder alignment is strong
-- The team has operated AI-Led before and has confidence in the brief quality
-
-**Minimal oversight is rarely appropriate for Initiation.** Initiation sets the
-foundation for every downstream stage — undiscovered gaps here compound through
-Requirements, Design, and Implementation. Even experienced teams should review
-Initiation outputs actively until brief quality is consistently high.
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
-- **Invented stakeholder priorities:** AI fabricates organizational priorities
-  not grounded in actual stakeholder input — results in scope that does not
-  reflect real business needs. Mitigation: treat all AI-generated priorities as
-  hypotheses requiring stakeholder confirmation before the brief is finalized.
-- **Hallucinated organizational constraints:** AI assumes constraints (budget
-  caps, compliance requirements, approval processes) without evidence —
+- **Invented stakeholder priorities:** An agent fabricates organizational
+  priorities not grounded in actual stakeholder input — results in scope that
+  does not reflect real business needs. Mitigation: treat all agent-generated
+  priorities as hypotheses requiring stakeholder confirmation before the brief
+  is finalized.
+- **Hallucinated organizational constraints:** An agent assumes constraints
+  (budget caps, compliance requirements, approval processes) without evidence —
   incorrect assumptions propagate into estimates and scope boundaries. Flag all
   constraints with [ASSUMED] until verified.
-- **Over-scoping:** AI treats every idea raised during discovery as in-scope,
-  producing a brief that is too broad for the stated timeline. Mitigation: the
-  non-goals section requires explicit human input on what is deliberately
-  excluded.
-- **Under-exploring risks:** AI generates a short risk list when the project
-  context warrants a longer one — especially in brownfield projects, regulated
-  domains, or projects with external dependencies. Mitigation: prompt AI to
-  enumerate risks by category and review each category explicitly.
+- **Over-scoping:** An agent treats every idea raised during discovery as
+  in-scope, producing a brief that is too broad for the stated timeline.
+  Mitigation: the non-goals section requires explicit human input on what is
+  deliberately excluded.
+- **Under-exploring risks:** An agent generates a short risk list when the
+  project context warrants a longer one — especially in brownfield projects,
+  regulated domains, or projects with external dependencies. Mitigation: prompt
+  the agent to enumerate risks by category and review each category explicitly.
 
 ### Session Handoff Notes
 
-When handing off between AI sessions during Initiation, capture the following
+When handing off between agent sessions during Initiation, capture the following
 state so the next session can continue without re-discovery:
 
 - Stakeholders identified so far and their roles (Responsible, Accountable,
@@ -368,21 +352,22 @@ state so the next session can continue without re-discovery:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
 [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
 for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
-When AI-generated content is uncertain or potentially incorrect:
+When agent-generated content is uncertain or potentially incorrect:
 
 - Tag all unverified assumptions with **[ASSUMED]** in the brief — this makes
   them visible to reviewers and creates a validation checklist for Requirements.
   See
   [Reviewing \[ASSUMED\] Items](../../guides/agentic-workflow.md#reviewing-assumed-items)
   for reviewer disposition guidance
-- Escalate investment decisions to the project sponsor rather than allowing AI
-  to frame them as recommendations; AI presents options, humans decide
+- Escalate investment decisions to the project sponsor rather than allowing an
+  agent to frame them as recommendations; agents present options, humans decide
 - Present multiple scope options with explicit trade-offs rather than a single
   recommended scope when the project boundary is genuinely unclear
 - When a risk cannot be mitigated within Initiation, flag it as a Gate 1 blocker
@@ -401,7 +386,7 @@ When AI-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.23.0. New-product no-baseline guidance added in
-v0.48.0.
+v0.48.0. v0.49: vocabulary and oversight model updated.

@@ -1,5 +1,62 @@
 # Changelog
 
+## 0.49.0 (2026-06-20)
+
+### Features
+
+- **framework:** operating model — a Layer-B model for _who runs the process and
+  how autonomously_, separate from right-sizing's governance weight. Four
+  configurable functions (Work Execution, Workflow Automation, Required
+  Assurance, Authority) plus standing functions; capability coverage; the
+  effective operating envelope; and Lights-Out as one calibration of the same
+  settings (`guides/operating-model.md`)
+- **framework:** agent- and conformance-facing `spec/` layer — DoD-scoped
+  executable contracts in a six-field form (applicability · inputs · procedure ·
+  outputs · evidence · failure-behavior): the operating-model, delegated-run,
+  and canonical-state contracts a bounded Lights-Out run executes
+  (`spec/operating-model.md`, `spec/delegated-run.md`,
+  `spec/canonical-state.md`)
+- **closure:** dev/ops split — the continuous Support stage is dissolved; the
+  SDLC's 8th stage is now **Closure**, a terminal stage owning the dev→ops
+  operational-envelope handoff record, production-ownership transfer, project
+  closure (rendering the completion contract), and the project wrap-up
+  retrospective (`stages/closure/`, `templates/operational-handoff.md`)
+- **framework:** Operations Guide — a standing-system process (sibling to the
+  SDLC, terminal: decommission) organized by Observe / Respond / Maintain /
+  Measure, reusing the operating model; relocates and reframes the former
+  Support reference content (`guides/operations.md`)
+- **framework:** Flow delivery mode — a continuous, per-issue lane for small
+  in-place software changes (no Initiation, no Closure; ship-and-close is
+  terminal), with a folded entry artifact. Three work-shapes — Project · Flow ·
+  Operations — share one operating model (`guides/stages.md`,
+  `templates/flow-issue.md`)
+- **initiation:** ideation front door — the "Arriving with Only an Idea"
+  interview infers the operating configuration (consequence / compliance / reach
+  / operating posture) and seeds it as `[ASSUMED]`, locked at Gate 1; the
+  learning loop closes the capture ↔ validate-and-launch portfolio loop with one
+  front door and two on-ramps
+
+### Improvements
+
+- **framework:** right-sizing reorganized around three **governance-weight**
+  dimensions — Consequence (a magnitude), Compliance (a flag/obligation set),
+  and Stakeholder Reach (accountability boundaries) — with _who runs the
+  process_ moved to the operating model; Minimal/Standard/Enterprise retained as
+  consequence-mapped presets (`guides/right-sizing.md`)
+- **framework:** vocabulary sweep — "agent" is the actor, "AI" the technology;
+  the retired AI-Autonomy / Human-Led / AI-Led tiers and the
+  Active/Passive/Minimal oversight dial are replaced in prose by Work
+  Execution + Authority + Required Assurance; a `Terminal` execution pattern is
+  added for Closure
+- **framework:** `ai-assistance.md` retired — its autonomy/oversight model is
+  superseded by the operating model; inbound links repointed
+
+### Bug Fixes
+
+- **closure:** a project that reaches its terminal no longer presents as an
+  early completion — reaching Closure is the normal project terminal, and the
+  standing system continues under Operations (fixes the dev/ops category error)
+
 ## 0.48.0 (2026-06-09)
 
 ### Features

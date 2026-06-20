@@ -93,7 +93,8 @@ duplicating coverage.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
+   (see the Operating Model Guide)
 2. Read [**Right-Sizing Verification**](#right-sizing-verification) to match
    effort to project complexity
 3. Execute the [**Verification Workflow**](#verification-workflow) — plan tests,
@@ -110,37 +111,28 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Verification at whatever autonomy tier your team is
+AI can assist with Verification at whatever autonomy level your team is
 comfortable with — from generating test cases to driving the entire testing
 process.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                                | Collaborative                                         | AI-Led                                                          |
-| ---------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
-| Engineer writes tests; AI suggests cases | AI drafts tests from ACs; engineer validates coverage | AI writes and iterates until CI passes; engineer reviews intent |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
-- **Test case generation:** Describe your acceptance criteria — AI generates
-  comprehensive test cases covering happy paths, edge cases, and error scenarios
-- **Coverage gap analysis:** AI reviews your test plan against requirements and
-  flags untested acceptance criteria or missing test types
-- **Test data creation:** AI generates realistic test data and fixtures from
-  your data model, including edge-case values and boundary conditions
-- **Checklist review:** AI walks through the verification checklist and flags
-  gaps before the go/no-go decision
+- **Test case generation:** Describe your acceptance criteria — an agent
+  generates comprehensive test cases covering happy paths, edge cases, and error
+  scenarios
+- **Coverage gap analysis:** An agent reviews your test plan against
+  requirements and flags untested acceptance criteria or missing test types
+- **Test data creation:** An agent generates realistic test data and fixtures
+  from your data model, including edge-case values and boundary conditions
+- **Checklist review:** An agent walks through the verification checklist and
+  flags gaps before the go/no-go decision
 
 > **Required gates:** CI validation + human spot-check — Tests are
 > self-verifying, so AI can iterate until objective gates pass; humans validate
@@ -511,4 +503,5 @@ roles per the
 **Last Updated:** 2026-06-20
 
 Added to framework in v0.6.0. Verification Environment and verification-depth
-guidance added in v0.45.0.
+guidance added in v0.45.0. v0.49: autonomy vocabulary repointed to the operating
+model.

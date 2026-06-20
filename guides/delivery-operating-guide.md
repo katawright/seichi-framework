@@ -111,15 +111,24 @@ dependencies.
 > **project close-out** — confirm every acceptance criterion is met or descoped,
 > every success criterion is measured or carries a re-check date, and learnings
 > are triaged and routed to their owners. Use the
-> [Project Close-Out Checklist](../stages/support/project-closeout-checklist.md)
-> and capture the result in the
-> [Project Close-Out Summary](../templates/project-closeout.md). See
+> [Closure Checklist](../stages/closure/checklist.md) and capture the result in
+> the [Project Close-Out Summary](../templates/project-closeout.md). See
 > [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda and
 > time-boxing.
 
 ---
 
 ## Kanban / Flow Rhythm
+
+> **Flow delivery mode vs. Kanban cadence:** v0.49 introduced **Flow** as a
+> first-class SDLC delivery mode for small, per-issue in-place software changes
+> (see [stages.md — Flow Delivery Mode](stages.md#flow-delivery-mode)). Flow is
+> a _work shape_ (alongside Project and Operations); Kanban is a _cadence
+> mechanism_ for managing throughput. They are complementary: a team doing Flow
+> work often uses a Kanban board to manage it, but Kanban cadence also applies
+> to teams running Project increments on a continuous-flow board. This section
+> covers the Kanban operating cadence; see the stages guide for Flow scope and
+> entry criteria.
 
 Kanban replaces time-boxed sprints with WIP-limited flow. Stages still apply —
 they become columns on the board rather than calendar blocks.
@@ -205,4 +214,5 @@ Green / Amber / Red
 
 Added to framework in v0.40.0. Final-increment close-out review pointed at the
 project close-out (checklist + summary) in v0.47.0. Name disambiguated from the
-new Operating Model Guide in v0.49.0.
+new Operating Model Guide in v0.49.0. Close-out checklist repointed to Closure
+stage; Flow delivery mode cross-reference added to Kanban section in v0.49.0.

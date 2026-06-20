@@ -75,20 +75,21 @@ specifications.
 
 ### How to Use This Guide
 
-1. Confirm your AI autonomy tier (it usually carries forward from Initiation;
-   review [**How AI Helps**](#how-ai-helps) if adjusting)
+1. Confirm your operating posture (it usually carries forward from Initiation;
+   review [**How AI Helps**](#how-ai-helps) and the Operating Model Guide if
+   adjusting)
 2. Confirm your risk tier (it usually carries forward from Initiation, but
    review the [**Right-Sizing Requirements**](#right-sizing-requirements)
    practice table to verify)
 3. Fill out the
    [Requirements Brief Template](../../templates/requirements-brief.md) using AI
-   according to your chosen autonomy tier — refer to
+   according to your operating posture — refer to
    [**Why These Requirements Elements Matter**](#why-these-requirements-elements-matter)
    for rationale and examples as you complete each section. See the
    [Bootstrap Guide](../../guides/bootstrap.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [Requirements Checklist](checklist.md) using AI according to
-   your chosen autonomy tier
+   your operating posture
 6. Complete the Requirements Readiness checkpoint — present to stakeholders and
    record the ready/not-ready decision using the
    [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
@@ -105,37 +106,27 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Requirements at whatever autonomy tier your team is
+AI can assist with Requirements at whatever autonomy level your team is
 comfortable with — from reviewing your draft to driving the entire elicitation
 process.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                     | Collaborative                              | AI-Led                                                                   |
-| ----------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
-| Human writes reqs; AI reviews | AI drafts reqs from brief; human validates | AI drafts and proactively flags contradictions and gaps; human validates |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
-- **Interview-based drafting:** Share the Initiation Brief with AI — it asks
-  structured questions, interviews you about user needs and edge cases, and
+- **Interview-based drafting:** Share the Initiation Brief with an agent — it
+  asks structured questions, interviews you about user needs and edge cases, and
   produces a draft requirements document
-- **Template review:** Fill out the template yourself, then ask AI to review for
-  completeness, testability, and ambiguity
-- **Completeness checking:** AI runs through the checklist and flags gaps in
-  your requirements
-- **Edge case and NFR generation:** AI identifies gaps, suggests NFRs from
+- **Template review:** Fill out the template yourself, then ask an agent to
+  review for completeness, testability, and ambiguity
+- **Completeness checking:** An agent runs through the checklist and flags gaps
+  in your requirements
+- **Edge case and NFR generation:** An agent identifies gaps, suggests NFRs from
   success metrics, and surfaces edge cases you may not have considered
 
 For assistance level details, see the
@@ -312,10 +303,10 @@ behavior-focused — what users can't do and why.
 
 > "Build a unified dashboard."
 
-> **Agent instruction (Collaborative/AI-Led):** If the user introduces solution
-> language during requirements elicitation, acknowledge the idea, capture it as
-> a design consideration for System Design, then redirect to the behavior the
-> user needs.
+> **Agent instruction (Collaborative/Lights-Out):** If the user introduces
+> solution language during requirements elicitation, acknowledge the idea,
+> capture it as a design consideration for System Design, then redirect to the
+> behavior the user needs.
 
 ### Goals and Success Criteria
 
@@ -762,4 +753,5 @@ Requirements is foundational but revisitable.
 Added to framework in v0.3.0. Visual NFR examples added to Usability category in
 v0.44.0. Goals layer threaded through the Goals and Success Criteria and
 Traceability Summary sections in v0.45.0. Requirements altitude (imposed vs
-chosen) added in v0.46.0.
+chosen) added in v0.46.0. v0.49: autonomy vocabulary repointed to the operating
+model.

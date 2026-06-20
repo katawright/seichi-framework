@@ -268,9 +268,9 @@ These formats can be adapted similarly:
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
 - Component designs with interface specifications
 - API specifications and data model change proposals
@@ -286,12 +286,10 @@ These formats can be adapted similarly:
 - Test coverage strategy adequacy — right levels, right scenarios
 - Absence of architectural drift from System Design decisions
 
-### Oversight Intensity at This Stage
-
-**Active or Passive.** Passive is common once architectural patterns are
-established from earlier increments — AI can work within known patterns with
-light spot-checking. Active is appropriate for the first increment or when
-introducing new architectural patterns that haven't been validated yet.
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
@@ -319,7 +317,8 @@ Capture the following at the end of each session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
 [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
 for the central fallback protocols.
 
@@ -343,7 +342,7 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. Internal-consistency troubleshooting added in
-v0.45.0.
+v0.45.0. v0.49: vocabulary and oversight model updated.

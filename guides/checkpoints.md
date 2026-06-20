@@ -97,7 +97,8 @@ The specific criteria depend on stage context:
 - Test execution + coverage review (Verification)
 - Production deployment approval (Deployment)
 - Compliance approval (Deployment)
-- Production ownership decision (Support)
+- Production ownership transfer (Closure)
+- Project closure (Closure)
 
 **AI validation:** Human review of AI-generated work products is critical.
 Verify that AI-generated code, tests, documentation, deployment plans, and
@@ -149,7 +150,8 @@ column below. For who decides, see the **Decides** column.
 | Test Execution + Coverage Review | Verification     | Review    | QA, AppSec            | QA                 | PjM, PM       |
 | Production Deployment Approval   | Deployment       | Review    | DevOps, AppSec        | DevOps             | PM, PjM, Exec |
 | Compliance Approval              | Deployment       | Review    | PM, AppSec            | AppSec             | Exec, PjM     |
-| Production Ownership Decision    | Support          | Review    | DevOps                | DevOps (peer\*)    | PM, PjM, Exec |
+| Production Ownership Transfer    | Closure          | Review    | DevOps                | DevOps (peer\*)    | PM, PjM, Exec |
+| Project Closure                  | Closure          | Review    | PjM                   | PjM (peer\*)       | PM, Exec      |
 
 \* **Peer** — a second person in the same role (or a senior in a related role)
 who was not the primary author.
@@ -173,7 +175,7 @@ Each stage specifies which checkpoint types apply:
 - **Implementation:** Review (PR Review + CI)
 - **Verification:** Review (Test Execution + Coverage Review)
 - **Deployment:** Review (Production Deployment Approval, Compliance Approval)
-- **Support:** Review (Production Ownership Decision)
+- **Closure:** Review (Production Ownership Transfer, Project Closure)
 
 **Human validation of AI output is required at all checkpoint types.** The
 [Operating Model Guide](operating-model.md) sizes how independently agents may

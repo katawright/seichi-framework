@@ -257,7 +257,7 @@ Each stage operates primarily from one location:
 | Implementation              | Source Code             | Read artifacts and framework; write code                  |
 | Verification                | Source Code + Artifacts | Tests run in source code; verification brief in artifacts |
 | Deployment                  | Artifacts               | References source code for build artifacts                |
-| Support                     | Artifacts               | References deployed system                                |
+| Closure                     | Artifacts               | References deployed system; project close-out             |
 
 When the agent needs to run code (tests, builds, linters), it should operate
 from the source code directory. For all other stages, the agent reads and writes
@@ -436,14 +436,14 @@ the latest session log for context on where we left off.
 To run a stage at higher autonomy, add preferences to your prompt:
 
 ```
-Work through the [STAGE NAME] stage at AI-Led autonomy with
+Work through the [STAGE NAME] stage at agent-led autonomy with
 [Active / Passive / Minimal] oversight. Drive the stage activities
 autonomously. Flag assumptions, pause at gates for my review, and
 maintain a session log.
 ```
 
-See the [Agentic Workflow Guide](agentic-workflow.md) for autonomy tiers, stage
-routing, and fallback protocols.
+See the [Agentic Workflow Guide](agentic-workflow.md) for operating postures,
+stage routing, and fallback protocols.
 
 ---
 
@@ -470,7 +470,7 @@ the
    alternatives
 4. **Reference framework concepts** — use terms from the framework (e.g.,
    "MoSCoW prioritization," "acceptance criteria") to keep aligned
-5. **Review at gates** — even at AI-Led autonomy, review artifacts at gate
+5. **Review at gates** — even at agent-led autonomy, review artifacts at gate
    checkpoints before the agent proceeds
 6. **Mind sensitive content in session logs** — session logs and briefs are
    checked into the repo by default. If the repo is public or broadly shared,
@@ -496,8 +496,11 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
 Session-start location guard cross-referenced in v0.47.0. Workspace ADR canon
-and project-number fallback convention added in v0.48.0.
+and project-number fallback convention added in v0.48.0. "Autonomy tiers"
+rewritten to "operating postures"; Support stage renamed to Closure in
+stage-location table; "AI-Led autonomy" rewritten to "agent-led autonomy" in
+v0.49.0.

@@ -55,8 +55,8 @@ only need one area.
 
 **Setting up monitoring, alerting, or on-call?** Go to
 [Observability](#observability) for instrumentation and dashboards; see
-[Support Operations](../stages/support/operations.md) for on-call rotation,
-incident response, and escalation.
+[Operations Guide](operations.md) for on-call rotation, incident response, and
+escalation.
 
 **Choosing a release or rollback strategy?** Go to
 [Release Patterns](#release-patterns).
@@ -110,8 +110,8 @@ Monitoring, alerting, and instrumentation across the lifecycle.
 | Topic                          | Reference                                                                                                                         |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Monitoring thresholds          | [Deployment Reference — Monitoring Thresholds and Cadence](../stages/deployment/reference.md#monitoring-thresholds-and-cadence)   |
-| Baselines and SLOs             | [Support Reference — Monitoring Thresholds and Baselines](../stages/support/reference.md#monitoring-thresholds-and-baselines)     |
-| Alerting design                | [Support Reference — Alerting Design](../stages/support/reference.md#alerting-design)                                             |
+| Baselines and SLOs             | [Operations Guide: Observe](operations.md#observe)                                                                                |
+| Alerting design                | [Operations Guide: Observe](operations.md#observe)                                                                                |
 | Implementation instrumentation | [Implementation README — Instrumentation and Observability](../stages/implementation/README.md#instrumentation-and-observability) |
 
 ## Operational NFRs
@@ -154,19 +154,21 @@ checklists by context (greenfield / brownfield), see the
 
 ## Templates
 
-Operational templates used across deployment and support stages.
+Operational templates used across deployment and operations.
 
-| Template             | Path                                                                        |
-| -------------------- | --------------------------------------------------------------------------- |
-| Deployment brief     | [`templates/deployment-brief.md`](../templates/deployment-brief.md)         |
-| Support brief        | [`templates/support-brief.md`](../templates/support-brief.md)               |
-| Post-incident review | [`templates/post-incident-review.md`](../templates/post-incident-review.md) |
-| Runbook              | [`templates/runbook.md`](../templates/runbook.md)                           |
+| Template                   | Path                                                                        |
+| -------------------------- | --------------------------------------------------------------------------- |
+| Deployment brief           | [`templates/deployment-brief.md`](../templates/deployment-brief.md)         |
+| Operational handoff record | [`templates/operational-handoff.md`](../templates/operational-handoff.md)   |
+| Post-incident review       | [`templates/post-incident-review.md`](../templates/post-incident-review.md) |
+| Runbook                    | [`templates/runbook.md`](../templates/runbook.md)                           |
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.
+Support stage references repointed to Operations Guide and operational-handoff
+template in v0.49.0.

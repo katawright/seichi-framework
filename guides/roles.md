@@ -157,7 +157,7 @@ Informed (kept in the loop), **-** = Not involved (no role at this stage)
 | **Implementation**   | -   | -    | C         | R/A       | C   | C      | C      | I   |
 | **Verification**     | C   | -    | C         | R         | R/A | -      | R      | I   |
 | **Deployment**       | I   | I    | C         | C         | C   | R/A    | C      | C   |
-| **Support**          | I   | I    | C         | C         | -   | R/A    | C      | I§  |
+| **Closure**          | C   | I    | C         | C         | -   | R/A    | C      | I§  |
 | Deployment Approval  | I   | I    | C         | C         | C   | R/A    | C      | C   |
 | Compliance Approval  | C   | I    | C         | -         | -   | C      | R/A    | C   |
 
@@ -165,6 +165,23 @@ Informed (kept in the loop), **-** = Not involved (no role at this stage)
 accountability is in cross-cutting delivery activities — schedule, gate
 facilitation, coordination, and dependency management. See
 [Project Manager (PjM)](#project-manager-pjm) for PjM's R/A assignments.
+
+**Beyond the project stages — Flow and Operations.** The matrix above covers
+Project-mode stages. The framework's other two
+[work-shapes](stages.md#flow-delivery-mode) carry their own thin RACI, sized to
+the same operating model:
+
+| Work-shape                       | R         | A                                                   | C                              | I        |
+| -------------------------------- | --------- | --------------------------------------------------- | ------------------------------ | -------- |
+| **Flow** (per-issue change)      | Engineers | the issue approver (PM or Engineer per consequence) | AppSec (security-relevant), QA | PjM      |
+| **Operations** (standing system) | DevOps    | DevOps                                              | AppSec, Engineers              | PM, Exec |
+
+At low consequence, a Flow item's approver and engineer may be the same person
+(or a delegated agent under policy); at higher consequence the approver and
+implementer separate, exactly as the [operating model](operating-model.md)
+prescribes. Operations RACI is read per
+[ownership span](operations.md#ownership-spans); the decommission of a standing
+system runs as its own bounded project under the stage RACI above.
 
 **Verification responsibility split:** Engineers (R) fix defects found during
 testing, complete unit test gaps, and support integration test debugging. QA
@@ -308,19 +325,20 @@ Responsible at Verification (security testing), Gate 2 (risk posture input), and
 Compliance Approval. For details on security activities by stage, see the
 [Security Guide](security.md).
 
-| Stage / Checkpoint   | RACI | AppSec Activity                                                 |
-| -------------------- | ---- | --------------------------------------------------------------- |
-| **Initiation**       | C    | Review data sensitivity classification and compliance scope     |
-| Gate 1               | C    | Confirm risk and policy exposure is captured                    |
-| **Requirements**     | C    | Review security NFRs for completeness                           |
-| **System Design**    | C    | Review threat model and security architecture                   |
-| Gate 2               | R    | Provide risk posture assessment for investment decision         |
-| **Increment Design** | C    | Flag security-relevant changes (auth, data, API surface)        |
-| **Implementation**   | C    | Review security scan results; advise on findings                |
-| **Verification**     | R    | Own security testing (dependency scans, SAST, pen testing at E) |
-| **Deployment**       | C    | Verify SBOM, artifact integrity, pre-deployment security checks |
-| **Support**          | C    | Advise on CVE prioritization and incident response              |
-| Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                  |
+| Stage / Checkpoint   | RACI | AppSec Activity                                                              |
+| -------------------- | ---- | ---------------------------------------------------------------------------- |
+| **Initiation**       | C    | Review data sensitivity classification and compliance scope                  |
+| Gate 1               | C    | Confirm risk and policy exposure is captured                                 |
+| **Requirements**     | C    | Review security NFRs for completeness                                        |
+| **System Design**    | C    | Review threat model and security architecture                                |
+| Gate 2               | R    | Provide risk posture assessment for investment decision                      |
+| **Increment Design** | C    | Flag security-relevant changes (auth, data, API surface)                     |
+| **Implementation**   | C    | Review security scan results; advise on findings                             |
+| **Verification**     | R    | Own security testing (dependency scans, SAST, pen testing at E)              |
+| **Deployment**       | C    | Verify SBOM, artifact integrity, pre-deployment security checks              |
+| **Closure**          | C    | Confirm persisting compliance obligations are captured in the handoff record |
+| **Operations**       | C    | Advise on CVE prioritization and incident response (standing)                |
+| Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                               |
 
 ### Security Escalation Protocol
 
@@ -357,6 +375,9 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.10.0. Solo-builder translation added in v0.48.0.
+Added to framework in v0.10.0. Solo-builder translation added in v0.48.0. In
+v0.49.0 the dev/ops split renamed the Support stage RACI row → Closure, added an
+Operations row to the AppSec activity table, and added Flow/Operations
+work-shape RACI.
