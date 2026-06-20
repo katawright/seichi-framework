@@ -120,8 +120,9 @@ Initiation assumes its inputs already exist — a business opportunity worth
 investigating, a stakeholder list, and budget context. Many projects do not
 start there. They start with "I have an idea for X": a half-formed product idea,
 no stakeholder list, and no budget framing. **Idea formation** is the
-pre-Initiation activity that closes the gap — a short, structured conversation
-that turns a fuzzy idea into Initiation-ready inputs.
+pre-Initiation activity that closes the gap — a short, structured conversation,
+its depth scaled to the idea's stakes, that turns a fuzzy idea into
+Initiation-ready inputs.
 
 Idea formation is not a stage. It has no gate, no checklist, and no artifact
 beyond the brief sections it seeds. It ends the moment Initiation can begin —
@@ -182,6 +183,84 @@ Two cautions for whoever runs the interview:
   autonomy tier). The agent infers these from the conversation and presents them
   as overridable assumptions — see
   [Agentic Workflow Guide: Zero-to-One Project Routing](../../guides/agentic-workflow.md#zero-to-one-project-routing).
+
+### Scaling the Interview to the Stakes
+
+Idea formation is **one adaptive conversation**, not a fixed questionnaire. Its
+depth and direction scale to the stakes of the idea — a throwaway calculator a
+friend asked for and a subscription streaming service sit at the two ends of the
+same interview, not in two different interviews. The calculator earns a glance
+and a few questions; the streaming service earns a longer conversation that
+unfolds its business model, the data it touches, and how far the builder wants
+to take it.
+
+**Infer the stakes; do not ask the idea-holder to declare them.** This is the
+same rule the interview already follows for framework classifications — read
+them from the conversation rather than fronting a menu (see
+[Agentic Workflow Guide: Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference))
+— now extended to govern the interview's own depth. Read the stakes from the
+opening answers; reflect what you read back as overridable `[ASSUMED]` values,
+never as a question like "how risky is this?"
+
+**Depth folds and unfolds with the inferred stakes.** Low stakes collapse the
+interview to its three [exit criteria](#exit-criteria) and stop; higher stakes
+unfold further lines of questioning. A high signal on any one axis opens that
+line: money changing hands opens the business case and payment-data sensitivity;
+"I want it to run itself" opens how much the builder wants AI to drive;
+regulated data opens compliance. Listen for these signals rather than waiting to
+be told them:
+
+| Signal in the opening answers      | What it raises                                       |
+| ---------------------------------- | ---------------------------------------------------- |
+| Real users beyond the builder      | Who is affected; pushes the risk tier up             |
+| Money changing hands               | Business case; payment-data sensitivity              |
+| Regulated or personal data         | Compliance and privacy obligations                   |
+| Public or external exposure        | External users (a tier escalation); security posture |
+| Ambition to automate, "run itself" | How much AI drives — the autonomy tier               |
+
+This table is **what to read, not a script to recite.** The framework specifies
+the signals to listen for and the classifications they inform; the question
+order, wording, and tone stay an implementation concern of the tool or skill
+running the interview, exactly as the
+[Interview Contract](#the-interview-contract) leaves them.
+
+**When the signals are ambiguous, fail toward unfolding.** Ask one more question
+rather than assume low stakes. Under-reading a real product — treating a
+payments app as a throwaway — is far costlier than over-asking on a genuine
+throwaway, where the worst case is a single extra question. This is the
+interview's form of the framework's standing rule to default conservatively when
+signals are missing or conflict (see
+[Classification by Inference, rule 2](../../guides/agentic-workflow.md#classification-by-inference)).
+
+### Seeding the Operating Frame
+
+The interview is the origin point of the project's **operating frame** — the
+right-sizing selections the rest of the lifecycle consumes: how much process it
+carries, how much AI drives it, where it deploys, and what compliance it must
+honor. "Build it and run it to the highest degree," read correctly, is a request
+for the most autonomous end of that frame; "just a quick favor" is the least.
+Idea formation **proposes** the frame; it does not commit it.
+
+Seed the inferred classifications — risk tier, AI autonomy, deployment intent,
+and any compliance obligation — into the draft brief's right-sizing section as
+`[ASSUMED]` values, exactly as
+[Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)
+prescribes. Initiation refines them as the brief takes shape, and **Gate 1 locks
+them**: the investment decision is where "are you sure you want to run a
+payments product this autonomously?" is answered honestly. The calculator
+effectively has no Gate 1 — a glance-and-go self-gate at the lowest tier — so
+its frame is set and forgotten in one breath; the streaming service's Gate 1 is
+real, and is where its proposed frame is committed or pulled back.
+
+> **Compliance binds before build, not at Gate 1.** One element does not wait
+> for the gate: a hard compliance obligation — regulated data, a legal
+> constraint, a contractual rule the product must honor. When the interview
+> surfaces one, record it as a binding constraint in the brief's
+> [Data Sensitivity and Compliance](#data-sensitivity-and-compliance) section,
+> not as an `[ASSUMED]` value to confirm later. It shapes the work from the
+> first line of code; a build that ignores it is wrong before Gate 1 ever rules
+> on the investment. Everything else stays `[ASSUMED]` and refines to the Gate 1
+> lock.
 
 ---
 
@@ -793,7 +872,8 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
-Idea-formation entry path added in v0.48.0.
+Idea-formation entry path added in v0.48.0. Adaptive, stakes-scaled interview
+frame and operating-frame seeding added in v0.49.0.

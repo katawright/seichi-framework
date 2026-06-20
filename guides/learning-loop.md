@@ -3,8 +3,9 @@
 ## Overview
 
 A standing practice for turning friction encountered while running a project
-into triaged, routed improvement — across the development process, the team's
-execution, the product, and the tooling.
+into triaged, routed improvement across the development process, the team's
+execution, the product, and the tooling — the capture half of the portfolio loop
+that idea formation closes.
 
 ### Why a Learning Loop
 
@@ -28,55 +29,79 @@ The learning loop closes both ends: a standing capture surface that exists from
 project start, and durable destinations that route each observation to the owner
 that can actually act on it.
 
+**The learning loop is the capture half of a larger portfolio loop.** It
+captures what running a project surfaces;
+[idea formation](../stages/initiation/README.md#arriving-with-only-an-idea) —
+the front door at Initiation — validates and launches what the backlog holds.
+The two are halves of one standing practice that sits above any single project:
+
+> **capture** (friction logged while delivering · raw greenfield ideas) → the
+> **idea backlog** → **validate & launch** (idea formation) → Initiation →
+> delivery → back to capture
+
+This guide defines the capture half; idea formation defines the launch half. See
+[Closing the Portfolio Loop](#closing-the-portfolio-loop) for how they meet.
+
 ### Goals of This Guide
 
 - Define the **friction log** — the standing, project-spanning capture surface
-- Define the **four friction types** and how each routes at the retrospective
+- Define the **four friction types** and the **principle** that routes each — to
+  whoever owns the fix
 - Define the **idea backlog** — the cross-project destination for **product**
   ideas (candidate future projects)
-- Show how the loop closes from one project's friction into the next project's
-  Initiation
+- Place the loop's **three retrospective cadences** across the lifecycle
+- Show how capture closes into the next project's Initiation, and how the loop
+  runs at any level of automation — from a facilitated team retro to an
+  unattended agent pass
 
 ### Key Principle
 
 Friction is data. Capture it where it happens, type it by who owns the fix, and
-route it to that owner — product ideas to the backlog, process and tooling
-friction to the framework or tool that owns them.
+route it to that owner. The framework fixes the **types** and the routing
+**principle**; **you** name the destinations, because only you know who owns
+your process and your tools.
 
 ### How to Use This Guide
 
 1. Start a [**friction log**](#the-friction-log) at project start; append to it
    as friction arises in any stage
 2. Type each entry using the [**four friction types**](#friction-types)
-3. At each retrospective, [**triage**](#triage-at-the-retrospective) the log's
-   entries into the retrospective's analysis sections
-4. Route **product** ideas into the [**idea backlog**](#the-idea-backlog) and
-   draw from it when
-   [**initiating future projects**](#closing-the-loop-into-future-projects);
-   route **process** and **tooling** friction outward to the owning tracker
+3. At each [**retrospective cadence**](#triage-cadences), triage the log's
+   entries and route each by type
+4. Route destinations are
+   [**operator-relative**](#routing-is-operator-relative): product ideas to the
+   [**idea backlog**](#the-idea-backlog); process and tooling friction to the
+   owner you name for it, captured locally by default
+5. When the loop runs
+   [**without a human present**](#running-the-loop-lights-out), an agent
+   prepares the drafts; a human authorizes anything that leaves your workspace
 
 ---
 
 ## The Loop at a Glance
 
-| Friction type | What it is                                        | Triaged at the retro into    | Where the fix lands                         |
-| ------------- | ------------------------------------------------- | ---------------------------- | ------------------------------------------- |
-| **Process**   | The development process / SDLC method itself      | Process Feedback             | The framework's tracker (file upstream)     |
-| **Execution** | How this team ran the project                     | Action Items / Carry Forward | The next increment                          |
-| **Product**   | The software being built                          | Future Value Candidates      | The product's idea backlog → future project |
-| **Tooling**   | The tools and environment used to run the project | Action Items                 | The owning tool's tracker                   |
+| Friction type | What it is                                        | Triaged at the retro into    | Where the fix lands                                    |
+| ------------- | ------------------------------------------------- | ---------------------------- | ------------------------------------------------------ |
+| **Process**   | The development process / SDLC method itself      | Process Feedback             | The owner of your method (capture locally by default)  |
+| **Execution** | How this team ran the project                     | Action Items / Carry Forward | The next increment                                     |
+| **Product**   | The software being built                          | Future Value Candidates      | The product's idea backlog → future project            |
+| **Tooling**   | The tools and environment used to run the project | Action Items                 | The tool's owner (capture locally if you don't own it) |
 
 Only **Product** friction becomes an idea-backlog entry — those are candidate
 future projects for the product. Process and tooling friction route **outward**
 to the owner that can act on them; they are recorded in the friction log's
 Disposition, not added to this project's backlog.
 
-The loop, end to end:
+The capture half, end to end:
 
-> friction logged during execution (typed) → triaged at each increment
-> retrospective → routed by type → **product** ideas land in the idea backlog →
-> triaged into the Initiation of a future project; **process** and **tooling**
-> friction route out to the owning framework / tool tracker.
+> friction logged during execution (typed) → triaged at a retrospective cadence
+> → routed by type → **product** ideas land in the idea backlog → drawn into the
+> Initiation of a future project; **process** and **tooling** friction route out
+> to the owner you name for each.
+
+This half feeds the [portfolio loop](#overview): the idea backlog is where
+capture hands off to idea formation, which launches the next project — whose
+friction feeds a new log, and the loop turns again.
 
 ---
 
@@ -132,19 +157,33 @@ is. Sharpen it until a type is obvious rather than inventing an "Other" category
 
 ---
 
-## Triage at the Retrospective
+## Triage Cadences
 
-At each increment retrospective, triage the friction-log entries logged during
-that increment. The retrospective is where typed friction becomes routed action.
+The framework reflects at three moments, and friction is triaged at each. All
+three are the **same mechanism** — read the log, type what is untyped, route
+each entry by type — fired at a different cadence and feeding the **same**
+destinations (the same idea backlog, the same operator-named trackers).
+
+| Cadence                           | Fires at                            | Triaged into                   | Home                               |
+| --------------------------------- | ----------------------------------- | ------------------------------ | ---------------------------------- |
+| **Increment retrospective**       | the close of each increment         | the increment's retro sections | the SDLC's iterative loop          |
+| **Project wrap-up retrospective** | project close-out                   | a final harvest of the log     | the project's close-out (terminal) |
+| **Operational retrospective**     | periodically, and after an incident | the running system's review    | the operations practice            |
+
+The increment retrospective is the primary cadence and the one this guide
+details; the other two are the same triage at the project's terminal and on a
+running system. The project wrap-up retro harvests the whole log one last time
+(see [Closing the Portfolio Loop](#closing-the-portfolio-loop)); the operational
+retro keeps the loop turning after delivery ends, once the system is in standing
+operation.
+
+> The project wrap-up and operational cadences live in framework areas still
+> being defined — the SDLC's terminal close-out stage and a standing-operations
+> practice. Until those are named, treat the homes above as the cadence's
+> intent, not a link.
+
 For each entry, record its destination in the friction log's **Disposition**
 field so the log itself shows the loop closing.
-
-| Friction type | Retrospective section        | Durable destination                     |
-| ------------- | ---------------------------- | --------------------------------------- |
-| **Execution** | Action Items / Carry Forward | The next increment                      |
-| **Process**   | Process Feedback             | The framework's tracker (file upstream) |
-| **Product**   | Future Value Candidates      | The product's idea backlog              |
-| **Tooling**   | Action Items                 | The owning tool's tracker               |
 
 **Execution friction has a closed within-project loop.** An Execution entry
 becomes a retrospective **Action Item** (with an owner and a target date; the
@@ -154,11 +193,70 @@ Design Brief, whose **Carry Forward Resolution** section records how each one
 was handled. Nothing is lost between increments.
 
 **Process, Product, and Tooling friction routes outward** — beyond the current
-increment, and often beyond the current project. Only **Product** friction feeds
-the idea backlog (it is a candidate future project for the product). **Process**
-friction routes to the framework's tracker and **Tooling** friction to the
-owning tool's tracker — recorded in the friction log's Disposition, not added to
-this project's backlog.
+increment, and often beyond the current project. How those destinations are
+named is the subject of the next section.
+
+---
+
+## Routing Is Operator-Relative
+
+The framework fixes the four friction **types** and one routing **principle** —
+route each entry to whoever owns the fix. It does **not** hardcode the
+destinations, because who owns your process and your tools depends on your
+context. **You name the destination**; your team's setup or governance profile
+supplies it.
+
+- **Product** friction has a framework-defined home: the
+  [idea backlog](#the-idea-backlog), the layer above any single project for the
+  product's own future work.
+- **Process** friction (the SDLC method itself) and **Tooling** friction (the
+  assistant, IDE, CI, a platform) route to whoever owns that method or tool — a
+  team backlog, an internal tracker, the tool vendor's issue tracker. The
+  framework names the type; you name the tracker.
+
+**Capture locally by default.** Often no owner you control exists for a piece of
+Process or Tooling friction — you adopted the method or the tool, you do not
+maintain it. That is the common case, and its default is simple: **capture and
+retain the friction locally**, in your own friction log and notes. It still has
+value — it informs how you tailor the method and configure the tools for your
+next project. Contributing it upstream to the method's or tool's maintainer is
+an **explicit opt-in**, never a requirement of the loop.
+
+**The adopter is the default audience.** This guide is written for the team that
+_uses_ the framework, not the team that maintains it. When the operator and the
+framework maintainer are the **same** party — a team dogfooding its own method,
+where Process friction routes to the framework's own repository — that is a
+recognized **special case**, not the default. If that is you, file upstream
+directly (see [CONTRIBUTING.md](../CONTRIBUTING.md)); if it is not, capture
+locally and contribute only if you choose to.
+
+---
+
+## Running the Loop Lights-Out
+
+The loop's required concern is constant — friction is captured, typed, and
+routed — but its **ceremony scales** with how the project is run. A human team
+holds a facilitated retrospective; an unattended agent makes a
+consolidate-and-prepare pass over the friction log. Same concern, scaled
+presentation; progressive governance applies here as everywhere.
+
+An agent running the loop may **consolidate, classify, deduplicate, and
+prepare** idea and issue drafts. Those drafts are durable and attributable —
+part of the project's record, produced under the agent's normal delivery
+authority. But an agent **prepares; it does not publish:**
+
+- **Filing to any external or upstream tracker is a human-authorized action.**
+  Posting an issue to a tool vendor, opening a pull request against the
+  framework, or adding to a shared cross-team backlog leaves your workspace and
+  reaches another party — an outward-facing act that a human authorizes, not one
+  an agent takes on its own.
+- **The self-modification boundary is absolute.** An agent never changes the
+  framework, the delivery factory, or the governance it runs under — regardless
+  of autonomy level. It may _draft_ process feedback; adopting that feedback
+  into the method is a human decision, outside the agent's authority.
+
+The result: a Lights-Out project still produces a fully triaged, route-ready set
+of drafts; a human only has to authorize what crosses a boundary.
 
 ---
 
@@ -180,13 +278,12 @@ The backlog holds **product / portfolio ideas** — features, tech debt, or
 architectural opportunities for the product being built. These typically become,
 or seed, a future project, so every idea's **Target** is **Product**.
 
-Process and tooling friction does **not** live here. It routes outward to the
-owner that can act on it — **process** friction to the framework's tracker (file
-upstream; see [CONTRIBUTING.md](../CONTRIBUTING.md)), **tooling** friction to
-the owning tool's tracker — captured in the friction log's **Disposition**, not
-as idea documents. The idea backlog is the layer _above this project_ for its
-own future work; friction owned by a different product (the framework, a tool)
-does not belong in it.
+Process and tooling friction does **not** live here. It routes to the owner you
+name for it — captured locally by default, contributed upstream only by choice
+(see [Routing Is Operator-Relative](#routing-is-operator-relative)) — and is
+recorded in the friction log's **Disposition**, not as idea documents. The idea
+backlog is the layer _above this project_ for its own future work; friction
+owned by a different product (the framework, a tool) does not belong in it.
 
 > **Dogfooding caveat.** When the product you are building _is_ the tooling
 > (e.g. a team building its own delivery platform), tooling friction and product
@@ -206,17 +303,36 @@ portfolio-level activity owned by the stakeholders who initiate projects.
 
 ---
 
-## Closing the Loop into Future Projects
+## Closing the Portfolio Loop
+
+Capture is only half of the standing practice. The other half is **validate &
+launch** —
+[idea formation](../stages/initiation/README.md#arriving-with-only-an-idea), the
+front door at Initiation that turns a backlog idea into a project. The learning
+loop fills the backlog; idea formation draws it back down.
 
 At project wrap-up, the project retrospective harvests its **Future Value
 Candidates** into the idea backlog — each product candidate worth keeping
 becomes an idea document, with its origin citing the friction-log entry or
-retrospective it came from. **Process Feedback** routes to the framework's
-tracker, and tooling friction to the owning tool's tracker, rather than into the
+retrospective it came from. Process and tooling friction routes to the owner you
+named for each (per
+[Routing Is Operator-Relative](#routing-is-operator-relative)), not into the
 backlog.
 
-The loop closes at [Initiation](../stages/initiation/README.md): a new project
-can draw a goal, a scope, or an entire business case from the idea backlog. An
+**One front door, two on-ramps.** A new project reaches idea formation by one of
+two routes — but through the _same_ adaptive interview, producing the same
+`[ASSUMED]`-seeded brief:
+
+- **Cold (greenfield).** Someone arrives with only an idea — no backlog entry,
+  no problem statement yet. The interview starts from a blank page and builds
+  the candidate problem, the target user, and the riskiest assumptions.
+- **Warm (from the backlog).** A **Promoted** `IDEA-NNN` already carries a
+  problem statement and an origin. The interview starts there — deepening and
+  validating what the idea records, and setting the project's operating frame —
+  rather than from scratch.
+
+Either way, the loop closes at [Initiation](../stages/initiation/README.md): a
+new project draws a goal, a scope, or an entire business case from an idea. An
 idea promoted into a project updates its status and links to the project it
 seeded. Friction observed while running that project feeds a new friction log —
 and the loop turns again.
@@ -234,6 +350,10 @@ away.
 - [Idea Template](../templates/idea.md) — one document per backlog idea
 - [Retrospective Template](../templates/retrospective.md) — where friction is
   triaged and routed
+- [Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea)
+  — the front door the backlog feeds (the launch half)
+- [Agentic Workflow Guide: Zero-to-One Project Routing](agentic-workflow.md#zero-to-one-project-routing)
+  — the two on-ramps into the front door
 - [AI-Assisted SDLC Stages: Learning Throughline](stages.md#learning-throughline)
   — the per-stage learning roles
 - [Framework Guide](framework.md) — cross-cutting framework concepts
@@ -244,8 +364,10 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.45.0. Idea backlog scoped to product/portfolio ideas;
 process and tooling friction routed to the owning framework/tool tracker in
-v0.47.0.
+v0.47.0. Reframed as the capture half of the portfolio loop; routing made
+operator-relative (capture-locally default); three retrospective cadences
+placed; Lights-Out capture (agent prepares, never publishes) added in v0.49.0.
