@@ -83,15 +83,31 @@ through stages with additional focus:
 
 ### Zero-to-One Project Routing
 
-When a user arrives with only an idea — "I have an idea for X," no existing
-artifacts, no workspace, no formed project description — do not ask them to pick
-a framework entry point or answer classification questions. Route into idea
-formation:
+A new project reaches the framework through one front door — idea formation, the
+adaptive interview defined in
+[Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea)
+— by one of **two on-ramps**:
 
-1. **Idea formation** — interview the user from the idea to Initiation-ready
-   inputs: a candidate problem statement, a target user, and the riskiest
-   assumptions surfaced. The exit criteria and interview contract are defined in
-   [Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea)
+- **Cold (greenfield).** A user arrives with only an idea — "I have an idea for
+  X," no existing artifacts, no workspace, no formed project description. The
+  interview starts from a blank page.
+- **Warm (from the backlog).** A **Promoted** idea-backlog entry (`IDEA-NNN`)
+  already carries a problem statement and an origin (see
+  [The Learning Loop](learning-loop.md#closing-the-portfolio-loop)). The
+  interview starts there — deepening, validating, and setting the operating
+  frame — rather than from scratch.
+
+Either way, do not ask the user to pick a framework entry point or answer
+classification questions. Route into idea formation:
+
+1. **Idea formation** — interview from the idea to Initiation-ready inputs: a
+   candidate problem statement, a target user, and the riskiest assumptions
+   surfaced. Scale the interview's depth to the inferred stakes and infer the
+   classifications rather than fronting them — the exit criteria, interview
+   contract, and adaptive frame are defined in
+   [Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea).
+   On the warm on-ramp, the backlog entry's problem statement is the interview's
+   starting point, not a blank page
 2. **Classify by inference** — derive risk tier, project type, deployment
    intent, autonomy tier, and oversight intensity from the conversation and
    present them as overridable `[ASSUMED]` defaults, rather than asking the user
@@ -101,7 +117,8 @@ formation:
    [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
    interview output
 4. **Proceed with Initiation** — continue the stage normally at the inferred
-   tier; Gate 1 still applies
+   tier; Gate 1 still applies, and locks the operating frame the interview
+   proposed
 
 ---
 
@@ -461,7 +478,7 @@ it immediately rather than waiting for the retrospective session.
    is not obvious, leave it for the retrospective to assign.
 4. Leave **Status** as Open and **Disposition** blank. The retrospective triages
    each entry and routes it — see
-   [The Learning Loop](../guides/learning-loop.md#triage-at-the-retrospective).
+   [The Learning Loop](../guides/learning-loop.md#triage-cadences).
 
 > Agents: this is a write action. Follow artifact location conventions in
 > [Working Locations](../guides/framework.md#working-locations) and verify the
@@ -545,7 +562,8 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
-Zero-to-one routing and classification by inference added in v0.48.0.
+Zero-to-one routing and classification by inference added in v0.48.0. Warm
+on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
