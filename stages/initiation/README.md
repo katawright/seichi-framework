@@ -19,8 +19,6 @@ checkpoints:
     accountable_role: [exec]
 checklist: stages/initiation/checklist.md
 reference: stages/initiation/reference.md
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [arch, eng, appsec, pjm], I: [exec] }

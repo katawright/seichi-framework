@@ -26,18 +26,14 @@
         { "type": "null" }
       ]
     },
-    "default_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" },
-    "default_oversight_intensity": { "$ref": "defs.schema.json#/$defs/oversight-intensity" },
     "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
     "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
-    "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" },
-    "preparation_autonomy": { "$ref": "defs.schema.json#/$defs/autonomy-level" }
+    "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" }
   },
   "required": [
     "id",
     "inputs", "outputs", "checkpoints",
     "checklist", "reference",
-    "default_autonomy", "default_oversight_intensity",
     "working_location", "session_log_template",
     "raci_roles"
   ],

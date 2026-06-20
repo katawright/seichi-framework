@@ -33,9 +33,6 @@ checkpoints:
     condition: compliance # Standard/Enterprise tier with compliance requirements
 checklist: stages/deployment/checklist.md
 reference: stages/deployment/reference.md
-default_autonomy: human-led
-preparation_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles:

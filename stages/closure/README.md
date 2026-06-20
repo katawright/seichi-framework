@@ -22,8 +22,6 @@ checkpoints:
     responsible_roles: [pjm]
 checklist: stages/closure/checklist.md
 reference: null
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles:

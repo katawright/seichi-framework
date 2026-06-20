@@ -14,8 +14,6 @@ export interface RawStageFrontmatter {
     name?: string;
     condition?: string;
   }>;
-  default_autonomy?: string;
-  default_oversight_intensity?: string;
   working_location?: string;
 }
 

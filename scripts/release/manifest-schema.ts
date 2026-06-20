@@ -22,18 +22,6 @@ export const manifestCheckpointTypeSchema = z.enum([
 
 export const manifestCheckpointConditionSchema = z.enum(["compliance"]);
 
-export const manifestAutonomySchema = z.enum([
-  "human-led",
-  "collaborative",
-  "ai-led",
-]);
-
-export const manifestOversightSchema = z.enum([
-  "active",
-  "passive",
-  "minimal",
-]);
-
 export const manifestWorkingLocationSchema = z.enum([
   "artifacts",
   "source-code",
@@ -61,8 +49,6 @@ export const manifestStageSchema = z.object({
   display_order: z.number().int().positive(),
   default_sequence: z.number().int().positive(),
   pattern: manifestStagePatternSchema,
-  default_autonomy: manifestAutonomySchema,
-  default_oversight_intensity: manifestOversightSchema,
   working_location: manifestWorkingLocationSchema,
   checkpoints: z.array(manifestCheckpointSchema).min(1),
   artifacts: z.array(manifestArtifactSchema).min(1),

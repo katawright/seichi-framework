@@ -26,8 +26,6 @@ checkpoints:
     responsible_roles: [qa, appsec]
 checklist: stages/verification/checklist.md
 reference: stages/verification/reference.md
-default_autonomy: ai-led
-default_oversight_intensity: passive
 working_location: source-code
 session_log_template: templates/session-log.md
 raci_roles: { R: [eng, qa, appsec], A: [qa], C: [pm, arch], I: [pjm] }

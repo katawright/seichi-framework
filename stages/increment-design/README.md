@@ -20,8 +20,6 @@ checkpoints:
     responsible_roles: [eng]
 checklist: stages/increment-design/checklist.md
 reference: stages/increment-design/reference.md
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [eng], A: [eng], C: [pm, arch, qa, appsec, pjm] }
