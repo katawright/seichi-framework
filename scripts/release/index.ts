@@ -23,6 +23,7 @@ const VERSION_REGEX = /^\d+\.\d+\.\d+$/;
 // tsconfig, etc.) is maintainer-only and must not ship in the zip.
 const FRAMEWORK_INCLUDES = [
   "guides",
+  "spec",
   "stages",
   "templates",
   "INDEX.md",

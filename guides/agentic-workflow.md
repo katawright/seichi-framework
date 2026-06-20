@@ -249,8 +249,8 @@ The agent drives the process. Humans validate at gates.
    and check pre-mortem assumptions before starting the next Increment Design
 7. Use fallback protocols (below) when blocked
 
-For oversight intensity within AI-Led (Active / Passive / Minimal), see the
-[AI Assistance Scorecard: Oversight Intensity](ai-assistance.md#oversight-intensity).
+For how independently work runs and where it must escalate, see the
+[Operating Model Guide: The Configurable Functions](operating-model.md#the-configurable-functions).
 
 ---
 
@@ -567,3 +567,4 @@ combinations and process guidance.
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm
 on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
+Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.

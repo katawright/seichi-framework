@@ -8,6 +8,11 @@ each level, then score your codebase to determine where you stand. For the
 overall brownfield preparation process, see the
 [Brownfield Preparation Guide](brownfield.md).
 
+> **In operating-model terms,** a readiness tier is largely a
+> [capability-coverage](operating-model.md#capability-coverage) assessment: thin
+> verifiability gives an agent little it can check, so the operating envelope
+> stays narrow. See the [Operating Model Guide](operating-model.md).
+
 ### Why Brownfield Readiness
 
 Brownfield projects vary enormously. A well-tested codebase with current
@@ -590,7 +595,7 @@ for the full constraint taxonomy with NFR templates and examples.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo
@@ -602,4 +607,5 @@ Operability) to supplementary considerations, added "How Readiness Is Measured"
 rationale section, and recalculated tier thresholds for 0-20 scoring range. AI
 Operating Modes moved back from the Approach Guide to this guide and
 restructured as tier subsections; tiers moved before the rubric to establish
-context before scoring.
+context before scoring. Cross-link to the Operating Model Guide (readiness ≈
+capability coverage) added in v0.49.0.

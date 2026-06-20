@@ -4,25 +4,25 @@
 
 Cross-cutting concepts that apply across all stages — design principles, roles,
 governance, greenfield/brownfield adaptation, and pointers to the authoritative
-references for stages, checkpoints, measurement, AI assistance, and
+references for stages, checkpoints, measurement, the operating model, and
 right-sizing.
 
 ### Why This Guide
 
 Individual stage guides cover their own scope. Dedicated references cover stages
-([stages.md](stages.md)), AI assistance ([ai-assistance.md](ai-assistance.md)),
-and right-sizing ([right-sizing.md](right-sizing.md)). This guide is the hub for
-concepts that span multiple documents: roles, governance, MoSCoW (Must / Should
-/ Could / Won't Have), greenfield/brownfield adaptation, compliance, and key
-terms.
+([stages.md](stages.md)), the operating model
+([operating-model.md](operating-model.md)), and right-sizing
+([right-sizing.md](right-sizing.md)). This guide is the hub for concepts that
+span multiple documents: roles, governance, MoSCoW (Must / Should / Could /
+Won't Have), greenfield/brownfield adaptation, compliance, and key terms.
 
 ### Goals of This Guide
 
 - Define the framework's design principles and key benefits
 - Explain cross-stage concepts (MoSCoW, roles, governance, compliance)
 - Document greenfield vs. brownfield adaptation
-- Link to authoritative references for stages, checkpoints, measurement, AI
-  assistance, and right-sizing
+- Link to authoritative references for stages, checkpoints, measurement, the
+  operating model, and right-sizing
 
 ### Key Principle
 
@@ -198,9 +198,10 @@ adapts for projects that deploy continuously per-slice rather than in batches.
 rigor to project risk and team size. Full reference:
 [right-sizing.md](right-sizing.md).
 
-**[AI Assistance Overview](#ai-assistance-overview)** — Stage-by-stage gate
-requirements and AI autonomy tiers. Full reference:
-[ai-assistance.md](ai-assistance.md).
+**[Operating Model](#operating-model)** — Who runs the process and how
+autonomously (Layer B): operating functions, capability coverage, and the
+Lights-Out envelope. Full reference: [operating-model.md](operating-model.md);
+the normative contracts live in the [spec layer](../spec/README.md).
 
 **[Working Locations](#working-locations)** — Three repository locations that
 structure where framework guidance, project artifacts, and source code live.
@@ -532,13 +533,15 @@ System Design, the increment plan maps MoSCoW priorities to specific increments:
 
 ---
 
-## AI Assistance Overview
+## Operating Model
 
-AI assistance levels are bounded and controlled with explicit human gates at
-every stage. Teams also choose an AI autonomy tier (Human-Led, Collaborative, or
-AI-Led) that adjusts who drives the process. For stage-by-stage gate
-requirements, the autonomy spectrum, and operational guidance, see the
-[AI Assistance Scorecard](ai-assistance.md).
+Right-sizing sets how heavy the process is; the **operating model** sets who
+runs it and how autonomously — a separate Layer-B decision. It names the
+operating functions, what project consequence and real capability allow, and the
+envelope of what may proceed without a human (up to unattended "Lights-Out"
+operation). For the full model and how-to, see the
+[Operating Model Guide](operating-model.md); for the normative contracts behind
+it, see the [Operating Model Spec](../spec/operating-model.md).
 
 ---
 
@@ -1011,12 +1014,14 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.9.0. Visual designs row added to Artifact Placement
-table in v0.44.0. Traceability Chain section added in v0.45.0. CD Workflow
-Adaptations reconciled with the elective-release model in v0.45.0. Learning
-Throughline and Deferral guidance pointed at the learning loop in v0.45.0.
-"Outcomes over mechanisms" design principle and the Outcomes, Not Mechanisms
-concept section added in v0.47.0. ADR publish target moved to the workspace ADR
-canon and project-id-scoped id scheme adopted in v0.48.0.
+Added to framework in v0.9.0. AI Assistance Overview concept retitled to
+Operating Model and repointed to the Operating Model Guide and spec in v0.49.0.
+Visual designs row added to Artifact Placement table in v0.44.0. Traceability
+Chain section added in v0.45.0. CD Workflow Adaptations reconciled with the
+elective-release model in v0.45.0. Learning Throughline and Deferral guidance
+pointed at the learning loop in v0.45.0. "Outcomes over mechanisms" design
+principle and the Outcomes, Not Mechanisms concept section added in v0.47.0. ADR
+publish target moved to the workspace ADR canon and project-id-scoped id scheme
+adopted in v0.48.0.
