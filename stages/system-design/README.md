@@ -35,8 +35,6 @@ checkpoints:
     accountable_role: [exec]
 checklist: stages/system-design/checklist.md
 reference: stages/system-design/reference.md
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles:

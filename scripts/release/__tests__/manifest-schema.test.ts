@@ -29,8 +29,6 @@ const validStage = {
   display_order: 2,
   default_sequence: 2,
   pattern: "Foundational",
-  default_autonomy: "collaborative",
-  default_oversight_intensity: "active",
   working_location: "artifacts",
   checkpoints: [validCheckpoint],
   artifacts: [validArtifact],
@@ -89,11 +87,6 @@ describe("manifestStageSchema", () => {
 
   it("rejects an invalid pattern enum", () => {
     const result = manifestStageSchema.safeParse({ ...validStage, pattern: "Other" });
-    expect(result.success).toBe(false);
-  });
-
-  it("rejects an invalid default_autonomy enum", () => {
-    const result = manifestStageSchema.safeParse({ ...validStage, default_autonomy: "auto" });
     expect(result.success).toBe(false);
   });
 

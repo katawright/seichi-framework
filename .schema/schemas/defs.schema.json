@@ -78,16 +78,6 @@
       "required": ["artifact"],
       "additionalProperties": false
     },
-    "autonomy-level": {
-      "$comment": "AI autonomy tier from guides/ai-assistance.md. Determines how much independent action the agent takes.",
-      "type": "string",
-      "enum": ["human-led", "collaborative", "ai-led"]
-    },
-    "oversight-intensity": {
-      "$comment": "How closely a human monitors agent work: active (review each step), passive (review outputs), minimal (spot-check only).",
-      "type": "string",
-      "enum": ["active", "passive", "minimal"]
-    },
     "working-location-type": {
       "$comment": "Where the stage's primary work happens: artifacts (docs/ governance files) or source-code (application codebase).",
       "type": "string",

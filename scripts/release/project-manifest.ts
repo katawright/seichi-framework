@@ -54,10 +54,6 @@ const FRONTMATTER_TO_MANIFEST_CHECKPOINT_TYPE: Record<
 // `condition` means the checkpoint always applies.
 const CHECKPOINT_CONDITIONS = new Set(["compliance"]);
 
-const AUTONOMY_VALUES = new Set(["human-led", "collaborative", "ai-led"]);
-
-const OVERSIGHT_VALUES = new Set(["active", "passive", "minimal"]);
-
 const WORKING_LOCATION_VALUES = new Set(["artifacts", "source-code"]);
 
 function readVersion(frameworkDir: string): string {
@@ -196,18 +192,6 @@ function projectStage(frameworkDir: string, stageDirName: string): ManifestStage
     display_order: displayOrder,
     default_sequence: displayOrder,
     pattern,
-    default_autonomy: pickEnum<ManifestStage["default_autonomy"]>(
-      fm.default_autonomy,
-      AUTONOMY_VALUES,
-      "default_autonomy",
-      fm.id,
-    ),
-    default_oversight_intensity: pickEnum<ManifestStage["default_oversight_intensity"]>(
-      fm.default_oversight_intensity,
-      OVERSIGHT_VALUES,
-      "default_oversight_intensity",
-      fm.id,
-    ),
     working_location: pickEnum<ManifestStage["working_location"]>(
       fm.working_location,
       WORKING_LOCATION_VALUES,

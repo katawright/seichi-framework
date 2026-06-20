@@ -23,8 +23,6 @@ checkpoints:
     responsible_roles: [pm]
 checklist: stages/requirements/checklist.md
 reference: stages/requirements/reference.md
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [arch, eng, qa, appsec, pjm], I: [exec] }

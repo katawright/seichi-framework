@@ -159,8 +159,6 @@ describe("buildManifest error paths", () => {
     const root = makeFixture(
       `---
 id: initiation
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 checkpoints:
   - type: review
@@ -177,8 +175,6 @@ body
 
   it("throws when stage frontmatter is missing the id field", () => {
     const root = makeFixture(`---
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 outputs:
   - artifact: alpha
@@ -191,9 +187,7 @@ body
   it("throws when an enum value is invalid", () => {
     const root = makeFixture(`---
 id: initiation
-default_autonomy: super-led
-default_oversight_intensity: active
-working_location: artifacts
+working_location: super-loc
 checkpoints:
   - type: review
     name: "Test Checkpoint"
@@ -202,14 +196,12 @@ outputs:
 ---
 body
 `);
-    expect(() => buildManifest(root)).toThrow(/invalid or missing `default_autonomy`/);
+    expect(() => buildManifest(root)).toThrow(/invalid or missing `working_location`/);
   });
 
   it("throws when a stage has no checkpoints", () => {
     const root = makeFixture(`---
 id: initiation
-default_autonomy: collaborative
-default_oversight_intensity: active
 working_location: artifacts
 outputs:
   - artifact: alpha
