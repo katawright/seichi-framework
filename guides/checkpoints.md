@@ -175,9 +175,9 @@ Each stage specifies which checkpoint types apply:
 - **Deployment:** Review (Production Deployment Approval, Compliance Approval)
 - **Support:** Review (Production Ownership Decision)
 
-**Human validation of AI output is required at all checkpoint types.** The AI
-Assistance Scorecard provides stage-specific guidance on where AI can work more
-independently vs. where human oversight is critical.
+**Human validation of AI output is required at all checkpoint types.** The
+[Operating Model Guide](operating-model.md) sizes how independently agents may
+work at each stage and where human oversight is required.
 
 > **Enterprise extensions:** Organizations with additional governance needs can
 > insert additional reviews or alignments as checkpoints within stages rather
@@ -187,6 +187,7 @@ independently vs. where human oversight is critical.
 
 ## Notes
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-06-20
 
-Extracted from `guides/stages.md` in v0.42.0.
+Extracted from `guides/stages.md` in v0.42.0. Stale AI Assistance Scorecard
+reference repointed to the Operating Model Guide in v0.49.0.

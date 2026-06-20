@@ -124,7 +124,7 @@ incident patterns and suggesting process refinements.
 
 Match AI's role to your team's autonomy comfort level. Gate requirements always
 apply regardless of tier. See the
-[AI Assistance Scorecard: AI Autonomy Spectrum](../../guides/ai-assistance.md#ai-autonomy-spectrum)
+[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
 for full tier definitions.
 
 | Human-Led                          | Collaborative                                     | AI-Led                                                              |
@@ -133,7 +133,7 @@ for full tier definitions.
 
 At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
 see
-[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
 For detailed AI-Led patterns, see
 [Stage Reference](reference.md#ai-led-patterns).
 
@@ -149,7 +149,7 @@ For detailed AI-Led patterns, see
   data, highlighting trends and recommending actions
 
 For assistance level details, see the
-[AI Assistance Scorecard](../../guides/ai-assistance.md).
+[Operating Model Guide](../../guides/operating-model.md).
 
 > **Required gates:** Human approval — Support involves production-impacting
 > decisions requiring domain expertise and real-time judgment for escalation and
@@ -554,7 +554,7 @@ project, fuller for Enterprise.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.8.0. Goals terminology aligned with the Initiation
 goals layer in v0.45.0. Project Close-Out section, checklist, and summary added

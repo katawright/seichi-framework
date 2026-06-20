@@ -174,8 +174,8 @@ to score the codebase across five axes and determine the readiness tier.
 
 - **T5 Ready / T4 Approachable** — Proceed with standard discovery increment
 - **T3 Constrained** — Factor targeted preparation into timeline
-- **T2 Challenging / T1 Hostile** — Consider treating the enablement program
-  as the adoption pilot (see
+- **T2 Challenging / T1 Hostile** — Consider treating the enablement program as
+  the adoption pilot (see
   [Brownfield Preparation as a Pilot](#brownfield-preparation-as-a-pilot))
 - **T0 Rebuild** — Flag for strategic evaluation before committing to
   AI-assisted modification
@@ -448,9 +448,8 @@ Use language consistently across the organization:
 #### Progressing Through Autonomy Tiers
 
 As teams gain experience during rollout, they naturally progress from Human-Led
-to Collaborative to AI-Led. The
-[AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum) defines each tier.
-Expect this progression:
+to Collaborative to AI-Led. The [Operating Model Guide](operating-model.md)
+sizes who runs the process and how autonomously. Expect this progression:
 
 1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and
    review all output closely. AI is a drafting tool.
@@ -572,6 +571,7 @@ organizations can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.17.0.
+Added to framework in v0.17.0. Autonomy-progression pointer repointed to the
+Operating Model Guide in v0.49.0.

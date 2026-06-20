@@ -128,8 +128,8 @@ for detailed guidance on solo, small-team, and large-team formality adjustments.
 ### AI Autonomy → _How Much AI Drives_
 
 AI autonomy determines how independently AI operates within each stage's gate
-requirements. The [AI Assistance Scorecard](ai-assistance.md) defines three
-tiers:
+requirements. Its sibling, the [Operating Model Guide](operating-model.md),
+sizes this Layer-B choice in full; in brief, three tiers:
 
 | Tier              | Philosophy                 | AI Role                                                                                                     |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -143,12 +143,12 @@ tooling.
 
 Within the AI-Led tier, teams also tune **oversight intensity** — from Active
 (review every gate thoroughly) to Minimal (review summary only). See
-[AI Assistance Scorecard: Oversight Intensity](ai-assistance.md#oversight-intensity)
+[Operating Model Guide: The Configurable Functions](operating-model.md#the-configurable-functions)
 for the full model and risk-tier mapping.
 
-For detailed tier definitions, cross-stage summary, and choosing guidance, see
-the
-[AI Assistance Scorecard: AI Autonomy Spectrum](ai-assistance.md#ai-autonomy-spectrum).
+For the full operating model — functions, capability coverage, the envelope, and
+operating presets — see the
+[Operating Model Guide: The Configurable Functions](operating-model.md#the-configurable-functions).
 Each stage guide also includes a stage-specific autonomy table in its AI
 Assistance section.
 
@@ -292,6 +292,7 @@ rigor:
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.13.0.
+Added to framework in v0.13.0. AI-autonomy links repointed to the sibling
+Operating Model Guide in v0.49.0.

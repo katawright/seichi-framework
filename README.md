@@ -88,8 +88,8 @@ decisions (Gates) and compliance sign-offs remain human. The same governance
 structure that guides a cautious first pilot scales to a future where AI agents
 fill most roles and humans govern through checkpoints.
 
-See the [AI Assistance Scorecard](guides/ai-assistance.md) for selection
-criteria and full guidance.
+See the [Operating Model Guide](guides/operating-model.md) for who runs the
+process and how autonomously — and where unattended operation is possible.
 
 ---
 
@@ -334,8 +334,8 @@ For detailed readiness criteria, see the
 **1. Pre-pilot setup**
 
 - Select risk tier using the [Right-Sizing Guide](guides/right-sizing.md).
-- Choose initial AI autonomy tier (typically Human-Led) using the
-  [AI Assistance Scorecard](guides/ai-assistance.md).
+- Choose the initial AI autonomy posture (start conservative) using the
+  [Operating Model Guide](guides/operating-model.md).
 
 **2. Pilot execution**
 
@@ -363,8 +363,8 @@ to try the framework solo or with your team first, skip to
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
 2. Choose risk tier ([Right-Sizing Guide](guides/right-sizing.md)).
-3. Select initial AI autonomy tier
-   ([AI Assistance Scorecard](guides/ai-assistance.md)).
+3. Select the initial AI autonomy posture
+   ([Operating Model Guide](guides/operating-model.md)).
 4. Copy and complete the bootstrap prompt
    ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template)) — plan ~15
    minutes.
@@ -398,9 +398,9 @@ it will find the agent entry point automatically and guide you through the
 process. See the [Agentic Workflow Guide](guides/agentic-workflow.md) for
 details.
 
-1. **Learn the autonomy tiers (~10 min).** Read the
-   [AI Assistance Scorecard Quick Reference](guides/ai-assistance.md#quick-reference)
-   to understand Human-Led, Collaborative, and AI-Led modes.
+1. **Learn the operating model (~10 min).** Read the
+   [Operating Model Guide](guides/operating-model.md) to understand who runs the
+   process and how autonomously.
 2. **Calibrate process weight (~5 min).** Use the
    [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
@@ -425,6 +425,7 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
+Autonomy-tier links repointed to the Operating Model Guide in v0.49.0.

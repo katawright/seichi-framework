@@ -6,6 +6,11 @@ Week-by-week operating rhythm for running one increment through the framework â€
 composing existing stage guides, RACI, and gate facilitation into an actionable
 delivery view.
 
+> **Not the [Operating Model Guide](operating-model.md).** That guide sizes
+> _who_ runs the process and _how autonomously_ (Layer B, the operating model);
+> this guide is the week-by-week _delivery rhythm_ for one increment. Similar
+> name, different axis.
+
 ### Why a Delivery Operating Guide
 
 The [Cadence Mapping](framework.md#cadence-mapping) table in the Framework Guide
@@ -196,7 +201,8 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.40.0. Final-increment close-out review pointed at the
-project close-out (checklist + summary) in v0.47.0.
+project close-out (checklist + summary) in v0.47.0. Name disambiguated from the
+new Operating Model Guide in v0.49.0.

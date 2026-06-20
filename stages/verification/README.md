@@ -118,7 +118,7 @@ process.
 
 Match AI's role to your team's autonomy comfort level. Gate requirements always
 apply regardless of tier. See the
-[AI Assistance Scorecard: AI Autonomy Spectrum](../../guides/ai-assistance.md#ai-autonomy-spectrum)
+[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
 for full tier definitions.
 
 | Human-Led                                | Collaborative                                         | AI-Led                                                          |
@@ -127,7 +127,7 @@ for full tier definitions.
 
 At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
 see
-[AI Assistance Scorecard: Oversight Intensity](../../guides/ai-assistance.md#oversight-intensity).
+[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
 For detailed AI-Led patterns, see
 [Stage Reference](reference.md#ai-led-patterns).
 
@@ -147,7 +147,7 @@ For detailed AI-Led patterns, see
 > test quality and coverage intent.
 
 For assistance level details, see the
-[AI Assistance Scorecard](../../guides/ai-assistance.md).
+[Operating Model Guide](../../guides/operating-model.md).
 
 ---
 
@@ -508,7 +508,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.6.0. Verification Environment and verification-depth
 guidance added in v0.45.0.

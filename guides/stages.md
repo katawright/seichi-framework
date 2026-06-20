@@ -81,8 +81,8 @@ what's just been drafted.
 - Ensure cross-functional handoffs between business and technical stakeholders
 - Establish a measurement throughline from goals to production metrics
 
-For operational guidance on AI assistance levels at each stage, see the
-**[AI Assistance Scorecard](ai-assistance.md)**.
+For who runs the process and how autonomously at each stage, see the
+**[Operating Model Guide](operating-model.md)**.
 
 ### Key Principle
 
@@ -966,6 +966,7 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-05-29
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.9.0. Stage Altitude section added in v0.46.0.
+AI-assistance pointer repointed to the Operating Model Guide in v0.49.0.
