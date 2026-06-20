@@ -104,18 +104,19 @@ documentation, ADRs, infrastructure configuration, and known technical debt.
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
+   (see the Operating Model Guide)
 2. Read [**Right-Sizing System Design**](#right-sizing-system-design) to
    calibrate effort to your project's risk tier
 3. Fill out the
    [System Design Brief Template](../../templates/system-design-brief.md) using
-   AI according to your chosen autonomy tier — refer to
+   AI according to your operating posture — refer to
    [**Why These System Design Elements Matter**](#why-these-system-design-elements-matter)
    for rationale as you complete each section. See the
    [Bootstrap Guide](../../guides/bootstrap.md) for prompting tips
 4. Review the brief for correctness — you own the final content
 5. Complete the [System Design Checklist](checklist.md) using AI according to
-   your chosen autonomy tier
+   your operating posture
 6. Complete Gate 2 — present to stakeholders and record the proceed/revise/stop
    decision using the [Gate Decision Template](../../templates/gate-decision.md)
 
@@ -130,38 +131,28 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with System Design at whatever autonomy tier your team is
+AI can assist with System Design at whatever autonomy level your team is
 comfortable with — from suggesting patterns to driving the entire architecture
 exploration.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                           | Collaborative                           | AI-Led                                                                    |
-| ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
-| Human designs; AI suggests patterns | AI proposes architecture; human decides | AI evaluates trade-offs proactively, identifies concerns; human validates |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
-- **Architecture exploration:** Describe your requirements and constraints — AI
-  generates multiple architecture options with trade-off analysis
-- **Technology evaluation:** AI researches pricing, compares frameworks, and
-  drafts ADRs with cost analysis
-- **Diagram generation:** AI produces diagram-as-code (Mermaid, PlantUML) as
-  first drafts — layout and details typically need human refinement before
+- **Architecture exploration:** Describe your requirements and constraints — an
+  agent generates multiple architecture options with trade-off analysis
+- **Technology evaluation:** An agent researches pricing, compares frameworks,
+  and drafts ADRs with cost analysis
+- **Diagram generation:** An agent produces diagram-as-code (Mermaid, PlantUML)
+  as first drafts — layout and details typically need human refinement before
   publication
-- **Increment planning:** AI maps MoSCoW priorities to increments, identifies
-  dependencies, and estimates effort ranges
+- **Increment planning:** An agent maps MoSCoW priorities to increments,
+  identifies dependencies, and estimates effort ranges
 
 For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
@@ -422,15 +413,15 @@ at System Design to enable parallel increment work.
 The following concerns apply across all stages. Define your approach at System
 Design and trace it through implementation and verification:
 
-| Concern             | Define at           | Verify at            | Framework Reference                                                                                                       |
-| ------------------- | ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Security            | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Security section) + Verification Checklist (security gate) |
-| Performance         | System Design       | Verification         | [Requirements Brief](../../templates/requirements-brief.md) (NFR section)                                                 |
-| Observability       | Requirements/Design | Support              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                              |
-| Accessibility       | Requirements        | Verification         | Verification Checklist                                                                                                    |
-| Resilience          | System Design       | Verification/Support | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
-| Data privacy        | System Design       | Verification         | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
-| Visual architecture | System Design       | Verification         | [Visual Architecture](#visual-architecture) + Verification Checklist                                                      |
+| Concern             | Define at           | Verify at               | Framework Reference                                                                                                       |
+| ------------------- | ------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Security            | System Design       | Verification            | [System Design Brief](../../templates/system-design-brief.md) (Security section) + Verification Checklist (security gate) |
+| Performance         | System Design       | Verification            | [Requirements Brief](../../templates/requirements-brief.md) (NFR section)                                                 |
+| Observability       | Requirements/Design | Operations              | [Measurement Throughline](../../guides/framework.md#measurement-throughline)                                              |
+| Accessibility       | Requirements        | Verification            | Verification Checklist                                                                                                    |
+| Resilience          | System Design       | Verification/Operations | [System Design Brief](../../templates/system-design-brief.md) (Rollback and DR sections)                                  |
+| Data privacy        | System Design       | Verification            | [System Design Brief](../../templates/system-design-brief.md) (Compliance section)                                        |
+| Visual architecture | System Design       | Verification            | [Visual Architecture](#visual-architecture) + Verification Checklist                                                      |
 
 ### Visual Architecture
 
@@ -721,4 +712,5 @@ Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence
 reconciliation added in v0.46.0. ADR all-three-criteria rule + design-note
 discriminator added in v0.47.0. ADR id scheme and canon promotion updated in
-v0.48.0.
+v0.48.0. v0.49: autonomy vocabulary repointed to the operating model;
+Support→Operations refs updated.

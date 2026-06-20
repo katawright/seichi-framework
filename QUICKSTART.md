@@ -8,15 +8,17 @@ Get from zero to your first stage in under five minutes.
 
 The framework overlays your existing software development process — agile,
 waterfall, or hybrid — with structured AI assistance at every stage. You choose
-how much autonomy AI gets (from human-driven drafting to fully AI-led
-execution), and checkpoints keep humans in control of key decisions.
+how the work is run — from humans driving with agents assisting to agents
+running unattended — and checkpoints keep humans in control of key decisions.
 
 Eight stages cover the full lifecycle:
 
 - **Foundational** (once per project): Initiation → Requirements → System Design
 - **Iterative** (per increment): Increment Design → Implementation →
   Verification → Deployment
-- **Continuous** (ongoing): Support
+- **Terminal** (project end): Closure — then the standing system is run by the
+  [Operations](guides/operations.md) process, and small in-place changes run as
+  [Flow](guides/stages.md#flow-delivery-mode) items
 
 Scale the process to fit your project: **Minimal** (MVPs, prototypes),
 **Standard** (production apps), or **Enterprise** (regulated, mission-critical).
@@ -88,7 +90,7 @@ Cowork, or similar).
 > create the project structure, AGENTS.md, and your agent-specific startup file
 > (e.g., CLAUDE.md for Claude Code). Then guide me through the first stage.
 > Infer project classifications (risk tier, project type, deployment intent,
-> autonomy, oversight) from our conversation and present them as overridable
+> operating posture) from our conversation and present them as overridable
 > assumptions instead of asking me to choose. Drive the process but check
 > decisions with me.
 
@@ -154,7 +156,7 @@ If you're adopting the framework on a project already in progress:
 > have already been made. Create lightweight retroactive artifacts for completed
 > stages based on our conversation, then guide me forward from the current
 > stage. Infer project classifications (risk tier, project type, deployment
-> intent, autonomy, oversight) from our conversation and present them as
+> intent, operating posture) from our conversation and present them as
 > overridable assumptions instead of asking me to choose. Drive the process but
 > check decisions with me.
 
@@ -212,8 +214,10 @@ In both cases, the existing codebase is untouched — the agent only adds
 > forward.
 
 > **Joining to operate an already-deployed system?** Start at the
-> [Support Stage Guide](stages/support/README.md) and complete the
-> [Support Readiness Checklist](stages/support/readiness-checklist.md).
+> [Operations Guide](guides/operations.md). If you are taking over from a
+> project that just closed, the
+> [Closure handoff record](stages/closure/README.md#the-operational-envelope-handoff-record)
+> is what you operate against.
 
 > **Joining in a specific role?**
 >
@@ -225,7 +229,7 @@ In both cases, the existing codebase is untouched — the agent only adds
 > | DevOps / Platform Engineer      | [DevOps Integration Guide](guides/devops-integration.md)                                                 |
 > | QA / Test Engineer              | [Verification](stages/verification/README.md)                                                            |
 > | Executive / Leadership          | [README: Business Value](README.md#business-value)                                                       |
-> | Support / Operations            | [Support Stage](stages/support/README.md)                                                                |
+> | Operations / Production owner   | [Operations Guide](guides/operations.md)                                                                 |
 
 ### Adding a New Project to an Existing Workspace
 
@@ -258,19 +262,19 @@ workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
 > `frameworks/v<version>/QUICKSTART.md` from the version you just downloaded.
 >
 > I want to start a new project in this workspace. Ask me for the project name
-> and a one-line description; infer autonomy level and oversight style from our
-> conversation and present them as overridable assumptions (or I'll specify them
-> here). Then create a new project directory under `projects/`, create its
-> `project.md` pinning the framework version to use, create a `docs/` subtree,
-> add an entry with the next sequential project number to `projects/index.md`,
-> and guide me through Initiation.
+> and a one-line description; infer the operating posture from our conversation
+> and present them as overridable assumptions (or I'll specify them here). Then
+> create a new project directory under `projects/`, create its `project.md`
+> pinning the framework version to use, create a `docs/` subtree, add an entry
+> with the next sequential project number to `projects/index.md`, and guide me
+> through Initiation.
 
 The agent downloads the latest framework release (keeping any older versions in
 place), reads the workspace conventions from `AGENTS.md`, creates the new
 project scaffolding, updates `projects/index.md`, and walks you through
 Initiation starting with the project name and description. Classifications
-(autonomy, oversight, risk tier) are inferred from the conversation and
-presented as overridable assumptions — see
+(operating posture, risk tier) are inferred from the conversation and presented
+as overridable assumptions — see
 [Agentic Workflow Guide: Classification by Inference](guides/agentic-workflow.md#classification-by-inference).
 
 **Workspace structure after adding a second project:**
@@ -313,7 +317,7 @@ my-workspace/
 - [**Brownfield Worked Example**](guides/worked-example-brownfield.md) — see
   preparation, exit checkpoint, and feature delivery for an existing codebase
 - [**Bootstrap Guide**](guides/bootstrap.md) — customize project layout,
-  multi-repo setup, and advanced autonomy levels
+  multi-repo setup, and advanced operating postures
 - [**Delivery Operating Guide**](guides/delivery-operating-guide.md) —
   week-by-week operating rhythm for Sprint and Kanban delivery
 
@@ -321,7 +325,9 @@ my-workspace/
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.26.0. Classification-by-inference prompt alignment and
-idea-path entry added in v0.48.0.
+idea-path entry added in v0.48.0. In v0.49.0 the lifecycle list gained the
+Terminal Closure stage (with Operations and Flow), and the autonomy-tier
+vocabulary was repointed to the operating model (operating posture).

@@ -370,7 +370,7 @@ conditions) lives in `guides/stages.md` front matter.
 pipeline:
   - id: stage-name
     stage_number: 1 # 1-8
-    execution_pattern: foundational # foundational | iterative | continuous
+    execution_pattern: foundational # foundational | iterative | terminal
     feeds_into: [next-stage-id] # downstream stage ids
     revisit_conditions: [trigger-condition] # when to revisit this stage
 ---

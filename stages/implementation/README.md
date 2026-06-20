@@ -77,7 +77,8 @@ brief from the previous verification cycle (see
 
 ### How to Use This Guide
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
+   (see the Operating Model Guide)
 2. Read [**Right-Sizing Implementation**](#right-sizing-implementation) to match
    effort to project complexity
 3. Start a session log from the
@@ -125,38 +126,29 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Implementation at whatever autonomy tier your team is
+AI can assist with Implementation at whatever autonomy level your team is
 comfortable with — from generating code snippets to driving the entire
 implementation process.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                                  | Collaborative                                     | AI-Led                                                               |
-| ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------- |
-| Engineer writes; AI completes and suggests | AI generates from specs; engineer reviews each PR | AI implements full increments, identifies issues; engineer validates |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
-- **Code generation and scaffolding:** Describe a component or function — AI
-  generates implementation code aligned with your design specs and conventions
-- **Test writing:** AI drafts unit tests from acceptance criteria, covering
-  happy path, edge cases, and error scenarios
+- **Code generation and scaffolding:** Describe a component or function — an
+  agent generates implementation code aligned with your design specs and
+  conventions
+- **Test writing:** An agent drafts unit tests from acceptance criteria,
+  covering happy path, edge cases, and error scenarios
 - **Session continuity and handoff:** Share your session log at the start of
-  each session — AI restores context and suggests priorities for the current
-  session
-- **Checklist review:** AI walks through the implementation checklist and flags
-  gaps before handoff to Verification
+  each session — an agent restores context and suggests priorities for the
+  current session
+- **Checklist review:** An agent walks through the implementation checklist and
+  flags gaps before handoff to Verification
 
 > **Required gates:** CI validation + human approval — Implementation outputs
 > are highly verifiable through tests and CI, enabling AI to iterate quickly
@@ -360,7 +352,7 @@ The [Implementation Reference](reference.md) covers these topics in depth:
 
 > Implementation continues the **measurement throughline** by instrumenting
 > success criteria for observability — embedding the metrics, logging, and
-> telemetry that Verification and Support stages rely on. See
+> telemetry that Verification and Operations rely on. See
 > [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 
 > Implementation continues the **learning throughline** by noting surprises and
@@ -436,4 +428,5 @@ for the full convention.
 
 Added to framework in v0.5.0. Session-log creation marked [GATE] in the
 ONCE-PER-INCREMENT block in v0.47.0. Implementation-stage ADR drafts aligned
-with the canon promotion convention in v0.48.0.
+with the canon promotion convention in v0.48.0. v0.49: autonomy vocabulary
+repointed to the operating model; Support→Operations refs updated.

@@ -69,16 +69,16 @@ Well-Secured Software, **RV** = Respond to Vulnerabilities. See
 [SSDF Practice Mapping](#ssdf-practice-mapping) for details — you can ignore
 this column if SSDF traceability isn't relevant to your project.
 
-| Stage                | Security activity                                           | AI automation                                      | SSDF group |
-| -------------------- | ----------------------------------------------------------- | -------------------------------------------------- | ---------- |
-| **Initiation**       | Classify data sensitivity and compliance scope              | AI suggests classification from project context    | PO         |
-| **Requirements**     | Define security NFRs from sensitivity classification        | AI drafts security NFRs, flags gaps                | PO/PW      |
-| **System Design**    | Design security architecture; threat model at tier level    | AI generates threat model draft, suggests controls | PW         |
-| **Increment Design** | Assess security implications; flag auth/data/API changes    | AI flags security-relevant changes in design       | PW         |
-| **Implementation**   | Secure coding + AI-automated scanning (SAST, deps, secrets) | SAST, dependency scan, secrets detection run in CI | PW         |
-| **Verification**     | Validate security controls (dep scan through pen testing)   | AI runs security test suites, triages findings     | RV         |
-| **Deployment**       | Verify release integrity; SBOM; pre-deployment checks       | AI generates SBOM, validates artifact integrity    | PS/RV      |
-| **Support**          | Monitor CVEs; patch per SLA; incident response              | AI monitors CVE feeds, prioritizes vulnerabilities | RV         |
+| Stage                | Security activity                                           | AI automation                                            | SSDF group |
+| -------------------- | ----------------------------------------------------------- | -------------------------------------------------------- | ---------- |
+| **Initiation**       | Classify data sensitivity and compliance scope              | AI suggests classification from project context          | PO         |
+| **Requirements**     | Define security NFRs from sensitivity classification        | an agent drafts security NFRs, flags gaps                | PO/PW      |
+| **System Design**    | Design security architecture; threat model at tier level    | AI generates threat model draft, suggests controls       | PW         |
+| **Increment Design** | Assess security implications; flag auth/data/API changes    | AI flags security-relevant changes in design             | PW         |
+| **Implementation**   | Secure coding + AI-automated scanning (SAST, deps, secrets) | SAST, dependency scan, secrets detection run in CI       | PW         |
+| **Verification**     | Validate security controls (dep scan through pen testing)   | AI runs security test suites, triages findings           | RV         |
+| **Deployment**       | Verify release integrity; SBOM; pre-deployment checks       | AI generates SBOM, validates artifact integrity          | PS/RV      |
+| **Support**          | Monitor CVEs; patch per SLA; incident response              | an agent monitors CVE feeds, prioritizes vulnerabilities | RV         |
 
 The throughline ensures security decisions compound rather than repeat. Data
 sensitivity classified in Initiation drives NFRs in Requirements, which drive
@@ -120,9 +120,9 @@ AI produces the first draft; a human reviews for accuracy and completeness:
 - **Security test cases** — AI generates test scenarios from threat model; human
   reviews coverage
 
-### Human-Led, AI-Assisted
+### Human-Governed, Agent-Assisted
 
-Humans drive these activities; AI provides research and drafting support:
+Humans drive these activities; agents provide research and drafting support:
 
 - **Security architecture decisions** — human decides authentication model,
   encryption strategy, trust boundaries; AI researches options
@@ -183,10 +183,10 @@ Initiation.
 | -------------------------- | ---------------------------------------- | --------------------------------------------------------------- |
 | Note key security concerns | Security NFRs with verification criteria | Full security requirements catalog with compliance traceability |
 
-**How AI helps:** AI drafts security NFRs from the data sensitivity
+**How AI helps:** an agent drafts security NFRs from the data sensitivity
 classification — authentication, authorization, encryption, audit logging, data
-retention. AI flags gaps where sensitivity level implies requirements not yet
-captured.
+retention. An agent flags gaps where sensitivity level implies requirements not
+yet captured.
 
 **Security gate criteria:** Security NFRs captured with verification criteria;
 reviewed by engineering (and security team for Enterprise tier).
@@ -326,10 +326,10 @@ readiness.
 | ------------------------------------- | -------------------------------------- | ------------------------------------------------ |
 | Scan weekly, patch critical in 7 days | CVE monitoring, patch per severity SLA | Continuous monitoring, formal vulnerability mgmt |
 
-**How AI helps:** AI monitors CVE feeds for dependencies in the project's SBOM,
-prioritizes vulnerabilities by exploitability and blast radius, and drafts patch
-plans. AI assists with security incident investigation by correlating logs and
-suggesting root causes.
+**How AI helps:** an agent monitors CVE feeds for dependencies in the project's
+SBOM, prioritizes vulnerabilities by exploitability and blast radius, and drafts
+patch plans. An agent assists with security incident investigation by
+correlating logs and suggesting root causes.
 
 **Security gate criteria:** Vulnerability scan results reviewed per SLA; no
 critical unpatched vulnerabilities beyond SLA window; incident response
@@ -373,6 +373,8 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.25.0.
+Added to framework in v0.25.0. Actor-sense "AI" rewritten to "agent/agents";
+"Human-Led, AI-Assisted" heading renamed to "Human-Governed, Agent-Assisted" in
+v0.49.0.

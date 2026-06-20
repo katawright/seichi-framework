@@ -92,9 +92,8 @@ increment builds it.
 - **CI/CD, environments, monitoring →**
   [Deployment Setup Guide: Greenfield Path](../stages/deployment/setup.md#greenfield-path)
   — implement pipelines, provision environments, configure observability
-- **Incident response, on-call, runbooks →**
-  [Support Operations Guide: Greenfield Path](../stages/support/operations.md#greenfield-path)
-  — establish operational processes alongside infrastructure
+- **Incident response, on-call, runbooks →** [Operations Guide](operations.md) —
+  establish operational processes alongside infrastructure
 
 **Completion signal:** A "hello world" application deploys successfully through
 the full pipeline to production, monitoring captures its metrics, and on-call
@@ -179,6 +178,7 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.14.0.
+Added to framework in v0.14.0. Operational processes link repointed to
+Operations Guide in v0.49.0.

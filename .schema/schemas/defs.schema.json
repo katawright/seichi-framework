@@ -14,9 +14,9 @@
       "pattern": "^[a-z].*\\.md$"
     },
     "stage-execution-pattern": {
-      "$comment": "Foundational (once per project), iterative (per increment), or continuous (ongoing).",
+      "$comment": "Foundational (once per project), iterative (per increment), or terminal (once at project end — Closure).",
       "type": "string",
-      "enum": ["foundational", "iterative", "continuous"]
+      "enum": ["foundational", "iterative", "terminal"]
     },
     "checkpoint-protocol": {
       "$comment": "The six checkpoint protocols defining how each checkpoint is processed. Describes the execution procedure, not the checkpoint type (Gate/Review/Alignment).",

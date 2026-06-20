@@ -785,13 +785,13 @@ management
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
-At the AI-Led tier, AI takes ownership of the architecture exploration and
-documentation process rather than waiting for human direction. Concretely, this
-includes:
+At the Agent-Led operating posture, an agent takes ownership of the architecture
+exploration and documentation process rather than waiting for human direction.
+Concretely, this includes:
 
 - Proposing multiple architecture options with explicit trade-off analysis —
   presenting options rather than a single recommendation, so humans choose
@@ -815,42 +815,24 @@ foundational decisions are difficult and expensive to reverse. Human validation
 is non-negotiable in the following areas:
 
 - **Architecture decisions:** Require alignment — architecture council or tech
-  lead sign-off. AI proposes; humans decide.
+  lead sign-off. Agents propose; humans decide.
 - **Security model and data flow:** No security-critical decision should be
   finalized without human review. This includes authentication architecture,
   authorization model, data residency, and encryption choices.
-- **Rollback and migration plans:** AI drafts these, but humans must verify that
-  they are executable against the actual production environment and team
-  capabilities.
-- **Technology selections with organizational fit:** AI evaluates technologies
-  against stated requirements, but cannot assess organizational politics,
-  existing vendor relationships, team hiring pipelines, or undocumented
-  constraints.
+- **Rollback and migration plans:** An agent drafts these, but humans must
+  verify that they are executable against the actual production environment and
+  team capabilities.
+- **Technology selections with organizational fit:** An agent evaluates
+  technologies against stated requirements, but cannot assess organizational
+  politics, existing vendor relationships, team hiring pipelines, or
+  undocumented constraints.
 - **Gate 2 (Investment Decision):** Requires thorough human approval — this gate
   commits the organization to a specific architecture and investment level.
 
-### Oversight Intensity at This Stage
-
-**Active oversight is strongly recommended for System Design.** System Design
-produces foundational decisions that are difficult and expensive to reverse —
-architecture, data model, security model, and infrastructure choices all have
-downstream consequences across every subsequent stage.
-
-Active oversight (human reviews every gate thoroughly) should be the default
-unless the following conditions are both true:
-
-- The design follows well-established organizational patterns — the team has
-  built multiple systems using the same stack, and the architecture is a
-  well-understood variation of prior work
-- A tech lead or architect is engaged throughout the process, not just at gates
-
-Passive oversight (human reviews at hard gates only) is appropriate only when
-both conditions above are met. Even then, the Gate 2 investment decision
-requires active review regardless of tier.
-
-**Minimal oversight is not appropriate for System Design** under any
-circumstances — the blast radius of a flawed architecture or missed security
-concern is too high.
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
@@ -868,15 +850,15 @@ concern is too high.
   rather than fit — the team's tool preferences, not the project's requirements,
   drive the stack. Mitigation: every technology selection must trace to a
   specific requirement, NFR, or organizational standard documented in an ADR.
-- **Insufficient attention to data migration and rollback:** AI focuses on the
-  happy-path architecture and omits migration complexity, rollback procedures,
-  and backward compatibility constraints. Mitigation: require explicit migration
-  and rollback sections in the design brief before Gate 2.
+- **Insufficient attention to data migration and rollback:** An agent focuses on
+  the happy-path architecture and omits migration complexity, rollback
+  procedures, and backward compatibility constraints. Mitigation: require
+  explicit migration and rollback sections in the design brief before Gate 2.
 
 ### Session Handoff Notes
 
-When handing off between AI sessions during System Design, capture the following
-state so the next session can continue without re-deriving context:
+When handing off between agent sessions during System Design, capture the
+following state so the next session can continue without re-deriving context:
 
 - Key ADRs drafted and their current status — Proposed, Accepted, or Needs
   Review — and which decisions are still open
@@ -892,19 +874,20 @@ state so the next session can continue without re-deriving context:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
 [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
 for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
-When AI-generated content is uncertain or potentially incorrect:
+When agent-generated content is uncertain or potentially incorrect:
 
 - Present multiple architecture options with explicit trade-off tables rather
   than committing to a single approach — this preserves the human decision
-  rather than encoding AI preference into the artifact
+  rather than encoding agent preference into the artifact
 - Escalate to the architecture council when uncertain about trade-offs between
-  non-trivial options; do not resolve architectural ambiguity through AI
+  non-trivial options; do not resolve architectural ambiguity through agent
   inference alone
 - Document all design assumptions in ADRs with an explicit "Assumed" status —
   treat assumed constraints as open questions until verified by relevant
@@ -926,7 +909,7 @@ When AI-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. ADR id examples updated to the two-digit draft
-form in v0.48.0.
+form in v0.48.0. v0.49: vocabulary and oversight model updated.

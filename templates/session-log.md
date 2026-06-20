@@ -12,17 +12,17 @@
 
 **Last Updated:** YYYY-MM-DD HH:MM
 
-| Field              | Value                                            |
-| ------------------ | ------------------------------------------------ |
-| **Project**        | [Project Name]                                   |
-| **Stage**          | [Stage Name]                                     |
-| **Increment**      | [Increment Number/Name or N/A]                   |
-| **Autonomy Tier**  | [Human-Led / Collaborative / AI-Led]             |
-| **Oversight**      | [Active / Passive / Minimal or N/A]              |
-| **Participant(s)** | [Names / Agent IDs]                              |
-| **Stage Status**   | [Not Started / In Progress / Blocked / Complete] |
-| **Gate Status**    | [Pending / Approved / Rejected — Approver: name] |
-| **Duration**       | [Optional — total time spent across sessions]    |
+| Field              | Value                                                         |
+| ------------------ | ------------------------------------------------------------- |
+| **Project**        | [Project Name]                                                |
+| **Stage**          | [Stage Name]                                                  |
+| **Increment**      | [Increment Number/Name or N/A]                                |
+| **Work Execution** | [Humans / Collaborative / Agents]                             |
+| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent] |
+| **Participant(s)** | [Names / Agent IDs]                                           |
+| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]              |
+| **Gate Status**    | [Pending / Approved / Rejected — Approver: name]              |
+| **Duration**       | [Optional — total time spent across sessions]                 |
 
 ---
 
@@ -74,4 +74,4 @@
 
 - [Specific actions for the next session]
 
-<!-- Template Last Updated: 2026-03-03 | Added in v0.23.0 -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.23.0. v0.49 vocabulary/dev-ops-split sweep. -->

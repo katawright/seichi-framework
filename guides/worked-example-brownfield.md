@@ -94,7 +94,7 @@ for scoring definitions.
 Captured in the
 [Initiation Brief](../templates/initiation-brief.md#brownfield-readiness--quick-pass-if-applicable):
 
-- **AI operating mode:** T2 — AI is advisory; assists with analysis,
+- **Agent operating mode:** T2 — the agent is advisory; assists with analysis,
   documentation, test generation, and review but does not drive production code
   at scale
 - **Preparation estimate:** 2 preparation increments (4 weeks) before
@@ -206,9 +206,9 @@ work can begin there.
 
 The team uses AI in T2 advisory mode during preparation:
 
-- **AI drafts architecture documentation** from code analysis — the original
-  developer reviews and corrects. AI got the data flow 80% right but missed two
-  stored procedures that fire on customer status changes.
+- **An agent drafts architecture documentation** from code analysis — the
+  original developer reviews and corrects. The agent got the data flow 80% right
+  but missed two stored procedures that fire on customer status changes.
 - **AI generates unit test scaffolding** for the service layer — engineers fill
   in assertions and fix incorrect assumptions about business rules.
 - **AI documents stored procedures** by analyzing SQL — the team validates
@@ -267,9 +267,9 @@ Using the
   where boundaries are clearest
 - **Supplementary note:** Deployability at 2 (manual deploy) — mitigated by
   deploy runbook and tested rollback procedure
-- **AI operating mode for feature work:** T3 — AI writes production code in the
-  customer account area (well-covered); AI is advisory for changes touching
-  other areas
+- **Agent operating mode for feature work:** T3 — an agent writes production
+  code in the customer account area (well-covered); the agent is advisory for
+  changes touching other areas
 - **Condition:** First feature increment uses
   [shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout)
   for deployment validation before full production exposure
@@ -299,9 +299,9 @@ customer account area under T3 operating constraints.
   follow this pattern (documented in AGENTS.md)
 - Schema changes must use migration scripts (new convention from Increment 0)
 
-**AI operating mode:** T3 — AI writes code in the customer account service
-layer; engineer reviews all changes against stored procedure documentation to
-catch conflicts.
+**Agent operating mode:** T3 — an agent writes production code in the customer
+account service layer; engineer reviews all changes against stored procedure
+documentation to catch conflicts.
 ```
 
 ### Implementation Under T3 Constraints
@@ -315,8 +315,9 @@ AI-assisted development with brownfield guardrails:
 - **AI generates unit and integration tests** — using the test patterns
   established in Increment 0. The tests cover the new endpoint plus regression
   tests verifying that existing stored procedure behavior is unchanged.
-- **AI drafts the migration script** — engineer reviews for rollback safety and
-  verifies it follows the new migration conventions from the deploy runbook.
+- **An agent drafts the migration script** — engineer reviews for rollback
+  safety and verifies it follows the new migration conventions from the deploy
+  runbook.
 
 ### Shadow Mode Deployment
 
@@ -388,12 +389,15 @@ Exit Checkpoint                                   ← brownfield-only
     ↓
 Increment 1 (Feature)
   FR-1: Profile self-service
-  AI mode: T3 (constrained to prepared area)
+  Agent mode: T3 (constrained to prepared area)
   Shadow mode deployment                          ← brownfield-specific
     ↓
-Support
-  Monitor: SC-01 — support ticket volume vs. 40% reduction target
-  Monitor: Shadow mode can be re-enabled for future increments
+Closure
+  Dev→ops handoff; production ownership transferred; project closed
+    ↓
+Operations (ongoing — see operations.md)
+  Observe: SC-01 — support ticket volume vs. 40% reduction target
+  Note: Shadow mode can be re-enabled for future increments
 ```
 
 **Key difference from greenfield:** Brownfield projects add preparation
@@ -429,7 +433,9 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20 — v0.49 consistency sweep: actor-sense "AI"
+references rewritten to "agent"; "AI operating mode" → "agent operating mode";
+traceability chain updated to end at Closure followed by Operations.
 
 Added to framework in v0.40.0. Scores recalculated for five-axis rubric
 (Consistency added; Deployability and Observability moved to supplementary

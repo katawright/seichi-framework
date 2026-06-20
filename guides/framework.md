@@ -45,7 +45,7 @@ control.
 The AI-Assisted SDLC framework is a lightweight, practical guide for integrating
 AI assistance into software development. It helps both technical and
 non-technical stakeholders work through every stage of a project — from initial
-idea to production support.
+idea to production and ongoing operations.
 
 By providing clear guidance and AI assistance from the very first stage, the
 framework enables anyone with an idea to create a professional project
@@ -78,8 +78,9 @@ the organization.
   security, and executive oversight needs
 - **Scalable across teams** — right-sizing from solo developer to enterprise;
   methodology-agnostic (agile, waterfall, hybrid)
-- **Progressive AI adoption** — start Human-Led to build trust, evolve to
-  Collaborative and AI-Led as confidence grows
+- **Progressive AI adoption** — start with humans driving and agents assisting
+  to build trust, and shift execution toward agents as confidence grows (an
+  operating-model choice — see [Operating Model Guide](operating-model.md))
 
 ### Who Benefits
 
@@ -162,7 +163,7 @@ governs (gates, invariants, required outputs) versus the interchangeable ways of
 working that satisfy it.
 
 **[SDLC Stages](#sdlc-stages)** — Eight stages across three execution patterns
-(foundational, iterative, continuous). Full reference: [stages.md](stages.md).
+(foundational, iterative, terminal). Full reference: [stages.md](stages.md).
 
 **[Checkpoint Taxonomy](#checkpoint-taxonomy)** — Three checkpoint types
 ensuring quality and alignment. Full reference:
@@ -237,9 +238,9 @@ for conformance and coherence"_ — and stays silent on the mechanism that
 satisfies it. Whether you run that review in one pass or two, with one reviewer
 or a panel, is a pattern you can swap without a framework change. The same holds
 for executing increments concurrently (the framework fixes the boundary
-invariants; the orchestration shape is yours) and for AI autonomy (the framework
-fixes who may clear a gate and under what guardrails; how the agent drives the
-work is yours).
+invariants; the orchestration shape is yours) and for how autonomously agents
+operate (the framework fixes who may clear a gate and under what guardrails; how
+the agent drives the work is yours).
 
 Two cautions:
 
@@ -257,10 +258,12 @@ Two cautions:
 ## SDLC Stages
 
 The framework defines eight stages across three execution patterns —
-foundational (once per project), iterative (per increment), and continuous
-(ongoing). For complete stage definitions including inputs, outputs, entry/exit
-criteria, stage flow diagrams, and handoffs, see the
-[AI-Assisted SDLC Stages](stages.md) reference.
+foundational (once per project), iterative (per increment), and terminal
+(project closure). Standing operation of the delivered system is the sibling
+[Operations](operations.md) process, not a stage; small in-place changes run as
+[Flow](stages.md#flow-delivery-mode) items. For complete stage definitions
+including inputs, outputs, entry/exit criteria, stage flow diagrams, and
+handoffs, see the [AI-Assisted SDLC Stages](stages.md) reference.
 
 ---
 
@@ -325,7 +328,7 @@ Five properties of this chain are worth keeping in mind:
    Passing every acceptance criterion proves the requirements were built as
    specified — it does not prove the goal's success criteria were met.
    Construction is confirmed at Verification; the success criteria are confirmed
-   later, in production, during Support.
+   later, in production, during Operations.
 4. **Non-functional requirements are heterogeneous.** Observability NFRs exist
    to make a success criterion measurable; performance and reliability NFRs are
    system-level targets that can serve as an early indicator for a
@@ -362,7 +365,7 @@ instance of the whole chain on a real feature, see
 ## Measurement Throughline
 
 For the stage-by-stage breakdown of how success criteria flow from Initiation
-through Support, see
+through Closure (and into Operations), see
 [AI-Assisted SDLC Stages § Measurement Throughline](stages.md#measurement-throughline).
 
 ---
@@ -691,7 +694,9 @@ tree.
 **Iterative stage** — Repeats for each increment in the Increment Design →
 Implementation → Verification → Deployment cycle.
 
-**Continuous stage** — Runs ongoing after first production deployment (Support).
+**Terminal stage** — Runs once at project end (Closure): hands the system off to
+the [Operations](operations.md) process and closes the project. Standing,
+ongoing operation is the Operations process, not a stage.
 
 **Non-Functional Requirement (NFR)** — A quality attribute or constraint
 (performance, security, scalability, usability, observability, compliance) that
@@ -807,15 +812,15 @@ project types deliver features using the same iterative cycle.
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                                   | Greenfield                                | Brownfield (First AI)                                                                                                                                                     | Brownfield (Has Context)                          |
-| --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| **Initiation**                          | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                                                             | Understand existing system + define new goals     |
-| **Requirements**                        | All requirements are new                  | New requirements + existing system constraints                                                                                                                            | New requirements + existing system constraints    |
-| **System Design**                       | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                                                                      | Adapt/extend architecture + assess infrastructure |
-| **Increment Design**                    | Plan bootstrap increment details          | Plan discovery increment details                                                                                                                                          | Plan first feature increment details              |
-| **Increment 0 (bootstrap / discovery)** | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) (not a separate stage — executed using the iterative stages) | N/A — proceed directly to feature delivery        |
-| **Increment 1+**                        | Deliver features with established infra   | Deliver features with established infra + documented context                                                                                                              | Deliver features with established infra           |
-| **Support**                             | Monitor new system                        | Monitor changes, consider existing user base                                                                                                                              | Monitor changes, consider existing user base      |
+| Stage                                   | Greenfield                                | Brownfield (First AI)                                                                                                                                                     | Brownfield (Has Context)                                |
+| --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| **Initiation**                          | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                                                             | Understand existing system + define new goals           |
+| **Requirements**                        | All requirements are new                  | New requirements + existing system constraints                                                                                                                            | New requirements + existing system constraints          |
+| **System Design**                       | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                                                                      | Adapt/extend architecture + assess infrastructure       |
+| **Increment Design**                    | Plan bootstrap increment details          | Plan discovery increment details                                                                                                                                          | Plan first feature increment details                    |
+| **Increment 0 (bootstrap / discovery)** | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) (not a separate stage — executed using the iterative stages) | N/A — proceed directly to feature delivery              |
+| **Increment 1+**                        | Deliver features with established infra   | Deliver features with established infra + documented context                                                                                                              | Deliver features with established infra                 |
+| **Closure / Operations**                | Hand off + operate the new system         | Hand off + operate changes, consider existing user base                                                                                                                   | Hand off + operate changes, consider existing user base |
 
 ### Project Foundation
 
@@ -862,12 +867,12 @@ the iterative stages.
 
 ### How CD Changes Stage Timing
 
-| Stage          | Batch (default)                 | CD                                                  |
-| -------------- | ------------------------------- | --------------------------------------------------- |
-| Implementation | All slices, then increment gate | Per-slice gate (PR + CI); summary at close          |
-| Verification   | Batch verification after code   | Per-slice CI; increment-close summary               |
-| Deployment     | Discrete deployment event       | Per-merge release via pre-authorized automated path |
-| Support        | Handoff after deployment        | Monitoring active from first deploy                 |
+| Stage          | Batch (default)                    | CD                                                  |
+| -------------- | ---------------------------------- | --------------------------------------------------- |
+| Implementation | All slices, then increment gate    | Per-slice gate (PR + CI); summary at close          |
+| Verification   | Batch verification after code      | Per-slice CI; increment-close summary               |
+| Deployment     | Discrete deployment event          | Per-merge release via pre-authorized automated path |
+| Closure        | Close-out + handoff at project end | Operations active from first deploy (continuous)    |
 
 Foundational stages (Initiation, Requirements, System Design, Increment Design)
 are unaffected — CD applies only to the iterative execution stages.
@@ -876,13 +881,13 @@ are unaffected — CD applies only to the iterative execution stages.
 
 CD doesn't skip stages — it folds their concerns into the continuous flow. When
 the CD pipeline fully automates a stage's activities (e.g., the release decision
-is pre-positioned in pipeline policy, support monitoring is active from the
+is pre-positioned in pipeline policy, operations monitoring is active from the
 first deploy), the stage's per-increment ceremony can be folded into the
 continuous workflow. Folding changes how a stage's decisions are recorded and
 executed, not whether they are made — a CD pipeline still ships a human-owned,
 pre-positioned release on every merge.
 
-When folding Deployment or Support, record the rationale using the
+When folding Deployment, record the rationale using the
 [Checkpoint Decision Template](../templates/checkpoint-decision.md). Include
 re-evaluation triggers so the team revisits the decision if conditions change
 (e.g., a breaking migration requires manual deployment coordination).
@@ -894,7 +899,7 @@ Each iterative stage includes a CD subsection with stage-specific adaptations:
 - [Implementation: CD Projects — Per-Slice Gates](../stages/implementation/README.md#cd-projects-per-slice-gates)
 - [Verification: CD Projects — Lightweight Verification](../stages/verification/README.md#cd-projects-lightweight-verification)
 - [Deployment: CD Projects — Minimal Deployment](../stages/deployment/README.md#cd-projects-minimal-deployment)
-- [Support: CD Projects — Minimal Support](../stages/support/README.md#cd-projects-minimal-support)
+- [Operations: standing monitoring active from the first deploy](operations.md#observe)
 
 For how CD interacts with right-sizing tiers, see
 [Right-Sizing Guide: CD as a Delivery Practice Modifier](right-sizing.md#cd-as-a-delivery-practice-modifier).
@@ -903,14 +908,16 @@ For how CD interacts with right-sizing tiers, see
 
 ## Right-Sizing Your Process
 
-Right-sizing has three independent dimensions: **project risk tier** (Minimal,
-Standard, Enterprise) determines _what_ practices you adopt, **team size**
-determines _how formally_ you apply them, and **AI autonomy tier** (Human-Led,
-Collaborative, AI-Led) determines _how much AI involvement_ you allow. The
-framework's eight stages remain the same regardless — what changes is formality,
-documentation detail, and coordination. For the full model, tier definitions,
-team-size guidance, and choosing criteria, see the
-[Right-Sizing Guide](right-sizing.md).
+Right-sizing sizes governance **weight** along three dimensions —
+**consequence** (how bad it is if this goes wrong), **compliance** (mandatory
+obligations regardless of consequence), and **stakeholder reach** (how far
+across accountability boundaries the work and its sign-offs travel). _Who runs
+the process and how autonomously_ is a separate decision — the
+[Operating Model Guide](operating-model.md) (Work Execution + Authority), within
+floors that consequence and compliance set. The framework's eight stages remain
+the same regardless — what changes is formality, documentation detail, and
+coordination. For the full model, tier definitions, team-size guidance, and
+choosing criteria, see the [Right-Sizing Guide](right-sizing.md).
 
 ---
 

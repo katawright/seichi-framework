@@ -1,4 +1,4 @@
-<!-- For guidance on incident response, see stages/support/README.md#incident-response -->
+<!-- For guidance on incident response, see guides/operations.md#respond -->
 
 # Post-Incident Review
 
@@ -6,8 +6,8 @@
 incident.
 
 **Usage:** Complete after incident resolution. See the
-[Support stage incident response section](../stages/support/README.md#incident-response)
-for the full incident workflow.
+[Operations Guide: Respond](../guides/operations.md#respond) for the full
+incident workflow.
 
 **Incident ID:** [e.g., INC-001]
 
@@ -93,4 +93,4 @@ for the full incident workflow.
 
 ---
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.35.0 -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.35.0. v0.49 vocabulary/dev-ops-split sweep. -->

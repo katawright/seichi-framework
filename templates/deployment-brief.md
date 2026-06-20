@@ -273,21 +273,21 @@ tracker]
 
 ---
 
-## Handoff to Support
+## Handoff to Operations
 
-- [ ] Deployment brief shared with Support team
+- [ ] Deployment brief shared with Operations team
 - [ ] Success criteria baselines documented
-- [ ] Monitoring dashboards accessible to Support
-- [ ] Support runbook created or updated
+- [ ] Monitoring dashboards accessible to Operations
+- [ ] Operations runbook created or updated
 - [ ] Known issues documented with workarounds
 - [ ] Escalation contacts updated
 
-<!-- For support handoff details, see ../stages/deployment/reference.md -->
+<!-- For operations handoff details, see ../stages/deployment/reference.md -->
 
 ---
 
 > For full readiness verification before accepting production ownership, see the
-> [Support Readiness Checklist](../stages/support/readiness-checklist.md).
+> [Operations Guide](../guides/operations.md).
 
 ## Production Ownership Transfer
 
@@ -300,7 +300,7 @@ tracker]
 | System / Increment | [What is being transferred]                        |
 | Transfer date/time | YYYY-MM-DD HH:MM [TZ]                              |
 | Accepting team     | [Team or role name]                                |
-| Support tier       | [Minimal / Standard / Enterprise]                  |
+| Operations tier    | [Minimal / Standard / Enterprise]                  |
 | Escalation contact | [Deployment engineer, available until: YYYY-MM-DD] |
 
 **Accepting team confirms:**
@@ -388,7 +388,7 @@ tracker]
 1. Monitor production for next 24 hours
 2. Track success criteria baselines vs. targets
 3. Address any minor issues discovered
-4. Hand off to Support stage
+4. Hand off toward Closure and Operations
 
 ---
 
@@ -402,4 +402,4 @@ tracker]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-05-18 | Added in v0.7.0. Session protocol preamble added in v0.44.0. Release disposition field added in v0.45.0. -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.7.0. Session protocol preamble added in v0.44.0. Release disposition field added in v0.45.0. v0.49 vocabulary/dev-ops-split sweep. -->

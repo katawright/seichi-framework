@@ -23,7 +23,7 @@ const STAGE_PATTERN: Record<string, ManifestStage["pattern"]> = {
   implementation: "Iterative",
   verification: "Iterative",
   deployment: "Iterative",
-  support: "Continuous",
+  closure: "Terminal",
 };
 
 const STAGE_DISPLAY_ORDER: Record<string, number> = {
@@ -34,7 +34,7 @@ const STAGE_DISPLAY_ORDER: Record<string, number> = {
   implementation: 5,
   verification: 6,
   deployment: 7,
-  support: 8,
+  closure: 8,
 };
 
 // Frontmatter checkpoint `type:` values map to the manifest checkpoint

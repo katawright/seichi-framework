@@ -59,7 +59,11 @@ See `INDEX.md` for the full file inventory and canonical sources.
   System Design
 - Iterative stages (per increment): Increment Design, Implementation,
   Verification, Deployment
-- Continuous stage: Support
+- Terminal stage: Closure (hand off to Operations + close the project)
+- Operations is a **sibling process**, not a stage (standing-system operation;
+  see `guides/operations.md`); **Flow** is a second delivery mode for small
+  in-place changes (see `guides/stages.md`). Three work-shapes — Project · Flow
+  · Operations — share one operating model.
 - Increment = neutral term mapping to epic/feature/sprint/milestone/deliverable
 
 ---
@@ -88,8 +92,8 @@ See `INDEX.md` for the full file inventory and canonical sources.
 3. Each stage directory should include: README (stage guide), checklist,
    reference (if needed). Templates live in `templates/`. Stage directories are
    under `stages/`
-4. Include role metadata and execution pattern
-   (foundational/iterative/continuous) in each stage
+4. Include role metadata and execution pattern (foundational/iterative/terminal)
+   in each stage
 5. Use feature branches and PRs (main branch is protected)
 
 ---
@@ -171,6 +175,7 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.9.0.
+Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
+split (terminal Closure stage; Operations sibling process; Flow delivery mode).

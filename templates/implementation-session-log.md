@@ -19,18 +19,18 @@ for logging conventions and AI agent guidance.
 
 **Last Updated:** YYYY-MM-DD HH:MM
 
-| Field             | Value                                            |
-| ----------------- | ------------------------------------------------ |
-| **Project**       | [Project Name]                                   |
-| **Increment**     | [Increment Number/Name]                          |
-| **Engineer(s)**   | [Names]                                          |
-| **Stage**         | Implementation                                   |
-| **Autonomy Tier** | [Human-Led / Collaborative / AI-Led]             |
-| **Oversight**     | [Active / Passive / Minimal]                     |
-| **Stage Status**  | [Not Started / In Progress / Blocked / Complete] |
-| **Gate Status**   | [Pending / Approved / Rejected — Approver: name] |
+| Field              | Value                                                         |
+| ------------------ | ------------------------------------------------------------- |
+| **Project**        | [Project Name]                                                |
+| **Increment**      | [Increment Number/Name]                                       |
+| **Engineer(s)**    | [Names]                                                       |
+| **Stage**          | Implementation                                                |
+| **Work Execution** | [Humans / Collaborative / Agents]                             |
+| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent] |
+| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]              |
+| **Gate Status**    | [Pending / Approved / Rejected — Approver: name]              |
 
-<!-- AI agent: update this log at the end of each session with completed work, in-progress items, next steps, and blockers -->
+<!-- Agent: update this log at the end of each session with completed work, in-progress items, next steps, and blockers -->
 
 ---
 
@@ -91,4 +91,4 @@ for logging conventions and AI agent guidance.
 
 _Add more session entries as needed._
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.12.0 -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.12.0. v0.49 vocabulary/dev-ops-split sweep. -->

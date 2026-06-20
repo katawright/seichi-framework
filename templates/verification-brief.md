@@ -3,8 +3,8 @@
 # Verification Brief: [Increment Name]
 
 > **Before starting a session on this brief:** follow the steps in
-> [Session Protocol](../guides/session-protocol.md). Check it at session
-> start so nothing is missed as the protocol evolves.
+> [Session Protocol](../guides/session-protocol.md). Check it at session start
+> so nothing is missed as the protocol evolves.
 
 > **Stage guide:** [Verification README](../stages/verification/README.md)
 
@@ -298,7 +298,7 @@ Implementation rework brief should reference this cycle's verification brief]
 
 ## Project Closeout (Optional)
 
-<!-- Include this section when Deployment and Support stages were skipped
+<!-- Include this section when Deployment and Closure stages were skipped
      (e.g., local-only tools, spikes, experiments). This brief then serves
      as the de facto project conclusion. -->
 
@@ -347,4 +347,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-04-11 | Added in v0.6.0. Session protocol preamble added in v0.44.0. -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.6.0. Session protocol preamble added in v0.44.0. v0.49 vocabulary/dev-ops-split sweep. -->

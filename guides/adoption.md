@@ -150,8 +150,8 @@ needed for expansion.
 3. **Address the real concern.** If the root is job security, leadership needs
    to communicate clearly about AI's role (augmentation, not replacement) — and
    back that up with actions, not just messaging. If the root is quality
-   concerns, point to the framework's verification gates and Human-Led mode as
-   evidence that those concerns are taken seriously.
+   concerns, point to the framework's verification gates and human-driven
+   operating posture as evidence that those concerns are taken seriously.
 4. **Find willing teams first.** A successful pilot with a willing team builds
    organizational evidence that skeptics can evaluate on their own terms.
    Forcing a pilot on a resistant team risks confirming their fears.
@@ -368,7 +368,7 @@ revisit the assessment for guidance:
 1. Pilot team reads the [README](../README.md) and
    [Framework Guide](framework.md)
 2. Apply the framework to one project, starting at Initiation
-3. Work through stages iteratively, beginning in Human-Led mode
+3. Work through stages iteratively, beginning with humans driving
 4. Capture feedback after each stage and at retrospective
 
 #### Success Criteria for Phase 2
@@ -392,7 +392,7 @@ revisit the assessment for guidance:
 1. Pilot team shares lessons learned with expanding teams
 2. Pilot team members act as mentors or embedded coaches
 3. Expanding teams start with the same approach: one Standard-tier project,
-   Human-Led mode
+   humans driving with agents assisting
 4. Adjust framework practices based on pilot feedback before expanding
 
 #### Managing Change During Expansion
@@ -409,9 +409,10 @@ Common resistance patterns and how to address them:
 | Resistance Pattern                | Response                                |
 | --------------------------------- | --------------------------------------- |
 | "AI will replace my job"          | Framework explicitly keeps humans in    |
-|                                   | control. AI drafts; humans decide.      |
+|                                   | control. Agents draft; humans decide.   |
 | "AI-generated code is unreliable" | That's exactly why the framework adds   |
-|                                   | verification gates. Start Human-Led.    |
+|                                   | verification gates. Start with humans   |
+|                                   | driving.                                |
 | "This is just more process"       | Framework replaces ad-hoc AI usage with |
 |                                   | structured usage. Right-size to Minimal |
 |                                   | if overhead concerns are valid.         |
@@ -445,24 +446,26 @@ Use language consistently across the organization:
 - Say "AI as a productivity tool" not "AI as a replacement"
 - Refer to "human validation" not "quality control of AI"
 
-#### Progressing Through Autonomy Tiers
+#### Progressing Through Operating Postures
 
-As teams gain experience during rollout, they naturally progress from Human-Led
-to Collaborative to AI-Led. The [Operating Model Guide](operating-model.md)
-sizes who runs the process and how autonomously. Expect this progression:
+As teams gain experience during rollout, the natural trajectory is to start with
+humans driving and agents assisting, and shift execution toward agents as
+confidence grows. For the full Work Execution and Authority model, see the
+[Operating Model Guide](operating-model.md).
 
-1. **Human-Led (Weeks 1–4):** Humans set the agenda, direct AI explicitly, and
-   review all output closely. AI is a drafting tool.
-2. **Collaborative (Weeks 4–12):** Humans and AI share initiative. AI
-   proactively suggests approaches; humans evaluate and decide. Trust builds
-   through repeated verification.
-3. **AI-Led (12+ weeks, high-verifiability stages only):** AI drives execution
-   within bounded scope (e.g., generating tests, writing implementation code).
-   Humans validate through automated gates and spot checks.
+- **Weeks 1–4:** Humans set the agenda, direct agents explicitly, and review all
+  output closely. Agents are drafting tools.
+- **Weeks 4–12:** Humans and agents share initiative. Agents proactively suggest
+  approaches; humans evaluate and decide. Trust builds through repeated
+  verification.
+- **12+ weeks (high-verifiability stages only):** Agents drive execution within
+  bounded scope (e.g., generating tests, writing implementation code). Humans
+  validate through automated gates and spot checks. This is sometimes called
+  Lights-Out or agent-led execution.
 
-**Important:** Not every stage should reach AI-Led. Low-verifiability stages
-like Initiation and System Design should remain Human-Led or Collaborative
-regardless of team maturity.
+**Important:** Not every stage should reach agent-led execution.
+Low-verifiability stages like Initiation and System Design should remain
+human-driven regardless of team maturity.
 
 #### Success Criteria for Phase 3
 
@@ -519,8 +522,8 @@ highest and the risk is lowest.
 
 7. **System Design** — AI-assisted architecture exploration. High impact of
    errors requires strong gates.
-8. **Support** — AI-assisted incident response and triage. Requires established
-   monitoring infrastructure.
+8. **Closure** — project close-out and handoff to operations. Requires
+   established monitoring infrastructure and a standing ops process.
 
 **Partial adoption is valid.** A team using the framework for Implementation and
 Verification only is still getting value. The framework is designed so each
@@ -574,4 +577,6 @@ organizations can define default tier mappings based on project characteristics.
 **Last Updated:** 2026-06-20
 
 Added to framework in v0.17.0. Autonomy-progression pointer repointed to the
-Operating Model Guide in v0.49.0.
+Operating Model Guide; autonomy-tier triple replaced with operating-posture
+framing; actor-sense "AI" rewritten to "agents"; Support stage renamed to
+Closure in stage adoption sequence in v0.49.0.

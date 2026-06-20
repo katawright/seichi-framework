@@ -121,9 +121,9 @@ overridable assumptions (see
 
 > `[ASSUMED]` Risk tier: Minimal — solo, personal data only, no external users.
 > `[ASSUMED]` Project type: Greenfield — empty folder. `[ASSUMED]` Deployment
-> intent: Local/personal use for now. `[ASSUMED]` Autonomy: Collaborative with
-> Active oversight — framework default for a first project. Say the word and any
-> of these change.
+> intent: Local/personal use for now. `[ASSUMED]` Operating posture:
+> Checkpointed — framework default for a first project. Say the word and any of
+> these change.
 
 Sam nods, and only now does the agent scaffold the workspace and seed the brief.
 
@@ -138,8 +138,8 @@ at Minimal are omitted, not filled with "N/A."
 ### Right-Sizing This Brief
 
 **Tier chosen:** Minimal `[ASSUMED]` **Project type:** Greenfield **Deployment
-intent:** Local-only (personal use) **AI autonomy:** Collaborative `[ASSUMED]`
-**Oversight intensity:** Active `[ASSUMED]`
+intent:** Local-only (personal use) **Operating posture:** Checkpointed
+`[ASSUMED]` — see [Operating Model](operating-model.md) for Required Assurance.
 
 ### Problem Statement
 
@@ -287,6 +287,7 @@ codebase, see the [Brownfield Worked Example](worked-example-brownfield.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20 — v0.49 consistency sweep: operating posture
+vocabulary updated (Collaborative → Checkpointed; oversight intensity removed).
 
 Added to framework in v0.48.0.

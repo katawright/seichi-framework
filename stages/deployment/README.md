@@ -57,7 +57,7 @@ afterthought — untested rollbacks, missing monitoring, poor communication, and
 between "code works in testing" and "code delivers value to users" by delivering
 production releases incrementally with rollback capability, confirming
 production health and instrumentation, keeping stakeholders informed throughout,
-and capturing monitoring baselines for ongoing Support. Whether a given
+and capturing monitoring baselines for ongoing operations. Whether a given
 increment ships now or defers to a later release is an elective, human-owned
 decision this stage owns.
 
@@ -103,12 +103,13 @@ issues documented.
 > CI/CD integration across the full lifecycle, see the
 > [DevOps Integration Guide](../../guides/devops-integration.md).
 
-> **Autonomy boundary:** Deployment preparation (steps 1-4: brief, runbook,
-> environment prep) proceeds at Collaborative autonomy. Deployment execution
-> (steps 5-8: production release, monitoring, rollback) requires Human-Led
-> autonomy — humans approve and execute production changes.
+> **Execution authority:** Deployment preparation (steps 1-4: brief, runbook,
+> environment prep) may use collaborative work execution. Deployment execution
+> (steps 5-8: production release, monitoring, rollback) requires interactive
+> human authority — humans approve and execute production changes.
 
-1. Read [**How AI Helps**](#how-ai-helps) to determine your AI autonomy tier
+1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
+   (see the Operating Model Guide)
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
    to your project's risk tier
 3. Fill out the [Deployment Brief Template](../../templates/deployment-brief.md)
@@ -179,37 +180,26 @@ or library — see
 
 ## How AI Helps
 
-AI can assist with Deployment at whatever autonomy tier your team is comfortable
-with — from generating scripts to monitoring pipelines.
+AI can assist with Deployment at whatever autonomy level your team is
+comfortable with — from generating scripts to monitoring pipelines.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier — even at the AI-Led tier, **humans own all production
-approval gates; pipelines execute deployment steps**. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                             | Collaborative                       | AI-Led                                                                          |
-| ------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------- |
-| Engineer writes runbook; AI templates | AI drafts runbook; engineer reviews | AI monitors pipeline, recommends gate decisions with evidence; engineer decides |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
 
-- **Deployment script generation:** Describe your infrastructure and AI produces
-  deployment scripts, rollback procedures, and runbooks
-- **Pre-deployment review:** AI walks through the checklist and flags gaps or
-  risks in your deployment plan
-- **Communication drafting:** AI drafts stakeholder notifications for each
+- **Deployment script generation:** Describe your infrastructure and an agent
+  produces deployment scripts, rollback procedures, and runbooks
+- **Pre-deployment review:** An agent walks through the checklist and flags gaps
+  or risks in your deployment plan
+- **Communication drafting:** An agent drafts stakeholder notifications for each
   deployment phase
-- **Monitoring configuration:** AI suggests alert thresholds, dashboard layouts,
-  and health check endpoints for your stack
+- **Monitoring configuration:** An agent suggests alert thresholds, dashboard
+  layouts, and health check endpoints for your stack
 
 For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
@@ -248,7 +238,7 @@ Expand Deployment only when needed:
 - **Large user base:** Add gradual rollout strategy, extended monitoring, canary
   analysis
 
-Otherwise, keep deployment straightforward and hand off to Support.
+Otherwise, keep deployment straightforward and hand off to Closure.
 
 > These triggers help you decide when to move from Minimal to Standard or
 > Enterprise. For full tier definitions and choosing criteria, see the
@@ -282,7 +272,7 @@ reserve the full checklist for increment-level review.
 **Using the 37-item checklist with CD:** Mark items that the CD pipeline handles
 as "Satisfied by CD pipeline" rather than N/A — this preserves traceability
 while acknowledging automated coverage. Focus manual review on the Handoff to
-Support and Final Decision sections.
+Closure and Final Decision sections.
 
 > **CD does not exempt human judgment concerns.** Breaking database migrations,
 > cross-service deployment ordering, and infrastructure changes still require
@@ -348,7 +338,7 @@ For the full CD model, see
  11. Complete deployment brief
  12. Continue monitoring (24-48 hours)
 
-HANDOFF TO SUPPORT
+HANDOFF TO CLOSURE
 ```
 
 > Steps 5–8 vary by deployment strategy — see
@@ -630,8 +620,8 @@ Deployment validates that measurement systems work in production. See
   comparison
 - **Monitoring Dashboards** — configured and validated production dashboards
 - **Incident Response Procedures** — escalation paths and response playbooks
-  (Minimal: section in deployment brief; Standard+: standalone document) (using
-  [Support Reference](../support/reference.md#incident-response-process))
+  (Minimal: section in deployment brief; Standard+: standalone document) (see
+  [Operations Guide](../../guides/operations.md#respond))
 - **Rollback Procedure** — tested and documented rollback steps (section in
   Deployment Brief or standalone runbook)
 - **Retrospective** — increment retrospective capturing what went well, what
@@ -655,22 +645,21 @@ Deployment validates that measurement systems work in production. See
 > integrity, generating an SBOM, and running pre-deployment security checks. See
 > [Security Guide](../../guides/security.md).
 
-**Handoff:** Support stage receives the deployed system, monitoring dashboards,
+**Handoff:** Closure stage receives the deployed system, monitoring dashboards,
 updated runbooks, incident response procedures, rollback procedure, baseline
-measurements, release notes, and success criteria register (originates from
-Initiation; verify the support team has access during handoff). Retrospective
-action items feed into the next Increment Design cycle (see
-[Deployment Checklist — Support Handoff](checklist.md#handoff-to-support)). When
-the same role owns both Deployment and Support, apply the handoff checklist as a
+measurements, release notes, and success criteria register (the raw material for
+the operational handoff record); the running system then hands off to Operations
+(see [Operations Guide](../../guides/operations.md)). Originating from
+Initiation, verify the handoff team has access to the success criteria register
+during handoff. Retrospective action items feed into the next Increment Design
+cycle (see
+[Deployment Checklist — Closure Handoff](checklist.md#handoff-to-support)). When
+the same role owns both Deployment and Closure, apply the handoff checklist as a
 self-review rather than a cross-team transfer. Distribute checkpoint or gate
 decision artifacts to all Informed roles per the
 [Information Protocol](../../guides/roles.md#information-protocol). Record the
 deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
-
-The Support team should verify readiness using the
-[Support Readiness Checklist](../support/readiness-checklist.md) before
-accepting ownership.
 
 ---
 
@@ -706,4 +695,5 @@ accepting ownership.
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
 Brownfield Database Deployment section added in v0.42.0. Compliance Approval
 `condition` checkpoint metadata added in v0.45.0. Release Disposition section
-and the elective-release model added in v0.45.0.
+and the elective-release model added in v0.45.0. v0.49: autonomy vocabulary
+repointed to the operating model; Support→Closure/Operations refs updated.

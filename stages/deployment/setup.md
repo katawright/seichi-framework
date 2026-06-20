@@ -109,7 +109,7 @@ cover the decisions that feed into it and the ongoing work that uses it.
 | Per-increment deployment  | [Deployment Stage Guide](README.md)                                                          | Uses the infrastructure built here |
 | Pipeline readiness check  | [Deployment Pipeline Checklist](pipeline-checklist.md)                                       | Validates what this guide produces |
 | Monitoring infrastructure | This guide                                                                                   | Configures tools and dashboards    |
-| Operational processes     | [Support Operations Guide](../support/operations.md)                                         | Uses monitoring infrastructure     |
+| Operational processes     | [Operations Guide](../../guides/operations.md)                                               | Uses monitoring infrastructure     |
 
 ---
 
@@ -251,12 +251,12 @@ Set up observability infrastructure:
 - Infrastructure metrics dashboards
 - Alert routing and escalation policies
 - On-call rotation tooling configured (see
-  [Support Operations Guide](../support/operations.md) for rotation structure
-  and escalation process)
+  [Operations Guide](../../guides/operations.md) for rotation structure and
+  escalation process)
 
 For configuring ongoing operational processes that use this infrastructure
 (incident response, on-call procedures, runbooks), see the
-[Support Operations Guide](../support/operations.md).
+[Operations Guide](../../guides/operations.md).
 
 ### 8. Skeleton Deployment
 
@@ -384,6 +384,7 @@ model expects projects to grow.
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. Support Operations Guide links updated to
+Operations Guide in v0.49.0.

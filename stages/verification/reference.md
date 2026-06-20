@@ -412,9 +412,9 @@ measure success without working monitoring.
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
 - Test generation from acceptance criteria — functional, integration, and edge
   case tests
@@ -433,13 +433,10 @@ measure success without working monitoring.
 - Acceptance criteria coverage completeness — every AC has a corresponding test
 - Whether tests verify behavior rather than implementation details
 
-### Oversight Intensity at This Stage
-
-**Passive or Minimal.** Verification has very high verifiability — test results
-are machine-checkable. Minimal oversight is appropriate when acceptance criteria
-are clear and the CI pipeline is mature. Active oversight is reserved for
-complex business logic or security-critical paths where test intent is harder to
-assess automatically.
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
@@ -467,7 +464,10 @@ Capture the following at the end of each session:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance) for the central fallback protocols.
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
+[Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
+for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
@@ -491,6 +491,6 @@ These protocols apply at all autonomy tiers, not only AI-Led. See [Agentic Workf
 
 ## Notes
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-06-20
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. v0.49: vocabulary and oversight model updated.

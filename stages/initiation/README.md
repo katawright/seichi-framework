@@ -54,7 +54,7 @@ and scope projects with AI assistance.
 ### Key Principle
 
 Success criteria established in Initiation flow through every subsequent stage —
-from Requirements to Support. Getting them right here is the highest-leverage
+from Requirements to Closure. Getting them right here is the highest-leverage
 activity in the entire SDLC. For the full stage definition (purpose, roles,
 inputs/outputs, entry/exit criteria, and gate details), see
 [Framework Stages: Initiation](../../guides/stages.md#stage-1-initiation).
@@ -77,17 +77,17 @@ budget context. No prior framework artifacts or technical expertise required.
 
 1. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to understand
    the three right-sizing axes and select your risk tier
-2. Read [**How AI Helps**](#how-ai-helps) to select your AI autonomy tier (and
-   oversight intensity if AI-Led)
-3. **For Collaborative or AI-Led tiers:** Confirm all right-sizing selections
-   with the user before drafting. For first-time or zero-to-one users, infer the
+2. Read [**How AI Helps**](#how-ai-helps) to select your operating posture (Work
+   Execution + Authority — see the Operating Model Guide)
+3. **When agents perform the work:** Confirm all right-sizing selections with
+   the user before drafting. For first-time or zero-to-one users, infer the
    selections from the conversation and present them as overridable `[ASSUMED]`
    defaults rather than asking the user to pick from framework taxonomies — see
    [Agentic Workflow Guide: Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference).
    Do not begin populating the brief until agreed.
 4. Fill out the [Initiation Brief Template](../../templates/initiation-brief.md)
-   using AI according to your chosen autonomy tier. For each section of the
-   brief, consult the matching subsection under
+   using agents according to your chosen operating posture. For each section of
+   the brief, consult the matching subsection under
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    below for rationale, good/bad examples, and what to include. See the
    [Bootstrap Guide](../../guides/bootstrap.md) for the bootstrap prompt
@@ -96,8 +96,8 @@ budget context. No prior framework artifacts or technical expertise required.
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief
 6. Review the brief for correctness — you own the final content
-7. Complete the [Initiation Checklist](checklist.md) using AI according to your
-   chosen autonomy tier
+7. Complete the [Initiation Checklist](checklist.md) using agents according to
+   your chosen operating posture
 8. Complete Gate 1 — present to stakeholders; Exec decides proceed/revise/stop
    (see
    [Decision-Rights Matrix](../../guides/checkpoints.md#decision-rights-matrix)).
@@ -180,8 +180,8 @@ Two cautions for whoever runs the interview:
   failure mode the problem statement exists to prevent. Start from the trigger
   and the user.
 - **Do not front framework classification questions** (risk tier, project type,
-  autonomy tier). The agent infers these from the conversation and presents them
-  as overridable assumptions — see
+  operating posture). The agent infers these from the conversation and presents
+  them as overridable assumptions — see
   [Agentic Workflow Guide: Zero-to-One Project Routing](../../guides/agentic-workflow.md#zero-to-one-project-routing).
 
 ### Scaling the Interview to the Stakes
@@ -210,13 +210,13 @@ line: money changing hands opens the business case and payment-data sensitivity;
 regulated data opens compliance. Listen for these signals rather than waiting to
 be told them:
 
-| Signal in the opening answers      | What it raises                                       |
-| ---------------------------------- | ---------------------------------------------------- |
-| Real users beyond the builder      | Who is affected; pushes the risk tier up             |
-| Money changing hands               | Business case; payment-data sensitivity              |
-| Regulated or personal data         | Compliance and privacy obligations                   |
-| Public or external exposure        | External users (a tier escalation); security posture |
-| Ambition to automate, "run itself" | How much AI drives — the autonomy tier               |
+| Signal in the opening answers      | What it raises                                         |
+| ---------------------------------- | ------------------------------------------------------ |
+| Real users beyond the builder      | Who is affected; pushes the risk tier up               |
+| Money changing hands               | Business case; payment-data sensitivity                |
+| Regulated or personal data         | Compliance and privacy obligations                     |
+| Public or external exposure        | External users (a tier escalation); security posture   |
+| Ambition to automate, "run itself" | How autonomously it should run — the operating posture |
 
 This table is **what to read, not a script to recite.** The framework specifies
 the signals to listen for and the classifications they inform; the question
@@ -232,25 +232,26 @@ interview's form of the framework's standing rule to default conservatively when
 signals are missing or conflict (see
 [Classification by Inference, rule 2](../../guides/agentic-workflow.md#classification-by-inference)).
 
-### Seeding the Operating Frame
+### Seeding the Operating Configuration
 
-The interview is the origin point of the project's **operating frame** — the
-right-sizing selections the rest of the lifecycle consumes: how much process it
-carries, how much AI drives it, where it deploys, and what compliance it must
-honor. "Build it and run it to the highest degree," read correctly, is a request
-for the most autonomous end of that frame; "just a quick favor" is the least.
-Idea formation **proposes** the frame; it does not commit it.
+The interview is the origin point of the project's **operating configuration** —
+the right-sizing selections the rest of the lifecycle consumes: how much process
+it carries, how autonomously it runs, where it deploys, and what compliance it
+must honor. "Build it and run it to the highest degree," read correctly, is a
+request for the most autonomous end of that configuration; "just a quick favor"
+is the least. Idea formation **proposes** the configuration; it does not commit
+it.
 
-Seed the inferred classifications — risk tier, AI autonomy, deployment intent,
-and any compliance obligation — into the draft brief's right-sizing section as
-`[ASSUMED]` values, exactly as
+Seed the inferred classifications — risk tier, operating posture, deployment
+intent, and any compliance obligation — into the draft brief's right-sizing
+section as `[ASSUMED]` values, exactly as
 [Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)
 prescribes. Initiation refines them as the brief takes shape, and **Gate 1 locks
 them**: the investment decision is where "are you sure you want to run a
 payments product this autonomously?" is answered honestly. The calculator
 effectively has no Gate 1 — a glance-and-go self-gate at the lowest tier — so
 its frame is set and forgotten in one breath; the streaming service's Gate 1 is
-real, and is where its proposed frame is committed or pulled back.
+real, and is where its proposed configuration is committed or pulled back.
 
 > **Compliance binds before build, not at Gate 1.** One element does not wait
 > for the gate: a hard compliance obligation — regulated data, a legal
@@ -266,25 +267,18 @@ real, and is where its proposed frame is committed or pulled back.
 
 ## How AI Helps
 
-AI can assist with Initiation at whatever autonomy tier your team is comfortable
-with — from answering questions to driving the entire discovery process.
+An agent can assist with Initiation at whatever operating posture your team is
+comfortable with — from answering questions to driving the entire discovery
+process.
 
-### AI Autonomy Spectrum
-
-Match AI's role to your team's autonomy comfort level. Gate requirements always
-apply regardless of tier. See the
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions)
-for full tier definitions.
-
-| Human-Led                          | Collaborative                                 | AI-Led                                                          |
-| ---------------------------------- | --------------------------------------------- | --------------------------------------------------------------- |
-| Human drafts; AI answers questions | AI interviews and drafts brief; human reviews | AI drives discovery, cross-references for gaps; human validates |
-
-At the AI-Led tier, oversight intensity can be tuned from Active to Minimal —
-see
-[Operating Model Guide: The Configurable Functions](../../guides/operating-model.md#the-configurable-functions).
-For detailed AI-Led patterns, see
-[Stage Reference](reference.md#ai-led-patterns).
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+(with per-stage overrides) along two functions: **Work Execution** (Humans ·
+Collaborative · Agents) and **Authority** (interactive human · pre-authorized
+policy · delegated agent). Gate 1 always stays a human-owned investment
+decision. See the [Operating Model Guide](../../guides/operating-model.md). For
+agent-led discovery patterns, see
+[Stage Reference](reference.md#agent-led-patterns).
 
 ### AI Assistance Patterns
 
@@ -311,8 +305,9 @@ For assistance level details, see the
 The framework scales along three axes:
 
 - **Risk tier** (Minimal / Standard / Enterprise) — how much process to apply
-- **AI autonomy tier** (Human-Led / Collaborative / AI-Led) — how much AI drives
-  the work (see [How AI Helps](#how-ai-helps) above)
+- **Operating posture** — who performs the work (Work Execution) and who decides
+  (Authority), and how autonomously it runs (see [How AI Helps](#how-ai-helps)
+  above and the [Operating Model Guide](../../guides/operating-model.md))
 - **Team size** — solo, small team, or multi-team (see
   [Right-Sizing Guide](../../guides/right-sizing.md#team-size--how-formal))
 
@@ -517,7 +512,7 @@ the same abstraction-and-scope idea applied to Initiation; see
 Success criteria are the guardrails that keep delivery honest. Each one is the
 measurable check that a goal was met, and names the goal or goals it verifies.
 They flow through every later stage — Requirements traces features to them,
-Verification validates them, and Support monitors them in production (see
+Verification validates them, and Operations monitors them in production (see
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline)).
 Without measurable criteria, teams declare success based on "we shipped it"
 rather than "it worked." Defining baselines and targets during Initiation also

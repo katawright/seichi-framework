@@ -109,7 +109,7 @@ classification questions. Route into idea formation:
    On the warm on-ramp, the backlog entry's problem statement is the interview's
    starting point, not a blank page
 2. **Classify by inference** — derive risk tier, project type, deployment
-   intent, autonomy tier, and oversight intensity from the conversation and
+   intent, operating posture, and Required Assurance from the conversation and
    present them as overridable `[ASSUMED]` defaults, rather than asking the user
    to choose from framework taxonomies. See
    [Classification by Inference](#classification-by-inference)
@@ -126,10 +126,11 @@ classification questions. Route into idea formation:
 
 A new project carries five classification decisions: **risk tier** (Minimal /
 Standard / Enterprise), **project type** (greenfield / brownfield), **deployment
-intent** (production service / internal tool / local-only), **AI autonomy tier**
-(Human-Led / Collaborative / AI-Led), and **oversight intensity** (Active /
-Passive / Minimal). A first-time user cannot answer these before understanding
-the framework — do not present them as menus at first contact.
+intent** (production service / internal tool / local-only), **operating
+posture** (Supervised / Checkpointed / Lights-Out), and **Required Assurance**
+(see [Operating Model Guide](operating-model.md)). A first-time user cannot
+answer these before understanding the framework — do not present them as menus
+at first contact.
 
 Instead, derive all five from two or three natural questions woven into the
 opening conversation:
@@ -145,9 +146,9 @@ Present the derived classifications as overridable assumptions using the
 
 > `[ASSUMED]` Risk tier: Minimal — solo experiment, no sensitive data.
 > `[ASSUMED]` Project type: Greenfield — empty repository. `[ASSUMED]`
-> Deployment intent: Local-only for now. `[ASSUMED]` Autonomy: Collaborative
-> with Active oversight — framework default for a first project. Say the word
-> and any of these change.
+> Deployment intent: Local-only for now. `[ASSUMED]` Operating posture:
+> Checkpointed — framework default for a first project. Say the word and any of
+> these change.
 
 Rules:
 
@@ -195,40 +196,37 @@ flowchart LR
     ID --> Impl[5. Implementation]
     Impl --> Ver[6. Verification]
     Ver --> Dep[7. Deployment]
-    Dep --> Sup[8. Support]
+    Dep --> Clo[8. Closure]
 
     Ver -.->|defects| Impl
     Dep -.->|next increment| ID
-    Sup -.->|enhancements| Req
-    Sup -.->|perf issues| SD
-    Sup -.->|enhancements| ID
-    Sup -.->|patches| Impl
-    Sup -.->|reassess| Init
+    Clo -.->|ops findings| ID
 ```
 
 **Solid arrows** show the primary forward flow. **Dashed arrows** show feedback
 loops — defects return to Implementation for rework, Deployment feeds into
-Increment Design for the next increment, and Support findings feed back to
-Requirements (enhancements), System Design (performance issues requiring
-architectural changes), Increment Design (enhancements), Implementation
-(low-risk patches), or Initiation (reassessment).
+Increment Design for the next increment, and Closure closes the project with a
+handoff to Operations. Operations findings feed back as new
+[Flow](stages.md#flow-delivery-mode) items or projects.
 
 ---
 
-## Quick Start by Autonomy Tier
+## Quick Start by Operating Posture
 
-### Human-Led
+### Supervised
 
-The agent assists on request. Humans drive every step.
+Work Execution is Human-led; Authority is interactive. The agent surfaces
+information and a human acts. Humans drive every step.
 
 1. Read the stage README for guidance and rationale
 2. Wait for human instructions before producing artifacts
 3. Generate drafts, options, and analyses when asked
 4. Present outputs for human review before proceeding
 
-### Collaborative
+### Checkpointed
 
-The agent co-authors within human-set boundaries. This is the default tier.
+Work Execution is Collaborative; Authority follows pre-authorized policy. The
+agent co-authors within human-set boundaries. This is the default posture.
 
 1. Read the stage README and checklist
 2. Propose a work plan for the current stage
@@ -236,9 +234,10 @@ The agent co-authors within human-set boundaries. This is the default tier.
 4. Pause at gates for human review and approval
 5. Iterate based on human feedback
 
-### AI-Led
+### Lights-Out
 
-The agent drives the process. Humans validate at gates.
+Work Execution is Agent-driven; Authority is delegated. The agent drives the
+process. Humans validate at gates.
 
 1. Read the stage README, checklist, and reference (if available)
 2. Assess inputs — flag any that are missing or ambiguous
@@ -249,8 +248,8 @@ The agent drives the process. Humans validate at gates.
    and check pre-mortem assumptions before starting the next Increment Design
 7. Use fallback protocols (below) when blocked
 
-For how independently work runs and where it must escalate, see the
-[Operating Model Guide: The Configurable Functions](operating-model.md#the-configurable-functions).
+For Required Assurance levels and Authority configuration across postures, see
+the [Operating Model Guide](operating-model.md).
 
 ---
 
@@ -281,10 +280,11 @@ Recommended workflow for AI coding agents operating in this repository:
 Use these protocols when the agent encounters obstacles during autonomous
 operation.
 
-> **Human-Led tier:** At Human-Led tier, request human direction before deriving
-> inputs or attempting gate remediation. The protocols below assume
-> collaborative or AI-led autonomy. Human-Led agents should halt and present the
-> situation to the human rather than acting autonomously.
+> **Supervised posture:** At the Supervised posture, the agent surfaces the
+> situation and a human acts before deriving inputs or attempting gate
+> remediation. The protocols below assume Checkpointed or Lights-Out postures.
+> Agents at the Supervised posture should halt and present the situation to the
+> human rather than acting autonomously.
 
 ### Missing Input
 
@@ -348,11 +348,11 @@ unavailable).
 2. Flag every decision made without human input
 3. Compile a decision log for the human to review when available
 4. Do not proceed past hard gates (Gate 1, Gate 2) without human approval
-5. At Human-Led tier, halt and log all context for human review rather than
-   continuing autonomously
-6. At Collaborative tier, "continue" means continue work within the current
-   stage only — do not advance to the next stage or pass a gate without human
-   approval
+5. At the Supervised posture, halt and log all context for human review rather
+   than continuing autonomously
+6. At the Checkpointed posture, "continue" means continue work within the
+   current stage only — do not advance to the next stage or pass a gate without
+   human approval
 
 ### Precedence and Compound Conditions
 
@@ -364,7 +364,7 @@ When multiple fallback conditions apply simultaneously, resolve in this order:
    inputs with `[ASSUMED]` flag before halting, so context is maximally prepared
    for human review upon return.
 2. **Unreachable Human** — determine whether to wait or continue based on gate
-   type and autonomy tier.
+   type and operating posture.
 3. **Missing Input** — attempt to derive or request; if the human is
    unreachable, follow step 1/2 above.
 4. **Ambiguous Requirements** — lowest priority; resolve after inputs and human
@@ -373,8 +373,8 @@ When multiple fallback conditions apply simultaneously, resolve in this order:
 Stage-specific fallback guidance in `stages/[stage]/reference.md` extends these
 central protocols. Where a stage-specific protocol contradicts this section, the
 stage-specific protocol takes precedence for that stage. Stage-specific fallback
-protocols apply at all autonomy tiers unless the stage reference explicitly
-restricts them to a specific tier.
+protocols apply at all operating postures unless the stage reference explicitly
+restricts them to a specific posture.
 
 ---
 
@@ -420,8 +420,8 @@ artifacts. Create a new log file per stage (e.g.,
 end of every session.
 
 Use [Session Log](../templates/session-log.md) (`templates/session-log.md`) for
-all stages. The generalized template captures stage name, autonomy tier,
-oversight level, artifact progress, and per-session entries including decisions
+all stages. The generalized template captures stage name, operating posture,
+assurance level, artifact progress, and per-session entries including decisions
 made and context for the next session.
 
 For the Implementation stage specifically, use the
@@ -448,13 +448,13 @@ content:
 **Agent-specific guidance:** Role reflects who drove the work, not who typed. An
 agent that generates an artifact from a detailed human brief is typically listed
 as Author only if it made substantive decisions beyond mechanical translation.
-Consider the autonomy tier:
+Consider the operating posture:
 
-| Autonomy Tier | Typical Author            | Rationale                              |
-| ------------- | ------------------------- | -------------------------------------- |
-| Human-Led     | Human                     | Human shaped all content               |
-| Collaborative | Human and/or agent        | Depends on who drove each section      |
-| AI-Led        | Agent (human as Approver) | Agent drove substance; human validated |
+| Operating Posture | Typical Author            | Rationale                              |
+| ----------------- | ------------------------- | -------------------------------------- |
+| Supervised        | Human                     | Human shaped all content               |
+| Checkpointed      | Human and/or agent        | Depends on who drove each section      |
+| Lights-Out        | Agent (human as Approver) | Agent drove substance; human validated |
 
 When multiple contributors share authorship, list each with their role. When in
 doubt, credit the contributor who made the substantive decisions rather than the
@@ -562,7 +562,10 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-20 — v0.49 consistency sweep: Support stage renamed to
+Closure; autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed
+to operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow
+Diagram feedback edges updated to reflect Operations.
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm

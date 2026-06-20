@@ -10,9 +10,9 @@ successful completion (60-90 seconds).
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-> **AI-Led mode:** AI completes the full checklist and presents results to the
-> human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for. **During interactive
+> **Lights-Out mode:** an agent completes the full checklist and presents
+> results for review. A human reviews all items and confirms **[H]** items,
+> which require judgment an agent cannot substitute for. **During interactive
 > stage execution, raise [H] items as they arise rather than batching them at
 > the end.**
 
@@ -126,24 +126,24 @@ successful completion (60-90 seconds).
 
 ---
 
-## Handoff to Support
+## Handoff to Operations and Closure
 
-> When the same role owns both Deployment and Support, apply this section as a
-> self-review rather than a cross-team transfer.
+> When the same role owns both Deployment and ongoing operations, apply this
+> section as a self-review rather than a cross-team transfer.
 
-1. [ ] **[H] Support team briefed on deployment outcome** (walkthrough
+1. [ ] **[H] Operations owner briefed on deployment outcome** (walkthrough
        completed)
-2. [ ] **[H] Known issues and workarounds documented** (shared with support
-       team)
-3. [ ] **Production monitoring access verified** (support team has dashboard
+2. [ ] **[H] Known issues and workarounds documented** (shared with operations
+       owner)
+3. [ ] **Production monitoring access verified** (operations owner has dashboard
        access)
-4. [ ] **Support runbook created or updated** (reflects current deployment)
+4. [ ] **Operations runbook created or updated** (reflects current deployment)
 5. [ ] **[H] On-call rotation and escalation path updated** (contacts current)
 6. [ ] **First-week monitoring schedule defined** (observation cadence agreed)
-7. [ ] **[H] Support team confirms receipt of all Support stage inputs**
-       (deployed system, monitoring dashboards, updated runbooks, incident
-       response procedures, rollback procedure, baseline measurements, release
-       notes, success criteria register) — confirm by having the support contact
+7. [ ] **[H] Operations owner confirms receipt of all handoff inputs** (deployed
+       system, monitoring dashboards, updated runbooks, incident response
+       procedures, rollback procedure, baseline measurements, release notes,
+       success criteria register) — confirm by having the operations contact
        verify access to each artifact and sign off in the deployment brief or
        checkpoint decision
 8. [ ] **[H] Increment retrospective completed or scheduled** (run the
@@ -154,7 +154,7 @@ successful completion (60-90 seconds).
        log, release notes, updated runbooks — verify against stage README front
        matter)
 
-**Gate:** Support team ready to own production system.
+**Gate:** Operations owner ready to own production system.
 
 ---
 
@@ -175,8 +175,9 @@ successful completion (60-90 seconds).
 
 **Decision:** Ready / Not Ready
 
-**If Ready:** Hand off to Support stage. Record the deployment decision using
-the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+**If Ready:** Hand off toward Closure and Operations. Record the deployment
+decision using the
+[Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 **If Not Ready:** Document blocking items, resolve, and re-run this checklist.
 
@@ -199,7 +200,9 @@ the [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.7.0. Database migration and migration security items
-added in v0.42.0. Release Disposition section added in v0.45.0.
+added in v0.42.0. Release Disposition section added in v0.45.0. Support
+references updated to Operations/Closure and AI-Led mode updated to Lights-Out
+mode in v0.49.0.

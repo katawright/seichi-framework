@@ -3,7 +3,7 @@
 ## Overview
 
 End-to-end trace of a single requirement through every framework stage — from
-Initiation through Support — showing completed artifact examples at each step.
+Initiation through Closure — showing completed artifact examples at each step.
 
 ### Why a Worked Example
 
@@ -851,9 +851,13 @@ Deployment
   Migrations: 3 additive scripts
   Baseline: Onboarding completion rate tracking begins
     ↓
-Support
-  Monitor: Onboarding completion rate > 95% at 30-day mark
-  Monitor: Task assignment time < 5 minutes
+Closure
+  Dev→ops handoff complete; production ownership transferred
+  Wrap-up retro held; project closed
+    ↓
+Operations (ongoing — see operations.md)
+  Observe: Onboarding completion rate > 95% at 30-day mark
+  Observe: Task assignment time < 5 minutes
 ```
 
 **Key takeaway:** Every artifact references the one before it. An engineer
@@ -867,7 +871,8 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20 — v0.49 consistency sweep: traceability chain
+updated to end at Closure (project close-out) followed by Operations.
 
 Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
 updated to the two-digit draft form in v0.48.0. For a brownfield adoption

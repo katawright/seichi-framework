@@ -10,9 +10,9 @@ System Design.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-> **AI-Led mode:** AI completes the full checklist and presents results to the
-> human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for. **During interactive
+> **Lights-Out mode:** an agent completes the full checklist and presents
+> results for review. A human reviews all items and confirms **[H]** items,
+> which require judgment an agent cannot substitute for. **During interactive
 > stage execution, raise [H] items as they arise rather than batching them at
 > the end.**
 
@@ -108,7 +108,7 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.3.0. Item 11 reworded for the goals/success-criteria
-split in v0.45.0.
+split in v0.45.0. AI-Led mode updated to Lights-Out mode in v0.49.0.

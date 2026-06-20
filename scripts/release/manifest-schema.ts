@@ -11,7 +11,7 @@ const slugSchema = z.string().regex(/^[a-z0-9-]+$/);
 export const manifestStagePatternSchema = z.enum([
   "Foundational",
   "Iterative",
-  "Continuous",
+  "Terminal",
 ]);
 
 export const manifestCheckpointTypeSchema = z.enum([

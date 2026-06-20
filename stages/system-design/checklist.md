@@ -10,9 +10,9 @@ ready for Gate 2.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-> **AI-Led mode:** AI completes the full checklist and presents results to the
-> human reviewer. Humans review all items and confirm **[H]** items, which
-> require human judgment that AI cannot substitute for. **During interactive
+> **Lights-Out mode:** an agent completes the full checklist and presents
+> results for review. A human reviews all items and confirms **[H]** items,
+> which require judgment an agent cannot substitute for. **During interactive
 > stage execution, raise [H] items as they arise rather than batching them at
 > the end.**
 
@@ -132,7 +132,8 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. ADR earns-its-position check (item 23) added in
-v0.47.0. ADR naming check updated to the two-digit draft form in v0.48.0.
+v0.47.0. ADR naming check updated to the two-digit draft form in v0.48.0. AI-Led
+mode updated to Lights-Out mode in v0.49.0.

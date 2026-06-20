@@ -39,21 +39,13 @@ pipeline:
   - id: deployment
     stage_number: 7
     execution_pattern: iterative
-    feeds_into: [support, increment-design]
+    feeds_into: [closure, increment-design]
     revisit_conditions: [deployment-failure, rollback-required]
-  - id: support
+  - id: closure
     stage_number: 8
-    execution_pattern: continuous
-    feeds_into:
-      [
-        requirements,
-        system-design,
-        increment-design,
-        implementation,
-        initiation,
-      ]
-    revisit_conditions:
-      [incident-pattern, success-criteria-miss, enhancement-request]
+    execution_pattern: terminal
+    feeds_into: [initiation]
+    revisit_conditions: [reopened-scope, post-closure-defect]
 ---
 
 # AI-Assisted SDLC Stages
@@ -95,7 +87,7 @@ flow through every subsequent stage.
 1. Review the [**Quick Reference**](#quick-reference) table to see all 8 stages
    at a glance
 2. Understand [**How Stages Execute**](#how-stages-execute) (Foundational,
-   Iterative, Continuous)
+   Iterative, Terminal) and the [**Flow delivery mode**](#flow-delivery-mode)
 3. Check [**Stage Altitude**](#stage-altitude) to see the abstraction level and
    scope each stage works at
 4. Drill into individual [**stage definitions**](#stage-1-initiation) for
@@ -118,7 +110,7 @@ flow through every subsequent stage.
 | 5   | Implementation   | Engineers                | Iterative    | Execute implementation plan from Increment Design                                                                                            |
 | 6   | Verification     | QA Engineers / Engineers | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria                                   |
 | 7   | Deployment       | DevOps / Engineers       | Iterative    | Release to production                                                                                                                        |
-| 8   | Support          | Engineers / DevOps       | Continuous   | Monitor, maintain, and enhance                                                                                                               |
+| 8   | Closure          | DevOps                   | Terminal     | Hand the system off to Operations and close the project                                                                                      |
 
 ---
 
@@ -140,9 +132,16 @@ The 8 stages follow three execution patterns:
   present, but whether Deployment produces a production release is an elective
   per-increment decision — see [Stage 7](#stage-7-deployment).
 
-- **Continuous** (Support) — Ongoing after first production deployment. Feeds
-  learnings back into future iterations and may trigger revisits to earlier
-  stages.
+- **Terminal** (Closure) — Runs once at project end: hands the running system to
+  the [Operations](operations.md) process, transfers production ownership, and
+  closes the project against the completion contract. Reaching it is the
+  **normal** project terminal, not an early completion.
+
+> **Continuous operation is not a stage.** Monitoring, incident response, and
+> maintenance — the standing work that outlives delivery — belong to the
+> [Operations](operations.md) process, a sibling to the SDLC. A project _ends_
+> at Closure; the system it produced is _operated_ there. Small in-place
+> software changes run as [Flow](#flow-delivery-mode) items.
 
 ### Stage Flow
 
@@ -150,7 +149,7 @@ The 8 stages follow three execution patterns:
 
 ```
 Initiation → Requirements → System Design → Increment Design
-→ Implementation → Verification → Deployment → Support
+→ Implementation → Verification → Deployment → Closure
 ```
 
 #### Iterative Flow (Agile-style)
@@ -173,7 +172,7 @@ System Design (once)
 │   Deployment   →   release  or  defer      │
 └────────────────────────────────────────────┘
     ↓
-Support (continuous)
+Closure (terminal)  →  Operations (the system runs on)
 ```
 
 > **Reading the Deployment slot:** Every increment has a Deployment slot, but a
@@ -187,6 +186,86 @@ Support (continuous)
 > depends on codebase readiness. See the
 > [Brownfield Readiness Guide](brownfield-readiness.md) for the assessment and
 > routing.
+
+---
+
+## Flow Delivery Mode
+
+The SDLC runs in two **delivery modes**. Everything above describes **Project
+mode** — a bounded investment that runs the full stage sequence, passes Gate 1
+and Gate 2, and ends at [Closure](../stages/closure/README.md). **Flow mode** is
+the other: a continuous, queue-driven lane for small changes that are too small
+to be a project but still **change the software**.
+
+Together with the standing-system [Operations](operations.md) process, these are
+the **three work-shapes, one operating model**:
+
+| Work-shape     | What it is                        | Entry                                          | Terminal                                                                     |
+| -------------- | --------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Project**    | A bounded investment              | Initiation + Gate 1                            | [Closure](../stages/closure/README.md)                                       |
+| **Flow**       | A continuous per-issue change     | An approved issue                              | Ship + close the issue                                                       |
+| **Operations** | A standing system (its own guide) | [Closure handoff](../stages/closure/README.md) | [Decommission](operations.md#decommission-the-terminal-of-a-standing-system) |
+
+All three reuse the same [operating model](operating-model.md) — levers, floors,
+capability coverage, Lights-Out, escalation and stop, evidence — so each can be
+performed by humans, agents, or a mix. Project and Flow live in this guide;
+Operations is a [separate process](operations.md).
+
+### When to Use Flow
+
+Flow is for small, ad-hoc changes that **change the software** — a button-text
+fix, a small enhancement, a low-risk patch. Because they change code, they are
+delivery work, not [Operations](operations.md#the-remediation-boundary); because
+they are small and self-contained, they do not warrant a project's Initiation
+and Closure. A change that is substantial — new scope, architectural impact, a
+real investment decision — is a **project**, not a Flow item. When in doubt,
+size by [consequence](right-sizing.md): if it needs a Gate-1-style investment
+decision, it is a project.
+
+### How Flow Folds the Stages
+
+Flow runs the same stage _concerns_ at per-issue granularity, with two folds:
+
+- **The issue's approval is the folded go-decision.** There is no Initiation and
+  no Gate 1 — approving the issue _is_ the authorization to deliver it. The
+  consequence-sizing that Initiation would do is folded into the issue itself.
+- **Ship-and-close is the terminal.** There is no Closure handoff, because the
+  system is **already owned and operated** — a Flow item modifies a running
+  system, it does not hand off a new one.
+
+What remains is the core delivery loop, per issue:
+
+```text
+approved issue → implement → verify → ship + close
+```
+
+Design, implementation, and verification still happen — folded to the size of
+the change. The load-bearing concerns are **acceptance criteria**,
+**verification**, and **consequence**: they say when the change is done and
+whether it may ship.
+
+### Lights-Out Flow
+
+Flow is the shared execution substrate for human-filed small changes **and**
+agent-spawned fixes — including the
+[ops→dev edge](operations.md#the-opsdev-edge), where an operations agent
+diagnoses a code fix and hands it to Flow. An agent may monitor the queue and
+deliver approved issues unattended **up to a consequence floor**; above it, a
+human reviews and approves before ship. This is the same bounded-delegated-run
+discipline the [Delegated-Run Spec](../spec/delegated-run.md) defines, with a
+single issue as the unit.
+
+### The Flow Issue
+
+Each Flow item is captured with the
+[Flow Issue Template](../templates/flow-issue.md) — the folded entry artifact
+that collapses Initiation (approval + intent), Requirements (what + acceptance),
+and consequence-sizing into one small form carrying enough for autonomous
+delivery and self-verification. A Flow issue is the **approved,
+ready-to-deliver** request — distinct from a raw [Idea](../templates/idea.md)
+(backlog, not yet validated) or an untriaged
+[Friction Log](../templates/friction-log.md) entry. Note the relationship; do
+not duplicate them.
 
 ---
 
@@ -255,15 +334,15 @@ request/response shape, a migration's columns). The
 at System Design, signatures and schemas at Increment Design, method bodies at
 Implementation.
 
-**Off the ladder — Verification, Deployment, Support.** These are not rungs on
+**Off the ladder — Verification, Deployment, Closure.** These are not rungs on
 the abstraction ladder; Implementation is its bottom rung. Each is governed by a
 question rather than an altitude:
 
 - **Verification** — does the built increment match the upper rungs (its
   behavior-what, and the outcome behind it)?
 - **Deployment** — is this increment ready to release, and should it ship now?
-- **Support** — is the system still meeting its goals in production, and what
-  should feed back into earlier stages?
+- **Closure** — is the delivered scope complete, and is the system ready to hand
+  off and the project to close?
 
 Goals, success criteria, and requirements relate as **siblings of a goal**, not
 a sequence — see
@@ -286,7 +365,7 @@ Measurable success criteria established in Initiation flow through all stages:
 | **Implementation**   | Implement logging, metrics collection, instrumentation, and measurement systems                                               |
 | **Verification**     | Test that measurement systems work; validate FR acceptance criteria and NFR verification criteria tied to success criteria    |
 | **Deployment**       | Deploy with monitoring configured; on releasing increments, capture baseline measurements in production                       |
-| **Support**          | Monitor success criteria in production; validate whether goals achieved; report progress                                      |
+| **Closure**          | Reconcile success criteria against outcomes one last time; pending criteria carry a Re-check Date into Operations             |
 
 This ensures goals aren't just documented and forgotten—they actively guide
 development and enable data-driven validation of success.
@@ -298,16 +377,16 @@ development and enable data-driven validation of success.
 Continuous learning — anticipating failure modes early and reflecting on what
 actually happened — keeps teams from repeating mistakes across increments:
 
-| Stage                | Learning role                                                    |
-| -------------------- | ---------------------------------------------------------------- |
-| **Initiation**       | Pre-mortem: identify top failure modes before committing         |
-| **Requirements**     | Flag ambiguous or assumption-heavy requirements as learning risk |
-| **System Design**    | Pre-mortem lens on architecture: what's hardest to reverse?      |
-| **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions |
-| **Implementation**   | Note surprises and deviations; route mid-stage discoveries       |
-| **Verification**     | Capture what tests reveal; assess impact of failures             |
-| **Deployment**       | Run increment retrospective; triage friction-log entries         |
-| **Support**          | Ongoing retros surface systemic patterns; feed back to planning  |
+| Stage                | Learning role                                                          |
+| -------------------- | ---------------------------------------------------------------------- |
+| **Initiation**       | Pre-mortem: identify top failure modes before committing               |
+| **Requirements**     | Flag ambiguous or assumption-heavy requirements as learning risk       |
+| **System Design**    | Pre-mortem lens on architecture: what's hardest to reverse?            |
+| **Increment Design** | Review pre-mortem assumptions; carry forward prior retro actions       |
+| **Implementation**   | Note surprises and deviations; route mid-stage discoveries             |
+| **Verification**     | Capture what tests reveal; assess impact of failures                   |
+| **Deployment**       | Run increment retrospective; triage friction-log entries               |
+| **Closure**          | Project wrap-up retro; triage and route the friction log one last time |
 
 Pre-mortems happen once at the project level (Initiation); retrospectives happen
 at every increment boundary and at project wrap-up. Capture friction throughout
@@ -320,10 +399,11 @@ loop, see [The Learning Loop](learning-loop.md).
 ## Security Throughline
 
 Security activities flow through every stage, from data classification in
-Initiation through vulnerability management in Support. Security decisions
-compound across stages — data sensitivity classified in Initiation drives NFRs
-in Requirements, which drive architecture in System Design, which drive scanning
-in Implementation. For the stage-by-stage breakdown, AI automation tiers, and
+Initiation through deployment hardening, and continue into ongoing vulnerability
+management in [Operations](operations.md). Security decisions compound across
+stages — data sensitivity classified in Initiation drives NFRs in Requirements,
+which drive architecture in System Design, which drive scanning in
+Implementation. For the stage-by-stage breakdown, AI automation tiers, and
 Secure Software Development Framework (SSDF) traceability, see the
 [Security Guide](security.md).
 
@@ -876,82 +956,86 @@ released or deferred.
 
 ### Handoff to Next Stage
 
-Support stage receives: Deployed system, monitoring dashboards, updated
-runbooks, incident response procedures, baseline measurements, release notes,
-success criteria register, and rollback procedure.
+Between increments, Deployment feeds back to Increment Design for the next
+increment. At project end, the Closure stage receives: the deployed system,
+monitoring dashboards, updated runbooks, incident response procedures, baseline
+measurements, release notes, success criteria register, and rollback procedure —
+the raw material for the operational handoff record.
 
 ---
 
-## Stage 8: Support
+## Stage 8: Closure
 
-- **Primary Role:** DevOps / Engineers
-- **Supporting Roles:** Product Manager, Project Manager
-- **Execution Pattern:** Continuous (ongoing after first deployment)
-- **Stage Guide:** [Support](../stages/support/README.md)
+- **Primary Role:** DevOps
+- **Supporting Roles:** Product Manager, Project Manager, Architect, Engineers,
+  Executives
+- **Execution Pattern:** Terminal (once at project end)
+- **Stage Guide:** [Closure](../stages/closure/README.md)
 
 ### Goals
 
-Monitor production systems, track success criteria, respond to incidents, fix
-bugs, and implement minor enhancements. Ensure system reliability and gather
-feedback for future improvements.
+Hand the running system off to operations, transfer production ownership, and
+close the project against its goals — rendering the completion contract (claimed
+→ verified → accepted → closed) and bookending the Initiation Brief. Reaching
+Closure is the **normal** project terminal, not an early completion.
 
 ### Inputs
 
 **Required:**
 
-- Deployed system in production
-- Monitoring dashboards and alerts
-- Runbooks and operational procedures
-- Defined success criteria and baseline measurements
+- Deployed system in production (or "nothing to operate" for a project that
+  never shipped one)
+- Completion evidence from Verification and the run
 - [Success Criteria Register](../templates/success-criteria-register.md) with
   baselines and targets
-- Incident response procedures
+- The project's standing friction log
+- Increment retrospectives accumulated across the build
 
 **Optional:**
 
-- SLA/SLO definitions (required for Standard and Enterprise tiers)
-- User feedback channels
+- Operating-envelope and compliance obligations that persist into operation
 
 ### Entry Criteria
 
-- At least one increment deployed to production
-- Monitoring and alerting configured
-- Support procedures documented
+- The project's delivered scope is complete (final increment shipped, or the
+  project is being sunset)
+- Verification and assurance evidence available for the completion claim
 
 ### Key Activities
 
-- Monitor production systems and success criteria
-- Track progress toward measurable goals and report status
-- Respond to incidents and outages
-- Triage and fix bugs
-- Implement minor enhancements and improvements
-- Manage dependency updates and security patches
-- Analyze logs and metrics for optimization
-- Gather user feedback
-- Plan for future iterations based on learnings
+- Produce the operational-envelope handoff record (the six-item dev→ops seam)
+- Transfer production ownership of the running system
+- Reconcile completion: every in-scope requirement disposed, success criteria
+  measured or dated, defects and limitations disclosed
+- Run the project wrap-up retrospective and route every friction-log entry
+- Produce the Project Close-Out Summary
 
 ### Outputs
 
-- **Support Brief** — Primary container artifact for support-stage work (see
-  [Support Brief Template](../templates/support-brief.md))
-- **System Availability Metrics** — Uptime and reliability metrics
-- **Success Criteria Reports** — Progress toward measurable goals
-- **Incident Reports** — Incident reports and resolutions
-- **Enhancement Backlog** — Enhancement backlog for future increments
+- **Operational Handoff Record** — the six-item dev→ops seam (see
+  [Operational Handoff Template](../templates/operational-handoff.md))
+- **Project Close-Out Summary** — the readable render of the completion contract
+  (see [Project Close-Out Summary](../templates/project-closeout.md))
 
 ### Exit Criteria
 
-N/A (continuous stage)
+- Operational handoff record produced and production ownership accepted (or
+  Closure marked N/A — nothing to operate)
+- Completion contract closed: claimed → verified → accepted → closed
+- Friction log fully triaged and routed
+- Project Close-Out Summary produced
 
 ### Handoff to Next Stage
 
-Support stage may trigger revisits to earlier stages:
+Closure is the project's terminal. Where it leads next is a new lifecycle, not a
+later stage:
 
-- Requirements stage: User feedback reveals gaps or new needs
-- System Design stage: Performance issues require architectural changes
-- Increment Design stage: Scoped enhancements within current boundaries
-- Implementation stage: Low-risk patches with documented checkpoint decision
-- Initiation stage: Goals/business case need revision
+- **Operations** ([guide](operations.md)): the running system is operated under
+  its new owner via the handoff record.
+- **A follow-on project**: reopened or new scope re-enters at
+  [Initiation](../stages/initiation/README.md).
+- **Flow** ([mode](#flow-delivery-mode)): a small in-place change to the
+  now-operated system runs as a Flow item.
 
 ---
 

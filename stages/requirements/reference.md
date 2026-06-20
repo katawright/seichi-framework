@@ -255,8 +255,7 @@ change windows; database schema changes must be backward-compatible."
 
 Design-time targets by right-sizing tier. These define _what to require_ during
 requirements elicitation — for runtime monitoring thresholds and alerting rules,
-see
-[Support Reference — Monitoring Thresholds and Baselines](../stages/support/reference.md#monitoring-thresholds-and-baselines).
+see [Operations Guide: Observe](../../guides/operations.md#observe).
 
 | Category           | Minimal         | Standard                        | Enterprise                           |
 | ------------------ | --------------- | ------------------------------- | ------------------------------------ |
@@ -354,12 +353,13 @@ optional fields; response schema extension only.
 
 ---
 
-## AI-Led Patterns
+## Agent-Led Patterns
 
-### What AI Drives
+### What Agents Drive
 
-At the AI-Led tier, AI takes ownership of the requirements drafting process end
-to end rather than waiting for human direction. Concretely, this includes:
+At the Agent-Led operating posture, an agent takes ownership of the requirements
+drafting process end to end rather than waiting for human direction. Concretely,
+this includes:
 
 - Converting Initiation Brief goals into user stories with acceptance criteria
   formatted to the Given/When/Then structure
@@ -381,58 +381,45 @@ Domain correctness is the non-delegable human contribution to requirements.
 Specifically:
 
 - **Domain correctness:** Whether requirements reflect how the business actually
-  works, not just how AI inferred it should work from the brief
-- **Business priority and MoSCoW ranking:** AI can draft an initial ranking
-  based on brief language, but stakeholders own the final prioritization
+  works, not just how an agent inferred it should work from the brief
+- **Business priority and MoSCoW ranking:** An agent can draft an initial
+  ranking based on brief language, but stakeholders own the final prioritization
 - **Stakeholder alignment:** Whether the requirements set reflects consensus
   among all parties consulted during Initiation
 - **Acceptance criteria accuracy:** Whether the Given/When/Then criteria
-  actually test the right behavior — AI can generate structurally correct
+  actually test the right behavior — an agent can generate structurally correct
   criteria that test the wrong thing
 
-### Oversight Intensity at This Stage
-
-**Active or Passive oversight is typical for Requirements.** Active oversight is
-recommended when:
-
-- The domain is complex or novel and AI lacks reliable context — medical,
-  financial, legal, or highly specialized business logic
-- Requirements volatility is high — stakeholder alignment is still forming and
-  scope is shifting
-- The team is new to AI-Led requirements drafting
-
-Passive oversight (human reviews at gates, AI proceeds between them) is
-appropriate when:
-
-- Requirements patterns are well-established within the organization — the team
-  has done similar work before and the acceptance criteria format is consistent
-- Domain expertise is available for fast spot-checks at gates
+**Oversight at this stage.** How closely a human watches the work is no longer a
+separate dial — it folds into **Required Assurance** (how independently the work
+is evaluated) and **Authority** (who decides), set in the operating model. See
+the [Operating Model Guide](../../guides/operating-model.md).
 
 ### Common Failure Modes
 
-- **Missing domain-specific context:** AI generates requirements that are
+- **Missing domain-specific context:** An agent generates requirements that are
   structurally correct but wrong for the domain — for example, a requirement
   that makes sense for a generic e-commerce system but conflicts with the
   organization's existing order management rules. Mitigation: domain expert
   review of every requirement before the requirements document is finalized.
-- **Over-specifying implementation details:** AI conflates "what the system must
-  do" with "how the system should do it" — producing requirements that constrain
-  design unnecessarily. Mitigation: review each requirement against the
-  behavior/implementation distinction in
+- **Over-specifying implementation details:** An agent conflates "what the
+  system must do" with "how the system should do it" — producing requirements
+  that constrain design unnecessarily. Mitigation: review each requirement
+  against the behavior/implementation distinction in
   [**Requirements Terminology**](#requirements-terminology).
 - **Inconsistent acceptance criteria:** Criteria for related stories use
   different thresholds, formats, or terminology — creating ambiguity during
   Verification. Mitigation: review acceptance criteria across related stories as
   a group, not individually.
-- **Plausible but misaligned requirements:** AI generates requirements that
-  sound correct based on the brief but do not reflect what stakeholders actually
-  want — the brief described what they want to build, not why. Mitigation: trace
-  each requirement back to a specific Initiation Brief goal.
+- **Plausible but misaligned requirements:** An agent generates requirements
+  that sound correct based on the brief but do not reflect what stakeholders
+  actually want — the brief described what they want to build, not why.
+  Mitigation: trace each requirement back to a specific Initiation Brief goal.
 
 ### Session Handoff Notes
 
-When handing off between AI sessions during Requirements, capture the following
-state so the next session can continue without re-eliciting:
+When handing off between agent sessions during Requirements, capture the
+following state so the next session can continue without re-eliciting:
 
 - Open requirements questions needing stakeholder input — specific ambiguities
   identified, not just a general note that "some things are unclear"
@@ -447,13 +434,14 @@ state so the next session can continue without re-eliciting:
 
 ## Fallback Protocol
 
-These protocols apply at all autonomy tiers, not only AI-Led. See
+These protocols apply at every operating posture, not only unattended
+(Lights-Out) runs. See
 [Agentic Workflow Guide: Error and Fallback Guidance](../../guides/agentic-workflow.md#error-and-fallback-guidance)
 for the central fallback protocols.
 
 **Extends:** Missing Input, Ambiguous Requirements. **Overrides:** none.
 
-When AI-generated content is uncertain or potentially incorrect:
+When agent-generated content is uncertain or potentially incorrect:
 
 - Flag contradictions explicitly with both interpretations presented, and
   request a stakeholder decision before resolving them — never silently choose
@@ -478,7 +466,8 @@ When AI-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-20
 
 Added to framework in v0.12.0. Misaligned-requirements mitigation re-pointed to
-Initiation goals in v0.45.0.
+Initiation goals in v0.45.0. v0.49: Support reference repointed to Operations
+Guide; vocabulary and oversight model updated.
