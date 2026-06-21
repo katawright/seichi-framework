@@ -17,7 +17,7 @@ rather than a quality layer woven through development.
 ### Goals of This Guide
 
 - Define security activities at each SDLC stage, scaled by project risk tier
-- Show how AI agents automate the majority of security work
+- Show how agents automate the majority of security work
 - Provide a security throughline paralleling the measurement and learning
   throughlines
 - Enable lightweight NIST Secure Software Development Framework (SSDF, SP
@@ -42,7 +42,7 @@ normal development.
 ### How to Use This Guide
 
 1. Review the [**Security Throughline**](#security-throughline) table to see
-   security activities across all 8 stages
+   security activities across all 8 stages and the Operations process
 2. Read [**How AI Makes Security Cheap**](#how-ai-makes-security-cheap) to
    understand what's automated vs. what needs human judgment
 3. Drill into [**Security Activities by Stage**](#security-activities-by-stage)
@@ -59,9 +59,9 @@ normal development.
 
 ## Security Throughline
 
-Security activities flow through every stage, from data classification in
-Initiation through vulnerability management in Support. Each stage builds on the
-prior stage's security outputs.
+Security activities flow through every stage and into the Operations process,
+from data classification in Initiation through ongoing vulnerability management.
+Each stage builds on the prior stage's security outputs.
 
 The SSDF group column maps each activity to a NIST SSDF practice group: **PO** =
 Prepare the Organization, **PS** = Protect the Software, **PW** = Produce
@@ -69,16 +69,17 @@ Well-Secured Software, **RV** = Respond to Vulnerabilities. See
 [SSDF Practice Mapping](#ssdf-practice-mapping) for details — you can ignore
 this column if SSDF traceability isn't relevant to your project.
 
-| Stage                | Security activity                                           | AI automation                                            | SSDF group |
-| -------------------- | ----------------------------------------------------------- | -------------------------------------------------------- | ---------- |
-| **Initiation**       | Classify data sensitivity and compliance scope              | AI suggests classification from project context          | PO         |
-| **Requirements**     | Define security NFRs from sensitivity classification        | an agent drafts security NFRs, flags gaps                | PO/PW      |
-| **System Design**    | Design security architecture; threat model at tier level    | AI generates threat model draft, suggests controls       | PW         |
-| **Increment Design** | Assess security implications; flag auth/data/API changes    | AI flags security-relevant changes in design             | PW         |
-| **Implementation**   | Secure coding + AI-automated scanning (SAST, deps, secrets) | SAST, dependency scan, secrets detection run in CI       | PW         |
-| **Verification**     | Validate security controls (dep scan through pen testing)   | AI runs security test suites, triages findings           | RV         |
-| **Deployment**       | Verify release integrity; SBOM; pre-deployment checks       | AI generates SBOM, validates artifact integrity          | PS/RV      |
-| **Support**          | Monitor CVEs; patch per SLA; incident response              | an agent monitors CVE feeds, prioritizes vulnerabilities | RV         |
+| Stage                      | Security activity                                                                    | AI automation                                                                | SSDF group |
+| -------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------- |
+| **Initiation**             | Classify data sensitivity and compliance scope                                       | an agent suggests classification from project context                        | PO         |
+| **Requirements**           | Define security NFRs from sensitivity classification                                 | an agent drafts security NFRs, flags gaps                                    | PO/PW      |
+| **System Design**          | Design security architecture; threat model at tier level                             | an agent generates a threat model draft, suggests controls                   | PW         |
+| **Increment Design**       | Assess security implications; flag auth/data/API changes                             | an agent flags security-relevant changes in design                           | PW         |
+| **Implementation**         | Secure coding + AI-automated scanning (SAST, deps, secrets)                          | SAST, dependency scan, secrets detection run in CI                           | PW         |
+| **Verification**           | Validate security controls (dep scan through pen testing)                            | an agent runs security test suites, triages findings                         | RV         |
+| **Deployment**             | Verify release integrity; SBOM; pre-deployment checks                                | an agent generates the SBOM, validates artifact integrity                    | PS/RV      |
+| **Closure**                | Hand off security posture, open findings, and SBOM in the operational handoff record | an agent compiles the security handoff and persisting compliance obligations | RV         |
+| **Operations** _(process)_ | Monitor CVEs; patch per SLA; incident response                                       | an agent monitors CVE feeds, prioritizes vulnerabilities                     | RV         |
 
 The throughline ensures security decisions compound rather than repeat. Data
 sensitivity classified in Initiation drives NFRs in Requirements, which drive
@@ -95,8 +96,8 @@ making baseline security coverage effectively free.
 
 ### Fully Automated (CI/Pipeline)
 
-AI handles these without human intervention. They run as part of CI/CD or agent
-workflows:
+Agents handle these without human intervention. They run as part of CI/CD or
+agent workflows:
 
 - **Dependency scanning** — flag known vulnerabilities in third-party packages
 - **SAST (Static Application Security Testing)** — detect common vulnerability
@@ -111,27 +112,27 @@ workflows:
 
 AI produces the first draft; a human reviews for accuracy and completeness:
 
-- **Threat models** — AI generates threat model from architecture description;
-  human validates assumptions and prioritization
-- **Security NFRs** — AI drafts requirements from data classification and
-  compliance context; human confirms coverage
-- **Vulnerability prioritization** — AI triages scan results by exploitability
-  and blast radius; human makes fix/accept/defer decisions
-- **Security test cases** — AI generates test scenarios from threat model; human
-  reviews coverage
+- **Threat models** — an agent generates a threat model from the architecture
+  description; a human validates assumptions and prioritization
+- **Security NFRs** — an agent drafts requirements from data classification and
+  compliance context; a human confirms coverage
+- **Vulnerability prioritization** — an agent triages scan results by
+  exploitability and blast radius; a human makes fix/accept/defer decisions
+- **Security test cases** — an agent generates test scenarios from the threat
+  model; a human reviews coverage
 
 ### Human-Governed, Agent-Assisted
 
 Humans drive these activities; agents provide research and drafting support:
 
 - **Security architecture decisions** — human decides authentication model,
-  encryption strategy, trust boundaries; AI researches options
-- **Compliance decisions** — human determines regulatory applicability; AI maps
-  controls to requirements
-- **Penetration test interpretation** — human contextualizes findings; AI helps
-  draft remediation plans
-- **Incident response** — human leads investigation and decisions; AI correlates
-  logs and suggests root causes
+  encryption strategy, trust boundaries; an agent researches options
+- **Compliance decisions** — a human determines regulatory applicability; an
+  agent maps controls to requirements
+- **Penetration test interpretation** — a human contextualizes findings; an
+  agent helps draft remediation plans
+- **Incident response** — a human leads investigation and decisions; an agent
+  correlates logs and suggests root causes
 
 ### What This Means by Risk Tier
 
@@ -162,9 +163,9 @@ security posture required.
 | -------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------- |
 | Note if project handles sensitive data | Classify data sensitivity (public, internal, confidential, restricted) | Formal data classification with compliance mapping |
 
-**How AI helps:** AI suggests data classification based on project description
-and identifies likely compliance regimes (GDPR, HIPAA, SOC 2, PCI-DSS) from
-context.
+**How AI helps:** an agent suggests data classification based on the project
+description and identifies likely compliance regimes (GDPR, HIPAA, SOC 2,
+PCI-DSS) from context.
 
 **Security gate criteria:** Data sensitivity and compliance scope documented in
 the Initiation Brief.
@@ -205,9 +206,9 @@ risk tier.
 | ------------------------ | --------------------------------------------- | ---------------------------------------------- |
 | Basic security awareness | Threat model for key areas, security baseline | Comprehensive threat model, compliance mapping |
 
-**How AI helps:** AI generates a threat model draft from architecture
-descriptions using STRIDE or similar methodology. AI suggests security controls
-(authentication, encryption, input validation, rate limiting) mapped to
+**How AI helps:** an agent generates a threat model draft from architecture
+descriptions using STRIDE or similar methodology. An agent suggests security
+controls (authentication, encryption, input validation, rate limiting) mapped to
 identified threats.
 
 **Security gate criteria:** Security approach documented in System Design Brief;
@@ -227,10 +228,10 @@ authentication, authorization, data handling, or API surfaces.
 | --------------------------- | ---------------------------------------------- | ------------------------------------------ |
 | Quick security mental check | Document security-relevant changes and threats | Formal security assessment with test cases |
 
-**How AI helps:** AI reviews increment scope against the threat model and flags
-security-relevant changes — new API endpoints, data model changes,
-authentication flow changes, third-party integrations. AI suggests security test
-cases for the Verification stage.
+**How AI helps:** an agent reviews increment scope against the threat model and
+flags security-relevant changes — new API endpoints, data model changes,
+authentication flow changes, third-party integrations. An agent suggests
+security test cases for the Verification stage.
 
 **Security gate criteria:** Security implications assessed in Increment Design
 Brief; security-relevant changes identified.
@@ -253,8 +254,8 @@ issues, and secrets.
 
 - **Automated (all tiers):** Dependency scanning in CI, secrets detection in
   pre-commit hooks, basic SAST rules
-- **Standard+:** AI reviews code changes for OWASP Top 10 patterns (injection,
-  XSS, broken auth, sensitive data exposure)
+- **Standard+:** an agent reviews code changes for OWASP Top 10 patterns
+  (injection, XSS, broken auth, sensitive data exposure)
 - **Enterprise:** Dedicated SAST/DAST tools integrated into CI pipeline with
   automated triage
 
@@ -275,9 +276,10 @@ to penetration testing.
 | ----------------------------- | ---------------------------------------- | ------------------------------------------------- |
 | Basic vulnerability awareness | Dependency scanning, OWASP Top 10 review | Penetration testing, SAST/DAST, compliance checks |
 
-**How AI helps:** AI runs security test suites, triages findings by severity and
-exploitability, and generates remediation guidance. At Standard+ tiers, AI
-validates that security NFRs from Requirements are covered by test results.
+**How AI helps:** an agent runs security test suites, triages findings by
+severity and exploitability, and generates remediation guidance. At Standard+
+tiers, an agent validates that security NFRs from Requirements are covered by
+test results.
 
 **Security gate criteria:** No critical vulnerabilities; security test results
 documented; findings triaged with fix/accept/defer decisions.
@@ -295,9 +297,9 @@ Verify release integrity, generate SBOM, and run pre-deployment security checks.
 | -------------------------- | ------------------------------------------- | ------------------------------------------------ |
 | Basic release verification | SBOM generated, artifact integrity verified | Full supply chain verification, signed artifacts |
 
-**How AI helps:** AI generates SBOM automatically at build time, validates
-artifact checksums, and runs pre-deployment security checks (no new critical
-CVEs since last scan, secrets not embedded in artifacts, configuration
+**How AI helps:** an agent generates the SBOM automatically at build time,
+validates artifact checksums, and runs pre-deployment security checks (no new
+critical CVEs since last scan, secrets not embedded in artifacts, configuration
 reviewed).
 
 **Security gate criteria:** SBOM generated; artifact integrity verified;
@@ -315,10 +317,35 @@ At Standard and Enterprise tiers, AppSec owns a
 — see the
 [Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix).
 
-### Support
+### Closure
 
-Monitor for new vulnerabilities, patch per SLA, and maintain incident response
-readiness.
+At project close-out, hand off the security posture to whoever owns the running
+system — open findings, the current SBOM, and any persisting compliance
+obligations — recorded in the operational handoff record.
+
+**What to do:**
+
+| Minimal                           | Standard                                | Enterprise                                                                 |
+| --------------------------------- | --------------------------------------- | -------------------------------------------------------------------------- |
+| Note open findings in the handoff | Hand off findings, SBOM, and patch SLAs | Formal security handoff with compliance obligations and ownership transfer |
+
+**How AI helps:** an agent compiles the security handoff — open findings, the
+SBOM, and the compliance obligations that continue after delivery — into the
+operational handoff record.
+
+**Security gate criteria:** Open security findings, SBOM, and persisting
+compliance obligations recorded in the operational handoff record and accepted
+by the receiving owner.
+
+**SSDF reference:** RV (Respond to Vulnerabilities) — transfer ongoing
+vulnerability-response ownership at handoff.
+
+### Operations (Standing Process)
+
+Once the system is running, vulnerability management is continuous and belongs
+to the [Operations process](operations.md) (Maintain and Respond) rather than an
+SDLC stage: monitor for new vulnerabilities, patch per SLA, and maintain
+incident response readiness.
 
 **What to do:**
 
@@ -354,7 +381,7 @@ primarily executed.
 | **PO**     | Prepare the Organization      | Define security requirements, roles, tooling, training               | Initiation, Requirements                                                    |
 | **PS**     | Protect the Software          | Protect code, builds, and releases from tampering                    | Implementation, Deployment                                                  |
 | **PW**     | Produce Well-Secured Software | Design, code, review, and test software with security built in       | Requirements, System Design, Increment Design, Implementation, Verification |
-| **RV**     | Respond to Vulnerabilities    | Identify, triage, and remediate vulnerabilities in released software | Verification, Deployment, Support                                           |
+| **RV**     | Respond to Vulnerabilities    | Identify, triage, and remediate vulnerabilities in released software | Verification, Deployment, Operations                                        |
 
 **How to use this table:**
 
@@ -375,6 +402,7 @@ to their implementation details.
 
 **Last Updated:** 2026-06-20
 
-Added to framework in v0.25.0. Actor-sense "AI" rewritten to "agent/agents";
-"Human-Led, AI-Assisted" heading renamed to "Human-Governed, Agent-Assisted" in
-v0.49.0.
+Added to framework in v0.25.0. In v0.49.0 the retired Support stage was
+reconciled to the Closure stage (terminal security handoff) plus the Operations
+process (ongoing vulnerability management), and the actor-sense "AI" → "agent"
+rewrite was completed (the proper noun "AI" is reserved for the technology).

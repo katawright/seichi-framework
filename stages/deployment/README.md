@@ -650,10 +650,10 @@ the operational handoff record); the running system then hands off to Operations
 Initiation, verify the handoff team has access to the success criteria register
 during handoff. Retrospective action items feed into the next Increment Design
 cycle (see
-[Deployment Checklist — Closure Handoff](checklist.md#handoff-to-support)). When
-the same role owns both Deployment and Closure, apply the handoff checklist as a
-self-review rather than a cross-team transfer. Distribute checkpoint or gate
-decision artifacts to all Informed roles per the
+[Deployment Checklist — Closure Handoff](checklist.md#handoff-to-operations-and-closure)).
+When the same role owns both Deployment and Closure, apply the handoff checklist
+as a self-review rather than a cross-team transfer. Distribute checkpoint or
+gate decision artifacts to all Informed roles per the
 [Information Protocol](../../guides/roles.md#information-protocol). Record the
 deployment decision using the
 [Checkpoint Decision Template](../../templates/checkpoint-decision.md).

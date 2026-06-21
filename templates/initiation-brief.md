@@ -42,7 +42,7 @@ context)]
 **Deployment intent:** [Production service / Internal tool / Local-only (CLI,
 spike, experiment) / TBD]
 
-<!-- Local-only projects may skip Deployment and Support setup. -->
+<!-- Local-only projects may skip Deployment setup. -->
 
 **Operating posture:** [see the Operating Model Guide — Work Execution +
 Authority]

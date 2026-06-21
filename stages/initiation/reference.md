@@ -153,7 +153,7 @@ Initiation.
 Success criteria serve two purposes simultaneously: they make the Gate 1
 investment decision concrete, and they establish the measurement throughline
 that flows through Requirements (traceability), System Design (instrumentation),
-Verification (test coverage), Deployment (baseline capture), and Support
+Verification (test coverage), Deployment (baseline capture), and Operations
 (ongoing monitoring). See
 [Framework Guide: Measurement Throughline](../../guides/framework.md#measurement-throughline).
 

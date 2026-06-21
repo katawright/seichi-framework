@@ -7,7 +7,7 @@ framework location.
 
 ### Why DevOps Integration
 
-DevOps responsibilities span multiple framework stages (deployment, support,
+DevOps responsibilities span multiple framework stages (deployment, operations,
 security, observability) and multiple guides. Without a single entry point,
 DevOps engineers have to discover relevant sections by reading every guide. This
 document collects all DevOps-relevant pointers in one place.

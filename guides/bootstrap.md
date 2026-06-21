@@ -401,7 +401,7 @@ bootstrap prompt.
 > sibling repositories alongside this directory. Interview me to find out which
 > repos are involved and where they are. Then guide me through the first stage.
 > Infer project classifications (risk tier, project type, deployment intent,
-> autonomy, oversight) from our conversation and present them as overridable
+> operating posture) from our conversation and present them as overridable
 > assumptions instead of asking me to choose. Drive the process but check
 > decisions with me.
 
@@ -436,10 +436,9 @@ the latest session log for context on where we left off.
 To run a stage at higher autonomy, add preferences to your prompt:
 
 ```
-Work through the [STAGE NAME] stage at agent-led autonomy with
-[Active / Passive / Minimal] oversight. Drive the stage activities
-autonomously. Flag assumptions, pause at gates for my review, and
-maintain a session log.
+Work through the [STAGE NAME] stage at a [Checkpointed / Lights-Out]
+operating posture. Drive the stage activities autonomously. Flag
+assumptions, pause at gates for my review, and maintain a session log.
 ```
 
 See the [Agentic Workflow Guide](agentic-workflow.md) for operating postures,
