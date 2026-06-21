@@ -6,6 +6,10 @@ import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import fg from "fast-glob";
 import { minimatch } from "minimatch";
+import { runAnchors } from "./checks/anchors.mjs";
+import { runRetiredVocab } from "./checks/retired-vocab.mjs";
+import { runStamps } from "./checks/stamps.mjs";
+import { runIndexCounts } from "./checks/index-counts.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "..");
@@ -237,6 +241,39 @@ for (let file of structureFiles) {
   }
 }
 
+// ── Extended checks (warn-only) ─────────────────────────────────────
+// Deterministic checks for the mechanizable cold-review finding classes:
+// anchor/link integrity, retired vocabulary as live guidance, Last Updated
+// stamp freshness, and INDEX count self-consistency. Land warn-only (they do
+// NOT affect the exit code); promote to fatal once the tree is clean.
+
+const checkExclude = fileMap.checkExclude || [];
+const checkFiles = structureFiles.filter(
+  (f) => !checkExclude.some((pattern) => minimatch(f, pattern)),
+);
+
+function runCheck(label, fn) {
+  try {
+    return fn();
+  } catch (err) {
+    return [`${label}  (check error: ${err.message})`];
+  }
+}
+
+const checkIssues = [
+  ...runCheck("ANCHOR", () =>
+    runAnchors(repoRoot, checkFiles, fileMap.linkAllowlist || []),
+  ),
+  ...runCheck("VOCAB", () =>
+    runRetiredVocab(
+      repoRoot,
+      checkFiles.filter((f) => f !== "CHANGELOG.md"),
+    ),
+  ),
+  ...runCheck("STAMP", () => runStamps(repoRoot, checkFiles)),
+  ...runCheck("COUNT", () => runIndexCounts(repoRoot)),
+];
+
 // ── Report ──────────────────────────────────────────────────────────
 
 if (failures.length > 0) {
@@ -259,12 +296,20 @@ if (structureIssues.length > 0) {
   }
 }
 
+if (checkIssues.length > 0) {
+  console.log("");
+  for (const issue of checkIssues) {
+    console.log(issue);
+  }
+}
+
 console.log("");
 console.log(
   `Results: ${passed} passed, ${failed} failed, ${skipped} skipped, ${warned} warned` +
     (structureWarnings > 0
       ? `, ${structureWarnings} structure warnings`
-      : ""),
+      : "") +
+    (checkIssues.length > 0 ? `, ${checkIssues.length} check warnings` : ""),
 );
 
 process.exit(failed > 0 ? 1 : 0);

@@ -37,5 +37,18 @@
     "AGENTS.md",
     "CONTRIBUTING.md",
     "QUICKSTART.md"
+  ],
+  "checkExclude": [
+    ".claude/**",
+    ".ignore/**",
+    ".obsidian/**",
+    ".evaluation/**",
+    ".schema/**",
+    "node_modules/**",
+    "docs/**"
+  ],
+  "linkAllowlist": [
+    "adr/ADR-*.md",
+    "onboarding-tracker/*.md"
   ]
 }

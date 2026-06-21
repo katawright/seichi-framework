@@ -1,0 +1,19 @@
+[
+  { "regex": "\\bHuman-Led\\b", "flags": "g", "replacement": "Humans (work execution)" },
+  { "regex": "\\bAI-Led\\b", "flags": "g", "replacement": "Agents (work execution)" },
+  { "regex": "\\bagent-led\\b", "flags": "gi", "replacement": "agent-driven / delegated to agents" },
+  { "regex": "\\bOversight Intensity\\b", "flags": "g", "replacement": "operating posture" },
+  { "regex": "\\bAI autonomy\\b", "flags": "gi", "replacement": "operating posture" },
+  { "regex": "\\bautonomy tier\\b", "flags": "gi", "replacement": "operating posture" },
+  { "regex": "\\bAI operating tier\\b", "flags": "gi", "replacement": "AI operating mode" },
+  { "regex": "\\boperating frame\\b", "flags": "gi", "replacement": "operating configuration / posture" },
+  { "regex": "\\(with per-stage overrides\\)", "flags": "gi", "replacement": "(drop — autonomy is per project, not per stage)" },
+  { "regex": "\\bSupport stage\\b", "flags": "g", "replacement": "Closure stage" },
+  { "regex": "\\bstages/support\\b", "flags": "g", "replacement": "stages/closure" },
+  { "regex": "\\bsupport-brief\\b", "flags": "g", "replacement": "project-closeout / operational-handoff" },
+  { "regex": "\\bai-assistance\\b", "flags": "g", "replacement": "(retired guide)" },
+  { "regex": "\\bscorecard\\b", "flags": "gi", "replacement": "reference" },
+  { "regex": "\\bdefault_autonomy\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
+  { "regex": "\\bdefault_oversight_intensity\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
+  { "regex": "\\bpreparation_autonomy\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" }
+]
