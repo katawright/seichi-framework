@@ -29,7 +29,7 @@
 
 ## Right-Sizing This Brief
 
-<!-- See initiation/README.md#right-sizing-initiation for the full
+<!-- See ../stages/initiation/README.md#right-sizing-initiation for the full
      practice table and expansion triggers. -->
 
 **Tier chosen:** [Minimal / Standard / Enterprise]
@@ -295,4 +295,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer and Right-Sizing autonomy/oversight fields added in v0.48.0. Tier-definition pointer repointed to the Operating Model Guide in v0.49.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer and Right-Sizing autonomy/oversight fields added in v0.48.0. Tier-definition pointer repointed to the Operating Model Guide in v0.49.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment path corrected to ../stages/. -->

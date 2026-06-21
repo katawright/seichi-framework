@@ -38,7 +38,9 @@ replacing tribal knowledge with documented decisions.
 6. [**Verification**](#stage-6-verification) — see test results mapped to
    acceptance criteria
 7. [**Deployment**](#stage-7-deployment) — see the release record
-8. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
+8. [**Closure**](#stage-8-closure) — see the project close-out and dev→ops
+   handoff
+9. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
    end-to-end flow
 
 ---
@@ -252,7 +254,7 @@ From the **System Design Brief**, Technology Stack (§ 3):
 From the **System Design Brief**, Increment Plan (§ 11):
 
 ```markdown
-## 9. Increment Plan
+## 11. Increment Plan
 
 ### Increment 1: Core Task Management (Must Have)
 
@@ -813,6 +815,125 @@ Additive
 
 ---
 
+## Stage 8: Closure
+
+Closure ends the project: it disposes every requirement honestly, renders the
+completion contract as a **Project Close-Out Summary**, and hands the running
+system to Operations with an **Operational Handoff Record**. Here is how FR-3
+and the onboarding tracker appear at close.
+
+### Project Close-Out Summary
+
+```markdown
+# Project Close-Out Summary
+
+**Project:** Employee Onboarding Tracker **Started:** 2026-02-10 **Closed:**
+2026-03-16 **Owner:** Jamie Chen (Product Manager)
+
+**Completion status:** Closed **Final disposition:** Delivered
+
+## Why — Objective and Scope
+
+Deliver core onboarding task management so new hires complete required
+onboarding fully and on time (Goal G-1). Scope: Increment 1 — task library,
+assignment with relative due dates, progress dashboard, and completion.
+
+## What Was Delivered
+
+Live at v1.0.0: task library, task assignment (FR-3), progress dashboard, and
+task completion. Every in-scope acceptance criterion is disposed (excerpt —
+FR-3's criteria shown; the full table covers all Increment 1 ACs).
+
+| AC     | Outcome | Notes                                              |
+| ------ | ------- | -------------------------------------------------- |
+| AC-3.1 | Met     | Tasks assignable from the library; AT-3.1 passing  |
+| AC-3.2 | Met     | Due dates computed relative to start date; AT-3.2  |
+| AC-3.3 | Met     | Reassignment updates the dashboard; AT-3.3 passing |
+
+## Outcomes — Success Criteria and Assurance
+
+**Assurance result:** Internal — independent UAT approved (Jamie Chen,
+2026-03-10); no PII in logs verified.
+
+| SC    | Target                          | Result  | Re-check Date | Notes                       |
+| ----- | ------------------------------- | ------- | ------------- | --------------------------- |
+| SC-01 | Onboarding completion 68% → 95% | Pending | 2026-04-15    | First cohort at 30-day mark |
+| SC-02 | Time to assign tasks < 5 min    | Pending | 2026-03-26    | Baseline 25 min (manual)    |
+
+## Honest Incomplete — Defects, Risks, Limitations
+
+- **Known defects:** none known
+- **Unresolved risks / limitations:** completion-rate impact unverified until
+  the first cohort reaches its 30-day mark
+- **Deferred work:** bulk task assignment deferred from scope → IDEA-021
+
+## Acceptance and What's Next
+
+- **Accepted by:** Jamie Chen (PM) — 2026-03-16
+- **Handoff to Operations:** operational handoff record produced — yes
+- **Pending re-checks:** SC-01 (2026-04-15), SC-02 (2026-03-26)
+- **Open ideas:** IDEA-021 — bulk task assignment
+```
+
+### Operational Handoff Record
+
+```markdown
+# Operational Handoff Record
+
+**System:** Employee Onboarding Tracker **Handoff date:** 2026-03-16 **From
+(delivery):** Jamie Chen (PM) **To (operations owner):** Engineering team
+(on-call rotation)
+
+## 1. Identity & Observability
+
+- **What it is:** REST API + dashboard for assigning and tracking new-hire
+  onboarding tasks
+- **Where it runs:** production (us-east); stateless API servers + PostgreSQL
+- **Health signals:** /analytics dashboards; healthy = error rate < 1% and
+  task-assignment p95 < 500ms
+
+## 2. Ongoing Operating Envelope
+
+- **In-envelope operation:** routine HR usage — assignment, dashboard reads,
+  completion updates
+- **Consequence level:** Moderate (internal users; employee data, no external
+  exposure)
+- **Out-of-envelope triggers:** error rate > 1% sustained, or any auth-bypass
+  signal → stop or escalate
+
+## 3. Stop & Rollback
+
+- **How to stop it safely:** disable the assignment endpoint via feature flag
+- **How to roll back:** redeploy the prior tag; migrations are additive (down
+  scripts drop the new tables) — see the deployment runbook
+
+## 5. Ops Decision Rights
+
+| Decision                        | Owner               | Delegable?                       |
+| ------------------------------- | ------------------- | -------------------------------- |
+| Routine remediation (no code)   | Engineering on-call | up to the Moderate floor         |
+| Software change (re-enters dev) | Jamie Chen (PM)     | No — routes to Flow or a project |
+| Irreversible / high-consequence | Jamie Chen (PM)     | No — non-delegable human gate    |
+```
+
+**What to notice:**
+
+- The close-out **disposes every acceptance criterion** (Met / Descoped /
+  Deferred) — the final pass over the traceability chain, and the honesty floor
+  that never folds
+- Success criteria that need time to measure carry a **re-check date** instead
+  of being marked done — SC-01 and SC-02 stay Pending and become Operations' to
+  watch, continuing the measurement throughline past Closure
+- Deferred scope routes to the **idea backlog** (IDEA-021), not a support pile —
+  the learning loop in action
+- The **operational handoff record** is what the Operations owner runs the
+  system against: its envelope, stop/rollback, and decision rights become the
+  ownership span's operating envelope (see [Operations Guide](operations.md))
+- Closure ends the **project**; the system continues under **Operations** — the
+  two lifecycles meet exactly here
+
+---
+
 ## The Full Traceability Chain
 
 Here's how FR-3 flows through the entire framework:
@@ -871,8 +992,9 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-20 — v0.49 consistency sweep: traceability chain
-updated to end at Closure (project close-out) followed by Operations.
+**Last Updated:** 2026-06-21 — added a worked Stage 8 (Closure) example: project
+close-out summary + operational handoff record. (2026-06-20: v0.49 consistency
+sweep — traceability chain updated to end at Closure followed by Operations.)
 
 Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
 updated to the two-digit draft form in v0.48.0. For a brownfield adoption

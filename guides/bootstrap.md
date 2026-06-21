@@ -11,7 +11,7 @@ The [Quick Start](../QUICKSTART.md) gets you running with sensible defaults —
 create a directory, start your agent, paste a prompt. This guide explains the
 underlying model: working locations, project configuration, and setup options.
 Use it when you need more control over project structure — custom directory
-layouts or higher AI autonomy levels.
+layouts or more autonomous operating postures.
 
 ### Goals of This Guide
 
@@ -495,7 +495,7 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
 Session-start location guard cross-referenced in v0.47.0. Workspace ADR canon

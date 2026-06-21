@@ -283,10 +283,8 @@ Define decision maker BEFORE deployment:
 4. Fix root cause before redeploying
 5. Update deployment brief
 
-> **AI exploration:** \_"Help me design a rollback procedure for [describe
-> your >
->
-> > deployment strategy and infrastructure]."\_
+> **AI exploration:** _"Help me design a rollback procedure for [describe your >
+> deployment strategy and infrastructure]."_
 
 ---
 
@@ -493,10 +491,8 @@ For breaking changes requiring downtime:
 - SSL/TLS certificates valid
 - Authentication and authorization verified
 
-> **AI exploration:** \_"Audit our deployment security posture for [describe
-> your
->
-> > stack and compliance requirements]."\_
+> **AI exploration:** _"Audit our deployment security posture for [describe your
+> > stack and compliance requirements]."_
 
 ---
 
@@ -553,10 +549,8 @@ Stable for 24 hours?
   → No: Continue monitoring and troubleshooting
 ```
 
-> **AI exploration:** \_"Create deployment decision trees tailored to
-> [describe >
->
-> > your deployment process and risk tolerance]."\_
+> **AI exploration:** _"Create deployment decision trees tailored to [describe >
+> your deployment process and risk tolerance]."_
 
 ---
 

@@ -1,4 +1,4 @@
-<!-- For guidance on completing this brief, see increment-design/README.md -->
+<!-- For guidance on completing this brief, see ../stages/increment-design/README.md -->
 
 # Increment Design Brief
 
@@ -284,4 +284,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. ADR id placeholders updated to promoted scheme in v0.48.0. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.12.0. Depends On and Foundation Concerns prompt added in v0.42.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. ADR id placeholders updated to promoted scheme in v0.48.0. Stage-guidance comment path corrected to ../stages/ in v0.49.0. -->

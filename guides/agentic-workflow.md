@@ -97,8 +97,8 @@ adaptive interview defined in
 - **Warm (from the backlog).** A **Promoted** idea-backlog entry (`IDEA-NNN`)
   already carries a problem statement and an origin (see
   [The Learning Loop](learning-loop.md#closing-the-portfolio-loop)). The
-  interview starts there — deepening, validating, and setting the operating
-  frame — rather than from scratch.
+  interview starts there — deepening, validating, and seeding the project's
+  operating configuration — rather than from scratch.
 
 Either way, do not ask the user to pick a framework entry point or answer
 classification questions. Route into idea formation:

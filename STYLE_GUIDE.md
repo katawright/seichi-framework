@@ -51,11 +51,11 @@ The canonical section order for every framework file:
      files have overlapping Why sections, consider merging them.
    - **Goals of This [Type]** — bullet list of what the document delivers.
      `[Type]` matches the document type used in "How to Use This [Type]" (e.g.,
-     Guide, Reference, Scorecard)
+     Guide, Reference)
    - **Key Principle** — the single most important idea to remember
    - **Starting Point** — what you need before starting this stage (stage
      READMEs only)
-   - **How to Use This [Guide/Scorecard]** — numbered navigation steps. Bold
+   - **How to Use This [Guide/Reference]** — numbered navigation steps. Bold
      section names must be anchor links to the referenced heading (e.g.,
      `[**Quick Reference**](#quick-reference)`).
 3. **Orienting reference table** (position 2, immediately after Overview) — a
@@ -123,12 +123,12 @@ between H3 subsections within an H2.
 
 Files fall into categories that may have type-specific conventions:
 
-| Category                          | Example pattern  | Notes section extras  |
-| --------------------------------- | ---------------- | --------------------- |
-| **README files**                  | `README.md`      | Standard structure    |
-| **Guide files** (`guides/`)       | `*.md`           | Standard structure    |
-| **Template files** (`templates/`) | `*.md`           | HTML comment metadata |
-| **Scorecard / reference files**   | `*-scorecard.md` | Standard structure    |
+| Category                          | Example pattern | Notes section extras  |
+| --------------------------------- | --------------- | --------------------- |
+| **README files**                  | `README.md`     | Standard structure    |
+| **Guide files** (`guides/`)       | `*.md`          | Standard structure    |
+| **Template files** (`templates/`) | `*.md`          | HTML comment metadata |
+| **Reference files**               | `reference.md`  | Standard structure    |
 
 **Template file conventions:**
 
@@ -318,7 +318,7 @@ Same file, two audiences, no duplication.
 | **Stage READMEs**    | `id`, `inputs`, `outputs`, `checkpoints`, `checklist`, `reference`, plus agent-facing fields (working location, RACI, etc.) |
 | **Stages guide**     | `pipeline` array with stage ordering, execution patterns, dependency graph, and revisit conditions                          |
 | **Other guides**     | No front matter                                                                                                             |
-| **Root README**      | `agent_entry_point` (path to agentic workflow guide)                                                                        |
+| **Root README**      | No front matter (agent entry point is a prose callout at the README top)                                                    |
 | **Templates**        | No front matter — templates use HTML comment metadata                                                                       |
 | **Checklists**       | No front matter                                                                                                             |
 | **Stage references** | No front matter                                                                                                             |
@@ -395,7 +395,7 @@ pipeline:
 - **H3:** Subsections within an H2
 - **H4+:** Use sparingly; prefer restructuring into separate H2/H3 sections
 - "How to Use" H3 label should match the document type (e.g., "How to Use This
-  Guide", "How to Use This Scorecard")
+  Guide", "How to Use This Reference")
 
 ---
 
@@ -414,6 +414,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.19.0.
