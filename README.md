@@ -27,7 +27,7 @@ way to scale what works from one team to the next.
   your sprint ceremonies, PR review process, and CI/CD pipeline stay. The
   framework adds: an initiation brief to define the problem, verification
   checklists to confirm quality before shipping, and optional stage briefs
-  scaled to your risk tier.
+  scaled to your tier.
 - Provide structured AI assistance with appropriate human oversight at every
   stage
 - Give leaders explicit investment gates and checkpoint records for governance
@@ -341,7 +341,7 @@ For detailed readiness criteria, see the
 
 **1. Pre-pilot setup**
 
-- Select risk tier using the [Right-Sizing Guide](guides/right-sizing.md).
+- Select tier using the [Right-Sizing Guide](guides/right-sizing.md).
 - Choose the initial AI autonomy posture (start conservative) using the
   [Operating Model Guide](guides/operating-model.md).
 
@@ -370,7 +370,7 @@ to try the framework solo or with your team first, skip to
 
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
-2. Choose risk tier ([Right-Sizing Guide](guides/right-sizing.md)).
+2. Choose tier ([Right-Sizing Guide](guides/right-sizing.md)).
 3. Select the initial AI autonomy posture
    ([Operating Model Guide](guides/operating-model.md)).
 4. Copy and complete the bootstrap prompt

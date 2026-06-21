@@ -108,23 +108,23 @@ classification questions. Route into idea formation:
    [Initiation: Arriving with Only an Idea](../stages/initiation/README.md#arriving-with-only-an-idea).
    On the warm on-ramp, the backlog entry's problem statement is the interview's
    starting point, not a blank page
-2. **Classify by inference** — derive risk tier, project type, deployment
-   intent, operating posture, and Required Assurance from the conversation and
-   present them as overridable `[ASSUMED]` defaults, rather than asking the user
-   to choose from framework taxonomies. See
+2. **Classify by inference** — derive tier, project type, deployment intent,
+   operating posture, and Required Assurance from the conversation and present
+   them as overridable `[ASSUMED]` defaults, rather than asking the user to
+   choose from framework taxonomies. See
    [Classification by Inference](#classification-by-inference)
 3. **Scaffold and seed** — only after the interview, create the workspace (see
    [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
    interview output
 4. **Proceed with Initiation** — continue the stage normally at the inferred
-   tier; Gate 1 still applies, and locks the operating frame the interview
+   tier; Gate 1 still applies, and locks the operating posture the interview
    proposed
 
 ---
 
 ## Classification by Inference
 
-A new project carries five classification decisions: **risk tier** (Minimal /
+A new project carries five classification decisions: **tier** (Minimal /
 Standard / Enterprise), **project type** (greenfield / brownfield), **deployment
 intent** (production service / internal tool / local-only), **operating
 posture** (Supervised / Checkpointed / Lights-Out), and **Required Assurance**
@@ -135,8 +135,8 @@ at first contact.
 Instead, derive all five from two or three natural questions woven into the
 opening conversation:
 
-- _"Is this just you, or a team?"_ → team size, candidate risk tier
-- _"Is this an experiment, or something you'll run for real?"_ → risk tier,
+- _"Is this just you, or a team?"_ → stakeholder reach, candidate tier
+- _"Is this an experiment, or something you'll run for real?"_ → tier,
   deployment intent
 - _"Deploying anywhere yet, or local for now?"_ → deployment intent
 - _"Starting fresh, or building on existing code?"_ → project type
@@ -144,11 +144,10 @@ opening conversation:
 Present the derived classifications as overridable assumptions using the
 `[ASSUMED]` convention, recorded in the Initiation Brief's right-sizing section:
 
-> `[ASSUMED]` Risk tier: Minimal — solo experiment, no sensitive data.
-> `[ASSUMED]` Project type: Greenfield — empty repository. `[ASSUMED]`
-> Deployment intent: Local-only for now. `[ASSUMED]` Operating posture:
-> Checkpointed — framework default for a first project. Say the word and any of
-> these change.
+> `[ASSUMED]` Tier: Minimal — solo experiment, no sensitive data. `[ASSUMED]`
+> Project type: Greenfield — empty repository. `[ASSUMED]` Deployment intent:
+> Local-only for now. `[ASSUMED]` Operating posture: Checkpointed — framework
+> default for a first project. Say the word and any of these change.
 
 Rules:
 
@@ -215,7 +214,7 @@ handoff to Operations. Operations findings feed back as new
 
 ### Supervised
 
-Work Execution is Human-led; Authority is interactive. The agent surfaces
+Work Execution is **Humans**; Authority is interactive. The agent surfaces
 information and a human acts. Humans drive every step.
 
 1. Read the stage README for guidance and rationale
@@ -225,8 +224,9 @@ information and a human acts. Humans drive every step.
 
 ### Checkpointed
 
-Work Execution is Collaborative; Authority follows pre-authorized policy. The
-agent co-authors within human-set boundaries. This is the default posture.
+Work Execution is **Collaborative**; Authority is interactive at gates, with
+pre-authorized policy between. The agent co-authors within human-set boundaries.
+This is the default posture.
 
 1. Read the stage README and checklist
 2. Propose a work plan for the current stage
@@ -236,8 +236,8 @@ agent co-authors within human-set boundaries. This is the default posture.
 
 ### Lights-Out
 
-Work Execution is Agent-driven; Authority is delegated. The agent drives the
-process. Humans validate at gates.
+Work Execution is **Agents**; Authority is delegated or pre-authorized. The
+agent drives the process. Humans validate at gates.
 
 1. Read the stage README, checklist, and reference (if available)
 2. Assess inputs — flag any that are missing or ambiguous

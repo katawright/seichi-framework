@@ -15,7 +15,7 @@ For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 > assisted by AI.
 
 > Not every item applies at every scale — mark items N/A with justification when
-> they don't fit your project's risk tier. See
+> they don't fit your project's tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
 ## Greenfield: New Infrastructure

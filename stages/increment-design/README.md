@@ -83,7 +83,7 @@ action items from the previous increment.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
    (see the Operating Model Guide)
 2. Read [**Right-Sizing Increment Design**](#right-sizing-increment-design) to
-   calibrate effort to your project's risk tier
+   calibrate effort to your project's tier
 3. Review increment plan for current increment scope
 4. Use the [Bootstrap Guide](../../guides/bootstrap.md) to engage your AI agent
    in detailing component designs — refer to
@@ -147,7 +147,7 @@ For assistance level details, see the
 ## Right-Sizing Increment Design
 
 Not every increment needs formal component specs or detailed interface
-contracts. Match your Increment Design effort to your project's risk tier.
+contracts. Match your Increment Design effort to your project's tier.
 
 | Practice               | Minimal                            | Standard                                       | Enterprise                                        |
 | ---------------------- | ---------------------------------- | ---------------------------------------------- | ------------------------------------------------- |

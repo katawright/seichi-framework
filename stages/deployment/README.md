@@ -108,7 +108,7 @@ issues documented.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
    (see the Operating Model Guide)
 2. Read [**Right-Sizing Deployment**](#right-sizing-deployment) to match effort
-   to your project's risk tier
+   to your project's tier
 3. Fill out the [Deployment Brief Template](../../templates/deployment-brief.md)
    for this increment's deployment plan
 4. Deploy using the [**Deployment Workflow**](#deployment-workflow)
@@ -210,7 +210,7 @@ For assistance level details, see the
 ## Right-Sizing Deployment
 
 Not every project needs multi-environment promotion or canary deploys. Match
-your per-increment deployment effort to your project's risk tier.
+your per-increment deployment effort to your project's tier.
 
 | Practice               | Minimal                            | Standard                                       | Enterprise                                        |
 | ---------------------- | ---------------------------------- | ---------------------------------------------- | ------------------------------------------------- |

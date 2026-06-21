@@ -160,7 +160,7 @@ For assistance level details, see the
 ## Right-Sizing Implementation
 
 Not every project needs formal pull request processes or comprehensive
-instrumentation. Match your Implementation effort to your project's risk tier.
+instrumentation. Match your Implementation effort to your project's tier.
 
 | Practice               | Minimal                                                                                                  | Standard                                                     | Enterprise                                                            |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |

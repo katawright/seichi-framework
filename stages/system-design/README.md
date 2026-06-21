@@ -105,7 +105,7 @@ documentation, ADRs, infrastructure configuration, and known technical debt.
 1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
    (see the Operating Model Guide)
 2. Read [**Right-Sizing System Design**](#right-sizing-system-design) to
-   calibrate effort to your project's risk tier
+   calibrate effort to your project's tier
 3. Fill out the
    [System Design Brief Template](../../templates/system-design-brief.md) using
    AI according to your operating posture — refer to
@@ -164,7 +164,7 @@ For assistance level details, see the
 ## Right-Sizing System Design
 
 Not every project needs a formal architecture document or comprehensive ADRs.
-Match your System Design effort to your project's risk tier.
+Match your System Design effort to your project's tier.
 
 | Practice                | Minimal                              | Standard                                      | Enterprise                                           |
 | ----------------------- | ------------------------------------ | --------------------------------------------- | ---------------------------------------------------- |
@@ -651,8 +651,8 @@ The [System Design Reference](reference.md) covers these topics in depth:
 > [Framework Guide: Learning Throughline](../../guides/framework.md#learning-throughline).
 
 > System Design continues the **security throughline** by designing the security
-> architecture and creating a threat model scaled to the project's risk tier.
-> See [Security Guide](../../guides/security.md).
+> architecture and creating a threat model scaled to the project's tier. See
+> [Security Guide](../../guides/security.md).
 
 **Handoff:** Increment Design stage receives architecture, increment plan, and
 foundational conventions. Distribute checkpoint or gate decision artifacts to

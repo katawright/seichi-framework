@@ -178,7 +178,7 @@ Two cautions for whoever runs the interview:
 - **Do not open with "what should we build?"** — solution-first framing is the
   failure mode the problem statement exists to prevent. Start from the trigger
   and the user.
-- **Do not front framework classification questions** (risk tier, project type,
+- **Do not front framework classification questions** (tier, project type,
   operating posture). The agent infers these from the conversation and presents
   them as overridable assumptions — see
   [Agentic Workflow Guide: Zero-to-One Project Routing](../../guides/agentic-workflow.md#zero-to-one-project-routing).
@@ -211,7 +211,7 @@ be told them:
 
 | Signal in the opening answers      | What it raises                                         |
 | ---------------------------------- | ------------------------------------------------------ |
-| Real users beyond the builder      | Who is affected; pushes the risk tier up               |
+| Real users beyond the builder      | Who is affected; pushes the tier up                    |
 | Money changing hands               | Business case; payment-data sensitivity                |
 | Regulated or personal data         | Compliance and privacy obligations                     |
 | Public or external exposure        | External users (a tier escalation); security posture   |
@@ -241,9 +241,9 @@ request for the most autonomous end of that configuration; "just a quick favor"
 is the least. Idea formation **proposes** the configuration; it does not commit
 it.
 
-Seed the inferred classifications — risk tier, operating posture, deployment
-intent, and any compliance obligation — into the draft brief's right-sizing
-section as `[ASSUMED]` values, exactly as
+Seed the inferred classifications — tier, operating posture, deployment intent,
+and any compliance obligation — into the draft brief's right-sizing section as
+`[ASSUMED]` values, exactly as
 [Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)
 prescribes. Initiation refines them as the brief takes shape, and **Gate 1 locks
 them**: the investment decision is where "are you sure you want to run a
@@ -473,9 +473,9 @@ parallel root, not from a goal. For how goals connect to success criteria,
 requirements, and acceptance criteria across stages, see
 [Framework Guide: The Traceability Chain](../../guides/framework.md#the-traceability-chain).
 
-The number of goals reflects what the project intends to achieve, not its risk
-tier — most projects have one to four, and fewer is better. State at least one
-goal at every tier, including Minimal, where it may be a single bullet.
+The number of goals reflects what the project intends to achieve, not its tier —
+most projects have one to four, and fewer is better. State at least one goal at
+every tier, including Minimal, where it may be a single bullet.
 
 **Good example:**
 
