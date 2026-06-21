@@ -104,7 +104,7 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. The spec layer is authored from the v0.49 detail
 docs (operating model, delegated-run operations, progressive governance and

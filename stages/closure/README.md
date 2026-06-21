@@ -104,8 +104,9 @@ the build, and the completion evidence produced by Verification and the run.
 6. Produce the [Project Close-Out Summary](../../templates/project-closeout.md)
    and complete the [Closure Checklist](checklist.md)
 
-For who runs each step and how autonomously, see the
-[Operating Model Guide](../../guides/operating-model.md). For cross-cutting
+For who runs each step and how autonomously, read
+[**How AI Helps**](#how-ai-helps) to determine your operating posture (see the
+[Operating Model Guide](../../guides/operating-model.md)). For cross-cutting
 framework concepts, see [Framework Guide](../../guides/framework.md).
 
 ---
@@ -272,6 +273,46 @@ Use the [Retrospective Template](../../templates/retrospective.md) with scope
 
 ---
 
+## How AI Helps
+
+AI can assist with Closure at whatever operating posture your team is comfortable
+with — drafting the handoff record, rendering the completion contract, and
+preparing the retrospective routing — while the acceptance decisions stay
+human-owned.
+
+How autonomously this stage runs — who performs the work and who decides — is an
+operating-model choice, not a fixed property of the stage. It is set per project
+along two functions: **Work Execution** (Humans · Collaborative · Agents) and
+**Authority** (interactive human · pre-authorized policy · delegated agent). Gate
+requirements always apply regardless. See the
+[Operating Model Guide](../../guides/operating-model.md).
+
+### AI Assistance Patterns
+
+- **Handoff-record drafting:** An agent assembles the six-item operational
+  handoff record from the deployment runbook, success criteria register, and
+  known issues — you review and confirm items 4 (what must stay true) and 6
+  (known-state ledger), which never fold.
+- **Completion-contract rendering:** An agent reconciles in-scope requirements,
+  acceptance criteria, and success-criteria evidence into the completion claim
+  (claimed → verified → accepted → closed) and flags any gap or undisclosed
+  defect.
+- **Close-out summary:** An agent drafts the Close-Out Summary that bookends the
+  Initiation Brief — scope delivered, outcomes, and the honest incomplete.
+- **Retrospective routing:** An agent triages the friction log and prepares the
+  routed drafts (product ideas, process and tooling fixes) for filing.
+
+For assistance level details, see the
+[Operating Model Guide](../../guides/operating-model.md).
+
+> **Required gates:** Production-ownership transfer and acceptance of irreversible
+> closure (data disposition on sunset) are human-owned decisions — an agent
+> prepares the records and drafts the routing, but accepting ownership and filing
+> to external trackers are human-authorized actions (the
+> agent-prepares-never-publishes rule).
+
+---
+
 ## Right-Sizing Closure
 
 Closure folds with [consequence](../../guides/right-sizing.md), like every stage
@@ -348,7 +389,7 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Closure replaces the v0.8.0 Support stage slot in
 the v0.49 dev/ops split: the continuous operational duties moved to the

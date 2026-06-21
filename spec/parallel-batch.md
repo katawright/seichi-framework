@@ -319,7 +319,7 @@ chooses the storage; this spec fixes only what must be representable.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to the framework in v0.49.0. Authored from the v0.49 parallel-batch detail
 (workstream 3) as the normative counterpart to the human-facing

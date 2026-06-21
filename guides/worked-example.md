@@ -907,6 +907,14 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
 - **How to roll back:** redeploy the prior tag; migrations are additive (down
   scripts drop the new tables) — see the deployment runbook
 
+## 4. What Must Stay True
+
+- **Invariants:** every assigned task traces to a real employee record;
+  completion state is never silently lost
+- **Persisting compliance obligations:** employee PII stays internal — no PII in
+  logs or analytics exports (the UAT-verified constraint)
+- **Data obligations:** onboarding records retained per HR's retention policy
+
 ## 5. Ops Decision Rights
 
 | Decision                        | Owner               | Delegable?                       |
@@ -914,6 +922,14 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
 | Routine remediation (no code)   | Engineering on-call | up to the Moderate floor         |
 | Software change (re-enters dev) | Jamie Chen (PM)     | No — routes to Flow or a project |
 | Irreversible / high-consequence | Jamie Chen (PM)     | No — non-delegable human gate    |
+
+## 6. Known-State Ledger
+
+- **Open issues:** none known
+- **Deferred work:** bulk task assignment deferred → IDEA-021
+- **Known limitations:** completion-rate impact unverified until the first cohort
+  reaches its 30-day mark (SC-01)
+- **Recent changes:** v1.0.0 — initial production release (2026-03-16)
 ```
 
 **What to notice:**

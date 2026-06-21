@@ -439,7 +439,7 @@ regardless of consequence, and wider reach adds sign-off artifacts.
 | [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |
 | [Operational Handoff](../templates/operational-handoff.md)             | Closure          | Optional    | Required    | Required    |
 | [Project Close-Out](../templates/project-closeout.md)                  | Closure          | Recommended | Required    | Required    |
-| [Retrospective](../templates/retrospective.md)                         | Deployment       | Recommended | Recommended | Required    |
+| [Retrospective](../templates/retrospective.md)                         | Increment cycle  | Recommended | Recommended | Required    |
 | [Friction Log](../templates/friction-log.md)                           | All stages       | Recommended | Recommended | Required    |
 | [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
 
@@ -517,7 +517,7 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.13.0. Reorganized in v0.49.0 around the three
 **governance-weight** dimensions — **Consequence**, **Compliance**, and

@@ -366,7 +366,7 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.45.0. Idea backlog scoped to product/portfolio ideas;
 process and tooling friction routed to the owning framework/tool tracker in

@@ -254,7 +254,7 @@ are deferred beyond v0.49.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Authored from the v0.49 progressive-governance
 and structured-state detail doc. The run-level state and the rendered-snapshot
