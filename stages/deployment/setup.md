@@ -19,7 +19,7 @@ complexity enters the picture.
   scratch
 - Guide brownfield projects through documenting and improving existing
   infrastructure
-- Provide right-sizing tables so teams invest appropriately for their risk tier
+- Provide right-sizing tables so teams invest appropriately for their tier
 - Validate the pipeline end-to-end with a skeleton deployment before the first
   real increment
 
@@ -31,7 +31,7 @@ Increment 0 catches infrastructure issues when the stakes are low.
 ### How to Use This Guide
 
 1. Review [**Right-Sizing Deployment Setup**](#right-sizing-deployment-setup) to
-   match investment to your risk tier
+   match investment to your tier
 2. Follow the [**Greenfield Path**](#greenfield-path) or
    [**Brownfield Path**](#brownfield-path) based on your starting point
 3. Complete the [Deployment Pipeline Checklist](pipeline-checklist.md) to verify
@@ -48,8 +48,8 @@ For cross-cutting framework concepts, see
 
 Not every project needs multi-environment infrastructure or
 infrastructure-as-code. Match your deployment setup investment to your project's
-risk tier. The greenfield and brownfield paths below apply at every tier — this
-table shows the target scope for each.
+tier. The greenfield and brownfield paths below apply at every tier — this table
+shows the target scope for each.
 
 | Practice                   | Minimal                            | Standard                                      | Enterprise                                            |
 | -------------------------- | ---------------------------------- | --------------------------------------------- | ----------------------------------------------------- |

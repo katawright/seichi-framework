@@ -41,7 +41,7 @@
       "enum": ["gate", "review", "alignment"]
     },
     "checkpoint-condition": {
-      "$comment": "Named project-level condition gating whether a checkpoint applies. Omitted when the checkpoint always applies. compliance: the project has regulatory, legal, or security sign-off requirements (typically Standard or Enterprise risk tier).",
+      "$comment": "Named project-level condition gating whether a checkpoint applies. Omitted when the checkpoint always applies. compliance: the project has regulatory, legal, or security sign-off requirements (typically Standard or Enterprise tier).",
       "type": "string",
       "enum": ["compliance"]
     },

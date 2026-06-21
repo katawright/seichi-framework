@@ -55,7 +55,7 @@ Project context:
 - Type: Greenfield
 - Team: 3 engineers, 1 QA, 1 product manager (also filling the project
   coordination role on this small team)
-- Risk tier: Standard
+- Tier: Standard
 - Tech stack: React frontend, Node.js/Express API, PostgreSQL
 
 The requirement we trace is the ability for HR managers to assign onboarding

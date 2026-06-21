@@ -11,8 +11,8 @@ delivery.
 > Operations governs a **standing system** that terminates at
 > [decommission](#decommission-the-terminal-of-a-standing-system). They are
 > sibling lifecycles that share one [operating model](operating-model.md) — the
-> same levers, floors, capability coverage, autonomy ladder, and stop
-> enforcement — so either can be performed by humans, agents, or a mix. A
+> same configurable functions, floors, capability coverage, autonomy ladder, and
+> stop enforcement — so either can be performed by humans, agents, or a mix. A
 > project _ends_ at Closure; the system it produced is _operated_ here, under
 > whoever owns it.
 
@@ -46,7 +46,8 @@ it is its own governed practice with its own terminal.
 Operating a system is the same operating model applied to a different unit. A
 project is delivered once; a system is operated continuously. What changes is
 the unit (system, not project) and the terminal (decommission, not closure) —
-not the levers, the floors, or what "running unattended" requires.
+not the configurable functions, the floors, or what "running unattended"
+requires.
 
 ### How to Use This Guide
 
@@ -91,12 +92,12 @@ The SDLC and Operations are two lifecycles over one
 [operating model](operating-model.md). They differ on two things and agree on
 the rest.
 
-| Concern             | SDLC (a project)                       | Operations (a system)                                           |
-| ------------------- | -------------------------------------- | --------------------------------------------------------------- |
-| **Unit**            | A bounded body of work                 | A standing, running system                                      |
-| **Terminal**        | [Closure](../stages/closure/README.md) | [Decommission](#decommission-the-terminal-of-a-standing-system) |
-| **Shape of work**   | Stages toward a delivered increment    | Continuous operating functions                                  |
-| **Operating model** | Levers, floors, coverage, Lights-Out   | _The same_ — reused, not redefined                              |
+| Concern             | SDLC (a project)                                     | Operations (a system)                                           |
+| ------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
+| **Unit**            | A bounded body of work                               | A standing, running system                                      |
+| **Terminal**        | [Closure](../stages/closure/README.md)               | [Decommission](#decommission-the-terminal-of-a-standing-system) |
+| **Shape of work**   | Stages toward a delivered increment                  | Continuous operating functions                                  |
+| **Operating model** | Configurable functions, floors, coverage, Lights-Out | _The same_ — reused, not redefined                              |
 
 They are not sequential phases where dev ends and ops begins. With continuous
 deployment, a system is in production from increment 1, so delivery and
@@ -147,7 +148,10 @@ run.
 
 Operations is organized by what it does, not by who staffs it. Four functions
 cover the work; each is right-sized by consequence and run at a chosen
-[autonomy](#autonomy-the-right-sizing-lens) level.
+[autonomy](#autonomy-the-right-sizing-lens) level. These four name the _shape_
+of operations work — distinct from the operating model's eight
+[operating functions](operating-model.md#operating-functions) that both the SDLC
+and Operations share.
 
 ### Observe
 

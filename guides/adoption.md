@@ -277,7 +277,7 @@ as the team builds familiarity.
 - Should decrease as teams get comfortable (target: <5% of increment time after
   3 increments)
 - If overhead remains >10% after 3 increments, review whether the team is
-  over-documenting or using the wrong risk tier
+  over-documenting or using the wrong tier
 
 ---
 
@@ -327,7 +327,7 @@ early frustration. Look for:
   enough to complete in 2–3 increments
 - **Non-critical path** — failure or delay won't impact revenue or contractual
   obligations
-- **Standard risk tier** — exercises the framework's core practices without
+- **Standard tier** — exercises the framework's core practices without
   Enterprise overhead
 - **Clear success criteria** — stakeholders can objectively evaluate whether the
   framework helped
@@ -538,8 +538,8 @@ governance reporting and objective traceability become priorities.
 
 #### Organizational Tier Policies
 
-Instead of leaving risk tier selection to individual teams each time,
-organizations can define default tier mappings based on project characteristics.
+Instead of leaving tier selection to individual teams each time, organizations
+can define default tier mappings based on project characteristics.
 
 ##### Example Tier Policy
 

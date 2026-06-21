@@ -146,9 +146,9 @@ Each active obligation has:
   obligation touches. _(v0.49 operates compliance project-wide; per-component
   scope is a named, forward-looking property.)_
 - **A payload** — the actual obligations, which land as **hard floors on the
-  other levers**: decisions that must stay human (Authority), an independence
-  floor on evaluation (Required Assurance), separation of duties (function
-  separation), retained and auditable evidence (evidence capture), and
+  other operating-model functions**: decisions that must stay human (Authority),
+  an independence floor on evaluation (Required Assurance), separation of duties
+  (function separation), retained and auditable evidence (evidence capture), and
   data-residency or provider constraints (capability coverage). It may also cap
   autonomy — forbidding Lights-Out for specific actions.
 
@@ -159,16 +159,17 @@ low-consequence yet carry compliance, or high-consequence with none. Its overall
 burden is _emergent_ from the summed payloads of its active obligations — not a
 level you set.
 
-> The framework defines the _shape_ of this lever — scoped obligation sources
-> mapping to floors on named levers — not the contents of each named regime.
-> Mapping a specific regulation (what HIPAA obligates, field by field) is a
-> compliance-mapping library, outside v0.49's scope.
+> The framework defines the _shape_ of this dimension — scoped obligation
+> sources mapping to floors on named operating-model functions — not the
+> contents of each named regime. Mapping a specific regulation (what HIPAA
+> obligates, field by field) is a compliance-mapping library, outside v0.49's
+> scope.
 
 > **Data sensitivity.** Regulated or policy-governed sensitive data lands as a
 > Compliance obligation. Purely-informal sensitivity under no governing
 > obligation routes through **Consequence** — it raises the blast radius of a
 > confidentiality failure; if a leak would genuinely cost nothing, there is
-> nothing to size. There is no separate sensitivity lever.
+> nothing to size. There is no separate sensitivity dimension.
 
 ### Stakeholder Reach → _Coordination & Formality_
 
@@ -187,10 +188,10 @@ Four ordinal levels, from no boundary to the outermost:
 | **Cross-team**  | Stakeholders elsewhere in the organization                        | Explicit shared artifacts, defined interfaces, scheduled syncs                           |
 | **Cross-org**   | Parties outside the organization (a client, an external customer) | Formal agreements, documented sign-off, deliverable evidence, contractual accountability |
 
-This lever is **discrete and bounded**, unlike consequence: you either cross the
-org boundary or you do not, so there is no continuum to band — and there is a
-**ceiling**. Cross-org is the top. What looks like a level beyond it (the
-public, the market, a regulator) is not more of _this_ lever; its weight
+This dimension is **discrete and bounded**, unlike consequence: you either cross
+the org boundary or you do not, so there is no continuum to band — and there is
+a **ceiling**. Cross-org is the top. What looks like a level beyond it (the
+public, the market, a regulator) is not more of _this_ dimension; its weight
 redistributes to **Compliance** (a regulator is an obligation source) and
 **Consequence** (public failure is a larger blast radius).
 
@@ -249,7 +250,8 @@ stack what applies.
 ### How Consequence Shapes Each Stage
 
 Consequence scales **technical rigor and blast-radius control** — verification
-depth, failure handling, and reversibility. Verification is the steepest lever.
+depth, failure handling, and reversibility. Verification is the steepest of
+these.
 
 | Stage / Process                                              | Negligible                             | Low                                     | Moderate                                                | High                                                              | Critical                                                                   |
 | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------- |

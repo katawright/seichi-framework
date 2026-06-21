@@ -88,7 +88,7 @@ The specific criteria depend on stage context:
 - **Deployment readiness:** Environment prepared, rollback tested, monitoring
   configured (Deployment)
 - **Compliance:** Legal, security, or regulatory sign-off (Deployment — when
-  required by risk tier)
+  required by tier)
 
 **Examples:**
 

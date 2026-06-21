@@ -17,7 +17,7 @@ to circulate.
 > the end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
-> they don't fit your project's risk tier. See
+> they don't fit your project's tier. See
 > [Right-Sizing Guide](../../guides/right-sizing.md).
 
 ---

@@ -89,7 +89,7 @@ Cowork, or similar).
 > This is a new, single-repo project. Set up this directory as my workspace —
 > create the project structure, AGENTS.md, and your agent-specific startup file
 > (e.g., CLAUDE.md for Claude Code). Then guide me through the first stage.
-> Infer project classifications (risk tier, project type, deployment intent,
+> Infer project classifications (tier, project type, deployment intent,
 > operating posture) from our conversation and present them as overridable
 > assumptions instead of asking me to choose. Drive the process but check
 > decisions with me.
@@ -155,10 +155,10 @@ If you're adopting the framework on a project already in progress:
 > we've built, where we are in the development lifecycle, and what decisions
 > have already been made. Create lightweight retroactive artifacts for completed
 > stages based on our conversation, then guide me forward from the current
-> stage. Infer project classifications (risk tier, project type, deployment
-> intent, operating posture) from our conversation and present them as
-> overridable assumptions instead of asking me to choose. Drive the process but
-> check decisions with me.
+> stage. Infer project classifications (tier, project type, deployment intent,
+> operating posture) from our conversation and present them as overridable
+> assumptions instead of asking me to choose. Drive the process but check
+> decisions with me.
 
 The agent sets up the governance layer alongside your existing code, interviews
 you to determine which [stages](guides/stages.md) are already complete, creates
@@ -273,8 +273,8 @@ The agent downloads the latest framework release (keeping any older versions in
 place), reads the workspace conventions from `AGENTS.md`, creates the new
 project scaffolding, updates `projects/index.md`, and walks you through
 Initiation starting with the project name and description. Classifications
-(operating posture, risk tier) are inferred from the conversation and presented
-as overridable assumptions — see
+(operating posture, tier) are inferred from the conversation and presented as
+overridable assumptions — see
 [Agentic Workflow Guide: Classification by Inference](guides/agentic-workflow.md#classification-by-inference).
 
 **Workspace structure after adding a second project:**
@@ -309,7 +309,7 @@ my-workspace/
 - [**README**](README.md) — full framework overview, governance model, and
   adoption guidance
 - [**Right-Sizing Guide**](guides/right-sizing.md) — calibrate process weight to
-  your project's risk and team size
+  your project's consequence and stakeholder reach
 - [**Worked Example**](guides/worked-example.md) — see what "done" looks like
   across all stages (greenfield)
 - [**Solo Worked Example**](guides/worked-example-solo.md) — see a fuzzy idea

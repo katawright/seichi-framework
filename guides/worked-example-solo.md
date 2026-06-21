@@ -119,7 +119,7 @@ autonomy level. The agent derives the classifications and presents them as
 overridable assumptions (see
 [Agentic Workflow Guide: Classification by Inference](agentic-workflow.md#classification-by-inference)):
 
-> `[ASSUMED]` Risk tier: Minimal — solo, personal data only, no external users.
+> `[ASSUMED]` Tier: Minimal — solo, personal data only, no external users.
 > `[ASSUMED]` Project type: Greenfield — empty folder. `[ASSUMED]` Deployment
 > intent: Local/personal use for now. `[ASSUMED]` Operating posture:
 > Checkpointed — framework default for a first project. Say the word and any of

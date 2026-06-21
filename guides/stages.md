@@ -206,10 +206,10 @@ the **three work-shapes, one operating model**:
 | **Flow**       | A continuous per-issue change     | An approved issue                              | Ship + close the issue                                                       |
 | **Operations** | A standing system (its own guide) | [Closure handoff](../stages/closure/README.md) | [Decommission](operations.md#decommission-the-terminal-of-a-standing-system) |
 
-All three reuse the same [operating model](operating-model.md) — levers, floors,
-capability coverage, Lights-Out, escalation and stop, evidence — so each can be
-performed by humans, agents, or a mix. Project and Flow live in this guide;
-Operations is a [separate process](operations.md).
+All three reuse the same [operating model](operating-model.md) — configurable
+functions, floors, capability coverage, Lights-Out, escalation and stop,
+evidence — so each can be performed by humans, agents, or a mix. Project and
+Flow live in this guide; Operations is a [separate process](operations.md).
 
 ### When to Use Flow
 

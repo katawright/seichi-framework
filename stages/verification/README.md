@@ -144,7 +144,7 @@ For assistance level details, see the
 ## Right-Sizing Verification
 
 Not every project needs a full test suite across all test types. Match your
-Verification effort to your project's risk tier.
+Verification effort to your project's tier.
 
 | Test Type               | Minimal                           | Standard                                   | Enterprise                                         |
 | ----------------------- | --------------------------------- | ------------------------------------------ | -------------------------------------------------- |
@@ -321,13 +321,12 @@ end-to-end testing — need the increment running in an environment that is
   target closely matches a developer's environment.
 - **A deployed pre-production / staging environment is needed** when production
   differs materially from local — containers, a different OS, network and
-  service topology, or production-scale data — or when the risk tier warrants
-  it.
+  service topology, or production-scale data — or when the tier warrants it.
 
 Getting the increment into that environment is a **Verification activity**, not
 a Deployment one: Deployment releases a verified increment to _production_;
 Verification stages it into whatever pre-production environment its tests
-require. Match the environment to your risk tier — see
+require. Match the environment to your tier — see
 [Right-Sizing Verification](#right-sizing-verification) and the Environments row
 of the Deployment guide's
 [right-sizing table](../deployment/README.md#right-sizing-deployment).
@@ -457,7 +456,7 @@ The [Verification Reference](reference.md) covers these topics in depth:
 
 > Verification continues the **security throughline** by validating that
 > security controls work correctly — from dependency scanning through
-> penetration testing, scaled by project risk tier. See
+> penetration testing, scaled by project tier. See
 > [Security Guide](../../guides/security.md).
 
 **Handoff:** On **go** or **conditional go**, Deployment stage receives verified

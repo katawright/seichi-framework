@@ -299,8 +299,8 @@ All paths are relative to the `project.md` file's location.
 - Description: [brief description of your project]
 - Type: [greenfield / brownfield]
 - Tech stack: [if known]
-- Team size: [solo / small (2-5) / large (6+)]
-- Risk tier: [Minimal / Standard / Enterprise]
+- Stakeholder reach: [solo / within-team / cross-team / cross-org]
+- Tier: [Minimal / Standard / Enterprise]
 ```
 
 ### Single-Repo Example
@@ -327,8 +327,8 @@ A solo project within the standard workspace structure:
 - Description: Web application for tracking employee onboarding tasks.
 - Type: greenfield
 - Tech stack: To be determined
-- Team size: small (3 engineers, 1 product manager)
-- Risk tier: Standard
+- Stakeholder reach: within-team
+- Tier: Standard
 ```
 
 > **Greenfield projects:** Create the project directory and project.md first
@@ -365,8 +365,8 @@ A project spanning two source repositories, with governance in a sibling repo:
 - Description: Migrate payment processing from legacy gateway to new provider.
 - Type: brownfield
 - Tech stack: Go (API), React (frontend), PostgreSQL
-- Team size: large (8 engineers, 2 PMs)
-- Risk tier: Enterprise
+- Stakeholder reach: cross-team
+- Tier: Enterprise
 ```
 
 Source code paths use three levels of `../` because `project.md` is nested under
@@ -400,7 +400,7 @@ bootstrap prompt.
 > startup file (e.g., CLAUDE.md for Claude Code). The source code lives in
 > sibling repositories alongside this directory. Interview me to find out which
 > repos are involved and where they are. Then guide me through the first stage.
-> Infer project classifications (risk tier, project type, deployment intent,
+> Infer project classifications (tier, project type, deployment intent,
 > operating posture) from our conversation and present them as overridable
 > assumptions instead of asking me to choose. Drive the process but check
 > decisions with me.

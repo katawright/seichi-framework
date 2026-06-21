@@ -73,7 +73,7 @@ Authority]
 
 <!-- Goals are the project's distinct intended outcomes. Most projects have 1-4;
      fewer is better. The count reflects what the project intends to achieve,
-     not its risk tier. State each as an outcome — not a feature, not a metric.
+     not its tier. State each as an outcome — not a feature, not a metric.
      Altitude check: ask "what does this enable?" — if the answer is itself an
      outcome, you've named a mechanism, not a goal. Measurability lives in
      Success Criteria below. -->

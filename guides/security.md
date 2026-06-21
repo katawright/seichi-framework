@@ -16,7 +16,7 @@ rather than a quality layer woven through development.
 
 ### Goals of This Guide
 
-- Define security activities at each SDLC stage, scaled by project risk tier
+- Define security activities at each SDLC stage, scaled by project tier
 - Show how agents automate the majority of security work
 - Provide a security throughline paralleling the measurement and learning
   throughlines
@@ -90,9 +90,9 @@ starts from scratch.
 
 ## How AI Makes Security Cheap
 
-Security work falls into three automation levels. At the Minimal project risk
-tier, Automated activities run as part of CI with zero additional effort —
-making baseline security coverage effectively free.
+Security work falls into three automation levels. At the Minimal project tier,
+Automated activities run as part of CI with zero additional effort — making
+baseline security coverage effectively free.
 
 ### Fully Automated (CI/Pipeline)
 
@@ -134,13 +134,13 @@ Humans drive these activities; agents provide research and drafting support:
 - **Incident response** — a human leads investigation and decisions; an agent
   correlates logs and suggests root causes
 
-### What This Means by Risk Tier
+### What This Means by Tier
 
-| Project risk tier | Security effort                                                             | Key decisions required                                                  |
-| ----------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Minimal**       | Zero additional effort — Automated activities run via CI/AI                 | Accept residual risk from reduced security review                       |
-| **Standard**      | Automated + AI-Drafted reviews during design and verification               | Staff security reviewer, approve scan tooling budget                    |
-| **Enterprise**    | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs |
+| Tier           | Security effort                                                             | Key decisions required                                                  |
+| -------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Minimal**    | Zero additional effort — Automated activities run via CI/AI                 | Accept residual risk from reduced security review                       |
+| **Standard**   | Automated + AI-Drafted reviews during design and verification               | Staff security reviewer, approve scan tooling budget                    |
+| **Enterprise** | All levels active + formal compliance mapping, pen testing, security review | Staff dedicated AppSec, approve compliance audit scope, escalation SLAs |
 
 At all tiers, AppSec follows the
 [Security Escalation Protocol](roles.md#security-escalation-protocol) for
@@ -198,7 +198,7 @@ Software) — define security requirements.
 ### System Design
 
 Design the security architecture and create a threat model scaled to project
-risk tier.
+tier.
 
 **What to do:**
 

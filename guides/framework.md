@@ -196,7 +196,7 @@ How the framework adapts for new projects versus extensions to existing systems.
 adapts for projects that deploy continuously per-slice rather than in batches.
 
 **[Right-Sizing Your Process](#right-sizing-your-process)** — Match process
-rigor to project risk and team size. Full reference:
+rigor to project consequence and stakeholder reach. Full reference:
 [right-sizing.md](right-sizing.md).
 
 **[Operating Model](#operating-model)** — Who runs the process and how
@@ -857,13 +857,13 @@ framework supports CD by treating it as a delivery practice modifier — CD
 changes _when_ iterative stage activities happen (per-slice instead of
 per-increment), not _whether_ they happen.
 
-### CD Is a Delivery Practice, Not a Risk Tier
+### CD Is a Delivery Practice, Not a Tier
 
-CD is orthogonal to the three risk tiers (Minimal, Standard, Enterprise). A
-project can be Minimal+CD or Enterprise+CD. The risk tier determines _what_
-practices you adopt; CD determines _when_ they execute. The 3-tier model is
-unchanged — CD simply shifts the execution cadence from batch to continuous for
-the iterative stages.
+CD is orthogonal to the three tiers (Minimal, Standard, Enterprise). A project
+can be Minimal+CD or Enterprise+CD. The tier determines _what_ practices you
+adopt; CD determines _when_ they execute. The 3-tier model is unchanged — CD
+simply shifts the execution cadence from batch to continuous for the iterative
+stages.
 
 ### How CD Changes Stage Timing
 
@@ -916,8 +916,8 @@ the process and how autonomously_ is a separate decision — the
 [Operating Model Guide](operating-model.md) (Work Execution + Authority), within
 floors that consequence and compliance set. The framework's eight stages remain
 the same regardless — what changes is formality, documentation detail, and
-coordination. For the full model, tier definitions, team-size guidance, and
-choosing criteria, see the [Right-Sizing Guide](right-sizing.md).
+coordination. For the full model, tier definitions, stakeholder-reach guidance,
+and choosing criteria, see the [Right-Sizing Guide](right-sizing.md).
 
 ---
 
@@ -984,8 +984,8 @@ organizations should evaluate before adoption.
 ### Enterprise-Tier Controls
 
 Organizations in regulated industries (healthcare, finance, government) should
-use the Enterprise risk tier, which adds formal gates for security review,
-compliance validation, and Change Advisory Board approval. See
+use the Enterprise tier, which adds formal gates for security review, compliance
+validation, and Change Advisory Board approval. See
 [Right-Sizing Guide](right-sizing.md) for tier definitions.
 
 ### AI-Specific Policies

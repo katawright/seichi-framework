@@ -76,9 +76,9 @@ specifications.
 1. Confirm your operating posture (it usually carries forward from Initiation;
    review [**How AI Helps**](#how-ai-helps) and the Operating Model Guide if
    adjusting)
-2. Confirm your risk tier (it usually carries forward from Initiation, but
-   review the [**Right-Sizing Requirements**](#right-sizing-requirements)
-   practice table to verify)
+2. Confirm your tier (it usually carries forward from Initiation, but review the
+   [**Right-Sizing Requirements**](#right-sizing-requirements) practice table to
+   verify)
 3. Fill out the
    [Requirements Brief Template](../../templates/requirements-brief.md) using AI
    according to your operating posture — refer to
@@ -140,7 +140,7 @@ For assistance level details, see the
 ## Right-Sizing Requirements
 
 Not every project needs comprehensive NFRs or formal stakeholder reviews. Match
-your Requirements effort to your project's risk tier.
+your Requirements effort to your project's tier.
 
 | Practice                        | Minimal                     | Standard                                     | Enterprise                                                          |
 | ------------------------------- | --------------------------- | -------------------------------------------- | ------------------------------------------------------------------- |
