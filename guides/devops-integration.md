@@ -73,6 +73,8 @@ Pipeline setup, gate enforcement, and deployment checklists.
 | Pipeline gate policy | [Deployment Setup — Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) |
 | Pipeline checklist   | [Pipeline Checklist](../stages/deployment/pipeline-checklist.md)                                |
 
+---
+
 ## Security Scanning and Supply Chain
 
 Automated security checks integrated into CI pipelines.
@@ -81,6 +83,8 @@ Automated security checks integrated into CI pipelines.
 | ------------------- | ---------------------------------------------------------------------------------------- |
 | CI/pipeline scans   | [Security Guide — Fully Automated (CI/Pipeline)](security.md#fully-automated-cipipeline) |
 | Deployment security | [Security Guide — Deployment stage](security.md#deployment)                              |
+
+---
 
 ## Release Patterns
 
@@ -93,6 +97,8 @@ Deployment strategies and rollback approaches.
 | Rollback procedures           | [Deployment Reference](../stages/deployment/reference.md#rollback-procedures)                           |
 | Shadow mode / gradual rollout | [Deployment Guide](../stages/deployment/README.md#shadow-mode-and-gradual-rollout)                      |
 
+---
+
 ## Environments and Secrets
 
 Environment provisioning, parity, and secrets management.
@@ -102,6 +108,8 @@ Environment provisioning, parity, and secrets management.
 | Environment provisioning | [Deployment Setup — Environment Provisioning](../stages/deployment/setup.md#3-environment-provisioning)                         |
 | Environment parity       | [Deployment Setup — Environment Parity](../stages/deployment/setup.md#5-environment-parity)                                     |
 | Secrets management       | [Deployment Setup — Configuration and Secrets Management](../stages/deployment/setup.md#6-configuration-and-secrets-management) |
+
+---
 
 ## Observability
 
@@ -114,6 +122,8 @@ Monitoring, alerting, and instrumentation across the lifecycle.
 | Alerting design                | [Operations Guide: Observe](operations.md#observe)                                                                                |
 | Implementation instrumentation | [Implementation README — Instrumentation and Observability](../stages/implementation/README.md#instrumentation-and-observability) |
 
+---
+
 ## Operational NFRs
 
 Design-time targets for availability, recovery, latency, and more.
@@ -121,6 +131,8 @@ Design-time targets for availability, recovery, latency, and more.
 | Topic       | Reference                                                                                                       |
 | ----------- | --------------------------------------------------------------------------------------------------------------- |
 | NFR catalog | [Requirements Reference — Operational NFR Catalog](../stages/requirements/reference.md#operational-nfr-catalog) |
+
+---
 
 ## Minimum Pipeline Controls
 
