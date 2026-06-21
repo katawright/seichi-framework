@@ -103,7 +103,7 @@ operating model and delegated runs. The human-facing rationale lives in
 | -------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------ | ---- |
 | `stages/initiation/checklist.md` | Gate 1 readiness validation for the Initiation Brief.                         | problem-statement, scope, success-criteria, risks, assumptions                  | initiation   | ref  |
 | `stages/initiation/README.md`    | Stage guide: business case, stakeholder alignment, and Gate 1 approval.       | business-case, stakeholders, scope, goals, Gate-1, foundational, idea-formation | requirements | core |
-| `stages/initiation/reference.md` | Deep-dive on stakeholder identification, risk analysis, and success criteria. | stakeholder-ID, risk-analysis, success-criteria, hypothesis, AI-led             | initiation   | ref  |
+| `stages/initiation/reference.md` | Deep-dive on stakeholder identification, risk analysis, and success criteria. | stakeholder-ID, risk-analysis, success-criteria, hypothesis, agent-driven       | initiation   | ref  |
 
 ### Requirements (3)
 
