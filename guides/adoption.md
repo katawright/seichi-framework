@@ -458,14 +458,15 @@ confidence grows. For the full Work Execution and Authority model, see the
 - **Weeks 4–12:** Humans and agents share initiative. Agents proactively suggest
   approaches; humans evaluate and decide. Trust builds through repeated
   verification.
-- **12+ weeks (high-verifiability stages only):** Agents drive execution within
+- **12+ weeks (where verifiability is high):** Agents drive execution within
   bounded scope (e.g., generating tests, writing implementation code). Humans
-  validate through automated gates and spot checks. This is sometimes called
-  Lights-Out or agent-led execution.
+  validate through automated checks and spot checks — the Lights-Out end of the
+  operating spectrum.
 
-**Important:** Not every stage should reach agent-led execution.
-Low-verifiability stages like Initiation and System Design should remain
-human-driven regardless of team maturity.
+**Important:** How autonomously work runs is an operating-model choice bounded
+by verifiability, not a fixed property of a stage. Where verifiability is low —
+much of Initiation and System Design, for example — the achievable posture stays
+closer to human-driven, regardless of team maturity.
 
 #### Success Criteria for Phase 3
 
@@ -574,7 +575,7 @@ can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.17.0. Autonomy-progression pointer repointed to the
 Operating Model Guide; autonomy-tier triple replaced with operating-posture

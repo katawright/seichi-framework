@@ -20,7 +20,7 @@
 
 ## Right-Sizing This Brief
 
-<!-- See requirements/README.md#right-sizing-requirements for the full
+<!-- See ../stages/requirements/README.md#right-sizing-requirements for the full
      practice table and expansion triggers. -->
 
 **Tier chosen:** [Minimal / Standard / Enterprise]
@@ -29,7 +29,7 @@
 
 ## Context
 
-<!-- For guidance, see requirements/README.md#context -->
+<!-- For guidance, see ../stages/requirements/README.md#context -->
 
 - [What triggered this requirements work / where it sits in the roadmap]
 
@@ -37,7 +37,7 @@
 
 ## Users / Personas
 
-<!-- For guidance, see requirements/README.md#userspersonas -->
+<!-- For guidance, see ../stages/requirements/README.md#userspersonas -->
 
 - [Primary users and secondary stakeholders with brief context]
 
@@ -45,7 +45,7 @@
 
 ## Problem Statement
 
-<!-- For guidance, see requirements/README.md#problem-statement -->
+<!-- For guidance, see ../stages/requirements/README.md#problem-statement -->
 
 > **Guard against solutioning:** This section describes _what is wrong_, not
 > _how to fix it_. If you find yourself naming technologies, UI patterns, or
@@ -58,7 +58,7 @@
 
 ## Goals and Success Criteria (from Initiation)
 
-<!-- For guidance, see requirements/README.md#goals-and-success-criteria -->
+<!-- For guidance, see ../stages/requirements/README.md#goals-and-success-criteria -->
 <!-- Measurement throughline: These goals and metrics from the Initiation Brief inform your functional and non-functional requirements. NFRs should include instrumentation to measure these metrics. -->
 <!-- For Standard+ tier, add a Measurement Throughline column mapping each
      success criterion to its supporting FR/NFR IDs. This makes the
@@ -85,7 +85,7 @@
 ## Constraints
 
 <!-- Carry forward from Initiation: Review the Initiation Brief for constraints already identified (budget, deadlines, team capacity, compliance, technology restrictions). Capture them here, then add any new constraints discovered during requirements elicitation. -->
-<!-- For brownfield projects, see requirements/README.md#constraints -->
+<!-- For brownfield projects, see ../stages/requirements/README.md#constraints -->
 <!-- Constraints inform MoSCoW prioritization and shape NFRs. Detailed cost analysis happens during System Design, with Gate 2 as the decision point. -->
 
 ### From Initiation Brief
@@ -117,7 +117,7 @@
 
 ## Scope Baseline
 
-<!-- For guidance, see requirements/README.md#scope-baseline-moscow -->
+<!-- For guidance, see ../stages/requirements/README.md#scope-baseline-moscow -->
 <!-- Minimal: informal must/nice-to-have | Standard: MoSCoW for all requirements | Enterprise: MoSCoW plus weighted scoring with formal input -->
 
 ### Must Have (earliest increments)
@@ -141,8 +141,8 @@
 
 ## Functional Requirements and Acceptance Criteria
 
-<!-- For guidance, see requirements/README.md#functional-requirements and
-     requirements/README.md#acceptance-criteria -->
+<!-- For guidance, see ../stages/requirements/README.md#functional-requirements and
+     ../stages/requirements/README.md#acceptance-criteria -->
 <!-- Minimal: brief behavior descriptions with informal "done" definitions |
      Standard: numbered FRs with Given/When/Then ACs |
      Enterprise: formal FRs with comprehensive ACs and edge cases -->
@@ -175,7 +175,7 @@
 
 ## Non-Functional Requirements (NFRs) — Minimal Set
 
-<!-- For guidance, see requirements/README.md#non-functional-requirements -->
+<!-- For guidance, see ../stages/requirements/README.md#non-functional-requirements -->
 <!-- Include only NFRs that matter for decisions, testing, or architecture. For each NFR, define measurable pass/fail checks (thresholds, SLOs, instrumentation, or test method). Ensure observability NFRs capture instrumentation needed to measure success metrics. -->
 
 - **Performance:** [NFR] | **Verification criteria:** [how validated]
@@ -195,7 +195,7 @@
 
 ## Data and Integrations (Constraints)
 
-<!-- For guidance, see requirements/README.md#data-and-integrations -->
+<!-- For guidance, see ../stages/requirements/README.md#data-and-integrations -->
 
 - [Data sources with ownership, retention, access patterns]
 - [External/internal integrations with constraints (rate limits, SLAs, auth)]
@@ -204,7 +204,7 @@
 
 ## Edge Cases and Error Handling
 
-<!-- For guidance, see requirements/README.md#edge-cases -->
+<!-- For guidance, see ../stages/requirements/README.md#edge-cases -->
 
 - [Top edge cases with expected behavior]
 - [edge case]
@@ -225,7 +225,7 @@
 
 ## Open Questions / Blockers
 
-<!-- For guidance, see requirements/README.md#open-questions -->
+<!-- For guidance, see ../stages/requirements/README.md#open-questions -->
 <!-- Tag each question with the consulted role (e.g., @Architect, @AppSec). See guides/roles.md#consultation-protocol -->
 
 - **Q1:**
@@ -235,7 +235,7 @@
 
 ## Requirements Readiness (Ready for System Design)
 
-<!-- For guidance, see requirements/README.md. Use Requirements Checklist for detailed validation. -->
+<!-- For guidance, see ../stages/requirements/README.md. Use Requirements Checklist for detailed validation. -->
 
 **Ready when:**
 
@@ -313,4 +313,4 @@ Provide this Requirements Brief to System Design team.
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. Goals layer threaded into the Goals and Success Criteria section and traceability table in v0.45.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. Goals layer threaded into the Goals and Success Criteria section and traceability table in v0.45.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment paths corrected to ../stages/. -->

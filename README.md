@@ -342,7 +342,7 @@ For detailed readiness criteria, see the
 **1. Pre-pilot setup**
 
 - Select tier using the [Right-Sizing Guide](guides/right-sizing.md).
-- Choose the initial AI autonomy posture (start conservative) using the
+- Choose the initial operating posture (start conservative) using the
   [Operating Model Guide](guides/operating-model.md).
 
 **2. Pilot execution**
@@ -371,7 +371,7 @@ to try the framework solo or with your team first, skip to
 1. Select one pilot project and confirm
    [prerequisites](#pre-pilot-prerequisites).
 2. Choose tier ([Right-Sizing Guide](guides/right-sizing.md)).
-3. Select the initial AI autonomy posture
+3. Select the initial operating posture
    ([Operating Model Guide](guides/operating-model.md)).
 4. Copy and complete the bootstrap prompt
    ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts)) — plan ~15
@@ -433,7 +433,7 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
 Autonomy-tier links repointed to the Operating Model Guide in v0.49.0. In
