@@ -84,7 +84,7 @@
       "enum": ["artifacts", "source-code"]
     },
     "raci-roles": {
-      "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role arrays. Mirrors guides/framework.md.",
+      "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role arrays. Mirrors the RACI matrix in guides/roles.md.",
       "type": "object",
       "properties": {
         "R": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },

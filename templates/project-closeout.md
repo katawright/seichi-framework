@@ -16,7 +16,7 @@ second source of truth.
 **Usage:** Produced at project Closure alongside the Closure Checklist.
 Synthesize from existing artifacts (Initiation Brief, success criteria register,
 retrospective, idea backlog) — reference them by ID, do not restate them. The
-six sections below are the
+sections below carry the
 [six irreducible elements](../spec/delegated-run.md#completion-evidence-package)
 that never drop at any consequence level.
 
@@ -128,4 +128,4 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 
 ---
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.47.0 (as Support's Project Close-Out). Recast in v0.49.0 as the rendered view of the completion contract, owned by the Closure stage. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.47.0 (as Support's Project Close-Out). Recast in v0.49.0 as the rendered view of the completion contract, owned by the Closure stage. -->
