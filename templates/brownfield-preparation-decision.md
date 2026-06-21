@@ -99,8 +99,8 @@ dates)
 
 ---
 
-<!-- For standard stage-gate checkpoints (quality, deployment, support readiness),
+<!-- For standard stage-gate checkpoints (quality, deployment, closure),
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-03-29 | Added in v0.39.0 -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.39.0. v0.49 closure-vocab fix. -->

@@ -177,7 +177,7 @@ or library — see
 
 ## How AI Helps
 
-AI can assist with Deployment at whatever autonomy level your team is
+AI can assist with Deployment at whatever operating posture your team is
 comfortable with — from generating scripts to monitoring pipelines.
 
 How autonomously this stage runs — who performs the work and who decides — is an
@@ -246,10 +246,10 @@ Otherwise, keep deployment straightforward and hand off to Closure.
 For CD projects, each merged slice is **released to production via a
 pre-authorized automated path** — the release decision was pre-positioned (pull
 request, automerge, and a green-pipeline policy) and the pipeline executes it,
-so the slot still resolves as Released. The 37-item deployment checklist is
-designed for discrete deployment events — most items are satisfied by the CD
-pipeline on every merge. Use the per-merge checklist below for each slice;
-reserve the full checklist for increment-level review.
+so the slot still resolves as Released. The full per-increment deployment
+checklist is designed for discrete deployment events — most items are satisfied
+by the CD pipeline on every merge. Use the per-merge checklist below for each
+slice; reserve the full checklist for increment-level review.
 
 **Per-merge deployment checklist (~5 items):**
 
@@ -266,10 +266,10 @@ reserve the full checklist for increment-level review.
 - No lingering deployment-related issues
 - Retrospective completed
 
-**Using the 37-item checklist with CD:** Mark items that the CD pipeline handles
-as "Satisfied by CD pipeline" rather than N/A — this preserves traceability
-while acknowledging automated coverage. Focus manual review on the Handoff to
-Closure and Final Decision sections.
+**Using the full checklist with CD:** Mark items that the CD pipeline handles as
+"Satisfied by CD pipeline" rather than N/A — this preserves traceability while
+acknowledging automated coverage. Focus manual review on the Handoff to Closure
+and Final Decision sections.
 
 > **CD does not exempt human judgment concerns.** Breaking database migrations,
 > cross-service deployment ordering, and infrastructure changes still require
@@ -687,7 +687,7 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
 Brownfield Database Deployment section added in v0.42.0. Compliance Approval

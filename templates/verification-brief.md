@@ -43,8 +43,8 @@ being tested]
 > If the [implementation brief](implementation-brief.md) records AC
 > modifications in its Requirements Implemented table (added, refined, or split
 > criteria), merge those changes here before planning tests. Also check the
-> [increment design brief](increment-design-brief.md#acceptance-testing) for the
-> planned AC-to-test mapping.
+> [increment design brief](increment-design-brief.md#53-acceptance-testing) for
+> the planned AC-to-test mapping.
 
 - [ ] [AC-1.1: Specific testable criterion]
 - [ ] [AC-1.2: Specific testable criterion]
@@ -347,4 +347,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.6.0. Session protocol preamble added in v0.44.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.6.0. Session protocol preamble added in v0.44.0. v0.49 vocabulary/dev-ops-split sweep; acceptance-testing anchor fix. -->

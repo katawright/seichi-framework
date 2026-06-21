@@ -37,16 +37,15 @@ how criteria flow through the framework.
 
 ## How This Register Is Used
 
-| Stage              | Usage                                                    |
-| ------------------ | -------------------------------------------------------- |
-| **Initiation**     | Create register; define goals, metrics, and targets      |
-| **Requirements**   | Ensure NFRs trace to register criteria                   |
-| **System Design**  | Plan instrumentation to measure register criteria        |
-| **Implementation** | Implement measurement systems                            |
-| **Verification**   | Validate measurement systems work                        |
-| **Deployment**     | Capture baseline measurements                            |
-| **Closure**        | Track actuals vs. targets; confirm final status          |
-| **Close-Out**      | Confirm each criterion is Met or carries a Re-check Date |
+| Stage              | Usage                                                                               |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| **Initiation**     | Create register; define goals, metrics, and targets                                 |
+| **Requirements**   | Ensure NFRs trace to register criteria                                              |
+| **System Design**  | Plan instrumentation to measure register criteria                                   |
+| **Implementation** | Implement measurement systems                                                       |
+| **Verification**   | Validate measurement systems work                                                   |
+| **Deployment**     | Capture baseline measurements                                                       |
+| **Closure**        | Track actuals vs. targets; confirm each criterion is Met or carries a Re-check Date |
 
 ---
 
@@ -73,4 +72,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0. Re-check Date column + Close-Out usage row added in v0.47.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0. Re-check Date column + Close-Out usage row added in v0.47.0. v0.49 vocabulary/dev-ops-split sweep; Close-Out usage row folded into Closure. -->

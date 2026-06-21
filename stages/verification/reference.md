@@ -412,7 +412,7 @@ measure success without working monitoring.
 
 ---
 
-## Agent-Led Patterns
+## Agent-Driven Patterns
 
 ### What Agents Drive
 
@@ -491,6 +491,6 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. v0.49: vocabulary and oversight model updated.

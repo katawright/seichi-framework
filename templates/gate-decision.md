@@ -174,7 +174,7 @@ quality]
 
 ---
 
-<!-- For deployment/support checkpoints, use checkpoint-decision.md.
+<!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. v0.49 closure-vocab fix. -->

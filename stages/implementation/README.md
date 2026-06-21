@@ -102,6 +102,11 @@ blocker that you cannot resolve within the current scope, document it in the
 session log Blockers section and flag for PjM review. PjM monitors session log
 blockers as part of dependency and blocker management.
 
+**Running increments in parallel:** When multiple increments are dispatched
+concurrently (a delegated or Lights-Out run), follow the
+[Parallel Execution Guide](../../guides/parallel-execution.md) for batch
+preflight, isolation, and integration.
+
 **Design-impacting decisions:** For changes that affect component boundaries,
 API contracts, or data flows defined in the System Design Brief, apply the
 [Decision Scope Test](../../guides/roles.md#decision-scope-test) to determine
@@ -124,7 +129,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Implementation at whatever autonomy level your team is
+AI can assist with Implementation at whatever operating posture your team is
 comfortable with — from generating code snippets to driving the entire
 implementation process.
 
@@ -422,7 +427,7 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.5.0. Session-log creation marked [GATE] in the
 ONCE-PER-INCREMENT block in v0.47.0. Implementation-stage ADR drafts aligned

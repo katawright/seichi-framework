@@ -360,7 +360,7 @@ If a project started without deployment infrastructure and now needs it
 
 1. **Reassess your right-sizing tier** — a project gaining deployment needs has
    likely moved from Minimal to Standard. See
-   [Right-Sizing Guide: Your Tier Can Change](../../guides/right-sizing.md#your-tier-can-change).
+   [Right-Sizing Guide: Re-Size as the Project Evolves](../../guides/right-sizing.md#re-size-as-the-project-evolves).
 2. **Treat deployment setup as foundation work** — follow the greenfield path
    above as a foundation increment. See the
    [Project Foundation Guide](../../guides/project-foundation.md) for how
@@ -384,7 +384,7 @@ model expects projects to grow.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. Support Operations Guide links updated to
 Operations Guide in v0.49.0.
