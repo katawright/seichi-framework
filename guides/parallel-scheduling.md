@@ -239,7 +239,7 @@ you hand to the [execution guide](parallel-execution.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to the framework in v0.49.0. Sits beside increment planning in System
 Design; the run-time half is the

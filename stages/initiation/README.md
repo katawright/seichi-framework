@@ -275,7 +275,7 @@ operating-model choice, not a fixed property of the stage. It is set per project
 along two functions: **Work Execution** (Humans · Collaborative · Agents) and
 **Authority** (interactive human · pre-authorized policy · delegated agent).
 Gate 1 always stays a human-owned investment decision. See the
-[Operating Model Guide](../../guides/operating-model.md). For agent-led
+[Operating Model Guide](../../guides/operating-model.md). For agent-driven
 discovery patterns, see [Stage Reference](reference.md#agent-driven-patterns).
 
 ### AI Assistance Patterns

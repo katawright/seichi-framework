@@ -285,7 +285,7 @@ batch done.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to the framework in v0.49.0. Consumes the schedule produced by the
 [Parallel Scheduling Guide](parallel-scheduling.md); companion to the

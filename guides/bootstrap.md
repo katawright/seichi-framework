@@ -469,7 +469,7 @@ the
    alternatives
 4. **Reference framework concepts** — use terms from the framework (e.g.,
    "MoSCoW prioritization," "acceptance criteria") to keep aligned
-5. **Review at gates** — even at agent-led autonomy, review artifacts at gate
+5. **Review at gates** — even at agent-driven autonomy, review artifacts at gate
    checkpoints before the agent proceeds
 6. **Mind sensitive content in session logs** — session logs and briefs are
    checked into the repo by default. If the repo is public or broadly shared,

@@ -109,4 +109,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. -->

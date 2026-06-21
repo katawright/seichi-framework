@@ -1021,7 +1021,7 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.9.0. AI Assistance Overview concept retitled to
 Operating Model and repointed to the Operating Model Guide and spec in v0.49.0.

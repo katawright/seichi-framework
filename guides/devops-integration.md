@@ -179,7 +179,7 @@ Operational templates used across deployment and operations.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.
 Support stage references repointed to Operations Guide and operational-handoff

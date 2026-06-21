@@ -93,4 +93,4 @@ incident workflow.
 
 ---
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.35.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.35.0. v0.49 vocabulary/dev-ops-split sweep. -->

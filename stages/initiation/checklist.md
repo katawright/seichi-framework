@@ -95,6 +95,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.2.0. AI-Led mode updated to Lights-Out mode in v0.49.0.

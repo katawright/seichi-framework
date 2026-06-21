@@ -400,7 +400,7 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.25.0. In v0.49.0 the retired Support stage was
 reconciled to the Closure stage (terminal security handoff) plus the Operations
