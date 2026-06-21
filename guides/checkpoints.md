@@ -74,6 +74,8 @@ focus on "when/how to proceed" rather than "if."
 Record gate decisions using the
 [Gate Decision Template](../templates/gate-decision.md).
 
+---
+
 ## Reviews
 
 - **Purpose:** Verify that criteria are met before proceeding
@@ -109,9 +111,11 @@ Approval authority varies by context — see the
 who decides. Record review decisions using the
 [Checkpoint Decision Template](../templates/checkpoint-decision.md).
 
-> **Compliance trigger:** Activate Compliance Approval when the project's risk
-> tier is Standard or Enterprise and regulatory, legal, or security sign-off
+> **Compliance trigger:** Activate Compliance Approval when the project's tier
+> is Standard or Enterprise and regulatory, legal, or security sign-off
 > requirements were identified during Initiation or System Design.
+
+---
 
 ## Alignments
 
@@ -129,6 +133,8 @@ who decides. Record review decisions using the
 **AI validation:** Review AI-generated designs, architectures, and requirements
 with the team. Ensure AI recommendations align with stakeholder needs and
 constraints.
+
+---
 
 ## Decision-Rights Matrix
 
@@ -163,6 +169,8 @@ Architect prepares architecture rationale and ADR summary. AppSec prepares
 security risk posture (see
 [Security Risk Posture](../templates/gate-decision.md#security-risk-posture)
 section in the gate decision template).
+
+---
 
 ## Checkpoint Mapping by Stage
 

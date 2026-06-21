@@ -284,9 +284,9 @@ Stage directories live under `stages/[stage]/`. Templates live in `templates/`:
 | `[name].md` | Pure fill-in-the-blank stage artifact |
 
 README files link to related documents inline (via How to Use steps and body
-content) and do not need a separate Related Documents section. Non-README files
-(checklists, references, guides) include a Related Documents section before
-Notes.
+content) and do not need a separate Related Documents section. Checklists and
+references include a Related Documents section before Notes. Guides, like
+READMEs, link inline and do not require one.
 
 ---
 
@@ -345,6 +345,7 @@ checkpoints:
     protocol: checkpoint-protocol # human-approval | specialized-review | alignment-review | ci-validation-human-approval | ci-validation-human-spot-check | human-execution-required
     name: "Human-readable checkpoint name"
     responsible_roles: [role-id] # roles from Decision-Rights Matrix
+    accountable_role: [role-id] # optional, RACI 'A' (decision-maker); used on gate-type checkpoints where the decision authority differs from the preparers
     condition: compliance # optional, names a project-level condition gating whether the checkpoint applies; omit when it always applies
 checklist: stages/stage-name/checklist.md
 reference: stages/stage-name/reference.md # null if not yet created
@@ -380,7 +381,8 @@ pipeline:
 
 - Front matter goes above the H1 title
 - Delimited by `---` on its own line (opening and closing)
-- No blank line between closing `---` and H1
+- A blank line separates the closing `---` from the H1 (Prettier normalizes
+  this)
 - Values derived from `guides/stages.md` — front matter reflects what is already
   documented, not new metadata
 
