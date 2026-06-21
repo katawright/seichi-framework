@@ -271,7 +271,7 @@ gate facilitation, cross-increment coordination, dependency tracking, and
 progress reporting. PjM is Consulted at stages where active coordination input
 is needed (foundational stages, gates, increment design, deployment) and
 Informed where it passively tracks progress (implementation, verification,
-support). The following cross-cutting activities give PjM clear R/A
+closure). The following cross-cutting activities give PjM clear R/A
 accountability:
 
 | Activity                               | PjM | PM  | Exec | Architect | Engineers | QA  | DevOps |

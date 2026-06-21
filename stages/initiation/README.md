@@ -73,8 +73,9 @@ budget context. No prior framework artifacts or technical expertise required.
 
 ### How to Use This Guide
 
-1. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to understand
-   the three right-sizing axes and select your risk tier
+1. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to size
+   governance weight (Consequence / Compliance / Stakeholder Reach) and choose
+   your operating posture
 2. Read [**How AI Helps**](#how-ai-helps) to select your operating posture (Work
    Execution + Authority — see the Operating Model Guide)
 3. **When agents perform the work:** Confirm all right-sizing selections with
@@ -300,26 +301,36 @@ For assistance level details, see the
 
 ## Right-Sizing Initiation
 
-The framework scales along three axes:
+Two separate decisions shape how heavy Initiation — and the rest of the project
+— should be.
 
-- **Risk tier** (Minimal / Standard / Enterprise) — how much process to apply
-- **Operating posture** — who performs the work (Work Execution) and who decides
-  (Authority), and how autonomously it runs (see [How AI Helps](#how-ai-helps)
-  above and the [Operating Model Guide](../../guides/operating-model.md))
-- **Team size** — solo, small team, or multi-team (see
-  [Right-Sizing Guide](../../guides/right-sizing.md#team-size--how-formal))
+**How heavy the process is (right-sizing).** Governance weight scales along
+three dimensions:
 
-If your project handles sensitive data, has compliance requirements, or serves
-external users, start at Standard or Enterprise — see the
-[Right-Sizing Guide](../../guides/right-sizing.md) for detailed selection
+- **Consequence** — how bad it is if the project goes wrong (blast radius ×
+  reversibility)
+- **Compliance** — whether regulatory, contractual, or policy obligations apply
+- **Stakeholder Reach** — how far across accountability boundaries the work and
+  sign-offs travel (solo, within-team, cross-team, or cross-org)
+
+These map to the **Minimal / Standard / Enterprise** governance-weight presets —
+see the [Right-Sizing Guide](../../guides/right-sizing.md) for selection
 criteria.
 
-Select values for all three before starting. Most internal projects land at
-**Standard**; use **Minimal** for low-risk experiments and **Enterprise** for
-regulated or multi-team efforts.
+**Who runs the process and how autonomously (operating model).** A separate
+decision — the operating posture: who performs the work (Work Execution), who
+decides (Authority), and how much runs without a human. See
+[How AI Helps](#how-ai-helps) above and the
+[Operating Model Guide](../../guides/operating-model.md).
+
+If your project handles sensitive data, has compliance requirements, or serves
+external users, start at Standard or Enterprise.
+
+Most internal projects land at **Standard**; use **Minimal** for low-risk
+experiments and **Enterprise** for regulated or multi-stakeholder efforts.
 
 Not every project needs a formal business case or comprehensive risk assessment.
-Match your Initiation effort to your project's risk tier.
+Match your Initiation effort to the project's consequence and reach.
 
 > **Project type matters too.** Whether you're building from scratch
 > (greenfield) or extending an existing system (brownfield) affects foundation
@@ -395,7 +406,7 @@ teams build features that solve the wrong problem or solve no problem at all.
 The structured format — who, what, why, impact — forces the author to articulate
 the gap between the current state and the desired state. This framing also
 anchors later stages: Requirements validates the problem, Design solves it, and
-Support measures whether it stays solved.
+Operations measures whether it stays solved.
 
 **Good format:**
 

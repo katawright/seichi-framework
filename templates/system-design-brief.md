@@ -460,10 +460,10 @@ Enterprise tier]
      rationale. This section is the formal skip record referenced by Gate 2.
      Omit this section entirely if no stages are being skipped. -->
 
-| Stage                | Skipped?   | Rationale                                                    |
-| -------------------- | ---------- | ------------------------------------------------------------ |
-| Deployment (Stage 7) | [Yes / No] | [e.g., local-only tool; no deployment infrastructure]        |
-| Support (Stage 8)    | [Yes / No] | [e.g., no production environment; no support runbook needed] |
+| Stage                | Skipped?   | Rationale                                                            |
+| -------------------- | ---------- | -------------------------------------------------------------------- |
+| Deployment (Stage 7) | [Yes / No] | [e.g., local-only tool; no deployment infrastructure]                |
+| Closure (Stage 8)    | [Yes / No] | [e.g., disposable experiment; no formal close-out or handoff needed] |
 
 ---
 
@@ -487,4 +487,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. Stage Skip Decisions row 8 updated Support→Closure in v0.49.0. -->

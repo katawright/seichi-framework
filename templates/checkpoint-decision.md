@@ -7,8 +7,7 @@ production ownership, or compliance).
 
 **Usage:** Use this template for operational checkpoints between stages. For
 Gate 1 and Gate 2 investment decisions, use [gate-decision.md](gate-decision.md)
-instead. See the
-[Checkpoint Taxonomy](../guides/checkpoints.md) for the full
+instead. See the [Checkpoint Taxonomy](../guides/checkpoints.md) for the full
 list of checkpoint types.
 
 **Last Updated:** YYYY-MM-DD
@@ -31,7 +30,8 @@ list of checkpoint types.
 
 - **Stage completed:** (which stage preceded this checkpoint)
 - **Decision being made:** (what is being approved/held/rejected)
-- **Stage artifact:** (link to deployment brief, support brief, or checklist)
+- **Stage artifact:** (link to deployment brief, operational-handoff record, or
+  checklist)
 
 ---
 
@@ -40,7 +40,7 @@ list of checkpoint types.
 - (List of artifacts and evidence evaluated)
 - _Example (Deployment):_ "Verification brief, deployment checklist, rollback
   plan, monitoring baselines"
-- _Example (Production Ownership):_ "Support readiness checklist, runbooks,
+- _Example (Production Ownership):_ "Operational handoff record, runbooks,
   on-call plan, escalation contacts"
 
 ---
@@ -100,7 +100,7 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 - (What happens next based on the decision)
 - _Example (Deploy):_ "Proceed with production deployment"
 - _Example (Hold):_ "Address blockers and re-run readiness checks"
-- _Example (Accept with conditions):_ "Support accepts ownership with listed
+- _Example (Accept with conditions):_ "Operations accepts ownership with listed
   mitigations and follow-up dates"
 - _Example (Rollback):_ "Execute rollback runbook and open incident record"
 
@@ -109,4 +109,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-03-20 | Added in v0.18.1 -->
+<!-- Template Last Updated: 2026-06-20 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. -->
