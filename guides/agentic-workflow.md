@@ -217,24 +217,26 @@ handoff to Operations. Operations findings feed back as new
 
 ### Supervised
 
-Work Execution is **Humans**; Authority is interactive. The agent surfaces
-information and a human acts. Humans drive every step.
+Work Execution is **Collaborative**; Authority is interactive at every step. The
+agent works in short steps and a human reviews each one before it proceeds. The
+difference from Checkpointed is cadence — review at every step here, rather than
+at deliberately placed checkpoints.
 
 1. Read the stage README for guidance and rationale
-2. Wait for human instructions before producing artifacts
-3. Generate drafts, options, and analyses when asked
-4. Present outputs for human review before proceeding
+2. Propose the next small step, then draft it
+3. Generate drafts, options, and analyses in short, reviewable increments
+4. Present each step for human review before proceeding
 
 ### Checkpointed
 
-Work Execution is **Collaborative**; Authority is interactive at gates, with
-pre-authorized policy between. The agent co-authors within human-set boundaries.
-This is the default posture.
+Work Execution is **Collaborative**; Authority is interactive at checkpoints,
+with pre-authorized policy between. The agent co-authors within human-set
+boundaries. This is the default posture.
 
 1. Read the stage README and checklist
 2. Propose a work plan for the current stage
 3. Draft artifacts proactively, flagging assumptions
-4. Pause at gates for human review and approval
+4. Pause at checkpoints for human review and approval
 5. Iterate based on human feedback
 
 ### Lights-Out
@@ -565,7 +567,7 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-20 — v0.49 consistency sweep: Support stage renamed to
+**Last Updated:** 2026-06-21 — v0.49 consistency sweep: Support stage renamed to
 Closure; autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed
 to operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow
 Diagram feedback edges updated to reflect Operations.
