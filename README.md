@@ -318,7 +318,7 @@ organizational pilot, start with [Try It Now](#try-it-now).
 **Brownfield without documented context?** The
 [Brownfield Readiness Guide](guides/brownfield-readiness.md) walks you through a
 scored readiness rubric (five axes, 0-4 each, 4 = best) that determines your
-tier and AI operating tier — from focused discovery to enablement programs for
+tier and AI operating mode — from focused discovery to enablement programs for
 codebases with pervasive issues.
 
 See

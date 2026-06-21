@@ -665,7 +665,7 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Authored from the v0.49 delegated-run-operations
 detail doc; the canonical state these contracts read and write is single-sourced
