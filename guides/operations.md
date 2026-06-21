@@ -253,11 +253,11 @@ is the operating model's autonomy ladder, applied to operations and gated by
 [capability coverage](operating-model.md#capability-coverage) and floored by
 [consequence](right-sizing.md):
 
-| Rung             | Who acts                                           | Coverage it requires                                                                          |
-| ---------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **Supervised**   | Agent surfaces; a human acts                       | signals and observability — enough to inform a human                                          |
-| **Checkpointed** | Agent acts between deliberately placed human gates | + automated diagnosis and safe-remediation primitives in scope                                |
-| **Lights-Out**   | Unattended; a human only at floor-forced gates     | + rollback, independent stop enforcement, run continuity — the full unattended coverage floor |
+| Rung             | Who acts                                                 | Coverage it requires                                                                          |
+| ---------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Supervised**   | Agent acts in short steps, each human-reviewed           | signals and observability — enough for a human to check each step                             |
+| **Checkpointed** | Agent acts between deliberately placed human checkpoints | + automated diagnosis and safe-remediation primitives in scope                                |
+| **Lights-Out**   | Unattended; a human only at floor-forced gates           | + rollback, independent stop enforcement, run continuity — the full unattended coverage floor |
 
 The rungs are the same [operating presets](operating-model.md#operating-presets)
 the SDLC uses; operations reads them per activity rather than per stage. A
@@ -416,7 +416,7 @@ this guide where an obligation or contract demands more.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Operations is the standing-system sibling to the
 SDLC, introduced in the v0.49 dev/ops split: the continuous "Support stage" was

@@ -301,10 +301,11 @@ capability ceiling**:
 
 Note the asymmetry: consequence floors only the two demand-side settings
 (assurance and authority); capability ceilings apply to all four. Consequence's
-assurance floor **saturates at Internal** — an External floor, or an outright
-Lights-Out ban, comes from compliance or a capability gap, never from
-consequence (see the [Right-Sizing Guide](right-sizing.md) consequence-floor
-table, and the spec's
+assurance floor **saturates at Internal** — an External assurance floor comes
+from compliance or cross-organization Stakeholder Reach, and an outright
+Lights-Out ban comes from compliance or a capability gap, never from consequence
+(see the [Right-Sizing Guide](right-sizing.md) consequence-floor table, and the
+spec's
 [floor table](../spec/operating-model.md#governance-floors-and-capability-ceilings)
 for the normative cells).
 
@@ -378,13 +379,19 @@ weight, these size autonomy:
 | Operating preset | Settings, roughly                                                                                                   | Minimum coverage it assumes                                                                  |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **Supervised**   | agents work in short steps, every step human-reviewed; decisions interactive                                        | none — a human checks everything                                                             |
-| **Checkpointed** | agents execute between deliberately placed human gates; routine decisions delegated; Self/Internal Assurance        | agents can verify their own work in scope; independent automated assurance where required    |
+| **Checkpointed** | agents execute between deliberately placed human checkpoints; routine decisions delegated; Self/Internal Assurance  | agents can verify their own work in scope; independent automated assurance where required    |
 | **Lights-Out**   | agent execution; Automated workflow; decisions delegated or pre-authorized; pauses only where a floor forces a gate | verifiability across the work; automated assurance; independent stop enforcement; continuity |
 
+Across the three, one axis moves — **how much the agent may do between human
+decision points**: at **Supervised**, roughly one reviewable unit, with review
+continuous; at **Checkpointed**, a checkpoint's worth, running autonomously
+between checkpoints under pre-authorized policy; at **Lights-Out**, the whole
+run, except where a floor forces a gate.
+
 The Checkpointed/Lights-Out line is the cadence source: Checkpointed places
-human gates as the design _cadence_; Lights-Out runs unattended _except_ where a
-consequence or compliance floor inserts a non-delegable gate — a bounded pause,
-not a downgrade to Checkpointed.
+human checkpoints as the design _cadence_; Lights-Out runs unattended _except_
+where a consequence or compliance floor inserts a non-delegable gate — a bounded
+pause, not a downgrade to Checkpointed.
 
 A preset is a default, not a verdict: override any single setting your project
 needs differently, then re-check coverage for what you changed. The spec carries
@@ -395,7 +402,7 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Companion to the
 [Right-Sizing Guide](right-sizing.md) (Layer A — governance weight) and the
