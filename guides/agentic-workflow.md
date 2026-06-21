@@ -202,7 +202,7 @@ flowchart LR
 
     Ver -.->|defects| Impl
     Dep -.->|next increment| ID
-    Clo -.->|ops findings| ID
+    Clo -.->|ops findings → new project / Flow item| Init
 ```
 
 **Solid arrows** show the primary forward flow. **Dashed arrows** show feedback
