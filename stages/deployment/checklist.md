@@ -200,7 +200,7 @@ decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.7.0. Database migration and migration security items
 added in v0.42.0. Release Disposition section added in v0.45.0. Support

@@ -92,7 +92,12 @@ export function extractLinks(content) {
   return links;
 }
 
-/** Bare *.md path tokens inside HTML comments (the guidance-pointer class). */
+/**
+ * Explicitly-relative (./ or ../) *.md path tokens inside HTML comments — the
+ * guidance-pointer class. Only relative paths are reported: a `../x.md` is
+ * unambiguously an intended file-relative link, whereas a bare `guides/x.md`
+ * in a comment is usually a prose identifier or example content, not a link.
+ */
 export function extractCommentMdPaths(content) {
   const out = [];
   const commentRe = /<!--([\s\S]*?)-->/g;
@@ -103,6 +108,7 @@ export function extractCommentMdPaths(content) {
     const pathRe = /([\w./-]+\.md)(#[-\w]+)?/g;
     let p;
     while ((p = pathRe.exec(body)) !== null) {
+      if (!/^\.\.?\//.test(p[1])) continue; // only ./ or ../ paths
       out.push({ path: p[1], index: offset + p.index });
     }
   }

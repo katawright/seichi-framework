@@ -275,7 +275,7 @@ Link each mitigation to an NFR so it is traceable through Verification.
 ### Increment 0: [Bootstrap / Discovery] (if applicable)
 
 <!-- Include when: greenfield needs bootstrap, or brownfield first AI-assisted needs discovery -->
-<!-- See ../system-design/README.md#infrastructure-planning -->
+<!-- See ../stages/system-design/README.md#infrastructure-planning -->
 
 **Goal:** [Establish infrastructure (greenfield) / Document existing system for
 AI context (brownfield first AI)]
@@ -487,4 +487,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. Stage Skip Decisions row 8 updated Support→Closure in v0.49.0. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. Stage Skip Decisions row 8 updated Support→Closure in v0.49.0. -->

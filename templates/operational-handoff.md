@@ -111,4 +111,4 @@ role / "delegated agent under policy"]
      At Negligible/Low consequence this may be an implicit self-acceptance;
      at High/Critical it is an explicit, possibly non-delegable, sign-off. -->
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.49.0 (dev/ops split — the dev→ops handoff seam owned by the Closure stage). -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.49.0 (dev/ops split — the dev→ops handoff seam owned by the Closure stage). -->

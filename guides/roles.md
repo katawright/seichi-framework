@@ -375,7 +375,7 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.10.0. Solo-builder translation added in v0.48.0. In
 v0.49.0 the dev/ops split renamed the Support stage RACI row → Closure, added an

@@ -595,7 +595,7 @@ for the full constraint taxonomy with NFR templates and examples.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo

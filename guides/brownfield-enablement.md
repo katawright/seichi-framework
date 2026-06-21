@@ -593,7 +593,7 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.37.0. Renamed from Brownfield Preparation Guide to
 Brownfield Enablement Guide as part of the brownfield guide restructuring

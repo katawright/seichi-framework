@@ -129,4 +129,4 @@ If rollback fails or the situation worsens:
 | ---------- | ------ | ----------------------- |
 | YYYY-MM-DD | [Name] | Initial runbook created |
 
-<!-- Template Last Updated: 2026-06-20 | Added in v0.17.0. Guidance link repointed from the retired Support stage to the Operations Guide in v0.49.0. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.17.0. Guidance link repointed from the retired Support stage to the Operations Guide in v0.49.0. -->

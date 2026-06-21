@@ -197,7 +197,7 @@ work at each stage and where human oversight is required.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Extracted from `guides/stages.md` in v0.42.0. Stale AI Assistance Scorecard
 reference repointed to the Operating Model Guide in v0.49.0.

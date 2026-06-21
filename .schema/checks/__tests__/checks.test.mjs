@@ -67,9 +67,12 @@ describe("extractLinks", () => {
 });
 
 describe("extractCommentMdPaths", () => {
-  it("finds bare md paths inside HTML comments", () => {
-    const out = extractCommentMdPaths("<!-- see increment-design/README.md -->");
-    expect(out[0].path).toBe("increment-design/README.md");
+  it("finds explicitly-relative md paths inside HTML comments", () => {
+    const out = extractCommentMdPaths("<!-- see ../stages/initiation/reference.md#x -->");
+    expect(out[0].path).toBe("../stages/initiation/reference.md");
+  });
+  it("ignores bare (non-relative) md paths — prose identifiers, not links", () => {
+    expect(extractCommentMdPaths("<!-- keep in sync with guides/framework.md -->")).toEqual([]);
   });
 });
 

@@ -108,7 +108,7 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.5.0. Session-log item covers creation through
 finalization in v0.47.0. AI-Led mode updated to Lights-Out mode in v0.49.0.

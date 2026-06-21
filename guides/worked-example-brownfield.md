@@ -433,7 +433,7 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-06-20 — v0.49 consistency sweep: actor-sense "AI"
+**Last Updated:** 2026-06-21 — v0.49 consistency sweep: actor-sense "AI"
 references rewritten to "agent"; "AI operating mode" → "agent operating mode";
 traceability chain updated to end at Closure followed by Operations.
 

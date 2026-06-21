@@ -178,7 +178,7 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.14.0. Operational processes link repointed to
 Operations Guide in v0.49.0.

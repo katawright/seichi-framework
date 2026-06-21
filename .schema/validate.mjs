@@ -241,11 +241,12 @@ for (let file of structureFiles) {
   }
 }
 
-// ── Extended checks (warn-only) ─────────────────────────────────────
+// ── Extended checks (fatal) ─────────────────────────────────────────
 // Deterministic checks for the mechanizable cold-review finding classes:
 // anchor/link integrity, retired vocabulary as live guidance, Last Updated
-// stamp freshness, and INDEX count self-consistency. Land warn-only (they do
-// NOT affect the exit code); promote to fatal once the tree is clean.
+// stamp freshness, and INDEX count self-consistency. These fail the build
+// (exit 1), the same as a schema failure. If the retired-vocab check ever
+// trips on a legitimate new usage, tune .schema/checks/retired-vocab.json.
 
 const checkExclude = fileMap.checkExclude || [];
 const checkFiles = structureFiles.filter(
@@ -309,7 +310,7 @@ console.log(
     (structureWarnings > 0
       ? `, ${structureWarnings} structure warnings`
       : "") +
-    (checkIssues.length > 0 ? `, ${checkIssues.length} check warnings` : ""),
+    (checkIssues.length > 0 ? `, ${checkIssues.length} check failures` : ""),
 );
 
-process.exit(failed > 0 ? 1 : 0);
+process.exit(failed > 0 || checkIssues.length > 0 ? 1 : 0);
