@@ -403,7 +403,7 @@ Initiation through deployment hardening, and continue into ongoing vulnerability
 management in [Operations](operations.md). Security decisions compound across
 stages — data sensitivity classified in Initiation drives NFRs in Requirements,
 which drive architecture in System Design, which drive scanning in
-Implementation. For the stage-by-stage breakdown, AI automation tiers, and
+Implementation. For the stage-by-stage breakdown, AI automation levels, and
 Secure Software Development Framework (SSDF) traceability, see the
 [Security Guide](security.md).
 
@@ -1050,7 +1050,7 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.9.0. Stage Altitude section added in v0.46.0.
 AI-assistance pointer repointed to the Operating Model Guide in v0.49.0.

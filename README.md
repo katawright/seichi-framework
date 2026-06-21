@@ -34,9 +34,10 @@ way to scale what works from one team to the next.
 
 ### Key Principle
 
-AI assistance increases as verifiability increases. Early stages use AI for
-drafting and analysis under tighter human control; later stages allow higher
-autonomy because outputs are directly testable.
+AI assistance is bounded by verifiability and risk. How autonomously the work
+runs — who performs it and who decides — is a per-project
+[operating-model](guides/operating-model.md) choice, not a fixed property of
+each stage.
 
 ### How to Use This Guide
 
@@ -252,10 +253,9 @@ per-checkpoint roles.
 > explore early without over-committing — and gives leadership a clear stop
 > point before the full build begins.
 
-For full checkpoint types and decision records, see
-[Checkpoint Taxonomy](guides/framework.md#checkpoint-taxonomy) in the
-[Framework Guide](guides/framework.md). For stage definitions and execution
-patterns, see [AI-Assisted SDLC Stages](guides/stages.md).
+For full checkpoint types and decision records, see the
+[Checkpoint Taxonomy](guides/checkpoints.md). For stage definitions and
+execution patterns, see [AI-Assisted SDLC Stages](guides/stages.md).
 
 ---
 
