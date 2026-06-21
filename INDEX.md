@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-06-20 | **Framework Version:** 0.49.0
+**Last Updated:** 2026-06-21 | **Framework Version:** 0.49.0
 
 ## Overview
 
@@ -194,11 +194,13 @@ operating model and delegated runs. The human-facing rationale lives in
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.41.0. Operating Model Guide and the agent-facing
 `spec/` layer added to the inventory in v0.49.0; the superseded AI Assistance
 Scorecard removed. The v0.49 dev/ops split renamed the Support stage → Closure
 (2 files), added the Operations Guide, and added the operational-handoff and
-flow-issue templates while removing the support-brief; counts refreshed
-accordingly (Guides 23, Stage Artifacts 25, Templates 23).
+flow-issue templates while removing the support-brief. The v0.49 parallel-batch
+work (WS3) added the `spec/parallel-batch.md` contract and the Parallel
+Scheduling and Parallel Execution guides; counts refreshed accordingly (Guides
+25, Spec 5, Stage Artifacts 25, Templates 23).

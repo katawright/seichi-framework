@@ -104,7 +104,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Requirements at whatever autonomy level your team is
+AI can assist with Requirements at whatever operating posture your team is
 comfortable with — from reviewing your draft to driving the entire elicitation
 process.
 
@@ -746,7 +746,7 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.3.0. Visual NFR examples added to Usability category in
 v0.44.0. Goals layer threaded through the Goals and Success Criteria and

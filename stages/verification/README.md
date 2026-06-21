@@ -77,7 +77,7 @@ meeting team threshold (default: 80% line coverage — see
 default; override in the implementation brief for project-specific targets),
 code review approvals,
 [requirements with acceptance criteria](../../templates/requirements-brief.md),
-[test strategy from Increment Design](../../templates/increment-design-brief.md#acceptance-testing),
+[test strategy from Increment Design](../../templates/increment-design-brief.md#53-acceptance-testing),
 [implementation brief](../../templates/implementation-brief.md) with notes, and
 component designs from Increment Design for plan-vs-actual comparison. Check the
 Implementation Brief's Requirements Implemented table for any acceptance
@@ -109,7 +109,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Verification at whatever autonomy level your team is
+AI can assist with Verification at whatever operating posture your team is
 comfortable with — from generating test cases to driving the entire testing
 process.
 
@@ -497,7 +497,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.6.0. Verification Environment and verification-depth
 guidance added in v0.45.0. v0.49: autonomy vocabulary repointed to the operating

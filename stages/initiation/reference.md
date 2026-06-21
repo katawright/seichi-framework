@@ -36,8 +36,8 @@ investment is made. Precision matters less than completeness at this stage.
    populating those sections of the brief
 3. Follow [**Success Criteria Definition**](#success-criteria-definition) to
    write measurable outcomes that hold up through all subsequent stages
-4. Review [**Agent-Led Patterns**](#agent-led-patterns) when operating at the
-   Agent-Led operating posture (see the Operating Model Guide)
+4. Review [**Agent-Driven Patterns**](#agent-driven-patterns) when work
+   execution is delegated to agents (see the Operating Model Guide)
 
 ---
 
@@ -271,13 +271,13 @@ revisit qualitative criteria and convert them to measurable ones.
 
 ---
 
-## Agent-Led Patterns
+## Agent-Driven Patterns
 
 ### What Agents Drive
 
-At the Agent-Led operating posture, an agent takes ownership of the discovery
-and drafting process rather than waiting for human direction. Concretely, this
-includes:
+When work execution is delegated to agents (e.g. the Lights-Out preset), an
+agent takes ownership of the discovery and drafting process rather than waiting
+for human direction. Concretely, this includes:
 
 - Conducting structured discovery interviews — drafting the questions, following
   up on gaps, and summarizing answers into brief sections
@@ -386,7 +386,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.23.0. New-product no-baseline guidance added in
 v0.48.0. v0.49: vocabulary and oversight model updated.

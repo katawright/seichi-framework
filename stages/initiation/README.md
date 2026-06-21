@@ -276,7 +276,7 @@ along two functions: **Work Execution** (Humans · Collaborative · Agents) and
 **Authority** (interactive human · pre-authorized policy · delegated agent).
 Gate 1 always stays a human-owned investment decision. See the
 [Operating Model Guide](../../guides/operating-model.md). For agent-led
-discovery patterns, see [Stage Reference](reference.md#agent-led-patterns).
+discovery patterns, see [Stage Reference](reference.md#agent-driven-patterns).
 
 ### AI Assistance Patterns
 
@@ -807,7 +807,7 @@ and System Design accounts for them structurally. See the
 [Security Guide](../../guides/security.md) for the framework's security
 throughline and classification approach.
 
-### Brownfield Readiness -- Quick Pass
+### Brownfield Readiness — Quick Pass
 
 Brownfield projects inherit existing code, infrastructure, and operational
 constraints that greenfield projects do not. The brownfield readiness section
@@ -875,7 +875,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
 Idea-formation entry path added in v0.48.0. Adaptive, stakes-scaled interview

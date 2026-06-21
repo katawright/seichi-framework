@@ -90,7 +90,7 @@ Three upstream artifacts feed into System Design:
   priorities and acceptance criteria
 - **Non-Functional Requirements** — performance, security, scalability, and
   other quality attributes (in the
-  [Requirements Brief](../../templates/requirements-brief.md#non-functional-requirements))
+  [Requirements Brief](../../templates/requirements-brief.md#non-functional-requirements-nfrs--minimal-set))
 - **[Success Criteria Register](../../templates/success-criteria-register.md)**
   — measurable success criteria requiring instrumentation
 
@@ -129,7 +129,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with System Design at whatever autonomy level your team is
+AI can assist with System Design at whatever operating posture your team is
 comfortable with — from suggesting patterns to driving the entire architecture
 exploration.
 
@@ -524,7 +524,9 @@ priority definitions.
 4. **Assess risk and complexity** — uncertain items first
 5. **Group into increments** — Must Haves first, delivering testable value;
    articulate the value each increment delivers to users or the project
-6. **Sequence increments** — dependencies first, then risk/value balance
+6. **Sequence increments** — dependencies first, then risk/value balance. For
+   dependency-aware batching and parallel-safe ordering, see the
+   [Parallel Scheduling Guide](../../guides/parallel-scheduling.md)
 7. **Map Should Haves** — assign to later increments
 8. **Handle Could Haves** — mark as opportunistic
 9. **Document Won't Haves** — explicitly list exclusions
@@ -704,7 +706,7 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence

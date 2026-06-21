@@ -146,12 +146,12 @@ they become columns on the board rather than calendar blocks.
 
 ### Operating Cadence
 
-| Frequency  | Activity                                                 | Lead | Reference                                                     |
-| ---------- | -------------------------------------------------------- | ---- | ------------------------------------------------------------- |
-| Daily      | Standup + board review: WIP, blockers, pull signals      | PjM  | —                                                             |
-| Twice/week | Replenishment: pull items into Ready when capacity opens | PjM  | [Dependency Register](../templates/dependency-register.md)    |
-| Weekly     | Metrics review: cycle time, throughput, blocked time     | PjM  | [Cadence Mapping](framework.md#cadence-mapping)               |
-| On trigger | Gate 2 review when all planned items reach Done          | PjM  | [Gate Review Facilitation](roles.md#gate-review-facilitation) |
+| Frequency  | Activity                                                   | Lead | Reference                                                     |
+| ---------- | ---------------------------------------------------------- | ---- | ------------------------------------------------------------- |
+| Daily      | Standup + board review: WIP, blockers, pull signals        | PjM  | —                                                             |
+| Twice/week | Replenishment: pull items into Ready when capacity opens   | PjM  | [Dependency Register](../templates/dependency-register.md)    |
+| Weekly     | Metrics review: cycle time, throughput, blocked time       | PjM  | [Cadence Mapping](framework.md#cadence-mapping)               |
+| On trigger | Project close-out review when all planned items reach Done | PjM  | [Gate Review Facilitation](roles.md#gate-review-facilitation) |
 
 **Pull triggers:** Items move between columns only when the next column has WIP
 capacity and the exit criteria for the current column are met. PjM monitors flow
@@ -210,7 +210,7 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.40.0. Final-increment close-out review pointed at the
 project close-out (checklist + summary) in v0.47.0. Name disambiguated from the

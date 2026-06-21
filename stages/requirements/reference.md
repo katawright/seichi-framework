@@ -353,13 +353,13 @@ optional fields; response schema extension only.
 
 ---
 
-## Agent-Led Patterns
+## Agent-Driven Patterns
 
 ### What Agents Drive
 
-At the Agent-Led operating posture, an agent takes ownership of the requirements
-drafting process end to end rather than waiting for human direction. Concretely,
-this includes:
+When work execution is delegated to agents (e.g. the Lights-Out preset), an
+agent takes ownership of the requirements drafting process end to end rather
+than waiting for human direction. Concretely, this includes:
 
 - Converting Initiation Brief goals into user stories with acceptance criteria
   formatted to the Given/When/Then structure
@@ -466,7 +466,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. Misaligned-requirements mitigation re-pointed to
 Initiation goals in v0.45.0. v0.49: Support reference repointed to Operations

@@ -112,7 +112,7 @@ For cross-cutting framework concepts, see
 
 ## How AI Helps
 
-AI can assist with Increment Design at whatever autonomy level your team is
+AI can assist with Increment Design at whatever operating posture your team is
 comfortable with — from generating boilerplate to drafting complete component
 specs with cross-cutting concerns flagged.
 
@@ -414,7 +414,7 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0. Stage
 altitude note and bridging-sentence reconciliation added in v0.46.0. v0.49:

@@ -785,13 +785,13 @@ management
 
 ---
 
-## Agent-Led Patterns
+## Agent-Driven Patterns
 
 ### What Agents Drive
 
-At the Agent-Led operating posture, an agent takes ownership of the architecture
-exploration and documentation process rather than waiting for human direction.
-Concretely, this includes:
+When work execution is delegated to agents (e.g. the Lights-Out preset), an
+agent takes ownership of the architecture exploration and documentation process
+rather than waiting for human direction. Concretely, this includes:
 
 - Proposing multiple architecture options with explicit trade-off analysis —
   presenting options rather than a single recommendation, so humans choose
@@ -909,7 +909,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.12.0. ADR id examples updated to the two-digit draft
 form in v0.48.0. v0.49: vocabulary and oversight model updated.
