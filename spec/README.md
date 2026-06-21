@@ -46,10 +46,14 @@ therefore written so that a conforming enforcer can evaluate it — and so that
 3. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
    — the run lifecycle, liveness, idempotency, replanning, and completion
    contracts
-4. Both read and write project state through the
-   [**Canonical-State Spec**](canonical-state.md) — the single source the other
-   two reference
-5. For the human-facing rationale behind any contract, follow its link back to
+4. For concurrent execution, read the
+   [**Parallel-Batch Spec**](parallel-batch.md) — the forcing-dependency
+   taxonomy, parallel-safety classification, and batch preflight, execution, and
+   close contracts
+5. Both read and write project state through the
+   [**Canonical-State Spec**](canonical-state.md) — the single source the others
+   reference
+6. For the human-facing rationale behind any contract, follow its link back to
    the [Operating Model Guide](../guides/operating-model.md)
 
 ---
@@ -87,13 +91,14 @@ Conventions:
 
 This layer is scoped to the contracts a bounded **Lights-Out** run executes —
 the v0.49 Definition of Done. It covers the operating-model contracts
-([operating-model.md](operating-model.md)) and the delegated-run contracts plus
-the canonical state they read and write ([delegated-run.md](delegated-run.md),
-[canonical-state.md](canonical-state.md)). Scale scenarios (small team,
-organization, enterprise), regulated and external assurance, and deep operations
-(incident command, DR, SLAs) are **`[Reserved]`** — they belong to a later,
-deliberate expansion of this layer, not to the Lights-Out foundation v0.49
-establishes.
+([operating-model.md](operating-model.md)), the delegated-run contracts plus the
+canonical state they read and write ([delegated-run.md](delegated-run.md),
+[canonical-state.md](canonical-state.md)), and the parallel-batch contracts for
+concurrent execution ([parallel-batch.md](parallel-batch.md)). Scale scenarios
+(small team, organization, enterprise), regulated and external assurance, and
+deep operations (incident command, DR, SLAs) are **`[Reserved]`** — they belong
+to a later, deliberate expansion of this layer, not to the Lights-Out foundation
+v0.49 establishes.
 
 ---
 
@@ -103,5 +108,6 @@ establishes.
 
 Added to framework in v0.49.0. The spec layer is authored from the v0.49 detail
 docs (operating model, delegated-run operations, progressive governance and
-structured state) and the levers rework. It is the normative counterpart to the
-human-facing [Operating Model Guide](../guides/operating-model.md).
+structured state, parallel-batch execution) and the levers rework. It is the
+normative counterpart to the human-facing
+[Operating Model Guide](../guides/operating-model.md).

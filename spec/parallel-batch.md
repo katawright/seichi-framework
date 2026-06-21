@@ -1,0 +1,331 @@
+# Parallel-Batch Spec
+
+## Overview
+
+Normative contracts for parallel-increment execution — how a dependency-aware
+increment plan is classified into parallel-safe **batches**, and how those
+batches run concurrently to an integrated, conserved result without one
+increment silently invalidating another.
+
+### Why These Contracts
+
+The [Parallel Scheduling Guide](../guides/parallel-scheduling.md) and
+[Parallel Execution Guide](../guides/parallel-execution.md) explain _why_ and
+_how_ for a human planner and orchestrator. An agent that composes batches at
+planning time, or runs them unattended, needs the same model as rules: when
+classification is required, what makes a batch safe to open, what must hold
+while it runs, and when it may close. These contracts are that form. The
+[Operating Model Spec](operating-model.md) names **batch orchestration and
+integration** as a standing operating function; this spec fixes what that
+function must do.
+
+### Goals of This Spec
+
+- Fix the **forcing-dependency taxonomy** and the parallel-safety classification
+  a plan MUST satisfy before increments share a batch
+- Define the **batch** as the fixed, ordered unit the scheduling layer produces
+  and the execution layer consumes
+- State the **preflight, execution-invariant, and close/transition** contracts a
+  conforming orchestrator MUST honor
+- Define **work conservation** — the evidence that integrating concurrent work
+  dropped nothing valid — as the bar for batch close
+- Apply the operating model's **capability-coverage** rule to concurrent work so
+  a parallel run is Lights-Out only where every required function is covered
+
+### Key Principle
+
+A batch closes only when its work is **integrated and demonstrably conserved**,
+never merely because its workers stopped. Parallelism is a scheduling decision
+constrained by forcing dependencies; when parallel safety cannot be established
+with confidence, the framework **sequences**.
+
+### How to Use This Spec
+
+1. Read the [**Forcing-Dependency Taxonomy**](#forcing-dependency-taxonomy) —
+   the shared vocabulary the contracts reference
+2. At planning time, apply
+   [**Parallel-Safety Classification**](#parallel-safety-classification) and
+   [**Batch Composition and Ordering**](#batch-composition-and-ordering)
+3. At run time, apply [**Batch Preflight**](#batch-preflight), the
+   [**Concurrent Execution Invariants**](#concurrent-execution-invariants), and
+   [**Batch Close and Transition**](#batch-close-and-transition)
+4. For unattended runs, apply
+   [**Parallel Lights-Out Eligibility**](#parallel-lights-out-eligibility)
+5. For the human-facing rationale behind any contract, follow its link back to
+   the scheduling and execution guides
+
+The six contract fields (Applicability, Inputs, Procedure, Outputs, Evidence,
+Failure behavior) follow the [Contract Form](README.md#contract-form).
+
+---
+
+## Forcing-Dependency Taxonomy
+
+A **forcing dependency** is any relationship that prevents two increments from
+executing safely and independently in the same batch. The normative taxonomy:
+
+| Category                               | Fires when                                                                                                       |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Foundation dependency**              | One increment needs infrastructure, code, schema, a contract, or another output another increment introduces     |
+| **Shared mutable boundary**            | Increments may write the same design-defined component, module, schema object, resource, configuration, or state |
+| **Shared contract change**             | Increments change the same public interface, or make mutually dependent producer/consumer changes                |
+| **Non-isolated verification**          | Tests or verification share mutable state that cannot run concurrently                                           |
+| **Integration-order dependency**       | One increment MUST integrate or deploy before another                                                            |
+| **Authority or capability dependency** | One increment depends on authority, access, or capability coverage another establishes                           |
+
+A project or tool MAY extend the taxonomy with domain-specific categories; it
+MUST NOT narrow it. Classification runs at the coarsest boundary the design
+already defines (components, schemas, contracts), so it applies before any code
+exists; file-level disjointness is a refinement applied once files are known,
+never a prerequisite.
+
+---
+
+## Parallel-Safety Classification
+
+Rationale:
+[Parallel Scheduling Guide § Parallel-Safety Classification](../guides/parallel-scheduling.md#parallel-safety-classification).
+
+**Applicability.** Any increment plan that proposes running two or more
+increments concurrently (a batch of size greater than one). A fully sequential
+plan — every batch of size one — is the reduction and requires no
+classification.
+
+**Inputs.** The dependency-aware increment plan (a System Design output); the
+forcing-dependency taxonomy; the design artifacts that define increment
+boundaries.
+
+**Procedure.**
+
+- For every intra-batch pair of increments, the planner MUST evaluate the pair
+  against the forcing-dependency taxonomy and record: the increments evaluated;
+  the shared boundaries and dependencies considered; a **safe / unsafe**
+  conclusion; assumptions and required conditions; and, when unsafe, the forcing
+  dependency that fired and the required order.
+- When a pair's parallel safety cannot be established with sufficient
+  confidence, the planner MUST classify it **unsafe** and sequence it.
+  Confidence MUST derive from reading both sides of the boundary, not from
+  increment descriptions.
+- The classification is an execution-planning record. It MUST NOT be treated as
+  an architecture decision record and MUST NOT gate on one.
+
+**Outputs.** A parallel-safety determination per evaluated pair, with the firing
+forcing dependency named for every unsafe pair.
+
+**Evidence.** The classification record is preserved as part of the increment
+plan in [canonical state](canonical-state.md); every cross-batch placement is
+traceable to a named forcing dependency.
+
+**Failure behavior.** Unestablished disjointness is **unsafe**: a pair that
+cannot be confidently classified is sequenced, never parallelized by default.
+
+---
+
+## Batch Composition and Ordering
+
+Rationale:
+[Parallel Scheduling Guide § Composing and Sequencing Batches](../guides/parallel-scheduling.md#composing-and-sequencing-batches).
+
+**Applicability.** Planning time, after classification, for any plan that
+composes more than one increment into a batch.
+
+**Inputs.** The parallel-safety classification; the dependency-aware increment
+plan and its transition conditions.
+
+**Procedure.**
+
+- Increments grouped into one batch MUST have **no unresolved forcing
+  dependency** between any pair.
+- Batches MUST be **ordered** so each batch's prerequisites — foundations,
+  contracts, integration order, established authority or capability — are
+  satisfied by an earlier batch.
+- Any increment whose safety is uncertain MUST be placed in its own batch.
+- Batch **membership MUST be fixed before execution begins.** Changing
+  membership after a batch opens is a replanning event that MUST re-evaluate
+  parallel safety, not an in-flight edit.
+
+**Outputs.** An ordered list of fixed, classified batches — the schedule the
+execution layer consumes. A batch of one is the valid limiting case.
+
+**Evidence.** The ordered batch list, with membership and ordering rationale, is
+recorded in the increment plan in [canonical state](canonical-state.md).
+
+**Failure behavior.** If prerequisites cannot be ordered into a valid sequence,
+the plan is not schedulable as composed and MUST return to increment planning.
+
+---
+
+## Batch Preflight
+
+Rationale:
+[Parallel Execution Guide § Batch Preflight](../guides/parallel-execution.md#batch-preflight).
+
+**Applicability.** Before any batch opens for execution.
+
+**Inputs.** The scheduled batch; prior-batch outcomes; available workers, tools,
+environments, access, and verification capabilities; workspace isolation
+guarantees.
+
+**Procedure.** Before opening a batch, the orchestrator MUST establish that:
+
+- every member increment is **authorized to begin**;
+- prior batches and hard dependencies are **complete**;
+- the **parallel-safety classification is current and accepted** (preflight
+  validates it; it MUST NOT re-decide it);
+- required workers, tools, environments, access, and verification capabilities
+  are **available**;
+- workspaces are **isolated or concurrency-safe**;
+- scope, acceptance criteria, and stop conditions are **explicit** per
+  increment;
+- required integration and close-out verification **can be performed**; and
+- **no unresolved prior-batch state** makes execution unsafe.
+
+**Outputs.** A determination to open the batch, or a refusal naming the
+unsatisfied condition.
+
+**Evidence.** The preflight result and the conditions checked are recorded for
+the batch.
+
+**Failure behavior.** On any unsatisfied condition the orchestrator MUST NOT
+open the batch; it surfaces the named remediation. Missing required coverage
+narrows the envelope per
+[Parallel Lights-Out Eligibility](#parallel-lights-out-eligibility).
+
+---
+
+## Concurrent Execution Invariants
+
+Rationale:
+[Parallel Execution Guide § Concurrent Execution Invariants](../guides/parallel-execution.md#concurrent-execution-invariants).
+
+**Applicability.** Continuously, while a batch is open.
+
+**Inputs.** The open batch; worker assignments (identity, scope, authority,
+acceptance criteria, stop conditions); shared project state.
+
+**Procedure.** While a batch runs, the following MUST hold continuously:
+
+- every action, artifact, decision, and evidence item is **attributable** to the
+  correct increment and actor;
+- workers remain **within assigned scope and authority**;
+- one increment **cannot silently overwrite or invalidate** another's work;
+  shared resources that cannot be isolated MUST be coordinated;
+- **blocked, failed, or unresponsive** increments are explicit, not inferred
+  from silence; an independent sibling MAY continue when its validity is
+  unaffected;
+- a **newly discovered forcing dependency** MUST route back to the scheduling
+  layer for serialization or replanning — never a quiet best-effort merge; and
+- **shared-contract or shared-assumption changes** are made visible to the
+  affected workers.
+
+**Outputs.** A per-increment running disposition (active, blocked, failed,
+complete) maintained throughout the batch.
+
+**Evidence.** Attributable per-increment action and evidence trails; recorded
+escalations for any newly discovered forcing dependency.
+
+**Failure behavior.** A violated invariant pauses or escalates the affected
+work; a blocked increment does not fail the batch, but it MUST NOT be masked as
+complete.
+
+---
+
+## Batch Close and Transition
+
+Rationale:
+[Parallel Execution Guide § Batch Close and Transition](../guides/parallel-execution.md#batch-close-and-transition).
+
+**Applicability.** When a batch is proposed for close, before the next batch
+opens.
+
+**Inputs.** Per-increment outcomes; the integrated result; whole-batch
+verification and assurance results.
+
+**Procedure.** A batch MAY close only when **every member increment has an
+explicit terminal or transition-eligible disposition** — one of the
+[delegated-run terminal states](delegated-run.md) with its reason code, not the
+mere fact that every worker stopped. Before the next batch opens:
+
+- completed work is **integrated or explicitly excluded**, never silently
+  dropped;
+- conflicts and inconsistencies are **resolved**;
+- required **whole-batch verification and assurance** pass on the integrated
+  result, not only per increment;
+- **work-conservation evidence** establishes that integration did not silently
+  lose valid work;
+- failed, stopped, deferred, or rejected outcomes are **recorded honestly**;
+- **downstream dependencies are re-evaluated** against the actual outcomes; and
+- required **cleanup and state preservation** are complete.
+
+**Outputs.** A batch close record: each increment's disposition and integration
+outcome, the whole-batch verification result, and the work-conservation
+determination.
+
+**Evidence.** The **minimum work-conservation evidence** is a determination —
+attributable and reproducible — that every member increment's valid output is
+either integrated or explicitly excluded with a recorded reason, and that
+integration dropped no function, test, or file that any increment delivered.
+
+**Failure behavior.** If work conservation cannot be established, the batch MUST
+NOT close; the discrepancy is surfaced for adjudication. Batch transition is a
+close-out gate, **not** a new checkpoint type — it introduces no checkpoint
+beyond those in [the checkpoint taxonomy](../guides/checkpoints.md).
+
+---
+
+## Parallel Lights-Out Eligibility
+
+Rationale:
+[Parallel Execution Guide § Parallel and Lights-Out](../guides/parallel-execution.md#parallel-and-lights-out).
+
+**Applicability.** Any batch proposed to run unattended.
+
+**Inputs.** The required-function set for the batch (orchestration, worker
+execution, integration, assurance, evidence capture, independent stop
+enforcement); available provider coverage.
+
+**Procedure.**
+
+- Parallel execution and Lights-Out are **independent properties**: a parallel
+  batch MAY run attended, and a Lights-Out run MAY execute a single increment.
+- A batch is Lights-Out **only when every required function has demonstrated,
+  available automated coverage.** If any required coverage is missing or lost
+  mid-batch, the batch is not Lights-Out for the affected scope: it pauses or
+  escalates even where some workers could technically continue.
+
+**Outputs.** A Lights-Out eligibility determination for the batch, per
+[Operating Model Spec § Capability Coverage](operating-model.md#capability-coverage).
+
+**Evidence.** The required-function set and its coverage are recorded as part of
+[canonical state](canonical-state.md).
+
+**Failure behavior.** Lost coverage **narrows the envelope** — it pauses or
+exits the affected work; it does not fail the project. The framework defines
+when a batch is Lights-Out-eligible; a conforming tool detects lost coverage
+mid-batch and holds the affected work.
+
+---
+
+## Representation in Canonical State
+
+Batches are not a separate store. The ordered, classified batch list — each
+batch's membership, order, prerequisites, transition criteria, and per-increment
+disposition — is part of the **increment plan** in
+[canonical state](canonical-state.md), and the current batch/increment is part
+of a delegated run's [position](delegated-run.md). A conforming implementation
+chooses the storage; this spec fixes only what must be representable.
+
+---
+
+## Notes
+
+**Last Updated:** 2026-06-20
+
+Added to the framework in v0.49.0. Authored from the v0.49 parallel-batch detail
+(workstream 3) as the normative counterpart to the human-facing
+[Parallel Scheduling Guide](../guides/parallel-scheduling.md) and
+[Parallel Execution Guide](../guides/parallel-execution.md). The unit is named
+**batch** (consistent with the [delegated-run](delegated-run.md) and
+[canonical-state](canonical-state.md) specs); parallel-safety classification is
+required whenever a plan proposes concurrent increments; and batch transition is
+a close-out gate rather than a new checkpoint type.

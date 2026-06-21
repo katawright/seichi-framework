@@ -118,9 +118,9 @@ specs with cross-cutting concerns flagged.
 
 How autonomously this stage runs — who performs the work and who decides — is an
 operating-model choice, not a fixed property of the stage. It is set per project
-(with per-stage overrides) along two functions: **Work Execution** (Humans ·
-Collaborative · Agents) and **Authority** (interactive human · pre-authorized
-policy · delegated agent). Gate requirements always apply regardless. See the
+along two functions: **Work Execution** (Humans · Collaborative · Agents) and
+**Authority** (interactive human · pre-authorized policy · delegated agent).
+Gate requirements always apply regardless. See the
 [Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns

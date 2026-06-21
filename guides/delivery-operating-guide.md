@@ -123,7 +123,7 @@ dependencies.
 > **Flow delivery mode vs. Kanban cadence:** v0.49 introduced **Flow** as a
 > first-class SDLC delivery mode for small, per-issue in-place software changes
 > (see [stages.md — Flow Delivery Mode](stages.md#flow-delivery-mode)). Flow is
-> a _work shape_ (alongside Project and Operations); Kanban is a _cadence
+> a _work-shape_ (alongside Project and Operations); Kanban is a _cadence
 > mechanism_ for managing throughput. They are complementary: a team doing Flow
 > work often uses a Kanban board to manage it, but Kanban cadence also applies
 > to teams running Project increments on a continuous-flow board. This section

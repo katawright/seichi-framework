@@ -75,8 +75,8 @@ sequential/parallel, delegated or not).
     workflow administration; assurance / verification; governance decision
     resolution (Authority).
   - **Standing functions** (no setting): evidence capture; escalation and stop
-    enforcement; batch orchestration and integration; run continuity, status
-    reporting, and completion evaluation.
+    enforcement; [batch orchestration and integration](parallel-batch.md); run
+    continuity, status reporting, and completion evaluation.
 - Evidence capture and stop enforcement MUST always be treated as required.
   Orchestration and integration are required only when parallel execution
   applies; run continuity and completion are required only when delegated runs

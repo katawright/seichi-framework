@@ -55,7 +55,7 @@ requires.
    [**Operations vs. the SDLC**](#operations-vs-the-sdlc)
 2. Establish [**ownership**](#ownership-spans) of the system, received through
    the [Closure handoff record](../stages/closure/README.md)
-3. Run the four [**operating functions**](#the-four-operating-functions) —
+3. Run the four [**operations activities**](#the-four-operations-activities) —
    Observe, Respond, Maintain, Measure
 4. Decide _how autonomously_ each runs using the
    [**autonomy ladder**](#autonomy-the-right-sizing-lens), within the
@@ -71,16 +71,16 @@ For cross-cutting framework concepts, see [Framework Guide](framework.md).
 
 ---
 
-## Operating Functions at a Glance
+## Operations Activities at a Glance
 
-| Function                  | Question it answers                             | Standing analog of               |
+| Activity                  | Question it answers                             | Standing analog of               |
 | ------------------------- | ----------------------------------------------- | -------------------------------- |
 | **[Observe](#observe)**   | Is the system healthy, and how would I know?    | the run's liveness/observability |
 | **[Respond](#respond)**   | Something is wrong or wanted — what do we do?   | the run's escalation + work loop |
 | **[Maintain](#maintain)** | What must stay current for it to keep running?  | continuity and upkeep            |
 | **[Measure](#measure)**   | Is it still meeting the goals it was built for? | the measurement throughline      |
 
-Autonomy is not a fifth function — it is a **lens** applied to each of the four
+Autonomy is not a fifth activity — it is a **lens** applied to each of the four
 (how much runs without a human), covered in
 [Autonomy: The Right-Sizing Lens](#autonomy-the-right-sizing-lens).
 
@@ -96,7 +96,7 @@ the rest.
 | ------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
 | **Unit**            | A bounded body of work                               | A standing, running system                                      |
 | **Terminal**        | [Closure](../stages/closure/README.md)               | [Decommission](#decommission-the-terminal-of-a-standing-system) |
-| **Shape of work**   | Stages toward a delivered increment                  | Continuous operating functions                                  |
+| **Shape of work**   | Stages toward a delivered increment                  | Continuous operations activities                                |
 | **Operating model** | Configurable functions, floors, coverage, Lights-Out | _The same_ — reused, not redefined                              |
 
 They are not sequential phases where dev ends and ops begins. With continuous
@@ -144,9 +144,9 @@ run.
 
 ---
 
-## The Four Operating Functions
+## The Four Operations Activities
 
-Operations is organized by what it does, not by who staffs it. Four functions
+Operations is organized by what it does, not by who staffs it. Four activities
 cover the work; each is right-sized by consequence and run at a chosen
 [autonomy](#autonomy-the-right-sizing-lens) level. These four name the _shape_
 of operations work — distinct from the operating model's eight
@@ -248,8 +248,8 @@ for the end-to-end chain.
 
 ## Autonomy: The Right-Sizing Lens
 
-Each of the four functions can run at a different level of autonomy. The lens is
-the operating model's autonomy ladder, applied to operations and gated by
+Each of the four activities can run at a different level of autonomy. The lens
+is the operating model's autonomy ladder, applied to operations and gated by
 [capability coverage](operating-model.md#capability-coverage) and floored by
 [consequence](right-sizing.md):
 
@@ -260,7 +260,7 @@ the operating model's autonomy ladder, applied to operations and gated by
 | **Lights-Out**   | Unattended; a human only at floor-forced gates     | + rollback, independent stop enforcement, run continuity — the full unattended coverage floor |
 
 The rungs are the same [operating presets](operating-model.md#operating-presets)
-the SDLC uses; operations reads them per function rather than per stage. A
+the SDLC uses; operations reads them per activity rather than per stage. A
 mature operation is commonly mixed — Lights-Out on Observe and routine Maintain,
 Checkpointed on Respond, Supervised on consequential remediation.
 
@@ -406,10 +406,10 @@ vulnerability-management programs, and regulated decommission/data-disposal
 regimes.
 
 These are right-sizing depth, not new operating concerns — they raise the rigor
-of the four functions and the spans that run them; they do not change the model.
-They will land in a later, deliberate expansion alongside the spec's
+of the four activities and the spans that run them; they do not change the
+model. They will land in a later, deliberate expansion alongside the spec's
 `[Reserved]` scale and deep-operations contracts. Until then, operations runs
-the four functions at the depth its consequence requires, and escalates beyond
+the four activities at the depth its consequence requires, and escalates beyond
 this guide where an obligation or contract demands more.
 
 ---
