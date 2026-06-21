@@ -354,16 +354,21 @@ or contexts covering the separated functions.
   applies, and the consequence if co-located.
 - Required separations:
 
-| Separated functions                                                                      | Minimum required independence                                                                                                                                                             | Applies when                                                                                       | Consequence if co-located                                                                             |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Work execution ↔ assurance of that same work                                             | Fresh eyes (context independence) at minimum; foundational-context to claim premise validation; model independence recorded; `[Reserved]` org or external for Internal/External Assurance | Any required assurance above None                                                                  | Claim capped at achieved independence; a same-context self-check supports mechanical conformance only |
-| Work execution ↔ governance decision resolution for consequential/non-delegable outcomes | Authority human-owned or pre-authorized; the actor may resolve only explicitly delegated, bounded-scope decisions                                                                         | Any acceptance/authorization decision; strictest for consequential, irreversible, or non-delegable | The decision and the action it gates leave the envelope; the run escalates                            |
-| Acting agent ↔ escalation and stop enforcement for machine-evaluable conditions          | Independent of the actor; default-closed; evaluable without the actor's cooperation                                                                                                       | Always for machine-evaluable stop conditions; required for any Lights-Out run                      | Stop cannot be relied upon; the run is not Lights-Out-eligible within the affected scope              |
-| Evidence capture ↔ custody and integrity of that evidence                                | Durable, independently held record with correction history; `[Reserved]` tamper-evidence and external custody scale with retention/audit obligations                                      | Strength scales with required assurance, retention, and auditability                               | Evidence may not support the claimed assurance or audit level; higher-tier claims are capped          |
+| Separated functions                                                                      | Minimum required independence                                                                                               | Applies when                                                                                       | Consequence if co-located                                                                             |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Work execution ↔ assurance of that same work                                             | Fresh eyes (context independence) at minimum; foundational-context to claim premise validation; model independence recorded | Any required assurance above None                                                                  | Claim capped at achieved independence; a same-context self-check supports mechanical conformance only |
+| Work execution ↔ governance decision resolution for consequential/non-delegable outcomes | Authority human-owned or pre-authorized; the actor may resolve only explicitly delegated, bounded-scope decisions           | Any acceptance/authorization decision; strictest for consequential, irreversible, or non-delegable | The decision and the action it gates leave the envelope; the run escalates                            |
+| Acting agent ↔ escalation and stop enforcement for machine-evaluable conditions          | Independent of the actor; default-closed; evaluable without the actor's cooperation                                         | Always for machine-evaluable stop conditions; required for any Lights-Out run                      | Stop cannot be relied upon; the run is not Lights-Out-eligible within the affected scope              |
+| Evidence capture ↔ custody and integrity of that evidence                                | Durable, independently held record with correction history                                                                  | Strength scales with required assurance, retention, and auditability                               | Evidence may not support the claimed assurance or audit level; higher-tier claims are capped          |
 
 - Row 1's floor is satisfiable by context separation within a single provider
   (fresh eyes); the higher rungs require a separate, organizationally or
   externally independent provider.
+- **`[Reserved]`** The organizationally or externally independent rungs — Row
+  1's org or external independence for Internal/External Assurance, and Row 4's
+  tamper-evidence and external custody scaling with retention and audit
+  obligations — are deferred beyond v0.49's solo Lights-Out scope; an enterprise
+  profile raises these same separations toward them (see Failure behavior).
 
 **Outputs.** The separation-conformance determination per required separation.
 
@@ -495,7 +500,7 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.49.0. Authored from the v0.49 operating-model detail
 doc and the levers rework. Human-facing rationale lives in the
