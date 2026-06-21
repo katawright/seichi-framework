@@ -463,13 +463,14 @@ floors; the delegated authority and capability coverage.
   at high consequence or under a compliance flag, execution-plan revisions
   escalate even in Lights-Out).
 - Material replanning MUST re-evaluate requirements and success-criteria
-  coverage; increment scope and completion criteria; dependencies, batches, and
-  parallel safety; downstream work validity; required functions and capability
-  coverage; authority and effective operating envelope; assurance and
-  verification; and budget, schedule, and deployment effects — and MUST
-  explicitly identify work that remains valid, requires re-verification,
-  requires modification, or is invalidated. Completed work MUST NOT remain
-  implicitly accepted when its supporting assumptions have materially changed.
+  coverage; increment scope and completion criteria; dependencies,
+  [batches and parallel safety](parallel-batch.md); downstream work validity;
+  required functions and capability coverage; authority and effective operating
+  envelope; assurance and verification; and budget, schedule, and deployment
+  effects — and MUST explicitly identify work that remains valid, requires
+  re-verification, requires modification, or is invalidated. Completed work MUST
+  NOT remain implicitly accepted when its supporting assumptions have materially
+  changed.
 
 **Outputs.** A revised, re-validated plan or an escalation.
 

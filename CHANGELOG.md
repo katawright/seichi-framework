@@ -2,6 +2,9 @@
 
 ## 0.49.0 (2026-06-20)
 
+> Planning-driven release: v0.49 was developed from the planning docs rather
+> than tracked issues, so the entries below carry no `(#NN)` references.
+
 ### Features
 
 - **framework:** operating model — a Layer-B model for _who runs the process and
@@ -16,6 +19,13 @@
   and canonical-state contracts a bounded Lights-Out run executes
   (`spec/operating-model.md`, `spec/delegated-run.md`,
   `spec/canonical-state.md`)
+- **framework:** parallel-batch execution — dependency-aware increment plans
+  extend into ordered, parallel-safe **batches**: a forcing-dependency taxonomy
+  and parallel-safety classification at planning time, and batch preflight,
+  concurrency-safe execution, work conservation, and close/transition at run
+  time, with parallel Lights-Out gated on capability coverage. Normative
+  contract plus scheduling and execution guides (`spec/parallel-batch.md`,
+  `guides/parallel-scheduling.md`, `guides/parallel-execution.md`)
 - **closure:** dev/ops split — the continuous Support stage is dissolved; the
   SDLC's 8th stage is now **Closure**, a terminal stage owning the dev→ops
   operational-envelope handoff record, production-ownership transfer, project

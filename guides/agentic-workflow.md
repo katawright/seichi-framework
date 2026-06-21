@@ -23,10 +23,13 @@ stages. This guide is that interface.
 
 ### Key Principle
 
-Stage READMEs (`stages/*/README.md`) are the **canonical source** for all stage
-metadata — inputs, outputs, checkpoints, autonomy levels, RACI roles, and
-revisit conditions. This guide provides cross-cutting concerns: artifact paths,
-working locations, fallback protocols, and session conventions.
+Stage READMEs (`stages/*/README.md`) are the **canonical source** for stage
+metadata — inputs, outputs, checkpoints, and RACI roles. Autonomy is an
+operating-model choice, not a stage property (see the
+[Operating Model Guide](operating-model.md)); the pipeline's revisit conditions
+live in the [Stages Guide](stages.md). This guide provides cross-cutting
+concerns: artifact paths, working locations, fallback protocols, and session
+conventions.
 
 > **Role assignments:** This guide defines _what_ to do at each stage. For _who_
 > does it, see [Roles and Responsibilities](roles.md#roles-and-responsibilities)
@@ -36,7 +39,7 @@ working locations, fallback protocols, and session conventions.
 ### How to Use This Guide
 
 1. **Read stage README front matter** — each `stages/*/README.md` contains the
-   canonical stage metadata (inputs, outputs, checkpoints, autonomy, RACI)
+   canonical stage metadata (inputs, outputs, checkpoints, RACI)
 2. **Identify your current stage** from the [**Stage Routing**](#stage-routing)
    section
 3. **Check inputs and outputs** — verify required inputs are available before
@@ -59,8 +62,8 @@ working locations, fallback protocols, and session conventions.
 
 For stage ordering, execution patterns, and the dependency graph, see the
 [AI-Assisted SDLC Stages](stages.md) pipeline front matter. For per-stage
-metadata (inputs, outputs, checkpoints, autonomy, RACI), parse the stage README
-front matter in `stages/*/README.md`. The `working_location` field in each stage
+metadata (inputs, outputs, checkpoints, RACI), parse the stage README front
+matter in `stages/*/README.md`. The `working_location` field in each stage
 README indicates where the agent should operate — either the artifacts
 repository (`docs/`) or the source code repository. See
 [Working Locations](framework.md#working-locations) for the full three-location
@@ -266,8 +269,8 @@ Recommended workflow for AI coding agents operating in this repository:
    infer project state; if no artifacts exist, start at Initiation.
 3. **Check inputs** — verify required inputs (listed in stage README front
    matter) are available; flag any missing inputs with `[ASSUMED]`
-4. **Execute** — follow the stage guide activities at the appropriate autonomy
-   tier; self-validate against the checklist
+4. **Execute** — follow the stage guide activities at the project's operating
+   posture; self-validate against the checklist
 5. **Gate** — present completed artifacts for human review at defined gates;
    follow fallback protocols from `stages/[stage]/reference.md` if blocked
 6. **Log** — for multi-session work, maintain a session log using

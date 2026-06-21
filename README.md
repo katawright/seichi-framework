@@ -73,8 +73,8 @@ Pick the path that matches your interest.
 
 The framework separates two questions the old single "autonomy tier" bundled
 together — **who performs the work** and **who decides** — and sets them through
-the [operating model](guides/operating-model.md), per project (with per-stage
-overrides), not as a fixed property of each stage:
+the [operating model](guides/operating-model.md), per project, not as a fixed
+property of each stage:
 
 | Question                                    | Setting                                                     | Stays human                           |
 | ------------------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
@@ -349,8 +349,8 @@ For detailed readiness criteria, see the
 
 - Run one Standard-tier project through two increments.
 - Copy the bootstrap prompt from the
-  [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template) and fill in
-  your project details (~15 minutes).
+  [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) and fill in your
+  project details (~15 minutes).
 - Start with the [Initiation stage](stages/initiation/README.md) — use the
   guide, brief template, and checklist.
 - Use the [Framework Guide](guides/framework.md) when deeper context is needed.
@@ -374,7 +374,7 @@ to try the framework solo or with your team first, skip to
 3. Select the initial AI autonomy posture
    ([Operating Model Guide](guides/operating-model.md)).
 4. Copy and complete the bootstrap prompt
-   ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template)) — plan ~15
+   ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts)) — plan ~15
    minutes.
 5. Complete Initiation artifacts using the
    [Initiation stage](stages/initiation/README.md) guide, brief template, and
@@ -413,8 +413,8 @@ details.
    [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
 3. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
-   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompt-template) and fill in
-   your project details.
+   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) and fill in your
+   project details.
 4. **Work through Initiation (~20 min).** Open the
    [Initiation stage](stages/initiation/README.md) guide and complete the brief
    template with your AI assistant.

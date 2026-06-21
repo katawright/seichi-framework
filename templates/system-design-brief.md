@@ -80,7 +80,7 @@ DevOps Lead, Project Manager]
 
 > **Visual architecture:** If the project has a UI, design-system, token,
 > component-library, and responsive-strategy decisions are ADR candidates — see
-> [System Design Guide: Visual Architecture](../../stages/system-design/README.md#visual-architecture).
+> [System Design Guide: Visual Architecture](../stages/system-design/README.md#visual-architecture).
 
 - **Directory:** `docs/adr/`
 - **File naming:** `ADR-DCC.md` (draft prefix with two-digit counter during

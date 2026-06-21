@@ -272,12 +272,11 @@ process.
 
 How autonomously this stage runs — who performs the work and who decides — is an
 operating-model choice, not a fixed property of the stage. It is set per project
-(with per-stage overrides) along two functions: **Work Execution** (Humans ·
-Collaborative · Agents) and **Authority** (interactive human · pre-authorized
-policy · delegated agent). Gate 1 always stays a human-owned investment
-decision. See the [Operating Model Guide](../../guides/operating-model.md). For
-agent-led discovery patterns, see
-[Stage Reference](reference.md#agent-led-patterns).
+along two functions: **Work Execution** (Humans · Collaborative · Agents) and
+**Authority** (interactive human · pre-authorized policy · delegated agent).
+Gate 1 always stays a human-owned investment decision. See the
+[Operating Model Guide](../../guides/operating-model.md). For agent-led
+discovery patterns, see [Stage Reference](reference.md#agent-led-patterns).
 
 ### AI Assistance Patterns
 
