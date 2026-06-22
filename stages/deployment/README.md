@@ -101,9 +101,10 @@ issues documented.
 > [DevOps Integration Guide](../../guides/devops-integration.md).
 
 > **Execution authority:** Deployment preparation (steps 1-4: brief, runbook,
-> environment prep) may use collaborative work execution. Deployment execution
-> (steps 5-8: production release, monitoring, rollback) requires interactive
-> human authority — humans approve and execute production changes.
+> environment prep) may use collaborative or agent work execution. The release
+> decision (steps 5-8: production release, monitoring, rollback) is human-owned
+> — made synchronously or pre-positioned via a pre-authorized automated path
+> that the pipeline then executes. Gate requirements always apply.
 
 1. Read [**How AI Helps**](#how-ai-helps) to determine your operating posture
    (see the Operating Model Guide)
@@ -201,9 +202,11 @@ Gate requirements always apply regardless. See the
 For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
 
-> **Required gates:** Human execution required + runbook — Production actions
-> have high blast radius and require real-time context; AI drafts and monitors,
-> humans own all approval gates and execute deployment steps.
+> **Required gates:** Human-owned release decision + runbook — production
+> actions have high blast radius and require real-time context, so the release
+> decision is human-owned (made synchronously or pre-positioned); AI drafts,
+> executes within the pre-authorized path, and monitors, while humans own the
+> release authority.
 
 ---
 
@@ -687,7 +690,7 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
 Brownfield Database Deployment section added in v0.42.0. Compliance Approval

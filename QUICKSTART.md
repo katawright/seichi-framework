@@ -325,7 +325,7 @@ my-workspace/
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.26.0. Classification-by-inference prompt alignment and
 idea-path entry added in v0.48.0. In v0.49.0 the lifecycle list gained the
