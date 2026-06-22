@@ -84,8 +84,8 @@ Load the index first, then load only what you need.
 ## Spec (5)
 
 Agent- and conformance-facing normative layer — executable contracts behind the
-operating model and delegated runs. The human-facing rationale lives in
-`guides/operating-model.md`.
+operating model, delegated runs, parallel-batch execution, and canonical project
+state. The human-facing rationale lives in `guides/operating-model.md`.
 
 | Path                      | Description                                                                                                                                                        | Keywords                                                                                                 | Refs                                            | Tier |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---- |

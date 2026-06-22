@@ -18,8 +18,8 @@ It does not restate the guides; it fixes what they describe.
 
 ### Goals of This Spec
 
-- State the operating-model and delegated-run rules as executable contracts an
-  agent can follow from the Markdown alone
+- State the operating-model, delegated-run, parallel-batch, and canonical-state
+  rules as executable contracts an agent can follow from the Markdown alone
 - Give conformance a precise target — what a tool must honor to claim it
   operates the framework
 - Fix the **semantics** of operation (what must hold), not the **storage** (no
