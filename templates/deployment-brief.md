@@ -287,9 +287,13 @@ tracker]
 ---
 
 > For full readiness verification before accepting production ownership, see the
-> [Operations Guide](../guides/operations.md).
+> [Operations Guide](../guides/operations.md). This section records the operations
+> handoff for **this deployment**. The project-terminal production-ownership
+> transfer is a separate Closure checkpoint, accepted against the Operational
+> Handoff Record — see
+> [Closure](../stages/closure/README.md#production-ownership-transfer).
 
-## Production Ownership Transfer
+## Increment Operations Handoff
 
 <!-- Complete when production responsibility transfers to the accepting team.
      For Minimal-tier projects where the same team deploys and supports,
@@ -402,4 +406,4 @@ tracker]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.7.0. Session protocol preamble added in v0.44.0. Release disposition field added in v0.45.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-21 | Added in v0.7.0. Session protocol preamble added in v0.44.0. Release disposition field added in v0.45.0. v0.49 vocabulary/dev-ops-split sweep. "Production Ownership Transfer" section renamed to "Increment Operations Handoff" to disambiguate from the project-terminal Closure checkpoint. -->
