@@ -287,7 +287,7 @@ codebase, see the [Brownfield Worked Example](worked-example-brownfield.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-21 — v0.49 consistency sweep: operating posture
-vocabulary updated (Collaborative → Checkpointed; oversight intensity removed).
+**Last Updated:** 2026-06-21
 
-Added to framework in v0.48.0.
+Added to framework in v0.48.0. v0.49 consistency sweep: operating posture
+vocabulary updated (Collaborative → Checkpointed; oversight intensity removed).

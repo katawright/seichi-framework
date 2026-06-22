@@ -433,12 +433,12 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-06-21 — v0.49 consistency sweep: actor-sense "AI"
-references rewritten to "agent"; the "AI operating mode" readiness term is kept
-as-is to match the canonical Brownfield Readiness rubric; traceability chain
-updated to end at Closure followed by Operations.
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.40.0. Scores recalculated for five-axis rubric
 (Consistency added; Deployability and Observability moved to supplementary
 considerations). Traceability chain's Initiation goal and success criterion
-split per the v0.45.0 goals layer.
+split per the v0.45.0 goals layer. v0.49 consistency sweep: actor-sense "AI"
+references rewritten to "agent" (the "AI operating mode" readiness term kept
+as-is to match the canonical Brownfield Readiness rubric); traceability chain
+updated to end at Closure followed by Operations.
