@@ -10,9 +10,10 @@ can execute a complete three-pass review from this file alone.
 | Location      | What to Review                                                                                                            |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Root (`*.md`) | README.md, QUICKSTART.md, AGENTS.md, CLAUDE.md, STYLE_GUIDE.md, CONTRIBUTING.md                                           |
-| `guides/`     | All 10 guide files                                                                                                        |
+| `guides/`     | All guide files in `guides/`                                                                                              |
+| `spec/`       | All spec files in `spec/` — README.md plus the executable contract files                                                  |
 | `stages/`     | All stage directories — README.md, checklist.md, reference.md, plus deployment/setup.md, deployment/pipeline-checklist.md |
-| `templates/`  | All 15 template files                                                                                                     |
+| `templates/`  | All template files in `templates/`                                                                                        |
 
 ### Files to Exclude
 
@@ -23,8 +24,8 @@ can execute a complete three-pass review from this file alone.
 
 ### Version
 
-Read the framework version from `VERSION` (currently `0.26.0`). Include the
-version in all deliverables.
+Read the framework version from `VERSION`. Include the version in all
+deliverables.
 
 ---
 
