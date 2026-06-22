@@ -9,6 +9,7 @@ import {
 } from "../lib.mjs";
 import { findRetired } from "../retired-vocab.mjs";
 import { parseIndexSections } from "../index-counts.mjs";
+import { parseIndexTables, indexOrderIssues } from "../index-order.mjs";
 import { parseStamp } from "../stamps.mjs";
 
 describe("slugify (GitHub rules)", () => {
@@ -107,6 +108,60 @@ describe("parseIndexSections", () => {
     expect(g.declared).toBe(2);
     expect(g.rows).toBe(2);
     expect(secs.find((s) => s.name === "Spec").rows).toBe(1);
+  });
+});
+
+describe("parseIndexTables", () => {
+  it("captures the first-column path of each data row, per table", () => {
+    const md =
+      "| Path | D |\n| --- | --- |\n| `guides/a.md` | x |\n| `guides/b.md` | y |\n";
+    const tables = parseIndexTables(md);
+    expect(tables).toHaveLength(1);
+    expect(tables[0].rows.map((r) => r.path)).toEqual(["guides/a.md", "guides/b.md"]);
+  });
+});
+
+describe("indexOrderIssues", () => {
+  const table = (...rows) =>
+    "| Path | D |\n| --- | --- |\n" + rows.map((p) => `| \`${p}\` | x |\n`).join("");
+
+  it("passes a table already in file-path order", () => {
+    expect(indexOrderIssues(table("guides/adoption.md", "guides/bootstrap.md"))).toEqual([]);
+  });
+
+  it("flags a row that sorts before its predecessor", () => {
+    const issues = indexOrderIssues(table("guides/framework.md", "guides/bootstrap.md"));
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("guides/bootstrap.md out of file-path sort order");
+  });
+
+  it("strips the .md extension so a base file precedes its hyphen-suffixed sibling", () => {
+    // With the extension kept, '.'(46) > '-'(45) would call this out of order.
+    expect(
+      indexOrderIssues(table("guides/brownfield.md", "guides/brownfield-approach.md")),
+    ).toEqual([]);
+  });
+
+  it("exempts README from the sequence — first (Spec-style) is fine", () => {
+    expect(
+      indexOrderIssues(table("spec/README.md", "spec/canonical-state.md", "spec/delegated-run.md")),
+    ).toEqual([]);
+  });
+
+  it("exempts README from the sequence — mid-table (stage-style) is fine", () => {
+    expect(
+      indexOrderIssues(
+        table("stages/x/checklist.md", "stages/x/README.md", "stages/x/reference.md"),
+      ),
+    ).toEqual([]);
+  });
+
+  it("checks each table independently (stage-grouped pipeline order not flagged)", () => {
+    const md =
+      table("stages/initiation/README.md", "stages/initiation/reference.md") +
+      "\n" +
+      table("stages/requirements/README.md", "stages/requirements/reference.md");
+    expect(indexOrderIssues(md)).toEqual([]);
   });
 });
 
