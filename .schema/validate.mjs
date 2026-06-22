@@ -10,6 +10,7 @@ import { runAnchors } from "./checks/anchors.mjs";
 import { runRetiredVocab } from "./checks/retired-vocab.mjs";
 import { runStamps } from "./checks/stamps.mjs";
 import { runIndexCounts } from "./checks/index-counts.mjs";
+import { runIndexOrder } from "./checks/index-order.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "..");
@@ -244,9 +245,10 @@ for (let file of structureFiles) {
 // ── Extended checks (fatal) ─────────────────────────────────────────
 // Deterministic checks for the mechanizable cold-review finding classes:
 // anchor/link integrity, retired vocabulary as live guidance, Last Updated
-// stamp freshness, and INDEX count self-consistency. These fail the build
-// (exit 1), the same as a schema failure. If the retired-vocab check ever
-// trips on a legitimate new usage, tune .schema/checks/retired-vocab.json.
+// stamp freshness, INDEX count self-consistency, and INDEX table sort-order.
+// These fail the build (exit 1), the same as a schema failure. If the
+// retired-vocab check ever trips on a legitimate new usage, tune
+// .schema/checks/retired-vocab.json.
 
 const checkExclude = fileMap.checkExclude || [];
 const checkFiles = structureFiles.filter(
@@ -273,6 +275,7 @@ const checkIssues = [
   ),
   ...runCheck("STAMP", () => runStamps(repoRoot, checkFiles)),
   ...runCheck("COUNT", () => runIndexCounts(repoRoot)),
+  ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
 ];
 
 // ── Report ──────────────────────────────────────────────────────────
