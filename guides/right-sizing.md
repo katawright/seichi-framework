@@ -433,7 +433,7 @@ regardless of consequence, and wider reach adds sign-off artifacts.
 | [ADR](../templates/adr.md)                                             | System Design    | Optional    | Recommended | Required    |
 | [Increment Design Brief](../templates/increment-design-brief.md)       | Increment Design | Optional    | Required    | Required    |
 | [Implementation Brief](../templates/implementation-brief.md)           | Implementation   | Optional    | Required    | Required    |
-| [Session Log](../templates/session-log.md)                             | Implementation   | Optional    | Recommended | Required    |
+| [Session Log](../templates/implementation-session-log.md)              | Implementation   | Optional    | Recommended | Required    |
 | [Verification Brief](../templates/verification-brief.md)               | Verification     | Optional    | Required    | Required    |
 | [Deployment Brief](../templates/deployment-brief.md)                   | Deployment       | Optional    | Required    | Required    |
 | [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |

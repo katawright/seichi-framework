@@ -874,8 +874,9 @@ stages.
 | Deployment     | Discrete deployment event          | Per-merge release via pre-authorized automated path |
 | Closure        | Close-out + handoff at project end | Operations active from first deploy (continuous)    |
 
-Foundational stages (Initiation, Requirements, System Design, Increment Design)
-are unaffected — CD applies only to the iterative execution stages.
+Initiation, Requirements, System Design, and Increment Design are unaffected —
+CD changes the timing only of the stages in the table above (Implementation,
+Verification, Deployment, Closure).
 
 ### When Stages Can Be Folded
 
