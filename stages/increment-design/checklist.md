@@ -10,7 +10,7 @@ and ready for Implementation.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-> **Lights-Out mode:** an agent completes the full checklist and presents
+> **Lights-Out preset:** an agent completes the full checklist and presents
 > results for review. A human reviews all items and confirms **[H]** items,
 > which require judgment an agent cannot substitute for. **During interactive
 > stage execution, raise [H] items as they arise rather than batching them at
@@ -119,7 +119,7 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.12.0. Database-layer logic item added in v0.42.0.
 Internal-consistency item added in v0.45.0. AI-Led mode updated to Lights-Out

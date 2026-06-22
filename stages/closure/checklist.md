@@ -12,7 +12,7 @@ close-out summary produced.
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by an agent.
 
-> **Lights-Out mode:** an agent completes the full checklist and presents
+> **Lights-Out preset:** an agent completes the full checklist and presents
 > results for review. A human reviews all items and confirms the **[H]** items,
 > which require judgment an agent cannot substitute for.
 
@@ -122,7 +122,7 @@ checklist.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.49.0. Supersedes the Support stage's Project Close-Out
 Checklist (v0.47.0), extended with the operational-handoff and

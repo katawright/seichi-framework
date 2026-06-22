@@ -621,6 +621,9 @@ objective.
   - failed-verification / failed-deployment → `failed`;
   - stopped-by-user / stopped-by-policy / superseded-by-replanning →
     `cancelled`;
+  - decision-lapsed (no decision before the escalation bound) → `abandoned`;
+  - limit-reached (authorized budget / time / usage / concurrency) →
+    `authorization-exhausted`;
   - **partially-complete is the realized extent** at any terminal, not a state;
   - `blocked` is a `paused` reason, not a terminal.
 - Each terminal MUST carry its outcome reason and preserve evidence and
@@ -665,7 +668,7 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.49.0. Authored from the v0.49 delegated-run-operations
 detail doc; the canonical state these contracts read and write is single-sourced
