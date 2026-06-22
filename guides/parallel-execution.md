@@ -287,7 +287,7 @@ batch done.
 
 **Last Updated:** 2026-06-21
 
-Added to the framework in v0.49.0. Consumes the schedule produced by the
+Added to framework in v0.49.0. Consumes the schedule produced by the
 [Parallel Scheduling Guide](parallel-scheduling.md); companion to the
 [Operating Model Guide](operating-model.md) for the Lights-Out coverage rule.
 The normative contracts behind this guide — batch preflight/close contracts,

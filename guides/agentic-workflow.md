@@ -567,12 +567,13 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-21 — v0.49 consistency sweep: Support stage renamed to
-Closure; autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed
-to operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow
-Diagram feedback edges updated to reflect Operations.
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm
 on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
 Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.
+v0.49 consistency sweep: Support stage renamed to Closure; autonomy-tier
+subsections (Human-Led / Collaborative / AI-Led) renamed to operating postures
+(Supervised / Checkpointed / Lights-Out); Stage Flow Diagram feedback edges
+updated to reflect Operations.

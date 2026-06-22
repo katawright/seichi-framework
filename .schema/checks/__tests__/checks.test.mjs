@@ -10,7 +10,7 @@ import {
 import { findRetired } from "../retired-vocab.mjs";
 import { parseIndexSections } from "../index-counts.mjs";
 import { parseIndexTables, indexOrderIssues } from "../index-order.mjs";
-import { parseStamp } from "../stamps.mjs";
+import { parseStamp, stampFormatIssues } from "../stamps.mjs";
 
 describe("slugify (GitHub rules)", () => {
   it("drops an em-dash, leaving the two flanking spaces as --", () => {
@@ -176,5 +176,33 @@ describe("parseStamp", () => {
   });
   it("returns null when absent", () => {
     expect(parseStamp("no stamp here")).toBe(null);
+  });
+});
+
+describe("stampFormatIssues", () => {
+  it("passes a bare-date stamp and canonical 'Added to framework' line", () => {
+    expect(
+      stampFormatIssues("**Last Updated:** 2026-06-21\n\nAdded to framework in v0.49.0.\n"),
+    ).toEqual([]);
+  });
+  it("flags trailing change-history on the Last Updated line", () => {
+    const issues = stampFormatIssues("**Last Updated:** 2026-06-21 — v0.49 sweep: renamed X\n");
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("must be a bare date");
+  });
+  it("flags 'Added to the framework' (stray 'the')", () => {
+    const issues = stampFormatIssues("**Last Updated:** 2026-06-21\n\nAdded to the framework in v0.49.0.\n");
+    expect(issues.some((i) => i.includes("'Added to the framework'"))).toBe(true);
+  });
+  it("leaves the template footer form (no markdown stamp line) alone", () => {
+    expect(stampFormatIssues("<!-- Template Last Updated: 2026-06-20 | added v0.47 -->\n")).toEqual(
+      [],
+    );
+  });
+  it("exempts template fill-in lines (placeholder date, trailing fields)", () => {
+    expect(
+      stampFormatIssues("**Last Updated:** YYYY-MM-DD **Increment:** [name]\n"),
+    ).toEqual([]);
+    expect(stampFormatIssues("**Last Updated:** YYYY-MM-DD HH:MM\n")).toEqual([]);
   });
 });

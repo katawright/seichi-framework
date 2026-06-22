@@ -1007,14 +1007,14 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-21 — reconciled the Initiation success-criteria table
-with the metrics tracked downstream (SC-01 onboarding completion / G-1; SC-02 time
-to assign tasks / G-2) so success-criteria IDs trace end to end; added a worked
-Stage 8 (Closure) example: project close-out summary + operational handoff record.
-(2026-06-20: v0.49 consistency sweep — traceability chain updated to end at Closure
-followed by Operations.)
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
-updated to the two-digit draft form in v0.48.0. For a brownfield adoption
-example showing preparation increments, exit checkpoints, and shadow mode, see
-the [Brownfield Worked Example](worked-example-brownfield.md).
+updated to the two-digit draft form in v0.48.0. v0.49 consistency sweep:
+traceability chain updated to end at Closure followed by Operations; the
+Initiation success-criteria table reconciled with the metrics tracked downstream
+(SC-01 onboarding completion / G-1; SC-02 time to assign tasks / G-2) so
+success-criteria IDs trace end to end; a worked Stage 8 (Closure) example added
+(project close-out summary + operational handoff record). For a brownfield
+adoption example showing preparation increments, exit checkpoints, and shadow
+mode, see the [Brownfield Worked Example](worked-example-brownfield.md).

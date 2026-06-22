@@ -321,7 +321,7 @@ chooses the storage; this spec fixes only what must be representable.
 
 **Last Updated:** 2026-06-21
 
-Added to the framework in v0.49.0. Authored from the v0.49 parallel-batch detail
+Added to framework in v0.49.0. Authored from the v0.49 parallel-batch detail
 (workstream 3) as the normative counterpart to the human-facing
 [Parallel Scheduling Guide](../guides/parallel-scheduling.md) and
 [Parallel Execution Guide](../guides/parallel-execution.md). The unit is named
