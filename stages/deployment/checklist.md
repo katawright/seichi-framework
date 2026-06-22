@@ -10,7 +10,7 @@ successful completion (60-90 seconds).
 > Items marked **[H]** require human judgment. Other items can be verified or
 > assisted by AI.
 
-> **Lights-Out mode:** an agent completes the full checklist and presents
+> **Lights-Out preset:** an agent completes the full checklist and presents
 > results for review. A human reviews all items and confirms **[H]** items,
 > which require judgment an agent cannot substitute for. **During interactive
 > stage execution, raise [H] items as they arise rather than batching them at
@@ -200,7 +200,7 @@ decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.7.0. Database migration and migration security items
 added in v0.42.0. Release Disposition section added in v0.45.0. Support

@@ -99,12 +99,13 @@ Use Glob to find all `.md` files in these locations:
 
 - Root: `*.md` (top-level only)
 - `guides/**/*.md`
+- `spec/**/*.md`
 - `stages/**/*.md`
 - `templates/**/*.md`
 
-**Exclude** any file or directory marked `export-ignore` in `.gitattributes` —
-that is the canonical list of contributor/tooling content excluded from
-releases.
+**Exclude** any file or directory marked `export-ignore` in `.gitattributes`
+(the contributor/tooling exclusion list). The authoritative release surface is
+the `FRAMEWORK_INCLUDES` allowlist in `scripts/release/index.ts`.
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
 
@@ -114,6 +115,7 @@ Read `INDEX.md` and parse its table sections:
 
 - **Root Files** — top-level `.md` files
 - **Guides** — files under `guides/`
+- **Spec** — files under `spec/`
 - **Stage Artifacts** — files under `stages/`, grouped by stage subsection
 - **Templates** — files under `templates/`
 
