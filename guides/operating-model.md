@@ -112,7 +112,7 @@ against these: _configure_ some, ensure _all_ are covered.
 | **Assurance / verification**      | Evaluating the work to the required independence | Yes → Required Assurance setting  |
 | **Decision resolution**           | Resolving governance decisions                   | Yes → Authority setting           |
 | **Evidence capture**              | Recording what happened, with provenance         | No — standing                     |
-| **Escalation & stop enforcement** | Halting or escalating when a limit is crossed    | No — standing (unattended runs)   |
+| **Escalation & stop enforcement** | Halting or escalating when a limit is crossed    | No — standing                     |
 | **Orchestration & integration**   | Coordinating concurrent work and merging it      | No — standing (parallel batches)  |
 | **Run continuity & completion**   | Persisting state, reporting, judging "done"      | No — standing (delegated runs)    |
 
@@ -122,8 +122,9 @@ Two kinds:
   _setting_. These are detailed in
   [The Configurable Functions](#the-configurable-functions).
 - **Standing functions** (four) — always needed for a run to be safe,
-  observable, and durable, with nothing for the operator to tune. Some apply
-  only when a run is unattended, parallel, or delegated.
+  observable, and durable, with nothing for the operator to tune. Evidence
+  capture and stop enforcement always apply; orchestration applies only when a
+  run is parallel and run continuity only when it is delegated.
 
 Across **all eight**, [capability coverage](#capability-coverage) asks the same
 question — _can a qualified provider actually deliver this function?_ So the
@@ -402,7 +403,7 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.49.0. Companion to the
 [Right-Sizing Guide](right-sizing.md) (Layer A — governance weight) and the
