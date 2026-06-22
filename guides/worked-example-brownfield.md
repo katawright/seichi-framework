@@ -267,9 +267,9 @@ Using the
   where boundaries are clearest
 - **Supplementary note:** Deployability at 2 (manual deploy) — mitigated by
   deploy runbook and tested rollback procedure
-- **AI operating mode for feature work:** T3 — an agent writes production
-  code in the customer account area (well-covered); the agent is advisory for
-  changes touching other areas
+- **AI operating mode for feature work:** T3 — an agent writes production code
+  in the customer account area (well-covered); the agent is advisory for changes
+  touching other areas
 - **Condition:** First feature increment uses
   [shadow mode](../stages/deployment/README.md#shadow-mode-and-gradual-rollout)
   for deployment validation before full production exposure

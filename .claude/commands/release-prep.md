@@ -1,14 +1,18 @@
 ---
-description: Update VERSION, generate CHANGELOG entry, update INDEX.md, and build the release zip
-allowed-tools: Bash(git log:*), Bash(git tag:*), Bash(git describe:*), Bash(git diff:*), Bash(npm run release:*), Read, Edit, Write, Glob, Grep
+description:
+  Update VERSION, generate CHANGELOG entry, update INDEX.md, and build the
+  release zip
+allowed-tools:
+  Bash(git log:*), Bash(git tag:*), Bash(git describe:*), Bash(git diff:*),
+  Bash(npm run release:*), Read, Edit, Write, Glob, Grep
 ---
 
 # /release-prep — Prepare a Framework Release
 
 You are preparing a release of the AI-Assisted SDLC Framework. This command
-updates VERSION, generates a CHANGELOG entry, updates INDEX.md, and builds
-the release zip via `npm run release`. After this command completes, the
-user will commit, merge to main, and run `/release`.
+updates VERSION, generates a CHANGELOG entry, updates INDEX.md, and builds the
+release zip via `npm run release`. After this command completes, the user will
+commit, merge to main, and run `/release`.
 
 The version argument is required. Usage: `/release-prep 0.43.0`
 
@@ -53,8 +57,8 @@ Parse each commit message and group into these CHANGELOG sections:
   existing content)
 - **Bug Fixes** — `fix` commits
 
-Omit `chore`, `test`, `ci` commits from the CHANGELOG — these are internal.
-If a section would be empty, omit it entirely.
+Omit `chore`, `test`, `ci` commits from the CHANGELOG — these are internal. If a
+section would be empty, omit it entirely.
 
 ### 2d: Write the entry
 
@@ -65,16 +69,16 @@ Format each entry as a bullet point with the scope in bold:
 
 ### Features
 
-* **scope:** description
-* **scope:** description
+- **scope:** description
+- **scope:** description
 
 ### Improvements
 
-* **scope:** description
+- **scope:** description
 
 ### Bug Fixes
 
-* **scope:** description
+- **scope:** description
 ```
 
 ### 2e: Prepend to CHANGELOG.md
@@ -99,7 +103,8 @@ Use Glob to find all `.md` files in these locations:
 - `templates/**/*.md`
 
 **Exclude** any file or directory marked `export-ignore` in `.gitattributes` —
-that is the canonical list of contributor/tooling content excluded from releases.
+that is the canonical list of contributor/tooling content excluded from
+releases.
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
 
@@ -172,22 +177,21 @@ Update the `**Framework Version:**` field to match the version from Step 1.
 
 ## Step 4: Build the Release Zip
 
-Run `npm run release` to produce `manifest.json` (gitignored, repo root)
-and `dist/framework-vX.Y.Z.zip`. The script reads VERSION and INDEX.md
-that you just updated, validates the projected manifest against the Zod
-schema, and emits a deterministic STORE-mode zip.
+Run `npm run release` to produce `manifest.json` (gitignored, repo root) and
+`dist/framework-vX.Y.Z.zip`. The script reads VERSION and INDEX.md that you just
+updated, validates the projected manifest against the Zod schema, and emits a
+deterministic STORE-mode zip.
 
-If the script fails with a schema or projection error, the source-tree
-content is inconsistent with what the projector expects (e.g.,
-frontmatter is malformed in a stage README). Surface the error and
-**stop** — do not proceed with the release until it is fixed.
+If the script fails with a schema or projection error, the source-tree content
+is inconsistent with what the projector expects (e.g., frontmatter is malformed
+in a stage README). Surface the error and **stop** — do not proceed with the
+release until it is fixed.
 
-If the script reports a version mismatch (manifest version vs VERSION
-file), that means Step 1 didn't take effect. Re-check VERSION before
-re-running.
+If the script reports a version mismatch (manifest version vs VERSION file),
+that means Step 1 didn't take effect. Re-check VERSION before re-running.
 
-Capture the reported zip path and artifact counts (stages, artifacts) for
-the Step 5 summary.
+Capture the reported zip path and artifact counts (stages, artifacts) for the
+Step 5 summary.
 
 ---
 

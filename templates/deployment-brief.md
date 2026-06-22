@@ -287,10 +287,10 @@ tracker]
 ---
 
 > For full readiness verification before accepting production ownership, see the
-> [Operations Guide](../guides/operations.md). This section records the operations
-> handoff for **this deployment**. The project-terminal production-ownership
-> transfer is a separate Closure checkpoint, accepted against the Operational
-> Handoff Record — see
+> [Operations Guide](../guides/operations.md). This section records the
+> operations handoff for **this deployment**. The project-terminal
+> production-ownership transfer is a separate Closure checkpoint, accepted
+> against the Operational Handoff Record — see
 > [Closure](../stages/closure/README.md#production-ownership-transfer).
 
 ## Increment Operations Handoff

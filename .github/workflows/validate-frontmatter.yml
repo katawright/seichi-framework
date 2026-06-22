@@ -7,6 +7,8 @@ on:
       - "**/*.md"
       - ".schema/**"
       - "package.json"
+      - ".prettierrc"
+      - ".prettierignore"
 
 jobs:
   validate:
@@ -21,4 +23,4 @@ jobs:
 
       - run: npm ci
 
-      - run: node .schema/validate.mjs
+      - run: npm run validate
