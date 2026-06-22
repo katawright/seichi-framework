@@ -57,8 +57,25 @@ function lastCommitDate(repoRoot, file) {
   }
 }
 
+// In a shallow clone (e.g. a default CI checkout of a PR merge ref), `git log`
+// reports the single fetched commit's date for every file, so freshness can't be
+// determined and would false-flag every stamp. Skip freshness when shallow.
+function isShallowRepo(repoRoot) {
+  try {
+    return (
+      execFileSync("git", ["rev-parse", "--is-shallow-repository"], {
+        cwd: repoRoot,
+        encoding: "utf8",
+      }).trim() === "true"
+    );
+  } catch {
+    return false;
+  }
+}
+
 export function runStamps(repoRoot, files) {
   const issues = [];
+  const shallow = isShallowRepo(repoRoot);
   for (const file of files) {
     if (!STAMP_GLOBS.some((g) => minimatch(file, g))) continue;
     let c;
@@ -77,9 +94,11 @@ export function runStamps(repoRoot, files) {
     }
     // Freshness: compare to the file's last commit date. Skip when there is no
     // committed history (untracked / shallow clone) — can't determine staleness.
-    const commitDate = lastCommitDate(repoRoot, file);
-    if (commitDate && stamp < commitDate) {
-      issues.push(`STAMP  ${file}  stamp ${stamp} < last commit ${commitDate} (stale)`);
+    if (!shallow) {
+      const commitDate = lastCommitDate(repoRoot, file);
+      if (commitDate && stamp < commitDate) {
+        issues.push(`STAMP  ${file}  stamp ${stamp} < last commit ${commitDate} (stale)`);
+      }
     }
   }
   return issues;
