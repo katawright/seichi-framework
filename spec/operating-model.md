@@ -505,7 +505,7 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.49.0. Authored from the v0.49 operating-model detail
 doc and the levers rework. Human-facing rationale lives in the
