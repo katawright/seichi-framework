@@ -197,7 +197,7 @@ is the normative source for the floor mapping those anchors feed.
   alone.
 - The consequence-to-floor mapping (cells are minimums):
 
-| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                             | Lights-Out                                                                 | Preset                      |
+| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                             | Lights-Out                                                                 | Governance-weight preset    |
 | ----------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------- |
 | Negligible  | None                                                          | none non-delegable                                                                | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
 | Low         | Self                                                          | acceptance delegable                                                              | eligible                                                                   | Minimal                     |
