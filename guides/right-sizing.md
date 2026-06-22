@@ -474,9 +474,9 @@ governance-weight preset it sits at.
 | -------------- | -------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
 | **Negligible** | None                                               | none non-delegable                                                       | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
 | **Low**        | Self                                               | acceptance delegable                                                     | eligible                                                                   | Minimal                     |
-| **Moderate**   | Internal _if an independent provider is available_ | gate decisions human-or-policy                                           | eligible, bounded pauses                                                   | Standard                    |
+| **Moderate**   | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                           | eligible, bounded pauses                                                   | Standard                    |
 | **High**       | Internal (required)                                | gate decisions non-delegable                                             | eligible; gated at irreversible transitions                                | Enterprise                  |
-| **Critical**   | Internal (required)                                | all gate decisions non-delegable + independent stop-enforcement coverage | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+| **Critical**   | Internal (required)                                | all gate decisions non-delegable + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
 
 **Consequence saturates at Internal.** Magnitude alone never floors assurance
 above Internal and never turns Lights-Out off. **External** assurance is floored

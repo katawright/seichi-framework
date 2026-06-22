@@ -11,6 +11,7 @@ import { runRetiredVocab } from "./checks/retired-vocab.mjs";
 import { runStamps } from "./checks/stamps.mjs";
 import { runIndexCounts } from "./checks/index-counts.mjs";
 import { runIndexOrder } from "./checks/index-order.mjs";
+import { runFloorTable } from "./checks/floor-table.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "..");
@@ -276,6 +277,7 @@ const checkIssues = [
   ...runCheck("STAMP", () => runStamps(repoRoot, checkFiles)),
   ...runCheck("COUNT", () => runIndexCounts(repoRoot)),
   ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
+  ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
 ];
 
 // ── Report ──────────────────────────────────────────────────────────
