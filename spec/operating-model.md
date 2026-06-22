@@ -197,13 +197,13 @@ is the normative source for the floor mapping those anchors feed.
   alone.
 - The consequence-to-floor mapping (cells are minimums):
 
-| Consequence | Assurance floor (min)                        | Authority floor (min)                                                             | Lights-Out                                                                 | Preset                      |
-| ----------- | -------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------- |
-| Negligible  | None                                         | none non-delegable                                                                | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
-| Low         | Self                                         | acceptance delegable                                                              | eligible                                                                   | Minimal                     |
+| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                             | Lights-Out                                                                 | Preset                      |
+| ----------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------- |
+| Negligible  | None                                                          | none non-delegable                                                                | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
+| Low         | Self                                                          | acceptance delegable                                                              | eligible                                                                   | Minimal                     |
 | Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                    | eligible, bounded pauses                                                   | Standard                    |
-| High        | Internal (required)                          | gate decisions non-delegable                                                      | eligible; gated at irreversible transitions                                | Enterprise                  |
-| Critical    | Internal (required)                          | all gate decisions non-delegable + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+| High        | Internal (required)                                           | gate decisions non-delegable                                                      | eligible; gated at irreversible transitions                                | Enterprise                  |
+| Critical    | Internal (required)                                           | all gate decisions non-delegable + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
 
 - At the highest consequence, the additional weight lands on Authority (gate
   density and non-delegability) and required standing-function coverage (stop
@@ -211,8 +211,9 @@ is the normative source for the floor mapping those anchors feed.
   (see [Lights-Out Eligibility](#lights-out-eligibility)).
 - A consequence floor a run cannot reach because coverage is absent (e.g. the
   Moderate **Internal** assurance floor with no independent provider) falls back
-  to the highest coverable rung below it (here, **Self**), recorded as an accepted
-  limitation per [Capability Coverage](#capability-coverage) — not waived.
+  to the highest coverable rung below it (here, **Self**), recorded as an
+  accepted limitation per [Capability Coverage](#capability-coverage) — not
+  waived.
 
 **Outputs.** The clamped, achievable setting for each configurable function.
 

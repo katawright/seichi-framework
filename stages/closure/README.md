@@ -275,16 +275,16 @@ Use the [Retrospective Template](../../templates/retrospective.md) with scope
 
 ## How AI Helps
 
-AI can assist with Closure at whatever operating posture your team is comfortable
-with — drafting the handoff record, rendering the completion contract, and
-preparing the retrospective routing — while the acceptance decisions stay
-human-owned.
+AI can assist with Closure at whatever operating posture your team is
+comfortable with — drafting the handoff record, rendering the completion
+contract, and preparing the retrospective routing — while the acceptance
+decisions stay human-owned.
 
 How autonomously this stage runs — who performs the work and who decides — is an
 operating-model choice, not a fixed property of the stage. It is set per project
 along two functions: **Work Execution** (Humans · Collaborative · Agents) and
-**Authority** (interactive human · pre-authorized policy · delegated agent). Gate
-requirements always apply regardless. See the
+**Authority** (interactive human · pre-authorized policy · delegated agent).
+Gate requirements always apply regardless. See the
 [Operating Model Guide](../../guides/operating-model.md).
 
 ### AI Assistance Patterns
@@ -305,10 +305,10 @@ requirements always apply regardless. See the
 For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
 
-> **Required gates:** Production-ownership transfer and acceptance of irreversible
-> closure (data disposition on sunset) are human-owned decisions — an agent
-> prepares the records and drafts the routing, but accepting ownership and filing
-> to external trackers are human-authorized actions (the
+> **Required gates:** Production-ownership transfer and acceptance of
+> irreversible closure (data disposition on sunset) are human-owned decisions —
+> an agent prepares the records and drafts the routing, but accepting ownership
+> and filing to external trackers are human-authorized actions (the
 > agent-prepares-never-publishes rule).
 
 ---

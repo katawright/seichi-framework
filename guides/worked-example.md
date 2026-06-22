@@ -926,8 +926,8 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
 
 - **Open issues:** none known
 - **Deferred work:** bulk task assignment deferred → IDEA-021
-- **Known limitations:** completion-rate impact unverified until the first cohort
-  reaches its 30-day mark (SC-01)
+- **Known limitations:** completion-rate impact unverified until the first
+  cohort reaches its 30-day mark (SC-01)
 - **Recent changes:** v1.0.0 — initial production release (2026-03-16)
 ```
 
