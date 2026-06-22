@@ -7,10 +7,10 @@ A framework release ships two artifacts:
 - The **source tree** at a tagged commit on `main` (read by humans and tools
   browsing the repo).
 - A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the framework
-  surface — `guides/`, `stages/`, `templates/`, `INDEX.md`, `QUICKSTART.md`,
-  `README.md`, `VERSION`, plus a generated `manifest.json`. The zip is the
-  canonical artifact downstream consumers (e.g., Theia) fetch and project; it is
-  attached to the GitHub release and uploaded to S3.
+  surface — `guides/`, `spec/`, `stages/`, `templates/`, `INDEX.md`,
+  `QUICKSTART.md`, `README.md`, `VERSION`, plus a generated `manifest.json`. The
+  zip is the canonical artifact downstream consumers (e.g., Theia) fetch and
+  project; it is attached to the GitHub release and uploaded to S3.
 
 The release flow is two slash commands plus an explicit packaging step:
 
@@ -131,6 +131,6 @@ lockfiles on Linux already.
 
 ## Notes
 
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.24.0.

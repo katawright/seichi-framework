@@ -39,7 +39,10 @@ Read `guides/agentic-workflow.md`, `guides/stages.md`, `guides/roles.md`, and
 `STYLE_GUIDE.md` when creating or editing files. `guides/roles.md` is the
 canonical source for role definitions and the RACI matrix. Stage READMEs
 (`stages/*/README.md`) contain canonical stage metadata in their front matter.
-See `INDEX.md` for the full file inventory and canonical sources.
+The `spec/` files are the normative contracts behind the operating model,
+delegated runs, parallel-batch execution, and canonical project state — keep a
+guide and its governing spec in sync when editing either. See `INDEX.md` for the
+full file inventory and canonical sources.
 
 ---
 
@@ -175,7 +178,7 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-06-20
+**Last Updated:** 2026-06-21
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).
