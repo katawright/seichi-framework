@@ -12,6 +12,9 @@ import { runStamps } from "./checks/stamps.mjs";
 import { runIndexCounts } from "./checks/index-counts.mjs";
 import { runIndexOrder } from "./checks/index-order.mjs";
 import { runFloorTable } from "./checks/floor-table.mjs";
+import { runShipList } from "./checks/ship-list.mjs";
+import { runFuncGroup } from "./checks/func-group.mjs";
+import { runCallout } from "./checks/callout.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "..");
@@ -243,13 +246,16 @@ for (let file of structureFiles) {
   }
 }
 
-// ── Extended checks (fatal) ─────────────────────────────────────────
+// ── Extended checks ─────────────────────────────────────────────────
 // Deterministic checks for the mechanizable cold-review finding classes:
 // anchor/link integrity, retired vocabulary as live guidance, Last Updated
-// stamp freshness, INDEX count self-consistency, and INDEX table sort-order.
-// These fail the build (exit 1), the same as a schema failure. If the
-// retired-vocab check ever trips on a legitimate new usage, tune
-// .schema/checks/retired-vocab.json.
+// stamp freshness, INDEX count self-consistency, INDEX table sort-order,
+// consequence-floor table parity, and the restatement-family regression guards
+// (shipped-layer enumeration, operator-table function grouping, stage-callout
+// uniformity). Fatal issues fail the build (exit 1), the same as a schema
+// failure; warn-tier issues (heuristic callout semantics, operational skips) are
+// printed but do not break the build. If the retired-vocab check ever trips on a
+// legitimate new usage, tune .schema/checks/retired-vocab.json.
 
 const checkExclude = fileMap.checkExclude || [];
 const checkFiles = structureFiles.filter(
@@ -264,6 +270,7 @@ function runCheck(label, fn) {
   }
 }
 
+// Checks that return a flat array of fatal issues.
 const checkIssues = [
   ...runCheck("ANCHOR", () =>
     runAnchors(repoRoot, checkFiles, fileMap.linkAllowlist || []),
@@ -279,6 +286,27 @@ const checkIssues = [
   ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
   ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
 ];
+
+// Restatement-family guards return { fatal, warn }: the drift itself is fatal,
+// while heuristic semantics and operational skips (unparseable source, missing
+// sentinel) only warn.
+function runFamilyCheck(label, fn) {
+  try {
+    const r = fn();
+    return { fatal: r.fatal || [], warn: r.warn || [] };
+  } catch (err) {
+    return { fatal: [`${label}  (check error: ${err.message})`], warn: [] };
+  }
+}
+
+const familyChecks = [
+  runFamilyCheck("SHIP", () => runShipList(repoRoot)),
+  runFamilyCheck("FUNCGROUP", () => runFuncGroup(repoRoot)),
+  runFamilyCheck("CALLOUT", () => runCallout(repoRoot)),
+];
+
+const fatalIssues = [...checkIssues, ...familyChecks.flatMap((r) => r.fatal)];
+const checkWarnings = familyChecks.flatMap((r) => r.warn);
 
 // ── Report ──────────────────────────────────────────────────────────
 
@@ -302,10 +330,17 @@ if (structureIssues.length > 0) {
   }
 }
 
-if (checkIssues.length > 0) {
+if (fatalIssues.length > 0) {
   console.log("");
-  for (const issue of checkIssues) {
+  for (const issue of fatalIssues) {
     console.log(issue);
+  }
+}
+
+if (checkWarnings.length > 0) {
+  console.log("");
+  for (const issue of checkWarnings) {
+    console.log(`WARN  ${issue}`);
   }
 }
 
@@ -315,7 +350,8 @@ console.log(
     (structureWarnings > 0
       ? `, ${structureWarnings} structure warnings`
       : "") +
-    (checkIssues.length > 0 ? `, ${checkIssues.length} check failures` : ""),
+    (fatalIssues.length > 0 ? `, ${fatalIssues.length} check failures` : "") +
+    (checkWarnings.length > 0 ? `, ${checkWarnings.length} check warnings` : ""),
 );
 
-process.exit(failed > 0 || checkIssues.length > 0 ? 1 : 0);
+process.exit(failed > 0 || fatalIssues.length > 0 ? 1 : 0);

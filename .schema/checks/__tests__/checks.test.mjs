@@ -12,6 +12,22 @@ import { parseIndexSections } from "../index-counts.mjs";
 import { parseIndexTables, indexOrderIssues } from "../index-order.mjs";
 import { parseStamp, stampFormatIssues } from "../stamps.mjs";
 import { extractFloorTable, floorTableIssues } from "../floor-table.mjs";
+import {
+  parseFrameworkIncludes,
+  shipsListTokens,
+  shipListIssues,
+} from "../ship-list.mjs";
+import {
+  specAlwaysSet,
+  operatorStandingRows,
+  funcGroupIssues,
+} from "../func-group.mjs";
+import {
+  requiredGatesCallout,
+  howAiHelpsSection,
+  oversightPara,
+  executionPinHits,
+} from "../callout.mjs";
 
 describe("slugify (GitHub rules)", () => {
   it("drops an em-dash, leaving the two flanking spaces as --", () => {
@@ -245,5 +261,157 @@ describe("floor-table consistency", () => {
     const issues = floorTableIssues(specMd, rsMd("Internal"));
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("'moderate'");
+  });
+});
+
+describe("ship-list (I-ship)", () => {
+  const ts =
+    'const FRAMEWORK_INCLUDES = [\n  "guides",\n  "spec",\n  "stages",\n' +
+    '  "templates",\n  "INDEX.md",\n  "QUICKSTART.md",\n  "README.md",\n' +
+    '  "VERSION",\n];';
+
+  it("parses the FRAMEWORK_INCLUDES array literal", () => {
+    expect(parseFrameworkIncludes(ts)).toEqual([
+      "guides",
+      "spec",
+      "stages",
+      "templates",
+      "INDEX.md",
+      "QUICKSTART.md",
+      "README.md",
+      "VERSION",
+    ]);
+  });
+
+  it("extracts layer tokens, dropping multi-segment paths and manifest.json", () => {
+    const toks = shipsListTokens(
+      "`dist/framework-vX.Y.Z.zip` `guides/`, `spec/`, `INDEX.md`, `manifest.json`",
+    );
+    expect([...toks].sort()).toEqual(["INDEX.md", "guides", "spec"]);
+  });
+
+  const block = (...layers) =>
+    "- A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the " +
+    "framework surface — <!-- ships-list -->" +
+    layers.map((l) => `\`${l}\``).join(", ") +
+    ", plus a generated `manifest.json`.";
+
+  it("passes a complete ships-list", () => {
+    const md = block(
+      "guides/",
+      "spec/",
+      "stages/",
+      "templates/",
+      "INDEX.md",
+      "QUICKSTART.md",
+      "README.md",
+      "VERSION",
+    );
+    expect(shipListIssues(ts, [{ file: "CONTRIBUTING.md", content: md }]).fatal).toEqual([]);
+  });
+
+  it("flags a ships-list missing the spec/ layer (R13)", () => {
+    const md = block(
+      "guides/",
+      "stages/",
+      "templates/",
+      "INDEX.md",
+      "QUICKSTART.md",
+      "README.md",
+      "VERSION",
+    );
+    const { fatal } = shipListIssues(ts, [{ file: "CONTRIBUTING.md", content: md }]);
+    expect(fatal).toHaveLength(1);
+    expect(fatal[0]).toContain("missing: spec");
+  });
+
+  it("warns (does not fail) when no sentinel is present", () => {
+    const { fatal, warn } = shipListIssues(ts, [
+      { file: "x.md", content: "no marker here" },
+    ]);
+    expect(fatal).toEqual([]);
+    expect(warn.some((w) => w.includes("ships-list"))).toBe(true);
+  });
+});
+
+describe("func-group (H-funcgroup)", () => {
+  const spec =
+    "- **Standing functions** (no setting): evidence capture; escalation and " +
+    "stop enforcement; orchestration; run continuity.\n" +
+    "- Evidence capture and stop enforcement MUST always be treated as " +
+    "required. Orchestration and integration are required only when parallel " +
+    "execution applies; run continuity and completion are required only when " +
+    "delegated runs apply.\n";
+
+  const table = (stopCell) =>
+    "| Operating function | What it covers | Operator configures? |\n" +
+    "| --- | --- | --- |\n" +
+    "| **Work execution** | Producing the work | Yes → Work Execution setting |\n" +
+    "| **Evidence capture** | Recording | No — standing |\n" +
+    `| **Escalation & stop enforcement** | Halting | ${stopCell} |\n` +
+    "| **Orchestration & integration** | Coordinating | No — standing (parallel batches) |\n" +
+    "| **Run continuity & completion** | Persisting | No — standing (delegated runs) |\n";
+
+  it("reads the always-required set from the spec", () => {
+    const s = specAlwaysSet(spec);
+    expect(s.has("evidence")).toBe(true);
+    expect(s.has("stop")).toBe(true);
+    expect(s.has("orchestration")).toBe(false);
+  });
+
+  it("finds the four standing rows (skips the configurable row)", () => {
+    const rows = operatorStandingRows(table("No — standing"));
+    expect(rows.map((r) => r.key)).toEqual([
+      "evidence",
+      "stop",
+      "orchestration",
+      "continuity",
+    ]);
+  });
+
+  it("passes when standing-row qualifiers match the spec grouping", () => {
+    expect(funcGroupIssues(spec, table("No — standing")).fatal).toEqual([]);
+  });
+
+  it("flags a conditional qualifier on an always-required function (R15)", () => {
+    const { fatal } = funcGroupIssues(spec, table("No — standing (unattended runs)"));
+    expect(fatal).toHaveLength(1);
+    expect(fatal[0]).toContain("stop enforcement");
+  });
+});
+
+describe("callout (G-callout)", () => {
+  it("extracts the Required gates callout blockquote", () => {
+    const md =
+      "intro\n\n> **Required gates:** Human approval — humans own all\n> decisions.\n\nafter";
+    expect(requiredGatesCallout(md).text).toContain("Required gates");
+  });
+
+  it("execution-pin: flags a human-subject execution verb (R14)", () => {
+    expect(
+      executionPinHits("Human execution required — humans execute deployment steps.").length,
+    ).toBeGreaterThan(0);
+  });
+
+  it("execution-pin: conforms when the execute verb's subject is AI", () => {
+    expect(
+      executionPinHits("AI drafts, executes within the path; humans own the decision."),
+    ).toEqual([]);
+  });
+
+  it("execution-pin: ignores callouts with no execution verb", () => {
+    expect(executionPinHits("AI produces drafts; humans own all decisions.")).toEqual([]);
+  });
+
+  it("finds the How AI Helps section", () => {
+    expect(howAiHelpsSection("## How AI Helps\n\nBody.\n\n## Next\n").text).toContain(
+      "How AI Helps",
+    );
+  });
+
+  it("finds the Oversight paragraph", () => {
+    const md =
+      "x\n\n**Oversight at this stage.** Folds into Authority. See the [guide](../../guides/operating-model.md).\n\ny";
+    expect(oversightPara(md).text).toContain("Oversight at this stage");
   });
 });
