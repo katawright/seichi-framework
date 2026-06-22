@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so the stamp freshness check sees real per-file commit dates
 
       - uses: actions/setup-node@v4
         with:
