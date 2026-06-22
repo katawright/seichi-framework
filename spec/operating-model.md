@@ -201,7 +201,7 @@ is the normative source for the floor mapping those anchors feed.
 | ----------- | -------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------- |
 | Negligible  | None                                         | none non-delegable                                                                | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
 | Low         | Self                                         | acceptance delegable                                                              | eligible                                                                   | Minimal                     |
-| Moderate    | Internal _if independent provider available_ | gate decisions human-or-policy                                                    | eligible, bounded pauses                                                   | Standard                    |
+| Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                    | eligible, bounded pauses                                                   | Standard                    |
 | High        | Internal (required)                          | gate decisions non-delegable                                                      | eligible; gated at irreversible transitions                                | Enterprise                  |
 | Critical    | Internal (required)                          | all gate decisions non-delegable + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
 
@@ -209,6 +209,10 @@ is the normative source for the floor mapping those anchors feed.
   density and non-delegability) and required standing-function coverage (stop
   enforcement) — both insert **bounded pauses**; neither switches Lights-Out off
   (see [Lights-Out Eligibility](#lights-out-eligibility)).
+- A consequence floor a run cannot reach because coverage is absent (e.g. the
+  Moderate **Internal** assurance floor with no independent provider) falls back
+  to the highest coverable rung below it (here, **Self**), recorded as an accepted
+  limitation per [Capability Coverage](#capability-coverage) — not waived.
 
 **Outputs.** The clamped, achievable setting for each configurable function.
 

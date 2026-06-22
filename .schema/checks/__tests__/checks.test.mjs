@@ -11,6 +11,7 @@ import { findRetired } from "../retired-vocab.mjs";
 import { parseIndexSections } from "../index-counts.mjs";
 import { parseIndexTables, indexOrderIssues } from "../index-order.mjs";
 import { parseStamp, stampFormatIssues } from "../stamps.mjs";
+import { extractFloorTable, floorTableIssues } from "../floor-table.mjs";
 
 describe("slugify (GitHub rules)", () => {
   it("drops an em-dash, leaving the two flanking spaces as --", () => {
@@ -204,5 +205,45 @@ describe("stampFormatIssues", () => {
       stampFormatIssues("**Last Updated:** YYYY-MM-DD **Increment:** [name]\n"),
     ).toEqual([]);
     expect(stampFormatIssues("**Last Updated:** YYYY-MM-DD HH:MM\n")).toEqual([]);
+  });
+});
+
+describe("floor-table consistency", () => {
+  // Minimal spec/guide pair: same floor values, intentionally different headers.
+  const specMd =
+    "## Floors\n\n" +
+    "| Consequence | Assurance floor (min) | Lights-Out | Preset |\n" +
+    "| --- | --- | --- | --- |\n" +
+    "| Negligible | None | eligible | off-grid |\n" +
+    "| Low | Self | eligible | Minimal |\n" +
+    "| Moderate | Internal, else Self | eligible, bounded pauses | Standard |\n" +
+    "| High | Internal (required) | gated | Enterprise |\n" +
+    "| Critical | Internal (required) | up to gates | off-grid |\n";
+  const rsMd = (moderate) =>
+    "> [Informative]\n\n" +
+    "| Consequence | Required Assurance floor | Lights-Out | Governance-weight preset |\n" +
+    "| --- | --- | --- | --- |\n" +
+    "| **Negligible** | None | eligible | off-grid |\n" +
+    "| **Low** | Self | eligible | Minimal |\n" +
+    `| **Moderate** | ${moderate} | eligible, bounded pauses | Standard |\n` +
+    "| **High** | Internal (required) | gated | Enterprise |\n" +
+    "| **Critical** | Internal (required) | up to gates | off-grid |\n";
+
+  it("finds the floor table by its Lights-Out + floor header (ignores other tables)", () => {
+    const withDecoy =
+      "| Consequence | Reach |\n| --- | --- |\n| Negligible | nobody |\n\n" + specMd;
+    const t = extractFloorTable(withDecoy);
+    expect(t.get("moderate")[1]).toBe("Internal, else Self");
+    expect(t.has("negligible")).toBe(true);
+  });
+
+  it("passes when floor values match despite different headers and bold", () => {
+    expect(floorTableIssues(specMd, rsMd("Internal, else Self"))).toEqual([]);
+  });
+
+  it("flags a diverged floor cell", () => {
+    const issues = floorTableIssues(specMd, rsMd("Internal"));
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("'moderate'");
   });
 });
