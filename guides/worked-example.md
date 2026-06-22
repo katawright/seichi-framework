@@ -118,11 +118,10 @@ enough to still be an outcome this project can be held to. See
 
 ### Success Criteria
 
-| SC ID | Goal(s) | Metric                     | Baseline | Target |
-| ----- | ------- | -------------------------- | -------- | ------ |
-| SC-01 | G-1     | Onboarding task completion | 68%      | 95%    |
-| SC-02 | G-1     | Tasks completed on time    | 85%      | 97%    |
-| SC-03 | G-2     | HR time per new hire       | 4 hours  | 1 hour |
+| SC ID | Goal(s) | Metric                     | Baseline | Target  |
+| ----- | ------- | -------------------------- | -------- | ------- |
+| SC-01 | G-1     | Onboarding task completion | 68%      | 95%     |
+| SC-02 | G-2     | Time to assign tasks       | 25 min   | < 5 min |
 
 ### Scope Boundaries
 
@@ -1008,9 +1007,12 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-21 — added a worked Stage 8 (Closure) example: project
-close-out summary + operational handoff record. (2026-06-20: v0.49 consistency
-sweep — traceability chain updated to end at Closure followed by Operations.)
+**Last Updated:** 2026-06-21 — reconciled the Initiation success-criteria table
+with the metrics tracked downstream (SC-01 onboarding completion / G-1; SC-02 time
+to assign tasks / G-2) so success-criteria IDs trace end to end; added a worked
+Stage 8 (Closure) example: project close-out summary + operational handoff record.
+(2026-06-20: v0.49 consistency sweep — traceability chain updated to end at Closure
+followed by Operations.)
 
 Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
 updated to the two-digit draft form in v0.48.0. For a brownfield adoption

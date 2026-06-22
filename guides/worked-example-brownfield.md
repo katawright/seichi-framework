@@ -94,7 +94,7 @@ for scoring definitions.
 Captured in the
 [Initiation Brief](../templates/initiation-brief.md#brownfield-readiness--quick-pass-if-applicable):
 
-- **Agent operating mode:** T2 — the agent is advisory; assists with analysis,
+- **AI operating mode:** T2 — the agent is advisory; assists with analysis,
   documentation, test generation, and review but does not drive production code
   at scale
 - **Preparation estimate:** 2 preparation increments (4 weeks) before
@@ -267,7 +267,7 @@ Using the
   where boundaries are clearest
 - **Supplementary note:** Deployability at 2 (manual deploy) — mitigated by
   deploy runbook and tested rollback procedure
-- **Agent operating mode for feature work:** T3 — an agent writes production
+- **AI operating mode for feature work:** T3 — an agent writes production
   code in the customer account area (well-covered); the agent is advisory for
   changes touching other areas
 - **Condition:** First feature increment uses
@@ -299,7 +299,7 @@ customer account area under T3 operating constraints.
   follow this pattern (documented in AGENTS.md)
 - Schema changes must use migration scripts (new convention from Increment 0)
 
-**Agent operating mode:** T3 — an agent writes production code in the customer
+**AI operating mode:** T3 — an agent writes production code in the customer
 account service layer; engineer reviews all changes against stored procedure
 documentation to catch conflicts.
 ```
@@ -434,8 +434,9 @@ feature increments — they're not throwaway work.
 ## Notes
 
 **Last Updated:** 2026-06-21 — v0.49 consistency sweep: actor-sense "AI"
-references rewritten to "agent"; "AI operating mode" → "agent operating mode";
-traceability chain updated to end at Closure followed by Operations.
+references rewritten to "agent"; the "AI operating mode" readiness term is kept
+as-is to match the canonical Brownfield Readiness rubric; traceability chain
+updated to end at Closure followed by Operations.
 
 Added to framework in v0.40.0. Scores recalculated for five-axis rubric
 (Consistency added; Deployability and Observability moved to supplementary
