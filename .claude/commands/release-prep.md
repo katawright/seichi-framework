@@ -104,8 +104,9 @@ Use Glob to find all `.md` files in these locations:
 - `templates/**/*.md`
 
 **Exclude** any file or directory marked `export-ignore` in `.gitattributes`
-(the contributor/tooling exclusion list). The authoritative release surface is
-the `FRAMEWORK_INCLUDES` allowlist in `scripts/release/index.ts`.
+(this governs GitHub's source-archive tarballs, not the released zip). The
+authoritative release surface is the `FRAMEWORK_INCLUDES` allowlist in
+`scripts/release/index.ts`.
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
 
