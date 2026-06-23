@@ -23,7 +23,7 @@ outputs:
     embedded_in: retrospective
 checkpoints:
   - type: review
-    protocol: human-execution-required
+    protocol: human-approval
     name: "Production Deployment Approval"
     responsible_roles: [devops, appsec]
   - type: review
