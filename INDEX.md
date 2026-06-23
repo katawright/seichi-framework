@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-06-21 | **Framework Version:** 0.49.0
+**Last Updated:** 2026-06-22 | **Framework Version:** 0.49.0
 
 ## Overview
 
@@ -194,7 +194,7 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.41.0. Operating Model Guide and the agent-facing
 `spec/` layer added to the inventory in v0.49.0; the superseded AI Assistance
