@@ -801,7 +801,7 @@ with acceptance criteria, test strategy, and component designs.
 ## Stage 6: Verification
 
 - **Primary Role:** QA Engineers / Engineers
-- **Supporting Roles:** Product Manager, DevOps, Project Manager
+- **Supporting Roles:** Product Manager, Architect, AppSec, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Verification](../stages/verification/README.md)
 
@@ -1050,7 +1050,7 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-22
 
 Added to framework in v0.9.0. Stage Altitude section added in v0.46.0.
 AI-assistance pointer repointed to the Operating Model Guide in v0.49.0.
