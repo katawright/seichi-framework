@@ -26,14 +26,16 @@ deployment, production ownership), use
      stakeholder table in the Initiation Brief. Were all C-roles and key
      stakeholders consulted? -->
 
-**Division of labor:** The Responsible role(s) (R) prepare the gate package —
+**Division of labor:** The checkpoint's **Prepares Evidence** roles (the
+[Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix)
+column, mirrored by the stage's `responsible_roles`) prepare the gate package —
 completing Context, Inputs Reviewed, Artifact Completeness, and Criteria
-Evaluated with evidence. When multiple roles share R designation (e.g., Gate 2:
-PM, Architect, and AppSec), each R-role prepares the sections within their
-domain. For Gate 2: PM prepares the business case and requirements coverage;
-Architect prepares the architecture rationale and ADR summary; AppSec prepares
-the Security Risk Posture. The Accountable role (A) reviews the package, leads
-the decision discussion, and records the final Decision and Next Steps. The
+Evaluated with evidence. When a checkpoint lists multiple preparers (e.g., Gate
+2: PM, Architect, and AppSec), each prepares the sections within their domain.
+For Gate 2: PM prepares the business case and requirements coverage; Architect
+prepares the architecture rationale and ADR summary; AppSec prepares the
+Security Risk Posture. The Accountable role (A) reviews the package, leads the
+decision discussion, and records the final Decision and Next Steps. The
 Facilitator (PjM) manages agenda and time-boxing per the
 [Gate Review Facilitation](../guides/roles.md#gate-review-facilitation)
 protocol.
@@ -177,4 +179,4 @@ quality]
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-06-22 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. v0.49 closure-vocab fix. v0.49 Gate 2 division-of-labor restored PM (business case + requirements coverage) to match checkpoints.md. -->
+<!-- Template Last Updated: 2026-06-22 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. v0.49 closure-vocab fix. v0.49 Gate 2 division-of-labor restored PM (business case + requirements coverage) to match checkpoints.md. v0.49 division-of-labor reworded to the Prepares-Evidence (Decision-Rights) framing instead of RACI "R designation", removing the cross-axis letter collision with the RACI matrix. -->
