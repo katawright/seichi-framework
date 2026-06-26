@@ -291,16 +291,17 @@ expert-consultant posture from
 [Session Protocol](../../guides/session-protocol.md#orient--classify-the-scenario-first-contact)
 runs at Initiation.
 
-**Decide the tier- and posture-movers now; defer the rest — but record it.**
+**Decide the movers now; defer the rest — but record it.**
 
-- **Movers — settle at Initiation.** Services that move the tier or operating
-  posture are settled here, because they change what the project _is_: auth for
-  external users (tier + security posture), payments (business case +
-  payment-data sensitivity), and persistence of regulated or personal data
-  (compliance, which [binds before build](#seeding-the-operating-configuration),
-  not at Gate 1). Record their data-sensitivity and compliance implications
-  once, in [Data Sensitivity and Compliance](#data-sensitivity-and-compliance) —
-  not here — and let their tier/posture effect flow into the right-sizing
+- **Movers — settle at Initiation.** Services that move the tier, security
+  posture, or compliance scope are settled here, because they change what the
+  project _is_: auth for external users (tier + security posture), payments
+  (business case + payment-data sensitivity), and persistence of regulated or
+  personal data (compliance, which
+  [binds before build](#seeding-the-operating-configuration), not at Gate 1).
+  Record their data-sensitivity and compliance implications once, in
+  [Data Sensitivity and Compliance](#data-sensitivity-and-compliance) — not here
+  — and let their tier and security/compliance effect flow into the right-sizing
   selections. (The _provider_ choice can still be a System Design call; what is
   settled at Initiation is the need and its consequence.)
 - **Design-time — surface now, decide at System Design.** Hosting, the database
@@ -797,6 +798,11 @@ during Initiation is just a design input.
   or technology mandates
 - Dependencies — other teams' deliverables, vendor timelines, approval
   processes, infrastructure provisioning
+
+> **Platform services:** the cross-cutting services the product composes (auth,
+> payments, hosting, persistence, …) are surfaced as a consulting step — see
+> [Platform Services](#platform-services). The design-time ones land here as
+> dependencies flagged for System Design.
 
 **Example:**
 
