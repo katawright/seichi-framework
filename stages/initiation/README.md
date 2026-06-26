@@ -311,7 +311,7 @@ runs at Initiation.
   System Design — so they are _deferred deliberately, not dropped silently_.
   Their build-vs-buy, options, cost, and ADRs are System Design's job, through
   its existing
-  [Technology evaluation and Infrastructure Planning](../system-design/README.md#infrastructure-planning).
+  [Infrastructure Planning](../system-design/README.md#infrastructure-planning).
 
 One service can sit on both sides: persistence is a **mover** for its
 data-sensitivity dimension (regulated data → tier/compliance) and a
