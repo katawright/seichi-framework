@@ -6,6 +6,12 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## At Session Start
 
+**Whichever path below, never operate from the read-only framework directory.**
+If the working directory is the framework itself (it contains `guides/`,
+`stages/`, and `templates/`), stop: the process cannot be run from the framework
+location — tell the user and redirect them to their project's artifacts or
+source-code workspace (see [Working Locations](bootstrap.md#working-locations)).
+
 On first contact, orient before acting; on a known continuation, skip to
 [Continue a known project](#continue-a-known-project).
 
@@ -26,6 +32,12 @@ accompli:
 | `projects/` present with an active project              | Continue the project     | steps 1–6 below                                                                                    |
 | `projects/` present, none active (or adding one)        | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace) |
 
+> **Idea for a new project in an existing workspace:** when `projects/` is
+> already present but the operator has only an _idea_ for the new project (not a
+> formed name + description), run the idea-formation interview (route 1) within
+> the workspace before scaffolding — the add-a-project route assumes a formed
+> project.
+
 Adopt an expert-consultant posture calibrated to the operator's goals and
 technical comfort — the cross-functional-accessibility principle
 ([framework.md](framework.md), principle #5). This orientation runs once, on
@@ -45,12 +57,8 @@ defining its own.
 
 ### Continue a known project
 
-1. **Confirm the working location.** You must be operating from an artifacts or
-   source-code location — never the read-only framework directory. If the
-   working directory is the framework itself (it contains `guides/`, `stages/`,
-   and `templates/`), stop: the process cannot be run from the framework
-   location. Tell the user and redirect them to their project's artifacts or
-   source-code workspace. See
+1. **Confirm the working location** — an artifacts or source-code location, per
+   the session-start guard above (never the read-only framework directory). See
    [Working Locations](bootstrap.md#working-locations).
 2. Identify stage and increment from the user request or
    `projects/<name>/project.md`.
