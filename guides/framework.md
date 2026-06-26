@@ -272,11 +272,11 @@ handoffs, see the [AI-Assisted SDLC Stages](stages.md) reference.
 The framework defines three checkpoint types — each with distinct decision
 rights, required evidence, and decision records.
 
-| Type          | When                                                                    | Purpose                                          |
-| ------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
-| **Gate**      | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, revise, or stop   |
-| **Review**    | End of each stage                                                       | Criteria verification — does this meet the bar?  |
-| **Alignment** | After System Design                                                     | Stakeholder consensus — are we on the same page? |
+| Type          | When                                                                    | Purpose                                                                 |
+| ------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Gate**      | End of Initiation (Gate 1), after Requirements + System Design (Gate 2) | Investment decision — proceed, proceed with conditions, revise, or stop |
+| **Review**    | End of each stage                                                       | Criteria verification — does this meet the bar?                         |
+| **Alignment** | After System Design                                                     | Stakeholder consensus — are we on the same page?                        |
 
 For the full taxonomy, per-checkpoint decision-rights matrix, and required
 evidence, see the [Checkpoint Taxonomy](checkpoints.md) reference.
@@ -1022,7 +1022,7 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.9.0. AI Assistance Overview concept retitled to
 Operating Model and repointed to the Operating Model Guide and spec in v0.49.0.

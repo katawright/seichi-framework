@@ -147,9 +147,9 @@ These rules apply to AI coding assistants working in this repository.
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
    - If files were added, removed, or renamed, update `INDEX.md`. INDEX.md lists
-     framework-usage files only (guides, stages, templates, root navigation).
-     Contributor tooling (CLAUDE.md, STYLE_GUIDE.md, AGENTS.md, CONTRIBUTING.md)
-     and schema/CI files are excluded.
+     framework-usage files only (guides, spec, stages, templates, root
+     navigation). Contributor tooling (CLAUDE.md, STYLE_GUIDE.md, AGENTS.md,
+     CONTRIBUTING.md) and schema/CI files are excluded.
 6. Do not commit or create tags unless the user explicitly requests it.
 7. Never commit directly to main; always use a feature branch.
 
@@ -178,7 +178,7 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).
