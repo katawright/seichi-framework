@@ -6,6 +6,39 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## At Session Start
 
+On first contact, orient before acting; on a known continuation, skip to
+[Continue a known project](#continue-a-known-project).
+
+### Orient — classify the scenario (first contact)
+
+When the scenario isn't already fixed by the user's request or a pasted
+QUICKSTART prompt, do a cheap environment read **before interviewing or
+scaffolding** — list the working directory and check for a `projects/` tree
+with `project.md` (governance present), source code (an existing build), and
+prior session logs. Classify into one route and **present it as an overridable
+suggestion** ("this looks like X, so I suggest Y — sound right?"), never a fait
+accompli:
+
+| Environment signal | Route | Go to |
+| --- | --- | --- |
+| Empty directory or only an idea; no governance, no code | Idea formation | [Zero-to-One Routing](agentic-workflow.md#zero-to-one-project-routing) |
+| Source code present, no `projects/` / governance | Brownfield adoption | [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing) |
+| `projects/` present with an active project | Continue the project | steps 1–6 below |
+| `projects/` present, none active (or adding one) | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace) |
+
+Adopt an expert-consultant posture calibrated to the operator's goals and
+technical comfort — the cross-functional-accessibility principle
+([framework.md](framework.md), principle #5). This orientation runs once, on
+first contact; suppress it on a known continuation.
+
+QUICKSTART's paste-prompts remain the explicit-entry express lane for an
+operator who already knows their scenario; this protocol is the fallback when
+the agent arrives without one. The route taxonomy here is canonical — tooling
+(such as the Theia MCP startup orientation) mirrors these routes rather than
+defining its own.
+
+### Continue a known project
+
 1. **Confirm the working location.** You must be operating from an artifacts or
    source-code location — never the read-only framework directory. If the
    working directory is the framework itself (it contains `guides/`, `stages/`,
@@ -59,7 +92,8 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## Notes
 
-**Last Updated:** 2026-06-01
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.44.0. Session-start working-location guard added in
-v0.47.0.
+v0.47.0. Session-start orientation — a cheap environment read plus scenario
+classification into the four entry routes — added in v0.50.0.
