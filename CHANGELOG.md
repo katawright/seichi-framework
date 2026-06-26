@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.50.0 (2026-06-26)
+
+### Features
+
+- **framework:** session-start orientation protocol — `session-protocol.md`'s
+  "At Session Start" now splits into an **Orient** subsection (a cheap
+  environment read plus a four-route scenario taxonomy, presented as an
+  overridable suggestion) and **Continue-a-known-project**;
+  `agentic-workflow.md`'s Agent Execution Model points at the protocol rather
+  than restating project-state inference (SO-1)
+- **initiation:** platform-services consulting at Initiation — a new **Platform
+  Services** section in `initiation/README.md` wires the signal table to implied
+  cross-cutting services (auth, payments, persistence, hosting, email, storage,
+  observability, secrets, jobs, CDN) and sets the timing split: tier/posture
+  movers settle at Initiation, the rest are surfaced, sequenced, and deferred to
+  System Design with the decision recorded. System Design gains an
+  Infrastructure Planning callback and the brief's Constraints and Dependencies
+  gains a surfacing prompt (SO-2)
+- **framework:** entry-accessibility refinements — a first-contact jargon-help
+  invitation in the Orient subsection, operator-comfort register calibration in
+  Classification by Inference (technical comfort inferred from how the operator
+  talks, never a self-rating), and removal of the redundant "My idea:"
+  placeholder from the QUICKSTART idea-only prompt (QS-1/QS-2/QS-3)
+
+### Bug Fixes
+
+- **initiation:** narrow the Platform Services mover criterion to "tier,
+  security posture, or compliance scope" (replacing the ambiguous "operating
+  posture"), and surface the consulting step from the brief's Constraints and
+  Dependencies walkthrough so it is reachable without a heading scan (R4-F1/F2)
+- **framework:** point the session-start brownfield route at the adoption
+  first-move in QUICKSTART "Joining a Project Mid-Stream" before
+  Brownfield-First Routing, closing a route asymmetry with the new-project row
+  (R3-F1)
+- **framework:** hoist the working-location guard into the "At Session Start"
+  preamble so it applies to both the Orient and Continue paths, and clarify that
+  an idea (not a formed description) for a new project in an existing workspace
+  runs the idea-formation interview (R2-F1/F3)
+- **framework:** add the shipped `spec/` layer to two usage-layer enumerations
+  (INDEX.md Scope, CLAUDE.md Agent-Execution Rule 5) that contradicted the live
+  INDEX Spec section; the gate-outcome shorthand remains at v0.49's uniform
+  3-value form, with the full four-value harmonization deferred to v0.52/GC-3
+  (invariant sweep + 2x2 Run 1)
+
 ## 0.49.0 (2026-06-20)
 
 > Planning-driven release: v0.49 was developed from the planning docs rather
