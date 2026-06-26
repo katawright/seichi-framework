@@ -203,4 +203,7 @@ Scorecard removed. The v0.49 dev/ops split renamed the Support stage → Closure
 flow-issue templates while removing the support-brief. The v0.49 parallel-batch
 work (WS3) added the `spec/parallel-batch.md` contract and the Parallel
 Scheduling and Parallel Execution guides; counts refreshed accordingly (Guides
-25, Spec 5, Stage Artifacts 25, Templates 23).
+25, Spec 5, Stage Artifacts 25, Templates 23). In v0.50.0 the Scope description
+was corrected to include the `spec/` layer, and the `session-protocol.md` and
+`initiation/README.md` rows refreshed for the session-start orientation and
+Platform Services additions.

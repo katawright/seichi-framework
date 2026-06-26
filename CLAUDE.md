@@ -182,3 +182,5 @@ Right-size the model when spawning subagents:
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).
+Agent-Execution Rule 5's INDEX-scope file list corrected to include the `spec/`
+layer in v0.50.0.
