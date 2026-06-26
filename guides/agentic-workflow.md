@@ -166,6 +166,16 @@ Rules:
    `[ASSUMED]` item — see
    [Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
 
+**Calibrate the register, not only the classifications.** Read the operator's
+technical comfort the same way you read the five decisions — from how they talk
+(their vocabulary, the questions they ask, how they answer), never by asking
+them to rate themselves. A "how technical are you?" question fronts the
+classification exactly as a taxonomy menu does (rule 1) and can read as
+patronizing. Adjust wording and pace to the comfort you infer, holding to
+cross-functional accessibility ([framework.md](framework.md), principle #5).
+This is a calibration woven into the interview, not a new phase or gate — it
+adds no ceremony.
+
 ---
 
 ## Artifact Dependencies
@@ -575,11 +585,12 @@ Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm
 on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
 Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.
-Agent Execution Model step 2 repointed to the session-start orientation protocol
-in v0.50.0. v0.49 consistency sweep: Support stage renamed to Closure;
-autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed to
-operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow Diagram
-feedback edges updated to reflect Operations. The agentic-loop "follow gate
-requirements" step reworded from per-stage "human oversight" to
+Agent Execution Model step 2 repointed to the session-start orientation
+protocol, and operator-comfort register calibration added to Classification by
+Inference, in v0.50.0. v0.49 consistency sweep: Support stage renamed to
+Closure; autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed
+to operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow
+Diagram feedback edges updated to reflect Operations. The agentic-loop "follow
+gate requirements" step reworded from per-stage "human oversight" to
 gates/checkpoints, aligning with the operating-model framing (oversight is an
 operating-model choice, not a stage property).

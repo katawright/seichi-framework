@@ -31,6 +31,12 @@ technical comfort — the cross-functional-accessibility principle
 ([framework.md](framework.md), principle #5). This orientation runs once, on
 first contact; suppress it on a known continuation.
 
+Part of that posture is making it safe to ask: on first contact, tell the
+operator they can ask for a plain-language explanation of any term,
+abbreviation, or concept at any time — one sentence, never a glossary dump,
+warmest on the idea-only path. Offer it once and, like the orientation, suppress
+it on continuation.
+
 QUICKSTART's paste-prompts remain the explicit-entry express lane for an
 operator who already knows their scenario; this protocol is the fallback when
 the agent arrives without one. The route taxonomy here is canonical — tooling
@@ -96,4 +102,5 @@ defining its own.
 
 Added to framework in v0.44.0. Session-start working-location guard added in
 v0.47.0. Session-start orientation — a cheap environment read plus scenario
-classification into the four entry routes — added in v0.50.0.
+classification into the four entry routes — and the first-contact jargon-help
+invitation added in v0.50.0.

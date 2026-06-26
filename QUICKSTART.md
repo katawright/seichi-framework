@@ -56,8 +56,6 @@ Cowork, or similar).
 > Once we have a candidate problem statement, a target user, and the riskiest
 > assumptions, set up the workspace, seed the Initiation Brief with what we
 > found, and guide me through the rest of Initiation.
->
-> My idea: [describe it in a sentence or two — rough is fine]
 
 The agent downloads the framework, interviews you from the idea to
 Initiation-ready inputs — no workspace ceremony first — then creates the
@@ -325,9 +323,10 @@ my-workspace/
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.26.0. Classification-by-inference prompt alignment and
 idea-path entry added in v0.48.0. In v0.49.0 the lifecycle list gained the
 Terminal Closure stage (with Operations and Flow), and the autonomy-tier
-vocabulary was repointed to the operating model (operating posture).
+vocabulary was repointed to the operating model (operating posture). Trailing
+"My idea:" placeholder dropped from the idea-only prompt in v0.50.0.
