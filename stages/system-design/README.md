@@ -550,6 +550,15 @@ Infrastructure planning is a **required output** of System Design. The goal is
 to ensure working development, testing, deployment, and monitoring
 infrastructure exists before feature delivery begins.
 
+> **Platform services from Initiation.** The
+> [platform services](../initiation/README.md#platform-services) surfaced at
+> Initiation are decided here — the design-time set (hosting, database engine,
+> email, storage, observability, secrets, jobs, CDN) and the provider choice for
+> any mover already settled there (e.g., which auth or payments service). Each
+> is a build-vs-buy call with options, trade-offs, and cost, recorded as an ADR
+> through technology evaluation and the infrastructure plan — resolved here, not
+> discovered when an increment needs them.
+
 **Greenfield projects:** Infrastructure must be created. Increment 0 becomes the
 **bootstrap** increment establishing CI/CD, environments, monitoring, and
 deployment automation. Feature delivery begins at Increment 1.
@@ -706,11 +715,12 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence
 reconciliation added in v0.46.0. ADR all-three-criteria rule + design-note
 discriminator added in v0.47.0. ADR id scheme and canon promotion updated in
 v0.48.0. v0.49: autonomy vocabulary repointed to the operating model;
-Support→Operations refs updated.
+Support→Operations refs updated. Platform-services decisioning pointer
+(build-vs-buy for services surfaced at Initiation) added in v0.50.0.

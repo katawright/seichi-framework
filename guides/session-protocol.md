@@ -13,18 +13,18 @@ On first contact, orient before acting; on a known continuation, skip to
 
 When the scenario isn't already fixed by the user's request or a pasted
 QUICKSTART prompt, do a cheap environment read **before interviewing or
-scaffolding** — list the working directory and check for a `projects/` tree
-with `project.md` (governance present), source code (an existing build), and
-prior session logs. Classify into one route and **present it as an overridable
+scaffolding** — list the working directory and check for a `projects/` tree with
+`project.md` (governance present), source code (an existing build), and prior
+session logs. Classify into one route and **present it as an overridable
 suggestion** ("this looks like X, so I suggest Y — sound right?"), never a fait
 accompli:
 
-| Environment signal | Route | Go to |
-| --- | --- | --- |
-| Empty directory or only an idea; no governance, no code | Idea formation | [Zero-to-One Routing](agentic-workflow.md#zero-to-one-project-routing) |
-| Source code present, no `projects/` / governance | Brownfield adoption | [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing) |
-| `projects/` present with an active project | Continue the project | steps 1–6 below |
-| `projects/` present, none active (or adding one) | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace) |
+| Environment signal                                      | Route                    | Go to                                                                                              |
+| ------------------------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------- |
+| Empty directory or only an idea; no governance, no code | Idea formation           | [Zero-to-One Routing](agentic-workflow.md#zero-to-one-project-routing)                             |
+| Source code present, no `projects/` / governance        | Brownfield adoption      | [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing)                   |
+| `projects/` present with an active project              | Continue the project     | steps 1–6 below                                                                                    |
+| `projects/` present, none active (or adding one)        | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace) |
 
 Adopt an expert-consultant posture calibrated to the operator's goals and
 technical comfort — the cross-functional-accessibility principle

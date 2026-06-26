@@ -569,16 +569,17 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm
 on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
 Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.
-v0.49 consistency sweep: Support stage renamed to Closure; autonomy-tier
-subsections (Human-Led / Collaborative / AI-Led) renamed to operating postures
-(Supervised / Checkpointed / Lights-Out); Stage Flow Diagram feedback edges
-updated to reflect Operations. The agentic-loop "follow gate requirements" step
-reworded from per-stage "human oversight" to gates/checkpoints, aligning with
-the operating-model framing (oversight is an operating-model choice, not a stage
-property).
+Agent Execution Model step 2 repointed to the session-start orientation protocol
+in v0.50.0. v0.49 consistency sweep: Support stage renamed to Closure;
+autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed to
+operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow Diagram
+feedback edges updated to reflect Operations. The agentic-loop "follow gate
+requirements" step reworded from per-stage "human oversight" to
+gates/checkpoints, aligning with the operating-model framing (oversight is an
+operating-model choice, not a stage property).
