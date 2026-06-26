@@ -224,8 +224,9 @@ experience surveys — see
 
 ## Governance at a Glance
 
-The framework uses **two investment gates** — explicit proceed/revise/stop
-decisions where "investment" means committing team capacity, time, and budget.
+The framework uses **two investment gates** — explicit
+proceed/proceed-with-conditions/revise/stop decisions where "investment" means
+committing team capacity, time, and budget.
 
 | Gate   | When                               | Decision                             | Accountable |
 | ------ | ---------------------------------- | ------------------------------------ | ----------- |
@@ -433,7 +434,7 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
 Autonomy-tier links repointed to the Operating Model Guide in v0.49.0. In

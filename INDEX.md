@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-06-22 | **Framework Version:** 0.49.0
+**Last Updated:** 2026-06-26 | **Framework Version:** 0.49.0
 
 ## Overview
 
@@ -20,9 +20,9 @@ index lets readers identify relevant files before committing to deeper reads.
 
 ### Scope
 
-Lists files needed to **use** the framework: guides, stage artifacts, templates,
-and root navigation files. Contributor tooling, schema validation, and CI
-configuration are excluded.
+Lists files needed to **use** the framework: guides, spec, stage artifacts,
+templates, and root navigation files. Contributor tooling, schema validation,
+and CI configuration are excluded.
 
 ### Sort Order
 
@@ -194,7 +194,7 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.41.0. Operating Model Guide and the agent-facing
 `spec/` layer added to the inventory in v0.49.0; the superseded AI Assistance
