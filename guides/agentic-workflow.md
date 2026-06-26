@@ -266,9 +266,11 @@ Recommended workflow for AI coding agents operating in this repository:
    cross-cutting guidance. Determine your working location from the
    `working_location` field in the current stage's README front matter.
 2. **Locate stage** — identify the current stage from the routing section; read
-   the stage README, checklist, and reference. If the current stage is not clear
-   from the human's request, check for existing session logs or artifacts to
-   infer project state; if no artifacts exist, start at Initiation.
+   the stage README, checklist, and reference. If the current stage — or the
+   scenario itself — is not clear from the human's request, run the
+   [Session-Start Orientation](session-protocol.md#orient--classify-the-scenario-first-contact)
+   protocol: a cheap environment read that classifies the scenario into the four
+   entry routes (idea formation, brownfield adoption, continue, add a project).
 3. **Check inputs** — verify required inputs (listed in stage README front
    matter) are available; flag any missing inputs with `[ASSUMED]`
 4. **Execute** — follow the stage guide activities at the project's operating
