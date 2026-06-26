@@ -264,6 +264,68 @@ real, and is where its proposed configuration is committed or pulled back.
 
 ---
 
+## Platform Services
+
+Most products compose a set of **platform services** around their core build —
+authentication and authorization, payments/billing, data persistence, web
+hosting, email/notifications, file/object storage, observability, secrets and
+config, background jobs, a CDN. The set differs per product and **this list is
+not exhaustive** — surface whatever cross-cutting services the idea implies.
+Each is a _decision surface_, not a foregone choice: name the **category**
+(auth, payments…), never a product — picking a vendor is not this step.
+
+The signals you read while
+[scaling the interview](#scaling-the-interview-to-the-stakes) do double duty:
+each not only sets a classification but **implies a platform service to plan**.
+"Money changing hands" raises the business case _and_ implies payments; "public
+or external exposure" raises the tier _and_ implies auth; "regulated or personal
+data" raises compliance _and_ implies a datastore that can hold it. Naming the
+implied service is the step the signal table leaves unsaid — make it explicit,
+as an overridable observation, not a recited checklist.
+
+For each surfaced service the consultant questions are the same five:
+**needed?** · **when** (which stage or increment)? · **build vs. buy** ·
+**options and trade-offs** · **cost**. When the operator has no view, offer to
+research it rather than leave the decision unowned — this is how the
+expert-consultant posture from
+[Session Protocol](../../guides/session-protocol.md#orient--classify-the-scenario-first-contact)
+runs at Initiation.
+
+**Decide the tier- and posture-movers now; defer the rest — but record it.**
+
+- **Movers — settle at Initiation.** Services that move the tier or operating
+  posture are settled here, because they change what the project _is_: auth for
+  external users (tier + security posture), payments (business case +
+  payment-data sensitivity), and persistence of regulated or personal data
+  (compliance, which [binds before build](#seeding-the-operating-configuration),
+  not at Gate 1). Record their data-sensitivity and compliance implications
+  once, in [Data Sensitivity and Compliance](#data-sensitivity-and-compliance) —
+  not here — and let their tier/posture effect flow into the right-sizing
+  selections. (The _provider_ choice can still be a System Design call; what is
+  settled at Initiation is the need and its consequence.)
+- **Design-time — surface now, decide at System Design.** Hosting, the database
+  _engine_, email, storage, observability, secrets, jobs, and the CDN are
+  build-vs-buy choices that do not move the tier. Surface and sequence them now
+  and record them as open dependencies in the brief's
+  [Constraints and Dependencies](#constraints-and-dependencies), flagged for
+  System Design — so they are _deferred deliberately, not dropped silently_.
+  Their build-vs-buy, options, cost, and ADRs are System Design's job, through
+  its existing
+  [Technology evaluation and Infrastructure Planning](../system-design/README.md#infrastructure-planning).
+
+One service can sit on both sides: persistence is a **mover** for its
+data-sensitivity dimension (regulated data → tier/compliance) and a
+**design-time** choice for its engine. Split it — settle the sensitivity now,
+defer the engine.
+
+> **Obligations vs. provisioning.**
+> [Data Sensitivity and Compliance](#data-sensitivity-and-compliance) captures
+> what an obligation _requires_; this section captures whether a service is
+> _needed and how it is sourced_. They are complementary — reference, do not
+> restate.
+
+---
+
 ## How AI Helps
 
 An agent can assist with Initiation at whatever operating posture your team is
@@ -875,8 +937,9 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
 Idea-formation entry path added in v0.48.0. Adaptive, stakes-scaled interview
-frame and operating-frame seeding added in v0.49.0.
+frame and operating-frame seeding added in v0.49.0. Platform-services consultant
+section (signal → implied service; mover/design-time split) added in v0.50.0.

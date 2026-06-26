@@ -221,6 +221,11 @@ GDPR applies because EU users are in scope"]
 
 <!-- Minimal: brief bulleted list sufficient | Standard: structured with
      resolution path and owner -->
+<!-- Platform services: surface the cross-cutting services the idea implies
+     (auth, payments, persistence, hosting, email, storage, observability,
+     secrets, jobs, CDN). Settle tier/posture-movers via Right-Sizing + Data
+     Sensitivity above; list the design-time ones here as dependencies flagged
+     for System Design. See ../stages/initiation/README.md#platform-services. -->
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team
   capacity, technology restrictions]
@@ -295,4 +300,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer and Right-Sizing autonomy/oversight fields added in v0.48.0. Tier-definition pointer repointed to the Operating Model Guide in v0.49.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment path corrected to ../stages/. -->
+<!-- Template Last Updated: 2026-06-26 | Added in v0.2.0. Tier annotations added in v0.42.0. Pre-Mortem "do not skip" directive elevated to visible blockquote and session protocol preamble added in v0.44.0. Goals split from Success Criteria into separate sections in v0.45.0. Goals altitude check added in v0.46.0. No-baseline pointer and Right-Sizing autonomy/oversight fields added in v0.48.0. Tier-definition pointer repointed to the Operating Model Guide in v0.49.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment path corrected to ../stages/. Platform-services surfacing prompt added to Constraints and Dependencies in v0.50.0. -->
