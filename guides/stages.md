@@ -420,7 +420,7 @@ Secure Software Development Framework (SSDF) traceability, see the
 
 Establish the business case, define goals with measurable success criteria, set
 scope boundaries, and produce a plan to reach the first major decision gate
-(proceed/proceed-with-conditions/revise/stop).
+(proceed/revise/stop).
 
 ### Inputs
 
@@ -632,7 +632,7 @@ guides all subsequent implementation work.
 - NFR traceability table links each NFR to architectural approach and
   verification method
 - Infrastructure plan complete
-- Gate 2 decision made (proceed/proceed-with-conditions/revise/stop)
+- Gate 2 decision made (proceed/revise/stop)
 
 ### Checkpoints
 
