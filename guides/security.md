@@ -1,59 +1,15 @@
 # Security Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#security-guide) for what
+> this guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-Cross-cutting security guidance that defines security activities per stage,
-shows how AI automation makes security nearly free at the Minimal tier, and
-provides lightweight NIST SSDF traceability for organizations that need it.
-
-### Why Security
-
-Security defects found late cost 6-15x more to fix than those caught during
-design. Yet teams consistently deprioritize security for delivery speed — not
-because they don't care, but because security work feels like overhead layered
-on top of "real" work. The result: security is treated as a gate at the end
-rather than a quality layer woven through development.
-
-### Goals of This Guide
-
-- Define security activities at each SDLC stage, scaled by project tier
-- Show how agents automate the majority of security work
-- Provide a security throughline paralleling the measurement and learning
-  throughlines
-- Enable lightweight NIST Secure Software Development Framework (SSDF, SP
-  800-218) traceability without requiring familiarity with the standard
-
-> **Why SSDF?** Several secure development frameworks exist — OWASP SAMM
-> (maturity-model focused), BSIMM (benchmarking against industry peers), and
-> Microsoft SDL (prescriptive process). SSDF was chosen because it is
-> practice-based rather than maturity-based, maps cleanly to SDLC stages rather
-> than requiring a separate assessment process, and is increasingly referenced
-> in US federal procurement and supply chain requirements (Executive Order
-> 14028). If your organization already uses SAMM or BSIMM, the stage-by-stage
-> activities in this guide still apply — only the traceability column changes.
-
-### Key Principle
+## Key Principle
 
 AI makes security nearly free at the Minimal tier. Dependency scanning, SAST,
 secrets detection, and SBOM generation run automatically — teams get baseline
 security coverage with zero additional effort beyond what AI does as part of
 normal development.
-
-### How to Use This Guide
-
-1. Review the [**Security Throughline**](#security-throughline) table to see
-   security activities across all 8 stages and the Operations process
-2. Read [**How AI Makes Security Cheap**](#how-ai-makes-security-cheap) to
-   understand what's automated vs. what needs human judgment
-3. Drill into [**Security Activities by Stage**](#security-activities-by-stage)
-   for your current stage
-4. See [**SSDF Practice Mapping**](#ssdf-practice-mapping) only if your
-   organization requires NIST SSDF traceability
-5. **AppSec engineers:** See your
-   [role definition, activity table, and escalation protocol](roles.md#application-security-appsec)
-   in the Framework Guide and the
-   [Decision-Rights Matrix](checkpoints.md#decision-rights-matrix) for
-   checkpoint-level authority (who prepares evidence, who decides)
 
 ---
 
@@ -400,7 +356,7 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.25.0. In v0.49.0 the retired Support stage was
 reconciled to the Closure stage (terminal security handoff) plus the Operations

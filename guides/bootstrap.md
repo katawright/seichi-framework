@@ -1,37 +1,14 @@
 # Bootstrap Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#bootstrap-guide) for what
+> this guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-Step-by-step instructions for starting AI-assisted SDLC projects with a local
-agent.
-
-### Why a Bootstrap Guide
-
-The [Quick Start](../QUICKSTART.md) gets you running with sensible defaults —
-create a directory, start your agent, paste a prompt. This guide explains the
-underlying model: working locations, project configuration, and setup options.
-Use it when you need more control over project structure — custom directory
-layouts or more autonomous operating postures.
-
-### Goals of This Guide
-
-- Define the workspace structure and working locations model
-- Explain the project config file, project index, and AGENTS.md
-- Provide bootstrap prompts for single-repo and multi-repo projects
-- Guide iterative, multi-session stage work
-
-### Key Principle
+## Key Principle
 
 The framework operates across three types of location. A workspace organizes
 them under a single root directory. Getting these right at the start prevents
 confusion and rework later.
-
-### How to Use This Guide
-
-1. [**Prerequisites**](#prerequisites) — confirm you have what you need
-2. [**Working Locations**](#working-locations) — understand the location model
-3. [**Project Config File**](#project-config-file) — set up your project.md
-4. [**Bootstrap Prompts**](#bootstrap-prompts) — multi-repo setup prompt
 
 ---
 
@@ -495,7 +472,7 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.9.0. Reworked from Manual Process Guide in v0.42.0.
 Session-start location guard cross-referenced in v0.47.0. Workspace ADR canon

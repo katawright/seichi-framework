@@ -1,37 +1,10 @@
 # Parallel Scheduling Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#parallel-scheduling-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Practical guidance for turning a dependency-aware increment plan into an ordered
-set of **parallel-safe batches** — deciding what may run at the same time, and
-what must wait. The run-time half is the
-[Parallel Execution Guide](parallel-execution.md); the normative contracts
-behind both are in the [Parallel-Batch Spec](../spec/parallel-batch.md).
-
-### Why Schedule
-
-The framework already plans work as increments ordered by dependencies
-(`Requirements → Increments → Dependencies → Sequence`). Running them strictly
-one at a time is the safe default, but it leaves wall-clock time on the table
-when increments are genuinely independent. The temptation is to "just run them
-in parallel" — and that is exactly where projects get hurt: two increments edit
-the same file and one silently overwrites the other; a migration lands out of
-order; a contract changes under a consumer mid-flight. Scheduling does the
-analysis that makes parallelism safe **before** anything runs, so collisions are
-designed out of the plan rather than discovered during a run.
-
-### Goals of This Guide
-
-- Decide **which increments may run concurrently** and which must be sequenced
-- Name the **forcing dependencies** that prevent two increments from sharing a
-  batch
-- Record a defensible, auditable **parallel-safety classification**
-- **Compose** independent increments into batches and **order** the batches by
-  their dependencies
-- Keep the **sequential case as the reduction** — a batch of one is the plan you
-  already run
-
-### Key Principle
+## Key Principle
 
 > Parallelism is a scheduling decision constrained by **forcing dependencies**.
 > Two increments may share a batch only when no forcing dependency binds them.
@@ -41,21 +14,6 @@ actually independent) costs one batch boundary. A false merge (parallelizing
 work that was actually coupled) costs a merge conflict or, worse, a silent
 semantic break that ships. The cost asymmetry sets the default: **when parallel
 safety cannot be established with confidence, sequence.**
-
-### How to Use This Guide
-
-1. Plan increments and their dependencies as usual (System Design increment
-   planning) — that dependency-aware plan is the **input** here
-2. Read [**The Batch Model**](#the-batch-model) to understand the unit you are
-   scheduling into
-3. Walk [**Forcing Dependencies**](#forcing-dependencies) pair-wise over
-   candidate increments
-4. Record the
-   [**Parallel-Safety Classification**](#parallel-safety-classification)
-5. [**Compose and Sequence Batches**](#composing-and-sequencing-batches) into
-   the ordered schedule
-6. Hand the schedule to the [Parallel Execution Guide](parallel-execution.md) to
-   run
 
 ---
 
@@ -239,7 +197,7 @@ you hand to the [execution guide](parallel-execution.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.49.0. Sits beside increment planning in System Design;
 the run-time half is the [Parallel Execution Guide](parallel-execution.md). The

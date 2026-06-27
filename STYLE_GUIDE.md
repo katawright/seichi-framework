@@ -65,6 +65,19 @@ The canonical section order for every framework file:
 4. **Body sections** — the file's substantive content as H2 sections
 5. **H2 Notes** — always the last H2
 
+> **Operational guides (`guides/*.md`) — audience separation (v0.51).** The
+> human-onboarding layer (the Overview blurb plus **Why [Topic]**, **Goals of
+> This Guide**, and **How to Use This Guide**) is **relocated to
+> [`guides/OVERVIEW.md`](guides/OVERVIEW.md)** — the human-facing orientation
+> doc that agents do not load (see
+> [Read Order and the Load Line](guides/agentic-workflow.md#read-order-and-the-load-line)).
+> Each operational guide instead opens with a one-line **"New here?"** pointer
+> to its OVERVIEW section, then its **Key Principle** (promoted to H2) and any
+> load-bearing cross-reference callouts, then body sections and Notes. The full
+> scaffold above still applies to **stage READMEs, references, templates, and
+> spec files** — only `guides/` moved. (`session-protocol.md`, a pure procedural
+> reference, never carried the scaffold and is unchanged.)
+
 ---
 
 ## Notes Section Format

@@ -1,35 +1,11 @@
 # Brownfield Enablement Guide
 
-## Overview
+> **New here?** See
+> [Framework Overview](OVERVIEW.md#brownfield-enablement-guide) for what this
+> guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-Tactical guide for brownfield enablement — specific techniques for improving
-readiness across each assessment axis, discovery activities, and key decisions
-that arise during preparation. For T0-T1 codebases where the chosen approach is
-replacement rather than improvement, this guide also covers rebuild execution
-patterns. For strategic decisions about investment model, preparation scope, and
-exit criteria, see the [Brownfield Approach Guide](brownfield-approach.md). For
-the overall brownfield preparation process, see the
-[Brownfield Preparation Guide](brownfield.md).
-
-### Why Brownfield Enablement
-
-Brownfield codebases that score below T5 on the
-[readiness rubric](brownfield-readiness.md#readiness-rubric) need some level of
-preparation — from a focused documentation pass at T4 to targeted technical
-improvements at T3 and below — before AI tools can assist feature development
-effectively. Without structured preparation guidance, teams either prepare too
-little (AI-assisted work fails on an unsuitable codebase) or too much
-(preparation becomes an open-ended refactoring project that never reaches
-feature work).
-
-### Goals of This Guide
-
-- Provide specific, actionable techniques for improving each readiness axis
-- Define discovery activities and key decisions for brownfield preparation
-- Cover rebuild execution patterns for T0-T1 scenarios
-- Connect preparation work to the framework's iterative stage cycle
-
-### Key Principle
+## Key Principle
 
 Preparation is not open-ended. The goal is "enough to start AI-assisted feature
 work," not "perfect codebase." How preparation is scoped — full codebase,
@@ -39,23 +15,6 @@ and organizational context. See the
 scoping strategy and the
 [Investment Models](brownfield-approach.md#investment-models) for the range of
 approaches.
-
-### How to Use This Guide
-
-1. Complete the readiness assessment in the
-   [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
-2. Choose your investment model and preparation scope in the
-   [Brownfield Approach Guide](brownfield-approach.md)
-3. Follow [**Discovery Activities**](#discovery-activities) for all brownfield
-   projects (T4 and below)
-4. Use [**Enablement Tactics**](#enablement-tactics) to target the axes that
-   scored lowest
-5. If Rebuild is the chosen approach, see
-   [**Rebuild Tactics**](#rebuild-tactics) for execution patterns
-6. See [**Preparation Sequencing**](#preparation-sequencing) for how to order
-   preparation work across increments
-7. Review [**Common Blind Spots**](#common-blind-spots) for preparation gaps
-   specific to your project
 
 ---
 
@@ -593,7 +552,7 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.37.0. Renamed from Brownfield Preparation Guide to
 Brownfield Enablement Guide as part of the brownfield guide restructuring

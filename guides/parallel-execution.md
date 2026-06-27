@@ -1,38 +1,10 @@
 # Parallel Execution Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#parallel-execution-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Practical guidance for running a parallel-safe batch — keeping concurrent work
-attributable, isolated, integrated, and conserved, so a batch that finishes has
-actually delivered every increment's work and lost none of it. Deciding _what_
-may run concurrently is the [Parallel Scheduling Guide](parallel-scheduling.md);
-the normative contracts behind both are in the
-[Parallel-Batch Spec](../spec/parallel-batch.md).
-
-### Why Execution Needs Its Own Controls
-
-A sequential run gets safety for free: one actor, one workspace, one change at a
-time. Concurrency removes all three guarantees at once, and that is where
-parallel runs silently fail — two workers edit the same file and one overwrite
-wins; a batch is declared done because every worker stopped, when a function was
-dropped during the merge; a run keeps going unattended after the one capability
-that made it safe disappeared. Execution is the set of run-time controls —
-isolation, coordination, integration, conservation, stop enforcement — that put
-those guarantees back. Parallelism does not change _what_ the process requires;
-it changes _how easily independent work collides_, and these controls are what
-keep it from colliding.
-
-### Goals of This Guide
-
-- Run a batch with **isolation and coordination** so workers cannot corrupt each
-  other
-- Keep concurrent work **attributable** and within scope throughout the run
-- **Integrate** finished work and prove, via **work conservation**, that nothing
-  valid was lost
-- **Close** a batch honestly and transition to the next
-- Establish when a parallel batch may run **unattended** (Lights-Out)
-
-### Key Principle
+## Key Principle
 
 > A batch closes only when its work is **integrated and demonstrably conserved**
 > — never merely because its workers stopped.
@@ -40,22 +12,6 @@ keep it from colliding.
 Isolation keeps concurrent work from colliding while it runs; conservation
 proves the merge that follows did not drop any of it. Together they are what a
 sequential run never has to think about and a parallel run must.
-
-### How to Use This Guide
-
-1. Start from a **scheduled plan** — an ordered set of parallel-safe batches
-   from the [Parallel Scheduling Guide](parallel-scheduling.md). Execution
-   assumes the parallel-safety analysis is already done and accepted
-2. Assign the [**Roles**](#execution-roles) for the batch
-3. Run [**Batch Preflight**](#batch-preflight) before opening the batch
-4. Open the batch and run workers under
-   [**Isolation and Concurrency-Safety**](#isolation-and-concurrency-safety) and
-   the [**Execution Invariants**](#concurrent-execution-invariants)
-5. At close, run
-   [**Integration and Work Conservation**](#integration-and-work-conservation)
-   and [**Close and Transition**](#batch-close-and-transition)
-6. If the run is unattended, read
-   [**Parallel and Lights-Out**](#parallel-and-lights-out)
 
 ---
 
@@ -285,7 +241,7 @@ batch done.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.49.0. Consumes the schedule produced by the
 [Parallel Scheduling Guide](parallel-scheduling.md); companion to the

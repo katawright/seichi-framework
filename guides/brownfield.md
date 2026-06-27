@@ -1,52 +1,16 @@
 # Brownfield Preparation Guide
 
-## Overview
+> **New here?** See
+> [Framework Overview](OVERVIEW.md#brownfield-preparation-guide) for what this
+> guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-End-to-end guide for preparing brownfield codebases for AI-assisted development
-— from readiness assessment through strategic planning to operational
-enablement.
-
-### Why Brownfield Preparation
-
-Brownfield projects — extending or enhancing existing systems — are where most
-software development happens. These codebases span a wide spectrum. Some are
-well-maintained with strong tests, clean architecture, and CI/CD pipelines —
-they need only a documentation pass before AI tools can contribute effectively.
-Others carry years of accumulated complexity: tribal knowledge, business logic
-hidden in database layers, uneven test coverage, manual deployments. AI tools
-can produce plausible but wrong output when they can't see or reason about
-constraints like these.
-
-Brownfield preparation is the process of assessing where a codebase falls on
-this spectrum and, where needed, making it ready for AI-assisted development.
-The scope ranges from documenting conventions for AI context (a few days) to a
-multi-increment enablement program (weeks or months). For hostile codebases at
-the far end of the spectrum, the assessment may reveal that preparation itself
-is not cost-effective — and that recognition is a valuable outcome too.
-
-### Goals of This Guide
-
-- Define what brownfield preparation is and when it applies
-- Describe the three-step preparation process
-- Route to the detailed guides for each step
-- Provide the conceptual foundation for brownfield-specific decisions
-
-### Key Principle
+## Key Principle
 
 The goal is bounded preparation — assess what you have, decide how much to
 invest, enable the target area, then start delivering features. For codebases
 where bounding is not feasible, the assessment surfaces that reality early,
 before the organization commits to an approach that won't deliver value.
-
-### How to Use This Guide
-
-1. Read
-   [**What Brownfield Preparation Involves**](#what-brownfield-preparation-involves)
-   to understand the scope
-2. Follow the [**Preparation Process**](#the-preparation-process) — assess,
-   decide, enable
-3. See [**Supporting Resources**](#supporting-resources) for templates and
-   worked examples
 
 ---
 
@@ -277,7 +241,7 @@ For the full organizational adoption context, see the
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.42.0 as part of the brownfield guide restructuring
 (readiness → approach → enablement). Umbrella guide providing process overview

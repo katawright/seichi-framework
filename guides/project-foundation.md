@@ -1,13 +1,8 @@
 # Project Foundation Guide
 
-## Overview
-
-Practical walkthrough for foundation work — the infrastructure, discovery, or
-preparation that happens before your first feature increment. Foundation work
-may be a single bootstrap increment or a multi-increment preparation project,
-depending on the project's starting point. This guide explains when foundation
-work applies, what it involves, and routes you to the stage-specific guides
-where the actual work is defined.
+> **New here?** See [Framework Overview](OVERVIEW.md#project-foundation-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
 For the conceptual overview and stage adaptation table, see the
 [Framework Guide](framework.md#greenfield-vs-brownfield-projects). For
@@ -15,37 +10,11 @@ infrastructure planning details by project type, see
 [Infrastructure Planning by Project Type](#infrastructure-planning-by-project-type)
 below.
 
-### Why Foundation Work
-
-Without foundation work, teams jump from architecture documents to feature work
-and discover infrastructure gaps mid-sprint — missing CI/CD pipelines, uncreated
-environments, absent monitoring. Foundation work closes those gaps so the first
-feature increment starts on solid ground.
-
-### Goals of This Guide
-
-- Bridge the gap between foundational planning and feature delivery
-- Turn infrastructure decisions from System Design into working systems — CI/CD
-  pipelines, environments, monitoring, and operational processes
-- Route you to the right stage-specific guides based on your project type
-  (greenfield or brownfield)
-
-### Key Principle
+## Key Principle
 
 Foundation work bridges planning and delivery. It converts architecture
 decisions into working infrastructure so your first feature increment starts on
 solid ground.
-
-### How to Use This Guide
-
-1. Read [**When It Happens**](#when-it-happens) to understand where foundation
-   work fits in the project lifecycle
-2. Follow the [**Greenfield Foundation**](#greenfield-foundation-bootstrap) or
-   [**Brownfield Foundation**](#brownfield-foundation) section based on your
-   project type
-3. Use
-   [**How Foundation Work Flows Through Stages**](#how-foundation-work-flows-through-stages)
-   to plan your foundation increment(s) like any other increment
 
 ---
 
@@ -178,7 +147,7 @@ user-facing functionality.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.14.0. Operational processes link repointed to
 Operations Guide in v0.49.0.

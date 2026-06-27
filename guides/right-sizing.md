@@ -1,9 +1,8 @@
 # Right-Sizing Guide
 
-## Overview
-
-Practical guidance for scaling framework practices to fit a project's actual
-consequence and context.
+> **New here?** See [Framework Overview](OVERVIEW.md#right-sizing-guide) for
+> what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
 > **Right-sizing is one of two sibling decisions.** It sizes how _heavy_ the
 > process is (governance weight, Layer A). It does not decide who or what _runs_
@@ -14,48 +13,13 @@ consequence and context.
 > runs it in the operating model. The two interact in one direction: consequence
 > and compliance set **floors** the operating model cannot go below.
 
-### Why Right-Size
-
-Not every project needs every practice. A prototype for five internal users
-doesn't need contractual SLAs, and a regulated financial platform shouldn't rely
-on informal monitoring. Without right-sizing, teams fall into one of two traps:
-over-engineering (heavyweight processes that slow down small projects and
-frustrate teams) or under-engineering (skipping critical practices that would
-have caught production failures early).
-
-### Goals of This Guide
-
-- Prevent over-engineering on low-consequence projects and under-engineering on
-  high-consequence ones
-- Provide a consistent model for scaling practices across all 8 stages
-- Keep _how heavy the process is_ separate from _who runs it_ — the latter is
-  the [Operating Model Guide](operating-model.md)'s job
-
-For cross-cutting framework concepts, see [Framework Guide](framework.md).
-
-### Key Principle
+## Key Principle
 
 Match your process investment to your project's actual consequence, obligations,
 and stakeholder reach. **Consequence** determines _what_ practices you adopt,
 **compliance** makes certain practices mandatory regardless of consequence, and
 **stakeholder reach** determines _how much coordination and formality_ surround
 them.
-
-### How to Use This Guide
-
-1. Understand the three
-   [**Dimensions of Governance Weight**](#the-three-dimensions-of-governance-weight)
-   — Consequence, Compliance, and Stakeholder Reach
-2. See
-   [**How Each Dimension Shapes the Stages**](#how-each-dimension-shapes-the-stages)
-   for what they change, stage by stage
-3. _Optional shortcut:_ recognize your project in a
-   [common shape](#common-project-shapes) for a close starting point — or set
-   the three dimensions directly (an agent operating the framework interviews
-   you to land each one)
-4. Decide _who runs the process_ separately, in the
-   [Operating Model Guide](operating-model.md)
-5. Drill into individual stage guides for detailed right-sizing tables
 
 ---
 
@@ -517,11 +481,14 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
-Added to framework in v0.13.0. Reorganized in v0.49.0 around the three
-**governance-weight** dimensions — **Consequence**, **Compliance**, and
-**Stakeholder Reach** (the Layer-A anchor definitions the
+Added to framework in v0.13.0. In v0.51.0 the human-onboarding sections
+(Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#right-sizing-guide); the operational Key
+Principle and the operating-model sibling callout stay here. Reorganized in
+v0.49.0 around the three **governance-weight** dimensions — **Consequence**,
+**Compliance**, and **Stakeholder Reach** (the Layer-A anchor definitions the
 [Operating Model Spec](../spec/operating-model.md#governance-floors-and-capability-ceilings)
 references) — with _who runs the process_ moved to the sibling
 [Operating Model Guide](operating-model.md) (Layer B). The dev/ops split retired

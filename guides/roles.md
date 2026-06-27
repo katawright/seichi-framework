@@ -1,46 +1,14 @@
 # Roles and Responsibilities
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#roles-and-responsibilities)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Canonical role definitions, the cross-stage RACI matrix, and protocols governing
-how roles collaborate during each stage.
-
-### Why Roles
-
-Software projects fail more often from coordination gaps than from technical
-mistakes. When responsibilities are ambiguous — who decides, who reviews, who
-gets informed — work stalls, decisions get revisited, and accountability
-dissolves. Explicit role definitions and a shared RACI matrix give every
-participant a clear answer to "what is expected of me at this stage?"
-
-### Goals of This Guide
-
-- Define the canonical set of roles used across all framework stages
-- Assign Responsible, Accountable, Consulted, and Informed designations per
-  stage
-- Establish protocols for consultation and information distribution
-- Provide expanded guidance for cross-cutting roles (PjM, AppSec)
-
-### Key Principle
+## Key Principle
 
 Roles describe functions, not headcount. In smaller teams one person may hold
 multiple roles (e.g., PM and PjM); in larger organizations a single role may be
 staffed by a team. What matters is that every function has a clear owner.
-
-### How to Use This Guide
-
-1. Read [**Role Definitions**](#role-definitions) to understand the canonical
-   roles and their scope
-2. Use the [**RACI Matrix**](#raci-matrix) to determine who is involved at each
-   stage and in what capacity
-3. Read [**Domain Stakeholders**](#domain-stakeholders) to include
-   project-specific participants beyond the canonical roles
-4. Follow the [**Consultation Protocol**](#consultation-protocol) and
-   [**Information Protocol**](#information-protocol) when collaborating across
-   roles
-5. See the [**Project Manager (PjM)**](#project-manager-pjm) and
-   [**Application Security (AppSec)**](#application-security-appsec) sections
-   for expanded cross-cutting role guidance
 
 ---
 
@@ -375,7 +343,7 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.10.0. Solo-builder translation added in v0.48.0. In
 v0.49.0 the dev/ops split renamed the Support stage RACI row → Closure, added an

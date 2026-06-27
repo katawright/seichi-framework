@@ -1,37 +1,13 @@
 # DevOps Integration Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#devops-integration-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Entry point for DevOps engineers — maps each DevOps concern to its authoritative
-framework location.
-
-### Why DevOps Integration
-
-DevOps responsibilities span multiple framework stages (deployment, operations,
-security, observability) and multiple guides. Without a single entry point,
-DevOps engineers have to discover relevant sections by reading every guide. This
-document collects all DevOps-relevant pointers in one place.
-
-### Goals of This Guide
-
-- Route DevOps engineers to the right framework section for each concern
-- Cover CI/CD, security scanning, release patterns, environments, observability,
-  and operational NFRs
-- Provide minimum pipeline control baselines by tier
-
-### Key Principle
+## Key Principle
 
 This guide is a routing document, not a duplication layer. Each section points
 to the authoritative source — follow the links for full guidance.
-
-### How to Use This Guide
-
-1. Start with [**Getting Started**](#getting-started) for the recommended setup
-   sequence or jump to a specific concern
-2. Use the reference tables in each section to find the authoritative guide for
-   your topic
-3. Review [**Minimum Pipeline Controls**](#minimum-pipeline-controls) for
-   baseline requirements by tier
 
 ---
 
@@ -179,7 +155,7 @@ Operational templates used across deployment and operations.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.
 Support stage references repointed to Operations Guide and operational-handoff

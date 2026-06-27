@@ -1,32 +1,10 @@
 # Brownfield Approach Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#brownfield-approach-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Strategic guide for choosing how to prepare a brownfield codebase for
-AI-assisted development — from organizational investment model to tactical
-decisions about preparation scope and execution strategy. For the overall
-brownfield preparation process, see the
-[Brownfield Preparation Guide](brownfield.md).
-
-### Why Brownfield Approach
-
-Assessing a codebase's readiness (see the
-[Brownfield Readiness Guide](brownfield-readiness.md)) tells you where you
-stand. This guide helps you decide what to do about it. The right approach
-depends on more than codebase state — organizational context, leadership
-support, financial capacity, and business priorities all shape the decision. A
-sales-led organization that can't pause feature delivery needs a different
-approach than an engineering-led organization with executive buy-in for a
-dedicated preparation effort.
-
-### Goals of This Guide
-
-- Present the range of investment models for brownfield preparation
-- Help teams choose an approach that fits their organizational context
-- Define preparation scope — full codebase vs. bounded target area
-- Establish exit criteria for knowing when preparation is sufficient
-
-### Key Principle
+## Key Principle
 
 Match the investment to the organizational reality. There is no single correct
 approach — a dedicated preparation project, feature-interleaved improvement, and
@@ -34,20 +12,6 @@ opportunistic fixes all have valid use cases depending on leadership support,
 financial capacity, and codebase state. The wrong approach is not the one that
 moves slowly — it's the one that doesn't fit the organization's constraints and
 stalls entirely.
-
-### How to Use This Guide
-
-1. Complete the readiness assessment in the
-   [Brownfield Readiness Guide](brownfield-readiness.md) first — this
-   establishes your tier and AI operating mode
-2. Review [**Investment Models**](#investment-models) to understand the range of
-   approaches
-3. Review [**Foundation Work by Tier**](#foundation-work-by-tier) for scope
-   guidance
-4. Evaluate [**Preparation Scope**](#preparation-scope) to determine whether
-   preparation can be bounded
-5. Proceed to the [Brownfield Enablement Guide](brownfield-enablement.md) for
-   execution
 
 ---
 
@@ -397,7 +361,7 @@ decision and reference the exit checkpoint evidence.
 
 ## Notes
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.42.0 as part of the brownfield guide restructuring
 (readiness → approach → enablement). Content moved from the Brownfield Readiness

@@ -1,80 +1,15 @@
 # The Learning Loop
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#the-learning-loop) for what
+> this guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-A standing practice for turning friction encountered while running a project
-into triaged, routed improvement across the development process, the team's
-execution, the product, and the tooling — the capture half of the portfolio loop
-that idea formation closes.
-
-### Why a Learning Loop
-
-Every project generates friction: a checklist that misleads, a handoff that
-drops context, a discovered gap in the product, a tool that fights you. Most of
-it is observed once and forgotten. The framework already reflects on what
-happened — pre-mortems at Initiation, retrospectives at each increment — but two
-ends of the loop were left open:
-
-- **Capture had no standing home.** In-the-moment observations lived in a
-  section of the Retrospective Template, a Deployment-stage artifact. Friction
-  that arose in the Foundational stages, or that spanned the whole project, had
-  nowhere to go until an increment closed.
-- **Improvement ideas had no durable destination.** A retrospective's
-  forward-looking outputs — value ideas, framework feedback — were shared "with
-  stakeholders" and then stranded in a per-project document. Within a project,
-  learning flowed (carry-forward into the next increment); across projects, it
-  leaked.
-
-The learning loop closes both ends: a standing capture surface that exists from
-project start, and durable destinations that route each observation to the owner
-that can actually act on it.
-
-**The learning loop is the capture half of a larger portfolio loop.** It
-captures what running a project surfaces;
-[idea formation](../stages/initiation/README.md#arriving-with-only-an-idea) —
-the front door at Initiation — validates and launches what the backlog holds.
-The two are halves of one standing practice that sits above any single project:
-
-> **capture** (friction logged while delivering · raw greenfield ideas) → the
-> **idea backlog** → **validate & launch** (idea formation) → Initiation →
-> delivery → back to capture
-
-This guide defines the capture half; idea formation defines the launch half. See
-[Closing the Portfolio Loop](#closing-the-portfolio-loop) for how they meet.
-
-### Goals of This Guide
-
-- Define the **friction log** — the standing, project-spanning capture surface
-- Define the **four friction types** and the **principle** that routes each — to
-  whoever owns the fix
-- Define the **idea backlog** — the cross-project destination for **product**
-  ideas (candidate future projects)
-- Place the loop's **three retrospective cadences** across the lifecycle
-- Show how capture closes into the next project's Initiation, and how the loop
-  runs at any level of automation — from a facilitated team retro to an
-  unattended agent pass
-
-### Key Principle
+## Key Principle
 
 Friction is data. Capture it where it happens, type it by who owns the fix, and
 route it to that owner. The framework fixes the **types** and the routing
 **principle**; **you** name the destinations, because only you know who owns
 your process and your tools.
-
-### How to Use This Guide
-
-1. Start a [**friction log**](#the-friction-log) at project start; append to it
-   as friction arises in any stage
-2. Type each entry using the [**four friction types**](#friction-types)
-3. At each [**retrospective cadence**](#triage-cadences), triage the log's
-   entries and route each by type
-4. Route destinations are
-   [**operator-relative**](#routing-is-operator-relative): product ideas to the
-   [**idea backlog**](#the-idea-backlog); process and tooling friction to the
-   owner you name for it, captured locally by default
-5. When the loop runs
-   [**without a human present**](#running-the-loop-lights-out), an agent
-   prepares the drafts; a human authorizes anything that leaves your workspace
 
 ---
 
@@ -99,9 +34,9 @@ The capture half, end to end:
 > Initiation of a future project; **process** and **tooling** friction route out
 > to the owner you name for each.
 
-This half feeds the [portfolio loop](#overview): the idea backlog is where
-capture hands off to idea formation, which launches the next project — whose
-friction feeds a new log, and the loop turns again.
+This half feeds the [portfolio loop](#closing-the-portfolio-loop): the idea
+backlog is where capture hands off to idea formation, which launches the next
+project — whose friction feeds a new log, and the loop turns again.
 
 ---
 
@@ -366,7 +301,7 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.45.0. Idea backlog scoped to product/portfolio ideas;
 process and tooling friction routed to the owning framework/tool tracker in

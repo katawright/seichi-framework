@@ -1,47 +1,13 @@
 # Worked Example: One Requirement Through the Framework
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#worked-example-greenfield)
+> for what this example is, why it exists, and how to use it. This file is the
+> operational reference.
 
-End-to-end trace of a single requirement through every framework stage — from
-Initiation through Closure — showing completed artifact examples at each step.
-
-### Why a Worked Example
-
-The framework templates and guides explain what each artifact should contain,
-but it's hard to judge the right level of detail without seeing a completed
-example. This document shows exactly what "done" looks like for one requirement
-flowing through every stage.
-
-### Goals of This Example
-
-- Show the expected detail level for each framework artifact
-- Demonstrate how artifacts link together across stages
-- Provide a concrete traceability chain from goal to production
-- Give engineers and analysts a "what good looks like" reference
-
-### Key Principle
+## Key Principle
 
 Traceability is the throughline — every artifact references the one before it,
 replacing tribal knowledge with documented decisions.
-
-### How to Use This Example
-
-1. [**Initiation**](#stage-1-initiation) — see how the project starts with a
-   problem statement and success criteria
-2. [**Requirements**](#stage-2-requirements) — see what a requirement and its
-   acceptance criteria look like
-3. [**System Design**](#stage-3-system-design) — see foundational technology and
-   increment planning decisions
-4. [**Increment Design**](#stage-4-increment-design) — see how design artifacts
-   reference requirements
-5. [**Implementation**](#stage-5-implementation) — see the completion record
-6. [**Verification**](#stage-6-verification) — see test results mapped to
-   acceptance criteria
-7. [**Deployment**](#stage-7-deployment) — see the release record
-8. [**Closure**](#stage-8-closure) — see the project close-out and dev→ops
-   handoff
-9. [**The Full Traceability Chain**](#the-full-traceability-chain) — see the
-   end-to-end flow
 
 ---
 
@@ -1007,7 +973,7 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.17.0. Goal-altitude exhibit added in v0.46.0. ADR ids
 updated to the two-digit draft form in v0.48.0. v0.49 consistency sweep:

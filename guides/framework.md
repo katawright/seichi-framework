@@ -1,42 +1,13 @@
 # Framework Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#framework-guide) for what
+> this guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-Cross-cutting concepts that apply across all stages — design principles, roles,
-governance, greenfield/brownfield adaptation, and pointers to the authoritative
-references for stages, checkpoints, measurement, the operating model, and
-right-sizing.
-
-### Why This Guide
-
-Individual stage guides cover their own scope. Dedicated references cover stages
-([stages.md](stages.md)), the operating model
-([operating-model.md](operating-model.md)), and right-sizing
-([right-sizing.md](right-sizing.md)). This guide is the hub for concepts that
-span multiple documents: roles, governance, MoSCoW (Must / Should / Could /
-Won't Have), greenfield/brownfield adaptation, compliance, and key terms.
-
-### Goals of This Guide
-
-- Define the framework's design principles and key benefits
-- Explain cross-stage concepts (MoSCoW, roles, governance, compliance)
-- Document greenfield vs. brownfield adaptation
-- Link to authoritative references for stages, checkpoints, measurement, the
-  operating model, and right-sizing
-
-### Key Principle
+## Key Principle
 
 AI as assistant, not replacement — AI is a productivity tool that humans
 control.
-
-### How to Use This Guide
-
-1. [**What Is This Framework?**](#what-is-this-framework) — design principles
-   and benefits
-2. [**How to Use This Framework**](#how-to-use-this-framework) — getting started
-   (manual process or application)
-3. [**Key Concepts**](#key-concepts) — linked overview of all cross-stage topics
-4. Drill into individual concept sections as needed
 
 ---
 
