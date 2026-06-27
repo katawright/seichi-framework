@@ -78,7 +78,7 @@ The canonical section order for every framework file:
 > body sections and Notes. The full scaffold above still applies to **stage
 > READMEs, references, templates, and spec files** — only `guides/` moved.
 > (`session-protocol.md`, a pure procedural reference, never carried the
-> scaffold and is unchanged.)
+> scaffold and so was not given a "New here?" pointer.)
 
 ---
 
@@ -125,7 +125,10 @@ between H3 subsections within an H2.
 ## Cross-Linking
 
 - Use the file's title as link text, not the raw filename (e.g.,
-  `[Framework Guide](guides/framework.md)`, not `guides/framework.md`)
+  `[Framework Guide](guides/framework.md)`, not `guides/framework.md`). A
+  code-font filename is acceptable link text only when the reference is
+  explicitly to the file as an artifact — e.g. `OVERVIEW.md`'s "→ Operational
+  guide" back-pointers.
 - Link to other framework files by relative path
 - Use fragment anchors (`#section-name`) only when linking to a specific section
   within another file

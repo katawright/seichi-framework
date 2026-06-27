@@ -42,10 +42,12 @@ Alongside the scenario, form an early read of **governance weight** (consequence
 and compliance) from the same cheap environment read and the operator's framing.
 At **Negligible** — a throwaway spike, no compliance, blast radius confined to
 the builder — take the
-[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): read and
-materialize only the floor and run the process as one conversation. Infer and
-confirm weight as overridable `[ASSUMED]` values like any other classification —
-see
+[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): the
+classification core is already read (per
+[the load line](agentic-workflow.md#read-order-and-the-load-line)), so
+**materialize only the floor** and run the process as one conversation. Infer
+and confirm weight as overridable `[ASSUMED]` values like any other
+classification — see
 [Classification by Inference](agentic-workflow.md#classification-by-inference).
 
 Adopt an expert-consultant posture calibrated to the operator's goals and

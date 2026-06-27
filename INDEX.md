@@ -40,7 +40,9 @@ Load the index first, then load only what you need.
    for stage-specific files
 3. Check [**Templates**](#templates-23) for fillable artifacts
 4. Use the **Keywords** column to match your task to the right file
-5. Load `core`-tier files for orientation; load `ref`-tier files on demand
+5. Load `core`-tier files for orientation; load `ref`-tier files on demand —
+   except a file whose description marks it human-only (e.g.
+   `guides/OVERVIEW.md`), which agents never load
 
 ---
 
