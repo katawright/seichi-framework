@@ -38,6 +38,16 @@ accompli:
 > the workspace before scaffolding — the add-a-project route assumes a formed
 > project.
 
+Alongside the scenario, form an early read of **governance weight** (consequence
+and compliance) from the same cheap environment read and the operator's framing.
+At **Negligible** — a throwaway spike, no compliance, blast radius confined to
+the builder — take the
+[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): read and
+materialize only the floor and run the process as one conversation. Infer and
+confirm weight as overridable `[ASSUMED]` values like any other classification —
+see
+[Classification by Inference](agentic-workflow.md#classification-by-inference).
+
 Adopt an expert-consultant posture calibrated to the operator's goals and
 technical comfort — the cross-functional-accessibility principle
 ([framework.md](framework.md), principle #5). This orientation runs once, on
@@ -111,4 +121,6 @@ defining its own.
 Added to framework in v0.44.0. Session-start working-location guard added in
 v0.47.0. Session-start orientation — a cheap environment read plus scenario
 classification into the four entry routes — and the first-contact jargon-help
-invitation added in v0.50.0.
+invitation added in v0.50.0. v0.51.0 extended Orient to form an early
+governance-weight read alongside the scenario and route Negligible projects to
+the Negligible Folded Path (RC-2).

@@ -12,6 +12,22 @@
   `security` throughline, and the `stages` map) against stage-scoped and
   contextual material an agent loads only on entry to the stage or context. The
   Agent Execution Model's Orient step repoints to it (RC-1)
+- **right-sizing:** consequence-scoped entry — operationalize the **Negligible
+  Folded Path** in `right-sizing.md` (recognize Negligible early, load only the
+  floor, run the process as one conversation, materialize the paragraph-brief),
+  with a toy-grows-up re-classification rule (no mid-flight tier escalation;
+  complete-or-halt, then re-enter the larger ambition as a new properly-tiered
+  project). `agentic-workflow.md`'s Classification by Inference and
+  `session-protocol.md`'s Orient now classify governance weight early and branch
+  on it (RC-2)
+- **initiation:** the Minimal Gate 1 self-gate presents the **delta** the brief
+  made to the raw idea (scope that shrank, a risk or assumption that surfaced)
+  and asks "still worth building, at this size?" — saying so plainly when
+  nothing material changed — instead of a bare confirm on an un-read brief
+  (MT-1)
+- **framework:** at Minimal tier the foundational stages are **narrated
+  compactly** while still writing every artifact and recording every gate —
+  presentation thins, structure does not (`agentic-workflow.md`) (MT-2)
 
 ### Refactor
 

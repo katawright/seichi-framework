@@ -661,12 +661,18 @@ speeds up the gate review itself.
 > scope. Stop if: problem cannot be validated or strategic alignment is absent."
 
 > **Solo builders (Minimal tier):** Gate 1 collapses to a deliberate
-> one-question self-gate: _"Knowing what the brief now says, do I still want to
-> build this?"_ No review meeting, no decision package — but the decision is
-> still recorded: write the answer and the date as a note in the brief. The
-> pause matters because the brief usually changes the idea — "yes, but smaller"
-> is a common answer, and "no" is a successful outcome, not a failure. For the
-> full N=1 role translation, see
+> one-question self-gate — but don't fire a bare "proceed?" on a brief the
+> builder just watched scroll past. **Present the delta first:** in a sentence
+> or two, name what the brief changed from the raw idea — scope that shrank, a
+> risk or assumption that surfaced — then ask _"Knowing this, is it still worth
+> building, at this size?"_ When the brief changed nothing material, **say so
+> plainly** ("the brief didn't reshape the idea — here's a two-second confirm").
+> The delta is the agent's own raw-idea-vs-brief read — free, because it holds
+> both — not a new artifact or check. No review meeting, no decision package,
+> but the decision is still recorded: write the answer and the date as a note in
+> the brief. The pause earns its place because the brief usually changes the
+> idea — "yes, but smaller" is a common answer, and "no" is a successful
+> outcome, not a failure. For the full N=1 role translation, see
 > [Roles Guide: Solo Builders](../../guides/roles.md#solo-builders-n1).
 
 > **Brownfield projects:** If the quick-pass readiness assessment estimates **T3
