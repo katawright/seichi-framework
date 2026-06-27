@@ -418,6 +418,40 @@ regardless of consequence, and wider reach adds sign-off artifacts.
 
 ---
 
+## The Negligible Folded Path
+
+Negligible consequence is the one shape an agent should recognize **before
+front-loading the framework** and route to deliberately — not discover stage by
+stage. It is the operating floor of the folded-stages principle: the whole
+process runs as a single conversation, and only the floor is materialized.
+
+When the early read is Negligible — the **Spike / experiment** shape, no
+compliance, blast radius confined to the builder, fully reversible — take the
+folded path:
+
+1. **Load only the floor** — the router, this guide, and the Initiation
+   material; defer every downstream stage guide and template the tier folds away
+   (see
+   [Read Order and the Load Line](agentic-workflow.md#read-order-and-the-load-line)).
+2. **Run the process as one conversation** — Initiation → Requirements → Design
+   fold together; **Gate 1 and Gate 2 fold** ("you just start"; design and build
+   are one step); Closure folds into the conversation.
+3. **Materialize the paragraph-brief only** — the Initiation Brief is the single
+   surviving artifact, often a recorded paragraph (see
+   [Minimum Viable Artifacts](#minimum-viable-artifacts)) — then agents build.
+4. **Keep the decisions, fold the ceremony** — problem, intent, a high-level
+   shape, and a quick look-before-you-build still happen; only their
+   presentation and artifacts thin to the floor the tier already authorizes.
+
+**Hard boundary — thin ceremony, never the floor.** Consequence sets _soft_
+floors; compliance sets _hard_ ones. The folded path may thin ceremony and
+artifacts, **never** the compliance floor or the non-delegable floor. A
+**Negligible project that carries compliance** — a tiny tool touching regulated
+data — is folded in ceremony but keeps every categorical obligation; it is not
+the folded path's free case, so classify compliance _before_ folding.
+
+---
+
 ## Consequence Floors on the Operating Model
 
 Consequence floors two operating-model settings — **Required Assurance** and
@@ -471,6 +505,17 @@ A project's shape is not fixed — re-size when a dimension moves:
   [Project Foundation Guide](project-foundation.md) — treat it as foundation
   work for the deployment dimension.
 
+**A Negligible toy that grows up does not escalate tier in place.** The
+[folded path](#the-negligible-folded-path) leaves no full artifacts to upgrade,
+so re-sizing it mid-flight is not the clean move. Instead **complete** the toy
+(it is near-floor and cheap to finish) or **halt** it, then re-enter the larger
+ambition as a **new, properly-tiered project** seeded by the paragraph-brief —
+lean toward completing. **Guardrail:** complete-then-re-enter is available only
+when _finishing_ the toy does not itself breach a hard floor; the moment
+compliance applies, the blast radius turns non-trivial, or completion would be
+an irreversible high-consequence transition, the work was never the folded
+path's case — halt and re-tier instead.
+
 Reassess at major milestones — particularly after Initiation and Requirements,
 where expansion triggers signal more rigor is needed:
 
@@ -486,8 +531,10 @@ where expansion triggers signal more rigor is needed:
 Added to framework in v0.13.0. In v0.51.0 the human-onboarding sections
 (Overview / Why / Goals / How to Use) moved to the
 [Framework Overview](OVERVIEW.md#right-sizing-guide); the operational Key
-Principle and the operating-model sibling callout stay here. Reorganized in
-v0.49.0 around the three **governance-weight** dimensions — **Consequence**,
+Principle and the operating-model sibling callout stay here. v0.51.0 also added
+**The Negligible Folded Path** as an operational route and the toy-grows-up
+re-classification rule to **Re-Size as the Project Evolves** (RC-2). Reorganized
+in v0.49.0 around the three **governance-weight** dimensions — **Consequence**,
 **Compliance**, and **Stakeholder Reach** (the Layer-A anchor definitions the
 [Operating Model Spec](../spec/operating-model.md#governance-floors-and-capability-ceilings)
 references) — with _who runs the process_ moved to the sibling

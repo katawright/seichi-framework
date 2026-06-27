@@ -160,8 +160,9 @@ SC-02 proves the core habit.
 
 ### Gate 1 — Proposed Decision Criteria
 
-Solo at Minimal tier: Gate 1 is the one-question self-gate — _"Knowing what the
-brief now says, do I still want to build this?"_ — recorded as a note below (see
+Solo at Minimal tier: Gate 1 is the one-question self-gate — the agent presents
+the delta the brief made to the raw idea, then asks _"Knowing this, is it still
+worth building, at this size?"_ — recorded as a note below (see
 [Initiation: Gate 1 Decision Criteria](../stages/initiation/README.md#gate-1-decision-criteria)).
 
 ### Project Lead and Stakeholders
@@ -220,17 +221,24 @@ logging-UX unknown; the progression view is well understood.
 
 ## Gate 1: The Self-Gate
 
-No meeting, no decision package. Sam reads the finished brief and answers the
-one question, recording it in the brief:
+No meeting, no decision package. The agent doesn't fire a bare "proceed?" — it
+**presents the delta first**, then Sam answers the one question, recorded in the
+brief:
 
-> **Gate 1 (2026-06-09):** Knowing what the brief now says, do I still want to
-> build this? **Yes — but smaller than the original idea.** v1 is logging plus
-> one progression view; nothing else until SC-02 shows six weeks of real use.
+> **The brief reshaped the idea:** it arrived as "an app to track my climbing
+> training" and the brief narrowed it to a sub-20-second logger and one
+> progression view, gated on Sam's own adoption (SC-02). Scope shrank, and the
+> riskiest assumption — "will I actually log every session?" — surfaced as the
+> thing to test first.
+>
+> **Gate 1 (2026-06-09):** Knowing this, is it still worth building, at this
+> size? **Yes — but smaller than the original idea.** v1 is logging plus one
+> progression view; nothing else until SC-02 shows six weeks of real use.
 
-Note what the brief changed: the idea arrived as "an app to track my climbing
-training" and left Gate 1 as "a sub-20-second logger and one chart, gated on my
-own adoption." That narrowing is the gate working. **"No" would also have been a
-success** — a half-evening of interviewing instead of three abandoned weekends.
+That narrowing is the gate working — the delta is what earns the click. Had the
+brief changed nothing material, the agent would have said so plainly and made it
+a two-second confirm. **"No" would also have been a success** — a half-evening
+of interviewing instead of three abandoned weekends.
 
 ---
 

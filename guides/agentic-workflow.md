@@ -129,6 +129,15 @@ Rules:
    `[ASSUMED]` item — see
    [Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
 
+**Negligible routes to the folded path.** When inference lands at the bottom of
+the scale — a throwaway spike, no compliance, blast radius confined to the
+builder — classify that **early, before front-loading**, and route to the
+[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): read and
+materialize only the floor (per [the load line](#read-order-and-the-load-line)),
+and run the process as one conversation rather than narrated stages. Rule 3's
+escalation triggers still override — compliance or external users pull a project
+off the folded path even when it otherwise looks Negligible.
+
 **Calibrate the register, not only the classifications.** Read the operator's
 technical comfort the same way you read the five decisions — from how they talk
 (their vocabulary, the questions they ask, how they answer), never by asking
@@ -326,6 +335,26 @@ Read at session start and honor throughout, regardless of stage or tier:
   much of the governance spine is _materialized and applied_ (see
   [Right-Sizing](right-sizing.md)); they never scope the line away by stage, and
   never below the compliance or non-delegable floor.
+
+---
+
+## Narrating Foundational Stages at Minimal
+
+At **Minimal** tier the three foundational stages — Initiation, Requirements,
+System Design — still run and still **write their artifacts to disk**. The
+briefs and their readiness decisions are preserved, as is the traceability chain
+(goal → success criterion → requirement → acceptance criterion → test). What
+thins is the **presentation**: narrate each stage **compactly** — a few
+sentences on what it produced and what it decided, with a pointer to the written
+artifact — rather than emitting each full brief inline for the operator to
+scroll. The felt weight at Minimal is mostly the wall of generated text, not the
+decisions underneath; a compact running narration removes that weight without
+dropping a stage, a decision, or the gate record.
+
+This is presentation, not structure — every Minimal artifact is still authored
+and still gated. At **Negligible** the structure folds further (only the
+paragraph-brief survives); see
+[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path).
 
 ---
 
@@ -628,10 +657,14 @@ Inference, in v0.50.0. The **Read Order and the Load Line** section — fixing t
 always-loaded cross-cutting governance against stage-scoped and contextual
 material, so an agent reads the current stage rather than the whole corpus — was
 added in v0.51.0, and the Agent Execution Model's Orient step repointed to it.
-v0.49 consistency sweep: Support stage renamed to Closure; autonomy-tier
-subsections (Human-Led / Collaborative / AI-Led) renamed to operating postures
-(Supervised / Checkpointed / Lights-Out); Stage Flow Diagram feedback edges
-updated to reflect Operations. The agentic-loop "follow gate requirements" step
-reworded from per-stage "human oversight" to gates/checkpoints, aligning with
-the operating-model framing (oversight is an operating-model choice, not a stage
+v0.51.0 also routed **Negligible** projects to the Negligible Folded Path from
+Classification by Inference (RC-2), added the **Narrating Foundational Stages at
+Minimal** guidance (MT-2), and moved the guide's human-onboarding sections to
+the [Framework Overview](OVERVIEW.md#agentic-workflow-guide) (RC-3). v0.49
+consistency sweep: Support stage renamed to Closure; autonomy-tier subsections
+(Human-Led / Collaborative / AI-Led) renamed to operating postures (Supervised /
+Checkpointed / Lights-Out); Stage Flow Diagram feedback edges updated to reflect
+Operations. The agentic-loop "follow gate requirements" step reworded from
+per-stage "human oversight" to gates/checkpoints, aligning with the
+operating-model framing (oversight is an operating-model choice, not a stage
 property).
