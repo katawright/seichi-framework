@@ -17,6 +17,8 @@ assessment regardless of other axes. If any axis scores 0 (the worst score),
 bump the tier down at least one level unless the blast radius of that axis is
 small.
 
+---
+
 ## When to Assess
 
 The readiness rubric is scored in up to two passes — a rough pass at Initiation

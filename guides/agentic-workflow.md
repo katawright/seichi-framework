@@ -318,6 +318,8 @@ Read at session start and honor throughout, regardless of stage or tier:
   [`spec/delegated-run.md`](../spec/delegated-run.md) (delegated / Lights-Out
   runs), [`spec/parallel-batch.md`](../spec/parallel-batch.md) with the parallel
   guides (parallel batches), the brownfield guides (brownfield projects),
+  [`roles.md`](roles.md) (role/RACI detail, on demand when assignments matter —
+  each stage README's `raci_roles` front matter carries the per-stage roster),
   [`bootstrap.md`](bootstrap.md) and
   [`project-foundation.md`](project-foundation.md) (setup), and the remaining
   `ref`-tier guides — but never [`OVERVIEW.md`](OVERVIEW.md), the human-only
