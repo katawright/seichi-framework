@@ -954,4 +954,6 @@ roles per the
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
 Idea-formation entry path added in v0.48.0. Adaptive, stakes-scaled interview
 frame and operating-frame seeding added in v0.49.0. Platform-services consultant
-section (signal → implied service; mover/design-time split) added in v0.50.0.
+section (signal → implied service; mover/design-time split) added in v0.50.0. In
+v0.51.0 the Minimal Gate 1 self-gate was updated to present the idea→brief delta
+before the one-question confirm (MT-1).

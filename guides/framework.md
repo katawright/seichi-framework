@@ -18,12 +18,6 @@ AI assistance into software development. It helps both technical and
 non-technical stakeholders work through every stage of a project — from initial
 idea to production and ongoing operations.
 
-By providing clear guidance and AI assistance from the very first stage, the
-framework enables anyone with an idea to create a professional project
-proposal—without needing deep process knowledge or technical expertise. This
-democratizes project initiation, ensuring good ideas can come from anywhere in
-the organization.
-
 **Design principles:**
 
 1. **AI as assistant, not replacement** — AI is a productivity tool that humans
@@ -38,39 +32,6 @@ the organization.
 7. **Outcomes over mechanisms** — the framework specifies what must hold —
    gates, invariants, required outputs — not the way of working you use to get
    there; interchangeable techniques are patterns, not process
-
-### Key Benefits
-
-- **Lower AI adoption risk** — clear guardrails at every stage prevent costly AI
-  missteps in architecture and production
-- **Faster project starts** — non-technical stakeholders can initiate projects
-  with AI guidance, no process expertise required
-- **Consistent governance** — auditable checkpoints satisfy compliance,
-  security, and executive oversight needs
-- **Scalable across teams** — right-sizing from solo developer to enterprise;
-  methodology-agnostic (agile, waterfall, hybrid)
-- **Progressive AI adoption** — start with humans driving and agents assisting
-  to build trust, and shift execution toward agents as confidence grows (an
-  operating-model choice — see [Operating Model Guide](operating-model.md))
-
-### Who Benefits
-
-- **Engineers** — structured guidance for using AI safely and effectively, with
-  clear boundaries at each stage
-- **Product Managers and Business Analysts** — initiate and plan projects with
-  AI assistance, even without technical expertise
-- **Engineering Leaders and Executives** — governance visibility across the
-  development lifecycle with auditable checkpoints and measurable success
-  criteria
-- **Project Managers and Delivery Leads** — structured coordination points at
-  every gate and increment boundary, with clear accountability for delivery
-  tracking and cross-team dependency management
-- **Application Security** — cross-stage security touchpoints from data
-  classification through compliance sign-off, with severity-based escalation
-  authority. See the [Security Guide](security.md) and
-  [AppSec role definition](roles.md#application-security-appsec)
-- **Organizations** — a repeatable, scalable approach to AI-assisted development
-  that works across teams and methodologies
 
 ---
 
@@ -1003,4 +964,8 @@ elective-release model in v0.45.0. Learning Throughline and Deferral guidance
 pointed at the learning loop in v0.45.0. "Outcomes over mechanisms" design
 principle and the Outcomes, Not Mechanisms concept section added in v0.47.0. ADR
 publish target moved to the workspace ADR canon and project-id-scoped id scheme
-adopted in v0.48.0.
+adopted in v0.48.0. In v0.51.0 the human-onboarding sections (Overview / Why /
+Goals / How to Use) plus the Key Benefits, Who Benefits, and "democratizes"
+motivational prose moved to the
+[Framework Overview](OVERVIEW.md#framework-guide); the design principles and
+operational concepts stay here (RC-3).

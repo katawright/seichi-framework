@@ -284,13 +284,52 @@ Won't Have), greenfield/brownfield adaptation, compliance, and key terms.
 
 **How to use it.**
 
-1. [What Is This Framework?](framework.md#what-is-this-framework) — design
-   principles and benefits
+1. [What Is This Framework?](framework.md#what-is-this-framework) — the design
+   principles
 2. [How to Use This Framework](framework.md#how-to-use-this-framework) — getting
    started
 3. [Key Concepts](framework.md#key-concepts) — linked overview of all
    cross-stage topics
 4. Drill into individual concept sections as needed
+
+**Why it matters.** By providing clear guidance and AI assistance from the very
+first stage, the framework enables anyone with an idea to create a professional
+project proposal — without needing deep process knowledge or technical
+expertise. This democratizes project initiation, ensuring good ideas can come
+from anywhere in the organization.
+
+**Key benefits.**
+
+- **Lower AI adoption risk** — clear guardrails at every stage prevent costly AI
+  missteps in architecture and production
+- **Faster project starts** — non-technical stakeholders can initiate projects
+  with AI guidance, no process expertise required
+- **Consistent governance** — auditable checkpoints satisfy compliance,
+  security, and executive oversight needs
+- **Scalable across teams** — right-sizing from solo developer to enterprise;
+  methodology-agnostic (agile, waterfall, hybrid)
+- **Progressive AI adoption** — start with humans driving and agents assisting
+  to build trust, and shift execution toward agents as confidence grows (an
+  operating-model choice — see [Operating Model Guide](operating-model.md))
+
+**Who benefits.**
+
+- **Engineers** — structured guidance for using AI safely and effectively, with
+  clear boundaries at each stage
+- **Product Managers and Business Analysts** — initiate and plan projects with
+  AI assistance, even without technical expertise
+- **Engineering Leaders and Executives** — governance visibility across the
+  development lifecycle with auditable checkpoints and measurable success
+  criteria
+- **Project Managers and Delivery Leads** — structured coordination points at
+  every gate and increment boundary, with clear accountability for delivery
+  tracking and cross-team dependency management
+- **Application Security** — cross-stage security touchpoints from data
+  classification through compliance sign-off, with severity-based escalation
+  authority. See the [Security Guide](security.md) and
+  [AppSec role definition](roles.md#application-security-appsec)
+- **Organizations** — a repeatable, scalable approach to AI-assisted development
+  that works across teams and methodologies
 
 → **Operational guide:** [`framework.md`](framework.md)
 

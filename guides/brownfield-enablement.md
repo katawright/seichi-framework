@@ -567,4 +567,6 @@ Infrastructure Planning replaced with cross-reference to
 Preparation Activities by Axis slimmed to Preparation Sequencing. Key Decisions
 (Logic Authority, Wrap vs. Extract, External Write Paths) folded into per-axis
 enablement tactics (Modularity, Transparency). Operational processes link
-repointed to Operations Guide in v0.49.0.
+repointed to Operations Guide in v0.49.0. In v0.51.0 the human-onboarding
+sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#brownfield-enablement-guide).

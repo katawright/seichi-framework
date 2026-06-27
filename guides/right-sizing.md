@@ -300,10 +300,10 @@ consequential gates human.
 | **Gate 1** | Close of Initiation    | Approve the business case — problem, stakeholders, risks, sponsor commitment — to invest in discovery (the Requirements stage).                                             |
 | **Gate 2** | Close of System Design | Approve the accumulated requirements, the system design and its security/risk posture, and the cost and time estimates against budget — the go/no-go to commit to building. |
 
-| Gate       | Negligible                                         | Low                                                     | Moderate                                                       | High                                                     | Critical                                                            |
-| ---------- | -------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------- |
-| **Gate 1** | Folded in — no deliberate decision; you just start | Recorded self-gate ("worth building?")                  | Deliberate go/no-go on the business case                       | Reviewed go/no-go; risks and sponsor commitment explicit | Mandatory, non-delegable authorization to proceed                   |
-| **Gate 2** | Folded in — design and "build it" are one step     | Recorded self-gate (design sound, estimate acceptable?) | Deliberate go/no-go: requirements, design, estimate vs. budget | Reviewed go/no-go incl. security/risk posture            | Mandatory, non-delegable build authorization (a bounded human gate) |
+| Gate       | Negligible                                                                 | Low                                                     | Moderate                                                       | High                                                     | Critical                                                            |
+| ---------- | -------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Gate 1** | Folded in — the go/no-go folds into a glance-and-go (no separate ceremony) | Recorded self-gate ("worth building?")                  | Deliberate go/no-go on the business case                       | Reviewed go/no-go; risks and sponsor commitment explicit | Mandatory, non-delegable authorization to proceed                   |
+| **Gate 2** | Folded in — design and "build it" are one step                             | Recorded self-gate (design sound, estimate acceptable?) | Deliberate go/no-go: requirements, design, estimate vs. budget | Reviewed go/no-go incl. security/risk posture            | Mandatory, non-delegable build authorization (a bounded human gate) |
 
 Where a compliance obligation applies, Gate 1 adds a recorded, auditable
 decision with applicable regimes identified before investing; Gate 2 adds a
@@ -385,7 +385,12 @@ Which templates to produce, driven primarily by **consequence**. **Required** =
 must complete before the stage gate; **Recommended** = high value, skip only
 with justification; **Optional** = use when the project calls for it. Compliance
 and reach add to this: a compliance obligation forces specific artifacts
-regardless of consequence, and wider reach adds sign-off artifacts.
+regardless of consequence, and wider reach adds sign-off artifacts. These levels
+govern when each brief is **rendered as a formal view** — the underlying
+decisions are always captured in the
+[canonical project state](../spec/canonical-state.md) regardless (the
+single-source rule); a lower level folds the view into lighter notes or another
+brief, it does not drop the work.
 
 | Template                                                               | Stage            | Low         | Moderate    | High        |
 | ---------------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
@@ -429,9 +434,11 @@ When the early read is Negligible — the **Spike / experiment** shape, no
 compliance, blast radius confined to the builder, fully reversible — take the
 folded path:
 
-1. **Load only the floor** — the router, this guide, and the Initiation
-   material; defer every downstream stage guide and template the tier folds away
-   (see
+1. **Materialize only the floor** — the classification core (router, this guide,
+   the Initiation material) is already read to get here, and the governance
+   spine loads but has next to nothing to apply at Negligible; beyond that,
+   **render and write only** the Initiation floor, deferring every downstream
+   stage guide and template the tier folds away (see
    [Read Order and the Load Line](agentic-workflow.md#read-order-and-the-load-line)).
 2. **Run the process as one conversation** — Initiation → Requirements → Design
    fold together; **Gate 1 and Gate 2 fold** ("you just start"; design and build

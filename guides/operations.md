@@ -377,4 +377,6 @@ dissolved, its terminal project-completion duties moved to the
 [Closure stage](../stages/closure/README.md), and its standing operational
 content was relocated and reframed here on the shared
 [operating model](operating-model.md). Deep-operations depth (incident command,
-disaster recovery, SLAs) is `[Reserved]`.
+disaster recovery, SLAs) is `[Reserved]`. In v0.51.0 the human-onboarding
+sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#operations-guide).

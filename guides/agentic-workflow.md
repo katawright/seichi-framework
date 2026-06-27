@@ -132,11 +132,12 @@ Rules:
 **Negligible routes to the folded path.** When inference lands at the bottom of
 the scale — a throwaway spike, no compliance, blast radius confined to the
 builder — classify that **early, before front-loading**, and route to the
-[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): read and
-materialize only the floor (per [the load line](#read-order-and-the-load-line)),
-and run the process as one conversation rather than narrated stages. Rule 3's
-escalation triggers still override — compliance or external users pull a project
-off the folded path even when it otherwise looks Negligible.
+[Negligible Folded Path](right-sizing.md#the-negligible-folded-path): the
+classification core is already read (per
+[the load line](#read-order-and-the-load-line)), so **materialize only the
+floor** and run the process as one conversation rather than narrated stages.
+Rule 3's escalation triggers still override — compliance or external users pull
+a project off the folded path even when it otherwise looks Negligible.
 
 **Calibrate the register, not only the classifications.** Read the operator's
 technical comfort the same way you read the five decisions — from how they talk
@@ -319,7 +320,8 @@ Read at session start and honor throughout, regardless of stage or tier:
   guides (parallel batches), the brownfield guides (brownfield projects),
   [`bootstrap.md`](bootstrap.md) and
   [`project-foundation.md`](project-foundation.md) (setup), and the remaining
-  `ref`-tier guides.
+  `ref`-tier guides — but never [`OVERVIEW.md`](OVERVIEW.md), the human-only
+  orientation layer, which agents do not load.
 
 ### What stage-scoping must not cost
 
@@ -341,20 +343,25 @@ Read at session start and honor throughout, regardless of stage or tier:
 ## Narrating Foundational Stages at Minimal
 
 At **Minimal** tier the three foundational stages — Initiation, Requirements,
-System Design — still run and still **write their artifacts to disk**. The
-briefs and their readiness decisions are preserved, as is the traceability chain
-(goal → success criterion → requirement → acceptance criterion → test). What
-thins is the **presentation**: narrate each stage **compactly** — a few
-sentences on what it produced and what it decided, with a pointer to the written
-artifact — rather than emitting each full brief inline for the operator to
-scroll. The felt weight at Minimal is mostly the wall of generated text, not the
-decisions underneath; a compact running narration removes that weight without
-dropping a stage, a decision, or the gate record.
+System Design — still run, and their **decisions are captured in the canonical
+project state**: the high-level design, the increment plan, the readiness calls,
+and the traceability chain (goal → success criterion → requirement → acceptance
+criterion → test). The formal briefs are **rendered views** over that state (see
+[Canonical State Spec](../spec/canonical-state.md)); at Minimal those views fold
+into lighter forms. What thins is the **presentation and the rendering**, not
+the decisions: narrate each stage **compactly** — a few sentences on what it
+produced and what it decided, with a pointer to where the decision is recorded —
+rather than emitting each full brief inline for the operator to scroll. The felt
+weight at Minimal is mostly the wall of generated text, not the decisions
+underneath; a compact running narration removes that weight without dropping a
+stage, a decision, or the gate record.
 
-This is presentation, not structure — every Minimal artifact is still authored
-and still gated. At **Negligible** the structure folds further (only the
-paragraph-brief survives); see
-[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path).
+This is presentation, not structure — every Minimal **decision** is still
+captured in canonical state and still gated; the briefs are rendered as the tier
+calls for, some folding into lighter notes (see
+[Minimum Viable Artifacts](right-sizing.md#minimum-viable-artifacts)). At
+**Negligible** the structure folds further (only the paragraph-brief survives);
+see [The Negligible Folded Path](right-sizing.md#the-negligible-folded-path).
 
 ---
 

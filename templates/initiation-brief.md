@@ -223,9 +223,10 @@ GDPR applies because EU users are in scope"]
      resolution path and owner -->
 <!-- Platform services: surface the cross-cutting services the idea implies
      (auth, payments, persistence, hosting, email, storage, observability,
-     secrets, jobs, CDN). Settle tier/posture-movers via Right-Sizing + Data
-     Sensitivity above; list the design-time ones here as dependencies flagged
-     for System Design. See ../stages/initiation/README.md#platform-services. -->
+     secrets, jobs, CDN). Settle tier-, security-posture-, and compliance-moving
+     services via Right-Sizing + Data Sensitivity above; list the design-time
+     ones here as dependencies flagged for System Design. See
+     ../stages/initiation/README.md#platform-services. -->
 
 - **Constraints:** [budget, deadlines, compliance, SLOs, platform limits, team
   capacity, technology restrictions]

@@ -983,4 +983,6 @@ Initiation success-criteria table reconciled with the metrics tracked downstream
 success-criteria IDs trace end to end; a worked Stage 8 (Closure) example added
 (project close-out summary + operational handoff record). For a brownfield
 adoption example showing preparation increments, exit checkpoints, and shadow
-mode, see the [Brownfield Worked Example](worked-example-brownfield.md).
+mode, see the [Brownfield Worked Example](worked-example-brownfield.md). In
+v0.51.0 the human-onboarding sections (Overview / Why / Goals / How to Use)
+moved to the [Framework Overview](OVERVIEW.md#worked-example-greenfield).

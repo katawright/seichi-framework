@@ -479,4 +479,5 @@ Session-start location guard cross-referenced in v0.47.0. Workspace ADR canon
 and project-number fallback convention added in v0.48.0. "Autonomy tiers"
 rewritten to "operating postures"; Support stage renamed to Closure in
 stage-location table; "AI-Led autonomy" rewritten to "agent-led autonomy" in
-v0.49.0.
+v0.49.0. In v0.51.0 the human-onboarding sections (Overview / Why / Goals / How
+to Use) moved to the [Framework Overview](OVERVIEW.md#bootstrap-guide).

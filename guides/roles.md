@@ -348,4 +348,6 @@ before the stage resumes.
 Added to framework in v0.10.0. Solo-builder translation added in v0.48.0. In
 v0.49.0 the dev/ops split renamed the Support stage RACI row → Closure, added an
 Operations row to the AppSec activity table, and added Flow/Operations
-work-shape RACI.
+work-shape RACI. In v0.51.0 the human-onboarding sections (Overview / Why /
+Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#roles-and-responsibilities).

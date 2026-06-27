@@ -203,4 +203,6 @@ Added to framework in v0.49.0. Sits beside increment planning in System Design;
 the run-time half is the [Parallel Execution Guide](parallel-execution.md). The
 normative contracts behind this guide — the forcing-dependency taxonomy and the
 parallel-safety classification record — are in the
-[Parallel-Batch Spec](../spec/parallel-batch.md).
+[Parallel-Batch Spec](../spec/parallel-batch.md). In v0.51.0 the
+human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#parallel-scheduling-guide).

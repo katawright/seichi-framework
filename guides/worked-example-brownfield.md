@@ -408,4 +408,6 @@ considerations). Traceability chain's Initiation goal and success criterion
 split per the v0.45.0 goals layer. v0.49 consistency sweep: actor-sense "AI"
 references rewritten to "agent" (the "AI operating mode" readiness term kept
 as-is to match the canonical Brownfield Readiness rubric); traceability chain
-updated to end at Closure followed by Operations.
+updated to end at Closure followed by Operations. In v0.51.0 the
+human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#worked-example-brownfield).
