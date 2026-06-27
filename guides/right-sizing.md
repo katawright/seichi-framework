@@ -434,11 +434,11 @@ When the early read is Negligible — the **Spike / experiment** shape, no
 compliance, blast radius confined to the builder, fully reversible — take the
 folded path:
 
-1. **Materialize only the floor** — the classification core (router, this guide,
-   the Initiation material) is already read to get here, and the governance
-   spine loads but has next to nothing to apply at Negligible; beyond that,
-   **render and write only** the Initiation floor, deferring every downstream
-   stage guide and template the tier folds away (see
+1. **Materialize only the floor** — the classification core (router, this guide)
+   is already read to get here, the Initiation stage has been entered, and the
+   governance spine loads but has next to nothing to apply at Negligible; beyond
+   that, **render and write only** the Initiation floor, deferring every
+   downstream stage guide and template the tier folds away (see
    [Read Order and the Load Line](agentic-workflow.md#read-order-and-the-load-line)).
 2. **Run the process as one conversation** — Initiation → Requirements → Design
    fold together; **Gate 1 and Gate 2 fold** ("you just start"; design and build
