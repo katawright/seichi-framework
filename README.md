@@ -12,6 +12,9 @@ stage.
 > **Just want to start?** See the [Quick Start](QUICKSTART.md) — zero to your
 > first stage in one session.
 
+> **New to the framework?** See the [Framework Overview](guides/OVERVIEW.md) — a
+> guided tour of every guide: what each is, why it exists, and how to use it.
+
 ### Why This Framework
 
 Teams are adopting AI development tools rapidly, but without structure the

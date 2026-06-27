@@ -553,4 +553,6 @@ can define default tier mappings based on project characteristics.
 Added to framework in v0.17.0. Autonomy-progression pointer repointed to the
 Operating Model Guide; autonomy-tier triple replaced with operating-posture
 framing; actor-sense "AI" rewritten to "agents"; Support stage renamed to
-Closure in stage adoption sequence in v0.49.0.
+Closure in stage adoption sequence in v0.49.0. In v0.51.0 the human-onboarding
+sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#organizational-adoption-guide).

@@ -73,10 +73,12 @@ The canonical section order for every framework file:
 > [Read Order and the Load Line](guides/agentic-workflow.md#read-order-and-the-load-line)).
 > Each operational guide instead opens with a one-line **"New here?"** pointer
 > to its OVERVIEW section, then its **Key Principle** (promoted to H2) and any
-> load-bearing cross-reference callouts, then body sections and Notes. The full
-> scaffold above still applies to **stage READMEs, references, templates, and
-> spec files** — only `guides/` moved. (`session-protocol.md`, a pure procedural
-> reference, never carried the scaffold and is unchanged.)
+> load-bearing cross-reference callouts (a sibling- or disambiguation-callout
+> may sit just before the Key Principle where it frames the whole guide), then
+> body sections and Notes. The full scaffold above still applies to **stage
+> READMEs, references, templates, and spec files** — only `guides/` moved.
+> (`session-protocol.md`, a pure procedural reference, never carried the
+> scaffold and is unchanged.)
 
 ---
 
@@ -427,6 +429,8 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
-Added to framework in v0.19.0.
+Added to framework in v0.19.0. In v0.51.0 documented the operational-guide
+audience-separation convention (the human-onboarding layer relocated to
+`guides/OVERVIEW.md`; guides open with a "New here?" pointer + Key Principle).

@@ -377,4 +377,6 @@ subsections — readiness describes what AI can do; approach describes what the
 organization should do about it. Key Decisions (Logic Authority, Wrap vs.
 Extract, External Write Paths) moved to the
 [Brownfield Enablement Guide](brownfield-enablement.md#enablement-tactics) as
-tactical decisions folded into per-axis enablement tactics.
+tactical decisions folded into per-axis enablement tactics. In v0.51.0 the
+human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#brownfield-approach-guide).

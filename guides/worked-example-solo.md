@@ -269,3 +269,6 @@ codebase, see the [Brownfield Worked Example](worked-example-brownfield.md).
 
 Added to framework in v0.48.0. v0.49 consistency sweep: operating posture
 vocabulary updated (Collaborative → Checkpointed; oversight intensity removed).
+In v0.51.0 the Gate 1 self-gate was rewritten to present the idea→brief delta
+before the one-question confirm (MT-1), and the human-onboarding sections moved
+to the [Framework Overview](OVERVIEW.md#worked-example-solo) (RC-3).

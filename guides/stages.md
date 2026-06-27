@@ -1018,4 +1018,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 **Last Updated:** 2026-06-26
 
 Added to framework in v0.9.0. Stage Altitude section added in v0.46.0.
-AI-assistance pointer repointed to the Operating Model Guide in v0.49.0.
+AI-assistance pointer repointed to the Operating Model Guide in v0.49.0. In
+v0.51.0 the human-onboarding sections (Overview / Why / Goals / How to Use)
+moved to the [Framework Overview](OVERVIEW.md#stages-guide).

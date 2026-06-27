@@ -361,4 +361,6 @@ to their implementation details.
 Added to framework in v0.25.0. In v0.49.0 the retired Support stage was
 reconciled to the Closure stage (terminal security handoff) plus the Operations
 process (ongoing vulnerability management), and the actor-sense "AI" → "agent"
-rewrite was completed (the proper noun "AI" is reserved for the technology).
+rewrite was completed (the proper noun "AI" is reserved for the technology). In
+v0.51.0 the human-onboarding sections (Overview / Why / Goals / How to Use)
+moved to the [Framework Overview](OVERVIEW.md#security-guide).

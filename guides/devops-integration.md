@@ -159,4 +159,6 @@ Operational templates used across deployment and operations.
 
 Added to framework in v0.38.0. Minimum Pipeline Controls added in v0.40.0.
 Support stage references repointed to Operations Guide and operational-handoff
-template in v0.49.0.
+template in v0.49.0. In v0.51.0 the human-onboarding sections (Overview / Why /
+Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#devops-integration-guide).

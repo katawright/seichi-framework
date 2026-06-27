@@ -574,4 +574,6 @@ Operating Modes moved back from the Approach Guide to this guide and
 restructured as tier subsections; tiers moved before the rubric to establish
 context before scoring. Cross-link to the Operating Model Guide (readiness ≈
 capability coverage) added in v0.49.0. Actor-sense "AI writes production code"
-rewritten to "an agent writes production code" in v0.49.0.
+rewritten to "an agent writes production code" in v0.49.0. In v0.51.0 the
+human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#brownfield-readiness-guide).
