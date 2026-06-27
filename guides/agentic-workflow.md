@@ -1,27 +1,10 @@
 # Agentic Workflow Guide
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#agentic-workflow-guide) for
+> what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Structured entry point for AI agents working with the AI-Assisted SDLC framework
-— providing machine-readable stage routing, artifact dependencies, and fallback
-protocols in a single file.
-
-### Why This Guide
-
-The framework's stage guides, checklists, and references are optimized for human
-readers navigating one stage at a time. An AI agent dropped into this repository
-needs a different interface: a single file with structured metadata for
-programmatic routing and enough narrative context to operate autonomously across
-stages. This guide is that interface.
-
-### Goals of This Guide
-
-- Provide a single entry point for agents to orient in this repository
-- Expose stage routing, inputs/outputs, and gates as structured YAML
-- Define fallback protocols for common agent failure modes
-- Establish session continuity conventions for multi-session work
-
-### Key Principle
+## Key Principle
 
 Stage READMEs (`stages/*/README.md`) are the **canonical source** for stage
 metadata — inputs, outputs, checkpoints, and RACI roles. Autonomy is an
@@ -35,26 +18,6 @@ conventions.
 > does it, see [Roles and Responsibilities](roles.md#roles-and-responsibilities)
 > in the Roles Guide. The RACI matrix defines which role is Responsible,
 > Accountable, Consulted, or Informed at each stage.
-
-### How to Use This Guide
-
-1. **Read stage README front matter** — each `stages/*/README.md` contains the
-   canonical stage metadata (inputs, outputs, checkpoints, RACI)
-2. **Identify your current stage** from the [**Stage Routing**](#stage-routing)
-   section
-3. **Check inputs and outputs** — verify required inputs are available before
-   starting a stage
-4. **Follow gate requirements** — each stage specifies its required gates and
-   checkpoints
-5. **Use fallback protocols** when stuck — see
-   [**Error and Fallback Guidance**](#error-and-fallback-guidance)
-6. **Maintain session logs** — see
-   [**Session Continuity Protocol**](#session-continuity-protocol) for
-   multi-session work
-
-> **New to the framework?** See the [Bootstrap Guide](bootstrap.md) for setup
-> instructions, working location configuration, and a ready-to-use prompt
-> template for your first project.
 
 ---
 
@@ -272,8 +235,11 @@ the [Operating Model Guide](operating-model.md).
 
 Recommended workflow for AI coding agents operating in this repository:
 
-1. **Orient** — read `guides/agentic-workflow.md` for stage routing and
-   cross-cutting guidance. Determine your working location from the
+1. **Orient** — read the **classification core** and orient, following
+   [Read Order and the Load Line](#read-order-and-the-load-line): read this
+   guide for stage routing, classify the scenario and governance weight, then
+   load the governance spine and the **current** stage's material — do not
+   front-load downstream stages. Determine your working location from the
    `working_location` field in the current stage's README front matter.
 2. **Locate stage** — identify the current stage from the routing section; read
    the stage README, checklist, and reference. If the current stage — or the
@@ -289,6 +255,77 @@ Recommended workflow for AI coding agents operating in this repository:
    follow fallback protocols from `stages/[stage]/reference.md` if blocked
 6. **Log** — for multi-session work, maintain a session log using
    `templates/session-log.md`; read on start, write on end
+
+---
+
+## Read Order and the Load Line
+
+Read **stage-scoped**, not whole-corpus. The framework is large; an agent that
+front-loads every guide, stage, and template before acting pays a fixed
+per-session comprehension cost on material the current stage mostly does not
+need. Load the cross-cutting governance that binds _throughout_, plus the
+**current** stage's material — and defer downstream stages' guides, references,
+and templates until the run reaches them.
+
+The line between _always-loaded_ and _deferred_ — the **load line** — is fixed
+below. The `core`/`ref` tier in [`INDEX.md`](../INDEX.md) marks reading _depth_
+within a topic; the load line is orthogonal, marking which files cross-cut every
+stage (always) versus which belong to one stage or context (deferred until
+reached).
+
+### Always loaded — the cross-cutting governance
+
+Read at session start and honor throughout, regardless of stage or tier:
+
+- **Tier 0 — Classification core (read first, before anything else).**
+  [`INDEX.md`](../INDEX.md), [`README.md`](../README.md), this guide
+  (`agentic-workflow.md`), [`session-protocol.md`](session-protocol.md), and
+  [`right-sizing.md`](right-sizing.md). Enough to orient, classify the scenario
+  (the
+  [Session-Start Orientation](session-protocol.md#orient--classify-the-scenario-first-contact)),
+  and classify governance weight (tier / consequence) **before** committing to
+  any further read. `right-sizing.md` is not short, but it is read first
+  regardless: it is the read that decides which other reads happen at all.
+- **Tier 1 — Governance spine (loaded after Tier 0; applied at the weight Tier 0
+  established).** [`operating-model.md`](operating-model.md) (with
+  [`spec/operating-model.md`](../spec/operating-model.md)),
+  [`framework.md`](framework.md), [`checkpoints.md`](checkpoints.md),
+  [`security.md`](security.md) (the cross-cutting **throughline**, not a stage's
+  security detail), and [`stages.md`](stages.md) (the stage **map** — inputs,
+  outputs, gates — not the stage READMEs). These carry the non-delegable floor,
+  the gate and checkpoint rules, the compliance hooks, and the security
+  throughline. They are **never** scoped away by stage.
+
+### Deferred — load on entry to the stage or context
+
+- **Stage-scoped.** Each `stages/<stage>/README.md`, `checklist.md`,
+  `reference.md`, and that stage's templates — load when the run **enters** that
+  stage, not before. A `core`-tier stage README means "load this before its
+  `ref` siblings _within_ the stage," not "load before the stage."
+- **Contextual.** Load on the triggering condition, not by stage:
+  [`operations.md`](operations.md) (Closure / Operations),
+  [`learning-loop.md`](learning-loop.md) (friction / retro),
+  [`spec/delegated-run.md`](../spec/delegated-run.md) (delegated / Lights-Out
+  runs), [`spec/parallel-batch.md`](../spec/parallel-batch.md) with the parallel
+  guides (parallel batches), the brownfield guides (brownfield projects),
+  [`bootstrap.md`](bootstrap.md) and
+  [`project-foundation.md`](project-foundation.md) (setup), and the remaining
+  `ref`-tier guides.
+
+### What stage-scoping must not cost
+
+- **Forward references stay visible.** A downstream constraint that should shape
+  an early decision — e.g., a Verification requirement that affects System
+  Design — must remain visible even though the downstream stage's full guide has
+  not loaded. The always-loaded stage **map** ([`stages.md`](stages.md)) carries
+  each stage's inputs and outputs for exactly this reason, and the traceability
+  chain (goal → success criterion → requirement → acceptance criterion → test)
+  is governance, honored throughout. Defer downstream _guides_, never downstream
+  _constraints_.
+- **The load line is a floor, not a ceremony budget.** Lighter tiers thin how
+  much of the governance spine is _materialized and applied_ (see
+  [Right-Sizing](right-sizing.md)); they never scope the line away by stage, and
+  never below the compliance or non-delegable floor.
 
 ---
 
@@ -587,10 +624,14 @@ on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
 Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.
 Agent Execution Model step 2 repointed to the session-start orientation
 protocol, and operator-comfort register calibration added to Classification by
-Inference, in v0.50.0. v0.49 consistency sweep: Support stage renamed to
-Closure; autonomy-tier subsections (Human-Led / Collaborative / AI-Led) renamed
-to operating postures (Supervised / Checkpointed / Lights-Out); Stage Flow
-Diagram feedback edges updated to reflect Operations. The agentic-loop "follow
-gate requirements" step reworded from per-stage "human oversight" to
-gates/checkpoints, aligning with the operating-model framing (oversight is an
-operating-model choice, not a stage property).
+Inference, in v0.50.0. The **Read Order and the Load Line** section — fixing the
+always-loaded cross-cutting governance against stage-scoped and contextual
+material, so an agent reads the current stage rather than the whole corpus — was
+added in v0.51.0, and the Agent Execution Model's Orient step repointed to it.
+v0.49 consistency sweep: Support stage renamed to Closure; autonomy-tier
+subsections (Human-Led / Collaborative / AI-Led) renamed to operating postures
+(Supervised / Checkpointed / Lights-Out); Stage Flow Diagram feedback edges
+updated to reflect Operations. The agentic-loop "follow gate requirements" step
+reworded from per-stage "human oversight" to gates/checkpoints, aligning with
+the operating-model framing (oversight is an operating-model choice, not a stage
+property).

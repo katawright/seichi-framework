@@ -1,39 +1,15 @@
 # Checkpoint Taxonomy
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#checkpoint-taxonomy) for
+> what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
-Taxonomy of the three checkpoint types used across all stages — gates, reviews,
-and alignments — with decision-rights assignments and stage mapping.
-
-### Why Checkpoints
-
-Without distinct checkpoint types, all quality gates feel the same — teams
-either rubber-stamp everything or treat every review as a stop/go decision.
-Distinguishing gates (investment decisions) from reviews (criteria verification)
-and alignments (stakeholder consensus) gives each checkpoint the right weight
-and the right decision-maker.
-
-### Goals of This Guide
-
-- Define the three checkpoint types and when each applies
-- Assign decision rights (who prepares evidence, who decides, who is informed)
-- Map checkpoints to stages so every stage has clear exit criteria
-
-### Key Principle
+## Key Principle
 
 Not every checkpoint is a gate. Gates ask "should we continue?" Reviews ask
 "does this meet the bar?" Alignments ask "are we on the same page?" Matching the
 checkpoint type to the question prevents both rubber-stamping and decision
 fatigue.
-
-### How to Use This Guide
-
-1. Read [**Gates**](#gates), [**Reviews**](#reviews), and
-   [**Alignments**](#alignments) to understand the three types
-2. Use the [**Decision-Rights Matrix**](#decision-rights-matrix) to determine
-   who prepares evidence and who decides at each checkpoint
-3. Refer to [**Checkpoint Mapping by Stage**](#checkpoint-mapping-by-stage) to
-   see which checkpoints apply at each stage
 
 ---
 
@@ -197,7 +173,7 @@ work at each stage and where human oversight is required.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Extracted from `guides/stages.md` in v0.42.0. Stale AI Assistance Scorecard
 reference repointed to the Operating Model Guide in v0.49.0.

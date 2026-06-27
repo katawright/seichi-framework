@@ -1,10 +1,8 @@
 # Operations Guide
 
-## Overview
-
-Practical guidance for operating a standing production system — keeping it
-healthy, responding to what goes wrong, and feeding what you learn back into
-delivery.
+> **New here?** See [Framework Overview](OVERVIEW.md#operations-guide) for what
+> this guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
 > **Operations is a process, not an SDLC stage.** The SDLC governs a **bounded
 > project** that terminates at [Closure](../stages/closure/README.md);
@@ -16,58 +14,13 @@ delivery.
 > project _ends_ at Closure; the system it produced is _operated_ here, under
 > whoever owns it.
 
-### Why Operations
-
-Operations was long treated as the last stage of the project that built the
-system — a "Support stage" bolted onto the end of delivery. That conflated two
-different lifecycles: a project that is _done_ when its scope ships, and a
-system that keeps running long after. The category error showed up everywhere —
-a finished project that reached its "continuous stage" looked like it had
-stopped early; ongoing operations assumed a standing ops team a solo builder
-never had; and forward work piled into a support backlog because there was
-nowhere else to put it. Pulling operations out into its own process fixes the
-seam: delivery ends cleanly at Closure, the system is handed off, and operating
-it is its own governed practice with its own terminal.
-
-### Goals of This Guide
-
-- Separate operating a **standing system** from delivering a **bounded project**
-- Organize operations around what it actually does — **Observe, Respond,
-  Maintain, Measure** — rather than around a team shape
-- Apply the [operating model](operating-model.md) so operations can run
-  supervised, checkpointed, or Lights-Out, sized to consequence
-- Draw the **remediation boundary** — what operations fixes in place versus what
-  re-enters delivery
-- Route what operations learns back into delivery through a clean
-  [ops→dev edge](#the-opsdev-edge)
-
-### Key Principle
+## Key Principle
 
 Operating a system is the same operating model applied to a different unit. A
 project is delivered once; a system is operated continuously. What changes is
 the unit (system, not project) and the terminal (decommission, not closure) —
 not the configurable functions, the floors, or what "running unattended"
 requires.
-
-### How to Use This Guide
-
-1. Confirm you are operating a standing system, not finishing a project — see
-   [**Operations vs. the SDLC**](#operations-vs-the-sdlc)
-2. Establish [**ownership**](#ownership-spans) of the system, received through
-   the [Closure handoff record](../stages/closure/README.md)
-3. Run the four [**operations activities**](#the-four-operations-activities) —
-   Observe, Respond, Maintain, Measure
-4. Decide _how autonomously_ each runs using the
-   [**autonomy ladder**](#autonomy-the-right-sizing-lens), within the
-   consequence floors from the [Right-Sizing Guide](right-sizing.md)
-5. Route fixes across the [**remediation boundary**](#the-remediation-boundary):
-   operational remediation stays here; software change re-enters delivery as
-   [Flow](stages.md#flow-delivery-mode) or a project
-6. Retire the system through
-   [**decommission**](#decommission-the-terminal-of-a-standing-system) when its
-   life ends
-
-For cross-cutting framework concepts, see [Framework Guide](framework.md).
 
 ---
 
@@ -416,7 +369,7 @@ this guide where an obligation or contract demands more.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.49.0. Operations is the standing-system sibling to the
 SDLC, introduced in the v0.49 dev/ops split: the continuous "Support stage" was

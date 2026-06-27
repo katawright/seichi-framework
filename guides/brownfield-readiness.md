@@ -1,38 +1,15 @@
 # Brownfield Readiness Guide
 
-## Overview
-
-Assessment framework for evaluating brownfield codebase readiness for
-AI-assisted development. Understand the readiness tiers and what AI can do at
-each level, then score your codebase to determine where you stand. For the
-overall brownfield preparation process, see the
-[Brownfield Preparation Guide](brownfield.md).
+> **New here?** See [Framework Overview](OVERVIEW.md#brownfield-readiness-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
 > **In operating-model terms,** a readiness tier is largely a
 > [capability-coverage](operating-model.md#capability-coverage) assessment: thin
 > verifiability gives an agent little it can check, so the operating envelope
 > stays narrow. See the [Operating Model Guide](operating-model.md).
 
-### Why Brownfield Readiness
-
-Brownfield projects vary enormously. A well-tested codebase with current
-documentation needs only a discovery pass before AI-assisted feature work, while
-a codebase with no tests, tribal-knowledge-only architecture, and tangled
-multi-repo dependencies may need months of preparation. Without a structured
-readiness assessment, teams either over-invest in preparation (delaying value)
-or under-invest (setting AI tools up to fail on a codebase they can't reason
-about effectively).
-
-### Goals of This Guide
-
-- Define the full brownfield readiness spectrum from Ready to Rebuild
-- Describe what AI can and cannot do at each readiness tier
-- Provide a scored rubric for evaluating codebase readiness across five axes
-- Map scores to readiness tiers that inform preparation strategy
-- Address multi-repository and database considerations that extend beyond a
-  single codebase
-
-### Key Principle
+## Key Principle
 
 Assess the weakest axis, not the average. A single critical gap — such as zero
 test coverage or entirely undocumented architecture — can shift the overall
@@ -40,19 +17,7 @@ assessment regardless of other axes. If any axis scores 0 (the worst score),
 bump the tier down at least one level unless the blast radius of that axis is
 small.
 
-### How to Use This Guide
-
-1. Read the [**Readiness Tiers**](#readiness-tiers) to understand the spectrum
-   and what AI can do at each level
-2. Score your codebase using the [**Readiness Rubric**](#readiness-rubric) (five
-   axes, 0-4 each) to determine your tier
-3. Check
-   [**Multi-Repository and Database Considerations**](#multi-repository-and-database-considerations)
-   if your system extends beyond a single repository
-4. Proceed to the [**Brownfield Approach Guide**](brownfield-approach.md) to
-   choose your investment model and preparation strategy
-
-### When to Assess
+## When to Assess
 
 The readiness rubric is scored in up to two passes — a rough pass at Initiation
 and, if the project proceeds, a detailed pass at System Design:
@@ -595,7 +560,7 @@ for the full constraint taxonomy with NFR templates and examples.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
 in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo

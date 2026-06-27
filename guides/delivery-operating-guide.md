@@ -1,48 +1,19 @@
 # Delivery Operating Guide
 
-## Overview
-
-Week-by-week operating rhythm for running one increment through the framework —
-composing existing stage guides, RACI, and gate facilitation into an actionable
-delivery view.
+> **New here?** See [Framework Overview](OVERVIEW.md#delivery-operating-guide)
+> for what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
 > **Not the [Operating Model Guide](operating-model.md).** That guide sizes
 > _who_ runs the process and _how autonomously_ (Layer B, the operating model);
 > this guide is the week-by-week _delivery rhythm_ for one increment. Similar
 > name, different axis.
 
-### Why a Delivery Operating Guide
-
-The [Cadence Mapping](framework.md#cadence-mapping) table in the Framework Guide
-shows _what_ maps _where_, and the RACI matrix shows _who_ does _what_. But a
-PjM looking at a 2-week sprint still has to mentally assemble the operating
-rhythm from stage guides, gate facilitation notes, and RACI tables. This guide
-composes those pieces into a week-by-week view so PjMs can run delivery without
-cross-referencing multiple documents.
-
-### Goals of This Guide
-
-- Provide a concrete week-by-week operating rhythm for one increment cycle
-- Cover Sprint and Kanban/Flow delivery modes
-- Include a minimal status template for progress reporting
-- Link to (not duplicate) existing framework content for RACI, gates, and stage
-  details
-
-### Key Principle
+## Key Principle
 
 This guide composes existing content — it does not replace it. If the RACI
 matrix, gate facilitation agenda, or stage definitions change, those changes are
 authoritative. This guide provides the operating view that connects them.
-
-### How to Use This Guide
-
-1. Choose your delivery mode:
-   [**Sprint Rhythm**](#sprint-rhythm-2-week-increment) or
-   [**Kanban / Flow Rhythm**](#kanban--flow-rhythm)
-2. Walk through the week-by-week activities for one increment cycle
-3. Use the [**Status Template**](#status-template) for progress reporting
-4. Follow links to authoritative sources for RACI, gate agendas, and stage
-   guides
 
 ---
 
@@ -210,7 +181,7 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.40.0. Final-increment close-out review pointed at the
 project close-out (checklist + summary) in v0.47.0. Name disambiguated from the

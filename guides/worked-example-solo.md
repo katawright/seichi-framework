@@ -1,44 +1,14 @@
 # Worked Example: Solo Developer, From Idea to Gate 1
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#worked-example-solo) for
+> what this example is, why it exists, and how to use it. This file is the
+> operational reference.
 
-End-to-end example of the framework at its smallest — one person, an empty
-repository, a half-formed idea — traced from the idea-formation interview
-through a Minimal-tier Initiation Brief to the one-question Gate 1 self-gate.
-
-### Why a Solo Example
-
-The other worked examples are team-shaped: a greenfield project with engineers,
-QA, and a product manager, and a brownfield adoption with an established
-organization. The most common first-look user matches neither — a solo developer
-with a fuzzy product idea and no stakeholder list. This example shows exactly
-what "done" looks like for that situation, before committing to anything.
-
-### Goals of This Example
-
-- Show what an idea-formation interview extracts from a fuzzy idea
-- Show project classification inferred from conversation, not asked as menus
-- Show a completed Minimal-tier Initiation Brief, including no-baseline success
-  criteria
-- Show the Gate 1 one-question self-gate, recorded without ceremony
-
-### Key Principle
+## Key Principle
 
 The framework at N=1 is the same framework with the ceremony removed. The
 deliberate moments — a tested problem statement, explicit assumptions, a real
 go/no-go pause — stay.
-
-### How to Use This Example
-
-1. [**The Idea**](#the-idea) — the starting point, verbatim
-2. [**Idea Formation: The Interview**](#idea-formation-the-interview) — what the
-   conversation extracts
-3. [**Classification by Inference**](#classification-by-inference) — the
-   `[ASSUMED]` defaults the agent presents
-4. [**The Minimal-Tier Initiation Brief**](#the-minimal-tier-initiation-brief) —
-   the completed artifact
-5. [**Gate 1: The Self-Gate**](#gate-1-the-self-gate) — the recorded decision
-6. [**What Happens Next**](#what-happens-next) — where the path continues
 
 ---
 
@@ -287,7 +257,7 @@ codebase, see the [Brownfield Worked Example](worked-example-brownfield.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.48.0. v0.49 consistency sweep: operating posture
 vocabulary updated (Collaborative → Checkpointed; oversight intensity removed).

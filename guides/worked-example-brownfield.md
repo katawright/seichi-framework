@@ -1,47 +1,14 @@
 # Worked Example: Brownfield Adoption
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#worked-example-brownfield)
+> for what this example is, why it exists, and how to use it. This file is the
+> operational reference.
 
-End-to-end traced example of a brownfield project adopting the framework — from
-readiness assessment through one preparation increment, exit checkpoint, and one
-feature increment.
-
-### Why a Brownfield Worked Example
-
-The [greenfield Worked Example](worked-example.md) shows what "done" looks like
-for a new-build project. But brownfield adoption follows a different path:
-assessing existing codebase readiness, running preparation increments, deciding
-when preparation is "enough," and then delivering features under constraints
-that don't exist in greenfield. Without a concrete example, the brownfield
-guidance stays abstract — engineers and DevOps trust examples over
-prescriptions.
-
-### Goals of This Example
-
-- Demonstrate the readiness assessment → preparation → exit checkpoint → feature
-  work flow
-- Show "acceptable substitutes" for organizations with existing artifacts
-- Make shadow mode and gradual rollout guidance concrete
-- Illustrate gate decisions for brownfield-specific scenarios
-
-### Key Principle
+## Key Principle
 
 Preparation is bounded, not open-ended. This example shows a team that prepares
 _enough_ to start AI-assisted feature work in one area, then expands — not a
 team that perfects the entire codebase before writing a line of new code.
-
-### How to Use This Example
-
-1. Read the [**Scenario**](#scenario) to understand the starting point
-2. Follow the [**Readiness Assessment**](#readiness-assessment) to see scoring
-   in action
-3. Walk through the [**Discovery Increment**](#discovery-increment-increment-0)
-   and [**Exit Checkpoint**](#exit-checkpoint) to see how "enough" is determined
-4. See the [**Feature Increment**](#feature-increment-increment-1) for
-   AI-assisted delivery under brownfield constraints
-5. Review the
-   [**Traceability Chain**](#traceability-chain-brownfield-vs-greenfield) to see
-   how brownfield differs from greenfield
 
 ---
 
@@ -433,7 +400,7 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-26
 
 Added to framework in v0.40.0. Scores recalculated for five-axis rubric
 (Consistency added; Deployability and Observability moved to supplementary

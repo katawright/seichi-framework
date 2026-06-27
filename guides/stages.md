@@ -50,50 +50,15 @@ pipeline:
 
 # AI-Assisted SDLC Stages
 
-## Overview
+> **New here?** See [Framework Overview](OVERVIEW.md#stages-guide) for what this
+> guide is, why it exists, and how to use it. This file is the operational
+> reference.
 
-**8 stages** that balance comprehensive coverage with practical simplicity for
-AI-assisted software delivery.
-
-### Why Defined Stages
-
-Software projects have natural phases, but without explicit stage definitions
-teams skip critical activities, handoffs between roles break down, and goals set
-early never connect to what gets measured in production. AI amplifies this
-problem — it can generate artifacts quickly, but without clear inputs, outputs,
-and exit criteria for each stage, teams lose track of what's been validated and
-what's just been drafted.
-
-### Goals of This Guide
-
-- Define what happens at each stage — inputs, activities, outputs, and exit
-  criteria
-- Provide methodology-agnostic stages that work for agile, waterfall, and hybrid
-  approaches
-- Ensure cross-functional handoffs between business and technical stakeholders
-- Establish a measurement throughline from goals to production metrics
-
-For who runs the process and how autonomously at each stage, see the
-**[Operating Model Guide](operating-model.md)**.
-
-### Key Principle
+## Key Principle
 
 Each stage is led by the role best suited to the work, with AI assistance
 bounded by verifiability and risk. Success criteria established in Initiation
 flow through every subsequent stage.
-
-### How to Use This Guide
-
-1. Review the [**Quick Reference**](#quick-reference) table to see all 8 stages
-   at a glance
-2. Understand [**How Stages Execute**](#how-stages-execute) (Foundational,
-   Iterative, Terminal) and the [**Flow delivery mode**](#flow-delivery-mode)
-3. Check [**Stage Altitude**](#stage-altitude) to see the abstraction level and
-   scope each stage works at
-4. Drill into individual [**stage definitions**](#stage-1-initiation) for
-   inputs, activities, outputs, and exit criteria
-5. See [**Checkpoint Taxonomy**](checkpoints.md) for the gate and review types
-   that govern progression
 
 ---
 

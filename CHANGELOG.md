@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.51.0 (2026-06-26)
+
+### Features
+
+- **framework:** stage-scoped framework loading — `agentic-workflow.md` gains a
+  **Read Order and the Load Line** section fixing the always-loaded
+  cross-cutting governance (Tier 0 classification core — `INDEX`, `README`,
+  `agentic-workflow`, `session-protocol`, `right-sizing`; Tier 1 governance
+  spine — `operating-model` and its spec, `framework`, `checkpoints`, the
+  `security` throughline, and the `stages` map) against stage-scoped and
+  contextual material an agent loads only on entry to the stage or context. The
+  Agent Execution Model's Orient step repoints to it (RC-1)
+
+### Refactor
+
+- **framework:** audience-separated the guide corpus — the human-onboarding
+  layer (Overview blurb + Why / Goals / How to Use) is lifted out of all 24
+  operational `guides/*.md` files into a new human-facing
+  **`guides/OVERVIEW.md`** (per-guide sections with a table of contents and
+  back-links) that agents do not load. Each guide now opens with a one-line "New
+  here?" pointer to its OVERVIEW section, then its load-bearing Key Principle
+  and any cross-reference callouts. `INDEX.md` adds the OVERVIEW row (Guides 25
+  → 26) and `STYLE_GUIDE.md` documents the new opening convention. The
+  brownfield 5→1 single-source consolidation (RC-3's separate de-dup lever) is
+  deferred to a tracked follow-up (RC-3, audience-separation lever)
+
 ## 0.50.0 (2026-06-26)
 
 ### Features

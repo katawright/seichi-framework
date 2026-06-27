@@ -1,9 +1,8 @@
 # Operating Model Guide
 
-## Overview
-
-Practical guidance for deciding who or what operates a project's process — and
-how much of it runs without a human.
+> **New here?** See [Framework Overview](OVERVIEW.md#operating-model-guide) for
+> what this guide is, why it exists, and how to use it. This file is the
+> operational reference.
 
 > **Sibling to the [Right-Sizing Guide](right-sizing.md).** Right-sizing sizes
 > governance _weight_ (Layer A — how heavy the process is); this guide sizes who
@@ -13,63 +12,13 @@ how much of it runs without a human.
 > [Operating Model Spec](../spec/operating-model.md) — this guide gives the
 > rationale and how-to; the spec gives the rules.
 
-### Why an Operating Model
-
-Right-sizing tells you how _heavy_ a process should be; it does not tell you who
-_runs_ it. Two projects at the same consequence level can operate completely
-differently: one engineer driving agents by hand, or an agent executing
-unattended overnight while a human reviews the result in the morning. That
-choice — how much human involvement the work actually requires — is a separate
-decision from how heavy the process is, and operators make it by accident when
-the framework gives it no name. The operating model names it, so it can be set
-deliberately. It also keeps the decision honest about real limits — but the
-limit is rarely capability alone. If an agent cannot independently verify a
-deployment, whether that step should run unattended is a consequence question,
-not a capability one: on a personal site you might happily let it deploy
-unverified; on a payment system you would not. The operating model makes that
-interaction explicit instead of leaving it to chance.
-
-### Goals of This Guide
-
-- Separate _how the process is operated_ from _how heavy it is_ (right-sizing)
-- Name the **operating functions** the model runs on, and which the operator
-  configures
-- Show how project consequence and real capability bound those choices
-- Explain the operating envelope — what may proceed without a human, and where
-  it must stop or escalate
-- Position unattended ("Lights-Out") operation as one end of a spectrum, not a
-  separate mode
-
-### Key Principle
+## Key Principle
 
 Right-sizing decides _what_ the process requires; the operating model decides
 _who or what satisfies it, and how autonomously_. The operator sets intent on
 the functions they can configure; project consequence raises floors they cannot
 go below, and real capability sets a ceiling they cannot exceed. What survives
 between them is the **effective operating envelope**.
-
-### How to Use This Guide
-
-1. Right-size first — see [Right-Sizing Guide](right-sizing.md) — to establish
-   consequence, compliance, and team context
-2. **Shortcut — start with a preset:** an [Operating Preset](#operating-presets)
-   bundles the four settings _and_ the minimum coverage they assume. Pick the
-   one that fits; if your environment meets its minimum coverage, you are
-   configured — stop here, or read on to customize or understand why
-3. **Or go deep:** read [**Operating Functions**](#operating-functions) to learn
-   the functions the model runs on
-4. Assess [**Capability Coverage**](#capability-coverage) — what agents and
-   tools can actually do — so you configure within reality, not against it
-5. Set the four [**configurable functions**](#the-configurable-functions),
-   within what coverage supports
-6. Read [**The Operating Envelope**](#the-operating-envelope) to see what that
-   yields: what runs unattended, what escalates
-
-Expect a loop, not a straight line: the envelope (step 6) can still send you
-back to step 5 to adjust a setting — leading with a preset or with assessment
-just keeps that loop short. For the normative form of any rule below — the exact
-floors, the fidelity conditions, the stop-enforcement contract — follow the
-links into the [Operating Model Spec](../spec/operating-model.md).
 
 ---
 
@@ -403,10 +352,13 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-26
 
-Added to framework in v0.49.0. Companion to the
-[Right-Sizing Guide](right-sizing.md) (Layer A — governance weight) and the
+Added to framework in v0.49.0. In v0.51.0 the human-onboarding sections
+(Overview / Why / Goals / How to Use) moved to the
+[Framework Overview](OVERVIEW.md#operating-model-guide); the operational Key
+Principle and the right-sizing / spec sibling callout stay here. Companion to
+the [Right-Sizing Guide](right-sizing.md) (Layer A — governance weight) and the
 agent-facing [Operating Model Spec](../spec/operating-model.md), which carries
 the normative contracts behind these functions: the floors, ceilings, capability
 coverage, the effective operating envelope, evaluator independence, and stop
