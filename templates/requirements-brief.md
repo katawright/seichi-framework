@@ -279,7 +279,8 @@ Provide this Requirements Brief to System Design team.
 - Increment plan with dependencies for iterative delivery (System Design stage)
 - Updated staffing/timeline estimates with improved confidence (System Design
   stage)
-- Recommendation: proceed / revise / stop (System Design stage)
+- Recommendation: Proceed / Proceed with conditions / Revise / Stop (System
+  Design stage)
 
 **For System Design team:** Focus foundational design pass on:
 
@@ -313,4 +314,4 @@ Provide this Requirements Brief to System Design team.
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. Goals layer threaded into the Goals and Success Criteria section and traceability table in v0.45.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment paths corrected to ../stages/. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.3.0. MoSCoW headers updated to "earliest increments"/"later increments" vocabulary, session protocol preamble, and Usability NFR prompt added in v0.44.0. Goals layer threaded into the Goals and Success Criteria section and traceability table in v0.45.0. v0.49 vocabulary/dev-ops-split sweep; stage-guidance comment paths corrected to ../stages/. -->

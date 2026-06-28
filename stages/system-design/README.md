@@ -115,8 +115,9 @@ documentation, ADRs, infrastructure configuration, and known technical debt.
 4. Review the brief for correctness — you own the final content
 5. Complete the [System Design Checklist](checklist.md) using AI according to
    your operating posture
-6. Complete Gate 2 — present to stakeholders and record the proceed/revise/stop
-   decision using the [Gate Decision Template](../../templates/gate-decision.md)
+6. Complete Gate 2 — present to stakeholders and record the Proceed / Proceed
+   with conditions / Revise / Stop decision using the
+   [Gate Decision Template](../../templates/gate-decision.md)
 
 > **See a completed example:** The
 > [Worked Example: System Design](../../guides/worked-example.md#stage-3-system-design)
@@ -541,8 +542,8 @@ priority definitions.
 
 > **Gate 2:** The increment plan feeds into the Gate 2 Decision Package in the
 > [System Design Brief Template](../../templates/system-design-brief.md#gate-2-decision-package).
-> Record the proceed/revise/stop decision using the
-> [Gate Decision Template](../../templates/gate-decision.md).
+> Record the Proceed / Proceed with conditions / Revise / Stop decision using
+> the [Gate Decision Template](../../templates/gate-decision.md).
 
 ### Infrastructure Planning
 
@@ -715,7 +716,7 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. Visual architecture cross-cutting concern and
 subsection added in v0.44.0. Stage altitude note and bridging-sentence

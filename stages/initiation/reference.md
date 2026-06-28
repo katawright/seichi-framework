@@ -307,7 +307,8 @@ organizational judgment, stakeholder authority, or accountability. Specifically:
   and stakeholders can confirm or refute them
 - Risk acceptance — whether identified risks are acceptable, require mitigation,
   or should block the Gate 1 decision
-- The Gate 1 proceed/revise/stop decision itself — this is always human-owned
+- The Gate 1 decision itself (Proceed / Proceed with conditions / Revise / Stop)
+  — this is always human-owned
 
 **Oversight at this stage.** How closely a human watches the work is no longer a
 separate dial — it folds into **Required Assurance** (how independently the work
@@ -386,7 +387,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.23.0. New-product no-baseline guidance added in
 v0.48.0. v0.49: vocabulary and oversight model updated.

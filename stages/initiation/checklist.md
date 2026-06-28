@@ -45,7 +45,8 @@ to circulate.
 
 5. [ ] **Scope boundaries are explicit** (in-scope and out-of-scope)
 6. [ ] **Non-goals are explicit** (3-5 items)
-7. [ ] **[J] Gate 1 decision criteria are explicit** (proceed/revise/stop)
+7. [ ] **[J] Gate 1 decision criteria are explicit** (Proceed / Proceed with
+       conditions / Revise / Stop)
 8. [ ] **A project lead is named**
 9. [ ] **Key stakeholders identified with participation levels** (documented in
        brief with roles, participation type C/I, and relevant stages; see
@@ -102,6 +103,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.2.0. AI-Led mode updated to Lights-Out mode in v0.49.0.
