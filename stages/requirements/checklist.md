@@ -118,7 +118,7 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.3.0. Item 11 reworded for the goals/success-criteria
 split in v0.45.0. AI-Led mode updated to Lights-Out mode in v0.49.0.
