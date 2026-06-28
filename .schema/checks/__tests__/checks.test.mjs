@@ -207,6 +207,11 @@ describe("stampFormatIssues", () => {
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("must be a bare date");
   });
+  it("exempts a pipe-delimited structured continuation (INDEX header)", () => {
+    expect(
+      stampFormatIssues("**Last Updated:** 2026-06-28 | **Framework Version:** 0.52.0\n"),
+    ).toEqual([]);
+  });
   it("flags 'Added to the framework' (stray 'the')", () => {
     const issues = stampFormatIssues("**Last Updated:** 2026-06-21\n\nAdded to the framework in v0.49.0.\n");
     expect(issues.some((i) => i.includes("'Added to the framework'"))).toBe(true);

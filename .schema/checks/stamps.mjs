@@ -13,7 +13,14 @@ const STAMP_GLOBS = [
   "stages/**/*.md",
   "spec/*.md",
   "templates/*.md",
+  // Root navigation/content files (README, INDEX, STYLE_GUIDE, CONTRIBUTING,
+  // CLAUDE, AGENTS, QUICKSTART). `*.md` matches root-level files only — minimatch
+  // `*` does not cross `/`, so nested files stay covered by the globs above.
+  "*.md",
 ];
+
+// Root `.md` files that legitimately carry no maintenance stamp.
+const STAMP_EXCLUDE = ["CHANGELOG.md"];
 
 export function parseStamp(content) {
   let m = content.match(/\*\*Last Updated:\*\*\s*(\d{4}-\d{2}-\d{2})/);
@@ -30,11 +37,15 @@ export function parseStamp(content) {
 // The first rule fires only on a REAL date (\d{4}-\d{2}-\d{2}) with trailing text,
 // which intentionally exempts template fill-in lines (`**Last Updated:** YYYY-MM-DD
 // **Increment:** …`) — there the date is a placeholder and the maintenance stamp is
-// the `<!-- Template Last Updated: … -->` footer instead.
+// the `<!-- Template Last Updated: … -->` footer instead. A pipe-delimited
+// structured continuation is also exempt (the INDEX header pairs the stamp with
+// `| **Framework Version:** X.Y.Z`) — the rule targets free-text / em-dash change
+// history trailing the stamp, not a second structured field.
 export function stampFormatIssues(content) {
   const issues = [];
   const m = content.match(/^\*\*Last Updated:\*\* (\d{4}-\d{2}-\d{2})(.*)$/m);
-  if (m && m[2].trim() !== "") {
+  const trailing = m ? m[2].trim() : "";
+  if (m && trailing !== "" && !trailing.startsWith("|")) {
     issues.push(
       "'**Last Updated:**' line must be a bare date YYYY-MM-DD — move change history to the 'Added to framework …' line",
     );
@@ -78,6 +89,7 @@ export function runStamps(repoRoot, files) {
   const shallow = isShallowRepo(repoRoot);
   for (const file of files) {
     if (!STAMP_GLOBS.some((g) => minimatch(file, g))) continue;
+    if (STAMP_EXCLUDE.some((g) => minimatch(file, g))) continue;
     let c;
     try {
       c = readFileSync(join(repoRoot, file), "utf8");

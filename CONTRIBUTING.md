@@ -132,6 +132,6 @@ lockfiles on Linux already.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.24.0.
