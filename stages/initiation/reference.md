@@ -295,20 +295,22 @@ for human direction. Concretely, this includes:
 
 ### What Humans Validate
 
-All investment decisions belong to humans — agents cannot substitute for
-organizational judgment, stakeholder authority, or accountability. Specifically:
+The **investment decision** is the human-owned floor here: Gate 1 itself, the
+budget and timeline commitments it authorizes, and the acceptance of residual
+risk. The supporting analysis is agent-able and follows the project's Authority
+setting:
 
-- All scope and priority choices — what is in scope, what is explicitly
-  excluded, what is deferred
+- Scope and priority choices — what is in scope, excluded, or deferred (an agent
+  drafts; the choice is authorized at the gate)
 - Stakeholder alignment — whether the right people have been consulted and are
   aligned
-- Budget and timeline commitments — an agent provides ranges; humans commit
-- Assumption challenges — an agent lists assumptions, but only domain experts
-  and stakeholders can confirm or refute them
-- Risk acceptance — whether identified risks are acceptable, require mitigation,
-  or should block the Gate 1 decision
+- Budget and timeline — an agent provides ranges; committing them is the floor
+- Assumptions — an agent lists them; confirming or refuting a domain assumption
+  needs a party qualified in that domain
+- Risk acceptance — an agent analyzes likelihood and impact; accepting residual
+  risk (or letting it block Gate 1) is the floor
 - The Gate 1 decision itself (Proceed / Proceed with conditions / Revise / Stop)
-  — this is always human-owned
+  — always human-owned
 
 **Oversight at this stage.** How closely a human watches the work is no longer a
 separate dial — it folds into **Required Assurance** (how independently the work

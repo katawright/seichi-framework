@@ -811,23 +811,27 @@ rather than waiting for human direction. Concretely, this includes:
 ### What Humans Validate
 
 System Design has the highest blast radius of the foundational stages —
-foundational decisions are difficult and expensive to reverse. Human validation
-is non-negotiable in the following areas:
+foundational decisions are difficult and expensive to reverse. The genuine floor
+here is **Gate 2** and any **compliance or security sign-off**, which stay
+human-owned. The remaining judgments follow the project's Authority setting — a
+human owns each directly, or an agent does within delegated bounds:
 
-- **Architecture decisions:** Require alignment — architecture council or tech
-  lead sign-off. Agents propose; humans decide.
-- **Security model and data flow:** No security-critical decision should be
-  finalized without human review. This includes authentication architecture,
-  authorization model, data residency, and encryption choices.
-- **Rollback and migration plans:** An agent drafts these, but humans must
-  verify that they are executable against the actual production environment and
-  team capabilities.
+- **Architecture decisions:** An Alignment checkpoint — architecture council or
+  tech-lead sign-off by default. Agents propose; the project's Authority setting
+  fixes who decides, and may delegate it to an agent within bounds.
+- **Security model and data flow:** Authentication architecture, authorization
+  model, data residency, and encryption choices carry the higher assurance bar;
+  for a regulated tier the compliance/security sign-off is the human-owned
+  floor.
+- **Rollback and migration plans:** An agent drafts these; their adequacy
+  against the actual production environment and team capabilities is checked
+  under the project's Required Assurance.
 - **Technology selections with organizational fit:** An agent evaluates
-  technologies against stated requirements, but cannot assess organizational
-  politics, existing vendor relationships, team hiring pipelines, or
-  undocumented constraints.
-- **Gate 2 (Investment Decision):** Requires thorough human approval — this gate
-  commits the organization to a specific architecture and investment level.
+  technologies against stated requirements; organizational politics, vendor
+  relationships, hiring pipelines, and undocumented constraints need a party
+  with that context.
+- **Gate 2 (Investment Decision):** The human-owned floor — this gate commits
+  the organization to a specific architecture and investment level.
 
 **Oversight at this stage.** How closely a human watches the work is no longer a
 separate dial — it folds into **Required Assurance** (how independently the work
@@ -909,7 +913,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. ADR id examples updated to the two-digit draft
 form in v0.48.0. v0.49: vocabulary and oversight model updated.

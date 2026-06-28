@@ -598,10 +598,14 @@ rollback if critical.
 
 ### What Humans Validate
 
-ALL production approval gates — humans own every production deployment decision.
-Deployment execution and timing. Rollback decisions during incidents. Traffic
-management and canary promotion decisions. This is the stage with the highest
-risk if wrong (production outages, data loss).
+Production **authorization** is the human-owned floor here — the release /
+go-live decision, and the acceptance/ownership sign-offs. **Execution** —
+deployment steps, timing, traffic management, and canary promotion — is Work
+Execution and follows the project's Authority setting; an agent may run it
+within bounds. The more severe and irreversible the blast radius (production
+outages, data loss), the more the floor tightens toward an interactive human, up
+to interactive-only at Critical. This is the stage with the highest risk if
+wrong.
 
 **Oversight at this stage.** How closely a human watches the work is no longer a
 separate dial — it folds into **Required Assurance** (how independently the work
@@ -657,7 +661,7 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. Hotfix risk-acceptance guidance added in v0.45.0.
 v0.49: vocabulary and oversight model updated; Support reference repointed.
