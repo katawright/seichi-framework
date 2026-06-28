@@ -449,11 +449,14 @@ Broken tests block the team and fix cost increases exponentially over time.
 
 ### What Humans Validate
 
+These checks follow the project's **Authority** setting — a human owns each
+directly, or an agent does within delegated bounds:
+
 - PR review — checking intent, correctness, and security, not just that tests
   pass
 - CI results: tests, linting, and security scans
-- No auth changes, schema changes, or cross-service boundary changes proceed
-  without explicit human approval
+- Higher-risk changes — auth, schema, or cross-service boundary changes — raise
+  the approval bar, tightening toward an interactive human as consequence climbs
 - Feature flag compliance — incomplete work is behind flags before merge
 
 **Oversight at this stage.** How closely a human watches the work is no longer a
@@ -516,6 +519,6 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. v0.49: vocabulary and oversight model updated.

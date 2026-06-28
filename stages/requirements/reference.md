@@ -377,13 +377,15 @@ than waiting for human direction. Concretely, this includes:
 
 ### What Humans Validate
 
-Domain correctness is the non-delegable human contribution to requirements.
-Specifically:
+Domain correctness is the judgment that most needs a qualified party at this
+stage — whether a human owns it directly or a suitably qualified agent does
+within delegated bounds follows the project's Authority setting:
 
 - **Domain correctness:** Whether requirements reflect how the business actually
   works, not just how an agent inferred it should work from the brief
 - **Business priority and MoSCoW ranking:** An agent can draft an initial
-  ranking based on brief language, but stakeholders own the final prioritization
+  ranking based on brief language; the final prioritization is authorized by
+  whoever holds that authority on the project
 - **Stakeholder alignment:** Whether the requirements set reflects consensus
   among all parties consulted during Initiation
 - **Acceptance criteria accuracy:** Whether the Given/When/Then criteria
@@ -466,7 +468,7 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. Misaligned-requirements mitigation re-pointed to
 Initiation goals in v0.45.0. v0.49: Support reference repointed to Operations

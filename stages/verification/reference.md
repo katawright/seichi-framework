@@ -426,6 +426,9 @@ measure success without working monitoring.
 
 ### What Humans Validate
 
+These assurance judgments follow the project's **Authority** setting — a human
+owns each directly, or an agent does within delegated bounds:
+
 - Test intent and coverage quality — are the right things being tested, not just
   that line coverage numbers are met
 - Edge case adequacy — does the test suite cover the scenarios that actually
@@ -491,6 +494,6 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. v0.49: vocabulary and oversight model updated.

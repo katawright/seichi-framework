@@ -281,6 +281,9 @@ These formats can be adapted similarly:
 
 ### What Humans Validate
 
+These design judgments follow the project's **Authority** setting — a human owns
+each directly, or an agent does within delegated bounds:
+
 - Design coherence with the system architecture
 - Interface contract completeness — no missing inputs, outputs, or error cases
 - Test coverage strategy adequacy — right levels, right scenarios
@@ -342,7 +345,7 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.12.0. Internal-consistency troubleshooting added in
 v0.45.0. v0.49: vocabulary and oversight model updated.
