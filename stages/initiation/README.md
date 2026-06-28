@@ -97,8 +97,8 @@ budget context. No prior framework artifacts or technical expertise required.
 6. Review the brief for correctness — you own the final content
 7. Complete the [Initiation Checklist](checklist.md) using agents according to
    your chosen operating posture
-8. Complete Gate 1 — present to stakeholders; Exec decides proceed/revise/stop
-   (see
+8. Complete Gate 1 — present to stakeholders; Exec decides Proceed / Proceed
+   with conditions / Revise / Stop (see
    [Decision-Rights Matrix](../../guides/checkpoints.md#decision-rights-matrix)).
    At Minimal tier, record the decision and date as a note in the Initiation
    Brief; at Standard+ tier, use the
@@ -450,8 +450,8 @@ predictable failures. This section explains why each element is included:
    through all stages
 5. [**Scope Boundaries and Non-Goals**](#scope-boundaries-and-non-goals) —
    what's in and what's out
-6. [**Gate 1 Decision Criteria**](#gate-1-decision-criteria) —
-   proceed/revise/stop framework
+6. [**Gate 1 Decision Criteria**](#gate-1-decision-criteria) — Proceed / Proceed
+   with conditions / Revise / Stop framework
 7. [**Project Lead and Stakeholders**](#project-lead-and-stakeholders) —
    ownership and accountability
 8. [**Assumptions**](#assumptions) — hidden scope made explicit
@@ -647,18 +647,18 @@ trade-offs, not oversights.
 Makes the approval decision explicit and repeatable. Without criteria, gate
 reviews become subjective debates where seniority or enthusiasm drives the
 outcome. Pre-defined criteria tell reviewers exactly what "ready" looks like and
-give the team a concrete target to prepare for. They also make the
-proceed/revise/stop options concrete — reviewers aren't choosing between "yes"
-and "no" but between well-defined paths. This reduces decision fatigue and
-speeds up the gate review itself.
+give the team a concrete target to prepare for. They also make the Proceed /
+Proceed with conditions / Revise / Stop options concrete — reviewers aren't
+choosing between "yes" and "no" but between well-defined paths. This reduces
+decision fatigue and speeds up the gate review itself.
 
 **What to include:**
 
 - Decision criteria — what conditions must be true to proceed
 - Thresholds — quantified where possible (e.g., "business case shows positive
   ROI within 12 months")
-- Decision options — define proceed, revise, and stop with expected next steps
-  for each
+- Decision options — define Proceed, Proceed with conditions, Revise, and Stop
+  with expected next steps for each
 
 **Example:**
 

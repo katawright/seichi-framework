@@ -227,8 +227,9 @@ experience surveys — see
 
 ## Governance at a Glance
 
-The framework uses **two investment gates** — explicit proceed/revise/stop
-decisions where "investment" means committing team capacity, time, and budget.
+The framework uses **two investment gates** — explicit Proceed / Proceed with
+conditions / Revise / Stop decisions where "investment" means committing team
+capacity, time, and budget.
 
 | Gate   | When                               | Decision                             | Accountable |
 | ------ | ---------------------------------- | ------------------------------------ | ----------- |
@@ -384,7 +385,7 @@ to try the framework solo or with your team first, skip to
    checklist.
 6. Schedule and run the Gate 1 decision.
 7. **(Executives)** Review the Initiation Brief and gate-decision record; make
-   the Gate 1 proceed/revise/stop decision.
+   the Gate 1 decision — Proceed / Proceed with conditions / Revise / Stop.
 
 **Expected early outputs:**
 
