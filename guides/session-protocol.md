@@ -95,6 +95,10 @@ defining its own.
    tooling — append an entry to the project's friction log (see
    [Feedback Capture Protocol](agentic-workflow.md#feedback-capture-protocol)).
 
+> For each `[J]` or `[H]` item, record the evaluator at the required identity
+> grade and the timestamp (see
+> [Canonical-State Spec § Record Requirements](../spec/canonical-state.md#record-requirements)).
+
 ---
 
 ## Template Selection
@@ -118,11 +122,12 @@ defining its own.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.44.0. Session-start working-location guard added in
 v0.47.0. Session-start orientation — a cheap environment read plus scenario
 classification into the four entry routes — and the first-contact jargon-help
 invitation added in v0.50.0. v0.51.0 extended Orient to form an early
 governance-weight read alongside the scenario and route Negligible projects to
-the Negligible Folded Path (RC-2).
+the Negligible Folded Path (RC-2). v0.52.0 split the session-entry field to [H]
+/ [J] Items and added the recording-grade pointer (CL-3).
