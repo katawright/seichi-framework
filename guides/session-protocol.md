@@ -29,7 +29,7 @@ accompli:
 | ------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Empty directory or only an idea; no governance, no code | Idea formation           | [Zero-to-One Routing](agentic-workflow.md#zero-to-one-project-routing)                                                                                                 |
 | Source code present, no `projects/` / governance        | Brownfield adoption      | [QUICKSTART: Joining Mid-Stream](../QUICKSTART.md#joining-a-project-mid-stream), then [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing) |
-| `projects/` present with an active project              | Continue the project     | steps 1–6 below                                                                                                                                                        |
+| `projects/` present with an active project              | Continue the project     | steps 1–7 below                                                                                                                                                        |
 | `projects/` present, none active (or adding one)        | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace)                                                                     |
 
 > **Idea for a new project in an existing workspace:** when `projects/` is

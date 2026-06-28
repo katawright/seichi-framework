@@ -436,8 +436,8 @@ scope boundaries, and produce a plan to reach the first major decision gate
 ### Checkpoints
 
 - **Gate 1 (Investment Decision):** End of Initiation stage
-  - **Decision:** Approve brief and proceed to Requirements, revise to refine
-    the idea, or stop the project
+  - **Decision:** Approve brief and proceed to Requirements (optionally **with
+    conditions**), revise to refine the idea, or stop the project
   - **Based on:** Completed Initiation Brief (which proposes decision criteria)
   - **Criteria:** Business case clear, stakeholders aligned, risks acceptable,
     sponsor committed
@@ -605,7 +605,8 @@ guides all subsequent implementation work.
   reviewed with stakeholders
 - **Gate 2 (Investment Decision):** After Requirements and System Design are
   both complete
-  - **Decision:** Commit to building this, revise the approach, or stop
+  - **Decision:** Commit to building this (optionally **with conditions**),
+    revise the approach, or stop
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
   - **Criteria:** Technical approach sound, costs acceptable, risks manageable,
     security risk posture reviewed (AppSec prepares security evidence)

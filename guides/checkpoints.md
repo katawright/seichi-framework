@@ -83,9 +83,11 @@ The specific criteria depend on stage context:
 - Production ownership transfer (Closure)
 - Project closure (Closure)
 
-**AI validation:** Human review of AI-generated work products is critical.
-Verify that AI-generated code, tests, documentation, deployment plans, and
-compliance artifacts meet the relevant criteria.
+**AI validation:** Validating AI-generated work products against the relevant
+criteria is critical — code, tests, documentation, deployment plans, and
+compliance artifacts. _Who_ validates (a human, a delegated agent, or
+pre-authorized policy) follows the project's Authority setting; see the
+[Operating Model Guide](operating-model.md).
 
 Approval authority varies by context — see the
 [Decision-Rights Matrix](#decision-rights-matrix) for who prepares evidence and
@@ -166,12 +168,13 @@ Each stage specifies which checkpoint types apply:
 - **Deployment:** Review (Production Deployment Approval, Compliance Approval)
 - **Closure:** Review (Production Ownership Transfer, Project Closure)
 
-**Every checkpoint keeps human-owned authority.** A human either validates in
-the moment **or** has pre-authorized the decision as policy (the normal
-Lights-Out path) — never a delegated agent at the floor. The
-[Operating Model Guide](operating-model.md) sets which applies per checkpoint,
-sizing how independently agents may work at each stage and where human oversight
-is required.
+**Gate decisions keep human-owned authority** — a human either validates in the
+moment **or** has pre-authorized the decision as policy (the normal Lights-Out
+path), never a delegated agent (interactive-only at Critical). **Review and
+alignment decisions follow the project's Authority setting**, which may delegate
+them to an agent within bounds. The [Operating Model Guide](operating-model.md)
+sets which applies per checkpoint, sizing how independently agents may work at
+each stage and where human oversight is required.
 
 > **Enterprise extensions:** Organizations with additional governance needs can
 > insert additional reviews or alignments as checkpoints within stages rather
