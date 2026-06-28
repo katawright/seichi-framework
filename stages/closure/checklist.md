@@ -129,7 +129,7 @@ checklist.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.49.0. Supersedes the Support stage's Project Close-Out
 Checklist (v0.47.0), extended with the operational-handoff and

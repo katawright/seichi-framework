@@ -1,5 +1,67 @@
 # Changelog
 
+## 0.52.0 (2026-06-28)
+
+Set C — Governance Mechanics & Execution Discipline. Nine items (CL-1–CL-5,
+GC-1–GC-3, PB-1) sharing the Accountability Model foundation (authority-weight ×
+reducibility).
+
+### Features
+
+- **framework:** split the checklist `[H]` marker into three tiers — _unmarked_
+  (mechanical), **`[J]`** (judgment; who confirms is an operating-model choice),
+  and **`[H]`** (the non-delegable, human-owned floor — interactive or
+  pre-authorized policy, never a delegated agent; interactive-only at Critical).
+  All eight stage checklists re-marked per the migration table (40 → `[J]`, 13
+  floor `[H]`, 2 "stakeholders notified" demoted to unmarked); the Requirements
+  review split into a `[J]` eng/product review + an `[H]` security/compliance
+  sign-off; role-neutral rephrasing of the human-team-presuming items; the
+  marker legend and `STYLE_GUIDE` convention rewritten; the `operating-model.md`
+  non-delegable-floor parenthetical tightened to "(human-owned)" and the
+  `checkpoints.md` human-validation sentence aligned (CL-1)
+- **spec:** operationalize the recording obligation and the two actor-identity
+  grades in `canonical-state.md` Record Requirements — required from `[J]` up
+  (evaluator + timestamp); qualification-identity at `[J]`, party-identity at
+  `[H]`; the framework states grade + timestamp, the platform owns the field
+  schema (CL-3)
+- **spec:** new **Authorized Parties for Floor Decisions** contract — a
+  per-project roster (per-class with per-decision override) binding identities
+  to the RACI Accountable position, with a solo-owner default; lifts the
+  actor-identity and authorized-party slices out of the `[Reserved]` line (CL-4)
+- **framework:** surface compliance as a **validation `[J]`** item at
+  Verification (the "controls are met" evidence act, `condition: compliance`,
+  per release) and an **authorization `[H]`** floor at the deploy Compliance
+  Approval checkpoint (CL-2)
+- **spec:** gate/checkpoint "Proceed with conditions" outcomes become **tracked
+  carry-forward obligations** in canonical state (owner, discharge
+  stage/increment, satisfied/blocked status), re-checked at each stage entry via
+  a new session-protocol step and recorded in the gate/checkpoint decision
+  templates (GC-1)
+- **framework:** make the **pre-authorized-policy** gate-clearance mechanism
+  discoverable — surfaced as an inferred, overridable default in
+  `agentic-workflow.md` Classification by Inference and at the first Gate 1;
+  consequence-scaled (interactive-only at Critical), discoverability only, never
+  auto-switch (GC-2)
+- **framework:** add a **policy-clearance variant** to the gate- and
+  checkpoint-decision templates (clearance mode + cleared-by-policy with author,
+  evaluating agent, and timestamp, plus the roster check) (CL-3/CL-4)
+- **system-design:** a bounded **assess-then-decide** step at increment planning
+  (Standard+) prompts an explicit parallel-safety assessment before sequencing;
+  the conservative sequence-by-default and the parallel-safety classification
+  remain the arbiter (PB-1)
+
+### Bug Fixes
+
+- **framework:** harmonize the gate-outcome vocabulary to the canonical
+  four-value form (`Proceed / Proceed with conditions / Revise / Stop`) at every
+  live-guidance site in one pass — the three-value `proceed/revise/stop`
+  shorthand dropped the first-class "Proceed with conditions" outcome; a v0.50
+  partial fix had created a within-`README` contradiction and was reverted
+  (GC-3)
+- **spec:** make the `[Reserved]` convention definition version-agnostic
+  ("deferred to a later, deliberate expansion of this layer"), resolving the
+  self-contradiction that CL-3/CL-4 un-reserve items in v0.52 (CL-5)
+
 ## 0.51.0 (2026-06-26)
 
 ### Features
