@@ -227,8 +227,7 @@ mechanism is outside framework scope; the session log or brief Blockers section
 provides the blocker details.
 
 > **Note:** For security and compliance accountability at checkpoint level, see
-> the
-> [accountability table](framework.md#compliance-and-regulatory-considerations).
+> the [accountability table](framework.md#roles-and-responsibilities).
 
 ---
 

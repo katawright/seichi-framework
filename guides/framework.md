@@ -48,18 +48,19 @@ assistant helps you apply them to your specific project context.
 
 **Getting started:**
 
-See the **[Bootstrap Guide](bootstrap.md)** for setup instructions and a
-ready-to-use prompt template. The guide includes:
+See the **[Quick Start](../QUICKSTART.md)** for a single-repo project's
+ready-to-use prompt, or the **[Bootstrap Guide](bootstrap.md)** for the setup
+model and the multi-repo prompt. The Bootstrap Guide includes:
 
-- Template prompt with project context placeholders
-- Two setup approaches (agent-driven and user-driven)
-- Example prompts for each stage
+- The working-locations model and project setup (`project.md`, AGENTS.md)
+- The multi-repo bootstrap prompt
+- Guidance for iterative, multi-session stage work
 - Tips for effective AI collaboration across multiple sessions
 
 **Using this approach:**
 
 1. Start with the Initiation stage
-2. Use the Manual Process Guide to engage your AI assistant
+2. Use the [Bootstrap Guide](bootstrap.md) to engage your AI assistant
 3. Work iteratively across multiple sessions as needed (stages aren't
    one-conversation tasks)
 4. Complete the brief template for each stage (outputs)

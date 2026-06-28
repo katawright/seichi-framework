@@ -574,7 +574,8 @@ structure — custom directory layouts or more autonomous operating postures.
 
 - Define the workspace structure and working-locations model
 - Explain the project config file, project index, and AGENTS.md
-- Provide bootstrap prompts for single-repo and multi-repo projects
+- Provide the multi-repo bootstrap prompt (single-repo prompts are in the Quick
+  Start)
 - Guide iterative, multi-session stage work
 
 **How to use it.**

@@ -49,7 +49,9 @@ committing to Requirements and System Design work.
 Six tiers define the spectrum of brownfield codebase readiness. Each tier
 describes what AI can and cannot do at that readiness level — what "using AI"
 means in practice, where guardrails are needed, and where AI should not be
-trusted. For preparation strategy at each tier, see the
+trusted. This section is the **canonical definition** of what each tier means;
+other guides reference these tiers rather than restating them. For preparation
+strategy at each tier, see the
 [Brownfield Approach Guide](brownfield-approach.md#investment-models).
 
 | Total | Tier | Label            | AI Operating Mode                                                |

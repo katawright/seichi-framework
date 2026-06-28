@@ -89,8 +89,9 @@ budget context. No prior framework artifacts or technical expertise required.
    the brief, consult the matching subsection under
    [**Why These Initiation Elements Matter**](#why-these-initiation-elements-matter)
    below for rationale, good/bad examples, and what to include. See the
-   [Bootstrap Guide](../../guides/bootstrap.md) for the bootstrap prompt
-   template and setup instructions
+   [Quick Start](../../QUICKSTART.md) for the bootstrap prompt (single-repo) and
+   the [Bootstrap Guide](../../guides/bootstrap.md) for setup instructions and
+   the multi-repo prompt
 5. Populate the
    [Success Criteria Register](../../templates/success-criteria-register.md)
    with the success criteria from your brief
