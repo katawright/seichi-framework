@@ -290,10 +290,10 @@ fourth thing to set.
 
 The two hard **gates** are not stages — they are the investment decisions that
 ride the stages: **Gate 1** at the close of Initiation, **Gate 2** at the close
-of System Design. _Who_ resolves a gate — an interactive human, a pre-authorized
-policy, or a delegated agent — is an [Operating Model](operating-model.md)
-(Authority) choice; right-sizing only sets the floor that keeps the
-consequential gates human.
+of System Design. _Who_ resolves a gate — an interactive human or a
+pre-authorized policy, both human-owned — is an
+[Operating Model](operating-model.md) (Authority) choice; right-sizing only sets
+the floor that keeps gates human (interactive-only at Critical).
 
 | Gate       | Position               | The investment decision it makes                                                                                                                                            |
 | ---------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
