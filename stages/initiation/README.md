@@ -337,9 +337,16 @@ How autonomously this stage runs — who performs the work and who decides — i
 operating-model choice, not a fixed property of the stage. It is set per project
 along two functions: **Work Execution** (Humans · Collaborative · Agents) and
 **Authority** (interactive human · pre-authorized policy · delegated agent).
-Gate 1 always stays a human-owned investment decision. See the
-[Operating Model Guide](../../guides/operating-model.md). For agent-driven
-discovery patterns, see [Stage Reference](reference.md#agent-driven-patterns).
+Gate 1 always stays a human-owned investment decision — discharged interactively
+**or** by a pre-authorized proceed-if policy, never by a delegated agent. On a
+default interactive run, surface the alternative once at the first gate: _"I'll
+keep checking with you at each gate; say the word and I'll run them on a
+proceed-if policy instead."_ Discoverability only — never auto-switch, and at
+Critical gates stay interactive-only (see
+[Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)).
+See the [Operating Model Guide](../../guides/operating-model.md). For
+agent-driven discovery patterns, see
+[Stage Reference](reference.md#agent-driven-patterns).
 
 ### AI Assistance Patterns
 
@@ -949,7 +956,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.2.0. Goal altitude check added in v0.46.0.
 Idea-formation entry path added in v0.48.0. Adaptive, stakes-scaled interview
