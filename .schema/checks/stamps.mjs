@@ -31,9 +31,10 @@ export function parseStamp(content) {
 }
 
 // Format strictness (STYLE_GUIDE Notes Section Format): the maintenance
-// `**Last Updated:**` stamp MUST be a bare `YYYY-MM-DD` — change history belongs
-// on the `Added to framework in vX.Y.Z.` line below, not trailing the stamp. And
-// the change-history line MUST read "Added to framework", not "the framework".
+// `**Last Updated:**` stamp MUST be a bare `YYYY-MM-DD` with no trailing text. The
+// Notes section is date + a single `Added to framework in vX.Y.Z.` origin line —
+// no per-version change history (git history / CHANGELOG is the record). And the
+// origin line MUST read "Added to framework", not "the framework".
 // The first rule fires only on a REAL date (\d{4}-\d{2}-\d{2}) with trailing text,
 // which intentionally exempts template fill-in lines (`**Last Updated:** YYYY-MM-DD
 // **Increment:** …`) — there the date is a placeholder and the maintenance stamp is

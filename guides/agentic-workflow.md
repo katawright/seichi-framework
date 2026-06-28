@@ -677,24 +677,4 @@ combinations and process guidance.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
-Zero-to-one routing and classification by inference added in v0.48.0. Warm
-on-ramp (backlog idea promotion) into the one front door added in v0.49.0.
-Oversight-intensity pointer repointed to the Operating Model Guide in v0.49.0.
-Agent Execution Model step 2 repointed to the session-start orientation
-protocol, and operator-comfort register calibration added to Classification by
-Inference, in v0.50.0. The **Read Order and the Load Line** section — fixing the
-always-loaded cross-cutting governance against stage-scoped and contextual
-material, so an agent reads the current stage rather than the whole corpus — was
-added in v0.51.0, and the Agent Execution Model's Orient step repointed to it.
-v0.51.0 also routed **Negligible** projects to the Negligible Folded Path from
-Classification by Inference (RC-2), added the **Narrating Foundational Stages at
-Minimal** guidance (MT-2), and moved the guide's human-onboarding sections to
-the [Framework Overview](OVERVIEW.md#agentic-workflow-guide) (RC-3). v0.49
-consistency sweep: Support stage renamed to Closure; autonomy-tier subsections
-(Human-Led / Collaborative / AI-Led) renamed to operating postures (Supervised /
-Checkpointed / Lights-Out); Stage Flow Diagram feedback edges updated to reflect
-Operations. The agentic-loop "follow gate requirements" step reworded from
-per-stage "human oversight" to gates/checkpoints, aligning with the
-operating-model framing (oversight is an operating-model choice, not a stage
-property).
+Added to framework in v0.23.0.

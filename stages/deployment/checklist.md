@@ -210,9 +210,4 @@ decision using the
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.7.0. Database migration and migration security items
-added in v0.42.0. Release Disposition section added in v0.45.0. Support
-references updated to Operations/Closure and AI-Led mode updated to Lights-Out
-mode in v0.49.0. v0.52.0 re-marked items to the three-tier `[J]`/`[H]` scheme,
-gave the deployment sign-off block role-neutral wording, and rewrote the marker
-legend (CL-1).
+Added to framework in v0.7.0.

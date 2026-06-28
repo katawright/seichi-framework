@@ -562,20 +562,6 @@ for the full constraint taxonomy with NFR templates and examples.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.37.0. Re-Assessment Protocol and exit thresholds added
-in v0.39.0. T0 decision framework, Transparency SP note, and multi-repo
-expansion added in v0.42.0. Foundation Work by Tier, Key Concepts, and Bounded
-Preparation moved to the [Brownfield Approach Guide](brownfield-approach.md) as
-part of the brownfield guide restructuring. Rubric restructured from six axes to
-five: added Consistency, moved Deployability and Observability (formerly
-Operability) to supplementary considerations, added "How Readiness Is Measured"
-rationale section, and recalculated tier thresholds for 0-20 scoring range. AI
-Operating Modes moved back from the Approach Guide to this guide and
-restructured as tier subsections; tiers moved before the rubric to establish
-context before scoring. Cross-link to the Operating Model Guide (readiness ≈
-capability coverage) added in v0.49.0. Actor-sense "AI writes production code"
-rewritten to "an agent writes production code" in v0.49.0. In v0.51.0 the
-human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
-[Framework Overview](OVERVIEW.md#brownfield-readiness-guide).
+Added to framework in v0.37.0.

@@ -389,12 +389,6 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Closure replaces the v0.8.0 Support stage slot in
-the v0.49 dev/ops split: the continuous operational duties moved to the
-[Operations Guide](../../guides/operations.md), and the project-terminal duties
-(handoff, ownership transfer, project close-out, wrap-up retro — the latter
-shipped as Support's Project Close-Out in v0.47.0) consolidated here as a
-terminal stage. Project closure renders the completion contract in the
-[Delegated-Run Spec](../../spec/delegated-run.md#project-level-completion).
+Added to framework in v0.49.0.

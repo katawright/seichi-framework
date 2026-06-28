@@ -535,21 +535,4 @@ where expansion triggers signal more rigor is needed:
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.13.0. In v0.52.0 the gate-resolver enum was tightened
-to the human-owned floor (interactive human or pre-authorized policy;
-interactive-only at Critical), dropping the delegated-agent gate resolver
-(CL-1/GC-2). In v0.51.0 the human-onboarding sections (Overview / Why / Goals /
-How to Use) moved to the [Framework Overview](OVERVIEW.md#right-sizing-guide);
-the operational Key Principle and the operating-model sibling callout stay here.
-v0.51.0 also added **The Negligible Folded Path** as an operational route and
-the toy-grows-up re-classification rule to **Re-Size as the Project Evolves**
-(RC-2). Reorganized in v0.49.0 around the three **governance-weight** dimensions
-— **Consequence**, **Compliance**, and **Stakeholder Reach** (the Layer-A anchor
-definitions the
-[Operating Model Spec](../spec/operating-model.md#governance-floors-and-capability-ceilings)
-references) — with _who runs the process_ moved to the sibling
-[Operating Model Guide](operating-model.md) (Layer B). The dev/ops split retired
-the Support row in favor of **Closure** (terminal stage) and the standing
-**[Operations](operations.md)** process; the Minimal/Standard/Enterprise tiers
-are retained as governance-weight presets mapped to consequence
-(Low/Moderate/High; Negligible and Critical off-grid).
+Added to framework in v0.13.0.

@@ -414,8 +414,6 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Internal-consistency pass added in v0.45.0. Stage
-altitude note and bridging-sentence reconciliation added in v0.46.0. v0.49:
-autonomy vocabulary repointed to the operating model.
+Added to framework in v0.12.0.

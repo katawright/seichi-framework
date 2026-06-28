@@ -470,6 +470,4 @@ When agent-generated content is uncertain or potentially incorrect:
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Misaligned-requirements mitigation re-pointed to
-Initiation goals in v0.45.0. v0.49: Support reference repointed to Operations
-Guide; vocabulary and oversight model updated.
+Added to framework in v0.12.0.

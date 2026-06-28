@@ -668,11 +668,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Authored from the v0.49 delegated-run-operations
-detail doc; the canonical state these contracts read and write is single-sourced
-from the [Canonical-State Spec](canonical-state.md), and eligibility to run
-unattended is governed by the [Operating Model Spec](operating-model.md).
-Human-facing rationale lives in the
-[Operating Model Guide](../guides/operating-model.md).
+Added to framework in v0.49.0.

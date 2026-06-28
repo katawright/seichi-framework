@@ -746,10 +746,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.3.0. Visual NFR examples added to Usability category in
-v0.44.0. Goals layer threaded through the Goals and Success Criteria and
-Traceability Summary sections in v0.45.0. Requirements altitude (imposed vs
-chosen) added in v0.46.0. v0.49: autonomy vocabulary repointed to the operating
-model.
+Added to framework in v0.3.0.

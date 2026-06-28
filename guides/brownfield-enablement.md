@@ -552,21 +552,6 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.37.0. Renamed from Brownfield Preparation Guide to
-Brownfield Enablement Guide as part of the brownfield guide restructuring
-(readiness → approach → enablement). Exit Checkpoint Protocol and Preparation as
-Adoption Pilot moved to the [Brownfield Approach Guide](brownfield-approach.md).
-Consistency workstream added; Operability renamed to Observability; workstreams
-reordered (rubric axes first, then supplementary). Enablement Workstreams
-deepened to Enablement Tactics with specific per-axis techniques and canonical
-references. Rebuild Tactics section added for T0-T1 execution patterns.
-Infrastructure Planning replaced with cross-reference to
-[System Design Reference](../stages/system-design/reference.md#brownfield-infrastructure-planning).
-Preparation Activities by Axis slimmed to Preparation Sequencing. Key Decisions
-(Logic Authority, Wrap vs. Extract, External Write Paths) folded into per-axis
-enablement tactics (Modularity, Transparency). Operational processes link
-repointed to Operations Guide in v0.49.0. In v0.51.0 the human-onboarding
-sections (Overview / Why / Goals / How to Use) moved to the
-[Framework Overview](OVERVIEW.md#brownfield-enablement-guide).
+Added to framework in v0.37.0.

@@ -384,7 +384,6 @@ model expects projects to grow.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Support Operations Guide links updated to
-Operations Guide in v0.49.0.
+Added to framework in v0.12.0.

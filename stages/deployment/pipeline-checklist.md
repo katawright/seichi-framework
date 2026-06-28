@@ -89,5 +89,4 @@ increment deployment.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. v0.52.0 re-marked the on-call and
-tribal-knowledge items to `[J]` and adopted the three-tier marker legend (CL-1).
+Added to framework in v0.12.0.

@@ -956,16 +956,4 @@ regulatory requirements.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.9.0. AI Assistance Overview concept retitled to
-Operating Model and repointed to the Operating Model Guide and spec in v0.49.0.
-Visual designs row added to Artifact Placement table in v0.44.0. Traceability
-Chain section added in v0.45.0. CD Workflow Adaptations reconciled with the
-elective-release model in v0.45.0. Learning Throughline and Deferral guidance
-pointed at the learning loop in v0.45.0. "Outcomes over mechanisms" design
-principle and the Outcomes, Not Mechanisms concept section added in v0.47.0. ADR
-publish target moved to the workspace ADR canon and project-id-scoped id scheme
-adopted in v0.48.0. In v0.51.0 the human-onboarding sections (Overview / Why /
-Goals / How to Use) plus the Key Benefits, Who Benefits, and "democratizes"
-motivational prose moved to the
-[Framework Overview](OVERVIEW.md#framework-guide); the design principles and
-operational concepts stay here (RC-3).
+Added to framework in v0.9.0.

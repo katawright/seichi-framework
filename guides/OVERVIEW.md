@@ -1025,12 +1025,6 @@ and the
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.51.0 as the human-facing orientation layer (RC-3): the
-Overview / Why / Goals / How-to-Use sections lifted out of the operational
-guides and collected here with back-links, so a person can get oriented in one
-place while agents read the operational guides stage-scoped (see
-[Read Order and the Load Line](agentic-workflow.md#read-order-and-the-load-line)).
-Each guide retains a one-line pointer to its section here; load-bearing content
-(Key Principles, operational cross-reference callouts) stays in the guides.
+Added to framework in v0.51.0.

@@ -500,6 +500,4 @@ roles per the
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.6.0. Verification Environment and verification-depth
-guidance added in v0.45.0. v0.49: autonomy vocabulary repointed to the operating
-model.
+Added to framework in v0.6.0.

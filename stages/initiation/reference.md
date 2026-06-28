@@ -391,5 +391,4 @@ When agent-generated content is uncertain or potentially incorrect:
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.23.0. New-product no-baseline guidance added in
-v0.48.0. v0.49: vocabulary and oversight model updated.
+Added to framework in v0.23.0.

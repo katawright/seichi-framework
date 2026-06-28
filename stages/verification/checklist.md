@@ -136,7 +136,4 @@ the increment is ready for deployment.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.6.0. Database-layer logic regression and preparation
-increment verification guidance added in v0.42.0. AI-Led mode updated to
-Lights-Out mode in v0.49.0. v0.52.0 split the [H] marker into [J]/[H] (CL-1) and
-added the tier-conditional compliance-validation [J] item (CL-2).
+Added to framework in v0.6.0.

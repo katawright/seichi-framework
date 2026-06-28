@@ -369,14 +369,6 @@ this guide where an obligation or contract demands more.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Operations is the standing-system sibling to the
-SDLC, introduced in the v0.49 dev/ops split: the continuous "Support stage" was
-dissolved, its terminal project-completion duties moved to the
-[Closure stage](../stages/closure/README.md), and its standing operational
-content was relocated and reframed here on the shared
-[operating model](operating-model.md). Deep-operations depth (incident command,
-disaster recovery, SLAs) is `[Reserved]`. In v0.51.0 the human-onboarding
-sections (Overview / Why / Goals / How to Use) moved to the
-[Framework Overview](OVERVIEW.md#operations-guide).
+Added to framework in v0.49.0.

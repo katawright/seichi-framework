@@ -181,11 +181,6 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.40.0. Final-increment close-out review pointed at the
-project close-out (checklist + summary) in v0.47.0. Name disambiguated from the
-new Operating Model Guide in v0.49.0. Close-out checklist repointed to Closure
-stage; Flow delivery mode cross-reference added to Kanban section in v0.49.0. In
-v0.51.0 the human-onboarding sections (Overview / Why / Goals / How to Use)
-moved to the [Framework Overview](OVERVIEW.md#delivery-operating-guide).
+Added to framework in v0.40.0.

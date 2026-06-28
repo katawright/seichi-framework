@@ -137,8 +137,4 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.23.0 | Future Value
-     Candidates section added in v0.42.0 | Captured Feedback rewired to the
-     friction log and Framework Feedback renamed Process Feedback in v0.45.0 |
-     Process Feedback routed to the framework tracker (not a Target:Process idea)
-     in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.23.0. -->

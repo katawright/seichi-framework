@@ -128,7 +128,4 @@ and ready for Implementation.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Database-layer logic item added in v0.42.0.
-Internal-consistency item added in v0.45.0. AI-Led mode updated to Lights-Out
-mode in v0.49.0. v0.52.0 re-marked items to the three-tier `[J]`/`[H]` scheme
-and rewrote the marker legend (CL-1).
+Added to framework in v0.12.0.

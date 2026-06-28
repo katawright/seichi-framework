@@ -131,7 +131,4 @@ checklist.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Supersedes the Support stage's Project Close-Out
-Checklist (v0.47.0), extended with the operational-handoff and
-ownership-transfer items from the v0.49 dev/ops split. v0.52.0 re-marked items
-to the three-tier `[J]`/`[H]` scheme and rewrote the marker legend (CL-1).
+Added to framework in v0.49.0.

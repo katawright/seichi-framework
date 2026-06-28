@@ -319,13 +319,6 @@ chooses the storage; this spec fixes only what must be representable.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Authored from the v0.49 parallel-batch detail
-(workstream 3) as the normative counterpart to the human-facing
-[Parallel Scheduling Guide](../guides/parallel-scheduling.md) and
-[Parallel Execution Guide](../guides/parallel-execution.md). The unit is named
-**batch** (consistent with the [delegated-run](delegated-run.md) and
-[canonical-state](canonical-state.md) specs); parallel-safety classification is
-required whenever a plan proposes concurrent increments; and batch transition is
-a close-out gate rather than a new checkpoint type.
+Added to framework in v0.49.0.

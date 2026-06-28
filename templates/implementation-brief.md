@@ -327,4 +327,4 @@ register]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.5.0. Tier annotations added in v0.42.0. Skip-entirely directives elevated to visible blockquotes and session protocol preamble added in v0.44.0. ADR id placeholders updated to promoted scheme in v0.48.0. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.5.0. -->

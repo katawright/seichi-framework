@@ -107,8 +107,4 @@ v0.49 establishes.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. The spec layer is authored from the v0.49 detail
-docs (operating model, delegated-run operations, progressive governance and
-structured state, parallel-batch execution) and the levers rework. It is the
-normative counterpart to the human-facing
-[Operating Model Guide](../guides/operating-model.md).
+Added to framework in v0.49.0.
