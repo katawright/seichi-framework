@@ -7,14 +7,21 @@ to circulate.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -30,7 +37,7 @@ to circulate.
 2. [ ] **Business case + "why now"** stated in 1-3 bullets
 3. [ ] **Goals are enumerated as discrete outcomes** (G-1, G-2, …; each a stated
        outcome, not a feature or a metric)
-4. [ ] **[H] Goal ↔ success-criterion mapping is complete both directions**
+4. [ ] **[J] Goal ↔ success-criterion mapping is complete both directions**
        (every goal has at least one success criterion; every success criterion
        maps to at least one goal)
 
@@ -38,7 +45,7 @@ to circulate.
 
 5. [ ] **Scope boundaries are explicit** (in-scope and out-of-scope)
 6. [ ] **Non-goals are explicit** (3-5 items)
-7. [ ] **[H] Gate 1 decision criteria are explicit** (proceed/revise/stop)
+7. [ ] **[J] Gate 1 decision criteria are explicit** (proceed/revise/stop)
 8. [ ] **A project lead is named**
 9. [ ] **Key stakeholders identified with participation levels** (documented in
        brief with roles, participation type C/I, and relevant stages; see
@@ -56,7 +63,7 @@ to circulate.
 ### Risks and Constraints
 
 12. [ ] **Top assumptions (<=5) are written down**
-13. [ ] **[H] Top risks/unknowns (<=5) with likelihood, impact, and
+13. [ ] **[J] Top risks/unknowns (<=5) with likelihood, impact, and
         mitigations**
 14. [ ] **Constraints and dependencies identified** with owners where possible
 

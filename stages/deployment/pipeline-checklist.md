@@ -11,8 +11,15 @@ For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -31,7 +38,7 @@ For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 6. [ ] **Configuration externalized per environment** (environment-specific
        values)
 7. [ ] **Monitoring and alerting operational** (APM, logs, dashboards, alerts)
-8. [ ] **[H] On-call rotation and escalation path defined** (contacts and
+8. [ ] **[J] On-call rotation and escalation path defined** (contacts and
        procedures documented)
 9. [ ] **Skeleton application deployed end-to-end through pipeline** (walking
        skeleton validated)
@@ -51,8 +58,8 @@ For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 2. [ ] **All environments inventoried** (with access and configuration details)
 3. [ ] **Manual steps identified and documented** (automation candidates
        flagged)
-4. [ ] **[H] Tribal knowledge captured from experienced team members**
-       (workarounds and gotchas recorded)
+4. [ ] **[J] Tribal knowledge captured and documented** (workarounds and gotchas
+       recorded from those who know the existing system)
 5. [ ] **Secrets management practices reviewed** (no secrets in code, rotation
        policies checked)
 6. [ ] **Monitoring coverage assessed** (gaps identified and prioritized)

@@ -222,7 +222,7 @@ Structure for stage checklist files:
 
 1. **H1 title**
 2. **Purpose + Usage** — one-line purpose and one-line usage instruction
-3. **[H] marker convention** — blockquote explaining human-judgment markers
+3. **Marker convention** — blockquote explaining the [J] / [H] markers
 4. **Numbered items with checkboxes** — one assertion per item,
    observable/verifiable language. Organize items using the structure that best
    fits the checklist's purpose:
@@ -245,14 +245,19 @@ Item format:
 
 ```
 N. [ ] **Bold assertion** (parenthetical qualifier)
+N. [ ] **[J] Bold assertion** (parenthetical qualifier)
 N. [ ] **[H] Bold assertion** (parenthetical qualifier)
 ```
 
 - The number and checkbox come first: `1. [ ] **...**`
 - The assertion is bold and states a single observable quality
 - Parenthetical qualifiers after the bold provide clarification or thresholds
-- `[H]` goes inside the bold, before the assertion text, for items requiring
-  human judgment
+- `[J]` and `[H]` go inside the bold, before the assertion text: `[J]` for items
+  needing judgment (whether a human, a delegated agent, or pre-authorized policy
+  confirms is an operating-model choice); `[H]` for the non-delegable,
+  human-owned floor (interactive or pre-authorized policy, never a delegated
+  agent — interactive-only at Critical). Unmarked items are mechanical, verified
+  by an agent directly
 
 Item design rules:
 

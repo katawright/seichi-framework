@@ -9,12 +9,19 @@ close-out summary produced.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by an agent.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms the **[H]** items,
-> which require judgment an agent cannot substitute for.
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model.
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's consequence level. See
@@ -31,7 +38,7 @@ close-out summary produced.
        [Operational Handoff Template](../../templates/operational-handoff.md))
 2. [ ] **Identity, observability, and stop/rollback documented** (an operator
        can watch the system and revert it safely)
-3. [ ] **[H] What-must-stay-true captured, including persisting compliance
+3. [ ] **[J] What-must-stay-true captured, including persisting compliance
        obligations** (the invariants the running system must preserve)
 4. [ ] **Known-state ledger current** (open issues, deferred work, known
        limitations, recent changes)
@@ -58,7 +65,7 @@ close-out summary produced.
        left Open)
 8. [ ] **Product ideas routed to the idea backlog** (each one worth keeping has
        an IDEA-NNN document)
-9. [ ] **[H] Process and tooling friction routed to its owner** (to the
+9. [ ] **[J] Process and tooling friction routed to its owner** (to the
        operator-named tracker that owns the fix — see
        [The Learning Loop](../../guides/learning-loop.md))
 
@@ -75,9 +82,9 @@ close-out summary produced.
         [Success Criteria Register](../../templates/success-criteria-register.md))
 12. [ ] **Assurance result recorded at the required level** (recorded even when
         the required level is None/Self)
-13. [ ] **[H] Known defects, risks, and limitations disclosed** (the completion
+13. [ ] **[J] Known defects, risks, and limitations disclosed** (the completion
         honesty floor — nothing material hidden)
-14. [ ] **[H] Initiation goals and success criteria reviewed as a closing act**
+14. [ ] **[J] Initiation goals and success criteria reviewed as a closing act**
         (actuals compared against the original intent)
 
 **Gate:** All items checked → completion is reconciled against the
@@ -87,7 +94,7 @@ close-out summary produced.
 
 ## Close-Out Record
 
-15. [ ] **[H] Project Close-Out Summary produced** (why, how it went, outcomes,
+15. [ ] **[J] Project Close-Out Summary produced** (why, how it went, outcomes,
         learnings, what's next — using the
         [Project Close-Out Summary](../../templates/project-closeout.md))
 

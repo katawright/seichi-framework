@@ -7,14 +7,21 @@ and ready for Implementation.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -34,7 +41,7 @@ and ready for Implementation.
        deliverables — platform configuration, documentation, manual setup — are
        especially prone to being dropped)
 4. [ ] **Component interactions documented** (flows, error handling paths)
-5. [ ] **[H] Carry-forward items from previous increment resolved** (N/A for
+5. [ ] **[J] Carry-forward items from previous increment resolved** (N/A for
        first increment; each item addressed, deferred with justification, or
        marked N/A)
 
@@ -46,7 +53,7 @@ and ready for Implementation.
 8. [ ] **Database-layer logic dependencies identified** (SP contracts referenced
        in design; logic authority confirmed for affected calculations; N/A for
        systems without database-layer business logic)
-9. [ ] **[H] Design follows conventions from System Design** (patterns,
+9. [ ] **[J] Design follows conventions from System Design** (patterns,
        interfaces, naming)
 
 ### Architecture and Security
@@ -62,19 +69,19 @@ and ready for Implementation.
 
 ### Testing and Readiness
 
-13. [ ] **[H] Test strategy covers all levels** (unit, integration, acceptance,
+13. [ ] **[J] Test strategy covers all levels** (unit, integration, acceptance,
         performance where applicable; for single-process tools, integration
         tests may be N/A if unit tests cover the full pipeline)
 14. [ ] **Implementation notes provided** (security, performance, patterns)
-15. [ ] **[H] No major blockers or unresolved dependencies** (dependencies
+15. [ ] **[J] No major blockers or unresolved dependencies** (dependencies
         available, risks mitigated)
 16. [ ] **Brief is internally consistent** (cross-references trace cleanly —
         interface field lists match the component bodies that populate them,
         stated rules and invariants agree with the data model and each other,
         and no "the implementation will…" claim contradicts another part of the
         brief)
-17. [ ] **[H] Engineers understand the design and can implement independently**
-        (no major unknowns)
+17. [ ] **[J] Design is understood well enough to implement independently** (no
+        major unknowns)
 
 ### Foundation Concerns (I0 / foundation increments only)
 
