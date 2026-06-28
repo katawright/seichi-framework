@@ -300,6 +300,11 @@ my-workspace/
 > [Framework Version Coexistence](guides/bootstrap.md#framework-version-coexistence)
 > for how multi-version workspaces work and when old versions can be cleaned up.
 
+When a workspace's projects span several app repositories — different projects
+touching different, overlapping subsets — see
+[Bootstrap Guide: Portfolio Workspace](guides/bootstrap.md#portfolio-workspace-many-projects-shared-app-repos)
+for the worked example.
+
 ---
 
 ## What's Next

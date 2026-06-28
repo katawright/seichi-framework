@@ -352,9 +352,9 @@ For detailed readiness criteria, see the
 **2. Pilot execution**
 
 - Run one Standard-tier project through two increments.
-- Copy the bootstrap prompt from the
-  [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) and fill in your
-  project details (~15 minutes).
+- Copy the bootstrap prompt — the [Quick Start](QUICKSTART.md) for a single-repo
+  project, the [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) for
+  multi-repo — and fill in your project details (~15 minutes).
 - Start with the [Initiation stage](stages/initiation/README.md) — use the
   guide, brief template, and checklist.
 - Use the [Framework Guide](guides/framework.md) when deeper context is needed.
@@ -377,9 +377,10 @@ to try the framework solo or with your team first, skip to
 2. Choose tier ([Right-Sizing Guide](guides/right-sizing.md)).
 3. Select the initial operating posture
    ([Operating Model Guide](guides/operating-model.md)).
-4. Copy and complete the bootstrap prompt
-   ([Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts)) — plan ~15
-   minutes.
+4. Copy and complete the bootstrap prompt — the [Quick Start](QUICKSTART.md) for
+   a single-repo project, the
+   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) for multi-repo —
+   plan ~15 minutes.
 5. Complete Initiation artifacts using the
    [Initiation stage](stages/initiation/README.md) guide, brief template, and
    checklist.
@@ -416,9 +417,10 @@ details.
 2. **Calibrate process weight (~5 min).** Use the
    [Right-Sizing Guide](guides/right-sizing.md) to match framework rigor to your
    project's size and risk.
-3. **Bootstrap your project (~15 min).** Copy the bootstrap prompt from the
-   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) and fill in your
-   project details.
+3. **Bootstrap your project (~15 min).** Copy the bootstrap prompt — the
+   [Quick Start](QUICKSTART.md) for a single-repo project, the
+   [Bootstrap Guide](guides/bootstrap.md#bootstrap-prompts) for multi-repo — and
+   fill in your project details.
 4. **Work through Initiation (~20 min).** Open the
    [Initiation stage](stages/initiation/README.md) guide and complete the brief
    template with your AI assistant.

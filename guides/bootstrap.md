@@ -112,6 +112,61 @@ This layout assumes all repositories are siblings under a common parent
 directory. `project.md` references source repos with relative paths (e.g.,
 `../../../payment-api`).
 
+### Portfolio Workspace (Many Projects, Shared App Repos)
+
+A product with several apps, where different projects span different — often
+overlapping — subsets of those apps, is just the multi-repo layout with **more
+than one project** under `projects/`. No new structure is needed: one governance
+repo holds many projects, and each project's `project.md` pins only the app
+repos that project touches.
+
+```
+~/work/                            ← common parent directory
+├── acme-governance/               ← governance git repo (agent starts here)
+│   ├── AGENTS.md
+│   ├── adrs/                      ← accepted ADRs (canon; created at first promotion; project-scoped ids)
+│   ├── frameworks/
+│   │   └── v<version>/               ← framework release (read-only)
+│   └── projects/
+│       ├── index.md
+│       ├── checkout-redesign/     ← spans web-store + payments-api
+│       │   ├── project.md
+│       │   └── docs/
+│       ├── loyalty-program/       ← spans web-store + mobile-app + payments-api
+│       │   ├── project.md
+│       │   └── docs/
+│       └── fraud-rules-engine/    ← spans payments-api only
+│           ├── project.md
+│           └── docs/
+├── web-store/                     ← source git repo
+├── mobile-app/                    ← source git repo
+└── payments-api/                  ← source git repo
+```
+
+Each project's `project.md` lists its own Source code subset:
+
+- `checkout-redesign` → `../../../web-store`, `../../../payments-api`
+- `loyalty-program` → `../../../web-store`, `../../../mobile-app`,
+  `../../../payments-api`
+- `fraud-rules-engine` → `../../../payments-api`
+
+The subsets overlap freely: `payments-api` appears in all three projects,
+`web-store` in two, `mobile-app` in one. They don't conflict because each
+`project.md` declares its own binding.
+
+**The load-bearing rule:** governance binds to source **by relative path in
+`project.md`, per project** — so `projects/` is never tied to a single app's
+`src/`. The colocated single-repo layout (`projects/`, `frameworks/`, and `src/`
+as siblings) is simply the convenience default for the one-app case; the
+portfolio layout is the same model with the binding made explicit per project.
+
+The flat, sequential `projects/index.md` (`0001`, `0002`, …) needs no per-app
+grouping at product scale — each entry's one-line description names the apps it
+spans, and the project number still scopes that project's promoted ADR ids. To
+add another project to a portfolio workspace, follow
+[Adding a New Project to an Existing Workspace](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace)
+— the procedure is identical to any multi-project workspace.
+
 ### AGENTS.md
 
 `AGENTS.md` is a tool-agnostic instructions file at the workspace root. It

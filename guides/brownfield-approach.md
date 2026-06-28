@@ -228,11 +228,12 @@ assessment and choose an investment model at that point.
 Target conditions define the minimum axis scores at which the target area
 supports safe AI-assisted feature work. They are not total-score targets — they
 ensure the specific axes that matter most for each operating mode are strong
-enough. T4 targets T5 because the gap is small and documentation-level. T3's
-target conditions keep it at T3 — the goal is making T3 mode safe to operate in
-(AI writing production code in well-covered modules), not reaching T4. T2 and T1
-both target T3 because that is the lowest tier at which AI contributes
-production code.
+enough. (For what each tier's operating mode means, see the
+[readiness tier definitions](brownfield-readiness.md#readiness-tiers).) T4
+targets T5 because the gap is small and documentation-level. T3's target
+conditions keep it at T3 — the goal is making the T3 operating mode safe to run
+in, not reaching T4. T2 and T1 both target T3 because that is the lowest tier at
+which AI contributes production code.
 
 | Tier | Foundation Work                                                                                                     | Target Conditions                              |
 | ---- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
