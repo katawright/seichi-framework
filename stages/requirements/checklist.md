@@ -121,4 +121,7 @@ Record the decision using the
 **Last Updated:** 2026-06-28
 
 Added to framework in v0.3.0. Item 11 reworded for the goals/success-criteria
-split in v0.45.0. AI-Led mode updated to Lights-Out mode in v0.49.0.
+split in v0.45.0. AI-Led mode updated to Lights-Out mode in v0.49.0. v0.52.0
+re-marked items to the three-tier `[J]`/`[H]` scheme, split the review item into
+a `[J]` eng/product review + an `[H]` security/compliance sign-off, and rewrote
+the marker legend (CL-1).

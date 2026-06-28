@@ -106,3 +106,5 @@ to circulate.
 **Last Updated:** 2026-06-28
 
 Added to framework in v0.2.0. AI-Led mode updated to Lights-Out mode in v0.49.0.
+v0.52.0 re-marked items to the three-tier `[J]`/`[H]` scheme and rewrote the
+marker legend (CL-1).

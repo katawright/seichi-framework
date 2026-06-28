@@ -120,3 +120,5 @@ and ready for Verification.
 
 Added to framework in v0.5.0. Session-log item covers creation through
 finalization in v0.47.0. AI-Led mode updated to Lights-Out mode in v0.49.0.
+v0.52.0 re-marked items to the three-tier `[J]`/`[H]` scheme and rewrote the
+marker legend (CL-1).
