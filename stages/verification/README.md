@@ -374,7 +374,8 @@ Track defects by **severity** (technical impact: Critical → Low) and
 
 > For structuring gate decisions, use the
 > [Checkpoint Decision Template](../../templates/checkpoint-decision.md) with
-> the **Review** type (Ready / Not Ready).
+> the **Review** type (Ready / Not Ready; record any conditions on a Ready
+> outcome).
 
 Complete the Production Readiness section of the Verification Brief as your
 primary artifact. At Standard+ tiers, additionally complete the
@@ -497,7 +498,7 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.6.0. Verification Environment and verification-depth
 guidance added in v0.45.0. v0.49: autonomy vocabulary repointed to the operating

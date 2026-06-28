@@ -59,7 +59,7 @@ For detailed setup guidance, see the [Deployment Setup Guide](setup.md).
 3. [ ] **Manual steps identified and documented** (automation candidates
        flagged)
 4. [ ] **[J] Tribal knowledge captured and documented** (workarounds and gotchas
-       recorded from those who know the existing system)
+       documented for whoever maintains the system)
 5. [ ] **Secrets management practices reviewed** (no secrets in code, rotation
        policies checked)
 6. [ ] **Monitoring coverage assessed** (gaps identified and prioritized)
@@ -89,4 +89,5 @@ increment deployment.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0.
+Added to framework in v0.12.0. v0.52.0 re-marked the on-call and
+tribal-knowledge items to `[J]` and adopted the three-tier marker legend (CL-1).
