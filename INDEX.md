@@ -199,18 +199,4 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.41.0. Operating Model Guide and the agent-facing
-`spec/` layer added to the inventory in v0.49.0; the superseded AI Assistance
-Scorecard removed. The v0.49 dev/ops split renamed the Support stage → Closure
-(2 files), added the Operations Guide, and added the operational-handoff and
-flow-issue templates while removing the support-brief. The v0.49 parallel-batch
-work (WS3) added the `spec/parallel-batch.md` contract and the Parallel
-Scheduling and Parallel Execution guides. In v0.50.0 the Scope description was
-corrected to include the `spec/` layer, and the `session-protocol.md` and
-`initiation/README.md` rows refreshed for the session-start orientation and
-Platform Services additions. In v0.51.0 the human-facing `guides/OVERVIEW.md`
-orientation layer was added (the audience-separation lever). In v0.52.0 the
-`canonical-state.md` row description and keywords were refreshed for the CL-3
-recording grades, the CL-4 authorized-party roster, and GC-1 carry-forward
-conditions. Current section counts are Guides 26, Spec 5, Stage Artifacts 25,
-Templates 23.
+Added to framework in v0.41.0.

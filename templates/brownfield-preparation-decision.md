@@ -103,4 +103,4 @@ dates)
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.39.0. v0.49 closure-vocab fix. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.39.0. -->

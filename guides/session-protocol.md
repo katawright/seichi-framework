@@ -129,10 +129,4 @@ defining its own.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.44.0. Session-start working-location guard added in
-v0.47.0. Session-start orientation — a cheap environment read plus scenario
-classification into the four entry routes — and the first-contact jargon-help
-invitation added in v0.50.0. v0.51.0 extended Orient to form an early
-governance-weight read alongside the scenario and route Negligible projects to
-the Negligible Folded Path (RC-2). v0.52.0 split the session-entry field to [H]
-/ [J] Items and added the recording-grade pointer (CL-3).
+Added to framework in v0.44.0.

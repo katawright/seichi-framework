@@ -663,5 +663,4 @@ for the central fallback protocols.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Hotfix risk-acceptance guidance added in v0.45.0.
-v0.49: vocabulary and oversight model updated; Support reference repointed.
+Added to framework in v0.12.0.

@@ -94,4 +94,4 @@ is done and whether it may ship.
 - **Approved by:** [name / role / "policy: <rule>"]
 - **Date:** YYYY-MM-DD
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.49.0 (Flow delivery mode — the folded small-change entry artifact). -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.49.0. -->

@@ -226,4 +226,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-06-09 | Added in v0.4.0. ADR Criteria Justification section added in v0.47.0. ADR id scheme and publish target updated in v0.48.0 -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.4.0. -->

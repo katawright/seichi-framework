@@ -35,4 +35,4 @@ coordination practices.
 
 ---
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.27.0 -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.27.0. -->

@@ -141,7 +141,4 @@ ready for Gate 2.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. ADR earns-its-position check (item 23) added in
-v0.47.0. ADR naming check updated to the two-digit draft form in v0.48.0. AI-Led
-mode updated to Lights-Out mode in v0.49.0. v0.52.0 re-marked items to the
-three-tier `[J]`/`[H]` scheme and rewrote the marker legend (CL-1).
+Added to framework in v0.12.0.

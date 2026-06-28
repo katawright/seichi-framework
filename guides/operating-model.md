@@ -356,20 +356,4 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. In v0.52.0 the §Authority non-delegable-floor
-description was aligned to the human-owned floor — interactive human or
-pre-authorized policy, never a delegated agent, interactive-only at Critical —
-matching the
-[Operating Model Spec](../spec/operating-model.md#governance-floors-and-capability-ceilings)
-(CL-1). In v0.51.0 the human-onboarding sections (Overview / Why / Goals / How
-to Use) moved to the [Framework Overview](OVERVIEW.md#operating-model-guide);
-the operational Key Principle and the right-sizing / spec sibling callout stay
-here. Companion to the [Right-Sizing Guide](right-sizing.md) (Layer A —
-governance weight) and the agent-facing
-[Operating Model Spec](../spec/operating-model.md), which carries the normative
-contracts behind these functions: the floors, ceilings, capability coverage, the
-effective operating envelope, evaluator independence, and stop enforcement. The
-group names "configurable functions" / "standing functions" and the operating
-presets (Supervised / Checkpointed / Lights-Out) are settled per the v0.49
-levers rework. Supersedes the v0.48 AI Assistance Scorecard, whose autonomy and
-oversight model these functions replace.
+Added to framework in v0.49.0.

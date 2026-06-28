@@ -348,12 +348,4 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Authored from the v0.49 progressive-governance
-and structured-state detail doc. The run-level state and the rendered-snapshot
-fidelity floor that consume this canonical state live in the
-[Delegated-Run Spec](delegated-run.md); the human-facing rationale for the
-operating model lives in the
-[Operating Model Guide](../guides/operating-model.md). Recording-grade
-attribution (identity grades + obligation) and the Authorized Parties for Floor
-Decisions contract added in v0.52.0 (CL-3/CL-4), lifting two slices out of the
-`[Reserved]` actor-identity/membership line.
+Added to framework in v0.49.0.

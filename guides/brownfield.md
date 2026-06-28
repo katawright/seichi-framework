@@ -241,11 +241,6 @@ For the full organizational adoption context, see the
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.42.0 as part of the brownfield guide restructuring
-(readiness → approach → enablement). Umbrella guide providing process overview
-and routing to the three brownfield sub-guides. Added Rebuild to "Connecting to
-Investment Models" list. In v0.51.0 the human-onboarding sections (Overview /
-Why / Goals / How to Use) moved to the
-[Framework Overview](OVERVIEW.md#brownfield-preparation-guide).
+Added to framework in v0.42.0.

@@ -123,4 +123,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. v0.52 added the policy-clearance variant — clearance mode + cleared-by-policy (CL-3/CL-4). -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.18.1. -->

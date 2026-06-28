@@ -241,13 +241,6 @@ batch done.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Consumes the schedule produced by the
-[Parallel Scheduling Guide](parallel-scheduling.md); companion to the
-[Operating Model Guide](operating-model.md) for the Lights-Out coverage rule.
-The normative contracts behind this guide — batch preflight/close contracts,
-isolation and work-conservation requirements, and Lights-Out coverage — are in
-the [Parallel-Batch Spec](../spec/parallel-batch.md). In v0.51.0 the
-human-onboarding sections (Overview / Why / Goals / How to Use) moved to the
-[Framework Overview](OVERVIEW.md#parallel-execution-guide).
+Added to framework in v0.49.0.

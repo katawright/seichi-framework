@@ -65,4 +65,4 @@ lands. An entry that fits none should be sharpened until it does; there is no
 
 ---
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.45.0. Disposition routing made owner-explicit in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.45.0. -->

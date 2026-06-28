@@ -323,10 +323,6 @@ my-workspace/
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.26.0. Classification-by-inference prompt alignment and
-idea-path entry added in v0.48.0. In v0.49.0 the lifecycle list gained the
-Terminal Closure stage (with Operations and Flow), and the autonomy-tier
-vocabulary was repointed to the operating model (operating posture). Trailing
-"My idea:" placeholder dropped from the idea-only prompt in v0.50.0.
+Added to framework in v0.26.0.

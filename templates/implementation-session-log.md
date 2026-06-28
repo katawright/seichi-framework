@@ -97,4 +97,4 @@ for logging conventions and AI agent guidance.
 
 _Add more session entries as needed._
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. v0.49 vocabulary/dev-ops-split sweep. v0.52.0 added the [H] / [J] Items session-entry field (CL-3). -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. -->

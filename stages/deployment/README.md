@@ -714,10 +714,4 @@ deployment decision using the
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
-Brownfield Database Deployment section added in v0.42.0. Compliance Approval
-`condition` checkpoint metadata added in v0.45.0. Release Disposition section
-and the elective-release model added in v0.45.0. v0.49: autonomy vocabulary
-repointed to the operating model; Support→Closure/Operations refs updated.
-v0.52.0 surfaced the Compliance Approval as an [H] authorization floor fed by
-the Verification compliance-validation [J] item (CL-2).
+Added to framework in v0.7.0.

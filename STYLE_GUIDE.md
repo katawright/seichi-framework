@@ -96,8 +96,14 @@ Added to framework in vX.Y.Z.
 
 Rules:
 
-- "Added to framework" line is plain text (not italic, not bold)
-- Update the **Last Updated** date whenever the file is modified
+- "Added to framework" line is plain text (not italic, not bold) and names
+  **only the version the file was introduced in**
+- Update the **Last Updated** date whenever the file is modified — the date is
+  the **only** thing that changes on a touch
+- Do **not** append per-version change history to the Notes section (or to the
+  "Added to framework" line). What changed, and in which version, is recorded in
+  git history and `CHANGELOG.md`, not in each file — per-file change logs only
+  accrete and drift.
 
 ---
 
@@ -439,8 +445,4 @@ Use Initiation stage artifacts as reference implementations.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.19.0. In v0.52.0 documented the three-tier checklist
-marker convention (_unmarked_ / `[J]` / `[H]`, CL-1). In v0.51.0 documented the
-operational-guide audience-separation convention (the human-onboarding layer
-relocated to `guides/OVERVIEW.md`; guides open with a "New here?" pointer + Key
-Principle).
+Added to framework in v0.19.0.

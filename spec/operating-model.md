@@ -511,8 +511,4 @@ storage or mechanism.
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.49.0. Authored from the v0.49 operating-model detail
-doc and the levers rework. Human-facing rationale lives in the
-[Operating Model Guide](../guides/operating-model.md); the run-level contracts
-that consume these functions live in the [Delegated-Run Spec](delegated-run.md)
-and [Canonical-State Spec](canonical-state.md).
+Added to framework in v0.49.0.

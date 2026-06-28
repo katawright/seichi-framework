@@ -726,10 +726,4 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 **Last Updated:** 2026-06-28
 
-Added to framework in v0.12.0. Visual architecture cross-cutting concern and
-subsection added in v0.44.0. Stage altitude note and bridging-sentence
-reconciliation added in v0.46.0. ADR all-three-criteria rule + design-note
-discriminator added in v0.47.0. ADR id scheme and canon promotion updated in
-v0.48.0. v0.49: autonomy vocabulary repointed to the operating model;
-Support→Operations refs updated. Platform-services decisioning pointer
-(build-vs-buy for services surfaced at Initiation) added in v0.50.0.
+Added to framework in v0.12.0.

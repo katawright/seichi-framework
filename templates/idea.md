@@ -55,4 +55,4 @@ architectural-opportunity]
 
 ---
 
-<!-- Template Last Updated: 2026-06-01 | Added in v0.45.0. Scoped to product ideas (Target field removed) in v0.47.0 -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.45.0. -->

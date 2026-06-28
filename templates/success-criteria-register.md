@@ -72,4 +72,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.29.0. SC ID and Goal(s) columns added in v0.45.0. Re-check Date column + Close-Out usage row added in v0.47.0. v0.49 vocabulary/dev-ops-split sweep; Close-Out usage row folded into Closure. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.29.0. -->

@@ -301,12 +301,6 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.45.0. Idea backlog scoped to product/portfolio ideas;
-process and tooling friction routed to the owning framework/tool tracker in
-v0.47.0. Reframed as the capture half of the portfolio loop; routing made
-operator-relative (capture-locally default); three retrospective cadences
-placed; Lights-Out capture (agent prepares, never publishes) added in v0.49.0.
-In v0.51.0 the human-onboarding sections (Overview / Why / Goals / How to Use)
-moved to the [Framework Overview](OVERVIEW.md#the-learning-loop).
+Added to framework in v0.45.0.

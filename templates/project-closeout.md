@@ -128,4 +128,4 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 
 ---
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.47.0 (as Support's Project Close-Out). Recast in v0.49.0 as the rendered view of the completion contract, owned by the Closure stage. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.47.0. -->

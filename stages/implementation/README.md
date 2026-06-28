@@ -427,9 +427,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.5.0. Session-log creation marked [GATE] in the
-ONCE-PER-INCREMENT block in v0.47.0. Implementation-stage ADR drafts aligned
-with the canon promotion convention in v0.48.0. v0.49: autonomy vocabulary
-repointed to the operating model; Support→Operations refs updated.
+Added to framework in v0.5.0.
