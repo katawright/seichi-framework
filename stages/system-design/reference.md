@@ -812,13 +812,15 @@ rather than waiting for human direction. Concretely, this includes:
 
 System Design has the highest blast radius of the foundational stages —
 foundational decisions are difficult and expensive to reverse. The genuine floor
-here is **Gate 2** and any **compliance or security sign-off**, which stay
-human-owned. The remaining judgments follow the project's Authority setting — a
-human owns each directly, or an agent does within delegated bounds:
+here is **Gate 2**, the **compliance/security floor** (checklist item 6), and
+the **stakeholder-alignment sign-off** (checklist item 17) — all human-owned.
+The supporting judgments follow the project's Authority setting — a human owns
+each directly, or an agent does within delegated bounds:
 
-- **Architecture decisions:** An Alignment checkpoint — architecture council or
-  tech-lead sign-off by default. Agents propose; the project's Authority setting
-  fixes who decides, and may delegate it to an agent within bounds.
+- **Architecture decisions:** An Alignment checkpoint. Agents propose, and under
+  a delegated Authority an agent may decide the architecture itself within
+  bounds — but obtaining the **stakeholder-alignment sign-off** (that the right
+  parties concur) is the human-owned floor (checklist item 17).
 - **Security model and data flow:** Authentication architecture, authorization
   model, data residency, and encryption choices carry the higher assurance bar;
   for a regulated tier the compliance/security sign-off is the human-owned

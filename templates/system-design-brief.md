@@ -415,6 +415,8 @@ mitigation]
 **Recommendation:**
 
 - [ ] **Proceed** — Business case sound, cost acceptable
+- [ ] **Proceed with conditions** — [conditions to carry forward as tracked
+      obligations]
 - [ ] **Revise** — [What would change]
 - [ ] **Stop** — [Why]
 
@@ -487,4 +489,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. Stage Skip Decisions row 8 updated Support→Closure in v0.49.0. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. Value Delivered, Versioning Strategy, and Dependencies added in v0.42.0. Tier annotations and Stage Skip Decisions section added in v0.42.0. Skip-entirely directives elevated to visible blockquotes, session protocol preamble, and visual architecture ADR callout added in v0.44.0. ADR draft id width updated in v0.48.0. Stage Skip Decisions row 8 updated Support→Closure in v0.49.0. Gate 2 Recommendation gained "Proceed with conditions" in v0.52.0 (GC-3). -->
