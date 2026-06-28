@@ -105,10 +105,9 @@ the increment is ready for deployment.
 > selecting a final decision below.**
 
 - [ ] **Ready** — Hand off to Deployment stage; record the decision using the
-      [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
-- [ ] **Ready with conditions** — Document conditions in Verification Brief;
-      hand off to Deployment with conditions noted; record the decision using
-      the [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
+      [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
+      Any carry-forward conditions are documented in the Verification Brief and
+      the decision's Conditions field.
 - [ ] **Not Ready** — Route to Implementation for rework (see
       [Rework Cycle](README.md#when-verification-fails))
 

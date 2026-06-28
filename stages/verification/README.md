@@ -259,11 +259,10 @@ the prior brief and summarizes what was fixed.
 **Routing decision:** The Production Readiness field in the verification brief
 determines the path:
 
-| Production Readiness  | Route to       | Action                                                                       |
-| --------------------- | -------------- | ---------------------------------------------------------------------------- |
-| Ready                 | Deployment     | Hand off verified code, test results, UAT approval                           |
-| Ready with conditions | Deployment     | Hand off with conditions documented in brief                                 |
-| Not Ready             | Implementation | Publish brief with Rework Handoff section populated; notify engineering lead |
+| Production Readiness | Route to       | Action                                                                                                    |
+| -------------------- | -------------- | --------------------------------------------------------------------------------------------------------- |
+| Ready                | Deployment     | Hand off verified code, test results, UAT approval (any carry-forward conditions documented in the brief) |
+| Not Ready            | Implementation | Publish brief with Rework Handoff section populated; notify engineering lead                              |
 
 **Rework trigger artifact:** The completed verification brief with a Not Ready
 decision and populated Rework Handoff section is the trigger artifact for the

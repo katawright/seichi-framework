@@ -236,7 +236,8 @@ changes, or "None"]
 <!-- For structuring the go/no-go decision, use the
      Checkpoint Decision Template (checkpoint-decision.md) -->
 
-**Overall:** [✅ Ready / ⚠️ Ready with conditions / ❌ Not Ready]
+**Overall:** [✅ Ready / ❌ Not Ready] (record any carry-forward conditions
+below)
 
 | Gate              | Status       | Notes |
 | ----------------- | ------------ | ----- |

@@ -426,8 +426,10 @@ measure success without working monitoring.
 
 ### What Humans Validate
 
-These assurance judgments follow the project's **Authority** setting — a human
-owns each directly, or an agent does within delegated bounds:
+The stage's human-owned floor is **UAT acceptance** and the **production
+go/no-go** (checklist items 11 and 17). The remaining assurance judgments follow
+the project's **Authority** setting — a human owns each directly, or an agent
+does within delegated bounds:
 
 - Test intent and coverage quality — are the right things being tested, not just
   that line coverage numbers are met

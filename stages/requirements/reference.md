@@ -377,9 +377,11 @@ than waiting for human direction. Concretely, this includes:
 
 ### What Humans Validate
 
-Domain correctness is the judgment that most needs a qualified party at this
-stage — whether a human owns it directly or a suitably qualified agent does
-within delegated bounds follows the project's Authority setting:
+The stage's human-owned floor is the **security/compliance sign-off when
+required** (checklist item 18). Domain correctness is the judgment that most
+needs a qualified party — whether a human owns it directly or a suitably
+qualified agent does within delegated bounds follows the project's Authority
+setting:
 
 - **Domain correctness:** Whether requirements reflect how the business actually
   works, not just how an agent inferred it should work from the brief
