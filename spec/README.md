@@ -77,9 +77,10 @@ Conventions:
 
 - **Normative voice.** MUST / MUST NOT / MUST be is binding; SHOULD is a strong
   default; MAY is permitted latitude.
-- **`[Reserved]`** marks a contract or clause deferred beyond v0.49 (typically
-  scale, enterprise, regulated, or deep-operations content). It is named so its
-  absence is deliberate, not an omission.
+- **`[Reserved]`** marks a contract or clause deferred to a later, deliberate
+  expansion of this layer (typically scale, enterprise, regulated, or
+  deep-operations content). It is named so its absence is deliberate, not an
+  omission.
 - **`[Informative]`** marks rationale or illustration that does not itself bind.
 - **Semantics, not storage.** No contract prescribes a schema, file layout, API,
   or vendor. It states the required properties; an implementation chooses the
@@ -104,7 +105,7 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.49.0. The spec layer is authored from the v0.49 detail
 docs (operating model, delegated-run operations, progressive governance and
