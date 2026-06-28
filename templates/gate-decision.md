@@ -18,7 +18,15 @@ deployment, production ownership), use
 
 **Decision makers:**
 
-- **Decided by:** (names/roles)
+- **Clearance mode:** Interactive human / Pre-authorized policy
+- **Decided by:** _(interactive)_ the deciding party — name + role/id. A floor
+  decision MUST be discharged by a party on the project's authorized-party
+  roster for it (see
+  [Canonical-State Spec § Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)).
+- **Cleared by policy:** _(pre-authorized policy)_ the policy (name/link) and
+  its **author** — the accountable authorized party — with the date authored;
+  the run records the evaluating agent and the clearance timestamp (see
+  [Record Requirements](../spec/canonical-state.md#record-requirements)).
 - **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)
 
@@ -179,4 +187,4 @@ quality]
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-06-22 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. v0.49 closure-vocab fix. v0.49 Gate 2 division-of-labor restored PM (business case + requirements coverage) to match checkpoints.md. v0.49 division-of-labor reworded to the Prepares-Evidence (Decision-Rights) framing instead of RACI "R designation", removing the cross-axis letter collision with the RACI matrix. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.13.0. Post-Decision Actions section added in v0.44.0. Gate 2 ADR actions updated to workspace-canon promotion in v0.48.0. v0.49 closure-vocab fix. v0.49 Gate 2 division-of-labor restored PM (business case + requirements coverage) to match checkpoints.md. v0.49 division-of-labor reworded to the Prepares-Evidence (Decision-Rights) framing instead of RACI "R designation", removing the cross-axis letter collision with the RACI matrix. v0.52 added the policy-clearance variant — clearance mode + cleared-by-policy (CL-3/CL-4). -->

@@ -20,7 +20,15 @@ list of checkpoint types.
 
 **Decision makers:**
 
-- **Decided by:** (names/roles)
+- **Clearance mode:** Interactive human / Pre-authorized policy
+- **Decided by:** _(interactive)_ the deciding party — name + role/id. A floor
+  decision MUST be discharged by a party on the project's authorized-party
+  roster for it (see
+  [Canonical-State Spec § Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)).
+- **Cleared by policy:** _(pre-authorized policy)_ the policy (name/link) and
+  its **author** — the accountable authorized party — with the date authored;
+  the run records the evaluating agent and the clearance timestamp (see
+  [Record Requirements](../spec/canonical-state.md#record-requirements)).
 - **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)
 
@@ -109,4 +117,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.18.1. Stage-artifact example updated (support brief → operational-handoff record) in v0.49.0. v0.52 added the policy-clearance variant — clearance mode + cleared-by-policy (CL-3/CL-4). -->

@@ -186,6 +186,27 @@ project.
 - Specific storage, synchronization, and agent-access mechanisms are
   implementation choices; the Markdown MUST still specify the required record
   semantics and access properties sufficiently for an agent to operate them.
+- **Attribution carries an accountability grade.** For any item whose checklist
+  marker or governance profile places it at the judgment tier (`[J]`) or above,
+  the record MUST capture _who or what discharged it_ at the grade the item's
+  accountability demands, plus the **timestamp** of evaluation. Below that tier
+  (mechanical, unmarked items) recording is OPTIONAL but RECOMMENDED — it is
+  near-free under agent execution. The timestamp is always recorded.
+- **Two identity grades**, each the _minimum that suffices_, not a cap on what
+  is recorded:
+  - **`[J]` — qualification-identity.** The evaluator's _kind_: for an agent,
+    vendor / model / version; for a human, name + role. A type suffices, because
+    a judgment item asks only that a qualified evaluator confirmed it.
+  - **`[H]` — party-identity.** A _unique authorized party_: for a human, name +
+    a stable identifier; for an `[H]`·policy clearance, the policy's **author**
+    (the accountable party) together with the evaluating agent's
+    qualification-identity and the timestamp. A type never suffices at the floor
+    — it cannot answer for an outcome. _Which_ parties are authorized is the
+    [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
+    contract.
+- The framework states the **grade required + the timestamp**; the platform owns
+  the field schema (names, storage, binding to accounts). An agent MUST be able
+  to read and satisfy the grade requirement from Markdown alone.
 
 **Outputs.** Records meeting the required semantics.
 
@@ -196,7 +217,64 @@ record.
 no correction history) caps the assurance or audit level its evidence can
 support (see
 [Operating Model Spec § Function Separation](operating-model.md#function-separation),
-evidence row).
+evidence row). A `[J]`-or-above act recorded without its required identity grade
+or timestamp is not a satisfied record and caps the level the same way.
+
+---
+
+## Authorized Parties for Floor Decisions
+
+Rationale: progressive-governance detail (the authorization half of the
+non-delegable floor; see
+[Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution)).
+
+**Applicability.** Every non-delegable floor decision — the `[H]` acceptance,
+authorization, sign-off, and ownership acts, plus the investment gates. Not
+judgment (`[J]`) or mechanical items.
+
+**Inputs.** The floor decisions the governance profile requires; the consequence
+and compliance floors; the Accountable (**A**) role RACI assigns each decision
+([Roles Guide](../guides/roles.md#raci-matrix)).
+
+**Procedure.**
+
+- A project MAY declare an **authorized-party roster**: for each floor decision
+  — or each _class_ of floor decisions — the set of identified parties (unique
+  identifiers, not bare names or roles) permitted to discharge it. The roster
+  binds concrete identities to the **Accountable (A)** position RACI assigns by
+  role: the role is the _qualification_ (which function is accountable); the
+  roster names _which parties_ fill it for floor acts.
+- At `[H]`·interactive the decider MUST be on the roster for that decision; at
+  `[H]`·policy the policy **author** MUST be on it. Recording the act is the
+  [Record Requirements](#record-requirements) half; this contract is the
+  authorization half.
+- **Default rule (absent a declaration):** the project's executor/owner is the
+  authorized party for every floor act. A Negligible or Minimal solo project
+  therefore carries an _implicit_ roster — the lone owner approves everything —
+  with zero ceremony; a Standard project declares the roster at the
+  role/function level; a Critical or formal-compliance project declares an
+  explicit, tight roster (e.g. only named identifiers may clear the compliance
+  gate).
+- **Granularity.** Rosters are declared **per class** with an optional
+  **per-decision override** (e.g. "all compliance sign-offs → {ids},"
+  overridable for a specific gate).
+- **Boundary.** The framework states the **structure + the default rule**; the
+  platform owns the roster **schema** (fields, storage, binding to user
+  accounts). An agent MUST be able to read "this decision's authorized parties
+  are {ids}" and enforce membership from Markdown alone.
+
+**Outputs.** The authorized-party set — explicit or the default — for each floor
+decision the project requires.
+
+**Evidence.** The declared roster (or the recorded default), and, per floor act,
+the discharging party checked against it (recorded under
+[Record Requirements](#record-requirements)).
+
+**Failure behavior.** A floor act discharged by a party not in the authorized
+set (and not the default owner) is **not authorized**; the contract MUST treat
+it as an unresolved authorization decision and escalate (see
+[Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution),
+escalation outcome).
 
 ---
 
@@ -246,19 +324,28 @@ normalized database schema, a specific storage or synchronization mechanism,
 team or organization administration, RBAC/SSO/SCIM or enterprise policy tooling,
 compliance mappings for specific regulations, formal audit-export
 implementations, or the elimination of existing Markdown artifacts.
-**`[Reserved]`** Shared multi-actor project state, visible actor identity,
-membership and roles, and audit-export contracts scale on this same model but
-are deferred beyond v0.49.
+**`[Reserved]`** Shared multi-actor project state, full membership and roles
+(org/team administration, RBAC/SSO/SCIM, enterprise policy tooling), and
+audit-export contracts scale on this same model but are deferred to a later,
+deliberate expansion of this layer. Two slices are **lifted** from this
+reservation in v0.52: **actor identity** at the recording grades for `[J]`+ acts
+(see [Record Requirements](#record-requirements)) and the **authorized-party
+set** for floor decisions (see
+[Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions));
+the broader identity, membership, and audit-export surface stays reserved.
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-21
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.49.0. Authored from the v0.49 progressive-governance
 and structured-state detail doc. The run-level state and the rendered-snapshot
 fidelity floor that consume this canonical state live in the
 [Delegated-Run Spec](delegated-run.md); the human-facing rationale for the
 operating model lives in the
-[Operating Model Guide](../guides/operating-model.md).
+[Operating Model Guide](../guides/operating-model.md). Recording-grade
+attribution (identity grades + obligation) and the Authorized Parties for Floor
+Decisions contract added in v0.52.0 (CL-3/CL-4), lifting two slices out of the
+`[Reserved]` actor-identity/membership line.
