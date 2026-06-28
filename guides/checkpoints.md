@@ -31,7 +31,8 @@ fatigue.
   must be met before the next stage begins (e.g., "proceed once legal review
   clears the data-handling approach"). Each condition becomes a **tracked
   carry-forward obligation** in the canonical state — with an owner, the
-  stage/increment that discharges it, and a satisfied/blocked status (see
+  stage/increment that discharges it, and an Open / Satisfied / Blocked status
+  (see
   [Canonical-State Spec § Minimum Canonical Project State](../spec/canonical-state.md#minimum-canonical-project-state)).
   It is not merely minuted at the gate: every later stage entry re-reads the
   open conditions and reports their status, and a stage cannot close over a
@@ -171,10 +172,14 @@ Each stage specifies which checkpoint types apply:
 **Gate decisions keep human-owned authority** — a human either validates in the
 moment **or** has pre-authorized the decision as policy (the normal Lights-Out
 path), never a delegated agent (interactive-only at Critical). **Review and
-alignment decisions follow the project's Authority setting**, which may delegate
-them to an agent within bounds. The [Operating Model Guide](operating-model.md)
-sets which applies per checkpoint, sizing how independently agents may work at
-each stage and where human oversight is required.
+alignment decisions follow the project's Authority setting** and may be
+delegated to an agent within bounds — **except acceptance, authorization, and
+ownership-transfer Reviews** (Production Deployment Approval, Compliance
+Approval, Production Ownership Transfer, Project Closure), which carry **`[H]`**
+floor sign-offs and stay human-owned. The
+[Operating Model Guide](operating-model.md) sets which applies per checkpoint,
+sizing how independently agents may work at each stage and where human oversight
+is required.
 
 > **Enterprise extensions:** Organizations with additional governance needs can
 > insert additional reviews or alignments as checkpoints within stages rather

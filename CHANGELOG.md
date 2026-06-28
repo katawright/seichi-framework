@@ -12,11 +12,12 @@ reducibility).
   (mechanical), **`[J]`** (judgment; who confirms is an operating-model choice),
   and **`[H]`** (the non-delegable, human-owned floor — interactive or
   pre-authorized policy, never a delegated agent; interactive-only at Critical).
-  All eight stage checklists re-marked per the migration table (40 → `[J]`, 13
-  floor `[H]`, 2 "stakeholders notified" demoted to unmarked); the Requirements
-  review split into a `[J]` eng/product review + an `[H]` security/compliance
-  sign-off; role-neutral rephrasing of the human-team-presuming items; the
-  marker legend and `STYLE_GUIDE` convention rewritten; the `operating-model.md`
+  All eight stage checklists re-marked per the migration table (38 → `[J]`, 13
+  floor `[H]`, 2 "stakeholders notified" demoted to unmarked), plus 2 further
+  `[J]` re-marks in the deployment pipeline checklist; the Requirements review
+  split into a `[J]` eng/product review + an `[H]` security/compliance sign-off;
+  role-neutral rephrasing of the human-team-presuming items; the marker legend
+  and `STYLE_GUIDE` convention rewritten; the `operating-model.md`
   non-delegable-floor parenthetical tightened to "(human-owned)" and the
   `checkpoints.md` human-validation sentence aligned (CL-1)
 - **spec:** operationalize the recording obligation and the two actor-identity

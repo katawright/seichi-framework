@@ -437,8 +437,10 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
-Added to framework in v0.19.0. In v0.51.0 documented the operational-guide
-audience-separation convention (the human-onboarding layer relocated to
-`guides/OVERVIEW.md`; guides open with a "New here?" pointer + Key Principle).
+Added to framework in v0.19.0. In v0.52.0 documented the three-tier checklist
+marker convention (_unmarked_ / `[J]` / `[H]`, CL-1). In v0.51.0 documented the
+operational-guide audience-separation convention (the human-onboarding layer
+relocated to `guides/OVERVIEW.md`; guides open with a "New here?" pointer + Key
+Principle).

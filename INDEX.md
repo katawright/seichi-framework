@@ -90,13 +90,13 @@ Agent- and conformance-facing normative layer — executable contracts behind th
 operating model, delegated runs, parallel-batch execution, and canonical project
 state. The human-facing rationale lives in `guides/operating-model.md`.
 
-| Path                      | Description                                                                                                                                                        | Keywords                                                                                                 | Refs                                            | Tier |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---- |
-| `spec/README.md`          | Spec index and the six-field executable-contract form; scope of the normative layer.                                                                               | spec, normative, contracts, conformance, executable-contract, lights-out                                 | operating-model (guide)                         | core |
-| `spec/canonical-state.md` | Canonical project-state contracts: minimum state, artifacts-as-views, Markdown self-sufficiency, records, folding.                                                 | canonical-state, artifacts-as-views, self-sufficiency, records, folding                                  | delegated-run, operating-model                  | ref  |
-| `spec/delegated-run.md`   | Delegated-run contracts: lifecycle, liveness, durable state, idempotency, replanning, completion.                                                                  | delegated-run, lights-out, lifecycle, liveness, idempotency, completion, replanning                      | operating-model, canonical-state                | core |
-| `spec/operating-model.md` | Operating-model contracts: functions, coverage, envelope, floors, Lights-Out eligibility, separation, stop enforcement.                                            | operating-model, coverage, envelope, floors, lights-out, separation, stop-enforcement                    | operating-model (guide), delegated-run          | core |
-| `spec/parallel-batch.md`  | Parallel-batch contracts: forcing-dependency taxonomy, parallel-safety classification, batch preflight/execution/close, work conservation, Lights-Out eligibility. | parallel-batch, batch, parallel-safety, forcing-dependency, work-conservation, orchestration, lights-out | operating-model, delegated-run, canonical-state | core |
+| Path                      | Description                                                                                                                                                                             | Keywords                                                                                                                              | Refs                                            | Tier |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---- |
+| `spec/README.md`          | Spec index and the six-field executable-contract form; scope of the normative layer.                                                                                                    | spec, normative, contracts, conformance, executable-contract, lights-out                                                              | operating-model (guide)                         | core |
+| `spec/canonical-state.md` | Canonical project-state contracts: minimum state, artifacts-as-views, Markdown self-sufficiency, records, recording grades, authorized-party roster, carry-forward conditions, folding. | canonical-state, artifacts-as-views, self-sufficiency, records, recording-grades, authorized-party, carry-forward-conditions, folding | delegated-run, operating-model                  | ref  |
+| `spec/delegated-run.md`   | Delegated-run contracts: lifecycle, liveness, durable state, idempotency, replanning, completion.                                                                                       | delegated-run, lights-out, lifecycle, liveness, idempotency, completion, replanning                                                   | operating-model, canonical-state                | core |
+| `spec/operating-model.md` | Operating-model contracts: functions, coverage, envelope, floors, Lights-Out eligibility, separation, stop enforcement.                                                                 | operating-model, coverage, envelope, floors, lights-out, separation, stop-enforcement                                                 | operating-model (guide), delegated-run          | core |
+| `spec/parallel-batch.md`  | Parallel-batch contracts: forcing-dependency taxonomy, parallel-safety classification, batch preflight/execution/close, work conservation, Lights-Out eligibility.                      | parallel-batch, batch, parallel-safety, forcing-dependency, work-conservation, orchestration, lights-out                              | operating-model, delegated-run, canonical-state | core |
 
 ## Stage Artifacts (25)
 
@@ -197,7 +197,7 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.41.0. Operating Model Guide and the agent-facing
 `spec/` layer added to the inventory in v0.49.0; the superseded AI Assistance
@@ -209,5 +209,8 @@ Scheduling and Parallel Execution guides. In v0.50.0 the Scope description was
 corrected to include the `spec/` layer, and the `session-protocol.md` and
 `initiation/README.md` rows refreshed for the session-start orientation and
 Platform Services additions. In v0.51.0 the human-facing `guides/OVERVIEW.md`
-orientation layer was added (the audience-separation lever); current section
-counts are Guides 26, Spec 5, Stage Artifacts 25, Templates 23.
+orientation layer was added (the audience-separation lever). In v0.52.0 the
+`canonical-state.md` row description and keywords were refreshed for the CL-3
+recording grades, the CL-4 authorized-party roster, and GC-1 carry-forward
+conditions. Current section counts are Guides 26, Spec 5, Stage Artifacts 25,
+Templates 23.
