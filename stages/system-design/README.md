@@ -525,14 +525,22 @@ priority definitions.
 4. **Assess risk and complexity** — uncertain items first
 5. **Group into increments** — Must Haves first, delivering testable value;
    articulate the value each increment delivers to users or the project
-6. **Sequence increments** — dependencies first, then risk/value balance. For
-   dependency-aware batching and parallel-safe ordering, see the
-   [Parallel Scheduling Guide](../../guides/parallel-scheduling.md)
-7. **Map Should Haves** — assign to later increments
-8. **Handle Could Haves** — mark as opportunistic
-9. **Document Won't Haves** — explicitly list exclusions
-10. **Estimate duration and effort as ranges**
-11. **Calculate cost range for Gate 2** — effort x blended rate, compare to
+6. **Assess parallel-safety (Standard+ tiers).** Before sequencing, check
+   whether any grouped increments are independently deliverable and would batch
+   safely. If two or more could, run the parallel-safety classification
+   ([Parallel-Batch Spec](../../spec/parallel-batch.md)); otherwise — and at
+   Negligible/Minimal — keep the clean sequence-by-default. This step prompts
+   only the _assessment_; the classification's own conservative rule
+   (unestablished disjointness is unsafe → sequence) stays the arbiter, so
+   surfacing the option never weakens safety. See the
+   [Parallel Scheduling Guide](../../guides/parallel-scheduling.md) for
+   dependency-aware batching and parallel-safe ordering.
+7. **Sequence increments** — dependencies first, then risk/value balance
+8. **Map Should Haves** — assign to later increments
+9. **Handle Could Haves** — mark as opportunistic
+10. **Document Won't Haves** — explicitly list exclusions
+11. **Estimate duration and effort as ranges**
+12. **Calculate cost range for Gate 2** — effort x blended rate, compare to
     Initiation estimates
 
 > For increment sizing guidance, estimation techniques, and methodology-specific
