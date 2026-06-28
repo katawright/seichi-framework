@@ -129,6 +129,27 @@ Rules:
    `[ASSUMED]` item — see
    [Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
 
+**Gate-authority mechanism — surface the policy option.** Gate clearance is
+itself an inferred dimension: a gate may be cleared by an **interactive human**
+or by **pre-authorized policy** (a discretion-free proceed-if rule the run
+evaluates) — both human-owned (see
+[Operating Model Guide § Authority](operating-model.md#authority--who-may-decide)).
+The default inference is interactive, but a user on a default run never learns
+the policy option exists. Surface it once, as an overridable default:
+
+> Default: I'll check with you at each gate. You can instead set a _proceed-if_
+> policy — e.g., "clear Gate 2 when the design covers all FRs and the estimate
+> is under budget" — and I'll clear the gate automatically when the conditions
+> hold. Say the word.
+
+Consequence-scaled (inherits the [H] floor): at low consequence with clear,
+machine-checkable conditions, lean toward offering the policy option; at
+**Critical / severe-harm irreversible transitions, do not offer it —
+interactive-only**. A "policy" whose conditions need judgment is delegation, not
+policy, and must never be offered as a floor-satisfying clearance.
+**Discoverability only** — never auto-switch a gate to policy without the user
+setting it; the default stays interactive and conservative.
+
 **Negligible routes to the folded path.** When inference lands at the bottom of
 the scale — a throwaway spike, no compliance, blast radius confined to the
 builder — classify that **early, before front-loading**, and route to the
@@ -654,7 +675,7 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.23.0. Artifact dependency graph added in v0.23.0.
 Zero-to-one routing and classification by inference added in v0.48.0. Warm
