@@ -81,6 +81,12 @@ for logging conventions and AI agent guidance.
 
 - [Unresolved items requiring human input]
 
+**[H] / [J] Items:**
+
+- [Each `[H]`/`[J]` item discharged this session — record the evaluator at the
+  required identity grade and the timestamp; see
+  [Record Requirements](../spec/canonical-state.md#record-requirements)]
+
 **Context for Next Session:**
 
 - [Critical context the next agent/human needs to continue]
@@ -91,4 +97,4 @@ for logging conventions and AI agent guidance.
 
 _Add more session entries as needed._
 
-<!-- Template Last Updated: 2026-06-21 | Added in v0.12.0. v0.49 vocabulary/dev-ops-split sweep. -->
+<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. v0.49 vocabulary/dev-ops-split sweep. v0.52.0 added the [H] / [J] Items session-entry field (CL-3). -->

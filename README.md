@@ -437,11 +437,13 @@ changes.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.17.0. Idea-path entry added to Start Here in v0.48.0.
-Autonomy-tier links repointed to the Operating Model Guide in v0.49.0. In
-v0.49.0 the dev/ops split renamed the 8th stage Support → Closure (terminal),
-moved standing operations to the [Operations Guide](guides/operations.md), and
-added the [Flow](guides/stages.md#flow-delivery-mode) delivery mode. In v0.51.0
-added the [Framework Overview](guides/OVERVIEW.md) navigation callout (RC-3).
+In v0.52.0 the gate-outcome restatements were harmonized to the four-value form
+— Proceed / Proceed with conditions / Revise / Stop (GC-3). Autonomy-tier links
+repointed to the Operating Model Guide in v0.49.0. In v0.49.0 the dev/ops split
+renamed the 8th stage Support → Closure (terminal), moved standing operations to
+the [Operations Guide](guides/operations.md), and added the
+[Flow](guides/stages.md#flow-delivery-mode) delivery mode. In v0.51.0 added the
+[Framework Overview](guides/OVERVIEW.md) navigation callout (RC-3).
