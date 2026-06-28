@@ -161,9 +161,12 @@ Each stage specifies which checkpoint types apply:
 - **Deployment:** Review (Production Deployment Approval, Compliance Approval)
 - **Closure:** Review (Production Ownership Transfer, Project Closure)
 
-**Human validation of AI output is required at all checkpoint types.** The
-[Operating Model Guide](operating-model.md) sizes how independently agents may
-work at each stage and where human oversight is required.
+**Every checkpoint keeps human-owned authority.** A human either validates in
+the moment **or** has pre-authorized the decision as policy (the normal
+Lights-Out path) — never a delegated agent at the floor. The
+[Operating Model Guide](operating-model.md) sets which applies per checkpoint,
+sizing how independently agents may work at each stage and where human oversight
+is required.
 
 > **Enterprise extensions:** Organizations with additional governance needs can
 > insert additional reviews or alignments as checkpoints within stages rather

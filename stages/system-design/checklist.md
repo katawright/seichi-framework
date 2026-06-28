@@ -7,14 +7,21 @@ ready for Gate 2.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -45,7 +52,7 @@ ready for Gate 2.
 
 8. [ ] **Monitoring and logging strategy designed** (observability stack,
        alerting)
-9. [ ] **[H] Success criteria instrumentation planned** — each criterion from
+9. [ ] **[J] Success criteria instrumentation planned** — each criterion from
        the Success Criteria Register has a defined collection method, metric
        name, and delivery increment
 10. [ ] **Infrastructure plan covers CI/CD, environments, deployment**
@@ -69,12 +76,12 @@ ready for Gate 2.
 
 ### Increment Plan and Readiness
 
-14. [ ] **[H] Increment plan maps MoSCoW priorities to sequenced increments**
+14. [ ] **[J] Increment plan maps MoSCoW priorities to sequenced increments**
         (Must Haves first, dependencies identified, each increment articulates
         value delivered)
-15. [ ] **[H] All requirements have architectural approach** (no orphaned FRs or
+15. [ ] **[J] All requirements have architectural approach** (no orphaned FRs or
         NFRs)
-16. [ ] **[H] Design assumptions consistent with upstream artifacts** (user
+16. [ ] **[J] Design assumptions consistent with upstream artifacts** (user
         scale, data volume, concurrency, and growth projections align with
         requirements brief; any departures are justified with documented
         rationale and business input)
@@ -94,7 +101,7 @@ ready for Gate 2.
 22. [ ] **Draft ADRs use correct naming and location** (`ADR-DCC.md` in
         project's `docs/adr/`; ready for Gate 2 promotion to the workspace ADR
         canon per [ADR Publishing](../../guides/framework.md#adr-publishing))
-23. [ ] **[H] Each draft ADR earns its position** (meets all three criteria —
+23. [ ] **[J] Each draft ADR earns its position** (meets all three criteria —
         significant, hard to reverse, contested; decisions that fail
         hard-to-reverse are demoted to design-note subsections in the brief, not
         kept as ADRs; every load-bearing decision has an ADR)

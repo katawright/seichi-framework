@@ -88,7 +88,7 @@ defining its own.
 ## At Session End
 
 1. Fill in the new session entry: Completed, In Progress, Decisions Made,
-   Deviations from Plan, [H] Items, Context for Next Session.
+   Deviations from Plan, [H] / [J] Items, Context for Next Session.
 2. Update the file's `Last Updated` header.
 3. Update the `Artifact Progress` table if any artifact changed state.
 4. If any friction surfaced this session — process, execution, product, or

@@ -7,14 +7,21 @@ System Design.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -28,7 +35,7 @@ System Design.
 
 1. [ ] **Functional requirements are testable** (FR-# IDs, behavior-focused, can
        be validated in Verification)
-2. [ ] **[H] Each FR has objective acceptance criteria** (ACs define "done" with
+2. [ ] **[J] Each FR has objective acceptance criteria** (ACs define "done" with
        measurable conditions, no subjective language)
 3. [ ] **Requirements prioritized with
        [MoSCoW](../../guides/framework.md#moscow-prioritization)** (clear
@@ -63,16 +70,19 @@ System Design.
 
 ### Quality and Traceability
 
-13. [ ] **[H] Top edge cases listed** (common failure scenarios with expected
+13. [ ] **[J] Top edge cases listed** (common failure scenarios with expected
         behavior)
 14. [ ] **Open questions listed** (critical blockers flagged with owners)
 15. [ ] **Traceability summary present** (FRs traced to Initiation goals and
         success metrics)
 16. [ ] **Success Criteria Register referenced** — all success criteria have
         supporting FRs/NFRs and register measurement methods are feasible
-17. [ ] **[H] Review occurred** (engineering + product, and security/compliance
-        if relevant, have validated)
-18. [ ] **All required stage outputs produced** (requirements brief, acceptance
+17. [ ] **[J] Engineering and product review occurred** (eng and product have
+        validated the requirements)
+18. [ ] **[H] Security/compliance sign-off obtained when required**
+        (tier-conditional — AppSec or the compliance authority signs off; N/A
+        when the data-sensitivity classification carries no compliance scope)
+19. [ ] **All required stage outputs produced** (requirements brief, acceptance
         criteria, prioritized backlog, NFRs — verify against stage README front
         matter)
 

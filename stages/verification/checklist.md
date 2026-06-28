@@ -7,14 +7,21 @@ the increment is ready for deployment.
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -49,7 +56,7 @@ the increment is ready for deployment.
 9. [ ] **Database-layer logic regression passing** (SP regression suite green;
        logic authority verified for modified calculations; N/A for systems
        without database-layer business logic or greenfield)
-10. [ ] **[H] Readiness re-assessment completed** (N/A except after brownfield
+10. [ ] **[J] Readiness re-assessment completed** (N/A except after brownfield
         preparation increments; re-score target area per
         [Re-Assessment Protocol](../../guides/brownfield-readiness.md#readiness-re-assessment-protocol);
         for preparation increments, use binary pass/fail criteria per readiness
@@ -66,9 +73,9 @@ the increment is ready for deployment.
 
 ### Defect Status
 
-13. [ ] **[H] No critical or high-severity defects open** (all resolved or
+13. [ ] **[J] No critical or high-severity defects open** (all resolved or
         deferred with justification)
-14. [ ] **[H] Deferred defects documented** (justification and target version
+14. [ ] **[J] Deferred defects documented** (justification and target version
         included)
 15. [ ] **Fixed defects retested and verified** (no regressions from fixes)
 
@@ -77,10 +84,10 @@ the increment is ready for deployment.
 16. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
         rollback plan documented)
 17. [ ] **Verification brief completed with test results documented**
-18. [ ] **[H] Deployment prerequisites prepared** (code tagged, runbook created,
+18. [ ] **[J] Deployment prerequisites prepared** (code tagged, runbook created,
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
-19. [ ] **[H] Stakeholders notified of deployment plan**
+19. [ ] **Stakeholders notified of deployment plan**
 20. [ ] **All required stage outputs produced** (verification brief, test
         results, defect reports — verify against stage README front matter)
 

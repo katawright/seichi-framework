@@ -309,7 +309,7 @@ conditions evaluable by a covered function?).
     allows.
 - A policy is usable only if its conditions are evaluable by a covered function;
   otherwise the gate MUST fall back to interactive human regardless of intent.
-- The **non-delegable floor** (interactive human) MUST include investment gates,
+- The **non-delegable floor** (human-owned) MUST include investment gates,
   compliance sign-off, and — at high or critical consequence — gate decisions at
   irreversible or high-blast-radius transitions.
 - **`[Reserved]`** Whether gate **judgment** may ever be delegated to agent

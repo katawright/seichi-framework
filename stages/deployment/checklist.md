@@ -7,14 +7,21 @@ successful completion (60-90 seconds).
 
 ---
 
-> Items marked **[H]** require human judgment. Other items can be verified or
-> assisted by AI.
+> **Markers.** _Unmarked_ — mechanical; an agent verifies directly. **[J]** —
+> needs judgment, but whether a human, a delegated agent, or pre-authorized
+> policy provides it is an operating-model choice. **[H]** — the non-delegable
+> floor: **human-owned** regardless of operating model, discharged either
+> interactively **or** by pre-authorized policy, never a delegated agent
+> (interactive-only at Critical). The marker says only _whether an agent may
+> discharge the item_; whether an **[H]** item clears interactively or by policy
+> is resolved per project by the consequence + compliance floor (see the
+> [Operating Model Guide](../../guides/operating-model.md)), not by the marker.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
-> results for review. A human reviews all items and confirms **[H]** items,
-> which require judgment an agent cannot substitute for. **During interactive
-> stage execution, raise [H] items as they arise rather than batching them at
-> the end.**
+> results for review. **[H]** items stay human-owned — cleared interactively or
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's tier. See
@@ -70,13 +77,13 @@ successful completion (60-90 seconds).
 10. [ ] **Security pre-deployment checks passed** (no new critical CVEs since
         last scan, SBOM generated, artifact integrity verified; consult
         [AppSec per RACI](../../guides/roles.md#raci-matrix))
-11. [ ] **[H] Configuration and secrets reviewed** (no secrets in code, values
+11. [ ] **[J] Configuration and secrets reviewed** (no secrets in code, values
         correct per environment)
-12. [ ] **[H] Stakeholders notified of deployment schedule** (timeline and
-        expected impact communicated)
+12. [ ] **Stakeholders notified of deployment schedule** (timeline and expected
+        impact communicated)
 13. [ ] **Deployment team available and on communication channel** (on-call
         confirmed)
-14. [ ] **[H] Cross-repo deployment ordering confirmed** (N/A for single-repo
+14. [ ] **[J] Cross-repo deployment ordering confirmed** (N/A for single-repo
         projects; multi-repo: verify deployment sequence, per-service validation
         gates, and rollback ordering)
 15. [ ] **Database migration steps documented separately from application
@@ -131,14 +138,14 @@ successful completion (60-90 seconds).
 > When the same role owns both Deployment and ongoing operations, apply this
 > section as a self-review rather than a cross-team transfer.
 
-1. [ ] **[H] Operations owner briefed on deployment outcome** (walkthrough
+1. [ ] **[J] Operations owner briefed on deployment outcome** (walkthrough
        completed)
-2. [ ] **[H] Known issues and workarounds documented** (shared with operations
+2. [ ] **[J] Known issues and workarounds documented** (shared with operations
        owner)
 3. [ ] **Production monitoring access verified** (operations owner has dashboard
        access)
 4. [ ] **Operations runbook created or updated** (reflects current deployment)
-5. [ ] **[H] On-call rotation and escalation path updated** (contacts current)
+5. [ ] **[J] On-call rotation and escalation path updated** (contacts current)
 6. [ ] **First-week monitoring schedule defined** (observation cadence agreed)
 7. [ ] **[H] Operations owner confirms receipt of all handoff inputs** (deployed
        system, monitoring dashboards, updated runbooks, incident response
@@ -146,7 +153,7 @@ successful completion (60-90 seconds).
        success criteria register) — confirm by having the operations contact
        verify access to each artifact and sign off in the deployment brief or
        checkpoint decision
-8. [ ] **[H] Increment retrospective completed or scheduled** (run the
+8. [ ] **[J] Increment retrospective completed or scheduled** (run the
        [Retrospective Template](../../templates/retrospective.md) now or
        schedule within one week; triage friction-log entries; log carry-forward
        items for next Increment Design)
@@ -163,13 +170,14 @@ successful completion (60-90 seconds).
 **Readiness summary:**
 
 - [ ] All checklist sections above are complete
-- [ ] **[H] Deployment engineer signs off on success** (technical validation
-      complete)
-- [ ] **[H] DevOps lead reviews and approves outcome** (operational readiness
-      confirmed)
-- [ ] **[H] Project manager confirms release coordination complete** (schedule,
-      dependencies, and stakeholder communication verified)
-- [ ] **[H] Product manager acknowledges completion** (business acceptance)
+- [ ] **[J] Technical deployment validation signed off** (deployment validated
+      against technical checks; engineering function)
+- [ ] **[H] Operational readiness approved** (deployment approval — operational
+      readiness confirmed; DevOps function authority, consequence-relative)
+- [ ] **[J] Release coordination confirmed complete** (schedule, dependencies,
+      and stakeholder communication verified; project-management function)
+- [ ] **[H] Business acceptance of completion** (the product function accepts
+      the completed release on the business's behalf)
 - [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
 - [ ] **Follow-up issues logged in backlog** (nothing lost)
 
