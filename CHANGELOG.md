@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.53.0 (2026-06-28)
+
+Rolling ideation bucket from the v0.50–v0.52 cycle — three approved doc-only
+items (VC-1, WS-1, RC-3-C) plus a corpus-wide alignment of bootstrap-prompt
+references (single-repo → Quick Start, multi-repo → Bootstrap Guide).
+
+### Improvements
+
+- **framework:** add a **Portfolio Workspace** worked example to the Bootstrap
+  Guide — a governance repo holding multiple projects whose `project.md` files
+  pin different, overlapping subsets of sibling app repos; states the
+  load-bearing rule (governance binds to source by relative path per project, so
+  `projects/` is never tied to a single app's `src/`) and cross-links the
+  add-a-project flow, with a back-pointer from the Quick Start (WS-1)
+- **framework:** make the Brownfield Readiness Guide's Readiness Tiers section
+  the **canonical home** for tier definitions and replace the tier-meaning
+  paraphrase in the Brownfield Approach Guide with a cross-link, so tier
+  meanings live once (RC-3-C)
+- **framework:** align bootstrap-prompt references corpus-wide — Quick Start for
+  the single-repo prompt, Bootstrap Guide for the setup model and multi-repo
+  prompt (README, Framework Guide, Overview, Initiation README)
+
+### Bug Fixes
+
+- **framework:** replace the retired "Manual Process Guide" reference in the
+  Framework Guide with the Bootstrap Guide, and add the term to the
+  `retired-vocab` guard so it cannot return as live guidance (VC-1)
+- **roles:** point the checkpoint-accountability note to the **Roles and
+  Responsibilities** section, where the accountability table actually lives (was
+  the Compliance and Regulatory Considerations anchor)
+
 ## 0.52.0 (2026-06-28)
 
 Set C — Governance Mechanics & Execution Discipline. Nine items (CL-1–CL-5,
