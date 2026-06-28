@@ -197,13 +197,13 @@ is the normative source for the floor mapping those anchors feed.
   alone.
 - The consequence-to-floor mapping (cells are minimums):
 
-| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                             | Lights-Out                                                                 | Governance-weight preset    |
-| ----------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------- |
-| Negligible  | None                                                          | none non-delegable                                                                | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
-| Low         | Self                                                          | acceptance delegable                                                              | eligible                                                                   | Minimal                     |
-| Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                    | eligible, bounded pauses                                                   | Standard                    |
-| High        | Internal (required)                                           | gate decisions non-delegable                                                      | eligible; gated at irreversible transitions                                | Enterprise                  |
-| Critical    | Internal (required)                                           | all gate decisions non-delegable + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                                                                          | Lights-Out                                                                 | Governance-weight preset    |
+| ----------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
+| Negligible  | None                                                          | none non-delegable                                                                                                             | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
+| Low         | Self                                                          | acceptance delegable                                                                                                           | eligible                                                                   | Minimal                     |
+| Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                                                                 | eligible, bounded pauses                                                   | Standard                    |
+| High        | Internal (required)                                           | gate decisions non-delegable                                                                                                   | eligible; gated at irreversible transitions                                | Enterprise                  |
+| Critical    | Internal (required)                                           | all gate decisions non-delegable, interactive-only (no pre-authorized policy) + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
 
 - At the highest consequence, the additional weight lands on Authority (gate
   density and non-delegability) and required standing-function coverage (stop
@@ -311,7 +311,11 @@ conditions evaluable by a covered function?).
   otherwise the gate MUST fall back to interactive human regardless of intent.
 - The **non-delegable floor** (human-owned) MUST include investment gates,
   compliance sign-off, and — at high or critical consequence — gate decisions at
-  irreversible or high-blast-radius transitions.
+  irreversible or high-blast-radius transitions. At **Critical** consequence
+  (severe-harm irreversible transitions) the floor tightens further to
+  **interactive-only**: a human decides in the moment, and pre-authorized policy
+  does not qualify — the call cannot be reduced to discretion-free conditions
+  ahead of time (the reducibility rule above).
 - **`[Reserved]`** Whether gate **judgment** may ever be delegated to agent
   discretion (the strict delegated-agent path, distinct from policy) is
   deferred; the Lights-Out path is policy, not delegation, so v0.49 does not

@@ -173,10 +173,11 @@ Each stage specifies which checkpoint types apply:
 moment **or** has pre-authorized the decision as policy (the normal Lights-Out
 path), never a delegated agent (interactive-only at Critical). **Review and
 alignment decisions follow the project's Authority setting** and may be
-delegated to an agent within bounds — **except acceptance, authorization, and
-ownership-transfer Reviews** (Production Deployment Approval, Compliance
-Approval, Production Ownership Transfer, Project Closure), which carry **`[H]`**
-floor sign-offs and stay human-owned. The
+delegated to an agent within bounds — **except those carrying an `[H]` floor
+sign-off**: the acceptance, authorization, stakeholder-alignment, and
+ownership-transfer acts (Architecture Review stakeholder sign-off, Production
+Deployment Approval, Compliance Approval, Production Ownership Transfer, Project
+Closure), which stay human-owned. The
 [Operating Model Guide](operating-model.md) sets which applies per checkpoint,
 sizing how independently agents may work at each stage and where human oversight
 is required.
