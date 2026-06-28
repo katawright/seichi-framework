@@ -82,7 +82,13 @@ rationale.
   - **Review:** Ready / Not Ready
   - **Alignment:** Aligned / Adjustments Needed
 - **Rationale:** (why this decision was made)
-- **Conditions:** (if any — e.g., "accept with mitigation X by date Y")
+- **Conditions:** (if any) — each is a tracked carry-forward obligation,
+  re-checked at every later stage entry per the
+  [Canonical-State Spec](../spec/canonical-state.md#minimum-canonical-project-state):
+
+  | Condition | Owner | Discharged at (stage/increment) | Status                     |
+  | --------- | ----- | ------------------------------- | -------------------------- |
+  | …         | …     | …                               | Open / Satisfied / Blocked |
 
 ---
 

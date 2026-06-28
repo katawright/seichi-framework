@@ -29,11 +29,16 @@ fatigue.
 - **When used:** Early in the project when stopping is still realistic
 - **"Proceed with conditions":** The project continues, but named conditions
   must be met before the next stage begins (e.g., "proceed once legal review
-  clears the data-handling approach"). Track conditions in the gate decision
-  record and verify them at the next checkpoint. If the next checkpoint is
-  skipped (e.g., collapsed tiers at Minimal), resolve conditions in the first
-  artifact produced after the gate — document evidence inline and note which
-  gate condition it satisfies.
+  clears the data-handling approach"). Each condition becomes a **tracked
+  carry-forward obligation** in the canonical state — with an owner, the
+  stage/increment that discharges it, and a satisfied/blocked status (see
+  [Canonical-State Spec § Minimum Canonical Project State](../spec/canonical-state.md#minimum-canonical-project-state)).
+  It is not merely minuted at the gate: every later stage entry re-reads the
+  open conditions and reports their status, and a stage cannot close over a
+  condition due within it while it stays open. If the next checkpoint is skipped
+  (e.g., collapsed tiers at Minimal), resolve conditions in the first artifact
+  produced after the gate — document evidence inline and note which gate
+  condition it satisfies.
 
 **Examples:**
 
@@ -176,7 +181,7 @@ is required.
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.42.0 (extracted from `guides/stages.md`). Stale AI
 Assistance Scorecard reference repointed to the Operating Model Guide in

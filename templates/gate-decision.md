@@ -112,7 +112,13 @@ Criteria may match or differ from what the preceding stage proposed.
 ## Decision: Proceed / Proceed with conditions / Revise / Stop
 
 - **Rationale:** (why this decision was made)
-- **Conditions:** (if any — e.g., "proceed but address X first")
+- **Conditions:** (if "Proceed with conditions") — each is a tracked
+  carry-forward obligation, re-checked at every later stage entry per the
+  [Canonical-State Spec](../spec/canonical-state.md#minimum-canonical-project-state):
+
+  | Condition | Owner | Discharged at (stage/increment) | Status                     |
+  | --------- | ----- | ------------------------------- | -------------------------- |
+  | …         | …     | …                               | Open / Satisfied / Blocked |
 
 ---
 
