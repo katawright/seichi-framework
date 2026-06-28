@@ -159,6 +159,28 @@ verification was skipped, why, and what compensating checks (smoke tests,
 heightened monitoring, a tested rollback) are in place. See the
 [hotfix workflow](reference.md#hotfix-deployment).
 
+### Compliance Approval Is a Floor Authorization
+
+For a regulated release, the **Compliance Approval** checkpoint (front matter;
+`condition: compliance`, Standard/Enterprise; AppSec **R/A**) is a non-delegable
+**`[H]` floor** act — the _accept-and-release_ authorization, kept distinct from
+the evidence beneath it. The split mirrors roles-as-functions:
+
+- **Validation** — "the required controls are met" — is AppSec's R-work,
+  recorded at Verification as a `[J]` item (agent-able at any tier; see the
+  [Verification Checklist](../verification/checklist.md)).
+- **Authorization** — "we accept this and release" — is the `[H]` floor here:
+  human-owned, **policy-dischargeable through High** (a pre-authorized
+  pass-the-controls policy) and **interactive-only at Critical**, or under any
+  regime that mandates a named-human attestation.
+
+One floor act fed by agent-produced evidence, not two floor items. Record it per
+the [Record Requirements](../../spec/canonical-state.md#record-requirements)
+grade rule (the approver as a unique authorized party, or the policy and its
+author), and gate it by the project's
+[authorized-party roster](../../spec/canonical-state.md#authorized-parties-for-floor-decisions).
+It is **per-release** and tier-conditional — absent compliance scope it is N/A.
+
 ### Release Cadence and the Project-End Guarantee
 
 Release cadence is a delivery choice:
@@ -690,10 +712,12 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.7.0. Shadow Mode and Gradual Rollout added in v0.39.0.
 Brownfield Database Deployment section added in v0.42.0. Compliance Approval
 `condition` checkpoint metadata added in v0.45.0. Release Disposition section
 and the elective-release model added in v0.45.0. v0.49: autonomy vocabulary
 repointed to the operating model; Support→Closure/Operations refs updated.
+v0.52.0 surfaced the Compliance Approval as an [H] authorization floor fed by
+the Verification compliance-validation [J] item (CL-2).

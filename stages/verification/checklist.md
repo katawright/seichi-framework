@@ -81,14 +81,20 @@ the increment is ready for deployment.
 
 ### Production Readiness
 
-16. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
+16. [ ] **[J] Compliance controls validated** (N/A unless the project has
+        compliance scope; the required controls are met, with evidence — the
+        validation sweep that feeds the deploy
+        [Compliance Approval](../deployment/README.md#compliance-approval-is-a-floor-authorization).
+        Agent-able at any tier; `condition: compliance`, Standard/Enterprise;
+        per release)
+17. [ ] **[H] Go/no-go decision recorded** (production readiness assessed,
         rollback plan documented)
-17. [ ] **Verification brief completed with test results documented**
-18. [ ] **[J] Deployment prerequisites prepared** (code tagged, runbook created,
+18. [ ] **Verification brief completed with test results documented**
+19. [ ] **[J] Deployment prerequisites prepared** (code tagged, runbook created,
         monitoring configured; if Deployment was skipped at Gate 2, reference
         that decision and confirm no re-evaluation triggers activated)
-19. [ ] **Stakeholders notified of deployment plan**
-20. [ ] **All required stage outputs produced** (verification brief, test
+20. [ ] **Stakeholders notified of deployment plan**
+21. [ ] **All required stage outputs produced** (verification brief, test
         results, defect reports — verify against stage README front matter)
 
 ---
@@ -128,8 +134,9 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-06-22
+**Last Updated:** 2026-06-28
 
 Added to framework in v0.6.0. Database-layer logic regression and preparation
 increment verification guidance added in v0.42.0. AI-Led mode updated to
-Lights-Out mode in v0.49.0.
+Lights-Out mode in v0.49.0. v0.52.0 split the [H] marker into [J]/[H] (CL-1) and
+added the tier-conditional compliance-validation [J] item (CL-2).
