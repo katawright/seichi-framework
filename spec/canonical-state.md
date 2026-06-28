@@ -72,9 +72,10 @@ operating configuration, and the records produced as work proceeds.
   conclusions; decision rights, delegated authority, and authorization records;
   required operating functions, capability coverage, and function separations;
   effective operating-envelope state; runs, directives, events, and continuation
-  state; checkpoint decisions, escalations, and resolutions; folded-stage state
-  and unfolding triggers; and evidence, provenance, and traceability
-  relationships.
+  state; checkpoint decisions, escalations, and resolutions; carried-forward
+  gate and checkpoint conditions (each with an owner, the discharging stage or
+  increment, and a satisfied or blocked status); folded-stage state and
+  unfolding triggers; and evidence, provenance, and traceability relationships.
 - This canonical state MUST be the single source for project-level facts. Any
   other representation of these facts is a [view](#artifacts-as-views), not a
   second source.
@@ -82,6 +83,12 @@ operating configuration, and the records produced as work proceeds.
   and scope, the operating envelope, the escalation and stop conditions, and the
   resource and time limits — is part of this canonical state. A run references
   it; it MUST NOT be restated as a separate source (single-source rule).
+- **Carry-forward obligations are tracked state.** A "proceed with conditions"
+  gate or checkpoint outcome records each condition as an open item — owner,
+  discharging stage or increment, and satisfied/blocked status. Subsequent
+  stages re-read these at entry, and a stage MUST disposition each condition due
+  within it (satisfy, re-own with a new discharge point, or escalate) before it
+  closes. They are canonical state, not a gate-record footnote.
 
 **Outputs.** The canonical project state and its Authorization subset.
 
