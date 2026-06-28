@@ -158,7 +158,7 @@ Files fall into categories that may have type-specific conventions:
 
 - Location: `templates/` — pure fill-in-the-blank files, no guidance prose
 - Omit the `## Notes` section; instead end with an HTML comment:
-  `<!-- Template Last Updated: YYYY-MM-DD | Added in vX.Y.Z -->`
+  `<!-- Template Last Updated: YYYY-MM-DD | Added in vX.Y.Z. -->`
 - Use `YYYY-MM-DD` as a placeholder for dates that users fill in (e.g.,
   `**Last Updated:** YYYY-MM-DD`)
 - Keep guidance content (naming conventions, tips, examples) in the relevant
@@ -239,9 +239,10 @@ Structure for stage checklist files:
      deployment phases, greenfield vs. brownfield). Each group gets its own gate
      statement
    - **Flat list** — when all items are equally important and ungrouped
-5. **Final Decision** — checkbox pair (Ready / Not Ready) with circulation
-   guidance. For phase-based checklists, the final group's gate statement serves
-   this role
+5. **Final Decision** — checkbox pair with circulation guidance. The pair is
+   stage-appropriate: most checklists use **Ready / Not Ready**; the terminal
+   Closure checklist uses **Closed / Not Closed**. For phase-based checklists,
+   the final group's gate statement serves this role
 6. **Core Items** — table mapping each blocking item to its rationale (only when
    using Core/Supporting split)
 7. **Related Documents** — links to template, guide, reference, and stages
