@@ -412,10 +412,13 @@ brief, it does not drop the work.
 | [Friction Log](../templates/friction-log.md)                           | All stages       | Recommended | Recommended | Required    |
 | [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
 
-> **At Negligible consequence**, the Initiation Brief is the only artifact that
-> remains — often just a recorded paragraph — and everything else folds into the
-> conversation (Closure included). **At Critical**, treat the High column as
-> all-Required with mandatory human sign-off.
+> **At Negligible consequence**, one artifact remains — a durable
+> paragraph-brief, written to a single file (a root `DECISIONS.md` beside the
+> code, not just spoken in the conversation) — and everything else folds into
+> the conversation (Closure included). See
+> [The Negligible Folded Path](#the-negligible-folded-path) for what that one
+> file captures. **At Critical**, treat the High column as all-Required with
+> mandatory human sign-off.
 
 > **CD projects:** Verification Brief, Deployment Brief, and the Operational
 > Handoff remain applicable but shift to increment-close summaries. See each
@@ -443,9 +446,14 @@ folded path:
 2. **Run the process as one conversation** — Initiation → Requirements → Design
    fold together; **Gate 1 and Gate 2 fold** ("you just start"; design and build
    are one step); Closure folds into the conversation.
-3. **Materialize the paragraph-brief only** — the Initiation Brief is the single
-   surviving artifact, often a recorded paragraph (see
-   [Minimum Viable Artifacts](#minimum-viable-artifacts)) — then agents build.
+3. **Materialize the paragraph-brief as one durable file** — the folded path
+   still emits a single surviving artifact, and it is **written down, not merely
+   spoken**: one short Markdown file, a root `DECISIONS.md` beside the code,
+   carrying the paragraph-brief plus the decision trace the conversation
+   produced — the inferred classifications, any `[ASSUMED]` calls, the scope,
+   and the key approach decisions with a one-line rationale each (see
+   [Minimum Viable Artifacts](#minimum-viable-artifacts)). One record, not a
+   folder — then agents build.
 4. **Keep the decisions, fold the ceremony** — problem, intent, a high-level
    shape, and a quick look-before-you-build still happen; only their
    presentation and artifacts thin to the floor the tier already authorizes.
@@ -455,7 +463,12 @@ floors; compliance sets _hard_ ones. The folded path may thin ceremony and
 artifacts, **never** the compliance floor or the non-delegable floor. A
 **Negligible project that carries compliance** — a tiny tool touching regulated
 data — is folded in ceremony but keeps every categorical obligation; it is not
-the folded path's free case, so classify compliance _before_ folding.
+the folded path's free case, so classify compliance _before_ folding. Folding
+likewise never thins the **durable write-down**: the one `DECISIONS.md` file is
+a floor of its own, persisted even for a throwaway spike. The
+[canonical-state contract](../spec/canonical-state.md#progressive-governance-and-folding)
+binds the folded path rather than exempting it — folding collapses presentation
+and decision-rights, never durability.
 
 ---
 
@@ -533,6 +546,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.13.0.
