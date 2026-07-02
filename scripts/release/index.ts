@@ -21,12 +21,18 @@ const VERSION_REGEX = /^\d+\.\d+\.\d+$/;
 // repo (.schema, scripts, .obsidian, .ignore, .evaluation, node_modules,
 // CHANGELOG, CONTRIBUTING, STYLE_GUIDE, AGENTS, CLAUDE, .git, package.json,
 // tsconfig, etc.) is maintainer-only and must not ship in the zip.
+//
+// LICENSE (CC BY 4.0) governs the prose that ships (guides/spec/stages/README),
+// so it must travel with the zip. templates/LICENSE (CC0) ships automatically as
+// part of the templates/ tree. .schema/LICENSE (MIT) stays out — the tooling it
+// covers is maintainer-only and never shipped.
 const FRAMEWORK_INCLUDES = [
   "guides",
   "spec",
   "stages",
   "templates",
   "INDEX.md",
+  "LICENSE",
   "QUICKSTART.md",
   "README.md",
   "VERSION",

@@ -8,10 +8,10 @@ A framework release ships two artifacts:
   browsing the repo).
 - A **packaged zip** (`dist/framework-vX.Y.Z.zip`) containing only the framework
   surface — <!-- ships-list -->`guides/`, `spec/`, `stages/`, `templates/`,
-  `INDEX.md`, `QUICKSTART.md`, `README.md`, `VERSION`, plus a generated
-  `manifest.json`. The zip is the canonical artifact downstream consumers (e.g.,
-  Theia) fetch and project; it is attached to the GitHub release and uploaded to
-  S3.
+  `INDEX.md`, `LICENSE`, `QUICKSTART.md`, `README.md`, `VERSION`, plus a
+  generated `manifest.json`. The zip is the canonical artifact downstream
+  consumers (e.g., Theia) fetch and project; it is attached to the GitHub
+  release and uploaded to S3.
 
 The release flow is two slash commands plus an explicit packaging step:
 
@@ -81,6 +81,29 @@ conversation.
 
 ---
 
+## Licensing of Contributions
+
+Contributions are accepted **inbound = outbound**: whatever you submit is
+licensed under the same terms as the part of the repository it applies to —
+[CC BY 4.0](LICENSE) for content, [CC0 1.0](templates/LICENSE) for `templates/`,
+and [MIT](.schema/LICENSE) for the `.schema/` tooling (the
+[README License section](README.md#license) has the full split). Opening a pull
+request means you agree to license your contribution on those terms.
+
+There is **no CLA and no DCO sign-off** to complete — keeping the process light
+is deliberate.
+
+---
+
+## What to Expect
+
+This is a solo-maintained project. Issues and pull requests are welcome, but are
+reviewed at the maintainer's discretion and may be slow. Forking is encouraged —
+the permissive licenses make it frictionless to take the framework in your own
+direction.
+
+---
+
 ## What Makes a Good Suggestion
 
 The best suggestions are:
@@ -132,6 +155,6 @@ lockfiles on Linux already.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.24.0.
