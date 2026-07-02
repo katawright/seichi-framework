@@ -157,8 +157,13 @@ builder — classify that **early, before front-loading**, and route to the
 classification core is already read (per
 [the load line](#read-order-and-the-load-line)), so **materialize only the
 floor** and run the process as one conversation rather than narrated stages.
-Rule 3's escalation triggers still override — compliance or external users pull
-a project off the folded path even when it otherwise looks Negligible.
+"One conversation" still **writes the paragraph-brief down** as one durable file
+(a root `DECISIONS.md`) — the classification inferences, `[ASSUMED]` calls,
+scope, and approach decisions persist beside the code, never only in the
+transcript (see
+[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path)). Rule
+3's escalation triggers still override — compliance or external users pull a
+project off the folded path even when it otherwise looks Negligible.
 
 **Calibrate the register, not only the classifications.** Read the operator's
 technical comfort the same way you read the five decisions — from how they talk
@@ -383,8 +388,10 @@ This is presentation, not structure — every Minimal **decision** is still
 captured in canonical state and still gated; the briefs are rendered as the tier
 calls for, some folding into lighter notes (see
 [Minimum Viable Artifacts](right-sizing.md#minimum-viable-artifacts)). At
-**Negligible** the structure folds further (only the paragraph-brief survives);
-see [The Negligible Folded Path](right-sizing.md#the-negligible-folded-path).
+**Negligible** the structure folds further — only the paragraph-brief survives,
+and _survives_ means **persisted to a durable file** (a root `DECISIONS.md`),
+not merely spoken; see
+[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path).
 
 ---
 
@@ -675,6 +682,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.23.0.

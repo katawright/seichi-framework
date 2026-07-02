@@ -304,6 +304,16 @@ obligations; the available capability and function separation.
   assurance and evidence obligations, acceptance and authorization decisions,
   traceability and decision records, governance controls and authority
   boundaries, and escalation rules.
+- Folding thins **presentation and decision-rights, never durability**. Even the
+  fully collapsed **Negligible folded path**
+  ([Right-Sizing](../guides/right-sizing.md#the-negligible-folded-path)) is
+  **bound by the
+  [rendered-snapshot fidelity floor](delegated-run.md#project-state-access), not
+  exempt from it**: its minimum canonical state — the paragraph-brief and the
+  decision trace behind it — MUST be a durable, attributable write-down (a file,
+  e.g. a root `DECISIONS.md`), not conversation text that vanishes with the
+  transcript. "One conversation" is a presentation choice; it never waives the
+  durable write-back the floor requires.
 - Folding MUST change what is seen, never the independence required of the work.
   A folded self-assurance is still performed with **fresh eyes**, not by the
   producing context confirming itself (see
@@ -346,6 +356,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.49.0.
