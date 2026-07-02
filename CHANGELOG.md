@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.54.0 (2026-07-01)
+
+Open-Source Readiness (OS-1) — the framework becomes openly licensed — plus a
+folded-path durable-artifact fix (CS-2).
+
+### Features
+
+- **framework:** open-source licensing (OS-1) — add a root `LICENSE` (CC BY 4.0)
+  for the prose content, `templates/LICENSE` (CC0 1.0) so an adopter's filled-in
+  template artifacts carry no license obligation, and `.schema/LICENSE` (MIT)
+  for the tooling; add a README `## License` section explaining the three-way
+  split with a trademark/naming reservation, and a CONTRIBUTING inbound=outbound
+  clause (no CLA, no DCO). The root `LICENSE` also ships inside the packaged
+  framework zip.
+
+### Improvements
+
+- **framework:** guarantee a durable decision record at the Negligible folded
+  path (CS-2) — the folded path now emits one durable file (a root
+  `DECISIONS.md`) carrying the paragraph-brief, inferred classifications,
+  `[ASSUMED]` calls, scope, and key approach decisions; the right-sizing,
+  agentic-workflow, and canonical-state guidance now state that "one
+  conversation" still writes the brief down to a file, bound by (not exempt
+  from) the canonical-state durability floor.
+
 ## 0.53.0 (2026-06-28)
 
 Rolling ideation bucket from the v0.50–v0.52 cycle — three approved doc-only

@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-06-28 | **Framework Version:** 0.53.0
+**Last Updated:** 2026-07-01 | **Framework Version:** 0.54.0
 
 ## Overview
 
@@ -197,6 +197,6 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.41.0.
