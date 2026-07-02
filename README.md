@@ -437,8 +437,30 @@ changes.
 
 ---
 
+## License
+
+The framework is openly licensed, with each part matched to how it is meant to
+be used:
+
+- **Content** — the guides, spec, stage artifacts, and all other prose — is
+  licensed under [CC BY 4.0](LICENSE). Share and adapt it freely, for any
+  purpose, with attribution when you redistribute the framework itself.
+- **Templates** (`templates/`) are dedicated to the public domain under
+  [CC0 1.0](templates/LICENSE). Any artifact you produce by filling in a
+  template carries **no** license obligation — no attribution, no share-alike.
+  The output is yours.
+- **Tooling** (`.schema/`) — the validation and CI code — is licensed under
+  [MIT](.schema/LICENSE).
+
+**Naming.** These licenses cover copyright in the content only; they grant no
+rights in the project or product name, which is reserved. Forks and adaptations
+may reuse the content under the terms above, but should not use the project or
+product name in a way that implies endorsement, affiliation, or official status.
+
+---
+
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-01
 
 Added to framework in v0.17.0.
