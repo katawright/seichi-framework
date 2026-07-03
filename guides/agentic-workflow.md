@@ -309,6 +309,12 @@ within a topic; the load line is orthogonal, marking which files cross-cut every
 stage (always) versus which belong to one stage or context (deferred until
 reached).
 
+**Capable-executor read path.** The spec layer (`spec/`), the right-sizing
+tables, and the templates are the intended **self-sufficient read path** for
+highly capable executors; the guides serve as rationale and scaffolding for the
+same contracts. An executor that can operate from contracts alone loads spec +
+tables + templates and pulls guides on demand.
+
 ### Always loaded — the cross-cutting governance
 
 Read at session start and honor throughout, regardless of stage or tier:
@@ -682,6 +688,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-07-01
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.23.0.
