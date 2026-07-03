@@ -373,6 +373,11 @@ or contexts covering the separated functions.
 - Row 1's floor is satisfiable by context separation within a single provider
   (fresh eyes); the higher rungs require a separate, organizationally or
   externally independent provider.
+- Row 1's cap is **carried in the record**: a `[J]`-or-above discharge records
+  its evidence-independence grade under
+  [Canonical-State Spec § Record Requirements](canonical-state.md#record-requirements),
+  so an enforcing tool can **read** — not infer — whether a floor item was
+  self-asserted.
 - **`[Reserved]`** The organizationally or externally independent rungs — Row
   1's org or external independence for Internal/External Assurance, and Row 4's
   tamper-evidence and external custody scaling with retention and audit
@@ -509,6 +514,6 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.49.0.
