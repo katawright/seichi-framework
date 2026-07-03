@@ -155,8 +155,11 @@ state element, procedure, and evidence artifact in v0.49.
 
 **Procedure.**
 
-- Canonical state operates in one of **two first-class operating modes**:
-  - **File mode** — the Markdown rendering in VCS **is** the canonical state.
+- Canonical state operates in exactly one of **two first-class operating modes**
+  at a time; the modes are exclusive per project:
+  - **File mode** — the Markdown rendering **is** the canonical state, held as
+    durable files meeting [Record Requirements](#record-requirements) (in
+    practice, version control; the mechanism is an implementation choice).
     Self-sufficiency binds in full at runtime. File mode is the default, and the
     fallback whenever no binding record (see
     [Mode Binding and Discovery](#mode-binding-and-discovery)) declares
