@@ -9,11 +9,11 @@ is the single source of truth for conventions, rules, and execution guidance.
 
 ## Project Overview
 
-This project develops an SDLC framework for agent-executed software delivery —
+This project develops an SDLC framework for agent-executed software delivery:
 right-sized governance, human-owned decisions, and verifiable autonomy from
 supervised to lights-out. The framework is designed to:
 
-- Govern agent-executed delivery across the full lifecycle — three work-shapes
+- Govern agent-executed delivery across the full lifecycle: three work-shapes
   (Project · Flow · Operations), one operating model
 - Keep decisions human-owned at a non-delegable floor while execution shifts
   toward agents

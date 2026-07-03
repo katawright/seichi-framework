@@ -2,7 +2,7 @@
 
 ## Overview
 
-An SDLC framework for agent-executed software delivery — right-sized governance,
+An SDLC framework for agent-executed software delivery: right-sized governance,
 human-owned decisions, and verifiable autonomy from supervised to lights-out.
 
 Eight stages and three work-shapes (Project · Flow · Operations) share one
@@ -20,18 +20,18 @@ conforming tools can execute directly.
 
 ### Why This Framework
 
-Agents can now execute most of the delivery lifecycle — drafting requirements,
+Agents can now execute most of the delivery lifecycle: drafting requirements,
 designing systems, writing and verifying code, deploying increments. The open
 question is no longer whether to use them but how to govern the work: who
 decides, how independently work is verified, and how much may run unattended.
 Without that structure, autonomy gets set by habit rather than by consequence,
 decision trails evaporate, verification collapses into an agent checking its own
 work, and leadership has no visibility into what was delegated or why. The
-framework makes those choices explicit: a per-project
+framework makes those choices explicit for any scale of project, from a solo
+prototype to regulated delivery: a per-project
 [operating model](guides/operating-model.md) that sets who performs the work and
 who decides, a non-delegable floor of human-owned decisions, verification that
-scales with consequence, and a recorded decision trail — from a solo prototype
-to regulated delivery.
+scales with consequence, and a recorded decision trail.
 
 ### Goals of This Guide
 
@@ -40,8 +40,8 @@ to regulated delivery.
   framework adds: an initiation brief to define the problem, verification
   checklists to confirm quality before shipping, and optional stage briefs
   scaled to your tier.
-- Set who performs the work and who decides — per project, through the operating
-  model — with human oversight where consequence demands it
+- Set who performs the work and who decides through the per-project operating
+  model, with human oversight where consequence demands it
 - Give leaders explicit investment gates and checkpoint records for governance
 
 ### Key Principle
@@ -208,9 +208,9 @@ builds familiarity.
 ### Industry Context
 
 Early studies of AI coding assistants (GitHub/Microsoft Copilot research,
-2023–2024) reported productivity gains of 20–55% on well-scoped coding tasks —
-measurements of code-generation speed in controlled settings. Since then the
-technology has moved from code completion to agents that execute whole
+2023–2024) reported productivity gains of 20–55% on well-scoped coding tasks.
+Those numbers measured code-generation speed in controlled settings. Since then
+the technology has moved from code completion to agents that execute whole
 increments, and the open question has moved with it: from how much faster
 drafting gets to how much of delivery can run autonomously, and under what
 governance. Project-level outcomes still depend on team experience, task fit,
