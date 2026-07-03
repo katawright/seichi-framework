@@ -21,6 +21,8 @@ over it, and that it has a complete, lossless Markdown rendering.
   authorizes against
 - Establish that briefs, checklists, packages, and reports are **rendered
   views**, not parallel sources
+- Name the two operating modes — **file mode** and **platform mode** — and the
+  binding record that makes the mode discoverable
 - Fix Markdown **self-sufficiency**: no required state element may be
   expressible only through live structured access
 - State implementation-neutral record requirements and the folding rule that
@@ -37,9 +39,10 @@ consequence level; only ceremony and decision rights scale down.
 
 1. Read [**Minimum Canonical Project State**](#minimum-canonical-project-state)
    for what the state contains and which facts a run authorizes against
-2. Read [**Artifacts as Views**](#artifacts-as-views) and
-   [**Markdown Self-Sufficiency**](#markdown-self-sufficiency) for the
-   source-of-truth and lossless-rendering rules
+2. Read [**Artifacts as Views**](#artifacts-as-views),
+   [**Markdown Self-Sufficiency**](#markdown-self-sufficiency), and
+   [**Mode Binding and Discovery**](#mode-binding-and-discovery) for the
+   source-of-truth, operating-mode, and lossless-rendering rules
 3. Read [**Record Requirements**](#record-requirements) and
    [**Progressive Governance and Folding**](#progressive-governance-and-folding)
    for the durability and folding contracts
@@ -141,14 +144,41 @@ Rationale: progressive-governance detail (D8 self-sufficiency). This is the
 clause that keeps the framework operable in rendered-snapshot mode and the North
 Star true.
 
-**Applicability.** The whole v0.49 normative layer — binds the framework and the
-spec authors (meta-conformance, enforced at authoring time), not every tool.
+**Applicability.** The whole v0.49 normative layer. At **authoring time** it
+binds the framework and the spec authors (meta-conformance): every required
+state element and normative operation must remain expressible as Markdown — not
+every tool. At **runtime** it binds **file mode** only; platform mode owes the
+export obligation instead (both modes defined in the Procedure below).
 
 **Inputs.** The minimum canonical project state; every normative rule, required
 state element, procedure, and evidence artifact in v0.49.
 
 **Procedure.**
 
+- Canonical state operates in one of **two first-class operating modes**:
+  - **File mode** — the Markdown rendering in VCS **is** the canonical state.
+    Self-sufficiency binds in full at runtime. File mode is the default, and the
+    fallback whenever no binding record (see
+    [Mode Binding and Discovery](#mode-binding-and-discovery)) declares
+    otherwise.
+  - **Platform mode** — a conforming tool holds canonical state in its own
+    structured store; Markdown artifacts are rendered
+    [views](#artifacts-as-views), never a second source. Self-sufficiency binds
+    platform mode at authoring time only: every contract remains _expressible_
+    as Markdown (so file mode stays possible for whoever wants it), but the tool
+    is NOT required to operate through Markdown at runtime.
+- Platform mode owes portability through **complete, neutral, exercised
+  export**, not files-as-source-of-truth:
+  - **Complete** — the export covers the full governance state (the
+    [Minimum Canonical Project State](#minimum-canonical-project-state)), not
+    artifacts alone.
+  - **Neutral** — usable by a consumer other than the producing tool.
+    **`[Reserved]`** The neutrality bar — re-ingestable by another conforming
+    tool (round-trip) vs. inspectable for audit only — and the field-level
+    export enumeration are resolved with the machine-facing interface layer and
+    ratified at the first conforming platform's schema freeze.
+  - **Exercised** — a never-run export path rots; the protection is an export
+    that is actually run and verified, not a clause.
 - The minimum canonical project state MUST have a complete, lossless Markdown
   rendering. No required state element may be expressible **only** through live
   structured access.
@@ -169,6 +199,58 @@ for all snapshot runs). Note: a specific deployment with no Markdown path simply
 lacks the snapshot mode — the coverage-narrows-the-envelope rule supplies that
 consequence, and this self-sufficiency rule is **not** a per-implementation
 feature mandate.
+
+---
+
+## Mode Binding and Discovery
+
+Rationale: a mode nobody can detect is not a mode. File mode is the correct
+default and fallback; the binding record is the explicit, discoverable state
+that overrides it.
+
+**Applicability.** Every project operating in platform mode, and every agent's
+session-start orientation (the mode determination precedes any other read of
+project state).
+
+**Inputs.** The workspace; the binding record, if present.
+
+**Procedure.**
+
+- A platform-mode project MUST carry a committed **binding record** in the
+  workspace: a durable pointer declaring at minimum the operating mode, the
+  platform identity, the project identity, and the pinned framework version. The
+  record is a _pointer to_ the canonical state, not part of it; it is committed
+  so it survives re-clones. It is **provisioned** by the platform at project
+  creation, never improvised by an agent. **`[Reserved]`** The record's field
+  schema (platform-owned) is resolved at the first conforming platform's schema
+  freeze.
+- **Discovery.** At session start an agent MUST check for the binding record
+  before treating local Markdown as canonical. Record found → the project
+  operates in platform mode, and local Markdown artifacts are
+  [views](#artifacts-as-views). Record absent → file mode.
+- **Precedence.** The binding record, not transport presence, determines the
+  mode. A reachable platform (e.g., a connected MCP server) without a binding
+  record proves **capability**, not **binding**; an unreachable platform with a
+  binding record does not return the project to file mode.
+- **Default-closed degraded mode.** Bound but unreachable: **governance writes**
+  — gate decisions, `[J]`/`[H]` discharges, operating-envelope changes — MUST
+  NOT be recorded only-locally; the agent escalates instead (the same
+  default-closed discipline as
+  [Operating Model Spec § Stop Enforcement](operating-model.md#stop-enforcement)).
+  There is never a second source of truth. **`[Reserved]`** Whether
+  non-governance work may queue-and-reconcile rather than halt while the
+  platform is unreachable is resolved at the first conforming platform's schema
+  freeze.
+
+**Outputs.** The project's operating mode, determined from the binding record or
+its absence.
+
+**Evidence.** The binding record; the session's recorded mode determination.
+
+**Failure behavior.** An agent that writes governance state only-locally in a
+bound project has forked the source of truth: the platform record remains
+authoritative, the local write is not a discharge of anything, and it MUST be
+reconciled or discarded.
 
 ---
 
@@ -212,9 +294,28 @@ project.
     — it cannot answer for an outcome. _Which_ parties are authorized is the
     [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
     contract.
-- The framework states the **grade required + the timestamp**; the platform owns
-  the field schema (names, storage, binding to accounts). An agent MUST be able
-  to read and satisfy the grade requirement from Markdown alone.
+- **Attribution also carries an evidence-independence grade.** For any
+  `[J]`-or-above discharge, the record MUST capture how the evaluation stood
+  **relative to the producing context**, reusing the
+  [independence axes](operating-model.md#evaluator-independence) — no new
+  vocabulary. Minimum value set: **self-asserted** (the producing context) ·
+  **fresh-eyes** (a context-independent evaluator) · **independent** (an
+  organizationally or externally independent evaluator).
+- A `[J]`-or-above **floor item discharged self-asserted is not a cleared
+  floor**: it supports mechanical conformance only — the record-level form of
+  [Operating Model Spec § Function Separation](operating-model.md#function-separation)
+  row 1. Identity answers _who_; the
+  [authorized-party roster](#authorized-parties-for-floor-decisions) answers
+  _whether authorized_; this grade answers _how independently evaluated_ — the
+  third leg. A recorded self-asserted grade is not a defect (it is the honest
+  solo default at `[J]` below the consequence floor); an **absent** grade on a
+  `[J]`-or-above act caps the record the same way a missing identity grade does.
+  **`[Reserved]`** Recording granularity — per checklist item vs. per gate or
+  checkpoint decision — is resolved at the first conforming platform's schema
+  freeze.
+- The framework states the **grades required + the timestamp**; the platform
+  owns the field schema (names, storage, binding to accounts). An agent MUST be
+  able to read and satisfy the grade requirement from Markdown alone.
 
 **Outputs.** Records meeting the required semantics.
 
@@ -225,8 +326,9 @@ record.
 no correction history) caps the assurance or audit level its evidence can
 support (see
 [Operating Model Spec § Function Separation](operating-model.md#function-separation),
-evidence row). A `[J]`-or-above act recorded without its required identity grade
-or timestamp is not a satisfied record and caps the level the same way.
+evidence row). A `[J]`-or-above act recorded without its required identity
+grade, its evidence-independence grade, or its timestamp is not a satisfied
+record and caps the level the same way.
 
 ---
 
@@ -356,6 +458,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-01
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.49.0.
