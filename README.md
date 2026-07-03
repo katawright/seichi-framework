@@ -2,9 +2,12 @@
 
 ## Overview
 
-A practical, stage-by-stage guide for AI-assisted software delivery — giving
-teams and leaders the guidance, visibility, and oversight they need at every
-stage.
+An SDLC framework for agent-executed software delivery — right-sized governance,
+human-owned decisions, and verifiable autonomy from supervised to lights-out.
+
+Eight stages and three work-shapes (Project · Flow · Operations) share one
+operating model, with a normative [spec layer](spec/README.md) that agents and
+conforming tools can execute directly.
 
 > **Agents:** Start at [agentic-workflow.md](guides/agentic-workflow.md) for
 > stage routing, fallback protocols, and execution guidance.
@@ -17,12 +20,18 @@ stage.
 
 ### Why This Framework
 
-Teams are adopting AI development tools rapidly, but without structure the
-results are inconsistent — some teams over-rely on AI without adequate review,
-others avoid it and miss productivity gains, and leadership has no visibility
-into how AI is being used or whether it's helping. Ad-hoc adoption also means no
-shared language for discussing AI's role, no consistent quality gates, and no
-way to scale what works from one team to the next.
+Agents can now execute most of the delivery lifecycle — drafting requirements,
+designing systems, writing and verifying code, deploying increments. The open
+question is no longer whether to use them but how to govern the work: who
+decides, how independently work is verified, and how much may run unattended.
+Without that structure, autonomy gets set by habit rather than by consequence,
+decision trails evaporate, verification collapses into an agent checking its own
+work, and leadership has no visibility into what was delegated or why. The
+framework makes those choices explicit: a per-project
+[operating model](guides/operating-model.md) that sets who performs the work and
+who decides, a non-delegable floor of human-owned decisions, verification that
+scales with consequence, and a recorded decision trail — from a solo prototype
+to regulated delivery.
 
 ### Goals of This Guide
 
@@ -31,14 +40,14 @@ way to scale what works from one team to the next.
   framework adds: an initiation brief to define the problem, verification
   checklists to confirm quality before shipping, and optional stage briefs
   scaled to your tier.
-- Provide structured AI assistance with appropriate human oversight at every
-  stage
+- Set who performs the work and who decides — per project, through the operating
+  model — with human oversight where consequence demands it
 - Give leaders explicit investment gates and checkpoint records for governance
 
 ### Key Principle
 
-AI assistance is bounded by verifiability and risk. How autonomously the work
-runs — who performs it and who decides — is a per-project
+Agent autonomy is bounded by verifiability and consequence. How autonomously the
+work runs — who performs it and who decides — is a per-project
 [operating-model](guides/operating-model.md) choice, not a fixed property of
 each stage.
 
@@ -70,6 +79,7 @@ Pick the path that matches your interest.
 | Close out a project and hand it to operations    | [Closure Stage](stages/closure/README.md)                             | [Operational Handoff Template](templates/operational-handoff.md)                                 | [Operations Guide](guides/operations.md)                   |
 | Operate and maintain a production system         | [Operations Guide](guides/operations.md)                              | [Operating Model Guide](guides/operating-model.md)                                               | [Right-Sizing Guide](guides/right-sizing.md)               |
 | Assess security across stages                    | [Security Guide](guides/security.md)                                  | [Governance](#governance-at-a-glance)                                                            | [Verification](stages/verification/README.md)              |
+| Build a tool or integration on the framework     | [Spec Layer](spec/README.md)                                          | [Canonical-State Spec](spec/canonical-state.md)                                                  | [Operating Model Spec](spec/operating-model.md)            |
 
 ---
 
@@ -197,12 +207,15 @@ builds familiarity.
 
 ### Industry Context
 
-Published studies on AI-assisted development report productivity gains ranging
-from 20–55% on well-scoped coding tasks (GitHub/Microsoft Copilot research,
-2023–2024). These numbers measure code generation speed in controlled settings —
-actual project-level ROI depends on team experience, AI maturity, task fit, and
-process overhead. This framework does not guarantee specific gains; it provides
-the structure to realize and measure them.
+Early studies of AI coding assistants (GitHub/Microsoft Copilot research,
+2023–2024) reported productivity gains of 20–55% on well-scoped coding tasks —
+measurements of code-generation speed in controlled settings. Since then the
+technology has moved from code completion to agents that execute whole
+increments, and the open question has moved with it: from how much faster
+drafting gets to how much of delivery can run autonomously, and under what
+governance. Project-level outcomes still depend on team experience, task fit,
+verification discipline, and process overhead. This framework does not guarantee
+specific gains; it provides the structure to realize and measure them.
 
 ### Measuring Success
 
@@ -461,6 +474,6 @@ product name in a way that implies endorsement, affiliation, or official status.
 
 ## Notes
 
-**Last Updated:** 2026-07-01
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.17.0.

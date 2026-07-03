@@ -9,13 +9,18 @@ is the single source of truth for conventions, rules, and execution guidance.
 
 ## Project Overview
 
-This project develops a practical framework for integrating AI assistance across
-all SDLC stages. The framework is designed to:
+This project develops an SDLC framework for agent-executed software delivery —
+right-sized governance, human-owned decisions, and verifiable autonomy from
+supervised to lights-out. The framework is designed to:
 
-- Fully integrate AI into the software development process
+- Govern agent-executed delivery across the full lifecycle — three work-shapes
+  (Project · Flow · Operations), one operating model
+- Keep decisions human-owned at a non-delegable floor while execution shifts
+  toward agents
+- State its contracts in a normative spec layer that agents and conforming tools
+  can execute directly
 - Guide both technical and non-technical stakeholders through software
   development
-- Make AI adoption less threatening to skeptical engineers
 - Democratize project initiation for business stakeholders
 - Support iterative delivery with adaptive feedback loops
 
@@ -178,9 +183,10 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-06-26
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).
 Agent-Execution Rule 5's INDEX-scope file list corrected to include the `spec/`
-layer in v0.50.0.
+layer in v0.50.0. Project Overview repositioned from assistant-era framing to
+agent-executed delivery in v0.55 (RP-1).

@@ -7,7 +7,7 @@ Get from zero to your first stage in under five minutes.
 ## The Framework in 30 Seconds
 
 The framework overlays your existing software development process — agile,
-waterfall, or hybrid — with structured AI assistance at every stage. You choose
+waterfall, or hybrid — with governed agent execution at every stage. You choose
 how the work is run — from humans driving with agents assisting to agents
 running unattended — and checkpoints keep humans in control of key decisions.
 
@@ -328,6 +328,6 @@ for the worked example.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-03
 
 Added to framework in v0.26.0.
