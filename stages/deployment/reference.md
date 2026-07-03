@@ -601,8 +601,9 @@ rollback if critical.
 Production **authorization** is the human-owned floor here — the release /
 go-live decision, and the acceptance/ownership sign-offs. **Execution** —
 deployment steps, timing, traffic management, and canary promotion — is Work
-Execution and follows the project's Authority setting; an agent may run it
-within bounds. The more severe and irreversible the blast radius (production
+Execution: whether an agent performs it follows the project's **Work Execution**
+setting, while whether it may proceed past the go-live gate unattended follows
+**Authority**. The more severe and irreversible the blast radius (production
 outages, data loss), the more the floor tightens toward an interactive human, up
 to interactive-only at Critical. This is the stage with the highest risk if
 wrong.
