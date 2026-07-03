@@ -1,5 +1,48 @@
 # Changelog
 
+## 0.55.0 (unreleased)
+
+The platform seam's thin concept-naming slice (CS-1/CS-3/EN-1, with the three
+contract-shaping parameters landing as `[Reserved]`), the capable-executor read
+path (EC-1a), and public-surface repositioning (RP-1; repo rename deferred).
+
+### Features
+
+- **spec:** name the two first-class operating modes in the Canonical-State Spec
+  — **file mode** (the Markdown rendering in VCS is the canonical state;
+  self-sufficiency binds in full at runtime) and **platform mode** (a conforming
+  tool holds canonical state in its own structured store; self-sufficiency binds
+  at authoring time only, portability owed through complete, neutral, exercised
+  export) — and scope § Markdown Self-Sufficiency to authoring-time
+  expressibility + file-mode runtime; the export neutrality bar (round-trip vs.
+  inspectable-only) is `[Reserved]` until the first conforming platform's schema
+  freeze (CS-1 thin slice)
+- **spec:** add § Mode Binding and Discovery to the Canonical-State Spec — a
+  committed, platform-provisioned binding record; a session-start discovery
+  step; binding-record-over-transport precedence; and a default-closed degraded
+  mode barring only-local governance writes when bound but unreachable; the
+  record's field schema and the offline queue-vs-halt behavior for
+  non-governance work are `[Reserved]` (CS-3 thin slice)
+- **spec:** record the evidence-independence grade of a `[J]`-or-above discharge
+  (self-asserted · fresh-eyes · independent, reusing the Evaluator Independence
+  axes) in Record Requirements, with the operational cap — a floor item
+  discharged self-asserted is not a cleared floor — and a Function Separation
+  bullet making the cap record-visible to an enforcing tool; recording
+  granularity (per item vs. per decision) is `[Reserved]` (EN-1 thin slice)
+
+### Improvements
+
+- **framework:** name the capable-executor read path in the Agentic Workflow
+  Guide's load line — the spec layer + the right-sizing tables + the templates
+  as the intended self-sufficient read path for highly capable executors, with
+  the guides as rationale and scaffolding (EC-1a)
+- **framework:** reposition the public surface from assistant-era framing to
+  agent-executed delivery — README Overview / Why This Framework / Key Principle
+  / Industry Context, a Start Here row routing tool builders to the spec layer,
+  the GitHub description and topics, and an echo sweep of QUICKSTART.md,
+  guides/OVERVIEW.md, and CLAUDE.md's project overview (RP-1; the repo rename is
+  deferred behind the master-brand decision)
+
 ## 0.54.0 (2026-07-01)
 
 Open-Source Readiness (OS-1) — the framework becomes openly licensed — plus a
