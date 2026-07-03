@@ -43,6 +43,15 @@ path (EC-1a), and public-surface repositioning (RP-1; repo rename deferred).
   guides/OVERVIEW.md, and CLAUDE.md's project overview (RP-1; the repo rename is
   deferred behind the master-brand decision)
 
+### Fixes
+
+- **framework:** correct the Deployment stage's "What Humans Validate" note to
+  route execution to the **Work Execution** setting rather than Authority —
+  whether an agent performs the deployment steps follows Work Execution, while
+  whether it may proceed past the go-live gate unattended follows Authority;
+  realigns the block with the operating-model two-function split and the other
+  stage reference notes (v0.55 invariant sweep, INV-1)
+
 ## 0.54.0 (2026-07-01)
 
 Open-Source Readiness (OS-1) — the framework becomes openly licensed — plus a
