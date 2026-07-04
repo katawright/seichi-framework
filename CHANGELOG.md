@@ -9,14 +9,14 @@ path (EC-1a), and public-surface repositioning (RP-1; repo rename deferred).
 ### Features
 
 - **spec:** name the two first-class operating modes in the Canonical-State Spec
-  — **file mode** (the Markdown rendering in VCS is the canonical state;
-  self-sufficiency binds in full at runtime) and **platform mode** (a conforming
-  tool holds canonical state in its own structured store; self-sufficiency binds
-  at authoring time only, portability owed through complete, neutral, exercised
-  export) — and scope § Markdown Self-Sufficiency to authoring-time
-  expressibility + file-mode runtime; the export neutrality bar (round-trip vs.
-  inspectable-only) is `[Reserved]` until the first conforming platform's schema
-  freeze (CS-1 thin slice)
+  — **file mode** (the Markdown rendering is the canonical state, in practice
+  held in version control; self-sufficiency binds in full at runtime) and
+  **platform mode** (a conforming tool holds canonical state in its own
+  structured store; self-sufficiency binds at authoring time only, portability
+  owed through complete, neutral, exercised export) — and scope § Markdown
+  Self-Sufficiency to authoring-time expressibility + file-mode runtime; the
+  export neutrality bar (round-trip vs. inspectable-only) is `[Reserved]` until
+  the first conforming platform's schema freeze (CS-1 thin slice)
 - **spec:** add § Mode Binding and Discovery to the Canonical-State Spec — a
   committed, platform-provisioned binding record; a session-start discovery
   step; binding-record-over-transport precedence; and a default-closed degraded

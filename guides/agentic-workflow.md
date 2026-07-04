@@ -309,11 +309,14 @@ within a topic; the load line is orthogonal, marking which files cross-cut every
 stage (always) versus which belong to one stage or context (deferred until
 reached).
 
-**Capable-executor read path.** The spec layer (`spec/`), the right-sizing
-tables, and the templates are the intended **self-sufficient read path** for
-highly capable executors; the guides serve as rationale and scaffolding for the
-same contracts. An executor that can operate from contracts alone loads spec +
-tables + templates and pulls guides on demand.
+**Capable-executor read path.** Where the spec layer covers a contract, the spec
+(`spec/`), the right-sizing tables, and the templates are the intended read path
+for highly capable executors; the corresponding guides are rationale and
+scaffolding, pulled on demand by an executor that can operate from the contracts
+alone. This is not self-sufficiency across the whole governance surface: the
+security throughline, checkpoints, the stage map, and session orientation live
+only in guides, are part of the always-loaded spine below, and bind every
+executor at the non-delegable floor regardless of capability.
 
 ### Always loaded — the cross-cutting governance
 
