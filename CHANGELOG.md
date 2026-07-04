@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.55.0 (unreleased)
+## 0.55.0 (2026-07-03)
 
 The platform seam's thin concept-naming slice (CS-1/CS-3/EN-1, with the three
 contract-shaping parameters landing as `[Reserved]`), the capable-executor read
