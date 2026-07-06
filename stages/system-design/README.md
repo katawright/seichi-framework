@@ -191,6 +191,17 @@ Expand System Design only when needed:
 
 Otherwise, keep design lightweight and move to Increment Design.
 
+**What System Design pins is capability-invariant.** Architecture, conventions,
+system-level contracts, and ADRs are contract detail — their value rises with
+executor capability, and they are never thinned because the executor is strong.
+What scales to the
+[executor read path](../../guides/operating-model.md#one-capability-input-two-effects)
+is pre-drawn structure _below_ this stage's altitude: component internals,
+file-level layout, and worked designs for downstream stages. On a
+`contracts-only` path, state conventions and constraints and leave the blueprint
+to the stages and implementers that own it — brownfield structural guidance
+stays a convention or constraint, not a pre-drawn blueprint.
+
 > These triggers help you decide when to move from Minimal to Standard or
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
@@ -724,6 +735,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.12.0.

@@ -51,6 +51,14 @@ Authority]
      When the agent infers this (zero-to-one or first-time users), it carries
      [ASSUMED] until confirmed at Gate 1. -->
 
+**Executor read path:** [Guided / Contracts-only]
+
+<!-- How much implementation scaffolding stage artifacts carry for this
+     executor, and which framework read path it follows. Default Guided when
+     the executor is unknown; set by behavioral symptom, never model name.
+     Carries [ASSUMED] when inferred; recalibrated at each retrospective. See
+     ../guides/operating-model.md#one-capability-input-two-effects. -->
+
 ---
 
 ## Problem Statement
@@ -304,4 +312,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-07-05 | Added in v0.2.0. -->
+<!-- Template Last Updated: 2026-07-06 | Added in v0.2.0. -->

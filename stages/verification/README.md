@@ -309,6 +309,17 @@ higher-level testing.
 > For detailed test strategies, best practices, and result templates for each
 > test type, see the [Verification Reference](reference.md).
 
+### Test Strategy Depth and the Executor
+
+The test strategy Verification receives scales with the
+[executor read path](../../guides/operating-model.md#one-capability-input-two-effects):
+on a `guided` path it may enumerate concrete test cases; on `contracts-only` it
+pins test intent, coverage targets, and the AC mapping, and deriving the
+concrete case list is Verification work under that intent. What never scales is
+the bar itself — every acceptance criterion verified, coverage targets met, and
+the tier's assurance floor honored. Executor capability adjusts how much of the
+test design arrives pre-worked, never how much verification is required.
+
 ### Verification Environment
 
 The environment-dependent test types above — integration, UAT, performance, and
@@ -497,6 +508,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.6.0.

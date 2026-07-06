@@ -34,8 +34,9 @@ and ready for Implementation.
 ### Scope and Components
 
 1. [ ] **Increment scope defined** (requirements, ACs, out-of-scope documented)
-2. [ ] **Components detailed enough to implement** (responsibilities, structure,
-       dependencies)
+2. [ ] **Components detailed enough to implement** (contracts pinned —
+       responsibilities, interfaces, dependencies; internal structure detailed
+       only on a `guided` read path)
 3. [ ] **All ACs and deliverables map to a component or standalone task**
        (cross-reference requirements against the component list; non-code
        deliverables — platform configuration, documentation, manual setup — are
@@ -126,6 +127,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.12.0.

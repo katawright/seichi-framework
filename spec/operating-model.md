@@ -119,10 +119,34 @@ evaluators).
   work-execution and assurance/verification coverage).
 - Capability MUST NOT grant authority. Missing or inadequate capability narrows
   the envelope even when an action is authorized.
+- Capability has a second, symmetric effect beyond the ceiling: it sets how much
+  **implementation scaffolding** stage artifacts carry for the executor.
+  Contract and verification detail — interfaces, acceptance criteria, test
+  intent, boundaries, and governance hooks — MUST NOT be reduced on capability
+  grounds at any capability level. Implementation scaffolding — component
+  structure, file layout, enumerated test cases, pre-worked logic — MAY be
+  scaled to the executor, and is the only specification detail capability
+  adjusts.
+- The scaffolding scale is declared, not inferred per session: the **executor
+  read path** setting (`guided` | `contracts-only`) is recorded in the project
+  operating configuration alongside tier and posture, surfaced as an overridable
+  `[ASSUMED]` default when inferred (see
+  [Classification by Inference](../guides/agentic-workflow.md#classification-by-inference)).
+  The setting MUST be keyed to observed executor behavior, never to a model name
+  or version. When the executor is unknown or weak, the default is `guided`; the
+  retrospective's specification-depth calibration reviews the setting each
+  increment, and the setting MUST be re-evaluated after a material change to the
+  executor configuration — provider, model tier, or reasoning effort.
+  **[Informative]** At first encounter, the setting follows the qualification
+  evidence held for the executor configuration — evidence classes and the trial
+  mechanism in
+  [Operating Model Guide § Read-Path Starting Points](../guides/operating-model.md#read-path-starting-points);
+  absent evidence, the `guided` default applies.
 
 **Outputs.** The coverage map over the required functions.
 
-**Evidence.** The coverage map, with each provider's recorded properties.
+**Evidence.** The coverage map, with each provider's recorded properties, and
+the declared executor read path setting.
 
 **Failure behavior.** An uncovered required function removes its dependent
 actions from the [envelope](#effective-operating-envelope). Distinguish:
@@ -514,6 +538,6 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.49.0.

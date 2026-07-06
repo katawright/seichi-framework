@@ -248,8 +248,9 @@ These formats can be adapted similarly:
 
 **Common issues and solutions:**
 
-- **Component designs too vague** -> Add structure details (classes, functions,
-  responsibilities)
+- **Component designs too vague** -> Pin the contract (responsibilities,
+  interfaces, dependencies, error cases); add internal structure detail only on
+  a `guided` read path
 - **Interface specs incomplete** -> Detail all interfaces with inputs, outputs,
   and error cases
 - **Testing strategy missing** -> Define unit, integration, acceptance test
@@ -330,8 +331,11 @@ for the central fallback protocols.
 - Cross-reference all designs against system architecture ADRs before finalizing
 - Request architect review when proposing patterns not established in System
   Design
-- Default to more detailed specification when uncertain about interface
-  contracts — over-specification is safer than under-specification at this stage
+- When uncertain about an interface contract, resolve it precisely — specify
+  contracts, boundaries, and verification criteria rather than leaving them
+  open. Do not resolve uncertainty by pre-specifying internal implementation
+  structure: that is the implementer's job, and over-specifying it degrades
+  output
 
 ---
 
@@ -345,6 +349,6 @@ for the central fallback protocols.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.12.0.

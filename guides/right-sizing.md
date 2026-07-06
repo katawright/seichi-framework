@@ -201,6 +201,15 @@ Right-sizing still constrains those choices: consequence and compliance set
 decisions human — but the choices themselves live in the operating model. See
 [Consequence Floors](#consequence-floors-on-the-operating-model) below.
 
+The same separation governs **specification depth**. The consequence tiers scale
+what the process _pins_ — more contracts, more verification — as stakes rise.
+How much **implementation scaffolding** those artifacts carry for the executor
+(component structure, enumerated test cases, pre-worked logic) is the operating
+model's capability input, declared as the executor read path — see
+[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects).
+The two axes are orthogonal and never trade off: a high-consequence increment on
+a strong executor still needs heavy contracts and light structure.
+
 ---
 
 ## How Each Dimension Shapes the Stages
@@ -546,6 +555,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.13.0.

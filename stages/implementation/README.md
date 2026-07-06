@@ -267,6 +267,30 @@ gates. For increments with multiple PRs, steps 4-12 repeat for each PR.
 
 ## Why These Implementation Elements Matter
 
+### Implementer Latitude Under Contract-First Briefs
+
+On the `contracts-only`
+[executor read path](../../guides/operating-model.md#one-capability-input-two-effects),
+the increment design brief arrives thin by design: it pins contracts,
+constraints, and verification criteria, and deliberately leaves internal
+structure unspecified. Implementation absorbs that latitude — deriving component
+structure, file layout, and concrete test cases is this stage's work, not a gap
+in the brief:
+
+- **What is pinned:** interface contracts, acceptance criteria, test intent and
+  coverage targets, requirement-imposed constraints, and System Design's
+  conventions and ADRs. These bind regardless of executor capability.
+- **What is latitude:** internal structure, file layout, and the concrete test
+  cases that realize the planned test intent. Exercise it within conventions,
+  and record significant structural decisions in the implementation brief — a
+  departure from something the brief _did_ state is a recorded design deviation
+  ([Delegated-Run Spec](../../spec/delegated-run.md#controlled-replanning)).
+- **What is neither:** a genuinely missing or ambiguous _contract_ — a boundary
+  another increment depends on, an unstated constraint — is a design gap, not
+  latitude. Route it through
+  [When to Revisit Increment Design](../increment-design/README.md#when-to-revisit-increment-design)
+  rather than guessing across a contract boundary.
+
 ### Code Quality
 
 Follow SOLID, DRY, KISS, and YAGNI principles. Consult your team's standards or
@@ -427,6 +451,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.5.0.
