@@ -75,9 +75,9 @@ classification questions. Route into idea formation:
    On the warm on-ramp, the backlog entry's problem statement is the interview's
    starting point, not a blank page
 2. **Classify by inference** — derive tier, project type, deployment intent,
-   operating posture, and Required Assurance from the conversation and present
-   them as overridable `[ASSUMED]` defaults, rather than asking the user to
-   choose from framework taxonomies. See
+   operating posture, Required Assurance, and the executor read path from the
+   conversation and present them as overridable `[ASSUMED]` defaults, rather
+   than asking the user to choose from framework taxonomies. See
    [Classification by Inference](#classification-by-inference)
 3. **Scaffold and seed** — only after the interview, create the workspace (see
    [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
@@ -90,16 +90,18 @@ classification questions. Route into idea formation:
 
 ## Classification by Inference
 
-A new project carries five classification decisions: **tier** (Minimal /
-Standard / Enterprise), **project type** (greenfield / brownfield), **deployment
-intent** (production service / internal tool / local-only), **operating
-posture** (Supervised / Checkpointed / Lights-Out), and **Required Assurance**
-(see [Operating Model Guide](operating-model.md)). A first-time user cannot
-answer these before understanding the framework — do not present them as menus
-at first contact.
+A new project carries six classification decisions: **tier** (Minimal / Standard
+/ Enterprise), **project type** (greenfield / brownfield), **deployment intent**
+(production service / internal tool / local-only), **operating posture**
+(Supervised / Checkpointed / Lights-Out), **Required Assurance** (see
+[Operating Model Guide](operating-model.md)), and **executor read path**
+(`guided` | `contracts-only` — see
+[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects)).
+A first-time user cannot answer these before understanding the framework — do
+not present them as menus at first contact.
 
-Instead, derive all five from two or three natural questions woven into the
-opening conversation:
+Instead, derive them from two or three natural questions woven into the opening
+conversation:
 
 - _"Is this just you, or a team?"_ → stakeholder reach, candidate tier
 - _"Is this an experiment, or something you'll run for real?"_ → tier,
@@ -107,13 +109,25 @@ opening conversation:
 - _"Deploying anywhere yet, or local for now?"_ → deployment intent
 - _"Starting fresh, or building on existing code?"_ → project type
 
+The **executor read path** is inferred from the executor, not the operator:
+default to `guided` when the executor is unknown, and let behavioral evidence —
+sound implementation from contracts alone, versus structure-guessing, many
+clarifying questions, or convention drift — move it. At first encounter, start
+from the qualification evidence held for the executor configuration — see the
+[starting-point table](operating-model.md#read-path-starting-points) for the
+evidence classes and trial mechanism (never a model or benchmark name). Like the
+others it is confirmed at Gate 1, re-calibrated at each retrospective, and
+re-evaluated when the executor configuration materially changes (including its
+reasoning effort).
+
 Present the derived classifications as overridable assumptions using the
 `[ASSUMED]` convention, recorded in the Initiation Brief's right-sizing section:
 
 > `[ASSUMED]` Tier: Minimal — solo experiment, no sensitive data. `[ASSUMED]`
 > Project type: Greenfield — empty repository. `[ASSUMED]` Deployment intent:
 > Local-only for now. `[ASSUMED]` Operating posture: Checkpointed — framework
-> default for a first project. Say the word and any of these change.
+> default for a first project. `[ASSUMED]` Executor read path: Guided — executor
+> unproven; the retrospective calibrates. Say the word and any of these change.
 
 Rules:
 
@@ -166,7 +180,7 @@ transcript (see
 project off the folded path even when it otherwise looks Negligible.
 
 **Calibrate the register, not only the classifications.** Read the operator's
-technical comfort the same way you read the five decisions — from how they talk
+technical comfort the same way you read the six decisions — from how they talk
 (their vocabulary, the questions they ask, how they answer), never by asking
 them to rate themselves. A "how technical are you?" question fronts the
 classification exactly as a taxonomy menu does (rule 1) and can read as
@@ -313,10 +327,18 @@ reached).
 (`spec/`), the right-sizing tables, and the templates are the intended read path
 for highly capable executors; the corresponding guides are rationale and
 scaffolding, pulled on demand by an executor that can operate from the contracts
-alone. This is not self-sufficiency across the whole governance surface: the
-security throughline, checkpoints, the stage map, and session orientation live
-only in guides, are part of the always-loaded spine below, and bind every
-executor at the non-delegable floor regardless of capability.
+alone. The read path is a **declared setting**, not an inference the executor
+makes about itself: `guided` | `contracts-only` in the project operating
+configuration, inferred and surfaced as an overridable `[ASSUMED]` default like
+tier and posture (see
+[Classification by Inference](#classification-by-inference)), and reviewed by
+the retrospective's specification-depth calibration. The same setting scales how
+much implementation scaffolding the stage artifacts themselves carry — see
+[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects).
+This is not self-sufficiency across the whole governance surface: the security
+throughline, checkpoints, the stage map, and session orientation live only in
+guides, are part of the always-loaded spine below, and bind every executor at
+the non-delegable floor regardless of capability.
 
 ### Always loaded — the cross-cutting governance
 
@@ -691,6 +713,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.23.0.

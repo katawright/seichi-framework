@@ -229,6 +229,126 @@ depends on the consequence floor, not on coverage alone.
 > coverage is thin and the envelope (below) stays narrow. See the
 > [Brownfield Readiness Guide](brownfield-readiness.md).
 
+### One Capability Input, Two Effects
+
+Capability already ceilings the four settings above. The same input has a
+second, symmetric effect: it sets how much **implementation scaffolding** the
+stages emit for the executor. Specification detail serves two purposes, and
+capability touches only the second:
+
+- **Contract and verification detail** — interfaces, acceptance criteria, test
+  intent, boundaries, governance hooks. Its value is invariant or _rising_ with
+  capability: a stronger, more parallel, sub-agent-delegating executor needs
+  pinned contracts more, not less. Fixed at every capability level — never a
+  dial.
+- **Implementation scaffolding** — component structure, file layout, enumerated
+  test cases, pre-worked logic. A weak executor benefits from it; a strong one
+  is actively degraded by it. This is the only specification detail capability
+  adjusts — turned up for one executor, down for another, same spine.
+
+The dial is declared as the **executor read path** setting in the project
+operating configuration, alongside tier and posture:
+
+- **`guided`** — stage artifacts carry implementation scaffolding, and the
+  executor reads the guides. Choose it when the executor guesses structure
+  poorly, asks many clarifying questions, or drifts from conventions.
+- **`contracts-only`** — artifacts stay contract-first and internal structure is
+  the implementer's latitude; the executor operates from the spec layer, the
+  right-sizing tables, and the templates, pulling guides on demand. Choose it
+  when the executor produces sound implementations from contracts alone.
+
+Set it by **behavioral symptom, never model name** — the framework names no
+model taxonomy, and the observable test above is version-neutral. When the
+executor is unknown, default to `guided` — a declared, visible default with a
+retrospective exit, not a hidden assumption: each retrospective's
+specification-depth calibration asks whether the executor needed more or less
+detail than provided, and the setting moves with that evidence.
+
+This dial is distinct from the right-sizing tiers, which scale specification to
+_consequence_ (see the [Right-Sizing Guide](right-sizing.md)) — a
+high-consequence increment on a strong executor still needs heavy contracts and
+light structure. And it never touches assurance: the verification bar is set by
+consequence and compliance, not by executor capability. The normative statement
+is in the
+[Operating Model Spec](../spec/operating-model.md#capability-coverage).
+
+### Read-Path Starting Points
+
+The behavioral test above needs observed work, which a first increment does not
+have yet. There is no identity shortcut: any predicate over what a model _is_ —
+its name, its lineup position, its recency — is a proxy for a behavioral
+property that identity does not carry, and every such proxy goes stale or
+misaligns across vendors. The starting point is instead an **evidence
+question**: has this executor configuration — model, reasoning effort, task
+domain — _demonstrated_ sound implementation from contracts alone? That is
+[provider qualification](../spec/operating-model.md#evaluator-independence)
+applied to the work-execution function — nothing new.
+
+| Start at                                         | Evidence held for this model × effort configuration                                                                                                              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`contracts-only`**                             | Demonstrated — qualification evidence exists for this configuration (evidence classes below)                                                                     |
+| **`guided`**, with an early contracts-only trial | None either way — the unproven case; the trial (a slice or one increment authored contract-first, checked by the retrospective calibration) creates the evidence |
+| **`guided`**                                     | Adverse — this configuration has shown structure-guessing, clarifying-question volume, or convention drift                                                       |
+
+Evidence classes, strongest first:
+
+1. **Your own retrospective calibration** — in-domain, in-project observed
+   behavior; the standing arbiter.
+2. **A recorded project- or organization-layer mapping** — a prior project's
+   `AGENTS.md` or Initiation Brief note recording model, effort, setting, and
+   outcome.
+3. **Ecosystem evidence, including benchmarks whose shape matches the property**
+   — an underspecified goal in a real codebase, with the _derived structure_
+   scored; long-horizon work rather than patch or puzzle solving. Benchmark
+   evidence is **presumptive, not conclusive**: it justifies a starting point;
+   the first retrospective confirms it. Benchmark _names and thresholds_ do not
+   belong here — they churn as fast as model names.
+4. **Nothing** — the unproven case. The framework does not guess; it makes
+   measurement cheap: the trial row bounds the cost of not knowing to one
+   increment, and the trial itself creates the qualification record.
+
+**The qualification record.** Evidence class 2 is how discovery amortizes: the
+first project to trial a configuration records the outcome once, and every
+subsequent project consumes it at classification instead of rediscovering. The
+framework fixes what the record must carry, not how it is stored: the
+configuration (model, effort, task domain — concrete names belong _here_, not in
+framework text), the evidence basis (trial or retrospective observations — the
+symptoms seen or absent, not a bare verdict), the resulting setting, when it was
+established, and what invalidates it (any material configuration change;
+superseded, never silently edited). It lives above any single project — in the
+workspace or organization layer, beside the
+[workspace ADR canon](framework.md#adr-publishing) and with the same
+promote-and-consume lifecycle: produced inside a project by the retrospective
+calibration, promoted to the shared record, read by the next project's
+classification. Storage, lookup, and cross-organization sharing are tooling and
+platform concerns the framework leaves open (see the
+[spec's scope boundary](../spec/operating-model.md#scope-boundary)).
+
+How to read the table:
+
+- **Qualification is configuration-scoped, and reasoning effort is part of the
+  configuration.** Deriving sound structure from contracts alone is exactly what
+  the reasoning budget buys, so evidence for a model at default effort does not
+  qualify the same model tightly capped. A material change to the configuration
+  — provider, model, effort, or task domain — re-opens the setting, the same
+  rule that re-establishes provider qualification after a material change
+  ([Operating Model Spec](../spec/operating-model.md#evaluator-independence)).
+- **Evidence ratchets; lineups do not.** Qualification evidence persists when
+  the vendor ships a newer model above the one you use — repositioning in a
+  lineup never demotes a demonstrated read path. Only a material configuration
+  or domain change re-opens it.
+- **Mixed fleets key to the least capable configuration that consumes brief
+  content directly.** An orchestrator delegating to smaller subagents does not
+  force the project to `guided`: it expands scaffolding at delegation time, in
+  the instructions it writes — the artifact stays at the project's read path.
+- **No model names, no benchmark names, by design.** The framework supplies the
+  bar and the feedback loop; current names live where they can churn. Your
+  project layer records your stack's mapping — model, effort, evidence,
+  resulting setting — in `AGENTS.md` or an Initiation Brief note, where it
+  survives model releases and benchmark turnover alike.
+- **A prior, not a verdict.** The table sets increment 1's starting point; the
+  first retrospective's calibration overrides it with observed behavior.
+
 ---
 
 ## The Operating Envelope
@@ -354,6 +474,6 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.49.0.

@@ -94,7 +94,11 @@ the increment-design-brief Carry Forward Resolution section.
      2. Instrumentation gaps — success criteria not yet measurable
      3. Unresolved edge cases — open questions deferred from this increment
      4. Stakeholder feedback — UAT findings not addressed
-     5. Test coverage improvements — areas where testing was insufficient -->
+     5. Test coverage improvements — areas where testing was insufficient
+     6. Specification-depth calibration — did the executor need more or less
+        detail than the briefs provided? Route the adjustment to the next
+        increment design and revisit the executor read path setting (see
+        guides/operating-model.md#one-capability-input-two-effects). -->
 
 - [item]
 
@@ -137,4 +141,4 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-07-05 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-06 | Added in v0.23.0. -->

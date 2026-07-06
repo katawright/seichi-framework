@@ -178,12 +178,14 @@ Right-size the model when spawning subagents:
   (e.g., file moves, link find-and-replace, renaming patterns)
 - **Sonnet** — moderate reasoning, code changes with some context needed
 - **Opus** — architectural decisions, complex analysis, ambiguous requirements
+- **Fable** — the hardest work: cross-document normative reasoning, adversarial
+  review of spec contracts, large multi-file synthesis under ambiguity
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).

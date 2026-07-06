@@ -22,6 +22,14 @@
 > adapt the section's content depth for your project tier. Annotations are HTML
 > comments and are invisible in rendered output.
 
+> **Read-path annotations:** Fields marked `<!-- Contracts-only: ... -->` are
+> implementation scaffolding — thin by default; justify thickness. On the
+> `contracts-only` executor read path (recorded in the Initiation Brief
+> right-sizing section), omit them and leave the detail to the implementer; on
+> `guided`, complete them. Contract fields — interfaces, acceptance criteria,
+> test intent — are never omitted on read-path grounds. See
+> ../guides/operating-model.md#one-capability-input-two-effects.
+
 **Last Updated:** YYYY-MM-DD
 
 ---
@@ -121,6 +129,9 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 
 **Constraining ADRs:** [ADR-NNNN-CC, ADR-NNNN-CC — or "None"]
 
+<!-- Contracts-only: omit Structure — internal layout is implementer latitude
+     unless a requirement or ADR pins it. -->
+
 **Structure:**
 
 ```
@@ -195,6 +206,10 @@ stateful, approach]
 ## 5. Testing Strategy for This Increment
 
 ### 5.1 Unit Tests
+
+<!-- Contracts-only: keep coverage targets and test intent; omit enumerated
+     per-function test cases — case enumeration is the implementer's, within
+     the intent stated here. -->
 
 - Key functions to test
 - Test cases (happy path, edge cases, errors)
@@ -284,4 +299,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-07-05 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-06 | Added in v0.12.0. -->

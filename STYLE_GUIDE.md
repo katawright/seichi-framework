@@ -173,12 +173,18 @@ Files fall into categories that may have type-specific conventions:
 
 - Templates use tier-aware HTML comment annotations to signal which sections
   agents should skip or simplify at a given project tier
-- Three annotation forms:
+- Four annotation forms:
   - **Skip:** `<!-- Minimal: skip this section entirely -->`
   - **Tiered depth:**
     `<!-- Minimal: [brief] | Standard: [full] | Enterprise: [comprehensive] -->`
   - **Cross-reference:**
     `<!-- Minimal: reference [source] rather than restate; include only deviations -->`
+  - **Read-path:**
+    `<!-- Contracts-only: omit [field] — implementer latitude -->` — marks
+    implementation scaffolding that scales to the executor read path (see the
+    Operating Model Guide). Tier annotations scale to consequence; read-path
+    annotations scale to executor capability — the two are orthogonal, and
+    contract fields never carry a read-path annotation
 - When a section should be omitted entirely (including its heading), the
   annotation must say "omit this section entirely" or "skip this section
   entirely" — "if applicable" alone is insufficient, as agents default to
@@ -444,6 +450,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.19.0.

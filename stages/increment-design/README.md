@@ -29,9 +29,10 @@ raci_roles: { R: [eng], A: [eng], C: [pm, arch, qa, appsec, pjm] }
 
 ## Overview
 
-Practical guidance for creating detailed component designs, interface
-specifications, and test strategies that give engineers everything they need to
-implement an increment without guessing.
+Practical guidance for creating component designs, interface specifications, and
+test strategies that pin what an increment must honor — its contracts,
+constraints, and verification criteria — at the scaffolding depth the executor
+needs.
 
 ### Why Increment Design
 
@@ -63,8 +64,18 @@ works?"_
 
 ### Key Principle
 
-Provide enough detail for engineers to implement without guessing. Reference
-architecture from System Design.
+Specify contracts, boundaries, and verification criteria precisely; do not
+pre-specify internal implementation structure — that is the implementer's job,
+and over-specifying it degrades output. "Enough detail to implement without
+guessing" is relative to the executor: resolve at design time only contracts
+other increments or teams depend on, constraints the requirements impose, and
+decisions that are expensive to reverse. Everything else is implementer
+latitude, protected by the recorded-design-deviation change class
+([Delegated-Run Spec](../../spec/delegated-run.md#controlled-replanning)).
+Implementation scaffolding scales to the declared
+[executor read path](../../guides/operating-model.md#one-capability-input-two-effects);
+contract and verification detail never does. Reference architecture from System
+Design.
 
 ### Starting Point
 
@@ -174,6 +185,17 @@ Expand Increment Design only when needed:
 
 Otherwise, keep design focused and move to Implementation.
 
+**Two independent axes, one brief.** The tier table above scales specification
+to _consequence_ — higher stakes pin more contracts and more verification. The
+**executor read path** scales _implementation scaffolding_ — component
+structure, enumerated test cases, pre-worked logic — to the executor: `guided`
+keeps it; `contracts-only` omits it and leaves structure to the implementer (see
+[Operating Model Guide: One Capability Input, Two Effects](../../guides/operating-model.md#one-capability-input-two-effects)).
+The axes never trade off — a high-consequence increment on a strong executor
+still needs heavy contracts and light structure. Write the brief **thin by
+default and justify thickness**: at Minimal tier under agent execution on the
+contracts-only path, a conformant brief is roughly one page.
+
 > These triggers help you decide when to move from Minimal to Standard or
 > Enterprise. For full tier definitions and choosing criteria, see the
 > [Right-Sizing Guide](../../guides/right-sizing.md).
@@ -224,6 +246,12 @@ For Increment 2+, review before planning:
   decide which to address in this increment's scope (fix now, schedule later, or
   accept). Include selected debt items in the increment's scope baseline and
   test strategy.
+- **Specification-depth calibration** — did the executor need more or less
+  detail than the previous brief provided? Structure guessed poorly, many
+  clarifying questions, or convention drift → add scaffolding; scaffolding
+  ignored or worked around → remove it and revisit the
+  [executor read path](../../guides/operating-model.md#one-capability-input-two-effects)
+  setting.
 
 This is the point in the cycle where the
 [learning throughline](../../guides/framework.md#learning-throughline) feeds
@@ -414,6 +442,6 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.12.0.
