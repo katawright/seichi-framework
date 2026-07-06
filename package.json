@@ -1,8 +1,8 @@
 {
-  "name": "ai-assisted-sdlc-schema",
+  "name": "seichi-framework-schema",
   "version": "0.0.0",
   "private": true,
-  "description": "Front matter schema validation for the AI-Assisted SDLC framework",
+  "description": "Front matter schema validation for the Seichi Framework, an SDLC framework for agent-executed delivery",
   "type": "module",
   "scripts": {
     "validate": "node .schema/validate.mjs && npm run format:check",

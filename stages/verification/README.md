@@ -31,7 +31,7 @@ session_log_template: templates/session-log.md
 raci_roles: { R: [eng, qa, appsec], A: [qa], C: [pm, arch], I: [pjm] }
 ---
 
-# AI-Assisted SDLC: Verification Stage
+# Seichi Framework: Verification Stage
 
 ## Overview
 
@@ -497,6 +497,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.6.0.

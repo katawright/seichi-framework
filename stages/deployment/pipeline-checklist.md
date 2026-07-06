@@ -81,12 +81,12 @@ increment deployment.
 - [Deployment Stage Guide](README.md)
 - [Deployment Checklist](checklist.md)
 - [Deployment Reference](reference.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.12.0.

@@ -95,14 +95,14 @@ to circulate.
 ## Related Documents
 
 - [Initiation Brief Template](../../templates/initiation-brief.md)
-- [AI-Assisted SDLC: Initiation Stage](README.md)
+- [Seichi Framework: Initiation Stage](README.md)
 - [Initiation Reference](reference.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.2.0.

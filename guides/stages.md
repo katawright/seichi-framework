@@ -48,7 +48,7 @@ pipeline:
     revisit_conditions: [reopened-scope, post-closure-defect]
 ---
 
-# AI-Assisted SDLC Stages
+# Seichi Framework Stages
 
 > **New here?** See [Framework Overview](OVERVIEW.md#stages-guide) for what this
 > guide is, why it exists, and how to use it. This file is the operational
@@ -1016,6 +1016,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.9.0.

@@ -1,9 +1,9 @@
 # Framework Overview
 
-The friendly tour of the AI-Assisted SDLC framework — what each guide is, why it
-exists, and how to use it. This is the **human-facing orientation layer**,
-lifted out of the operational guides so a person can get oriented in one place
-without reading every guide end to end.
+The friendly tour of the Seichi Framework — what each guide is, why it exists,
+and how to use it. This is the **human-facing orientation layer**, lifted out of
+the operational guides so a person can get oriented in one place without reading
+every guide end to end.
 
 > **Agents: do not load this file.** It carries no operational rules — only
 > orientation an executing agent does not need. Each guide's binding content
@@ -143,9 +143,9 @@ For cross-cutting framework concepts, see [Framework Guide](framework.md).
 
 ## Agentic Workflow Guide
 
-Structured entry point for AI agents working with the AI-Assisted SDLC framework
-— machine-readable stage routing, artifact dependencies, and fallback protocols
-in a single file.
+Structured entry point for AI agents working with the Seichi Framework —
+machine-readable stage routing, artifact dependencies, and fallback protocols in
+a single file.
 
 **Why this guide.** The framework's stage guides, checklists, and references are
 optimized for human readers navigating one stage at a time. An AI agent dropped
@@ -528,7 +528,7 @@ handed off, and operating it is its own governed practice with its own terminal.
 ## Organizational Adoption Guide
 
 Practical guidance for planning and executing an organizational rollout of the
-AI-Assisted SDLC framework — from pilot selection through full standardization.
+Seichi Framework — from pilot selection through full standardization.
 
 **Why organizational adoption matters.** The framework is designed for
 per-project use, but organizational adoption requires additional planning: which
@@ -561,7 +561,7 @@ For the governance model and business-value framing, see the
 
 ## Bootstrap Guide
 
-Step-by-step instructions for starting AI-assisted SDLC projects with a local
+Step-by-step instructions for starting Seichi Framework projects with a local
 agent.
 
 **Why a bootstrap guide.** The [Quick Start](../QUICKSTART.md) gets you running
@@ -1026,6 +1026,6 @@ and the
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.51.0.

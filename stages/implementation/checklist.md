@@ -108,14 +108,14 @@ and ready for Verification.
 ## Related Documents
 
 - [Implementation Brief Template](../../templates/implementation-brief.md)
-- [AI-Assisted SDLC: Implementation Stage](README.md)
+- [Seichi Framework: Implementation Stage](README.md)
 - [Implementation Reference](reference.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.5.0.

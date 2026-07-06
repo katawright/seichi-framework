@@ -122,7 +122,7 @@ the increment-design-brief Carry Forward Resolution section.
 
 ## Process Feedback
 
-<!-- Did anything about the AI-Assisted SDLC framework itself — the development
+<!-- Did anything about the Seichi Framework itself — the development
      process you followed — help or hinder your work? This section collects the
      Process-type friction triaged from the friction log: missing checklist
      items, unclear guidance, template gaps, stage-model issues. Process
@@ -137,4 +137,4 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-05 | Added in v0.23.0. -->

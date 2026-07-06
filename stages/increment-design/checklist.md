@@ -118,14 +118,14 @@ and ready for Implementation.
 ## Related Documents
 
 - [Increment Design Brief Template](../../templates/increment-design-brief.md)
-- [AI-Assisted SDLC: Increment Design Stage](README.md)
+- [Seichi Framework: Increment Design Stage](README.md)
 - [Increment Design Reference](reference.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.12.0.

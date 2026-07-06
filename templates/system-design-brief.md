@@ -35,7 +35,7 @@ DevOps Lead, Project Manager]
 
 - **Related Requirements:** [Link to requirements-brief.md]
 - **Execution Pattern:** Foundational (see
-  [AI-Assisted SDLC Stages](../guides/stages.md))
+  [Seichi Framework Stages](../guides/stages.md))
 - **Primary Role:** Architect
 - **Supporting Roles:** Product Manager, QA Engineers, DevOps, Project Manager
 - **Checkpoints:** Alignment, Gate 2
@@ -489,4 +489,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-05 | Added in v0.12.0. -->

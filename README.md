@@ -1,4 +1,4 @@
-# AI-Assisted SDLC Framework
+# Seichi Framework
 
 ## Overview
 
@@ -132,7 +132,7 @@ standing system after a project closes. Together: three work-shapes (Project ·
 Flow · Operations), one operating model.
 
 For full stage definitions, inputs, outputs, and criteria, see
-[AI-Assisted SDLC Stages](guides/stages.md).
+[Seichi Framework Stages](guides/stages.md).
 
 ---
 
@@ -272,7 +272,7 @@ per-checkpoint roles.
 
 For full checkpoint types and decision records, see the
 [Checkpoint Taxonomy](guides/checkpoints.md). For stage definitions and
-execution patterns, see [AI-Assisted SDLC Stages](guides/stages.md).
+execution patterns, see [Seichi Framework Stages](guides/stages.md).
 
 ---
 
@@ -474,6 +474,6 @@ product name in a way that implies endorsement, affiliation, or official status.
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.17.0.

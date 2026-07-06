@@ -10,9 +10,9 @@ allowed-tools:
 
 # /release — Cut a Framework Release
 
-You are cutting a release of the AI-Assisted SDLC Framework from main. The
-VERSION file on main already contains the correct version — your job is to tag,
-push, and create the GitHub release with `dist/framework-vX.Y.Z.zip` attached.
+You are cutting a release of the Seichi Framework from main. The VERSION file on
+main already contains the correct version — your job is to tag, push, and create
+the GitHub release with `dist/framework-vX.Y.Z.zip` attached.
 
 ---
 

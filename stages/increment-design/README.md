@@ -25,7 +25,7 @@ session_log_template: templates/session-log.md
 raci_roles: { R: [eng], A: [eng], C: [pm, arch, qa, appsec, pjm] }
 ---
 
-# AI-Assisted SDLC: Increment Design Stage
+# Seichi Framework: Increment Design Stage
 
 ## Overview
 
@@ -414,6 +414,6 @@ to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.12.0.

@@ -28,7 +28,7 @@ raci_roles:
   { R: [devops], A: [devops], C: [pm, arch, eng, appsec], I: [exec, pjm] }
 ---
 
-# AI-Assisted SDLC: Closure Stage
+# Seichi Framework: Closure Stage
 
 ## Overview
 
@@ -389,6 +389,6 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.49.0.

@@ -39,7 +39,7 @@ raci_roles:
   { R: [devops], A: [devops], C: [arch, eng, qa, appsec, pjm], I: [pm, exec] }
 ---
 
-# AI-Assisted SDLC: Deployment Stage
+# Seichi Framework: Deployment Stage
 
 ## Overview
 
@@ -712,6 +712,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.7.0.

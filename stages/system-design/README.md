@@ -41,7 +41,7 @@ raci_roles:
   { R: [arch], A: [arch], C: [pm, eng, qa, devops, appsec, pjm], I: [exec] }
 ---
 
-# AI-Assisted SDLC: System Design Stage
+# Seichi Framework: System Design Stage
 
 ## Overview
 
@@ -724,6 +724,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.12.0.
