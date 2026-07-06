@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.56.0 (2026-07-06)
+
+### Improvements
+
+- **framework:** rename to Seichi Framework and repoint repo to
+  katawright/seichi-framework
+
 ## 0.55.0 (2026-07-03)
 
 The platform seam's thin concept-naming slice (CS-1/CS-3/EN-1, with the three
