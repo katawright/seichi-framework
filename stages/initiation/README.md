@@ -24,7 +24,7 @@ session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [arch, eng, appsec, pjm], I: [exec] }
 ---
 
-# AI-Assisted SDLC: Initiation Stage
+# Seichi Framework: Initiation Stage
 
 ## Overview
 
@@ -957,6 +957,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.2.0.

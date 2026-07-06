@@ -24,7 +24,7 @@ conventions.
 ## Stage Routing
 
 For stage ordering, execution patterns, and the dependency graph, see the
-[AI-Assisted SDLC Stages](stages.md) pipeline front matter. For per-stage
+[Seichi Framework Stages](stages.md) pipeline front matter. For per-stage
 metadata (inputs, outputs, checkpoints, RACI), parse the stage README front
 matter in `stages/*/README.md`. The `working_location` field in each stage
 README indicates where the agent should operate — either the artifacts
@@ -691,6 +691,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.23.0.

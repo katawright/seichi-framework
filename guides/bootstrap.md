@@ -181,12 +181,12 @@ it to `AGENTS.md` for workspace context.
 **Template — add this block to `AGENTS.md`:**
 
 ```markdown
-## AI-Assisted SDLC Workspace
+## Seichi Framework Workspace
 
 ### Workspace Structure
 
 - `adrs/` — Accepted ADRs (workspace canon; created at first Gate 2 promotion)
-- `frameworks/` — AI-Assisted SDLC framework releases (read-only)
+- `frameworks/` — Seichi Framework releases (read-only)
 - `projects/` — Project governance (briefs, draft ADRs, session logs)
 - `src/` — Application source code
 
@@ -209,7 +209,7 @@ framework files.
 
 If `AGENTS.md` doesn't exist yet, create it with a top-level heading (e.g.,
 `# My App`) and the block above. If it already exists (common in mid-stream
-adoption), add the `## AI-Assisted SDLC Workspace` block to the existing file.
+adoption), add the `## Seichi Framework Workspace` block to the existing file.
 Existing content (coding conventions, tech stack, build commands) stays
 untouched.
 
@@ -420,8 +420,8 @@ bootstrap prompt.
 2. **Start your agent** in that folder
 3. **Paste this prompt:**
 
-> Download the latest release of the AI-Assisted SDLC framework from
-> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> Download the latest release of the Seichi Framework from
+> https://github.com/katawright/seichi-framework into ./frameworks/ using the
 > version tag as the directory name (e.g., `frameworks/v<version>/`) if not
 > already present.
 >
@@ -527,6 +527,6 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.9.0.

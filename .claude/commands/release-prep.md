@@ -9,10 +9,10 @@ allowed-tools:
 
 # /release-prep — Prepare a Framework Release
 
-You are preparing a release of the AI-Assisted SDLC Framework. This command
-updates VERSION, generates a CHANGELOG entry, updates INDEX.md, and builds the
-release zip via `npm run release`. After this command completes, the user will
-commit, merge to main, and run `/release`.
+You are preparing a release of the Seichi Framework. This command updates
+VERSION, generates a CHANGELOG entry, updates INDEX.md, and builds the release
+zip via `npm run release`. After this command completes, the user will commit,
+merge to main, and run `/release`.
 
 The version argument is required. Usage: `/release-prep 0.43.0`
 

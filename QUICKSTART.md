@@ -40,8 +40,8 @@ Cowork, or similar).
 2. **Start your agent** in that folder
 3. **Paste this prompt:**
 
-> Download the latest release of the AI-Assisted SDLC framework from
-> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> Download the latest release of the Seichi Framework from
+> https://github.com/katawright/seichi-framework into ./frameworks/ using the
 > version tag as the directory name (e.g., `frameworks/v<version>/`) if not
 > already present.
 >
@@ -77,8 +77,8 @@ Cowork, or similar).
 2. **Start your agent** in that folder
 3. **Paste this prompt:**
 
-> Download the latest release of the AI-Assisted SDLC framework from
-> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> Download the latest release of the Seichi Framework from
+> https://github.com/katawright/seichi-framework into ./frameworks/ using the
 > version tag as the directory name (e.g., `frameworks/v<version>/`) if not
 > already present.
 >
@@ -138,15 +138,15 @@ If you're adopting the framework on a project already in progress:
    lives, if one exists)
 2. **Paste this prompt:**
 
-> Download the latest release of the AI-Assisted SDLC framework from
-> https://github.com/jeffogata/ai-assisted-sdlc into ./frameworks/ using the
+> Download the latest release of the Seichi Framework from
+> https://github.com/katawright/seichi-framework into ./frameworks/ using the
 > version tag as the directory name (e.g., `frameworks/v<version>/`) if not
 > already present.
 >
 > Then read QUICKSTART.md from the downloaded framework to orient yourself.
 >
-> This is an existing project that I want to bring under the AI-Assisted SDLC
-> framework. Set up the workspace structure (frameworks/, projects/, and your
+> This is an existing project that I want to bring under the Seichi Framework.
+> Set up the workspace structure (frameworks/, projects/, and your
 > agent-specific startup file) alongside the existing codebase. If an AGENTS.md
 > already exists, augment it with workspace instructions rather than overwriting
 > it; otherwise create one. Then interview me to understand the project — what
@@ -249,8 +249,8 @@ workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
 1. **Start your agent** in the workspace root (where `AGENTS.md` lives)
 2. **Paste this prompt:**
 
-> Download the latest release of the AI-Assisted SDLC framework from
-> https://github.com/jeffogata/ai-assisted-sdlc into `./frameworks/` using the
+> Download the latest release of the Seichi Framework from
+> https://github.com/katawright/seichi-framework into `./frameworks/` using the
 > version tag as the directory name (e.g., `frameworks/v<version>/`) if not
 > already present. Keep any previous framework versions in place — existing
 > projects may reference them via their `project.md`.
@@ -328,6 +328,6 @@ for the worked example.
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.26.0.

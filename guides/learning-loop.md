@@ -291,7 +291,7 @@ away.
   — the front door the backlog feeds (the launch half)
 - [Agentic Workflow Guide: Zero-to-One Project Routing](agentic-workflow.md#zero-to-one-project-routing)
   — the two on-ramps into the front door
-- [AI-Assisted SDLC Stages: Learning Throughline](stages.md#learning-throughline)
+- [Seichi Framework Stages: Learning Throughline](stages.md#learning-throughline)
   — the per-stage learning roles
 - [Framework Guide](framework.md) — cross-cutting framework concepts
 - [Increment Design](../stages/increment-design/README.md) — consumes
@@ -301,6 +301,6 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.45.0.

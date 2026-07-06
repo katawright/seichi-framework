@@ -13,10 +13,10 @@ control.
 
 ## What Is This Framework?
 
-The AI-Assisted SDLC framework is a lightweight, practical guide for integrating
-AI assistance into software development. It helps both technical and
-non-technical stakeholders work through every stage of a project — from initial
-idea to production and ongoing operations.
+The Seichi Framework is a lightweight, practical guide for integrating AI
+assistance into software development. It helps both technical and non-technical
+stakeholders work through every stage of a project — from initial idea to
+production and ongoing operations.
 
 **Design principles:**
 
@@ -37,8 +37,8 @@ idea to production and ongoing operations.
 
 ## How to Use This Framework
 
-The AI-Assisted SDLC framework can be used in two ways, depending on whether
-dedicated tooling exists for your team.
+The Seichi Framework can be used in two ways, depending on whether dedicated
+tooling exists for your team.
 
 ### Option 1: AI-Assisted Manual Process (Available Now)
 
@@ -196,7 +196,7 @@ foundational (once per project), iterative (per increment), and terminal
 [Operations](operations.md) process, not a stage; small in-place changes run as
 [Flow](stages.md#flow-delivery-mode) items. For complete stage definitions
 including inputs, outputs, entry/exit criteria, stage flow diagrams, and
-handoffs, see the [AI-Assisted SDLC Stages](stages.md) reference.
+handoffs, see the [Seichi Framework Stages](stages.md) reference.
 
 ---
 
@@ -299,14 +299,14 @@ instance of the whole chain on a real feature, see
 
 For the stage-by-stage breakdown of how success criteria flow from Initiation
 through Closure (and into Operations), see
-[AI-Assisted SDLC Stages § Measurement Throughline](stages.md#measurement-throughline).
+[Seichi Framework Stages § Measurement Throughline](stages.md#measurement-throughline).
 
 ---
 
 ## Learning Throughline
 
 For the stage-by-stage breakdown of pre-mortems and retrospectives, see
-[AI-Assisted SDLC Stages § Learning Throughline](stages.md#learning-throughline).
+[Seichi Framework Stages § Learning Throughline](stages.md#learning-throughline).
 For how friction is captured, triaged, and routed into a cross-project idea
 backlog, see [The Learning Loop](learning-loop.md).
 
@@ -955,6 +955,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.9.0.

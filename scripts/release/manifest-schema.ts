@@ -1,4 +1,4 @@
-// Canonical Zod schema for the AI-Assisted SDLC framework manifest.
+// Canonical Zod schema for the Seichi Framework manifest.
 //
 // This is the source of truth. Downstream consumers (e.g., theia-platform)
 // vendor a copy of this file. Keep the byte representation stable so the

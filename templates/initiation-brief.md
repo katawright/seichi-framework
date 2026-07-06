@@ -134,7 +134,7 @@ Authority]
 - **Stop if:** [conditions]
 
 **Next step if proceeding:** This brief becomes input to Requirements stage (per
-[AI-Assisted SDLC Stages](../guides/stages.md#stage-1-initiation)).
+[Seichi Framework Stages](../guides/stages.md#stage-1-initiation)).
 
 ---
 
@@ -304,4 +304,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.2.0. -->
+<!-- Template Last Updated: 2026-07-05 | Added in v0.2.0. -->

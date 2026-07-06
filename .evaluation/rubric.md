@@ -1,7 +1,7 @@
 # Framework Evaluation Rubric
 
-A standalone rubric for evaluating the AI-Assisted SDLC framework. A contributor
-can execute a complete three-pass review from this file alone.
+A standalone rubric for evaluating the Seichi Framework. A contributor can
+execute a complete three-pass review from this file alone.
 
 ## Scope
 
@@ -305,8 +305,8 @@ What I think this framework is and how it works (2-3 paragraphs).
 
 #### Personas
 
-**business-leader** — A VP or C-level executive evaluating whether to fund an
-AI-assisted SDLC pilot. Sub-lenses: CEO (growth, competitive advantage) and CFO
+**business-leader** — A VP or C-level executive evaluating whether to fund a
+Seichi Framework pilot. Sub-lenses: CEO (growth, competitive advantage) and CFO
 (ROI, cost control, risk). Focus areas: ROI justification, governance and
 oversight model, investment gates, organizational readiness, risk management.
 

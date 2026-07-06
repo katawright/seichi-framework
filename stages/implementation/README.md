@@ -29,7 +29,7 @@ session_log_template: templates/implementation-session-log.md
 raci_roles: { R: [eng], A: [eng], C: [arch, qa, devops, appsec], I: [pjm] }
 ---
 
-# AI-Assisted SDLC: Implementation Stage
+# Seichi Framework: Implementation Stage
 
 ## Overview
 
@@ -427,6 +427,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.5.0.

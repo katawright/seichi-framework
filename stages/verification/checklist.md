@@ -125,14 +125,14 @@ the increment is ready for deployment.
 ## Related Documents
 
 - [Verification Brief Template](../../templates/verification-brief.md)
-- [AI-Assisted SDLC: Verification Stage](README.md)
+- [Seichi Framework: Verification Stage](README.md)
 - [Verification Reference](reference.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.6.0.

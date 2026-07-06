@@ -37,7 +37,7 @@ Foundation] **Date:** [YYYY-MM-DD] **Author(s):** [Engineering Lead]
 - **Related Requirements:** [Link to requirements-brief.md]
 - **Related System Design:** [Link to system-design-brief.md]
 - **Execution Pattern:** Iterative (see
-  [AI-Assisted SDLC Stages](../guides/stages.md))
+  [Seichi Framework Stages](../guides/stages.md))
 - **Primary Role:** Engineers
 - **Supporting Roles:** Architect, QA Engineers, Product Manager, Project
   Manager
@@ -284,4 +284,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-05 | Added in v0.12.0. -->

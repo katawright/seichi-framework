@@ -1,4 +1,4 @@
-AI-Assisted SDLC Framework
+Seichi Framework
 Copyright (c) 2026 Jeffrey Ogata (github.com/jeffogata)
 
 The framework content in this repository — the prose guides, the specifications,
@@ -19,7 +19,7 @@ Two directories are licensed differently, by design:
 
 Attribution under CC BY 4.0 applies to redistribution of the framework content
 itself, not to artifacts produced by using its templates. A suggested credit
-line: "AI-Assisted SDLC Framework by Jeffrey Ogata (github.com/jeffogata),
+line: "Seichi Framework by Jeffrey Ogata (github.com/jeffogata),
 licensed under CC BY 4.0."
 
 Trademark and naming: This license grants rights in the copyrighted content

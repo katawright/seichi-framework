@@ -202,12 +202,12 @@ decision using the
 - [Deployment Stage Guide](README.md)
 - [Deployment Reference](reference.md)
 - [Deployment Pipeline Checklist](pipeline-checklist.md)
-- [AI-Assisted SDLC Stages](../../guides/stages.md)
+- [Seichi Framework Stages](../../guides/stages.md)
 
 ---
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.7.0.

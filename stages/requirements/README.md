@@ -28,7 +28,7 @@ session_log_template: templates/session-log.md
 raci_roles: { R: [pm], A: [pm], C: [arch, eng, qa, appsec, pjm], I: [exec] }
 ---
 
-# AI-Assisted SDLC: Requirements Stage
+# Seichi Framework: Requirements Stage
 
 ## Overview
 
@@ -746,6 +746,6 @@ Requirements is foundational but revisitable.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-05
 
 Added to framework in v0.3.0.
