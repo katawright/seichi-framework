@@ -243,16 +243,20 @@ is the least. Idea formation **proposes** the configuration; it does not commit
 it.
 
 Seed the inferred classifications — tier, project type, deployment intent,
-operating posture, Required Assurance, and the executor read path — into the
-draft brief's right-sizing section as `[ASSUMED]` values, exactly as
+operating posture, and the executor read path — into the draft brief's
+right-sizing section as `[ASSUMED]` values, exactly as
 [Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)
-prescribes (a hard compliance obligation binds as a constraint instead — see the
-callout below). Initiation refines them as the brief takes shape, and **Gate 1
-locks them**: the investment decision is where "are you sure you want to run a
-payments product this autonomously?" is answered honestly. The calculator
-effectively has no Gate 1 — a glance-and-go self-gate at the lowest tier — so
-its frame is set and forgotten in one breath; the streaming service's Gate 1 is
-real, and is where its proposed configuration is committed or pulled back.
+prescribes. The sixth classification decision, **Required Assurance**, is set
+per concern rather than once for the whole project (see
+[Operating Model Guide](../../guides/operating-model.md#required-assurance--how-independently-work-is-evaluated)),
+so it is not seeded here as a single `[ASSUMED]` value; and a hard compliance
+obligation binds as a constraint instead — see the callout below. Initiation
+refines them as the brief takes shape, and **Gate 1 locks them**: the investment
+decision is where "are you sure you want to run a payments product this
+autonomously?" is answered honestly. The calculator effectively has no Gate 1 —
+a glance-and-go self-gate at the lowest tier — so its frame is set and forgotten
+in one breath; the streaming service's Gate 1 is real, and is where its proposed
+configuration is committed or pulled back.
 
 > **Compliance binds before build, not at Gate 1.** One element does not wait
 > for the gate: a hard compliance obligation — regulated data, a legal

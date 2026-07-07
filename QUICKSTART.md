@@ -88,9 +88,9 @@ Cowork, or similar).
 > create the project structure, AGENTS.md, and your agent-specific startup file
 > (e.g., CLAUDE.md for Claude Code). Then guide me through the first stage.
 > Infer project classifications (tier, project type, deployment intent,
-> operating posture) from our conversation and present them as overridable
-> assumptions instead of asking me to choose. Drive the process but check
-> decisions with me.
+> operating posture, executor read path) from our conversation and present them
+> as overridable assumptions instead of asking me to choose. Drive the process
+> but check decisions with me.
 
 The agent downloads the framework, creates your workspace, and walks you through
 [Initiation](stages/initiation/README.md) interactively — starting with your
@@ -154,9 +154,9 @@ If you're adopting the framework on a project already in progress:
 > have already been made. Create lightweight retroactive artifacts for completed
 > stages based on our conversation, then guide me forward from the current
 > stage. Infer project classifications (tier, project type, deployment intent,
-> operating posture) from our conversation and present them as overridable
-> assumptions instead of asking me to choose. Drive the process but check
-> decisions with me.
+> operating posture, executor read path) from our conversation and present them
+> as overridable assumptions instead of asking me to choose. Drive the process
+> but check decisions with me.
 
 The agent sets up the governance layer alongside your existing code, interviews
 you to determine which [stages](guides/stages.md) are already complete, creates
@@ -328,6 +328,6 @@ for the worked example.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.26.0.

@@ -433,9 +433,9 @@ the multi-repo bootstrap prompt.
 > sibling repositories alongside this directory. Interview me to find out which
 > repos are involved and where they are. Then guide me through the first stage.
 > Infer project classifications (tier, project type, deployment intent,
-> operating posture) from our conversation and present them as overridable
-> assumptions instead of asking me to choose. Drive the process but check
-> decisions with me.
+> operating posture, executor read path) from our conversation and present them
+> as overridable assumptions instead of asking me to choose. Drive the process
+> but check decisions with me.
 
 The agent creates the workspace structure inside the governance directory, asks
 which source repositories are involved, records their paths in `project.md`, and

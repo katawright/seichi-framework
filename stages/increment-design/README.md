@@ -69,8 +69,9 @@ pre-specify internal implementation structure — that is the implementer's job,
 and over-specifying it degrades output. "Enough detail to implement without
 guessing" is relative to the executor: resolve at design time only contracts
 other increments or teams depend on, constraints the requirements impose, and
-decisions that are expensive to reverse. Everything else is implementer
-latitude, protected by the recorded-design-deviation change class
+decisions that are expensive to reverse. Everything else is implementer latitude
+— a within-plan execution choice, recorded when material, that rises to a
+recorded design deviation only if it departs from something the brief pinned
 ([Delegated-Run Spec](../../spec/delegated-run.md#controlled-replanning)).
 Implementation scaffolding scales to the declared
 [executor read path](../../guides/operating-model.md#one-capability-input-two-effects);
