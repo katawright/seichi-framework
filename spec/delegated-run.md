@@ -271,12 +271,31 @@ state.
 - **Deterministic conflict resolution.** Duplicate/out-of-order items MUST
   reconcile deterministically (merge-by-identity for evidence/reports;
   last-by-sequence for directives) under single-writer-for-scope; never a silent
-  fork. **`[Reserved]`** The cross-run write model — how project-scoped
-  canonical-state writes order across concurrent runs (the sequence above is
-  run-scoped), the write-admission rule for concurrency-safe write-back
-  (version-conditional rejection vs. deterministic merge, per record family),
-  and the scope granularity of single-writer-for-scope — is resolved at the
-  first conforming platform's schema freeze.
+  fork.
+- **Cross-run write model (ratified v0.58).** Project-scoped canonical-state
+  writes are **totally ordered by the project state version**
+  ([Canonical-State Spec](canonical-state.md#minimum-canonical-project-state)).
+  Run-scoped sequences order a run's own directives, reports, and acks; they
+  MUST NOT order writes across runs — concurrent runs' writes to one project
+  serialize through the project version, never through wall-clock or run
+  identity.
+- **Write admission (ratified v0.58).** Every canonical-state write declares the
+  state version it was based on (its **base version**). If the base version is
+  current, the write is admitted and the version increments **atomically with
+  it**: one logical governance write is one transaction, one version increment,
+  one event — a version-less mutation of canonical state is not representable.
+  On mismatch the write is **rejected, never silently merged**; the writer
+  re-evaluates against current state (the write may be moot, be resubmitted
+  rebased, or surface a conflict to resolve) — rejection is a normal protocol
+  outcome, not a failure. A record family MAY instead declare a deterministic
+  merge (merge-by-identity for identity-keyed append families; last-by-sequence
+  for a run's own directives), which still increments the version; families
+  without a declared merge are version-conditional by default. **Single-writer
+  scope is the project:** in live structured access the admission rule realizes
+  it per write (no lease is required for correctness); in rendered-snapshot
+  access the snapshot-holder MUST hold the sole write claim for the project for
+  the span of the run (finer claims are an implementation optimization, not a
+  conformance unit).
 - **Operation retry classes** (over the substrate): safe to retry; safe only
   after confirming current state; unsafe to retry automatically; requires
   authorization before retry.
@@ -417,6 +436,11 @@ integrations, deployments, and directives.
   events on directive processing; plan-revision/deviation events on replanning.
 - Sub-events below the minimum are optional/foldable; user-facing views MAY fold
   low-level events while retaining drill-down.
+- **Scope discipline (ratified v0.58).** The event record is canonical
+  governance state — the minimum event set plus material events. Fine-grained
+  execution telemetry is observability data, not canonical state, and MUST NOT
+  be recorded in the event record. Events carry references and deltas, never
+  bulk payloads; bulk content rides evidence items by reference (uri + hash).
 - `unresponsive` is observer-derived, not run-emitted (live mode:
   interval-exceeded flag; snapshot mode: computed at inspection).
 - Events MUST preserve corrections rather than overwrite history; **event

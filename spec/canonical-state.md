@@ -87,11 +87,19 @@ operating configuration, and the records produced as work proceeds.
   and scope, the operating envelope, the escalation and stop conditions, and the
   resource and time limits — is part of this canonical state. A run references
   it; it MUST NOT be restated as a separate source (single-source rule).
-  **`[Reserved]`** The state-version semantics — what a canonical-state version
-  identifies (the version [views](#artifacts-as-views) record and rendered
-  snapshots carry as their as-of marker), and the version-pinned form of a run's
-  Authorization reference that makes a mid-run operating-envelope change
-  detectable — are resolved at the first conforming platform's schema freeze.
+- **State versioning (ratified v0.58).** The canonical state carries a
+  **per-project monotonic state version**, incremented by every admitted
+  canonical-state write; it identifies a point in the project's total write
+  order, and equal versions imply identical canonical state. Every
+  [view](#artifacts-as-views), export, and rendered snapshot MUST carry the
+  state version it was rendered from as its as-of marker. A run's Authorization
+  reference is **version-pinned**: it names the state version current at run
+  approval, and the Authorization subset is read as-of that pin. A mid-run
+  change to the Authorization subset MUST be detectable as any subset record
+  whose last-write version exceeds the pin — the trigger for the envelope-change
+  stop in [Controlled Replanning](delegated-run.md#controlled-replanning) — and
+  a conforming platform MUST expose that determination cheaply. Re-authorization
+  records a new pin.
 - **Carry-forward obligations are tracked state.** A "proceed with conditions"
   gate or checkpoint outcome records each condition as a tracked item — owner,
   discharging stage or increment, and an Open / Satisfied / Blocked / Withdrawn
@@ -184,11 +192,19 @@ state element, procedure, and evidence artifact in v0.49.
   - **Complete** — the export covers the full governance state (the
     [Minimum Canonical Project State](#minimum-canonical-project-state)), not
     artifacts alone.
-  - **Neutral** — usable by a consumer other than the producing tool.
-    **`[Reserved]`** The neutrality bar — re-ingestable by another conforming
-    tool (round-trip) vs. inspectable for audit only — and the field-level
-    export enumeration are resolved with the machine-facing interface layer and
-    ratified at the first conforming platform's schema freeze.
+  - **Neutral** — usable by a consumer other than the producing tool. The bar is
+    **round-trip (ratified v0.58)**: the export MUST be re-ingestable by another
+    conforming tool, not merely inspectable for audit. Round-trip rides
+    structure the substrate already requires — stable record identities,
+    explicit supersession chains, and the as-of state version on the export —
+    and the platform→file exit path in
+    [Mode Binding and Discovery](#mode-binding-and-discovery) depends on it. The
+    export carries the **full append-only event record**, corrections preserved,
+    not only the minimum event set — a partial event history would make
+    re-ingestion lossy (see the event record's
+    [scope discipline](delegated-run.md#observable-run-event-model)).
+    **`[Reserved]`** The field-level export enumeration is resolved with the
+    machine-facing interface layer.
   - **Exercised** — a never-run export path rots; the protection is an export
     that is actually run and verified, not a clause.
 - The minimum canonical project state MUST have a complete, lossless Markdown
@@ -233,9 +249,17 @@ project state).
   platform identity, the project identity, and the pinned framework version. The
   record is a _pointer to_ the canonical state, not part of it; it is committed
   so it survives re-clones. It is **provisioned** by the platform at project
-  creation, never improvised by an agent. **`[Reserved]`** The record's field
-  schema (platform-owned) is resolved at the first conforming platform's schema
-  freeze.
+  creation or workspace attachment, never improvised by an agent. The ratified
+  minimum field set (v0.58): operating mode; platform identity (stable id + base
+  URL); project identity (platform project id + slug); workspace identity
+  (repository + the workspace's declared role); pinned framework version; the
+  binding record's own schema version; provisioning timestamp; and a
+  **platform-derived verification token** over the identity fields, keyed by a
+  platform secret. The token is what makes "provisioned, never improvised"
+  enforceable: the platform can verify any presented record was platform-issued,
+  and an agent cannot mint one. A platform MAY extend the set. Binding records
+  are **per-workspace pointers, N:1 onto a project** — several workspaces may
+  bind the same project, each with its own record.
 - **Discovery.** At session start an agent MUST check for the binding record
   before treating local Markdown as canonical. Record found → the project
   operates in platform mode, and local Markdown artifacts are
@@ -245,14 +269,43 @@ project state).
   record proves **capability**, not **binding**; an unreachable platform with a
   binding record does not return the project to file mode.
 - **Default-closed degraded mode.** Bound but unreachable: **governance writes**
-  — gate decisions, `[J]`/`[H]` discharges, operating-envelope changes — MUST
-  NOT be recorded only-locally; the agent escalates instead (the same
+  MUST NOT be recorded only-locally; the agent escalates instead (the same
   default-closed discipline as
   [Operating Model Spec § Stop Enforcement](operating-model.md#stop-enforcement)).
-  There is never a second source of truth. **`[Reserved]`** Whether
-  non-governance work may queue-and-reconcile rather than halt while the
-  platform is unreachable is resolved at the first conforming platform's schema
-  freeze.
+  There is never a second source of truth. **A write is governance-class iff**
+  it discharges or reverses a `[J]`-or-above item; records or changes a gate or
+  checkpoint decision; changes the Authorization subset, operating envelope,
+  governance profile, authorized-party roster, or operating mode; or records a
+  risk acceptance or accepted limitation. All other writes are non-governance by
+  default, and the write class is carried explicitly on every write.
+- **Offline non-governance work: queue-and-reconcile (ratified v0.58).** While
+  bound-but-unreachable, non-governance writes MAY queue locally and reconcile
+  on reconnect, under all of the following: each queued write carries a stable
+  id, its (non-governance) write class, its full attribution record, and the
+  state version it was prepared against; the claimed-evaluation timestamp is set
+  at evaluation and the platform-receipt timestamp at reconciliation — the
+  offline gap stays visible in the record; on reconnect the queue submits
+  through the ordinary
+  [write-admission rule](delegated-run.md#idempotency-substrate) (idempotent
+  replay by stable id; version-conditional admission; rejects re-evaluated,
+  never silently merged), and the reconciliation outcome is recorded. The queue
+  is client-held; the platform never holds a second source of truth. A write
+  whose class cannot be established offline MUST be treated as governance-class
+  (default-closed).
+- **Mode switching (ratified v0.58).** A mode transition in either direction is
+  itself a **recorded governance decision** — it changes where truth lives.
+  **File → platform adoption:** the workspace files are the source of truth at
+  adoption — they are canonical in file mode; any pre-existing structured
+  metadata is a hint, never the winner. Ingest MUST carry provenance on every
+  ingested record (source repository, path, and revision); attribution on
+  ingested history is bounded at client-claimed
+  ([Record Requirements](#record-requirements)), with claimed timestamps taken
+  from the sources and receipt timestamps set at ingest; source facts that
+  cannot be resolved are recorded as **explicit ingest gaps**, never silently
+  dropped. Adoption is complete only when the binding record is provisioned and
+  local Markdown is demoted to [views](#artifacts-as-views). **Platform → file
+  exit:** a complete export at the round-trip bar
+  ([Markdown Self-Sufficiency](#markdown-self-sufficiency)), then unbind.
 
 **Outputs.** The project's operating mode, determined from the binding record or
 its absence.
@@ -291,9 +344,12 @@ project.
 - **Attribution carries an accountability grade.** For any item whose checklist
   marker or governance profile places it at the judgment tier (`[J]`) or above,
   the record MUST capture _who or what discharged it_ at the grade the item's
-  accountability demands, plus the **timestamp** of evaluation. Below that tier
-  (mechanical, unmarked items) recording is OPTIONAL but RECOMMENDED — it is
-  near-free under agent execution. The timestamp is always recorded.
+  accountability demands, plus **two timestamps (ratified v0.58)** — the claimed
+  evaluation time and the platform receipt time; ordering never derives from
+  either (the [state version](#minimum-canonical-project-state) orders writes).
+  Below that tier (mechanical, unmarked items) recording is OPTIONAL but
+  RECOMMENDED — it is near-free under agent execution. The timestamps are always
+  recorded.
 - **Two identity grades**, each the _minimum that suffices_, not a cap on what
   is recorded:
   - **`[J]` — qualification-identity.** The evaluator's _kind_: for an agent,
@@ -311,8 +367,19 @@ project.
   **relative to the producing context**, reusing the
   [independence axes](operating-model.md#evaluator-independence) — no new
   vocabulary. Minimum value set: **self-asserted** (the producing context) ·
-  **fresh-eyes** (a context-independent evaluator) · **independent** (an
-  organizationally or externally independent evaluator).
+  **context-independent** (the evaluator does not inherit the producing context)
+  · **organizationally-independent** (an organizationally or externally
+  independent evaluator).
+- **Attribution also carries an attribution-source grade (ratified v0.58).** For
+  any attributed `[J]`-or-above act the record MUST capture how the identity was
+  established: **platform-verified** (the recording platform authenticated the
+  acting identity) or **client-claimed** (self-reported by the acting client —
+  including an agent's vendor / model / version, which a platform cannot
+  verify). An identity claim is bounded by the verification achieved — the
+  record MUST NOT present a client-claimed identity as verified, the same
+  discipline as
+  [Operating Model Spec § Evaluator Independence](operating-model.md#evaluator-independence)
+  (claims MUST NOT exceed what was achieved).
 - A `[J]`-or-above **floor item discharged self-asserted is not a cleared
   floor**: it supports mechanical conformance only — the record-level form of
   [Operating Model Spec § Function Separation](operating-model.md#function-separation)
@@ -322,10 +389,13 @@ project.
   third leg. A recorded self-asserted grade is not a defect (it is the honest
   solo default at `[J]` below the consequence floor); an **absent** grade on a
   `[J]`-or-above act caps the record the same way a missing identity grade does.
-  **`[Reserved]`** Recording granularity — per checklist item vs. per gate or
-  checkpoint decision — is resolved at the first conforming platform's schema
-  freeze.
-- The framework states the **grades required + the timestamp**; the platform
+  **Recording granularity (ratified v0.58):** the grade is recorded **per
+  discharging act — per checklist item**. A gate or checkpoint decision is
+  itself an attributable act carrying its own grade; per-decision granularity is
+  a derived, coarser view (the minimum grade across the acts it aggregates),
+  never the stored grain — coarser storage would be lossy and unrecoverable, and
+  finer recording is near-free under agent execution.
+- The framework states the **grades required + the timestamps**; the platform
   owns the field schema (names, storage, binding to accounts). An agent MUST be
   able to read and satisfy the grade requirement from Markdown alone.
 
@@ -339,8 +409,8 @@ no correction history) caps the assurance or audit level its evidence can
 support (see
 [Operating Model Spec § Function Separation](operating-model.md#function-separation),
 evidence row). A `[J]`-or-above act recorded without its required identity
-grade, its evidence-independence grade, or its timestamp is not a satisfied
-record and caps the level the same way.
+grade, its evidence-independence grade, its attribution-source grade, or its
+timestamps is not a satisfied record and caps the level the same way.
 
 ---
 
@@ -445,8 +515,8 @@ obligations; the available capability and function separation.
   transcript. "One conversation" is a presentation choice; it never waives the
   durable write-back the floor requires.
 - Folding MUST change what is seen, never the independence required of the work.
-  A folded self-assurance is still performed with **fresh eyes**, not by the
-  producing context confirming itself (see
+  A folded self-assurance is still performed **context-independently**, not by
+  the producing context confirming itself (see
   [Operating Model Spec § Function Separation](operating-model.md#function-separation)).
 - A folded stage MUST unfold or expose interaction on defined triggers:
   increased consequences or obligations, missing evidence, unavailable required
