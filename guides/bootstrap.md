@@ -409,9 +409,9 @@ of the governance repo.
 
 ## Bootstrap Prompts
 
-The [Quick Start](../QUICKSTART.md) covers single-repo projects (new and
-mid-stream) with copy/paste prompts. This section provides the multi-repo
-bootstrap prompt.
+The [Quick Start](../QUICKSTART.md) covers single-repo projects (idea-only, new,
+mid-stream, and add-a-project) with copy/paste prompts. This section provides
+the multi-repo bootstrap prompt.
 
 ### Multi-Repo Project
 
@@ -527,6 +527,6 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.9.0.
