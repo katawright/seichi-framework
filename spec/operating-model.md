@@ -136,7 +136,7 @@ evaluators).
   or version. When the executor is unknown or weak, the default is `guided`; the
   retrospective's specification-depth calibration reviews the setting each
   increment, and the setting MUST be re-evaluated after a material change to the
-  executor configuration — provider, model tier, or reasoning effort.
+  executor configuration — provider, model, reasoning effort, or task domain.
   **[Informative]** At first encounter, the setting follows the qualification
   evidence held for the executor configuration — evidence classes and the trial
   mechanism in

@@ -28,7 +28,7 @@
 > right-sizing section), omit them and leave the detail to the implementer; on
 > `guided`, complete them. Contract fields — interfaces, acceptance criteria,
 > test intent — are never omitted on read-path grounds. See
-> ../guides/operating-model.md#one-capability-input-two-effects.
+> [Operating Model Guide: One Capability Input, Two Effects](../guides/operating-model.md#one-capability-input-two-effects).
 
 **Last Updated:** YYYY-MM-DD
 
@@ -238,7 +238,7 @@ stateful, approach]
 - Tools and approach
 - Success criteria
 
-<!-- For detailed testing strategy examples, see ../stages/increment-design/reference.md#testing-strategy-example -->
+<!-- For detailed testing strategy examples, see ../stages/increment-design/reference.md#testing-strategy-examples -->
 
 ---
 
