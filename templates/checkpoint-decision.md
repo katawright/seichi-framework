@@ -123,4 +123,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.18.1. -->
+<!-- Template Last Updated: 2026-07-07 | Added in v0.18.1. -->
