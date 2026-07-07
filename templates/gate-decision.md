@@ -116,9 +116,9 @@ Criteria may match or differ from what the preceding stage proposed.
   carry-forward obligation, re-checked at every later stage entry per the
   [Canonical-State Spec](../spec/canonical-state.md#minimum-canonical-project-state):
 
-  | Condition | Owner | Discharged at (stage/increment) | Status                     |
-  | --------- | ----- | ------------------------------- | -------------------------- |
-  | …         | …     | …                               | Open / Satisfied / Blocked |
+  | Condition | Owner | Discharged at (stage/increment) | Status                                 |
+  | --------- | ----- | ------------------------------- | -------------------------------------- |
+  | …         | …     | …                               | Open / Satisfied / Blocked / Withdrawn |
 
 ---
 
