@@ -67,17 +67,18 @@ operating configuration, and the records produced as work proceeds.
 
 **Procedure.**
 
-- The framework MUST define a minimum canonical structured project state that
-  can include: goals and success criteria; requirements and acceptance criteria;
-  assumptions and risks; architecture and decisions; increment plans, batches,
-  and dependencies; operating configuration; governance profile and approved
-  deviations; assurance requirements, achieved independence, evidence, and
-  conclusions; decision rights, delegated authority, and authorization records;
-  required operating functions, capability coverage, and function separations;
-  effective operating-envelope state; runs, directives, events, and continuation
-  state; checkpoint decisions, escalations, and resolutions; carried-forward
-  gate and checkpoint conditions (each with an owner, the discharging stage or
-  increment, and an Open / Satisfied / Blocked status); folded-stage state and
+- The framework MUST define a minimum canonical structured project state; the
+  state MUST be able to represent, at minimum: goals and success criteria;
+  requirements and acceptance criteria; assumptions and risks; architecture and
+  decisions; increment plans, batches, and dependencies; operating
+  configuration; governance profile and approved deviations; assurance
+  requirements, achieved independence, evidence, and conclusions; decision
+  rights, delegated authority, and authorization records; required operating
+  functions, capability coverage, and function separations; effective
+  operating-envelope state; runs, directives, events, and continuation state;
+  checkpoint decisions, escalations, and resolutions; carried-forward gate and
+  checkpoint conditions (each with an owner, the discharging stage or increment,
+  and an Open / Satisfied / Blocked / Withdrawn status); folded-stage state and
   unfolding triggers; and evidence, provenance, and traceability relationships.
 - This canonical state MUST be the single source for project-level facts. Any
   other representation of these facts is a [view](#artifacts-as-views), not a
@@ -86,13 +87,21 @@ operating configuration, and the records produced as work proceeds.
   and scope, the operating envelope, the escalation and stop conditions, and the
   resource and time limits — is part of this canonical state. A run references
   it; it MUST NOT be restated as a separate source (single-source rule).
+  **`[Reserved]`** The state-version semantics — what a canonical-state version
+  identifies (the version [views](#artifacts-as-views) record and rendered
+  snapshots carry as their as-of marker), and the version-pinned form of a run's
+  Authorization reference that makes a mid-run operating-envelope change
+  detectable — are resolved at the first conforming platform's schema freeze.
 - **Carry-forward obligations are tracked state.** A "proceed with conditions"
   gate or checkpoint outcome records each condition as a tracked item — owner,
-  discharging stage or increment, and an Open / Satisfied / Blocked status.
-  Subsequent stages re-read these at entry, and a stage MUST disposition each
-  condition due within it (satisfy, re-own with a new discharge point, or
-  escalate) before it closes. They are canonical state, not a gate-record
-  footnote.
+  discharging stage or increment, and an Open / Satisfied / Blocked / Withdrawn
+  status (Withdrawn — no longer applicable — carries a recorded reason and
+  attribution). Subsequent stages re-read these at entry, and a stage MUST
+  disposition each condition due within it (satisfy, withdraw with a recorded
+  reason, re-own with a new discharge point, or escalate) before it closes.
+  Re-owning supersedes the tracked item with a successor rather than mutating
+  it, preserving the original's provenance. They are canonical state, not a
+  gate-record footnote.
 
 **Outputs.** The canonical project state and its Authorization subset.
 
@@ -361,6 +370,22 @@ and compliance floors; the Accountable (**A**) role RACI assigns each decision
   `[H]`·policy the policy **author** MUST be on it. Recording the act is the
   [Record Requirements](#record-requirements) half; this contract is the
   authorization half.
+- **Temporal validity.** Roster membership binds at two points: the policy
+  author MUST be on the roster for the decision class **at authoring**, and a
+  pre-authorized policy remains usable **only while its author remains on the
+  roster** for that class. When an author is removed, each affected gate falls
+  back to **interactive human** resolution until its policy is explicitly
+  **re-owned** — a new recorded `[H]`·policy authorization by an adopting author
+  on the roster, never a mechanical transfer of accountability. The removal act
+  MUST identify the policies it orphans, recorded under
+  [Record Requirements](#record-requirements), so the fallback is visible at
+  removal time, not discovered at the next gate. Roster changes are themselves
+  durable, attributed records; in platform mode they are governance writes (see
+  [Mode Binding and Discovery](#mode-binding-and-discovery)). **`[Reserved]`**
+  Co-authored policies — multiple jointly-and-severally accountable authors,
+  with fallback to interactive only when no author remains authorized — are
+  deferred with the shared multi-actor scope (see
+  [Scope Boundary](#scope-boundary)).
 - **Default rule (absent a declaration):** the project's executor/owner is the
   authorized party for every floor act. A Negligible or Minimal solo project
   therefore carries an _implicit_ roster — the lone owner approves everything —
@@ -461,6 +486,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-03
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.49.0.

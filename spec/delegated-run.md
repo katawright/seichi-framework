@@ -271,7 +271,12 @@ state.
 - **Deterministic conflict resolution.** Duplicate/out-of-order items MUST
   reconcile deterministically (merge-by-identity for evidence/reports;
   last-by-sequence for directives) under single-writer-for-scope; never a silent
-  fork.
+  fork. **`[Reserved]`** The cross-run write model — how project-scoped
+  canonical-state writes order across concurrent runs (the sequence above is
+  run-scoped), the write-admission rule for concurrency-safe write-back
+  (version-conditional rejection vs. deterministic merge, per record family),
+  and the scope granularity of single-writer-for-scope — is resolved at the
+  first conforming platform's schema freeze.
 - **Operation retry classes** (over the substrate): safe to retry; safe only
   after confirming current state; unsafe to retry automatically; requires
   authorization before retry.
@@ -668,6 +673,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.49.0.

@@ -31,8 +31,8 @@ fatigue.
   must be met before the next stage begins (e.g., "proceed once legal review
   clears the data-handling approach"). Each condition becomes a **tracked
   carry-forward obligation** in the canonical state — with an owner, the
-  stage/increment that discharges it, and an Open / Satisfied / Blocked status
-  (see
+  stage/increment that discharges it, and an Open / Satisfied / Blocked /
+  Withdrawn status (see
   [Canonical-State Spec § Minimum Canonical Project State](../spec/canonical-state.md#minimum-canonical-project-state)).
   It is not merely minuted at the gate: every later stage entry re-reads the
   open conditions and reports their status, and a stage cannot close over a
