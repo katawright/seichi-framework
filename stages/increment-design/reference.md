@@ -301,8 +301,9 @@ the [Operating Model Guide](../../guides/operating-model.md).
   patterns that conflict with established architecture
 - **Incomplete interface specifications** — missing error cases or edge
   conditions that cause integration failures downstream
-- **Under-specified test strategies** — vague coverage statements without
-  concrete scenario lists
+- **Under-specified test strategies** — vague test intent or coverage
+  statements; enumerated scenario lists are expected only on a `guided` read
+  path
 - **Missing cross-cutting concerns** — error handling, logging, and auth left as
   afterthoughts rather than designed in
 

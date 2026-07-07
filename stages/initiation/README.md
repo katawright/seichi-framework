@@ -242,12 +242,13 @@ request for the most autonomous end of that configuration; "just a quick favor"
 is the least. Idea formation **proposes** the configuration; it does not commit
 it.
 
-Seed the inferred classifications — tier, operating posture, deployment intent,
-and any compliance obligation — into the draft brief's right-sizing section as
-`[ASSUMED]` values, exactly as
+Seed the inferred classifications — tier, project type, deployment intent,
+operating posture, Required Assurance, and the executor read path — into the
+draft brief's right-sizing section as `[ASSUMED]` values, exactly as
 [Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)
-prescribes. Initiation refines them as the brief takes shape, and **Gate 1 locks
-them**: the investment decision is where "are you sure you want to run a
+prescribes (a hard compliance obligation binds as a constraint instead — see the
+callout below). Initiation refines them as the brief takes shape, and **Gate 1
+locks them**: the investment decision is where "are you sure you want to run a
 payments product this autonomously?" is answered honestly. The calculator
 effectively has no Gate 1 — a glance-and-go self-gate at the lowest tier — so
 its frame is set and forgotten in one breath; the streaming service's Gate 1 is
@@ -957,6 +958,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-06
 
 Added to framework in v0.2.0.
