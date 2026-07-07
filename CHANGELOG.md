@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.57.0 (2026-07-06)
+
+The v0.57 cycle right-sizes specification depth to executor capability (EC-1): a
+capability-invariant contract kernel with a capability-scaled scaffolding dial.
+
+### Features
+
+- **framework:** right-size specification depth to executor capability (EC-1) —
+  contract and verification detail (interfaces, ACs, test intent, boundaries,
+  governance) stays fixed at every capability level while only implementation
+  scaffolding scales; adds the declared executor read path setting (`guided` |
+  `contracts-only`) keyed to behavioral symptom and defaulting to `guided`,
+  evidence-keyed read-path starting points, executor read path as the sixth
+  `[ASSUMED]` inferred classification, and a specification-depth calibration
+  feedback loop across the operating model, Increment Design, and the
+  retrospective template
+
+### Bug Fixes
+
+- **framework:** align three restatements found by the v0.57 invariant sweep —
+  increment-design failure mode, Initiation seeding enumeration, and the
+  Bootstrap Guide's QUICKSTART on-ramp description
+- **framework:** resolve v0.57 cold-review Run 1 findings — task-domain
+  re-evaluation clause, INDEX keywords, template links, and concrete-test-case
+  ownership on contracts-only briefs
+- **framework:** resolve v0.57 cold-review Run 2 findings — Required Assurance
+  carve-out, executor read path in paste prompts, change-class alignment, and
+  the INDEX spec row
+
 ## 0.56.0 (2026-07-06)
 
 ### Improvements
