@@ -147,8 +147,9 @@ per concern, not once for the whole project.
 - **External Assurance** — an independent external party, regulator, or customer
   checks it.
 
-Fresh eyes is the floor the producer–evaluator separation rests on; the spec
-states it normatively in
+Fresh eyes — **context independence**, as the spec's recording grade names it —
+is the floor the producer–evaluator separation rests on; the spec states it
+normatively in
 [Function Separation](../spec/operating-model.md#function-separation).
 
 ### Authority — who may decide
@@ -474,6 +475,6 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.49.0.
