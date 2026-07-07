@@ -315,10 +315,11 @@ The test strategy Verification receives scales with the
 [executor read path](../../guides/operating-model.md#one-capability-input-two-effects):
 on a `guided` path it may enumerate concrete test cases; on `contracts-only` it
 pins test intent, coverage targets, and the AC mapping, and deriving the
-concrete case list is Verification work under that intent. What never scales is
-the bar itself — every acceptance criterion verified, coverage targets met, and
-the tier's assurance floor honored. Executor capability adjusts how much of the
-test design arrives pre-worked, never how much verification is required.
+concrete case list for the Verification-stage test types is Verification work
+under that intent. What never scales is the bar itself — every acceptance
+criterion verified, coverage targets met, and the tier's assurance floor
+honored. Executor capability adjusts how much of the test design arrives
+pre-worked, never how much verification is required.
 
 ### Verification Environment
 
