@@ -92,8 +92,9 @@ overridable assumptions (see
 > `[ASSUMED]` Tier: Minimal — solo, personal data only, no external users.
 > `[ASSUMED]` Project type: Greenfield — empty folder. `[ASSUMED]` Deployment
 > intent: Local/personal use for now. `[ASSUMED]` Operating posture:
-> Checkpointed — framework default for a first project. Say the word and any of
-> these change.
+> Checkpointed — framework default for a first project. `[ASSUMED]` Executor
+> read path: Guided — executor unproven; the retrospective calibrates. Say the
+> word and any of these change.
 
 Sam nods, and only now does the agent scaffold the workspace and seed the brief.
 
@@ -109,7 +110,8 @@ at Minimal are omitted, not filled with "N/A."
 
 **Tier chosen:** Minimal `[ASSUMED]` **Project type:** Greenfield **Deployment
 intent:** Local-only (personal use) **Operating posture:** Checkpointed
-`[ASSUMED]` — see [Operating Model](operating-model.md) for Required Assurance.
+`[ASSUMED]` **Executor read path:** Guided `[ASSUMED]` — see
+[Operating Model](operating-model.md) for Required Assurance.
 
 ### Problem Statement
 
@@ -265,6 +267,6 @@ codebase, see the [Brownfield Worked Example](worked-example-brownfield.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.48.0.

@@ -384,11 +384,14 @@ not a separate concept.
   snapshot, or **pauses** when the snapshot is insufficient.
 - **Rendered-snapshot fidelity floor.** A snapshot is Lights-Out-eligible only
   if it preserves: (1) complete readable state for the authorized scope; (2)
-  explicit freshness signaling (an as-of version/timestamp); (3) a durable,
-  attributable, reconcilable write-back path; (4) single-writer for the scope it
-  touches; (5) stable record identity. A snapshot MAY lack near-real-time
-  freshness, multi-writer safety, and real-time liveness/stop — which is why
-  snapshot mode is confined to single-actor, sequential, low-consequence runs.
+  explicit freshness signaling (the as-of state version; a timestamp MAY
+  accompany it but is not the as-of marker); (3) a durable, attributable,
+  reconcilable write-back path; (4) single-writer over the project for the run's
+  span (the write-admission scope in § Idempotency Substrate — finer claims are
+  an optimization, not the conformance unit); (5) stable record identity. A
+  snapshot MAY lack near-real-time freshness, multi-writer safety, and real-time
+  liveness/stop — which is why snapshot mode is confined to single-actor,
+  sequential, low-consequence runs.
 - **Normative scope.** Rendered-snapshot access is normatively required at the
   framework/spec level (it binds the framework and spec authors, not every
   tool): the mode is a valid satisfaction mode, and Markdown self-sufficiency
