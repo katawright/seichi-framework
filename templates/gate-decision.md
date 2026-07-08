@@ -25,7 +25,7 @@ deployment, production ownership), use
   [Canonical-State Spec § Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)).
 - **Cleared by policy:** _(pre-authorized policy)_ the policy (name/link) and
   its **author** — the accountable authorized party — with the date authored;
-  the run records the evaluating agent and the clearance timestamp (see
+  the run records the evaluating agent and the required timestamps (see
   [Record Requirements](../spec/canonical-state.md#record-requirements)).
 - **Facilitated by:** (name/role)
 - **Consulted:** (names/roles)

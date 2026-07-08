@@ -265,8 +265,8 @@ state.
 - **Stable identity.** Every report, evidence item, decision, directive, and ack
   MUST carry a stable id. Re-processing the same id MUST be a no-op or a
   deterministic merge, never a fork.
-- **Monotonic per-run sequence.** Directives and state writes MUST order by a
-  monotonic run-scoped sequence/version, not wall-clock. An item referencing a
+- **Monotonic per-run sequence.** Directives and run-state writes MUST order by
+  a monotonic run-scoped sequence/version, not wall-clock. An item referencing a
   stale run-version is re-evaluated against current state (and may be moot).
 - **Deterministic conflict resolution.** Duplicate/out-of-order items MUST
   reconcile deterministically (merge-by-identity for evidence/reports;

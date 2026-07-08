@@ -129,11 +129,11 @@ the increment-design-brief Carry Forward Resolution section.
 <!-- Did anything about the Seichi Framework itself — the development
      process you followed — help or hinder your work? This section collects the
      Process-type friction triaged from the friction log: missing checklist
-     items, unclear guidance, template gaps, stage-model issues. Process
-     feedback routes to the **framework's tracker**, not the product idea
-     backlog — for teams consuming the framework unchanged, file an issue or PR
-     at the framework repository (see CONTRIBUTING.md). Tooling friction routes
-     the same way, to the owning tool's tracker. Agents: record observations
+     items, unclear guidance, template gaps, stage-model issues. Process and
+     Tooling friction route to the owner you name (see the Learning Loop) —
+     capture locally by default; contributing upstream to the framework
+     repository or a tool's tracker (see CONTRIBUTING.md) is an explicit
+     opt-in, never a requirement. Agents: record observations
      here and flag them for human review — do not file issues or PRs without
      explicit permission. -->
 
@@ -141,4 +141,4 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-07-06 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-07 | Added in v0.23.0. -->

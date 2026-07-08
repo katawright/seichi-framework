@@ -345,11 +345,12 @@ project.
   marker or governance profile places it at the judgment tier (`[J]`) or above,
   the record MUST capture _who or what discharged it_ at the grade the item's
   accountability demands, plus **two timestamps (ratified v0.58)** — the claimed
-  evaluation time and the platform receipt time; ordering never derives from
-  either (the [state version](#minimum-canonical-project-state) orders writes).
-  Below that tier (mechanical, unmarked items) recording is OPTIONAL but
-  RECOMMENDED — it is near-free under agent execution. The timestamps are always
-  recorded.
+  evaluation time and the platform receipt time (in file mode, the receipt time
+  is the moment the write lands in the durable store — in practice, the commit
+  timestamp); ordering never derives from either (the
+  [state version](#minimum-canonical-project-state) orders writes). Below that
+  tier (mechanical, unmarked items) recording is OPTIONAL but RECOMMENDED — it
+  is near-free under agent execution. The timestamps are always recorded.
 - **Two identity grades**, each the _minimum that suffices_, not a cap on what
   is recorded:
   - **`[J]` — qualification-identity.** The evaluator's _kind_: for an agent,
@@ -358,8 +359,9 @@ project.
   - **`[H]` — party-identity.** A _unique authorized party_: for a human, name +
     a stable identifier; for an `[H]`·policy clearance, the policy's **author**
     (the accountable party) together with the evaluating agent's
-    qualification-identity and the timestamp. A type never suffices at the floor
-    — it cannot answer for an outcome. _Which_ parties are authorized is the
+    qualification-identity and the required timestamps. A type never suffices at
+    the floor — it cannot answer for an outcome. _Which_ parties are authorized
+    is the
     [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
     contract.
 - **Attribution also carries an evidence-independence grade.** For any

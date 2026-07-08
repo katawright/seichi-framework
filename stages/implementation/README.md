@@ -54,7 +54,8 @@ Verification catches problems early or discovers them late.
 ### Key Principle
 
 Build working, tested code that meets design specifications. AI accelerates
-every step; humans own every gate.
+every step; gate requirements always apply, decided per the project's Authority
+setting.
 
 ### Starting Point
 
@@ -155,7 +156,7 @@ Gate requirements always apply regardless. See the
 
 > **Required gates:** CI validation + human approval — Implementation outputs
 > are highly verifiable through tests and CI, enabling AI to iterate quickly
-> within defined boundaries. Humans gate merge via PR review + CI results.
+> within defined boundaries. Merge is gated by PR review + CI results.
 
 For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
@@ -452,6 +453,6 @@ for the full convention.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.5.0.

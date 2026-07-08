@@ -273,9 +273,9 @@ Integrate these checks into your CI/CD pipeline — see
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
 tier-specific gate configuration. For security accountability by stage, see the
 [Roles and Responsibilities](roles.md#roles-and-responsibilities) RACI matrix.
-At Standard and Enterprise tiers, AppSec owns a
-[Compliance Approval](../guides/checkpoints.md#reviews) checkpoint at Deployment
-— see the
+At Standard and Enterprise tiers with identified compliance requirements, AppSec
+owns a [Compliance Approval](../guides/checkpoints.md#reviews) checkpoint at
+Deployment — see the
 [Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix).
 
 ### Closure
@@ -361,6 +361,6 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.25.0.
