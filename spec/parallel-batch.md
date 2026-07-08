@@ -209,7 +209,11 @@ acceptance criteria, stop conditions); shared project state.
   correct increment and actor;
 - workers remain **within assigned scope and authority**;
 - one increment **cannot silently overwrite or invalidate** another's work;
-  shared resources that cannot be isolated MUST be coordinated;
+  shared resources that cannot be isolated MUST be coordinated — concurrent
+  writes to canonical project state go through the version-conditional
+  [write-admission model](delegated-run.md#idempotency-substrate)
+  (project-scoped single-writer, ordered by the project state version), never an
+  ad-hoc merge;
 - **blocked, failed, or unresponsive** increments are explicit, not inferred
   from silence; an independent sibling MAY continue when its validity is
   unaffected;
@@ -319,6 +323,6 @@ chooses the storage; this spec fixes only what must be representable.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-08
 
 Added to framework in v0.49.0.
