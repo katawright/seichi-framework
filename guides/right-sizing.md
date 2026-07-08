@@ -510,7 +510,7 @@ above Internal and never turns Lights-Out off. **External** assurance is floored
 by **Compliance** or cross-org reach (an accountability boundary), and an
 outright Lights-Out ban comes from **Compliance** or a **capability gap** —
 never from consequence. What the top of the scale does on its own is make
-irreversible- transition gates non-delegable and require independent
+irreversible-transition gates non-delegable and require independent
 stop-enforcement; both are bounded human pauses, which keep a run Lights-Out
 rather than ending it. The operating model consumes these floors — see the
 [Operating Model Guide](operating-model.md).
@@ -555,6 +555,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.13.0.

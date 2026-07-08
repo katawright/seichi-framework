@@ -81,9 +81,9 @@ defining its own.
 4. Read the most recent session entry's "Context for Next Session" block.
 5. **Re-check open carry-forward conditions.** Re-read any open gate/checkpoint
    "proceed with conditions" obligations from the canonical state and report
-   each one's status — satisfied, still open, or blocked — before starting stage
-   work. A stage cannot close over a condition due within it while it remains
-   open.
+   each one's status — satisfied, still open, blocked, or withdrawn (no longer
+   applicable) — before starting stage work. A stage cannot close over a
+   condition due within it while it remains open.
 6. Read the current stage README and the brief for this stage/increment if one
    exists.
 7. Append a new session entry header with today's date and participant.
