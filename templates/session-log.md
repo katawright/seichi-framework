@@ -69,7 +69,7 @@
 **[H] / [J] Items:**
 
 - [Each `[H]`/`[J]` item discharged this session — record the evaluator at the
-  required identity grade and the timestamp; see
+  required identity grade and the required timestamps; see
   [Record Requirements](../spec/canonical-state.md#record-requirements)]
 
 **Context for Next Session:**
@@ -80,4 +80,4 @@
 
 - [Specific actions for the next session]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-07 | Added in v0.23.0. -->

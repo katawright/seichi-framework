@@ -101,7 +101,7 @@ defining its own.
    [Feedback Capture Protocol](agentic-workflow.md#feedback-capture-protocol)).
 
 > For each `[J]` or `[H]` item, record the evaluator at the required identity
-> grade and the timestamp (see
+> grade and the required timestamps (see
 > [Canonical-State Spec § Record Requirements](../spec/canonical-state.md#record-requirements)).
 
 ---
@@ -127,6 +127,6 @@ defining its own.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-07
 
 Added to framework in v0.44.0.
