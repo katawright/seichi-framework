@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.58.0 (2026-07-08)
+
+The v0.58 cycle ratifies the platform seam: it resolves the four platform-seam
+`[Reserved]` tags carried since v0.55 against the System-of-Record schema
+design, then hardens the result through pre-charter review and two cold-review
+runs.
+
+### Features
+
+- **spec:** v0.58 seam ratification — resolve the four platform-seam
+  `[Reserved]` tags from the System-of-Record schema design
+
+### Bug Fixes
+
+- **spec:** pre-charter hardening from the 2026-07-07 platform implementer
+  review
+- **spec:** refresh Last Updated stamps on restatement-aligned files
+- **spec:** drain the v0.58 invariant-sweep drift (INV-17 major + 2 minors)
+- **spec:** drain the v0.58 cold-review Run 1 findings (2 majors + 6 minors)
+- **templates:** record floor-decision acts at the authorized-party grade
+- **spec:** drain the v0.58 cold-review Run 2 minor — parallel-batch write-model
+  pointer
+
 ## 0.57.0 (2026-07-06)
 
 The v0.57 cycle right-sizes specification depth to executor capability (EC-1): a
