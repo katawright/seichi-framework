@@ -104,12 +104,16 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 ## Acceptance and What's Next
 
 <!-- Element 6: the acceptance decision (may coincide with the completion claim,
-     but recorded). Plus the forward-looking close: success criteria still pending
-     re-check (with dates), and open product ideas that may seed future projects
-     (cite IDEA-NNN). The running system, if any, continues under Operations —
-     see ../guides/operations.md. -->
+     but recorded) — an [H] floor act: record a unique authorized party on the
+     project's authorized-party roster, not a bare role (see
+     ../spec/canonical-state.md#authorized-parties-for-floor-decisions). Plus the
+     forward-looking close: success criteria still pending re-check (with dates),
+     and open product ideas that may seed future projects (cite IDEA-NNN). The
+     running system, if any, continues under Operations — see
+     ../guides/operations.md. -->
 
-- **Accepted by:** [name / role] — Date: YYYY-MM-DD
+- **Accepted by:** [a unique authorized party — name + stable id — on the
+  project's authorized-party roster; a solo owner suffices] — Date: YYYY-MM-DD
 - **Handoff to Operations:** [operational handoff record produced — yes / N/A]
 - **Pending re-checks:** [SC-NN — Re-check Date]
 - **Open ideas:** [IDEA-NNN — short title]
@@ -128,4 +132,4 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 
 ---
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.47.0. -->
+<!-- Template Last Updated: 2026-07-08 | Added in v0.47.0. -->

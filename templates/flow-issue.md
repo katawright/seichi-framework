@@ -88,10 +88,19 @@ is done and whether it may ship.
 
 ## Authorization
 
-<!-- The go decision: who approved, or the policy that auto-approved. The issue's
-     approval is the folded go-decision — there is no separate Gate 1. -->
+<!-- The go decision. The issue's approval is the folded Gate 1 go-decision —
+     there is no separate Gate 1. A gate is a non-delegable floor act: resolved by
+     an interactive human OR a pre-authorized policy, never a delegated agent; at
+     Critical / severe-harm-irreversible consequence, interactive-only. See
+     ../spec/canonical-state.md#authorized-parties-for-floor-decisions. -->
 
-- **Approved by:** [name / role / "policy: <rule>"]
+- **Clearance mode:** [Interactive human / Pre-authorized policy]
+- **Approved by:** _(interactive)_ the deciding party — a unique authorized
+  party (name + stable id) on the project's authorized-party roster. _(policy)_
+  the policy (name/link) and its **author** — the accountable authorized party —
+  with the date authored (so its roster validity at authoring is checkable). For
+  a solo project the lone owner is the implicit authorized party — the name
+  alone suffices.
 - **Date:** YYYY-MM-DD
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.49.0. -->
+<!-- Template Last Updated: 2026-07-08 | Added in v0.49.0. -->
