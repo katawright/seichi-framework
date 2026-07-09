@@ -2,9 +2,9 @@
      (Project Closure: Rendering the Completion Contract) at
      ../stages/closure/README.md and stages/closure/checklist.md. This summary is
      the human-readable render of the completion contract — see
-     ../spec/delegated-run.md#project-level-completion. Reference other artifacts
-     by stable ID + label (SC-03, IDEA-014, ADR-D01, F-007), not relative links,
-     so IDs stay resolvable in every viewer. -->
+     ../spec/canonical-state.md#project-level-completion. Reference other
+     artifacts by stable ID + label (SC-03, IDEA-014, ADR-D01, F-007), not
+     relative links, so IDs stay resolvable in every viewer. -->
 
 # Project Close-Out Summary
 
@@ -23,8 +23,14 @@ that never drop at any consequence level.
 **Project:** [project name] **Started:** YYYY-MM-DD **Closed:** YYYY-MM-DD
 **Owner:** [name / role]
 
-**Completion status:** [Claimed / Verified / Accepted / **Closed**] **Final
-disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
+<!-- Completion status renders the project lifecycle (see
+     ../spec/canonical-state.md#project-lifecycle). There is no stored
+     disposition field: "delivered" IS the terminal + reason (closed /
+     accepted), and realized extent is the AC disposition table below — a view
+     never stores a second rollup of either. -->
+
+**Completion status:** [Claimed / Verified / **Closed** — reason: accepted /
+acceptance-declined / acceptance-lapsed]
 
 ---
 
@@ -106,15 +112,23 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 <!-- Element 6: the acceptance decision (may coincide with the completion claim,
      but recorded) — an [H] floor act: record a unique authorized party on the
      project's authorized-party roster, not a bare role (see
-     ../spec/canonical-state.md#authorized-parties-for-floor-decisions). Plus the
-     forward-looking close: success criteria still pending re-check (with dates),
-     and open product ideas that may seed future projects (cite IDEA-NNN). The
-     running system, if any, continues under Operations — see
-     ../guides/operations.md. -->
+     ../spec/canonical-state.md#authorized-parties-for-floor-decisions). What
+     gates closure is that the decision was MADE AND RECORDED, not that it was
+     positive — a declined or lapsed acceptance also closes, and the outcome
+     rides as the closed reason. Plus the forward-looking close: success
+     criteria still pending re-check (with dates), and open product ideas that
+     may seed future projects (cite IDEA-NNN). A pending release flip — an
+     increment deployed dark, not yet user-visible — is a handoff obligation:
+     record its owner and trigger (date or criteria) so the flip is owned after
+     closure, alongside the production-ownership transfer. The running system,
+     if any, continues under Operations — see ../guides/operations.md. -->
 
-- **Accepted by:** [a unique authorized party — name + stable id — on the
-  project's authorized-party roster; a solo owner suffices] — Date: YYYY-MM-DD
+- **Acceptance decision:** [accepted / declined / lapsed] — by [a unique
+  authorized party — name + stable id — on the project's authorized-party
+  roster; a solo owner suffices] — Date: YYYY-MM-DD
 - **Handoff to Operations:** [operational handoff record produced — yes / N/A]
+- **Pending release flips:** [none / flag or increment — owner, trigger (date or
+  criteria)]
 - **Pending re-checks:** [SC-NN — Re-check Date]
 - **Open ideas:** [IDEA-NNN — short title]
 
@@ -132,4 +146,4 @@ disposition:** [Delivered / Delivered with descope / Sunset / Cancelled]
 
 ---
 
-<!-- Template Last Updated: 2026-07-08 | Added in v0.47.0. -->
+<!-- Template Last Updated: 2026-07-09 | Added in v0.47.0. -->

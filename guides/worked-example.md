@@ -795,7 +795,7 @@ and the onboarding tracker appear at close.
 **Project:** Employee Onboarding Tracker **Started:** 2026-02-10 **Closed:**
 2026-03-16 **Owner:** Jamie Chen (Product Manager)
 
-**Completion status:** Closed **Final disposition:** Delivered
+**Completion status:** Closed — reason: accepted
 
 ## Why — Objective and Scope
 
@@ -834,8 +834,9 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
 
 ## Acceptance and What's Next
 
-- **Accepted by:** Jamie Chen (PM) — 2026-03-16
+- **Acceptance decision:** accepted — by Jamie Chen (PM) — 2026-03-16
 - **Handoff to Operations:** operational handoff record produced — yes
+- **Pending release flips:** none
 - **Pending re-checks:** SC-01 (2026-04-15), SC-02 (2026-03-26)
 - **Open ideas:** IDEA-021 — bulk task assignment
 ```
@@ -973,6 +974,6 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.17.0.

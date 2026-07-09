@@ -513,7 +513,7 @@ can't be stated clearly, the project isn't ready for investment.
 - Value estimate — quantified benefit (revenue, cost savings, risk reduction)
 - Urgency driver — why now rather than next quarter
 - Strategic alignment — which organizational goal or initiative this supports
-- Cost of delay — what happens if the project is deferred or cancelled
+- Cost of delay — what happens if the project is deferred or canceled
 
 **Good example:**
 
@@ -962,6 +962,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.2.0.

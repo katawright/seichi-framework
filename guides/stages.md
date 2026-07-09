@@ -942,8 +942,9 @@ the raw material for the operational handoff record.
 
 Hand the running system off to operations, transfer production ownership, and
 close the project against its goals — rendering the completion contract (claimed
-→ verified → accepted → closed) and bookending the Initiation Brief. Reaching
-Closure is the **normal** project terminal, not an early completion.
+→ verified → closed, with the acceptance decision recorded) and bookending the
+Initiation Brief. Reaching Closure is the **normal** project terminal, not an
+early completion.
 
 ### Inputs
 
@@ -963,8 +964,7 @@ Closure is the **normal** project terminal, not an early completion.
 
 ### Entry Criteria
 
-- The project's delivered scope is complete (final increment shipped, or the
-  project is being sunset)
+- The project's delivered scope is complete (final increment shipped)
 - Verification and assurance evidence available for the completion claim
 
 ### Key Activities
@@ -987,7 +987,8 @@ Closure is the **normal** project terminal, not an early completion.
 
 - Operational handoff record produced and production ownership accepted (or
   Closure marked N/A — nothing to operate)
-- Completion contract closed: claimed → verified → accepted → closed
+- Completion contract closed: claimed → verified → closed, with the acceptance
+  decision recorded
 - Friction log fully triaged and routed
 - Project Close-Out Summary produced
 
@@ -1016,6 +1017,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.9.0.
