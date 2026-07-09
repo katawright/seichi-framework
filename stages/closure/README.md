@@ -51,8 +51,9 @@ everything they need, and records a durable account of what happened. Without a
 terminal stage, projects trail off: the system runs on with no clear owner,
 learnings evaporate, and "is this finished?" has no honest answer. Closure makes
 the ending deliberate. It is the **rendered view of the completion contract** —
-the same claim → verify → accept → close the
-[Delegated-Run Spec](../../spec/delegated-run.md#project-level-completion)
+the same claimed → verified → closed ladder, with its recorded acceptance
+decision, that the
+[Canonical-State Spec](../../spec/canonical-state.md#project-level-completion)
 defines — performed at human cadence and bookending the Initiation Brief.
 
 ### Goals of This Guide
@@ -61,8 +62,8 @@ defines — performed at human cadence and bookending the Initiation Brief.
   operator needs to run the system safely
 - Make **production ownership transfer** an explicit, accepted decision
 - Close the project against the
-  [completion contract](../../spec/delegated-run.md#project-level-completion):
-  claimed → verified → accepted → closed
+  [completion contract](../../spec/canonical-state.md#project-level-completion):
+  claimed → verified → closed, with the acceptance decision recorded
 - Run the **project wrap-up retrospective** and route its learnings so nothing
   is stranded
 - Produce a single, readable **close-out summary** that bookends Initiation
@@ -77,8 +78,8 @@ second definition of "done."
 
 ### Starting Point
 
-A project whose delivered scope is complete — its final increment shipped (or
-the project is being sunset) — with: the deployed system live in production, the
+A project whose delivered scope is complete — its final increment shipped —
+with: the deployed system live in production, the
 [Success Criteria Register](../../templates/success-criteria-register.md), the
 project's standing friction log, the increment retrospectives accumulated across
 the build, and the completion evidence produced by Verification and the run.
@@ -116,12 +117,12 @@ framework concepts, see [Framework Guide](../../guides/framework.md).
 Closure is a thin, deliberate terminal — four responsibilities, no ongoing
 operations:
 
-| Responsibility                                                           | What it produces                                                     |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| [Operational-envelope handoff](#the-operational-envelope-handoff-record) | The six-item dev→ops seam record                                     |
-| [Production-ownership transfer](#production-ownership-transfer)          | A recorded decision accepting ownership of the running system        |
-| [Project closure](#project-closure-rendering-the-completion-contract)    | The completion claim closed (claimed → verified → accepted → closed) |
-| [Wrap-up retrospective](#the-project-wrap-up-retrospective)              | Routed learnings + the Close-Out Summary                             |
+| Responsibility                                                           | What it produces                                                               |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| [Operational-envelope handoff](#the-operational-envelope-handoff-record) | The six-item dev→ops seam record                                               |
+| [Production-ownership transfer](#production-ownership-transfer)          | A recorded decision accepting ownership of the running system                  |
+| [Project closure](#project-closure-rendering-the-completion-contract)    | The completion claim closed (claimed → verified → closed, acceptance recorded) |
+| [Wrap-up retrospective](#the-project-wrap-up-retrospective)              | Routed learnings + the Close-Out Summary                                       |
 
 Everything Closure does _not_ own — monitoring, incident response, maintenance,
 the standing measurement throughline — belongs to the
@@ -133,18 +134,26 @@ hands off.
 ## Closure Is the Normal Terminal
 
 A project reaches Closure when its delivered scope is complete — the final
-increment shipped, or the project is deliberately sunset. **That is a normal
-ending, not an early completion.** The old framework treated the trailing
-"continuous Support stage" as where projects went to run forever, so a project
-that simply finished looked like it had stopped short. Closure fixes that: the
-project _closes_ via the completion contract whenever its owner ends it, and the
-system it produced carries on under [Operations](../../guides/operations.md).
+increment shipped. **That is a normal ending, not an early completion.** The old
+framework treated the trailing "continuous Support stage" as where projects went
+to run forever, so a project that simply finished looked like it had stopped
+short. Closure fixes that: the project _closes_ via the completion contract
+whenever its owner ends it, and the system it produced carries on under
+[Operations](../../guides/operations.md).
 
 Closure is **orthogonal to whether the system keeps running.** A system may be
 operated for years after its project closes; a throwaway tool may close with no
 operations at all. Closing the project is the completion claim; operating the
 system is a separate lifecycle. Completion tooling must not flag a project that
 closes here as incomplete.
+
+The same split runs in the other direction: **a sunset is not a project
+ending.** Retiring a running system is an owner-initiated decision about the
+_product_, which starts a bounded decommission project (see
+[Operations: Decommission](../../guides/operations.md#decommission-the-terminal-of-a-standing-system))
+— it is not a route into this stage. And a canceled project can leave a live
+system in production: cancellation does not un-deploy, and turning the system
+off is an operations act, not a project transition.
 
 > **Marking Closure N/A.** A project that never produced a running system to
 > hand off (a pure spike, an experiment thrown away) still closes — but its
@@ -189,8 +198,8 @@ same decision:
   **accepts** ownership of the running system, against the handoff record. This
   is Closure's review checkpoint; record it with the
   [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
-- **Project closure** (below) — the completion contract's accept → close, ending
-  the project.
+- **Project closure** (below) — the completion contract's acceptance decision
+  and entry to `closed`, ending the project.
 
 Both are human-owned; neither substitutes for the other. Ownership transfer says
 "someone owns this system now"; project closure says "this project is done." A
@@ -210,21 +219,26 @@ is recorded either way.
 
 Project closure renders the canonical completion contract — it does not redefine
 it. The contract lives in the
-[Delegated-Run Spec](../../spec/delegated-run.md#project-level-completion);
-Closure performs it at human cadence. Completion runs through four distinct
-states (they may coincide for a low-consequence solo project but remain
-distinct):
+[Canonical-State Spec](../../spec/canonical-state.md#project-level-completion);
+Closure performs it at human cadence. Completion rides the
+[project lifecycle](../../spec/canonical-state.md#project-lifecycle) — the acts
+may coincide in time for a low-consequence solo project but remain distinct:
 
 ```text
-claimed → verified → accepted → closed
+claimed → verified → [acceptance decision recorded] → closed
 ```
 
 A project may be **claimed** complete only when every approved in-scope
 requirement has an explicit disposition, applicable success criteria have
 evidence or a recorded measurement plan, required verification and assurance
 pass, the result is inside its operating envelope, and known defects and
-limitations are disclosed. **Verified** confirms the claim against evidence;
-**accepted** is the human acceptance decision; **closed** is the terminal.
+limitations are disclosed. **Verified** confirms the claim against evidence —
+checked against _requirements_. **Acceptance** is the human-owned decision to
+take delivery — checked against _intent_ — and it gates `closed` as a decision
+**made and recorded, not necessarily positive**: the outcome rides as `closed`'s
+reason (`accepted`, `acceptance-declined`, or `acceptance-lapsed`). **`closed`**
+is the terminal. A refuted claim returns the project to `active` — identified
+work exists; refutation is not a failure terminal.
 
 The **Close-Out Summary** is the human-readable render of the **Completion
 Evidence Package** — a view over structured state, not a second source. At the
@@ -295,8 +309,8 @@ Gate requirements always apply regardless. See the
   (known-state ledger), which never fold.
 - **Completion-contract rendering:** An agent reconciles in-scope requirements,
   acceptance criteria, and success-criteria evidence into the completion claim
-  (claimed → verified → accepted → closed) and flags any gap or undisclosed
-  defect.
+  (claimed → verified → closed, with the acceptance decision recorded) and flags
+  any gap or undisclosed defect.
 - **Close-out summary:** An agent drafts the Close-Out Summary that bookends the
   Initiation Brief — scope delivered, outcomes, and the honest incomplete.
 - **Retrospective routing:** An agent triages the friction log and prepares the
@@ -306,10 +320,11 @@ For assistance level details, see the
 [Operating Model Guide](../../guides/operating-model.md).
 
 > **Required gates:** Production-ownership transfer and acceptance of
-> irreversible closure (data disposition on sunset) are human-owned decisions —
-> an agent prepares the records and drafts the routing, but accepting ownership
-> and filing to external trackers are human-authorized actions (the
-> agent-prepares-never-publishes rule).
+> irreversible closure (data disposition when a
+> [decommission project](../../guides/operations.md#decommission-the-terminal-of-a-standing-system)
+> closes) are human-owned decisions — an agent prepares the records and drafts
+> the routing, but accepting ownership and filing to external trackers are
+> human-authorized actions (the agent-prepares-never-publishes rule).
 
 ---
 
@@ -326,7 +341,7 @@ Closure folds with [consequence](../../guides/right-sizing.md), like every stage
 - **High / Critical** — formal acceptance sign-off, a complete completion
   evidence package, and a handoff record whose compliance and stop/rollback
   items are non-negotiable. Acceptance of irreversible closure (data disposition
-  on sunset) is a non-delegable human gate.
+  at the close of a decommission project) is a non-delegable human gate.
 
 What never folds: the completion honesty floor (every in-scope requirement
 disposed; defects disclosed) and, when a running system is handed off, handoff
@@ -370,8 +385,8 @@ distribute the close-out record to all Informed roles per the
 ## When to Revisit Closure
 
 - **Completion claim rejected** — verification or acceptance finds the scope is
-  not actually met; the project returns to the iterative stages rather than
-  closing.
+  not actually met; the project returns to `active` and the iterative stages
+  rather than closing.
 - **Handoff gap found** — the operator cannot safely run the system because the
   handoff record is incomplete; reopen Closure to complete it.
 - **Reopened scope** — new in-scope work is authorized after closure; a
@@ -389,6 +404,6 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.

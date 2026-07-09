@@ -4,8 +4,8 @@
 ownership transferred, completion reconciled, learnings routed, and a readable
 close-out summary produced.
 
-**Usage:** Run once at project wrap-up, after the final increment is delivered
-(or when the project is sunset). The terminal bookend to the Initiation gate.
+**Usage:** Run once at project wrap-up, after the final increment is delivered.
+The terminal bookend to the Initiation gate.
 
 ---
 
@@ -88,7 +88,7 @@ close-out summary produced.
         (actuals compared against the original intent)
 
 **Gate:** All items checked → completion is reconciled against the
-[completion contract](../../spec/delegated-run.md#project-level-completion).
+[completion contract](../../spec/canonical-state.md#project-level-completion).
 
 ---
 
@@ -106,6 +106,9 @@ bookends the Initiation Brief.
 ## Final Decision
 
 - [ ] All checklist sections above are complete
+- [ ] **[H] Acceptance decision made and recorded** (the outcome — accepted,
+      declined, or lapsed — rides as the `closed` reason; a decision recorded,
+      not necessarily positive, is what gates closure)
 - [ ] **[H] Project owner confirms the project is closed**
 
 **Decision:** Closed / Not Closed
@@ -129,6 +132,6 @@ checklist.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.

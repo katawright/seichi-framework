@@ -265,7 +265,7 @@ working on.
 - 0001 [onboarding-tracker](onboarding-tracker/project.md) — Web app for
   tracking employee onboarding tasks
 
-## Completed
+## Closed
 
 (none)
 ```
@@ -273,11 +273,14 @@ working on.
 Each project gets the next sequential number when its index entry is created
 (`0001`, `0002`, …). The number is the project's stable id: it scopes promoted
 ADR ids (see [Framework Guide: ADR Publishing](framework.md#adr-publishing)) and
-must never change or be reused, even after the project moves to Completed. This
-is the manual fallback convention — workspace tooling that assigns project ids
+must never change or be reused, even after the project leaves Active. This is
+the manual fallback convention — workspace tooling that assigns project ids
 supersedes it.
 
-When a project finishes, move it from Active to Completed (keeping its number).
+When a project reaches a terminal state (`closed` or `canceled` — see the
+[Canonical-State Spec § Project Lifecycle](../spec/canonical-state.md#project-lifecycle)),
+move it from Active to Closed (keeping its number); its `project.md` State line
+records which terminal and why.
 
 ### Stage-Location Mapping
 
@@ -324,7 +327,9 @@ All paths are relative to the `project.md` file's location.
 ## Status
 
 - Stage: [current stage, e.g., Initiation]
-- State: [Active / Paused / Completed / Canceled]
+- State: [active / paused / completion-claimed / completion-verified / closed /
+  canceled]
+- State reason: [when the state requires one — e.g., blocked, accepted]
 
 ## Context
 
@@ -334,6 +339,12 @@ All paths are relative to the `project.md` file's location.
 - Stakeholder reach: [solo / within-team / cross-team / cross-org]
 - Tier: [Minimal / Standard / Enterprise]
 ```
+
+The State line renders the normative project lifecycle — six states, two
+absorbing terminals (`closed`, `canceled`), with a reason required on `paused`,
+`completion-verified`, and both terminals. See the
+[Canonical-State Spec § Project Lifecycle](../spec/canonical-state.md#project-lifecycle)
+for the transition set and reason codes.
 
 ### Single-Repo Example
 
@@ -352,7 +363,7 @@ A solo project within the standard workspace structure:
 ## Status
 
 - Stage: Initiation
-- State: Active
+- State: active
 
 ## Context
 
@@ -390,7 +401,7 @@ A project spanning two source repositories, with governance in a sibling repo:
 ## Status
 
 - Stage: Implementation
-- State: Active
+- State: active
 
 ## Context
 
@@ -527,6 +538,6 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.9.0.

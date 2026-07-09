@@ -135,6 +135,20 @@ increment's Deployment slot resolves one of two ways:
   deferral and its rationale with the
   [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
 
+The disposition stays two-valued. A dark deploy behind a feature flag **ships
+code to production** — its slot resolves as **Released** — while **no user meets
+the change**. That visibility fact is not a third disposition value (a value
+that had to mutate when the flag flips would be a non-absorbing "terminal"); it
+is a **`user-visible` attribute on Released**, off the disposition axis: unset
+while the increment is dark, stamped with a timestamp when users meet the
+change. While pending, the attribute records an **owner** and a **trigger** (a
+date or criteria) so the flip is owned, not forgotten — a flip still pending at
+project close is carried into the
+[Project Close-Out Summary](../../templates/project-closeout.md) as a handoff
+obligation. Lifecycle is not visibility — the same axis separation the
+[project lifecycle](../../spec/canonical-state.md#project-lifecycle) draws for
+`archived`, at increment altitude.
+
 ### The Release Decision Is Always Human-Owned
 
 What varies is the decision's _locus_, not whether a human makes it:
@@ -148,6 +162,21 @@ What varies is the decision's _locus_, not whether a human makes it:
 A fully automated CD pipeline is the pre-positioned case — it does not remove
 the human decision, it relocates it. See
 [Recording an Automated (Pre-Positioned) Release](#recording-an-automated-pre-positioned-release).
+
+**When an increment is dark-deployed, the release decision's referent is the
+flag flip, not the deploy.** The deploy becomes a technical staging act;
+everything this section says about the decision transfers to the flip unchanged.
+The flip is human-owned with the same varying locus — synchronous (a human
+approves the flip at flip time) or pre-positioned (an agent or automation flips
+per an authored policy; the human decision was made when the policy was
+authored). Consequence scales the permitted locus exactly as it does for
+[compliance approval](#compliance-approval-is-a-floor-authorization) —
+policy-dischargeable through High, interactive-only at Critical. When the flip
+happens — per increment, at chosen increments, or at implementation completion —
+is release strategy, elective per increment. Post-deployment verification
+verifies the **deploy** (production health, dark behavior); user-outcome
+evidence arrives after the flip (see the
+[completion contract](../../spec/canonical-state.md#project-level-completion)).
 
 ### Verification Precedes a Release
 
@@ -712,6 +741,6 @@ deployment decision using the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.7.0.
