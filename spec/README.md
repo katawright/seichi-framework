@@ -44,7 +44,7 @@ therefore written so that a conforming enforcer can evaluate it — and so that
    functions, coverage, envelope, floors, separations, and stop enforcement that
    bound any run
 3. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
-   — the run lifecycle, liveness, idempotency, replanning, and completion
+   — the run lifecycle, liveness, idempotency, replanning, and honest-outcome
    contracts
 4. For concurrent execution, read the
    [**Parallel-Batch Spec**](parallel-batch.md) — the forcing-dependency
@@ -52,7 +52,8 @@ therefore written so that a conforming enforcer can evaluate it — and so that
    close contracts
 5. Both read and write project state through the
    [**Canonical-State Spec**](canonical-state.md) — the single source the others
-   reference
+   reference, and home of the project lifecycle and the project-level completion
+   contract
 6. For the human-facing rationale behind any contract, follow its link back to
    the [Operating Model Guide](../guides/operating-model.md)
 
@@ -105,6 +106,6 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.

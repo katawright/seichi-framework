@@ -4,8 +4,10 @@
 
 Normative contracts for a delegated (Lights-Out) run — the authorized span of
 unattended execution, its lifecycle and liveness, the durable state it carries,
-the events it emits, how it replans within authority, and how project-level
-completion is proven across runs.
+the events it emits, how it replans within authority, and how its outcomes are
+recorded honestly. Project-level completion — the claim evaluated across runs —
+lives in the
+[Canonical-State Spec](canonical-state.md#project-level-completion).
 
 ### Why These Contracts
 
@@ -23,7 +25,8 @@ inspect and trust.
 - Fix one minimum durable run state, the idempotency substrate, and the
   rendered-snapshot fidelity floor that keeps a run operable from Markdown
 - Define operational-readiness preflight, controlled replanning, the
-  learning-loop delegation boundary, and project-level completion
+  learning-loop delegation boundary, and the run's honest completion and
+  incomplete outcomes
 
 ### Key Principle
 
@@ -49,10 +52,10 @@ an explicit contract, never assumed because agents stopped or tests passed.
    execution substrate
 4. Read [**Controlled Replanning**](#controlled-replanning),
    [**Learning-Loop Delegation Boundary**](#learning-loop-delegation-boundary),
-   [**Project-Level Completion**](#project-level-completion),
    [**Completion Evidence Package**](#completion-evidence-package), and
    [**Honest Incomplete Outcomes**](#honest-incomplete-outcomes) for adaptation
-   and closure
+   and closure — the project-level completion contract itself lives in the
+   [Canonical-State Spec](canonical-state.md#project-level-completion)
 
 The contract form is defined in the [spec index](README.md#contract-form).
 Eligibility to run unattended at all is governed by the
@@ -79,7 +82,7 @@ escalation and stop conditions, and resource/time limits.
 - A project MUST be deliverable by **one or more runs**. The lifecycle is
   therefore **per-run**; project-level completion is the distinct claim
   evaluated across runs (see
-  [Project-Level Completion](#project-level-completion)).
+  [Canonical-State Spec § Project-Level Completion](canonical-state.md#project-level-completion)).
 - **Authorized scope** is what a run may attempt; **realized extent** is what it
   actually completes. The two diverge whenever a run halts early — a partial
   increment is a realized extent (an honest incomplete outcome), not a smaller
@@ -116,7 +119,7 @@ are observed through.
 proposed -> approved -> active
 active   <->  paused                       (pause is non-terminal; resolve-and-continue -> active)
 active|paused -> completion-claimed -> completion-verified
-active|paused -> failed | cancelled | abandoned | authorization-exhausted
+active|paused -> failed | canceled | abandoned | authorization-exhausted
 ```
 
 - `proposed` is an optional pre-authorization state; **`approved` is the minimum
@@ -132,7 +135,7 @@ active|paused -> failed | cancelled | abandoned | authorization-exhausted
   liveness determination overlaying `active`/`paused` (see
   [Progress, Liveness, and Unresponsive State](#progress-liveness-and-unresponsive-state)).
 - **Five terminal states, each carrying an outcome reason:**
-  `completion-verified`, `failed`, `cancelled`, `abandoned`,
+  `completion-verified`, `failed`, `canceled`, `abandoned`,
   `authorization-exhausted`. A run ends only at a terminal.
 - The lifecycle MUST distinguish requested from confirmed state,
   no-recent-report from confirmed stop, completion claimed from completion
@@ -222,7 +225,7 @@ and observability.
 | External-world state  | repository/workspace/branch; deployment; external-system state                                   | run-level                                                         |
 | Continuation          | resumption context (no private conversational state); in-flight ops + retry class                | run-level                                                         |
 | Observability         | last progress report; last known activity; reporting cadence + decision-response window          | run-level                                                         |
-| Evidence & completion | evidence-package state; completion claim/verify/accept status                                    | run-level                                                         |
+| Evidence & completion | evidence-package state; completion claim/verify status                                           | run-level                                                         |
 | Timestamps            | relevant lifecycle timestamps                                                                    | run-level                                                         |
 
 - **Single-source split.** The Authorization group MUST be the run-scoped read
@@ -555,45 +558,17 @@ refused and recorded.
 
 ## Project-Level Completion
 
-Rationale: a completion claim is earned against a contract, evaluated across a
-project's runs. This contract is the **canonical definition of project
-closure**; the Closure stage's close-out checklist and summary are its rendered
-view (see
-[Canonical-State Spec § Artifacts as Views](canonical-state.md#artifacts-as-views)).
-
-**Applicability.** Any project or delegated objective claimed complete.
-
-**Inputs.** The approved scope; requirements and success criteria;
-batch/increment outcomes; verification, assurance, and deployment results; the
-operating envelope; acceptance and authorization decisions.
-
-**Procedure.**
-
-- A project-completion claim MUST NOT be permitted merely because agents
-  stopped, tasks were marked complete, tests passed, or deployment succeeded. It
-  is permitted only when **all** hold: every approved in-scope requirement has
-  an explicit disposition; applicable success criteria have evidence or an
-  explicit post-release measurement plan; required decisions and constraints
-  remain satisfied or approved deviations are recorded; all batches and
-  increments have explicit outcomes; parallel work is integrated; required
-  whole-system verification and assurance pass; deployment and post-deployment
-  verification pass when applicable; required operational readiness, handoff,
-  and cleanup are complete; known defects, deviations, unresolved risks, and
-  limitations are disclosed; the final result remains inside the approved
-  operating envelope; and required acceptance and authorization decisions are
-  resolved.
-- The contract MUST distinguish completion **claimed**, **verified**,
-  **accepted**, and **closed**. These MAY coincide for a low-risk solo project
-  but remain distinct. This four-step claim is project-level and is evaluated
-  **across** a project's runs; a single run reaching `completion-verified` means
-  only **its** authorized objective slice is done and verified.
-
-**Outputs.** A claimed → verified → accepted → closed determination.
-
-**Evidence.** The [Completion Evidence Package](#completion-evidence-package).
-
-**Failure behavior.** Any unmet element blocks the completion claim; the run
-records an [honest incomplete outcome](#honest-incomplete-outcomes) instead.
+This contract is defined in the
+[Canonical-State Spec § Project-Level Completion](canonical-state.md#project-level-completion)
+(relocated there in v0.59): it is cross-run by construction and binds every
+project at every tier and autonomy posture, not only delegated runs. The
+run/project distinction stays load-bearing here: the lifecycle in this spec is
+**per-run**; project-level completion is the distinct claim evaluated across a
+project's runs, on the
+[project lifecycle](canonical-state.md#project-lifecycle). A single run reaching
+`completion-verified` means only **its** authorized objective slice is done and
+verified. A run's completion evidence feeds the
+[Completion Evidence Package](#completion-evidence-package) below.
 
 ---
 
@@ -651,8 +626,7 @@ objective.
 - The honest-incomplete taxonomy MUST be **reason codes over the five terminal
   states**, not parallel states:
   - failed-verification / failed-deployment → `failed`;
-  - stopped-by-user / stopped-by-policy / superseded-by-replanning →
-    `cancelled`;
+  - stopped-by-user / stopped-by-policy / superseded-by-replanning → `canceled`;
   - decision-lapsed (no decision before the escalation bound) → `abandoned`;
   - limit-reached (authorized budget / time / usage / concurrency) →
     `authorization-exhausted`;
@@ -700,6 +674,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.
