@@ -19,6 +19,8 @@ over it, and that it has a complete, lossless Markdown rendering.
 
 - Define the minimum canonical project state and mark the subset a run
   authorizes against
+- Define the normative **project lifecycle** — states, reasons, overlays, and
+  transitions — and the **project-level completion contract** that rides it
 - Establish that briefs, checklists, packages, and reports are **rendered
   views**, not parallel sources
 - Name the two operating modes — **file mode** and **platform mode** — and the
@@ -39,11 +41,14 @@ consequence level; only ceremony and decision rights scale down.
 
 1. Read [**Minimum Canonical Project State**](#minimum-canonical-project-state)
    for what the state contains and which facts a run authorizes against
-2. Read [**Artifacts as Views**](#artifacts-as-views),
+2. Read [**Project Lifecycle**](#project-lifecycle) and
+   [**Project-Level Completion**](#project-level-completion) for the project's
+   state model and what "done" means
+3. Read [**Artifacts as Views**](#artifacts-as-views),
    [**Markdown Self-Sufficiency**](#markdown-self-sufficiency), and
    [**Mode Binding and Discovery**](#mode-binding-and-discovery) for the
    source-of-truth, operating-mode, and lossless-rendering rules
-3. Read [**Record Requirements**](#record-requirements) and
+4. Read [**Record Requirements**](#record-requirements) and
    [**Progressive Governance and Folding**](#progressive-governance-and-folding)
    for the durability and folding contracts
 
@@ -68,18 +73,20 @@ operating configuration, and the records produced as work proceeds.
 **Procedure.**
 
 - The framework MUST define a minimum canonical structured project state; the
-  state MUST be able to represent, at minimum: goals and success criteria;
-  requirements and acceptance criteria; assumptions and risks; architecture and
-  decisions; increment plans, batches, and dependencies; operating
-  configuration; governance profile and approved deviations; assurance
-  requirements, achieved independence, evidence, and conclusions; decision
-  rights, delegated authority, and authorization records; required operating
-  functions, capability coverage, and function separations; effective
-  operating-envelope state; runs, directives, events, and continuation state;
-  checkpoint decisions, escalations, and resolutions; carried-forward gate and
-  checkpoint conditions (each with an owner, the discharging stage or increment,
-  and an Open / Satisfied / Blocked / Withdrawn status); folded-stage state and
-  unfolding triggers; and evidence, provenance, and traceability relationships.
+  state MUST be able to represent, at minimum: the
+  [project lifecycle state](#project-lifecycle) with its status reason and any
+  overlays; goals and success criteria; requirements and acceptance criteria;
+  assumptions and risks; architecture and decisions; increment plans, batches,
+  and dependencies; operating configuration; governance profile and approved
+  deviations; assurance requirements, achieved independence, evidence, and
+  conclusions; decision rights, delegated authority, and authorization records;
+  required operating functions, capability coverage, and function separations;
+  effective operating-envelope state; runs, directives, events, and continuation
+  state; checkpoint decisions, escalations, and resolutions; carried-forward
+  gate and checkpoint conditions (each with an owner, the discharging stage or
+  increment, and an Open / Satisfied / Blocked / Withdrawn status); folded-stage
+  state and unfolding triggers; and evidence, provenance, and traceability
+  relationships.
 - This canonical state MUST be the single source for project-level facts. Any
   other representation of these facts is a [view](#artifacts-as-views), not a
   second source.
@@ -122,6 +129,193 @@ and MUST be reconciled into the canonical state.
 
 ---
 
+## Project Lifecycle
+
+Rationale: the run lifecycle solved this problem once (see
+[Delegated-Run Spec § Run Lifecycle](delegated-run.md#run-lifecycle) and
+[§ Honest Incomplete Outcomes](delegated-run.md#honest-incomplete-outcomes));
+this contract ports that discipline to the project: a small closed state set,
+reason codes over states rather than parallel states, overlays off the axis, and
+requested distinguished from confirmed.
+
+**Applicability.** Every project, at every tier, consequence level, autonomy
+posture, and operating mode. This is the **project-level** lifecycle; a run has
+its own lifecycle
+([Delegated-Run Spec § Run Lifecycle](delegated-run.md#run-lifecycle)) and
+neither substitutes for the other.
+
+**Inputs.** Recorded lifecycle transitions and their reasons; the
+[completion contract](#project-level-completion); the acceptance decision.
+
+**Procedure.**
+
+- The normative lifecycle — six states, two terminals:
+
+```text
+active <-> paused                                     (paused carries a reason)
+active  -> completion-claimed -> completion-verified -> closed
+completion-claimed -> active                          (claim refuted)
+active | paused | completion-claimed -> canceled
+```
+
+- **Terminals are absorbing.** `closed` and `canceled` are the only terminal
+  states; no transition leaves either. The terminal meanings are
+  **delivery-based**: `closed` means the approved scope was delivered and
+  verified and the closure decision is recorded; `canceled` has one unambiguous
+  meaning — **no verified delivery**. A verified-but-declined project is
+  `closed` with reason `acceptance-declined`, never `canceled`.
+- **Reason codes are normative** — fixed, closed sets per state — and a reason
+  is present **iff** the state requires one:
+
+| State                 | Reason codes (closed set)                                        |
+| --------------------- | ---------------------------------------------------------------- |
+| `paused`              | `blocked` · `awaiting-decision` · `owner-hold`                   |
+| `completion-verified` | `awaiting-acceptance` (default on entry) · `closure-in-progress` |
+| `closed`              | `accepted` · `acceptance-declined` · `acceptance-lapsed`         |
+| `canceled`            | `stopped-by-owner` · `superseded` · `lapsed` · `limit-reached`   |
+
+`active` and `completion-claimed` carry no reason. Free prose belongs in a
+separate detail field, never in the reason. A situation no code fits is a
+**missing code** — a framework change, not a free-text escape hatch.
+
+- **The completion ladder sits on this axis.** `completion-claimed` and
+  `completion-verified` are lifecycle states — the run lifecycle's own ladder,
+  with acceptance appended as the gate to `closed`, because acceptance is a
+  project-level human decision a run cannot make (see
+  [Project-Level Completion](#project-level-completion)). There is no separate
+  completion-status axis.
+- **Acceptance is a decision, not a state.** Entry to `closed` is gated by the
+  required, human-owned acceptance decision being **made and recorded — not by
+  the decision being positive**: `acceptance-declined` also enters `closed`. The
+  decision's outcome rides as `closed`'s reason — `accepted`,
+  `acceptance-declined`, or `acceptance-lapsed`, the last recorded by an
+  administrator when it is determined that no decision will come (an owner
+  departed, a client gone silent); recording the lapse is itself a human act.
+  Delegability follows the operating-model floors
+  ([Operating Model Spec § Governance Floors](operating-model.md#governance-floors-and-capability-ceilings)):
+  acceptance is delegable only at Low consequence, human-or-policy at Moderate,
+  non-delegable at High, interactive-only at Critical. **An agent can drive
+  `completion-claimed` and `completion-verified`; it can never reach `closed`.**
+  The two rungs differ in kind: `completion-verified` is epistemic — does the
+  evidence support the claim, checked against **requirements**; acceptance is an
+  authority act — do we take delivery, checked against **intent**.
+- **A refuted completion claim returns to `active`** — not to `paused`, and not
+  to a terminal. An unmet contract element **blocks** the claim: identified work
+  exists, and identified work is `active`. This is a deliberate asymmetry with
+  the run lifecycle, where `failed-verification` routes to the `failed` terminal
+  — correct for a run, whose authorized span is over; wrong for a project, which
+  simply has work left.
+- **Closure-stage work happens inside `completion-verified`**, made visible by
+  its reason (`awaiting-acceptance` → `closure-in-progress`). Handoff,
+  production-ownership transfer, the retrospective, and the close-out summary
+  are stage work, not lifecycle states.
+- **`paused` is the single non-terminal suspension state**, reachable from
+  `active` only. It suspends the project awaiting something external; it is not
+  where refuted claims or identified work go. A stalled verification waits in
+  `completion-claimed`, which is already a waiting state.
+- **No pre-`active` state.** A project performs authorized work (Initiation)
+  before Gate 1 — Gate 1 authorizes the plan, not the project's existence — so a
+  project is `active` from bootstrap.
+- **Two terminals, not five.** A run is an operational span that can exhaust a
+  budget or fail a deployment; a project is a governance object, and those
+  endings all reduce to _stopped, for a reason_. The richness lives in the
+  reason codes — the run spec's own rule.
+- **Overlays sit off the axis** — determinations that overlay a state without
+  being one:
+  - **`stale`** — an observer-inferred staleness determination over a
+    non-terminal state: the project's expected attention has lapsed with no
+    recorded transition and nobody present to record one. The project-level
+    analog of the run's `unresponsive`. Staleness is never recorded as a
+    lifecycle state — when someone finally looks, they resume the project or
+    record `canceled` with reason `lapsed`.
+  - **`archived`** — an administrator-assigned visibility determination
+    overlaying a terminal. It sets independently of the lifecycle (e.g. an
+    archived-at fact); it never overwrites _which_ terminal the project reached,
+    and terminals stay absorbing.
+- The lifecycle MUST distinguish requested from confirmed state: a completion
+  claim is not a verification, a verification is not the acceptance decision,
+  and an intention to stop is not a recorded terminal.
+
+**Outputs.** The project's current lifecycle state, its reason where the state
+requires one, and any overlays.
+
+**Evidence.** A durable, attributed record for every transition (per
+[Record Requirements](#record-requirements)); entries into a required-reason
+state carry their reason. Entry to `closed` is discharged at the `[H]` grade
+against the [authorized-party roster](#authorized-parties-for-floor-decisions);
+`closed`'s reason is the only record of the acceptance outcome — including that
+none came.
+
+**Failure behavior.** A write attempting a transition outside the defined set —
+including any exit from a terminal — MUST be rejected. A required-reason state
+recorded without a reason, or with a code not defined for that state, is not a
+satisfied record. A staleness observation never mutates lifecycle state; it
+awaits a human record.
+
+---
+
+## Project-Level Completion
+
+Rationale: a completion claim is earned against a contract, never assumed
+because agents stopped or tests passed. The contract is evaluated **across** a
+project's runs — cross-run by construction — and binds every project at every
+tier and autonomy posture; a supervised project with no runs at all still honors
+it. This contract is the **canonical definition of project closure**; the
+Closure stage's close-out checklist and summary are its rendered view (see
+[Artifacts as Views](#artifacts-as-views)).
+
+**Applicability.** Any project or delegated objective claimed complete.
+
+**Inputs.** The approved scope; requirements and success criteria;
+batch/increment outcomes; verification, assurance, and deployment results; the
+operating envelope; acceptance and authorization decisions.
+
+**Procedure.**
+
+- A project-completion claim MUST NOT be permitted merely because agents
+  stopped, tasks were marked complete, tests passed, or deployment succeeded. It
+  is permitted only when **all** hold: every approved in-scope requirement has
+  an explicit disposition; applicable success criteria have evidence or an
+  explicit post-release measurement plan; required decisions and constraints
+  remain satisfied or approved deviations are recorded; all batches and
+  increments have explicit outcomes; parallel work is integrated; required
+  whole-system verification and assurance pass; deployment and post-deployment
+  verification pass when applicable; required operational readiness, handoff,
+  and cleanup are complete; known defects, deviations, unresolved risks, and
+  limitations are disclosed; the final result remains inside the approved
+  operating envelope; and required acceptance and authorization decisions are
+  resolved.
+- **Post-deployment verification verifies the deploy.** Its referent is
+  production health — and, for an increment deployed dark behind a feature flag,
+  the dark behavior. User visibility is a separate fact off this axis (see
+  [Deployment Stage § Release Disposition](../stages/deployment/README.md#release-disposition)):
+  user-outcome evidence arrives after the flip and is carried by the
+  post-release measurement plan. **User visibility does not gate `closed`** — a
+  fully implemented, verified, dark-deployed project closes; a pending flip is
+  recorded at close-out as a handoff obligation with an owner and a trigger.
+- The claim ladder rides the [project lifecycle](#project-lifecycle): completion
+  **claimed** and **verified** are the lifecycle states `completion-claimed` and
+  `completion-verified`; **acceptance** is the required human-owned recorded
+  decision gating entry to `closed` — a decision made and recorded, not
+  necessarily positive; **`closed`** is the terminal. These MAY coincide in time
+  for a low-risk solo project but remain distinct acts. The claim is
+  project-level and evaluated **across** a project's runs; a single run reaching
+  `completion-verified` means only **its** authorized objective slice is done
+  and verified.
+
+**Outputs.** A completion determination on the project lifecycle: claimed →
+verified → closed, with the acceptance decision recorded.
+
+**Evidence.** The
+[Completion Evidence Package](delegated-run.md#completion-evidence-package).
+
+**Failure behavior.** Any unmet element blocks the completion claim: the project
+returns to `active` (identified work exists), and a run that ends without
+completing its slice records an
+[honest incomplete outcome](delegated-run.md#honest-incomplete-outcomes).
+
+---
+
 ## Artifacts as Views
 
 Rationale: progressive-governance detail (Artifacts as Views); dev/ops split
@@ -140,8 +334,9 @@ status report, and compliance export.
 - The Closure stage's close-out **Summary** MUST be the human-cadence rendered
   view of the
   [Completion Evidence Package](delegated-run.md#completion-evidence-package) —
-  not a second definition. The completion **contract** is canonical in the
-  delegated-run spec; the close-out renders it.
+  not a second definition. The completion **contract** is canonical in this spec
+  ([Project-Level Completion](#project-level-completion)); the close-out renders
+  it.
 - A supporting tool MAY generate or synchronize Markdown views without making
   each document a separate source of truth.
 
@@ -558,6 +753,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.
