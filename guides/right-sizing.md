@@ -499,11 +499,18 @@ governance-weight preset it sits at.
 
 | Consequence    | Required Assurance floor                                      | Authority floor                                                                                                                | Lights-Out                                                                 | Governance-weight preset    |
 | -------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
-| **Negligible** | None                                                          | none non-delegable                                                                                                             | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
-| **Low**        | Self                                                          | work-product acceptance delegable; the project acceptance decision stays an `[H]` floor act                                    | eligible                                                                   | Minimal                     |
+| **Negligible** | None                                                          | adds nothing beyond the standing non-delegable floor                                                                           | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
+| **Low**        | Self                                                          | adds nothing beyond the standing floor; work-product acceptance delegable                                                      | eligible                                                                   | Minimal                     |
 | **Moderate**   | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                                                                 | eligible, bounded pauses                                                   | Standard                    |
 | **High**       | Internal (required)                                           | gate decisions non-delegable                                                                                                   | eligible; gated at irreversible transitions                                | Enterprise                  |
 | **Critical**   | Internal (required)                                           | all gate decisions non-delegable, interactive-only (no pre-authorized policy) + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+
+The Authority cells state only what **consequence adds**. The categorical
+non-delegable floor of
+[Operating Model Spec § Authority](../spec/operating-model.md#authority-and-decision-resolution)
+— investment gates, compliance sign-off, and the project acceptance decision —
+binds at **every** row, including Negligible (the folded path thins its
+ceremony, never the floor itself).
 
 **Consequence saturates at Internal.** Magnitude alone never floors assurance
 above Internal and never turns Lights-Out off. **External** assurance is floored
