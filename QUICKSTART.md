@@ -105,7 +105,7 @@ my-app/
 ├── frameworks/
 │   └── v<version>/           ← framework release (read-only)
 ├── projects/
-│   ├── index.md           ← active and completed projects
+│   ├── index.md           ← active and closed projects
 │   └── my-first-project/
 │       ├── project.md     ← project config (locations + context)
 │       └── docs/
@@ -171,7 +171,7 @@ my-existing-app/               ← project root = workspace root
 ├── frameworks/
 │   └── v<version>/               ← framework release (read-only)
 ├── projects/
-│   ├── index.md               ← active and completed projects
+│   ├── index.md               ← active and closed projects
 │   └── my-first-project/
 │       ├── project.md         ← source code: ../../src
 │       └── docs/
@@ -191,7 +191,7 @@ my-existing-app/               ← project root = workspace root = source code
 ├── frameworks/
 │   └── v<version>/               ← framework release (read-only)
 ├── projects/
-│   ├── index.md               ← active and completed projects
+│   ├── index.md               ← active and closed projects
 │   └── my-first-project/
 │       ├── project.md         ← source code: ../..
 │       └── docs/
@@ -239,7 +239,7 @@ while an existing project stays in maintenance.
 
 The framework is designed for this case. Each project pins its own framework
 version in its `project.md`, and `projects/index.md` tracks all active and
-completed projects. You don't need to reinitialize the workspace — just download
+closed projects. You don't need to reinitialize the workspace — just download
 the latest framework release (if you don't already have it), add a new project
 directory, and let the agent guide you through the first stage.
 
@@ -328,6 +328,6 @@ for the worked example.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.26.0.
