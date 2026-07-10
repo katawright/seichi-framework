@@ -19,9 +19,10 @@ deployment, production ownership), use
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
-- **Decided by:** _(interactive)_ the deciding party — name + role/id. A floor
-  decision MUST be discharged by a party on the project's authorized-party
-  roster for it (see
+- **Decided by:** _(interactive)_ the deciding party — name + a stable
+  identifier (a unique authorized party; a role is a type and never suffices at
+  the floor). A floor decision MUST be discharged by a party on the project's
+  authorized-party roster for it (see
   [Canonical-State Spec § Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)).
 - **Cleared by policy:** _(pre-authorized policy)_ the policy (name/link) and
   its **author** — the accountable authorized party — with the date authored;
@@ -193,4 +194,4 @@ quality]
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-07-07 | Added in v0.13.0. -->
+<!-- Template Last Updated: 2026-07-09 | Added in v0.13.0. -->

@@ -21,9 +21,10 @@ list of checkpoint types.
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
-- **Decided by:** _(interactive)_ the deciding party — name + role/id. A floor
-  decision MUST be discharged by a party on the project's authorized-party
-  roster for it (see
+- **Decided by:** _(interactive)_ the deciding party — name + a stable
+  identifier (a unique authorized party; a role is a type and never suffices at
+  the floor). A floor decision MUST be discharged by a party on the project's
+  authorized-party roster for it (see
   [Canonical-State Spec § Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)).
 - **Cleared by policy:** _(pre-authorized policy)_ the policy (name/link) and
   its **author** — the accountable authorized party — with the date authored;
@@ -123,4 +124,4 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-07-07 | Added in v0.18.1. -->
+<!-- Template Last Updated: 2026-07-09 | Added in v0.18.1. -->

@@ -16,5 +16,6 @@
   { "regex": "\\bdefault_autonomy\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
   { "regex": "\\bdefault_oversight_intensity\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
   { "regex": "\\bpreparation_autonomy\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
-  { "regex": "\\bManual Process Guide\\b", "flags": "g", "replacement": "Bootstrap Guide" }
+  { "regex": "\\bManual Process Guide\\b", "flags": "g", "replacement": "Bootstrap Guide" },
+  { "regex": "\\bcancelled\\b", "flags": "gi", "replacement": "canceled (one l — framework-normative spelling, v0.59)" }
 ]

@@ -115,7 +115,11 @@ acceptance-declined / acceptance-lapsed]
      ../spec/canonical-state.md#authorized-parties-for-floor-decisions). What
      gates closure is that the decision was MADE AND RECORDED, not that it was
      positive — a declined or lapsed acceptance also closes, and the outcome
-     rides as the closed reason. Plus the forward-looking close: success
+     rides as the closed reason. Exception for LAPSED: it exists precisely for
+     the case where the acceptance party is gone (owner departed, client
+     silent), so it is recorded by an administrator — a human act, but not the
+     rostered acceptance party who records accepted / declined. Plus the
+     forward-looking close: success
      criteria still pending re-check (with dates), and open product ideas that
      may seed future projects (cite IDEA-NNN). A pending release flip — an
      increment deployed dark, not yet user-visible — is a handoff obligation:

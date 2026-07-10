@@ -1,7 +1,12 @@
 // Rule E — Last Updated stamp format + freshness (inventory category E).
 // Every stamped doc file must carry a parseable `**Last Updated:** YYYY-MM-DD`
 // (or template footer `<!-- Template Last Updated: YYYY-MM-DD … -->`), and the
-// stamp must be >= the file's last git-commit date (not stale).
+// stamp must be >= the file's last git AUTHOR date (not stale). Author date —
+// not committer date — because this repo merges rebase-only: a rebase rewrites
+// every committer date to merge time, which would retroactively stale-flag
+// stamps that were correct when the work was committed (the v0.58 drain
+// commits hit exactly this). Author date survives rebase and cherry-pick and
+// is the date the stamp actually records.
 
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -59,7 +64,7 @@ export function stampFormatIssues(content) {
 
 function lastCommitDate(repoRoot, file) {
   try {
-    const out = execFileSync("git", ["log", "-1", "--format=%cs", "--", file], {
+    const out = execFileSync("git", ["log", "-1", "--format=%as", "--", file], {
       cwd: repoRoot,
       encoding: "utf8",
     }).trim();
@@ -105,8 +110,9 @@ export function runStamps(repoRoot, files) {
     for (const issue of stampFormatIssues(c)) {
       issues.push(`STAMP  ${file}  ${issue}`);
     }
-    // Freshness: compare to the file's last commit date. Skip when there is no
-    // committed history (untracked / shallow clone) — can't determine staleness.
+    // Freshness: compare to the file's last authored-commit date. Skip when
+    // there is no committed history (untracked / shallow clone) — can't
+    // determine staleness.
     if (!shallow) {
       const commitDate = lastCommitDate(repoRoot, file);
       if (commitDate && stamp < commitDate) {

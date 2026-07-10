@@ -39,7 +39,10 @@ successful completion (60-90 seconds).
        Deployment slot resolves as **Released** or **Deferred**; the disposition
        and its rationale are recorded in the deployment brief's Release Details
        section and a
-       [Checkpoint Decision](../../templates/checkpoint-decision.md)
+       [Checkpoint Decision](../../templates/checkpoint-decision.md). If
+       Released **dark** (behind a feature flag), the pending flip's **owner and
+       trigger** are recorded there too — the `user-visible` attribute (see
+       [Release Disposition](README.md#release-disposition))
 
 > **If Deferred:** the increment was verified (and, where applicable, staged),
 > but its production release rolls into a later increment. Record the deferral
@@ -208,6 +211,6 @@ decision using the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.7.0.
