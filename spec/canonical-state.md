@@ -244,7 +244,10 @@ requires one, and any overlays.
 state carry their reason. Entry to `closed` is discharged at the `[H]` grade
 against the [authorized-party roster](#authorized-parties-for-floor-decisions);
 `closed`'s reason is the only record of the acceptance outcome — including that
-none came.
+none came. A transition into either terminal, and the acceptance decision, are
+**governance-class writes**
+([Mode Binding and Discovery](#mode-binding-and-discovery)) — in a bound project
+they are never recorded only-locally and never offline-queued.
 
 **Failure behavior.** A write attempting a transition outside the defined set —
 including any exit from a terminal — MUST be rejected. A required-reason state
@@ -469,10 +472,12 @@ project state).
   [Operating Model Spec § Stop Enforcement](operating-model.md#stop-enforcement)).
   There is never a second source of truth. **A write is governance-class iff**
   it discharges or reverses a `[J]`-or-above item; records or changes a gate or
-  checkpoint decision; changes the Authorization subset, operating envelope,
-  governance profile, authorized-party roster, or operating mode; or records a
-  risk acceptance or accepted limitation. All other writes are non-governance by
-  default, and the write class is carried explicitly on every write.
+  checkpoint decision; records a [project-lifecycle](#project-lifecycle)
+  transition into a terminal (`closed` / `canceled`) or the acceptance decision;
+  changes the Authorization subset, operating envelope, governance profile,
+  authorized-party roster, or operating mode; or records a risk acceptance or
+  accepted limitation. All other writes are non-governance by default, and the
+  write class is carried explicitly on every write.
 - **Offline non-governance work: queue-and-reconcile (ratified v0.58).** While
   bound-but-unreachable, non-governance writes MAY queue locally and reconcile
   on reconnect, under all of the following: each queued write carries a stable
