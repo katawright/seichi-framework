@@ -25,6 +25,8 @@ function must do.
   a plan MUST satisfy before increments share a batch
 - Define the **batch** as the fixed, ordered unit the scheduling layer produces
   and the execution layer consumes
+- Give the batch a normative **lifecycle** — states, reasons, absorbing
+  terminals — so abnormal endings are honest, not stranded
 - State the **preflight, execution-invariant, and close/transition** contracts a
   conforming orchestrator MUST honor
 - Define **work conservation** — the evidence that integrating concurrent work
@@ -46,12 +48,14 @@ with confidence, the framework **sequences**.
 2. At planning time, apply
    [**Parallel-Safety Classification**](#parallel-safety-classification) and
    [**Batch Composition and Ordering**](#batch-composition-and-ordering)
-3. At run time, apply [**Batch Preflight**](#batch-preflight), the
+3. Read the [**Batch Lifecycle**](#batch-lifecycle) for the states a batch moves
+   through from composition to a terminal
+4. At run time, apply [**Batch Preflight**](#batch-preflight), the
    [**Concurrent Execution Invariants**](#concurrent-execution-invariants), and
    [**Batch Close and Transition**](#batch-close-and-transition)
-4. For unattended runs, apply
+5. For unattended runs, apply
    [**Parallel Lights-Out Eligibility**](#parallel-lights-out-eligibility)
-5. For the human-facing rationale behind any contract, follow its link back to
+6. For the human-facing rationale behind any contract, follow its link back to
    the scheduling and execution guides
 
 The six contract fields (Applicability, Inputs, Procedure, Outputs, Evidence,
@@ -152,6 +156,94 @@ recorded in the increment plan in [canonical state](canonical-state.md).
 
 **Failure behavior.** If prerequisites cannot be ordered into a valid sequence,
 the plan is not schedulable as composed and MUST return to increment planning.
+
+---
+
+## Batch Lifecycle
+
+Rationale: the project and run lifecycles fix the same discipline
+([Canonical-State Spec § Project Lifecycle](canonical-state.md#project-lifecycle),
+[Delegated-Run Spec § Run Lifecycle](delegated-run.md#run-lifecycle)) — a small
+closed state set, reason codes over states, absorbing terminals, honest abnormal
+endings. The batch is the remaining stateful execution unit; without an abnormal
+terminal, a batch that will never close has nowhere legal to go: its own close
+contract strands it at adjudication, and a canceled project's open batches would
+stay open forever.
+
+**Applicability.** Every batch, from composition to a terminal.
+
+**Inputs.** Recorded batch transitions and their reasons; the preflight
+determination; the close record; the project's lifecycle state (a cascade input,
+per
+[Canonical-State Spec § Terminal Integrity](canonical-state.md#terminal-integrity)).
+
+**Procedure.**
+
+- The normative lifecycle — five states, three terminals:
+
+```text
+planned -> open -> closed            (close contract satisfied)
+planned -> canceled                  (never opened)
+open    -> abandoned                 (opened; will not close)
+```
+
+- `planned` is the composed batch
+  ([Batch Composition and Ordering](#batch-composition-and-ordering)):
+  membership fixed, not yet opened. [Batch Preflight](#batch-preflight) admits
+  `planned → open`; the [close contract](#batch-close-and-transition) admits
+  `open → closed`.
+- **Terminals are absorbing.** `closed`, `canceled`, and `abandoned` are
+  terminal; no transition leaves any of them.
+- **Two abnormal terminals, split on whether work may exist.** `canceled` ends a
+  batch that never opened — no work was authorized under it, so there is nothing
+  to conserve. `abandoned` ends an opened batch that will not close — work may
+  exist, and the **realized extent** is recorded (the run model's device,
+  [Honest Incomplete Outcomes](delegated-run.md#honest-incomplete-outcomes)):
+  each member increment's disposition as it stood, and the
+  integrated-or-excluded determination as far as it was established. Abandonment
+  never erases or inflates what happened.
+- **Reason codes are normative** — fixed, closed sets per state — and a reason
+  is present **iff** the state requires one:
+
+| State       | Reason codes (closed set)                                                   |
+| ----------- | --------------------------------------------------------------------------- |
+| `canceled`  | `superseded-by-replanning` · `project-canceled`                             |
+| `abandoned` | `conservation-unresolved` · `superseded-by-replanning` · `project-canceled` |
+
+`planned`, `open`, and `closed` carry no reason — the close record already
+carries the conservation determination. Free prose belongs in a separate detail
+field, never in the reason. A situation no code fits is a **missing code** — a
+framework change, not a free-text escape hatch.
+
+- `conservation-unresolved` is the resting state for the close contract's
+  failure path: adjudication determined that work conservation cannot be
+  established and will not be (see
+  [Batch Close and Transition](#batch-close-and-transition)).
+- `superseded-by-replanning` records a batch replanned away. Membership is
+  fixed, so a replanning event that dissolves or recomposes a batch ends the old
+  batch and schedules successors; successor batches chain provenance to the
+  replanning event.
+- `project-canceled` is the parent-caused disposition
+  ([Canonical-State Spec § Terminal Integrity](canonical-state.md#terminal-integrity)):
+  the project's cancellation cascades to `planned` batches as `canceled` and to
+  `open` batches as `abandoned`, chained to the cancellation's attribution. At
+  project `closed`, the quiescence precondition requires every batch at a
+  terminal.
+- **A blocked member increment does not move the batch.** The batch stays `open`
+  with the increment's disposition explicit
+  ([Concurrent Execution Invariants](#concurrent-execution-invariants)); "the
+  workers stopped" is never a batch state.
+
+**Outputs.** The batch's current lifecycle state and, on `canceled` or
+`abandoned`, its reason.
+
+**Evidence.** A durable, attributed record per transition (per
+[Canonical-State Spec § Record Requirements](canonical-state.md#record-requirements));
+an `abandoned` record preserves the realized extent.
+
+**Failure behavior.** A transition outside the defined set — including any exit
+from a terminal — MUST be rejected. A required-reason terminal recorded without
+a reason, or with a code not defined for that state, is not a satisfied record.
 
 ---
 
@@ -271,9 +363,14 @@ either integrated or explicitly excluded with a recorded reason, and that
 integration dropped no function, test, or file that any increment delivered.
 
 **Failure behavior.** If work conservation cannot be established, the batch MUST
-NOT close; the discrepancy is surfaced for adjudication. Batch transition is a
-close-out gate, **not** a new checkpoint type — it introduces no checkpoint
-beyond those in [the checkpoint taxonomy](../guides/checkpoints.md).
+NOT close; the discrepancy is surfaced for adjudication. Adjudication has two
+honest outcomes: the discrepancy is resolved — the missing work recovered or
+explicitly excluded with a recorded reason — and the batch closes, or
+conservation is determined unestablishable and the batch is **`abandoned`** with
+reason `conservation-unresolved` ([Batch Lifecycle](#batch-lifecycle)); an open
+batch is never adjudication's resting state. Batch transition is a close-out
+gate, **not** a new checkpoint type — it introduces no checkpoint beyond those
+in [the checkpoint taxonomy](../guides/checkpoints.md).
 
 ---
 
@@ -313,7 +410,8 @@ mid-batch and holds the affected work.
 ## Representation in Canonical State
 
 Batches are not a separate store. The ordered, classified batch list — each
-batch's membership, order, prerequisites, transition criteria, and per-increment
+batch's membership, order, prerequisites, transition criteria,
+[lifecycle state](#batch-lifecycle) with its reason, and per-increment
 disposition — is part of the **increment plan** in
 [canonical state](canonical-state.md), and the current batch/increment is part
 of a delegated run's [position](delegated-run.md). A conforming implementation
@@ -323,6 +421,6 @@ chooses the storage; this spec fixes only what must be representable.
 
 ## Notes
 
-**Last Updated:** 2026-07-08
+**Last Updated:** 2026-07-10
 
 Added to framework in v0.49.0.
