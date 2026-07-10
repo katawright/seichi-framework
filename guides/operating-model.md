@@ -449,11 +449,11 @@ presets form an **autonomy family**, separate from and orthogonal to the
 Minimal/Standard/Enterprise governance-weight presets — those size process
 weight, these size autonomy:
 
-| Operating preset | Settings, roughly                                                                                                   | Minimum coverage it assumes                                                                  |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **Supervised**   | agents work in short steps, every step human-reviewed; decisions interactive                                        | none — a human checks everything                                                             |
-| **Checkpointed** | agents execute between deliberately placed human checkpoints; routine decisions delegated; Self/Internal Assurance  | agents can verify their own work in scope; independent automated assurance where required    |
-| **Lights-Out**   | agent execution; Automated workflow; decisions delegated or pre-authorized; pauses only where a floor forces a gate | verifiability across the work; automated assurance; independent stop enforcement; continuity |
+| Operating preset | Settings, roughly                                                                                                                     | Minimum coverage it assumes                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Supervised**   | agents work in short steps, every step human-reviewed; decisions interactive                                                          | none — a human checks everything                                                             |
+| **Checkpointed** | agents execute between deliberately placed human checkpoints; routine decisions run on pre-authorized policy; Self/Internal Assurance | agents can verify their own work in scope; independent automated assurance where required    |
+| **Lights-Out**   | agent execution; Automated workflow; decisions delegated or pre-authorized; pauses only where a floor forces a gate                   | verifiability across the work; automated assurance; independent stop enforcement; continuity |
 
 Across the three, one axis moves — **how much the agent may do between human
 decision points**: at **Supervised**, roughly one reviewable unit, with review
@@ -475,6 +475,6 @@ the Lights-Out eligibility conditions each preset must meet — see
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.49.0.

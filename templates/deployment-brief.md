@@ -55,6 +55,11 @@ Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
      release fires. See ../stages/deployment/README.md#release-disposition. -->
 
 - **Release Disposition:** [Released / Deferred]
+- **User-Visible:** [yes at release / pending (dark deploy) / YYYY-MM-DD
+  (flipped)] — see
+  [Release Disposition](../stages/deployment/README.md#release-disposition)
+- **Pending flip (dark deploys only):** owner: [name] — trigger: [date or
+  criteria]
 - **Release Version:** [e.g., v1.2.0]
 - **Previous Version:** [Currently deployed version]
 - **Build/Package ID:** [CI/CD build number or artifact]
@@ -406,4 +411,4 @@ tracker]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.7.0. -->
+<!-- Template Last Updated: 2026-07-09 | Added in v0.7.0. -->
