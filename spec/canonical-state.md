@@ -180,8 +180,8 @@ separate detail field, never in the reason. A situation no code fits is a
 
 - **The completion ladder sits on this axis.** `completion-claimed` and
   `completion-verified` are lifecycle states — the run lifecycle's own ladder,
-  with acceptance appended as the gate to `closed`, because acceptance is a
-  project-level human decision a run cannot make (see
+  with acceptance appended as the decision that gates entry to `closed`, because
+  acceptance is a project-level human decision a run cannot make (see
   [Project-Level Completion](#project-level-completion)). There is no separate
   completion-status axis.
 - **Acceptance is a decision, not a state.** Entry to `closed` is gated by the
@@ -767,6 +767,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-10
 
 Added to framework in v0.49.0.
