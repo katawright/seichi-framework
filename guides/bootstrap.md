@@ -65,7 +65,7 @@ my-app/                            ← workspace root
 ├── frameworks/
 │   └── v<version>/                   ← framework release (read-only)
 ├── projects/
-│   ├── index.md                   ← active and completed projects
+│   ├── index.md                   ← active and closed projects
 │   └── onboarding-tracker/
 │       ├── project.md             ← project config (locations + context)
 │       └── docs/                  ← artifacts for this project

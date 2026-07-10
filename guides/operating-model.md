@@ -187,14 +187,15 @@ making the call within human-set bounds. A policy pre-decides the **outcome**
 **judgment** (flexible, but capped by the agent's qualification and the
 decision's reversibility).
 
-Some decisions stay **human-owned** regardless of capability — investment gates
-and compliance sign-off among them — discharged by an interactive human **or**
-by pre-authorized policy (the human deciding ahead of time), never a delegated
-agent; at Critical or severe-harm irreversible transitions the floor tightens to
-interactive-only. That non-delegable floor is set by consequence and compliance
-(see [right-sizing](right-sizing.md)). When no valid mechanism can resolve a
-decision, the work escalates rather than proceeds. The spec fixes which
-resolution mode is permitted at each consequence level — see
+Some decisions stay **human-owned** regardless of capability — investment gates,
+compliance sign-off, and the project acceptance decision among them — discharged
+by an interactive human **or** by pre-authorized policy (the human deciding
+ahead of time), never a delegated agent; at Critical or severe-harm irreversible
+transitions the floor tightens to interactive-only. That non-delegable floor is
+set by consequence and compliance (see [right-sizing](right-sizing.md)). When no
+valid mechanism can resolve a decision, the work escalates rather than proceeds.
+The spec fixes which resolution mode is permitted at each consequence level —
+see
 [Governance Floors and Capability Ceilings](../spec/operating-model.md#governance-floors-and-capability-ceilings).
 
 ---

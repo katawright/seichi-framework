@@ -500,7 +500,7 @@ governance-weight preset it sits at.
 | Consequence    | Required Assurance floor                                      | Authority floor                                                                                                                | Lights-Out                                                                 | Governance-weight preset    |
 | -------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
 | **Negligible** | None                                                          | none non-delegable                                                                                                             | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
-| **Low**        | Self                                                          | acceptance delegable                                                                                                           | eligible                                                                   | Minimal                     |
+| **Low**        | Self                                                          | work-product acceptance delegable; the project acceptance decision stays an `[H]` floor act                                    | eligible                                                                   | Minimal                     |
 | **Moderate**   | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                                                                 | eligible, bounded pauses                                                   | Standard                    |
 | **High**       | Internal (required)                                           | gate decisions non-delegable                                                                                                   | eligible; gated at irreversible transitions                                | Enterprise                  |
 | **Critical**   | Internal (required)                                           | all gate decisions non-delegable, interactive-only (no pre-authorized policy) + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
@@ -555,6 +555,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-09
 
 Added to framework in v0.13.0.

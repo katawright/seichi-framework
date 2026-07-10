@@ -191,11 +191,20 @@ separate detail field, never in the reason. A situation no code fits is a
   `acceptance-declined`, or `acceptance-lapsed`, the last recorded by an
   administrator when it is determined that no decision will come (an owner
   departed, a client gone silent); recording the lapse is itself a human act.
-  Delegability follows the operating-model floors
-  ([Operating Model Spec § Governance Floors](operating-model.md#governance-floors-and-capability-ceilings)):
-  acceptance is delegable only at Low consequence, human-or-policy at Moderate,
-  non-delegable at High, interactive-only at Critical. **An agent can drive
-  `completion-claimed` and `completion-verified`; it can never reach `closed`.**
+  The acceptance decision is an **`[H]` floor act at every consequence level**:
+  human-owned, discharged by an interactive human **or** by pre-authorized
+  policy (the human deciding ahead of time), **never a delegated agent**, and
+  interactive-only at Critical (see
+  [Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution)).
+  **An agent can drive `completion-claimed` and `completion-verified`; it can
+  never reach `closed` on its own authority.** It MAY execute a
+  policy-discharged closure — the normal Lights-Out mechanism — where the
+  decision is the policy **author's**, recorded against the policy and its
+  author per [Record Requirements](#record-requirements). This floor binds the
+  **project** acceptance decision; bounded **work-product** acceptance (e.g.
+  whether a component design is acceptable to build) is a different altitude and
+  MAY be delegated at low consequence per the
+  [governance floors](operating-model.md#governance-floors-and-capability-ceilings).
   The two rungs differ in kind: `completion-verified` is epistemic — does the
   evidence support the claim, checked against **requirements**; acceptance is an
   authority act — do we take delivery, checked against **intent**.
