@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.59.0 (2026-07-10)
+
+The v0.59 cycle gives the project its own normative lifecycle: six states, two
+absorbing terminals, and a reason code required on every terminal transition.
+Project-level completion relocates to `spec/canonical-state.md` as its canonical
+home, `completed` becomes `closed`, `archived` demotes from a state to an
+overlay, and the project acceptance decision is named on the standing
+categorical non-delegable floor — binding at every consequence level.
+
+### Features
+
+- **spec:** define the project lifecycle and relocate project-level completion
+  to `spec/canonical-state.md` — six states, two absorbing terminals, four
+  reason-code sets, and acceptance as a required human-owned decision that gates
+  entry to `closed`
+- **framework:** render the project lifecycle across stages, guides, and
+  templates — retires `Final disposition` and sunset-as-closure-route,
+  normalizes `canceled`, and adds the `user-visible` attribute to Deployment's
+  Release Disposition
+
+### Bug Fixes
+
+- **framework:** drain the v0.59 invariant-sweep minors and fix the stale-stamp
+  guard
+- **spec:** classify terminal lifecycle transitions as governance-class writes
+- **spec:** the project acceptance decision is an `[H]` floor act at every
+  consequence level — never delegated to an agent, interactive-only at Critical,
+  with a policy-discharged closure carve-out recorded against the policy's
+  author
+- **spec:** make the guarded floor tables' Authority column
+  consequence-marginal, each cell stating only what consequence adds atop the
+  standing non-delegable floor
+- **spec:** describe acceptance as the decision that gates entry to `closed` at
+  its last remaining site, aligning `spec/canonical-state.md` with the
+  checkpoint taxonomy
+
 ## 0.58.0 (2026-07-08)
 
 The v0.58 cycle ratifies the platform seam: it resolves the four platform-seam
