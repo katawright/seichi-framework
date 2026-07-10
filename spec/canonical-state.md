@@ -20,7 +20,9 @@ over it, and that it has a complete, lossless Markdown rendering.
 - Define the minimum canonical project state and mark the subset a run
   authorizes against
 - Define the normative **project lifecycle** — states, reasons, overlays, and
-  transitions — and the **project-level completion contract** that rides it
+  transitions — the **project-level completion contract** that rides it, and the
+  **terminal-integrity contract** that binds its terminals to the open child
+  graph
 - Establish that briefs, checklists, packages, and reports are **rendered
   views**, not parallel sources
 - Name the two operating modes — **file mode** and **platform mode** — and the
@@ -43,7 +45,9 @@ consequence level; only ceremony and decision rights scale down.
    for what the state contains and which facts a run authorizes against
 2. Read [**Project Lifecycle**](#project-lifecycle) and
    [**Project-Level Completion**](#project-level-completion) for the project's
-   state model and what "done" means
+   state model and what "done" means, and
+   [**Terminal Integrity**](#terminal-integrity) for what its terminals require
+   of the open child records under them
 3. Read [**Artifacts as Views**](#artifacts-as-views),
    [**Markdown Self-Sufficiency**](#markdown-self-sufficiency), and
    [**Mode Binding and Discovery**](#mode-binding-and-discovery) for the
@@ -208,6 +212,11 @@ separate detail field, never in the reason. A situation no code fits is a
   The two rungs differ in kind: `completion-verified` is epistemic — does the
   evidence support the claim, checked against **requirements**; acceptance is an
   authority act — do we take delivery, checked against **intent**.
+- **Terminals bind the open child graph** (see
+  [Terminal Integrity](#terminal-integrity)): entry to `closed` carries a second
+  MUST precondition alongside the acceptance decision — the quiescence set is
+  dispositioned; entry to `canceled` disposes every open child record by
+  cascade, chained to the cancellation's attribution.
 - **A refuted completion claim returns to `active`** — not to `paused`, and not
   to a terminal. An unmet contract element **blocks** the claim: identified work
   exists, and identified work is `active`. This is a deliberate asymmetry with
@@ -262,7 +271,9 @@ they are never recorded only-locally and never offline-queued.
 including any exit from a terminal — MUST be rejected. A required-reason state
 recorded without a reason, or with a code not defined for that state, is not a
 satisfied record. A staleness observation never mutates lifecycle state; it
-awaits a human record.
+awaits a human record. An entry to `closed` over an undispositioned quiescence
+set, or a `canceled` recorded without its cascade, violates
+[Terminal Integrity](#terminal-integrity).
 
 ---
 
@@ -325,6 +336,127 @@ verified → closed, with the acceptance decision recorded.
 returns to `active` (identified work exists), and a run that ends without
 completing its slice records an
 [honest incomplete outcome](delegated-run.md#honest-incomplete-outcomes).
+
+---
+
+## Terminal Integrity
+
+Rationale: the [lifecycle contract](#project-lifecycle) makes the terminals
+absorbing and honest about the project's own row; the families under it — runs,
+batches, escalations, directives, deviations, carry-forward conditions, planning
+records — each keep their own status. Without a contract over that child graph
+at the moment a terminal is recorded, the terminals stop being honest: `closed`
+could assert completeness over still-open work, and a canceled project's
+children would stay open forever — the trail-off dishonesty the lifecycle exists
+to kill.
+
+**Applicability.** Every transition into a project terminal (`closed` /
+`canceled`), at every tier, consequence level, autonomy posture, and operating
+mode; transitively, every run terminal (the run → directive hop).
+
+**Inputs.** The open child records under the project; the terminal transition
+being recorded, with its reason and attribution.
+
+**Procedure.**
+
+- The two terminals make opposite claims, so they bind the child graph in
+  opposite directions: `closed` asserts completeness — open children falsify the
+  assertion, so the transition is **refused** until they are dispositioned;
+  `canceled` asserts abandonment — nobody hand-closes an abandoned project's
+  child graph, so the transition **disposes** it.
+- **`closed` is quiescence-gated.** Entry to `closed` carries a MUST
+  precondition alongside the acceptance decision: the **quiescence set** is
+  dispositioned —
+  - every run is at a terminal state;
+  - every batch is at a terminal state;
+  - no escalation is open;
+  - every carry-forward condition is Satisfied or Withdrawn, none Open or
+    Blocked;
+  - no risk rests open — each carries an explicit disposition, not merely a
+    disclosure.
+
+  The set names the project's **direct** children once; transitivity carries the
+  rest (a terminal run has already dispositioned its directives, below), so each
+  family has exactly one enforcement point. **Approved deviations are the
+  deliberate exemption:** a deviation records a condition the delivery was
+  accepted under; it attaches to the delivered result, survives `closed` as part
+  of what was accepted (disclosed per the
+  [completion contract](#project-level-completion)), and moves through its own
+  lifecycle independently of the project's. The completion contract demands most
+  of this quiescence at **claim** time; this precondition binds the same
+  determination to the transition itself — closure-stage work happens after the
+  claim, and the completeness assertion is recorded over the child graph at
+  entry to `closed`, not at claim time.
+
+- **`canceled` cascades.** Recording `canceled` MUST disposition every open
+  child record, transitively down the containment graph — project → run →
+  directive, project → batch, and likewise for escalations, approved deviations,
+  carry-forward conditions, and planning records. Each stateful child family's
+  vocabulary defines the **parent-caused disposition** the cascade lands it in:
+  a resting status plus a parent-caused reason code — `project-canceled` at the
+  project hop, `run-terminal` at the run hop — so a cascaded ending is never
+  conflated with an ending the child's own parties chose.
+- **The run → directive hop is the same cascade one level down.** A run reaching
+  any terminal — its own or cascaded — MUST leave no directive non-terminal; its
+  non-terminal directives take the directive family's parent-caused disposition
+  (see
+  [Delegated-Run Spec § Idempotency Substrate](delegated-run.md#idempotency-substrate)).
+- **A cascaded disposition never impersonates a party's own act.** A family MAY
+  land cascaded endings on a status it shares with party-initiated endings only
+  when its reason vocabulary distinguishes the parent-caused ending; the reason
+  code, not the status name, records who ended the child and why.
+- **The cascade preserves realized extent.** A force-dispositioned child records
+  what had actually happened when the parent ended — the run model's
+  realized-extent rule
+  ([Honest Incomplete Outcomes](delegated-run.md#honest-incomplete-outcomes));
+  the cascade never erases or inflates it.
+- **One attributed act.** The cancellation is a single attributed governance
+  write; every cascaded disposition chains its provenance to that transition
+  record ([Record Requirements](#record-requirements)) and is never
+  re-attributed to the child's own parties. The cascaded dispositions are part
+  of the terminal transition's governance-class write
+  ([Mode Binding and Discovery](#mode-binding-and-discovery)).
+- **A partially canceled project is not representable.** The cascade is part of
+  the terminal transition, not follow-up work: at any admitted state version a
+  reader sees either the project non-terminal with its children as they were, or
+  the project terminal with every child dispositioned. In file mode the
+  transition and its cascade land as one write-back.
+- **Records, not operations.** The cascade dispositions **governance records**;
+  it commands nothing operational. Cancellation does not un-deploy, stop a
+  production system, or alter release or flag state — a canceled project can
+  leave a live system in production, and changing that system is
+  product-altitude work outside this contract. For an in-flight run the cascaded
+  terminal withdraws authorization — the record that
+  [stop enforcement](operating-model.md#stop-enforcement) acts on; the cascade
+  records the end, enforcement effects it.
+- **`paused` does not couple.** Pausing a project constrains no child record:
+  runs continue under their own authorization, and pausing them is modeled where
+  it always was — a `pause-requested` directive per run. The two axes are
+  deliberately uncoupled; the non-coupling is designed, not an omission.
+- **Stage state rests; bindings persist.** At either terminal, folded-stage
+  state and unfolding triggers
+  ([Progressive Governance and Folding](#progressive-governance-and-folding))
+  are preserved as records as-of the terminal, and no unfolding trigger fires
+  after it — nothing remains to govern. A
+  [mode binding](#mode-binding-and-discovery) is not deleted by a terminal: the
+  binding record persists as a durable pointer (discovery still resolves the
+  mode, through which the terminal is readable); what ends is the binding
+  **obligation** — unbinding afterward is an administrative act, never required
+  for the terminal to be honest.
+
+**Outputs.** At `closed`, a quiescent child graph under the completeness claim;
+at `canceled`, a fully dispositioned child graph, every cascaded record carrying
+its parent-caused reason.
+
+**Evidence.** The terminal transition record plus, for `canceled`, the cascaded
+disposition records, each chaining provenance to the transition (per
+[Record Requirements](#record-requirements)).
+
+**Failure behavior.** An entry to `closed` while the quiescence set holds an
+undispositioned member MUST be rejected — the same rejection class as a
+transition outside the defined set. A `canceled` observed with a child still
+open is an incomplete write, not a tolerable intermediate state: the missing
+cascade dispositions MUST be applied, chained to the original transition.
 
 ---
 

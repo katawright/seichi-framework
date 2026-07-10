@@ -626,7 +626,10 @@ objective.
 - The honest-incomplete taxonomy MUST be **reason codes over the five terminal
   states**, not parallel states:
   - failed-verification / failed-deployment → `failed`;
-  - stopped-by-user / stopped-by-policy / superseded-by-replanning → `canceled`;
+  - stopped-by-user / stopped-by-policy / superseded-by-replanning /
+    project-canceled (the project's cancellation cascaded to the run; see
+    [Canonical-State Spec § Terminal Integrity](canonical-state.md#terminal-integrity))
+    → `canceled`;
   - decision-lapsed (no decision before the escalation bound) → `abandoned`;
   - limit-reached (authorized budget / time / usage / concurrency) →
     `authorization-exhausted`;
@@ -674,6 +677,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-10
 
 Added to framework in v0.49.0.
