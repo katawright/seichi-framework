@@ -247,7 +247,8 @@ Minimal floor the package folds to **six irreducible elements that never drop**:
 1. Approved objective and scope.
 2. Final delivered result.
 3. Requirements / success-criteria disposition — **every in-scope requirement
-   explicitly disposed** (met, descoped, or deferred).
+   explicitly disposed** (at the acceptance-criterion level: Met, Descoped, or
+   Deferred).
 4. Assurance result at the required level (recorded even when the level is
    None/Self).
 5. Honest defects, risks, limitations, and deferred work.
@@ -404,6 +405,6 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.49.0.
