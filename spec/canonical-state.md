@@ -491,8 +491,9 @@ written to eliminate. This contract closes the class: every canonical record
 family's status set is normative, here or in the family's own contract.
 
 **Applicability.** Escalations; approved deviations; decision records (gate and
-checkpoint decisions; architecture decision records); the planning families
-(goals, success criteria, requirements, assumptions, risks).
+checkpoint decisions; architecture decision records); pre-authorized policies;
+the planning families (goals, success criteria, requirements, assumptions,
+risks).
 
 **Inputs.** Recorded status changes and their reasons; for cascaded
 dispositions, the parent terminal per [Terminal Integrity](#terminal-integrity).
@@ -622,6 +623,39 @@ applied to the records where it was implied but never stated:
   escalation. ADRs do not join the `closed` quiescence set: the
   [completion contract](#project-level-completion)'s resolved-decisions element
   already covers the honest case.
+
+### Pre-Authorized Policy Lifecycle
+
+A pre-authorized policy is a human-authored, discretion-free rule discharging a
+floor decision as its author's act
+([Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution));
+its validity is bound to the author's roster presence by the temporal-validity
+rule in
+[Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions).
+This is that rule's record-level statement — the status set the behavior already
+implies:
+
+```text
+active -> orphaned | superseded | revoked
+```
+
+- **`active`** — the rule may discharge decisions in its class, its author
+  roster-current.
+- **`orphaned`** — the author left the roster. The policy is unusable from the
+  removal forward — each affected gate falls back to interactive resolution —
+  and its history stands: every decision it discharged while valid remains
+  attributed to it. The removal act identifies the policies it orphans (the
+  existing rule, unchanged).
+- **`superseded`** — replaced by a new policy chaining provenance. Re-owning a
+  departed author's policy is exactly this: a **new** policy authored by the
+  adopting roster member — accountability never transfers mechanically.
+- **`revoked`** — an attributed governance write ending the rule with no
+  replacement. Carries no reason set — the revocation is itself the recorded
+  act, and rationale rides the record (the decision-record device).
+- Terminals are absorbing: a returning author re-grants with a new policy
+  chaining provenance, never by reactivating the orphaned one.
+- Project terminals do not disposition policies — a policy is a standing grant,
+  outside the cascade (see [Terminal Integrity](#terminal-integrity)).
 
 ### Planning-Family Status Sets
 
