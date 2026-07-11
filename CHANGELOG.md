@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.60.0 (2026-07-10)
+
+The v0.60 cycle makes termination honest across the framework. A new Terminal
+Integrity contract governs what becomes of a project's child graph when the
+project reaches a terminal — the cancellation cascade — and every terminable
+record type earns a real lifecycle: the parallel batch, escalations, directives,
+and deviations each gain normative states and honest terminals, and the
+planning-family status vocabularies are ratified so superseded work is named
+`obsolete` rather than left dangling.
+
+### Features
+
+- **spec:** add the Terminal Integrity contract — child-graph disposition on
+  project terminals and the cancellation cascade that propagates disposition
+  down the child graph (TC-1)
+- **spec:** give the parallel batch a lifecycle with honest abnormal terminals
+  (TC-2)
+- **spec:** give escalations a normative lifecycle (TC-3)
+- **spec:** add the directive `voided` terminal (TC-4)
+- **spec:** make deviation expiry and revocation real (TC-5)
+- **spec:** ratify the planning-family status vocabularies (TC-6)
+
+### Bug Fixes
+
+- **spec:** replace `moot` with `obsolete` as the normative term
+- **framework:** enrich INDEX rows for the new spec sections (v0.60 cold-review
+  Run 1)
+
 ## 0.59.0 (2026-07-10)
 
 The v0.59 cycle gives the project its own normative lifecycle: six states, two
