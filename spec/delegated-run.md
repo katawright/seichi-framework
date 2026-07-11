@@ -270,7 +270,8 @@ state.
   deterministic merge, never a fork.
 - **Monotonic per-run sequence.** Directives and run-state writes MUST order by
   a monotonic run-scoped sequence/version, not wall-clock. An item referencing a
-  stale run-version is re-evaluated against current state (and may be moot).
+  stale run-version is re-evaluated against current state (and may be moot — a
+  moot directive records `voided`, below).
 - **Deterministic conflict resolution.** Duplicate/out-of-order items MUST
   reconcile deterministically (merge-by-identity for evidence/reports;
   last-by-sequence for directives) under single-writer-for-scope; never a silent
@@ -305,7 +306,7 @@ state.
 - **Directive lifecycle, ordering, and supersession:**
 
 ```text
-draft -> queued -> received -> acknowledged -> applied | rejected | superseded
+draft -> queued -> received -> acknowledged -> applied | rejected | superseded | voided
 ```
 
 - **Intent vs. effect** — `queued`/`received`/`acknowledged` is intent; **only
@@ -315,6 +316,16 @@ draft -> queued -> received -> acknowledged -> applied | rejected | superseded
 - **Supersession** — a later same-scope/same-type directive supersedes an
   earlier un-applied one; the superseded directive goes to `superseded` and MUST
   NOT also apply. Exactly-once across the supersession chain.
+- **Voiding** — the terminal for intent whose referent is gone; unlike
+  supersession it has **no replacement semantics**. When a run reaches any
+  terminal — its own or cascaded — every non-terminal directive against it MUST
+  be voided with reason `run-terminal`: the
+  [Terminal Integrity](canonical-state.md#terminal-integrity) cascade at the run
+  → directive hop. A stale directive whose re-evaluation determines it moot is
+  voided with reason `evaluated-moot`. The reason set is closed: `run-terminal`
+  · `evaluated-moot`. A voided directive MUST NOT apply. A `draft` never entered
+  the directive exchange: it MAY simply be discarded, and if retained it is
+  voided with the rest.
 
 **Outputs.** Exactly-once effects under duplication and reordering.
 
