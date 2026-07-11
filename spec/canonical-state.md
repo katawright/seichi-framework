@@ -569,6 +569,42 @@ active -> expired | revoked
 - Terminals are absorbing: re-granting is a new record chaining provenance,
   never a reactivation.
 
+### Planning-Family Status Sets
+
+The planning families carry statuses, not transition machines: what each set
+must distinguish is an honest resting place for every way the record's story can
+end — including the ways nobody plans for. The normative closed sets:
+
+| Family            | Status set (closed)                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| Goal              | `active` · `achieved` · `dropped`                                                        |
+| Success criterion | `not-started` · `met` · `met-synthetic` · `deferred` · `blocked` · `revised` · `dropped` |
+| Requirement       | `proposed` · `approved` · `implemented` · `verified` · `deferred` · `dropped`            |
+| Assumption        | `open` · `validated` · `invalidated` · `retired`                                         |
+| Risk              | `open` · `mitigated` · `accepted` · `realized` · `closed`                                |
+
+- **A success criterion can be honestly retired.** `dropped` is the resting
+  status for a criterion that will not be pursued; `revised` and `deferred` both
+  promise a future, and a criterion with no future MUST NOT hide in either.
+- **A risk that materializes has a word.** `realized` records the outcome — the
+  risk happened — distinct from `closed` (the threat ended without
+  materializing) and from `mitigated`/`accepted` (live postures). Collapsing a
+  realized risk into `closed` destroys the outcome distinction the project
+  terminals preserve. The reason-and-detail record suffices; a linked
+  consequence record is product altitude, not required here.
+- **Risks are dispositioned at close, not merely disclosed.** At entry to
+  project `closed`, no risk rests `open`
+  ([Terminal Integrity](#terminal-integrity)'s quiescence set): each is
+  `mitigated`, `accepted`, `realized`, or `closed` — an explicit resting posture
+  someone answers for, recorded under
+  [Record Requirements](#record-requirements).
+- **Planning-family statuses carry no required reason.** The cascade is the
+  exception in effect, not in form: a cascaded landing carries the parent-caused
+  reason on the cascade record per [Terminal Integrity](#terminal-integrity).
+  The cascade lands each family in its retirement status: goals, success
+  criteria, and requirements at `dropped`; assumptions at `retired`; risks at
+  `closed` — each chained to the cancellation with reason `project-canceled`.
+
 **Outputs.** Each record's current status, with its reason where the status
 requires one.
 
