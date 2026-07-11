@@ -8,8 +8,8 @@
 
 **Last Updated:** YYYY-MM-DD
 
-**Date:** YYYY-MM-DD **Status:** [Proposed | Accepted | Deprecated | Superseded
-by ADR-XXX] **Deciders:** [Names of people involved in decision]
+**Date:** YYYY-MM-DD **Status:** [Proposed | Accepted | Rejected | Deprecated |
+Superseded by ADR-XXX] **Deciders:** [Names of people involved in decision]
 
 ---
 
@@ -226,4 +226,4 @@ post-commitment surprises.
 | YYYY-MM-DD | [Name] | Created ADR | Initial decision |
 |            |        |             |                  |
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.4.0. -->
+<!-- Template Last Updated: 2026-07-10 | Added in v0.4.0. -->
