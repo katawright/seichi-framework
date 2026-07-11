@@ -352,12 +352,12 @@ completing its slice records an
 
 Rationale: the [lifecycle contract](#project-lifecycle) makes the terminals
 absorbing and honest about the project's own row; the families under it — runs,
-batches, escalations, directives, deviations, carry-forward conditions, planning
-records — each keep their own status. Without a contract over that child graph
-at the moment a terminal is recorded, the terminals stop being honest: `closed`
-could assert completeness over still-open work, and a canceled project's
-children would stay open forever — the trail-off dishonesty the lifecycle exists
-to kill.
+batches, escalations, directives, deviations, carry-forward conditions, decision
+records, planning records — each keep their own status. Without a contract over
+that child graph at the moment a terminal is recorded, the terminals stop being
+honest: `closed` could assert completeness over still-open work, and a canceled
+project's children would stay open forever — the trail-off dishonesty the
+lifecycle exists to kill.
 
 **Applicability.** Every transition into a project terminal (`closed` /
 `canceled`), at every tier, consequence level, autonomy posture, and operating
