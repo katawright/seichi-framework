@@ -866,8 +866,8 @@ the [Operating Model Guide](../../guides/operating-model.md).
 When handing off between agent sessions during System Design, capture the
 following state so the next session can continue without re-deriving context:
 
-- Key ADRs drafted and their current status — Proposed, Accepted, or Needs
-  Review — and which decisions are still open
+- Key ADRs drafted, their current status (Proposed or Accepted), which proposals
+  are still in review, and which decisions are still open
 - Unresolved trade-offs between architecture options where a human decision is
   required before the session can proceed
 - Pending specialized reviews — which ADRs or design sections are awaiting
@@ -915,6 +915,6 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.12.0.
