@@ -84,6 +84,14 @@ full file inventory and canonical sources.
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`
   - Scopes: stage names, framework, ci
   - Breaking changes: `!` or `BREAKING CHANGE:` in commit body
+  - Multi-line commit messages: never wrap the message in a PowerShell
+    here-string (`@'…'@`) unless the command actually runs in PowerShell. In a
+    POSIX shell (the Bash tool / Git Bash) `@'…'@` is not a here-string — it
+    parses as a literal `@`, a single-quoted string, and a literal `@`, which
+    silently wraps the message in stray `@` lines. Use a POSIX heredoc
+    (`git commit -F -  <<'EOF' … EOF`) in Bash, or a real here-string only in
+    PowerShell. After committing, confirm `git log -1` shows no leading/trailing
+    `@` line.
 - File versioning:
   - Stage artifacts include `Last Updated` and version-introduction note
   - Update `**Last Updated:** YYYY-MM-DD` in the Notes section of every modified
@@ -185,7 +193,7 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
 split (terminal Closure stage; Operations sibling process; Flow delivery mode).
