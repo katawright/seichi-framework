@@ -18,5 +18,6 @@
   { "regex": "\\bpreparation_autonomy\\b", "flags": "g", "replacement": "(dropped field — Phase 4½)" },
   { "regex": "\\bManual Process Guide\\b", "flags": "g", "replacement": "Bootstrap Guide" },
   { "regex": "\\bcancelled\\b", "flags": "gi", "replacement": "canceled (one l — framework-normative spelling, v0.59)" },
-  { "regex": "\\bthe gate (in)?to\\b", "flags": "gi", "replacement": "the decision that gates entry to (acceptance is a Review checkpoint, not an investment gate — v0.59)" }
+  { "regex": "\\bthe gate (in)?to\\b", "flags": "gi", "replacement": "the decision that gates entry to (acceptance is a Review checkpoint, not an investment gate — v0.59)" },
+  { "regex": "\\bmoot\\b", "flags": "gi", "replacement": "obsolete (framework-normative term, v0.60 — 'moot' reads as 'debatable' in British English)" }
 ]

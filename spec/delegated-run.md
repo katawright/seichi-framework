@@ -270,8 +270,8 @@ state.
   deterministic merge, never a fork.
 - **Monotonic per-run sequence.** Directives and run-state writes MUST order by
   a monotonic run-scoped sequence/version, not wall-clock. An item referencing a
-  stale run-version is re-evaluated against current state (and may be moot — a
-  moot directive records `voided`, below).
+  stale run-version is re-evaluated against current state (and may be obsolete —
+  an obsolete directive records `voided`, below).
 - **Deterministic conflict resolution.** Duplicate/out-of-order items MUST
   reconcile deterministically (merge-by-identity for evidence/reports;
   last-by-sequence for directives) under single-writer-for-scope; never a silent
@@ -289,7 +289,7 @@ state.
   it**: one logical governance write is one transaction, one version increment,
   one event — a version-less mutation of canonical state is not representable.
   On mismatch the write is **rejected, never silently merged**; the writer
-  re-evaluates against current state (the write may be moot, be resubmitted
+  re-evaluates against current state (the write may be obsolete, be resubmitted
   rebased, or surface a conflict to resolve) — rejection is a normal protocol
   outcome, not a failure. A record family MAY instead declare a deterministic
   merge (merge-by-identity for identity-keyed append families; last-by-sequence
@@ -321,11 +321,11 @@ draft -> queued -> received -> acknowledged -> applied | rejected | superseded |
   terminal — its own or cascaded — every non-terminal directive against it MUST
   be voided with reason `run-terminal`: the
   [Terminal Integrity](canonical-state.md#terminal-integrity) cascade at the run
-  → directive hop. A stale directive whose re-evaluation determines it moot is
-  voided with reason `evaluated-moot`. The reason set is closed: `run-terminal`
-  · `evaluated-moot`. A voided directive MUST NOT apply. A `draft` never entered
-  the directive exchange: it MAY simply be discarded, and if retained it is
-  voided with the rest.
+  → directive hop. A stale directive whose re-evaluation determines it obsolete
+  is voided with reason `evaluated-obsolete`. The reason set is closed:
+  `run-terminal` · `evaluated-obsolete`. A voided directive MUST NOT apply. A
+  `draft` never entered the directive exchange: it MAY simply be discarded, and
+  if retained it is voided with the rest.
 
 **Outputs.** Exactly-once effects under duplication and reordering.
 
