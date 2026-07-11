@@ -71,10 +71,11 @@ defines — performed at human cadence and bookending the Initiation Brief.
 ### Key Principle
 
 Completion is a contract, not a vibe. A project may be claimed complete only
-when every in-scope requirement has an explicit disposition, applicable success
-criteria have evidence or a measurement plan, and the honest defects and
-limitations are disclosed. Closure renders that contract; it does not invent a
-second definition of "done."
+when every in-scope requirement has an explicit disposition, every success
+criterion is accounted for — met with evidence, carried by a post-release
+measurement plan, or honestly retired — and the honest defects and limitations
+are disclosed. Closure renders that contract; it does not invent a second
+definition of "done."
 
 ### Starting Point
 
@@ -229,11 +230,12 @@ claimed → verified → [acceptance decision recorded] → closed
 ```
 
 A project may be **claimed** complete only when every approved in-scope
-requirement has an explicit disposition, applicable success criteria have
-evidence or a recorded measurement plan, required verification and assurance
-pass, the result is inside its operating envelope, and known defects and
-limitations are disclosed. **Verified** confirms the claim against evidence —
-checked against _requirements_. **Acceptance** is the human-owned decision to
+requirement has an explicit disposition, every success criterion is explicitly
+accounted for — `met` with evidence, carried by a recorded post-release
+measurement plan, or honestly retired (`dropped`) — required verification and
+assurance pass, the result is inside its operating envelope, and known defects
+and limitations are disclosed. **Verified** confirms the claim against evidence
+— checked against _requirements_. **Acceptance** is the human-owned decision to
 take delivery — checked against _intent_ — and it gates `closed` as a decision
 **made and recorded, not necessarily positive**: the outcome rides as `closed`'s
 reason (`accepted`, `acceptance-declined`, or `acceptance-lapsed`). **`closed`**
