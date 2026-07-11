@@ -83,12 +83,12 @@ acceptance-declined / acceptance-lapsed]
 
 <!-- Element 4: assurance result at the required level (recorded even when the
      required level is None/Self). Plus each success criterion against its
-     Initiation target (cite SC IDs). Result: the criterion's canonical status —
-     met, met-synthetic, not-met, or dropped (see
-     spec/canonical-state.md#planning-family-status-sets). For criteria that
-     need time to measure, record a Re-check Date (mirrors the success criteria
-     register) rather than leaving them open-ended; the criterion lands its
-     outcome status when the measurement reports. -->
+     Initiation target (cite SC IDs). Result: the criterion's final outcome
+     status — met, met-synthetic, not-met, or dropped (see
+     spec/canonical-state.md#planning-family-status-sets). A criterion that
+     needs time to measure leaves Result "—" and records a Re-check Date
+     (mirrors the success criteria register) rather than staying open-ended;
+     it lands its outcome status when the measurement reports. -->
 
 **Assurance result:** [None / Self / Internal / External — and the conclusion]
 

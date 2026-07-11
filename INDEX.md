@@ -197,6 +197,6 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.41.0.

@@ -339,7 +339,8 @@ ADRs follow a propose → review → decide → record → evolve lifecycle:
 - **Accepted:** Decision has been approved and will be/is being implemented
 - **Rejected:** The deciding authority decided against the proposal
 - **Withdrawn:** The author retracted the proposal before a decision was made
-- **Deprecated:** Decision is no longer relevant but not superseded
+- **Deprecated:** Decision stays on the record but is now discouraged, with no
+  specific successor
 - **Superseded by ADR-XXX:** This decision has been replaced by a newer decision
 
 #### Tips for Writing Good ADRs
