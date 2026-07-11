@@ -820,10 +820,10 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
 **Assurance result:** Internal — independent UAT approved (Jamie Chen,
 2026-03-10); no PII in logs verified.
 
-| SC    | Target                          | Result  | Re-check Date | Notes                       |
-| ----- | ------------------------------- | ------- | ------------- | --------------------------- |
-| SC-01 | Onboarding completion 68% → 95% | Pending | 2026-04-15    | First cohort at 30-day mark |
-| SC-02 | Time to assign tasks < 5 min    | Pending | 2026-03-26    | Baseline 25 min (manual)    |
+| SC    | Target                          | Result | Re-check Date | Notes                       |
+| ----- | ------------------------------- | ------ | ------------- | --------------------------- |
+| SC-01 | Onboarding completion 68% → 95% | —      | 2026-04-15    | First cohort at 30-day mark |
+| SC-02 | Time to assign tasks < 5 min    | —      | 2026-03-26    | Baseline 25 min (manual)    |
 
 ## Honest Incomplete — Defects, Risks, Limitations
 
@@ -904,8 +904,8 @@ FR-3's criteria shown; the full table covers all Increment 1 ACs).
   Deferred) — the final pass over the traceability chain, and the honesty floor
   that never folds
 - Success criteria that need time to measure carry a **re-check date** instead
-  of being marked done — SC-01 and SC-02 stay Pending and become Operations' to
-  watch, continuing the measurement throughline past Closure
+  of being marked done — SC-01 and SC-02 leave their Result open and become
+  Operations' to watch, continuing the measurement throughline past Closure
 - Deferred scope routes to the **idea backlog** (IDEA-021), not a support pile —
   the learning loop in action
 - The **operational handoff record** is what the Operations owner runs the
@@ -974,6 +974,6 @@ core value — it replaces tribal knowledge with documented decisions.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.17.0.
