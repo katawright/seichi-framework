@@ -118,13 +118,16 @@ operating configuration, and the records produced as work proceeds.
 - **Carry-forward obligations are tracked state.** A "proceed with conditions"
   gate or checkpoint outcome records each condition as a tracked item — owner,
   discharging stage or increment, and an Open / Satisfied / Blocked / Withdrawn
-  status (Withdrawn — no longer applicable — carries a recorded reason and
-  attribution). Subsequent stages re-read these at entry, and a stage MUST
-  disposition each condition due within it (satisfy, withdraw with a recorded
-  reason, re-own with a new discharge point, or escalate) before it closes.
-  Re-owning supersedes the tracked item with a successor rather than mutating
-  it, preserving the original's provenance. They are canonical state, not a
-  gate-record footnote.
+  status. Withdrawn — no longer applicable — carries an attribution and a
+  recorded reason from a closed set: `party-withdrawn` (a party's own act — the
+  condition no longer applies) · `project-canceled` (the cascade,
+  [Terminal Integrity](#terminal-integrity)); free prose belongs in a detail
+  field, never in the reason. Subsequent stages re-read these at entry, and a
+  stage MUST disposition each condition due within it (satisfy, withdraw with a
+  recorded reason, re-own with a new discharge point, or escalate) before it
+  closes. Re-owning supersedes the tracked item with a successor rather than
+  mutating it, preserving the original's provenance. They are canonical state,
+  not a gate-record footnote.
 
 **Outputs.** The canonical project state and its Authorization subset.
 
@@ -404,7 +407,10 @@ being recorded, with its reason and attribution.
   vocabulary defines the **parent-caused disposition** the cascade lands it in:
   a resting status plus a parent-caused reason code — `project-canceled` at the
   project hop, `run-terminal` at the run hop — so a cascaded ending is never
-  conflated with an ending the child's own parties chose.
+  conflated with an ending the child's own parties chose. Carry-forward
+  conditions land at Withdrawn / `project-canceled` — Open and Blocked alike
+  ([Minimum Canonical Project State](#minimum-canonical-project-state) closes
+  the withdrawal-reason set).
 - **The run → directive hop is the same cascade one level down.** A run reaching
   any terminal — its own or cascaded — MUST leave no directive non-terminal; its
   non-terminal directives take the directive family's parent-caused disposition
