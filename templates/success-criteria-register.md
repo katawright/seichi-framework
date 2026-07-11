@@ -18,34 +18,39 @@ how criteria flow through the framework.
 
 ## Success Criteria
 
-| SC ID | Goal(s) | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                  | Last Measured | Re-check Date  |
-| ----- | ------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | --------------------------------------- | ------------- | -------------- |
-| SC-01 | G-1     | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [Not started / Tracking / Met / Missed] | YYYY-MM-DD    | YYYY-MM-DD / — |
-| SC-02 | G-1     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    | YYYY-MM-DD / — |
-| SC-03 | G-2     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC ID | Goal(s) | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                                                                 | Last Measured | Re-check Date  |
+| ----- | ------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------- | ------------- | -------------- |
+| SC-01 | G-1     | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [not-started / met / met-synthetic / not-met / deferred / blocked / revised / dropped] | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC-02 | G-1     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC-03 | G-2     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
 
 <!-- Keep this table as the single source of truth for project success criteria.
      Other stages reference this register rather than duplicating criteria.
      Goal(s): the Initiation Brief goal ID(s) this criterion verifies — usually
      one; list several only when the metric genuinely serves multiple goals.
+     Status: the canonical success-criterion set — see
+     spec/canonical-state.md#planning-family-status-sets. A criterion that will
+     not be pursued rests dropped, never blank; delivered-but-measured-unmet
+     rests not-met (a finding, not a failure of the record).
      Re-check Date: for criteria that need time to measure (e.g., adoption over a
      quarter), the committed date to re-measure. Set at project close-out for any
-     criterion not yet Met; leave "—" once Met or when measured continuously.
+     criterion still awaiting measurement; leave "—" once the criterion rests at
+     its outcome or is dropped, or when measured continuously.
      See guides/framework.md#measurement-throughline for how criteria flow through stages. -->
 
 ---
 
 ## How This Register Is Used
 
-| Stage              | Usage                                                                               |
-| ------------------ | ----------------------------------------------------------------------------------- |
-| **Initiation**     | Create register; define goals, metrics, and targets                                 |
-| **Requirements**   | Ensure NFRs trace to register criteria                                              |
-| **System Design**  | Plan instrumentation to measure register criteria                                   |
-| **Implementation** | Implement measurement systems                                                       |
-| **Verification**   | Validate measurement systems work                                                   |
-| **Deployment**     | Capture baseline measurements                                                       |
-| **Closure**        | Track actuals vs. targets; confirm each criterion is Met or carries a Re-check Date |
+| Stage              | Usage                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| **Initiation**     | Create register; define goals, metrics, and targets                                                    |
+| **Requirements**   | Ensure NFRs trace to register criteria                                                                 |
+| **System Design**  | Plan instrumentation to measure register criteria                                                      |
+| **Implementation** | Implement measurement systems                                                                          |
+| **Verification**   | Validate measurement systems work                                                                      |
+| **Deployment**     | Capture baseline measurements                                                                          |
+| **Closure**        | Track actuals vs. targets; confirm each criterion rests at an honest status or carries a Re-check Date |
 
 ---
 
@@ -72,4 +77,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.29.0. -->
+<!-- Template Last Updated: 2026-07-11 | Added in v0.29.0. -->

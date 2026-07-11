@@ -77,8 +77,8 @@ The terminal bookend to the Initiation gate.
 
 10. [ ] **Every acceptance criterion is Met, Descoped, or Deferred** (a final
         pass over the traceability chain; no AC left ambiguous)
-11. [ ] **Every success criterion is Measured or has a Re-check Date** (recorded
-        in the
+11. [ ] **Every success criterion is Measured, honestly retired (dropped), or
+        has a Re-check Date** (recorded in the
         [Success Criteria Register](../../templates/success-criteria-register.md))
 12. [ ] **Assurance result recorded at the required level** (recorded even when
         the required level is None/Self)
@@ -132,6 +132,6 @@ checklist.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.49.0.
