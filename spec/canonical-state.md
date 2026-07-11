@@ -403,12 +403,13 @@ being recorded, with its reason and attribution.
 - **`canceled` cascades.** Recording `canceled` MUST disposition every open
   child record, transitively down the containment graph — project → run →
   directive, project → batch, and likewise for escalations, approved deviations,
-  carry-forward conditions, and planning records. Each stateful child family's
-  vocabulary defines the **parent-caused disposition** the cascade lands it in:
-  a resting status plus a parent-caused reason code — `project-canceled` at the
-  project hop, `run-terminal` at the run hop — so a cascaded ending is never
-  conflated with an ending the child's own parties chose. Carry-forward
-  conditions land at Withdrawn / `project-canceled` — Open and Blocked alike
+  carry-forward conditions, decision records, and planning records. Each
+  stateful child family's vocabulary defines the **parent-caused disposition**
+  the cascade lands it in: a resting status plus a parent-caused reason code —
+  `project-canceled` at the project hop, `run-terminal` at the run hop — so a
+  cascaded ending is never conflated with an ending the child's own parties
+  chose. Carry-forward conditions land at Withdrawn / `project-canceled` — Open
+  and Blocked alike
   ([Minimum Canonical Project State](#minimum-canonical-project-state) closes
   the withdrawal-reason set).
 - **The run → directive hop is the same cascade one level down.** A run reaching
@@ -489,7 +490,8 @@ the precondition the [project-lifecycle](#project-lifecycle) contract was
 written to eliminate. This contract closes the class: every canonical record
 family's status set is normative, here or in the family's own contract.
 
-**Applicability.** Escalations; approved deviations; the planning families
+**Applicability.** Escalations; approved deviations; decision records (gate and
+checkpoint decisions; architecture decision records); the planning families
 (goals, success criteria, requirements, assumptions, risks).
 
 **Inputs.** Recorded status changes and their reasons; for cascaded
@@ -580,6 +582,46 @@ active -> expired | revoked
   `revoked` with reason `project-canceled`.
 - Terminals are absorbing: re-granting is a new record chaining provenance,
   never a reactivation.
+
+### Decision Lifecycle
+
+Two decision kinds share one correction discipline — the carry-forward re-owning
+rule ([Minimum Canonical Project State](#minimum-canonical-project-state)),
+applied to the records where it was implied but never stated:
+
+- **Decision records are append-only.** A re-decision or correction supersedes
+  the prior record with a successor chaining provenance
+  ([Record Requirements](#record-requirements)) — never a mutation. Exactly one
+  **live** decision exists per subject — per gate or checkpoint for
+  gate/checkpoint decisions, per decision key for architecture decision records
+  — and "current" is **derived from the chain, never stored beside it**. The
+  superseding record's rationale is the content; no reason vocabulary attends
+  supersession (the escalation `resolved` device).
+- **Gate and checkpoint decisions carry no status axis.** The record carries its
+  outcome, rationale, and attribution; superseded-ness is structural (the
+  chain), and a status column beside the chain would be a second source for the
+  same fact. An **unmade** decision is not an open decision record — it is an
+  [escalation](#escalation-lifecycle), already covered.
+- **Architecture decision record (ADR) statuses (closed set):** `proposed` ·
+  `accepted` · `rejected` · `withdrawn` · `deprecated` · `superseded`.
+  - **`rejected` and `withdrawn` are different stories** (the `resolved` /
+    `raiser-withdrawn` distinction, ported): `rejected` — the deciding authority
+    decided against the proposal; `withdrawn` — the author retracted it before a
+    decision. A durable record store cannot delete a pulled draft, and without
+    `withdrawn` it would have to lie as `rejected`.
+  - **`deprecated` and `superseded` are different endings for an accepted
+    decision:** `deprecated` — still on the record, now discouraged, no specific
+    successor; `superseded` — replaced, and the chain names the successor.
+  - `proposed` is the open status; `accepted` is a standing posture that may
+    later move to `deprecated` or `superseded`; the other four are resting.
+    Statuses carry no required reason — rationale rides the record.
+- **Cascade landing:** the [Terminal Integrity](#terminal-integrity) cascade
+  lands an open (`proposed`) ADR at `withdrawn`, the parent-caused reason riding
+  the cascade record (the planning-family device). Gate and checkpoint decisions
+  need no landing — a made decision is a fact, and the unmade one is its
+  escalation. ADRs do not join the `closed` quiescence set: the
+  [completion contract](#project-level-completion)'s resolved-decisions element
+  already covers the honest case.
 
 ### Planning-Family Status Sets
 
