@@ -317,7 +317,7 @@ End-to-end flow from draft to publication:
 
 #### ADR Lifecycle
 
-ADRs follow a propose → review → approve → record → evolve lifecycle:
+ADRs follow a propose → review → decide → record → evolve lifecycle:
 
 1. **Propose:** Author creates an ADR with status "Proposed" and opens a review
    (PR, design meeting, or async comment thread)
@@ -325,16 +325,20 @@ ADRs follow a propose → review → approve → record → evolve lifecycle:
    - Minimal: Self-review or pair discussion
    - Standard: Team review via PR or design meeting
    - Enterprise: Architecture council or tech lead board
-3. **Approve:** Reviewers accept; author updates status to "Accepted" and
-   records who decided
+3. **Decide:** Reviewers accept — author updates status to "Accepted" and
+   records who decided — or decide against, landing the ADR at "Rejected". An
+   author may retract a proposal before the decision by setting "Withdrawn"
 4. **Record:** ADR is merged to version control alongside code
 5. **Evolve:** When a decision is superseded, create a new ADR and set the
    original's status to "Superseded by ADR-XXX"
 
-**Status values:**
+**Status values** (the
+[canonical closed set](../../spec/canonical-state.md#decision-lifecycle)):
 
 - **Proposed:** Decision is under consideration
 - **Accepted:** Decision has been approved and will be/is being implemented
+- **Rejected:** The deciding authority decided against the proposal
+- **Withdrawn:** The author retracted the proposal before a decision was made
 - **Deprecated:** Decision is no longer relevant but not superseded
 - **Superseded by ADR-XXX:** This decision has been replaced by a newer decision
 
@@ -735,6 +739,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.12.0.
