@@ -459,6 +459,18 @@ being recorded, with its reason and attribution.
   mode, through which the terminal is readable); what ends is the binding
   **obligation** — unbinding afterward is an administrative act, never required
   for the terminal to be honest.
+- **Standing grants and standing configuration are not open work.** The
+  Authorization subset's records (authorization records, the effective operating
+  envelope, capability coverage, function separations), the
+  [authorized-party roster](#authorized-parties-for-floor-decisions), and
+  [pre-authorized policies](#pre-authorized-policy-lifecycle) are dispositioned
+  by neither terminal — the mode-binding rule, generalized. Their **force** ends
+  with the project: a terminal project admits no decision for a policy to clear
+  and no work for an authorization to cover; the records persist as history of
+  what stood at the end. The cascade does not rewrite them — `revoked` and its
+  siblings record a party's decision about the grant itself, and cancellation
+  decides nothing about any grant. Post-terminal housekeeping on this class is
+  administrative, never required for the terminal to be honest.
 
 **Outputs.** At `closed`, a quiescent child graph under the completeness claim;
 at `canceled`, a fully dispositioned child graph, every cascaded record carrying
