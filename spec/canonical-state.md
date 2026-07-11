@@ -302,16 +302,18 @@ operating envelope; acceptance and authorization decisions.
 - A project-completion claim MUST NOT be permitted merely because agents
   stopped, tasks were marked complete, tests passed, or deployment succeeded. It
   is permitted only when **all** hold: every approved in-scope requirement has
-  an explicit disposition; applicable success criteria have evidence or an
-  explicit post-release measurement plan; required decisions and constraints
-  remain satisfied or approved deviations are recorded; all batches and
-  increments have explicit outcomes; parallel work is integrated; required
-  whole-system verification and assurance pass; deployment and post-deployment
-  verification pass when applicable; required operational readiness, handoff,
-  and cleanup are complete; known defects, deviations, unresolved risks, and
-  limitations are disclosed; the final result remains inside the approved
-  operating envelope; and required acceptance and authorization decisions are
-  resolved.
+  an explicit disposition; every success criterion is explicitly accounted for —
+  `met` with evidence, carried by an explicit post-release measurement plan
+  (which lands its outcome status when it reports, per
+  [Planning-Family Status Sets](#planning-family-status-sets)), or honestly
+  retired (`dropped`); required decisions and constraints remain satisfied or
+  approved deviations are recorded; all batches and increments have explicit
+  outcomes; parallel work is integrated; required whole-system verification and
+  assurance pass; deployment and post-deployment verification pass when
+  applicable; required operational readiness, handoff, and cleanup are complete;
+  known defects, deviations, unresolved risks, and limitations are disclosed;
+  the final result remains inside the approved operating envelope; and required
+  acceptance and authorization decisions are resolved.
 - **Post-deployment verification verifies the deploy.** Its referent is
   production health — and, for an increment deployed dark behind a feature flag,
   the dark behavior. User visibility is a separate fact off this axis (see
@@ -390,7 +392,10 @@ being recorded, with its reason and attribution.
   of this quiescence at **claim** time; this precondition binds the same
   determination to the transition itself — closure-stage work happens after the
   claim, and the completeness assertion is recorded over the child graph at
-  entry to `closed`, not at claim time.
+  entry to `closed`, not at claim time. Planning outcome statuses are the other
+  sanctioned post-`closed` motion: a goal or success criterion awaiting
+  post-release measurement resolves to its outcome status after the terminal
+  (see [Planning-Family Status Sets](#planning-family-status-sets)).
 
 - **`canceled` cascades.** Recording `canceled` MUST disposition every open
   child record, transitively down the containment graph — project → run →
@@ -576,17 +581,35 @@ The planning families carry statuses, not transition machines: what each set
 must distinguish is an honest resting place for every way the record's story can
 end — including the ways nobody plans for. The normative closed sets:
 
-| Family            | Status set (closed)                                                                      |
-| ----------------- | ---------------------------------------------------------------------------------------- |
-| Goal              | `active` · `achieved` · `dropped`                                                        |
-| Success criterion | `not-started` · `met` · `met-synthetic` · `deferred` · `blocked` · `revised` · `dropped` |
-| Requirement       | `proposed` · `approved` · `implemented` · `verified` · `deferred` · `dropped`            |
-| Assumption        | `open` · `validated` · `invalidated` · `retired`                                         |
-| Risk              | `open` · `mitigated` · `accepted` · `realized` · `closed`                                |
+| Family            | Status set (closed)                                                                                  |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| Goal              | `active` · `achieved` · `not-achieved` · `dropped`                                                   |
+| Success criterion | `not-started` · `met` · `met-synthetic` · `not-met` · `deferred` · `blocked` · `revised` · `dropped` |
+| Requirement       | `proposed` · `approved` · `implemented` · `verified` · `deferred` · `dropped`                        |
+| Assumption        | `open` · `validated` · `invalidated` · `retired`                                                     |
+| Risk              | `open` · `mitigated` · `accepted` · `realized` · `closed`                                            |
 
 - **A success criterion can be honestly retired.** `dropped` is the resting
   status for a criterion that will not be pursued; `revised` and `deferred` both
   promise a future, and a criterion with no future MUST NOT hide in either.
+- **Delivered-but-unmet has a word.** `not-achieved` (goal) and `not-met`
+  (success criterion) are the resting statuses for an outcome pursued to
+  delivery and measured unmet — typically by the post-release measurement plan
+  the [completion contract](#project-level-completion) carries. They differ in
+  kind from `dropped`: `dropped` records a decision not to pursue;
+  `not-achieved` and `not-met` record a measured result. A goal whose project
+  delivered and whose measurement came back negative MUST NOT hide in `active`
+  (a promise nobody will keep), in `dropped` (a retirement that never happened),
+  or in any status that promises a future. A failed outcome is a finding, not a
+  defect in the record — the honest word is what makes the learning citable.
+- **Outcome statuses may resolve after project `closed`.** A superseding status
+  write landing a goal or success criterion at its outcome status —
+  `achieved`/`not-achieved`, `met`/`not-met` — chained to the post-release
+  measurement plan, is legal and expected after entry to `closed`: the planning
+  families are deliberately absent from
+  [Terminal Integrity](#terminal-integrity)'s quiescence set, and `closed`
+  asserts completeness of the delivered work, never of outcome evidence that
+  arrives on the measurement plan's clock.
 - **A risk that materializes has a word.** `realized` records the outcome — the
   risk happened — distinct from `closed` (the threat ended without
   materializing) and from `mitigated`/`accepted` (live postures). Collapsing a
@@ -1059,6 +1082,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-10
+**Last Updated:** 2026-07-11
 
 Added to framework in v0.49.0.
