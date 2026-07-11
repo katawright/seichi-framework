@@ -517,10 +517,11 @@ open -> resolved | withdrawn | lapsed
   links its resolution. Carries no reason — the resolution record is the
   content.
 - **`withdrawn`** — ended without a resolution. Reasons (closed set):
-  `raiser-withdrawn` (the raising party no longer needs the decision) · `moot`
-  (the triggering condition resolved itself — moot is a reason, not a fifth
-  state) · `project-canceled` (the cascade). The reason code records who ended
-  it; the status name is shared honestly because the reason disambiguates.
+  `raiser-withdrawn` (the raising party no longer needs the decision) ·
+  `obsolete` (the triggering condition resolved itself — obsolescence is a
+  reason, not a fifth state) · `project-canceled` (the cascade). The reason code
+  records who ended it; the status name is shared honestly because the reason
+  disambiguates.
 - **`lapsed`** — the determination that no decision will come (the
   `acceptance-lapsed` device, ported). Recording the lapse is a human act —
   interactive, or pre-authorized policy as the policy author's act — never a
