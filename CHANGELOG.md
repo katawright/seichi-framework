@@ -1,5 +1,57 @@
 # Changelog
 
+## 0.61.0 (2026-07-11)
+
+The v0.61 cycle — Outcome Honesty & Vocabulary Closure — finishes what v0.60's
+Terminal Integrity started: every record ending has an honest resting place, and
+every canonical status vocabulary is ratified and closed. Goals and success
+criteria gain delivered-but-measured-unmet statuses that may legally land after
+project `closed`, the carry-forward withdrawal reasons close, decision records
+earn a supersession contract with a six-value ADR status set, pre-authorized
+policies get a lifecycle, and standing grants are declared exempt from the
+cancellation cascade — their force ends with the project; the records persist.
+
+### Features
+
+- **spec:** goal and success-criterion failure statuses — `not-achieved` and
+  `not-met` name the delivered-but-measured-unmet outcome, and outcome statuses
+  may resolve after project `closed` on the measurement plan's clock (VC-1)
+- **spec:** close the carry-forward withdrawal-reason set (`party-withdrawn` ·
+  `project-canceled`) and name its cascade landing (VC-2)
+- **spec:** ratify the decision-record supersession contract and ADR status
+  vocabulary — append-only supersession, one live decision per subject, no
+  status axis on gate/checkpoint decisions, and the closed set
+  `proposed · accepted · rejected · withdrawn · deprecated · superseded` (VC-3)
+- **spec:** ratify the pre-authorized policy lifecycle —
+  `active → orphaned | superseded | revoked` (VC-4)
+- **spec:** standing grants are cascade-exempt, stated at class level (VC-5)
+
+### Improvements
+
+- **framework:** enrich the INDEX canonical-state row for the v0.61 sections
+- **framework:** warn against PowerShell here-strings in POSIX-shell commits
+
+### Bug Fixes
+
+- **spec:** disambiguate policy `superseded` from absorbing `orphaned` — a
+  re-owned departed author's policy rests `orphaned`, never `superseded`
+- **spec:** admit measured-unmet criteria at claim time — `not-met` is an honest
+  finding, not a claim blocker
+- **spec:** add decision records to the Terminal Integrity rationale
+- **closure:** re-scope the close-out disposition parenthetical to the
+  acceptance-criterion level
+- **closure:** mirror the reworded completion clause in both completion-contract
+  paraphrases
+- **system-design:** propagate the six-value ADR status set into the stage
+  guide's status list and lifecycle
+- **system-design:** drop the invented "Needs Review" ADR status from the
+  session-handoff notes
+- **templates:** the success-criteria register and project close-out speak the
+  canonical success-criterion vocabulary
+- **framework:** clear the v0.61 cold-review cosmetic nits — close-out Result
+  guidance, worked-example alignment, the `Deprecated` gloss, and the INDEX
+  Notes stamp
+
 ## 0.60.0 (2026-07-10)
 
 The v0.60 cycle makes termination honest across the framework. A new Terminal
