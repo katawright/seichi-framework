@@ -306,8 +306,9 @@ operating envelope; acceptance and authorization decisions.
   stopped, tasks were marked complete, tests passed, or deployment succeeded. It
   is permitted only when **all** hold: every approved in-scope requirement has
   an explicit disposition; every success criterion is explicitly accounted for —
-  `met` with evidence, carried by an explicit post-release measurement plan
-  (which lands its outcome status when it reports, per
+  `met` with evidence, measured unmet (`not-met` — an honest finding, not a
+  claim blocker), carried by an explicit post-release measurement plan (which
+  lands its outcome status when it reports, per
   [Planning-Family Status Sets](#planning-family-status-sets)), or honestly
   retired (`dropped`); required decisions and constraints remain satisfied or
   approved deviations are recorded; all batches and increments have explicit
