@@ -23,6 +23,8 @@ over it, and that it has a complete, lossless Markdown rendering.
   transitions — the **project-level completion contract** that rides it, and the
   **terminal-integrity contract** that binds its terminals to the open child
   graph
+- Fix normative, closed **status vocabularies** for the canonical record
+  families that lack their own lifecycle contract
 - Establish that briefs, checklists, packages, and reports are **rendered
   views**, not parallel sources
 - Name the two operating modes — **file mode** and **platform mode** — and the
@@ -45,9 +47,11 @@ consequence level; only ceremony and decision rights scale down.
    for what the state contains and which facts a run authorizes against
 2. Read [**Project Lifecycle**](#project-lifecycle) and
    [**Project-Level Completion**](#project-level-completion) for the project's
-   state model and what "done" means, and
+   state model and what "done" means,
    [**Terminal Integrity**](#terminal-integrity) for what its terminals require
-   of the open child records under them
+   of the open child records under them, and
+   [**Record-Family Status Vocabularies**](#record-family-status-vocabularies)
+   for the closed status sets of the remaining stateful families
 3. Read [**Artifacts as Views**](#artifacts-as-views),
    [**Markdown Self-Sufficiency**](#markdown-self-sufficiency), and
    [**Mode Binding and Discovery**](#mode-binding-and-discovery) for the
@@ -457,6 +461,89 @@ undispositioned member MUST be rejected — the same rejection class as a
 transition outside the defined set. A `canceled` observed with a child still
 open is an incomplete write, not a tolerable intermediate state: the missing
 cascade dispositions MUST be applied, chained to the original transition.
+
+---
+
+## Record-Family Status Vocabularies
+
+Rationale: the stateful families with execution semantics carry their own
+lifecycle contracts — the [project](#project-lifecycle), the
+[run](delegated-run.md#run-lifecycle), the
+[batch](parallel-batch.md#batch-lifecycle), the
+[directive](delegated-run.md#idempotency-substrate), the
+[carry-forward condition](#minimum-canonical-project-state). The remaining
+canonical record families had no normative status model at all, leaving a
+conforming implementation to invent vocabularies the framework never ratified —
+the precondition the [project-lifecycle](#project-lifecycle) contract was
+written to eliminate. This contract closes the class: every canonical record
+family's status set is normative, here or in the family's own contract.
+
+**Applicability.** Escalations; approved deviations; the planning families
+(goals, success criteria, requirements, assumptions, risks).
+
+**Inputs.** Recorded status changes and their reasons; for cascaded
+dispositions, the parent terminal per [Terminal Integrity](#terminal-integrity).
+
+**Procedure.**
+
+- **Status sets are normative and closed** — the lifecycle discipline applied to
+  every family: a situation no status fits is a **missing status**, a framework
+  change, never a free-text escape hatch; free prose belongs in a detail field.
+  Where a status requires a reason, the reason codes are a closed set too.
+- **Resting statuses are absorbing at the record.** Reversing one is a
+  supersession — a successor record chaining provenance to the original — never
+  a mutation of the resting record (the carry-forward re-owning device,
+  generalized).
+- **Parent-caused endings ride [Terminal Integrity](#terminal-integrity):** the
+  cascade lands each family in the resting status named below with the
+  parent-caused reason, never impersonating a party's own act.
+
+### Escalation Lifecycle
+
+An escalation is the canonical record of an unresolved decision routed to
+authority
+([Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution)):
+the affected action stops, the unresolved decision and its evidence are
+recorded, the target authority is identified, state is preserved. The record's
+own lifecycle:
+
+```text
+open -> resolved | withdrawn | lapsed
+```
+
+- **`open`** — awaiting the target authority. The escalation is not itself a
+  resolution; it waits for one.
+- **`resolved`** — the routed decision was made and recorded; the escalation
+  links its resolution. Carries no reason — the resolution record is the
+  content.
+- **`withdrawn`** — ended without a resolution. Reasons (closed set):
+  `raiser-withdrawn` (the raising party no longer needs the decision) · `moot`
+  (the triggering condition resolved itself — moot is a reason, not a fifth
+  state) · `project-canceled` (the cascade). The reason code records who ended
+  it; the status name is shared honestly because the reason disambiguates.
+- **`lapsed`** — the determination that no decision will come (the
+  `acceptance-lapsed` device, ported). Recording the lapse is a human act —
+  interactive, or pre-authorized policy as the policy author's act — never a
+  bare timeout. The
+  [decision-overdue path](delegated-run.md#progress-liveness-and-unresponsive-state)
+  is a producer: a pre-authorized auto-abandon past the longer bound records the
+  run's `decision-lapsed` ending and the escalation's `lapsed` as the same
+  determination.
+- Terminals are absorbing: a resolved, withdrawn, or lapsed escalation is never
+  reopened — a recurring need is a new escalation chaining provenance to the old
+  one.
+
+**Outputs.** Each record's current status, with its reason where the status
+requires one.
+
+**Evidence.** A durable, attributed record per status change
+([Record Requirements](#record-requirements)); cascaded dispositions chain
+provenance per [Terminal Integrity](#terminal-integrity).
+
+**Failure behavior.** A status outside the family's defined set — or a
+required-reason status without a reason, or with a code not defined for it — is
+not a satisfied record. A status write that mutates a resting record instead of
+superseding it forks the record's history and MUST be rejected.
 
 ---
 
