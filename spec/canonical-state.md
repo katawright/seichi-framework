@@ -658,9 +658,12 @@ active -> orphaned | superseded | revoked
   and its history stands: every decision it discharged while valid remains
   attributed to it. The removal act identifies the policies it orphans (the
   existing rule, unchanged).
-- **`superseded`** — replaced by a new policy chaining provenance. Re-owning a
-  departed author's policy is exactly this: a **new** policy authored by the
-  adopting roster member — accountability never transfers mechanically.
+- **`superseded`** — an `active` policy replaced by a new policy chaining
+  provenance. Re-owning a departed author's policy reuses the same mechanism — a
+  **new** policy authored by the adopting roster member, chaining provenance to
+  the orphaned one — but the predecessor rests `orphaned`, not `superseded`:
+  only an `active` policy lands here, and accountability never transfers
+  mechanically.
 - **`revoked`** — an attributed governance write ending the rule with no
   replacement. Carries no reason set — the revocation is itself the recorded
   act, and rationale rides the record (the decision-record device).
