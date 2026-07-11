@@ -533,6 +533,42 @@ open -> resolved | withdrawn | lapsed
   reopened — a recurring need is a new escalation chaining provenance to the old
   one.
 
+### Deviation Lifecycle
+
+An approved deviation records a condition the work proceeds under — a governance
+requirement waived or altered, attributed to its approver. The grant is
+revisitable by construction:
+[Controlled Replanning](delegated-run.md#controlled-replanning) holds that
+completed work MUST NOT remain implicitly accepted when its supporting
+assumptions have materially changed, and a deviation is exactly such an
+acceptance. Its lifecycle:
+
+```text
+active -> expired | revoked
+```
+
+- **`active`** — the grant holds.
+- **`expired`** — the grant's **optional granted-until bound** passed. Expiry is
+  mechanical: the bound was the approver's decision, recorded at grant time, so
+  no new decision attends its arrival. Carries no reason. The bound stays
+  optional — a mandatory bound on every deviation invites ritual dates, not
+  governance.
+- **`revoked`** — an attributed governance write ending the grant before any
+  bound. Reasons (closed set): `assumptions-changed` (the condition it was
+  granted against no longer holds) · `superseded` (replaced by a new grant
+  chaining provenance) · `project-canceled` (the cascade).
+- **Work MUST NOT rely on an expired or revoked deviation.** Continued need is a
+  new deviation request, decided on current facts — never a quiet extension of
+  the dead grant.
+- **A deviation survives project `closed`** — the deliberate exemption in
+  [Terminal Integrity](#terminal-integrity)'s quiescence set: it attaches to the
+  delivered result as part of what was accepted, disclosed per the
+  [completion contract](#project-level-completion), and moves through this
+  lifecycle on its own clock afterward. On project `canceled` it is cascaded to
+  `revoked` with reason `project-canceled`.
+- Terminals are absorbing: re-granting is a new record chaining provenance,
+  never a reactivation.
+
 **Outputs.** Each record's current status, with its reason where the status
 requires one.
 
