@@ -144,19 +144,19 @@ active|paused -> failed | canceled | abandoned | authorization-exhausted
   rendered-snapshot access the arrival is observed at next read. A decline MUST
   NOT split one negotiation into two runs.
 - **`paused` is the single non-terminal suspension state of an authorized run**
-  (`declined` is its pre-authorization counterpart). A pause suspends a
-  run; it does not end it. On an escalation/decision condition the run enters
-  `paused`, stays live, and awaits **resolve-and-continue** (→ `active`) or
-  **cancel** (→ terminal). A pause MUST NOT split one run into two. `blocked`
-  and `awaiting-decision` are status **reasons** on `paused`, not separate
-  states. `pause-requested` is a directive state, not a run state; the run
-  becomes `paused` only when that directive is `applied`.
-- **Authorization MAY be revoked before start:** `approved → canceled`,
-  carrying only the existing revocation reasons (`stopped-by-user` ·
-  `stopped-by-policy` · `superseded-by-replanning` · `project-canceled`).
-  `proposal-withdrawn` is not legal from `approved` — approval ends the
-  proposal story. There is no `approved → failed` edge: preflight runs inside
-  `active`, and a preflight failure is a failure of an `active` run.
+  (`declined` is its pre-authorization counterpart). A pause suspends a run; it
+  does not end it. On an escalation/decision condition the run enters `paused`,
+  stays live, and awaits **resolve-and-continue** (→ `active`) or **cancel** (→
+  terminal). A pause MUST NOT split one run into two. `blocked` and
+  `awaiting-decision` are status **reasons** on `paused`, not separate states.
+  `pause-requested` is a directive state, not a run state; the run becomes
+  `paused` only when that directive is `applied`.
+- **Authorization MAY be revoked before start:** `approved → canceled`, carrying
+  only the existing revocation reasons (`stopped-by-user` · `stopped-by-policy`
+  · `superseded-by-replanning` · `project-canceled`). `proposal-withdrawn` is
+  not legal from `approved` — approval ends the proposal story. There is no
+  `approved → failed` edge: preflight runs inside `active`, and a preflight
+  failure is a failure of an `active` run.
 - **`unresponsive` is not a lifecycle state** — it is an observer-assigned
   liveness determination overlaying `active`/`paused` (see
   [Progress, Liveness, and Unresponsive State](#progress-liveness-and-unresponsive-state)).
@@ -475,11 +475,12 @@ integrations, deployments, and directives.
 - **The minimum event set ⊇ the minimum lifecycle.** Normative **always**: a
   run-lifecycle event on every lifecycle transition (enter approved/active;
   enter/exit declined; enter/exit paused with reason; completion-claimed;
-  completion-verified; each terminal with outcome reason). Normative **when
-  the thing happens**: progress events at the authorized cadence; decision/escalation events at a
-  pause-for-decision; verification/assurance events when assurance runs;
-  integration/deployment events when they occur; directive/acknowledgement
-  events on directive processing; plan-revision/deviation events on replanning.
+  completion-verified; each terminal with outcome reason). Normative **when the
+  thing happens**: progress events at the authorized cadence;
+  decision/escalation events at a pause-for-decision; verification/assurance
+  events when assurance runs; integration/deployment events when they occur;
+  directive/acknowledgement events on directive processing;
+  plan-revision/deviation events on replanning.
 - Sub-events below the minimum are optional/foldable; user-facing views MAY fold
   low-level events while retaining drill-down.
 - **Scope discipline (ratified v0.58).** The event record is canonical
@@ -670,11 +671,10 @@ objective.
     project-canceled (the project's cancellation cascaded to the run; see
     [Canonical-State Spec § Terminal Integrity](canonical-state.md#terminal-integrity))
     → `canceled`;
-  - proposal-withdrawn (proposer retracted the pending proposal; legal only
-    from `proposed`) → `canceled`;
-  - proposal-declined (the authority's decline stood — accepted by the
-    proposer, or the decline's bound arrived; legal only from `declined`) →
-    `canceled`;
+  - proposal-withdrawn (proposer retracted the pending proposal; legal only from
+    `proposed`) → `canceled`;
+  - proposal-declined (the authority's decline stood — accepted by the proposer,
+    or the decline's bound arrived; legal only from `declined`) → `canceled`;
   - the pre-authorization reason sets are closed per source state: from
     `proposed` — proposal-withdrawn · superseded-by-replanning ·
     project-canceled; from `declined` — proposal-declined ·
@@ -730,8 +730,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-12
+**Last Updated:** 2026-07-13
 
-Added to framework in v0.49.0. Run Lifecycle gained the pre-authorization
-`declined` state and party-driven disposition paths from `proposed`/`approved`
-(with the `proposal-withdrawn` / `proposal-declined` reasons) in v0.62 (DC-1).
+Added to framework in v0.49.0.
