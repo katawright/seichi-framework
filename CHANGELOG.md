@@ -1,5 +1,44 @@
 # Changelog
 
+## 0.62.0 (2026-07-13)
+
+The v0.62 cycle — Disposition Completeness — closes the three gaps where
+Terminal Integrity's own rules collided with the run machine or a sanction the
+spec had not stated, seeded from the v0.60/v0.61 schema-conformance
+implementation: every pre-authorization run state gains a party-driven path to a
+terminal, post-terminal motion is governed by one deciding principle with a
+closed sanction list, and a superseded still-`proposed` ADR has a named honest
+resting place.
+
+### Features
+
+- **spec:** the run lifecycle gains the non-terminal pre-authorization
+  `declined` state — the `paused` of the proposal phase, carrying a required
+  mechanical lapse bound — and party-driven disposition paths from
+  `proposed`/`approved`, with the `proposal-withdrawn` / `proposal-declined`
+  reasons closed per source state (DC-1)
+- **spec:** Terminal Integrity gains the deciding principle over post-terminal
+  motion — sanctioned exactly where the terminal's assertion deliberately awaits
+  evidence on the world's clock — with its closed sanction list; the planning
+  families gain the standing/resting distinction (risk and assumption rows), the
+  post-`closed` risk-`realized` sanction, and the explicit denial of
+  post-`canceled` planning writes (DC-2)
+- **spec:** a superseded still-`proposed` ADR rests `withdrawn` with the
+  retraction attributed on the record, the `withdrawn` definition moves to
+  attribution-neutral wording, and `proposed` asserts decision-readiness —
+  drafting precedes the record (DC-3)
+
+### Bug Fixes
+
+- **framework:** clear the v0.62 sweep-1 residuals — the stale stages Quick
+  Reference sync comment, the off-set `Draft` ADR-status token in the
+  gate-decision template, and the deciding principle's over-broad "anywhere"
+  quantifier
+- **framework:** clear the cold-review run-1 minors — the stale gate-decision
+  template stamp, the author-only `withdrawn` glosses in the system-design
+  README, and per-version change history removed from the spec Notes sections
+  per the style guide
+
 ## 0.61.0 (2026-07-11)
 
 The v0.61 cycle — Outcome Honesty & Vocabulary Closure — finishes what v0.60's
