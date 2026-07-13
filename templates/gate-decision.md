@@ -138,7 +138,7 @@ canonical procedure.
 - [ ] Rename each `ADR-DCC.md` to `ADR-NNNN-CC.md` (project id + draft counter)
 - [ ] Move accepted ADRs from the project's `docs/adr/` to the workspace
       top-level `adrs/` canon
-- [ ] Update ADR status from `Draft` / `Proposed` → `Accepted`
+- [ ] Update ADR status from `Proposed` → `Accepted`
 - [ ] Replace the project's draft copy with a pointer to the promoted id
 
 ---
