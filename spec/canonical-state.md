@@ -405,8 +405,9 @@ being recorded, with its reason and attribution.
 - **Post-terminal motion is sanctioned exactly where the terminal's assertion
   deliberately awaits evidence on the world's clock.** `closed` asserts
   completeness of the delivered work while deliberately awaiting outcome
-  evidence, so its sanctioned set — closed, and the only post-terminal motion
-  anywhere — is: goal `achieved`/`not-achieved`, success criterion
+  evidence, so its sanctioned set — closed, and the only post-terminal status
+  motion of a planning or child record — is: goal `achieved`/`not-achieved`,
+  success criterion
   `met`/`not-met`, risk `realized` (see
   [Planning-Family Status Sets](#planning-family-status-sets)). `canceled`
   asserts abandonment, and abandonment awaits nothing — no acceptance,
@@ -1229,7 +1230,7 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-12
+**Last Updated:** 2026-07-13
 
 Added to framework in v0.49.0. Terminal Integrity gained the deciding
 principle over post-terminal motion, the planning families gained the

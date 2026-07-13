@@ -64,7 +64,7 @@ flow through every subsequent stage.
 
 ## Quick Reference
 
-<!-- Keep this table in sync with guides/framework.md and README.md -->
+<!-- Keep this table in sync with README.md -->
 
 | #   | Stage            | Primary Role             | Pattern      | Purpose                                                                                                                                      |
 | --- | ---------------- | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1017,6 +1017,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-13
 
 Added to framework in v0.9.0.
