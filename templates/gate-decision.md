@@ -194,4 +194,4 @@ quality]
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-07-09 | Added in v0.13.0. -->
+<!-- Template Last Updated: 2026-07-13 | Added in v0.13.0. -->

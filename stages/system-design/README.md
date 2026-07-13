@@ -326,8 +326,9 @@ ADRs follow a propose → review → decide → record → evolve lifecycle:
    - Standard: Team review via PR or design meeting
    - Enterprise: Architecture council or tech lead board
 3. **Decide:** Reviewers accept — author updates status to "Accepted" and
-   records who decided — or decide against, landing the ADR at "Rejected". An
-   author may retract a proposal before the decision by setting "Withdrawn"
+   records who decided — or decide against, landing the ADR at "Rejected". A
+   proposal may also be retracted before the decision — the author's own act, or
+   a collaborator's superseding successor — landing it at "Withdrawn"
 4. **Record:** ADR is merged to version control alongside code
 5. **Evolve:** When a decision is superseded, create a new ADR and set the
    original's status to "Superseded by ADR-XXX"
@@ -338,7 +339,9 @@ ADRs follow a propose → review → decide → record → evolve lifecycle:
 - **Proposed:** Decision is under consideration
 - **Accepted:** Decision has been approved and will be/is being implemented
 - **Rejected:** The deciding authority decided against the proposal
-- **Withdrawn:** The author retracted the proposal before a decision was made
+- **Withdrawn:** Retracted before a decision — the author's own act, a
+  collaborator's superseding successor, or the cancellation cascade — with the
+  retraction attributed on the record
 - **Deprecated:** Decision stays on the record but is now discouraged, with no
   specific successor
 - **Superseded by ADR-XXX:** This decision has been replaced by a newer decision
@@ -740,6 +743,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-13
 
 Added to framework in v0.12.0.

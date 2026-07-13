@@ -407,13 +407,12 @@ being recorded, with its reason and attribution.
   completeness of the delivered work while deliberately awaiting outcome
   evidence, so its sanctioned set — closed, and the only post-terminal status
   motion of a planning or child record — is: goal `achieved`/`not-achieved`,
-  success criterion
-  `met`/`not-met`, risk `realized` (see
+  success criterion `met`/`not-met`, risk `realized` (see
   [Planning-Family Status Sets](#planning-family-status-sets)). `canceled`
   asserts abandonment, and abandonment awaits nothing — no acceptance,
   disclosure, or completeness claim exists for later evidence to falsify: no
-  planning record moves after `canceled`, and post-abandonment operational
-  facts belong to the operations record, not the project's.
+  planning record moves after `canceled`, and post-abandonment operational facts
+  belong to the operations record, not the project's.
 - **`canceled` cascades.** Recording `canceled` MUST disposition every open
   child record, transitively down the containment graph — project → run →
   directive, project → batch, and likewise for escalations, approved deviations,
@@ -633,11 +632,11 @@ applied to the records where it was implied but never stated:
   `accepted` · `rejected` · `withdrawn` · `deprecated` · `superseded`.
   - **`rejected` and `withdrawn` are different stories** (the `resolved` /
     `raiser-withdrawn` distinction, ported): `rejected` — the deciding authority
-    decided against the proposal; `withdrawn` — retracted before a decision,
-    the retraction attributed on the record: the author's own act, a
-    collaborator's superseding successor, or the cancellation cascade. A
-    durable record store cannot delete a pulled draft, and without `withdrawn`
-    it would have to lie as `rejected`.
+    decided against the proposal; `withdrawn` — retracted before a decision, the
+    retraction attributed on the record: the author's own act, a collaborator's
+    superseding successor, or the cancellation cascade. A durable record store
+    cannot delete a pulled draft, and without `withdrawn` it would have to lie
+    as `rejected`.
   - **`deprecated` and `superseded` are different endings for an accepted
     decision:** `deprecated` — still on the record, now discouraged, no specific
     successor; `superseded` — replaced, and the chain names the successor.
@@ -647,13 +646,13 @@ applied to the records where it was implied but never stated:
   - **`proposed` asserts decision-readiness.** Drafting precedes the record: an
     ADR enters the record when it is ready for the authority's act — the same
     kind of attributed claim as `completion-claimed` — and a working draft
-    belongs outside the record (a document, branch, or review), never parked
-    in `proposed`.
-  - **Correcting a still-`proposed` ADR is a supersession** — a successor
-    record chaining provenance, the predecessor resting `withdrawn` with the
-    retraction attributed on the record. Left `proposed`, the dead draft would
-    promise a decision no one will make — a record resting in an open status
-    forever is the trail-off this vocabulary exists to kill.
+    belongs outside the record (a document, branch, or review), never parked in
+    `proposed`.
+  - **Correcting a still-`proposed` ADR is a supersession** — a successor record
+    chaining provenance, the predecessor resting `withdrawn` with the retraction
+    attributed on the record. Left `proposed`, the dead draft would promise a
+    decision no one will make — a record resting in an open status forever is
+    the trail-off this vocabulary exists to kill.
 - **Cascade landing:** the [Terminal Integrity](#terminal-integrity) cascade
   lands an open (`proposed`) ADR at `withdrawn`, the parent-caused reason riding
   the cascade record (the planning-family device). Gate and checkpoint decisions
@@ -730,40 +729,40 @@ end — including the ways nobody plans for. The normative closed sets:
   the record (reversal is supersession, per this contract's opening rule). For
   risks, `open` · `mitigated` · `accepted` are standing and `realized` ·
   `closed` rest; for assumptions, only `open` is standing — `validated` ·
-  `invalidated` · `retired` all rest, which is why a post-`closed`
-  invalidation of a validated assumption is not a sanctioned landing: it would
-  be motion out of a resting status, which the terminal's assertion never
-  awaited. The remaining families' partitions are not ratified; the closed
-  sanction set in [Terminal Integrity](#terminal-integrity) answers the
-  post-terminal question for them.
+  `invalidated` · `retired` all rest, which is why a post-`closed` invalidation
+  of a validated assumption is not a sanctioned landing: it would be motion out
+  of a resting status, which the terminal's assertion never awaited. The
+  remaining families' partitions are not ratified; the closed sanction set in
+  [Terminal Integrity](#terminal-integrity) answers the post-terminal question
+  for them.
 - **Outcome statuses may resolve after project `closed`.** The sanctioned
   post-`closed` motions are a closed set (the deciding principle in
-  [Terminal Integrity](#terminal-integrity)): a superseding status write
-  landing a goal or success criterion at its outcome status —
-  `achieved`/`not-achieved`, `met`/`not-met` — chained to the post-release
-  measurement plan; and a risk resting in a standing posture (`mitigated` /
-  `accepted`) landing at `realized` when the threat materializes. Both are
-  legal and expected after entry to `closed`: goals and success criteria are
-  deliberately absent from [Terminal Integrity](#terminal-integrity)'s
-  quiescence set, a mitigated or accepted risk satisfies it as an answered
-  posture attached to what was accepted and disclosed, and `closed` asserts
-  completeness of the delivered work, never of outcome evidence that arrives
-  on the world's clock. **After `canceled`, no planning record moves** — see
-  the deciding principle in [Terminal Integrity](#terminal-integrity).
+  [Terminal Integrity](#terminal-integrity)): a superseding status write landing
+  a goal or success criterion at its outcome status — `achieved`/`not-achieved`,
+  `met`/`not-met` — chained to the post-release measurement plan; and a risk
+  resting in a standing posture (`mitigated` / `accepted`) landing at `realized`
+  when the threat materializes. Both are legal and expected after entry to
+  `closed`: goals and success criteria are deliberately absent from
+  [Terminal Integrity](#terminal-integrity)'s quiescence set, a mitigated or
+  accepted risk satisfies it as an answered posture attached to what was
+  accepted and disclosed, and `closed` asserts completeness of the delivered
+  work, never of outcome evidence that arrives on the world's clock. **After
+  `canceled`, no planning record moves** — see the deciding principle in
+  [Terminal Integrity](#terminal-integrity).
 - **A risk that materializes has a word.** `realized` records the outcome — the
   risk happened — distinct from `closed` (the threat ended without
-  materializing) and from `mitigated`/`accepted` (standing postures).
-  Collapsing a realized risk into `closed` destroys the outcome distinction the
-  project terminals preserve. The reason-and-detail record suffices; a linked
+  materializing) and from `mitigated`/`accepted` (standing postures). Collapsing
+  a realized risk into `closed` destroys the outcome distinction the project
+  terminals preserve. The reason-and-detail record suffices; a linked
   consequence record is product altitude, not required here. Prior posture is
-  preserved by history-walking, not new vocabulary: `open → mitigated →
-  realized` keeps mitigated-but-happened-anyway distinguishable one hop back in
-  the chain. Risk `closed` is the resting case: it asserts the threat ended
-  without materializing — a completed determination awaiting nothing. Before
-  the project terminal, a wrong call is corrected by supersession (the
-  resting-status rule); after project `closed`, a materialization of a `closed`
-  risk is an operations-record fact — no status write, and no new planning
-  record, lands in a closed project's state.
+  preserved by history-walking, not new vocabulary:
+  `open → mitigated → realized` keeps mitigated-but-happened-anyway
+  distinguishable one hop back in the chain. Risk `closed` is the resting case:
+  it asserts the threat ended without materializing — a completed determination
+  awaiting nothing. Before the project terminal, a wrong call is corrected by
+  supersession (the resting-status rule); after project `closed`, a
+  materialization of a `closed` risk is an operations-record fact — no status
+  write, and no new planning record, lands in a closed project's state.
 - **Risks are dispositioned at close, not merely disclosed.** At entry to
   project `closed`, no risk rests `open`
   ([Terminal Integrity](#terminal-integrity)'s quiescence set): each is
@@ -1232,8 +1231,4 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 **Last Updated:** 2026-07-13
 
-Added to framework in v0.49.0. Terminal Integrity gained the deciding
-principle over post-terminal motion, the planning families gained the
-standing/resting distinction with the post-`closed` risk-`realized` sanction
-(DC-2), and the Decision Lifecycle gained the decision-readiness and
-still-`proposed` supersession clauses (DC-3) in v0.62.
+Added to framework in v0.49.0.

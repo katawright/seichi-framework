@@ -193,10 +193,6 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-13
 
-Added to framework in v0.9.0. SDLC Execution Model updated for the v0.49 dev/ops
-split (terminal Closure stage; Operations sibling process; Flow delivery mode).
-Agent-Execution Rule 5's INDEX-scope file list corrected to include the `spec/`
-layer in v0.50.0. Project Overview repositioned from assistant-era framing to
-agent-executed delivery in v0.55 (RP-1).
+Added to framework in v0.9.0.
