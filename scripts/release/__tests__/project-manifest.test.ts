@@ -149,6 +149,21 @@ describe("buildManifest error paths", () => {
       join(root, "INDEX.md"),
       "# Test\n\n**Last Updated:** 2026-05-04 | **Framework Version:** 9.9.9\n",
     );
+    const guidesDir = join(root, "guides");
+    mkdirSync(guidesDir, { recursive: true });
+    writeFileSync(
+      join(guidesDir, "stages.md"),
+      `---
+pipeline:
+  - id: initiation
+    stage_number: 1
+    execution_pattern: foundational
+    feeds_into: [requirements]
+    revisit_conditions: [scope-change]
+---
+body
+`,
+    );
     const stagesDir = join(root, "stages", "initiation");
     mkdirSync(stagesDir, { recursive: true });
     writeFileSync(join(stagesDir, "README.md"), stageReadme);
