@@ -12,6 +12,7 @@ import { runStamps } from "./checks/stamps.mjs";
 import { runIndexCounts } from "./checks/index-counts.mjs";
 import { runIndexOrder } from "./checks/index-order.mjs";
 import { runFloorTable } from "./checks/floor-table.mjs";
+import { runKernel } from "./checks/kernel.mjs";
 import { runShipList } from "./checks/ship-list.mjs";
 import { runFuncGroup } from "./checks/func-group.mjs";
 import { runCallout } from "./checks/callout.mjs";
@@ -285,6 +286,7 @@ const checkIssues = [
   ...runCheck("COUNT", () => runIndexCounts(repoRoot)),
   ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
   ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
+  ...runCheck("KERNEL", () => runKernel(repoRoot)),
 ];
 
 // Restatement-family guards return { fatal, warn }: the drift itself is fatal,

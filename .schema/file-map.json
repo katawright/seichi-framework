@@ -30,6 +30,7 @@
     "node_modules/**",
     "templates/**",
     "docs/**",
+    "spec/generated/**",
     "stages/*/checklist.md",
     "stages/*/pipeline-checklist.md",
     "CHANGELOG.md",
@@ -45,7 +46,8 @@
     ".evaluation/**",
     ".schema/**",
     "node_modules/**",
-    "docs/**"
+    "docs/**",
+    "spec/generated/**"
   ],
   "linkAllowlist": [
     "adr/ADR-*.md",
