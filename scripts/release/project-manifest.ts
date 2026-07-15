@@ -1,6 +1,8 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
+import matter from "gray-matter";
+
 import { deriveDisplayName } from "./derive-display-name";
 import type {
   FrameworkManifest,
@@ -10,32 +12,33 @@ import type {
 } from "./manifest-schema";
 import { parseStageFrontmatter } from "./parse-frontmatter";
 
-// Stage-pattern map for v0.45.x. The framework's stage patterns are not
-// carried in the stage README frontmatter today — adding a `pattern:` field
-// is a future framework cut concern (Increment Design brief §7 Q3). For
-// now, the mapping is fixed; the projector throws if it encounters a stage
-// id outside this map so a future mismatch fails loudly.
-const STAGE_PATTERN: Record<string, ManifestStage["pattern"]> = {
-  initiation: "Foundational",
-  requirements: "Foundational",
-  "system-design": "Foundational",
-  "increment-design": "Iterative",
-  implementation: "Iterative",
-  verification: "Iterative",
-  deployment: "Iterative",
-  closure: "Terminal",
+// Stage order and execution pattern come from the one normative home for
+// both: the `guides/stages.md` pipeline front matter (schema-validated by
+// .schema/schemas/stages-guide.schema.json). The projector consumes it and
+// carries no parallel copy — the pre-kernel hard-coded STAGE_PATTERN /
+// STAGE_DISPLAY_ORDER constants are retired. The projector throws on a stage
+// id absent from the pipeline so a mismatch fails loudly.
+const FRONTMATTER_TO_MANIFEST_PATTERN: Record<string, ManifestStage["pattern"]> = {
+  foundational: "Foundational",
+  iterative: "Iterative",
+  terminal: "Terminal",
 };
 
-const STAGE_DISPLAY_ORDER: Record<string, number> = {
-  initiation: 1,
-  requirements: 2,
-  "system-design": 3,
-  "increment-design": 4,
-  implementation: 5,
-  verification: 6,
-  deployment: 7,
-  closure: 8,
-};
+interface PipelineStage {
+  id: string;
+  stage_number: number;
+  execution_pattern: string;
+}
+
+function readPipeline(frameworkDir: string): Map<string, PipelineStage> {
+  const guidePath = join(frameworkDir, "guides", "stages.md");
+  const text = readFileSync(guidePath, "utf8");
+  const pipeline = (matter(text).data as { pipeline?: PipelineStage[] }).pipeline;
+  if (!Array.isArray(pipeline) || pipeline.length === 0) {
+    throw new Error(`No \`pipeline\` front matter found in ${guidePath}`);
+  }
+  return new Map(pipeline.map((stage) => [stage.id, stage]));
+}
 
 // Frontmatter checkpoint `type:` values map to the manifest checkpoint
 // `type` enum. The frontmatter uses `gate` for investment gates; the
@@ -140,20 +143,30 @@ function pickEnum<T extends string>(
   return value as T;
 }
 
-function projectStage(frameworkDir: string, stageDirName: string): ManifestStage {
+function projectStage(
+  frameworkDir: string,
+  stageDirName: string,
+  pipeline: Map<string, PipelineStage>,
+): ManifestStage {
   const readmePath = join(frameworkDir, "stages", stageDirName, "README.md");
   const fm = parseStageFrontmatter(readmePath);
 
-  const pattern = STAGE_PATTERN[fm.id];
-  if (!pattern) {
+  const pipelineStage = pipeline.get(fm.id);
+  if (!pipelineStage) {
     throw new Error(
-      `Stage ${fm.id}: not in v0.44.x stage-pattern map. Add an explicit \`pattern:\` frontmatter field, or extend the projector map.`,
+      `Stage ${fm.id}: not in the guides/stages.md pipeline front matter.`,
     );
   }
-  const displayOrder = STAGE_DISPLAY_ORDER[fm.id];
-  if (!displayOrder) {
+  const pattern = FRONTMATTER_TO_MANIFEST_PATTERN[pipelineStage.execution_pattern];
+  if (!pattern) {
     throw new Error(
-      `Stage ${fm.id}: not in v0.44.x stage display-order map. Extend the projector map.`,
+      `Stage ${fm.id}: invalid pipeline \`execution_pattern\`: ${String(pipelineStage.execution_pattern)}`,
+    );
+  }
+  const displayOrder = pipelineStage.stage_number;
+  if (!Number.isInteger(displayOrder) || displayOrder < 1) {
+    throw new Error(
+      `Stage ${fm.id}: invalid pipeline \`stage_number\`: ${String(pipelineStage.stage_number)}`,
     );
   }
 
@@ -213,8 +226,9 @@ function projectStage(frameworkDir: string, stageDirName: string): ManifestStage
  * two runs against the same source produce equal values.
  */
 export function buildManifest(frameworkDir: string): FrameworkManifest {
+  const pipeline = readPipeline(frameworkDir);
   const stages = listStageDirs(frameworkDir)
-    .map((name) => projectStage(frameworkDir, name))
+    .map((name) => projectStage(frameworkDir, name, pipeline))
     .sort((a, b) => a.display_order - b.display_order);
 
   return {

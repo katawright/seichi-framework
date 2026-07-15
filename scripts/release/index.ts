@@ -10,6 +10,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { buildZip } from "./build-zip";
+import { writeKernel } from "./kernel/generate.mjs";
 import { manifestSchema } from "./manifest-schema";
 import { buildManifest } from "./project-manifest";
 
@@ -80,6 +81,15 @@ async function main(): Promise<void> {
         `Version mismatch: argv = ${argVersion}, VERSION file = ${version}.`,
       );
     }
+  }
+
+  // Regenerate the kernel exports (spec/generated/*) so a release can never
+  // stage stale kernel artifacts; the .schema freshness check enforces the
+  // same invariant in CI and the pre-commit hook.
+  try {
+    writeKernel(REPO_ROOT);
+  } catch (err) {
+    fail(`Failed to generate kernel exports: ${err instanceof Error ? err.message : String(err)}`);
   }
 
   let manifest;

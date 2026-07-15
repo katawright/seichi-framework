@@ -9,6 +9,7 @@
     "format": "prettier --write \"**/*.md\"",
     "format:check": "prettier --check \"**/*.md\"",
     "install-hooks": "node -e \"require('fs').cpSync('.schema/hooks/pre-commit','.git/hooks/pre-commit')\"",
+    "kernel": "node scripts/release/kernel/cli.mjs",
     "release": "tsx scripts/release/index.ts",
     "test": "vitest run"
   },
@@ -20,6 +21,7 @@
     "archiver": "^7.0.1",
     "fast-glob": "^3.3.0",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "minimatch": "^10.0.0",
     "prettier": "3.8.4",
     "tsx": "^4.21.0",
