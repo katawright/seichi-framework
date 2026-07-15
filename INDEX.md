@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-07-13 | **Framework Version:** 0.62.0
+**Last Updated:** 2026-07-15 | **Framework Version:** 0.62.0
 
 ## Overview
 
@@ -97,6 +97,26 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 | `spec/delegated-run.md`   | Delegated-run contracts: lifecycle, liveness, durable state, idempotency, cross-run write model, replanning, completion evidence and honest incomplete outcomes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | delegated-run, lights-out, lifecycle, liveness, idempotency, write-admission, state-version, completion-evidence, honest-incomplete, replanning                                                                                                                                                                                                                                                                                                                                                                                                               | operating-model, canonical-state                | core |
 | `spec/operating-model.md` | Operating-model contracts: functions, coverage, envelope, floors, Lights-Out eligibility, separation, stop enforcement, and the executor read path that scales implementation scaffolding.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | operating-model, coverage, envelope, floors, lights-out, separation, stop-enforcement, executor-read-path                                                                                                                                                                                                                                                                                                                                                                                                                                                     | operating-model (guide), delegated-run          | core |
 | `spec/parallel-batch.md`  | Parallel-batch contracts: forcing-dependency taxonomy, parallel-safety classification, batch preflight/execution/close, batch lifecycle (states and abnormal terminals), work conservation, Lights-Out eligibility.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | parallel-batch, batch, batch-lifecycle, abandoned, terminal, parallel-safety, forcing-dependency, work-conservation, orchestration, lights-out                                                                                                                                                                                                                                                                                                                                                                                                                | operating-model, delegated-run, canonical-state | core |
+
+## Kernel (10)
+
+The machine-readable kernel interface under the spec namespace — hand-curated
+vocabulary sources, the rule registry, and the generated, stamped exports.
+Kernel interface version is a separate `0.x` axis (experimental, pre-1.0). See
+`spec/README.md` § Kernel Interface.
+
+| Path                                    | Description                                                                                               | Keywords                                                                        | Refs                                         | Tier |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------- | ---- |
+| `spec/generated/manifest.json`          | Generated self-contained kernel manifest: vocabularies, rule registry, transitions, stage data (stamped). | kernel, manifest, generated, machine-export, vocabularies, transitions, stamped | spec/vocabulary, spec/rules                  | ref  |
+| `spec/generated/reference.md`           | Generated human-readable kernel reference (vocabularies, machines, rules, pipeline).                      | kernel, reference, generated, human-readable                                    | spec/generated/manifest.json                 | ref  |
+| `spec/generated/schema-projection.json` | Generated schema-facing equivalence export — the projection consumers compare enums against.              | kernel, projection, equivalence, generated, schema-facing                       | spec/generated/manifest.json                 | ref  |
+| `spec/rules/index.yaml`                 | Kernel rule registry: stable rule IDs with layer, admission basis, source, and provenance.                | kernel, rules, rule-id, registry, provenance, first-slice                       | spec, guides                                 | ref  |
+| `spec/schemas/manifest.schema.json`     | JSON Schema the generated kernel manifest validates against.                                              | kernel, schema, validation, manifest                                            | spec/generated/manifest.json                 | ref  |
+| `spec/vocabulary/concurrency.yaml`      | Kernel vocabulary source: forcing-dependency taxonomy and parallel-safety conclusion.                     | kernel, vocabulary, forcing-dependency, parallel-safety                         | parallel-batch (spec)                        | ref  |
+| `spec/vocabulary/config.yaml`           | Kernel vocabulary source: schema-enforced operating-configuration value sets.                             | kernel, vocabulary, assurance-level, executor-read-path, consequence-tier       | operating-model (spec), right-sizing         | ref  |
+| `spec/vocabulary/grades.yaml`           | Kernel vocabulary source: attribution grades, write classes, record requirements.                         | kernel, vocabulary, identity-grade, independence, attribution-source, records   | canonical-state (spec)                       | ref  |
+| `spec/vocabulary/reasons.yaml`          | Kernel vocabulary source: per-machine closed reason sets.                                                 | kernel, vocabulary, reason-codes, honest-incomplete, closed-sets                | canonical-state (spec), delegated-run (spec) | ref  |
+| `spec/vocabulary/statuses.yaml`         | Kernel vocabulary source: lifecycle machines, planning-family statuses, terminal-integrity sets.          | kernel, vocabulary, lifecycle, statuses, transitions, terminal-integrity        | canonical-state (spec), delegated-run (spec) | ref  |
 
 ## Stage Artifacts (25)
 
@@ -197,6 +217,6 @@ state. The human-facing rationale lives in `guides/operating-model.md`.
 
 ## Notes
 
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.41.0.

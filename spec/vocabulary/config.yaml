@@ -1,0 +1,36 @@
+# Kernel vocabulary source — schema-enforced operating-configuration fields
+# and their closed value sets.
+#
+# SOURCE file (hand-curated). First slice: only the value sets a consumer
+# enum-enforces today are authored — Required Assurance, the executor read
+# path, and the consequence anchors. The remaining setting vocabularies
+# (Work Execution / Workflow Automation / Authority sets, operating presets)
+# and the four remaining project-configuration decisions are resolver-input
+# constructs whose sets the guide enumerates but has never ratified as
+# closed; promoting them is a vocabulary-closure ratification routed to a
+# planning cycle, so they carry rule IDs (see spec/rules/index.yaml) but no
+# vocabulary entry yet.
+
+vocabularies:
+  # Required Assurance: how independently must work be evaluated?
+  assurance_level:
+    owning_rule: OMG-002
+    source: guides/operating-model.md
+    consumers: ["schema:assurance_level"]
+    values: [none, self, internal, external]
+
+  # The declared scaffolding scale: keyed to observed executor behavior,
+  # never to a model name or version; `guided` is the unknown/weak default.
+  executor_read_path:
+    owning_rule: OM-008
+    source: spec/operating-model.md
+    consumers: ["schema:executor_read_path"]
+    values: [guided, contracts-only]
+
+  # The five consequence anchors — a magnitude of harm, assigned by judgment
+  # to the nearest anchor (RS-003), consumed by the floor mapping (OM-017).
+  consequence_tier:
+    owning_rule: RS-002
+    source: guides/right-sizing.md
+    consumers: ["schema:consequence_tier"]
+    values: [negligible, low, moderate, high, critical]

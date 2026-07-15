@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kernel-manifest.schema.json",
+  "$comment": "Schema for the generated kernel interface manifest (spec/generated/manifest.json). The manifest is a self-contained, stamped, generated JSON export — never hand-edited. Kernel interface is 0.x (pre-1.0): the shape may break with explicit release notes.",
+  "type": "object",
+  "required": [
+    "meta",
+    "vocabularies",
+    "rules",
+    "transitions",
+    "record_requirements",
+    "terminal_integrity",
+    "stages"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "framework_version",
+        "kernel_interface_version",
+        "source_hash",
+        "generated_at",
+        "generated"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "framework_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "kernel_interface_version": { "type": "string", "pattern": "^0\\.\\d+$" },
+        "source_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "generated_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+        },
+        "generated": { "type": "string" }
+      }
+    },
+    "vocabularies": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["values", "owning_rule", "source", "consumers"],
+        "additionalProperties": false,
+        "properties": {
+          "values": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/value" }
+          },
+          "owning_rule": { "$ref": "#/$defs/rule-id" },
+          "source": { "type": "string", "minLength": 1 },
+          "consumers": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[A-Z]+-\\d{3}[a-z]?$" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "layer", "basis", "source", "introduced", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "layer": { "enum": ["1a", "1b"] },
+          "basis": {
+            "enum": ["both-conjuncts", "divergent-consumption", "resolver-input", "1b"]
+          },
+          "source": { "type": "string", "minLength": 1 },
+          "introduced": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["active", "superseded", "deprecated"] },
+          "notes": { "type": "string" },
+          "supersedes": { "$ref": "#/$defs/rule-id" },
+          "superseded_by": { "$ref": "#/$defs/rule-id" }
+        }
+      }
+    },
+    "transitions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["states", "terminals", "edges", "reason_sets"],
+        "additionalProperties": false,
+        "properties": {
+          "states": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/value" }
+          },
+          "terminals": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/value" }
+          },
+          "edges": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "$ref": "#/$defs/value" }
+            }
+          },
+          "reason_sets": { "$ref": "#/$defs/reason-map" },
+          "reason_sets_by_source_state": { "$ref": "#/$defs/reason-map" }
+        }
+      }
+    },
+    "record_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/value" }
+    },
+    "terminal_integrity": {
+      "type": "object",
+      "required": ["quiescence_set", "post_terminal_sanctions", "cascade_landing"],
+      "additionalProperties": false,
+      "properties": {
+        "quiescence_set": { "type": "object" },
+        "post_terminal_sanctions": { "type": "object" },
+        "cascade_landing": { "type": "object" }
+      }
+    },
+    "stages": {
+      "type": "object",
+      "required": ["pipeline", "stage_metadata"],
+      "additionalProperties": false,
+      "properties": {
+        "pipeline": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "stage_number",
+              "execution_pattern",
+              "feeds_into",
+              "revisit_conditions"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "$ref": "#/$defs/value" },
+              "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
+              "execution_pattern": { "enum": ["foundational", "iterative", "terminal"] },
+              "feeds_into": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "$ref": "#/$defs/value" }
+              },
+              "revisit_conditions": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        "stage_metadata": {
+          "type": "object",
+          "minProperties": 8,
+          "additionalProperties": {
+            "type": "object",
+            "required": ["working_location", "outputs", "checkpoints"],
+            "properties": {
+              "working_location": { "type": ["string", "null"] },
+              "outputs": { "type": "array", "minItems": 1 },
+              "checkpoints": { "type": "array", "minItems": 1 },
+              "checklist": { "type": ["string", "null"] },
+              "reference": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "value": {
+      "$comment": "Stable kernel identifier — kebab-case, never display text.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+    },
+    "rule-id": { "type": "string", "pattern": "^[A-Z]+-\\d{3}[a-z]?$" },
+    "reason-map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "$ref": "#/$defs/value" }
+      }
+    }
+  }
+}

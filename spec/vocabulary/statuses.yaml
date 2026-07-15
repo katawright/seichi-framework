@@ -1,0 +1,285 @@
+# Kernel vocabulary source — lifecycle machines, planning-family status sets,
+# the standing/resting partition, and the terminal-integrity sets.
+#
+# SOURCE file (hand-curated). Values are stable identifiers in the framework's
+# kebab-case spelling, extracted verbatim from the normative spec/guide clause
+# each entry cites — never display text, never localized. Machine-facing
+# consumers ingest `spec/generated/manifest.json` (never this file); the
+# schema-facing export projects these identifiers to the consumer's naming
+# convention (kebab-case -> snake_case) mechanically.
+#
+# Edge sets are the spec-stated minimum machines, verbatim. A consumer MAY
+# enforce additional recorded interpretations (e.g. cascade-only edges); those
+# ride the consumer's own compatibility record, not this vocabulary.
+#
+# Owning rules live in spec/rules/index.yaml; rule bodies stay in spec/*.md
+# this phase. Kernel interface: 0.x (pre-1.0, may break with release notes).
+
+machines:
+  project_lifecycle:
+    owning_rule: CS-007
+    source: spec/canonical-state.md
+    consumers: ["schema:project_lifecycle"]
+    states:
+      [active, paused, completion-claimed, completion-verified, closed, canceled]
+    terminals: [closed, canceled]
+    edges:
+      - [active, paused]
+      - [paused, active]
+      - [active, completion-claimed]
+      - [completion-claimed, completion-verified]
+      - [completion-claimed, active] # claim refuted -> identified work exists
+      - [completion-verified, closed]
+      - [active, canceled]
+      - [paused, canceled]
+      - [completion-claimed, canceled]
+
+  run_lifecycle:
+    owning_rule: DR-005
+    source: spec/delegated-run.md
+    consumers: ["schema:run_lifecycle"]
+    states:
+      [
+        proposed,
+        declined,
+        approved,
+        active,
+        paused,
+        completion-claimed,
+        completion-verified,
+        failed,
+        canceled,
+        abandoned,
+        authorization-exhausted,
+      ]
+    # Five terminals, each carrying an outcome reason (DR-013).
+    terminals:
+      [completion-verified, failed, canceled, abandoned, authorization-exhausted]
+    edges:
+      - [proposed, approved]
+      - [proposed, declined]
+      - [declined, proposed] # revise-and-re-propose
+      - [proposed, canceled]
+      - [declined, canceled]
+      - [approved, canceled] # authorization revoked before start
+      - [approved, active]
+      - [active, paused]
+      - [paused, active]
+      - [active, completion-claimed]
+      - [paused, completion-claimed]
+      - [completion-claimed, completion-verified]
+      - [active, failed]
+      - [active, canceled]
+      - [active, abandoned]
+      - [active, authorization-exhausted]
+      - [paused, failed]
+      - [paused, canceled]
+      - [paused, abandoned]
+      - [paused, authorization-exhausted]
+
+  batch_lifecycle:
+    owning_rule: PB-013
+    source: spec/parallel-batch.md
+    consumers: ["schema:batch_status"]
+    states: [planned, open, closed, canceled, abandoned]
+    terminals: [closed, canceled, abandoned]
+    edges:
+      - [planned, open] # preflight admits
+      - [open, closed] # close contract satisfied
+      - [planned, canceled] # never opened
+      - [open, abandoned] # opened; will not close
+
+  directive_lifecycle:
+    owning_rule: DR-034
+    source: spec/delegated-run.md
+    consumers: ["schema:directive_state"]
+    states:
+      [draft, queued, received, acknowledged, applied, rejected, superseded, voided]
+    terminals: [applied, rejected, superseded, voided]
+    edges:
+      - [draft, queued]
+      - [queued, received]
+      - [received, acknowledged]
+      - [acknowledged, applied]
+      - [acknowledged, rejected]
+      # Supersession: a later same-scope/same-type directive supersedes an
+      # earlier un-applied one in the exchange.
+      - [queued, superseded]
+      - [received, superseded]
+      - [acknowledged, superseded]
+      # Voiding: the terminal for intent whose referent is gone; a retained
+      # draft is voided with the rest on any run terminal.
+      - [draft, voided]
+      - [queued, voided]
+      - [received, voided]
+      - [acknowledged, voided]
+
+  escalation_lifecycle:
+    owning_rule: CS-044
+    source: spec/canonical-state.md
+    consumers: ["schema:escalation_state"]
+    states: [open, resolved, withdrawn, lapsed]
+    terminals: [resolved, withdrawn, lapsed]
+    edges:
+      - [open, resolved]
+      - [open, withdrawn]
+      - [open, lapsed]
+
+  deviation_lifecycle:
+    owning_rule: CS-045
+    source: spec/canonical-state.md
+    consumers: ["schema:deviation_status"]
+    states: [active, expired, revoked]
+    terminals: [expired, revoked]
+    edges:
+      - [active, expired] # optional granted-until bound passed (mechanical)
+      - [active, revoked] # attributed governance write
+
+  policy_lifecycle:
+    owning_rule: CS-054
+    source: spec/canonical-state.md
+    consumers: ["schema:policy_status"]
+    states: [active, orphaned, superseded, revoked]
+    terminals: [orphaned, superseded, revoked]
+    edges:
+      - [active, orphaned] # author left the roster
+      - [active, superseded] # only an active policy lands here
+      - [active, revoked]
+
+  adr_lifecycle:
+    owning_rule: CS-050
+    source: spec/canonical-state.md
+    consumers: ["schema:adr_status"]
+    states: [proposed, accepted, rejected, withdrawn, deprecated, superseded]
+    # proposed is the open status; accepted is a standing posture; the other
+    # four are resting. Statuses carry no required reason.
+    terminals: [rejected, withdrawn, deprecated, superseded]
+    edges:
+      - [proposed, accepted]
+      - [proposed, rejected]
+      - [proposed, withdrawn] # retracted before a decision (incl. supersession of a still-proposed draft)
+      - [accepted, deprecated]
+      - [accepted, superseded]
+
+# Planning families carry statuses, not transition machines (CS-055).
+planning_families:
+  owning_rule: CS-055
+  source: spec/canonical-state.md
+  goal_status:
+    consumers: ["schema:goal_status"]
+    values: [active, achieved, not-achieved, dropped]
+  success_criterion_status:
+    consumers: ["schema:sc_status"]
+    values:
+      [not-started, met, met-synthetic, not-met, deferred, blocked, revised, dropped]
+  requirement_status:
+    consumers: ["schema:req_status"]
+    values: [proposed, approved, implemented, verified, deferred, dropped]
+  assumption_status:
+    consumers: ["schema:assumption_status"]
+    values: [open, validated, invalidated, retired]
+  risk_status:
+    consumers: ["schema:risk_status"]
+    values: [open, mitigated, accepted, realized, closed]
+
+# Standing postures await the world's evidence; resting statuses are absorbing
+# at the record (reversal is supersession). Only the ratified partitions are
+# stated; the remaining families' partitions are deliberately absent — the
+# post-terminal sanction set answers the post-terminal question for them.
+standing_resting_partition:
+  owning_rule: CS-058
+  source: spec/canonical-state.md
+  risk_status:
+    standing: [open, mitigated, accepted]
+    resting: [realized, closed]
+  assumption_status:
+    standing: [open]
+    resting: [validated, invalidated, retired]
+
+terminal_integrity:
+  # The quiescence set gating entry to project `closed` — the project's
+  # direct children, named once; transitivity carries the rest. Approved
+  # deviations are the deliberate exemption.
+  quiescence_set:
+    owning_rule: CS-028
+    source: spec/canonical-state.md
+    members:
+      - family: run
+        condition: every run is at a terminal state
+      - family: batch
+        condition: every batch is at a terminal state
+      - family: escalation
+        condition: no escalation is open
+      - family: carry-forward-condition
+        condition: every condition is satisfied or withdrawn, none open or blocked
+      - family: risk
+        condition: no risk rests open — each carries an explicit disposition
+    exemptions:
+      - family: approved-deviation
+        rationale: attaches to the delivered result as part of what was accepted
+
+  # The closed set of sanctioned post-terminal status motions (CS-029).
+  # After `canceled`, no planning record moves.
+  post_terminal_sanctions:
+    owning_rule: CS-029
+    source: spec/canonical-state.md
+    after_closed:
+      - family: goal
+        landing_statuses: [achieved, not-achieved]
+      - family: success-criterion
+        landing_statuses: [met, not-met]
+      - family: risk
+        landing_statuses: [realized]
+        from_postures: [mitigated, accepted]
+    after_canceled: []
+
+  # Cascade landing table (CS-030): the parent-caused disposition each
+  # stateful child family lands in when the parent records its terminal.
+  # The manifest's landing table is a generated view of this source.
+  cascade_landing:
+    owning_rule: CS-030
+    source: spec/canonical-state.md
+    project_canceled:
+      - family: run
+        landing_status: canceled
+        reason: project-canceled
+      - family: batch
+        from: planned
+        landing_status: canceled
+        reason: project-canceled
+      - family: batch
+        from: open
+        landing_status: abandoned
+        reason: project-canceled
+      - family: escalation
+        landing_status: withdrawn
+        reason: project-canceled
+      - family: approved-deviation
+        landing_status: revoked
+        reason: project-canceled
+      - family: carry-forward-condition
+        landing_status: withdrawn
+        reason: project-canceled
+      - family: decision-record
+        from: proposed
+        landing_status: withdrawn
+        reason: project-canceled # rides the cascade record; ADR statuses carry no reason
+      - family: goal
+        landing_status: dropped
+        reason: project-canceled
+      - family: success-criterion
+        landing_status: dropped
+        reason: project-canceled
+      - family: requirement
+        landing_status: dropped
+        reason: project-canceled
+      - family: assumption
+        landing_status: retired
+        reason: project-canceled
+      - family: risk
+        landing_status: closed
+        reason: project-canceled
+    run_terminal:
+      - family: directive
+        landing_status: voided
+        reason: run-terminal

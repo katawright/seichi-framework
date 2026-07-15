@@ -1,0 +1,106 @@
+# Kernel vocabulary source — per-machine closed reason sets.
+#
+# SOURCE file (hand-curated). A reason is present iff the state requires one;
+# free prose belongs in a detail field, never in the reason. A situation no
+# code fits is a MISSING CODE — a framework change, never a free-text escape
+# hatch. Machines and their states are defined in statuses.yaml; each
+# `machine:` key below must name a machine there, and each state key must be
+# one of its states (checked mechanically).
+
+reason_sets:
+  project_lifecycle:
+    owning_rule: CS-009
+    source: spec/canonical-state.md
+    consumers: ["schema:project_lifecycle_reason"]
+    by_state:
+      paused: [blocked, awaiting-decision, owner-hold]
+      completion-verified: [awaiting-acceptance, closure-in-progress]
+      closed: [accepted, acceptance-declined, acceptance-lapsed]
+      canceled: [stopped-by-owner, superseded, lapsed, limit-reached]
+
+  run_pause:
+    owning_rule: DR-005
+    source: spec/delegated-run.md
+    consumers: ["schema:pause_reason"]
+    by_state:
+      paused: [blocked, awaiting-decision]
+
+  # Honest-incomplete taxonomy: reason codes over the five terminals, closed
+  # per source state for the pre-authorization endings (DR-065).
+  #
+  # MISSING-CODE FLAG (VC-class, recorded in the Phase 2 equivalence report):
+  # DR-013 requires every terminal to carry an outcome reason, but the spec
+  # names no code for the successful `completion-verified` terminal; its
+  # consumer uses `completed`. Ratifying that code is a vocabulary-closure
+  # question routed to a planning cycle — it is deliberately NOT authored here.
+  run_outcome:
+    owning_rule: DR-065
+    source: spec/delegated-run.md
+    consumers: ["schema:run_outcome"]
+    by_state:
+      failed: [failed-verification, failed-deployment]
+      canceled:
+        [
+          stopped-by-user,
+          stopped-by-policy,
+          superseded-by-replanning,
+          project-canceled,
+          proposal-withdrawn,
+          proposal-declined,
+        ]
+      abandoned: [decision-lapsed]
+      authorization-exhausted: [limit-reached]
+    # The pre-authorization reason sets are closed per source state.
+    # `stopped-by-user` / `stopped-by-policy` are not legal before `approved`;
+    # `project-canceled` is the cascade's landing, never a party's own act;
+    # `proposal-withdrawn` is legal only from `proposed`, `proposal-declined`
+    # only from `declined`.
+    by_source_state:
+      proposed: [proposal-withdrawn, superseded-by-replanning, project-canceled]
+      declined: [proposal-declined, superseded-by-replanning, project-canceled]
+
+  batch_lifecycle:
+    owning_rule: PB-016
+    source: spec/parallel-batch.md
+    consumers: ["schema:batch_terminal_reason"]
+    by_state:
+      canceled: [superseded-by-replanning, project-canceled]
+      abandoned:
+        [conservation-unresolved, superseded-by-replanning, project-canceled]
+
+  directive_void:
+    owning_rule: DR-037
+    source: spec/delegated-run.md
+    consumers: ["schema:directive_void_reason"]
+    by_state:
+      voided: [run-terminal, evaluated-obsolete]
+
+  escalation_lifecycle:
+    owning_rule: CS-044
+    source: spec/canonical-state.md
+    consumers: ["schema:escalation_withdrawn_reason"]
+    by_state:
+      withdrawn: [raiser-withdrawn, obsolete, project-canceled]
+
+  deviation_lifecycle:
+    owning_rule: CS-045
+    source: spec/canonical-state.md
+    consumers: ["schema:deviation_revoked_reason"]
+    by_state:
+      revoked: [assumptions-changed, superseded, project-canceled]
+
+  # The pre-authorized policy lifecycle (CS-054) carries NO reason sets:
+  # `revoked` is itself the recorded act and rationale rides the record.
+  # ADR statuses (CS-050) likewise carry no required reason. Both are stated
+  # here as explicit absences so the closure is checkable.
+  policy_lifecycle:
+    owning_rule: CS-054
+    source: spec/canonical-state.md
+    consumers: []
+    by_state: {}
+
+  adr_lifecycle:
+    owning_rule: CS-050
+    source: spec/canonical-state.md
+    consumers: []
+    by_state: {}

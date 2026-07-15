@@ -1,0 +1,669 @@
+# Kernel rule registry — the first-slice rule IDs with metadata and source
+# pointers. Rule BODIES stay in the existing spec/*.md and guides/*.md files
+# this phase; this registry fixes identity, provenance, and location.
+#
+# ID convention: `<PREFIX>-<NNN>` — an uppercase domain-concept prefix
+# (adopted verbatim from the framework's existing families, including the
+# 3-char OMG/SEC) plus a zero-padded 3-digit number unique within the prefix.
+# Sub-IDs keep a lowercase suffix with the padded number (AW-004a). An ID,
+# once assigned, is permanent and never reused; a material semantic change
+# mints a successor (`supersedes`/`superseded_by`), a reword keeps the ID.
+# Deterministic ordering is (PREFIX ascending, NNN ascending, suffix
+# ascending). Numbering gaps are accepted (skipped non-kernel material).
+#
+# Fields: layer 1a (structured) | 1b (compact prose contract); basis
+# both-conjuncts | divergent-consumption | resolver-input | 1b; source = the
+# one normative home; introduced = framework version the rule entered
+# (`verify` until the provenance pass fills it — a mechanical follow-up, not
+# a manifest blocker); status active | superseded | deprecated.
+
+rules:
+  # ── 1a — structured layer: lifecycle machines + closed reason sets ──────
+  - id: CS-007
+    title: Project lifecycle machine
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-009
+    title: Project lifecycle reason codes (per-state, iff-required)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: DR-005
+    title: Run lifecycle machine
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-013
+    title: Run terminals and outcome-reason requirement
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-065
+    title: Run honest-incomplete taxonomy (per-source closed reason sets)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: PB-013
+    title: Batch lifecycle machine
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+  - id: PB-016
+    title: Batch closed reason codes (per-state)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+  - id: DR-034
+    title: Directive lifecycle machine
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-037
+    title: Directive voiding and closed void-reason set
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: CS-044
+    title: Escalation lifecycle machine and closed withdrawn-reason set
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-045
+    title: Deviation lifecycle machine and closed revoked-reason set
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-054
+    title: Pre-authorized policy lifecycle machine
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-050
+    title: ADR status machine (closed statuses, no required reasons)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+
+  # ── 1a — planning-family vocabularies, partition, sanction set ──────────
+  - id: CS-055
+    title: Planning-family closed status sets
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-058
+    title: Standing/resting partition over planning statuses
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-029
+    title: Post-terminal sanction set (closed)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+    notes: consolidates a verbatim restatement into one normative home
+
+  # ── 1a — Terminal Integrity ──────────────────────────────────────────────
+  - id: CS-028
+    title: Quiescence set (closed, direct children)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-030
+    title: Cascade landing table
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+    notes: the manifest landing table is a generated view; per-family machine clauses keep their own IDs
+
+  # ── 1a — attribution grades, write classes, record requirements ─────────
+  - id: CS-082
+    title: Judgment-tier attribution with two timestamps
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-083
+    title: Two identity grades (qualification / party)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-084
+    title: Evidence-independence grade
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-085
+    title: Attribution-source grade (platform-verified / client-claimed)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-086
+    title: Self-asserted floor-discharge rule (grade-capping)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-075
+    title: Write classes (governance-class iff; class carried per write)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-079
+    title: Record requirements (implementation-neutral record-property list)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+
+  # ── 1a — forcing-dependency taxonomy ─────────────────────────────────────
+  - id: PB-001
+    title: Six-category forcing-dependency taxonomy
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+  - id: PB-004
+    title: Per-pair parallel-safety classification record
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+
+  # ── 1a — schema-enforced operating-configuration fields ─────────────────
+  - id: OM-008
+    title: Executor read path setting (guided / contracts-only)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/operating-model.md
+    introduced: verify
+    status: active
+  - id: RS-002
+    title: Consequence anchors (five-tier harm scale)
+    layer: 1a
+    basis: both-conjuncts
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+
+  # ── 1a — traceability identity level ─────────────────────────────────────
+  - id: FW-005a
+    title: Traceability-chain identity level (record families + typed links)
+    layer: 1a
+    basis: both-conjuncts
+    source: guides/framework.md
+    introduced: verify
+    status: active
+    notes: rule split; FW-005 is the lineage root, not a binding rule ID
+
+  # ── 1a — stage pipeline + per-stage structure (already data) ─────────────
+  - id: ST-001
+    title: Stage pipeline (eight stages with pattern, order, feeds, revisit)
+    layer: 1a
+    basis: both-conjuncts
+    source: guides/stages.md
+    introduced: verify
+    status: active
+  - id: AW-001
+    title: Per-stage artifact/checkpoint structure (declared-canonical stage metadata)
+    layer: 1a
+    basis: both-conjuncts
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+    notes: the canonical data lives in stages/*/README.md front matter, declared canonical by this rule
+
+  # ── 1a — divergent-consumption path ──────────────────────────────────────
+  - id: CP-001
+    title: Checkpoint types and closed outcome sets (Gate / Review / Alignment)
+    layer: 1a
+    basis: divergent-consumption
+    source: guides/checkpoints.md
+    introduced: verify
+    status: active
+    notes: vocabulary promotion blocked on the open checkpoint-outcome divergence; resolves through a planning cycle before the data freezes
+
+  # ── 1a — resolver-input path (planned consumer; scope closed by ADR) ─────
+  - id: AW-004
+    title: Six project-configuration decisions set at intake
+    layer: 1a
+    basis: resolver-input
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+    notes: the six fields and value sets are named vocabulary/config entries, not sub-IDs; two of six are schema-enforced today (via OMG-002 assurance and OM-008 read path)
+  - id: OM-017
+    title: Consequence-to-floor mapping table
+    layer: 1a
+    basis: resolver-input
+    source: spec/operating-model.md
+    introduced: verify
+    status: active
+  - id: OMG-002
+    title: Setting vocabularies (Required Assurance; Work Execution / Workflow Automation / Authority)
+    layer: 1a
+    basis: resolver-input
+    source: guides/operating-model.md
+    introduced: verify
+    status: active
+    notes: the Required Assurance subset is schema-enforced today (vocabulary assurance_level); the remaining three sets await vocabulary-closure ratification
+  - id: OMG-016
+    title: Operating presets (Supervised / Checkpointed / Lights-Out)
+    layer: 1a
+    basis: resolver-input
+    source: guides/operating-model.md
+    introduced: verify
+    status: active
+  - id: DR-052
+    title: Replanning preset-to-autonomy-class table
+    layer: 1a
+    basis: resolver-input
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: RS-015
+    title: Consequence-by-stage scaling matrix
+    layer: 1a
+    basis: resolver-input
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+  - id: RS-016
+    title: Compliance-by-stage additions table
+    layer: 1a
+    basis: resolver-input
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+  - id: RS-017
+    title: Reach-by-stage formality matrix
+    layer: 1a
+    basis: resolver-input
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+  - id: RS-023
+    title: Minimum-viable-artifacts matrix
+    layer: 1a
+    basis: resolver-input
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+
+  # ── 1b — the 28 judgment clauses (compact prose contracts) ───────────────
+  - id: DR-004
+    title: Work beyond the span stops (envelope-change detection)
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-019
+    title: Reconfirm presumed-unresponsive work before trusting it
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-025
+    title: Boundary-currency (state complete and current before a boundary)
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-026
+    title: Resume contract (compatible actor, no private context)
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-044
+    title: Snapshot-mode scope of normativity
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-054
+    title: Consequence/compliance pulls the autonomy ceiling down
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-055
+    title: Material-replanning re-evaluation and work-validity classification
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-056
+    title: Prepare-vs-initiate improvement-candidate boundary
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-057
+    title: Self-modification ban
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-059
+    title: Proposed-change quality properties (durable / reversible / verified)
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-067
+    title: Never represent partial or failed results as complete
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: DR-068
+    title: Framework/runtime responsibility split (recording is not performing)
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: verify
+    status: active
+  - id: CS-006
+    title: Stray-fact reconciliation (single-source detection)
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-012
+    title: Project vs work-product acceptance altitude
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-071
+    title: Live-only element is an authoring-time defect
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-080
+    title: Smallest-sufficient record set (anti-bloat)
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-094
+    title: Fold only while requirements stay satisfied
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: CS-096
+    title: Folding never changes required independence
+    layer: 1b
+    basis: 1b
+    source: spec/canonical-state.md
+    introduced: verify
+    status: active
+  - id: OM-046
+    title: Semantic drift is not reliably machine-evaluable (bound blast radius)
+    layer: 1b
+    basis: 1b
+    source: spec/operating-model.md
+    introduced: verify
+    status: active
+  - id: OM-047
+    title: Feasibility ceiling (bounded blast radius, else checkpoint)
+    layer: 1b
+    basis: 1b
+    source: spec/operating-model.md
+    introduced: verify
+    status: active
+  - id: PB-005
+    title: Insufficient confidence classifies unsafe and sequences
+    layer: 1b
+    basis: 1b
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+  - id: SP-004
+    title: Idea-for-a-new-project runs the idea-formation interview
+    layer: 1b
+    basis: 1b
+    source: guides/session-protocol.md
+    introduced: verify
+    status: active
+  - id: SP-006
+    title: Expert-consultant posture and plain-language calibration
+    layer: 1b
+    basis: 1b
+    source: guides/session-protocol.md
+    introduced: verify
+    status: active
+  - id: RS-003
+    title: Consequence assigned by judgment to the nearest anchor
+    layer: 1b
+    basis: 1b
+    source: guides/right-sizing.md
+    introduced: verify
+    status: active
+  - id: AW-004a
+    title: Configuration decisions never fronted as menus at first contact
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+    notes: sub-ID split from AW-004 (the interaction rule over the six decisions)
+  - id: AW-010
+    title: Calibrate register from the operator's speech (never ask)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: FW-009
+    title: Impact-assessment two-question spectrums
+    layer: 1b
+    basis: 1b
+    source: guides/framework.md
+    introduced: verify
+    status: active
+  - id: ST-006
+    title: When-to-use-Flow sizing call
+    layer: 1b
+    basis: 1b
+    source: guides/stages.md
+    introduced: verify
+    status: active
+
+  # ── 1b — batch preflight/close condition sets ────────────────────────────
+  - id: PB-022
+    title: Batch preflight conditions
+    layer: 1b
+    basis: 1b
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+    notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+  - id: PB-028
+    title: Batch close and next-batch-open conditions
+    layer: 1b
+    basis: 1b
+    source: spec/parallel-batch.md
+    introduced: verify
+    status: active
+    notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+
+  # ── 1b — traceability id conventions + chain topology ────────────────────
+  - id: FW-005b
+    title: Traceability id conventions and chain topology
+    layer: 1b
+    basis: 1b
+    source: guides/framework.md
+    introduced: verify
+    status: active
+    notes: rule split from FW-005; promotion trigger — re-enters 1a when a schema conformance cycle enforces id formats or chain topology
+
+  # ── 1b — execution-module content (compact prose first) ──────────────────
+  - id: AW-016
+    title: Load line (Tier 0/1 read order)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-017
+    title: Capable-executor read-path contract
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+    notes: the value set (guided / contracts-only) is schema-enforced via OM-008's vocabulary; this rule carries the per-mode load contract
+  - id: AW-018
+    title: Stage-scoping floor (defer guides, never constraints)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-006
+    title: Assumed-classification convention (derived classifications as overridable assumptions)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-020
+    title: Missing-input protocol (derive assumed, or request)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-021
+    title: Assumed-classification gate disposition (confirm / challenge / carry forward)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-019
+    title: Supervised fallback discipline (halt and present)
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-022
+    title: Failed-gate protocol
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-023
+    title: Ambiguous-requirements protocol
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-024
+    title: Unreachable-human protocol
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+  - id: AW-025
+    title: Fallback precedence order
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
+    notes: the four-item precedence order is flagged as future data for the resolver
+  - id: SP-008
+    title: Continue-a-known-project session steps
+    layer: 1b
+    basis: 1b
+    source: guides/session-protocol.md
+    introduced: verify
+    status: active
+  - id: SP-009
+    title: Session-end steps
+    layer: 1b
+    basis: 1b
+    source: guides/session-protocol.md
+    introduced: verify
+    status: active
+  - id: AW-026
+    title: Session-continuity read-on-start / write-on-end
+    layer: 1b
+    basis: 1b
+    source: guides/agentic-workflow.md
+    introduced: verify
+    status: active
