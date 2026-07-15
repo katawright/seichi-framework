@@ -1,9 +1,13 @@
 #!/bin/sh
-# Front matter schema validation for staged .md files
+# Front matter schema validation for staged .md files, plus the kernel
+# checks whenever kernel sources or generated exports are staged (the
+# kernel check runs inside validate.mjs regardless of the file list).
 
 STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM -- '*.md')
+STAGED_KERNEL=$(git diff --cached --name-only --diff-filter=ACM -- \
+  'spec/vocabulary/*.yaml' 'spec/rules/*.yaml' 'spec/schemas/*.json' 'spec/generated/*')
 
-if [ -z "$STAGED_MD" ]; then
+if [ -z "$STAGED_MD" ] && [ -z "$STAGED_KERNEL" ]; then
   exit 0
 fi
 

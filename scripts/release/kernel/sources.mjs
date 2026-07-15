@@ -7,12 +7,17 @@
 // generator, no duplicated logic.
 //
 // source_hash covers the canonical kernel sources ONLY — vocabulary/*.yaml
-// and rules/index.yaml whole, plus the stage FRONT-MATTER blocks of
-// guides/stages.md and stages/*/README.md (prose edits below the front
-// matter never move it) — and explicitly excludes the meta stamp fields.
-// It is the "did the kernel change?" signal, stable across framework-only
-// releases. The whole manifest stays a pure function of its inputs
-// (generated_at is source-derived from INDEX.md, never wall-clock).
+// and rules/index.yaml whole (every byte of those files is kernel source),
+// plus the EXTRACTED stage front-matter values (the exact parsed objects the
+// manifest embeds, canonically serialized) — and explicitly excludes the
+// meta stamp fields. Stage front matter is a shared home carrying fields the
+// kernel does not extract, so hashing the extracted values (not the raw
+// blocks) keeps the signal true to its contract: source_hash moves iff
+// kernel content changes, and stays identical across framework-only
+// releases. Because the hashed objects are the same objects the manifest
+// embeds, the hash and the manifest cannot drift. The whole manifest stays a
+// pure function of its inputs (generated_at is source-derived from INDEX.md,
+// never wall-clock).
 
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync } from "node:fs";
@@ -95,13 +100,14 @@ export function loadKernelSources(repoRoot) {
 
   const stageReadmes = listStageReadmes(repoRoot);
   const pipelineBlock = frontMatterBlock(repoRoot, STAGES_GUIDE_FILE);
-  hashedInputs[STAGES_GUIDE_FILE] = sha256Hex(pipelineBlock);
   const pipeline = yaml.load(pipelineBlock).pipeline;
+  // Hash the extracted values, not the raw block: edits to front matter the
+  // kernel does not extract must not move source_hash.
+  hashedInputs[STAGES_GUIDE_FILE] = sha256Hex(canonicalJson(pipeline));
 
   const stageMetadata = {};
   for (const relPath of stageReadmes) {
     const block = frontMatterBlock(repoRoot, relPath);
-    hashedInputs[relPath] = sha256Hex(block);
     const fm = matter(`---\n${block}\n---\n`).data;
     stageMetadata[fm.id] = {
       working_location: fm.working_location ?? null,
@@ -110,6 +116,7 @@ export function loadKernelSources(repoRoot) {
       checklist: fm.checklist ?? null,
       reference: fm.reference ?? null,
     };
+    hashedInputs[relPath] = sha256Hex(canonicalJson(stageMetadata[fm.id]));
   }
 
   const sourceHash = `sha256:${sha256Hex(canonicalJson(hashedInputs))}`;

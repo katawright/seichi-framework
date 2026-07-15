@@ -10,7 +10,7 @@
 // generated_at stamp is source-derived (INDEX.md Last Updated), never
 // wall-clock, so identical inputs produce byte-identical artifacts.
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
@@ -40,6 +40,55 @@ function sortedObject(entries) {
   }
   return out;
 }
+
+// A rule `source` may be a single-star glob (one rule's canonical data home
+// spans sibling files, e.g. stages/*/README.md). Existence then means: the
+// pattern matches at least one file.
+function sourceExists(repoRoot, source) {
+  if (!source.includes("*")) return existsSync(join(repoRoot, source));
+  const segments = source.split("/");
+  let dirs = [repoRoot];
+  for (const segment of segments) {
+    const next = [];
+    for (const dir of dirs) {
+      if (segment.includes("*")) {
+        const re = new RegExp(
+          `^${segment.split("*").map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join(".*")}$`,
+        );
+        try {
+          for (const name of readdirSync(dir)) {
+            if (re.test(name)) next.push(join(dir, name));
+          }
+        } catch {
+          /* unreadable dir — no matches */
+        }
+      } else {
+        next.push(join(dir, segment));
+      }
+    }
+    dirs = next;
+  }
+  return dirs.some((p) => existsSync(p));
+}
+
+// Cascade-landing families -> the vocabulary their landing_status/from
+// values resolve against. `null` = the family's status vocabulary is
+// deliberately not authored in the first slice (not on the ADR admission
+// list); its landing values are prose-verified only, flagged when swept.
+const CASCADE_FAMILY_VOCAB = {
+  run: { machine: "run_lifecycle" },
+  batch: { machine: "batch_lifecycle" },
+  directive: { machine: "directive_lifecycle" },
+  escalation: { machine: "escalation_lifecycle" },
+  "approved-deviation": { machine: "deviation_lifecycle" },
+  "decision-record": { machine: "adr_lifecycle" },
+  goal: { family: "goal_status" },
+  "success-criterion": { family: "success_criterion_status" },
+  requirement: { family: "requirement_status" },
+  assumption: { family: "assumption_status" },
+  risk: { family: "risk_status" },
+  "carry-forward-condition": null,
+};
 
 // ── Source validation (shared with the .schema kernel check) ───────────────
 
@@ -81,7 +130,7 @@ export function validateKernelSources(repoRoot, sources) {
     if (rule.status !== undefined && !["active", "superseded", "deprecated"].includes(rule.status)) {
       issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: invalid status \`${rule.status}\``);
     }
-    if (rule.source && !existsSync(join(repoRoot, rule.source))) {
+    if (rule.source && !sourceExists(repoRoot, rule.source)) {
       issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: source file missing: ${rule.source}`);
     }
   }
@@ -142,6 +191,35 @@ export function validateKernelSources(repoRoot, sources) {
         issues.push(`KERNEL  ${where}: source-state reason set keyed on unknown state \`${state}\``);
       }
     }
+    // The iff, both ways: every reason-required state carries a closed set
+    // or an explicit machine-readable missing-code flag; no set is keyed on
+    // a state not declared reason-required.
+    if (r.required_reason_states === undefined) {
+      issues.push(`KERNEL  ${where}: missing \`required_reason_states\``);
+    } else {
+      const covered = new Set([
+        ...Object.keys(r.by_state ?? {}),
+        ...Object.keys(r.missing_codes ?? {}),
+      ]);
+      for (const state of r.required_reason_states) {
+        if (!states.has(state)) {
+          issues.push(`KERNEL  ${where}: required-reason state \`${state}\` not a state`);
+        }
+        if (!covered.has(state)) {
+          issues.push(
+            `KERNEL  ${where}: reason-required state \`${state}\` has no closed set and no missing_codes flag`,
+          );
+        }
+      }
+      const required = new Set(r.required_reason_states);
+      for (const state of covered) {
+        if (!required.has(state)) {
+          issues.push(
+            `KERNEL  ${where}: state \`${state}\` carries a reason set but is not in required_reason_states`,
+          );
+        }
+      }
+    }
   }
 
   // Flat vocabularies (grades, config, concurrency) + planning families.
@@ -189,6 +267,41 @@ export function validateKernelSources(repoRoot, sources) {
   const ti = vocab.statuses.terminal_integrity ?? {};
   for (const key of ["quiescence_set", "post_terminal_sanctions", "cascade_landing"]) {
     checkOwningRule(`spec/vocabulary/statuses.yaml#terminal_integrity.${key}`, ti[key]?.owning_rule);
+  }
+
+  // Cascade-landing references resolve against the landed family's authored
+  // vocabulary; families whose vocabulary the first slice deliberately does
+  // not author are allowlisted (null) and skipped.
+  const planningFamilies = vocab.statuses.planning_families ?? {};
+  const resolveFamilyValues = (spec) => {
+    if (spec.machine) return machines[spec.machine]?.states;
+    return planningFamilies[spec.family]?.values;
+  };
+  for (const hop of ["project_canceled", "run_terminal"]) {
+    for (const row of ti.cascade_landing?.[hop] ?? []) {
+      const where = `spec/vocabulary/statuses.yaml#terminal_integrity.cascade_landing.${hop}`;
+      if (!(row.family in CASCADE_FAMILY_VOCAB)) {
+        issues.push(`KERNEL  ${where}: unknown family \`${row.family}\``);
+        continue;
+      }
+      const spec = CASCADE_FAMILY_VOCAB[row.family];
+      if (spec === null) continue; // vocabulary deliberately unauthored this slice
+      const values = resolveFamilyValues(spec);
+      if (!values) {
+        issues.push(`KERNEL  ${where}: family \`${row.family}\` vocabulary not found`);
+        continue;
+      }
+      if (!values.includes(row.landing_status)) {
+        issues.push(
+          `KERNEL  ${where}: \`${row.family}\` landing status \`${row.landing_status}\` not in its vocabulary`,
+        );
+      }
+      if (row.from !== undefined && !values.includes(row.from)) {
+        issues.push(
+          `KERNEL  ${where}: \`${row.family}\` from-state \`${row.from}\` not in its vocabulary`,
+        );
+      }
+    }
   }
   checkOwningRule(
     "spec/vocabulary/grades.yaml#record_requirements",
@@ -253,30 +366,48 @@ function transitionEntries(sources) {
       : name === "directive_void"
         ? "directive_lifecycle"
         : name;
-    reasonsByMachine[machineName] ??= { by_state: {}, by_source_state: {} };
+    reasonsByMachine[machineName] ??= {
+      by_state: {},
+      by_source_state: {},
+      required: [],
+      missing: {},
+    };
+    const acc = reasonsByMachine[machineName];
     for (const [state, values] of Object.entries(r.by_state ?? {})) {
-      reasonsByMachine[machineName].by_state[state] = [
-        ...(reasonsByMachine[machineName].by_state[state] ?? []),
-        ...values,
-      ];
+      acc.by_state[state] = [...(acc.by_state[state] ?? []), ...values];
     }
     for (const [state, values] of Object.entries(r.by_source_state ?? {})) {
-      reasonsByMachine[machineName].by_source_state[state] = values;
+      acc.by_source_state[state] = values;
+    }
+    for (const state of r.required_reason_states ?? []) {
+      if (!acc.required.includes(state)) acc.required.push(state);
+    }
+    for (const [state, note] of Object.entries(r.missing_codes ?? {})) {
+      acc.missing[state] = note;
     }
   }
 
   const entries = [];
   for (const [name, m] of Object.entries(vocab.statuses.machines)) {
-    const reasons = reasonsByMachine[name] ?? { by_state: {}, by_source_state: {} };
+    const reasons = reasonsByMachine[name] ?? {
+      by_state: {},
+      by_source_state: {},
+      required: [],
+      missing: {},
+    };
     entries.push([
       name,
       {
         states: m.states,
         terminals: m.terminals,
         edges: m.edges,
+        reason_required_states: [...reasons.required].sort(),
         reason_sets: sortedObject(Object.entries(reasons.by_state)),
         ...(Object.keys(reasons.by_source_state).length > 0
           ? { reason_sets_by_source_state: sortedObject(Object.entries(reasons.by_source_state)) }
+          : {}),
+        ...(Object.keys(reasons.missing).length > 0
+          ? { missing_reason_codes: sortedObject(Object.entries(reasons.missing)) }
           : {}),
       },
     ]);
@@ -484,6 +615,12 @@ export function buildReference(manifest) {
         push(
           `  - from \`${state}\`: ${values.map((r) => `\`${r}\``).join(" · ")}`,
         );
+      }
+    }
+    if (t.missing_reason_codes) {
+      push("- Missing codes (flagged, unratified — routed to a planning cycle):");
+      for (const [state, note] of Object.entries(t.missing_reason_codes)) {
+        push(`  - \`${state}\`: ${note}`);
       }
     }
     push();

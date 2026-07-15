@@ -71,7 +71,11 @@
             "enum": ["both-conjuncts", "divergent-consumption", "resolver-input", "1b"]
           },
           "source": { "type": "string", "minLength": 1 },
-          "introduced": { "type": "string", "minLength": 1 },
+          "introduced": {
+            "$comment": "A framework version, or the literal placeholder `verify` (provenance pass pending — a distinguishable placeholder, never presented as completed provenance).",
+            "type": "string",
+            "pattern": "^(v\\d+\\.\\d+\\.\\d+|verify)$"
+          },
           "status": { "enum": ["active", "superseded", "deprecated"] },
           "notes": { "type": "string" },
           "supersedes": { "$ref": "#/$defs/rule-id" },
@@ -84,7 +88,7 @@
       "minProperties": 1,
       "additionalProperties": {
         "type": "object",
-        "required": ["states", "terminals", "edges", "reason_sets"],
+        "required": ["states", "terminals", "edges", "reason_required_states", "reason_sets"],
         "additionalProperties": false,
         "properties": {
           "states": {
@@ -109,8 +113,18 @@
               "items": { "$ref": "#/$defs/value" }
             }
           },
+          "reason_required_states": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/value" }
+          },
           "reason_sets": { "$ref": "#/$defs/reason-map" },
-          "reason_sets_by_source_state": { "$ref": "#/$defs/reason-map" }
+          "reason_sets_by_source_state": { "$ref": "#/$defs/reason-map" },
+          "missing_reason_codes": {
+            "$comment": "Reason-required states the framework has not yet ratified a code for — an explicit, machine-readable flag, never an omission.",
+            "type": "object",
+            "additionalProperties": { "type": "string", "minLength": 1 }
+          }
         }
       }
     },
