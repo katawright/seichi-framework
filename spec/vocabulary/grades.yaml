@@ -1,0 +1,59 @@
+# Kernel vocabulary source — attribution grades, write classes, and the
+# implementation-neutral record-requirement properties.
+#
+# SOURCE file (hand-curated). Values are stable identifiers in kebab-case;
+# the two identity-grade identifiers slug the grade marker plus the identity
+# kind (`[J]` qualification-identity -> j-qualification, `[H]` party-identity
+# -> h-party), matching the consumer's established naming after the
+# kebab->snake projection.
+
+vocabularies:
+  identity_grade:
+    owning_rule: CS-083
+    source: spec/canonical-state.md
+    consumers: ["schema:identity_grade"]
+    values: [j-qualification, h-party]
+
+  independence_grade:
+    owning_rule: CS-084
+    source: spec/canonical-state.md
+    consumers: ["schema:independence_grade"]
+    values: [self-asserted, context-independent, organizationally-independent]
+
+  attribution_source:
+    owning_rule: CS-085
+    source: spec/canonical-state.md
+    consumers: ["schema:attribution_source"]
+    values: [platform-verified, client-claimed]
+
+  # A write is governance-class iff it discharges or reverses a [J]-or-above
+  # item; records or changes a gate or checkpoint decision; records a
+  # project-lifecycle transition into a terminal or the acceptance decision;
+  # changes the Authorization subset, operating envelope, governance profile,
+  # authorized-party roster, or operating mode; or records a risk acceptance
+  # or accepted limitation. All other writes are non-governance by default,
+  # and the class is carried explicitly on every write. The consumer carries
+  # the class as a boolean (`governance_class`), a representation of this
+  # two-valued set.
+  write_class:
+    owning_rule: CS-075
+    source: spec/canonical-state.md
+    consumers: ["schema:run_events.governance_class (boolean)"]
+    values: [governance, non-governance]
+
+# The implementation-neutral record-property list (CS-079): what every
+# project record must provide, independent of storage mechanism.
+record_requirements:
+  owning_rule: CS-079
+  source: spec/canonical-state.md
+  properties:
+    - durability
+    - revision-history
+    - provenance
+    - traceability
+    - attribution
+    - accessibility
+    - portability
+    - retention
+    - auditability
+    - immutability-or-correction-history

@@ -1,0 +1,28 @@
+# Kernel vocabulary source — parallel-execution concurrency vocabularies.
+#
+# SOURCE file (hand-curated). The forcing-dependency identifiers slug the
+# taxonomy's category names (e.g. "Shared contract change" ->
+# shared-contract), matching the consumer's established naming after the
+# kebab->snake projection. A project or tool MAY extend the taxonomy with
+# domain-specific categories; it MUST NOT narrow it.
+
+vocabularies:
+  forcing_dependency:
+    owning_rule: PB-001
+    source: spec/parallel-batch.md
+    consumers: ["schema:forcing_dependency"]
+    values:
+      - foundation
+      - shared-mutable-boundary
+      - shared-contract
+      - non-isolated-verification
+      - integration-order
+      - authority-capability
+
+  # The per-pair parallel-safety conclusion; unestablished disjointness is
+  # unsafe, and every unsafe pair names its firing dependency.
+  safety_conclusion:
+    owning_rule: PB-004
+    source: spec/parallel-batch.md
+    consumers: ["schema:safety_conclusion", "schema:psc_unsafe_named_ck"]
+    values: [safe, unsafe]

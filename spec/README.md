@@ -89,6 +89,37 @@ Conventions:
 
 ---
 
+## Kernel Interface (experimental, 0.x)
+
+The spec namespace also hosts the framework's **kernel interface** — the
+machine-readable single source for the vocabulary and rule identities the
+contracts above state in prose:
+
+- **`vocabulary/*.yaml`** — hand-curated source for the closed value sets
+  (lifecycle machines and reason sets, planning-family statuses, attribution
+  grades, operating-configuration fields, concurrency vocabularies). Values are
+  stable identifiers, never display text.
+- **`rules/index.yaml`** — the rule registry: every kernel rule's stable ID,
+  layer, admission basis, and normative source. Rule bodies stay in the contract
+  files above.
+- **`schemas/manifest.schema.json`** — the schema the generated manifest
+  validates against.
+- **`generated/`** — generated, stamped exports (never hand-edited):
+  `manifest.json` (the self-contained machine export), `reference.md` (the
+  human-readable view), and `schema-projection.json` (the consumer-facing
+  equivalence export). Regenerate with `npm run kernel`; CI fails when they are
+  stale or hand-edited.
+
+The kernel interface is versioned on its own **0.x** axis
+(`meta. kernel_interface_version`), independent of the framework version:
+pre-1.0 it may break with explicit release notes, and no compatibility promise
+attaches to it. Consumers pin the interface version and may cache-validate on
+`meta.source_hash`, which moves only when the kernel sources change. Stage
+metadata stays canonical in its front-matter homes (`guides/stages.md` pipeline;
+`stages/*/README.md`) and is embedded into the manifest, not moved.
+
+---
+
 ## Scope
 
 This layer is scoped to the contracts a bounded **Lights-Out** run executes —
@@ -106,6 +137,6 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.49.0.
