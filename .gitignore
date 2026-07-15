@@ -6,8 +6,10 @@ dist/
 build/
 out/
 
-# Generated framework manifest (emitted by `npm run release`)
-manifest.json
+# Generated framework manifest at the repo root (emitted by `npm run release`).
+# Root-anchored: the committed kernel export spec/generated/manifest.json is
+# tracked and freshness-checked, never ignored.
+/manifest.json
 
 # Environment and secrets
 .env

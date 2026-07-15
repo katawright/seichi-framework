@@ -111,9 +111,9 @@ contracts above state in prose:
   stale or hand-edited.
 
 The kernel interface is versioned on its own **0.x** axis
-(`meta. kernel_interface_version`), independent of the framework version:
-pre-1.0 it may break with explicit release notes, and no compatibility promise
-attaches to it. Consumers pin the interface version and may cache-validate on
+(`meta.kernel_interface_version`), independent of the framework version: pre-1.0
+it may break with explicit release notes, and no compatibility promise attaches
+to it. Consumers pin the interface version and may cache-validate on
 `meta.source_hash`, which moves only when the kernel sources change. Stage
 metadata stays canonical in its front-matter homes (`guides/stages.md` pipeline;
 `stages/*/README.md`) and is embedded into the manifest, not moved.

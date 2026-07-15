@@ -7,11 +7,15 @@
 # `machine:` key below must name a machine there, and each state key must be
 # one of its states (checked mechanically).
 
+# `required_reason_states` closes the iff both ways per reason set: every
+# listed state must have a closed set here (or an explicit `missing_codes`
+# entry), and no set may be keyed on an unlisted state — checked mechanically.
 reason_sets:
   project_lifecycle:
     owning_rule: CS-009
     source: spec/canonical-state.md
     consumers: ["schema:project_lifecycle_reason"]
+    required_reason_states: [paused, completion-verified, closed, canceled]
     by_state:
       paused: [blocked, awaiting-decision, owner-hold]
       completion-verified: [awaiting-acceptance, closure-in-progress]
@@ -22,21 +26,19 @@ reason_sets:
     owning_rule: DR-005
     source: spec/delegated-run.md
     consumers: ["schema:pause_reason"]
+    required_reason_states: [paused]
     by_state:
       paused: [blocked, awaiting-decision]
 
   # Honest-incomplete taxonomy: reason codes over the five terminals, closed
   # per source state for the pre-authorization endings (DR-065).
-  #
-  # MISSING-CODE FLAG (VC-class, recorded in the Phase 2 equivalence report):
-  # DR-013 requires every terminal to carry an outcome reason, but the spec
-  # names no code for the successful `completion-verified` terminal; its
-  # consumer uses `completed`. Ratifying that code is a vocabulary-closure
-  # question routed to a planning cycle — it is deliberately NOT authored here.
   run_outcome:
     owning_rule: DR-065
     source: spec/delegated-run.md
     consumers: ["schema:run_outcome"]
+    # DR-013: every terminal carries an outcome reason.
+    required_reason_states:
+      [completion-verified, failed, canceled, abandoned, authorization-exhausted]
     by_state:
       failed: [failed-verification, failed-deployment]
       canceled:
@@ -50,19 +52,39 @@ reason_sets:
         ]
       abandoned: [decision-lapsed]
       authorization-exhausted: [limit-reached]
-    # The pre-authorization reason sets are closed per source state.
-    # `stopped-by-user` / `stopped-by-policy` are not legal before `approved`;
-    # `project-canceled` is the cascade's landing, never a party's own act;
-    # `proposal-withdrawn` is legal only from `proposed`, `proposal-declined`
-    # only from `declined`.
+    # MISSING-CODE FLAG (VC-class, machine-readable): DR-013 requires an
+    # outcome reason on every terminal, but the spec names no code for the
+    # successful `completion-verified` terminal; its consumer uses
+    # `completed`. Ratifying that code is a vocabulary-closure question
+    # routed to a planning cycle — it is deliberately NOT authored here.
+    missing_codes:
+      completion-verified: >-
+        no ratified code for the successful terminal; the consumer uses
+        `completed` (unratified) — VC-class closure routed to a planning cycle
+    # The pre-authorization and revocation reason sets are closed per source
+    # state. `stopped-by-user` / `stopped-by-policy` are not legal before
+    # `approved`; `project-canceled` is the cascade's landing, never a
+    # party's own act; `proposal-withdrawn` is legal only from `proposed`,
+    # `proposal-declined` only from `declined`. The `approved` entry is
+    # stated by DR-005's revocation clause ("carrying only the existing
+    # revocation reasons") — the closure crosses owning rules (machine clause
+    # DR-005; taxonomy DR-065).
     by_source_state:
       proposed: [proposal-withdrawn, superseded-by-replanning, project-canceled]
       declined: [proposal-declined, superseded-by-replanning, project-canceled]
+      approved:
+        [
+          stopped-by-user,
+          stopped-by-policy,
+          superseded-by-replanning,
+          project-canceled,
+        ]
 
   batch_lifecycle:
     owning_rule: PB-016
     source: spec/parallel-batch.md
     consumers: ["schema:batch_terminal_reason"]
+    required_reason_states: [canceled, abandoned]
     by_state:
       canceled: [superseded-by-replanning, project-canceled]
       abandoned:
@@ -72,6 +94,7 @@ reason_sets:
     owning_rule: DR-037
     source: spec/delegated-run.md
     consumers: ["schema:directive_void_reason"]
+    required_reason_states: [voided]
     by_state:
       voided: [run-terminal, evaluated-obsolete]
 
@@ -79,6 +102,7 @@ reason_sets:
     owning_rule: CS-044
     source: spec/canonical-state.md
     consumers: ["schema:escalation_withdrawn_reason"]
+    required_reason_states: [withdrawn]
     by_state:
       withdrawn: [raiser-withdrawn, obsolete, project-canceled]
 
@@ -86,6 +110,7 @@ reason_sets:
     owning_rule: CS-045
     source: spec/canonical-state.md
     consumers: ["schema:deviation_revoked_reason"]
+    required_reason_states: [revoked]
     by_state:
       revoked: [assumptions-changed, superseded, project-canceled]
 
@@ -97,10 +122,12 @@ reason_sets:
     owning_rule: CS-054
     source: spec/canonical-state.md
     consumers: []
+    required_reason_states: []
     by_state: {}
 
   adr_lifecycle:
     owning_rule: CS-050
     source: spec/canonical-state.md
     consumers: []
+    required_reason_states: []
     by_state: {}
