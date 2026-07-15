@@ -116,7 +116,11 @@ export function loadKernelSources(repoRoot) {
       checklist: fm.checklist ?? null,
       reference: fm.reference ?? null,
     };
-    hashedInputs[relPath] = sha256Hex(canonicalJson(stageMetadata[fm.id]));
+    // The extracted `id` is the manifest's stage_metadata map key — embedded
+    // data, so it is part of the hash domain (verify-fixes re-check R1).
+    hashedInputs[relPath] = sha256Hex(
+      canonicalJson({ id: fm.id, metadata: stageMetadata[fm.id] }),
+    );
   }
 
   const sourceHash = `sha256:${sha256Hex(canonicalJson(hashedInputs))}`;
