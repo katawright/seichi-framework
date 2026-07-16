@@ -690,6 +690,54 @@ export function buildReference(manifest, ruleBodies = {}) {
   );
   push();
 
+  // Terminal integrity — the generated view of the CS-028/029/030 data
+  // (the cascade landing table's generated view per the recorded maintainer
+  // decision; the spec bodies bind the data and link here).
+  const ti = manifest.terminal_integrity;
+  push("## Terminal integrity");
+  push();
+  push("### Quiescence set (CS-028)");
+  push();
+  push("| Family | Condition |");
+  push("| --- | --- |");
+  for (const m of ti.quiescence_set.members ?? []) {
+    push(`| \`${m.family}\` | ${m.condition} |`);
+  }
+  for (const e of ti.quiescence_set.exemptions ?? []) {
+    push(`| \`${e.family}\` | **exempt** — ${e.rationale} |`);
+  }
+  push();
+  push("### Post-terminal sanctions (CS-029)");
+  push();
+  push("| After | Family | Sanctioned landing | From postures |");
+  push("| --- | --- | --- | --- |");
+  for (const s of ti.post_terminal_sanctions.after_closed ?? []) {
+    push(
+      `| \`closed\` | \`${s.family}\` | ${s.landing_statuses.map((v) => `\`${v}\``).join(" · ")} | ` +
+        `${(s.from_postures ?? []).map((v) => `\`${v}\``).join(" · ") || "—"} |`,
+    );
+  }
+  if ((ti.post_terminal_sanctions.after_canceled ?? []).length === 0) {
+    push("| `canceled` | — | none — no planning record moves | — |");
+  }
+  push();
+  push("### Cascade landing (CS-030)");
+  push();
+  push("| Hop | Family | From | Landing status | Reason |");
+  push("| --- | --- | --- | --- | --- |");
+  for (const [hop, rows] of Object.entries({
+    project_canceled: ti.cascade_landing.project_canceled ?? [],
+    run_terminal: ti.cascade_landing.run_terminal ?? [],
+  })) {
+    for (const r of rows) {
+      push(
+        `| ${hop.replace("_", " ")} | \`${r.family}\` | ${r.from ? `\`${r.from}\`` : "any"} | ` +
+          `\`${r.landing_status}\` | \`${r.reason}\` |`,
+      );
+    }
+  }
+  push();
+
   push("## Rule registry");
   push();
   push("| ID | Title | Layer | Basis | Source | Representation |");

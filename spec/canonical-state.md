@@ -134,9 +134,26 @@ operating configuration, and the records produced as work proceeds.
 **Evidence.** The state itself is the record; each element carries provenance
 per [Record Requirements](#record-requirements).
 
-**Failure behavior.** A project-level fact that exists only inside a run's
-private state, or only in a rendered document, violates the single-source rule
-and MUST be reconciled into the canonical state.
+**Failure behavior.** Stray facts are reconciled —
+[CS-006](#cs-006--stray-fact-reconciliation-single-source-detection), below.
+
+<!-- rule: CS-006 -->
+
+### CS-006 — Stray-fact reconciliation (single-source detection)
+
+- **Applicability.** Every project-level fact, wherever it surfaces.
+- **Inputs.** The canonical project state (the enclosing contract); the stray
+  representation.
+- **Procedure.** A project-level fact that exists only inside a run's private
+  state, or only in a rendered document, violates the single-source rule and
+  MUST be reconciled into the canonical state.
+- **Outputs.** The fact, reconciled into the canonical state.
+- **Evidence.** The reconciling write, attributed per
+  [Record Requirements](#record-requirements).
+- **Failure behavior.** N/A — this rule is itself the enclosing contract's
+  failure path.
+
+<!-- /rule: CS-006 -->
 
 ---
 
@@ -236,34 +253,85 @@ neither substitutes for the other.
 
 **Procedure.**
 
-- The normative lifecycle — six states, two terminals:
+<!-- rule: CS-007 -->
 
-```text
-active <-> paused                                     (paused carries a reason)
-active  -> completion-claimed -> completion-verified -> closed
-completion-claimed -> active                          (claim refuted)
-active | paused | completion-claimed -> canceled
-```
+### CS-007 — Project lifecycle machine
 
-- **Terminals are absorbing.** `closed` and `canceled` are the only terminal
-  states; no transition leaves either. The terminal meanings are
-  **delivery-based**: `closed` means the approved scope was delivered and
-  verified and the closure decision is recorded; `canceled` has one unambiguous
-  meaning — **no verified delivery**. A verified-but-declined project is
-  `closed` with reason `acceptance-declined`, never `canceled`.
-- **Reason codes are normative** — fixed, closed sets per state — and a reason
-  is present **iff** the state requires one:
+- **Applicability.** Every project, at every tier, consequence level, autonomy
+  posture, and operating mode.
+- **Inputs.** The `project_lifecycle` machine in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) — the closed state set
+  (six states), edges, and two absorbing terminals bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.**
+  - **Terminals are absorbing.** `closed` and `canceled` are the only terminal
+    states; no transition leaves either. The terminal meanings are
+    **delivery-based**: `closed` means the approved scope was delivered and
+    verified and the closure decision is recorded; `canceled` has one
+    unambiguous meaning — **no verified delivery**. A verified-but-declined
+    project is `closed` with reason `acceptance-declined`, never `canceled`.
+  - **A refuted completion claim returns to `active`** — not to `paused`, and
+    not to a terminal. An unmet contract element **blocks** the claim:
+    identified work exists, and identified work is `active`. This is a
+    deliberate asymmetry with the run lifecycle, where `failed-verification`
+    routes to the `failed` terminal — correct for a run, whose authorized span
+    is over; wrong for a project, which simply has work left.
+  - **`paused` is the single non-terminal suspension state**, reachable from
+    `active` only. It suspends the project awaiting something external; it is
+    not where refuted claims or identified work go. A stalled verification waits
+    in `completion-claimed`, which is already a waiting state.
+  - **No pre-`active` state.** A project performs authorized work (Initiation)
+    before Gate 1 — Gate 1 authorizes the plan, not the project's existence — so
+    a project is `active` from bootstrap.
+  - **Two terminals, not five.** A run is an operational span that can exhaust a
+    budget or fail a deployment; a project is a governance object, and those
+    endings all reduce to _stopped, for a reason_. The richness lives in the
+    reason codes — the run spec's own rule.
+  - **Overlays sit off the axis** — determinations that overlay a state without
+    being one:
+    - **`stale`** — an observer-inferred staleness determination over a
+      non-terminal state: the project's expected attention has lapsed with no
+      recorded transition and nobody present to record one. The project-level
+      analog of the run's `unresponsive`. Staleness is never recorded as a
+      lifecycle state — when someone finally looks, they resume the project or
+      record `canceled` with reason `lapsed`.
+    - **`archived`** — an administrator-assigned visibility determination
+      overlaying a terminal. It sets independently of the lifecycle (e.g. an
+      archived-at fact); it never overwrites _which_ terminal the project
+      reached, and terminals stay absorbing.
+  - The lifecycle MUST distinguish requested from confirmed state: a completion
+    claim is not a verification, a verification is not the acceptance decision,
+    and an intention to stop is not a recorded terminal.
+- **Outputs.** The project's current lifecycle state and any overlays.
+- **Evidence.** As the enclosing contract — a durable, attributed record for
+  every transition.
+- **Failure behavior.** A write attempting a transition outside the defined set
+  — including any exit from a terminal — MUST be rejected. A staleness
+  observation never mutates lifecycle state; it awaits a human record.
 
-| State                 | Reason codes (closed set)                                        |
-| --------------------- | ---------------------------------------------------------------- |
-| `paused`              | `blocked` · `awaiting-decision` · `owner-hold`                   |
-| `completion-verified` | `awaiting-acceptance` (default on entry) · `closure-in-progress` |
-| `closed`              | `accepted` · `acceptance-declined` · `acceptance-lapsed`         |
-| `canceled`            | `stopped-by-owner` · `superseded` · `lapsed` · `limit-reached`   |
+<!-- /rule: CS-007 -->
 
-`active` and `completion-claimed` carry no reason. Free prose belongs in a
-separate detail field, never in the reason. A situation no code fits is a
-**missing code** — a framework change, not a free-text escape hatch.
+<!-- rule: CS-009 -->
+
+### CS-009 — Project lifecycle reason codes (per-state, iff-required)
+
+- **Applicability.** Every project-lifecycle state entry.
+- **Inputs.** The `project_lifecycle` reason sets in
+  [`vocabulary/reasons.yaml`](vocabulary/reasons.yaml) — the closed per-state
+  code sets and the reason-required states bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.** **Reason codes are normative** — fixed, closed sets per state —
+  and a reason is present **iff** the state requires one. `active` and
+  `completion-claimed` carry no reason. Free prose belongs in a separate detail
+  field, never in the reason. A situation no code fits is a **missing code** — a
+  framework change, not a free-text escape hatch.
+- **Outputs.** The state's reason, where the state requires one.
+- **Evidence.** Entries into a required-reason state carry their reason
+  (enclosing contract).
+- **Failure behavior.** A required-reason state recorded without a reason, or
+  with a code not defined for that state, is not a satisfied record.
+
+<!-- /rule: CS-009 -->
 
 - **The completion ladder sits on this axis.** `completion-claimed` and
   `completion-verified` are lifecycle states — the run lifecycle's own ladder,
@@ -287,55 +355,44 @@ separate detail field, never in the reason. A situation no code fits is a
   never reach `closed` on its own authority.** It MAY execute a
   policy-discharged closure — the normal Lights-Out mechanism — where the
   decision is the policy **author's**, recorded against the policy and its
-  author per [Record Requirements](#record-requirements). This floor binds the
-  **project** acceptance decision; bounded **work-product** acceptance (e.g.
-  whether a component design is acceptable to build) is a different altitude and
-  MAY be delegated at low consequence per the
-  [governance floors](operating-model.md#governance-floors-and-capability-ceilings).
-  The two rungs differ in kind: `completion-verified` is epistemic — does the
-  evidence support the claim, checked against **requirements**; acceptance is an
-  authority act — do we take delivery, checked against **intent**.
+  author per [Record Requirements](#record-requirements). The altitude this
+  floor binds is [CS-012](#cs-012--project-vs-work-product-acceptance-altitude),
+  below.
 - **Terminals bind the open child graph** (see
   [Terminal Integrity](#terminal-integrity)): entry to `closed` carries a second
   MUST precondition alongside the acceptance decision — the quiescence set is
   dispositioned; entry to `canceled` disposes every open child record by
   cascade, chained to the cancellation's attribution.
-- **A refuted completion claim returns to `active`** — not to `paused`, and not
-  to a terminal. An unmet contract element **blocks** the claim: identified work
-  exists, and identified work is `active`. This is a deliberate asymmetry with
-  the run lifecycle, where `failed-verification` routes to the `failed` terminal
-  — correct for a run, whose authorized span is over; wrong for a project, which
-  simply has work left.
 - **Closure-stage work happens inside `completion-verified`**, made visible by
   its reason (`awaiting-acceptance` → `closure-in-progress`). Handoff,
   production-ownership transfer, the retrospective, and the close-out summary
   are stage work, not lifecycle states.
-- **`paused` is the single non-terminal suspension state**, reachable from
-  `active` only. It suspends the project awaiting something external; it is not
-  where refuted claims or identified work go. A stalled verification waits in
-  `completion-claimed`, which is already a waiting state.
-- **No pre-`active` state.** A project performs authorized work (Initiation)
-  before Gate 1 — Gate 1 authorizes the plan, not the project's existence — so a
-  project is `active` from bootstrap.
-- **Two terminals, not five.** A run is an operational span that can exhaust a
-  budget or fail a deployment; a project is a governance object, and those
-  endings all reduce to _stopped, for a reason_. The richness lives in the
-  reason codes — the run spec's own rule.
-- **Overlays sit off the axis** — determinations that overlay a state without
-  being one:
-  - **`stale`** — an observer-inferred staleness determination over a
-    non-terminal state: the project's expected attention has lapsed with no
-    recorded transition and nobody present to record one. The project-level
-    analog of the run's `unresponsive`. Staleness is never recorded as a
-    lifecycle state — when someone finally looks, they resume the project or
-    record `canceled` with reason `lapsed`.
-  - **`archived`** — an administrator-assigned visibility determination
-    overlaying a terminal. It sets independently of the lifecycle (e.g. an
-    archived-at fact); it never overwrites _which_ terminal the project reached,
-    and terminals stay absorbing.
-- The lifecycle MUST distinguish requested from confirmed state: a completion
-  claim is not a verification, a verification is not the acceptance decision,
-  and an intention to stop is not a recorded terminal.
+
+<!-- rule: CS-012 -->
+
+### CS-012 — Project vs work-product acceptance altitude
+
+- **Applicability.** Every acceptance decision — project acceptance and bounded
+  work-product acceptance.
+- **Inputs.** The decision's altitude: the project's delivered scope, or a
+  bounded work product within it.
+- **Procedure.** The `[H]` acceptance floor binds the **project** acceptance
+  decision; bounded **work-product** acceptance (e.g. whether a component design
+  is acceptable to build) is a different altitude and MAY be delegated at low
+  consequence per the
+  [governance floors](operating-model.md#governance-floors-and-capability-ceilings).
+  The two rungs differ in kind: `completion-verified` is epistemic — does the
+  evidence support the claim, checked against **requirements**; acceptance is an
+  authority act — do we take delivery, checked against **intent**.
+- **Outputs.** The altitude determination: which floor, if any, binds the
+  decision.
+- **Evidence.** N/A — the discharged decision's record carries its altitude
+  through what it accepts (enclosing contract).
+- **Failure behavior.** N/A — a project acceptance delegated as if it were
+  work-product acceptance is an unauthorized floor act
+  ([Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)).
+
+<!-- /rule: CS-012 -->
 
 **Outputs.** The project's current lifecycle state, its reason where the state
 requires one, and any overlays.
@@ -446,94 +503,140 @@ being recorded, with its reason and attribution.
 **Procedure.**
 
 - The two terminals make opposite claims, so they bind the child graph in
-  opposite directions: `closed` asserts completeness — open children falsify the
-  assertion, so the transition is **refused** until they are dispositioned;
-  `canceled` asserts abandonment — nobody hand-closes an abandoned project's
-  child graph, so the transition **disposes** it.
-- **`closed` is quiescence-gated.** Entry to `closed` carries a MUST
-  precondition alongside the acceptance decision: the **quiescence set** is
-  dispositioned —
-  - every run is at a terminal state;
-  - every batch is at a terminal state;
-  - no escalation is open;
-  - every carry-forward condition is Satisfied or Withdrawn, none Open or
-    Blocked;
-  - no risk rests open — each carries an explicit disposition, not merely a
-    disclosure.
+opposite directions: `closed` asserts completeness — open children falsify the
+assertion, so the transition is **refused** until they are dispositioned;
+`canceled` asserts abandonment — nobody hand-closes an abandoned project's child
+graph, so the transition **disposes** it.
+<!-- rule: CS-028 -->
 
-  The set names the project's **direct** children once; transitivity carries the
-  rest (a terminal run has already dispositioned its directives, below), so each
-  family has exactly one enforcement point. **Approved deviations are the
-  deliberate exemption:** a deviation records a condition the delivery was
-  accepted under; it attaches to the delivered result, survives `closed` as part
-  of what was accepted (disclosed per the
-  [completion contract](#project-level-completion)), and moves through its own
-  lifecycle independently of the project's. The completion contract demands most
-  of this quiescence at **claim** time; this precondition binds the same
-  determination to the transition itself — closure-stage work happens after the
-  claim, and the completeness assertion is recorded over the child graph at
-  entry to `closed`, not at claim time. Planning outcome statuses are the other
-  sanctioned post-`closed` motion: a goal or success criterion awaiting
-  post-release measurement resolves to its outcome status, and a standing risk
-  posture that materializes resolves to `realized`, after the terminal (see
-  [Planning-Family Status Sets](#planning-family-status-sets)).
+### CS-028 — Quiescence set (closed, direct children)
 
-- **Post-terminal motion is sanctioned exactly where the terminal's assertion
-  deliberately awaits evidence on the world's clock.** `closed` asserts
-  completeness of the delivered work while deliberately awaiting outcome
-  evidence, so its sanctioned set — closed, and the only post-terminal status
-  motion of a planning or child record — is: goal `achieved`/`not-achieved`,
-  success criterion `met`/`not-met`, risk `realized` (see
-  [Planning-Family Status Sets](#planning-family-status-sets)). `canceled`
-  asserts abandonment, and abandonment awaits nothing — no acceptance,
-  disclosure, or completeness claim exists for later evidence to falsify: no
-  planning record moves after `canceled`, and post-abandonment operational facts
-  belong to the operations record, not the project's.
-- **`canceled` cascades.** Recording `canceled` MUST disposition every open
-  child record, transitively down the containment graph — project → run →
-  directive, project → batch, and likewise for escalations, approved deviations,
-  carry-forward conditions, decision records, and planning records. Each
-  stateful child family's vocabulary defines the **parent-caused disposition**
-  the cascade lands it in: a resting status plus a parent-caused reason code —
-  `project-canceled` at the project hop, `run-terminal` at the run hop — so a
-  cascaded ending is never conflated with an ending the child's own parties
-  chose. Carry-forward conditions land at Withdrawn / `project-canceled` — Open
-  and Blocked alike
-  ([Minimum Canonical Project State](#minimum-canonical-project-state) closes
-  the withdrawal-reason set).
-- **The run → directive hop is the same cascade one level down.** A run reaching
-  any terminal — its own or cascaded — MUST leave no directive non-terminal; its
-  non-terminal directives take the directive family's parent-caused disposition
-  (see
-  [Delegated-Run Spec § Idempotency Substrate](delegated-run.md#idempotency-substrate)).
-- **A cascaded disposition never impersonates a party's own act.** A family MAY
-  land cascaded endings on a status it shares with party-initiated endings only
-  when its reason vocabulary distinguishes the parent-caused ending; the reason
-  code, not the status name, records who ended the child and why.
-- **The cascade preserves realized extent.** A force-dispositioned child records
-  what had actually happened when the parent ended — the run model's
-  realized-extent rule
-  ([Honest Incomplete Outcomes](delegated-run.md#honest-incomplete-outcomes));
-  the cascade never erases or inflates it.
-- **One attributed act.** The cancellation is a single attributed governance
-  write; every cascaded disposition chains its provenance to that transition
-  record ([Record Requirements](#record-requirements)) and is never
-  re-attributed to the child's own parties. The cascaded dispositions are part
-  of the terminal transition's governance-class write
-  ([Mode Binding and Discovery](#mode-binding-and-discovery)).
-- **A partially canceled project is not representable.** The cascade is part of
-  the terminal transition, not follow-up work: at any admitted state version a
-  reader sees either the project non-terminal with its children as they were, or
-  the project terminal with every child dispositioned. In file mode the
-  transition and its cascade land as one write-back.
-- **Records, not operations.** The cascade dispositions **governance records**;
-  it commands nothing operational. Cancellation does not un-deploy, stop a
-  production system, or alter release or flag state — a canceled project can
-  leave a live system in production, and changing that system is
-  product-altitude work outside this contract. For an in-flight run the cascaded
-  terminal withdraws authorization — the record that
-  [stop enforcement](operating-model.md#stop-enforcement) acts on; the cascade
-  records the end, enforcement effects it.
+- **Applicability.** Every transition into project `closed`.
+- **Inputs.** The **quiescence set** — `terminal_integrity.quiescence_set` in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml): the closed member set,
+  per-family conditions, and the approved-deviation exemption bind as data
+  (generated view: [reference.md](generated/reference.md)).
+- **Procedure.**
+  - Entry to `closed` carries a MUST precondition alongside the acceptance
+    decision: the quiescence set is dispositioned.
+  - The set names the project's **direct** children once; transitivity carries
+    the rest (a terminal run has already dispositioned its directives — see
+    [CS-030](#cs-030--cascade-landing-table)), so each family has exactly one
+    enforcement point.
+  - **Approved deviations are the deliberate exemption:** a deviation records a
+    condition the delivery was accepted under; it attaches to the delivered
+    result, survives `closed` as part of what was accepted (disclosed per the
+    [completion contract](#project-level-completion)), and moves through its own
+    lifecycle independently of the project's.
+  - The completion contract demands most of this quiescence at **claim** time;
+    this precondition binds the same determination to the transition itself —
+    closure-stage work happens after the claim, and the completeness assertion
+    is recorded over the child graph at entry to `closed`, not at claim time.
+    Planning outcome statuses are the other sanctioned post-`closed` motion —
+    [CS-029](#cs-029--post-terminal-sanction-set-closed), below.
+- **Outputs.** At `closed`, a quiescent child graph under the completeness
+  claim.
+- **Evidence.** The terminal transition record (enclosing contract).
+- **Failure behavior.** An entry to `closed` while the quiescence set holds an
+  undispositioned member MUST be rejected — the same rejection class as a
+  transition outside the defined set.
+
+<!-- /rule: CS-028 -->
+
+<!-- rule: CS-029 -->
+
+### CS-029 — Post-terminal sanction set (closed)
+
+- **Applicability.** Every status write against a record of a project that has
+  entered a terminal.
+- **Inputs.** The closed sanction set —
+  `terminal_integrity.post_terminal_sanctions` in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml): the sanctioned
+  post-`closed` landings (and the empty post-`canceled` set) bind as data
+  (generated view: [reference.md](generated/reference.md)).
+- **Procedure.** **Post-terminal motion is sanctioned exactly where the
+  terminal's assertion deliberately awaits evidence on the world's clock.**
+  `closed` asserts completeness of the delivered work while deliberately
+  awaiting outcome evidence, so its sanctioned set — closed, and the only
+  post-terminal status motion of a planning or child record — is the data's
+  post-`closed` landings (see
+  [Planning-Family Status Sets](#planning-family-status-sets) for the status
+  semantics). `canceled` asserts abandonment, and abandonment awaits nothing —
+  no acceptance, disclosure, or completeness claim exists for later evidence to
+  falsify: no planning record moves after `canceled`, and post-abandonment
+  operational facts belong to the operations record, not the project's.
+- **Outputs.** The sanction determination for a proposed post-terminal write.
+- **Evidence.** A sanctioned landing chains to the evidence that produced it
+  (the post-release measurement plan; the materialization record).
+- **Failure behavior.** A post-terminal status write outside the sanctioned set
+  MUST be rejected.
+
+<!-- /rule: CS-029 -->
+
+<!-- rule: CS-030 -->
+
+### CS-030 — Cascade landing table
+
+- **Applicability.** Every transition into project `canceled`; transitively,
+  every run terminal (the run → directive hop).
+- **Inputs.** The cascade landing table — `terminal_integrity.cascade_landing`
+  in [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml): each stateful child
+  family's parent-caused disposition (resting status + parent-caused reason)
+  binds as data, rendered as a generated view in
+  [reference.md](generated/reference.md) — the manifest's landing table is that
+  view, never a hand-maintained copy.
+- **Procedure.**
+  - **`canceled` cascades.** Recording `canceled` MUST disposition every open
+    child record, transitively down the containment graph — project → run →
+    directive, project → batch, and likewise for escalations, approved
+    deviations, carry-forward conditions, decision records, and planning
+    records. Each family lands in its parent-caused disposition per the data: a
+    resting status plus a parent-caused reason code — `project-canceled` at the
+    project hop, `run-terminal` at the run hop — so a cascaded ending is never
+    conflated with an ending the child's own parties chose.
+  - **The run → directive hop is the same cascade one level down.** A run
+    reaching any terminal — its own or cascaded — MUST leave no directive
+    non-terminal; its non-terminal directives take the directive family's
+    parent-caused disposition (see
+    [Delegated-Run Spec § Idempotency Substrate](delegated-run.md#idempotency-substrate)).
+  - **A cascaded disposition never impersonates a party's own act.** A family
+    MAY land cascaded endings on a status it shares with party-initiated endings
+    only when its reason vocabulary distinguishes the parent-caused ending; the
+    reason code, not the status name, records who ended the child and why.
+  - **The cascade preserves realized extent.** A force-dispositioned child
+    records what had actually happened when the parent ended — the run model's
+    realized-extent rule
+    ([Honest Incomplete Outcomes](delegated-run.md#honest-incomplete-outcomes));
+    the cascade never erases or inflates it.
+  - **One attributed act.** The cancellation is a single attributed governance
+    write; every cascaded disposition chains its provenance to that transition
+    record ([Record Requirements](#record-requirements)) and is never
+    re-attributed to the child's own parties. The cascaded dispositions are part
+    of the terminal transition's governance-class write
+    ([Mode Binding and Discovery](#mode-binding-and-discovery)).
+  - **A partially canceled project is not representable.** The cascade is part
+    of the terminal transition, not follow-up work: at any admitted state
+    version a reader sees either the project non-terminal with its children as
+    they were, or the project terminal with every child dispositioned. In file
+    mode the transition and its cascade land as one write-back.
+  - **Records, not operations.** The cascade dispositions **governance
+    records**; it commands nothing operational. Cancellation does not un-deploy,
+    stop a production system, or alter release or flag state — a canceled
+    project can leave a live system in production, and changing that system is
+    product-altitude work outside this contract. For an in-flight run the
+    cascaded terminal withdraws authorization — the record that
+    [stop enforcement](operating-model.md#stop-enforcement) acts on; the cascade
+    records the end, enforcement effects it.
+- **Outputs.** At `canceled`, a fully dispositioned child graph, every cascaded
+  record carrying its parent-caused reason.
+- **Evidence.** The cascaded disposition records, each chaining provenance to
+  the transition (enclosing contract).
+- **Failure behavior.** A `canceled` observed with a child still open is an
+  incomplete write, not a tolerable intermediate state: the missing cascade
+  dispositions MUST be applied, chained to the original transition.
+
+<!-- /rule: CS-030 -->
+
 - **`paused` does not couple.** Pausing a project constrains no child record:
   runs continue under their own authorization, and pausing them is modeled where
   it always was — a `pause-requested` directive per run. The two axes are
@@ -561,19 +664,18 @@ being recorded, with its reason and attribution.
   decides nothing about any grant. Post-terminal housekeeping on this class is
   administrative, never required for the terminal to be honest.
 
-**Outputs.** At `closed`, a quiescent child graph under the completeness claim;
-at `canceled`, a fully dispositioned child graph, every cascaded record carrying
-its parent-caused reason.
+**Outputs.** At `closed`, a quiescent child graph under the completeness claim
+([CS-028](#cs-028--quiescence-set-closed-direct-children)); at `canceled`, a
+fully dispositioned child graph ([CS-030](#cs-030--cascade-landing-table)).
 
 **Evidence.** The terminal transition record plus, for `canceled`, the cascaded
 disposition records, each chaining provenance to the transition (per
 [Record Requirements](#record-requirements)).
 
-**Failure behavior.** An entry to `closed` while the quiescence set holds an
-undispositioned member MUST be rejected — the same rejection class as a
-transition outside the defined set. A `canceled` observed with a child still
-open is an incomplete write, not a tolerable intermediate state: the missing
-cascade dispositions MUST be applied, chained to the original transition.
+**Failure behavior.** Per the marked contracts above: the `closed` rejection is
+[CS-028](#cs-028--quiescence-set-closed-direct-children)'s; the incomplete
+cascade is [CS-030](#cs-030--cascade-landing-table)'s; the post-terminal
+rejection is [CS-029](#cs-029--post-terminal-sanction-set-closed)'s.
 
 ---
 
@@ -605,13 +707,12 @@ dispositions, the parent terminal per [Terminal Integrity](#terminal-integrity).
   every family: a situation no status fits is a **missing status**, a framework
   change, never a free-text escape hatch; free prose belongs in a detail field.
   Where a status requires a reason, the reason codes are a closed set too.
-- **Resting statuses are absorbing at the record.** Reversing one is a
-  supersession — a successor record chaining provenance to the original — never
-  a mutation of the resting record (the carry-forward re-owning device,
-  generalized).
+- **Resting statuses are absorbing at the record** — the partition rule,
+  [CS-058](#cs-058--standingresting-partition-over-planning-statuses), below.
 - **Parent-caused endings ride [Terminal Integrity](#terminal-integrity):** the
-  cascade lands each family in the resting status named below with the
-  parent-caused reason, never impersonating a party's own act.
+  cascade lands each family in its resting status with the parent-caused reason,
+  never impersonating a party's own act
+  ([CS-030](#cs-030--cascade-landing-table)).
 
 ### Escalation Lifecycle
 
@@ -619,35 +720,47 @@ An escalation is the canonical record of an unresolved decision routed to
 authority
 ([Operating Model Spec § Authority](operating-model.md#authority-and-decision-resolution)):
 the affected action stops, the unresolved decision and its evidence are
-recorded, the target authority is identified, state is preserved. The record's
-own lifecycle:
+recorded, the target authority is identified, state is preserved.
 
-```text
-open -> resolved | withdrawn | lapsed
-```
+<!-- rule: CS-044 -->
 
-- **`open`** — awaiting the target authority. The escalation is not itself a
-  resolution; it waits for one.
-- **`resolved`** — the routed decision was made and recorded; the escalation
-  links its resolution. Carries no reason — the resolution record is the
-  content.
-- **`withdrawn`** — ended without a resolution. Reasons (closed set):
-  `raiser-withdrawn` (the raising party no longer needs the decision) ·
-  `obsolete` (the triggering condition resolved itself — obsolescence is a
-  reason, not a fifth state) · `project-canceled` (the cascade). The reason code
-  records who ended it; the status name is shared honestly because the reason
-  disambiguates.
-- **`lapsed`** — the determination that no decision will come (the
-  `acceptance-lapsed` device, ported). Recording the lapse is a human act —
-  interactive, or pre-authorized policy as the policy author's act — never a
-  bare timeout. The
-  [decision-overdue path](delegated-run.md#progress-liveness-and-unresponsive-state)
-  is a producer: a pre-authorized auto-abandon past the longer bound records the
-  run's `decision-lapsed` ending and the escalation's `lapsed` as the same
-  determination.
-- Terminals are absorbing: a resolved, withdrawn, or lapsed escalation is never
-  reopened — a recurring need is a new escalation chaining provenance to the old
-  one.
+#### CS-044 — Escalation lifecycle machine and closed withdrawn-reason set
+
+- **Applicability.** Every escalation record.
+- **Inputs.** The `escalation_lifecycle` machine and its withdrawn-reason set in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) /
+  [`vocabulary/reasons.yaml`](vocabulary/reasons.yaml) — states, edges,
+  terminals, and the closed reason set bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.**
+  - **`open`** — awaiting the target authority. The escalation is not itself a
+    resolution; it waits for one.
+  - **`resolved`** — the routed decision was made and recorded; the escalation
+    links its resolution. Carries no reason — the resolution record is the
+    content.
+  - **`withdrawn`** — ended without a resolution: `raiser-withdrawn` (the
+    raising party no longer needs the decision) · `obsolete` (the triggering
+    condition resolved itself — obsolescence is a reason, not a fifth state) ·
+    `project-canceled` (the cascade). The reason code records who ended it; the
+    status name is shared honestly because the reason disambiguates.
+  - **`lapsed`** — the determination that no decision will come (the
+    `acceptance-lapsed` device, ported). Recording the lapse is a human act —
+    interactive, or pre-authorized policy as the policy author's act — never a
+    bare timeout. The
+    [decision-overdue path](delegated-run.md#progress-liveness-and-unresponsive-state)
+    is a producer: a pre-authorized auto-abandon past the longer bound records
+    the run's `decision-lapsed` ending and the escalation's `lapsed` as the same
+    determination.
+  - Terminals are absorbing: a resolved, withdrawn, or lapsed escalation is
+    never reopened — a recurring need is a new escalation chaining provenance to
+    the old one.
+- **Outputs.** The escalation's current status and, on `withdrawn`, its reason.
+- **Evidence.** As the enclosing contract — a durable, attributed record per
+  status change.
+- **Failure behavior.** As the enclosing contract — a status or reason outside
+  the defined sets is not a satisfied record.
+
+<!-- /rule: CS-044 -->
 
 ### Deviation Lifecycle
 
@@ -657,33 +770,47 @@ revisitable by construction:
 [Controlled Replanning](delegated-run.md#controlled-replanning) holds that
 completed work MUST NOT remain implicitly accepted when its supporting
 assumptions have materially changed, and a deviation is exactly such an
-acceptance. Its lifecycle:
+acceptance.
 
-```text
-active -> expired | revoked
-```
+<!-- rule: CS-045 -->
 
-- **`active`** — the grant holds.
-- **`expired`** — the grant's **optional granted-until bound** passed. Expiry is
-  mechanical: the bound was the approver's decision, recorded at grant time, so
-  no new decision attends its arrival. Carries no reason. The bound stays
-  optional — a mandatory bound on every deviation invites ritual dates, not
-  governance.
-- **`revoked`** — an attributed governance write ending the grant before any
-  bound. Reasons (closed set): `assumptions-changed` (the condition it was
-  granted against no longer holds) · `superseded` (replaced by a new grant
-  chaining provenance) · `project-canceled` (the cascade).
-- **Work MUST NOT rely on an expired or revoked deviation.** Continued need is a
-  new deviation request, decided on current facts — never a quiet extension of
-  the dead grant.
-- **A deviation survives project `closed`** — the deliberate exemption in
-  [Terminal Integrity](#terminal-integrity)'s quiescence set: it attaches to the
-  delivered result as part of what was accepted, disclosed per the
-  [completion contract](#project-level-completion), and moves through this
-  lifecycle on its own clock afterward. On project `canceled` it is cascaded to
-  `revoked` with reason `project-canceled`.
-- Terminals are absorbing: re-granting is a new record chaining provenance,
-  never a reactivation.
+#### CS-045 — Deviation lifecycle machine and closed revoked-reason set
+
+- **Applicability.** Every approved-deviation record.
+- **Inputs.** The `deviation_lifecycle` machine and its revoked-reason set in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) /
+  [`vocabulary/reasons.yaml`](vocabulary/reasons.yaml) — states, edges,
+  terminals, and the closed reason set bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.**
+  - **`active`** — the grant holds.
+  - **`expired`** — the grant's **optional granted-until bound** passed. Expiry
+    is mechanical: the bound was the approver's decision, recorded at grant
+    time, so no new decision attends its arrival. Carries no reason. The bound
+    stays optional — a mandatory bound on every deviation invites ritual dates,
+    not governance.
+  - **`revoked`** — an attributed governance write ending the grant before any
+    bound: `assumptions-changed` (the condition it was granted against no longer
+    holds) · `superseded` (replaced by a new grant chaining provenance) ·
+    `project-canceled` (the cascade).
+  - **Work MUST NOT rely on an expired or revoked deviation.** Continued need is
+    a new deviation request, decided on current facts — never a quiet extension
+    of the dead grant.
+  - **A deviation survives project `closed`** — the deliberate exemption in
+    [Terminal Integrity](#terminal-integrity)'s quiescence set: it attaches to
+    the delivered result as part of what was accepted, disclosed per the
+    [completion contract](#project-level-completion), and moves through this
+    lifecycle on its own clock afterward. On project `canceled` it is cascaded
+    to `revoked` with reason `project-canceled`.
+  - Terminals are absorbing: re-granting is a new record chaining provenance,
+    never a reactivation.
+- **Outputs.** The deviation's current status and, on `revoked`, its reason.
+- **Evidence.** As the enclosing contract — a durable, attributed record per
+  status change.
+- **Failure behavior.** As the enclosing contract — a status or reason outside
+  the defined sets is not a satisfied record.
+
+<!-- /rule: CS-045 -->
 
 ### Decision Lifecycle
 
@@ -700,12 +827,20 @@ applied to the records where it was implied but never stated:
   superseding record's rationale is the content; no reason vocabulary attends
   supersession (the escalation `resolved` device).
 - **Gate and checkpoint decisions carry no status axis.** The record carries its
-  outcome, rationale, and attribution; superseded-ness is structural (the
-  chain), and a status column beside the chain would be a second source for the
-  same fact. An **unmade** decision is not an open decision record — it is an
-  [escalation](#escalation-lifecycle), already covered.
-- **Architecture decision record (ADR) statuses (closed set):** `proposed` ·
-  `accepted` · `rejected` · `withdrawn` · `deprecated` · `superseded`.
+outcome, rationale, and attribution; superseded-ness is structural (the chain),
+and a status column beside the chain would be a second source for the same fact.
+An **unmade** decision is not an open decision record — it is an
+[escalation](#escalation-lifecycle), already covered.
+<!-- rule: CS-050 -->
+
+#### CS-050 — ADR status machine (closed statuses, no required reasons)
+
+- **Applicability.** Every architecture decision record.
+- **Inputs.** The `adr_lifecycle` machine in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) — the closed status
+  set, edges, and terminals bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.**
   - **`rejected` and `withdrawn` are different stories** (the `resolved` /
     `raiser-withdrawn` distinction, ported): `rejected` — the deciding authority
     decided against the proposal; `withdrawn` — retracted before a decision, the
@@ -729,13 +864,20 @@ applied to the records where it was implied but never stated:
     attributed on the record. Left `proposed`, the dead draft would promise a
     decision no one will make — a record resting in an open status forever is
     the trail-off this vocabulary exists to kill.
-- **Cascade landing:** the [Terminal Integrity](#terminal-integrity) cascade
-  lands an open (`proposed`) ADR at `withdrawn`, the parent-caused reason riding
-  the cascade record (the planning-family device). Gate and checkpoint decisions
-  need no landing — a made decision is a fact, and the unmade one is its
-  escalation. ADRs do not join the `closed` quiescence set: the
-  [completion contract](#project-level-completion)'s resolved-decisions element
-  already covers the honest case.
+  - **Cascade landing:** the [Terminal Integrity](#terminal-integrity) cascade
+    lands an open (`proposed`) ADR at `withdrawn`, the parent-caused reason
+    riding the cascade record (the planning-family device). Gate and checkpoint
+    decisions need no landing — a made decision is a fact, and the unmade one is
+    its escalation. ADRs do not join the `closed` quiescence set: the
+    [completion contract](#project-level-completion)'s resolved-decisions
+    element already covers the honest case.
+- **Outputs.** The ADR's current status.
+- **Evidence.** As the enclosing contract — the supersession chain carries the
+  history.
+- **Failure behavior.** As the enclosing contract — a status outside the defined
+  set, or a mutation of a resting record, is not a satisfied record.
+
+<!-- /rule: CS-050 -->
 
 ### Pre-Authorized Policy Lifecycle
 
@@ -746,111 +888,146 @@ its validity is bound to the author's roster presence by the temporal-validity
 rule in
 [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions).
 This is that rule's record-level statement — the status set the behavior already
-implies:
+implies.
 
-```text
-active -> orphaned | superseded | revoked
-```
+<!-- rule: CS-054 -->
 
-- **`active`** — the rule may discharge decisions in its class, its author
-  roster-current.
-- **`orphaned`** — the author left the roster. The policy is unusable from the
-  removal forward — each affected gate falls back to interactive resolution —
-  and its history stands: every decision it discharged while valid remains
-  attributed to it. The removal act identifies the policies it orphans (the
-  existing rule, unchanged).
-- **`superseded`** — an `active` policy replaced by a new policy chaining
-  provenance. Re-owning a departed author's policy reuses the same mechanism — a
-  **new** policy authored by the adopting roster member, chaining provenance to
-  the orphaned one — but the predecessor rests `orphaned`, not `superseded`:
-  only an `active` policy lands here, and accountability never transfers
-  mechanically.
-- **`revoked`** — an attributed governance write ending the rule with no
-  replacement. Carries no reason set — the revocation is itself the recorded
-  act, and rationale rides the record (the decision-record device).
-- Terminals are absorbing: a returning author re-grants with a new policy
-  chaining provenance, never by reactivating the orphaned one.
-- Project terminals do not disposition policies — a policy is a standing grant,
-  outside the cascade (see [Terminal Integrity](#terminal-integrity)).
+#### CS-054 — Pre-authorized policy lifecycle machine
+
+- **Applicability.** Every pre-authorized policy record.
+- **Inputs.** The `policy_lifecycle` machine in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) — the closed status
+  set, edges, and terminals bind as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.**
+  - **`active`** — the rule may discharge decisions in its class, its author
+    roster-current.
+  - **`orphaned`** — the author left the roster. The policy is unusable from the
+    removal forward — each affected gate falls back to interactive resolution —
+    and its history stands: every decision it discharged while valid remains
+    attributed to it. The removal act identifies the policies it orphans (the
+    existing rule, unchanged).
+  - **`superseded`** — an `active` policy replaced by a new policy chaining
+    provenance. Re-owning a departed author's policy reuses the same mechanism —
+    a **new** policy authored by the adopting roster member, chaining provenance
+    to the orphaned one — but the predecessor rests `orphaned`, not
+    `superseded`: only an `active` policy lands here, and accountability never
+    transfers mechanically.
+  - **`revoked`** — an attributed governance write ending the rule with no
+    replacement. Carries no reason set — the revocation is itself the recorded
+    act, and rationale rides the record (the decision-record device).
+  - Terminals are absorbing: a returning author re-grants with a new policy
+    chaining provenance, never by reactivating the orphaned one.
+  - Project terminals do not disposition policies — a policy is a standing
+    grant, outside the cascade (see [Terminal Integrity](#terminal-integrity)).
+- **Outputs.** The policy's current status.
+- **Evidence.** As the enclosing contract — a durable, attributed record per
+  status change.
+- **Failure behavior.** As the enclosing contract — a status outside the defined
+  set, or a discharge by a non-`active` policy, is not a satisfied record.
+
+<!-- /rule: CS-054 -->
 
 ### Planning-Family Status Sets
 
 The planning families carry statuses, not transition machines: what each set
 must distinguish is an honest resting place for every way the record's story can
-end — including the ways nobody plans for. The normative closed sets:
+end — including the ways nobody plans for.
 
-| Family            | Status set (closed)                                                                                  |
-| ----------------- | ---------------------------------------------------------------------------------------------------- |
-| Goal              | `active` · `achieved` · `not-achieved` · `dropped`                                                   |
-| Success criterion | `not-started` · `met` · `met-synthetic` · `not-met` · `deferred` · `blocked` · `revised` · `dropped` |
-| Requirement       | `proposed` · `approved` · `implemented` · `verified` · `deferred` · `dropped`                        |
-| Assumption        | `open` · `validated` · `invalidated` · `retired`                                                     |
-| Risk              | `open` · `mitigated` · `accepted` · `realized` · `closed`                                            |
+<!-- rule: CS-055 -->
 
-- **A success criterion can be honestly retired.** `dropped` is the resting
-  status for a criterion that will not be pursued; `revised` and `deferred` both
-  promise a future, and a criterion with no future MUST NOT hide in either.
-- **Delivered-but-unmet has a word.** `not-achieved` (goal) and `not-met`
-  (success criterion) are the resting statuses for an outcome pursued to
-  delivery and measured unmet — typically by the post-release measurement plan
-  the [completion contract](#project-level-completion) carries. They differ in
-  kind from `dropped`: `dropped` records a decision not to pursue;
-  `not-achieved` and `not-met` record a measured result. A goal whose project
-  delivered and whose measurement came back negative MUST NOT hide in `active`
-  (a promise nobody will keep), in `dropped` (a retirement that never happened),
-  or in any status that promises a future. A failed outcome is a finding, not a
-  defect in the record — the honest word is what makes the learning citable.
-- **Statuses split into standing postures and resting statuses.** A **standing
-  posture** awaits the world's evidence; a **resting status** is absorbing at
-  the record (reversal is supersession, per this contract's opening rule). For
-  risks, `open` · `mitigated` · `accepted` are standing and `realized` ·
-  `closed` rest; for assumptions, only `open` is standing — `validated` ·
-  `invalidated` · `retired` all rest, which is why a post-`closed` invalidation
-  of a validated assumption is not a sanctioned landing: it would be motion out
-  of a resting status, which the terminal's assertion never awaited. The
-  remaining families' partitions are not ratified; the closed sanction set in
-  [Terminal Integrity](#terminal-integrity) answers the post-terminal question
-  for them.
-- **Outcome statuses may resolve after project `closed`.** The sanctioned
-  post-`closed` motions are a closed set (the deciding principle in
-  [Terminal Integrity](#terminal-integrity)): a superseding status write landing
-  a goal or success criterion at its outcome status — `achieved`/`not-achieved`,
-  `met`/`not-met` — chained to the post-release measurement plan; and a risk
-  resting in a standing posture (`mitigated` / `accepted`) landing at `realized`
-  when the threat materializes. Both are legal and expected after entry to
-  `closed`: goals and success criteria are deliberately absent from
-  [Terminal Integrity](#terminal-integrity)'s quiescence set, a mitigated or
-  accepted risk satisfies it as an answered posture attached to what was
-  accepted and disclosed, and `closed` asserts completeness of the delivered
-  work, never of outcome evidence that arrives on the world's clock. **After
-  `canceled`, no planning record moves** — see the deciding principle in
-  [Terminal Integrity](#terminal-integrity).
-- **A risk that materializes has a word.** `realized` records the outcome — the
-  risk happened — distinct from `closed` (the threat ended without
-  materializing) and from `mitigated`/`accepted` (standing postures). Collapsing
-  a realized risk into `closed` destroys the outcome distinction the project
-  terminals preserve. The reason-and-detail record suffices; a linked
-  consequence record is product altitude, not required here. Prior posture is
-  preserved by history-walking, not new vocabulary:
-  `open → mitigated → realized` keeps mitigated-but-happened-anyway
-  distinguishable one hop back in the chain. Risk `closed` is the resting case:
-  it asserts the threat ended without materializing — a completed determination
-  awaiting nothing. Before the project terminal, a wrong call is corrected by
-  supersession (the resting-status rule); after project `closed`, a
-  materialization of a `closed` risk is an operations-record fact — no status
-  write, and no new planning record, lands in a closed project's state.
-- **Risks are dispositioned at close, not merely disclosed.** At entry to
-  project `closed`, no risk rests `open`
-  ([Terminal Integrity](#terminal-integrity)'s quiescence set): each is
-  `mitigated`, `accepted`, `realized`, or `closed` — an explicit resting posture
-  someone answers for, recorded under
-  [Record Requirements](#record-requirements).
-- **Planning-family statuses carry no required reason.** The cascade is the
-  exception in effect, not in form: a cascaded landing carries the parent-caused
-  reason on the cascade record per [Terminal Integrity](#terminal-integrity).
-  The cascade lands each family in its retirement status: goals, success
-  criteria, and requirements at `dropped`; assumptions at `retired`; risks at
-  `closed` — each chained to the cancellation with reason `project-canceled`.
+#### CS-055 — Planning-family closed status sets
+
+- **Applicability.** Every goal, success criterion, requirement, assumption, and
+  risk record.
+- **Inputs.** The `planning_families` status sets in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) — the closed per-family
+  sets bind as data (generated view: [reference.md](generated/reference.md)).
+- **Procedure.**
+  - **A success criterion can be honestly retired.** `dropped` is the resting
+    status for a criterion that will not be pursued; `revised` and `deferred`
+    both promise a future, and a criterion with no future MUST NOT hide in
+    either.
+  - **Delivered-but-unmet has a word.** `not-achieved` (goal) and `not-met`
+    (success criterion) are the resting statuses for an outcome pursued to
+    delivery and measured unmet — typically by the post-release measurement plan
+    the [completion contract](#project-level-completion) carries. They differ in
+    kind from `dropped`: `dropped` records a decision not to pursue;
+    `not-achieved` and `not-met` record a measured result. A goal whose project
+    delivered and whose measurement came back negative MUST NOT hide in `active`
+    (a promise nobody will keep), in `dropped` (a retirement that never
+    happened), or in any status that promises a future. A failed outcome is a
+    finding, not a defect in the record — the honest word is what makes the
+    learning citable.
+  - **A risk that materializes has a word.** `realized` records the outcome —
+    the risk happened — distinct from `closed` (the threat ended without
+    materializing) and from `mitigated`/`accepted` (standing postures).
+    Collapsing a realized risk into `closed` destroys the outcome distinction
+    the project terminals preserve. The reason-and-detail record suffices; a
+    linked consequence record is product altitude, not required here. Prior
+    posture is preserved by history-walking, not new vocabulary:
+    `open → mitigated → realized` keeps mitigated-but-happened-anyway
+    distinguishable one hop back in the chain. Risk `closed` is the resting
+    case: it asserts the threat ended without materializing — a completed
+    determination awaiting nothing. Before the project terminal, a wrong call is
+    corrected by supersession (the resting-status rule); after project `closed`,
+    a materialization of a `closed` risk is an operations-record fact — no
+    status write, and no new planning record, lands in a closed project's state.
+  - **Risks are dispositioned at close, not merely disclosed.** At entry to
+    project `closed`, no risk rests `open`
+    ([CS-028](#cs-028--quiescence-set-closed-direct-children)): each is
+    `mitigated`, `accepted`, `realized`, or `closed` — an explicit resting
+    posture someone answers for, recorded under
+    [Record Requirements](#record-requirements).
+  - **Planning-family statuses carry no required reason.** The cascade is the
+    exception in effect, not in form: a cascaded landing carries the
+    parent-caused reason on the cascade record, and lands each family in its
+    retirement status per the
+    [cascade landing table](#cs-030--cascade-landing-table)'s data.
+  - **Outcome statuses may resolve after project `closed`** — the sanctioned
+    post-`closed` motions are
+    [CS-029](#cs-029--post-terminal-sanction-set-closed)'s closed set; after
+    `canceled`, no planning record moves.
+- **Outputs.** Each record's current status.
+- **Evidence.** As the enclosing contract — a durable, attributed record per
+  status change.
+- **Failure behavior.** As the enclosing contract — a status outside the
+  family's defined set is not a satisfied record.
+
+<!-- /rule: CS-055 -->
+
+<!-- rule: CS-058 -->
+
+#### CS-058 — Standing/resting partition over planning statuses
+
+- **Applicability.** Every planning-family status write, before and after the
+  project's terminals.
+- **Inputs.** The `standing_resting_partition` in
+  [`vocabulary/statuses.yaml`](vocabulary/statuses.yaml) — the ratified
+  partitions (risk, assumption) bind as data; each partition exactly covers its
+  family's status set.
+- **Procedure.**
+  - **Statuses split into standing postures and resting statuses.** A **standing
+    posture** awaits the world's evidence; a **resting status** is absorbing at
+    the record.
+  - **Resting statuses are absorbing at the record.** Reversing one is a
+    supersession — a successor record chaining provenance to the original —
+    never a mutation of the resting record (the carry-forward re-owning device,
+    generalized).
+  - For assumptions, only `open` is standing — `validated` · `invalidated` ·
+    `retired` all rest, which is why a post-`closed` invalidation of a validated
+    assumption is not a sanctioned landing: it would be motion out of a resting
+    status, which the terminal's assertion never awaited.
+  - The remaining families' partitions are not ratified; the closed sanction set
+    ([CS-029](#cs-029--post-terminal-sanction-set-closed)) answers the
+    post-terminal question for them.
+- **Outputs.** The standing-or-resting determination for a status.
+- **Evidence.** N/A — the partition is consumed by supersession discipline and
+  the post-terminal sanction rule.
+- **Failure behavior.** A status write that mutates a resting record instead of
+  superseding it forks the record's history and MUST be rejected.
+
+<!-- /rule: CS-058 -->
 
 **Outputs.** Each record's current status, with its reason where the status
 requires one.
@@ -861,8 +1038,8 @@ provenance per [Terminal Integrity](#terminal-integrity).
 
 **Failure behavior.** A status outside the family's defined set — or a
 required-reason status without a reason, or with a code not defined for it — is
-not a satisfied record. A status write that mutates a resting record instead of
-superseding it forks the record's history and MUST be rejected.
+not a satisfied record. Mutation of a resting record is rejected per
+[CS-058](#cs-058--standingresting-partition-over-planning-statuses).
 
 ---
 
@@ -965,13 +1142,30 @@ state element, procedure, and evidence artifact in v0.49.
 **Evidence.** The rendering itself, with freshness/version marking (see the
 [rendered-snapshot fidelity floor](delegated-run.md#project-state-access)).
 
-**Failure behavior.** A normative element expressible only through live
-structured access is an authoring-time defect and MUST be corrected; it does not
-narrow a specific run's envelope (it would silently break Markdown operability
-for all snapshot runs). Note: a specific deployment with no Markdown path simply
-lacks the snapshot mode — the coverage-narrows-the-envelope rule supplies that
-consequence, and this self-sufficiency rule is **not** a per-implementation
-feature mandate.
+**Failure behavior.** The authoring-time-defect rule —
+[CS-071](#cs-071--live-only-element-is-an-authoring-time-defect), below.
+
+<!-- rule: CS-071 -->
+
+### CS-071 — Live-only element is an authoring-time defect
+
+- **Applicability.** Every normative rule, required state element, procedure,
+  and evidence artifact in the normative layer (meta-conformance — it binds the
+  framework and spec authors).
+- **Inputs.** The normative layer's elements; their Markdown expressibility.
+- **Procedure.** A normative element expressible only through live structured
+  access is an authoring-time defect and MUST be corrected; it does not narrow a
+  specific run's envelope (it would silently break Markdown operability for all
+  snapshot runs). A specific deployment with no Markdown path simply lacks the
+  snapshot mode — the coverage-narrows-the-envelope rule supplies that
+  consequence, and this self-sufficiency rule is **not** a per-implementation
+  feature mandate.
+- **Outputs.** The corrected, Markdown-expressible element.
+- **Evidence.** N/A — meta-conformance; the correction is its own record.
+- **Failure behavior.** N/A — this rule is itself the enclosing contract's
+  failure path.
+
+<!-- /rule: CS-071 -->
 
 ---
 
@@ -1017,14 +1211,33 @@ project state).
   MUST NOT be recorded only-locally; the agent escalates instead (the same
   default-closed discipline as
   [Operating Model Spec § Stop Enforcement](operating-model.md#stop-enforcement)).
-  There is never a second source of truth. **A write is governance-class iff**
-  it discharges or reverses a `[J]`-or-above item; records or changes a gate or
-  checkpoint decision; records a [project-lifecycle](#project-lifecycle)
-  transition into a terminal (`closed` / `canceled`) or the acceptance decision;
-  changes the Authorization subset, operating envelope, governance profile,
-  authorized-party roster, or operating mode; or records a risk acceptance or
-  accepted limitation. All other writes are non-governance by default, and the
-  write class is carried explicitly on every write.
+  There is never a second source of truth. Which writes are governance-class is
+  [CS-075](#cs-075--write-classes-governance-class-iff-class-carried-per-write),
+  below.
+
+<!-- rule: CS-075 -->
+
+### CS-075 — Write classes (governance-class iff; class carried per write)
+
+- **Applicability.** Every canonical-state write, in every operating mode.
+- **Inputs.** The two-valued `write_class` set (`governance` / `non-governance`)
+  in [`vocabulary/grades.yaml`](vocabulary/grades.yaml) — binds as data.
+- **Procedure.** **A write is governance-class iff** it discharges or reverses a
+  `[J]`-or-above item; records or changes a gate or checkpoint decision; records
+  a [project-lifecycle](#project-lifecycle) transition into a terminal (`closed`
+  / `canceled`) or the acceptance decision; changes the Authorization subset,
+  operating envelope, governance profile, authorized-party roster, or operating
+  mode; or records a risk acceptance or accepted limitation. All other writes
+  are non-governance by default, and the write class is carried explicitly on
+  every write.
+- **Outputs.** Each write's class, carried on the write.
+- **Evidence.** The class on the write record (enclosing contract).
+- **Failure behavior.** A write whose class cannot be established MUST be
+  treated as governance-class (default-closed — the enclosing contract's offline
+  rule).
+
+<!-- /rule: CS-075 -->
+
 - **Offline non-governance work: queue-and-reconcile (ratified v0.58).** While
   bound-but-unreachable, non-governance writes MAY queue locally and reconcile
   on reconnect, under all of the following: each queued write carries a stable
@@ -1077,60 +1290,161 @@ project.
 
 **Procedure.**
 
-- The framework MUST define implementation-neutral requirements for project
-  records: durability, revision history, provenance, traceability, attribution,
-  accessibility, portability, retention, auditability, and appropriate
-  immutability or correction history.
-- The target is the **smallest sufficient set** of facts, decisions,
-  relationships, evidence, deviations, and outcomes. Automation MUST NOT justify
-  generating every full document; formal artifacts are rendered when their
-  audience or governance profile requires them.
-- Specific storage, synchronization, and agent-access mechanisms are
-  implementation choices; the Markdown MUST still specify the required record
-  semantics and access properties sufficiently for an agent to operate them.
-- **Attribution carries an accountability grade.** For any item whose checklist
-  marker or governance profile places it at the judgment tier (`[J]`) or above,
-  the record MUST capture _who or what discharged it_ at the grade the item's
-  accountability demands, plus **two timestamps (ratified v0.58)** — the claimed
-  evaluation time and the platform receipt time (in file mode, the receipt time
-  is the moment the write lands in the durable store — in practice, the commit
-  timestamp); ordering never derives from either (the
+<!-- rule: CS-079 -->
+
+### CS-079 — Record requirements (implementation-neutral record-property list)
+
+- **Applicability.** All project records.
+- **Inputs.** The `record_requirements` property list in
+  [`vocabulary/grades.yaml`](vocabulary/grades.yaml) — the closed property list
+  binds as data (generated view: [reference.md](generated/reference.md)).
+- **Procedure.**
+  - The framework MUST define implementation-neutral requirements for project
+    records — the data's property list: durability through appropriate
+    immutability or correction history.
+  - Specific storage, synchronization, and agent-access mechanisms are
+    implementation choices; the Markdown MUST still specify the required record
+    semantics and access properties sufficiently for an agent to operate them.
+- **Outputs.** Records meeting the required semantics.
+- **Evidence.** Provenance, attribution, and correction history attached to each
+  record.
+- **Failure behavior.** A record lacking a required property (e.g. no
+  provenance, no correction history) caps the assurance or audit level its
+  evidence can support (see
+  [Operating Model Spec § Function Separation](operating-model.md#function-separation),
+  evidence row).
+
+<!-- /rule: CS-079 -->
+
+<!-- rule: CS-080 -->
+
+### CS-080 — Smallest-sufficient record set (anti-bloat)
+
+- **Applicability.** Every project's record set and rendered artifacts.
+- **Inputs.** The facts, decisions, relationships, evidence, deviations, and
+  outcomes the project produces.
+- **Procedure.** The target is the **smallest sufficient set** of facts,
+  decisions, relationships, evidence, deviations, and outcomes. Automation MUST
+  NOT justify generating every full document; formal artifacts are rendered when
+  their audience or governance profile requires them.
+- **Outputs.** The smallest sufficient record set.
+- **Evidence.** N/A — the discipline shows in what is not generated.
+- **Failure behavior.** N/A — no failure path is defined; over-generation is a
+  quality defect, not a conformance violation.
+
+<!-- /rule: CS-080 -->
+
+<!-- rule: CS-082 -->
+
+### CS-082 — Judgment-tier attribution with two timestamps
+
+- **Applicability.** Any item whose checklist marker or governance profile
+  places it at the judgment tier (`[J]`) or above.
+- **Inputs.** The item's tier; the discharging actor; the claimed evaluation and
+  platform receipt times.
+- **Procedure.** The record MUST capture _who or what discharged it_ at the
+  grade the item's accountability demands, plus **two timestamps (ratified
+  v0.58)** — the claimed evaluation time and the platform receipt time (in file
+  mode, the receipt time is the moment the write lands in the durable store — in
+  practice, the commit timestamp); ordering never derives from either (the
   [state version](#minimum-canonical-project-state) orders writes). Below that
   tier (mechanical, unmarked items) recording is OPTIONAL but RECOMMENDED — it
   is near-free under agent execution. The timestamps are always recorded.
-- **Two identity grades**, each the _minimum that suffices_, not a cap on what
-  is recorded:
+- **Outputs.** The attributed, twice-timestamped discharge record.
+- **Evidence.** The record itself (enclosing contract).
+- **Failure behavior.** A `[J]`-or-above act recorded without its required
+  attribution or timestamps is not a satisfied record and caps the assurance
+  level (enclosing contract's failure rule).
+
+<!-- /rule: CS-082 -->
+
+<!-- rule: CS-083 -->
+
+### CS-083 — Two identity grades (qualification / party)
+
+- **Applicability.** Every attributed `[J]`-or-above act.
+- **Inputs.** The `identity_grade` set (`j-qualification` / `h-party`) in
+  [`vocabulary/grades.yaml`](vocabulary/grades.yaml) — binds as data.
+- **Procedure.** **Two identity grades**, each the _minimum that suffices_, not
+  a cap on what is recorded:
   - **`[J]` — qualification-identity.** The evaluator's _kind_: for an agent,
     vendor / model / version; for a human, name + role. A type suffices, because
     a judgment item asks only that a qualified evaluator confirmed it.
-  - **`[H]` — party-identity.** A _unique authorized party_: for a human, name +
-    a stable identifier; for an `[H]`·policy clearance, the policy's **author**
-    (the accountable party) together with the evaluating agent's
-    qualification-identity and the required timestamps. A type never suffices at
-    the floor — it cannot answer for an outcome. _Which_ parties are authorized
-    is the
-    [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
-    contract.
-- **Attribution also carries an evidence-independence grade.** For any
-  `[J]`-or-above discharge, the record MUST capture how the evaluation stood
-  **relative to the producing context**, reusing the
+  - **`[H]` — party-identity.** A _unique authorized party_: for a human, name
+    - a stable identifier; for an `[H]`·policy clearance, the policy's
+      **author** (the accountable party) together with the evaluating agent's
+      qualification-identity and the required timestamps. A type never suffices
+      at the floor — it cannot answer for an outcome. _Which_ parties are
+      authorized is the
+      [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
+      contract.
+- **Outputs.** The act's identity grade and the identity recorded at it.
+- **Evidence.** The record itself (enclosing contract).
+- **Failure behavior.** An act recorded below the grade its accountability
+  demands is not a satisfied record and caps the level (enclosing contract's
+  failure rule).
+
+<!-- /rule: CS-083 -->
+
+<!-- rule: CS-084 -->
+
+### CS-084 — Evidence-independence grade
+
+- **Applicability.** Every `[J]`-or-above discharge.
+- **Inputs.** The `independence_grade` set (`self-asserted` /
+  `context-independent` / `organizationally-independent`) in
+  [`vocabulary/grades.yaml`](vocabulary/grades.yaml) — binds as data.
+- **Procedure.** The record MUST capture how the evaluation stood **relative to
+  the producing context**, reusing the
   [independence axes](operating-model.md#evaluator-independence) — no new
-  vocabulary. Minimum value set: **self-asserted** (the producing context) ·
+  vocabulary: **self-asserted** (the producing context) ·
   **context-independent** (the evaluator does not inherit the producing context)
   · **organizationally-independent** (an organizationally or externally
   independent evaluator).
-- **Attribution also carries an attribution-source grade (ratified v0.58).** For
-  any attributed `[J]`-or-above act the record MUST capture how the identity was
-  established: **platform-verified** (the recording platform authenticated the
-  acting identity) or **client-claimed** (self-reported by the acting client —
+- **Outputs.** The act's recorded evidence-independence grade.
+- **Evidence.** The record itself (enclosing contract).
+- **Failure behavior.** An absent grade on a `[J]`-or-above act caps the record
+  ([CS-086](#cs-086--self-asserted-floor-discharge-rule-grade-capping)).
+
+<!-- /rule: CS-084 -->
+
+<!-- rule: CS-085 -->
+
+### CS-085 — Attribution-source grade (platform-verified / client-claimed)
+
+- **Applicability.** Every attributed `[J]`-or-above act (ratified v0.58).
+- **Inputs.** The `attribution_source` set (`platform-verified` /
+  `client-claimed`) in [`vocabulary/grades.yaml`](vocabulary/grades.yaml) —
+  binds as data.
+- **Procedure.** The record MUST capture how the identity was established:
+  **platform-verified** (the recording platform authenticated the acting
+  identity) or **client-claimed** (self-reported by the acting client —
   including an agent's vendor / model / version, which a platform cannot
   verify). An identity claim is bounded by the verification achieved — the
   record MUST NOT present a client-claimed identity as verified, the same
   discipline as
   [Operating Model Spec § Evaluator Independence](operating-model.md#evaluator-independence)
   (claims MUST NOT exceed what was achieved).
-- A `[J]`-or-above **floor item discharged self-asserted is not a cleared
-  floor**: it supports mechanical conformance only — the record-level form of
+- **Outputs.** The act's recorded attribution-source grade.
+- **Evidence.** The record itself (enclosing contract).
+- **Failure behavior.** A client-claimed identity presented as verified is an
+  unsupported claim; the record caps at what was achieved.
+
+<!-- /rule: CS-085 -->
+
+<!-- rule: CS-086 -->
+
+### CS-086 — Self-asserted floor-discharge rule (grade-capping)
+
+- **Applicability.** Every `[J]`-or-above floor item; every recorded or absent
+  independence grade.
+- **Inputs.** The act's recorded grades
+  ([CS-083](#cs-083--two-identity-grades-qualification--party),
+  [CS-084](#cs-084--evidence-independence-grade),
+  [CS-085](#cs-085--attribution-source-grade-platform-verified--client-claimed)).
+- **Procedure.** A `[J]`-or-above **floor item discharged self-asserted is not a
+  cleared floor**: it supports mechanical conformance only — the record-level
+  form of
   [Operating Model Spec § Function Separation](operating-model.md#function-separation)
   row 1. Identity answers _who_; the
   [authorized-party roster](#authorized-parties-for-floor-decisions) answers
@@ -1144,6 +1458,14 @@ project.
   a derived, coarser view (the minimum grade across the acts it aggregates),
   never the stored grain — coarser storage would be lossy and unrecoverable, and
   finer recording is near-free under agent execution.
+- **Outputs.** The floor-clearance determination for the act.
+- **Evidence.** The per-act grades (enclosing contract).
+- **Failure behavior.** N/A — the cap is the rule's own consequence; the
+  uncleared floor routes as an unresolved authorization decision where a floor
+  demanded more.
+
+<!-- /rule: CS-086 -->
+
 - The framework states the **grades required + the timestamps**; the platform
   owns the field schema (names, storage, binding to accounts). An agent MUST be
   able to read and satisfy the grade requirement from Markdown alone.
@@ -1153,13 +1475,11 @@ project.
 **Evidence.** Provenance, attribution, and correction history attached to each
 record.
 
-**Failure behavior.** A record lacking a required property (e.g. no provenance,
-no correction history) caps the assurance or audit level its evidence can
-support (see
-[Operating Model Spec § Function Separation](operating-model.md#function-separation),
-evidence row). A `[J]`-or-above act recorded without its required identity
-grade, its evidence-independence grade, its attribution-source grade, or its
-timestamps is not a satisfied record and caps the level the same way.
+**Failure behavior.** Per the marked contracts above: missing properties cap per
+[CS-079](#cs-079--record-requirements-implementation-neutral-record-property-list);
+missing grades or timestamps cap per
+[CS-082](#cs-082--judgment-tier-attribution-with-two-timestamps) –
+[CS-086](#cs-086--self-asserted-floor-discharge-rule-grade-capping).
 
 ---
 
@@ -1247,26 +1567,56 @@ obligations; the available capability and function separation.
 
 **Procedure.**
 
-- Stage folding is a presentation and interaction choice, MUST NOT be the
-  omission of a stage's required work. A stage MAY be folded only when all
-  applicable requirements remain satisfied: stage concerns and practices,
-  assurance and evidence obligations, acceptance and authorization decisions,
-  traceability and decision records, governance controls and authority
-  boundaries, and escalation rules.
+<!-- rule: CS-094 -->
+
+### CS-094 — Fold only while requirements stay satisfied
+
+- **Applicability.** Any stage presented below its full ceremony.
+- **Inputs.** The stage's required concerns; the current consequence and
+  obligations.
+- **Procedure.** Stage folding is a presentation and interaction choice, MUST
+  NOT be the omission of a stage's required work. A stage MAY be folded only
+  when all applicable requirements remain satisfied: stage concerns and
+  practices, assurance and evidence obligations, acceptance and authorization
+  decisions, traceability and decision records, governance controls and
+  authority boundaries, and escalation rules.
+- **Outputs.** A folded presentation that preserves every required concern.
+- **Evidence.** Folded-stage state, recorded in the canonical state (enclosing
+  contract).
+- **Failure behavior.** A folding that drops a required concern is invalid; the
+  stage MUST unfold (enclosing contract's trigger rule).
+
+<!-- /rule: CS-094 -->
+
 - Folding thins **presentation and decision-rights, never durability**. Even the
-  fully collapsed **Negligible folded path**
-  ([Right-Sizing](../guides/right-sizing.md#the-negligible-folded-path)) is
-  **bound by the
-  [rendered-snapshot fidelity floor](delegated-run.md#project-state-access), not
-  exempt from it**: its minimum canonical state — the paragraph-brief and the
-  decision trace behind it — MUST be a durable, attributable write-down (a file,
-  e.g. a root `DECISIONS.md`), not conversation text that vanishes with the
-  transcript. "One conversation" is a presentation choice; it never waives the
-  durable write-back the floor requires.
-- Folding MUST change what is seen, never the independence required of the work.
-  A folded self-assurance is still performed **context-independently**, not by
-  the producing context confirming itself (see
+fully collapsed **Negligible folded path**
+([Right-Sizing](../guides/right-sizing.md#the-negligible-folded-path)) is
+**bound by the
+[rendered-snapshot fidelity floor](delegated-run.md#project-state-access), not
+exempt from it**: its minimum canonical state — the paragraph-brief and the
+decision trace behind it — MUST be a durable, attributable write-down (a file,
+e.g. a root `DECISIONS.md`), not conversation text that vanishes with the
+transcript. "One conversation" is a presentation choice; it never waives the
+durable write-back the floor requires.
+<!-- rule: CS-096 -->
+
+### CS-096 — Folding never changes required independence
+
+- **Applicability.** Every folded stage's assurance and evaluation work.
+- **Inputs.** The independence the governance profile requires; the folded
+  presentation.
+- **Procedure.** Folding MUST change what is seen, never the independence
+  required of the work. A folded self-assurance is still performed
+  **context-independently**, not by the producing context confirming itself (see
   [Operating Model Spec § Function Separation](operating-model.md#function-separation)).
+- **Outputs.** Folded work at the unreduced independence.
+- **Evidence.** The independence grade on the discharging act
+  ([CS-084](#cs-084--evidence-independence-grade)).
+- **Failure behavior.** A folding that drops a required independence floor is
+  invalid (enclosing contract).
+
+<!-- /rule: CS-096 -->
+
 - A folded stage MUST unfold or expose interaction on defined triggers:
   increased consequences or obligations, missing evidence, unavailable required
   capability, unresolved decisions, failed assurance, lost function separation,
@@ -1305,6 +1655,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.49.0.
