@@ -131,7 +131,12 @@ Rationale:
     against the forcing-dependency taxonomy and record: the increments
     evaluated; the shared boundaries and dependencies considered; a **safe /
     unsafe** conclusion; assumptions and required conditions; and, when unsafe,
-    the forcing dependency that fired and the required order.
+    the forcing dependency that fired and the required order. **Naming is
+    universal:** a pair classified `unsafe` on insufficient confidence alone
+    ([PB-005](#pb-005--insufficient-confidence-classifies-unsafe-and-sequences))
+    names the nearest **suspected** category the same way, with the
+    unestablished disjointness recorded in the assumptions and required
+    conditions — an `unsafe` conclusion never carries an empty category.
   - The classification is an execution-planning record. It MUST NOT be treated
     as an architecture decision record and MUST NOT gate on one.
 - **Outputs.** A parallel-safety determination per evaluated pair, with the
@@ -156,7 +161,10 @@ Rationale:
 - **Procedure.** When a pair's parallel safety cannot be established with
   sufficient confidence, the planner MUST classify it **unsafe** and sequence
   it. Confidence MUST derive from reading both sides of the boundary, not from
-  increment descriptions.
+  increment descriptions. The recorded conclusion still names the nearest
+  suspected category
+  ([PB-004](#pb-004--per-pair-parallel-safety-classification-record)'s
+  universal-naming rule).
 - **Outputs.** The pair's `unsafe` conclusion and its sequencing.
 - **Evidence.** N/A — recorded on the
   [PB-004](#pb-004--per-pair-parallel-safety-classification-record)
