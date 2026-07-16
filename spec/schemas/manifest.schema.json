@@ -79,7 +79,17 @@
           "status": { "enum": ["active", "superseded", "deprecated"] },
           "notes": { "type": "string" },
           "supersedes": { "$ref": "#/$defs/rule-id" },
-          "superseded_by": { "$ref": "#/$defs/rule-id" }
+          "superseded_by": { "$ref": "#/$defs/rule-id" },
+          "representation": {
+            "$comment": "How the rule migrated (Decision P3-3): data = normative content fully in vocabulary/transition/matrix data; data+contract = data plus a compact residual contract; contract = six-field prose contract only. Present iff the rule's body is marker-anchored in its source (migrated).",
+            "enum": ["data", "data+contract", "contract"]
+          },
+          "links": {
+            "$comment": "Rationale locations (guide text that keeps the why) — repo-relative paths, optionally with a #heading-anchor fragment.",
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
         }
       }
     },

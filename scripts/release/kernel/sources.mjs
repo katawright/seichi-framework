@@ -26,6 +26,8 @@ import { join } from "node:path";
 import matter from "gray-matter";
 import yaml from "js-yaml";
 
+import { parseRuleSpans } from "./markers.mjs";
+
 export const VOCABULARY_FILES = [
   "spec/vocabulary/concurrency.yaml",
   "spec/vocabulary/config.yaml",
@@ -98,6 +100,51 @@ export function loadKernelSources(repoRoot) {
   hashedInputs[RULES_FILE] = sha256Hex(rulesRaw);
   const rulesDoc = yaml.load(rulesRaw);
 
+  // Marker-anchored rule bodies (Phase 3, Decision P3-2): extracted from each
+  // rule's registry `source` file — the one normative home — never from
+  // elsewhere (stray markers are the .schema rule-markers check's job).
+  // The extracted bodies are embedded data (reference.md emits them), so they
+  // are part of the hash domain: a body edit MUST move source_hash (the
+  // verify-fixes R1 principle). Glob and non-Markdown sources carry no marked
+  // bodies (stage front matter is data, not a body span).
+  const ruleBodies = {};
+  const markerIssues = [];
+  const sourceFiles = [
+    ...new Set(
+      (rulesDoc.rules ?? [])
+        .map((r) => r.source)
+        .filter((s) => typeof s === "string" && s.endsWith(".md") && !s.includes("*")),
+    ),
+  ].sort();
+  const idsBySource = new Map();
+  for (const r of rulesDoc.rules ?? []) {
+    if (!idsBySource.has(r.source)) idsBySource.set(r.source, new Set());
+    idsBySource.get(r.source).add(r.id);
+  }
+  for (const relPath of sourceFiles) {
+    let text;
+    try {
+      text = readLf(repoRoot, relPath);
+    } catch {
+      continue; // missing source files are reported by validateKernelSources
+    }
+    const { spans, issues } = parseRuleSpans(text);
+    for (const issue of issues) {
+      markerIssues.push(`${relPath}: ${issue}`);
+    }
+    for (const span of spans) {
+      if (!idsBySource.get(relPath)?.has(span.id)) continue; // not this rule's home
+      if (span.id in ruleBodies) {
+        markerIssues.push(
+          `${relPath}: duplicate marker span for ${span.id} (line ${span.openLine}) — single-home requires exactly one pair`,
+        );
+        continue;
+      }
+      ruleBodies[span.id] = span.body;
+    }
+  }
+  hashedInputs["spec/rules/bodies"] = sha256Hex(canonicalJson(ruleBodies));
+
   const stageReadmes = listStageReadmes(repoRoot);
   const pipelineBlock = frontMatterBlock(repoRoot, STAGES_GUIDE_FILE);
   const pipeline = yaml.load(pipelineBlock).pipeline;
@@ -136,6 +183,8 @@ export function loadKernelSources(repoRoot) {
   return {
     vocab,
     rules: rulesDoc.rules,
+    ruleBodies,
+    markerIssues,
     pipeline,
     stageMetadata,
     sourceHash,

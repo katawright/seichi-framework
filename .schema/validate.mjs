@@ -13,6 +13,7 @@ import { runIndexCounts } from "./checks/index-counts.mjs";
 import { runIndexOrder } from "./checks/index-order.mjs";
 import { runFloorTable } from "./checks/floor-table.mjs";
 import { runKernel } from "./checks/kernel.mjs";
+import { runRuleMarkers } from "./checks/rule-markers.mjs";
 import { runShipList } from "./checks/ship-list.mjs";
 import { runFuncGroup } from "./checks/func-group.mjs";
 import { runCallout } from "./checks/callout.mjs";
@@ -251,7 +252,8 @@ for (let file of structureFiles) {
 // Deterministic checks for the mechanizable cold-review finding classes:
 // anchor/link integrity, retired vocabulary as live guidance, Last Updated
 // stamp freshness, INDEX count self-consistency, INDEX table sort-order,
-// consequence-floor table parity, and the restatement-family regression guards
+// consequence-floor table parity, kernel rule-marker span integrity +
+// rule-ID citation resolution, and the restatement-family regression guards
 // (shipped-layer enumeration, operator-table function grouping, stage-callout
 // uniformity). Fatal issues fail the build (exit 1), the same as a schema
 // failure; warn-tier issues (heuristic callout semantics, operational skips) are
@@ -287,6 +289,7 @@ const checkIssues = [
   ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
   ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
   ...runCheck("KERNEL", () => runKernel(repoRoot)),
+  ...runCheck("MARKER", () => runRuleMarkers(repoRoot, fileMap.checkExclude || [])),
 ];
 
 // Restatement-family guards return { fatal, warn }: the drift itself is fatal,

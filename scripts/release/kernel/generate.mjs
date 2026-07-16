@@ -19,6 +19,7 @@ import {
   loadKernelSources,
   RULES_FILE,
 } from "./sources.mjs";
+import { headingRiderIssue } from "./markers.mjs";
 
 export const KERNEL_INTERFACE_VERSION = "0.1";
 
@@ -132,6 +133,59 @@ export function validateKernelSources(repoRoot, sources) {
     }
     if (rule.source && !sourceExists(repoRoot, rule.source)) {
       issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: source file missing: ${rule.source}`);
+    }
+    // Phase 3 migration fields (Decisions P3-2/P3-3), optional until the
+    // rule's wave migrates it.
+    if (
+      rule.representation !== undefined &&
+      !["data", "data+contract", "contract"].includes(rule.representation)
+    ) {
+      issues.push(
+        `KERNEL  ${RULES_FILE}  ${rule.id}: invalid representation \`${rule.representation}\``,
+      );
+    }
+    if (rule.links !== undefined) {
+      if (!Array.isArray(rule.links) || rule.links.length === 0) {
+        issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: \`links\` must be a non-empty array`);
+      } else {
+        for (const link of rule.links) {
+          if (typeof link !== "string" || link === "") {
+            issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: \`links\` entries must be non-empty strings`);
+            continue;
+          }
+          const path = link.split("#")[0];
+          if (!sourceExists(repoRoot, path)) {
+            issues.push(`KERNEL  ${RULES_FILE}  ${rule.id}: links target missing: ${path}`);
+          }
+        }
+      }
+    }
+  }
+
+  // Marker-anchored bodies: structural defects found while extracting, plus
+  // the representation ⇔ marker coupling (single-home made structural —
+  // Decision 2.3): a migrated rule (representation recorded, P3-3) has
+  // exactly one marker pair in its source; an unmigrated rule has none.
+  // The extracted body must open with the visible ID heading (the Q2 rider).
+  for (const issue of sources.markerIssues ?? []) {
+    issues.push(`KERNEL  ${issue}`);
+  }
+  for (const rule of rules) {
+    if (!rule.id) continue;
+    const body = (sources.ruleBodies ?? {})[rule.id];
+    if (rule.representation !== undefined && body === undefined) {
+      issues.push(
+        `KERNEL  ${RULES_FILE}  ${rule.id}: representation recorded but no marker-anchored body in ${rule.source}`,
+      );
+    }
+    if (rule.representation === undefined && body !== undefined) {
+      issues.push(
+        `KERNEL  ${RULES_FILE}  ${rule.id}: marker-anchored body found but no \`representation\` recorded (set it in the migrating commit — P3-3)`,
+      );
+    }
+    if (body !== undefined) {
+      const rider = headingRiderIssue(rule.id, body);
+      if (rider) issues.push(`KERNEL  ${rule.source}: ${rider}`);
     }
   }
 
@@ -427,6 +481,8 @@ export function buildKernelManifest(sources) {
       introduced: r.introduced,
       status: r.status,
       ...(r.notes ? { notes: r.notes } : {}),
+      ...(r.representation ? { representation: r.representation } : {}),
+      ...(r.links ? { links: r.links } : {}),
     };
   }
 
@@ -555,7 +611,7 @@ export function buildSchemaProjection(sources, manifest) {
 
 // ── Human-readable reference ───────────────────────────────────────────────
 
-export function buildReference(manifest) {
+export function buildReference(manifest, ruleBodies = {}) {
   const lines = [];
   const push = (s = "") => lines.push(s);
 
@@ -636,12 +692,36 @@ export function buildReference(manifest) {
 
   push("## Rule registry");
   push();
-  push("| ID | Title | Layer | Basis | Source |");
-  push("| --- | --- | --- | --- | --- |");
+  push("| ID | Title | Layer | Basis | Source | Representation |");
+  push("| --- | --- | --- | --- | --- | --- |");
   for (const [id, r] of Object.entries(manifest.rules)) {
-    push(`| ${id} | ${r.title} | ${r.layer} | ${r.basis} | \`${r.source}\` |`);
+    push(
+      `| ${id} | ${r.title} | ${r.layer} | ${r.basis} | \`${r.source}\` | ` +
+        `${r.representation ?? "—"} |`,
+    );
   }
   push();
+
+  // Per-rule contract sections (migration plan step 4): the marker-anchored
+  // bodies, verbatim from their normative homes. Each body opens with its
+  // own visible `### <ID> — <title>` heading (the Q2 rider), so no heading
+  // is synthesized here. Present only once rules have migrated (Waves A–D).
+  const migratedIds = Object.keys(manifest.rules).filter((id) => ruleBodies[id] !== undefined);
+  if (migratedIds.length > 0) {
+    push("## Rule contracts");
+    push();
+    push(
+      "Marker-anchored rule bodies, extracted verbatim from each rule's " +
+        "normative home (`spec/rules/index.yaml` `source`). Rules without a " +
+        "section here have not yet migrated; their bodies live unanchored in " +
+        "the cited source.",
+    );
+    push();
+    for (const id of migratedIds) {
+      push(ruleBodies[id]);
+      push();
+    }
+  }
 
   push("## Stage pipeline");
   push();
@@ -671,7 +751,7 @@ export function generateKernel(repoRoot) {
   const projection = buildSchemaProjection(sources, manifest);
   return {
     "spec/generated/manifest.json": `${JSON.stringify(manifest, null, 2)}\n`,
-    "spec/generated/reference.md": buildReference(manifest),
+    "spec/generated/reference.md": buildReference(manifest, sources.ruleBodies),
     "spec/generated/schema-projection.json": `${JSON.stringify(projection, null, 2)}\n`,
   };
 }

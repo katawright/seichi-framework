@@ -100,15 +100,38 @@ contracts above state in prose:
   grades, operating-configuration fields, concurrency vocabularies). Values are
   stable identifiers, never display text.
 - **`rules/index.yaml`** — the rule registry: every kernel rule's stable ID,
-  layer, admission basis, and normative source. Rule bodies stay in the contract
-  files above.
+  layer, admission basis, and normative source. A migrated rule's row also
+  records `representation` (how it migrated: `data` | `data+contract` |
+  `contract`) and `links` (the guide locations that keep its rationale).
+- **Rule-body markers** — a migrated rule's body is delimited in its one
+  normative home by an HTML-comment marker pair, and opens with a visible ID
+  heading so no citable handle is comment-only:
+
+  ```markdown
+  <!-- rule: DR-005 -->
+
+  ### DR-005 — Run lifecycle machine
+
+  …the contract…
+
+  <!-- /rule: DR-005 -->
+  ```
+
+  Spans are flat (nesting is disallowed) and single-homed: exactly one pair per
+  migrated rule, in the registry `source` file, with `representation` recorded
+  in the same commit. The validate suite enforces the pairing, the single home,
+  the heading, and that every rule-ID-shaped citation anywhere in the framework
+  resolves to a registered ID. Rules not yet migrated keep unanchored bodies in
+  the cited source.
+
 - **`schemas/manifest.schema.json`** — the schema the generated manifest
   validates against.
 - **`generated/`** — generated, stamped exports (never hand-edited):
   `manifest.json` (the self-contained machine export), `reference.md` (the
-  human-readable view), and `schema-projection.json` (the consumer-facing
-  equivalence export). Regenerate with `npm run kernel`; CI fails when they are
-  stale or hand-edited.
+  human-readable view, including migrated rule bodies extracted verbatim from
+  their marker-anchored homes), and `schema-projection.json` (the
+  consumer-facing equivalence export). Regenerate with `npm run kernel`; CI
+  fails when they are stale or hand-edited.
 
 The kernel interface is versioned on its own **0.x** axis
 (`meta.kernel_interface_version`), independent of the framework version: pre-1.0
@@ -137,6 +160,6 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.49.0.

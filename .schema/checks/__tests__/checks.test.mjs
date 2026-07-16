@@ -28,6 +28,12 @@ import {
   oversightPara,
   executionPinHits,
 } from "../callout.mjs";
+import {
+  parseRuleSpans,
+  headingRiderIssue,
+  extractIdTokens,
+  registryPrefixes,
+} from "../../../scripts/release/kernel/markers.mjs";
 
 describe("slugify (GitHub rules)", () => {
   it("drops an em-dash, leaving the two flanking spaces as --", () => {
@@ -418,5 +424,109 @@ describe("callout (G-callout)", () => {
     const md =
       "x\n\n**Oversight at this stage.** Folds into Authority. See the [guide](../../guides/operating-model.md).\n\ny";
     expect(oversightPara(md).text).toContain("Oversight at this stage");
+  });
+});
+
+describe("parseRuleSpans (rule-body markers)", () => {
+  const body = "### DR-005 — Run lifecycle machine\n\nThe contract text.";
+  const doc = `intro\n\n<!-- rule: DR-005 -->\n${body}\n<!-- /rule: DR-005 -->\n`;
+
+  it("extracts a well-formed span with a trimmed body", () => {
+    const { spans, issues } = parseRuleSpans(doc);
+    expect(issues).toEqual([]);
+    expect(spans).toHaveLength(1);
+    expect(spans[0].id).toBe("DR-005");
+    expect(spans[0].body).toBe(body);
+    expect(spans[0].openLine).toBe(3);
+  });
+
+  it("flags a close with no open", () => {
+    const { spans, issues } = parseRuleSpans("<!-- /rule: DR-005 -->\n");
+    expect(spans).toEqual([]);
+    expect(issues[0]).toMatch(/close marker for DR-005 with no open/);
+  });
+
+  it("flags an open never closed", () => {
+    const { issues } = parseRuleSpans("<!-- rule: DR-005 -->\ntext\n");
+    expect(issues[0]).toMatch(/never closed/);
+  });
+
+  it("flags a mismatched close", () => {
+    const { spans, issues } = parseRuleSpans(
+      "<!-- rule: DR-005 -->\ntext\n<!-- /rule: CS-007 -->\n",
+    );
+    expect(spans).toEqual([]);
+    expect(issues[0]).toMatch(/close marker for CS-007 does not match open marker for DR-005/);
+  });
+
+  it("flags a nested open (spans are flat)", () => {
+    const { issues } = parseRuleSpans(
+      "<!-- rule: DR-005 -->\n<!-- rule: CS-007 -->\ntext\n<!-- /rule: CS-007 -->\n",
+    );
+    expect(issues.some((i) => /nesting is disallowed/.test(i))).toBe(true);
+  });
+
+  it("ignores example markers inside fenced code blocks", () => {
+    const fenced = "```markdown\n<!-- rule: XX-001 -->\nexample\n<!-- /rule: XX-001 -->\n```\n";
+    const { spans, issues } = parseRuleSpans(fenced + doc);
+    expect(issues).toEqual([]);
+    expect(spans.map((s) => s.id)).toEqual(["DR-005"]);
+  });
+
+  it("returns duplicate spans for the caller to adjudicate", () => {
+    const { spans, issues } = parseRuleSpans(doc + "\n" + doc);
+    expect(issues).toEqual([]);
+    expect(spans.map((s) => s.id)).toEqual(["DR-005", "DR-005"]);
+  });
+});
+
+describe("headingRiderIssue (visible ID token — the Q2 rider)", () => {
+  it("passes a body opening with the ID heading", () => {
+    expect(headingRiderIssue("DR-005", "### DR-005 — Run lifecycle machine\n\ntext")).toBeNull();
+  });
+  it("fails a body whose first line is prose", () => {
+    expect(headingRiderIssue("DR-005", "The contract text.")).toMatch(/visible ID heading/);
+  });
+  it("fails a heading carrying the wrong ID", () => {
+    expect(headingRiderIssue("DR-005", "### CS-007 — Wrong rule")).toMatch(/visible ID heading/);
+  });
+  it("fails an empty body", () => {
+    expect(headingRiderIssue("DR-005", "")).toMatch(/empty/);
+  });
+  it("accepts a sub-ID heading (AW-004a)", () => {
+    expect(headingRiderIssue("AW-004a", "### AW-004a — Never fronted as menus")).toBeNull();
+  });
+});
+
+describe("extractIdTokens (C11 citation scan)", () => {
+  const prefixes = ["AW", "CS", "DR"];
+
+  it("finds registered-prefix tokens, including sub-IDs", () => {
+    const tokens = extractIdTokens("see DR-005 and `AW-004a` here", prefixes);
+    expect(tokens.map((t) => t.token)).toEqual(["DR-005", "AW-004a"]);
+  });
+
+  it("skips unregistered prefixes (template placeholders, foreign identifiers)", () => {
+    expect(extractIdTokens("INC-001, AES-256, REQ-001", prefixes)).toEqual([]);
+  });
+
+  it("does not match 2-digit handles or 4-digit identifiers", () => {
+    expect(extractIdTokens("CP-01 and ISO-8601 and DR-0055", ["CP", "ISO", "DR"])).toEqual([]);
+  });
+
+  it("blanks marker comments — a marker ID is not a citation", () => {
+    const doc = "<!-- rule: DR-005 -->\n### DR-005 — Title\n<!-- /rule: DR-005 -->";
+    expect(extractIdTokens(doc, prefixes).map((t) => t.token)).toEqual(["DR-005"]);
+  });
+});
+
+describe("registryPrefixes", () => {
+  it("collects the sorted prefix set from rule IDs", () => {
+    expect(registryPrefixes(["DR-005", "CS-007", "OMG-002", "AW-004a"])).toEqual([
+      "AW",
+      "CS",
+      "DR",
+      "OMG",
+    ]);
   });
 });

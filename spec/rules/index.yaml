@@ -1,6 +1,7 @@
 # Kernel rule registry — the first-slice rule IDs with metadata and source
-# pointers. Rule BODIES stay in the existing spec/*.md and guides/*.md files
-# this phase; this registry fixes identity, provenance, and location.
+# pointers. Rule bodies migrate to marker-anchored spans in their one
+# normative home (Phase 3, Waves A–D); until a rule's wave lands, its body
+# lives unanchored in the cited source.
 #
 # ID convention: `<PREFIX>-<NNN>` — an uppercase domain-concept prefix
 # (adopted verbatim from the framework's existing families, including the
@@ -16,6 +17,16 @@
 # one normative home; introduced = framework version the rule entered
 # (`verify` until the provenance pass fills it — a mechanical follow-up, not
 # a manifest blocker); status active | superseded | deprecated.
+#
+# Migration fields (Phase 3, set in the same commit that migrates a rule):
+#   representation: data | data+contract | contract — how the rule migrated
+#     (Decision P3-3). Present iff the rule's body is marker-anchored in its
+#     `source`: `<!-- rule: <ID> -->` … `<!-- /rule: <ID> -->` around the
+#     body, exactly one flat pair (no nesting), opening with the visible
+#     `### <ID> — <title>` heading (Decision P3-2 + the Q2 rider). The
+#     validate suite enforces the coupling in both directions.
+#   links: rationale locations (the guide text that keeps the why) —
+#     repo-relative paths, optionally with a #heading-anchor fragment.
 
 rules:
   # ── 1a — structured layer: lifecycle machines + closed reason sets ──────
