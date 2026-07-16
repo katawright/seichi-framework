@@ -286,13 +286,15 @@ is in the
 
 ### Read-Path Starting Points
 
-The behavioral test above needs observed work, which a first increment does not
-have yet. There is no identity shortcut: any predicate over what a model _is_ —
-its name, its lineup position, its recency — is a proxy for a behavioral
-property that identity does not carry, and every such proxy goes stale or
-misaligns across vendors. The starting point is instead an **evidence
-question**: has this executor configuration — model, reasoning effort, task
-domain — _demonstrated_ sound implementation from contracts alone? That is
+The binding setting contract is OM-008 in the
+[Operating Model Spec](../spec/operating-model.md#capability-coverage). The
+behavioral test above needs observed work, which a first increment does not have
+yet. There is no identity shortcut: any predicate over what a model _is_ — its
+name, its lineup position, its recency — is a proxy for a behavioral property
+that identity does not carry, and every such proxy goes stale or misaligns
+across vendors. The starting point is instead an **evidence question**: has this
+executor configuration — model, reasoning effort, task domain — _demonstrated_
+sound implementation from contracts alone? That is
 [provider qualification](../spec/operating-model.md#evaluator-independence)
 applied to the work-execution function — nothing new.
 
@@ -502,6 +504,6 @@ until a consumer or the resolver needs it as one.
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.49.0.

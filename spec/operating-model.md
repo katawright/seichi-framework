@@ -120,16 +120,24 @@ evaluators).
 - Capability MUST NOT grant authority. Missing or inadequate capability narrows
   the envelope even when an action is authorized.
 - Capability has a second, symmetric effect beyond the ceiling: it sets how much
-  **implementation scaffolding** stage artifacts carry for the executor.
-  Contract and verification detail — interfaces, acceptance criteria, test
-  intent, boundaries, and governance hooks — MUST NOT be reduced on capability
-  grounds at any capability level. Implementation scaffolding — component
-  structure, file layout, enumerated test cases, pre-worked logic — MAY be
-  scaled to the executor, and is the only specification detail capability
-  adjusts.
-- The scaffolding scale is declared, not inferred per session: the **executor
-  read path** setting (`guided` | `contracts-only`) is recorded in the project
-  operating configuration alongside tier and posture, surfaced as an overridable
+**implementation scaffolding** stage artifacts carry for the executor. Contract
+and verification detail — interfaces, acceptance criteria, test intent,
+boundaries, and governance hooks — MUST NOT be reduced on capability grounds at
+any capability level. Implementation scaffolding — component structure, file
+layout, enumerated test cases, pre-worked logic — MAY be scaled to the executor,
+and is the only specification detail capability adjusts.
+<!-- rule: OM-008 -->
+
+### OM-008 — Executor read path setting (guided / contracts-only)
+
+- **Applicability.** Every project operating configuration; the scaffolding
+  scale the enclosing contract adjusts.
+- **Inputs.** The closed value set `executor_read_path` in
+  [`vocabulary/config.yaml`](vocabulary/config.yaml) — `guided` |
+  `contracts-only` — binds as data.
+- **Procedure.** The scaffolding scale is declared, not inferred per session:
+  the **executor read path** setting is recorded in the project operating
+  configuration alongside tier and posture, surfaced as an overridable
   `[ASSUMED]` default when inferred (see
   [Classification by Inference](../guides/agentic-workflow.md#classification-by-inference)).
   The setting MUST be keyed to observed executor behavior, never to a model name
@@ -142,6 +150,14 @@ evaluators).
   mechanism in
   [Operating Model Guide § Read-Path Starting Points](../guides/operating-model.md#read-path-starting-points);
   absent evidence, the `guided` default applies.
+- **Outputs.** The declared executor read path setting in the operating
+  configuration.
+- **Evidence.** The declared setting, recorded with the coverage map (enclosing
+  contract).
+- **Failure behavior.** N/A — no failure path is defined for the setting itself:
+  absent a declaration or evidence, the `guided` default applies (Procedure).
+
+<!-- /rule: OM-008 -->
 
 **Outputs.** The coverage map over the required functions.
 
@@ -508,17 +524,52 @@ capability and evidence the conditions depend on.
 - Machine-evaluable conditions include: exceeded budget or resource ceiling;
   crossed authority boundary; unavailable required capability; failed
   verification; violated declared invariant.
-- **Semantic drift** — work technically in scope but no longer serving intent —
-  is NOT reliably machine-evaluable, and the framework MUST NOT claim otherwise.
-  Where consequential semantic failure cannot be detected, the run MUST bound
-  blast radius: prefer reversible actions, constrain scope and effects, and
-  require a checkpoint before any consequential or irreversible action.
-- **Feasibility ceiling.** A run MAY proceed unattended only where its
-  consequential failure modes are machine-evaluable or its blast radius is
-  bounded; otherwise the affected actions MUST route to a checkpoint regardless
-  of agent capability.
 - Stop enforcement is itself a required operating function: it MUST be shown to
   fire under its declared conditions and remain available throughout the run.
+
+<!-- rule: OM-046 -->
+
+### OM-046 — Semantic drift is not reliably machine-evaluable (bound blast radius)
+
+- **Applicability.** Any Lights-Out run (as the enclosing contract); every claim
+  about what stop enforcement can evaluate.
+- **Inputs.** The declared stop conditions; the consequential failure modes of
+  the work in scope.
+- **Procedure.** **Semantic drift** — work technically in scope but no longer
+  serving intent — is NOT reliably machine-evaluable, and the framework MUST NOT
+  claim otherwise. Where consequential semantic failure cannot be detected, the
+  run MUST bound blast radius: prefer reversible actions, constrain scope and
+  effects, and require a checkpoint before any consequential or irreversible
+  action.
+- **Outputs.** Blast-radius bounds on the affected work; a required checkpoint
+  before any consequential or irreversible action.
+- **Evidence.** N/A — rides the enclosing contract's evidence (stop-condition
+  definitions and firings).
+- **Failure behavior.** N/A — as the enclosing contract: default-closed when
+  required capability or evidence is unavailable.
+
+<!-- /rule: OM-046 -->
+
+<!-- rule: OM-047 -->
+
+### OM-047 — Feasibility ceiling (bounded blast radius, else checkpoint)
+
+- **Applicability.** Any run, or any action within a run, proposed to proceed
+  unattended.
+- **Inputs.** The machine-evaluability of the action's consequential failure
+  modes; the blast-radius bounds in effect
+  ([OM-046](#om-046--semantic-drift-is-not-reliably-machine-evaluable-bound-blast-radius)).
+- **Procedure.** A run MAY proceed unattended only where its consequential
+  failure modes are machine-evaluable or its blast radius is bounded; otherwise
+  the affected actions MUST route to a checkpoint regardless of agent
+  capability.
+- **Outputs.** The unattended-eligibility determination for the affected
+  actions.
+- **Evidence.** N/A — rides the enclosing contract's evidence.
+- **Failure behavior.** N/A — the checkpoint routing is the rule's own
+  consequence (Procedure); no separate failure path is defined.
+
+<!-- /rule: OM-047 -->
 
 **Outputs.** Enforced stops and routed checkpoints.
 

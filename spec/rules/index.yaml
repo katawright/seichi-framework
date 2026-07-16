@@ -253,6 +253,10 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - guides/operating-model.md#read-path-starting-points
+      - guides/agentic-workflow.md#classification-by-inference
   - id: RS-002
     title: Consequence anchors (five-tier harm scale)
     layer: 1a
@@ -499,6 +503,9 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/operating-model.md#stop-enforcement
   - id: OM-047
     title: Feasibility ceiling (bounded blast radius, else checkpoint)
     layer: 1b
@@ -506,6 +513,9 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/operating-model.md#stop-enforcement
   - id: PB-005
     title: Insufficient confidence classifies unsafe and sequences
     layer: 1b
