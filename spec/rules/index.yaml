@@ -425,6 +425,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#controlled-replanning
   - id: RS-015
     title: Consequence-by-stage scaling matrix
     layer: 1a

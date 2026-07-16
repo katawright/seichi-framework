@@ -660,13 +660,37 @@ floors; the delegated authority and capability coverage.
 | Foundational change          | Resolve through an authorized decision mechanism.                                                     |
 | Operating-envelope change    | Stop until the envelope is validly changed.                                                           |
 
-- The highest class an agent MAY resolve autonomously is set by the preset:
+- The highest class an agent MAY resolve autonomously is
+  [DR-052](#dr-052--replanning-preset-to-autonomy-class-table)'s rule.
 
-| Operating preset | Highest class resolved autonomously                                                    |
-| ---------------- | -------------------------------------------------------------------------------------- |
-| Supervised       | Within-plan execution choice only                                                      |
-| Checkpointed     | + Recorded design deviation (plan revisions wait for the next checkpoint)              |
-| Lights-Out       | + Execution-plan revision, _when delegated authority and capability coverage cover it_ |
+<!-- rule: DR-052 -->
+
+### DR-052 — Replanning preset-to-autonomy-class table
+
+- **Applicability.** Every mid-run change resolution (as the enclosing
+  contract): the highest change class an agent MAY resolve autonomously.
+- **Inputs.** The run's operating preset — the closed set `operating_preset`,
+  bound as data by
+  [OMG-016](operating-model.md#omg-016--operating-presets-supervised--checkpointed--lights-out);
+  the change class of the discovered change (the enclosing contract's classes).
+- **Procedure.** The highest class an agent MAY resolve autonomously is set by
+  the preset:
+
+  | Operating preset | Highest class resolved autonomously                                                    |
+  | ---------------- | -------------------------------------------------------------------------------------- |
+  | Supervised       | Within-plan execution choice only                                                      |
+  | Checkpointed     | + Recorded design deviation (plan revisions wait for the next checkpoint)              |
+  | Lights-Out       | + Execution-plan revision, _when delegated authority and capability coverage cover it_ |
+
+- **Outputs.** The preset's autonomy ceiling for the run.
+- **Evidence.** N/A — the ceiling shows in the routing of the affected change
+  (enclosing contract's evidence).
+- **Failure behavior.** The failure path is the clamp's rule:
+  consequence/compliance pulls the ceiling down regardless of preset
+  ([DR-054](#dr-054--consequencecompliance-pulls-the-autonomy-ceiling-down)),
+  and the enclosing contract's hard-floor invariants bind at every preset.
+
+<!-- /rule: DR-052 -->
 
 - **Hard-floor invariants at every preset:** foundational changes MUST require
   an authorized decision; operating-envelope changes MUST stop until validly
