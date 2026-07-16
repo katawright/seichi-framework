@@ -19,6 +19,20 @@ fatigue.
 | **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready                                 |
 | **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed                      |
 
+**These outcome sets are closed.** Each checkpoint type resolves to exactly one
+outcome from its own set — the sets above are the complete, ratified vocabulary,
+not illustrative examples. A checkpoint records one of its type's outcomes and
+no other; a situation no listed outcome fits is a gap to raise, not a free-text
+outcome to invent.
+
+**Stop is a gate-only outcome.** Only a gate carries a real Stop — the genuine
+go/no-go. Reviews resolve Ready / Not Ready (remediate and retry, never Stop the
+project); alignments resolve Aligned / Adjustments Needed (converge, never
+Stop). Recording a Stop against a review or an alignment is a type error: if
+stopping is genuinely on the table, the decision belongs at a gate. "Proceed
+with conditions" is likewise gate-only — it originates the tracked carry-forward
+obligations described under [Gates](#gates).
+
 ---
 
 ## Gates
@@ -190,6 +204,6 @@ is required.
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.42.0.

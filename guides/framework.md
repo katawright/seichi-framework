@@ -293,6 +293,44 @@ see the [Measurement Throughline](#measurement-throughline). For a worked
 instance of the whole chain on a real feature, see
 [Worked Example: The Full Traceability Chain](worked-example.md#the-full-traceability-chain).
 
+### Typed traceability links
+
+The chain above is drawn with arrows; in the canonical state each arrow is a
+**typed traceability link** — a directed relationship from one record to
+another, written `from-family / from-id —(type)→ to-family / to-id`. The
+endpoints are
+[canonical record families](../spec/canonical-state.md#canonical-record-families);
+the link **types** are a closed set of kebab-case verbs, each naming a
+relationship the framework owns:
+
+- **`realizes`** — the construction-branch edge: a functional requirement
+  realizes the goal it was chosen to serve.
+- **`verifies`** — the measurement/verification edge: a success criterion
+  verifies a goal, an acceptance criterion verifies a requirement, a test
+  verifies an acceptance criterion.
+- **`discharges`** — a carry-forward condition is discharged by the stage or
+  increment that satisfies it (and a governance floor by the evidence that
+  clears it).
+- **`corrects`** — an append-only correction edge: a record corrects an earlier
+  one (decision and run-event corrections carry their history this way).
+- **`renders`** — a rendered view renders the canonical records it presents —
+  its provenance edge back to the state version it was rendered from.
+- **`evidences`** — an evidence record evidences the claim, requirement, or
+  conclusion it supports.
+- **`supersedes`** — the append-only supersession edge: a successor record
+  supersedes its predecessor, chaining provenance.
+
+These seven are the complete, ratified set. Three relationships a consumer might
+reach for are deliberately **not** framework link types: a generic "relates to"
+(a link should name its relationship, not gesture at one), a bare "blocks"
+between work items (the richer forcing-dependency records own that fact — see
+[Parallel-Batch Spec](../spec/parallel-batch.md)), and a standalone "derives
+from" (the framework states no derivation edge left to name: chained provenance
+is `supersedes` and a view's derivation is `renders` — a future construct that
+states a genuine derivation edge ratifies a new type then). A relationship the
+seven cannot name is a missing link type — a framework change — not a free-text
+label.
+
 ---
 
 ## Measurement Throughline
@@ -955,6 +993,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.9.0.
