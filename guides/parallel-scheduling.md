@@ -65,7 +65,7 @@ execute concurrently.
 
 A **forcing dependency** is any relationship that prevents two increments from
 executing safely and independently in the same batch. The taxonomy is normative
-(see the
+(PB-001 in the
 [Parallel-Batch Spec](../spec/parallel-batch.md#forcing-dependency-taxonomy));
 walk it pair-wise over the candidate increments:
 
@@ -121,7 +121,9 @@ continue (see
 When a plan proposes running increments concurrently, evaluate **every
 intra-batch pair** for forcing dependencies and record the result. The
 classification is a System Design planning record — not an architecture decision
-record.
+record. The binding contracts are PB-004 (the per-pair record) and PB-005 (the
+insufficient-confidence rule) in the
+[Parallel-Batch Spec](../spec/parallel-batch.md#parallel-safety-classification).
 
 For each unordered pair, record:
 
@@ -197,6 +199,6 @@ you hand to the [execution guide](parallel-execution.md).
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.49.0.

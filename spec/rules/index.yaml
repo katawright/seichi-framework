@@ -72,6 +72,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/parallel-batch.md#batch-lifecycle
   - id: PB-016
     title: Batch closed reason codes (per-state)
     layer: 1a
@@ -79,6 +82,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/parallel-batch.md#batch-lifecycle
   - id: DR-034
     title: Directive lifecycle machine
     layer: 1a
@@ -225,6 +231,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - guides/parallel-scheduling.md#forcing-dependencies
   - id: PB-004
     title: Per-pair parallel-safety classification record
     layer: 1a
@@ -232,6 +241,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - guides/parallel-scheduling.md#parallel-safety-classification
 
   # ── 1a — schema-enforced operating-configuration fields ─────────────────
   - id: OM-008
@@ -501,6 +513,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/parallel-scheduling.md#parallel-safety-classification
   - id: SP-004
     title: Idea-for-a-new-project runs the idea-formation interview
     layer: 1b
@@ -561,6 +576,9 @@ rules:
     introduced: verify
     status: active
     notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+    representation: contract
+    links:
+      - guides/parallel-execution.md#batch-preflight
   - id: PB-028
     title: Batch close and next-batch-open conditions
     layer: 1b
@@ -569,6 +587,10 @@ rules:
     introduced: verify
     status: active
     notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+    representation: contract
+    links:
+      - guides/parallel-execution.md#batch-close-and-transition
+      - guides/parallel-execution.md#integration-and-work-conservation
 
   # ── 1b — traceability id conventions + chain topology ────────────────────
   - id: FW-005b

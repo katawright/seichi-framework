@@ -68,7 +68,9 @@ never reaches into a sibling's workspace, even to read.
 
 Before a batch opens, the orchestrator establishes that the batch _can_ run. On
 any failure, it refuses to open the batch and surfaces the named remediation.
-Preflight confirms:
+The binding contract is PB-022 in the
+[Parallel-Batch Spec](../spec/parallel-batch.md#batch-preflight). Preflight
+confirms:
 
 - every member increment is **authorized to begin**;
 - prior batches and hard dependencies are **complete**;
@@ -167,7 +169,9 @@ Integration must establish that:
 ## Batch Close and Transition
 
 A batch may close only when **every member increment has an explicit terminal or
-transition-eligible disposition** — not merely because every worker stopped.
+transition-eligible disposition** — not merely because every worker stopped. The
+binding contract is PB-028 in the
+[Parallel-Batch Spec](../spec/parallel-batch.md#batch-close-and-transition).
 Before the next batch opens:
 
 - completed work is **integrated or explicitly excluded**;
@@ -241,6 +245,6 @@ batch done.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.49.0.
