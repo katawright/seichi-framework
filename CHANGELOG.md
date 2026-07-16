@@ -1,5 +1,68 @@
 # Changelog
 
+## 0.63.0 (2026-07-15)
+
+The v0.63 cycle — Vocabulary Closure — ratifies four value sets the framework
+consumed or enumerated but had never closed, surfaced by the kernel's first
+value-by-value equivalence sweep of the promoted vocabularies against their
+consuming enums. Each closes or reconciles a set; none changes lifecycle
+semantics. This release ships the ratified guide/spec text together with the
+kernel's Phase 2 first slice — the hand-curated vocabulary sources, the rule
+registry, and the generated manifest that made this equivalence sweep possible —
+while the structured extraction of the VC-6→VC-9 closures themselves stays
+deliberately deferred, each flagged in-source as a ratification routed to a
+planning cycle.
+
+### Features
+
+- **spec:** the successful run terminal `completion-verified` carries the
+  ratified outcome reason `completed` — the closed single-member set that closes
+  the every-terminal outcome-reason requirement with no free-text escape hatch
+  (VC-6)
+- **framework:** the checkpoint outcome sets are ratified as closed per type
+  (Gate · Review · Alignment), and Stop is fixed as a gate-only outcome —
+  reviews remediate and retry, alignments converge, and "proceed with
+  conditions" is gate-only (VC-7)
+- **framework:** the Work Execution / Workflow Automation / Authority setting
+  vocabularies and the Supervised / Checkpointed / Lights-Out operating presets
+  (with their default bundles) are ratified as closed sets; the orthogonal
+  governance-weight axis is explicitly deferred (VC-8)
+- **spec, framework:** the traceability identity level gains two closed
+  identifier sets — 30 canonical record families in the canonical-state spec
+  (`stage` excluded as consumer-side substrate) and 7 typed trace-link verbs in
+  the framework guide (`realizes` · `verifies` · `discharges` · `corrects` ·
+  `renders` · `evidences` · `supersedes`) — closing the record-family and
+  link-type vocabularies FW-005a had only as consumer derivations (VC-9)
+- **spec:** the kernel interface gains its first hand-curated sources — closed
+  value sets in `spec/vocabulary/` (lifecycle machines with spec-verbatim edges,
+  per-machine reason sets, planning-family statuses, terminal-integrity sets,
+  attribution grades and write classes, operating-config fields, concurrency
+  vocabularies), the 87-ID rule registry (`spec/rules/index.yaml`), and the JSON
+  Schema the manifest validates against; rule bodies stay in `spec/*.md` and the
+  VC-class closures are deliberately left unauthored (missing-code flags routed
+  to a planning cycle) — Phase 2 first slice
+- **framework:** the release build generates the self-contained kernel manifest,
+  human-readable reference, and schema-facing projection (`spec/generated/`) as
+  pure functions of their inputs — `generated_at` is INDEX-derived rather than
+  wall-clock and `source_hash` covers the extracted kernel sources alone, so the
+  exports are stable across framework-only releases; `npm run kernel`
+  regenerates and `npm run release` refreshes before staging, and the
+  `guides/stages.md` pipeline front matter becomes the single normative home for
+  stage order and execution pattern
+- **ci:** the schema suite gains the kernel checks — duplicate and malformed
+  rule-ID detection, broken-reference resolution (owning rules, source files,
+  machine/state/edge and reason-set consistency, partition coverage), and a
+  freshness gate that regenerates the exports in memory and byte-compares them
+  to the committed files, so a stale or hand-edited export fails
+
+### Improvements
+
+- **framework:** the security guide's automation-level split now routes
+  who-performs to Work Execution, whether-a-human-re-checks to Required
+  Assurance, and who-accepts to Authority — with the compliance/security
+  sign-off unchanged as the human-owned floor (surfaced by the v0.63.0 invariant
+  sweep)
+
 ## 0.62.0 (2026-07-13)
 
 The v0.62 cycle — Disposition Completeness — closes the three gaps where

@@ -3,7 +3,7 @@
 
 # Kernel Reference
 
-Framework 0.62.0 · kernel interface 0.1 (0.x, pre-1.0) · as-of 2026-07-15T00:00:00Z
+Framework 0.63.0 · kernel interface 0.1 (0.x, pre-1.0) · as-of 2026-07-15T00:00:00Z
 
 Generated view of the kernel sources (`spec/vocabulary/*.yaml`, `spec/rules/index.yaml`, stage front matter). Machine consumers ingest `manifest.json`; the schema-facing equivalence export is `schema-projection.json`. Rule bodies live in the cited source files.
 
