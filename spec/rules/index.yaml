@@ -51,6 +51,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/delegated-run.md#run-lifecycle
   - id: DR-013
     title: Run terminals and outcome-reason requirement
     layer: 1a
@@ -58,6 +61,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/delegated-run.md#run-lifecycle
   - id: DR-065
     title: Run honest-incomplete taxonomy (per-source closed reason sets)
     layer: 1a
@@ -65,6 +71,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/delegated-run.md#honest-incomplete-outcomes
   - id: PB-013
     title: Batch lifecycle machine
     layer: 1a
@@ -92,6 +101,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/delegated-run.md#idempotency-substrate
   - id: DR-037
     title: Directive voiding and closed void-reason set
     layer: 1a
@@ -99,6 +111,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - spec/delegated-run.md#idempotency-substrate
   - id: CS-044
     title: Escalation lifecycle machine and closed withdrawn-reason set
     layer: 1a
@@ -377,6 +392,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/operating-model.md#lights-out-the-far-end-of-the-spectrum
   - id: DR-019
     title: Reconfirm presumed-unresponsive work before trusting it
     layer: 1b
@@ -384,6 +402,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#progress-liveness-and-unresponsive-state
   - id: DR-025
     title: Boundary-currency (state complete and current before a boundary)
     layer: 1b
@@ -391,6 +412,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#minimum-durable-run-state
   - id: DR-026
     title: Resume contract (compatible actor, no private context)
     layer: 1b
@@ -398,6 +422,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#minimum-durable-run-state
   - id: DR-044
     title: Snapshot-mode scope of normativity
     layer: 1b
@@ -405,6 +432,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#project-state-access
   - id: DR-054
     title: Consequence/compliance pulls the autonomy ceiling down
     layer: 1b
@@ -412,6 +442,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#controlled-replanning
   - id: DR-055
     title: Material-replanning re-evaluation and work-validity classification
     layer: 1b
@@ -419,6 +452,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#controlled-replanning
   - id: DR-056
     title: Prepare-vs-initiate improvement-candidate boundary
     layer: 1b
@@ -426,6 +462,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/learning-loop.md#running-the-loop-lights-out
   - id: DR-057
     title: Self-modification ban
     layer: 1b
@@ -433,6 +472,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/learning-loop.md#running-the-loop-lights-out
   - id: DR-059
     title: Proposed-change quality properties (durable / reversible / verified)
     layer: 1b
@@ -440,6 +482,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/learning-loop.md#running-the-loop-lights-out
   - id: DR-067
     title: Never represent partial or failed results as complete
     layer: 1b
@@ -447,6 +492,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#honest-incomplete-outcomes
   - id: DR-068
     title: Framework/runtime responsibility split (recording is not performing)
     layer: 1b
@@ -454,6 +502,9 @@ rules:
     source: spec/delegated-run.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - spec/delegated-run.md#framework-and-runtime-responsibilities
   - id: CS-006
     title: Stray-fact reconciliation (single-source detection)
     layer: 1b

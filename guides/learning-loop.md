@@ -177,6 +177,9 @@ holds a facilitated retrospective; an unattended agent makes a
 consolidate-and-prepare pass over the friction log. Same concern, scaled
 presentation; progressive governance applies here as everywhere.
 
+The binding contracts are DR-056 (prepare vs. initiate), DR-057 (the
+self-modification ban), and DR-059 (proposed-change quality properties) in the
+[Delegated-Run Spec](../spec/delegated-run.md#learning-loop-delegation-boundary).
 An agent running the loop may **consolidate, classify, deduplicate, and
 prepare** idea and issue drafts. Those drafts are durable and attributable —
 part of the project's record, produced under the agent's normal delivery
@@ -301,6 +304,6 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.45.0.
