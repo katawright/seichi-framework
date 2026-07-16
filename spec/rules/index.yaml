@@ -330,9 +330,12 @@ rules:
     title: Consequence anchors (five-tier harm scale)
     layer: 1a
     basis: both-conjuncts
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - guides/right-sizing.md#consequence--_what_-practices
 
   # ── 1a — traceability identity level ─────────────────────────────────────
   - id: FW-005a
@@ -413,30 +416,42 @@ rules:
     title: Consequence-by-stage scaling matrix
     layer: 1a
     basis: resolver-input
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#how-consequence-shapes-each-stage
   - id: RS-016
     title: Compliance-by-stage additions table
     layer: 1a
     basis: resolver-input
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#how-compliance-shapes-each-stage
   - id: RS-017
     title: Reach-by-stage formality matrix
     layer: 1a
     basis: resolver-input
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#how-stakeholder-reach-shapes-each-stage
   - id: RS-023
     title: Minimum-viable-artifacts matrix
     layer: 1a
     basis: resolver-input
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#minimum-viable-artifacts
 
   # ── 1b — the 28 judgment clauses (compact prose contracts) ───────────────
   - id: DR-004
@@ -667,9 +682,12 @@ rules:
     title: Consequence assigned by judgment to the nearest anchor
     layer: 1b
     basis: 1b
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#consequence--_what_-practices
   - id: AW-004a
     title: Configuration decisions never fronted as menus at first contact
     layer: 1b

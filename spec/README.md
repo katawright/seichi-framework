@@ -43,19 +43,23 @@ therefore written so that a conforming enforcer can evaluate it — and so that
 2. Start from the [**Operating Model Spec**](operating-model.md) — the
    functions, coverage, envelope, floors, separations, and stop enforcement that
    bound any run
-3. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
+3. For governance weight, read the [**Right-Sizing Spec**](right-sizing.md) —
+   the consequence anchors, the per-stage scaling matrices, and the
+   minimum-viable-artifacts matrix that size how heavy the process is
+4. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
    — the run lifecycle, liveness, idempotency, replanning, and honest-outcome
    contracts
-4. For concurrent execution, read the
+5. For concurrent execution, read the
    [**Parallel-Batch Spec**](parallel-batch.md) — the forcing-dependency
    taxonomy, parallel-safety classification, and batch preflight, execution, and
    close contracts
-5. Both read and write project state through the
+6. Both read and write project state through the
    [**Canonical-State Spec**](canonical-state.md) — the single source the others
    reference, and home of the project lifecycle and the project-level completion
    contract
-6. For the human-facing rationale behind any contract, follow its link back to
-   the [Operating Model Guide](../guides/operating-model.md)
+7. For the human-facing rationale behind any contract, follow its link back to
+   its guide (e.g. the [Operating Model Guide](../guides/operating-model.md) or
+   the [Right-Sizing Guide](../guides/right-sizing.md))
 
 ---
 
@@ -147,8 +151,10 @@ metadata stays canonical in its front-matter homes (`guides/stages.md` pipeline;
 
 This layer is scoped to the contracts a bounded **Lights-Out** run executes —
 the v0.49 Definition of Done. It covers the operating-model contracts
-([operating-model.md](operating-model.md)), the delegated-run contracts plus the
-canonical state they read and write ([delegated-run.md](delegated-run.md),
+([operating-model.md](operating-model.md)), the right-sizing contracts that size
+governance weight ([right-sizing.md](right-sizing.md)), the delegated-run
+contracts plus the canonical state they read and write
+([delegated-run.md](delegated-run.md),
 [canonical-state.md](canonical-state.md)), and the parallel-batch contracts for
 concurrent execution ([parallel-batch.md](parallel-batch.md)). Scale scenarios
 (small team, organization, enterprise), regulated and external assurance, and

@@ -53,6 +53,12 @@ goes wrong?** It is a _magnitude of harm_, read along three properties —
 Read together, those three properties place a project against five reference
 anchors:
 
+> **[Informative].** This table is the reader's view of the anchor scale. The
+> **normative** source is RS-002 in the
+> [Right-Sizing Spec](../spec/right-sizing.md#consequence-anchors), whose closed
+> identifier set binds as kernel data; the cells here reproduce it for
+> convenience and must track it if they ever diverge.
+
 | Anchor         | Harm if it fails                                                                         |
 | -------------- | ---------------------------------------------------------------------------------------- |
 | **Negligible** | Affects essentially no one beyond the builder; fully reversible — toy, spike, experiment |
@@ -62,7 +68,9 @@ anchors:
 | **Critical**   | Irreversible severe harm — safety, life, catastrophic financial/legal                    |
 
 You assign consequence by judgment, not measurement — harm has no units, so no
-project lands exactly on an anchor; you _match_ it to the nearest one. A coarse
+project lands exactly on an anchor; you _match_ it to the nearest one (the
+binding assignment rule is RS-003 in the
+[Right-Sizing Spec](../spec/right-sizing.md#consequence-anchors)). A coarse
 scale is enough because what consequence drives — which practices run, which
 decisions stay human — comes in steps, not a smooth dial. When a project falls
 between two anchors, lean to the heavier one when a failure would be hard to
@@ -214,71 +222,39 @@ a strong executor still needs heavy contracts and light structure.
 
 ## How Each Dimension Shapes the Stages
 
-The three dimensions act on every stage differently. The tables below read each
+The three dimensions act on every stage differently. The normative matrices —
+RS-015, RS-016, and RS-017 in the
+[Right-Sizing Spec](../spec/right-sizing.md#per-stage-scaling) — read each
 dimension _across_ the eight stages, with the standing
-[Operations](operations.md) process shown alongside Closure because its weight
-also scales with the same dimensions. For any one stage, you read all three and
-stack what applies.
+[Operations](operations.md) process alongside Closure because its weight also
+scales with the same dimensions. For any one stage, you read all three and stack
+what applies.
 
 ### How Consequence Shapes Each Stage
 
 Consequence scales **technical rigor and blast-radius control** — verification
 depth, failure handling, and reversibility. Verification is the steepest of
-these.
-
-| Stage / Process                                              | Negligible                             | Low                                     | Moderate                                                | High                                                              | Critical                                                                   |
-| ------------------------------------------------------------ | -------------------------------------- | --------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| **[Initiation](../stages/initiation/README.md)**             | Intent stated in a sentence            | One-line problem statement              | Explicit, measurable success criteria                   | Named risks; failure modes pinned down before building            | Failure/hazard analysis; mandatory authorization to proceed                |
-| **[Requirements](../stages/requirements/README.md)**         | Happy path held in conversation        | Core happy-path stories                 | Documented NFRs (performance, reliability, security)    | Edge and failure cases; failure handling becomes a requirement    | Exhaustive spec incl. failure/safety requirements; human sign-off          |
-| **[System Design](../stages/system-design/README.md)**       | A mental model; key choice noted       | Informal notes                          | Documented architecture; ADRs for consequential choices | Explicit failure-mode, recovery, and blast-radius design          | Formal architecture and failure/safety review before build                 |
-| **[Increment Design](../stages/increment-design/README.md)** | Implied next step                      | Task list                               | Component specs, interface contracts                    | Per-increment test and risk strategy                              | Risk-assessed plan; consequential increments gated to a human              |
-| **[Implementation](../stages/implementation/README.md)**     | Working code                           | Working code with smoke tests           | Coverage targets on critical paths                      | Defensive handling and instrumentation                            | Comprehensive coverage; consequential changes reviewed by a human          |
-| **[Verification](../stages/verification/README.md)**         | Does it run?                           | Manual checks                           | Automated integration/functional suites                 | Performance, security, and accessibility testing; formal go/no-go | Independent verification; mandatory (non-waivable) go/no-go                |
-| **[Deployment](../stages/deployment/README.md)**             | Run it locally                         | Manual push                             | CI/CD with staging and rollback                         | Canary/blue-green and progressive rollout                         | Progressive rollout with mandatory approval gates; rehearsed rollback      |
-| **[Closure](../stages/closure/README.md)**                   | Recorded paragraph; nothing to operate | Self-accepted handoff + brief close-out | Handoff record + reconciled close-out summary           | Formal acceptance; complete completion-evidence package           | Non-delegable acceptance of irreversible closure; full evidence + sign-off |
-| **[Operations](operations.md)** _(process)_                  | Notice if it breaks                    | Health check                            | APM, alerting, and on-call                              | Full observability and incident management                        | 24×7 monitoring and incident management; fast detection and recovery       |
-
-> The five columns are the consequence anchors. **Negligible** keeps the full
-> structure but folds ceremony into a conversation and a quick review, and
-> **Critical** makes consequential, irreversible actions non-delegable human
-> gates (bounded pauses within a run, not a blanket Lights-Out ban — an outright
-> ban comes from compliance or a capability gap). See
-> [Consequence Floors](#consequence-floors-on-the-operating-model).
+these. The binding per-stage matrix — including how the **Negligible** and
+**Critical** columns read (folded ceremony at one end, non-delegable human gates
+at the other; see
+[Consequence Floors](#consequence-floors-on-the-operating-model)) — is RS-015 in
+the
+[Right-Sizing Spec](../spec/right-sizing.md#rs-015--consequence-by-stage-scaling-matrix).
 
 ### How Compliance Shapes Each Stage
 
 Compliance is a flag (per scope). Where it applies, it adds **mandatory
 evidence, sign-off, and auditability** — present or absent, with the specifics
-set by the regime (the mapping library), not by a gradient.
-
-| Stage / Process            | What compliance adds when it applies                                                                                                                              |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Initiation**             | Identify applicable regimes and obligations; record authorization and compliance scope in the brief.                                                              |
-| **Requirements**           | Capture compliance requirements explicitly and traceably; classify data; obtain documented sign-off.                                                              |
-| **System Design**          | Compliance-by-design (data residency, encryption, access control, privacy); documented security/privacy design review; compliance rationale recorded in ADRs.     |
-| **Increment Design**       | Trace each increment to the compliance requirements it satisfies; risk assessment where the regime mandates it.                                                   |
-| **Implementation**         | Audit trail of changes, separation of duties (author ≠ approver), mandated security scanning, controlled-change records.                                          |
-| **Verification**           | Independent or external assurance; retained, auditable test evidence; regime-specific testing (security pen-test, accessibility conformance).                     |
-| **Deployment**             | Change-management approval records, segregation of duties in release, controlled production access, documented deployment evidence.                               |
-| **Closure**                | Capture persisting compliance obligations in the handoff record; retain the completion-evidence package for audit; non-delegable acceptance of regulated closure. |
-| **Operations** _(process)_ | Audit logging and evidence retention; mandated incident reporting (e.g. breach notification); contractual SLA records.                                            |
+set by the regime (the mapping library), not by a gradient. The binding
+per-stage additions table is RS-016 in the
+[Right-Sizing Spec](../spec/right-sizing.md#rs-016--compliance-by-stage-additions-table).
 
 ### How Stakeholder Reach Shapes Each Stage
 
 Stakeholder reach scales **coordination and communication formality** — who
-reviews, who hands off, and who signs.
-
-| Stage / Process            | Solo                  | Within-team                 | Cross-team                                       | Cross-org                                                |
-| -------------------------- | --------------------- | --------------------------- | ------------------------------------------------ | -------------------------------------------------------- |
-| **Initiation**             | Personal note         | Shared brief                | Stakeholders consulted, scope agreed             | Formal kickoff; client sign-off on objectives            |
-| **Requirements**           | Self-captured         | Team review                 | Stakeholder agreement on a shared backlog        | Client requirements sign-off; change process             |
-| **System Design**          | Personal              | Team design review          | Interface contracts published to dependent teams | Architecture approved with the client                    |
-| **Increment Design**       | None                  | Light shared plan           | Cross-team dependency and interface coordination | Client-visible plan and delivery schedule                |
-| **Implementation**         | Self-review           | Peer review (PR + approver) | Cross-team review of shared components           | Deliverable handoff; client-visible progress             |
-| **Verification**           | Self-verify           | Team verification           | Stakeholder UAT, cross-team integration          | Client UAT; formal acceptance sign-off                   |
-| **Deployment**             | Just deploy           | Coordinated team deploy     | Change comms, coordinated windows                | Client-approved deploy; scheduled windows; release notes |
-| **Closure**                | Self-accept + close   | Team close-out review       | Stakeholders sign off on handoff + closure       | Client acceptance; formal handoff sign-off               |
-| **Operations** _(process)_ | Informal self-support | Team rotation               | Defined handoff, internal escalation paths       | External support channels; formal incident communication |
+reviews, who hands off, and who signs. The binding per-stage formality matrix is
+RS-017 in the
+[Right-Sizing Spec](../spec/right-sizing.md#rs-017--reach-by-stage-formality-matrix).
 
 ### Reading the Three Together
 
@@ -390,48 +366,22 @@ each dimension on its own — that independence is the point.
 
 ### Minimum Viable Artifacts
 
-Which templates to produce, driven primarily by **consequence**. **Required** =
-must complete before the stage gate; **Recommended** = high value, skip only
-with justification; **Optional** = use when the project calls for it. Compliance
-and reach add to this: a compliance obligation forces specific artifacts
-regardless of consequence, and wider reach adds sign-off artifacts. These levels
-govern when each brief is **rendered as a formal view** — the underlying
-decisions are always captured in the
+Which templates to produce, driven primarily by **consequence** — a compliance
+obligation forces specific artifacts regardless of consequence, and wider reach
+adds sign-off artifacts. The levels govern when each brief is **rendered as a
+formal view**; the underlying decisions are always captured in the
 [canonical project state](../spec/canonical-state.md) regardless (the
-single-source rule); a lower level folds the view into lighter notes or another
-brief, it does not drop the work.
+single-source rule) — a lower level folds the view into lighter notes or another
+brief, it does not drop the work. The binding matrix — the per-template Required
+/ Recommended / Optional levels, the **Negligible** reading (one durable
+paragraph-brief remains; see
+[The Negligible Folded Path](#the-negligible-folded-path)), the **Critical**
+reading (the High column as all-Required with mandatory human sign-off), and the
+CD shift to increment-close summaries — is RS-023 in the
+[Right-Sizing Spec](../spec/right-sizing.md#minimum-viable-artifacts).
 
-| Template                                                               | Stage            | Low         | Moderate    | High        |
-| ---------------------------------------------------------------------- | ---------------- | ----------- | ----------- | ----------- |
-| [Initiation Brief](../templates/initiation-brief.md)                   | Initiation       | Required    | Required    | Required    |
-| [Gate Decision](../templates/gate-decision.md)                         | Initiation       | Optional    | Required    | Required    |
-| [Success Criteria Register](../templates/success-criteria-register.md) | Initiation       | Recommended | Recommended | Required    |
-| [Requirements Brief](../templates/requirements-brief.md)               | Requirements     | Recommended | Required    | Required    |
-| [System Design Brief](../templates/system-design-brief.md)             | System Design    | Optional    | Required    | Required    |
-| [ADR](../templates/adr.md)                                             | System Design    | Optional    | Recommended | Required    |
-| [Increment Design Brief](../templates/increment-design-brief.md)       | Increment Design | Optional    | Required    | Required    |
-| [Implementation Brief](../templates/implementation-brief.md)           | Implementation   | Optional    | Required    | Required    |
-| [Session Log](../templates/implementation-session-log.md)              | Implementation   | Optional    | Recommended | Required    |
-| [Verification Brief](../templates/verification-brief.md)               | Verification     | Optional    | Required    | Required    |
-| [Deployment Brief](../templates/deployment-brief.md)                   | Deployment       | Optional    | Required    | Required    |
-| [Runbook](../templates/runbook.md)                                     | Deployment       | Optional    | Recommended | Required    |
-| [Operational Handoff](../templates/operational-handoff.md)             | Closure          | Optional    | Required    | Required    |
-| [Project Close-Out](../templates/project-closeout.md)                  | Closure          | Recommended | Required    | Required    |
-| [Retrospective](../templates/retrospective.md)                         | Increment cycle  | Recommended | Recommended | Required    |
-| [Friction Log](../templates/friction-log.md)                           | All stages       | Recommended | Recommended | Required    |
-| [Checkpoint Decision](../templates/checkpoint-decision.md)             | Any              | Optional    | Optional    | Recommended |
-
-> **At Negligible consequence**, one artifact remains — a durable
-> paragraph-brief, written to a single file (a root `DECISIONS.md` beside the
-> code, not just spoken in the conversation) — and everything else folds into
-> the conversation (Closure included). See
-> [The Negligible Folded Path](#the-negligible-folded-path) for what that one
-> file captures. **At Critical**, treat the High column as all-Required with
-> mandatory human sign-off.
-
-> **CD projects:** Verification Brief, Deployment Brief, and the Operational
-> Handoff remain applicable but shift to increment-close summaries. See each
-> stage's CD subsection for what to include.
+> **CD projects:** see each stage's CD subsection for what its increment-close
+> summary should include.
 
 ---
 
@@ -562,6 +512,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.13.0.
