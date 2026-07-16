@@ -33,7 +33,11 @@ function rowCells(line) {
 
 // Extract the consequence-floor table's data rows from markdown content, keyed by
 // normalized consequence. The floor table is the unique one whose header row
-// names both "Lights-Out" and "floor". Returns Map<consequence, cells[]> or null.
+// names both "Lights-Out" and "floor" AND opens with a "Consequence" column —
+// the first-cell test keeps a body row of another table (e.g. the OMG-016
+// preset-bundle row "Lights-Out | … where a floor forces a gate | …", which
+// precedes the floor table in the spec since the Wave B migration) from being
+// mistaken for the header. Returns Map<consequence, cells[]> or null.
 export function extractFloorTable(content) {
   const lines = content.split("\n");
   let inTable = false;
@@ -44,7 +48,13 @@ export function extractFloorTable(content) {
       const cells = rowCells(raw);
       if (!inTable) {
         const hay = cells.join(" ").toLowerCase();
-        if (hay.includes("lights-out") && hay.includes("floor")) inTable = true;
+        if (
+          hay.includes("lights-out") &&
+          hay.includes("floor") &&
+          norm(cells[0] ?? "") === "consequence"
+        ) {
+          inTable = true;
+        }
         continue; // header row itself is not compared
       }
       if (cells.every((c) => /^:?-+:?$/.test(c))) continue; // separator row

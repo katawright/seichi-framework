@@ -66,7 +66,7 @@ Rationale:
 - **Applicability.** Every consequence classification — project intake and any
   re-size — and every contract that consumes a consequence level (the floor
   mapping
-  [OM-017](operating-model.md#governance-floors-and-capability-ceilings), the
+  [OM-017](operating-model.md#om-017--consequence-to-floor-mapping-table), the
   per-stage matrices below).
 - **Inputs.** The closed anchor set `consequence_tier` in
   [`vocabulary/config.yaml`](vocabulary/config.yaml) — `negligible` | `low` |
@@ -119,11 +119,11 @@ Rationale:
 - **Outputs.** The assigned consequence anchor.
 - **Evidence.** The recorded classification — surfaced as an overridable
   `[ASSUMED]` default when inferred at intake
-  ([AW-004](../guides/agentic-workflow.md#classification-by-inference)).
+  ([AW-004](operating-model.md#aw-004--six-project-configuration-decisions-set-at-intake)).
 - **Failure behavior.** The failure path is the intake contract's rule: when
   signals are missing or conflict, the inference defaults conservatively — the
   safer, heavier value, flagged for confirmation
-  ([AW-004](../guides/agentic-workflow.md#classification-by-inference)).
+  ([AW-004](operating-model.md#aw-004--six-project-configuration-decisions-set-at-intake)).
 
 <!-- /rule: RS-003 -->
 
@@ -173,7 +173,7 @@ apply and stack.
   **Critical** makes consequential, irreversible actions non-delegable human
   gates — bounded pauses within a run, not a blanket Lights-Out ban (an outright
   ban comes from compliance or a capability gap; the floor mapping is
-  [OM-017](operating-model.md#governance-floors-and-capability-ceilings)).
+  [OM-017](operating-model.md#om-017--consequence-to-floor-mapping-table)).
 
 - **Outputs.** The consequence-driven practice set per stage.
 - **Evidence.** N/A — the matrix is consumed at planning; its application shows
@@ -181,7 +181,7 @@ apply and stack.
 - **Failure behavior.** N/A — the matrix defines the scale and has no failure
   path of its own; consequence floors are soft and graduated, and the
   below-floor rule is
-  [OM-017](operating-model.md#governance-floors-and-capability-ceilings)'s.
+  [OM-017](operating-model.md#om-017--consequence-to-floor-mapping-table)'s.
 
 <!-- /rule: RS-015 -->
 

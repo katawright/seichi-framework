@@ -35,14 +35,17 @@ function with no qualified, available, sufficiently independent provider
 
 1. Read [**Operating Functions**](#operating-functions) for the function set a
    run engages
-2. Read [**Capability Coverage**](#capability-coverage) and
+2. Read [**Project Operating Configuration**](#project-operating-configuration)
+   for the intake decision set and the closed setting vocabularies a project
+   records
+3. Read [**Capability Coverage**](#capability-coverage) and
    [**Effective Operating Envelope**](#effective-operating-envelope) for how
    settings become achievable actions
-3. Read
+4. Read
    [**Governance Floors and Capability Ceilings**](#governance-floors-and-capability-ceilings)
    and [**Lights-Out Eligibility**](#lights-out-eligibility) for the consequence
    and compliance clamps
-4. Read
+5. Read
    [**Authority and Decision Resolution**](#authority-and-decision-resolution),
    [**Function Separation**](#function-separation),
    [**Evaluator Independence**](#evaluator-independence), and
@@ -94,6 +97,174 @@ as part of [canonical state](canonical-state.md).
 is a coverage gap; see [Capability Coverage](#capability-coverage) and
 [Effective Operating Envelope](#effective-operating-envelope) for the
 consequence.
+
+---
+
+## Project Operating Configuration
+
+Rationale:
+[Operating Model Guide § The Configurable Functions](../guides/operating-model.md#the-configurable-functions),
+[§ Operating Presets](../guides/operating-model.md#operating-presets), and
+[Agentic Workflow Guide § Classification by Inference](../guides/agentic-workflow.md#classification-by-inference).
+A project's operating configuration is the recorded set of classification
+decisions that select which contracts bind and at what weight. The contracts
+below fix the decision set, the intake interaction rule, and the closed value
+vocabularies the configuration draws from; the executor read path setting is
+[OM-008](#om-008--executor-read-path-setting-guided--contracts-only)'s rule.
+
+<!-- rule: AW-004 -->
+
+### AW-004 — Six project-configuration decisions set at intake
+
+- **Applicability.** Every new project's intake (idea formation through Gate 1);
+  any later re-classification.
+- **Inputs.** The intake conversation and its signals; the closed value sets in
+  [`vocabulary/config.yaml`](vocabulary/config.yaml) bind as data where ratified
+  — operating posture (`operating_preset`,
+  [OMG-016](#omg-016--operating-presets-supervised--checkpointed--lights-out)),
+  Required Assurance (`assurance_level`,
+  [OMG-002](#omg-002--setting-vocabularies-required-assurance-work-execution--workflow-automation--authority)),
+  executor read path (`executor_read_path`,
+  [OM-008](#om-008--executor-read-path-setting-guided--contracts-only))
+  (generated view: [reference.md](generated/reference.md)).
+- **Procedure.** A new project carries six classification decisions, all set at
+  intake: **tier** (Minimal / Standard / Enterprise), **project type**
+  (greenfield / brownfield), **deployment intent** (production service /
+  internal tool / local-only), **operating posture** (the
+  [OMG-016](#omg-016--operating-presets-supervised--checkpointed--lights-out)
+  preset set), **Required Assurance** (the
+  [OMG-002](#omg-002--setting-vocabularies-required-assurance-work-execution--workflow-automation--authority)
+  set), and the **executor read path**
+  ([OM-008](#om-008--executor-read-path-setting-guided--contracts-only)'s set).
+  They are derived by inference from the conversation — never fronted as menus
+  ([AW-004a](#aw-004a--configuration-decisions-never-fronted-as-menus-at-first-contact))
+  — and presented as overridable `[ASSUMED]` defaults, confirmed at Gate 1 like
+  any other `[ASSUMED]` item. When signals are missing or conflict, the
+  inference defaults conservatively — the safer value, higher tier, more
+  oversight — and is flagged. Escalation triggers override inference: sensitive
+  data, compliance requirements, or external users force Standard or Enterprise
+  regardless of conversational signals. **[Informative]** Tier, project type,
+  and deployment intent are enumerated here but not ratified as closed kernel
+  vocabularies (the governance-preset promotion is explicitly deferred — see
+  [`vocabulary/config.yaml`](vocabulary/config.yaml)).
+- **Outputs.** The six recorded configuration decisions, `[ASSUMED]`-tagged
+  where inferred, in the Initiation Brief's right-sizing section.
+- **Evidence.** The recorded decisions and their Gate-1 dispositions; the
+  underlying decisions are captured in [canonical state](canonical-state.md).
+- **Failure behavior.** N/A — the inference always produces a default (the
+  conservative rule above); an unconfirmed classification is an `[ASSUMED]` item
+  and follows the gate-disposition rule
+  ([Agentic Workflow Guide § Reviewing \[ASSUMED\] Items](../guides/agentic-workflow.md#reviewing-assumed-items)).
+
+<!-- /rule: AW-004 -->
+
+<!-- rule: AW-004a -->
+
+### AW-004a — Configuration decisions never fronted as menus at first contact
+
+- **Applicability.** First contact with a user at intake — the opening
+  conversation, before a classification first matters (typically Gate 1).
+- **Inputs.** The six decisions of
+  [AW-004](#aw-004--six-project-configuration-decisions-set-at-intake) and their
+  framework taxonomies.
+- **Procedure.** A first-time user cannot answer the six decisions before
+  understanding the framework — they are not presented as menus at first
+  contact. **Never front a framework taxonomy**: the user reaches the problem
+  conversation without being asked to pick from any framework menu; the
+  decisions are derived from two or three natural questions woven into the
+  opening conversation, and framework vocabulary is introduced later, when a
+  classification first matters (typically at Gate 1).
+- **Outputs.** N/A — an interaction rule; the decisions themselves are
+  [AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)'s output.
+- **Evidence.** N/A — as the enclosing decision set
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)).
+- **Failure behavior.** N/A — this rule is itself an interaction constraint on
+  [AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)'s
+  procedure; no separate failure path is defined.
+
+<!-- /rule: AW-004a -->
+
+<!-- rule: OMG-002 -->
+
+### OMG-002 — Setting vocabularies (Required Assurance; Work Execution / Workflow Automation / Authority)
+
+- **Applicability.** Every project operating configuration: the value each
+  configurable-function setting takes.
+- **Inputs.** The closed value sets in
+  [`vocabulary/config.yaml`](vocabulary/config.yaml) bind as data (generated
+  view: [reference.md](generated/reference.md)): `work_execution` (`humans` |
+  `collaborative` | `agents`), `workflow_automation` (`manual` |
+  `tool-supported` | `automated`), `assurance_level` (`none` | `self` |
+  `internal` | `external`), and `authority` (`interactive-human` |
+  `pre-authorized-policy` | `delegated-agent`).
+- **Procedure.** Each of the four settings takes exactly one value from its own
+  set; the sets are **closed, ratified vocabularies**, not illustrative
+  examples. A project's operating configuration records one value per setting
+  and no other; a distinction a listed value cannot express is a gap to raise,
+  not a free-text value to invent. The value semantics are the guide's setting
+  subsections
+  ([Work Execution](../guides/operating-model.md#work-execution--who-does-the-work),
+  [Workflow Automation](../guides/operating-model.md#workflow-automation--how-the-process-is-administered),
+  [Required Assurance](../guides/operating-model.md#required-assurance--how-independently-work-is-evaluated),
+  [Authority](../guides/operating-model.md#authority--who-may-decide)).
+- **Outputs.** N/A — the vocabularies are data; the recorded setting values are
+  the configuration's output
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)).
+- **Evidence.** N/A — as the operating configuration record
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)).
+- **Failure behavior.** A setting value outside its closed set is not a valid
+  configuration. Required Assurance is enforced as a closed set by conforming
+  tools today; Work Execution, Workflow Automation, and Authority carry the same
+  closure.
+
+<!-- /rule: OMG-002 -->
+
+<!-- rule: OMG-016 -->
+
+### OMG-016 — Operating presets (Supervised / Checkpointed / Lights-Out)
+
+- **Applicability.** The operating-posture decision in every project operating
+  configuration
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)), and
+  every contract that consumes a preset (the replanning autonomy ceiling,
+  [DR-052](delegated-run.md#controlled-replanning)).
+- **Inputs.** The closed preset set `operating_preset` in
+  [`vocabulary/config.yaml`](vocabulary/config.yaml) — `supervised` |
+  `checkpointed` | `lights-out` — binds as data (generated view:
+  [reference.md](generated/reference.md)).
+- **Procedure.** The preset names and their bundles are a **closed set**: each
+  preset names a default bundle of configurable-function settings together with
+  the minimum capability coverage that bundle assumes. The ratified bundles,
+  verbatim at their descriptive register:
+
+  | Operating preset | Settings (default bundle)                                                                                                             | Minimum coverage it assumes                                                                  |
+  | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+  | **Supervised**   | agents work in short steps, every step human-reviewed; decisions interactive                                                          | none — a human checks everything                                                             |
+  | **Checkpointed** | agents execute between deliberately placed human checkpoints; routine decisions run on pre-authorized policy; Self/Internal Assurance | agents can verify their own work in scope; independent automated assurance where required    |
+  | **Lights-Out**   | agent execution; Automated workflow; decisions delegated or pre-authorized; pauses only where a floor forces a gate                   | verifiability across the work; automated assurance; independent stop enforcement; continuity |
+
+  The bundle is the preset's ratified default: an operator MAY override any
+  single setting — a per-setting deviation from the named default, not a new
+  preset — and then re-checks coverage for what changed. The bundle is ratified
+  at the table's own descriptive register; restating it as exact per-setting
+  values is an extraction question, raised as its own decision where the mapping
+  needs interpretation, never resolved silently. A posture the three presets
+  cannot express is a gap to raise, not a fourth preset to coin. This closure
+  covers only the **autonomy family**: the orthogonal governance-weight presets
+  (Minimal / Standard / Enterprise) are not ratified as a promoted closed-set
+  field (explicitly deferred — see
+  [`vocabulary/config.yaml`](vocabulary/config.yaml)).
+
+- **Outputs.** N/A — the preset set is a vocabulary; the recorded posture is the
+  configuration's output
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)).
+- **Evidence.** N/A — as the operating configuration record
+  ([AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)).
+- **Failure behavior.** A posture value outside the closed set is not a valid
+  configuration; an overridden setting is recorded as a per-setting deviation,
+  never as a new preset.
+
+<!-- /rule: OMG-016 -->
 
 ---
 
@@ -235,25 +406,51 @@ is the normative source for the floor mapping those anchors feed.
   cross-organization Stakeholder Reach; an outright **Lights-Out prohibition**
   MUST arise only from compliance or a capability gap — never from consequence
   alone.
-- The consequence-to-floor mapping (cells are minimums):
+- The consequence-to-floor mapping is
+  [OM-017](#om-017--consequence-to-floor-mapping-table)'s rule.
 
-| Consequence | Assurance floor (min)                                         | Authority floor (min)                                                                                                          | Lights-Out                                                                 | Governance-weight preset    |
-| ----------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
-| Negligible  | None                                                          | adds nothing beyond the standing non-delegable floor                                                                           | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
-| Low         | Self                                                          | adds nothing beyond the standing floor; work-product acceptance delegable                                                      | eligible                                                                   | Minimal                     |
-| Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                                                                 | eligible, bounded pauses                                                   | Standard                    |
-| High        | Internal (required)                                           | gate decisions non-delegable                                                                                                   | eligible; gated at irreversible transitions                                | Enterprise                  |
-| Critical    | Internal (required)                                           | all gate decisions non-delegable, interactive-only (no pre-authorized policy) + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+<!-- rule: OM-017 -->
 
-- The Authority cells state only what **consequence adds**. The categorical
-  non-delegable floor of
-  [Authority and Decision Resolution](#authority-and-decision-resolution) —
-  investment gates, compliance sign-off, and the project acceptance decision —
-  binds at **every** row, including Negligible.
-- At the highest consequence, the additional weight lands on Authority (gate
-  density and non-delegability) and required standing-function coverage (stop
-  enforcement) — both insert **bounded pauses**; neither switches Lights-Out off
-  (see [Lights-Out Eligibility](#lights-out-eligibility)).
+### OM-017 — Consequence-to-floor mapping table
+
+- **Applicability.** Every floor determination for the demand-side settings
+  (Required Assurance, Authority), at every consequence anchor; consumed by the
+  enclosing clamp.
+- **Inputs.** The project's assigned consequence anchor — the closed set
+  `consequence_tier`, bound as data by
+  [RS-002](right-sizing.md#rs-002--consequence-anchors-five-tier-harm-scale);
+  the active compliance obligation set (compliance adds floors beyond these
+  cells).
+- **Procedure.** The normative mapping (cells are minimums):
+
+  | Consequence | Assurance floor (min)                                         | Authority floor (min)                                                                                                          | Lights-Out                                                                 | Governance-weight preset    |
+  | ----------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------- |
+  | Negligible  | None                                                          | adds nothing beyond the standing non-delegable floor                                                                           | eligible (glance-and-go)                                                   | off-grid (below Minimal)    |
+  | Low         | Self                                                          | adds nothing beyond the standing floor; work-product acceptance delegable                                                      | eligible                                                                   | Minimal                     |
+  | Moderate    | Internal _if an independent provider is available_, else Self | gate decisions human-or-policy                                                                                                 | eligible, bounded pauses                                                   | Standard                    |
+  | High        | Internal (required)                                           | gate decisions non-delegable                                                                                                   | eligible; gated at irreversible transitions                                | Enterprise                  |
+  | Critical    | Internal (required)                                           | all gate decisions non-delegable, interactive-only (no pre-authorized policy) + independent stop-enforcement coverage required | eligible up to non-delegable gates; no _delegated_ irreversible transition | off-grid (above Enterprise) |
+  - The Authority cells state only what **consequence adds**. The categorical
+    non-delegable floor of
+    [Authority and Decision Resolution](#authority-and-decision-resolution) —
+    investment gates, compliance sign-off, and the project acceptance decision —
+    binds at **every** row, including Negligible.
+  - At the highest consequence, the additional weight lands on Authority (gate
+    density and non-delegability) and required standing-function coverage (stop
+    enforcement) — both insert **bounded pauses**; neither switches Lights-Out
+    off (see [Lights-Out Eligibility](#lights-out-eligibility)).
+
+- **Outputs.** The consequence floor per demand-side setting, and the row's
+  Lights-Out reading, for the project's anchor.
+- **Evidence.** N/A — rides the enclosing contract's evidence (the floor and
+  ceiling determination per function).
+- **Failure behavior.** As the enclosing contract — intent below a consequence
+  floor without a recorded risk-acceptance is not permitted; a floor unreachable
+  for coverage reasons falls back per the enclosing Procedure, recorded as an
+  accepted limitation.
+
+<!-- /rule: OM-017 -->
+
 - A consequence floor a run cannot reach because coverage is absent (e.g. the
   Moderate **Internal** assurance floor with no independent provider) falls back
   to the highest coverable rung below it (here, **Self**), recorded as an

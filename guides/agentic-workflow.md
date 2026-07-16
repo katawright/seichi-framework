@@ -90,17 +90,14 @@ classification questions. Route into idea formation:
 
 ## Classification by Inference
 
-A new project carries six classification decisions: **tier** (Minimal / Standard
-/ Enterprise), **project type** (greenfield / brownfield), **deployment intent**
-(production service / internal tool / local-only), **operating posture**
-(Supervised / Checkpointed / Lights-Out), **Required Assurance** (see
-[Operating Model Guide](operating-model.md)), and **executor read path**
-(`guided` | `contracts-only` — see
-[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects)).
-A first-time user cannot answer these before understanding the framework — do
-not present them as menus at first contact.
-
-Instead, derive them from two or three natural questions woven into the opening
+A new project carries six classification decisions — tier, project type,
+deployment intent, operating posture, Required Assurance, and the executor read
+path — all set at intake. The binding contracts are AW-004 (the decision set and
+its conservative-inference rules) and AW-004a (never fronted as menus at first
+contact) in the
+[Operating Model Spec § Project Operating Configuration](../spec/operating-model.md#project-operating-configuration).
+A first-time user cannot answer these before understanding the framework, so
+derive them from two or three natural questions woven into the opening
 conversation:
 
 - _"Is this just you, or a team?"_ → stakeholder reach, candidate tier
@@ -129,19 +126,15 @@ Present the derived classifications as overridable assumptions using the
 > default for a first project. `[ASSUMED]` Executor read path: Guided — executor
 > unproven; the retrospective calibrates. Say the word and any of these change.
 
-Rules:
-
-1. **Never front a framework taxonomy.** The user should reach the problem
-   conversation without being asked to pick from any framework menu. Introduce
-   vocabulary later, when a classification first matters (typically at Gate 1).
-2. **Default conservatively.** When signals are missing or conflict, prefer the
-   safer value — higher tier, more oversight — and flag it.
-3. **Escalation triggers override inference.** Sensitive data, compliance
-   requirements, or external users force Standard or Enterprise regardless of
-   conversational signals — see the [Right-Sizing Guide](right-sizing.md).
-4. **Inferred values are hypotheses.** Confirm them at Gate 1 like any other
-   `[ASSUMED]` item — see
-   [Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
+The binding rules ride
+[AW-004/AW-004a](../spec/operating-model.md#project-operating-configuration):
+never front a framework taxonomy — introduce vocabulary later, when a
+classification first matters (typically at Gate 1); default conservatively when
+signals are missing or conflict; escalation triggers override inference
+(sensitive data, compliance requirements, or external users force Standard or
+Enterprise — see the [Right-Sizing Guide](right-sizing.md)); and inferred values
+are hypotheses, confirmed at Gate 1 like any other `[ASSUMED]` item — see
+[Reviewing \[ASSUMED\] Items](#reviewing-assumed-items).
 
 **Gate-authority mechanism — surface the policy option.** Gate clearance is
 itself an inferred dimension: a gate may be cleared by an **interactive human**
@@ -175,15 +168,15 @@ floor** and run the process as one conversation rather than narrated stages.
 (a root `DECISIONS.md`) — the classification inferences, `[ASSUMED]` calls,
 scope, and approach decisions persist beside the code, never only in the
 transcript (see
-[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path)). Rule
-3's escalation triggers still override — compliance or external users pull a
-project off the folded path even when it otherwise looks Negligible.
+[The Negligible Folded Path](right-sizing.md#the-negligible-folded-path)).
+AW-004's escalation triggers still override — compliance or external users pull
+a project off the folded path even when it otherwise looks Negligible.
 
 **Calibrate the register, not only the classifications.** Read the operator's
 technical comfort the same way you read the six decisions — from how they talk
 (their vocabulary, the questions they ask, how they answer), never by asking
 them to rate themselves. A "how technical are you?" question fronts the
-classification exactly as a taxonomy menu does (rule 1) and can read as
+classification exactly as a taxonomy menu does (AW-004a) and can read as
 patronizing. Adjust wording and pace to the comfort you infer, holding to
 cross-functional accessibility ([framework.md](framework.md), principle #5).
 This is a calibration woven into the interview, not a new phase or gate — it
@@ -713,6 +706,6 @@ combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.23.0.

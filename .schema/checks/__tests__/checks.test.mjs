@@ -264,6 +264,28 @@ describe("floor-table consistency", () => {
     expect(t.has("negligible")).toBe(true);
   });
 
+  it("is not fooled by a body row naming Lights-Out and floor (OMG-016 bundle row)", () => {
+    const withBundleTable =
+      "| Operating preset | Settings (default bundle) | Minimum coverage |\n" +
+      "| --- | --- | --- |\n" +
+      "| **Supervised** | short steps, human-reviewed | none |\n" +
+      "| **Lights-Out** | pauses only where a floor forces a gate | continuity |\n\n" +
+      specMd;
+    const t = extractFloorTable(withBundleTable);
+    expect(t).not.toBeNull();
+    expect(t.get("moderate")[1]).toBe("Internal, else Self");
+  });
+
+  it("still finds the floor table when it is indented inside a rule body", () => {
+    const indented = specMd
+      .split("\n")
+      .map((l) => (l.startsWith("|") ? `  ${l}` : l))
+      .join("\n");
+    const t = extractFloorTable(indented);
+    expect(t).not.toBeNull();
+    expect(t.has("critical")).toBe(true);
+  });
+
   it("passes when floor values match despite different headers and bold", () => {
     expect(floorTableIssues(specMd, rsMd("Internal, else Self"))).toEqual([]);
   });

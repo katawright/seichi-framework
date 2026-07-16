@@ -442,8 +442,8 @@ by contrast, are hard and not waivable). The last column maps each anchor to the
 governance-weight preset it sits at.
 
 > **[Informative].** This table is the right-sizing reader's view of the floor
-> mapping. The **normative** source is the
-> [Operating Model Spec: Governance Floors and Capability Ceilings](../spec/operating-model.md#governance-floors-and-capability-ceilings);
+> mapping. The **normative** source is OM-017 in the
+> [Operating Model Spec § Governance Floors and Capability Ceilings](../spec/operating-model.md#governance-floors-and-capability-ceilings);
 > the cells here reproduce it for convenience and must track it if they ever
 > diverge.
 

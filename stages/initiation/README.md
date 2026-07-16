@@ -229,8 +229,8 @@ rather than assume low stakes. Under-reading a real product — treating a
 payments app as a throwaway — is far costlier than over-asking on a genuine
 throwaway, where the worst case is a single extra question. This is the
 interview's form of the framework's standing rule to default conservatively when
-signals are missing or conflict (see
-[Classification by Inference, rule 2](../../guides/agentic-workflow.md#classification-by-inference)).
+signals are missing or conflict (AW-004 — see
+[Classification by Inference](../../guides/agentic-workflow.md#classification-by-inference)).
 
 ### Seeding the Operating Configuration
 
@@ -962,6 +962,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.2.0.

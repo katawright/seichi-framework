@@ -1,21 +1,22 @@
-# Kernel vocabulary source — schema-enforced operating-configuration fields
-# and their closed value sets.
+# Kernel vocabulary source — operating-configuration fields and their closed
+# value sets.
 #
-# SOURCE file (hand-curated). First slice: only the value sets a consumer
-# enum-enforces today are authored — Required Assurance, the executor read
-# path, and the consequence anchors. The remaining setting vocabularies
-# (Work Execution / Workflow Automation / Authority sets, operating presets)
-# and the four remaining project-configuration decisions are resolver-input
-# constructs whose sets the guide enumerates but has never ratified as
-# closed; promoting them is a vocabulary-closure ratification routed to a
-# planning cycle, so they carry rule IDs (see spec/rules/index.yaml) but no
-# vocabulary entry yet.
+# SOURCE file (hand-curated). Two vintages: the sets a consumer enum-enforces
+# today (assurance_level, executor_read_path, consequence_tier), and the
+# v0.63.0 VC-8 closures — the remaining setting vocabularies and the operating
+# presets — authored on ratification with no schema consumer yet
+# (resolver-input path; the Phase 4 resolver is the planned consumer). The
+# three remaining project-configuration decisions AW-004 names (tier /
+# governance preset, project type, deployment intent) are enumerated by the
+# guides but not ratified as closed sets; promoting one is a
+# vocabulary-closure ratification routed to a planning cycle (the
+# governance_preset deferral is explicit in VC-8).
 
 vocabularies:
   # Required Assurance: how independently must work be evaluated?
   assurance_level:
     owning_rule: OMG-002
-    source: guides/operating-model.md
+    source: spec/operating-model.md
     consumers: ["schema:assurance_level"]
     values: [none, self, internal, external]
 
@@ -31,6 +32,37 @@ vocabularies:
   # to the nearest anchor (RS-003), consumed by the floor mapping (OM-017).
   consequence_tier:
     owning_rule: RS-002
-    source: guides/right-sizing.md
+    source: spec/right-sizing.md
     consumers: ["schema:consequence_tier"]
     values: [negligible, low, moderate, high, critical]
+
+  # Work Execution: who performs the work? (VC-8)
+  work_execution:
+    owning_rule: OMG-002
+    source: spec/operating-model.md
+    consumers: []
+    values: [humans, collaborative, agents]
+
+  # Workflow Automation: how is the process administered? (VC-8)
+  workflow_automation:
+    owning_rule: OMG-002
+    source: spec/operating-model.md
+    consumers: []
+    values: [manual, tool-supported, automated]
+
+  # Authority: who may decide? Interactive human and pre-authorized policy
+  # are both human decisions; delegation grants the judgment itself. (VC-8)
+  authority:
+    owning_rule: OMG-002
+    source: spec/operating-model.md
+    consumers: []
+    values: [interactive-human, pre-authorized-policy, delegated-agent]
+
+  # The autonomy-family operating presets (OMG-016). Only the names are
+  # promoted; each preset's default bundle stays prose at its ratified
+  # descriptive register (see the OMG-016 rule body). (VC-8)
+  operating_preset:
+    owning_rule: OMG-016
+    source: spec/operating-model.md
+    consumers: []
+    values: [supervised, checkpointed, lights-out]

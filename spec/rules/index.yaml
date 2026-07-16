@@ -379,10 +379,13 @@ rules:
     title: Six project-configuration decisions set at intake
     layer: 1a
     basis: resolver-input
-    source: guides/agentic-workflow.md
+    source: spec/operating-model.md
     introduced: verify
     status: active
     notes: the six fields and value sets are named vocabulary/config entries, not sub-IDs; two of six are schema-enforced today (via OMG-002 assurance and OM-008 read path)
+    representation: data+contract
+    links:
+      - guides/agentic-workflow.md#classification-by-inference
   - id: OM-017
     title: Consequence-to-floor mapping table
     layer: 1a
@@ -390,21 +393,31 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/right-sizing.md#consequence-floors-on-the-operating-model
   - id: OMG-002
     title: Setting vocabularies (Required Assurance; Work Execution / Workflow Automation / Authority)
     layer: 1a
     basis: resolver-input
-    source: guides/operating-model.md
+    source: spec/operating-model.md
     introduced: verify
     status: active
-    notes: the Required Assurance subset is schema-enforced today (vocabulary assurance_level); the remaining three sets await vocabulary-closure ratification
+    notes: the Required Assurance subset is schema-enforced today (vocabulary assurance_level); the remaining three sets ratified as closed by VC-8 (v0.63.0), authored in config.yaml with no schema consumer yet
+    representation: data+contract
+    links:
+      - guides/operating-model.md#the-configurable-functions
+      - guides/operating-model.md#the-setting-vocabularies-are-closed
   - id: OMG-016
     title: Operating presets (Supervised / Checkpointed / Lights-Out)
     layer: 1a
     basis: resolver-input
-    source: guides/operating-model.md
+    source: spec/operating-model.md
     introduced: verify
     status: active
+    representation: data+contract
+    links:
+      - guides/operating-model.md#operating-presets
   - id: DR-052
     title: Replanning preset-to-autonomy-class table
     layer: 1a
@@ -692,10 +705,13 @@ rules:
     title: Configuration decisions never fronted as menus at first contact
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/operating-model.md
     introduced: verify
     status: active
     notes: sub-ID split from AW-004 (the interaction rule over the six decisions)
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#classification-by-inference
   - id: AW-010
     title: Calibrate register from the operator's speech (never ask)
     layer: 1b
