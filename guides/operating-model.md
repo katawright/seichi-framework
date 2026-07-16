@@ -198,6 +198,16 @@ The spec fixes which resolution mode is permitted at each consequence level —
 see
 [Governance Floors and Capability Ceilings](../spec/operating-model.md#governance-floors-and-capability-ceilings).
 
+### The setting vocabularies are closed
+
+Each of the four settings takes exactly one value from its own set, and those
+sets — listed in the table above and defined in the subsections — are **closed,
+ratified vocabularies**, not illustrative examples. A project's operating
+configuration records one value per setting and no other; a distinction a listed
+value cannot express is a gap to raise, not a free-text value to invent.
+Required Assurance is already enforced as a closed set by conforming tools; Work
+Execution, Workflow Automation, and Authority carry the same closure.
+
 ---
 
 ## Capability Coverage
@@ -450,7 +460,7 @@ presets form an **autonomy family**, separate from and orthogonal to the
 Minimal/Standard/Enterprise governance-weight presets — those size process
 weight, these size autonomy:
 
-| Operating preset | Settings, roughly                                                                                                                     | Minimum coverage it assumes                                                                  |
+| Operating preset | Settings (default bundle)                                                                                                             | Minimum coverage it assumes                                                                  |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **Supervised**   | agents work in short steps, every step human-reviewed; decisions interactive                                                          | none — a human checks everything                                                             |
 | **Checkpointed** | agents execute between deliberately placed human checkpoints; routine decisions run on pre-authorized policy; Self/Internal Assurance | agents can verify their own work in scope; independent automated assurance where required    |
@@ -472,10 +482,26 @@ needs differently, then re-check coverage for what you changed. The spec carries
 the Lights-Out eligibility conditions each preset must meet — see
 [Lights-Out Eligibility](../spec/operating-model.md#lights-out-eligibility).
 
+**The preset names and their bundles are a closed set.** Supervised,
+Checkpointed, and Lights-Out are the complete, ratified set of operating
+presets; each names the default bundle of configurable-function settings shown
+in the table (its "Settings (default bundle)" column) together with the minimum
+coverage that bundle assumes. The bundle is ratified verbatim at the table's own
+descriptive register; restating it as exact per-setting values is an extraction
+question, and where that mapping needs interpretation it is raised as its own
+decision rather than resolved silently. The bundle is the preset's ratified
+default — an operator may override any single setting, which is a per-setting
+deviation from the named default, not a new preset — but the preset set itself
+is closed: a posture the three presets cannot express is a gap to raise, not a
+fourth preset to coin. This closure covers only the **autonomy family**. The
+orthogonal governance-weight presets (Minimal / Standard / Enterprise) are not
+ratified as a promoted closed-set field in this cycle; that choice is deferred
+until a consumer or the resolver needs it as one.
+
 ---
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.49.0.

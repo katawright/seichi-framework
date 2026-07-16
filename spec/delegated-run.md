@@ -162,7 +162,15 @@ active|paused -> failed | canceled | abandoned | authorization-exhausted
   [Progress, Liveness, and Unresponsive State](#progress-liveness-and-unresponsive-state)).
 - **Five terminal states, each carrying an outcome reason:**
   `completion-verified`, `failed`, `canceled`, `abandoned`,
-  `authorization-exhausted`. A run ends only at a terminal.
+  `authorization-exhausted`. A run ends only at a terminal. The successful
+  terminal `completion-verified` carries the outcome reason `completed` — the
+  closed single-member set for a verified completion; the reason sets for the
+  four incomplete terminals are closed in
+  [Honest Incomplete Outcomes](#honest-incomplete-outcomes). Naming `completed`
+  closes the every-terminal requirement with no free-text escape hatch; the
+  reason is deliberately thin because a verified completion's discriminating
+  record is the completion-contract evaluation and its attribution, not this
+  code.
 - For a run reaching a terminal from `proposed|declined`, continuation state is
   vacuously empty; the preserved evidence is the proposal and the decision
   rationale.
@@ -689,7 +697,11 @@ objective.
   - **partially-complete is the realized extent** at any terminal, not a state;
   - `blocked` is a `paused` reason, not a terminal.
 - Each terminal MUST carry its outcome reason and preserve evidence and
-  continuation state.
+  continuation state. The four incomplete terminals draw from the closed reason
+  sets above; the successful terminal `completion-verified` carries `completed`
+  (its closed single-member set, stated with the terminal-outcome requirement in
+  [Run Lifecycle](#run-lifecycle)), so every one of the five terminals has a
+  closed outcome-reason set with no free-text escape hatch.
 
 **Outputs.** A terminal state with an outcome reason and preserved state.
 
@@ -730,6 +742,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-13
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.49.0.

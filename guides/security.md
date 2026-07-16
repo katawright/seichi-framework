@@ -49,11 +49,16 @@ starts from scratch.
 Security work falls into three automation levels. At the Minimal project tier,
 Automated activities run as part of CI with zero additional effort — making
 baseline security coverage effectively free. The split below is the **typical
-default**, not a fixed floor: the actual who-decides follows the project's
-[Authority setting](operating-model.md#authority--who-may-decide) — an
-Agents-mode project may move activities toward automation within delegated
-bounds, while the **compliance and security sign-off** for a regulated or
-Critical-consequence release stays the human-owned floor.
+default**, not a fixed floor: which level an activity runs at follows the
+project's
+[Work Execution setting](operating-model.md#work-execution--who-does-the-work)
+(who performs it) and
+[Required Assurance](operating-model.md#required-assurance--how-independently-work-is-evaluated)
+(whether a human re-checks it) — an Agents-mode project may move activities
+toward automation — while who **accepts** the result follows the
+[Authority setting](operating-model.md#authority--who-may-decide), and the
+**compliance and security sign-off** for a regulated or Critical-consequence
+release stays the human-owned floor.
 
 ### Fully Automated (CI/Pipeline)
 
@@ -361,6 +366,6 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-07-07
+**Last Updated:** 2026-07-15
 
 Added to framework in v0.25.0.
