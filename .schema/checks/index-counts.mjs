@@ -11,6 +11,7 @@ import { stripFences } from "./lib.mjs";
 const SECTION_GLOBS = {
   Guides: "guides/*.md",
   Spec: "spec/*.md",
+  Kernel: "spec/{vocabulary,rules,schemas,generated}/*",
   Templates: "templates/*.md",
   "Stage Artifacts": "stages/*/*.md",
 };

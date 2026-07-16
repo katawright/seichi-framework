@@ -103,6 +103,14 @@ Use Glob to find all `.md` files in these locations:
 - `stages/**/*.md`
 - `templates/**/*.md`
 
+Also scan the **kernel interface files** — the only non-`.md` entries INDEX
+tracks:
+
+- `spec/vocabulary/*.yaml`
+- `spec/rules/*.yaml`
+- `spec/schemas/*.json`
+- `spec/generated/*` (generated exports; still INDEX-listed)
+
 **Exclude** any file or directory marked `export-ignore` in `.gitattributes`
 (this governs GitHub's source-archive tarballs, not the released zip). The
 authoritative release surface is the `FRAMEWORK_INCLUDES` allowlist in
@@ -116,7 +124,10 @@ Read `INDEX.md` and parse its table sections:
 
 - **Root Files** — top-level `.md` files
 - **Guides** — files under `guides/`
-- **Spec** — files under `spec/`
+- **Spec** — `.md` files at the **top level** of `spec/` only
+- **Kernel** — files under `spec/vocabulary/`, `spec/rules/`, `spec/schemas/`,
+  and `spec/generated/` (including the one `.md`, `spec/generated/reference.md`
+  — it belongs here, never in Spec)
 - **Stage Artifacts** — files under `stages/`, grouped by stage subsection
 - **Templates** — files under `templates/`
 
