@@ -13,25 +13,27 @@ fatigue.
 
 ---
 
+> **[Informative].** This table is the reader's view of the taxonomy. The
+> **normative** source is CP-001 in the
+> [Checkpoints Spec](../spec/checkpoints.md#checkpoint-types-and-outcome-sets),
+> whose type and per-type outcome sets bind as kernel data
+> (`vocabulary/checkpoints.yaml`); the cells here reproduce it for convenience
+> and must track it if they ever diverge.
+
 | Type          | Purpose                                          | Outcome                                           |
 | ------------- | ------------------------------------------------ | ------------------------------------------------- |
 | **Gate**      | Investment decision — should we continue?        | Proceed / Proceed with conditions / Revise / Stop |
 | **Review**    | Criteria verification — does this meet the bar?  | Ready / Not Ready                                 |
 | **Alignment** | Stakeholder consensus — are we on the same page? | Aligned / Adjustments Needed                      |
 
-**These outcome sets are closed.** Each checkpoint type resolves to exactly one
-outcome from its own set — the sets above are the complete, ratified vocabulary,
-not illustrative examples. A checkpoint records one of its type's outcomes and
-no other; a situation no listed outcome fits is a gap to raise, not a free-text
-outcome to invent.
-
-**Stop is a gate-only outcome.** Only a gate carries a real Stop — the genuine
-go/no-go. Reviews resolve Ready / Not Ready (remediate and retry, never Stop the
-project); alignments resolve Aligned / Adjustments Needed (converge, never
-Stop). Recording a Stop against a review or an alignment is a type error: if
-stopping is genuinely on the table, the decision belongs at a gate. "Proceed
-with conditions" is likewise gate-only — it originates the tracked carry-forward
-obligations described under [Gates](#gates).
+**The outcome sets are closed, and Stop and "Proceed with conditions" are
+gate-only** — a review resolves Ready / Not Ready (remediate and retry) and an
+alignment resolves Aligned / Adjustments Needed (converge); if stopping is
+genuinely on the table, the decision belongs at a gate. The binding contract —
+including the type error a misrecorded outcome commits and the carry-forward
+obligations "Proceed with conditions" originates (described under
+[Gates](#gates)) — is CP-001 in the
+[Checkpoints Spec](../spec/checkpoints.md#checkpoint-types-and-outcome-sets).
 
 ---
 
@@ -204,6 +206,6 @@ is required.
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.42.0.

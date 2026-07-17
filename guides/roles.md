@@ -310,25 +310,13 @@ Compliance Approval. For details on security activities by stage, see the
 ### Security Escalation Protocol
 
 When AppSec identifies a security finding during any stage, the severity
-determines the orchestration response. AppSec has unilateral authority to pause
-any stage for a Critical finding; the stage's Responsible role must resolve the
-finding before work resumes.
-
-| Severity     | Orchestration Response                                                                                                                                                                               |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Critical** | Halt stage; finding must be resolved before proceeding to next checkpoint. If unresolved at a gate decision, the gate cannot proceed until the finding is resolved or formally downgraded by AppSec. |
-| **High**     | Conditional proceed; finding tracked with fix deadline before deployment                                                                                                                             |
-| **Medium**   | Track in defect backlog; fix targeted for current or next increment                                                                                                                                  |
-| **Low**      | Log in backlog; address opportunistically                                                                                                                                                            |
-
-Severity classification follows the project's defect management definitions (see
-[Verification Reference: Defect Management](../stages/verification/reference.md#defect-management)).
-For security findings, classify based on exploitability and blast radius:
-Critical = exploitable with no authentication or user interaction required and
-broad blast radius (e.g., RCE, auth bypass, mass data exposure); High =
-exploitable but requires authentication or has limited blast radius. At
-Enterprise tier, Critical and High findings require documented fix/accept/defer
-decisions with AppSec sign-off.
+determines the orchestration response. The binding severity-to-response mapping
+— including the severity classification rule, AppSec's unilateral authority to
+pause any stage for a Critical finding, the Enterprise-tier fix/accept/defer
+sign-off requirement, and the rule that an unresolved Critical finding leaves a
+gate unable to proceed — is the
+[Checkpoints Spec § Security Severity-Halt](../spec/checkpoints.md#security-severity-halt).
+The stage's Responsible role resolves the finding before work resumes.
 
 **Halt communication:** When AppSec halts a stage for a Critical finding, they
 produce a defect report using the standard defect format (see Verification
@@ -342,6 +330,6 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.10.0.

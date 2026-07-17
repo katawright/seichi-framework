@@ -1,0 +1,41 @@
+# Kernel vocabulary source — checkpoint types and their per-type closed
+# outcome sets.
+#
+# SOURCE file (hand-curated). Ratified as VC-7 (v0.63.0): CP-001 is
+# canonical — three checkpoint types, each with its own closed outcome set;
+# Stop and proceed-with-conditions are gate-only (the per-type binding is
+# stated in the CP-001 rule body, spec/checkpoints.md). The consumer's
+# divergent flat vocabulary (two kinds, one outcome set including the
+# dropped `pivot`) migrates toward these sets in the schema repo's next
+# conformance cycle, so no schema consumer is declared yet and these sets
+# are deliberately NOT in the equivalence projection until that migration
+# lands.
+
+vocabularies:
+  # Which question is this checkpoint answering?
+  checkpoint_type:
+    owning_rule: CP-001
+    source: spec/checkpoints.md
+    consumers: []
+    values: [gate, review, alignment]
+
+  # Gate: investment decision — should we continue?
+  gate_outcome:
+    owning_rule: CP-001
+    source: spec/checkpoints.md
+    consumers: []
+    values: [proceed, proceed-with-conditions, revise, stop]
+
+  # Review: criteria verification — does this meet the bar?
+  review_outcome:
+    owning_rule: CP-001
+    source: spec/checkpoints.md
+    consumers: []
+    values: [ready, not-ready]
+
+  # Alignment: stakeholder consensus — are we on the same page?
+  alignment_outcome:
+    owning_rule: CP-001
+    source: spec/checkpoints.md
+    consumers: []
+    values: [aligned, adjustments-needed]

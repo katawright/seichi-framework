@@ -29,6 +29,7 @@ import yaml from "js-yaml";
 import { parseRuleSpans } from "./markers.mjs";
 
 export const VOCABULARY_FILES = [
+  "spec/vocabulary/checkpoints.yaml",
   "spec/vocabulary/concurrency.yaml",
   "spec/vocabulary/config.yaml",
   "spec/vocabulary/grades.yaml",

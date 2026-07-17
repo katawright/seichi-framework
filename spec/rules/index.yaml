@@ -369,10 +369,14 @@ rules:
     title: Checkpoint types and closed outcome sets (Gate / Review / Alignment)
     layer: 1a
     basis: divergent-consumption
-    source: guides/checkpoints.md
+    source: spec/checkpoints.md
     introduced: verify
     status: active
-    notes: vocabulary promotion blocked on the open checkpoint-outcome divergence; resolves through a planning cycle before the data freezes
+    notes: the checkpoint-outcome divergence resolved as VC-7 (v0.63.0, CP-01 canonical, pivot dropped); the consumer migrates toward the ratified sets in its next conformance cycle, so the vocabulary carries no schema consumer yet
+    representation: data+contract
+    links:
+      - guides/checkpoints.md#key-principle
+      - guides/checkpoints.md#gates
 
   # ── 1a — resolver-input path (planned consumer; scope closed by ADR) ─────
   - id: AW-004

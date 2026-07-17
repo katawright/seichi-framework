@@ -46,18 +46,21 @@ therefore written so that a conforming enforcer can evaluate it — and so that
 3. For governance weight, read the [**Right-Sizing Spec**](right-sizing.md) —
    the consequence anchors, the per-stage scaling matrices, and the
    minimum-viable-artifacts matrix that size how heavy the process is
-4. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
+4. For checkpoint decisions, read the [**Checkpoints Spec**](checkpoints.md) —
+   the three checkpoint types, their closed outcome sets, and the security
+   severity-halt rule
+5. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
    — the run lifecycle, liveness, idempotency, replanning, and honest-outcome
    contracts
-5. For concurrent execution, read the
+6. For concurrent execution, read the
    [**Parallel-Batch Spec**](parallel-batch.md) — the forcing-dependency
    taxonomy, parallel-safety classification, and batch preflight, execution, and
    close contracts
-6. Both read and write project state through the
+7. Both read and write project state through the
    [**Canonical-State Spec**](canonical-state.md) — the single source the others
    reference, and home of the project lifecycle and the project-level completion
    contract
-7. For the human-facing rationale behind any contract, follow its link back to
+8. For the human-facing rationale behind any contract, follow its link back to
    its guide (e.g. the [Operating Model Guide](../guides/operating-model.md) or
    the [Right-Sizing Guide](../guides/right-sizing.md))
 
@@ -101,8 +104,8 @@ contracts above state in prose:
 
 - **`vocabulary/*.yaml`** — hand-curated source for the closed value sets
   (lifecycle machines and reason sets, planning-family statuses, attribution
-  grades, operating-configuration fields, concurrency vocabularies). Values are
-  stable identifiers, never display text.
+  grades, operating-configuration fields, concurrency vocabularies, checkpoint
+  types and outcomes). Values are stable identifiers, never display text.
 - **`rules/index.yaml`** — the rule registry: every kernel rule's stable ID,
   layer, admission basis, and normative source. A migrated rule's row also
   records `representation` (how it migrated: `data` | `data+contract` |
@@ -152,9 +155,9 @@ metadata stays canonical in its front-matter homes (`guides/stages.md` pipeline;
 This layer is scoped to the contracts a bounded **Lights-Out** run executes —
 the v0.49 Definition of Done. It covers the operating-model contracts
 ([operating-model.md](operating-model.md)), the right-sizing contracts that size
-governance weight ([right-sizing.md](right-sizing.md)), the delegated-run
-contracts plus the canonical state they read and write
-([delegated-run.md](delegated-run.md),
+governance weight ([right-sizing.md](right-sizing.md)), the checkpoint contracts
+([checkpoints.md](checkpoints.md)), the delegated-run contracts plus the
+canonical state they read and write ([delegated-run.md](delegated-run.md),
 [canonical-state.md](canonical-state.md)), and the parallel-batch contracts for
 concurrent execution ([parallel-batch.md](parallel-batch.md)). Scale scenarios
 (small team, organization, enterprise), regulated and external assurance, and

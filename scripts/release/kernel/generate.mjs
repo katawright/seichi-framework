@@ -277,7 +277,7 @@ export function validateKernelSources(repoRoot, sources) {
   }
 
   // Flat vocabularies (grades, config, concurrency) + planning families.
-  for (const fileName of ["grades", "config", "concurrency"]) {
+  for (const fileName of ["grades", "config", "concurrency", "checkpoints"]) {
     for (const [name, v] of Object.entries(vocab[fileName].vocabularies ?? {})) {
       const where = `spec/vocabulary/${fileName}.yaml#vocabularies.${name}`;
       checkOwningRule(where, v.owning_rule);
@@ -395,7 +395,7 @@ function vocabularyEntries(sources) {
       },
     ]);
   }
-  for (const fileName of ["grades", "config", "concurrency"]) {
+  for (const fileName of ["grades", "config", "concurrency", "checkpoints"]) {
     for (const [name, v] of Object.entries(vocab[fileName].vocabularies)) {
       entries.push([
         name,
