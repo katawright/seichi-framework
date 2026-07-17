@@ -36,10 +36,14 @@ reason_sets:
     owning_rule: DR-065
     source: spec/delegated-run.md
     consumers: ["schema:run_outcome"]
-    # DR-013: every terminal carries an outcome reason.
+    # DR-013: every terminal carries an outcome reason. The successful
+    # terminal's single-member set was ratified as VC-6 (v0.63.0): the code
+    # is deliberately thin — a verified completion's discriminating record
+    # is the completion-contract evaluation, not this code.
     required_reason_states:
       [completion-verified, failed, canceled, abandoned, authorization-exhausted]
     by_state:
+      completion-verified: [completed]
       failed: [failed-verification, failed-deployment]
       canceled:
         [
@@ -52,15 +56,6 @@ reason_sets:
         ]
       abandoned: [decision-lapsed]
       authorization-exhausted: [limit-reached]
-    # MISSING-CODE FLAG (VC-class, machine-readable): DR-013 requires an
-    # outcome reason on every terminal, but the spec names no code for the
-    # successful `completion-verified` terminal; its consumer uses
-    # `completed`. Ratifying that code is a vocabulary-closure question
-    # routed to a planning cycle — it is deliberately NOT authored here.
-    missing_codes:
-      completion-verified: >-
-        no ratified code for the successful terminal; the consumer uses
-        `completed` (unratified) — VC-class closure routed to a planning cycle
     # The pre-authorization and revocation reason sets are closed per source
     # state. `stopped-by-user` / `stopped-by-policy` are not legal before
     # `approved`; `project-canceled` is the cascade's landing, never a

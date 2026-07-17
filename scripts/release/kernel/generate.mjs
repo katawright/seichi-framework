@@ -538,14 +538,7 @@ const ENUM_PROJECTION = [
   ["adr_status", { machine: "adr_lifecycle" }],
   ["project_lifecycle_reason", { reasons: "project_lifecycle" }],
   ["pause_reason", { reasons: "run_pause" }],
-  [
-    "run_outcome",
-    {
-      reasons: "run_outcome",
-      note:
-        "framework set is the honest-incomplete taxonomy; the spec requires an outcome reason on every terminal but names no code for the successful completion-verified terminal (missing-code flag — see reasons.yaml)",
-    },
-  ],
+  ["run_outcome", { reasons: "run_outcome" }],
   ["batch_terminal_reason", { reasons: "batch_lifecycle" }],
   ["directive_void_reason", { reasons: "directive_void" }],
   ["escalation_withdrawn_reason", { reasons: "escalation_lifecycle" }],
