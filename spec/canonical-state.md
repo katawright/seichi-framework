@@ -161,75 +161,134 @@ per [Record Requirements](#record-requirements).
 
 Rationale: the
 [Minimum Canonical Project State](#minimum-canonical-project-state) enumerates
-the kinds of facts the state must represent; this section ratifies those kinds
-as a **closed set of record-family identifiers** — the stable names that typed
-references point at, in particular the
-[traceability links](../guides/framework.md#typed-traceability-links).
+the kinds of facts the state must represent, and the
+[Framework Guide's traceability chain](../guides/framework.md#the-traceability-chain)
+explains the typed links that connect them. The contracts below ratify those
+kinds and verbs as closed identifier sets — the traceability identity level —
+and fix the chain's topology and id conventions.
 
-**Applicability.** Every project; every conforming record store.
+<!-- rule: FW-005a -->
 
-**Inputs.** The minimum-canonical-state enumeration and the named family
-contracts elsewhere in this spec.
+### FW-005a — Traceability-chain identity level (record families + typed links)
 
-**Procedure.**
+- **Applicability.** Every project; every conforming record store; every typed
+  traceability link.
+- **Inputs.** Two closed identifier sets in
+  [`vocabulary/traceability.yaml`](vocabulary/traceability.yaml) bind as data
+  (generated view: [reference.md](generated/reference.md)): `record_family` —
+  the 30 kebab-case family slugs, each naming a canonical kind of record the
+  state may hold — and `trace_link_type` — the seven link-type verbs (`realizes`
+  | `verifies` | `discharges` | `corrects` | `renders` | `evidences` |
+  `supersedes`).
+- **Procedure.**
+  - Each family maps to a phrase in the minimum-canonical-state enumeration or
+    to a named family contract in this spec. Ratifying a family identifier
+    declares a canonical record **kind** that a typed reference may point at; it
+    does **not** restate the family's record **requirements**, which remain
+    their own constructs (for example the status vocabularies in
+    [Record-Family Status Vocabularies](#record-family-status-vocabularies) and
+    the shape rules in [Record Requirements](#record-requirements)).
+  - Three families are named explicitly because each is easy to fold into a
+    neighbor and must not be:
+    - **`roster-entry`** — a change to the
+      [authorized-party roster](#authorized-parties-for-floor-decisions) is
+      itself a durable, attributed record, distinct from the parties it lists.
+      The roster stays optional (a project MAY declare one); ratifying the
+      family does not mandate it.
+    - **`risk-acceptance`** — the risk-acceptance decision recorded when a
+      consequence floor is dropped (see
+      [Operating-Model Spec § Governance Floors and Capability Ceilings](operating-model.md#governance-floors-and-capability-ceilings))
+      is a distinct governance record, **not** the `accepted` posture of the
+      `risk` family's status.
+    - **`rendered-view`** — the **rendering-provenance** record for a
+      [view](#artifacts-as-views): its kind, the state version it was rendered
+      from, and attribution — never the rendered content itself. Views remain
+      non-sources; this family names the record that keeps a rendering traceable
+      to the canonical state, not a second source of the facts it renders.
+  - **`stage` is not a canonical record family.** Stage identity is the
+    kernel-canonical catalog (the stage pipeline in
+    [Stages Guide](../guides/stages.md) front matter), and stage progress is
+    reconstructible from gate and checkpoint decisions; the framework requires
+    no durable per-project stage-instance record. A conforming store MAY
+    implement a project-stage entity, but is not required to — it is
+    consumer-side substrate, not a ratified family. (Falsifier: a framework
+    clause requiring durable per-project stage-entry facts would flip `stage` to
+    a ratified family.)
+  - A **typed traceability link** is a directed relationship from one record to
+    another, written `from-family / from-id —(type)→ to-family / to-id`. The
+    endpoints are the ratified families; each verb names a relationship the
+    framework owns:
+    - **`realizes`** — the construction-branch edge: a functional requirement
+      realizes the goal it was chosen to serve.
+    - **`verifies`** — the measurement/verification edge: a success criterion
+      verifies a goal, an acceptance criterion verifies a requirement, a test
+      verifies an acceptance criterion.
+    - **`discharges`** — a carry-forward condition is discharged by the stage or
+      increment that satisfies it (and a governance floor by the evidence that
+      clears it).
+    - **`corrects`** — an append-only correction edge: a record corrects an
+      earlier one (decision and run-event corrections carry their history this
+      way).
+    - **`renders`** — a rendered view renders the canonical records it presents
+      — its provenance edge back to the state version it was rendered from.
+    - **`evidences`** — an evidence record evidences the claim, requirement, or
+      conclusion it supports.
+    - **`supersedes`** — the append-only supersession edge: a successor record
+      supersedes its predecessor, chaining provenance.
+  - Three relationships a consumer might reach for are deliberately **not**
+    framework link types: a generic `relates-to` (a link should name its
+    relationship, not gesture at one), a bare `blocks` between work items (the
+    richer forcing-dependency records own that fact — see
+    [Parallel-Batch Spec](parallel-batch.md)), and a standalone `derives-from`
+    (the framework states no derivation edge left to name: chained provenance is
+    `supersedes` and a view's derivation is `renders` — a future construct that
+    states a genuine derivation edge ratifies a new type then).
+- **Outputs.** The closed record-family and link-type identifier sets.
+- **Evidence.** Each record carries its family and provenance per
+  [Record Requirements](#record-requirements); each typed link names its type
+  and its two endpoints.
+- **Failure behavior.** A record whose family is outside the closed set — or a
+  fact recorded under no family to dodge the set — violates the closure, and a
+  link typed outside the closed verb set is not a valid typed link. A kind the
+  families cannot name is a **missing family** and a relationship the seven
+  verbs cannot name is a **missing link type**: a framework change, never a
+  free-text label.
 
-- The canonical record families are a **closed identifier set** — kebab-case
-  slugs, each naming a canonical kind of record the state may hold:
+<!-- /rule: FW-005a -->
 
-  `goal` · `success-criterion` · `requirement` · `acceptance-criterion` ·
-  `assumption` · `risk` · `decision-record` · `increment` · `batch` ·
-  `operating-configuration` · `approved-deviation` · `assurance-requirement` ·
-  `evidence-item` · `assurance-result` · `authorization-record` ·
-  `capability-coverage` · `function-separation` · `envelope-record` · `run` ·
-  `run-directive` · `run-event` · `gate-checkpoint-decision` · `escalation` ·
-  `carry-forward-condition` · `folded-stage-state` · `preauthorized-policy` ·
-  `workspace-binding` · `roster-entry` · `risk-acceptance` · `rendered-view` (30
-  families).
+<!-- rule: FW-005b -->
 
-- Each family maps to a phrase in the minimum-canonical-state enumeration or to
-  a named family contract in this spec. Ratifying a family identifier declares a
-  canonical record **kind** that a typed reference may point at; it does **not**
-  restate the family's record **requirements**, which remain their own
-  constructs (for example the status vocabularies in
-  [Record-Family Status Vocabularies](#record-family-status-vocabularies) and
-  the shape rules in [Record Requirements](#record-requirements)).
+### FW-005b — Traceability id conventions and chain topology
 
-- Three families are named explicitly because each is easy to fold into a
-  neighbor and must not be:
-  - **`roster-entry`** — a change to the
-    [authorized-party roster](#authorized-parties-for-floor-decisions) is itself
-    a durable, attributed record, distinct from the parties it lists. The roster
-    stays optional (a project MAY declare one); ratifying the family does not
-    mandate it.
-  - **`risk-acceptance`** — the risk-acceptance decision recorded when a
-    consequence floor is dropped (see
-    [Operating-Model Spec § Governance Floors and Capability Ceilings](operating-model.md#governance-floors-and-capability-ceilings))
-    is a distinct governance record, **not** the `accepted` posture of the
-    `risk` family's status.
-  - **`rendered-view`** — the **rendering-provenance** record for a
-    [view](#artifacts-as-views): its kind, the state version it was rendered
-    from, and attribution — never the rendered content itself. Views remain
-    non-sources; this family names the record that keeps a rendering traceable
-    to the canonical state, not a second source of the facts it renders.
+- **Applicability.** The outcome-chain records — goals, success criteria,
+  functional requirements, acceptance criteria — and the typed links among them,
+  in every project.
+- **Inputs.** The record-family and link-type sets
+  ([FW-005a](#fw-005a--traceability-chain-identity-level-record-families--typed-links));
+  the project's goals (the chain's anchor).
+- **Procedure.**
+  - **Topology.** The goal is the **join point**: from it the chain forks into a
+    measurement branch and a construction branch. A success criterion
+    **verifies** the goal; a functional requirement **realizes** it; an
+    acceptance criterion **verifies** the requirement; a test **verifies** the
+    acceptance criterion. Success criteria and requirements are siblings —
+    projections of the same goal — not a sequence. Security and compliance NFRs
+    descend from the Initiation Brief's Data Sensitivity and Compliance section,
+    so the framework has **two roots**: the outcome chain (business case → goals
+    → criteria/requirements) and the constraint chain.
+  - **Id conventions.** Chain records carry stable, family-scoped ids — `G-N`
+    (goals), `SC-NN` (success criteria), `FR-N` (functional requirements),
+    `AC-N.N` (acceptance criteria, scoped to their requirement) — and chain
+    references are by bare id, never by path.
+- **Outputs.** The project's traceability chain: typed links over stable ids.
+- **Evidence.** The typed links and the ids they reference, preserved in
+  canonical state.
+- **Failure behavior.** N/A — no failure path is defined for the chain shape
+  itself: the chain guarantees coverage and alignment, and a coverage gap (an
+  unchecked goal, an unowned criterion) is a finding for the checkpoint that
+  consumes the chain, not a defined failure state.
 
-- **`stage` is not a canonical record family.** Stage identity is the
-  kernel-canonical catalog (the stage pipeline in
-  [Stages Guide](../guides/stages.md) front matter), and stage progress is
-  reconstructible from gate and checkpoint decisions; the framework requires no
-  durable per-project stage-instance record. A conforming store MAY implement a
-  project-stage entity, but is not required to — it is consumer-side substrate,
-  not a ratified family. (Falsifier: a framework clause requiring durable
-  per-project stage-entry facts would flip `stage` to a ratified family.)
-
-**Outputs.** The closed record-family identifier set.
-
-**Evidence.** Each record carries its family and provenance per
-[Record Requirements](#record-requirements).
-
-**Failure behavior.** A record whose family is outside the closed set — or a
-fact recorded under no family to dodge the set — violates the closure. A kind
-the set cannot name is a **missing family**: a framework change, never a
-free-text family label.
+<!-- /rule: FW-005b -->
 
 ---
 

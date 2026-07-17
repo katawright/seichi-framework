@@ -342,10 +342,13 @@ rules:
     title: Traceability-chain identity level (record families + typed links)
     layer: 1a
     basis: both-conjuncts
-    source: guides/framework.md
+    source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: rule split; FW-005 is the lineage root, not a binding rule ID
+    notes: rule split; FW-005 is the lineage root, not a binding rule ID. Two-home reconciliation (VC-9, v0.63.0) — families and link types single-homed in spec/canonical-state.md; the guide keeps the chain rationale
+    representation: data+contract
+    links:
+      - guides/framework.md#typed-traceability-links
 
   # ── 1a — stage pipeline + per-stage structure (already data) ─────────────
   - id: ST-001
@@ -771,10 +774,13 @@ rules:
     title: Traceability id conventions and chain topology
     layer: 1b
     basis: 1b
-    source: guides/framework.md
+    source: spec/canonical-state.md
     introduced: verify
     status: active
     notes: rule split from FW-005; promotion trigger — re-enters 1a when a schema conformance cycle enforces id formats or chain topology
+    representation: contract
+    links:
+      - guides/framework.md#the-traceability-chain
 
   # ── 1b — execution-module content (compact prose first) ──────────────────
   - id: AW-016

@@ -79,13 +79,36 @@ for (const [enumName, entry] of Object.entries(projection.enums)) {
   }
   const missing = setDiff(entry.values, consumer); // projected but absent
   const extra = setDiff(consumer, entry.values); // consumer-only
-  if (missing.length === 0 && extra.length === 0) {
+  // A projection entry may declare a subset relationship (VC-9): the
+  // consumer's enum is the ratified set plus exactly the declared
+  // consumer-side substrate. Declared values are allowed (and expected);
+  // anything else stays a DELTA.
+  const declared = entry.consumer_only ?? [];
+  const undeclaredExtra = extra.filter((v) => !declared.includes(v));
+  const declaredAbsent = declared.filter((v) => !extra.includes(v));
+  if (missing.length === 0 && extra.length === 0 && declared.length === 0) {
     lines.push(`| \`${enumName}\` | EQUAL | ${entry.values.length} values |`);
+  } else if (
+    declared.length > 0 &&
+    missing.length === 0 &&
+    undeclaredExtra.length === 0 &&
+    declaredAbsent.length === 0
+  ) {
+    lines.push(
+      `| \`${enumName}\` | EQUAL (declared subset) | ${entry.values.length} ` +
+        `framework values ⊂ ${consumer.length}; declared consumer-only: ` +
+        `${declared.join(", ")} |`,
+    );
   } else {
     deltas++;
     const detail = [
       missing.length ? `framework-only: ${missing.join(", ")}` : null,
-      extra.length ? `consumer-only: ${extra.join(", ")}` : null,
+      undeclaredExtra.length
+        ? `consumer-only (undeclared): ${undeclaredExtra.join(", ")}`
+        : null,
+      declaredAbsent.length
+        ? `declared consumer-only value absent from consumer: ${declaredAbsent.join(", ")}`
+        : null,
     ]
       .filter(Boolean)
       .join("; ");

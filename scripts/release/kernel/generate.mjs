@@ -277,7 +277,7 @@ export function validateKernelSources(repoRoot, sources) {
   }
 
   // Flat vocabularies (grades, config, concurrency) + planning families.
-  for (const fileName of ["grades", "config", "concurrency", "checkpoints"]) {
+  for (const fileName of ["grades", "config", "concurrency", "checkpoints", "traceability"]) {
     for (const [name, v] of Object.entries(vocab[fileName].vocabularies ?? {})) {
       const where = `spec/vocabulary/${fileName}.yaml#vocabularies.${name}`;
       checkOwningRule(where, v.owning_rule);
@@ -395,7 +395,7 @@ function vocabularyEntries(sources) {
       },
     ]);
   }
-  for (const fileName of ["grades", "config", "concurrency", "checkpoints"]) {
+  for (const fileName of ["grades", "config", "concurrency", "checkpoints", "traceability"]) {
     for (const [name, v] of Object.entries(vocab[fileName].vocabularies)) {
       entries.push([
         name,
@@ -556,6 +556,17 @@ const ENUM_PROJECTION = [
   ["consequence_tier", { vocabulary: "consequence_tier" }],
   ["forcing_dependency", { vocabulary: "forcing_dependency" }],
   ["safety_conclusion", { vocabulary: "safety_conclusion" }],
+  // VC-9 declared subsets: the consumer's enums are the ratified sets plus
+  // declared consumer-side substrate; the comparison allows exactly those
+  // consumer-only values and nothing else.
+  ["record_family", { vocabulary: "record_family", consumer_only: ["stage"] }],
+  [
+    "trace_link_type",
+    {
+      vocabulary: "trace_link_type",
+      consumer_only: ["derives_from", "blocks", "relates_to"],
+    },
+  ],
 ];
 
 export function buildSchemaProjection(sources, manifest) {
@@ -582,6 +593,7 @@ export function buildSchemaProjection(sources, manifest) {
       values: frameworkValues.map(toSnake),
       framework_values: frameworkValues,
       source,
+      ...(spec.consumer_only ? { consumer_only: spec.consumer_only } : {}),
       ...(spec.note ? { note: spec.note } : {}),
     };
   }

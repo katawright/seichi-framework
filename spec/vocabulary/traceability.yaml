@@ -1,0 +1,70 @@
+# Kernel vocabulary source — the traceability identity level: canonical
+# record families and typed trace-link verbs.
+#
+# SOURCE file (hand-curated). Ratified as VC-9 (v0.63.0) by value-by-value
+# adjudication: record_family at 30 (out: `stage` — consumer-side substrate,
+# no framework clause requires a per-project stage-instance record) and
+# trace_link_type at 7 (out: `derives-from`, `blocks`, `relates-to` — each
+# exclusion's grounds are in the FW-005a rule body). The consumer's enums are
+# the ratified sets plus that declared substrate, so the equivalence
+# projection compares these as DECLARED SUBSETS of the consumer's 31/10.
+
+vocabularies:
+  # The closed set of canonical record kinds a typed reference may point at.
+  # Ratifying a family declares a record KIND; its record requirements remain
+  # their own constructs (CS-079-class).
+  record_family:
+    owning_rule: FW-005a
+    source: spec/canonical-state.md
+    consumers: ["schema:record_family (declared subset; consumer adds stage)"]
+    values:
+      - goal
+      - success-criterion
+      - requirement
+      - acceptance-criterion
+      - assumption
+      - risk
+      - decision-record
+      - increment
+      - batch
+      - operating-configuration
+      - approved-deviation
+      - assurance-requirement
+      - evidence-item
+      - assurance-result
+      - authorization-record
+      - capability-coverage
+      - function-separation
+      - envelope-record
+      - run
+      - run-directive
+      - run-event
+      - gate-checkpoint-decision
+      - escalation
+      - carry-forward-condition
+      - folded-stage-state
+      - preauthorized-policy
+      - workspace-binding
+      - roster-entry
+      - risk-acceptance
+      - rendered-view
+
+  # The closed set of link-type verbs — each names a relationship the
+  # framework owns; a relationship the seven cannot name is a missing link
+  # type (a framework change), never a free-text label.
+  trace_link_type:
+    owning_rule: FW-005a
+    source: spec/canonical-state.md
+    consumers:
+      [
+        "schema:trace_link_type (declared subset; consumer adds derives_from,
+        blocks, relates_to)",
+      ]
+    values:
+      - realizes
+      - verifies
+      - discharges
+      - corrects
+      - renders
+      - evidences
+      - supersedes

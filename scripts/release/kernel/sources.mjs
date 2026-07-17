@@ -35,6 +35,7 @@ export const VOCABULARY_FILES = [
   "spec/vocabulary/grades.yaml",
   "spec/vocabulary/reasons.yaml",
   "spec/vocabulary/statuses.yaml",
+  "spec/vocabulary/traceability.yaml",
 ];
 
 export const RULES_FILE = "spec/rules/index.yaml";

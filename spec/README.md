@@ -105,7 +105,8 @@ contracts above state in prose:
 - **`vocabulary/*.yaml`** — hand-curated source for the closed value sets
   (lifecycle machines and reason sets, planning-family statuses, attribution
   grades, operating-configuration fields, concurrency vocabularies, checkpoint
-  types and outcomes). Values are stable identifiers, never display text.
+  types and outcomes, record families and trace-link types). Values are stable
+  identifiers, never display text.
 - **`rules/index.yaml`** — the rule registry: every kernel rule's stable ID,
   layer, admission basis, and normative source. A migrated rule's row also
   records `representation` (how it migrated: `data` | `data+contract` |
