@@ -710,16 +710,22 @@ rules:
     title: Idea-for-a-new-project runs the idea-formation interview
     layer: 1b
     basis: 1b
-    source: guides/session-protocol.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/session-protocol.md#orient--classify-the-scenario-first-contact
   - id: SP-006
     title: Expert-consultant posture and plain-language calibration
     layer: 1b
     basis: 1b
-    source: guides/session-protocol.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/session-protocol.md#orient--classify-the-scenario-first-contact
   - id: RS-003
     title: Consequence assigned by judgment to the nearest anchor
     layer: 1b
@@ -745,23 +751,32 @@ rules:
     title: Calibrate register from the operator's speech (never ask)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#classification-by-inference
   - id: FW-009
     title: Impact-assessment two-question spectrums
     layer: 1b
     basis: 1b
-    source: guides/framework.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/framework.md#impact-assessment
   - id: ST-006
     title: When-to-use-Flow sizing call
     layer: 1b
     basis: 1b
-    source: guides/stages.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/stages.md#when-to-use-flow
 
   # ── 1b — batch preflight/close condition sets ────────────────────────────
   - id: PB-022
@@ -806,99 +821,153 @@ rules:
     title: Load line (Tier 0/1 read order)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#read-order-and-the-load-line
   - id: AW-017
     title: Capable-executor read-path contract
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
     notes: the value set (guided / contracts-only) is schema-enforced via OM-008's vocabulary; this rule carries the per-mode load contract
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#read-order-and-the-load-line
   - id: AW-018
     title: Stage-scoping floor (defer guides, never constraints)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#what-stage-scoping-must-not-cost
   - id: AW-006
     title: Assumed-classification convention (derived classifications as overridable assumptions)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#classification-by-inference
   - id: AW-020
     title: Missing-input protocol (derive assumed, or request)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#missing-input
   - id: AW-021
     title: Assumed-classification gate disposition (confirm / challenge / carry forward)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#reviewing-assumed-items
   - id: AW-019
     title: Supervised fallback discipline (halt and present)
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#error-and-fallback-guidance
   - id: AW-022
     title: Failed-gate protocol
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#failed-gate
   - id: AW-023
     title: Ambiguous-requirements protocol
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#ambiguous-requirements
   - id: AW-024
     title: Unreachable-human protocol
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#unreachable-human
   - id: AW-025
     title: Fallback precedence order
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
     notes: the four-item precedence order is flagged as future data for the resolver
+    representation: data+contract
+    links:
+      - guides/agentic-workflow.md#precedence-and-compound-conditions
   - id: SP-008
     title: Continue-a-known-project session steps
     layer: 1b
     basis: 1b
-    source: guides/session-protocol.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/session-protocol.md#continue-a-known-project
   - id: SP-009
     title: Session-end steps
     layer: 1b
     basis: 1b
-    source: guides/session-protocol.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/session-protocol.md#at-session-end
   - id: AW-026
     title: Session-continuity read-on-start / write-on-end
     layer: 1b
     basis: 1b
-    source: guides/agentic-workflow.md
+    source: spec/execution.md
     introduced: verify
     status: active
+    representation: contract
+    links:
+      - guides/agentic-workflow.md#session-continuity-protocol
+  - id: AW-027
+    title: Closed-world execution (no action without a governing contract)
+    layer: 1b
+    basis: 1b
+    source: spec/execution.md
+    introduced: v0.64.0
+    status: active
+    notes: admitted during Phase 3 Wave D per the design-review addendum (maintainer, 2026-07-16) — situation-level normative silence is a stop-and-escalate and the escalation is the deliverable; trigger is normative silence, never epistemic uncertainty. Trial fixture 7 probes it
+    representation: contract
+    links:
+      - spec/README.md#key-principle
+      - spec/operating-model.md#key-principle

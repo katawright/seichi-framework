@@ -49,18 +49,21 @@ therefore written so that a conforming enforcer can evaluate it — and so that
 4. For checkpoint decisions, read the [**Checkpoints Spec**](checkpoints.md) —
    the three checkpoint types, their closed outcome sets, and the security
    severity-halt rule
-5. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
+5. For executor conduct — the closed-world rule, the load line, the `[ASSUMED]`
+   convention, fallback protocols, and session continuity — read the
+   [**Execution Spec**](execution.md)
+6. For unattended execution, read the [**Delegated-Run Spec**](delegated-run.md)
    — the run lifecycle, liveness, idempotency, replanning, and honest-outcome
    contracts
-6. For concurrent execution, read the
+7. For concurrent execution, read the
    [**Parallel-Batch Spec**](parallel-batch.md) — the forcing-dependency
    taxonomy, parallel-safety classification, and batch preflight, execution, and
    close contracts
-7. Both read and write project state through the
+8. Both read and write project state through the
    [**Canonical-State Spec**](canonical-state.md) — the single source the others
    reference, and home of the project lifecycle and the project-level completion
    contract
-8. For the human-facing rationale behind any contract, follow its link back to
+9. For the human-facing rationale behind any contract, follow its link back to
    its guide (e.g. the [Operating Model Guide](../guides/operating-model.md) or
    the [Right-Sizing Guide](../guides/right-sizing.md))
 
@@ -105,8 +108,8 @@ contracts above state in prose:
 - **`vocabulary/*.yaml`** — hand-curated source for the closed value sets
   (lifecycle machines and reason sets, planning-family statuses, attribution
   grades, operating-configuration fields, concurrency vocabularies, checkpoint
-  types and outcomes, record families and trace-link types). Values are stable
-  identifiers, never display text.
+  types and outcomes, record families and trace-link types, the ordered fallback
+  precedence). Values are stable identifiers, never display text.
 - **`rules/index.yaml`** — the rule registry: every kernel rule's stable ID,
   layer, admission basis, and normative source. A migrated rule's row also
   records `representation` (how it migrated: `data` | `data+contract` |

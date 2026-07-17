@@ -318,77 +318,40 @@ reached).
 
 **Capable-executor read path.** Where the spec layer covers a contract, the spec
 (`spec/`), the right-sizing tables, and the templates are the intended read path
-for highly capable executors; the corresponding guides are rationale and
-scaffolding, pulled on demand by an executor that can operate from the contracts
-alone. The read path is a **declared setting**, not an inference the executor
-makes about itself: `guided` | `contracts-only` in the project operating
-configuration, inferred and surfaced as an overridable `[ASSUMED]` default like
-tier and posture (see
-[Classification by Inference](#classification-by-inference)), and reviewed by
-the retrospective's specification-depth calibration. The same setting scales how
-much implementation scaffolding the stage artifacts themselves carry — see
-[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects).
-This is not self-sufficiency across the whole governance surface: the security
-throughline, checkpoints, the stage map, and session orientation live only in
-guides, are part of the always-loaded spine below, and bind every executor at
-the non-delegable floor regardless of capability.
+for highly capable executors; the guides are rationale and scaffolding, pulled
+on demand. The binding contracts are AW-016 (the load line) and AW-017 (the
+capable-executor read path — including what contracts-only never exempts: the
+security throughline, checkpoints, the stage map, and session orientation) in
+the
+[Execution Spec § Read Order and the Load Line](../spec/execution.md#read-order-and-the-load-line).
 
 ### Always loaded — the cross-cutting governance
 
-Read at session start and honor throughout, regardless of stage or tier:
-
-- **Tier 0 — Classification core (read first, before anything else).**
-  [`INDEX.md`](../INDEX.md), [`README.md`](../README.md), this guide
-  (`agentic-workflow.md`), [`session-protocol.md`](session-protocol.md), and
-  [`right-sizing.md`](right-sizing.md). Enough to orient, classify the scenario
-  (the
-  [Session-Start Orientation](session-protocol.md#orient--classify-the-scenario-first-contact)),
-  and classify governance weight (tier / consequence) **before** committing to
-  any further read. `right-sizing.md` is not short, but it is read first
-  regardless: it is the read that decides which other reads happen at all.
-- **Tier 1 — Governance spine (loaded after Tier 0; applied at the weight Tier 0
-  established).** [`operating-model.md`](operating-model.md) (with
-  [`spec/operating-model.md`](../spec/operating-model.md)),
-  [`framework.md`](framework.md), [`checkpoints.md`](checkpoints.md),
-  [`security.md`](security.md) (the cross-cutting **throughline**, not a stage's
-  security detail), and [`stages.md`](stages.md) (the stage **map** — inputs,
-  outputs, gates — not the stage READMEs). These carry the non-delegable floor,
-  the gate and checkpoint rules, the compliance hooks, and the security
-  throughline. They are **never** scoped away by stage.
+Read at session start and honor throughout, regardless of stage or tier: the
+**Tier 0 classification core** (enough to orient, classify the scenario, and
+classify governance weight before committing to any further read) and the **Tier
+1 governance spine** (the non-delegable floor, the gate and checkpoint rules,
+the compliance hooks, and the security throughline — never scoped away by
+stage). The binding tier lists are AW-016 in the
+[Execution Spec](../spec/execution.md#aw-016--load-line-tier-01-read-order).
 
 ### Deferred — load on entry to the stage or context
 
-- **Stage-scoped.** Each `stages/<stage>/README.md`, `checklist.md`,
-  `reference.md`, and that stage's templates — load when the run **enters** that
-  stage, not before. A `core`-tier stage README means "load this before its
-  `ref` siblings _within_ the stage," not "load before the stage."
-- **Contextual.** Load on the triggering condition, not by stage:
-  [`operations.md`](operations.md) (Closure / Operations),
-  [`learning-loop.md`](learning-loop.md) (friction / retro),
-  [`spec/delegated-run.md`](../spec/delegated-run.md) (delegated / Lights-Out
-  runs), [`spec/parallel-batch.md`](../spec/parallel-batch.md) with the parallel
-  guides (parallel batches), the brownfield guides (brownfield projects),
-  [`roles.md`](roles.md) (role/RACI detail, on demand when assignments matter —
-  each stage README's `raci_roles` front matter carries the per-stage roster),
-  [`bootstrap.md`](bootstrap.md) and
-  [`project-foundation.md`](project-foundation.md) (setup), and the remaining
-  `ref`-tier guides — but never [`OVERVIEW.md`](OVERVIEW.md), the human-only
-  orientation layer, which agents do not load.
+Stage-scoped material — each stage's README, checklist, reference, and templates
+— loads when the run **enters** the stage; contextual guides load on their
+triggering condition (operations, learning-loop, delegated-run, parallel-batch,
+brownfield, roles, setup) — and never [`OVERVIEW.md`](OVERVIEW.md), the
+human-only orientation layer. The binding lists are AW-016's rule.
 
 ### What stage-scoping must not cost
 
-- **Forward references stay visible.** A downstream constraint that should shape
-  an early decision — e.g., a Verification requirement that affects System
-  Design — must remain visible even though the downstream stage's full guide has
-  not loaded. The always-loaded stage **map** ([`stages.md`](stages.md)) carries
-  each stage's inputs and outputs for exactly this reason, and the traceability
-  chain (goal → success criterion → requirement → acceptance criterion → test)
-  is governance, honored throughout. Defer downstream _guides_, never downstream
-  _constraints_.
-- **The load line is a floor, not a ceremony budget.** Lighter tiers thin how
-  much of the governance spine is _materialized and applied_ (see
-  [Right-Sizing](right-sizing.md)); they never scope the line away by stage, and
-  never below the compliance or non-delegable floor.
+Two floors bind the scoping: **forward references stay visible** (defer
+downstream _guides_, never downstream _constraints_ — the always-loaded stage
+map carries each stage's inputs and outputs for exactly this reason), and **the
+load line is a floor, not a ceremony budget** (lighter tiers thin what is
+materialized, never the line itself, and never below the compliance or
+non-delegable floor). The binding contract is AW-018 in the
+[Execution Spec](../spec/execution.md#aw-018--stage-scoping-floor-defer-guides-never-constraints).
 
 ---
 
@@ -424,137 +387,93 @@ not merely spoken; see
 Use these protocols when the agent encounters obstacles during autonomous
 operation.
 
-> **Supervised posture:** At the Supervised posture, the agent surfaces the
-> situation and a human acts before deriving inputs or attempting gate
-> remediation. The protocols below assume Checkpointed or Lights-Out postures.
-> Agents at the Supervised posture should halt and present the situation to the
-> human rather than acting autonomously.
+> **Supervised posture:** the agent halts and presents the situation rather than
+> acting autonomously — AW-019 in the
+> [Execution Spec § Fallback Protocols](../spec/execution.md#fallback-protocols).
+> The protocols below assume Checkpointed or Lights-Out postures.
 
 ### Missing Input
 
-An expected input artifact is unavailable or incomplete.
-
-1. Check whether the input can be derived from available context
-2. If derivable, produce the input and flag it with `[ASSUMED]` — clearly state
-   what was assumed and why
-3. If not derivable, request the input from the human
-4. Do not proceed past a gate with assumed inputs unless the human explicitly
-   approves
+An expected input artifact is unavailable or incomplete: derive it from
+available context and flag it `[ASSUMED]` (stating what was assumed and why), or
+request it — and never pass a gate on assumed inputs without explicit human
+approval. The binding protocol is AW-020 in the
+[Execution Spec](../spec/execution.md#aw-020--missing-input-protocol-derive-assumed-or-request).
 
 ### Reviewing [ASSUMED] Items
 
 When an artifact reaches gate review, every `[ASSUMED]` item requires an
-explicit disposition:
-
-- **Confirm** — the assumption has been verified as correct. Remove the
-  `[ASSUMED]` tag and update the artifact.
-- **Challenge** — the assumption is incorrect or needs revision. Correct the
-  content, remove the `[ASSUMED]` tag, and note the correction.
-- **Carry forward** — the assumption cannot be verified at this gate (e.g.,
-  depends on future discovery). Leave the tag, document the item as a condition
-  in the [Gate Decision Template](../templates/gate-decision.md), and assign an
-  owner to resolve it before the next gate.
-
-Do not proceed past a gate with unaddressed `[ASSUMED]` items — each one must
-have a recorded disposition.
+explicit disposition — **Confirm**, **Challenge**, or **Carry forward** (as a
+tracked condition with an owner) — and no gate passes with an unaddressed item.
+The binding contracts are AW-006 (the assumed-classification convention) and
+AW-021 (the gate disposition) in the
+[Execution Spec § The \[ASSUMED\] Convention](../spec/execution.md#the-assumed-convention).
 
 ### Failed Gate
 
 A gate check fails — checklist criteria not met, tests failing, or review
-rejected.
-
-1. Document the specific failure reason
-2. Attempt remediation (fix the issue, update the artifact)
-3. Re-run the gate check
-4. If remediation fails after one retry, escalate to the human with a summary of
-   what was tried
-
-At hard gates (Gate 1, Gate 2), skip autonomous remediation — escalate to the
-human immediately with the failure reason and do not re-run the gate check
-without human direction.
+rejected: document the failure, remediate once, re-run; at hard gates (Gate 1,
+Gate 2) skip autonomous remediation and escalate immediately. The binding
+protocol is AW-022 in the
+[Execution Spec](../spec/execution.md#aw-022--failed-gate-protocol).
 
 ### Ambiguous Requirements
 
-Requirements can be interpreted multiple ways.
-
-1. List all reasonable interpretations
-2. Assess risk and effort for each interpretation
-3. Recommend the interpretation with the lowest risk
-4. Request the human to confirm before proceeding
-5. Document the decision and rationale
+Requirements can be interpreted multiple ways: list the reasonable
+interpretations, assess risk and effort, recommend the lowest-risk reading,
+confirm with the human, and document the decision. The binding protocol is
+AW-023 in the
+[Execution Spec](../spec/execution.md#aw-023--ambiguous-requirements-protocol).
 
 ### Unreachable Human
 
-The agent needs human input but cannot get it (async workflow, human
-unavailable).
-
-1. Continue with the lowest-risk option
-2. Flag every decision made without human input
-3. Compile a decision log for the human to review when available
-4. Do not proceed past hard gates (Gate 1, Gate 2) without human approval
-5. At the Supervised posture, halt and log all context for human review rather
-   than continuing autonomously
-6. At the Checkpointed posture, "continue" means continue work within the
-   current stage only — do not advance to the next stage or pass a gate without
-   human approval
+The agent needs human input but cannot get it: continue with the lowest-risk
+option within the posture's bounds (at Checkpointed, within the current stage
+only; at Supervised, halt), flag every decision made without human input,
+compile a decision log — and never proceed past a hard gate without human
+approval. The binding protocol is AW-024 in the
+[Execution Spec](../spec/execution.md#aw-024--unreachable-human-protocol).
 
 ### Precedence and Compound Conditions
 
-When multiple fallback conditions apply simultaneously, resolve in this order:
-
-1. **Hard gate constraints take priority** — if a hard gate blocks and the human
-   is unreachable, log all context and halt. Do not proceed past hard gates
-   without human approval under any circumstances. Attempt to derive missing
-   inputs with `[ASSUMED]` flag before halting, so context is maximally prepared
-   for human review upon return.
-2. **Unreachable Human** — determine whether to wait or continue based on gate
-   type and operating posture.
-3. **Missing Input** — attempt to derive or request; if the human is
-   unreachable, follow step 1/2 above.
-4. **Ambiguous Requirements** — lowest priority; resolve after inputs and human
-   availability are determined.
-
+When multiple fallback conditions apply simultaneously, resolve in order: **hard
+gate constraints** first, then **unreachable human**, **missing input**, and
+**ambiguous requirements** last. The ordered set binds as kernel data
+(`fallback_precedence`) under AW-025 in the
+[Execution Spec](../spec/execution.md#aw-025--fallback-precedence-order).
 Stage-specific fallback guidance in `stages/[stage]/reference.md` extends these
-central protocols. Where a stage-specific protocol contradicts this section, the
-stage-specific protocol takes precedence for that stage. Stage-specific fallback
-protocols apply at all operating postures unless the stage reference explicitly
-restricts them to a specific posture.
+central protocols and takes precedence for its stage, at all operating postures
+unless the stage reference restricts it.
 
 ---
 
 ## Session Continuity Protocol
 
-> **Quick reference:** The step-by-step list lives in
-> [Session Protocol](session-protocol.md). This section has the narrative and
-> edge cases.
+> **Quick reference:** the step-by-step lists are SP-008 (session start on a
+> known project) and SP-009 (session end) in the
+> [Execution Spec § Session Continuity](../spec/execution.md#session-continuity);
+> [Session Protocol](session-protocol.md) routes to them. This section has the
+> narrative and edge cases.
 
 Multi-session work requires explicit context handoff. Use the session log
 template to maintain continuity across sessions, agents, or participants.
 
 ### Read on Start
 
-At the beginning of every session:
-
-1. Read the session log for the current stage (if one exists)
-2. Review the "Context for Next Session" and "Next Steps" from the last entry
-3. Check artifact progress to understand current state
-4. Confirm your understanding with the human before proceeding
+At the beginning of every session, read the stage's session log and the last
+entry's "Context for Next Session" before proceeding; at the end, write the new
+entry — completed / in-progress / decisions, deviations from the design brief,
+blockers, context and next steps for the successor, and any friction. The
+binding contract is AW-026 in the
+[Execution Spec § Session Continuity](../spec/execution.md#session-continuity);
+the operational step lists are SP-008 and SP-009.
 
 ### Write on End
 
-At the end of every session:
-
-1. Update the session log with a new entry
-2. Record what was completed, what is in progress, and what decisions were made
-3. Note any deviations from the design brief — where implementation diverged
-   from plan and why
-4. Document any blockers
-5. Write "Context for Next Session" — the critical information the next
-   agent/human needs to continue without re-reading everything
-6. List specific "Next Steps" as actionable items
-7. Capture any in-the-moment friction (surprises, deviations, process gaps,
-   tooling problems) by appending an entry to the project's friction log — see
-   [Feedback Capture Protocol](#feedback-capture-protocol) below
+Covered by
+[AW-026](../spec/execution.md#aw-026--session-continuity-read-on-start--write-on-end)
+above — the session-end step list is SP-009 in the
+[Execution Spec](../spec/execution.md#sp-009--session-end-steps).
 
 ### Session Log Template
 
@@ -675,19 +594,13 @@ At each sync point, agents should:
 ## Rework Cycles
 
 When a mid-stage discovery breaks something — a design proves infeasible, an NFR
-is unmet, or an assumption is invalidated — assess the impact using the two
-diagnostic questions in the
-[Framework Guide: Mid-Stage Discovery](framework.md#mid-stage-discovery):
-
-1. **Does this change the design?** — if yes, record an ADR and produce a
-   delta-only brief.
-2. **Does this affect the investment assumptions (cost, schedule, risk)?** — if
-   yes, re-evaluate the gate decision with updated evidence and record the new
-   decision in the original gate record.
-
-Both questions are spectrums requiring judgment, not binary gates. See the
-[Impact Assessment](framework.md#impact-assessment) reference table for common
-combinations and process guidance.
+is unmet, or an assumption is invalidated — assess the impact with FW-009's two
+diagnostic questions: _does this change the design?_ and _does this affect the
+investment assumptions (cost, schedule, risk)?_ Both are spectrums requiring
+judgment, not binary gates. The binding contract is FW-009 in the
+[Execution Spec](../spec/execution.md#fw-009--impact-assessment-two-question-spectrums);
+see the [Impact Assessment](framework.md#impact-assessment) reference table for
+common combinations and process guidance.
 
 ### Delta-Only Brief Convention
 

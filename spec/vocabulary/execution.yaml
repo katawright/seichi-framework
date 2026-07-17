@@ -1,0 +1,17 @@
+# Kernel vocabulary source — executor-conduct data.
+#
+# SOURCE file (hand-curated). fallback_precedence is an ORDERED set: position
+# is precedence (position 1 resolves first) — the one kernel vocabulary whose
+# order is normative, per AW-025 (spec/execution.md). No schema consumer;
+# resolver/orchestrator surfaces are the planned consumers.
+
+vocabularies:
+  fallback_precedence:
+    owning_rule: AW-025
+    source: spec/execution.md
+    consumers: []
+    values:
+      - hard-gate-constraint
+      - unreachable-human
+      - missing-input
+      - ambiguous-requirements

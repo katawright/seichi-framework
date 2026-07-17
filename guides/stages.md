@@ -182,10 +182,11 @@ Flow is for small, ad-hoc changes that **change the software** — a button-text
 fix, a small enhancement, a low-risk patch. Because they change code, they are
 delivery work, not [Operations](operations.md#the-remediation-boundary); because
 they are small and self-contained, they do not warrant a project's Initiation
-and Closure. A change that is substantial — new scope, architectural impact, a
-real investment decision — is a **project**, not a Flow item. When in doubt,
-size by [consequence](right-sizing.md): if it needs a Gate-1-style investment
-decision, it is a project.
+and Closure. The binding sizing call — substantial scope, architectural impact,
+or a real investment decision makes it a **project**, and when in doubt you size
+by [consequence](right-sizing.md) (a Gate-1-style investment decision means
+project) — is ST-006 in the
+[Execution Spec](../spec/execution.md#st-006--when-to-use-flow-sizing-call).
 
 ### How Flow Folds the Stages
 
@@ -1017,6 +1018,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-07-13
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.9.0.

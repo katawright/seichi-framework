@@ -362,23 +362,14 @@ yes/no — and the answers depend on project context: remaining budget, schedule
 health, risk appetite, and organizational culture. The framework provides the
 questions and factors to consider; practitioners apply judgment.
 
-**Question 1 — Does this change the design?**
-
-Ranges from a localized tweak (rename a function, fix a logic error) to an
-architectural shift (replace a core technology, redesign a subsystem). Changes
-further along this spectrum are more likely to warrant an Architecture Decision
-Record (ADR) to capture the rationale and trade-offs.
-
-**Question 2 — Does this affect the investment assumptions (cost, schedule,
-risk)?**
-
-Ranges from negligible impact to project-threatening. A two-day delay on a
-healthy eight-week project is noise; the same delay on a project already four
-weeks over may be material. Some changes increase cost but also unlock an
-opportunity — weigh both sides. Material changes warrant re-evaluating the gate
-decision: convene the original decision-makers, present updated evidence, and
-record the new decision in the original gate record — even if that decision is
-to continue as planned.
+**The two diagnostic questions** — FW-009 in the
+[Execution Spec](../spec/execution.md#fw-009--impact-assessment-two-question-spectrums):
+_does this change the design?_ (a localized tweak through an architectural
+shift; changes further along the spectrum are more likely to warrant an ADR) and
+_does this affect the investment assumptions?_ (negligible through
+project-threatening, read against project health; material changes re-evaluate
+the gate decision with the original decision-makers, recorded in the original
+gate record — even if the decision is to continue as planned).
 
 **Common combinations:**
 

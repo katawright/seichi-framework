@@ -51,15 +51,13 @@ classification — see
 [Classification by Inference](agentic-workflow.md#classification-by-inference).
 
 Adopt an expert-consultant posture calibrated to the operator's goals and
-technical comfort — the cross-functional-accessibility principle
-([framework.md](framework.md), principle #5). This orientation runs once, on
-first contact; suppress it on a known continuation.
-
-Part of that posture is making it safe to ask: on first contact, tell the
-operator they can ask for a plain-language explanation of any term,
-abbreviation, or concept at any time — one sentence, never a glossary dump,
-warmest on the idea-only path. Offer it once and, like the orientation, suppress
-it on continuation.
+technical comfort, and make it safe to ask: offer a plain-language explanation
+of any term on request — one sentence, never a glossary dump — once, on first
+contact, suppressing both the orientation and the offer on continuation. The
+binding contract is SP-006 in the
+[Execution Spec](../spec/execution.md#sp-006--expert-consultant-posture-and-plain-language-calibration);
+reading the operator's register from their speech (never asking) is AW-010's
+rule.
 
 QUICKSTART's paste-prompts remain the explicit-entry express lane for an
 operator who already knows their scenario; this protocol is the fallback when
@@ -69,40 +67,20 @@ defining its own.
 
 ### Continue a known project
 
-1. **Confirm the working location** — an artifacts or source-code location, per
-   the session-start guard above (never the read-only framework directory). See
-   [Working Locations](bootstrap.md#working-locations).
-2. Identify stage and increment from the user request or
-   `projects/<name>/project.md`.
-3. Open the session log at `projects/<name>/docs/session-logs/<stage>.md` (or
-   `<stage>-<increment>.md` for incremented stages). If it does not exist,
-   create it from the appropriate template (see
-   [Template Selection](#template-selection)).
-4. Read the most recent session entry's "Context for Next Session" block.
-5. **Re-check open carry-forward conditions.** Re-read any open gate/checkpoint
-   "proceed with conditions" obligations from the canonical state and report
-   each one's status — satisfied, still open, blocked, or withdrawn (no longer
-   applicable) — before starting stage work. A stage cannot close over a
-   condition due within it while it remains open.
-6. Read the current stage README and the brief for this stage/increment if one
-   exists.
-7. Append a new session entry header with today's date and participant.
+The seven session-start steps — the working-location guard, stage/increment
+identification, opening (or creating) the session log, reading the last entry's
+context, **re-checking open carry-forward conditions**, reading the stage README
+and brief, and appending the new entry header — are SP-008 in the
+[Execution Spec](../spec/execution.md#sp-008--continue-a-known-project-session-steps).
 
 ---
 
 ## At Session End
 
-1. Fill in the new session entry: Completed, In Progress, Decisions Made,
-   Deviations from Plan, [H] / [J] Items, Context for Next Session.
-2. Update the file's `Last Updated` header.
-3. Update the `Artifact Progress` table if any artifact changed state.
-4. If any friction surfaced this session — process, execution, product, or
-   tooling — append an entry to the project's friction log (see
-   [Feedback Capture Protocol](agentic-workflow.md#feedback-capture-protocol)).
-
-> For each `[J]` or `[H]` item, record the evaluator at the required identity
-> grade and the required timestamps (see
-> [Canonical-State Spec § Record Requirements](../spec/canonical-state.md#record-requirements)).
+The session-end steps — the completed entry (including `[H]` / `[J]` items
+recorded at their required identity grades), the `Last Updated` header, the
+`Artifact Progress` table, and friction capture — are SP-009 in the
+[Execution Spec](../spec/execution.md#sp-009--session-end-steps).
 
 ---
 
@@ -127,6 +105,6 @@ defining its own.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-16
 
 Added to framework in v0.44.0.
