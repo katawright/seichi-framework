@@ -805,8 +805,8 @@ recorded, the target authority is identified, state is preserved.
   - **`lapsed`** — the determination that no decision will come (the
     `acceptance-lapsed` device, ported). Recording the lapse is a human act —
     interactive, or pre-authorized policy as the policy author's act — never a
-    bare timeout. The
-    [decision-overdue path](delegated-run.md#progress-liveness-and-unresponsive-state)
+    bare timeout. The decision-overdue path
+    ([DR-022](delegated-run.md#dr-022--decision-overdue-escalates-and-never-changes-run-state))
     is a producer: a pre-authorized auto-abandon past the longer bound records
     the run's `decision-lapsed` ending and the escalation's `lapsed` as the same
     determination.
@@ -1714,6 +1714,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-17
 
 Added to framework in v0.49.0.

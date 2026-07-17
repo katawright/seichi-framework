@@ -253,14 +253,14 @@ last-known-activity.
   for long or high-consequence spans.
 - A run whose environment cannot meet the cadence its consequence requires is
   **not Lights-Out-eligible** for that span (cadence is a preflight check).
-- Two "stalled" signals with distinct owners: **Unresponsive** (the agent went
-  dark; threshold = reporting cadence; exceeded ⇒ presumed unresponsive) and
+- Two "stalled" signals with distinct owners — **Unresponsive** (the agent went
+  dark; threshold = the reporting cadence; exceeded ⇒ presumed unresponsive) and
   **Decision-overdue** (a paused run's human has not answered; threshold = the
-  decision-response window). Exceeding the decision-response window **escalates;
-  it MUST NOT change the run's state** — the run stays paused/alive. What the
-  escalation does (re-notify, route to a backup decider, or a pre-authorized
-  auto-cancel/auto-abandon after a longer bound) is itself governed by
-  pre-authorized policy.
+  decision-response window). Their handling is the two sub-rules below:
+  [DR-022](#dr-022--decision-overdue-escalates-and-never-changes-run-state)
+  governs the decision-overdue signal, and
+  [DR-019](#dr-019--reconfirm-presumed-unresponsive-work-before-trusting-it) the
+  presumed-unresponsive fail-safe.
 
 **Outputs.** The observer-derived liveness determination.
 
@@ -270,6 +270,39 @@ unresponsive/decision-overdue determinations.
 **Failure behavior.** The fail-safe presumption and reconfirmation duty —
 [DR-019](#dr-019--reconfirm-presumed-unresponsive-work-before-trusting-it),
 below.
+
+<!-- rule: DR-022 -->
+
+### DR-022 — Decision-overdue escalates and never changes run state
+
+- **Applicability.** A **paused** run whose human has not answered a pending
+  decision within the **decision-response window** — the decision-overdue
+  stalled signal, distinct from the **unresponsive** signal (agent gone dark;
+  threshold = the reporting cadence; its fail-safe presumption and
+  reconfirmation duty are
+  [DR-019](#dr-019--reconfirm-presumed-unresponsive-work-before-trusting-it)).
+- **Inputs.** The decision-response window (the decision-overdue threshold,
+  distinct from the reporting cadence); the run's current state; any
+  pre-authorized escalation / auto-abandon policy in force.
+- **Procedure.** Exceeding the decision-response window **escalates; it MUST NOT
+  change the run's state** — the run stays paused/alive. What the escalation
+  does — re-notify, route to a backup decider, or a pre-authorized auto-cancel /
+  auto-abandon after a **longer** bound — is itself governed by **pre-authorized
+  policy**. Absent such a policy, no terminal follows from the window alone: the
+  run waits, escalated. The lapse itself (the run's `decision-lapsed` ending and
+  the escalation's `lapsed`) is the policy author's act, never a bare timeout —
+  the producer side is
+  [CS-044](canonical-state.md#cs-044--escalation-lifecycle-machine-and-closed-withdrawn-reason-set).
+- **Outputs.** The recorded decision-overdue determination and its escalation,
+  with the run state unchanged by the overdue signal.
+- **Evidence.** The recorded decision-overdue determination and the escalation
+  record.
+- **Failure behavior.** Writing any run terminal (e.g. `abandoned` with
+  `decision-lapsed`) on a bare decision-response-window timeout, absent a
+  governing pre-authorized auto-abandon policy, is a conformance violation — the
+  window escalates, it does not terminate.
+
+<!-- /rule: DR-022 -->
 
 <!-- rule: DR-019 -->
 
@@ -1013,6 +1046,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-17
 
 Added to framework in v0.49.0.

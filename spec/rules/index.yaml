@@ -516,6 +516,17 @@ rules:
     representation: contract
     links:
       - spec/delegated-run.md#progress-liveness-and-unresponsive-state
+  - id: DR-022
+    title: Decision-overdue escalates and never changes run state
+    layer: 1b
+    basis: 1b
+    source: spec/delegated-run.md
+    introduced: v0.64.0
+    status: active
+    notes: admitted during Phase 3 (maintainer, 2026-07-17) — the decision-overdue rule (inventory DR-22) carved from the Progress/Liveness section contract into a citable rule; surfaced by the F6 trial (Luna misread CS-044's producer clause). Repairs CS-044's dangling section link.
+    representation: contract
+    links:
+      - spec/delegated-run.md#progress-liveness-and-unresponsive-state
   - id: DR-025
     title: Boundary-currency (state complete and current before a boundary)
     layer: 1b
