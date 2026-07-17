@@ -114,25 +114,25 @@ Rationale:
 
 Rationale:
 [Roles Guide § Security Escalation Protocol](../guides/roles.md#security-escalation-protocol)
-— the halt-communication protocol and the defect-report conventions stay there;
-this contract is the binding severity-to-response mapping the boundary ADR
-assigned a spec home alongside the checkpoint vocabulary. It carries no kernel
-rule ID (it is not in the first-slice registry); it binds as an ordinary spec
-contract.
+— the halt-communication protocol and the defect-report conventions stay there.
+The boundary ADR assigned this rule a spec home alongside the checkpoint
+vocabulary; it was admitted to the registry as CP-002 during Phase 3 Wave D
+(maintainer, 2026-07-16).
 
-**Applicability.** Any security finding AppSec identifies during any stage.
+<!-- rule: CP-002 -->
 
-**Inputs.** The finding; its severity classification. Severity follows the
-project's defect-management definitions (see
-[Verification Reference: Defect Management](../stages/verification/reference.md#defect-management));
-for security findings, classify on exploitability and blast radius — Critical =
-exploitable with no authentication or user interaction required and broad blast
-radius (e.g., RCE, auth bypass, mass data exposure); High = exploitable but
-requires authentication or has limited blast radius.
+### CP-002 — Security severity-halt (finding severity drives the orchestration response)
 
-**Procedure.**
-
-- The severity determines the orchestration response:
+- **Applicability.** Any security finding AppSec identifies during any stage.
+- **Inputs.** The finding; its severity classification. Severity follows the
+  project's defect-management definitions (see
+  [Verification Reference: Defect Management](../stages/verification/reference.md#defect-management));
+  for security findings, classify on exploitability and blast radius — Critical
+  = exploitable with no authentication or user interaction required and broad
+  blast radius (e.g., RCE, auth bypass, mass data exposure); High = exploitable
+  but requires authentication or has limited blast radius.
+- **Procedure.**
+  - The severity determines the orchestration response:
 
   | Severity     | Orchestration response                                                                                                                                                                               |
   | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -140,21 +140,21 @@ requires authentication or has limited blast radius.
   | **High**     | Conditional proceed; finding tracked with fix deadline before deployment                                                                                                                             |
   | **Medium**   | Track in defect backlog; fix targeted for current or next increment                                                                                                                                  |
   | **Low**      | Log in backlog; address opportunistically                                                                                                                                                            |
+  - AppSec has unilateral authority to pause any stage for a Critical finding;
+    the stage's Responsible role must resolve the finding before work resumes.
+  - At Enterprise tier, Critical and High findings require documented
+    fix/accept/defer decisions with AppSec sign-off.
 
-- AppSec has unilateral authority to pause any stage for a Critical finding; the
-  stage's Responsible role must resolve the finding before work resumes.
-- At Enterprise tier, Critical and High findings require documented
-  fix/accept/defer decisions with AppSec sign-off.
+- **Outputs.** The orchestration response for the finding's severity.
+- **Evidence.** The finding's defect report and its resolution or formal
+  downgrade record (report format and the `{parent}-appsec-addendum` naming per
+  the
+  [Roles Guide § Security Escalation Protocol](../guides/roles.md#security-escalation-protocol)).
+- **Failure behavior.** An unresolved, undowngraded Critical finding at a gate
+  leaves the gate unable to proceed — halting is the rule's own consequence, not
+  an exception path.
 
-**Outputs.** The orchestration response for the finding's severity.
-
-**Evidence.** The finding's defect report and its resolution or formal downgrade
-record (report format and the `{parent}-appsec-addendum` naming per the
-[Roles Guide § Security Escalation Protocol](../guides/roles.md#security-escalation-protocol)).
-
-**Failure behavior.** An unresolved, undowngraded Critical finding at a gate
-leaves the gate unable to proceed — halting is the rule's own consequence, not
-an exception path.
+<!-- /rule: CP-002 -->
 
 ---
 

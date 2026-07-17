@@ -388,6 +388,17 @@ rules:
     links:
       - guides/checkpoints.md#key-principle
       - guides/checkpoints.md#gates
+  - id: CP-002
+    title: Security severity-halt (finding severity drives the orchestration response)
+    layer: 1b
+    basis: 1b
+    source: spec/checkpoints.md
+    introduced: v0.64.0
+    status: active
+    notes: admitted during Phase 3 Wave D (maintainer, 2026-07-16), completing the boundary ADR's deferred home assignment for the roles.md severity-halt rule — checkpoint-consumed, previously outside the 87-ID first slice
+    representation: contract
+    links:
+      - guides/roles.md#security-escalation-protocol
 
   # ── 1a — resolver-input path (planned consumer; scope closed by ADR) ─────
   - id: AW-004
