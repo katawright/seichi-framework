@@ -173,7 +173,20 @@ export function validateKernelSources(repoRoot, sources) {
   for (const rule of rules) {
     if (!rule.id) continue;
     const body = (sources.ruleBodies ?? {})[rule.id];
-    if (rule.representation !== undefined && body === undefined) {
+    // `data` is the links-only representation (flag-1 disposition, Wave D):
+    // the rule's entire normative content is kernel data in its front-matter
+    // or vocabulary home, so it carries NO marker-anchored prose body — a
+    // body under a `data` rule contradicts the representation.
+    if (rule.representation === "data" && body !== undefined) {
+      issues.push(
+        `KERNEL  ${RULES_FILE}  ${rule.id}: representation \`data\` is links-only but a marker-anchored body was found in ${rule.source}`,
+      );
+    }
+    if (
+      rule.representation !== undefined &&
+      rule.representation !== "data" &&
+      body === undefined
+    ) {
       issues.push(
         `KERNEL  ${RULES_FILE}  ${rule.id}: representation recorded but no marker-anchored body in ${rule.source}`,
       );

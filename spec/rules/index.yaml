@@ -358,6 +358,10 @@ rules:
     source: guides/stages.md
     introduced: verify
     status: active
+    notes: links-only migration (Wave D, flag-1 disposition) — the pipeline front matter is the canonical data home; no prose body exists or is required
+    representation: data
+    links:
+      - guides/stages.md#how-stages-execute
   - id: AW-001
     title: Per-stage artifact/checkpoint structure (declared-canonical stage metadata)
     layer: 1a
@@ -365,7 +369,11 @@ rules:
     source: stages/*/README.md
     introduced: verify
     status: active
-    notes: the front matter is the canonical data home (one normative home per the first-slice map); declared canonical by guides/agentic-workflow.md (this rule)
+    notes: the front matter is the canonical data home (one normative home per the first-slice map); declared canonical by guides/agentic-workflow.md (this rule). Links-only migration (Wave D, flag-1 disposition)
+    representation: data
+    links:
+      - guides/agentic-workflow.md#key-principle
+      - guides/agentic-workflow.md#stage-routing
 
   # ── 1a — divergent-consumption path ──────────────────────────────────────
   - id: CP-001
