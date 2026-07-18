@@ -20,11 +20,16 @@
 #
 # Migration fields (Phase 3, set in the same commit that migrates a rule):
 #   representation: data | data+contract | contract — how the rule migrated
-#     (Decision P3-3). Present iff the rule's body is marker-anchored in its
-#     `source`: `<!-- rule: <ID> -->` … `<!-- /rule: <ID> -->` around the
-#     body, exactly one flat pair (no nesting), opening with the visible
-#     `### <ID> — <title>` heading (Decision P3-2 + the Q2 rider). The
-#     validate suite enforces the coupling in both directions.
+#     (Decision P3-3). Present on every migrated row. For `data+contract`
+#     and `contract`, the body is marker-anchored in its `source`:
+#     `<!-- rule: <ID> -->` … `<!-- /rule: <ID> -->` around the body, exactly
+#     one flat pair (no nesting), opening with the visible `### <ID> — <title>`
+#     heading (Decision P3-2 + the Q2 rider); the validate suite enforces the
+#     coupling in both directions. For `data` (ST-001, AW-001 — the approved
+#     links-only carve-out) there is NO marker span: the rule's substance
+#     lives in the structured data homes named in the row's notes, consumed
+#     by the generator; the validate suite forbids a marker on data rows.
+#     (Data-source existence/binding checks are a registered follow-up.)
 #   links: rationale locations (the guide text that keeps the why) —
 #     repo-relative paths, optionally with a #heading-anchor fragment.
 
