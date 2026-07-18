@@ -14,6 +14,10 @@ deployment, production ownership), use
 
 **Date:** YYYY-MM-DD
 
+**Decision:** Proceed / Proceed with conditions / Revise / Stop
+
+<!-- checkpoint-outcome: gate -->
+
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
@@ -120,9 +124,11 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
-<!-- checkpoint-outcome: gate -->
+## Decision Detail
 
-## Decision: Proceed / Proceed with conditions / Revise / Stop
+<!-- The decision itself is recorded once, in the header above (see
+     STYLE_GUIDE.md, Record-Template Fill-In Convention). This section
+     elaborates it. -->
 
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if "Proceed with conditions") — each is a tracked

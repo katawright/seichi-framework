@@ -16,6 +16,15 @@ list of checkpoint types.
 
 **Checkpoint Type:** Review / Alignment
 
+<!-- Keep the Decision line matching the declared Checkpoint Type; delete the
+     other. -->
+
+**Decision (Review):** Ready / Not Ready <!-- checkpoint-outcome: review -->
+
+**Decision (Alignment):** Aligned / Adjustments Needed
+
+<!-- checkpoint-outcome: alignment -->
+
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
@@ -87,12 +96,12 @@ rationale.
 
 ---
 
-## Decision
+## Decision Detail
 
-- **Decision type (choose one):**
-  - **Review:** Ready / Not Ready <!-- checkpoint-outcome: review -->
-  - **Alignment:** Aligned / Adjustments Needed
-    <!-- checkpoint-outcome: alignment -->
+<!-- The decision itself is recorded once, in the header above (see
+     STYLE_GUIDE.md, Record-Template Fill-In Convention). This section
+     elaborates it. -->
+
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any) — each is a tracked carry-forward obligation,
   re-checked at every later stage entry per the

@@ -719,3 +719,35 @@ describe("checkpoint-outcomes sentinel wrap form", () => {
     expect(issues[0]).toContain("approved, held");
   });
 });
+
+describe("checkpoint-outcomes blank-separated sentinel", () => {
+  const SETS = {
+    gate: new Set(["proceed", "proceed-with-conditions", "revise", "stop"]),
+    review: new Set(["ready", "not-ready"]),
+    alignment: new Set(["aligned", "adjustments-needed"]),
+  };
+
+  it("a sentinel separated from its line above by a blank still targets it", () => {
+    const doc = [
+      "**Decision:** Proceed / Proceed with conditions / Revise / Stop",
+      "",
+      "<!-- checkpoint-outcome: gate -->",
+      "",
+      "**Decision makers:**",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("still fails on off-canon values across the blank", () => {
+    const doc = [
+      "**Decision:** Approved / Held",
+      "",
+      "<!-- checkpoint-outcome: gate -->",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("approved, held");
+  });
+});

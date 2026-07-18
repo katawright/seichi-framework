@@ -129,9 +129,11 @@ export function checkpointOutcomeIssues(file, content, sets) {
     tagged.add(i);
     let target = i;
     if (line.replace(SENTINEL_RE, "").trim() === "") {
-      const above = i > 0 ? lineValues(lines[i - 1]) : null;
+      let up = i - 1;
+      while (up >= 0 && lines[up].trim() === "") up--;
+      const above = up >= 0 ? lineValues(lines[up]) : null;
       if (above && above.length) {
-        target = i - 1;
+        target = up;
       } else {
         target = i + 1;
         while (target < lines.length && lines[target].trim() === "") target++;
