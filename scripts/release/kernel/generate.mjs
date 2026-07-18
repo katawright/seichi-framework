@@ -486,6 +486,9 @@ export function buildKernelManifest(sources) {
   const rules = [...sources.rules].sort((a, b) => compareRuleIds(a.id, b.id));
   const rulesMap = {};
   for (const r of rules) {
+    // Registry `notes` are maintainer provenance and are deliberately NOT
+    // projected into the executor-facing manifest (they leaked trial-fixture
+    // mappings once — see the Phase 3 round-2 verification record).
     rulesMap[r.id] = {
       title: r.title,
       layer: r.layer,
@@ -493,7 +496,6 @@ export function buildKernelManifest(sources) {
       source: r.source,
       introduced: r.introduced,
       status: r.status,
-      ...(r.notes ? { notes: r.notes } : {}),
       ...(r.representation ? { representation: r.representation } : {}),
       ...(r.links ? { links: r.links } : {}),
     };

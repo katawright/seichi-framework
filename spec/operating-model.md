@@ -141,9 +141,18 @@ vocabularies the configuration draws from; the executor read path setting is
   — and presented as overridable `[ASSUMED]` defaults, confirmed at Gate 1 like
   any other `[ASSUMED]` item. When signals are missing or conflict, the
   inference defaults conservatively — the safer value, higher tier, more
-  oversight — and is flagged. Escalation triggers override inference: sensitive
+  oversight — and is flagged; for operating posture, under-determined means
+  `supervised` (the most-oversight preset). A stated preference for light
+  process bears on tier appetite, not on execution autonomy — it is not a
+  posture signal. Escalation triggers override inference: sensitive
   data, compliance requirements, or external users force Standard or Enterprise
-  regardless of conversational signals. **[Informative]** Tier, project type,
+  regardless of conversational signals, and set the Required Assurance
+  inference floor to `internal` — intake records the requirement; whether the
+  roster can currently meet it is a staffing fact dispositioned at Gate 1, not
+  an input that lowers the recorded floor (the availability fallback is
+  [OM-017](#om-017--consequence-to-floor-mapping-table)'s, exercised by a
+  recorded human acceptance, never by intake inference).
+  **[Informative]** Tier, project type,
   and deployment intent are enumerated here but not ratified as closed kernel
   vocabularies (the governance-preset promotion is explicitly deferred — see
   [`vocabulary/config.yaml`](vocabulary/config.yaml)).
@@ -173,7 +182,14 @@ vocabularies the configuration draws from; the executor read path setting is
   conversation without being asked to pick from any framework menu; the
   decisions are derived from two or three natural questions woven into the
   opening conversation, and framework vocabulary is introduced later, when a
-  classification first matters (typically at Gate 1).
+  classification first matters (typically at Gate 1). A defaulted
+  classification reaching its Gate-1 confirmation is such a moment: the
+  confirmation names the value set the default was chosen from (for operating
+  posture, the [OMG-016](#omg-016--operating-presets-supervised--checkpointed--lights-out)
+  presets) and that the value was a conservative default, not inferred fit —
+  so a user who wanted a different value has the vocabulary to move it. The
+  no-menus rule governs first contact; withholding the option space at
+  disposition time is not its intent.
 - **Outputs.** N/A — an interaction rule; the decisions themselves are
   [AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)'s output.
 - **Evidence.** N/A — as the enclosing decision set
@@ -439,6 +455,15 @@ is the normative source for the floor mapping those anchors feed.
     density and non-delegability) and required standing-function coverage (stop
     enforcement) — both insert **bounded pauses**; neither switches Lights-Out
     off (see [Lights-Out Eligibility](#lights-out-eligibility)).
+  - The Moderate cell's _else Self_ is the **coverage fallback**, exercised at
+    floor-consumption time by a **recorded human acceptance** (the Failure
+    behavior's accepted limitation) — it is not an intake inference. Intake
+    records the requirement (`internal` where forced by
+    [AW-004](#aw-004--six-project-configuration-decisions-set-at-intake)'s
+    escalation triggers); a roster that cannot currently meet it is a Gate-1
+    disposition (add an independent provider, or record the acceptance and
+    proceed at Self). A floor still unmet at the point assurance is demanded,
+    with no recorded acceptance, blocks per the Failure behavior.
 
 - **Outputs.** The consequence floor per demand-side setting, and the row's
   Lights-Out reading, for the project's anchor.
