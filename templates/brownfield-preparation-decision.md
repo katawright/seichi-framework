@@ -13,7 +13,12 @@ for exit criteria and decision options.
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Go / Conditional Go / Continue / Returning to Gate
+**Decision:** Ready / Not Ready <!-- checkpoint-outcome: review -->
+
+<!-- The exit checkpoint is a Review: were the target conditions met? The
+     preparation-specific next step (Go / Conditional Go / Continue, or an
+     end-of-scope gate recommendation) rides as the Recommendation below —
+     it elaborates this decision and is never a second outcome. -->
 
 **Decision makers:**
 
@@ -55,28 +60,25 @@ for exit criteria and decision options.
 
 ---
 
-## Decision
+## Decision Detail
+
+The decision itself is recorded once, in the header above. This section
+elaborates it.
 
 **Checkpoint timing:** Within committed scope / End of committed scope
 
-**Decision (choose one):**
+**Recommendation:** (the preparation-specific next step this decision routes to)
 
-_Within committed scope:_
-
-- **Go** — target area meets target conditions; proceed to feature work (early
-  exit)
-- **Conditional Go** — proceed with specific mitigations or constraints in place
-  (early exit)
-- **Continue** — committed increments remain; continue with next increment
-
-_End of committed scope (requires gate approval):_
-
-- **Close to target** — request gate approval for 1-2 additional increments with
-  concrete plan
-- **Meaningful progress** — request gate re-evaluation: adjust target mode,
-  extend scope, or stop
-- **No meaningful progress** — recommend gate pivot: change investment model or
-  stop
+<!-- Within committed scope — Ready: "Go" (target conditions met; early exit
+     to feature work) or "Conditional Go" (early exit with tracked conditions
+     — list them below); Not Ready: "Continue" (committed increments remain;
+     continue with the next increment).
+     End of committed scope — the recommendation feeds a gate re-evaluation,
+     where the gate's own closed outcome set governs: "Close to target"
+     (request approval for 1-2 additional increments with a concrete plan);
+     "Meaningful progress" (request re-evaluation: adjust target mode, extend
+     scope, or stop); "No meaningful progress" (recommend pivot: change
+     investment model or stop). -->
 
 **Rationale:** (why this decision)
 
@@ -103,4 +105,4 @@ dates)
      use checkpoint-decision.md instead.
      For Gate 1 and Gate 2 investment decisions, use gate-decision.md. -->
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.39.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.39.0. -->

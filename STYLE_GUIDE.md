@@ -228,6 +228,27 @@ Within-section writing patterns:
 
 ---
 
+## Record-Template Fill-In Convention
+
+A record template (a decision record, session log, or any artifact whose filled
+copy becomes canonical evidence) carries **exactly one fill-in point per
+recorded fact**, placed at the **scan surface** — the header block a reader
+checks first. Body sections elaborate that fact — rationale, conditions,
+evidence, recommendation, guidance — and never carry a second fill-in of the
+same fact.
+
+- **Why:** a duplicate fill-in is a second source waiting to disagree (the
+  document-internal form of the
+  [no-status-axis rule](spec/canonical-state.md#record-family-status-vocabularies));
+  and a fact buried mid-document defeats later scanning.
+- **When a duplicate exists**, keep the copy at the scan position and demote the
+  other to guidance (an HTML comment or informative prose).
+- **Outcome fields** additionally draw from their closed vocabulary and carry
+  the `<!-- checkpoint-outcome: ... -->` sentinel where the CKPT check applies;
+  a next-step vocabulary specific to the artifact (e.g. a preparation exit's "Go
+  / Conditional Go / Continue") rides an elaboration field such as
+  **Recommendation**, never the outcome field.
+
 ## Checklist Conventions
 
 Structure for stage checklist files:
@@ -450,6 +471,6 @@ Use Initiation stage artifacts as reference implementations.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.19.0.

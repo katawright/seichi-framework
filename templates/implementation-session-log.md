@@ -19,16 +19,16 @@ for logging conventions and AI agent guidance.
 
 **Last Updated:** YYYY-MM-DD HH:MM
 
-| Field              | Value                                                         |
-| ------------------ | ------------------------------------------------------------- |
-| **Project**        | [Project Name]                                                |
-| **Increment**      | [Increment Number/Name]                                       |
-| **Engineer(s)**    | [Names]                                                       |
-| **Stage**          | Implementation                                                |
-| **Work Execution** | [Humans / Collaborative / Agents]                             |
-| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent] |
-| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]              |
-| **Gate Status**    | [Pending / Approved / Rejected — Approver: name]              |
+| Field              | Value                                                                    |
+| ------------------ | ------------------------------------------------------------------------ |
+| **Project**        | [Project Name]                                                           |
+| **Increment**      | [Increment Number/Name]                                                  |
+| **Engineer(s)**    | [Names]                                                                  |
+| **Stage**          | Implementation                                                           |
+| **Work Execution** | [Humans / Collaborative / Agents]                                        |
+| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent]            |
+| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]                         |
+| **Gate decision**  | [Not yet held / Held — outcome rides in the gate-decision record (link)] |
 
 <!-- Agent: update this log at the end of each session with completed work, in-progress items, next steps, and blockers -->
 

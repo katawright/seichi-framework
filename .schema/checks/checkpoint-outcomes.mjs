@@ -25,6 +25,7 @@ const SENTINEL_RE = /<!--\s*checkpoint-outcome:\s*([a-z]+)\s*-->/;
 const NO_STATUS_AXIS = [
   "templates/gate-decision.md",
   "templates/checkpoint-decision.md",
+  "templates/brownfield-preparation-decision.md",
 ];
 
 /** The three per-type outcome sets from checkpoints.yaml, keyed by type. */
