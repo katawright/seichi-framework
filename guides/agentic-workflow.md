@@ -122,9 +122,10 @@ Present the derived classifications as overridable assumptions using the
 
 > `[ASSUMED]` Tier: Minimal — solo experiment, no sensitive data. `[ASSUMED]`
 > Project type: Greenfield — empty repository. `[ASSUMED]` Deployment intent:
-> Local-only for now. `[ASSUMED]` Operating posture: Checkpointed — framework
-> default for a first project. `[ASSUMED]` Executor read path: Guided — executor
-> unproven; the retrospective calibrates. Say the word and any of these change.
+> Local-only for now. `[ASSUMED]` Operating posture: Supervised — the
+> most-oversight preset; the default while posture signals are under-determined
+> (AW-004). `[ASSUMED]` Executor read path: Guided — executor unproven; the
+> retrospective calibrates. Say the word and any of these change.
 
 The binding rules ride
 [AW-004/AW-004a](../spec/operating-model.md#project-operating-configuration):
@@ -236,7 +237,10 @@ handoff to Operations. Operations findings feed back as new
 Work Execution is **Collaborative**; Authority is interactive at every step. The
 agent works in short steps and a human reviews each one before it proceeds. The
 difference from Checkpointed is cadence — review at every step here, rather than
-at deliberately placed checkpoints.
+at deliberately placed checkpoints. This is the framework's default posture:
+when intake signals are missing or conflict, under-determined means Supervised,
+the most-oversight preset
+([AW-004](../spec/operating-model.md#aw-004--six-project-configuration-decisions-set-at-intake)).
 
 1. Read the stage README for guidance and rationale
 2. Propose the next small step, then draft it
@@ -247,7 +251,8 @@ at deliberately placed checkpoints.
 
 Work Execution is **Collaborative**; Authority is interactive at checkpoints,
 with pre-authorized policy between. The agent co-authors within human-set
-boundaries. This is the default posture.
+boundaries — the posture a project steps up to from Supervised as calibration
+builds trust.
 
 1. Read the stage README and checklist
 2. Propose a work plan for the current stage
@@ -619,6 +624,6 @@ common combinations and process guidance.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.23.0.
