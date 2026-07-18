@@ -184,7 +184,7 @@ successful completion (60-90 seconds).
 - [ ] **24-hour monitoring plan clear** (assigned owner and schedule)
 - [ ] **Follow-up issues logged in backlog** (nothing lost)
 
-**Decision:** Ready / Not Ready
+**Decision:** Ready / Not Ready <!-- checkpoint-outcome: review -->
 
 **If Ready:** Hand off toward Closure and Operations. Record the deployment
 decision using the
@@ -211,6 +211,6 @@ decision using the
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.7.0.

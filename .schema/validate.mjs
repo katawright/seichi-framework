@@ -15,6 +15,7 @@ import { runFloorTable } from "./checks/floor-table.mjs";
 import { runKernel } from "./checks/kernel.mjs";
 import { runRuleMarkers } from "./checks/rule-markers.mjs";
 import { runShipList } from "./checks/ship-list.mjs";
+import { runCheckpointOutcomes } from "./checks/checkpoint-outcomes.mjs";
 import { runFuncGroup } from "./checks/func-group.mjs";
 import { runCallout } from "./checks/callout.mjs";
 
@@ -290,6 +291,7 @@ const checkIssues = [
   ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
   ...runCheck("KERNEL", () => runKernel(repoRoot)),
   ...runCheck("MARKER", () => runRuleMarkers(repoRoot, fileMap.checkExclude || [])),
+  ...runCheck("CKPT", () => runCheckpointOutcomes(repoRoot)),
 ];
 
 // Restatement-family guards return { fatal, warn }: the drift itself is fatal,

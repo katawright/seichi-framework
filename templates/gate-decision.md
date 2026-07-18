@@ -14,8 +14,6 @@ deployment, production ownership), use
 
 **Date:** YYYY-MM-DD
 
-**Status:** Pending / Proceed / Proceed with conditions / Revise / Stop
-
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
@@ -110,6 +108,8 @@ Criteria may match or differ from what the preceding stage proposed.
 
 ---
 
+<!-- checkpoint-outcome: gate -->
+
 ## Decision: Proceed / Proceed with conditions / Revise / Stop
 
 - **Rationale:** (why this decision was made)
@@ -184,14 +184,16 @@ quality]
   project draft copies with a pointer to the promoted id"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
   stakeholders"
-- _Example (Gate 1, Proceed with prep):_ "Proceed — preparation project approved
-  as prerequisite. Begin Requirements with preparation scope included."
-- _Example (Gate 1, Postpone):_ "Opportunity validated but preparation cost
-  exceeds current budget. Revisit when platform modernization completes."
+- _Example (Gate 1, Proceed with conditions):_ "Preparation project approved as
+  a tracked prerequisite condition. Begin Requirements with preparation scope
+  included."
+- _Example (Gate 1, Stop):_ "Opportunity validated but preparation cost exceeds
+  current budget — project paused. Revisit when platform modernization
+  completes."
 
 ---
 
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
      For architecture review decisions, record as an ADR with status "Accepted". -->
 
-<!-- Template Last Updated: 2026-07-13 | Added in v0.13.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.13.0. -->

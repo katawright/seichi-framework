@@ -111,9 +111,15 @@ bookends the Initiation Brief.
       not necessarily positive, is what gates closure)
 - [ ] **[H] Project owner confirms the project is closed**
 
-**Decision:** Closed / Not Closed
+**Decision:** Ready / Not Ready <!-- checkpoint-outcome: review -->
 
-**If Not Closed:** Document the outstanding items, resolve, and re-run this
+A **Ready** outcome clears the acceptance Review; it is not the lifecycle write.
+Entering the `closed` lifecycle state is the separate governance-class write
+this decision authorizes — it additionally requires the recorded acceptance
+decision and the open-record quiescence disposition (see the
+[Canonical-State Spec](../../spec/canonical-state.md)).
+
+**If Not Ready:** Document the outstanding items, resolve, and re-run this
 checklist.
 
 ---
@@ -132,6 +138,6 @@ checklist.
 
 ## Notes
 
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

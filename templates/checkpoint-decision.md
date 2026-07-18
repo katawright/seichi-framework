@@ -16,8 +16,6 @@ list of checkpoint types.
 
 **Checkpoint Type:** Review / Alignment
 
-**Status:** Pending / Approved / Held / Rejected / Rolled Back
-
 **Decision makers:**
 
 - **Clearance mode:** Interactive human / Pre-authorized policy
@@ -38,7 +36,7 @@ list of checkpoint types.
 ## Context
 
 - **Stage completed:** (which stage preceded this checkpoint)
-- **Decision being made:** (what is being approved/held/rejected)
+- **Decision being made:** (what is being decided)
 - **Stage artifact:** (link to deployment brief, operational-handoff record, or
   checklist)
 
@@ -80,8 +78,9 @@ rationale.
 ## Decision
 
 - **Decision type (choose one):**
-  - **Review:** Ready / Not Ready
+  - **Review:** Ready / Not Ready <!-- checkpoint-outcome: review -->
   - **Alignment:** Aligned / Adjustments Needed
+    <!-- checkpoint-outcome: alignment -->
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any) — each is a tracked carry-forward obligation,
   re-checked at every later stage entry per the
@@ -113,15 +112,16 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 ## Next Steps
 
 - (What happens next based on the decision)
-- _Example (Deploy):_ "Proceed with production deployment"
-- _Example (Hold):_ "Address blockers and re-run readiness checks"
-- _Example (Accept with conditions):_ "Operations accepts ownership with listed
-  mitigations and follow-up dates"
-- _Example (Rollback):_ "Execute rollback runbook and open incident record"
+- _Example (Review, Ready):_ "Proceed with production deployment"
+- _Example (Review, Not Ready):_ "Address blockers and re-run readiness checks"
+- _Example (Review, Ready with conditions):_ "Operations accepts ownership with
+  listed mitigations and follow-up dates"
+- _Example (operational follow-up):_ "Execute rollback runbook and open incident
+  record" (a rollback is a deployment fact, not a checkpoint outcome)
 
 ---
 
 <!-- For Gate 1 and Gate 2 investment decisions, use
      gate-decision.md instead of this template. -->
 
-<!-- Template Last Updated: 2026-07-09 | Added in v0.18.1. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.18.1. -->

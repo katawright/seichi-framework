@@ -258,15 +258,17 @@ Challenging / Hostile / Rebuild]
 **Estimated preparation effort:** [e.g., "None", "1-2 week discovery", "2-4
 month enablement program"]
 
-**Gate 1 implication:**
+**Gate 1 implication:** <!-- checkpoint-outcome: gate -->
 
 - [ ] Proceed — preparation cost is negligible or already factored into
       timeline/budget
-- [ ] Proceed with prep — preparation approved as prerequisite; include in scope
-      and estimates
-- [ ] Postpone — opportunity validated but preparation cost exceeds current
-      budget; revisit when [condition]
-- [ ] Abandon — preparation investment not justified by the opportunity
+- [ ] Proceed with conditions — preparation approved as a prerequisite; each
+      condition is a tracked carry-forward obligation, included in scope and
+      estimates
+- [ ] Stop — opportunity validated but preparation cost exceeds current budget;
+      pause the project and revisit when [condition]
+- [ ] Stop — preparation investment not justified by the opportunity; cancel the
+      project (cancellation cascades to open child records)
 
 ---
 
@@ -312,4 +314,4 @@ month enablement program"]
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-07-06 | Added in v0.2.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.2.0. -->

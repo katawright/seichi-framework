@@ -552,3 +552,170 @@ describe("registryPrefixes", () => {
     ]);
   });
 });
+
+import {
+  outcomeSets,
+  normalizeValue,
+  lineValues,
+  checkpointOutcomeIssues,
+} from "../checkpoint-outcomes.mjs";
+
+describe("checkpoint-outcomes guard (CKPT)", () => {
+  const SETS = {
+    gate: new Set(["proceed", "proceed-with-conditions", "revise", "stop"]),
+    review: new Set(["ready", "not-ready"]),
+    alignment: new Set(["aligned", "adjustments-needed"]),
+  };
+
+  it("parses the three outcome sets from checkpoints.yaml", () => {
+    const yaml = [
+      "vocabularies:",
+      "  gate_outcome:",
+      "    values: [proceed, stop]",
+      "  review_outcome:",
+      "    values: [ready, not-ready]",
+      "  alignment_outcome:",
+      "    values: [aligned, adjustments-needed]",
+    ].join("\n");
+    const sets = outcomeSets(yaml);
+    expect([...sets.gate]).toEqual(["proceed", "stop"]);
+    expect(Object.keys(sets)).toEqual(["gate", "review", "alignment"]);
+  });
+
+  it("normalizes display values to kebab identifiers", () => {
+    expect(normalizeValue("Proceed with conditions")).toBe(
+      "proceed-with-conditions",
+    );
+    expect(normalizeValue("Not Ready — [reason and action needed]")).toBe(
+      "not-ready",
+    );
+    expect(normalizeValue("[Ready]")).toBe("ready");
+  });
+
+  it("extracts values from bold-label and heading-label lines", () => {
+    expect(lineValues("**Decision:** Ready / Not Ready")).toEqual([
+      "ready",
+      "not-ready",
+    ]);
+    expect(lineValues("## Decision: Proceed / Revise")).toEqual([
+      "proceed",
+      "revise",
+    ]);
+    expect(lineValues("**Gate 1 implication:**")).toEqual([]);
+    expect(lineValues("plain prose")).toBeNull();
+  });
+
+  it("passes a tagged line whose values are in the set", () => {
+    const doc =
+      "**Decision:** Ready / Not Ready <!-- checkpoint-outcome: review -->";
+    expect(checkpointOutcomeIssues("stages/x/checklist.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("M-8 regression: a Review outcome collapsed into the lifecycle terminal", () => {
+    const doc =
+      "**Decision:** Closed / Not Closed <!-- checkpoint-outcome: review -->";
+    const issues = checkpointOutcomeIssues("stages/closure/checklist.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("off-canon review outcome");
+    expect(issues[0]).toContain("closed, not-closed");
+  });
+
+  it("M-4 regression: an invented Gate 1 checkbox vocabulary", () => {
+    const doc = [
+      "**Gate 1 implication:** <!-- checkpoint-outcome: gate -->",
+      "",
+      "- [ ] Proceed — cost negligible",
+      "- [ ] Proceed with prep — approved as prerequisite; include in scope",
+      "      and estimates",
+      "- [ ] Postpone — revisit when [condition]",
+      "- [ ] Abandon — not justified",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("templates/initiation-brief.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("proceed-with-prep, postpone, abandon");
+  });
+
+  it("M-5 regression: a status axis on a decision-record template", () => {
+    const doc = "**Status:** Pending / Approved / Held / Rejected / Rolled Back";
+    const issues = checkpointOutcomeIssues(
+      "templates/checkpoint-decision.md",
+      doc,
+      SETS,
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("no status axis");
+  });
+
+  it("allows a Status axis outside the two decision-record templates", () => {
+    const doc = "**Status:** [Open / Triaged / Resolved / Won't Fix]";
+    expect(checkpointOutcomeIssues("templates/friction-log.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("flags an untagged value-carrying Decision line", () => {
+    const doc = "**Decision:** Ready / Not Ready";
+    const issues = checkpointOutcomeIssues("stages/x/checklist.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("untagged");
+  });
+
+  it("standalone sentinel above a heading targets the heading (anchor-safe)", () => {
+    const doc = [
+      "<!-- checkpoint-outcome: gate -->",
+      "",
+      "## Decision: Proceed / Proceed with conditions / Revise / Stop",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("ignores Decision lines inside fences and comments", () => {
+    const doc = [
+      "```markdown",
+      "**Decision:** Anything / Goes",
+      "```",
+      "<!-- e.g. record with '## Decision: Approved / Held' inline",
+      "**Decision:** Foo / Bar -->",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("flags an unknown sentinel type", () => {
+    const doc = "**Decision:** Ready <!-- checkpoint-outcome: quality -->";
+    const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain('unknown checkpoint-outcome type "quality"');
+  });
+});
+
+describe("checkpoint-outcomes sentinel wrap form", () => {
+  const SETS = {
+    gate: new Set(["proceed", "proceed-with-conditions", "revise", "stop"]),
+    review: new Set(["ready", "not-ready"]),
+    alignment: new Set(["aligned", "adjustments-needed"]),
+  };
+
+  it("a prettier-wrapped sentinel targets the labeled line above it", () => {
+    const doc = [
+      "- **Decision type (choose one):**",
+      "  - **Alignment:** Aligned / Adjustments Needed",
+      "    <!-- checkpoint-outcome: alignment -->",
+      "- **Rationale:** (why this decision was made)",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("the wrap form still fails on off-canon values above", () => {
+    const doc = [
+      "  - **Alignment:** Approved / Held",
+      "    <!-- checkpoint-outcome: alignment -->",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("approved, held");
+  });
+});

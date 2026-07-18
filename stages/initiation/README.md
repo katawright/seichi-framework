@@ -690,8 +690,10 @@ decision fatigue and speeds up the gate review itself.
 
 > **Brownfield projects:** If the quick-pass readiness assessment estimates **T3
 > or below**, include preparation cost in the Gate 1 decision. The decision may
-> be to proceed (with preparation factored into timeline and budget), postpone
-> (if the opportunity doesn't justify the prep investment now), or abandon. See
+> be to proceed (with preparation factored into timeline and budget), proceed
+> with conditions (preparation approved as a tracked prerequisite), or stop —
+> pausing the project to revisit later, or canceling it if the opportunity
+> doesn't justify the prep investment. See
 > [Brownfield Readiness Guide: When to Assess](../../guides/brownfield-readiness.md#when-to-assess).
 
 > **Common mistake:** Confusing Gate 1 and Gate 2 outputs. Initiation produces
@@ -962,6 +964,6 @@ roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.2.0.

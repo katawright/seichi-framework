@@ -248,7 +248,10 @@
 - Requirements are testable and unambiguous
 - Open questions documented with owners (blockers resolved or mitigated)
 
-**Decision:** Ready for System Design / Not ready — [reason and action needed]
+<!-- Stage-exit Review — Ready advances the project to System Design. -->
+<!-- checkpoint-outcome: review -->
+
+**Decision:** Ready / Not Ready — [if Not Ready: reason and action needed]
 
 **Next step if ready:** Proceed to System Design stage (foundational pass).
 Provide this Requirements Brief to System Design team.
@@ -314,4 +317,4 @@ Provide this Requirements Brief to System Design team.
 - **Items needing attention:** [List any items that don't fully pass, or "None"
   if all items pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.3.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.3.0. -->
