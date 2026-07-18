@@ -251,7 +251,10 @@ Minimal floor the package folds to **six irreducible elements that never drop**:
 2. Final delivered result.
 3. Requirements / success-criteria disposition — **every in-scope requirement
    explicitly disposed** (at the acceptance-criterion level: Met, Descoped, or
-   Deferred).
+   Deferred — the closed set is
+   [CS-097](../../spec/canonical-state.md#cs-097--acceptance-criterion-disposition-set-met--descoped--deferred)'s;
+   there is deliberately no Unmet value — an in-scope unmet criterion refutes
+   the completion claim rather than resting in a disposition).
 4. Assurance result at the required level (recorded even when the level is
    None/Self).
 5. Honest defects, risks, limitations, and deferred work.
@@ -408,6 +411,6 @@ distribute the close-out record to all Informed roles per the
 
 ## Notes
 
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

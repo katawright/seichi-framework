@@ -1,0 +1,27 @@
+# Kernel vocabulary source — closure-time disposition sets: one-shot
+# reconciliation determinations recorded at the completion claim.
+#
+# SOURCE file (hand-curated). Distinct from the status machines in
+# statuses.yaml (a dispositioned record carries no value until the
+# reconciliation act, and there are no transitions) and from the checkpoint
+# outcome sets in checkpoints.yaml (a disposition disposes a record, not a
+# decision moment). Ratified with CS-097 (v0.64.0 sweep drain): the
+# acceptance-criterion set the closure surfaces already used, promoted from
+# unratified artifact prose.
+#
+# Deliberately no `unmet` value: an in-scope unmet acceptance criterion
+# refutes the completion claim rather than resting in a disposition — met /
+# descoped / deferred are the three exits from that refutation (the CS-097
+# rule body carries the contract).
+
+vocabularies:
+  # Recorded per acceptance criterion at the completion claim's evaluation.
+  acceptance_criterion_disposition:
+    owning_rule: CS-097
+    source: spec/canonical-state.md
+    # No schema consumer declared yet: the consumer currently models
+    # disposition as free text at requirement grain
+    # (requirements.disposition); it types this set and moves to
+    # acceptance-criterion grain in its next conformance cycle.
+    consumers: []
+    values: [met, descoped, deferred]

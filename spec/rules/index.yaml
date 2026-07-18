@@ -199,6 +199,19 @@ rules:
     links:
       - spec/canonical-state.md#terminal-integrity
 
+  - id: CS-097
+    title: Acceptance-criterion disposition set (met · descoped · deferred)
+    layer: 1a
+    basis: both-conjuncts
+    source: spec/canonical-state.md
+    introduced: v0.64.0
+    status: active
+    notes: admitted during the v0.64.0 sweep drain (maintainer, 2026-07-18) — ratifies the closure-time disposition set five artifact surfaces already used unratified; deliberately no unmet value (an in-scope unmet criterion refutes the completion claim; met/descoped/deferred are the three exits)
+    representation: data+contract
+    links:
+      - stages/closure/README.md#project-closure-rendering-the-completion-contract
+      - templates/project-closeout.md
+
   # ── 1a — Terminal Integrity ──────────────────────────────────────────────
   - id: CS-028
     title: Quiescence set (closed, direct children)

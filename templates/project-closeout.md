@@ -49,9 +49,13 @@ acceptance-declined / acceptance-lapsed]
 
 <!-- Element 2 (final delivered result) + Element 3 (requirements disposition).
      Reconcile every acceptance criterion: Met, Descoped, or Deferred — a final
-     pass over the traceability chain. EVERY in-scope requirement is explicitly
-     disposed; this is the honesty floor and never folds. Deferred items that
-     remain valuable route to the idea backlog (cite IDEA-NNN). -->
+     pass over the traceability chain, against the closed set in
+     ../spec/canonical-state.md#project-level-completion (CS-097). EVERY
+     in-scope requirement is explicitly disposed; this is the honesty floor and
+     never folds. Descoped cites the governing scope decision. Deferred cites
+     the explicit future — idea backlog (IDEA-NNN) or carry-forward condition.
+     There is no Unmet: an in-scope unmet criterion blocks the completion
+     claim; fix it, descope it, or defer it. -->
 
 [delivered result — what is live]
 
@@ -153,4 +157,4 @@ acceptance-declined / acceptance-lapsed]
 
 ---
 
-<!-- Template Last Updated: 2026-07-11 | Added in v0.47.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.47.0. -->

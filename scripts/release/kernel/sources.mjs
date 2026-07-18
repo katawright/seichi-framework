@@ -32,6 +32,7 @@ export const VOCABULARY_FILES = [
   "spec/vocabulary/checkpoints.yaml",
   "spec/vocabulary/concurrency.yaml",
   "spec/vocabulary/config.yaml",
+  "spec/vocabulary/dispositions.yaml",
   "spec/vocabulary/execution.yaml",
   "spec/vocabulary/grades.yaml",
   "spec/vocabulary/reasons.yaml",

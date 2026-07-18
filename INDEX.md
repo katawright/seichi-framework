@@ -1,6 +1,6 @@
 # Framework File Index
 
-**Last Updated:** 2026-07-16 | **Framework Version:** 0.63.0
+**Last Updated:** 2026-07-18 | **Framework Version:** 0.64.0
 
 ## Overview
 
@@ -40,7 +40,7 @@ Load the index first, then load only what you need.
 2. Jump to the relevant [**Stage Artifacts**](#stage-artifacts-25) subsection
    for stage-specific files
 3. Check [**Templates**](#templates-23) for fillable artifacts
-4. Check [**Kernel**](#kernel-13) for the machine-readable kernel interface
+4. Check [**Kernel**](#kernel-14) for the machine-readable kernel interface
    (vocabulary sources, rule registry, schema, generated exports)
 5. Use the **Keywords** column to match your task to the right file
 6. Load `core`-tier files for orientation; load `ref`-tier files on demand —
@@ -105,7 +105,7 @@ guides.
 | `spec/parallel-batch.md`  | Parallel-batch contracts: forcing-dependency taxonomy, parallel-safety classification, batch preflight/execution/close, batch lifecycle (states and abnormal terminals), work conservation, Lights-Out eligibility.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | parallel-batch, batch, batch-lifecycle, abandoned, terminal, parallel-safety, forcing-dependency, work-conservation, orchestration, lights-out                                                                                                                                                                                                                                                                                                                                                                                                                                                            | operating-model, delegated-run, canonical-state                            | core |
 | `spec/right-sizing.md`    | Right-sizing contracts: the five consequence anchors (kernel data) and nearest-anchor assignment, the consequence/compliance/reach per-stage scaling matrices, and the minimum-viable-artifacts matrix.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | right-sizing, consequence-anchors, consequence-tier, scaling-matrix, per-stage-scaling, compliance, stakeholder-reach, minimum-viable-artifacts, templates                                                                                                                                                                                                                                                                                                                                                                                                                                                | right-sizing (guide), operating-model (spec)                               | core |
 
-## Kernel (13)
+## Kernel (14)
 
 The machine-readable kernel interface under the spec namespace — hand-curated
 vocabulary sources, the rule registry, and the generated, stamped exports.
@@ -122,6 +122,7 @@ Kernel interface version is a separate `0.x` axis (experimental, pre-1.0). See
 | `spec/vocabulary/checkpoints.yaml`      | Kernel vocabulary source: checkpoint types and their per-type closed outcome sets.                        | kernel, vocabulary, checkpoint-type, gate-outcome, review-outcome, alignment-outcome | checkpoints (spec)                           | ref  |
 | `spec/vocabulary/concurrency.yaml`      | Kernel vocabulary source: forcing-dependency taxonomy and parallel-safety conclusion.                     | kernel, vocabulary, forcing-dependency, parallel-safety                              | parallel-batch (spec)                        | ref  |
 | `spec/vocabulary/config.yaml`           | Kernel vocabulary source: schema-enforced operating-configuration value sets.                             | kernel, vocabulary, assurance-level, executor-read-path, consequence-tier            | operating-model (spec), right-sizing         | ref  |
+| `spec/vocabulary/dispositions.yaml`     | Kernel vocabulary source: closure-time disposition sets (acceptance-criterion met/descoped/deferred).     | kernel, vocabulary, disposition, acceptance-criterion, completion                    | canonical-state (spec)                       | ref  |
 | `spec/vocabulary/execution.yaml`        | Kernel vocabulary source: the ordered fallback-precedence set (position is precedence).                   | kernel, vocabulary, fallback-precedence, execution                                   | execution (spec)                             | ref  |
 | `spec/vocabulary/grades.yaml`           | Kernel vocabulary source: attribution grades, write classes, record requirements.                         | kernel, vocabulary, identity-grade, independence, attribution-source, records        | canonical-state (spec)                       | ref  |
 | `spec/vocabulary/reasons.yaml`          | Kernel vocabulary source: per-machine closed reason sets.                                                 | kernel, vocabulary, reason-codes, honest-incomplete, closed-sets                     | canonical-state (spec), delegated-run (spec) | ref  |
@@ -227,6 +228,6 @@ Kernel interface version is a separate `0.x` axis (experimental, pre-1.0). See
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.41.0.

@@ -497,10 +497,12 @@ operating envelope; acceptance and authorization decisions.
 - A project-completion claim MUST NOT be permitted merely because agents
   stopped, tasks were marked complete, tests passed, or deployment succeeded. It
   is permitted only when **all** hold: every approved in-scope requirement has
-  an explicit disposition; every success criterion is explicitly accounted for —
-  `met` with evidence, measured unmet (`not-met` — an honest finding, not a
-  claim blocker), carried by an explicit post-release measurement plan (which
-  lands its outcome status when it reports, per
+  an explicit disposition (discharged at the acceptance-criterion grain —
+  [CS-097](#cs-097--acceptance-criterion-disposition-set-met--descoped--deferred));
+  every success criterion is explicitly accounted for — `met` with evidence,
+  measured unmet (`not-met` — an honest finding, not a claim blocker), carried
+  by an explicit post-release measurement plan (which lands its outcome status
+  when it reports, per
   [Planning-Family Status Sets](#planning-family-status-sets)), or honestly
   retired (`dropped`); required decisions and constraints remain satisfied or
   approved deviations are recorded; all batches and increments have explicit
@@ -527,6 +529,49 @@ operating envelope; acceptance and authorization decisions.
   project-level and evaluated **across** a project's runs; a single run reaching
   `completion-verified` means only **its** authorized objective slice is done
   and verified.
+
+<!-- rule: CS-097 -->
+
+### CS-097 — Acceptance-criterion disposition set (met · descoped · deferred)
+
+- **Applicability.** Every acceptance criterion of every approved in-scope
+  requirement, at the completion claim's evaluation; any earlier reconciliation
+  that dispositions an acceptance criterion.
+- **Inputs.** The `acceptance_criterion_disposition` set (`met` / `descoped` /
+  `deferred`) in [`vocabulary/dispositions.yaml`](vocabulary/dispositions.yaml)
+  — binds as data (generated view: [reference.md](generated/reference.md)); the
+  traceability chain (an acceptance criterion **verifies** its requirement).
+- **Procedure.**
+  - **Grain.** The enclosing contract's "every approved in-scope requirement has
+    an explicit disposition" is discharged at the **acceptance-criterion
+    grain**: every acceptance criterion of every approved in-scope requirement
+    carries exactly one disposition; a requirement's disposition is derivable
+    from its criteria and MUST NOT be recorded as a second source.
+  - **The values are decisions, not verdicts.** `met` — the criterion is
+    satisfied, with verification evidence. `descoped` — a **governed scope
+    decision** removed the criterion from scope, and the record cites that
+    decision; a criterion is never retroactively "not in scope" without one.
+    `deferred` — the obligation moves to an **explicit future** (an idea-backlog
+    entry or carry-forward condition, cited in the record); a deferral promises
+    a future, and a criterion with no future MUST NOT hide in it — it is
+    descoped, honestly.
+  - **Deliberately no `unmet` value.** An in-scope unmet acceptance criterion
+    refutes the completion claim (the enclosing contract's verification
+    conjunct) rather than resting in a disposition; `met` / `descoped` /
+    `deferred` are the three exits from that refutation. Contrast success
+    criteria, where measured-unmet (`not-met`) is an honest finding, not a claim
+    blocker: outcome risk closes honestly; spec risk blocks the claim. A
+    situation no listed value fits is a gap to raise, not a value to invent.
+- **Outputs.** A recorded disposition per acceptance criterion; the
+  requirement-level disposition as a derived view.
+- **Evidence.** The dispositions ride the
+  [Completion Evidence Package](delegated-run.md#completion-evidence-package),
+  rendered at close-out as the acceptance-criterion table.
+- **Failure behavior.** An undispositioned acceptance criterion on an approved
+  in-scope requirement blocks the completion claim (the enclosing contract's
+  failure behavior).
+
+<!-- /rule: CS-097 -->
 
 **Outputs.** A completion determination on the project lifecycle: claimed →
 verified → closed, with the acceptance decision recorded.
@@ -749,8 +794,13 @@ lifecycle contracts — the [project](#project-lifecycle), the
 canonical record families had no normative status model at all, leaving a
 conforming implementation to invent vocabularies the framework never ratified —
 the precondition the [project-lifecycle](#project-lifecycle) contract was
-written to eliminate. This contract closes the class: every canonical record
-family's status set is normative, here or in the family's own contract.
+written to eliminate. This contract closes the class for status-bearing
+families: every canonical record family that carries a status or disposition
+axis has its set ratified normatively — here, in the family's own contract, or
+(for the acceptance-criterion closure disposition) in
+[CS-097](#cs-097--acceptance-criterion-disposition-set-met--descoped--deferred).
+Families whose records are immutable facts (evidence items, run events, and
+their kin) carry no status axis, deliberately.
 
 **Applicability.** Escalations; approved deviations; decision records (gate and
 checkpoint decisions; architecture decision records); pre-authorized policies;
@@ -1714,6 +1764,6 @@ the broader identity, membership, and audit-export surface stays reserved.
 
 ## Notes
 
-**Last Updated:** 2026-07-17
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.
