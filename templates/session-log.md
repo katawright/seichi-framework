@@ -69,8 +69,19 @@
 **[H] / [J] Items:**
 
 - [Each `[H]`/`[J]` item discharged this session — record the evaluator at the
-  required identity grade and the required timestamps; see
-  [Record Requirements](../spec/canonical-state.md#record-requirements)]
+  required identity grade, the evidence-independence grade (Self-asserted /
+  Context-independent / Organizationally-independent,
+  [CS-084](../spec/canonical-state.md#cs-084--evidence-independence-grade)), and
+  the required timestamps; see
+  [Record Requirements](../spec/canonical-state.md#record-requirements).
+  Self-asserted is the normal, honest grade for a solo operator — it caps the
+  floor claim
+  ([CS-086](../spec/canonical-state.md#cs-086--self-asserted-floor-discharge-rule-grade-capping)),
+  not the work]
+- **Attribution source:** Client-claimed — hand-filled record; identities here
+  are self-reported. `platform-verified` applies only when a recording platform
+  authenticates the actor; platform-generated records carry per-act grades
+  ([CS-085](../spec/canonical-state.md#cs-085--attribution-source-grade-platform-verified--client-claimed)).
 
 **Context for Next Session:**
 
@@ -80,4 +91,4 @@
 
 - [Specific actions for the next session]
 
-<!-- Template Last Updated: 2026-07-07 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.23.0. -->
