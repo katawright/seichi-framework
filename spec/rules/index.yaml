@@ -528,7 +528,7 @@ rules:
     source: spec/delegated-run.md
     introduced: v0.64.0
     status: active
-    notes: admitted during Phase 3 (maintainer, 2026-07-17) — the decision-overdue rule (inventory DR-22) carved from the Progress/Liveness section contract into a citable rule; surfaced by the F6 trial (Luna misread CS-044's producer clause). Repairs CS-044's dangling section link.
+    notes: admitted during Phase 3 (maintainer, 2026-07-17) — the decision-overdue rule (inventory DR-22) carved from the Progress/Liveness section contract into a citable rule. Repairs CS-044's dangling section link.
     representation: contract
     links:
       - spec/delegated-run.md#progress-liveness-and-unresponsive-state
@@ -982,7 +982,7 @@ rules:
     source: spec/execution.md
     introduced: v0.64.0
     status: active
-    notes: admitted during Phase 3 Wave D per the design-review addendum (maintainer, 2026-07-16) — situation-level normative silence is a stop-and-escalate and the escalation is the deliverable; trigger is normative silence, never epistemic uncertainty. Trial fixture 7 probes it
+    notes: admitted during Phase 3 Wave D per the design-review addendum (maintainer, 2026-07-16) — situation-level normative silence is a stop-and-escalate and the escalation is the deliverable; trigger is normative silence, never epistemic uncertainty
     representation: contract
     links:
       - spec/README.md#key-principle
