@@ -68,6 +68,8 @@ machines:
       - [active, completion-claimed]
       - [paused, completion-claimed]
       - [completion-claimed, completion-verified]
+      - [completion-claimed, failed] # claim refuted (failed-verification)
+      - [completion-claimed, canceled] # stop or cascade while awaiting verification
       - [active, failed]
       - [active, canceled]
       - [active, abandoned]

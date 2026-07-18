@@ -160,8 +160,9 @@ This layer is scoped to the contracts a bounded **Lights-Out** run executes —
 the v0.49 Definition of Done. It covers the operating-model contracts
 ([operating-model.md](operating-model.md)), the right-sizing contracts that size
 governance weight ([right-sizing.md](right-sizing.md)), the checkpoint contracts
-([checkpoints.md](checkpoints.md)), the delegated-run contracts plus the
-canonical state they read and write ([delegated-run.md](delegated-run.md),
+([checkpoints.md](checkpoints.md)), the executor-conduct contracts
+([execution.md](execution.md)), the delegated-run contracts plus the canonical
+state they read and write ([delegated-run.md](delegated-run.md),
 [canonical-state.md](canonical-state.md)), and the parallel-batch contracts for
 concurrent execution ([parallel-batch.md](parallel-batch.md)). Scale scenarios
 (small team, organization, enterprise), regulated and external assurance, and
@@ -173,6 +174,6 @@ v0.49 establishes.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

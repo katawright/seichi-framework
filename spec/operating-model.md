@@ -144,20 +144,23 @@ vocabularies the configuration draws from; the executor read path setting is
   oversight — and is flagged; for operating posture, under-determined means
   `supervised` (the most-oversight preset). A stated preference for light
   process bears on tier appetite, not on execution autonomy — it is not a
-  posture signal. Escalation triggers override inference: sensitive
-  data, compliance requirements, or external users force Standard or Enterprise
-  regardless of conversational signals, and set the Required Assurance
-  inference floor to `internal` — intake records the requirement; whether the
-  roster can currently meet it is a staffing fact dispositioned at Gate 1, not
-  an input that lowers the recorded floor (the availability fallback is
+  posture signal. Escalation triggers override inference: sensitive data,
+  compliance requirements, or external users force Standard or Enterprise
+  regardless of conversational signals, and set the Required Assurance inference
+  floor to `internal` — intake records the requirement; whether the roster can
+  currently meet it is a staffing fact dispositioned at Gate 1, not an input
+  that lowers the recorded floor (the availability fallback is
   [OM-017](#om-017--consequence-to-floor-mapping-table)'s, exercised by a
-  recorded human acceptance, never by intake inference).
-  **[Informative]** Tier, project type,
-  and deployment intent are enumerated here but not ratified as closed kernel
-  vocabularies (the governance-preset promotion is explicitly deferred — see
-  [`vocabulary/config.yaml`](vocabulary/config.yaml)).
+  recorded human acceptance, never by intake inference). **[Informative]** Tier,
+  project type, and deployment intent are enumerated here but not ratified as
+  closed kernel vocabularies (the governance-preset promotion is explicitly
+  deferred — see [`vocabulary/config.yaml`](vocabulary/config.yaml)).
 - **Outputs.** The six recorded configuration decisions, `[ASSUMED]`-tagged
-  where inferred, in the Initiation Brief's right-sizing section.
+  where inferred. Five — tier, project type, deployment intent, operating
+  posture, and the executor read path — are seeded in the Initiation Brief's
+  right-sizing section; the sixth, **Required Assurance**, is set per concern
+  rather than once for the whole project, so it is not seeded there as a single
+  project-level `[ASSUMED]` value.
 - **Evidence.** The recorded decisions and their Gate-1 dispositions; the
   underlying decisions are captured in [canonical state](canonical-state.md).
 - **Failure behavior.** N/A — the inference always produces a default (the
@@ -182,12 +185,12 @@ vocabularies the configuration draws from; the executor read path setting is
   conversation without being asked to pick from any framework menu; the
   decisions are derived from two or three natural questions woven into the
   opening conversation, and framework vocabulary is introduced later, when a
-  classification first matters (typically at Gate 1). A defaulted
-  classification reaching its Gate-1 confirmation is such a moment: the
-  confirmation names the value set the default was chosen from (for operating
-  posture, the [OMG-016](#omg-016--operating-presets-supervised--checkpointed--lights-out)
-  presets) and that the value was a conservative default, not inferred fit —
-  so a user who wanted a different value has the vocabulary to move it. The
+  classification first matters (typically at Gate 1). A defaulted classification
+  reaching its Gate-1 confirmation is such a moment: the confirmation names the
+  value set the default was chosen from (for operating posture, the
+  [OMG-016](#omg-016--operating-presets-supervised--checkpointed--lights-out)
+  presets) and that the value was a conservative default, not inferred fit — so
+  a user who wanted a different value has the vocabulary to move it. The
   no-menus rule governs first contact; withholding the option space at
   disposition time is not its intent.
 - **Outputs.** N/A — an interaction rule; the decisions themselves are
@@ -818,6 +821,6 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-07-17
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.
