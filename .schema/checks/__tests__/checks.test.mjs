@@ -137,6 +137,51 @@ describe("findRetired", () => {
     const hits = findRetired("line one\nuse AI operating tier here\n");
     expect(hits[0].line).toBe(2);
   });
+
+  // --- G-5 regression: the `## Notes` exclusion was a latch that was set and
+  // never cleared, and its pattern (/^##[ \t]+Notes\b/) matched any H2 merely
+  // STARTING with the word — the \b is satisfied by the following space. In
+  // STYLE_GUIDE.md that meant `## Notes Section Format` at line 85 opened the
+  // exclusion and it ran to EOF: 393 of 483 lines invisible to VOCAB, including
+  // the Front Matter, Checklist and Record-Template authoring conventions that
+  // future authors copy from.
+
+  const LIVE = "Set the Oversight Intensity for the run.";
+
+  it("G-5: scans live guidance AFTER a ## Notes section ends", () => {
+    const hits = findRetired(
+      `## Notes\n\n**Last Updated:** 2026-07-19\n\n## Formatting\n\n${LIVE}\n`,
+    );
+    expect(hits.some((h) => h.term === "Oversight Intensity")).toBe(true);
+  });
+
+  it("G-5: `## Notes Section Format` does not open the exclusion", () => {
+    const hits = findRetired(`## Notes Section Format\n\n${LIVE}\n`);
+    expect(hits.some((h) => h.term === "Oversight Intensity")).toBe(true);
+  });
+
+  it("G-5: an H3 inside ## Notes does not end the exclusion", () => {
+    const hits = findRetired(`## Notes\n\n### Detail\n\n${LIVE}\n`);
+    expect(hits).toHaveLength(0);
+  });
+
+  it("G-5: the exclusion still covers a real ## Notes section", () => {
+    const hits = findRetired(`## Formatting\n\nfine\n\n## Notes\n\n${LIVE}\n`);
+    expect(hits).toHaveLength(0);
+  });
+
+  it("G-5: heading matching survives CRLF line endings", () => {
+    // The working tree checks out CRLF. An end-anchored title capture that does
+    // not absorb the \r never equals "Notes", which would silently disable the
+    // exclusion for every file in the repo.
+    const crlf = `## Notes\r\n\r\n${LIVE}\r\n`;
+    expect(findRetired(crlf)).toHaveLength(0);
+    const after = `## Notes\r\n\r\n## Formatting\r\n\r\n${LIVE}\r\n`;
+    expect(after.includes("\r")).toBe(true);
+    expect(
+      findRetired(after).some((h) => h.term === "Oversight Intensity"),
+    ).toBe(true);
+  });
 });
 
 describe("parseIndexSections", () => {
