@@ -414,6 +414,8 @@ mitigation]
 
 **Recommendation:**
 
+<!-- checkpoint-outcome: gate -->
+
 - [ ] **Proceed** — Business case sound, cost acceptable
 - [ ] **Proceed with conditions** — [conditions to carry forward as tracked
       obligations]
@@ -494,4 +496,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-07-18 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-19 | Added in v0.12.0. -->
