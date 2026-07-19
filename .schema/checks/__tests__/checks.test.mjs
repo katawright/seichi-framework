@@ -758,6 +758,7 @@ import {
   untaggedRestatement,
   exampleTypeOutcome,
   checkpointOutcomeIssues,
+  isDecisionRecord,
 } from "../checkpoint-outcomes.mjs";
 
 describe("checkpoint-outcomes guard (CKPT)", () => {
@@ -869,8 +870,13 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
   });
 
   it("M-5 regression: a status axis on a decision-record template", () => {
-    const doc =
-      "**Status:** Pending / Approved / Held / Rejected / Rolled Back";
+    // The H1 is what marks this a decision record (G-m4) — the rule keys on
+    // the document's own marker, not on its path.
+    const doc = [
+      "# Checkpoint Decision: [Checkpoint — Short Title]",
+      "",
+      "**Status:** Pending / Approved / Held / Rejected / Rolled Back",
+    ].join("\n");
     const issues = checkpointOutcomeIssues(
       "templates/checkpoint-decision.md",
       doc,
@@ -1078,6 +1084,54 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     expect(
       checkpointOutcomeIssues("stages/deployment/checklist.md", doc, SETS),
     ).toEqual([]);
+  });
+
+  // G-m4: NO_STATUS_AXIS was a hardcoded three-path literal, so renaming or
+  // adding a decision template silently dropped the rule with nothing failing.
+  it("G-m4: the decision-record marker is read from the H1, not the path", () => {
+    expect(isDecisionRecord("# Gate Decision: [Gate N]\n")).toBe(true);
+    expect(isDecisionRecord("# Checkpoint Decision: [x]\n")).toBe(true);
+    expect(isDecisionRecord("# Preparation Exit Decision: [x]\n")).toBe(true);
+    expect(isDecisionRecord("# Deployment Brief\n")).toBe(false);
+    expect(isDecisionRecord("# Requirements Checklist\n")).toBe(false);
+  });
+
+  it("G-m4: a RENAMED decision template keeps the rule", () => {
+    // The exact regression the path literal allowed: same document, new path.
+    const doc = [
+      "# Gate Decision: [Gate N — Short Title]",
+      "",
+      "**Status:** Pending / Approved / Held",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues(
+      "templates/investment-gate-decision.md", // not in the old literal
+      doc,
+      SETS,
+    );
+    expect(issues.some((i) => i.includes("no status axis"))).toBe(true);
+  });
+
+  it("G-m4: a bare Status outside a decision record is still allowed", () => {
+    const doc = ["# Friction Log", "", "**Status:** Open / Triaged"].join("\n");
+    expect(
+      checkpointOutcomeIssues("templates/friction-log.md", doc, SETS),
+    ).toEqual([]);
+  });
+
+  it("G-m4: an H1 inside a fence does not mark a decision record", () => {
+    const doc = ["```markdown", "# Gate Decision: [x]", "```"].join("\n");
+    expect(isDecisionRecord(doc)).toBe(false);
+  });
+
+  it("G-m4: the H1 marker survives CRLF line endings", () => {
+    const doc =
+      "# Gate Decision: [Gate N]\r\n\r\n**Status:** Pending / Held\r\n";
+    expect(isDecisionRecord(doc)).toBe(true);
+    expect(
+      checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS).some(
+        (i) => i.includes("no status axis"),
+      ),
+    ).toBe(true);
   });
 
   it("G-3: a complete set in any order still passes", () => {

@@ -36,11 +36,13 @@ import { stripFences } from "./lib.mjs";
 const VOCAB_FILE = "spec/vocabulary/checkpoints.yaml";
 const GLOBS = ["stages/*/checklist.md", "templates/*.md"];
 const SENTINEL_RE = /<!--\s*checkpoint-outcome:\s*([a-z]+)\s*-->/;
-const NO_STATUS_AXIS = [
-  "templates/gate-decision.md",
-  "templates/checkpoint-decision.md",
-  "templates/brownfield-preparation-decision.md",
-];
+/** A decision-record template declares itself in its H1 — `# Gate Decision:`,
+ *  `# Checkpoint Decision:`, `# Preparation Exit Decision:`. The whole artifact
+ *  IS the decision there, so a bare `**Status:**` is a status axis ON that
+ *  decision. Derived from the document's own marker rather than the hardcoded
+ *  three-path literal this replaces: renaming or adding a decision template
+ *  silently dropped the rule, and nothing failed to say so. */
+const DECISION_RECORD_H1_RE = /^#[ \t]+.*\bdecision\b/im;
 /** A label naming a checkpoint decision *and* a status axis — forbidden on
  *  any surface, not only the decision-record templates (M-17). `**Gate
  *  decision**` is deliberately not matched: a held/not-held tracker carries
@@ -61,6 +63,11 @@ const EXAMPLE_RE = /Example\s*\(([^)]+)\)\s*:/;
  *  because it keeps its parentheses or runs past four segments. */
 const VALUE_SHAPED_RE = /^[a-z0-9]+(?:-[a-z0-9]+){0,3}$/;
 const TYPE_ALIAS_RE = /^(gate|review|alignment)\b/;
+
+/** Whether a document is a decision record, read from its H1 (fences ignored). */
+export function isDecisionRecord(content) {
+  return DECISION_RECORD_H1_RE.test(stripFences(content));
+}
 
 /** The three per-type outcome sets from checkpoints.yaml, keyed by type. */
 export function outcomeSets(yamlSource) {
@@ -229,13 +236,14 @@ export function checkpointOutcomeIssues(file, content, sets) {
   // so a stray `\r` would make the guard silently pass the whole file.
   const fenced = stripFences(content);
   const lines = fenced.split(/\r?\n/);
+  const decisionRecord = DECISION_RECORD_H1_RE.test(fenced);
 
   // 1. No status axis on a gate/checkpoint decision. Bare `**Status:**` is an
   // error in the decision-record templates, where the whole artifact is the
   // decision; elsewhere the label has to name the decision it is putting a
   // status on (`**Gate Status**`) for the axis to be unambiguous.
   lines.forEach((line, i) => {
-    const bare = NO_STATUS_AXIS.includes(file) && /^\*\*Status:\*\*/.test(line);
+    const bare = decisionRecord && /^\*\*Status:\*\*/.test(line);
     if (bare || boldLabels(line).some((l) => STATUS_AXIS_LABEL_RE.test(l))) {
       issues.push(
         `CKPT  ${file}:${i + 1}  gate and checkpoint decisions carry no ` +
@@ -409,9 +417,22 @@ export function runCheckpointOutcomes(repoRoot) {
   }
   const files = fg.sync(GLOBS, { cwd: repoRoot });
   const issues = [];
+  let decisionRecords = 0;
   for (const file of files.sort()) {
     const content = readFileSync(join(repoRoot, file), "utf8");
+    if (isDecisionRecord(content)) decisionRecords++;
     issues.push(...checkpointOutcomeIssues(file, content, sets));
+  }
+  // The no-status-axis rule applies to decision-record templates. If it now
+  // matches NOTHING, the convention it keys on has broken and the rule is
+  // silently unenforced — the exact failure the hardcoded path list had, which
+  // is why this is fatal rather than a quiet zero.
+  if (!decisionRecords) {
+    issues.push(
+      `CKPT  no decision-record template found in ${GLOBS.join(", ")} ` +
+        `(expected an H1 naming a decision, e.g. "# Gate Decision: …") — the ` +
+        `no-status-axis rule is matching nothing and is not being enforced`,
+    );
   }
   return issues;
 }
