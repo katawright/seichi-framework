@@ -431,13 +431,24 @@ describe("ship-list (I-ship)", () => {
 });
 
 describe("func-group (H-funcgroup)", () => {
-  const spec =
+  // The always-required set lives in the list item opened by the anchor marker.
+  // The leading bullet deliberately names all four standing functions, so a span
+  // that over-reaches would be caught; the trailing bullet holds the conditional
+  // pair for the same reason.
+  const specWith = (alwaysItem) =>
     "- **Standing functions** (no setting): evidence capture; escalation and " +
     "stop enforcement; orchestration; run continuity.\n" +
-    "- Evidence capture and stop enforcement MUST always be treated as " +
-    "required. Orchestration and integration are required only when parallel " +
+    `- <!-- anchor: always-required-functions --> ${alwaysItem}\n` +
+    "- Orchestration and integration are required only when parallel " +
     "execution applies; run continuity and completion are required only when " +
     "delegated runs apply.\n";
+
+  // Wrapped mid-phrase ("stop" / "enforcement" on separate lines) exactly as
+  // prettier wraps the real spec — pins the whitespace normalization the
+  // function matchers depend on.
+  const spec = specWith(
+    "Evidence capture and stop\n  enforcement MUST always be treated as required.",
+  );
 
   const table = (stopCell) =>
     "| Operating function | What it covers | Operator configures? |\n" +
@@ -476,6 +487,62 @@ describe("func-group (H-funcgroup)", () => {
     );
     expect(fatal).toHaveLength(1);
     expect(fatal[0]).toContain("stop enforcement");
+  });
+
+  // --- G-6 regression: the guard used to derive the always-required set by
+  // regex-matching the prose phrase "MUST always be treated as required". Prose
+  // polish that dropped the phrase made specAlwaysSet return null, which the
+  // caller turned into a warn-and-skip — so live guide-table drift shipped with
+  // validate exiting 0. The set is now read from the anchored list item, and a
+  // missing anchor is itself fatal.
+
+  const REWORDED =
+    "Evidence capture and stop enforcement MUST be treated as required at all times.";
+
+  it("G-6: rewording the sentence does not disarm the derivation", () => {
+    const s = specAlwaysSet(specWith(REWORDED));
+    expect([...s].sort()).toEqual(["evidence", "stop"]);
+  });
+
+  it("G-6: reworded sentence still catches table drift (was warn-only, exit 0)", () => {
+    const { fatal, warn } = funcGroupIssues(
+      specWith(REWORDED),
+      table("No — standing (unattended runs)"),
+    );
+    expect(fatal).toHaveLength(1);
+    expect(fatal[0]).toContain("stop enforcement");
+    expect(warn).toEqual([]);
+  });
+
+  it("G-6: a missing anchor marker is fatal, not a warn-skip", () => {
+    const noAnchor = spec.replace(
+      "<!-- anchor: always-required-functions -->",
+      "",
+    );
+    const { fatal, warn } = funcGroupIssues(noAnchor, table("No — standing"));
+    expect(fatal).toHaveLength(1);
+    expect(fatal[0]).toContain("anchor");
+    expect(warn).toEqual([]);
+  });
+
+  it("G-6: a duplicated anchor marker is fatal (ambiguous)", () => {
+    const dup =
+      spec + "- <!-- anchor: always-required-functions --> evidence capture.\n";
+    expect(funcGroupIssues(dup, table("No — standing")).fatal).toHaveLength(1);
+  });
+
+  it("G-6: the anchored span stops at the next list item", () => {
+    // Absorbing the following bullet would mark orchestration and continuity
+    // always-required, inverting the comparison and masking real drift.
+    const s = specAlwaysSet(spec);
+    expect(s.has("orchestration")).toBe(false);
+    expect(s.has("continuity")).toBe(false);
+  });
+
+  it("G-6: a missing operator table is fatal, not a warn-skip", () => {
+    const { fatal, warn } = funcGroupIssues(spec, "no table here\n");
+    expect(fatal).toHaveLength(1);
+    expect(warn).toEqual([]);
   });
 });
 

@@ -80,8 +80,9 @@ sequential/parallel, delegated or not).
   - **Standing functions** (no setting): evidence capture; escalation and stop
     enforcement; [batch orchestration and integration](parallel-batch.md); run
     continuity, status reporting, and completion evaluation.
-- Evidence capture and stop enforcement MUST always be treated as required.
-  Orchestration and integration are required only when parallel execution
+- <!-- anchor: always-required-functions --> Evidence capture and stop
+  enforcement MUST always be treated as required.
+- Orchestration and integration are required only when parallel execution
   applies; run continuity and completion are required only when delegated runs
   apply.
 - A delivery or record system MUST NOT be credited with supplying an active
@@ -828,6 +829,6 @@ storage or mechanism.
 
 ## Notes
 
-**Last Updated:** 2026-07-18
+**Last Updated:** 2026-07-19
 
 Added to framework in v0.49.0.
