@@ -94,10 +94,12 @@ the retired meaning now lives. Retired vocabulary in change history is
 conformant and expected — it is how a downstream consumer learns a value left a
 closed set.
 
-If a retirement also has a consumer-side migration (a `consumer_only`
-declaration in `scripts/release/kernel/generate.mjs` `ENUM_PROJECTION`), say so
-in the bullet: the value is still accepted by the consumer and leaves on its
-next conformance cycle.
+If a retirement also has a consumer-side migration, say so in the bullet: the
+value is still accepted by the consumer and leaves on its next conformance
+cycle. `node scripts/release/kernel/compare-schema.mjs <consumer-enums.ts>`
+prints these under **Pending consumer migrations** — that section is the
+authoritative list, generated from the `consumer_pending` declarations in
+`scripts/release/kernel/generate.mjs` `ENUM_PROJECTION`.
 
 ### 2f: Prepend to CHANGELOG.md
 

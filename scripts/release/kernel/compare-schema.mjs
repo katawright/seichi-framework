@@ -58,6 +58,9 @@ const projection = JSON.parse(
 
 const lines = [];
 let deltas = 0;
+/** Declared consumer-side values the framework has already moved off of, and
+ *  the consumer still carries — the open two-phase migrations. */
+const pendingMigrations = [];
 
 lines.push(`# Schema equivalence comparison`);
 lines.push(``);
@@ -83,9 +86,24 @@ for (const [enumName, entry] of Object.entries(projection.enums)) {
   // consumer's enum is the ratified set plus exactly the declared
   // consumer-side substrate. Declared values are allowed (and expected);
   // anything else stays a DELTA.
-  const declared = entry.consumer_only ?? [];
+  const substrate = entry.consumer_substrate ?? [];
+  const pending = Object.keys(entry.consumer_pending ?? {});
+  const declared = [...substrate, ...pending];
   const undeclaredExtra = extra.filter((v) => !declared.includes(v));
+  // A declared value the consumer no longer carries is the second phase
+  // landing: for a pending migration that is the good news, but the
+  // declaration must be removed in the same cycle or the projection keeps
+  // asserting a value nobody has. Either way it is a DELTA until reconciled.
   const declaredAbsent = declared.filter((v) => !extra.includes(v));
+  for (const v of pending) {
+    if (extra.includes(v)) {
+      pendingMigrations.push({
+        enumName,
+        value: v,
+        note: entry.consumer_pending[v],
+      });
+    }
+  }
   if (missing.length === 0 && extra.length === 0 && declared.length === 0) {
     lines.push(`| \`${enumName}\` | EQUAL | ${entry.values.length} values |`);
   } else if (
@@ -94,10 +112,15 @@ for (const [enumName, entry] of Object.entries(projection.enums)) {
     undeclaredExtra.length === 0 &&
     declaredAbsent.length === 0
   ) {
+    const detail = [
+      substrate.length ? `substrate: ${substrate.join(", ")}` : null,
+      pending.length ? `**pending migration: ${pending.join(", ")}**` : null,
+    ]
+      .filter(Boolean)
+      .join("; ");
     lines.push(
       `| \`${enumName}\` | EQUAL (declared subset) | ${entry.values.length} ` +
-        `framework values ⊂ ${consumer.length}; declared consumer-only: ` +
-        `${declared.join(", ")} |`,
+        `framework values ⊂ ${consumer.length}; ${detail} |`,
     );
   } else {
     deltas++;
@@ -123,10 +146,29 @@ lines.push(
   `Consumer enums outside the projected slice (${notInSlice.length}): ` +
     notInSlice.map((e) => `\`${e}\``).join(", "),
 );
+// Open two-phase migrations, listed as the to-do list they are. These do NOT
+// affect the exit code: a pending migration is a green, sanctioned state — the
+// declaration is what keeps the comparison EQUAL while the consumer catches
+// up. Listing them separately is the point; a value queued to disappear and a
+// value that belongs to the consumer forever read identically otherwise.
+if (pendingMigrations.length) {
+  lines.push(``);
+  lines.push(
+    `## Pending consumer migrations (${pendingMigrations.length}) — not deltas`,
+  );
+  lines.push(``);
+  for (const p of pendingMigrations) {
+    lines.push(`- \`${p.enumName}.${p.value}\` — ${p.note}`);
+  }
+}
+
 lines.push(``);
 lines.push(
   deltas === 0
-    ? `Verdict: every projected enum compares EQUAL.`
+    ? `Verdict: every projected enum compares EQUAL.` +
+        (pendingMigrations.length
+          ? ` ${pendingMigrations.length} consumer migration(s) still open (above).`
+          : ``)
     : `Verdict: ${deltas} enum(s) carry a DELTA — each must be explicitly reviewed.`,
 );
 lines.push(``);

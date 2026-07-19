@@ -414,7 +414,7 @@
         "rendered-view"
       ],
       "source": "manifest:vocabularies.record_family",
-      "consumer_only": [
+      "consumer_substrate": [
         "stage"
       ]
     },
@@ -543,9 +543,9 @@
         "dropped"
       ],
       "source": "manifest:vocabularies.success_criterion_status",
-      "consumer_only": [
-        "met_synthetic"
-      ]
+      "consumer_pending": {
+        "met_synthetic": "retired from the ratified set in v0.64 — measurement provenance is not an outcome; it rides the register's How-measured column. Drop from the consumer enum next conformance cycle, then remove this declaration."
+      }
     },
     "trace_link_type": {
       "values": [
@@ -567,7 +567,7 @@
         "supersedes"
       ],
       "source": "manifest:vocabularies.trace_link_type",
-      "consumer_only": [
+      "consumer_substrate": [
         "derives_from",
         "blocks",
         "relates_to"

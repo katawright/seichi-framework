@@ -559,13 +559,18 @@ const ENUM_PROJECTION = [
   ["escalation_withdrawn_reason", { reasons: "escalation_lifecycle" }],
   ["deviation_revoked_reason", { reasons: "deviation_lifecycle" }],
   ["goal_status", { vocabulary: "goal_status" }],
-  // `met_synthetic` was retired from the ratified set in v0.64 (measurement
-  // provenance is not an outcome — it rides the register's How-measured
-  // column). Declared consumer-only until the schema repo drops it next
-  // conformance cycle, so compare-schema stays EQUAL across the two phases.
   [
     "sc_status",
-    { vocabulary: "success_criterion_status", consumer_only: ["met_synthetic"] },
+    {
+      vocabulary: "success_criterion_status",
+      consumer_pending: {
+        met_synthetic:
+          "retired from the ratified set in v0.64 — measurement provenance is " +
+          "not an outcome; it rides the register's How-measured column. Drop " +
+          "from the consumer enum next conformance cycle, then remove this " +
+          "declaration.",
+      },
+    },
   ],
   ["req_status", { vocabulary: "requirement_status" }],
   ["assumption_status", { vocabulary: "assumption_status" }],
@@ -578,15 +583,28 @@ const ENUM_PROJECTION = [
   ["consequence_tier", { vocabulary: "consequence_tier" }],
   ["forcing_dependency", { vocabulary: "forcing_dependency" }],
   ["safety_conclusion", { vocabulary: "safety_conclusion" }],
-  // VC-9 declared subsets: the consumer's enums are the ratified sets plus
-  // declared consumer-side substrate; the comparison allows exactly those
-  // consumer-only values and nothing else.
-  ["record_family", { vocabulary: "record_family", consumer_only: ["stage"] }],
+  // VC-9 declared subsets: the consumer's enum is the ratified set plus values
+  // this projection declares. Both kinds below are allowed by the comparison
+  // and nothing else is — they differ in *intent*, which is what the report
+  // reads back:
+  //
+  //   consumer_substrate — permanent and by design. The value belongs to the
+  //     consumer's storage layer and the framework will never ratify it.
+  //     Expected to stay forever; nothing to do.
+  //   consumer_pending   — a queued migration. The framework has already moved
+  //     and the consumer has not yet. Expected to disappear; each entry maps
+  //     the value to what has to happen. This is debt, and `compare-schema`
+  //     lists it as such.
+  //
+  // Splitting them matters because a single `consumer_only` list read as one
+  // kind: `stage` (permanent) and `met_synthetic` (debt) looked identical in
+  // the report, so nobody could tell which rows were a to-do list.
+  ["record_family", { vocabulary: "record_family", consumer_substrate: ["stage"] }],
   [
     "trace_link_type",
     {
       vocabulary: "trace_link_type",
-      consumer_only: ["derives_from", "blocks", "relates_to"],
+      consumer_substrate: ["derives_from", "blocks", "relates_to"],
     },
   ],
 ];
@@ -615,7 +633,12 @@ export function buildSchemaProjection(sources, manifest) {
       values: frameworkValues.map(toSnake),
       framework_values: frameworkValues,
       source,
-      ...(spec.consumer_only ? { consumer_only: spec.consumer_only } : {}),
+      ...(spec.consumer_substrate
+        ? { consumer_substrate: spec.consumer_substrate }
+        : {}),
+      ...(spec.consumer_pending
+        ? { consumer_pending: spec.consumer_pending }
+        : {}),
       ...(spec.note ? { note: spec.note } : {}),
     };
   }
