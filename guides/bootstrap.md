@@ -31,7 +31,7 @@ The framework uses three types of location:
 
 | Location        | Per Project | Role                | Contents                                                                                   | Agent Access |
 | --------------- | ----------- | ------------------- | ------------------------------------------------------------------------------------------ | ------------ |
-| **Framework**   | Shared      | Read-only reference | Guides, stages, templates, checklists                                                      | Read only    |
+| **Framework**   | Shared      | Read-only reference | Guides, spec, stages, templates, checklists                                                | Read only    |
 | **Artifacts**   | 1           | Project governance  | `docs/briefs/`, `docs/adr/`, `docs/session-logs/`, gate decisions, workspace `adrs/` canon | Read + write |
 | **Source code** | 1+          | Project codebase    | Application code, tests, CI/CD config                                                      | Read + write |
 
@@ -538,6 +538,6 @@ logs to maintain continuity between sessions.
 
 ## Notes
 
-**Last Updated:** 2026-07-09
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.9.0.

@@ -460,12 +460,17 @@ Enterprise tier]
 
 <!-- Record any downstream stages that are skipped for this project, with
      rationale. This section is the formal skip record referenced by Gate 2.
-     Omit this section entirely if no stages are being skipped. -->
+     Omit this section entirely if no stages are being skipped.
+     Deployment is the ONLY stage with a project-level N/A carve-out (a
+     project with no deployment target at all — see
+     ../stages/deployment/README.md#release-disposition). Every other stage
+     folds with consequence rather than being skipped; Closure in particular
+     always happens, folded to a recorded paragraph even for a thrown-away
+     experiment (../stages/closure/README.md). Do not add rows here. -->
 
-| Stage                | Skipped?   | Rationale                                                            |
-| -------------------- | ---------- | -------------------------------------------------------------------- |
-| Deployment (Stage 7) | [Yes / No] | [e.g., local-only tool; no deployment infrastructure]                |
-| Closure (Stage 8)    | [Yes / No] | [e.g., disposable experiment; no formal close-out or handoff needed] |
+| Stage                | Skipped?   | Rationale                                             |
+| -------------------- | ---------- | ----------------------------------------------------- |
+| Deployment (Stage 7) | [Yes / No] | [e.g., local-only tool; no deployment infrastructure] |
 
 ---
 
@@ -489,4 +494,4 @@ Enterprise tier]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-07-05 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.12.0. -->

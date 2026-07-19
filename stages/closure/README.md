@@ -391,9 +391,15 @@ distribute the close-out record to all Informed roles per the
 
 ## When to Revisit Closure
 
-- **Completion claim rejected** — verification or acceptance finds the scope is
-  not actually met; the project returns to `active` and the iterative stages
-  rather than closing.
+- **Completion claim refuted** — _verification_ finds the scope is not actually
+  met; the project returns from `completion-claimed` to `active` and the
+  iterative stages rather than closing. This is the only edge back.
+- **Acceptance declined** — _acceptance_ is the authority act against intent,
+  not a second verification, so a negative acceptance does not send the project
+  back. A recorded decision is what gates the terminal, positive or not:
+  `completion-verified` enters `closed` carrying the reason
+  `acceptance-declined` (or `acceptance-lapsed` where no decision came). Closure
+  is revisited only to complete the record, never to re-open the lifecycle.
 - **Handoff gap found** — the operator cannot safely run the system because the
   handoff record is incomplete; reopen Closure to complete it.
 - **Reopened scope** — new in-scope work is authorized after closure; a

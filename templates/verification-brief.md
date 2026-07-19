@@ -302,11 +302,14 @@ Implementation rework brief should reference this cycle's verification brief]
 
 ---
 
-## Project Closeout (Optional)
+## Delivery Notes (no deployment target)
 
-<!-- Include this section when Deployment and Closure stages were skipped
-     (e.g., local-only tools, spikes, experiments). This brief then serves
-     as the de facto project conclusion. -->
+<!-- Include this section when the project has no deployment target at all
+     (a local-only tool, spike, or library) and Deployment is therefore N/A.
+     These are delivery details, not a project conclusion: Closure still
+     happens, folded to a recorded paragraph carrying the acceptance
+     decision, the acceptance-criterion dispositions, and the quiescence
+     disposition (../stages/closure/README.md). Record it there, not here. -->
 
 **Distribution method:** [How users obtain the tool — e.g., clone repo, pip
 install, download binary]

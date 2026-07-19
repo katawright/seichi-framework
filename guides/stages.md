@@ -108,6 +108,18 @@ The 8 stages follow three execution patterns:
 > at Closure; the system it produced is _operated_ there. Small in-place
 > software changes run as [Flow](#flow-delivery-mode) items.
 
+> **Every stage folds; no stage is skipped.** Right-sizing changes how much
+> ceremony a stage carries, never whether it occurs — a Minimal-tier stage may
+> fold to a recorded paragraph, but the record exists. **Deployment carries the
+> single exception**, and it is project-level: a project with no deployment
+> target at all — a local-only tool, spike, or library — marks it N/A (see
+> [Stage 7](#stage-7-deployment)). No other stage has such a carve-out.
+> **Closure in particular always happens**: a thrown-away experiment still
+> closes, because the acceptance decision, the acceptance-criterion
+> dispositions, and the quiescence disposition have no other home. The formal
+> skip record is the System Design Brief's Stage Skip Decisions section,
+> referenced at Gate 2.
+
 ### Stage Flow
 
 #### Linear Flow (Waterfall-style)

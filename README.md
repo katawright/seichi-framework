@@ -445,8 +445,10 @@ wider pilot.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest improvements or submit
-changes.
+See
+[CONTRIBUTING.md](https://github.com/katawright/seichi-framework/blob/main/CONTRIBUTING.md)
+for how to suggest improvements or submit changes. (Maintainer-facing — it lives
+in the repository and is not part of the release archive.)
 
 ---
 
@@ -463,7 +465,9 @@ be used:
   template carries **no** license obligation — no attribution, no share-alike.
   The output is yours.
 - **Tooling** (`.schema/`) — the validation and CI code — is licensed under
-  [MIT](.schema/LICENSE).
+  [MIT](https://github.com/katawright/seichi-framework/blob/main/.schema/LICENSE).
+  The tooling it covers is maintainer-only and is not part of the release
+  archive.
 
 **Naming.** These licenses cover copyright in the content only; they grant no
 rights in the project or product name, which is reserved. Forks and adaptations
@@ -474,6 +478,6 @@ product name in a way that implies endorsement, affiliation, or official status.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.17.0.

@@ -164,8 +164,9 @@ _uses_ the framework, not the team that maintains it. When the operator and the
 framework maintainer are the **same** party — a team dogfooding its own method,
 where Process friction routes to the framework's own repository — that is a
 recognized **special case**, not the default. If that is you, file upstream
-directly (see [CONTRIBUTING.md](../CONTRIBUTING.md)); if it is not, capture
-locally and contribute only if you choose to.
+directly (see
+[CONTRIBUTING.md](https://github.com/katawright/seichi-framework/blob/main/CONTRIBUTING.md));
+if it is not, capture locally and contribute only if you choose to.
 
 ---
 
@@ -304,6 +305,6 @@ away.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.45.0.
