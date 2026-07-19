@@ -988,6 +988,40 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     expect(checkpointOutcomeIssues("templates/x.md", bare, SETS)).toEqual([]);
   });
 
+  // G-m1: a value-enumerating table cell with no bold label returned null —
+  // only the status-axis cell form was covered.
+  it("G-m1: an unlabeled table cell restating outcomes is flagged", () => {
+    const doc = [
+      "| Field | Value |",
+      "| --- | --- |",
+      "| Gate 1 | Proceed / Revise / Pivot |",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("untagged");
+    expect(issues[0]).toContain(":3");
+  });
+
+  it("G-m1: a tracker cell that enumerates non-outcomes stays silent", () => {
+    // Verbatim from templates/gate-decision.md's conditions table. Shape alone
+    // would flag this; set-overlap is what keeps it quiet.
+    const doc = [
+      "| Condition | Owner | Discharged at | Status |",
+      "| --- | --- | --- | --- |",
+      "| … | … | … | Open / Satisfied / Blocked / Withdrawn |",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("G-m1: a table cell of outcome-shaped non-members stays silent", () => {
+    const doc = [
+      "| Stage | Status |",
+      "| --- | --- |",
+      "| Build | Not Started / In Progress / Blocked / Complete |",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
   it("G-3: a complete set in any order still passes", () => {
     const doc = [
       "<!-- checkpoint-outcome: gate -->",

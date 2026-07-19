@@ -118,14 +118,41 @@ export function boldLabels(line) {
 }
 
 /**
- * The outcome values an untagged line restates, or null when it restates
- * none. Covers the labeled forms (line-initial, list item, or nested) and the
- * `## Decision:` heading; a table cell is covered by the status-axis rule
- * instead, since a value list in a cell is as often a tracker as an outcome.
+ * Values enumerated in a table cell that carries no bold label —
+ * `| Gate 1 | Proceed / Revise / Pivot |`. Only the status-axis cell form was
+ * covered before, so this shape restated an outcome set unguarded.
+ *
+ * A cell is a restatement only when its values OVERLAP a known outcome set.
+ * That discriminator is the point: a value list in a cell is as often a
+ * tracker as an outcome, and the corpus has real ones —
+ * `Open / Satisfied / Blocked / Withdrawn` on a conditions table — which must
+ * stay silent. Shape alone would flag those.
  */
-export function untaggedRestatement(line) {
+export function tableCellValues(line, sets) {
+  if (!sets || !/^\s*\|/.test(line)) return null;
+  for (const cell of line.split("|").slice(1, -1)) {
+    if (!cell.includes(" / ")) continue;
+    const values = cell.split(" / ").map(normalizeValue).filter(Boolean);
+    if (values.length < 2) continue;
+    if (!values.every((v) => VALUE_SHAPED_RE.test(v))) continue;
+    if (Object.values(sets).some((s) => values.some((v) => s.has(v)))) {
+      return values;
+    }
+  }
+  return null;
+}
+
+/**
+ * The outcome values an untagged line restates, or null when it restates
+ * none. Covers the labeled forms (line-initial, list item, or nested), the
+ * `## Decision:` heading, and an unlabeled value-enumerating table cell.
+ */
+export function untaggedRestatement(line, sets) {
   const values = lineValues(line);
-  if (!values || !values.length) return null;
+  // null means "no recognizable label" — the table-cell shape lives here.
+  // An empty array means "label present, values are in the block below".
+  if (values === null) return tableCellValues(line, sets);
+  if (!values.length) return null;
   if (/^#{2,}\s+Decision:/.test(line)) return values;
   const labels = boldLabels(line);
   if (labels.some((l) => STRICT_LABEL_RE.test(l))) return values;
@@ -290,7 +317,7 @@ export function checkpointOutcomeIssues(file, content, sets) {
   const netLines = stripComments(fenced).split(/\r?\n/);
   netLines.forEach((line, i) => {
     if (tagged.has(i)) return;
-    if (untaggedRestatement(line)) {
+    if (untaggedRestatement(line, sets)) {
       issues.push(
         `CKPT  ${file}:${i + 1}  untagged checkpoint-outcome restatement — ` +
           `tag the line with <!-- checkpoint-outcome: gate|review|alignment ` +
