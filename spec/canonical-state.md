@@ -385,8 +385,14 @@ neither substitutes for the other.
 - **Procedure.** **Reason codes are normative** — fixed, closed sets per state —
   and a reason is present **iff** the state requires one. `active` and
   `completion-claimed` carry no reason. Free prose belongs in a separate detail
-  field, never in the reason. A situation no code fits is a **missing code** — a
-  framework change, not a free-text escape hatch.
+  field, never in the reason. Two `paused`/`canceled` codes are easily confused
+  with their neighbours and are fixed here: **`owner-hold`** records the owner
+  electing to hold a project that is not otherwise obstructed — distinct from
+  **`blocked`**, where an external obstruction prevents progress regardless of
+  the owner's wish; and **`stopped-by-owner`** records the owner ending the
+  project on its own merits — distinct from **`superseded`**, where the work
+  continues elsewhere under a different project. A situation no code fits is a
+  **missing code** — a framework change, not a free-text escape hatch.
 - **Outputs.** The state's reason, where the state requires one.
 - **Evidence.** Entries into a required-reason state carry their reason
   (enclosing contract).
@@ -766,10 +772,11 @@ graph, so the transition **disposes** it.
   by neither terminal — the mode-binding rule, generalized. Their **force** ends
   with the project: a terminal project admits no decision for a policy to clear
   and no work for an authorization to cover; the records persist as history of
-  what stood at the end. The cascade does not rewrite them — `revoked` and its
-  siblings record a party's decision about the grant itself, and cancellation
-  decides nothing about any grant. Post-terminal housekeeping on this class is
-  administrative, never required for the terminal to be honest.
+  what stood at the end. The cascade does not rewrite them — `revoked` and the
+  other **policy-lifecycle** statuses record a party's decision about the grant
+  itself, and cancellation decides nothing about any grant. Post-terminal
+  housekeeping on this class is administrative, never required for the terminal
+  to be honest.
 
 **Outputs.** At `closed`, a quiescent child graph under the completeness claim
 ([CS-028](#cs-028--quiescence-set-closed-direct-children)); at `canceled`, a
@@ -1060,6 +1067,12 @@ end — including the ways nobody plans for.
     status for a criterion that will not be pursued; `revised` and `deferred`
     both promise a future, and a criterion with no future MUST NOT hide in
     either.
+  - **The standing values are not outcomes.** `not-started` records a criterion
+    defined but not yet being measured; `blocked` records measurement prevented
+    by an external obstruction. Neither promises a future the way `deferred`
+    does — `deferred` is a decision to pursue the criterion later, `blocked` is
+    a present impediment to measuring it now. A criterion that will not be
+    pursued rests at `dropped`, never in either.
   - **Delivered-but-unmet has a word.** `not-achieved` (goal) and `not-met`
     (success criterion) are the resting statuses for an outcome pursued to
     delivery and measured unmet — typically by the post-release measurement plan

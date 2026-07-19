@@ -5,8 +5,8 @@
 **Purpose:** Record a Gate 1 or Gate 2 investment decision.
 
 **Usage:** Use this template for investment gates that decide whether a project
-proceeds, is revised, or is stopped. For non-investment checkpoints (quality,
-deployment, production ownership), use
+proceeds (optionally with conditions), is revised, or is stopped. For
+non-investment checkpoints (quality, deployment, production ownership), use
 [checkpoint-decision.md](checkpoint-decision.md) instead. See the
 [Checkpoint Taxonomy](../guides/checkpoints.md) for the full decision framework.
 
@@ -212,6 +212,8 @@ quality]
 ---
 
 <!-- For deployment and closure checkpoints, use checkpoint-decision.md.
-     For architecture review decisions, record as an ADR with status "Accepted". -->
+     For an Architecture Review, use checkpoint-decision.md with the Alignment
+     type — its outcome is Aligned / Adjustments Needed. The architecture
+     decisions reached there are separately recorded as ADRs. -->
 
 <!-- Template Last Updated: 2026-07-18 | Added in v0.13.0. -->

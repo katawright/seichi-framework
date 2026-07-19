@@ -2,8 +2,9 @@
 
 # Checkpoint Decision: [Checkpoint — Short Title]
 
-**Purpose:** Record a non-investment checkpoint decision (quality, deployment,
-production ownership, or compliance).
+**Purpose:** Record a non-investment checkpoint decision — a Review (quality,
+deployment, production ownership, or compliance) or an Alignment (stakeholder
+consensus, including the Architecture Review).
 
 **Usage:** Use this template for operational checkpoints between stages. For
 Gate 1 and Gate 2 investment decisions, use [gate-decision.md](gate-decision.md)

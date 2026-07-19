@@ -1026,8 +1026,9 @@ later stage:
 
 For the full checkpoint taxonomy (three checkpoint types, Decision-Rights
 Matrix, and per-stage checkpoint mapping), see
-[Checkpoint Taxonomy](checkpoints.md). Each stage definition above references
-its specific checkpoints in the `### Checkpoints` subsection.
+[Checkpoint Taxonomy](checkpoints.md). Stages 1-4 carry a `### Checkpoints`
+subsection naming their specific checkpoints; the later stages defer to the
+Checkpoint Taxonomy rather than restating it.
 
 ---
 

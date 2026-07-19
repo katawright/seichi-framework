@@ -267,6 +267,8 @@ month enablement program"]
       estimates
 - [ ] Stop — opportunity validated but preparation cost exceeds current budget;
       pause the project and revisit when [condition]
+- [ ] Revise — the opportunity holds but the preparation scope or approach needs
+      rework before an investment decision can be made; re-present
 - [ ] Stop — preparation investment not justified by the opportunity; cancel the
       project (cancellation cascades to open child records)
 

@@ -79,9 +79,9 @@ completed increment, preview next increment scope, surface cross-increment
 dependencies.
 
 > **Close-out review:** If this is the final planned increment, run the
-> **project close-out** — confirm every acceptance criterion is met or descoped,
-> every success criterion is measured or carries a re-check date, and learnings
-> are triaged and routed to their owners. Use the
+> **project close-out** — confirm every acceptance criterion is met, descoped,
+> or deferred, every success criterion is measured or carries a re-check date,
+> and learnings are triaged and routed to their owners. Use the
 > [Closure Checklist](../stages/closure/checklist.md) and capture the result in
 > the [Project Close-Out Summary](../templates/project-closeout.md). See
 > [Gate Review Facilitation](roles.md#gate-review-facilitation) for agenda and
