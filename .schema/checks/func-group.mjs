@@ -32,16 +32,39 @@ function classify(text) {
   return null;
 }
 
+// Sentinel that marks WHICH list item states the always-required set. The guard
+// reads the set from the item this marker opens, so the coupling is explicit in
+// the spec source rather than being an invisible regex match against prose
+// wording. Renaming or removing it is fatal (see funcGroupIssues) — the previous
+// prose match degraded to warn-only, which meant innocuous rewording of the
+// sentence silently disarmed the whole check while CI stayed green.
+export const ANCHOR_RE = /<!--\s*anchor:\s*always-required-functions\s*-->/g;
+
 // The set of standing functions the spec Procedure marks ALWAYS required, read
-// from the "… MUST always be treated as required" sentence. Returns null if the
-// sentence isn't found (→ caller skips with a warning).
+// from the anchored list item. Returns null if the anchor is absent, or an empty
+// Set if it is present but names no recognized function — both fatal upstream.
 export function specAlwaysSet(specContent) {
-  const stripped = stripFences(specContent);
-  const m = stripped.match(/([^.]*?)\bMUST always be treated as required/i);
-  if (!m) return null;
+  const lines = stripFences(specContent).split("\n");
+  const marked = lines.flatMap((l, i) => {
+    ANCHOR_RE.lastIndex = 0;
+    return ANCHOR_RE.test(l) ? [i] : [];
+  });
+  if (marked.length !== 1) return null; // absent, or ambiguous (duplicated)
+  const start = marked[0];
+  // The anchored span is the list item the marker opens: its own line plus any
+  // continuation lines, ending at the next list item, a blank line, or EOF.
+  const parts = [lines[start].replace(ANCHOR_RE, " ")];
+  for (let i = start + 1; i < lines.length; i++) {
+    if (lines[i].trim() === "" || /^\s*[-*+]\s/.test(lines[i])) break;
+    parts.push(lines[i]);
+  }
+  // Collapse whitespace before matching: the item is prose-wrapped, so a phrase
+  // like "stop enforcement" routinely straddles a line break and would other-
+  // wise fail a single-space pattern purely because of where prettier wrapped.
+  const text = parts.join(" ").replace(/\s+/g, " ");
   const set = new Set();
-  for (const { key, re } of FUNC_MATCHERS) if (re.test(m[1])) set.add(key);
-  return set.size ? set : null;
+  for (const { key, re } of FUNC_MATCHERS) if (re.test(text)) set.add(key);
+  return set;
 }
 
 // The operator orientation table's standing rows. The table is the unique one
@@ -80,16 +103,27 @@ export function operatorStandingRows(guideContent) {
 export function funcGroupIssues(specContent, guideContent) {
   const fatal = [];
   const warn = [];
+  // Both inputs missing is FATAL, not a warn-skip. A check that quietly stops
+  // checking when it cannot find what it compares reports green on exactly the
+  // drift it exists to catch; the invariant register lists FUNCGROUP as fatal.
   const always = specAlwaysSet(specContent);
-  if (!always) {
-    warn.push(
-      `FUNCGROUP  ${SPEC_FILE}  "always required" grouping sentence not found — skipping`,
+  if (always === null) {
+    fatal.push(
+      `FUNCGROUP  ${SPEC_FILE}  the <!-- anchor: always-required-functions --> marker is missing or duplicated — the always-required standing-function set is read from the list item it opens, so the check cannot run without exactly one`,
+    );
+    return { fatal, warn };
+  }
+  if (!always.size) {
+    fatal.push(
+      `FUNCGROUP  ${SPEC_FILE}  the anchored list item names no recognized standing function — expected the always-required set (evidence capture, stop enforcement)`,
     );
     return { fatal, warn };
   }
   const rows = operatorStandingRows(guideContent);
   if (!rows.length) {
-    warn.push(`FUNCGROUP  ${GUIDE_FILE}  operator table not found — skipping`);
+    fatal.push(
+      `FUNCGROUP  ${GUIDE_FILE}  operator orientation table (header cell "Operator configures") has no standing rows — the guide-side half of the comparison is missing`,
+    );
     return { fatal, warn };
   }
   for (const { fn, key, cell, line } of rows) {
@@ -114,16 +148,16 @@ export function runFuncGroup(repoRoot) {
     specContent = readFileSync(join(repoRoot, SPEC_FILE), "utf8");
   } catch {
     return {
-      fatal: [],
-      warn: [`FUNCGROUP  ${SPEC_FILE}  not readable — skipping`],
+      fatal: [`FUNCGROUP  ${SPEC_FILE}  not readable — cannot compare`],
+      warn: [],
     };
   }
   try {
     guideContent = readFileSync(join(repoRoot, GUIDE_FILE), "utf8");
   } catch {
     return {
-      fatal: [],
-      warn: [`FUNCGROUP  ${GUIDE_FILE}  not readable — skipping`],
+      fatal: [`FUNCGROUP  ${GUIDE_FILE}  not readable — cannot compare`],
+      warn: [],
     };
   }
   return funcGroupIssues(specContent, guideContent);
