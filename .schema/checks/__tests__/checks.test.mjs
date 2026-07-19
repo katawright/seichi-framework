@@ -1022,6 +1022,64 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
   });
 
+  // G-1: blockValues was reachable only after a sentinel was found, so there
+  // was no untagged-block detector — and the checkbox-pair form is the majority
+  // form in the guarded corpus (6 of 8 stage checklists). Coverage was opt-in
+  // via a deletable HTML comment.
+  it("G-1: an untagged outcome-shaped checkbox block is flagged", () => {
+    const doc = [
+      "## Final Decision",
+      "",
+      "- [ ] **Ready**",
+      "- [ ] **Pivot**",
+      "- [ ] **Needs Review**",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("stages/x/checklist.md", doc, SETS);
+    expect(
+      issues.some((i) => i.includes("untagged checkpoint-outcome block")),
+    ).toBe(true);
+  });
+
+  it("G-1: a block covered by a standalone sentinel is not double-flagged", () => {
+    const doc = [
+      "<!-- checkpoint-outcome: review -->",
+      "",
+      "- [ ] **Ready** — Proceed to Verification",
+      "- [ ] **Not Ready** — Address weak items",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("stages/x/checklist.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("G-1: a block under a sentinel-bearing LABEL line is not flagged", () => {
+    // The sentinel rides the label, and section 2 consumes the block below it.
+    // That block start must count as covered, or the untagged-block scan
+    // reports the very form the sentinel was placed to guard.
+    const doc = [
+      "**Gate 1 implication:** <!-- checkpoint-outcome: gate -->",
+      "",
+      "- [ ] Proceed",
+      "- [ ] Proceed with conditions",
+      "- [ ] Revise",
+      "- [ ] Stop",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("G-1: a non-outcome checkbox block stays silent", () => {
+    // Verbatim shape from stages/deployment/checklist.md's readiness block —
+    // `- [ ]` items that are floor assertions, not an outcome menu.
+    const doc = [
+      "- [ ] All checklist sections above are complete",
+      "- [ ] **[J] Technical deployment validation signed off** (validated)",
+      "- [ ] **[H] Operational readiness approved** (deployment approval)",
+    ].join("\n");
+    expect(
+      checkpointOutcomeIssues("stages/deployment/checklist.md", doc, SETS),
+    ).toEqual([]);
+  });
+
   it("G-3: a complete set in any order still passes", () => {
     const doc = [
       "<!-- checkpoint-outcome: gate -->",

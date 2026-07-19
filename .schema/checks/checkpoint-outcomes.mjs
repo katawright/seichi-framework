@@ -189,6 +189,15 @@ function stripComments(content) {
   return content.replace(/<!--[\s\S]*?-->/g, (m) => m.replace(/[^\n]/g, " "));
 }
 
+/** First non-blank line index at or after `idx` — where blockValues actually
+ *  starts reading. Section 2 records this so the untagged-block scan knows a
+ *  sentinel already covers that block. */
+function blockStart(lines, idx) {
+  let i = idx;
+  while (i < lines.length && lines[i].trim() === "") i++;
+  return i;
+}
+
 /** Checkbox values of the block starting at or after line `idx`: each
  *  `- [ ] Value — …` item's text before its em-dash annotation. */
 function blockValues(lines, idx) {
@@ -276,6 +285,7 @@ export function checkpointOutcomeIssues(file, content, sets) {
       // the form the stage checklists use, where the block follows a
       // blockquote rather than a bold label.
       values = blockValues(lines, target);
+      if (values.length) tagged.add(blockStart(lines, target));
       if (values.length === 0) {
         issues.push(
           `CKPT  ${file}:${i + 1}  sentinel on a line with no recognizable ` +
@@ -285,7 +295,10 @@ export function checkpointOutcomeIssues(file, content, sets) {
         return;
       }
     }
-    if (values.length === 0) values = blockValues(lines, target + 1);
+    if (values.length === 0) {
+      values = blockValues(lines, target + 1);
+      if (values.length) tagged.add(blockStart(lines, target + 1));
+    }
     if (values.length === 0) {
       issues.push(
         `CKPT  ${file}:${i + 1}  sentinel with no values to check ` +
@@ -327,7 +340,45 @@ export function checkpointOutcomeIssues(file, content, sets) {
     }
   });
 
-  // 4. An example label that names a checkpoint type is checked against that
+  // 4. An untagged outcome-shaped checkbox block is an unguarded restatement.
+  // blockValues was reachable ONLY after a sentinel was found, so there was no
+  // untagged-block detector at all — and the checkbox-pair form is the majority
+  // form in the guarded corpus (6 of the 8 stage checklists), which made its
+  // coverage opt-in via a deletable HTML comment.
+  //
+  // STYLE_GUIDE.md § Final Decision requires the sentinel on either
+  // presentation, so an untagged outcome-shaped block is itself the violation.
+  // Its intended type is deliberately NOT inferred — the sentinel is what
+  // declares that, and guessing would re-create the ambiguity the sentinel
+  // exists to remove.
+  //
+  // Outcome-shaped means the values overlap a known set. The same discriminator
+  // as the table-cell branch, and for the same reason: the corpus has genuine
+  // non-outcome `- [ ]` blocks (Deployment's and Closure's readiness/floor
+  // items) that must stay silent.
+  for (let i = 0; i < netLines.length; i++) {
+    if (!/^\s*- \[[ xX]\] /.test(netLines[i])) continue;
+    const start = i;
+    const values = blockValues(netLines, start);
+    while (
+      i < netLines.length &&
+      (/^\s*- \[[ xX]\] /.test(netLines[i]) || /^\s+\S/.test(netLines[i]))
+    ) {
+      i++;
+    }
+    i--; // the outer loop's i++ resumes at the first line past the block
+    if (values.length < 2 || tagged.has(start)) continue;
+    if (!Object.values(sets).some((s) => values.some((v) => s.has(v))))
+      continue;
+    issues.push(
+      `CKPT  ${file}:${start + 1}  untagged checkpoint-outcome block — this ` +
+        `checkbox block restates an outcome set; tag it with ` +
+        `<!-- checkpoint-outcome: gate|review|alignment --> so its values are ` +
+        `checked (STYLE_GUIDE.md § Final Decision)`,
+    );
+  }
+
+  // 5. An example label that names a checkpoint type is checked against that
   // type's set directly — the type is declared, so no sentinel is needed.
   netLines.forEach((line, i) => {
     const pair = exampleTypeOutcome(line);
