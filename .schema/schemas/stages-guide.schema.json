@@ -18,7 +18,9 @@
       "properties": {
         "id": { "$ref": "defs.schema.json#/$defs/id" },
         "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
-        "execution_pattern": { "$ref": "defs.schema.json#/$defs/stage-execution-pattern" },
+        "execution_pattern": {
+          "$ref": "defs.schema.json#/$defs/stage-execution-pattern"
+        },
         "feeds_into": {
           "type": "array",
           "items": { "$ref": "defs.schema.json#/$defs/id" },
@@ -30,7 +32,13 @@
           "minItems": 1
         }
       },
-      "required": ["id", "stage_number", "execution_pattern", "feeds_into", "revisit_conditions"],
+      "required": [
+        "id",
+        "stage_number",
+        "execution_pattern",
+        "feeds_into",
+        "revisit_conditions"
+      ],
       "additionalProperties": false
     }
   }

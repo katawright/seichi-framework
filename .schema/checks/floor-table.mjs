@@ -16,11 +16,7 @@ const CONSEQUENCES = ["negligible", "low", "moderate", "high", "critical"];
 // lowercase. So `**Negligible**` == `Negligible` and `_if … available_` italics
 // don't matter — only the substance is compared.
 function norm(cell) {
-  return cell
-    .replace(/[*_`]/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
+  return cell.replace(/[*_`]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
 }
 
 function rowCells(line) {

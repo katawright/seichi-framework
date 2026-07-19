@@ -49,8 +49,5 @@
     "docs/**",
     "spec/generated/**"
   ],
-  "linkAllowlist": [
-    "adr/ADR-*.md",
-    "onboarding-tracker/*.md"
-  ]
+  "linkAllowlist": ["adr/ADR-*.md", "onboarding-tracker/*.md"]
 }

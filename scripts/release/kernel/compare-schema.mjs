@@ -140,12 +140,38 @@ for (const [enumName, entry] of Object.entries(projection.enums)) {
 }
 
 const projected = new Set(Object.keys(projection.enums));
-const notInSlice = Object.keys(consumerEnums).filter((e) => !projected.has(e));
+const divergences = projection.known_divergences ?? [];
+// An enum held out of the projection *because it diverges* must not read as an
+// enum no kernel vocabulary maps to. Same absence, opposite meaning.
+const divergent = new Set(divergences.flatMap((d) => d.consumer_enums));
+const notInSlice = Object.keys(consumerEnums).filter(
+  (e) => !projected.has(e) && !divergent.has(e),
+);
 lines.push(``);
 lines.push(
   `Consumer enums outside the projected slice (${notInSlice.length}): ` +
     notInSlice.map((e) => `\`${e}\``).join(", "),
 );
+
+if (divergences.length) {
+  lines.push(``);
+  lines.push(
+    `## Known divergences (${divergences.length}) — held out of the projection deliberately`,
+  );
+  lines.push(``);
+  for (const d of divergences) {
+    const present = d.consumer_enums.filter((e) => consumerEnums[e]);
+    lines.push(
+      `- **${d.consumer_enums.map((e) => `\`${e}\``).join(" · ")}**` +
+        (present.length < d.consumer_enums.length
+          ? ` _(not all present in this consumer)_`
+          : ``),
+    );
+    lines.push(`  - ${d.summary}`);
+    lines.push(`  - **Not projected:** ${d.why_unprojected}`);
+    lines.push(`  - **Decision home:** ${d.decision_home}`);
+  }
+}
 // Open two-phase migrations, listed as the to-do list they are. These do NOT
 // affect the exit code: a pending migration is a green, sanctioned state — the
 // declaration is what keeps the comparison EQUAL while the consumer catches

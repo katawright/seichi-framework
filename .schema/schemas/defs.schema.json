@@ -87,10 +87,26 @@
       "$comment": "RACI matrix assignments for a stage. Maps Responsible, Accountable, Consulted, Informed to role arrays. Mirrors the RACI matrix in guides/roles.md.",
       "type": "object",
       "properties": {
-        "R": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
-        "A": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
-        "C": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 },
-        "I": { "type": "array", "items": { "$ref": "#/$defs/role" }, "minItems": 1 }
+        "R": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/role" },
+          "minItems": 1
+        },
+        "A": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/role" },
+          "minItems": 1
+        },
+        "C": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/role" },
+          "minItems": 1
+        },
+        "I": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/role" },
+          "minItems": 1
+        }
       },
       "additionalProperties": false
     }

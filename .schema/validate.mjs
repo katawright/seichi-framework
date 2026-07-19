@@ -8,6 +8,7 @@ import fg from "fast-glob";
 import { minimatch } from "minimatch";
 import { runAnchors } from "./checks/anchors.mjs";
 import { runRetiredVocab } from "./checks/retired-vocab.mjs";
+import { runRetirementNotes } from "./checks/retirement-notes.mjs";
 import { runStamps } from "./checks/stamps.mjs";
 import { runIndexCounts } from "./checks/index-counts.mjs";
 import { runIndexOrder } from "./checks/index-order.mjs";
@@ -225,9 +226,7 @@ for (let file of structureFiles) {
     ) {
       issues.push("Missing ### Goals of This [Type] in Overview");
     }
-    if (
-      !headings.some((h) => h.level === 3 && h.text === "Key Principle")
-    ) {
+    if (!headings.some((h) => h.level === 3 && h.text === "Key Principle")) {
       issues.push("Missing ### Key Principle in Overview");
     }
     if (
@@ -285,12 +284,15 @@ const checkIssues = [
       checkFiles.filter((f) => f !== "CHANGELOG.md"),
     ),
   ),
+  ...runCheck("RELNOTE", () => runRetirementNotes(repoRoot)),
   ...runCheck("STAMP", () => runStamps(repoRoot, checkFiles)),
   ...runCheck("COUNT", () => runIndexCounts(repoRoot)),
   ...runCheck("ORDER", () => runIndexOrder(repoRoot)),
   ...runCheck("FLOOR", () => runFloorTable(repoRoot)),
   ...runCheck("KERNEL", () => runKernel(repoRoot)),
-  ...runCheck("MARKER", () => runRuleMarkers(repoRoot, fileMap.checkExclude || [])),
+  ...runCheck("MARKER", () =>
+    runRuleMarkers(repoRoot, fileMap.checkExclude || []),
+  ),
   ...runCheck("CKPT", () => runCheckpointOutcomes(repoRoot)),
 ];
 
@@ -354,11 +356,11 @@ if (checkWarnings.length > 0) {
 console.log("");
 console.log(
   `Results: ${passed} passed, ${failed} failed, ${skipped} skipped, ${warned} warned` +
-    (structureWarnings > 0
-      ? `, ${structureWarnings} structure warnings`
-      : "") +
+    (structureWarnings > 0 ? `, ${structureWarnings} structure warnings` : "") +
     (fatalIssues.length > 0 ? `, ${fatalIssues.length} check failures` : "") +
-    (checkWarnings.length > 0 ? `, ${checkWarnings.length} check warnings` : ""),
+    (checkWarnings.length > 0
+      ? `, ${checkWarnings.length} check warnings`
+      : ""),
 );
 
 process.exit(failed > 0 || fatalIssues.length > 0 ? 1 : 0);

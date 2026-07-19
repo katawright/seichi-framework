@@ -116,7 +116,9 @@ export function runStamps(repoRoot, files) {
     if (!shallow) {
       const commitDate = lastCommitDate(repoRoot, file);
       if (commitDate && stamp < commitDate) {
-        issues.push(`STAMP  ${file}  stamp ${stamp} < last commit ${commitDate} (stale)`);
+        issues.push(
+          `STAMP  ${file}  stamp ${stamp} < last commit ${commitDate} (stale)`,
+        );
       }
     }
   }

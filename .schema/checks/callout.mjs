@@ -60,7 +60,8 @@ const SUBJECT = /\b(ai|agent|agents|pipeline|humans?)\b/gi;
 
 export function executionPinHits(text) {
   const hits = [];
-  if (/human execution required/i.test(text)) hits.push("Human execution required");
+  if (/human execution required/i.test(text))
+    hits.push("Human execution required");
   let m;
   EXEC_VERB.lastIndex = 0;
   while ((m = EXEC_VERB.exec(text)) !== null) {
@@ -107,7 +108,11 @@ export function runCallout(repoRoot) {
         );
       }
     }
-    if (helps && /how autonomously this stage runs/i.test(helps.text) && !OM_LINK.test(helps.text)) {
+    if (
+      helps &&
+      /how autonomously this stage runs/i.test(helps.text) &&
+      !OM_LINK.test(helps.text)
+    ) {
       warn.push(
         `CALLOUT  ${file}:${helps.line}  "How AI Helps" asserts per-stage autonomy with no operating-model.md link (un-routed)`,
       );

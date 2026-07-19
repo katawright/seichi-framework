@@ -89,9 +89,7 @@ export function funcGroupIssues(specContent, guideContent) {
   }
   const rows = operatorStandingRows(guideContent);
   if (!rows.length) {
-    warn.push(
-      `FUNCGROUP  ${GUIDE_FILE}  operator table not found — skipping`,
-    );
+    warn.push(`FUNCGROUP  ${GUIDE_FILE}  operator table not found — skipping`);
     return { fatal, warn };
   }
   for (const { fn, key, cell, line } of rows) {
@@ -115,12 +113,18 @@ export function runFuncGroup(repoRoot) {
   try {
     specContent = readFileSync(join(repoRoot, SPEC_FILE), "utf8");
   } catch {
-    return { fatal: [], warn: [`FUNCGROUP  ${SPEC_FILE}  not readable — skipping`] };
+    return {
+      fatal: [],
+      warn: [`FUNCGROUP  ${SPEC_FILE}  not readable — skipping`],
+    };
   }
   try {
     guideContent = readFileSync(join(repoRoot, GUIDE_FILE), "utf8");
   } catch {
-    return { fatal: [], warn: [`FUNCGROUP  ${GUIDE_FILE}  not readable — skipping`] };
+    return {
+      fatal: [],
+      warn: [`FUNCGROUP  ${GUIDE_FILE}  not readable — skipping`],
+    };
   }
   return funcGroupIssues(specContent, guideContent);
 }

@@ -21,7 +21,11 @@ export function stripFences(content) {
         if (fence === null) {
           // Opening fence (an info string is allowed).
           fence = { char: ch, len };
-        } else if (ch === fence.char && len >= fence.len && info.trim() === "") {
+        } else if (
+          ch === fence.char &&
+          len >= fence.len &&
+          info.trim() === ""
+        ) {
           // CommonMark close: same char, >= opening length, no info string.
           // A shorter / different-char / info-bearing fence line nested inside
           // (e.g. ```json inside a ````markdown block) is content, not a close.

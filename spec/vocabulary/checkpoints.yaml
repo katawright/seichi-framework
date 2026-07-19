@@ -9,7 +9,11 @@
 # dropped `pivot`) migrates toward these sets in the schema repo's next
 # conformance cycle, so no schema consumer is declared yet and these sets
 # are deliberately NOT in the equivalence projection until that migration
-# lands.
+# lands. That hold-out is recorded as a machine-readable entry in
+# KNOWN_DIVERGENCES (scripts/release/kernel/generate.mjs), so compare-schema
+# reports it as a deliberate divergence rather than letting the consumer's
+# `checkpoint_kind` / `gate_outcome` sit unremarked among the enums no kernel
+# vocabulary maps to.
 
 vocabularies:
   # Which question is this checkpoint answering?

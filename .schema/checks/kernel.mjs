@@ -42,10 +42,16 @@ export function runKernel(repoRoot) {
   // Validate the committed manifest against the kernel manifest schema.
   try {
     const schema = JSON.parse(
-      readFileSync(join(repoRoot, "spec", "schemas", "manifest.schema.json"), "utf8"),
+      readFileSync(
+        join(repoRoot, "spec", "schemas", "manifest.schema.json"),
+        "utf8",
+      ),
     );
     const manifest = JSON.parse(
-      readFileSync(join(repoRoot, "spec", "generated", "manifest.json"), "utf8"),
+      readFileSync(
+        join(repoRoot, "spec", "generated", "manifest.json"),
+        "utf8",
+      ),
     );
     const ajv = new Ajv2020({ allErrors: true, strict: false });
     const validate = ajv.compile(schema);
@@ -57,7 +63,9 @@ export function runKernel(repoRoot) {
       }
     }
   } catch (err) {
-    issues.push(`KERNEL  manifest schema validation failed to run: ${err.message}`);
+    issues.push(
+      `KERNEL  manifest schema validation failed to run: ${err.message}`,
+    );
   }
 
   // Guard against a silently-empty generation (regressions in source loading

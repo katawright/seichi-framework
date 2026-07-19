@@ -60,7 +60,9 @@ export function runAnchors(repoRoot, files, allowlist = []) {
       if (pathPart === "") {
         // same-file anchor
         if (anchor && !ownSlugs.has(anchor)) {
-          issues.push(`ANCHOR  ${file}:${ln}  (${target}) → no heading '#${anchor}'`);
+          issues.push(
+            `ANCHOR  ${file}:${ln}  (${target}) → no heading '#${anchor}'`,
+          );
         }
         continue;
       }
@@ -89,7 +91,9 @@ export function runAnchors(repoRoot, files, allowlist = []) {
       if (allowed(p)) continue;
       const targetAbs = resolve(dirname(abs), p);
       if (!existsSync(targetAbs)) {
-        issues.push(`LINK  ${file}:${lineOf(raw, index)}  <!-- … ${p} --> → missing path`);
+        issues.push(
+          `LINK  ${file}:${lineOf(raw, index)}  <!-- … ${p} --> → missing path`,
+        );
       }
     }
   }

@@ -26,15 +26,21 @@
         { "type": "null" }
       ]
     },
-    "working_location": { "$ref": "defs.schema.json#/$defs/working-location-type" },
+    "working_location": {
+      "$ref": "defs.schema.json#/$defs/working-location-type"
+    },
     "session_log_template": { "$ref": "defs.schema.json#/$defs/file-path" },
     "raci_roles": { "$ref": "defs.schema.json#/$defs/raci-roles" }
   },
   "required": [
     "id",
-    "inputs", "outputs", "checkpoints",
-    "checklist", "reference",
-    "working_location", "session_log_template",
+    "inputs",
+    "outputs",
+    "checkpoints",
+    "checklist",
+    "reference",
+    "working_location",
+    "session_log_template",
     "raci_roles"
   ],
   "additionalProperties": false

@@ -37,7 +37,9 @@ import {
 
 describe("slugify (GitHub rules)", () => {
   it("drops an em-dash, leaving the two flanking spaces as --", () => {
-    expect(slugify("Authority — who may decide")).toBe("authority--who-may-decide");
+    expect(slugify("Authority — who may decide")).toBe(
+      "authority--who-may-decide",
+    );
   });
   it("drops a colon", () => {
     expect(slugify("Lights-Out: the far end of the spectrum")).toBe(
@@ -48,7 +50,9 @@ describe("slugify (GitHub rules)", () => {
     expect(slugify("5.3 Acceptance Testing")).toBe("53-acceptance-testing");
   });
   it("keeps internal hyphens", () => {
-    expect(slugify("Re-Size as the Project Evolves")).toBe("re-size-as-the-project-evolves");
+    expect(slugify("Re-Size as the Project Evolves")).toBe(
+      "re-size-as-the-project-evolves",
+    );
   });
   it("drops backticks (inline code in a heading)", () => {
     expect(slugify("Using `npm` here")).toBe("using-npm-here");
@@ -57,7 +61,9 @@ describe("slugify (GitHub rules)", () => {
 
 describe("headingSlugs", () => {
   it("suffixes duplicate headings -1, -2", () => {
-    const s = headingSlugs("# A\n## Supervised\n## Supervised\n## Supervised\n");
+    const s = headingSlugs(
+      "# A\n## Supervised\n## Supervised\n## Supervised\n",
+    );
     expect(s.has("supervised")).toBe(true);
     expect(s.has("supervised-1")).toBe(true);
     expect(s.has("supervised-2")).toBe(true);
@@ -68,7 +74,9 @@ describe("headingSlugs", () => {
     expect(s.has("fake")).toBe(false);
   });
   it("indexes deep headings (####)", () => {
-    expect(headingSlugs("#### ADR Publishing\n").has("adr-publishing")).toBe(true);
+    expect(headingSlugs("#### ADR Publishing\n").has("adr-publishing")).toBe(
+      true,
+    );
   });
 });
 
@@ -92,22 +100,30 @@ describe("extractLinks", () => {
 
 describe("extractCommentMdPaths", () => {
   it("finds explicitly-relative md paths inside HTML comments", () => {
-    const out = extractCommentMdPaths("<!-- see ../stages/initiation/reference.md#x -->");
+    const out = extractCommentMdPaths(
+      "<!-- see ../stages/initiation/reference.md#x -->",
+    );
     expect(out[0].path).toBe("../stages/initiation/reference.md");
   });
   it("ignores bare (non-relative) md paths — prose identifiers, not links", () => {
-    expect(extractCommentMdPaths("<!-- keep in sync with guides/framework.md -->")).toEqual([]);
+    expect(
+      extractCommentMdPaths("<!-- keep in sync with guides/framework.md -->"),
+    ).toEqual([]);
   });
 });
 
 describe("findRetired", () => {
   it("flags a retired term in live prose", () => {
-    expect(findRetired("Use the Human-Led posture.\n").some((h) => h.term === "Human-Led")).toBe(
-      true,
-    );
+    expect(
+      findRetired("Use the Human-Led posture.\n").some(
+        (h) => h.term === "Human-Led",
+      ),
+    ).toBe(true);
   });
   it("ignores a retired term inside ## Notes", () => {
-    const hits = findRetired("Live.\n\n## Notes\n- renamed Human-Led to Humans.\n");
+    const hits = findRetired(
+      "Live.\n\n## Notes\n- renamed Human-Led to Humans.\n",
+    );
     expect(hits.some((h) => h.term === "Human-Led")).toBe(false);
   });
   it("ignores a retired term in a migration callout", () => {
@@ -125,7 +141,8 @@ describe("findRetired", () => {
 
 describe("parseIndexSections", () => {
   it("counts table rows vs the declared heading count", () => {
-    const md = "## Guides (2)\n\n| F | D |\n| --- | --- |\n| a | x |\n| b | y |\n\n## Spec (1)\n\n| F | D |\n| --- | --- |\n| c | z |\n";
+    const md =
+      "## Guides (2)\n\n| F | D |\n| --- | --- |\n| a | x |\n| b | y |\n\n## Spec (1)\n\n| F | D |\n| --- | --- |\n| c | z |\n";
     const secs = parseIndexSections(md);
     const g = secs.find((s) => s.name === "Guides");
     expect(g.declared).toBe(2);
@@ -140,41 +157,63 @@ describe("parseIndexTables", () => {
       "| Path | D |\n| --- | --- |\n| `guides/a.md` | x |\n| `guides/b.md` | y |\n";
     const tables = parseIndexTables(md);
     expect(tables).toHaveLength(1);
-    expect(tables[0].rows.map((r) => r.path)).toEqual(["guides/a.md", "guides/b.md"]);
+    expect(tables[0].rows.map((r) => r.path)).toEqual([
+      "guides/a.md",
+      "guides/b.md",
+    ]);
   });
 });
 
 describe("indexOrderIssues", () => {
   const table = (...rows) =>
-    "| Path | D |\n| --- | --- |\n" + rows.map((p) => `| \`${p}\` | x |\n`).join("");
+    "| Path | D |\n| --- | --- |\n" +
+    rows.map((p) => `| \`${p}\` | x |\n`).join("");
 
   it("passes a table already in file-path order", () => {
-    expect(indexOrderIssues(table("guides/adoption.md", "guides/bootstrap.md"))).toEqual([]);
+    expect(
+      indexOrderIssues(table("guides/adoption.md", "guides/bootstrap.md")),
+    ).toEqual([]);
   });
 
   it("flags a row that sorts before its predecessor", () => {
-    const issues = indexOrderIssues(table("guides/framework.md", "guides/bootstrap.md"));
+    const issues = indexOrderIssues(
+      table("guides/framework.md", "guides/bootstrap.md"),
+    );
     expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("guides/bootstrap.md out of file-path sort order");
+    expect(issues[0]).toContain(
+      "guides/bootstrap.md out of file-path sort order",
+    );
   });
 
   it("strips the .md extension so a base file precedes its hyphen-suffixed sibling", () => {
     // With the extension kept, '.'(46) > '-'(45) would call this out of order.
     expect(
-      indexOrderIssues(table("guides/brownfield.md", "guides/brownfield-approach.md")),
+      indexOrderIssues(
+        table("guides/brownfield.md", "guides/brownfield-approach.md"),
+      ),
     ).toEqual([]);
   });
 
   it("exempts README from the sequence — first (Spec-style) is fine", () => {
     expect(
-      indexOrderIssues(table("spec/README.md", "spec/canonical-state.md", "spec/delegated-run.md")),
+      indexOrderIssues(
+        table(
+          "spec/README.md",
+          "spec/canonical-state.md",
+          "spec/delegated-run.md",
+        ),
+      ),
     ).toEqual([]);
   });
 
   it("exempts README from the sequence — mid-table (stage-style) is fine", () => {
     expect(
       indexOrderIssues(
-        table("stages/x/checklist.md", "stages/x/README.md", "stages/x/reference.md"),
+        table(
+          "stages/x/checklist.md",
+          "stages/x/README.md",
+          "stages/x/reference.md",
+        ),
       ),
     ).toEqual([]);
   });
@@ -183,19 +222,24 @@ describe("indexOrderIssues", () => {
     const md =
       table("stages/initiation/README.md", "stages/initiation/reference.md") +
       "\n" +
-      table("stages/requirements/README.md", "stages/requirements/reference.md");
+      table(
+        "stages/requirements/README.md",
+        "stages/requirements/reference.md",
+      );
     expect(indexOrderIssues(md)).toEqual([]);
   });
 });
 
 describe("parseStamp", () => {
   it("reads a Notes stamp with a trailing free-text suffix", () => {
-    expect(parseStamp("## Notes\n**Last Updated:** 2026-06-21 — v0.49 sweep\n")).toBe("2026-06-21");
+    expect(
+      parseStamp("## Notes\n**Last Updated:** 2026-06-21 — v0.49 sweep\n"),
+    ).toBe("2026-06-21");
   });
   it("reads a template footer stamp", () => {
-    expect(parseStamp("<!-- Template Last Updated: 2026-06-20 | added v0.47 -->")).toBe(
-      "2026-06-20",
-    );
+    expect(
+      parseStamp("<!-- Template Last Updated: 2026-06-20 | added v0.47 -->"),
+    ).toBe("2026-06-20");
   });
   it("returns null when absent", () => {
     expect(parseStamp("no stamp here")).toBe(null);
@@ -205,33 +249,47 @@ describe("parseStamp", () => {
 describe("stampFormatIssues", () => {
   it("passes a bare-date stamp and canonical 'Added to framework' line", () => {
     expect(
-      stampFormatIssues("**Last Updated:** 2026-06-21\n\nAdded to framework in v0.49.0.\n"),
+      stampFormatIssues(
+        "**Last Updated:** 2026-06-21\n\nAdded to framework in v0.49.0.\n",
+      ),
     ).toEqual([]);
   });
   it("flags trailing change-history on the Last Updated line", () => {
-    const issues = stampFormatIssues("**Last Updated:** 2026-06-21 — v0.49 sweep: renamed X\n");
+    const issues = stampFormatIssues(
+      "**Last Updated:** 2026-06-21 — v0.49 sweep: renamed X\n",
+    );
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("must be a bare date");
   });
   it("exempts a pipe-delimited structured continuation (INDEX header)", () => {
     expect(
-      stampFormatIssues("**Last Updated:** 2026-06-28 | **Framework Version:** 0.52.0\n"),
+      stampFormatIssues(
+        "**Last Updated:** 2026-06-28 | **Framework Version:** 0.52.0\n",
+      ),
     ).toEqual([]);
   });
   it("flags 'Added to the framework' (stray 'the')", () => {
-    const issues = stampFormatIssues("**Last Updated:** 2026-06-21\n\nAdded to the framework in v0.49.0.\n");
-    expect(issues.some((i) => i.includes("'Added to the framework'"))).toBe(true);
+    const issues = stampFormatIssues(
+      "**Last Updated:** 2026-06-21\n\nAdded to the framework in v0.49.0.\n",
+    );
+    expect(issues.some((i) => i.includes("'Added to the framework'"))).toBe(
+      true,
+    );
   });
   it("leaves the template footer form (no markdown stamp line) alone", () => {
-    expect(stampFormatIssues("<!-- Template Last Updated: 2026-06-20 | added v0.47 -->\n")).toEqual(
-      [],
-    );
+    expect(
+      stampFormatIssues(
+        "<!-- Template Last Updated: 2026-06-20 | added v0.47 -->\n",
+      ),
+    ).toEqual([]);
   });
   it("exempts template fill-in lines (placeholder date, trailing fields)", () => {
     expect(
       stampFormatIssues("**Last Updated:** YYYY-MM-DD **Increment:** [name]\n"),
     ).toEqual([]);
-    expect(stampFormatIssues("**Last Updated:** YYYY-MM-DD HH:MM\n")).toEqual([]);
+    expect(stampFormatIssues("**Last Updated:** YYYY-MM-DD HH:MM\n")).toEqual(
+      [],
+    );
   });
 });
 
@@ -258,7 +316,8 @@ describe("floor-table consistency", () => {
 
   it("finds the floor table by its Lights-Out + floor header (ignores other tables)", () => {
     const withDecoy =
-      "| Consequence | Reach |\n| --- | --- |\n| Negligible | nobody |\n\n" + specMd;
+      "| Consequence | Reach |\n| --- | --- |\n| Negligible | nobody |\n\n" +
+      specMd;
     const t = extractFloorTable(withDecoy);
     expect(t.get("moderate")[1]).toBe("Internal, else Self");
     expect(t.has("negligible")).toBe(true);
@@ -340,7 +399,9 @@ describe("ship-list (I-ship)", () => {
       "README.md",
       "VERSION",
     );
-    expect(shipListIssues(ts, [{ file: "CONTRIBUTING.md", content: md }]).fatal).toEqual([]);
+    expect(
+      shipListIssues(ts, [{ file: "CONTRIBUTING.md", content: md }]).fatal,
+    ).toEqual([]);
   });
 
   it("flags a ships-list missing the spec/ layer (R13)", () => {
@@ -353,7 +414,9 @@ describe("ship-list (I-ship)", () => {
       "README.md",
       "VERSION",
     );
-    const { fatal } = shipListIssues(ts, [{ file: "CONTRIBUTING.md", content: md }]);
+    const { fatal } = shipListIssues(ts, [
+      { file: "CONTRIBUTING.md", content: md },
+    ]);
     expect(fatal).toHaveLength(1);
     expect(fatal[0]).toContain("missing: spec");
   });
@@ -407,7 +470,10 @@ describe("func-group (H-funcgroup)", () => {
   });
 
   it("flags a conditional qualifier on an always-required function (R15)", () => {
-    const { fatal } = funcGroupIssues(spec, table("No — standing (unattended runs)"));
+    const { fatal } = funcGroupIssues(
+      spec,
+      table("No — standing (unattended runs)"),
+    );
     expect(fatal).toHaveLength(1);
     expect(fatal[0]).toContain("stop enforcement");
   });
@@ -422,24 +488,30 @@ describe("callout (G-callout)", () => {
 
   it("execution-pin: flags a human-subject execution verb (R14)", () => {
     expect(
-      executionPinHits("Human execution required — humans execute deployment steps.").length,
+      executionPinHits(
+        "Human execution required — humans execute deployment steps.",
+      ).length,
     ).toBeGreaterThan(0);
   });
 
   it("execution-pin: conforms when the execute verb's subject is AI", () => {
     expect(
-      executionPinHits("AI drafts, executes within the path; humans own the decision."),
+      executionPinHits(
+        "AI drafts, executes within the path; humans own the decision.",
+      ),
     ).toEqual([]);
   });
 
   it("execution-pin: ignores callouts with no execution verb", () => {
-    expect(executionPinHits("AI produces drafts; humans own all decisions.")).toEqual([]);
+    expect(
+      executionPinHits("AI produces drafts; humans own all decisions."),
+    ).toEqual([]);
   });
 
   it("finds the How AI Helps section", () => {
-    expect(howAiHelpsSection("## How AI Helps\n\nBody.\n\n## Next\n").text).toContain(
-      "How AI Helps",
-    );
+    expect(
+      howAiHelpsSection("## How AI Helps\n\nBody.\n\n## Next\n").text,
+    ).toContain("How AI Helps");
   });
 
   it("finds the Oversight paragraph", () => {
@@ -478,7 +550,9 @@ describe("parseRuleSpans (rule-body markers)", () => {
       "<!-- rule: DR-005 -->\ntext\n<!-- /rule: CS-007 -->\n",
     );
     expect(spans).toEqual([]);
-    expect(issues[0]).toMatch(/close marker for CS-007 does not match open marker for DR-005/);
+    expect(issues[0]).toMatch(
+      /close marker for CS-007 does not match open marker for DR-005/,
+    );
   });
 
   it("flags a nested open (spans are flat)", () => {
@@ -489,7 +563,8 @@ describe("parseRuleSpans (rule-body markers)", () => {
   });
 
   it("ignores example markers inside fenced code blocks", () => {
-    const fenced = "```markdown\n<!-- rule: XX-001 -->\nexample\n<!-- /rule: XX-001 -->\n```\n";
+    const fenced =
+      "```markdown\n<!-- rule: XX-001 -->\nexample\n<!-- /rule: XX-001 -->\n```\n";
     const { spans, issues } = parseRuleSpans(fenced + doc);
     expect(issues).toEqual([]);
     expect(spans.map((s) => s.id)).toEqual(["DR-005"]);
@@ -504,19 +579,27 @@ describe("parseRuleSpans (rule-body markers)", () => {
 
 describe("headingRiderIssue (visible ID token — the Q2 rider)", () => {
   it("passes a body opening with the ID heading", () => {
-    expect(headingRiderIssue("DR-005", "### DR-005 — Run lifecycle machine\n\ntext")).toBeNull();
+    expect(
+      headingRiderIssue("DR-005", "### DR-005 — Run lifecycle machine\n\ntext"),
+    ).toBeNull();
   });
   it("fails a body whose first line is prose", () => {
-    expect(headingRiderIssue("DR-005", "The contract text.")).toMatch(/visible ID heading/);
+    expect(headingRiderIssue("DR-005", "The contract text.")).toMatch(
+      /visible ID heading/,
+    );
   });
   it("fails a heading carrying the wrong ID", () => {
-    expect(headingRiderIssue("DR-005", "### CS-007 — Wrong rule")).toMatch(/visible ID heading/);
+    expect(headingRiderIssue("DR-005", "### CS-007 — Wrong rule")).toMatch(
+      /visible ID heading/,
+    );
   });
   it("fails an empty body", () => {
     expect(headingRiderIssue("DR-005", "")).toMatch(/empty/);
   });
   it("accepts a sub-ID heading (AW-004a)", () => {
-    expect(headingRiderIssue("AW-004a", "### AW-004a — Never fronted as menus")).toBeNull();
+    expect(
+      headingRiderIssue("AW-004a", "### AW-004a — Never fronted as menus"),
+    ).toBeNull();
   });
 });
 
@@ -533,23 +616,25 @@ describe("extractIdTokens (C11 citation scan)", () => {
   });
 
   it("does not match 2-digit handles or 4-digit identifiers", () => {
-    expect(extractIdTokens("CP-01 and ISO-8601 and DR-0055", ["CP", "ISO", "DR"])).toEqual([]);
+    expect(
+      extractIdTokens("CP-01 and ISO-8601 and DR-0055", ["CP", "ISO", "DR"]),
+    ).toEqual([]);
   });
 
   it("blanks marker comments — a marker ID is not a citation", () => {
-    const doc = "<!-- rule: DR-005 -->\n### DR-005 — Title\n<!-- /rule: DR-005 -->";
-    expect(extractIdTokens(doc, prefixes).map((t) => t.token)).toEqual(["DR-005"]);
+    const doc =
+      "<!-- rule: DR-005 -->\n### DR-005 — Title\n<!-- /rule: DR-005 -->";
+    expect(extractIdTokens(doc, prefixes).map((t) => t.token)).toEqual([
+      "DR-005",
+    ]);
   });
 });
 
 describe("registryPrefixes", () => {
   it("collects the sorted prefix set from rule IDs", () => {
-    expect(registryPrefixes(["DR-005", "CS-007", "OMG-002", "AW-004a"])).toEqual([
-      "AW",
-      "CS",
-      "DR",
-      "OMG",
-    ]);
+    expect(
+      registryPrefixes(["DR-005", "CS-007", "OMG-002", "AW-004a"]),
+    ).toEqual(["AW", "CS", "DR", "OMG"]);
   });
 });
 
@@ -619,7 +704,11 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
   it("M-8 regression: a Review outcome collapsed into the lifecycle terminal", () => {
     const doc =
       "**Decision:** Closed / Not Closed <!-- checkpoint-outcome: review -->";
-    const issues = checkpointOutcomeIssues("stages/closure/checklist.md", doc, SETS);
+    const issues = checkpointOutcomeIssues(
+      "stages/closure/checklist.md",
+      doc,
+      SETS,
+    );
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("off-canon review outcome");
     expect(issues[0]).toContain("closed, not-closed");
@@ -635,13 +724,18 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
       "- [ ] Postpone — revisit when [condition]",
       "- [ ] Abandon — not justified",
     ].join("\n");
-    const issues = checkpointOutcomeIssues("templates/initiation-brief.md", doc, SETS);
+    const issues = checkpointOutcomeIssues(
+      "templates/initiation-brief.md",
+      doc,
+      SETS,
+    );
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("proceed-with-prep, postpone, abandon");
   });
 
   it("M-5 regression: a status axis on a decision-record template", () => {
-    const doc = "**Status:** Pending / Approved / Held / Rejected / Rolled Back";
+    const doc =
+      "**Status:** Pending / Approved / Held / Rejected / Rolled Back";
     const issues = checkpointOutcomeIssues(
       "templates/checkpoint-decision.md",
       doc,
@@ -653,9 +747,9 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
 
   it("allows a Status axis outside the two decision-record templates", () => {
     const doc = "**Status:** [Open / Triaged / Resolved / Won't Fix]";
-    expect(checkpointOutcomeIssues("templates/friction-log.md", doc, SETS)).toEqual(
-      [],
-    );
+    expect(
+      checkpointOutcomeIssues("templates/friction-log.md", doc, SETS),
+    ).toEqual([]);
   });
 
   it("flags an untagged value-carrying Decision line", () => {
@@ -671,9 +765,9 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
       "",
       "## Decision: Proceed / Proceed with conditions / Revise / Stop",
     ].join("\n");
-    expect(checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS)).toEqual(
-      [],
-    );
+    expect(
+      checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS),
+    ).toEqual([]);
   });
 
   it("ignores Decision lines inside fences and comments", () => {
@@ -733,7 +827,11 @@ describe("checkpoint-outcomes widened trigger (Sweep-2 holes)", () => {
   it("M-17 regression: a status axis on a gate decision, in a table cell", () => {
     const doc =
       "| **Gate Status**    | [Pending / Approved / Rejected — Approver: name] |";
-    const issues = checkpointOutcomeIssues("templates/session-log.md", doc, SETS);
+    const issues = checkpointOutcomeIssues(
+      "templates/session-log.md",
+      doc,
+      SETS,
+    );
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("no status axis");
   });
@@ -743,15 +841,19 @@ describe("checkpoint-outcomes widened trigger (Sweep-2 holes)", () => {
       "| **Stage Status**   | [Not Started / In Progress / Blocked / Complete] |",
       "| **Gate decision**  | [Not yet held / Held — outcome rides in the gate-decision record (link)] |",
     ].join("\n");
-    expect(checkpointOutcomeIssues("templates/session-log.md", doc, SETS)).toEqual(
-      [],
-    );
+    expect(
+      checkpointOutcomeIssues("templates/session-log.md", doc, SETS),
+    ).toEqual([]);
   });
 
   it("flags an untagged restatement under a wider label, in a list item", () => {
     const doc =
       "- **AppSec recommendation:** [Proceed / Proceed with conditions / Revise]";
-    const issues = checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS);
+    const issues = checkpointOutcomeIssues(
+      "templates/gate-decision.md",
+      doc,
+      SETS,
+    );
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("untagged");
   });
@@ -859,9 +961,9 @@ describe("checkpoint-outcomes blank-separated sentinel", () => {
       "",
       "**Decision makers:**",
     ].join("\n");
-    expect(checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS)).toEqual(
-      [],
-    );
+    expect(
+      checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS),
+    ).toEqual([]);
   });
 
   it("still fails on off-canon values across the blank", () => {
@@ -873,5 +975,118 @@ describe("checkpoint-outcomes blank-separated sentinel", () => {
     const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain("approved, held");
+  });
+});
+
+import {
+  versionMarkers,
+  changelogSection,
+  retirementNoteIssues,
+} from "../retirement-notes.mjs";
+
+import { KNOWN_DIVERGENCES } from "../../../scripts/release/kernel/generate.mjs";
+import { readFileSync as _readFileSync } from "node:fs";
+
+describe("known divergences (unprojected consumer enums)", () => {
+  const projection = JSON.parse(
+    _readFileSync("spec/generated/schema-projection.json", "utf8"),
+  );
+
+  it("every entry carries the fields the report renders", () => {
+    for (const d of KNOWN_DIVERGENCES) {
+      expect(Array.isArray(d.consumer_enums)).toBe(true);
+      expect(d.consumer_enums.length).toBeGreaterThan(0);
+      for (const f of ["summary", "why_unprojected", "decision_home"]) {
+        expect(typeof d[f]).toBe("string");
+        expect(d[f].length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("a divergence is never also projected — the two claims contradict", () => {
+    // If an enum is projected, compare-schema enforces equivalence on it; a
+    // known divergence asserts the opposite (held out pending a decision).
+    const projected = new Set(Object.keys(projection.enums));
+    for (const d of KNOWN_DIVERGENCES) {
+      for (const e of d.consumer_enums) {
+        expect(projected.has(e)).toBe(false);
+      }
+    }
+  });
+
+  it("ships in the generated projection so consumers see it too", () => {
+    expect(projection.known_divergences).toEqual(KNOWN_DIVERGENCES);
+  });
+});
+
+describe("retirement notes guard (RELNOTE)", () => {
+  const ENTRIES = [
+    {
+      regex: "\\bmet.synthetic\\b",
+      flags: "gi",
+      replacement: "met (v0.64 — …)",
+    },
+    {
+      regex: "\\bcancelled\\b",
+      flags: "gi",
+      replacement: "canceled (…, v0.59)",
+    },
+    { regex: "\\bunrelated\\b", flags: "g", replacement: "other (v0.61)" },
+  ];
+  const section = (body) =>
+    `# Changelog\n\n## 0.64.0 (2026-07-19)\n\n${body}\n\n## 0.63.0 (2026-07-15)\n\nolder\n`;
+
+  it("derives both the full and minor version markers", () => {
+    expect(versionMarkers("0.64.0")).toEqual(["v0.64.0", "v0.64"]);
+  });
+
+  it("extracts only the section for the version asked for", () => {
+    const s = changelogSection(section("- **spec:** a change"), "0.64.0");
+    expect(s).toContain("a change");
+    expect(s).not.toContain("older");
+  });
+
+  it("is silent before the release section exists", () => {
+    const pre = "# Changelog\n\n## 0.63.0 (2026-07-15)\n\nolder\n";
+    expect(retirementNoteIssues(ENTRIES, pre, "0.64.0")).toEqual([]);
+    expect(changelogSection(pre, "0.64.0")).toBeNull();
+  });
+
+  it("flags a retirement missing from its release section", () => {
+    const issues = retirementNoteIssues(
+      ENTRIES,
+      section("- **framework:** drained the sweep majors"),
+      "0.64.0",
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("met.synthetic");
+    expect(issues[0]).toContain("CHANGELOG.md");
+  });
+
+  it("passes once the section names the retired term", () => {
+    const issues = retirementNoteIssues(
+      ENTRIES,
+      section("- **spec:** retired met-synthetic from the SC status set"),
+      "0.64.0",
+    );
+    expect(issues).toEqual([]);
+  });
+
+  it("only gates retirements marked for the version being released", () => {
+    // `cancelled` is a v0.59 retirement; a v0.64 release must not demand it.
+    const issues = retirementNoteIssues(
+      ENTRIES,
+      section("- **spec:** retired met-synthetic"),
+      "0.64.0",
+    );
+    expect(issues).toEqual([]);
+  });
+
+  it("reproduces the historical v0.59 miss that motivated the guard", () => {
+    const v59 =
+      "# Changelog\n\n## 0.59.0 (2026-07-10)\n\n- **spec:** other work\n";
+    const issues = retirementNoteIssues(ENTRIES, v59, "0.59.0");
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("cancelled");
   });
 });

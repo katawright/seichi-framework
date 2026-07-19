@@ -40,7 +40,9 @@ export function runRuleMarkers(repoRoot, excludePatterns = []) {
 
   let rules;
   try {
-    rules = yaml.load(readFileSync(join(repoRoot, "spec/rules/index.yaml"), "utf8")).rules;
+    rules = yaml.load(
+      readFileSync(join(repoRoot, "spec/rules/index.yaml"), "utf8"),
+    ).rules;
   } catch (err) {
     return [`MARKER  spec/rules/index.yaml unreadable: ${err.message}`];
   }
@@ -112,7 +114,9 @@ export function runRuleMarkers(repoRoot, excludePatterns = []) {
       try {
         content = readFileSync(join(repoRoot, path), "utf8");
       } catch {
-        issues.push(`LINKS  spec/rules/index.yaml  ${rule.id}: links target missing: ${path}`);
+        issues.push(
+          `LINKS  spec/rules/index.yaml  ${rule.id}: links target missing: ${path}`,
+        );
         continue;
       }
       if (fragment && !headingSlugs(content).has(fragment)) {

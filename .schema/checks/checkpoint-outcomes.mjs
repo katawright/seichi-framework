@@ -150,9 +150,7 @@ export function exampleTypeOutcome(line) {
 /** Blank `<!-- … -->` spans, preserving offsets (sentinels are matched on the
  *  raw text before this is applied). */
 function stripComments(content) {
-  return content.replace(/<!--[\s\S]*?-->/g, (m) =>
-    m.replace(/[^\n]/g, " "),
-  );
+  return content.replace(/<!--[\s\S]*?-->/g, (m) => m.replace(/[^\n]/g, " "));
 }
 
 /** Checkbox values of the block starting at or after line `idx`: each

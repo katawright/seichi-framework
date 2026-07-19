@@ -50,7 +50,10 @@ export function parseIndexSections(content) {
     if (!m) continue;
     const start = i;
     const next = h2.find((x) => x > start);
-    const body = lines.slice(start + 1, next === undefined ? lines.length : next);
+    const body = lines.slice(
+      start + 1,
+      next === undefined ? lines.length : next,
+    );
     const pipe = body.filter((l) => l.trimStart().startsWith("|"));
     const seps = pipe.filter((l) => SEPARATOR.test(l.trim()));
     sections.push({
@@ -80,7 +83,9 @@ export function runIndexCounts(repoRoot, indexFile = "INDEX.md") {
 
   for (const s of parseIndexSections(content)) {
     if (s.rows !== s.declared) {
-      issues.push(`COUNT  ${indexFile}  ${s.name}: heading(${s.declared}) ≠ table rows(${s.rows})`);
+      issues.push(
+        `COUNT  ${indexFile}  ${s.name}: heading(${s.declared}) ≠ table rows(${s.rows})`,
+      );
     }
     const glob = SECTION_GLOBS[s.name];
     if (glob) {

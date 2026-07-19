@@ -600,6 +600,7 @@ const ENUM_PROJECTION = [
   // kind: `stage` (permanent) and `met_synthetic` (debt) looked identical in
   // the report, so nobody could tell which rows were a to-do list.
   ["record_family", { vocabulary: "record_family", consumer_substrate: ["stage"] }],
+  // (see KNOWN_DIVERGENCES below for consumer enums deliberately NOT projected)
   [
     "trace_link_type",
     {
@@ -607,6 +608,40 @@ const ENUM_PROJECTION = [
       consumer_substrate: ["derives_from", "blocks", "relates_to"],
     },
   ],
+];
+
+// Divergences that are known, deliberate, and NOT projected — so the
+// comparison cannot see them and `compare-schema` would otherwise report the
+// enums as merely "outside the projected slice", indistinguishable from the two
+// dozen consumer enums no kernel vocabulary maps to at all.
+//
+// This is a third thing, distinct from both fields above. `consumer_substrate`
+// is permanent-and-fine and `consumer_pending` is one-sided debt with a known
+// destination; a known divergence is *blocked on a decision that has not been
+// made*, so it cannot be given a direction without pre-empting that decision.
+// Listing them is the whole job here — nothing is enforced.
+export const KNOWN_DIVERGENCES = [
+  {
+    consumer_enums: ["checkpoint_kind", "gate_outcome"],
+    framework_source: "spec/vocabulary/checkpoints.yaml",
+    summary:
+      "The consumer models two checkpoint kinds (gate · checkpoint) sharing " +
+      "one flat outcome set; CP-001 ratifies three types (gate · review · " +
+      "alignment), each with its own closed set. The consumer carries " +
+      "`pivot`, which CP-001 does not define, and lacks " +
+      "`proceed-with-conditions`. The divergence is two-way and structural, " +
+      "not a value list drifting.",
+    why_unprojected:
+      "Which vocabulary is canonical is an open contract question with two " +
+      "live directions — the schema migrates to per-type sets, or the " +
+      "framework reconciles (e.g. ratifies a Pivot outcome). Projecting the " +
+      "sets would freeze the vocabulary before the semantics are settled, so " +
+      "VC-7 declares `consumers: []` and holds them out deliberately.",
+    decision_home:
+      "seichi-platform-db-schema plan/notes/2026-07-14_checkpoint-outcome-" +
+      "vocabulary-divergence.md; kernel boundary ADR Decision 1a " +
+      "(divergent-consumption path)",
+  },
 ];
 
 export function buildSchemaProjection(sources, manifest) {
@@ -648,6 +683,7 @@ export function buildSchemaProjection(sources, manifest) {
     projection_convention:
       "framework kebab-case identifiers project to the consumer's snake_case mechanically (s/-/_/g); sets are compared order-insensitively",
     enums: sortedObject(Object.entries(enums)),
+    known_divergences: KNOWN_DIVERGENCES,
     representations: {
       write_class: {
         values: manifest.vocabularies.write_class.values,
