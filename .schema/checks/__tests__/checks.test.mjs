@@ -821,9 +821,23 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
       doc,
       SETS,
     );
-    expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("off-canon review outcome");
-    expect(issues[0]).toContain("closed, not-closed");
+    // Two issues, both true of this fixture: the invented pair is off-canon,
+    // and substituting it also omits the canonical pair (G-3 set-compare).
+    expect(issues).toHaveLength(2);
+    expect(
+      issues.some(
+        (i) =>
+          i.includes("off-canon review outcome") &&
+          i.includes("closed, not-closed"),
+      ),
+    ).toBe(true);
+    expect(
+      issues.some(
+        (i) =>
+          i.includes("incomplete review outcome set") &&
+          i.includes("ready, not-ready"),
+      ),
+    ).toBe(true);
   });
 
   it("M-4 regression: an invented Gate 1 checkbox vocabulary", () => {
@@ -841,8 +855,17 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
       doc,
       SETS,
     );
-    expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("proceed-with-prep, postpone, abandon");
+    expect(issues).toHaveLength(2);
+    expect(
+      issues.some((i) => i.includes("proceed-with-prep, postpone, abandon")),
+    ).toBe(true);
+    expect(
+      issues.some(
+        (i) =>
+          i.includes("incomplete gate outcome set") &&
+          i.includes("proceed-with-conditions, revise, stop"),
+      ),
+    ).toBe(true);
   });
 
   it("M-5 regression: a status axis on a decision-record template", () => {
@@ -914,6 +937,35 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
     // `pivot` sits BELOW the capital checkbox; before the fix it was invisible.
     expect(issues.some((i) => i.includes("pivot"))).toBe(true);
+  });
+
+  // G-3: the comparison was `values.filter(v => !set.has(v))` — membership
+  // only. Omission was never tested, so a restatement could silently narrow a
+  // closed set and pass. Every value present and in-set == green under `⊆`.
+  it("G-3: a gate block offering only Proceed is flagged as incomplete", () => {
+    const doc = ["<!-- checkpoint-outcome: gate -->", "", "- [ ] **Proceed**"];
+    const issues = checkpointOutcomeIssues(
+      "templates/x.md",
+      doc.join("\n"),
+      SETS,
+    );
+    // Nothing here is off-canon — the ONLY defect is what is missing.
+    expect(issues.some((i) => i.includes("off-canon"))).toBe(false);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("incomplete gate outcome set");
+    expect(issues[0]).toContain("proceed-with-conditions, revise, stop");
+  });
+
+  it("G-3: a complete set in any order still passes", () => {
+    const doc = [
+      "<!-- checkpoint-outcome: gate -->",
+      "",
+      "- [ ] **Stop**",
+      "- [ ] **Revise**",
+      "- [ ] **Proceed with conditions**",
+      "- [ ] **Proceed**",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
   });
 });
 
@@ -1022,8 +1074,13 @@ describe("checkpoint-outcomes widened trigger (Sweep-2 holes)", () => {
       doc,
       SETS,
     );
-    expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("ready-for-system-design");
+    expect(issues).toHaveLength(2);
+    expect(issues.some((i) => i.includes("ready-for-system-design"))).toBe(
+      true,
+    );
+    expect(
+      issues.some((i) => i.includes("incomplete review outcome set")),
+    ).toBe(true);
   });
 
   it("sees restatements in a CRLF working-tree file", () => {
@@ -1069,8 +1126,11 @@ describe("checkpoint-outcomes sentinel wrap form", () => {
       "    <!-- checkpoint-outcome: alignment -->",
     ].join("\n");
     const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
-    expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("approved, held");
+    expect(issues).toHaveLength(2);
+    expect(issues.some((i) => i.includes("approved, held"))).toBe(true);
+    expect(
+      issues.some((i) => i.includes("incomplete alignment outcome set")),
+    ).toBe(true);
   });
 });
 
@@ -1101,8 +1161,11 @@ describe("checkpoint-outcomes blank-separated sentinel", () => {
       "<!-- checkpoint-outcome: gate -->",
     ].join("\n");
     const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
-    expect(issues).toHaveLength(1);
-    expect(issues[0]).toContain("approved, held");
+    expect(issues).toHaveLength(2);
+    expect(issues.some((i) => i.includes("approved, held"))).toBe(true);
+    expect(issues.some((i) => i.includes("incomplete gate outcome set"))).toBe(
+      true,
+    );
   });
 });
 

@@ -264,6 +264,17 @@ export function checkpointOutcomeIssues(file, content, sets) {
           `${offenders.join(", ")} (closed set: ${[...set].join(" / ")})`,
       );
     }
+    // Omission is drift too. A restatement reproduces a CLOSED set, so a gate
+    // block offering only Proceed and Revise silently narrows what the deciding
+    // party may choose — no less a defect than inventing a value. Testing
+    // membership alone is `⊆`; the invariant register promises `↔`.
+    const missing = [...set].filter((v) => !values.includes(v));
+    if (missing.length) {
+      issues.push(
+        `CKPT  ${file}:${i + 1}  incomplete ${type} outcome set — missing: ` +
+          `${missing.join(", ")} (closed set: ${[...set].join(" / ")})`,
+      );
+    }
   });
 
   // 3. An untagged value-carrying outcome line is an unguarded restatement.
