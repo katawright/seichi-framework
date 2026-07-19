@@ -98,7 +98,7 @@ the increment-design-brief Carry Forward Resolution section.
      6. Specification-depth calibration — did the executor need more or less
         detail than the briefs provided? Route the adjustment to the next
         increment design and revisit the executor read path setting (see
-        guides/operating-model.md#one-capability-input-two-effects). -->
+        spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only). -->
 
 - [item]
 

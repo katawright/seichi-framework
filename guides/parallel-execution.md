@@ -218,11 +218,12 @@ properties**:
   unattended.
 
 A parallel batch is **Lights-Out only when every required function** —
-orchestration, worker execution, integration, assurance, evidence capture, and
-**independent stop enforcement** — has demonstrated, available automated
-coverage. If any required coverage is missing or lost mid-run, the batch is not
-Lights-Out for the affected scope: it pauses or escalates even where some
-workers could technically continue. This is the operating model's
+orchestration, worker execution, integration, assurance, evidence capture,
+**independent stop enforcement**, and **run continuity** (a Lights-Out batch is
+itself a delegated run) — has demonstrated, available automated coverage. If any
+required coverage is missing or lost mid-run, the batch is not Lights-Out for
+the affected scope: it pauses or escalates even where some workers could
+technically continue. This is the operating model's
 [capability-coverage rule](operating-model.md) applied to concurrent work —
 losing coverage **narrows the envelope**, it does not fail the project.
 

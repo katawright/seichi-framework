@@ -56,8 +56,12 @@ Authority]
 <!-- How much implementation scaffolding stage artifacts carry for this
      executor, and which framework read path it follows. Default Guided when
      the executor is unknown; set by behavioral symptom, never model name.
-     Carries [ASSUMED] when inferred; recalibrated at each retrospective. See
-     ../guides/operating-model.md#one-capability-input-two-effects. -->
+     Where qualification evidence already exists, the ratified starting point
+     may be contracts-only — see
+     ../guides/operating-model.md#read-path-starting-points.
+     Carries [ASSUMED] when inferred; recalibrated at each retrospective.
+     Normative rule:
+     ../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only. -->
 
 ---
 

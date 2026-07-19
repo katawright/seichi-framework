@@ -214,7 +214,7 @@ what the process _pins_ — more contracts, more verification — as stakes rise
 How much **implementation scaffolding** those artifacts carry for the executor
 (component structure, enumerated test cases, pre-worked logic) is the operating
 model's capability input, declared as the executor read path — see
-[Operating Model Guide: One Capability Input, Two Effects](operating-model.md#one-capability-input-two-effects).
+[Operating Model Guide: One Capability Input, Two Effects](../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only).
 The two axes are orthogonal and never trade off: a high-consequence increment on
 a strong executor still needs heavy contracts and light structure.
 

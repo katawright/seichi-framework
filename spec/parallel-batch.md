@@ -443,7 +443,8 @@ Rationale:
 
 **Inputs.** The required-function set for the batch (orchestration, worker
 execution, integration, assurance, evidence capture, independent stop
-enforcement); available provider coverage.
+enforcement, run continuity — a Lights-Out batch is itself a delegated run);
+available provider coverage.
 
 **Procedure.**
 

@@ -454,20 +454,20 @@ by and the **base version** the write declares.
 - **Write admission (ratified v0.58).** Every canonical-state write declares the
   state version it was based on (its **base version**). If the base version is
   current, the write is admitted and the version increments **atomically with
-  it**: one logical governance write is one transaction, one version increment,
-  one event — a version-less mutation of canonical state is not representable.
-  On mismatch the write is **rejected, never silently merged**; the writer
-  re-evaluates against current state (the write may be obsolete, be resubmitted
-  rebased, or surface a conflict to resolve) — rejection is a normal protocol
-  outcome, not a failure. A record family MAY instead declare a deterministic
-  merge (merge-by-identity for identity-keyed append families; last-by-sequence
-  for a run's own directives), which still increments the version; families
-  without a declared merge are version-conditional by default. **Single-writer
-  scope is the project:** in live structured access the admission rule realizes
-  it per write (no lease is required for correctness); in rendered-snapshot
-  access the snapshot-holder MUST hold the sole write claim for the project for
-  the span of the run (finer claims are an implementation optimization, not a
-  conformance unit).
+  it**: one logical canonical-state write is one transaction, one version
+  increment, one event — a version-less mutation of canonical state is not
+  representable. On mismatch the write is **rejected, never silently merged**;
+  the writer re-evaluates against current state (the write may be obsolete, be
+  resubmitted rebased, or surface a conflict to resolve) — rejection is a normal
+  protocol outcome, not a failure. A record family MAY instead declare a
+  deterministic merge (merge-by-identity for identity-keyed append families;
+  last-by-sequence for a run's own directives), which still increments the
+  version; families without a declared merge are version-conditional by default.
+  **Single-writer scope is the project:** in live structured access the
+  admission rule realizes it per write (no lease is required for correctness);
+  in rendered-snapshot access the snapshot-holder MUST hold the sole write claim
+  for the project for the span of the run (finer claims are an implementation
+  optimization, not a conformance unit).
 - **Operation retry classes** (over the substrate): safe to retry; safe only
   after confirming current state; unsafe to retry automatically; requires
   authorization before retry.

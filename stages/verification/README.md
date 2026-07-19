@@ -312,7 +312,7 @@ higher-level testing.
 ### Test Strategy Depth and the Executor
 
 The test strategy Verification receives scales with the
-[executor read path](../../guides/operating-model.md#one-capability-input-two-effects):
+[executor read path](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only):
 on a `guided` path it may enumerate concrete test cases; on `contracts-only` it
 pins test intent, coverage targets, and the AC mapping, and deriving the
 concrete case list for the Verification-stage test types is Verification work

@@ -25,8 +25,14 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "framework_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
-        "kernel_interface_version": { "type": "string", "pattern": "^0\\.\\d+$" },
+        "framework_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "kernel_interface_version": {
+          "type": "string",
+          "pattern": "^0\\.\\d+$"
+        },
         "source_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
         "generated_at": {
           "type": "string",
@@ -62,13 +68,25 @@
       "propertyNames": { "pattern": "^[A-Z]+-\\d{3}[a-z]?$" },
       "additionalProperties": {
         "type": "object",
-        "required": ["title", "layer", "basis", "source", "introduced", "status"],
+        "required": [
+          "title",
+          "layer",
+          "basis",
+          "source",
+          "introduced",
+          "status"
+        ],
         "additionalProperties": false,
         "properties": {
           "title": { "type": "string", "minLength": 1 },
           "layer": { "enum": ["1a", "1b"] },
           "basis": {
-            "enum": ["both-conjuncts", "divergent-consumption", "resolver-input", "1b"]
+            "enum": [
+              "both-conjuncts",
+              "divergent-consumption",
+              "resolver-input",
+              "1b"
+            ]
           },
           "source": { "type": "string", "minLength": 1 },
           "introduced": {
@@ -98,7 +116,13 @@
       "minProperties": 1,
       "additionalProperties": {
         "type": "object",
-        "required": ["states", "terminals", "edges", "reason_required_states", "reason_sets"],
+        "required": [
+          "states",
+          "terminals",
+          "edges",
+          "reason_required_states",
+          "reason_sets"
+        ],
         "additionalProperties": false,
         "properties": {
           "states": {
@@ -146,7 +170,11 @@
     },
     "terminal_integrity": {
       "type": "object",
-      "required": ["quiescence_set", "post_terminal_sanctions", "cascade_landing"],
+      "required": [
+        "quiescence_set",
+        "post_terminal_sanctions",
+        "cascade_landing"
+      ],
       "additionalProperties": false,
       "properties": {
         "quiescence_set": { "type": "object" },
@@ -176,7 +204,9 @@
             "properties": {
               "id": { "$ref": "#/$defs/value" },
               "stage_number": { "type": "integer", "minimum": 1, "maximum": 8 },
-              "execution_pattern": { "enum": ["foundational", "iterative", "terminal"] },
+              "execution_pattern": {
+                "enum": ["foundational", "iterative", "terminal"]
+              },
               "feeds_into": {
                 "type": "array",
                 "minItems": 1,

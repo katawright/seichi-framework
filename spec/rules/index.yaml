@@ -206,7 +206,11 @@ rules:
     source: spec/canonical-state.md
     introduced: v0.64.0
     status: active
-    notes: admitted during the v0.64.0 sweep drain (maintainer, 2026-07-18) — ratifies the closure-time disposition set five artifact surfaces already used unratified; deliberately no unmet value (an in-scope unmet criterion refutes the completion claim; met/descoped/deferred are the three exits)
+    notes:
+      admitted during the v0.64.0 sweep drain (maintainer, 2026-07-18) —
+      ratifies the closure-time disposition set five artifact surfaces already
+      used unratified; deliberately no unmet value (an in-scope unmet criterion
+      refutes the completion claim; met/descoped/deferred are the three exits)
     representation: data+contract
     links:
       - stages/closure/README.md#project-closure-rendering-the-completion-contract
@@ -230,7 +234,9 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: the manifest landing table is a generated view; per-family machine clauses keep their own IDs
+    notes:
+      the manifest landing table is a generated view; per-family machine clauses
+      keep their own IDs
     representation: data+contract
     links:
       - spec/canonical-state.md#terminal-integrity
@@ -243,7 +249,9 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: inventory annotates "ratified v0.58" — provenance pass to confirm introduced vs ratified
+    notes:
+      inventory annotates "ratified v0.58" — provenance pass to confirm
+      introduced vs ratified
     representation: contract
     links:
       - spec/canonical-state.md#record-requirements
@@ -274,7 +282,9 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: inventory annotates "ratified v0.58" — provenance pass to confirm introduced vs ratified
+    notes:
+      inventory annotates "ratified v0.58" — provenance pass to confirm
+      introduced vs ratified
     representation: data+contract
     links:
       - spec/canonical-state.md#record-requirements
@@ -285,7 +295,9 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: inventory annotates "ratified v0.58" — provenance pass to confirm introduced vs ratified
+    notes:
+      inventory annotates "ratified v0.58" — provenance pass to confirm
+      introduced vs ratified
     representation: contract
     links:
       - spec/canonical-state.md#record-requirements
@@ -363,7 +375,10 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: rule split; FW-005 is the lineage root, not a binding rule ID. Two-home reconciliation (VC-9, v0.63.0) — families and link types single-homed in spec/canonical-state.md; the guide keeps the chain rationale
+    notes:
+      rule split; FW-005 is the lineage root, not a binding rule ID. Two-home
+      reconciliation (VC-9, v0.63.0) — families and link types single-homed in
+      spec/canonical-state.md; the guide keeps the chain rationale
     representation: data+contract
     links:
       - guides/framework.md#typed-traceability-links
@@ -376,18 +391,25 @@ rules:
     source: guides/stages.md
     introduced: verify
     status: active
-    notes: links-only migration (Wave D, flag-1 disposition) — the pipeline front matter is the canonical data home; no prose body exists or is required
+    notes:
+      links-only migration (Wave D, flag-1 disposition) — the pipeline front
+      matter is the canonical data home; no prose body exists or is required
     representation: data
     links:
       - guides/stages.md#how-stages-execute
   - id: AW-001
-    title: Per-stage artifact/checkpoint structure (declared-canonical stage metadata)
+    title:
+      Per-stage artifact/checkpoint structure (declared-canonical stage
+      metadata)
     layer: 1a
     basis: both-conjuncts
     source: stages/*/README.md
     introduced: verify
     status: active
-    notes: the front matter is the canonical data home (one normative home per the first-slice map); declared canonical by guides/agentic-workflow.md (this rule). Links-only migration (Wave D, flag-1 disposition)
+    notes:
+      the front matter is the canonical data home (one normative home per the
+      first-slice map); declared canonical by guides/agentic-workflow.md (this
+      rule). Links-only migration (Wave D, flag-1 disposition)
     representation: data
     links:
       - guides/agentic-workflow.md#key-principle
@@ -401,19 +423,28 @@ rules:
     source: spec/checkpoints.md
     introduced: verify
     status: active
-    notes: the checkpoint-outcome divergence resolved as VC-7 (v0.63.0, CP-01 canonical, pivot dropped); the consumer migrates toward the ratified sets in its next conformance cycle, so the vocabulary carries no schema consumer yet
+    notes:
+      the checkpoint-outcome divergence resolved as VC-7 (v0.63.0, CP-01
+      canonical, pivot dropped); the consumer migrates toward the ratified sets
+      in its next conformance cycle, so the vocabulary carries no schema
+      consumer yet
     representation: data+contract
     links:
       - guides/checkpoints.md#key-principle
       - guides/checkpoints.md#gates
   - id: CP-002
-    title: Security severity-halt (finding severity drives the orchestration response)
+    title:
+      Security severity-halt (finding severity drives the orchestration
+      response)
     layer: 1b
     basis: 1b
     source: spec/checkpoints.md
     introduced: v0.64.0
     status: active
-    notes: admitted during Phase 3 Wave D (maintainer, 2026-07-16), completing the boundary ADR's deferred home assignment for the roles.md severity-halt rule — checkpoint-consumed, previously outside the 87-ID first slice
+    notes:
+      admitted during Phase 3 Wave D (maintainer, 2026-07-16), completing the
+      boundary ADR's deferred home assignment for the roles.md severity-halt
+      rule — checkpoint-consumed, previously outside the 87-ID first slice
     representation: contract
     links:
       - guides/roles.md#security-escalation-protocol
@@ -426,7 +457,10 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
-    notes: the six fields and value sets are named vocabulary/config entries, not sub-IDs; two of six are schema-enforced today (via OMG-002 assurance and OM-008 read path)
+    notes:
+      the six fields and value sets are named vocabulary/config entries, not
+      sub-IDs; two of six are schema-enforced today (via OMG-002 assurance and
+      OM-008 read path)
     representation: data+contract
     links:
       - guides/agentic-workflow.md#classification-by-inference
@@ -441,13 +475,18 @@ rules:
     links:
       - guides/right-sizing.md#consequence-floors-on-the-operating-model
   - id: OMG-002
-    title: Setting vocabularies (Required Assurance; Work Execution / Workflow Automation / Authority)
+    title:
+      Setting vocabularies (Required Assurance; Work Execution / Workflow
+      Automation / Authority)
     layer: 1a
     basis: resolver-input
     source: spec/operating-model.md
     introduced: verify
     status: active
-    notes: the Required Assurance subset is schema-enforced today (vocabulary assurance_level); the remaining three sets ratified as closed by VC-8 (v0.63.0), authored in config.yaml with no schema consumer yet
+    notes:
+      the Required Assurance subset is schema-enforced today (vocabulary
+      assurance_level); the remaining three sets ratified as closed by VC-8
+      (v0.63.0), authored in config.yaml with no schema consumer yet
     representation: data+contract
     links:
       - guides/operating-model.md#the-configurable-functions
@@ -541,7 +580,10 @@ rules:
     source: spec/delegated-run.md
     introduced: v0.64.0
     status: active
-    notes: admitted during Phase 3 (maintainer, 2026-07-17) — the decision-overdue rule (inventory DR-22) carved from the Progress/Liveness section contract into a citable rule. Repairs CS-044's dangling section link.
+    notes:
+      admitted during Phase 3 (maintainer, 2026-07-17) — the decision-overdue
+      rule (inventory DR-22) carved from the Progress/Liveness section contract
+      into a citable rule. Repairs CS-044's dangling section link.
     representation: contract
     links:
       - spec/delegated-run.md#progress-liveness-and-unresponsive-state
@@ -772,7 +814,8 @@ rules:
     source: spec/operating-model.md
     introduced: verify
     status: active
-    notes: sub-ID split from AW-004 (the interaction rule over the six decisions)
+    notes:
+      sub-ID split from AW-004 (the interaction rule over the six decisions)
     representation: contract
     links:
       - guides/agentic-workflow.md#classification-by-inference
@@ -815,7 +858,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
-    notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+    notes:
+      promotion trigger — re-enters 1a when a resolver or orchestration surface
+      consumes the condition set as data
     representation: contract
     links:
       - guides/parallel-execution.md#batch-preflight
@@ -826,7 +871,9 @@ rules:
     source: spec/parallel-batch.md
     introduced: verify
     status: active
-    notes: promotion trigger — re-enters 1a when a resolver or orchestration surface consumes the condition set as data
+    notes:
+      promotion trigger — re-enters 1a when a resolver or orchestration surface
+      consumes the condition set as data
     representation: contract
     links:
       - guides/parallel-execution.md#batch-close-and-transition
@@ -840,7 +887,9 @@ rules:
     source: spec/canonical-state.md
     introduced: verify
     status: active
-    notes: rule split from FW-005; promotion trigger — re-enters 1a when a schema conformance cycle enforces id formats or chain topology
+    notes:
+      rule split from FW-005; promotion trigger — re-enters 1a when a schema
+      conformance cycle enforces id formats or chain topology
     representation: contract
     links:
       - guides/framework.md#the-traceability-chain
@@ -863,7 +912,9 @@ rules:
     source: spec/execution.md
     introduced: verify
     status: active
-    notes: the value set (guided / contracts-only) is schema-enforced via OM-008's vocabulary; this rule carries the per-mode load contract
+    notes:
+      the value set (guided / contracts-only) is schema-enforced via OM-008's
+      vocabulary; this rule carries the per-mode load contract
     representation: contract
     links:
       - guides/agentic-workflow.md#read-order-and-the-load-line
@@ -878,7 +929,9 @@ rules:
     links:
       - guides/agentic-workflow.md#what-stage-scoping-must-not-cost
   - id: AW-006
-    title: Assumed-classification convention (derived classifications as overridable assumptions)
+    title:
+      Assumed-classification convention (derived classifications as overridable
+      assumptions)
     layer: 1b
     basis: 1b
     source: spec/execution.md
@@ -898,7 +951,9 @@ rules:
     links:
       - guides/agentic-workflow.md#missing-input
   - id: AW-021
-    title: Assumed-classification gate disposition (confirm / challenge / carry forward)
+    title:
+      Assumed-classification gate disposition (confirm / challenge / carry
+      forward)
     layer: 1b
     basis: 1b
     source: spec/execution.md
@@ -954,7 +1009,8 @@ rules:
     source: spec/execution.md
     introduced: verify
     status: active
-    notes: the four-item precedence order is flagged as future data for the resolver
+    notes:
+      the four-item precedence order is flagged as future data for the resolver
     representation: data+contract
     links:
       - guides/agentic-workflow.md#precedence-and-compound-conditions
@@ -995,7 +1051,11 @@ rules:
     source: spec/execution.md
     introduced: v0.64.0
     status: active
-    notes: admitted during Phase 3 Wave D per the design-review addendum (maintainer, 2026-07-16) — situation-level normative silence is a stop-and-escalate and the escalation is the deliverable; trigger is normative silence, never epistemic uncertainty
+    notes:
+      admitted during Phase 3 Wave D per the design-review addendum (maintainer,
+      2026-07-16) — situation-level normative silence is a stop-and-escalate and
+      the escalation is the deliverable; trigger is normative silence, never
+      epistemic uncertainty
     representation: contract
     links:
       - spec/README.md#key-principle

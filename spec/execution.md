@@ -598,8 +598,10 @@ quick-reference the brief templates link).
      tooling — append an entry to the project's friction log.
 - **Outputs.** The completed session entry.
 - **Evidence.** For each `[J]` or `[H]` item, the evaluator at the required
-  identity grade and the required timestamps
-  ([Canonical-State Spec § Record Requirements](canonical-state.md#record-requirements)).
+  identity grade, the required timestamps, and the **evidence-independence
+  grade** the evaluation stood at
+  ([Record Requirements](canonical-state.md#record-requirements),
+  [CS-084](canonical-state.md#cs-084--evidence-independence-grade)).
 - **Failure behavior.** N/A — as
   [AW-026](#aw-026--session-continuity-read-on-start--write-on-end): a skipped
   write strands the successor session.

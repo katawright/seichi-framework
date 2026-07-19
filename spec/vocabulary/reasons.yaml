@@ -41,7 +41,13 @@ reason_sets:
     # is deliberately thin — a verified completion's discriminating record
     # is the completion-contract evaluation, not this code.
     required_reason_states:
-      [completion-verified, failed, canceled, abandoned, authorization-exhausted]
+      [
+        completion-verified,
+        failed,
+        canceled,
+        abandoned,
+        authorization-exhausted,
+      ]
     by_state:
       completion-verified: [completed]
       failed: [failed-verification, failed-deployment]

@@ -21,7 +21,14 @@ machines:
     source: spec/canonical-state.md
     consumers: ["schema:project_lifecycle"]
     states:
-      [active, paused, completion-claimed, completion-verified, closed, canceled]
+      [
+        active,
+        paused,
+        completion-claimed,
+        completion-verified,
+        closed,
+        canceled,
+      ]
     terminals: [closed, canceled]
     edges:
       - [active, paused]
@@ -54,7 +61,13 @@ machines:
       ]
     # Five terminals, each carrying an outcome reason (DR-013).
     terminals:
-      [completion-verified, failed, canceled, abandoned, authorization-exhausted]
+      [
+        completion-verified,
+        failed,
+        canceled,
+        abandoned,
+        authorization-exhausted,
+      ]
     edges:
       - [proposed, approved]
       - [proposed, declined]
@@ -94,7 +107,16 @@ machines:
     source: spec/delegated-run.md
     consumers: ["schema:directive_state"]
     states:
-      [draft, queued, received, acknowledged, applied, rejected, superseded, voided]
+      [
+        draft,
+        queued,
+        received,
+        acknowledged,
+        applied,
+        rejected,
+        superseded,
+        voided,
+      ]
     terminals: [applied, rejected, superseded, voided]
     edges:
       - [draft, queued]
@@ -170,8 +192,7 @@ planning_families:
     values: [active, achieved, not-achieved, dropped]
   success_criterion_status:
     consumers: ["schema:sc_status"]
-    values:
-      [not-started, met, not-met, deferred, blocked, revised, dropped]
+    values: [not-started, met, not-met, deferred, blocked, revised, dropped]
   requirement_status:
     consumers: ["schema:req_status"]
     values: [proposed, approved, implemented, verified, deferred, dropped]
@@ -211,7 +232,8 @@ terminal_integrity:
       - family: escalation
         condition: no escalation is open
       - family: carry-forward-condition
-        condition: every condition is satisfied or withdrawn, none open or blocked
+        condition:
+          every condition is satisfied or withdrawn, none open or blocked
       - family: risk
         condition: no risk rests open — each carries an explicit disposition
     exemptions:

@@ -13,7 +13,8 @@ state." That state needs one definition, one source-of-truth rule, and one
 guarantee that it survives as Markdown — otherwise a run operating against an
 exported snapshot cannot know whether it has the whole picture. This spec fixes
 the state semantics: what the canonical state contains, that documents are views
-over it, and that it has a complete, lossless Markdown rendering.
+over it, and that it is **expressible** as a complete, lossless Markdown
+rendering — a bar binding on authoring always, and at runtime in file mode.
 
 ### Goals of This Spec
 
@@ -185,10 +186,16 @@ and fix the chain's topology and id conventions.
   `supersedes`).
 - **Procedure.**
   - Each family maps to a phrase in the minimum-canonical-state enumeration or
-    to a named family contract in this spec. Ratifying a family identifier
-    declares a canonical record **kind** that a typed reference may point at; it
-    does **not** restate the family's record **requirements**, which remain
-    their own constructs (for example the status vocabularies in
+    to a named family contract in this spec. **`workspace-binding` is the
+    exception the Inputs gloss does not cover:** the binding record is a
+    _pointer to_ the canonical state, not part of it (see
+    [Mode Binding and Discovery](#mode-binding-and-discovery)), so it names a
+    canonical record kind a typed reference may point at without being a state
+    element the project holds — the same shape as `rendered-view`. Ratifying a
+    family identifier declares a canonical record **kind** that a typed
+    reference may point at; it does **not** restate the family's record
+    **requirements**, which remain their own constructs (for example the status
+    vocabularies in
     [Record-Family Status Vocabularies](#record-family-status-vocabularies) and
     the shape rules in [Record Requirements](#record-requirements)).
   - Three families are named explicitly because each is easy to fold into a
@@ -1208,14 +1215,14 @@ Rationale: progressive-governance detail (D8 self-sufficiency). This is the
 clause that keeps the framework operable in rendered-snapshot mode and the North
 Star true.
 
-**Applicability.** The whole v0.49 normative layer. At **authoring time** it
-binds the framework and the spec authors (meta-conformance): every required
-state element and normative operation must remain expressible as Markdown — not
-every tool. At **runtime** it binds **file mode** only; platform mode owes the
-export obligation instead (both modes defined in the Procedure below).
+**Applicability.** The whole normative layer. At **authoring time** it binds the
+framework and the spec authors (meta-conformance): every required state element
+and normative operation must remain expressible as Markdown — not every tool. At
+**runtime** it binds **file mode** only; platform mode owes the export
+obligation instead (both modes defined in the Procedure below).
 
 **Inputs.** The minimum canonical project state; every normative rule, required
-state element, procedure, and evidence artifact in v0.49.
+state element, procedure, and evidence artifact in the normative layer.
 
 **Procedure.**
 
@@ -1259,8 +1266,8 @@ state element, procedure, and evidence artifact in v0.49.
   structured access.
 - Every normative operation over run state MUST be expressible as a read plus an
   attributable, reconcilable write over that rendering.
-- No v0.49 normative rule, required state element, procedure, or evidence
-  artifact may be expressible only through live structured access.
+- No normative rule, required state element, procedure, or evidence artifact may
+  be expressible only through live structured access.
 
 **Outputs.** A self-sufficient Markdown rendering of the canonical state.
 
@@ -1773,14 +1780,16 @@ operating, batch, and delegated-run models. It does **not** require a complete
 normalized database schema, a specific storage or synchronization mechanism,
 team or organization administration, RBAC/SSO/SCIM or enterprise policy tooling,
 compliance mappings for specific regulations, formal audit-export
-implementations, or the elimination of existing Markdown artifacts.
-**`[Reserved]`** Shared multi-actor project state, full membership and roles
-(org/team administration, RBAC/SSO/SCIM, enterprise policy tooling), and
-audit-export contracts scale on this same model but are deferred to a later,
-deliberate expansion of this layer. Two slices are **lifted** from this
-reservation in v0.52: **actor identity** at the recording grades for `[J]`+ acts
-(see [Record Requirements](#record-requirements)) and the **authorized-party
-set** for floor decisions (see
+implementations (distinct from the platform-mode **portability export**, which
+this spec does impose — see
+[Markdown Self-Sufficiency](#markdown-self-sufficiency)), or the elimination of
+existing Markdown artifacts. **`[Reserved]`** Shared multi-actor project state,
+full membership and roles (org/team administration, RBAC/SSO/SCIM, enterprise
+policy tooling), and audit-export contracts scale on this same model but are
+deferred to a later, deliberate expansion of this layer. Two slices are
+**lifted** from this reservation in v0.52: **actor identity** at the recording
+grades for `[J]`+ acts (see [Record Requirements](#record-requirements)) and the
+**authorized-party set** for floor decisions (see
 [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions));
 the broader identity, membership, and audit-export surface stays reserved.
 

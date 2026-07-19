@@ -142,6 +142,14 @@ acceptance-declined / acceptance-lapsed]
   reason in Completion status above — by [a unique authorized party — name +
   stable id — on the project's authorized-party roster; a solo owner suffices] —
   Date: YYYY-MM-DD
+  - **Evidence independence:** Self-asserted / Context-independent /
+    Organizationally-independent — how this evaluation stood relative to the
+    producing context
+    ([CS-084](../spec/canonical-state.md#cs-084--evidence-independence-grade)).
+  - **Attribution source:** Client-claimed — hand-filled record; identities here
+    are self-reported. `platform-verified` applies only when a recording
+    platform authenticates the actor
+    ([CS-085](../spec/canonical-state.md#cs-085--attribution-source-grade-platform-verified--client-claimed)).
 - **Handoff to Operations:** [operational handoff record produced — yes / N/A]
 - **Pending release flips:** [none / flag or increment — owner, trigger (date or
   criteria)]

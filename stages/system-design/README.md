@@ -195,7 +195,7 @@ Otherwise, keep design lightweight and move to Increment Design.
 system-level contracts, and ADRs are contract detail — their value rises with
 executor capability, and they are never thinned because the executor is strong.
 What scales to the
-[executor read path](../../guides/operating-model.md#one-capability-input-two-effects)
+[executor read path](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only)
 is pre-drawn structure _below_ this stage's altitude: component internals,
 file-level layout, and worked designs for downstream stages. On a
 `contracts-only` path, state conventions and constraints and leave the blueprint

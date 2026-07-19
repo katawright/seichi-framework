@@ -74,7 +74,7 @@ decisions that are expensive to reverse. Everything else is implementer latitude
 recorded design deviation only if it departs from something the brief pinned
 ([Delegated-Run Spec](../../spec/delegated-run.md#controlled-replanning)).
 Implementation scaffolding scales to the declared
-[executor read path](../../guides/operating-model.md#one-capability-input-two-effects);
+[executor read path](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only);
 contract and verification detail never does. Reference architecture from System
 Design.
 
@@ -191,7 +191,7 @@ to _consequence_ — higher stakes pin more contracts and more verification. The
 **executor read path** scales _implementation scaffolding_ — component
 structure, enumerated test cases, pre-worked logic — to the executor: `guided`
 keeps it; `contracts-only` omits it and leaves structure to the implementer (see
-[Operating Model Guide: One Capability Input, Two Effects](../../guides/operating-model.md#one-capability-input-two-effects)).
+[Operating Model Guide: One Capability Input, Two Effects](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only)).
 The axes never trade off — a high-consequence increment on a strong executor
 still needs heavy contracts and light structure. Write the brief **thin by
 default and justify thickness**: at Minimal tier under agent execution on the
@@ -251,7 +251,7 @@ For Increment 2+, review before planning:
   detail than the previous brief provided? Structure guessed poorly, many
   clarifying questions, or convention drift → add scaffolding; scaffolding
   ignored or worked around → remove it and revisit the
-  [executor read path](../../guides/operating-model.md#one-capability-input-two-effects)
+  [executor read path](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only)
   setting.
 
 This is the point in the cycle where the

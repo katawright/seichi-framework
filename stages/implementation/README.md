@@ -271,7 +271,7 @@ gates. For increments with multiple PRs, steps 4-12 repeat for each PR.
 ### Implementer Latitude Under Contract-First Briefs
 
 On the `contracts-only`
-[executor read path](../../guides/operating-model.md#one-capability-input-two-effects),
+[executor read path](../../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only),
 the increment design brief arrives thin by design: it pins contracts,
 constraints, and verification criteria, and deliberately leaves internal
 structure unspecified. Implementation absorbs that latitude — deriving component

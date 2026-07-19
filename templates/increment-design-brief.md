@@ -28,7 +28,7 @@
 > right-sizing section), omit them and leave the detail to the implementer; on
 > `guided`, complete them. Contract fields — interfaces, acceptance criteria,
 > test intent — are never omitted on read-path grounds. See
-> [Operating Model Guide: One Capability Input, Two Effects](../guides/operating-model.md#one-capability-input-two-effects).
+> [Operating Model Guide: One Capability Input, Two Effects](../spec/operating-model.md#om-008--executor-read-path-setting-guided--contracts-only).
 
 **Last Updated:** YYYY-MM-DD
 

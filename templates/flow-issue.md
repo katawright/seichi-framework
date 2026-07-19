@@ -99,8 +99,21 @@ is done and whether it may ship.
   party (name + stable id) on the project's authorized-party roster. _(policy)_
   the policy (name/link) and its **author** — the accountable authorized party —
   with the date authored (so its roster validity at authoring is checkable). For
-  a solo project the lone owner is the implicit authorized party — the name
-  alone suffices.
+  a solo project the lone owner is the implicit authorized party — no separate
+  roster is needed to establish _who_ is authorized. The recorded identity grade
+  is unchanged: an `[H]` act still records name + a stable identifier.
+- **Evidence independence:** Self-asserted / Context-independent /
+  Organizationally-independent — how this evaluation stood relative to the
+  producing context
+  ([CS-084](../spec/canonical-state.md#cs-084--evidence-independence-grade)).
+  Self-asserted is the normal, honest grade for a solo operator; it caps the
+  floor claim
+  ([CS-086](../spec/canonical-state.md#cs-086--self-asserted-floor-discharge-rule-grade-capping)),
+  not the work.
+- **Attribution source:** Client-claimed — hand-filled record; identities here
+  are self-reported. `platform-verified` applies only when a recording platform
+  authenticates the actor; platform-generated records carry per-act grades
+  ([CS-085](../spec/canonical-state.md#cs-085--attribution-source-grade-platform-verified--client-claimed)).
 - **Date:** YYYY-MM-DD
 
 <!-- Template Last Updated: 2026-07-08 | Added in v0.49.0. -->

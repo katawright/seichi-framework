@@ -310,12 +310,19 @@ evaluators).
 - Capability MUST NOT grant authority. Missing or inadequate capability narrows
   the envelope even when an action is authorized.
 - Capability has a second, symmetric effect beyond the ceiling: it sets how much
-**implementation scaffolding** stage artifacts carry for the executor. Contract
-and verification detail — interfaces, acceptance criteria, test intent,
-boundaries, and governance hooks — MUST NOT be reduced on capability grounds at
-any capability level. Implementation scaffolding — component structure, file
-layout, enumerated test cases, pre-worked logic — MAY be scaled to the executor,
-and is the only specification detail capability adjusts.
+  **implementation scaffolding** stage artifacts carry for the executor.
+  Contract and verification detail — interfaces, acceptance criteria, test
+  intent, boundaries, and governance hooks — MUST NOT be reduced on capability
+  grounds at any capability level. Implementation scaffolding — component
+  structure, file layout, enumerated test cases, pre-worked logic — MAY be
+  scaled to the executor, and is the only specification detail capability
+  adjusts.
+- **The verification bar is never capability-scaled.** Capability ceilings
+  narrow what an executor may be _given to do_; they never lower what its work
+  must _pass_. Required Assurance and the acceptance criteria are fixed by
+  consequence and compliance, so a lower-capability executor gets more
+  scaffolding, never a weaker bar.
+
 <!-- rule: OM-008 -->
 
 ### OM-008 — Executor read path setting (guided / contracts-only)
