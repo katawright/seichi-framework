@@ -120,7 +120,7 @@ Criteria may match or differ from what the preceding stage proposed.
 - **Mitigations in place:** [list key mitigations for identified risks]
 - **Residual risk acceptance:** [risks accepted and rationale]
 - **Compliance status:** [applicable standards and current status]
-- **AppSec recommendation:** [Proceed / Proceed with conditions / Revise]
+- **AppSec recommendation:** [Proceed / Proceed with conditions / Revise / Stop]
   <!-- checkpoint-outcome: gate -->
 
 ---
@@ -217,4 +217,4 @@ quality]
      type — its outcome is Aligned / Adjustments Needed. The architecture
      decisions reached there are separately recorded as ADRs. -->
 
-<!-- Template Last Updated: 2026-07-18 | Added in v0.13.0. -->
+<!-- Template Last Updated: 2026-07-19 | Added in v0.13.0. -->
