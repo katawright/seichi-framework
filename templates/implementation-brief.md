@@ -72,7 +72,12 @@ that the consultation occurred.
 
 **What was NOT built (if relevant):**
 
-- [Descoped item with reason]
+<!-- Each item here must land as an acceptance-criterion disposition at
+     closure — Descoped (citing the governed scope decision that authorized it)
+     or Deferred (citing the explicit future: IDEA-NNN or a carry-forward
+     condition). See ../spec/canonical-state.md#project-level-completion. -->
+
+- [Item not built — Descoped (scope decision: …) or Deferred (→ …)]
 
 ---
 
@@ -327,4 +332,4 @@ register]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.5.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.5.0. -->

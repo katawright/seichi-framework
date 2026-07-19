@@ -743,6 +743,6 @@ In addition to reactive triggers, consider scheduled architecture reviews:
 
 ## Notes
 
-**Last Updated:** 2026-07-13
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.12.0.

@@ -66,7 +66,8 @@ Discoverability, Transparency, Consistency) to determine your readiness tier
 (T0-T5). The tier tells you how much preparation, if any, is needed before
 AI-assisted feature work can begin.
 
-**Next step:** [Brownfield Readiness Guide](brownfield-readiness.md)
+**Next step:**
+[Brownfield Readiness Guide](brownfield-readiness.md#readiness-tiers)
 
 ### Step 2: Choose Your Approach
 
@@ -75,7 +76,9 @@ preparation — from full system replacement to opportunistic improvement. Choos
 your preparation scope and key technical decisions (wrap vs. extract, logic
 authority). The approach guide includes
 [foundation work by tier](brownfield-approach.md#foundation-work-by-tier) — what
-each tier means in practice for scope and exit thresholds.
+each tier **requires** in practice for scope and exit thresholds. (For what each
+tier _means_, see the [readiness tiers](brownfield-readiness.md#readiness-tiers)
+in Step 1.)
 
 **Next step:** [Brownfield Approach Guide](brownfield-approach.md)
 
@@ -241,6 +244,6 @@ For the full organizational adoption context, see the
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.42.0.

@@ -69,7 +69,7 @@ ready for Gate 2.
 12. [ ] **Brownfield preparation plan includes binary readiness re-assessment
         criteria** (per-axis pass/fail thresholds for each preparation
         increment, with named recommendations: Go, Conditional Go, Continue, or
-        returning to gate; N/A for greenfield or T4+ brownfield)
+        returning to gate; N/A for greenfield or T5 brownfield)
 13. [ ] **Cross-service security reviewed** (new inter-service communication has
         authentication and authorization; new database users have minimal
         grants; N/A for single-service projects)

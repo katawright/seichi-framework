@@ -145,7 +145,9 @@ codebase affects how quickly teams can start AI-assisted feature work.
 Use the [Brownfield Readiness Guide](brownfield-readiness.md#readiness-rubric)
 to score the codebase across five axes and determine the readiness tier.
 
-- **T5 Ready / T4 Approachable** — Proceed with standard discovery increment
+- **T5 Ready** — No preparation needed; create AGENTS.md with conventions and
+  proceed
+- **T4 Approachable** — Proceed with standard discovery increment
 - **T3 Constrained** — Factor targeted preparation into timeline
 - **T2 Challenging / T1 Hostile** — Consider treating the enablement program as
   the adoption pilot (see
@@ -496,8 +498,10 @@ highest and the risk is lowest.
 
 7. **System Design** — AI-assisted architecture exploration. High impact of
    errors requires strong gates.
-8. **Closure** — project close-out and handoff to operations. Requires
-   established monitoring infrastructure and a standing ops process.
+8. **Closure** — project close-out and handoff to operations. The depth of the
+   handoff _record_ scales with what is being handed off: a standing service
+   needs monitoring and a named ops process documented in it; a throwaway tool
+   may close with no operations at all. Closure itself always happens.
 
 **Partial adoption is valid.** A team using the framework for Implementation and
 Verification only is still getting value. The framework is designed so each
@@ -548,6 +552,6 @@ can define default tier mappings based on project characteristics.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.17.0.

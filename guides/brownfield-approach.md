@@ -233,7 +233,7 @@ enough. (For what each tier's operating mode means, see the
 targets T5 because the gap is small and documentation-level. T3's target
 conditions keep it at T3 — the goal is making the T3 operating mode safe to run
 in, not reaching T4. T2 and T1 both target T3 because that is the lowest tier at
-which AI contributes production code.
+which AI drives production code at scale.
 
 | Tier | Foundation Work                                                                                                     | Target Conditions                              |
 | ---- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

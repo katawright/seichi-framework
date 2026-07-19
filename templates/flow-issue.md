@@ -116,4 +116,4 @@ is done and whether it may ship.
   ([CS-085](../spec/canonical-state.md#cs-085--attribution-source-grade-platform-verified--client-claimed)).
 - **Date:** YYYY-MM-DD
 
-<!-- Template Last Updated: 2026-07-08 | Added in v0.49.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.49.0. -->

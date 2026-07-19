@@ -299,4 +299,4 @@ Guidance, tips, and considerations for engineers:
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-07-06 | Added in v0.12.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.12.0. -->

@@ -256,7 +256,7 @@ GDPR applies because EU users are in scope"]
      Design (Gate 2). See guides/brownfield-readiness.md#when-to-assess for the
      two-pass model and #readiness-rubric for axis definitions. -->
 
-**Estimated readiness tier:** [T0-T5] — [Ready / Approachable / Constrained /
+**Estimated readiness tier:** [T5-T0] — [Ready / Approachable / Constrained /
 Challenging / Hostile / Rebuild]
 
 **Estimated preparation effort:** [e.g., "None", "1-2 week discovery", "2-4
@@ -270,7 +270,8 @@ month enablement program"]
       condition is a tracked carry-forward obligation, included in scope and
       estimates
 - [ ] Stop — opportunity validated but preparation cost exceeds current budget;
-      pause the project and revisit when [condition]
+      record the project `paused` with a reason (`blocked` · `awaiting-decision`
+      · `owner-hold`) and revisit when [condition]
 - [ ] Revise — the opportunity holds but the preparation scope or approach needs
       rework before an investment decision can be made; re-present
 - [ ] Stop — preparation investment not justified by the opportunity; cancel the

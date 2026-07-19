@@ -201,13 +201,14 @@ quality]
   `ADR-DCC.md` files to the workspace `adrs/` canon as `ADR-NNNN-CC.md`; update
   project draft copies with a pointer to the promoted id"
 - _Example (Gate 2, Stop):_ "Archive project artifacts, communicate decision to
-  stakeholders"
+  stakeholders, and record the project `canceled` with its reason — the
+  cancellation cascades to open child records"
 - _Example (Gate 1, Proceed with conditions):_ "Preparation project approved as
   a tracked prerequisite condition. Begin Requirements with preparation scope
   included."
 - _Example (Gate 1, Stop):_ "Opportunity validated but preparation cost exceeds
-  current budget — project paused. Revisit when platform modernization
-  completes."
+  current budget — project `paused` with reason `owner-hold`. Revisit when
+  platform modernization completes."
 
 ---
 
