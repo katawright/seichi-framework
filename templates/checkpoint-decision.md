@@ -135,8 +135,8 @@ e.g., "All AI-drafted runbook entries reviewed by on-call engineer" or "N/A"]
 - (What happens next based on the decision)
 - _Example (Review, Ready):_ "Proceed with production deployment"
 - _Example (Review, Not Ready):_ "Address blockers and re-run readiness checks"
-- _Example (Review, Ready with conditions):_ "Operations accepts ownership with
-  listed mitigations and follow-up dates"
+- _Example (Review, Ready — conditions recorded):_ "Operations accepts ownership
+  with listed mitigations and follow-up dates"
 - _Example (operational follow-up):_ "Execute rollback runbook and open incident
   record" (a rollback is a deployment fact, not a checkpoint outcome)
 

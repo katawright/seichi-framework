@@ -125,7 +125,8 @@ acceptance-declined / acceptance-lapsed]
      rides as the closed reason. Exception for LAPSED: it exists precisely for
      the case where the acceptance party is gone (owner departed, client
      silent), so it is recorded by an administrator — a human act, but not the
-     rostered acceptance party who records accepted / declined. Plus the
+     rostered acceptance party who records accepted / acceptance-declined. Plus
+     the
      forward-looking close: success
      criteria still pending re-check (with dates), and open product ideas that
      may seed future projects (cite IDEA-NNN). A pending release flip — an
@@ -134,9 +135,10 @@ acceptance-declined / acceptance-lapsed]
      closure, alongside the production-ownership transfer. The running system,
      if any, continues under Operations — see ../guides/operations.md. -->
 
-- **Acceptance decision:** [accepted / declined / lapsed] — by [a unique
-  authorized party — name + stable id — on the project's authorized-party
-  roster; a solo owner suffices] — Date: YYYY-MM-DD
+- **Acceptance decision:** the outcome itself is recorded once, as the `closed`
+  reason in Completion status above — by [a unique authorized party — name +
+  stable id — on the project's authorized-party roster; a solo owner suffices] —
+  Date: YYYY-MM-DD
 - **Handoff to Operations:** [operational handoff record produced — yes / N/A]
 - **Pending release flips:** [none / flag or increment — owner, trigger (date or
   criteria)]

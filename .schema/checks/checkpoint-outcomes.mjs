@@ -3,15 +3,29 @@
 // bodies in spec/checkpoints.md); canonical-state.md § Decision Records
 // forbids a status axis on gate/checkpoint decision records. Artifacts
 // restate the outcome sets as `**Decision:**` lines and checkbox blocks —
-// the surface three v0.64 sweep majors (invented Gate 1 vocabulary, a
+// the surface three v0.64 sweep-1 majors (invented Gate 1 vocabulary, a
 // five-value status axis, a Review outcome collapsed into the lifecycle
 // terminal) all landed on. Detection is *marked*, not guessed (the
 // ship-list pattern): each restating line or block carries an inline
 // `<!-- checkpoint-outcome: gate|review|alignment -->` sentinel and the
-// check set-compares its values against the tagged set. An untagged
-// value-carrying Decision line in the covered globs is itself an error, so
-// a new restatement cannot land unguarded; a `**Status:**` axis in the two
-// decision-record templates is an error outright.
+// check set-compares its values against the tagged set.
+//
+// Untagged restatements are errors in their own right, so a new one cannot
+// land unguarded. Sweep 2 found the first trigger too narrow — it matched
+// only a line-initial `**Decision:**`, and two majors shipped through the
+// gap (M-10, an `_Example (Review, Ready with conditions):_` label; M-17, a
+// `| **Gate Status** |` table cell). The trigger now covers four shapes:
+//
+//   1. a labeled restatement — `**Decision:**` / `**Outcome:**` /
+//      `**… recommendation:**`, at line start, as a list item, or as a
+//      table cell — carrying a `/`-separated value set;
+//   2. an `_Example (Type, Outcome):_` label, whose parenthetical names a
+//      checkpoint type and is therefore checked against that type's set
+//      directly (no sentinel needed — the type is already declared);
+//   3. a status axis on a gate or checkpoint decision, in any covered file
+//      (`**Gate Status**`, `**Checkpoint status:**`, …), not merely a
+//      line-initial `**Status:**` in the decision-record templates;
+//   4. the pre-existing `## Decision:` heading form.
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -27,6 +41,22 @@ const NO_STATUS_AXIS = [
   "templates/checkpoint-decision.md",
   "templates/brownfield-preparation-decision.md",
 ];
+/** A label naming a checkpoint decision *and* a status axis — forbidden on
+ *  any surface, not only the decision-record templates (M-17). `**Gate
+ *  decision**` is deliberately not matched: a held/not-held tracker carries
+ *  no outcome vocabulary and is the sanctioned form. */
+const STATUS_AXIS_LABEL_RE = /\b(gate|checkpoint)\b.*\bstat(?:us|e)\b/;
+/** Labels that restate an outcome set. `decision` alone is strict (one value
+ *  is already a restatement); the wider endings need a two-or-more value list
+ *  so a prose gloss — `**Recommendation:** (the next step this routes to)` —
+ *  is not mistaken for one. */
+const STRICT_LABEL_RE = /^decision$/;
+const WIDE_LABEL_RE = /(?:^|\s)(?:decision|outcome|recommendation)$/;
+/** `_Example (Review, Ready):_` — the parenthetical declares the checkpoint
+ *  type, so the outcome beside it is checked against that type's set with no
+ *  sentinel required. */
+const EXAMPLE_RE = /Example\s*\(([^)]+)\)\s*:/;
+const TYPE_ALIAS_RE = /^(gate|review|alignment)\b/;
 
 /** The three per-type outcome sets from checkpoints.yaml, keyed by type. */
 export function outcomeSets(yamlSource) {
@@ -70,6 +100,53 @@ export function lineValues(line) {
   return rest.split(" / ").map(normalizeValue).filter(Boolean);
 }
 
+/** The bold labels on a line, normalized: `**Decision (Review):**` →
+ *  "decision", `| **Gate Status** |` → "gate status". */
+export function boldLabels(line) {
+  return [...line.matchAll(/\*\*([^*]+?)\*\*/g)].map((m) =>
+    m[1]
+      .replace(/\s*\([^)]*\)\s*/g, " ")
+      .replace(/\s*:\s*$/, "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " "),
+  );
+}
+
+/**
+ * The outcome values an untagged line restates, or null when it restates
+ * none. Covers the labeled forms (line-initial, list item, or nested) and the
+ * `## Decision:` heading; a table cell is covered by the status-axis rule
+ * instead, since a value list in a cell is as often a tracker as an outcome.
+ */
+export function untaggedRestatement(line) {
+  const values = lineValues(line);
+  if (!values || !values.length) return null;
+  if (/^#{2,}\s+Decision:/.test(line)) return values;
+  const labels = boldLabels(line);
+  if (labels.some((l) => STRICT_LABEL_RE.test(l))) return values;
+  if (values.length >= 2 && labels.some((l) => WIDE_LABEL_RE.test(l))) {
+    return values;
+  }
+  return null;
+}
+
+/**
+ * `[type, value]` for an example label that declares a checkpoint type, or
+ * null. `_Example (Deployment):_` and `_Example (Go):_` declare no type and
+ * are skipped; `_Example (Gate 1, Proceed):_` reads as the gate set.
+ */
+export function exampleTypeOutcome(line) {
+  const m = line.match(EXAMPLE_RE);
+  if (!m) return null;
+  const parts = m[1].split(",");
+  if (parts.length < 2) return null;
+  const type = parts[0].trim().toLowerCase().match(TYPE_ALIAS_RE);
+  if (!type) return null;
+  const value = normalizeValue(parts.slice(1).join(","));
+  return value ? [type[1], value] : null;
+}
+
 /** Blank `<!-- … -->` spans, preserving offsets (sentinels are matched on the
  *  raw text before this is applied). */
 function stripComments(content) {
@@ -78,11 +155,11 @@ function stripComments(content) {
   );
 }
 
-/** Checkbox values of the block after line `idx`: each `- [ ] Value — …`
- *  item's text before its em-dash annotation. */
+/** Checkbox values of the block starting at or after line `idx`: each
+ *  `- [ ] Value — …` item's text before its em-dash annotation. */
 function blockValues(lines, idx) {
   const values = [];
-  let i = idx + 1;
+  let i = idx;
   while (i < lines.length && lines[i].trim() === "") i++;
   for (; i < lines.length; i++) {
     const m = lines[i].match(/^\s*- \[[ x]\] (.*)$/);
@@ -100,21 +177,27 @@ function blockValues(lines, idx) {
 /** All CKPT issues for one file. Pure — unit-testable. */
 export function checkpointOutcomeIssues(file, content, sets) {
   const issues = [];
+  // Split on either line ending: `core.autocrlf` leaves part of a Windows
+  // working tree CRLF, and every value-extracting regex here is `$`-anchored,
+  // so a stray `\r` would make the guard silently pass the whole file.
   const fenced = stripFences(content);
-  const lines = fenced.split("\n");
+  const lines = fenced.split(/\r?\n/);
 
-  // 1. No status axis on a gate/checkpoint decision record.
-  if (NO_STATUS_AXIS.includes(file)) {
-    lines.forEach((line, i) => {
-      if (/^\*\*Status:\*\*/.test(line)) {
-        issues.push(
-          `CKPT  ${file}:${i + 1}  decision records carry no status axis ` +
-            `(canonical-state.md § Decision Records) — record the outcome, ` +
-            `delete the Status line`,
-        );
-      }
-    });
-  }
+  // 1. No status axis on a gate/checkpoint decision. Bare `**Status:**` is an
+  // error in the decision-record templates, where the whole artifact is the
+  // decision; elsewhere the label has to name the decision it is putting a
+  // status on (`**Gate Status**`) for the axis to be unambiguous.
+  lines.forEach((line, i) => {
+    const bare = NO_STATUS_AXIS.includes(file) && /^\*\*Status:\*\*/.test(line);
+    if (bare || boldLabels(line).some((l) => STATUS_AXIS_LABEL_RE.test(l))) {
+      issues.push(
+        `CKPT  ${file}:${i + 1}  gate and checkpoint decisions carry no ` +
+          `status axis (canonical-state.md § Decision Records) — record the ` +
+          `outcome in its decision record, or track only whether the ` +
+          `decision has been held`,
+      );
+    }
+  });
 
   // 2. Every sentinel-tagged line/block set-compares against its named set.
   // The sentinel rides its target line inline, or sits alone adjacent to it:
@@ -151,13 +234,20 @@ export function checkpointOutcomeIssues(file, content, sets) {
     }
     let values = lineValues(lines[target] ?? "");
     if (values === null) {
-      issues.push(
-        `CKPT  ${file}:${i + 1}  sentinel on a line with no recognizable ` +
-          `label (expected a **Label:** or ## Decision: line)`,
-      );
-      return;
+      // A sentinel may also sit directly above the checkbox block it tags —
+      // the form the stage checklists use, where the block follows a
+      // blockquote rather than a bold label.
+      values = blockValues(lines, target);
+      if (values.length === 0) {
+        issues.push(
+          `CKPT  ${file}:${i + 1}  sentinel on a line with no recognizable ` +
+            `label (expected a **Label:** line, a ## Decision: heading, or a ` +
+            `checkbox block)`,
+        );
+        return;
+      }
     }
-    if (values.length === 0) values = blockValues(lines, target);
+    if (values.length === 0) values = blockValues(lines, target + 1);
     if (values.length === 0) {
       issues.push(
         `CKPT  ${file}:${i + 1}  sentinel with no values to check ` +
@@ -174,18 +264,31 @@ export function checkpointOutcomeIssues(file, content, sets) {
     }
   });
 
-  // 3. An untagged value-carrying Decision line is an unguarded restatement.
-  const netLines = stripComments(fenced).split("\n");
+  // 3. An untagged value-carrying outcome line is an unguarded restatement.
+  const netLines = stripComments(fenced).split(/\r?\n/);
   netLines.forEach((line, i) => {
     if (tagged.has(i)) return;
-    if (!/^(\*\*Decision:\*\*|#{2,}\s+Decision:)/.test(line)) return;
-    const values = lineValues(line);
-    if (values && values.length) {
+    if (untaggedRestatement(line)) {
       issues.push(
         `CKPT  ${file}:${i + 1}  untagged checkpoint-outcome restatement — ` +
           `tag the line with <!-- checkpoint-outcome: gate|review|alignment ` +
           `--> so its values are checked, or rename the label if it is not ` +
           `a checkpoint outcome`,
+      );
+    }
+  });
+
+  // 4. An example label that names a checkpoint type is checked against that
+  // type's set directly — the type is declared, so no sentinel is needed.
+  netLines.forEach((line, i) => {
+    const pair = exampleTypeOutcome(line);
+    if (!pair) return;
+    const [type, value] = pair;
+    const set = sets[type];
+    if (set && !set.has(value)) {
+      issues.push(
+        `CKPT  ${file}:${i + 1}  off-canon ${type} outcome value in an ` +
+          `example label: ${value} (closed set: ${[...set].join(" / ")})`,
       );
     }
   });

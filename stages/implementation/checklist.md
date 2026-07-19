@@ -91,6 +91,8 @@ and ready for Verification.
 > The PR Review + CI checkpoint is satisfied per-PR during implementation. No
 > additional checkpoint decision record is needed for the Verification handoff.
 
+<!-- checkpoint-outcome: review -->
+
 - [ ] **Ready** — Proceed to Verification
 - [ ] **Not Ready** — Address weak items and re-check
 
@@ -116,6 +118,6 @@ and ready for Verification.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.5.0.

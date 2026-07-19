@@ -74,15 +74,19 @@ Captured in the
 Using the [Gate Decision Template](../templates/gate-decision.md):
 
 ```markdown
-## Decision: Proceed
+## Decision: Proceed with conditions
 
 - **Rationale:** Self-service portal has clear ROI (reduce support ticket volume
   by 40%). Preparation cost (4 weeks) is acceptable given 6-month project
   timeline. Preparation outputs (tests, documentation) have standalone value
-  even if the portal project is later descoped.
-- **Conditions:** Complete at least one preparation increment before committing
-  to the feature delivery timeline. Re-assess readiness before feature work
-  begins.
+  even if the portal project is later canceled.
+- **Conditions:** each is a tracked carry-forward obligation, re-checked at
+  every later stage entry:
+
+  | Condition                                                                                      | Owner | Discharged at    | Status |
+  | ---------------------------------------------------------------------------------------------- | ----- | ---------------- | ------ |
+  | Complete at least one preparation increment before committing to the feature delivery timeline | PjM   | Increment 0 exit | Open   |
+  | Re-assess readiness before feature work begins                                                 | Arch  | Increment 0 exit | Open   |
 ```
 
 ---
@@ -225,7 +229,11 @@ The team re-scores the **customer account area** (not the full system) using the
 Using the
 [Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md):
 
-**Decision: Conditional Go**
+**Decision: Ready** — the exit checkpoint is a Review, so its outcome is drawn
+from the Review set.
+
+**Recommendation: Conditional Go** — the preparation-specific next step this
+decision routes to.
 
 - **Thresholds partially met:** Verifiability and Modularity 3+, rest 2+ (T3
   target) — but Modularity at 2 falls short of the 3+ requirement
@@ -352,7 +360,7 @@ Increment 0 (Discovery)                          ← brownfield-only
     ↓
 Exit Checkpoint                                   ← brownfield-only
   Re-assessment: T2 → T3 (target area)
-  Decision: Conditional Go (shadow mode required)
+  Decision: Ready — Recommendation: Conditional Go (shadow mode required)
     ↓
 Increment 1 (Feature)
   FR-1: Profile self-service
@@ -400,6 +408,6 @@ feature increments — they're not throwaway work.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.40.0.

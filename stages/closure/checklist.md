@@ -106,9 +106,10 @@ bookends the Initiation Brief.
 ## Final Decision
 
 - [ ] All checklist sections above are complete
-- [ ] **[H] Acceptance decision made and recorded** (the outcome — accepted,
-      declined, or lapsed — rides as the `closed` reason; a decision recorded,
-      not necessarily positive, is what gates closure)
+- [ ] **[H] Acceptance decision made and recorded** (the outcome — `accepted`,
+      `acceptance-declined`, or `acceptance-lapsed` — rides as the `closed`
+      reason; a decision recorded, not necessarily positive, is what gates
+      closure)
 - [ ] **[H] Project owner confirms the project is closed**
 
 **Decision:** Ready / Not Ready <!-- checkpoint-outcome: review -->

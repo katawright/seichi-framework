@@ -12,17 +12,17 @@
 
 **Last Updated:** YYYY-MM-DD HH:MM
 
-| Field              | Value                                                         |
-| ------------------ | ------------------------------------------------------------- |
-| **Project**        | [Project Name]                                                |
-| **Stage**          | [Stage Name]                                                  |
-| **Increment**      | [Increment Number/Name or N/A]                                |
-| **Work Execution** | [Humans / Collaborative / Agents]                             |
-| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent] |
-| **Participant(s)** | [Names / Agent IDs]                                           |
-| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]              |
-| **Gate Status**    | [Pending / Approved / Rejected — Approver: name]              |
-| **Duration**       | [Optional — total time spent across sessions]                 |
+| Field              | Value                                                                    |
+| ------------------ | ------------------------------------------------------------------------ |
+| **Project**        | [Project Name]                                                           |
+| **Stage**          | [Stage Name]                                                             |
+| **Increment**      | [Increment Number/Name or N/A]                                           |
+| **Work Execution** | [Humans / Collaborative / Agents]                                        |
+| **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent]            |
+| **Participant(s)** | [Names / Agent IDs]                                                      |
+| **Stage Status**   | [Not Started / In Progress / Blocked / Complete]                         |
+| **Gate decision**  | [Not yet held / Held — outcome rides in the gate-decision record (link)] |
+| **Duration**       | [Optional — total time spent across sessions]                            |
 
 ---
 

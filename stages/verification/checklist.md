@@ -104,6 +104,8 @@ the increment is ready for deployment.
 > **If any items are unchecked, address them or document as conditions before
 > selecting a final decision below.**
 
+<!-- checkpoint-outcome: review -->
+
 - [ ] **Ready** — Hand off to Deployment stage; record the decision using the
       [Checkpoint Decision Template](../../templates/checkpoint-decision.md).
       Any carry-forward conditions are documented in the Verification Brief and
@@ -133,6 +135,6 @@ the increment is ready for deployment.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.6.0.

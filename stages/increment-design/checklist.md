@@ -100,6 +100,8 @@ and ready for Implementation.
 
 > **If any items are unchecked, address before proceeding.**
 
+<!-- checkpoint-outcome: review -->
+
 - [ ] **Ready** — Proceed to Implementation; record the decision using the
       [Checkpoint Decision Template](../../templates/checkpoint-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
@@ -127,6 +129,6 @@ and ready for Implementation.
 
 ## Notes
 
-**Last Updated:** 2026-07-06
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.12.0.

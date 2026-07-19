@@ -312,6 +312,12 @@ runs after each preparation increment as an **early exit opportunity**: have we
 met the target conditions ahead of schedule? If so, stop preparing and start
 delivering features.
 
+The exit checkpoint is a **Review**, so its recorded outcome is the Review set —
+**Ready / Not Ready** (were the target conditions met?). The
+preparation-specific next steps below are **Recommendations**: they elaborate
+that outcome and are never recorded in its place. Record both using the
+[Preparation Exit Decision Template](../templates/brownfield-preparation-decision.md).
+
 ### Within Committed Scope
 
 After each preparation increment, re-score the target area (see
@@ -319,7 +325,7 @@ After each preparation increment, re-score the target area (see
 and compare against the target conditions in
 [Foundation Work by Tier](#foundation-work-by-tier).
 
-| Decision           | When                                                                                          |
+| Recommendation     | When                                                                                          |
 | ------------------ | --------------------------------------------------------------------------------------------- |
 | **Go**             | Target area meets conditions for intended operating mode; proceed to feature work             |
 | **Conditional Go** | Most conditions met; remaining gaps have documented mitigations that don't block feature work |
@@ -337,7 +343,7 @@ the intended conditions, this is not a decision the exit checkpoint can make
 alone. It requires a **return to the gate system** for a new investment
 decision:
 
-| Outcome                    | Gate Action                                                                                                     |
+| Recommendation             | Gate Action                                                                                                     |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | **Close to target**        | Gate approves 1-2 additional increments with a concrete plan — a new, bounded commitment                        |
 | **Meaningful progress**    | Gate re-evaluates the investment: adjust the target operating mode (e.g., T4 → T3), extend scope, or stop       |
@@ -362,6 +368,6 @@ decision and reference the exit checkpoint evidence.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.42.0.

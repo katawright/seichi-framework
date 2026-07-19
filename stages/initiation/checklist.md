@@ -81,6 +81,8 @@ to circulate.
 
 > **If items are unchecked, address before proceeding.**
 
+<!-- checkpoint-outcome: review -->
+
 - [ ] **Ready** — Share with stakeholders for Gate 1; record the decision using
       the [Gate Decision Template](../../templates/gate-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
@@ -103,6 +105,6 @@ to circulate.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.2.0.

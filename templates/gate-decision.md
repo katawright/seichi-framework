@@ -121,6 +121,7 @@ Criteria may match or differ from what the preceding stage proposed.
 - **Residual risk acceptance:** [risks accepted and rationale]
 - **Compliance status:** [applicable standards and current status]
 - **AppSec recommendation:** [Proceed / Proceed with conditions / Revise]
+  <!-- checkpoint-outcome: gate -->
 
 ---
 

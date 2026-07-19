@@ -92,8 +92,10 @@ System Design.
 
 > **If items are unchecked, address before proceeding.**
 
-- [ ] **Ready for System Design** — All items checked, proceed to System Design
-      stage (foundational pass)
+<!-- checkpoint-outcome: review -->
+
+- [ ] **Ready** — All items checked; proceed to the System Design stage
+      (foundational pass)
 - [ ] **Not Ready** — Address weak items and re-check
 
 Record the decision using the
@@ -118,6 +120,6 @@ Record the decision using the
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.3.0.

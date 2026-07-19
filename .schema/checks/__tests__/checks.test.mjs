@@ -557,6 +557,9 @@ import {
   outcomeSets,
   normalizeValue,
   lineValues,
+  boldLabels,
+  untaggedRestatement,
+  exampleTypeOutcome,
   checkpointOutcomeIssues,
 } from "../checkpoint-outcomes.mjs";
 
@@ -689,6 +692,127 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain('unknown checkpoint-outcome type "quality"');
+  });
+});
+
+// The two Sweep-2 majors that shipped through the first trigger, which matched
+// only a line-initial `**Decision:**`.
+describe("checkpoint-outcomes widened trigger (Sweep-2 holes)", () => {
+  const SETS = {
+    gate: new Set(["proceed", "proceed-with-conditions", "revise", "stop"]),
+    review: new Set(["ready", "not-ready"]),
+    alignment: new Set(["aligned", "adjustments-needed"]),
+  };
+
+  it("M-10 regression: an invented Review outcome in an example label", () => {
+    const doc =
+      '- _Example (Review, Ready with conditions):_ "Operations accepts ownership"';
+    const issues = checkpointOutcomeIssues(
+      "templates/checkpoint-decision.md",
+      doc,
+      SETS,
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("off-canon review outcome value");
+    expect(issues[0]).toContain("ready-with-conditions");
+  });
+
+  it("M-10 fixed form and the gate labels beside it pass", () => {
+    const doc = [
+      '- _Example (Review, Ready — conditions recorded):_ "Operations accepts"',
+      '- _Example (Review, Not Ready):_ "Address blockers"',
+      '- _Example (Gate 1, Proceed with conditions):_ "Preparation approved"',
+      '- _Example (Gate 2, Stop):_ "Archive project artifacts"',
+      // No checkpoint type declared — not an outcome label at all.
+      '- _Example (Deployment):_ "Verification brief, rollback plan"',
+      '- _Example (Conditional Go):_ "Proceed with feature work"',
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("M-17 regression: a status axis on a gate decision, in a table cell", () => {
+    const doc =
+      "| **Gate Status**    | [Pending / Approved / Rejected — Approver: name] |";
+    const issues = checkpointOutcomeIssues("templates/session-log.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("no status axis");
+  });
+
+  it("M-17 fixed form passes — a held/not-held tracker is not a status axis", () => {
+    const doc = [
+      "| **Stage Status**   | [Not Started / In Progress / Blocked / Complete] |",
+      "| **Gate decision**  | [Not yet held / Held — outcome rides in the gate-decision record (link)] |",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/session-log.md", doc, SETS)).toEqual(
+      [],
+    );
+  });
+
+  it("flags an untagged restatement under a wider label, in a list item", () => {
+    const doc =
+      "- **AppSec recommendation:** [Proceed / Proceed with conditions / Revise]";
+    const issues = checkpointOutcomeIssues("templates/gate-decision.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("untagged");
+  });
+
+  it("does not read a single-value prose gloss as a set restatement", () => {
+    const doc = [
+      "**Recommendation:** (the preparation-specific next step this routes to)",
+      "- **Decision makers:**",
+      "- **Decision being made:** (what is being decided)",
+      "**Decision Authority:** [Name, Role]",
+    ].join("\n");
+    expect(checkpointOutcomeIssues("templates/x.md", doc, SETS)).toEqual([]);
+  });
+
+  it("a bare sentinel above a checkbox block tags that block", () => {
+    const doc = [
+      "> **If items are unchecked, address before proceeding.**",
+      "",
+      "<!-- checkpoint-outcome: review -->",
+      "",
+      "- [ ] **Ready** — All items checked; proceed to System Design",
+      "- [ ] **Not Ready** — Address weak items and re-check",
+    ].join("\n");
+    expect(
+      checkpointOutcomeIssues("stages/requirements/checklist.md", doc, SETS),
+    ).toEqual([]);
+  });
+
+  it("that block form still fails on an off-canon value", () => {
+    const doc = [
+      "<!-- checkpoint-outcome: review -->",
+      "",
+      "- [ ] **Ready for System Design** — All items checked",
+      "- [ ] **Not Ready** — Address weak items",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues(
+      "stages/requirements/checklist.md",
+      doc,
+      SETS,
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("ready-for-system-design");
+  });
+
+  it("sees restatements in a CRLF working-tree file", () => {
+    const doc = ["**Decision:** Ready / Not Ready", "", "more"].join("\r\n");
+    const issues = checkpointOutcomeIssues("stages/x/checklist.md", doc, SETS);
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("untagged");
+  });
+
+  it("parses labels and example parentheticals", () => {
+    expect(boldLabels("| **Gate Status** | x |")).toEqual(["gate status"]);
+    expect(boldLabels("**Decision (Review):** Ready")).toEqual(["decision"]);
+    expect(untaggedRestatement("**Decision:** Ready")).toEqual(["ready"]);
+    expect(untaggedRestatement("**Rationale:** a / b")).toBeNull();
+    expect(exampleTypeOutcome("_Example (Gate 1, Proceed):_ x")).toEqual([
+      "gate",
+      "proceed",
+    ]);
+    expect(exampleTypeOutcome("_Example (Deployment):_ x")).toBeNull();
   });
 });
 

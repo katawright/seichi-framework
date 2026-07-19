@@ -483,10 +483,10 @@ preparation increments have different completion signals:
   document review and cross-verification, not test execution.
 - **Preparation increment:** Target axes improved per the readiness
   re-assessment, and the
-  [exit checkpoint](brownfield-approach.md#exit-checkpoint-protocol) passed with
-  a Go, Conditional Go, or Continue decision. Verification includes both
-  artifact review and test execution (the new tests and infrastructure are
-  themselves deliverables).
+  [exit checkpoint](brownfield-approach.md#exit-checkpoint-protocol) cleared
+  **Ready**, with a Go, Conditional Go, or Continue recommendation. Verification
+  includes both artifact review and test execution (the new tests and
+  infrastructure are themselves deliverables).
 
 ### Documenting Tactical Decisions as ADRs
 
@@ -552,6 +552,6 @@ preparation gaps it can infer.
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.37.0.

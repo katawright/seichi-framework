@@ -266,9 +266,15 @@ Structure for stage checklist files:
      deployment phases, greenfield vs. brownfield). Each group gets its own gate
      statement
    - **Flat list** — when all items are equally important and ungrouped
-5. **Final Decision** — checkbox pair with circulation guidance. The pair is
-   stage-appropriate: most checklists use **Ready / Not Ready**; the terminal
-   Closure checklist uses **Closed / Not Closed**. For phase-based checklists,
+5. **Final Decision** — the stage-exit Review outcome plus circulation guidance.
+   Every checklist, including the terminal Closure one, draws from the same
+   closed `review_outcome` set: **Ready / Not Ready** (a checklist never
+   restates a lifecycle state such as `closed` as its outcome). Two
+   presentations are in use — a checkbox pair, or a
+   `**Decision:** Ready / Not Ready` line under a readiness-checkbox block
+   (Deployment and Closure, whose final checkboxes are `[H]`/`[J]` floor items
+   rather than the outcome itself). Either form carries the
+   `<!-- checkpoint-outcome: review -->` sentinel. For phase-based checklists,
    the final group's gate statement serves this role
 6. **Core Items** — table mapping each blocking item to its rationale (only when
    using Core/Supporting split)

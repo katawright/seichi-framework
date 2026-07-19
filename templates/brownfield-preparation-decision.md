@@ -7,7 +7,7 @@ checkpoint.
 
 **Usage:** Complete after the final preparation increment. See the
 [Brownfield Approach Guide](../guides/brownfield-approach.md#exit-checkpoint-protocol)
-for exit criteria and decision options.
+for exit criteria and the recommendation options.
 
 **Last Updated:** YYYY-MM-DD
 

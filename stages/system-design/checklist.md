@@ -68,7 +68,7 @@ ready for Gate 2.
 
 12. [ ] **Brownfield preparation plan includes binary readiness re-assessment
         criteria** (per-axis pass/fail thresholds for each preparation
-        increment, with named outcomes: Go, Conditional Go, Continue, or
+        increment, with named recommendations: Go, Conditional Go, Continue, or
         returning to gate; N/A for greenfield or T4+ brownfield)
 13. [ ] **Cross-service security reviewed** (new inter-service communication has
         authentication and authorization; new database users have minimal
@@ -112,6 +112,8 @@ ready for Gate 2.
 
 > **If any items are unchecked, address before proceeding.**
 
+<!-- checkpoint-outcome: review -->
+
 - [ ] **Ready** — Present to stakeholders for Gate 2; record the decision using
       the [Gate Decision Template](../../templates/gate-decision.md)
 - [ ] **Not Ready** — Address weak items and re-check
@@ -139,6 +141,6 @@ ready for Gate 2.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.12.0.
