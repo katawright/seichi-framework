@@ -6,11 +6,13 @@ Per-session steps for any stage. Brief templates reference this file.
 
 ## At Session Start
 
-**Whichever path below, never operate from the read-only framework directory.**
-If the working directory is the framework itself (it contains `guides/`,
-`stages/`, and `templates/`), stop: the process cannot be run from the framework
-location — tell the user and redirect them to their project's artifacts or
-source-code workspace (see [Working Locations](bootstrap.md#working-locations)).
+**Whichever path below, never operate from the read-only framework directory**
+([SP-008](../spec/execution.md#sp-008--continue-a-known-project-session-steps),
+whose working-location guard binds every route). If the working directory is the
+framework itself (it contains `guides/`, `stages/`, and `templates/`), stop: the
+process cannot be run from the framework location — tell the user and redirect
+them to their project's artifacts or source-code workspace (see
+[Working Locations](bootstrap.md#working-locations)).
 
 On first contact, orient before acting; on a known continuation, skip to
 [Continue a known project](#continue-a-known-project).
@@ -28,15 +30,17 @@ accompli:
 | Environment signal                                                                                                                          | Route                    | Go to                                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Empty directory or only an idea; no governance, no code                                                                                     | Idea formation           | [Zero-to-One Routing](agentic-workflow.md#zero-to-one-project-routing)                                                                                                 |
-| Source code present, no `projects/` / governance                                                                                            | Brownfield adoption      | [QUICKSTART: Joining Mid-Stream](../QUICKSTART.md#joining-a-project-mid-stream), then [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing) |
-| `projects/` present with an active project (any non-terminal project — the index `## Active` bucket, not only the `active` lifecycle state) | Continue the project     | steps 1–7 below                                                                                                                                                        |
+| Source code present (including sibling source repos, for the multi-repo layout), no `projects/` / governance                                | Brownfield adoption      | [QUICKSTART: Joining Mid-Stream](../QUICKSTART.md#joining-a-project-mid-stream), then [Brownfield-First Routing](agentic-workflow.md#brownfield-first-project-routing) |
+| `projects/` present with an active project (any non-terminal project — the index `## Active` bucket, not only the `active` lifecycle state) | Continue the project     | [Continue a known project](#continue-a-known-project)                                                                                                                  |
 | `projects/` present, none active (or adding one)                                                                                            | New project in workspace | [QUICKSTART: Adding a New Project](../QUICKSTART.md#adding-a-new-project-to-an-existing-workspace)                                                                     |
 
 > **Idea for a new project in an existing workspace:** when `projects/` is
 > already present but the operator has only an _idea_ for the new project (not a
 > formed name + description), run the idea-formation interview (route 1) within
 > the workspace before scaffolding — the add-a-project route assumes a formed
-> project.
+> project. This is
+> [SP-004](../spec/execution.md#sp-004--idea-for-a-new-project-runs-the-idea-formation-interview)
+> in the Execution Spec.
 
 Alongside the scenario, form an early read of **governance weight** (consequence
 and compliance) from the same cheap environment read and the operator's framing.
@@ -105,6 +109,6 @@ recorded at their required identity grades), the `Last Updated` header, the
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.44.0.

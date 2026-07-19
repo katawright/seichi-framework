@@ -551,8 +551,11 @@ quick-reference the brief templates link).
 
 ### SP-008 — Continue-a-known-project session steps
 
-- **Applicability.** Session start on a known continuation (an active project in
-  the workspace); never from the read-only framework directory.
+- **Applicability.** Session start on a known continuation — a project in the
+  workspace's `## Active` bucket, meaning **any non-terminal project, not only
+  the `active` lifecycle state**. Step 1's working-location guard applies more
+  widely than the rest: **no session start on any route may operate from the
+  read-only framework directory.**
 - **Inputs.** The user request; `projects/<name>/project.md`; the stage's
   session log; the canonical state's open carry-forward conditions.
 - **Procedure.**
@@ -684,6 +687,6 @@ storage).
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.64.0.

@@ -261,7 +261,7 @@ named for each (per
 backlog.
 
 **One front door, two on-ramps.** A new project reaches idea formation by one of
-two routes — but through the _same_ adaptive interview, producing the same
+two on-ramps — but through the _same_ adaptive interview, producing the same
 `[ASSUMED]`-seeded brief:
 
 - **Cold (greenfield).** Someone arrives with only an idea — no backlog entry,

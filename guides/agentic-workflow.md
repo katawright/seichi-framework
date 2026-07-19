@@ -79,9 +79,12 @@ classification questions. Route into idea formation:
    conversation and present them as overridable `[ASSUMED]` defaults, rather
    than asking the user to choose from framework taxonomies. See
    [Classification by Inference](#classification-by-inference)
-3. **Scaffold and seed** — only after the interview, create the workspace (see
-   [Quick Start](../QUICKSTART.md)) and seed the Initiation Brief with the
-   interview output
+3. **Scaffold and seed** — only after the interview. On the **cold** on-ramp,
+   create the workspace (see [Quick Start](../QUICKSTART.md)); on the **warm**
+   on-ramp the workspace already exists, so run the add-a-project scaffold
+   instead
+   ([SP-004](../spec/execution.md#sp-004--idea-for-a-new-project-runs-the-idea-formation-interview)).
+   Either way, seed the Initiation Brief with the interview output
 4. **Proceed with Initiation** — continue the stage normally at the inferred
    tier; Gate 1 still applies, and locks the operating posture the interview
    proposed

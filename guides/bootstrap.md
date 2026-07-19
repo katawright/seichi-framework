@@ -195,9 +195,14 @@ it to `AGENTS.md` for workspace context.
 1. Read `projects/index.md` to see active projects
 2. Ask which project to work on (or continue the most recent active project). If
    the user wants to start a new project, see "Adding a New Project to an
-   Existing Workspace" in the framework's `QUICKSTART.md`.
+   Existing Workspace" in the framework's `QUICKSTART.md` — unless they have
+   only an _idea_ rather than a formed name and description, in which case run
+   the idea-formation interview first, inside this workspace.
 3. Read that project's `project.md` for locations, status, and context
-4. Read the latest session log to pick up where the last session left off
+4. Follow the framework's Session Protocol for the continue route — the
+   working-location guard, opening the session log, reading the last entry's
+   context, and re-checking open carry-forward conditions
+   (`guides/session-protocol.md`)
 5. Follow the framework stage guides for the current stage
 
 ### Framework Reference
@@ -457,9 +462,11 @@ walks you through [Initiation](../stages/initiation/README.md) interactively.
 ## Resuming Work
 
 When returning to an existing project, start your agent in the workspace root
-(or the governance repo for multi-repo projects). If your agent auto-loads its
-startup file (e.g., Claude Code reads `CLAUDE.md` on startup), it finds
-`AGENTS.md` automatically and you can simply say:
+(or the governance repo for multi-repo projects). The session-start steps this
+runs are the continue route in
+[Session Protocol](session-protocol.md#continue-a-known-project). If your agent
+auto-loads its startup file (e.g., Claude Code reads `CLAUDE.md` on startup), it
+finds `AGENTS.md` automatically and you can simply say:
 
 ```
 Continue working. Read the latest session log for context on where we left off.

@@ -259,9 +259,11 @@ workspace that has `AGENTS.md`, `frameworks/`, and `projects/`.
 > `projects/index.md` to see existing projects and
 > `frameworks/v<version>/QUICKSTART.md` from the version you just downloaded.
 >
-> I want to start a new project in this workspace. Ask me for the project name
-> and a one-line description; infer the operating posture from our conversation
-> and present them as overridable assumptions (or I'll specify them here). Then
+> I want to start a new project in this workspace. If I have only an idea rather
+> than a formed name and description, run the idea-formation interview here in
+> this workspace first, then continue. Otherwise ask me for the project name and
+> a one-line description; infer the operating posture from our conversation and
+> present them as overridable assumptions (or I'll specify them here). Then
 > create a new project directory under `projects/`, create its `project.md`
 > pinning the framework version to use, create a `docs/` subtree, add an entry
 > with the next sequential project number to `projects/index.md`, and guide me
