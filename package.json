@@ -5,7 +5,7 @@
   "description": "Front matter schema validation for the Seichi Framework, an SDLC framework for agent-executed delivery",
   "type": "module",
   "scripts": {
-    "validate": "node .schema/validate.mjs && npm run format:check",
+    "validate": "npm run format:check && node .schema/validate.mjs",
     "format": "prettier --write \"**/*.md\"",
     "format:check": "prettier --check \"**/*.md\"",
     "install-hooks": "node -e \"require('fs').cpSync('.schema/hooks/pre-commit','.git/hooks/pre-commit')\"",
