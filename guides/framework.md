@@ -140,8 +140,8 @@ the normative contracts live in the [spec layer](../spec/README.md).
 **[Working Locations](#working-locations)** — Three repository locations that
 structure where framework guidance, project artifacts, and source code live.
 
-**[Roles and Responsibilities](#roles-and-responsibilities)** — Cross-stage RACI
-matrix for stages and gate decisions.
+**[Roles and Responsibilities](roles.md#raci-matrix)** — Cross-stage RACI matrix
+for stages and gate decisions.
 
 **[Architecture Governance](#architecture-governance)** — Tiered governance
 models from self-review (Minimal) to architecture council (Enterprise).
@@ -692,16 +692,18 @@ the [Delivery Operating Guide](delivery-operating-guide.md).
   System Design (see
   [Governance at a Glance](../README.md#governance-at-a-glance)).
 
+### Security and Compliance Accountability
+
 Security and compliance accountability should be explicit at the checkpoint
 level, especially for regulated or enterprise environments:
 
-| Stage / Checkpoint                      | Accountable Role                   | Typical Trigger                                                |
-| --------------------------------------- | ---------------------------------- | -------------------------------------------------------------- |
-| Initiation (risk and policy framing)    | Project lead + AppSec/compliance   | Sensitive data, regulated domains, external AI tools           |
-| Gate 1 / Gate 2 input (risk posture)    | AppSec/compliance (advisory A\*)   | New legal/privacy/security risk exposure                       |
-| Verification (control evidence)         | QA/engineering + AppSec/compliance | Security, privacy, or audit controls required for release      |
-| Compliance Approval checkpoint          | AppSec/compliance/legal (A)        | Contractual, regulatory, or internal policy sign-off required  |
-| Deployment Approval (release readiness) | DevOps/engineering + AppSec (C/A)  | Production change with material risk, data impact, or exposure |
+| Stage / Checkpoint                   | Accountable Role                    | Typical Trigger                                                |
+| ------------------------------------ | ----------------------------------- | -------------------------------------------------------------- |
+| Initiation (risk and policy framing) | Project lead + AppSec/compliance    | Sensitive data, regulated domains, external AI tools           |
+| Gate 1 / Gate 2 input (risk posture) | AppSec/compliance (advisory A\*)    | New legal/privacy/security risk exposure                       |
+| Verification (control evidence)      | QA/engineering + AppSec/compliance  | Security, privacy, or audit controls required for release      |
+| Compliance Approval checkpoint       | AppSec/compliance/legal (A)         | Contractual, regulatory, or internal policy sign-off required  |
+| Production Deployment Approval       | DevOps/engineering (A) + AppSec (C) | Production change with material risk, data impact, or exposure |
 
 \*Investment gate ownership remains with executive decision-makers; security and
 compliance provide required risk and policy input before approval.

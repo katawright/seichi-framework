@@ -51,7 +51,9 @@ late-stage scope change, blocked gate decisions, or rework. The goal is to
 identify who can affect the project, who is affected by it, and who has
 authority to approve, veto, or redirect it.
 
-Use the RACI model as a starting framework:
+Use the RACI model as a starting framework — the canonical definitions and the
+cross-stage assignments live in the
+[Roles Guide](../../guides/roles.md#raci-matrix):
 
 - **Responsible:** Who does the work (project lead, delivery team)
 - **Accountable:** Who owns the outcome and has final say (project sponsor,
@@ -60,6 +62,13 @@ Use the RACI model as a starting framework:
   legal, platform, domain experts)
 - **Informed:** Who needs to know outcomes without providing input (executives,
   adjacent teams)
+- **`-`:** Not involved — no role at this stage
+
+Note that **domain stakeholders are Consulted or Informed, never Responsible or
+Accountable** (see
+[Domain Stakeholders](../../guides/roles.md#domain-stakeholders)); R and A sit
+with the delivery roles. The list above describes the model, not this project's
+assignments.
 
 **Techniques for identification:**
 
@@ -389,6 +398,6 @@ When agent-generated content is uncertain or potentially incorrect:
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.23.0.

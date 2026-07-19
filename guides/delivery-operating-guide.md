@@ -56,13 +56,13 @@ One increment maps roughly to one sprint. This view assumes foundational stages
 
 ### Week 1: Design and Start Build
 
-| Day     | Activity                                                                                                              | Lead      | Reference                                                                 |
-| ------- | --------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
-| Monday  | Sprint kickoff: confirm increment scope from backlog, review prior retrospective action items and dependency register | PjM       | [Increment Design Guide](../stages/increment-design/README.md)            |
-| Mon–Tue | Increment Design Brief — component breakdown, test plan, API                                                          | Engineers | [Increment Design Brief Template](../templates/increment-design-brief.md) |
-| Tuesday | Review increment design brief; resolve ambiguities                                                                    | PjM + Eng | [RACI — Increment Design](roles.md#raci-matrix)                           |
-| Wed–Fri | Implementation begins — PRs, tests, instrumentation                                                                   | Engineers | [Implementation Guide](../stages/implementation/README.md)                |
-| Friday  | Mid-sprint check-in: blockers, dependency status, scope risk                                                          | PjM       | [Dependency Register](../templates/dependency-register.md)                |
+| Day     | Activity                                                                                                              | Lead                                                             | Reference                                                                 |
+| ------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Monday  | Sprint kickoff: confirm increment scope from backlog, review prior retrospective action items and dependency register | PjM                                                              | [Increment Design Guide](../stages/increment-design/README.md)            |
+| Mon–Tue | Increment Design Brief — component breakdown, test plan, API                                                          | Engineers                                                        | [Increment Design Brief Template](../templates/increment-design-brief.md) |
+| Tuesday | Review increment design brief; resolve ambiguities                                                                    | Eng (Architect consulted on design conformance; PjM facilitates) | [RACI — Increment Design](roles.md#raci-matrix)                           |
+| Wed–Fri | Implementation begins — PRs, tests, instrumentation                                                                   | Engineers                                                        | [Implementation Guide](../stages/implementation/README.md)                |
+| Friday  | Mid-sprint check-in: blockers, dependency status, scope risk                                                          | PjM                                                              | [Dependency Register](../templates/dependency-register.md)                |
 
 ### Week 2: Finish Build, Verify, Deploy
 
@@ -181,6 +181,6 @@ Green / Amber / Red
 
 ## Notes
 
-**Last Updated:** 2026-06-28
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.40.0.

@@ -40,6 +40,11 @@ missed, that routes back to scheduling — see the
 
 ## Execution Roles
 
+> **Not the [canonical SDLC roles](roles.md#role-definitions).** The three below
+> are _execution_ roles — responsibilities a batch run must cover, filled by
+> whoever is available. They do not map onto the eight framework roles and carry
+> no RACI position.
+
 Running a batch is provider-neutral but needs three responsibilities covered.
 One provider may cover several; the names are roles, not required separate
 actors.
@@ -245,6 +250,6 @@ batch done.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

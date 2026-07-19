@@ -107,10 +107,10 @@ This matrix shows who is Responsible, Accountable, Consulted, and Informed for
 key activities at each stage. It consolidates the Primary and Supporting Role
 designations from each stage guide into a single cross-stage view. This matrix
 covers stage-level role assignments, plus the four checkpoints that carry
-stage-level accountability (the two investment gates, Deployment Approval, and
-Compliance Approval). It is **not** the full checkpoint picture: for
-checkpoint-level decision rights — who prepares evidence, who decides, and the
-checkpoints absent here — see the
+stage-level accountability (the two investment gates, Production Deployment
+Approval, and Compliance Approval). It is **not** the full checkpoint picture:
+for checkpoint-level decision rights — who prepares evidence, who decides, and
+the checkpoints absent here — see the
 [Decision-Rights Matrix](checkpoints.md#decision-rights-matrix), which is
 authoritative for every checkpoint-level lookup.
 
@@ -118,20 +118,20 @@ authoritative for every checkpoint-level lookup.
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
 Informed (kept in the loop), **-** = Not involved (no role at this stage)
 
-| Activity / Stage     | PM  | Exec | Architect | Engineers | QA  | DevOps | AppSec | PjM |
-| -------------------- | --- | ---- | --------- | --------- | --- | ------ | ------ | --- |
-| **Initiation**       | R/A | I    | C         | C         | -   | -      | C      | C‡  |
-| Gate 1 decision†     | R   | A    | -         | -         | -   | -      | C      | C   |
-| **Requirements**     | R/A | I    | C         | C         | C   | -      | C      | C   |
-| **System Design**    | C   | I    | R/A       | C         | C   | C      | C      | C   |
-| Gate 2 decision†     | C   | A    | R         | C         | C   | C      | R      | C   |
-| **Increment Design** | C   | -    | C         | R/A       | C   | -      | C      | C   |
-| **Implementation**   | -   | -    | C         | R/A       | C   | C      | C      | I   |
-| **Verification**     | C   | -    | C         | R         | R/A | -      | R      | I   |
-| **Deployment**       | I   | I    | C         | C         | C   | R/A    | C      | C   |
-| **Closure**          | C   | I    | C         | C         | -   | R/A    | C      | I§  |
-| Deployment Approval  | I   | I    | C         | C         | C   | R/A    | C      | C   |
-| Compliance Approval  | C   | I    | C         | -         | -   | C      | R/A    | C   |
+| Activity / Stage               | PM  | Exec | Architect | Engineers | QA  | DevOps | AppSec | PjM |
+| ------------------------------ | --- | ---- | --------- | --------- | --- | ------ | ------ | --- |
+| **Initiation**                 | R/A | I    | C         | C         | -   | -      | C      | C‡  |
+| Gate 1 decision†               | R   | A    | -         | -         | -   | -      | C      | C   |
+| **Requirements**               | R/A | I    | C         | C         | C   | -      | C      | C   |
+| **System Design**              | C   | I    | R/A       | C         | C   | C      | C      | C   |
+| Gate 2 decision†               | C   | A    | R         | C         | C   | C      | R      | C   |
+| **Increment Design**           | C   | -    | C         | R/A       | C   | -      | C      | C   |
+| **Implementation**             | -   | -    | C         | R/A       | C   | C      | C      | I   |
+| **Verification**               | C   | -    | C         | R         | R/A | -      | R      | I   |
+| **Deployment**                 | I   | I    | C         | C         | C   | R/A    | C      | C   |
+| **Closure**                    | C   | I    | C         | C         | -   | R/A    | C      | I§  |
+| Production Deployment Approval | I   | I    | C         | C         | C   | R/A    | C      | C   |
+| Compliance Approval            | C   | I    | C         | -         | -   | C      | R/A    | C   |
 
 § **PjM across all stages:** PjM is never R/A for a stage because PjM's
 accountability is in cross-cutting delivery activities — schedule, gate
@@ -177,7 +177,7 @@ focuses on schedule impact and cross-stage dependency assessment; PjM also
 facilitates Gate 1 and Gate 2 reviews (scheduling, convening participants,
 capturing decisions in the gate decision template). At Enterprise tier,
 organizations may elevate Exec from Informed to Consulted or Accountable at
-Deployment Approval for production-impacting changes.
+Production Deployment Approval for production-impacting changes.
 
 † PjM's C designation at Gate 1 and Gate 2 includes gate facilitation
 responsibility (see [Gate Review Facilitation](#gate-review-facilitation)
@@ -296,20 +296,22 @@ Responsible at Verification (security testing), Gate 2 (risk posture input), and
 Compliance Approval. For details on security activities by stage, see the
 [Security Guide](security.md).
 
-| Stage / Checkpoint   | RACI | AppSec Activity                                                              |
-| -------------------- | ---- | ---------------------------------------------------------------------------- |
-| **Initiation**       | C    | Review data sensitivity classification and compliance scope                  |
-| Gate 1               | C    | Confirm risk and policy exposure is captured                                 |
-| **Requirements**     | C    | Review security NFRs for completeness                                        |
-| **System Design**    | C    | Review threat model and security architecture                                |
-| Gate 2               | R    | Provide risk posture assessment for investment decision                      |
-| **Increment Design** | C    | Flag security-relevant changes (auth, data, API surface)                     |
-| **Implementation**   | C    | Review security scan results; advise on findings                             |
-| **Verification**     | R    | Own security testing (dependency scans, SAST, pen testing at E)              |
-| **Deployment**       | C    | Verify SBOM, artifact integrity, pre-deployment security checks              |
-| **Closure**          | C    | Confirm persisting compliance obligations are captured in the handoff record |
-| **Operations**       | C    | Advise on CVE prioritization and incident response (standing)                |
-| Compliance Approval  | R/A  | Own compliance sign-off for regulated releases                               |
+| Stage / Checkpoint             | RACI | AppSec Activity                                                              |
+| ------------------------------ | ---- | ---------------------------------------------------------------------------- |
+| **Initiation**                 | C    | Review data sensitivity classification and compliance scope                  |
+| Gate 1                         | C    | Confirm risk and policy exposure is captured                                 |
+| **Requirements**               | C    | Review security NFRs for completeness                                        |
+| **System Design**              | C    | Review threat model and security architecture                                |
+| Gate 2                         | R    | Provide risk posture assessment for investment decision                      |
+| **Increment Design**           | C    | Flag security-relevant changes (auth, data, API surface)                     |
+| **Implementation**             | C    | Review security scan results; advise on findings                             |
+| **Verification**               | R    | Own security testing (dependency scans, SAST, pen testing at E)              |
+| **Deployment**                 | C    | Verify SBOM, artifact integrity, pre-deployment security checks              |
+| **Closure**                    | C    | Confirm persisting compliance obligations are captured in the handoff record |
+| **Operations**                 | C    | Advise on CVE prioritization and incident response (standing)                |
+| **Flow**                       | C    | Advise on security-relevant issues (auth, data, API surface)                 |
+| Production Deployment Approval | C    | Prepare pre-deployment security evidence for the approval                    |
+| Compliance Approval            | R/A  | Own compliance sign-off for regulated releases                               |
 
 ### Security Escalation Protocol
 

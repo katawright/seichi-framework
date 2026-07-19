@@ -74,7 +74,7 @@ flow through every subsequent stage.
 | 4   | Increment Design | Engineers                | Iterative    | Plan implementation approach AND test strategy for increment                                                                                 |
 | 5   | Implementation   | Engineers                | Iterative    | Execute implementation plan from Increment Design                                                                                            |
 | 6   | Verification     | QA Engineers / Engineers | Iterative    | Execute test strategy from Increment Design, validate FR acceptance criteria and NFR verification criteria                                   |
-| 7   | Deployment       | DevOps / Engineers       | Iterative    | Release to production                                                                                                                        |
+| 7   | Deployment       | DevOps                   | Iterative    | Release to production                                                                                                                        |
 | 8   | Closure          | DevOps                   | Terminal     | Hand the system off to Operations and close the project                                                                                      |
 
 ---
@@ -858,7 +858,7 @@ assessment, and implementation brief.
 
 ## Stage 7: Deployment
 
-- **Primary Role:** DevOps / Engineers
+- **Primary Role:** DevOps
 - **Supporting Roles:** Product Manager, Engineers, Project Manager
 - **Execution Pattern:** Iterative (per increment)
 - **Stage Guide:** [Deployment](../stages/deployment/README.md)

@@ -110,9 +110,11 @@ Humans drive these activities; agents provide research and drafting support:
 
 At all tiers, AppSec follows the
 [Security Escalation Protocol](roles.md#security-escalation-protocol) for
-severity-based finding response (Critical = halt stage). At Enterprise tier,
-AppSec is Responsible for security testing, Gate 2 risk posture, and compliance
-sign-off — see [RACI matrix](roles.md#raci-matrix).
+severity-based finding response (Critical = halt stage). At every tier, AppSec
+is Responsible for security testing, Gate 2 risk posture, and compliance
+sign-off — see [RACI matrix](roles.md#raci-matrix). What Enterprise tier adds is
+**dedicated** AppSec staffing for those positions, per the table above; the
+positions themselves are not tier-conditioned.
 
 ---
 
@@ -277,10 +279,10 @@ protect released software and verify integrity.
 Integrate these checks into your CI/CD pipeline — see
 [Pipeline Gate Policy](../stages/deployment/setup.md#2-pipeline-gate-policy) for
 tier-specific gate configuration. For security accountability by stage, see the
-[Roles and Responsibilities](roles.md#roles-and-responsibilities) RACI matrix.
-At Standard and Enterprise tiers with identified compliance requirements, AppSec
-owns a [Compliance Approval](../guides/checkpoints.md#reviews) checkpoint at
-Deployment — see the
+[RACI matrix](roles.md#raci-matrix). At Standard and Enterprise tiers with
+identified compliance requirements, AppSec owns a
+[Compliance Approval](../guides/checkpoints.md#reviews) checkpoint at Deployment
+— see the
 [Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix).
 
 ### Closure
@@ -366,6 +368,6 @@ to their implementation details.
 
 ## Notes
 
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.25.0.
