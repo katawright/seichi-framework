@@ -899,6 +899,22 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     expect(issues).toHaveLength(1);
     expect(issues[0]).toContain('unknown checkpoint-outcome type "quality"');
   });
+
+  // G-m3: `- [X]` (capital) failed the `/\[[ x]\]/` item pattern, fell through
+  // to the `else break`, and TRUNCATED the block — so it did not merely skip
+  // that one item, it stopped comparing every value below it.
+  it("G-m3: a capital [X] checkbox does not truncate the block", () => {
+    const doc = [
+      "<!-- checkpoint-outcome: gate -->",
+      "",
+      "- [ ] Proceed",
+      "- [X] Revise",
+      "- [ ] Pivot",
+    ].join("\n");
+    const issues = checkpointOutcomeIssues("templates/x.md", doc, SETS);
+    // `pivot` sits BELOW the capital checkbox; before the fix it was invisible.
+    expect(issues.some((i) => i.includes("pivot"))).toBe(true);
+  });
 });
 
 // The two Sweep-2 majors that shipped through the first trigger, which matched

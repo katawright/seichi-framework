@@ -160,7 +160,11 @@ function blockValues(lines, idx) {
   let i = idx;
   while (i < lines.length && lines[i].trim() === "") i++;
   for (; i < lines.length; i++) {
-    const m = lines[i].match(/^\s*- \[[ x]\] (.*)$/);
+    // `[X]` as well as `[x]`: a capital tick is valid GFM and appears in the
+    // corpus, and rejecting it did not merely skip that item — it fell through
+    // to the `else break` below and TRUNCATED the block, so every value after
+    // the capital checkbox went uncompared.
+    const m = lines[i].match(/^\s*- \[[ xX]\] (.*)$/);
     if (m) {
       values.push(normalizeValue(m[1]));
     } else if (/^\s+\S/.test(lines[i])) {
