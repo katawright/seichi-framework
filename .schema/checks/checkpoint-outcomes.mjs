@@ -56,6 +56,10 @@ const WIDE_LABEL_RE = /(?:^|\s)(?:decision|outcome|recommendation)$/;
  *  type, so the outcome beside it is checked against that type's set with no
  *  sentinel required. */
 const EXAMPLE_RE = /Example\s*\(([^)]+)\)\s*:/;
+/** Outcome-token shape after normalization: a short kebab identifier. Real
+ *  outcomes (`stop`, `proceed-with-conditions`) match; a prose gloss does not,
+ *  because it keeps its parentheses or runs past four segments. */
+const VALUE_SHAPED_RE = /^[a-z0-9]+(?:-[a-z0-9]+){0,3}$/;
 const TYPE_ALIAS_RE = /^(gate|review|alignment)\b/;
 
 /** The three per-type outcome sets from checkpoints.yaml, keyed by type. */
@@ -125,10 +129,15 @@ export function untaggedRestatement(line) {
   if (/^#{2,}\s+Decision:/.test(line)) return values;
   const labels = boldLabels(line);
   if (labels.some((l) => STRICT_LABEL_RE.test(l))) return values;
-  if (values.length >= 2 && labels.some((l) => WIDE_LABEL_RE.test(l))) {
-    return values;
-  }
-  return null;
+  if (!labels.some((l) => WIDE_LABEL_RE.test(l))) return null;
+  // A two-or-more list is unambiguously a restatement. A SINGLE value under a
+  // wide label used to be waved through, which let an invented outcome pass
+  // untagged (`**Outcome:** Pivot`). The `>= 2` was guarding against a prose
+  // gloss being read as a value — so admit single values only when they are
+  // outcome-SHAPED. `(the next step this routes to)` normalizes to a
+  // paren-led, six-segment string and is still correctly ignored.
+  if (values.length >= 2) return values;
+  return values.every((v) => VALUE_SHAPED_RE.test(v)) ? values : null;
 }
 
 /**

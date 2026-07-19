@@ -956,6 +956,38 @@ describe("checkpoint-outcomes guard (CKPT)", () => {
     expect(issues[0]).toContain("proceed-with-conditions, revise, stop");
   });
 
+  // G-m2: `values.length >= 2` waved through a single value under a wide
+  // label, so an invented outcome passed untagged.
+  it("G-m2: a single invented outcome under a wide label is flagged", () => {
+    const issues = checkpointOutcomeIssues(
+      "templates/x.md",
+      "**Outcome:** Pivot",
+      SETS,
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain("untagged");
+  });
+
+  it("G-m2: a single canonical outcome under a wide label is still flagged", () => {
+    // In-set or not, an untagged restatement is unguarded — the sentinel is
+    // what makes it checkable.
+    const issues = checkpointOutcomeIssues(
+      "templates/x.md",
+      "**Outcome:** Stop",
+      SETS,
+    );
+    expect(issues).toHaveLength(1);
+  });
+
+  it("G-m2: a prose gloss under a wide label is NOT a restatement", () => {
+    // The `>= 2` guard existed for this case; admitting single values must not
+    // readmit it. Both forms normalize past the outcome-token shape.
+    const paren = "**Recommendation:** (the next step this routes to)";
+    expect(checkpointOutcomeIssues("templates/x.md", paren, SETS)).toEqual([]);
+    const bare = "**Recommendation:** the next step this routes to";
+    expect(checkpointOutcomeIssues("templates/x.md", bare, SETS)).toEqual([]);
+  });
+
   it("G-3: a complete set in any order still passes", () => {
     const doc = [
       "<!-- checkpoint-outcome: gate -->",
