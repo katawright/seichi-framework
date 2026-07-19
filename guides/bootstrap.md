@@ -476,16 +476,22 @@ Read AGENTS.md and orient yourself. Continue working on [project name]. Read
 the latest session log for context on where we left off.
 ```
 
-To run a stage at higher autonomy, add preferences to your prompt:
+Operating posture is a **project** decision, recorded at intake, not a per-stage
+prompt preference. To run one stage against a posture other than the recorded
+one, state it as the override it is:
 
 ```
-Work through the [STAGE NAME] stage at a [Checkpointed / Lights-Out]
-operating posture. Drive the stage activities autonomously. Flag
-assumptions, pause at gates for my review, and maintain a session log.
+For the [STAGE NAME] stage only, override the recorded operating posture to
+[Checkpointed / Lights-Out]. Drive the stage activities accordingly, flag
+assumptions, and maintain a session log.
 ```
 
-See the [Agentic Workflow Guide](agentic-workflow.md) for operating postures,
-stage routing, and fallback protocols.
+An override moves the posture; it never moves the floors. The `[H]`
+non-delegable acts stay human-owned, and the consequence and compliance floors
+still clamp what any posture permits — at Critical consequence, interactively.
+See the [Operating Model Guide](operating-model.md) for the posture set and the
+floors, and the [Agentic Workflow Guide](agentic-workflow.md) for stage routing
+and fallback protocols.
 
 ---
 

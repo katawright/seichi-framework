@@ -76,8 +76,8 @@ budget context. No prior framework artifacts or technical expertise required.
 1. Read [**Right-Sizing Initiation**](#right-sizing-initiation) to size
    governance weight (Consequence / Compliance / Stakeholder Reach) and choose
    your operating posture
-2. Read [**How AI Helps**](#how-ai-helps) to select your operating posture (Work
-   Execution + Authority — see the Operating Model Guide)
+2. Read [**How AI Helps**](#how-ai-helps) to select your operating posture (see
+   the [Operating Model Guide](../../guides/operating-model.md))
 3. **When agents perform the work:** Confirm all right-sizing selections with
    the user before drafting. For first-time or zero-to-one users, infer the
    selections from the conversation and present them as overridable `[ASSUMED]`
@@ -370,7 +370,8 @@ For assistance level details, see the
 > **Required gates:** Human approval — Initiation involves business decisions
 > requiring human judgment, stakeholder alignment, and organizational context
 > that AI cannot independently verify. AI produces drafts and options; humans
-> own all decisions.
+> own the Gate 1 investment decision, and the supporting judgments follow the
+> project's Authority setting.
 
 ---
 

@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import fg from "fast-glob";
 import { stripFences } from "./lib.mjs";
+import { parseFrameworkIncludes } from "./ship-list.mjs";
 
 const SECTION_GLOBS = {
   Guides: "guides/*.md",
@@ -15,6 +16,25 @@ const SECTION_GLOBS = {
   Templates: "templates/*.md",
   "Stage Artifacts": "stages/*/*.md",
 };
+
+const INDEX_TS = "scripts/release/index.ts";
+
+// Root Files has no glob of its own: it is the shipped root-level navigation
+// surface, which only `FRAMEWORK_INCLUDES` defines. Derive it rather than
+// leaving the section validated against nothing but its own rows — top-level
+// `.md` entries, less INDEX.md itself (the file doing the listing).
+export function rootFileCount(repoRoot) {
+  let tokens;
+  try {
+    tokens = parseFrameworkIncludes(
+      readFileSync(join(repoRoot, INDEX_TS), "utf8"),
+    );
+  } catch {
+    return null;
+  }
+  if (!tokens) return null;
+  return tokens.filter((t) => t.endsWith(".md") && t !== "INDEX.md").length;
+}
 
 const SEPARATOR = /^\|[\s:|-]+\|?\s*$/;
 
@@ -68,6 +88,15 @@ export function runIndexCounts(repoRoot, indexFile = "INDEX.md") {
       if (disk !== s.declared) {
         issues.push(
           `COUNT  ${indexFile}  ${s.name}: heading(${s.declared}) ≠ disk files(${disk}) [${glob}]`,
+        );
+      }
+    }
+    if (s.name === "Root Files") {
+      const shipped = rootFileCount(repoRoot);
+      if (shipped !== null && shipped !== s.declared) {
+        issues.push(
+          `COUNT  ${indexFile}  ${s.name}: heading(${s.declared}) ≠ shipped root ` +
+            `files(${shipped}) [FRAMEWORK_INCLUDES in ${INDEX_TS}]`,
         );
       }
     }

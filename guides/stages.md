@@ -456,8 +456,9 @@ scope boundaries, and produce a plan to reach the first major decision gate
     sponsor committed
   - **Record decision:** Use the
     [Gate Decision Template](../templates/gate-decision.md)
-  - **AI validation:** Human review ensures AI-assisted brief analysis is sound
-    and recommendations are appropriate
+  - **AI validation:** the project's Required Assurance setting fixes how
+    independently AI-assisted brief analysis is evaluated (see the
+    [Operating Model Guide](operating-model.md#required-assurance--how-independently-work-is-evaluated))
 
 ### Handoff to Next Stage
 
@@ -623,8 +624,9 @@ guides all subsequent implementation work.
   - **Based on:** Architecture, increment plan, cost estimates, risk assessment
   - **Criteria:** Technical approach sound, costs acceptable, risks manageable,
     security risk posture reviewed (AppSec prepares security evidence)
-  - **AI validation:** Human review ensures AI-assisted design is
-    architecturally sound
+  - **AI validation:** the project's Required Assurance setting fixes how
+    independently AI-assisted design is evaluated (see the
+    [Operating Model Guide](operating-model.md#required-assurance--how-independently-work-is-evaluated))
 
 ### Handoff to Next Stage
 

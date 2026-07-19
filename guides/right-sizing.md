@@ -315,12 +315,13 @@ CD (Continuous Deployment) is orthogonal to governance weight — it changes
 _when_ iterative stage activities happen, not _whether_ they happen. A project
 can be low-consequence+CD or high-consequence+CD.
 
-| Stage                | Without CD (batch)                 | With CD (per-slice)                                         |
-| -------------------- | ---------------------------------- | ----------------------------------------------------------- |
-| Implementation       | All slices, then increment gate    | Per-slice gate (PR + CI); summary at close                  |
-| Verification         | Batch verification after code      | Per-slice CI; increment-close summary                       |
-| Deployment           | Discrete deployment event          | Per-merge automated pipeline                                |
-| Closure / Operations | Close-out + handoff at project end | Operations monitoring active from first deploy (continuous) |
+| Stage / Process        | Without CD (batch)                 | With CD (per-slice)                              |
+| ---------------------- | ---------------------------------- | ------------------------------------------------ |
+| Implementation         | All slices, then increment gate    | Per-slice gate (PR + CI); summary at close       |
+| Verification           | Batch verification after code      | Per-slice CI; increment-close summary            |
+| Deployment             | Discrete deployment event          | Per-merge automated pipeline                     |
+| Closure                | Close-out + handoff at project end | Close-out + handoff at project end               |
+| Operations _(process)_ | Monitoring begins at handoff       | Monitoring active from first deploy (continuous) |
 
 For the full model, see
 [Framework Guide: CD Workflow Adaptations](framework.md#cd-workflow-adaptations).
@@ -512,6 +513,6 @@ where expansion triggers signal more rigor is needed:
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.13.0.

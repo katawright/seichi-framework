@@ -106,15 +106,15 @@ Use Glob to find all `.md` files in these locations:
 Also scan the **kernel interface files** — the only non-`.md` entries INDEX
 tracks:
 
-- `spec/vocabulary/*.yaml`
-- `spec/rules/*.yaml`
-- `spec/schemas/*.json`
-- `spec/generated/*` (generated exports; still INDEX-listed)
+- `spec/{vocabulary,rules,schemas,generated}/*` — every entry, not only the
+  `.yaml`/`.json` ones. The `index-counts` guard counts the whole tree, so a
+  future kernel source with a different extension would be counted there and
+  invisible here, producing a fatal COUNT this command could not self-heal.
 
-**Exclude** any file or directory marked `export-ignore` in `.gitattributes`
-(this governs GitHub's source-archive tarballs, not the released zip). The
-authoritative release surface is the `FRAMEWORK_INCLUDES` allowlist in
-`scripts/release/index.ts`.
+**Filter by the `FRAMEWORK_INCLUDES` allowlist in `scripts/release/index.ts`** —
+it is the authoritative definition of the release surface. (`.gitattributes`
+`export-ignore` marks govern GitHub's source-archive tarballs, not the released
+zip; the two lists agree today, but the allowlist is the one that decides.)
 
 Also exclude `INDEX.md` itself — it is the file being updated, not an entry.
 

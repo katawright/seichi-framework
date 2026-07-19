@@ -98,9 +98,8 @@ rationale.
 
 ## Decision Detail
 
-<!-- The decision itself is recorded once, in the header above (see
-     STYLE_GUIDE.md, Record-Template Fill-In Convention). This section
-     elaborates it. -->
+<!-- The decision itself is recorded once, in the header above. This section
+     elaborates it; it never re-fills the decision. -->
 
 - **Rationale:** (why this decision was made)
 - **Conditions:** (if any) — each is a tracked carry-forward obligation,

@@ -132,7 +132,7 @@ the increment-design-brief Carry Forward Resolution section.
      items, unclear guidance, template gaps, stage-model issues. Process and
      Tooling friction route to the owner you name (see the Learning Loop) —
      capture locally by default; contributing upstream to the framework
-     repository or a tool's tracker (see CONTRIBUTING.md) is an explicit
+     repository or a tool's tracker is an explicit
      opt-in, never a requirement. Agents: record observations
      here and flag them for human review — do not file issues or PRs without
      explicit permission. -->
@@ -141,4 +141,4 @@ the increment-design-brief Carry Forward Resolution section.
 
 ---
 
-<!-- Template Last Updated: 2026-07-07 | Added in v0.23.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.23.0. -->

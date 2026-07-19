@@ -90,9 +90,9 @@ Load the index first, then load only what you need.
 ## Spec (8)
 
 Agent- and conformance-facing normative layer — executable contracts behind the
-operating model, right-sizing, delegated runs, parallel-batch execution, and
-canonical project state. The human-facing rationale lives in the corresponding
-guides.
+operating model, right-sizing, checkpoints, executor conduct, delegated runs,
+parallel-batch execution, and canonical project state. The human-facing
+rationale lives in the corresponding guides.
 
 | Path                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Keywords                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Refs                                                                       | Tier |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---- |
@@ -108,9 +108,9 @@ guides.
 ## Kernel (14)
 
 The machine-readable kernel interface under the spec namespace — hand-curated
-vocabulary sources, the rule registry, and the generated, stamped exports.
-Kernel interface version is a separate `0.x` axis (experimental, pre-1.0). See
-`spec/README.md` § Kernel Interface.
+vocabulary sources, the rule registry, the manifest schema, and the generated,
+stamped exports. Kernel interface version is a separate `0.x` axis
+(experimental, pre-1.0). See `spec/README.md` § Kernel Interface.
 
 | Path                                    | Description                                                                                               | Keywords                                                                             | Refs                                         | Tier |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------- | ---- |

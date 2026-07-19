@@ -45,9 +45,10 @@ Read `guides/agentic-workflow.md`, `guides/stages.md`, `guides/roles.md`, and
 canonical source for role definitions and the RACI matrix. Stage READMEs
 (`stages/*/README.md`) contain canonical stage metadata in their front matter.
 The `spec/` files are the normative contracts behind the operating model,
-right-sizing, delegated runs, parallel-batch execution, and canonical project
-state — keep a guide and its governing spec in sync when editing either. See
-`INDEX.md` for the full file inventory and canonical sources.
+right-sizing, checkpoints, executor conduct, delegated runs, parallel-batch
+execution, and canonical project state — keep a guide and its governing spec in
+sync when editing either. See `INDEX.md` for the full file inventory and
+canonical sources.
 
 ---
 
@@ -160,9 +161,10 @@ These rules apply to AI coding assistants working in this repository.
    - Confirm expected files still exist
    - Review diffs for formatting and consistency
    - If files were added, removed, or renamed, update `INDEX.md`. INDEX.md lists
-     framework-usage files only (guides, spec, stages, templates, root
+     framework-usage files only (guides, spec, the kernel interface under
+     `spec/{vocabulary,rules,schemas,generated}/`, stages, templates, root
      navigation). Contributor tooling (CLAUDE.md, STYLE_GUIDE.md, AGENTS.md,
-     CONTRIBUTING.md) and schema/CI files are excluded.
+     CONTRIBUTING.md), the `.schema/` check harness, and CI config are excluded.
 6. Do not commit or create tags unless the user explicitly requests it.
 7. Never commit directly to main; always use a feature branch.
 
@@ -193,6 +195,6 @@ Right-size the model when spawning subagents:
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.9.0.

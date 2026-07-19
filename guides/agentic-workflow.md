@@ -232,6 +232,15 @@ handoff to Operations. Operations findings feed back as new
 
 ## Quick Start by Operating Posture
 
+> **Reading these as settings.** Each posture below is a **preset label**, and
+> the per-setting values named under it are an _extracted view_ of that preset's
+> ratified default bundle — restated here for orientation. The bundle is
+> canonical at its own descriptive register; where a mapping needs
+> interpretation, that extraction is raised as its own decision and never
+> resolved silently
+> ([OMG-016](../spec/operating-model.md#omg-016--operating-presets-supervised--checkpointed--lights-out)).
+> Record the posture by its preset name, not as a setting pair.
+
 ### Supervised
 
 Work Execution is **Collaborative**; Authority is interactive at every step. The
@@ -263,13 +272,16 @@ builds trust.
 ### Lights-Out
 
 Work Execution is **Agents**; Authority is delegated or pre-authorized. The
-agent drives the process. Humans validate at gates.
+agent drives the process. Gates stay human-owned, cleared interactively **or**
+by pre-authorized policy per the project's Authority setting — policy clearance
+is the normal Lights-Out mechanism, not an exception.
 
 1. Read the stage README, checklist, and reference (if available)
 2. Assess inputs — flag any that are missing or ambiguous
 3. Execute stage activities autonomously, following the stage guide
 4. Self-validate intermediate work against checklist criteria
-5. Present completed artifacts at gates for human validation
+5. Present completed artifacts at gates for clearance — interactive or by
+   pre-authorized policy
 6. Between increments: review the previous increment's retrospective (if any)
    and check pre-mortem assumptions before starting the next Increment Design
 7. Use fallback protocols (below) when blocked
@@ -520,7 +532,7 @@ Consider the operating posture:
 
 | Operating Posture | Typical Author            | Rationale                              |
 | ----------------- | ------------------------- | -------------------------------------- |
-| Supervised        | Human                     | Human shaped all content               |
+| Supervised        | Human                     | Human directed and reviewed each step  |
 | Checkpointed      | Human and/or agent        | Depends on who drove each section      |
 | Lights-Out        | Agent (human as Approver) | Agent drove substance; human validated |
 

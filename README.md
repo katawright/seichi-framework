@@ -90,17 +90,18 @@ together — **who performs the work** and **who decides** — and sets them thr
 the [operating model](guides/operating-model.md), per project, not as a fixed
 property of each stage:
 
-| Question                                    | Setting                                                     | Stays human                           |
-| ------------------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
-| **Who performs the work?** (Work Execution) | Humans · Collaborative · Agents                             | —                                     |
-| **Who decides?** (Authority)                | Interactive human · Pre-authorized policy · Delegated agent | investment gates, compliance sign-off |
+| Question                                    | Setting                                                     | Stays human                                                            |
+| ------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Who performs the work?** (Work Execution) | Humans · Collaborative · Agents                             | —                                                                      |
+| **Who decides?** (Authority)                | Interactive human · Pre-authorized policy · Delegated agent | investment gates, compliance sign-off, the project acceptance decision |
 
 Humans remain accountable for decisions and correctness regardless of setting.
 For a pilot, start conservative (humans drive, agents assist) and shift
 execution toward Agents as confidence and capability grow — investment decisions
-(Gates) and compliance sign-offs stay human throughout. The same governance
-structure that guides a cautious first pilot scales to a future where agents
-fill most of the execution and humans govern through checkpoints.
+(Gates), compliance sign-offs, and the project acceptance decision stay human
+throughout. The same governance structure that guides a cautious first pilot
+scales to a future where agents fill most of the execution and humans govern
+through checkpoints.
 
 See the [Operating Model Guide](guides/operating-model.md) for the full model —
 the configurable functions, capability coverage, and where unattended
@@ -109,6 +110,9 @@ the configurable functions, capability coverage, and where unattended
 ---
 
 ## Stage Overview
+
+<!-- Keep this table in sync with guides/stages.md § Quick Reference,
+     CLAUDE.md § SDLC Execution Model, and QUICKSTART.md. -->
 
 The framework defines eight stages. Foundational stages run once per project
 (though they can be revisited); iterative stages repeat each increment.

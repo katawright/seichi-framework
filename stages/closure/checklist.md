@@ -21,7 +21,9 @@ The terminal bookend to the Initiation gate.
 
 > **Lights-Out preset:** an agent completes the full checklist and presents
 > results for review. **[H]** items stay human-owned — cleared interactively or
-> by pre-authorized policy per the operating model.
+> by pre-authorized policy per the operating model. **During interactive stage
+> execution, raise [H] items as they arise rather than batching them at the
+> end.**
 
 > Not every item applies at every scale — mark items N/A with justification when
 > they don't fit your project's consequence level. See

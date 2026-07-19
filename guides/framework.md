@@ -753,15 +753,16 @@ project types deliver features using the same iterative cycle.
 The framework's 8 stages apply to both project types, but activities and
 emphasis differ:
 
-| Stage                                   | Greenfield                                | Brownfield (First AI)                                                                                                                                                     | Brownfield (Has Context)                                |
-| --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| **Initiation**                          | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                                                             | Understand existing system + define new goals           |
-| **Requirements**                        | All requirements are new                  | New requirements + existing system constraints                                                                                                                            | New requirements + existing system constraints          |
-| **System Design**                       | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                                                                      | Adapt/extend architecture + assess infrastructure       |
-| **Increment Design**                    | Plan bootstrap increment details          | Plan discovery increment details                                                                                                                                          | Plan first feature increment details                    |
-| **Increment 0 (bootstrap / discovery)** | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) (not a separate stage — executed using the iterative stages) | N/A — proceed directly to feature delivery              |
-| **Increment 1+**                        | Deliver features with established infra   | Deliver features with established infra + documented context                                                                                                              | Deliver features with established infra                 |
-| **Closure / Operations**                | Hand off + operate the new system         | Hand off + operate changes, consider existing user base                                                                                                                   | Hand off + operate changes, consider existing user base |
+| Stage                                   | Greenfield                                | Brownfield (First AI)                                                                                                                                                     | Brownfield (Has Context)                          |
+| --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Initiation**                          | Define vision and objectives from scratch | Understand existing system + define new goals                                                                                                                             | Understand existing system + define new goals     |
+| **Requirements**                        | All requirements are new                  | New requirements + existing system constraints                                                                                                                            | New requirements + existing system constraints    |
+| **System Design**                       | Full architecture + infrastructure plan   | Assess existing + plan discovery for foundation work                                                                                                                      | Adapt/extend architecture + assess infrastructure |
+| **Increment Design**                    | Plan bootstrap increment details          | Plan discovery increment details                                                                                                                                          | Plan first feature increment details              |
+| **Increment 0 (bootstrap / discovery)** | **Establish infrastructure** (bootstrap)  | **Discover, document, and prepare** (scope depends on [readiness](brownfield-readiness.md#readiness-rubric)) (not a separate stage — executed using the iterative stages) | N/A — proceed directly to feature delivery        |
+| **Increment 1+**                        | Deliver features with established infra   | Deliver features with established infra + documented context                                                                                                              | Deliver features with established infra           |
+| **Closure**                             | Hand off the new system                   | Hand off changes, consider existing user base                                                                                                                             | Hand off changes, consider existing user base     |
+| **Operations** _(process)_              | Operate the new system                    | Operate changes, consider existing user base                                                                                                                              | Operate changes, consider existing user base      |
 
 ### Project Foundation
 
@@ -963,6 +964,6 @@ regulatory requirements.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.9.0.

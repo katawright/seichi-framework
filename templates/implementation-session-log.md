@@ -23,7 +23,7 @@ for logging conventions and AI agent guidance.
 | ------------------ | ------------------------------------------------------------------------ |
 | **Project**        | [Project Name]                                                           |
 | **Increment**      | [Increment Number/Name]                                                  |
-| **Engineer(s)**    | [Names]                                                                  |
+| **Engineer(s)**    | [Names / Agent IDs]                                                      |
 | **Stage**          | Implementation                                                           |
 | **Work Execution** | [Humans / Collaborative / Agents]                                        |
 | **Authority**      | [Interactive human / Pre-authorized policy / Delegated agent]            |

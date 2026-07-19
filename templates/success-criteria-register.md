@@ -42,15 +42,16 @@ how criteria flow through the framework.
 
 ## How This Register Is Used
 
-| Stage              | Usage                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------ |
-| **Initiation**     | Create register; define goals, metrics, and targets                                                    |
-| **Requirements**   | Ensure NFRs trace to register criteria                                                                 |
-| **System Design**  | Plan instrumentation to measure register criteria                                                      |
-| **Implementation** | Implement measurement systems                                                                          |
-| **Verification**   | Validate measurement systems work                                                                      |
-| **Deployment**     | Capture baseline measurements                                                                          |
-| **Closure**        | Track actuals vs. targets; confirm each criterion rests at an honest status or carries a Re-check Date |
+| Stage                | Usage                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Initiation**       | Create register; define goals, metrics, and targets                                                    |
+| **Requirements**     | Ensure NFRs trace to register criteria                                                                 |
+| **System Design**    | Plan instrumentation to measure register criteria                                                      |
+| **Increment Design** | Specify what to measure per increment; plan the test strategy against register criteria                |
+| **Implementation**   | Implement measurement systems                                                                          |
+| **Verification**     | Validate measurement systems work                                                                      |
+| **Deployment**       | Capture baseline measurements                                                                          |
+| **Closure**          | Track actuals vs. targets; confirm each criterion rests at an honest status or carries a Re-check Date |
 
 ---
 
