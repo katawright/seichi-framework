@@ -14,6 +14,15 @@ const VOCAB = require("./retired-vocab.json").map((v) => ({
   replacement: v.replacement,
 }));
 
+// An ATX heading of level 1 or 2, captured as (hashes, title). A `## Notes`
+// section runs until the next heading at this level — H3+ are subsections of it
+// and do not end it.
+// The trailing `\s*` (not `[ \t]*`) is load-bearing: the working tree checks out
+// CRLF, so a heading line still carries `\r` after the split. Anchoring with
+// `[ \t]*$` would leave the `\r` inside the captured title, and the exact-match
+// test below would then never fire on any file in the repo.
+const HEADING = /^(#{1,2})[ \t]+(.+?)[ \t]*#*\s*$/;
+
 /** Line indices (0-based) excluded from live-guidance scanning. */
 function excludedLines(fencedContent) {
   const lines = fencedContent.split("\n");
@@ -22,7 +31,15 @@ function excludedLines(fencedContent) {
   let inMigration = false;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    if (/^##[ \t]+Notes\b/.test(line)) inNotes = true;
+    // The Notes exclusion is a SECTION, not a latch: it opens on an exact
+    // `## Notes` heading and closes at the next H1/H2. The previous
+    // `/^##[ \t]+Notes\b/` both never cleared and matched any heading merely
+    // starting with the word (the \b is satisfied by the following space), so
+    // `## Notes Section Format` in STYLE_GUIDE.md excluded everything after it
+    // — 398 of 482 lines, including the Front Matter, Checklist, and
+    // Record-Template authoring conventions.
+    const h = HEADING.exec(line);
+    if (h) inNotes = h[1] === "##" && h[2] === "Notes";
     if (inNotes) {
       ex.add(i);
       continue;
