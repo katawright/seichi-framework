@@ -111,15 +111,21 @@ What isolation must guarantee:
 - shared resources that cannot be isolated are instead **coordinated**
   (serialized access) — and a heavily contended shared resource is itself a
   forcing dependency that should have split the batch at scheduling time;
-- writes to shared project state are **attributable** and **non-overwriting**.
+- writes to shared project state are **attributable** and **non-overwriting** —
+  guaranteed by version-conditional write admission, where each write declares
+  the state version it was based on and a stale one is rejected rather than
+  merged ([write admission](../spec/delegated-run.md#idempotency-substrate),
+  [state versioning](../spec/canonical-state.md#minimum-canonical-project-state)).
+  That is the correctness mechanism; **no lease is required for correctness**.
 
 > **Example.** Run each worker in its own isolated workspace (for instance, a
 > separate working tree on a per-increment branch) for filesystem isolation by
-> construction, and serialize writes to shared governance state through a
-> short-lived lease — acquire, write, release per block. Workspace isolation and
-> state coordination are two different mechanisms solving two halves of the same
-> property; sustained lease contention is the signal the batch should have been
-> split.
+> construction, and — as an **optimization**, not a correctness requirement —
+> serialize writes to shared governance state through a short-lived lease
+> (acquire, write, release per block) to reduce rejected writes under
+> contention. Workspace isolation and state coordination are two different
+> mechanisms solving two halves of the same property; sustained lease contention
+> is the signal the batch should have been split.
 
 ---
 

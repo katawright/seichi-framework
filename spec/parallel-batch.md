@@ -396,9 +396,12 @@ Rationale:
 - **Inputs.** Per-increment outcomes; the integrated result; whole-batch
   verification and assurance results.
 - **Procedure.** A batch MAY close only when **every member increment has an
-  explicit terminal or transition-eligible disposition** — one of the
-  [delegated-run terminal states](delegated-run.md) with its reason code, not
-  the mere fact that every worker stopped. Before the next batch opens:
+  explicit terminal or transition-eligible disposition** — for the run that
+  produced it, one of the
+  [delegated-run terminal states](delegated-run.md#run-lifecycle) with its
+  reason code, not the mere fact that every worker stopped. (The increment's own
+  disposition is a separate, project-level fact; the run terminal is what this
+  contract reads.) Before the next batch opens:
   - completed work is **integrated or explicitly excluded**, never silently
     dropped;
   - conflicts and inconsistencies are **resolved**;
@@ -478,6 +481,6 @@ chooses the storage; this spec fixes only what must be representable.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

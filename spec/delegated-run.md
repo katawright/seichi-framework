@@ -164,7 +164,7 @@ are observed through.
     `paused`, stays live, and awaits **resolve-and-continue** (→ `active`) or
     **cancel** (→ terminal). A pause MUST NOT split one run into two. `blocked`
     and `awaiting-decision` are status **reasons** on `paused`, not separate
-    states. `pause-requested` is a directive state, not a run state; the run
+    states. `pause-requested` is a **directive**, not a run state; the run
     becomes `paused` only when that directive is `applied`.
   - **Authorization MAY be revoked before start:** `approved → canceled`,
     carrying only the existing revocation reasons (`stopped-by-user` ·
@@ -172,6 +172,14 @@ are observed through.
     `proposal-withdrawn` is not legal from `approved` — approval ends the
     proposal story. There is no `approved → failed` edge: preflight runs inside
     `active`, and a preflight failure is a failure of an `active` run.
+  - **The claim/verify rung is two states, not one.** `completion-claimed`
+    records that the run asserted completion; `completion-verified` records that
+    the assertion was checked against the completion evidence and stood. A claim
+    is not a terminal — `completion-claimed` is non-terminal, and the run rests
+    only at `completion-verified` (with `completed`) or at `failed` (with
+    `failed-verification`) when the claim is refuted. Both are states of _this_
+    machine; the project-level analogues are separate and governed by
+    [CS-007](canonical-state.md#cs-007--project-lifecycle-machine).
   - **`unresponsive` is not a lifecycle state** — it is an observer-assigned
     liveness determination overlaying `active`/`paused` (see
     [Progress, Liveness, and Unresponsive State](#progress-liveness-and-unresponsive-state)).
@@ -233,7 +241,10 @@ Rationale: without a local runner there is no process to "be up"; liveness is
 defined against an **authorized reporting cadence** and judged by an observer,
 not a daemon.
 
-**Applicability.** Every run an observer is monitoring.
+**Applicability.** Every run an observer is monitoring **while it is `active` or
+`paused`** — the two states the four liveness determinations overlay. A run in
+`proposed`, `declined`, or `approved` has not started, so it is not yet
+liveness-bearing; a run at a terminal has stopped by record.
 
 **Inputs.** The authorized reporting cadence (declared at authorization, checked
 at preflight); the separate decision-response window; emitted events;
@@ -342,18 +353,18 @@ and observability.
 
 - The minimum durable run state MUST carry:
 
-| Group                 | Fields                                                                                           | Source                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| Identity & version    | run id; run version; execution-plan version; framework version                                   | run-level                                                         |
-| Authorization         | approved objective & scope; operating envelope; escalation/stop conditions; resource/time limits | [canonical state](canonical-state.md) (reference, do not restate) |
-| Position              | current batch/increment/stage/work item; lifecycle state + status reason; active actor/provider  | run-level                                                         |
-| Work ledger           | completed work + evidence; work in progress; remaining work                                      | run-level                                                         |
-| Open items            | outstanding decisions, blockers, questions, directives; current assumptions & recorded decisions | run-level                                                         |
-| External-world state  | repository/workspace/branch; deployment; external-system state                                   | run-level                                                         |
-| Continuation          | resumption context (no private conversational state); in-flight ops + retry class                | run-level                                                         |
-| Observability         | last progress report; last known activity; reporting cadence + decision-response window          | run-level                                                         |
-| Evidence & completion | evidence-package state; completion claim/verify status                                           | run-level                                                         |
-| Timestamps            | relevant lifecycle timestamps                                                                    | run-level                                                         |
+| Group                 | Fields                                                                                                  | Source                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Identity & version    | run id; run version; execution-plan version; framework version; the Authorization **state-version pin** | run-level                                                         |
+| Authorization         | approved objective & scope; operating envelope; escalation/stop conditions; resource/time limits        | [canonical state](canonical-state.md) (reference, do not restate) |
+| Position              | current batch/increment/stage/work item; lifecycle state + status reason; active actor/provider         | run-level                                                         |
+| Work ledger           | completed work + evidence; work in progress; remaining work                                             | run-level                                                         |
+| Open items            | outstanding decisions, blockers, questions, directives; current assumptions & recorded decisions        | run-level                                                         |
+| External-world state  | repository/workspace/branch; deployment; external-system state                                          | run-level                                                         |
+| Continuation          | resumption context (no private conversational state); in-flight ops + retry class                       | run-level                                                         |
+| Observability         | last progress report; last known activity; reporting cadence + decision-response window                 | run-level                                                         |
+| Evidence & completion | evidence-package state; completion claim/verify status                                                  | run-level                                                         |
+| Timestamps            | relevant lifecycle timestamps                                                                           | run-level                                                         |
 
 - **Single-source split.** The Authorization group MUST be the run-scoped read
   of the
@@ -417,7 +428,8 @@ object types.
 every operation with side effects.
 
 **Inputs.** The object's stable id; the monotonic per-run sequence; current run
-state.
+state; for a canonical-state write, the **project state version** it is ordered
+by and the **base version** the write declares.
 
 **Procedure.**
 
@@ -511,11 +523,16 @@ state.
 
 **Outputs.** Exactly-once effects under duplication and reordering.
 
-**Evidence.** The id-keyed records, the sequence, and the directive state
-transitions.
+**Evidence.** The id-keyed records, the sequence, the directive state
+transitions, and — for an admitted canonical-state write — the state-version
+increment it produced.
 
-**Failure behavior.** A duplicate or out-of-order item reconciles
-deterministically; it MUST NOT create contradictory state or a fork.
+**Failure behavior.** A duplicate or out-of-order **run-scoped** item — report,
+evidence item, directive, ack — reconciles deterministically; it MUST NOT create
+contradictory state or a fork. A **canonical-state** write is governed by write
+admission instead: on a stale base version it is rejected and re-evaluated,
+never silently merged, unless its record family has declared a deterministic
+merge.
 
 ---
 
@@ -638,8 +655,9 @@ integrations, deployments, and directives.
 
 - Every event MUST identify: identity and type;
   project/run/batch/increment/stage/ work-item scope; actor or provider;
-  timestamp; prior and resulting state where applicable; trigger and outcome;
-  related decisions, directives, artifacts, and evidence; causation or
+  timestamp; the state version the write produced, where the event carries a
+  canonical-state write; prior and resulting state where applicable; trigger and
+  outcome; related decisions, directives, artifacts, and evidence; causation or
   correlation; and a human-readable summary.
 - **The minimum event set ⊇ the minimum lifecycle.** Normative **always**: a
   run-lifecycle event on every lifecycle transition (enter approved/active;
@@ -679,7 +697,11 @@ operating preset, floored by consequence/compliance.
 **Applicability.** Any change discovered mid-run.
 
 **Inputs.** The change class; the operating preset; the consequence/compliance
-floors; the delegated authority and capability coverage.
+floors; the delegated authority and capability coverage. An **envelope change**
+is detected by comparing the Authorization subset against the run's
+version-pinned Authorization: any subset record whose last-write version exceeds
+the pin is an envelope change
+([Minimum Canonical Project State](canonical-state.md#minimum-canonical-project-state)).
 
 **Procedure.**
 
@@ -1046,6 +1068,6 @@ operations are `[Reserved]`.
 
 ## Notes
 
-**Last Updated:** 2026-07-17
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.49.0.

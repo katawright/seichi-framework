@@ -107,13 +107,16 @@ operating configuration, and the records produced as work proceeds.
   canonical-state write; it identifies a point in the project's total write
   order, and equal versions imply identical canonical state. Every
   [view](#artifacts-as-views), export, and rendered snapshot MUST carry the
-  state version it was rendered from as its as-of marker. A run's Authorization
-  reference is **version-pinned**: it names the state version current at run
-  approval, and the Authorization subset is read as-of that pin. A mid-run
-  change to the Authorization subset MUST be detectable as any subset record
-  whose last-write version exceeds the pin — the trigger for the envelope-change
-  stop in [Controlled Replanning](delegated-run.md#controlled-replanning) — and
-  a conforming platform MUST expose that determination cheaply. Re-authorization
+  state version it was rendered from as its as-of marker (in file mode, the
+  version is carried alongside the commit the view was rendered from — the
+  commit identifies the write, the version orders it, and a timestamp is never
+  the ordering key). A run's Authorization reference is **version-pinned**: it
+  names the state version current at run approval, and the Authorization subset
+  is read as-of that pin. A mid-run change to the Authorization subset MUST be
+  detectable as any subset record whose last-write version exceeds the pin — the
+  trigger for the envelope-change stop in
+  [Controlled Replanning](delegated-run.md#controlled-replanning) — and a
+  conforming platform MUST expose that determination cheaply. Re-authorization
   records a new pin.
 - **Carry-forward obligations are tracked state.** A "proceed with conditions"
   gate or checkpoint outcome records each condition as a tracked item — owner,

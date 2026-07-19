@@ -74,6 +74,29 @@ reason_sets:
           superseded-by-replanning,
           project-canceled,
         ]
+      # Post-start: the proposal codes are spent, so every authorized state
+      # carries exactly the four revocation codes.
+      active:
+        [
+          stopped-by-user,
+          stopped-by-policy,
+          superseded-by-replanning,
+          project-canceled,
+        ]
+      paused:
+        [
+          stopped-by-user,
+          stopped-by-policy,
+          superseded-by-replanning,
+          project-canceled,
+        ]
+      completion-claimed:
+        [
+          stopped-by-user,
+          stopped-by-policy,
+          superseded-by-replanning,
+          project-canceled,
+        ]
 
   batch_lifecycle:
     owning_rule: PB-016

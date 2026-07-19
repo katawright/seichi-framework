@@ -23,6 +23,9 @@ that never drop at any consequence level.
 **Project:** [project name] **Started:** YYYY-MM-DD **Closed:** YYYY-MM-DD
 **Owner:** [name / role]
 
+**As of:** [state version this view was rendered from — in file mode, also the
+commit; see ../spec/canonical-state.md#minimum-canonical-project-state]
+
 <!-- Completion status renders the project lifecycle (see
      ../spec/canonical-state.md#project-lifecycle). There is no stored
      disposition field: "delivered" IS the terminal + reason (closed /
