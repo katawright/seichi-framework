@@ -81,7 +81,25 @@ Format each entry as a bullet point with the scope in bold:
 - **scope:** description
 ```
 
-### 2e: Prepend to CHANGELOG.md
+### 2e: Check for retired vocabulary
+
+`git log --oneline` reads subject lines only, so a vocabulary retirement
+recorded in a commit **body** is invisible to step 2c — which is how `cancelled`
+and `the gate into` (both v0.59) reached a release with no CHANGELOG line.
+
+Read `.schema/checks/retired-vocab.json` and find every entry whose
+`replacement` names the version being prepared. For each one, ensure the entry
+carries a Bug Fixes bullet naming the retired term, its replacement, and where
+the retired meaning now lives. Retired vocabulary in change history is
+conformant and expected — it is how a downstream consumer learns a value left a
+closed set.
+
+If a retirement also has a consumer-side migration (a `consumer_only`
+declaration in `scripts/release/kernel/generate.mjs` `ENUM_PROJECTION`), say so
+in the bullet: the value is still accepted by the consumer and leaves on its
+next conformance cycle.
+
+### 2f: Prepend to CHANGELOG.md
 
 Insert the new entry after the `# Changelog` heading and before the first
 existing `## ` version heading. Preserve all existing entries unchanged.
