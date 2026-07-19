@@ -42,7 +42,12 @@ Date:** YYYY-MM-DD **Deployment Engineer:** [Name] **Status:** [Planning / Ready
 
 **UAT Sign-Off:**
 
-- Approved by: [Name, Title]
+- **Approved by:** [the accepting party — name + a stable identifier; a role is
+  a type and never suffices at this floor]. `[H]`, deployment checklist item 2.
+  A floor act, so the party MUST be on the project's authorized-party roster for
+  it (see
+  [Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)
+  and [Record Requirements](../spec/canonical-state.md#record-requirements)).
 - Date: YYYY-MM-DD
 - Notes: [Any conditions or caveats]
 
@@ -177,7 +182,12 @@ fleet]
 
 **SBOM location:** [Link or path to SBOM file]
 
-**Security sign-off:** [Name, date — or N/A for Minimal tier]
+**Security sign-off:** [the signing party — name + a stable identifier; a role
+is a type and never suffices at this floor] — Date: YYYY-MM-DD — or N/A for
+Minimal tier. Compliance Approval is an `[H]` floor act, so the party MUST be on
+the project's authorized-party roster for it (see
+[Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)
+and [Record Requirements](../spec/canonical-state.md#record-requirements)).
 
 ---
 
@@ -323,10 +333,17 @@ tracker]
 
 **Sign-off:**
 
-| Role                | Name   | Date       |
-| ------------------- | ------ | ---------- |
-| Deploying team lead | [Name] | YYYY-MM-DD |
-| Accepting team lead | [Name] | YYYY-MM-DD |
+| Role                | Party (name + stable identifier) | Date       |
+| ------------------- | -------------------------------- | ---------- |
+| Deploying team lead | [name + id]                      | YYYY-MM-DD |
+| Accepting team lead | [name + id]                      | YYYY-MM-DD |
+
+Both rows record `[H]` floor acts — operational readiness approval and business
+acceptance of completion (deployment checklist, Final Decision). A role is a
+type and never suffices at the floor, and each party MUST be on the project's
+authorized-party roster for its act (see
+[Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)
+and [Record Requirements](../spec/canonical-state.md#record-requirements)).
 
 ---
 
@@ -411,4 +428,4 @@ tracker]
       self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-07-09 | Added in v0.7.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.7.0. -->

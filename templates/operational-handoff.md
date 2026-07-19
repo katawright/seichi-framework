@@ -105,10 +105,14 @@ role / "delegated agent under policy"]
 
 ## Acceptance
 
-**Production ownership accepted by:** [name / role] — Date: YYYY-MM-DD
+**Production ownership accepted:** [Yes / Not yet] — the acceptance itself is
+recorded once, as a checkpoint decision
+([Checkpoint Decision Template](checkpoint-decision.md)); link it here rather
+than re-capturing the accepting party's identity, which that record carries at
+the `[H]` grade. Record link: [path or URL] — Date: YYYY-MM-DD
 
-<!-- Record the acceptance as a checkpoint decision (../templates/checkpoint-decision.md).
+<!-- The checkpoint decision is the authoritative record (closure checklist item 5).
      At Negligible/Low consequence this may be an implicit self-acceptance;
      at High/Critical it is an explicit, possibly non-delegable, sign-off. -->
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.49.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.49.0. -->

@@ -19,5 +19,6 @@
   { "regex": "\\bManual Process Guide\\b", "flags": "g", "replacement": "Bootstrap Guide" },
   { "regex": "\\bcancelled\\b", "flags": "gi", "replacement": "canceled (one l — framework-normative spelling, v0.59)" },
   { "regex": "\\bthe gate (in)?to\\b", "flags": "gi", "replacement": "the decision that gates entry to (acceptance is a Review checkpoint, not an investment gate — v0.59)" },
-  { "regex": "\\bmoot\\b", "flags": "gi", "replacement": "obsolete (framework-normative term, v0.60 — 'moot' reads as 'debatable' in British English)" }
+  { "regex": "\\bmoot\\b", "flags": "gi", "replacement": "obsolete (framework-normative term, v0.60 — 'moot' reads as 'debatable' in British English)" },
+  { "regex": "\\bmet.synthetic\\b", "flags": "gi", "replacement": "met (v0.64 — synthetic-vs-production is measurement provenance, not an outcome; it rides the success-criteria register's How-measured column)" }
 ]

@@ -1480,13 +1480,13 @@ project.
     vendor / model / version; for a human, name + role. A type suffices, because
     a judgment item asks only that a qualified evaluator confirmed it.
   - **`[H]` — party-identity.** A _unique authorized party_: for a human, name
-    - a stable identifier; for an `[H]`·policy clearance, the policy's
-      **author** (the accountable party) together with the evaluating agent's
-      qualification-identity and the required timestamps. A type never suffices
-      at the floor — it cannot answer for an outcome. _Which_ parties are
-      authorized is the
-      [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
-      contract.
+    plus a stable identifier; for an `[H]`·policy clearance, the policy's
+    **author** (the accountable party) together with the evaluating agent's
+    qualification-identity and the required timestamps. A type never suffices at
+    the floor — it cannot answer for an outcome. _Which_ parties are authorized
+    is the
+    [Authorized Parties for Floor Decisions](#authorized-parties-for-floor-decisions)
+    contract.
 - **Outputs.** The act's identity grade and the identity recorded at it.
 - **Evidence.** The record itself (enclosing contract).
 - **Failure behavior.** An act recorded below the grade its accountability
@@ -1603,8 +1603,13 @@ authorization, sign-off, and ownership acts, plus the investment gates. Not
 judgment (`[J]`) or mechanical items.
 
 **Inputs.** The floor decisions the governance profile requires; the consequence
-and compliance floors; the Accountable (**A**) role RACI assigns each decision
-([Roles Guide](../guides/roles.md#raci-matrix)).
+and compliance floors; the Accountable (**A**) role assigned to each decision.
+That assignment lives on two axes and both are required here: the stage-level
+[RACI matrix](../guides/roles.md#raci-matrix), and the **Decides** column of the
+checkpoint-level
+[Decision-Rights Matrix](../guides/checkpoints.md#decision-rights-matrix) —
+three of the five `[H]` acts (Architecture Review sign-off, Production Ownership
+Transfer, Project Closure) exist only on the latter.
 
 **Procedure.**
 
@@ -1628,8 +1633,11 @@ and compliance floors; the Accountable (**A**) role RACI assigns each decision
   MUST identify the policies it orphans, recorded under
   [Record Requirements](#record-requirements), so the fallback is visible at
   removal time, not discovered at the next gate. Roster changes are themselves
-  durable, attributed records; in platform mode they are governance writes (see
-  [Mode Binding and Discovery](#mode-binding-and-discovery)). **`[Reserved]`**
+  durable, attributed records, and they **are governance-class writes**
+  ([CS-075](#cs-075--write-classes-governance-class-iff-class-carried-per-write),
+  in every operating mode) — in a bound project they are never recorded
+  only-locally and never offline-queued
+  ([Mode Binding and Discovery](#mode-binding-and-discovery)). **`[Reserved]`**
   Co-authored policies — multiple jointly-and-severally accountable authors,
   with fallback to interactive only when no author remains authorized — are
   deferred with the shared multi-actor scope (see

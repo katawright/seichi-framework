@@ -18,11 +18,11 @@ how criteria flow through the framework.
 
 ## Success Criteria
 
-| SC ID | Goal(s) | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                                                                 | Last Measured | Re-check Date  |
-| ----- | ------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------- | ------------- | -------------- |
-| SC-01 | G-1     | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [not-started / met / met-synthetic / not-met / deferred / blocked / revised / dropped] | YYYY-MM-DD    | YYYY-MM-DD / — |
-| SC-02 | G-1     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
-| SC-03 | G-2     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC ID | Goal(s) | Metric            | Baseline                 | Target                     | Measurement Method                        | Status                                                                 | Last Measured | Re-check Date  |
+| ----- | ------- | ----------------- | ------------------------ | -------------------------- | ----------------------------------------- | ---------------------------------------------------------------------- | ------------- | -------------- |
+| SC-01 | G-1     | [Specific metric] | [Current value or "TBD"] | [Target value + timeframe] | [How measured — dashboard, query, manual] | [not-started / met / not-met / deferred / blocked / revised / dropped] | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC-02 | G-1     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
+| SC-03 | G-2     | [Specific metric] | [Current value]          | [Target value]             | [How measured]                            | [Status]                                                               | YYYY-MM-DD    | YYYY-MM-DD / — |
 
 <!-- Keep this table as the single source of truth for project success criteria.
      Other stages reference this register rather than duplicating criteria.
@@ -77,4 +77,4 @@ how criteria flow through the framework.
 | ---------- | ---------------- | --------- | ----------- |
 | YYYY-MM-DD | Initial creation | [Why]     | [Name]      |
 
-<!-- Template Last Updated: 2026-07-11 | Added in v0.29.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.29.0. -->

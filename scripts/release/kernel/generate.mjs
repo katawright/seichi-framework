@@ -559,7 +559,14 @@ const ENUM_PROJECTION = [
   ["escalation_withdrawn_reason", { reasons: "escalation_lifecycle" }],
   ["deviation_revoked_reason", { reasons: "deviation_lifecycle" }],
   ["goal_status", { vocabulary: "goal_status" }],
-  ["sc_status", { vocabulary: "success_criterion_status" }],
+  // `met_synthetic` was retired from the ratified set in v0.64 (measurement
+  // provenance is not an outcome — it rides the register's How-measured
+  // column). Declared consumer-only until the schema repo drops it next
+  // conformance cycle, so compare-schema stays EQUAL across the two phases.
+  [
+    "sc_status",
+    { vocabulary: "success_criterion_status", consumer_only: ["met_synthetic"] },
+  ],
   ["req_status", { vocabulary: "requirement_status" }],
   ["assumption_status", { vocabulary: "assumption_status" }],
   ["risk_status", { vocabulary: "risk_status" }],

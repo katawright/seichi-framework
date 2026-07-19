@@ -106,9 +106,13 @@ Requirements and UAT.
 This matrix shows who is Responsible, Accountable, Consulted, and Informed for
 key activities at each stage. It consolidates the Primary and Supporting Role
 designations from each stage guide into a single cross-stage view. This matrix
-covers stage-level role assignments. For checkpoint-level decision rights (who
-prepares evidence, who decides), see the
-[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix).
+covers stage-level role assignments, plus the four checkpoints that carry
+stage-level accountability (the two investment gates, Deployment Approval, and
+Compliance Approval). It is **not** the full checkpoint picture: for
+checkpoint-level decision rights — who prepares evidence, who decides, and the
+checkpoints absent here — see the
+[Decision-Rights Matrix](checkpoints.md#decision-rights-matrix), which is
+authoritative for every checkpoint-level lookup.
 
 **Legend:** **R** = Responsible (does the work), **A** = Accountable
 (approves/owns the outcome), **C** = Consulted (provides input), **I** =
@@ -330,6 +334,6 @@ before the stage resumes.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.10.0.

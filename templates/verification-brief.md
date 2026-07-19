@@ -214,7 +214,12 @@ changes, or "None"]
 **UAT Sign-Off:**
 
 - **Status:** [✅ Approved / ⚠️ Conditions / ❌ Not Approved]
-- Approver: [Name, Role]
+- **Approved by:** [the accepting party — name + a stable identifier; a role is
+  a type and never suffices at this floor]. `[H]`, verification checklist
+  item 11. A floor act, so the party MUST be on the project's authorized-party
+  roster for it (see
+  [Authorized Parties](../spec/canonical-state.md#authorized-parties-for-floor-decisions)
+  and [Record Requirements](../spec/canonical-state.md#record-requirements)).
 - Date: [YYYY-MM-DD]
 - Conditions: [If any]
 
@@ -348,4 +353,4 @@ delivery — e.g., user survey in 30 days, usage tracking, manual check-in]
       with self-assessment and evidence for each item
 - **Items needing attention:** [List any items that don't fully pass]
 
-<!-- Template Last Updated: 2026-06-28 | Added in v0.6.0. -->
+<!-- Template Last Updated: 2026-07-18 | Added in v0.6.0. -->

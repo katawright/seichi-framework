@@ -173,7 +173,7 @@ planning_families:
   success_criterion_status:
     consumers: ["schema:sc_status"]
     values:
-      [not-started, met, met-synthetic, not-met, deferred, blocked, revised, dropped]
+      [not-started, met, not-met, deferred, blocked, revised, dropped]
   requirement_status:
     consumers: ["schema:req_status"]
     values: [proposed, approved, implemented, verified, deferred, dropped]

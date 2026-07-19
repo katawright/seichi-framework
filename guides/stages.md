@@ -681,7 +681,8 @@ Verification.
 ### Checkpoints
 
 - **Design Review (Review):** End of Increment Design
-  - **Decision:** Ready to implement, or revise designs
+  - **Decision:** Ready (proceed to Implementation) / Not Ready (revise designs
+    and re-review)
   - **Based on:** Increment Design Brief with component designs, API specs, and
     test strategy
   - **Criteria:** Designs implementable, test strategy defined, no major
@@ -1018,6 +1019,6 @@ its specific checkpoints in the `### Checkpoints` subsection.
 
 ## Notes
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-18
 
 Added to framework in v0.9.0.
