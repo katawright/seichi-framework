@@ -1,10 +1,10 @@
 # Seichi Framework
 
 > **Status (2026-07-19):** v0.63.0 is the current release. The framework is
-> undergoing a structural revision; expect breaking changes in the next
-> minor version. The `vNext` branch tracks the revision, and the tag
-> `archive/v0.64-kernel-experiment` preserves an unreleased experimental
-> line that will not ship as-is.
+> undergoing a structural revision; expect breaking changes in the next minor
+> version. The `vNext` branch tracks the revision, and the tag
+> `archive/v0.64-kernel-experiment` preserves an unreleased experimental line
+> that will not ship as-is.
 
 ## Overview
 
