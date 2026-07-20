@@ -480,6 +480,6 @@ product name in a way that implies endorsement, affiliation, or official status.
 
 ## Notes
 
-**Last Updated:** 2026-07-05
+**Last Updated:** 2026-07-19
 
 Added to framework in v0.17.0.
